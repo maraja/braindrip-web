@@ -4,8 +4,11 @@
  * For each concept, looks up which interactive components should be placed
  * and after which h2 section they belong. Injects a <div data-interactive="...">
  * placeholder that the client-side React hydrator will mount components into.
+ *
+ * Registry entries support two matching modes:
+ *   - afterSection: exact match on h2 text
+ *   - afterSectionStartsWith: prefix match on h2 text (e.g. "What Is")
  */
-import { visit } from 'unist-util-visit';
 import { interactiveRegistry } from '../data/interactive-registry.mjs';
 
 export function rehypeInteractiveMarkers() {
@@ -19,14 +22,22 @@ export function rehypeInteractiveMarkers() {
     const config = interactiveRegistry[slug];
     if (!config || config.length === 0) return;
 
-    // Build a map: afterSection → list of component names to inject
-    const sectionMap = {};
+    // Separate exact-match and prefix-match entries
+    const exactMap = {};   // afterSection text → [component names]
+    const prefixMap = {};  // prefix string → [component names]
+
     for (const item of config) {
-      if (!sectionMap[item.afterSection]) {
-        sectionMap[item.afterSection] = [];
+      if (item.afterSectionStartsWith) {
+        const key = item.afterSectionStartsWith;
+        if (!prefixMap[key]) prefixMap[key] = [];
+        prefixMap[key].push(item.component);
+      } else if (item.afterSection) {
+        if (!exactMap[item.afterSection]) exactMap[item.afterSection] = [];
+        exactMap[item.afterSection].push(item.component);
       }
-      sectionMap[item.afterSection].push(item.component);
     }
+
+    const prefixKeys = Object.keys(prefixMap);
 
     // Walk the tree to find h2 elements and inject markers after their sections
     const children = tree.children;
@@ -40,7 +51,20 @@ export function rehypeInteractiveMarkers() {
         // Get the text content of the heading
         const headingText = getTextContent(node).trim();
 
-        if (sectionMap[headingText]) {
+        // Check exact match first, then prefix match
+        let matched = null;
+        if (exactMap[headingText]) {
+          matched = exactMap[headingText];
+        } else {
+          for (const prefix of prefixKeys) {
+            if (headingText.startsWith(prefix)) {
+              matched = prefixMap[prefix];
+              break;
+            }
+          }
+        }
+
+        if (matched) {
           // Find the end of this section (next h2 or end of document)
           let sectionEnd = children.length;
           for (let j = i + 1; j < children.length; j++) {
@@ -53,7 +77,7 @@ export function rehypeInteractiveMarkers() {
           // Insert markers just before the next h2 (at sectionEnd)
           insertions.push({
             index: sectionEnd,
-            components: sectionMap[headingText],
+            components: matched,
           });
         }
       }
