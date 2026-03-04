@@ -46,7 +46,7 @@ export const modules: ModuleInfo[] = [
     title: 'Alignment & Post-Training',
     description: 'RLHF, DPO, reward modeling, and preference learning.',
     icon: '🎯',
-    conceptCount: 16,
+    conceptCount: 13,
   },
   {
     number: '06',
@@ -54,7 +54,7 @@ export const modules: ModuleInfo[] = [
     title: 'Parameter-Efficient Fine-Tuning',
     description: 'LoRA, adapters, and methods for efficient model adaptation.',
     icon: '🔧',
-    conceptCount: 10,
+    conceptCount: 5,
   },
   {
     number: '07',
@@ -62,7 +62,7 @@ export const modules: ModuleInfo[] = [
     title: 'Inference & Deployment',
     description: 'Serving, decoding strategies, caching, and quantization.',
     icon: '🚀',
-    conceptCount: 20,
+    conceptCount: 18,
   },
   {
     number: '08',
@@ -70,7 +70,7 @@ export const modules: ModuleInfo[] = [
     title: 'Practical Applications',
     description: 'RAG, agents, tool use, and prompt engineering.',
     icon: '💡',
-    conceptCount: 20,
+    conceptCount: 12,
   },
   {
     number: '09',
@@ -78,7 +78,7 @@ export const modules: ModuleInfo[] = [
     title: 'Safety & Alignment',
     description: 'Attacks, defenses, alignment failures, and guardrails.',
     icon: '🛡',
-    conceptCount: 10,
+    conceptCount: 21,
   },
   {
     number: '10',
@@ -86,7 +86,7 @@ export const modules: ModuleInfo[] = [
     title: 'Evaluation',
     description: 'Benchmarks, metrics, and evaluation methodology.',
     icon: '📊',
-    conceptCount: 10,
+    conceptCount: 7,
   },
   {
     number: '11',
@@ -94,7 +94,7 @@ export const modules: ModuleInfo[] = [
     title: 'Advanced & Emerging',
     description: 'Cutting-edge research and emerging techniques.',
     icon: '🔬',
-    conceptCount: 10,
+    conceptCount: 27,
   },
 ];
 

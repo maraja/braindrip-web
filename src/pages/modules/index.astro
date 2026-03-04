@@ -17,7 +17,7 @@ import { modules } from '../../data/modules';
 
     <div class="space-y-3">
       {modules.map(mod => {
-        const isActive = ['01', '02', '03', '04'].includes(mod.number);
+        const isActive = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11'].includes(mod.number);
         return isActive ? (
           <a
             href={`/modules/${mod.slug}`}
