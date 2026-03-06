@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import { courses } from '../../data/courses';
+---
+
+<BaseLayout title="All Courses">
+  <Header />
+  <main class="mx-auto max-w-[900px] px-4 sm:px-6 py-10 sm:py-16">
+    <header class="mb-14">
+      <h1 class="font-serif text-[1.75rem] sm:text-[2.5rem] font-bold text-forest-700 tracking-tight mb-3">All Courses</h1>
+      <p class="text-lg text-forest-500 max-w-lg leading-relaxed">
+        {courses.reduce((sum, c) => sum + c.conceptCount, 0)} concepts across {courses.length} courses &mdash; from machine learning foundations to cutting-edge AI research.
+      </p>
+    </header>
+
+    <div class="space-y-3">
+      {courses.map(course => (
+        <a
+          href={`/courses/${course.slug}`}
+          class="group flex items-start gap-5 rounded-xl border border-cream-300 bg-cream-50/80 p-6 transition-all hover:border-sage/40 hover:bg-white hover:shadow-sm no-underline"
+        >
+          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-sage/10 flex items-center justify-center text-xl">
+            {course.icon}
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 mb-1.5">
+              <span class="inline-flex items-center rounded-full bg-sage/12 px-2 py-0.5 text-[10px] font-semibold text-sage-dark">
+                {course.moduleCount} {course.moduleCount === 1 ? 'module' : 'modules'}
+              </span>
+              <span class="inline-flex items-center rounded-full bg-cream-200/80 px-2 py-0.5 text-[10px] font-semibold text-forest-500">
+                {course.conceptCount} concepts
+              </span>
+            </div>
+            <h3 class="font-serif text-lg font-semibold text-forest-700 group-hover:text-rust transition-colors">
+              {course.title}
+            </h3>
+            <p class="text-sm text-forest-500 mt-1 leading-relaxed">{course.description}</p>
+          </div>
+          <svg class="w-5 h-5 text-forest-400/40 group-hover:text-rust transition-all flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      ))}
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

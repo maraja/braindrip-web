@@ -32,7 +32,7 @@ function ensureMap() {
 
   for (const [moduleSlug, concepts] of Object.entries(modules)) {
     for (const slug of concepts) {
-      CONCEPT_FILES.set(`${slug}.md`, `/concepts/${moduleSlug}/${slug}`);
+      CONCEPT_FILES.set(`${slug}.md`, `/courses/llm-concepts/${moduleSlug}/${slug}`);
     }
   }
 }

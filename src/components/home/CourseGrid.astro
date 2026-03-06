@@ -1,0 +1,45 @@
+---
+import { courses } from '../../data/courses';
+---
+
+<section class="mx-auto max-w-[900px] px-6 pb-24">
+  <div class="mb-12">
+    <h2 class="font-serif text-2xl font-bold text-forest-700 mb-2">Courses</h2>
+    <p class="text-forest-500 text-[15px] max-w-lg">
+      Pick a course to start learning. Each concept builds on the last.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    {courses.map(course => (
+      <a
+        href={`/courses/${course.slug}`}
+        class="group flex flex-col rounded-xl border border-cream-300 bg-cream-50/80 p-5 sm:p-6 transition-all hover:border-sage/40 hover:bg-white hover:shadow-sm no-underline"
+      >
+        <div class="flex items-center gap-3 mb-3">
+          <span class="flex-shrink-0 w-10 h-10 rounded-xl bg-sage/10 flex items-center justify-center text-lg">
+            {course.icon}
+          </span>
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center rounded-full bg-sage/12 px-2 py-0.5 text-[10px] font-semibold text-sage-dark tracking-wide">
+              {course.moduleCount} {course.moduleCount === 1 ? 'module' : 'modules'}
+            </span>
+            <span class="inline-flex items-center rounded-full bg-cream-200/80 px-2 py-0.5 text-[10px] font-semibold text-forest-500 tracking-wide">
+              {course.conceptCount} concepts
+            </span>
+          </div>
+        </div>
+        <h3 class="font-serif text-base font-semibold text-forest-700 group-hover:text-rust transition-colors leading-snug mb-1.5">
+          {course.title}
+        </h3>
+        <p class="text-[13px] text-forest-500 leading-relaxed line-clamp-2 flex-1">{course.description}</p>
+        <div class="mt-3 flex items-center text-[11px] font-mono text-rust opacity-0 group-hover:opacity-100 transition-opacity">
+          Start learning
+          <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>

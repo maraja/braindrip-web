@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/layout/Header.astro';
+import Footer from '../../../components/layout/Footer.astro';
+import Breadcrumbs from '../../../components/layout/Breadcrumbs.astro';
+import CourseHero from '../../../components/home/CourseHero.astro';
+import ModuleGrid from '../../../components/home/ModuleGrid.astro';
+import { courses } from '../../../data/courses';
+import { getModulesForCourse } from '../../../data/course-modules';
+
+export function getStaticPaths() {
+  return courses.map(course => ({
+    params: { course: course.slug },
+    props: { course },
+  }));
+}
+
+const { course } = Astro.props;
+const courseModules = getModulesForCourse(course.slug);
+---
+
+<BaseLayout title={course.title} description={course.description}>
+  <Header />
+  <main>
+    <CourseHero course={course} firstModuleSlug={courseModules[0]?.slug} />
+    <ModuleGrid courseSlug={course.slug} modules={courseModules} />
+  </main>
+  <Footer />
+</BaseLayout>

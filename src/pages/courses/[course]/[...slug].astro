@@ -1,0 +1,61 @@
+---
+import { getCollection, render } from 'astro:content';
+import ConceptLayout from '../../../layouts/ConceptLayout.astro';
+import { getCourse } from '../../../data/courses';
+import { getModule } from '../../../data/course-modules';
+import { formatConceptName } from '../../../utils/slugify';
+import { getPrevNext } from '../../../utils/concepts';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('courses');
+  return entries.map(entry => {
+    const id = entry.id.replace(/\.md$/, '');
+    const parts = id.split('/');
+    // parts: [courseSlug, moduleDir, conceptSlug]
+    const courseSlug = parts[0];
+    const moduleDir = parts.length >= 3 ? parts[1] : parts[0];
+    const conceptSlug = parts[parts.length - 1];
+    const moduleSlug = moduleDir.replace(/^\d+-/, '');
+
+    return {
+      params: { course: courseSlug, slug: `${moduleSlug}/${conceptSlug}` },
+      props: { entry, courseSlug, moduleSlug, conceptSlug },
+    };
+  });
+}
+
+const { entry, courseSlug, moduleSlug, conceptSlug } = Astro.props;
+const course = getCourse(courseSlug);
+const mod = getModule(courseSlug, moduleSlug);
+
+const { Content, headings: rawHeadings, remarkPluginFrontmatter } = await render(entry);
+
+const fm = remarkPluginFrontmatter || {};
+const title = fm.title || formatConceptName(conceptSlug);
+const summary = fm.summary || '';
+const prerequisites = fm.prerequisites || '';
+
+const headings = rawHeadings
+  .filter((h: any) => h.depth === 2 || h.depth === 3)
+  .map((h: any) => ({ depth: h.depth, text: h.text, slug: h.slug }));
+
+const { prev, next } = getPrevNext(courseSlug, conceptSlug, moduleSlug);
+---
+
+<ConceptLayout
+  title={title}
+  summary={summary}
+  prerequisites={prerequisites}
+  headings={headings}
+  courseSlug={courseSlug}
+  courseTitle={course?.title || courseSlug}
+  moduleSlug={moduleSlug}
+  moduleTitle={mod?.title || moduleSlug}
+  moduleNumber={mod?.number || '01'}
+  conceptSlug={conceptSlug}
+  prevSlug={prev}
+  nextSlug={next}
+  conceptCount={mod?.conceptCount || 0}
+>
+  <Content />
+</ConceptLayout>

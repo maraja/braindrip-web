@@ -10,7 +10,7 @@ import { rehypeInteractiveMarkers } from './src/plugins/rehype-interactive-marke
 import { rehypeFurtherReading } from './src/plugins/rehype-further-reading.mjs';
 
 export default defineConfig({
-  site: 'https://llm-concepts.vercel.app',
+  site: 'https://braindrip.vercel.app',
   integrations: [
     react(),
     tailwind(),

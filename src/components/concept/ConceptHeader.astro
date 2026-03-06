@@ -3,11 +3,12 @@ interface Props {
   title: string;
   summary?: string;
   prerequisites?: string;
+  courseSlug: string;
   moduleTitle: string;
   moduleSlug: string;
 }
 
-const { title, summary, prerequisites, moduleTitle, moduleSlug } = Astro.props;
+const { title, summary, prerequisites, courseSlug, moduleTitle, moduleSlug } = Astro.props;
 
 const prereqItems = prerequisites
   ? prerequisites.split(/,\s*(?:and\s+)?/).map(p => p.trim()).filter(Boolean)
@@ -17,7 +18,7 @@ const prereqItems = prerequisites
 <header class="concept-header mb-12">
   <!-- Module badge -->
   <a
-    href={`/modules/${moduleSlug}`}
+    href={`/courses/${courseSlug}/modules/${moduleSlug}`}
     class="inline-flex items-center gap-2 rounded-full border border-sage/20 bg-sage/8 px-3.5 py-1 text-[11px] font-mono font-medium text-sage-dark no-underline hover:bg-sage/15 transition-colors mb-5 tracking-wide"
   >
     <span class="w-1.5 h-1.5 rounded-full bg-sage"></span>

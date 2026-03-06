@@ -1,19 +1,26 @@
 ---
-import { modules } from '../../data/modules';
+import type { ModuleInfo } from '../../data/course-modules';
+
+interface Props {
+  courseSlug: string;
+  modules: ModuleInfo[];
+}
+
+const { courseSlug, modules } = Astro.props;
 ---
 
 <section class="mx-auto max-w-[900px] px-6 pb-24">
   <div class="mb-12">
     <h2 class="font-serif text-2xl font-bold text-forest-700 mb-2">Curriculum</h2>
     <p class="text-forest-500 text-[15px] max-w-lg">
-      A structured path through the ideas that power modern language models.
+      A structured path through the course content.
     </p>
   </div>
 
   <div class="space-y-3">
     {modules.map((mod, i) => (
       <a
-        href={`/modules/${mod.slug}`}
+        href={`/courses/${courseSlug}/modules/${mod.slug}`}
         class="group flex items-start gap-5 rounded-xl border border-cream-300 bg-cream-50/80 p-5 sm:p-6 transition-all hover:border-sage/40 hover:bg-white hover:shadow-sm no-underline"
       >
         <div class="flex-shrink-0 w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-sage/10 flex items-center justify-center text-xl">

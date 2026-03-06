@@ -13,6 +13,8 @@ interface Props {
   summary?: string;
   prerequisites?: string;
   headings?: Array<{ depth: number; text: string; slug: string }>;
+  courseSlug: string;
+  courseTitle: string;
   moduleSlug: string;
   moduleTitle: string;
   moduleNumber?: string;
@@ -27,6 +29,8 @@ const {
   summary,
   prerequisites,
   headings = [],
+  courseSlug,
+  courseTitle,
   moduleSlug,
   moduleTitle,
   moduleNumber = '01',
@@ -38,7 +42,8 @@ const {
 
 const breadcrumbs = [
   { label: 'Home', href: '/' },
-  { label: moduleTitle, href: `/modules/${moduleSlug}` },
+  { label: courseTitle, href: `/courses/${courseSlug}` },
+  { label: moduleTitle, href: `/courses/${courseSlug}/modules/${moduleSlug}` },
   { label: title, href: '' },
 ];
 ---
@@ -61,6 +66,7 @@ const breadcrumbs = [
           title={title}
           summary={summary}
           prerequisites={prerequisites}
+          courseSlug={courseSlug}
           moduleTitle={moduleTitle}
           moduleSlug={moduleSlug}
         />
@@ -74,6 +80,7 @@ const breadcrumbs = [
         <ConceptNav
           prevSlug={prevSlug}
           nextSlug={nextSlug}
+          courseSlug={courseSlug}
           moduleSlug={moduleSlug}
         />
       </article>
@@ -84,7 +91,7 @@ const breadcrumbs = [
           <p class="text-[10px] font-sans font-semibold uppercase tracking-widest text-forest-400 mb-1.5">Module {moduleNumber}</p>
           <p class="text-sm font-serif font-semibold text-forest-700 leading-snug">{moduleTitle}</p>
           <p class="text-xs text-forest-400 mt-2">{conceptCount} concepts in this module</p>
-          <a href={`/modules/${moduleSlug}`} class="inline-block mt-2 text-xs text-rust hover:underline">
+          <a href={`/courses/${courseSlug}/modules/${moduleSlug}`} class="inline-block mt-2 text-xs text-rust hover:underline">
             View all &rarr;
           </a>
         </div>
