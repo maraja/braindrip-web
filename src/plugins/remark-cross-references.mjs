@@ -1,72 +1,115 @@
 /**
- * Remark plugin that transforms cross-references like `see filename.md`
- * into proper links. Handles patterns:
- *   - (see `filename.md`)
- *   - see `filename.md`
- *   - `filename.md` in inline text
+ * Remark plugin that transforms cross-references like `filename.md`
+ * into proper links. Handles inline code nodes ending in .md.
+ *
+ * Dynamically scans all courses to build a slug→URL map at build time.
+ * When a slug exists in multiple courses, prefers same-course references.
  */
 import { visit } from 'unist-util-visit';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-// Build filename→slug map from all known concept files
-const CONCEPT_FILES = new Map();
+// Global map: conceptSlug → [{ courseSlug, moduleSlug, url }]
+let CONCEPT_MAP = null;
 
-function ensureMap() {
-  if (CONCEPT_FILES.size > 0) return;
+function buildConceptMap() {
+  if (CONCEPT_MAP) return;
+  CONCEPT_MAP = new Map();
 
-  const modules = {
-    'foundational-architecture': [
-      'activation-functions', 'attention-sinks', 'autoregressive-generation',
-      'byte-latent-transformers', 'causal-attention', 'differential-transformer',
-      'encoder-decoder-architecture', 'feed-forward-networks',
-      'grouped-query-attention', 'layer-normalization', 'logits-and-softmax',
-      'mixture-of-depths', 'mixture-of-experts', 'multi-head-attention',
-      'next-token-prediction', 'residual-connections', 'self-attention',
-      'sliding-window-attention', 'sparse-attention', 'transformer-architecture',
-    ],
-    'input-representation': [
-      'alibi', 'byte-pair-encoding', 'context-window', 'positional-encoding',
-      'rotary-position-embedding', 'special-tokens', 'token-embeddings',
-      'tokenization', 'vocabulary-design',
-    ],
-  };
+  // Try multiple resolution strategies
+  const thisDir = path.dirname(fileURLToPath(import.meta.url));
+  const candidates = [
+    path.resolve(thisDir, '..', 'content', 'courses'),
+    path.resolve('src/content/courses'),
+    path.resolve(process.cwd(), 'src/content/courses'),
+  ];
 
-  for (const [moduleSlug, concepts] of Object.entries(modules)) {
-    for (const slug of concepts) {
-      CONCEPT_FILES.set(`${slug}.md`, `/courses/llm-concepts/${moduleSlug}/${slug}`);
+  let coursesDir = null;
+  for (const c of candidates) {
+    if (fs.existsSync(c)) {
+      coursesDir = c;
+      break;
     }
   }
+
+  if (!coursesDir) {
+    console.warn('[cross-ref] Could not find courses directory');
+    return;
+  }
+
+  const courses = fs.readdirSync(coursesDir, { withFileTypes: true })
+    .filter(d => d.isDirectory())
+    .map(d => d.name);
+
+  for (const courseSlug of courses) {
+    const courseDir = path.join(coursesDir, courseSlug);
+    let modules;
+    try {
+      modules = fs.readdirSync(courseDir, { withFileTypes: true })
+        .filter(d => d.isDirectory())
+        .map(d => d.name);
+    } catch { continue; }
+
+    for (const moduleDir of modules) {
+      const moduleSlug = moduleDir.replace(/^\d+-/, '');
+      const modulePath = path.join(courseDir, moduleDir);
+      let files;
+      try {
+        files = fs.readdirSync(modulePath).filter(f => f.endsWith('.md'));
+      } catch { continue; }
+
+      for (const file of files) {
+        const conceptSlug = file.replace(/\.md$/, '');
+        const url = `/courses/${courseSlug}/${moduleSlug}/${conceptSlug}`;
+
+        if (!CONCEPT_MAP.has(conceptSlug)) {
+          CONCEPT_MAP.set(conceptSlug, []);
+        }
+        CONCEPT_MAP.get(conceptSlug).push({ courseSlug, moduleSlug, url });
+      }
+    }
+  }
+
 }
 
 export function remarkCrossReferences() {
   return function (tree, file) {
-    ensureMap();
+    buildConceptMap();
+    if (!CONCEPT_MAP || CONCEPT_MAP.size === 0) return;
+
+    // Extract current course slug from file path
+    const filePath = file.history?.[0] || file.path || '';
+    const courseMatch = filePath.match(/courses\/([^/]+)\//);
+    const currentCourse = courseMatch ? courseMatch[1] : null;
 
     visit(tree, 'inlineCode', (node, index, parent) => {
-      if (!parent || !node.value.endsWith('.md')) return;
+      if (!parent || index == null || !node.value.endsWith('.md')) return;
 
-      const filename = node.value;
-      const url = CONCEPT_FILES.get(filename);
+      const slug = node.value.replace(/\.md$/, '');
+      const entries = CONCEPT_MAP.get(slug);
 
-      if (url) {
-        // Replace inline code node with a link
-        const slug = filename.replace('.md', '');
-        const linkNode = {
-          type: 'link',
-          url,
-          data: {
-            hProperties: {
-              'data-concept': slug,
-              class: 'concept-link',
-            },
+      if (!entries || entries.length === 0) return;
+
+      // Prefer same-course match, fall back to first match
+      const match = entries.find(e => e.courseSlug === currentCourse) || entries[0];
+
+      const linkNode = {
+        type: 'link',
+        url: match.url,
+        data: {
+          hProperties: {
+            'data-concept': slug,
+            class: 'concept-link',
           },
-          children: [{
-            type: 'text',
-            value: formatConceptName(slug),
-          }],
-        };
+        },
+        children: [{
+          type: 'text',
+          value: formatConceptName(slug),
+        }],
+      };
 
-        parent.children[index] = linkNode;
-      }
+      parent.children[index] = linkNode;
     });
   };
 }

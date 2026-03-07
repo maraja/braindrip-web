@@ -397,6 +397,43 @@ html {
   margin: 0 auto;
 }
 
+/* Connections to Other Concepts section */
+.connections-section {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin-top: 0.5rem;
+}
+.connections-section ul,
+.connections-section ol {
+  margin-bottom: 0;
+  list-style: none;
+  padding-left: 0;
+}
+.connections-section li {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-border-light);
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+.connections-section li::before {
+  content: '→';
+  color: var(--color-rust);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.connections-section li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.connections-section a.concept-link {
+  font-weight: 600;
+}
+
 /* Further Reading section */
 .further-reading-section {
   background: var(--color-bg-card);
@@ -589,6 +626,15 @@ html {
   .concept-body td {
     padding: 0.5rem 0.65rem;
     white-space: nowrap;
+  }
+
+  /* Connections section */
+  .connections-section {
+    padding: 1rem;
+    margin-top: 0.25rem;
+  }
+  .connections-section li {
+    font-size: 0.82rem;
   }
 
   /* Further Reading */
