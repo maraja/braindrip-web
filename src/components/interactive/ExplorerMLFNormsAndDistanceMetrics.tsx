@@ -1,0 +1,52 @@
+import { useState } from 'react';
+
+const DETAILS = [
+    { label: 'Curse of dimensionality', detail: 'In high dimensions, the ratio of the distance to the nearest and farthest neighbor approaches 1, making distance-based methods (KNN, kernel methods) less discriminative. L1 distance degrades more gracefully than L2.' },
+    { label: 'Matrix norms', detail: 'The Frobenius norm $\\|A\\|_F = \\sqrt{\\sum_{ij} A_{ij}^2}$ is the L2 norm of the vectorized matrix. The spectral norm $\\|A\\|_2 = \\sigma_{\\max}(A)$ is the largest singular value.' },
+    { label: 'Dual norms', detail: 'The dual of $L^p$ is $L^q$ where $\\frac{1}{p} + \\frac{1}{q} = 1$. This duality appears in optimization (Lagrangian duality of regularized problems).' },
+    { label: 'Kernel trick', detail: 'Many kernel functions (RBF, polynomial) are defined in terms of norms: $k(\\mathbf{x}, \\mathbf{y}) = \\exp(-\\gamma\\|\\mathbf{x} - \\mathbf{y}\\|^2)$.' },
+];
+
+export default function ExplorerMLFNormsAndDistanceMetrics() {
+  const [open, setOpen] = useState<number | null>(null);
+
+  return (
+    <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '2rem', margin: '2.5rem 0' }}>
+      <div style={{ marginBottom: '1.5rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+          <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+        </div>
+        <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
+          Norms and Distance Metrics — Key Details Explorer
+        </h3>
+        <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
+          Click each card to explore the technical details of norms and distance metrics.
+        </p>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+        {DETAILS.map((d, i) => (
+          <button key={i} onClick={() => setOpen(open === i ? null : i)} style={{
+            textAlign: 'left' as const, background: open === i ? '#F0EBE1' : '#FDFBF7', border: '1px solid #E5DFD3',
+            borderRadius: '10px', padding: '0.875rem 1rem', cursor: 'pointer', width: '100%', transition: 'background 0.2s ease',
+          }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <span style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '0.95rem', fontWeight: 600, color: '#2C3E2D' }}>
+                {d.label}
+              </span>
+              <span style={{ fontSize: '0.8rem', color: '#7A8B7C', transform: open === i ? 'rotate(90deg)' : 'none', transition: 'transform 0.2s ease' }}>
+                &#9654;
+              </span>
+            </div>
+            {open === i && (
+              <p style={{ fontSize: '0.85rem', color: '#5A6B5C', lineHeight: 1.6, margin: '0.5rem 0 0 0' }}>
+                {d.detail}
+              </p>
+            )}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
