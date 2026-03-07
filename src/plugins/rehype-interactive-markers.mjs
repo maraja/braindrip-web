@@ -8,18 +8,30 @@
  * Registry entries support two matching modes:
  *   - afterSection: exact match on h2 text
  *   - afterSectionStartsWith: prefix match on h2 text (e.g. "What Is")
+ *
+ * Registry keys can be:
+ *   - "concept-slug" (legacy, for llm-concepts)
+ *   - "course-slug/concept-slug" (for multi-course support)
  */
 import { interactiveRegistry } from '../data/interactive-registry.mjs';
 
 export function rehypeInteractiveMarkers() {
   return function (tree, file) {
-    // Extract concept slug from file path
-    const filePath = file.history?.[0] || '';
-    const match = filePath.match(/([^/]+)\.md$/);
-    if (!match) return;
+    // Extract concept slug and course slug from file path
+    const filePath = file.history?.[0] || file.path || '';
 
-    const slug = match[1];
-    const config = interactiveRegistry[slug];
+    // Try to extract course/concept from path like .../courses/course-slug/module-dir/concept.md
+    const courseMatch = filePath.match(/courses\/([^/]+)\/[^/]+\/([^/]+)\.md$/);
+    const simpleMatch = filePath.match(/([^/]+)\.md$/);
+
+    if (!courseMatch && !simpleMatch) return;
+
+    const slug = courseMatch ? courseMatch[2] : simpleMatch[1];
+    const courseSlug = courseMatch ? courseMatch[1] : null;
+
+    // Look up registry: try course-qualified key first, then plain slug
+    const compositeKey = courseSlug ? `${courseSlug}/${slug}` : null;
+    const config = (compositeKey && interactiveRegistry[compositeKey]) || interactiveRegistry[slug];
     if (!config || config.length === 0) return;
 
     // Separate exact-match and prefix-match entries

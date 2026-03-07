@@ -1121,4 +1121,3879 @@ export const interactiveRegistry = {
       { component: 'AnalogyQueryDecomp', afterSectionStartsWith: 'What' },
       { component: 'ScaleQueryDecomp', afterSection: 'Why It Matters' },
   ],
+  'agentic-design-patterns/agent-testing-strategy': [
+    { component: 'QuizADPAgentTestingStrategy', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyADPAgentTestingStrategy', afterSectionStartsWith: 'What' },
+    { component: 'ScaleADPAgentTestingStrategy', afterSection: 'Why It Matters' },
+  ],
+  'agentic-design-patterns/architecture-selection-framework': [
+    { component: 'QuizADPArchitectureSelectionFramework', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyADPArchitectureSelectionFramework', afterSectionStartsWith: 'What' },
+    { component: 'ScaleADPArchitectureSelectionFramework', afterSection: 'Why It Matters' },
+  ],
+  'agentic-design-patterns/complexity-gradient': [
+    { component: 'QuizADPComplexityGradient', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyADPComplexityGradient', afterSectionStartsWith: 'What' },
+    { component: 'ScaleADPComplexityGradient', afterSection: 'Why It Matters' },
+  ],
+  'agentic-design-patterns/context-and-state-strategy': [
+    { component: 'QuizADPContextAndStateStrategy', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyADPContextAndStateStrategy', afterSectionStartsWith: 'What' },
+    { component: 'ScaleADPContextAndStateStrategy', afterSection: 'Why It Matters' },
+  ],
+  'agentic-design-patterns/cost-latency-optimization': [
+    { component: 'QuizADPCostLatencyOptimization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyADPCostLatencyOptimization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleADPCostLatencyOptimization', afterSection: 'Why It Matters' },
+  ],
+  'agentic-design-patterns/do-you-need-an-agent': [
+    { component: 'QuizADPDoYouNeedAnAgent', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyADPDoYouNeedAnAgent', afterSectionStartsWith: 'What' },
+    { component: 'ScaleADPDoYouNeedAnAgent', afterSection: 'Why It Matters' },
+  ],
+  'agentic-design-patterns/error-resilience-patterns': [
+    { component: 'QuizADPErrorResiliencePatterns', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyADPErrorResiliencePatterns', afterSectionStartsWith: 'What' },
+    { component: 'ScaleADPErrorResiliencePatterns', afterSection: 'Why It Matters' },
+  ],
+  'agentic-design-patterns/incremental-migration-patterns': [
+    { component: 'QuizADPIncrementalMigrationPatterns', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyADPIncrementalMigrationPatterns', afterSectionStartsWith: 'What' },
+    { component: 'ScaleADPIncrementalMigrationPatterns', afterSection: 'Why It Matters' },
+  ],
+  'agentic-design-patterns/multi-agent-decision-framework': [
+    { component: 'QuizADPMultiAgentDecisionFramework', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyADPMultiAgentDecisionFramework', afterSectionStartsWith: 'What' },
+    { component: 'ScaleADPMultiAgentDecisionFramework', afterSection: 'Why It Matters' },
+  ],
+  'agentic-design-patterns/safety-by-design': [
+    { component: 'QuizADPSafetyByDesign', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyADPSafetyByDesign', afterSectionStartsWith: 'What' },
+    { component: 'ScaleADPSafetyByDesign', afterSection: 'Why It Matters' },
+  ],
+  'agentic-design-patterns/system-prompt-engineering': [
+    { component: 'QuizADPSystemPromptEngineering', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyADPSystemPromptEngineering', afterSectionStartsWith: 'What' },
+    { component: 'ScaleADPSystemPromptEngineering', afterSection: 'Why It Matters' },
+  ],
+  'agentic-design-patterns/tool-interface-design': [
+    { component: 'QuizADPToolInterfaceDesign', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyADPToolInterfaceDesign', afterSectionStartsWith: 'What' },
+    { component: 'ScaleADPToolInterfaceDesign', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/action-space-design': [
+    { component: 'QuizAACActionSpaceDesign', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACActionSpaceDesign', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACActionSpaceDesign', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/agent-loop': [
+    { component: 'QuizAACAgentLoop', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACAgentLoop', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACAgentLoop', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/agent-state-management': [
+    { component: 'QuizAACAgentStateManagement', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACAgentStateManagement', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACAgentStateManagement', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/agent-vs-workflow': [
+    { component: 'QuizAACAgentVsWorkflow', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACAgentVsWorkflow', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACAgentVsWorkflow', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/autonomy-spectrum': [
+    { component: 'QuizAACAutonomySpectrum', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACAutonomySpectrum', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACAutonomySpectrum', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/determinism-vs-stochasticity': [
+    { component: 'QuizAACDeterminismVsStochasticity', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACDeterminismVsStochasticity', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACDeterminismVsStochasticity', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/environment-and-observations': [
+    { component: 'QuizAACEnvironmentAndObservations', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACEnvironmentAndObservations', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACEnvironmentAndObservations', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/goal-specification': [
+    { component: 'QuizAACGoalSpecification', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACGoalSpecification', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACGoalSpecification', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/llm-as-reasoning-engine': [
+    { component: 'QuizAACLlmAsReasoningEngine', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACLlmAsReasoningEngine', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACLlmAsReasoningEngine', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/what-is-an-ai-agent': [
+    { component: 'QuizAACWhatIsAnAiAgent', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACWhatIsAnAiAgent', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACWhatIsAnAiAgent', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/chain-of-thought-in-agents': [
+    { component: 'QuizAACChainOfThoughtInAgents', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACChainOfThoughtInAgents', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACChainOfThoughtInAgents', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/error-detection-and-recovery': [
+    { component: 'QuizAACErrorDetectionAndRecovery', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACErrorDetectionAndRecovery', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACErrorDetectionAndRecovery', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/inner-monologue': [
+    { component: 'QuizAACInnerMonologue', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACInnerMonologue', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACInnerMonologue', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/metacognition': [
+    { component: 'QuizAACMetacognition', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACMetacognition', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACMetacognition', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/plan-and-execute': [
+    { component: 'QuizAACPlanAndExecute', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACPlanAndExecute', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACPlanAndExecute', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/react-pattern': [
+    { component: 'QuizAACReactPattern', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACReactPattern', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACReactPattern', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/reflection-and-self-critique': [
+    { component: 'QuizAACReflectionAndSelfCritique', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACReflectionAndSelfCritique', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACReflectionAndSelfCritique', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/task-decomposition': [
+    { component: 'QuizAACTaskDecomposition', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACTaskDecomposition', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACTaskDecomposition', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/tree-search-and-branching': [
+    { component: 'QuizAACTreeSearchAndBranching', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACTreeSearchAndBranching', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACTreeSearchAndBranching', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/world-models': [
+    { component: 'QuizAACWorldModels', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACWorldModels', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACWorldModels', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/conversation-management': [
+    { component: 'QuizAACConversationManagement', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACConversationManagement', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACConversationManagement', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/episodic-memory': [
+    { component: 'QuizAACEpisodicMemory', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACEpisodicMemory', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACEpisodicMemory', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/long-term-persistent-memory': [
+    { component: 'QuizAACLongTermPersistentMemory', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACLongTermPersistentMemory', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACLongTermPersistentMemory', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/memory-architecture-overview': [
+    { component: 'QuizAACMemoryArchitectureOverview', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACMemoryArchitectureOverview', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACMemoryArchitectureOverview', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/memory-compression': [
+    { component: 'QuizAACMemoryCompression', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACMemoryCompression', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACMemoryCompression', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/memory-retrieval-strategies': [
+    { component: 'QuizAACMemoryRetrievalStrategies', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACMemoryRetrievalStrategies', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACMemoryRetrievalStrategies', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/semantic-memory': [
+    { component: 'QuizAACSemanticMemory', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACSemanticMemory', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACSemanticMemory', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/short-term-context-memory': [
+    { component: 'QuizAACShortTermContextMemory', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACShortTermContextMemory', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACShortTermContextMemory', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/api-integration': [
+    { component: 'QuizAACApiIntegration', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACApiIntegration', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACApiIntegration', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/browser-automation': [
+    { component: 'QuizAACBrowserAutomation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACBrowserAutomation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACBrowserAutomation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/code-generation-and-execution': [
+    { component: 'QuizAACCodeGenerationAndExecution', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACCodeGenerationAndExecution', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACCodeGenerationAndExecution', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/dynamic-tool-creation': [
+    { component: 'QuizAACDynamicToolCreation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACDynamicToolCreation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACDynamicToolCreation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/file-and-system-operations': [
+    { component: 'QuizAACFileAndSystemOperations', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACFileAndSystemOperations', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACFileAndSystemOperations', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/function-calling': [
+    { component: 'QuizAACFunctionCalling', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACFunctionCalling', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACFunctionCalling', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/model-context-protocol': [
+    { component: 'QuizAACModelContextProtocol', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACModelContextProtocol', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACModelContextProtocol', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/structured-output-for-actions': [
+    { component: 'QuizAACStructuredOutputForActions', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACStructuredOutputForActions', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACStructuredOutputForActions', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/tool-chaining': [
+    { component: 'QuizAACToolChaining', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACToolChaining', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACToolChaining', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/tool-selection-and-routing': [
+    { component: 'QuizAACToolSelectionAndRouting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACToolSelectionAndRouting', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACToolSelectionAndRouting', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/agent-debate-and-verification': [
+    { component: 'QuizAACAgentDebateAndVerification', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACAgentDebateAndVerification', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACAgentDebateAndVerification', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/agent-delegation': [
+    { component: 'QuizAACAgentDelegation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACAgentDelegation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACAgentDelegation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/consensus-and-voting': [
+    { component: 'QuizAACConsensusAndVoting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACConsensusAndVoting', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACConsensusAndVoting', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/hierarchical-agent-systems': [
+    { component: 'QuizAACHierarchicalAgentSystems', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACHierarchicalAgentSystems', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACHierarchicalAgentSystems', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/inter-agent-communication': [
+    { component: 'QuizAACInterAgentCommunication', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACInterAgentCommunication', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACInterAgentCommunication', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/multi-agent-architectures': [
+    { component: 'QuizAACMultiAgentArchitectures', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACMultiAgentArchitectures', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACMultiAgentArchitectures', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/role-based-specialization': [
+    { component: 'QuizAACRoleBasedSpecialization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACRoleBasedSpecialization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACRoleBasedSpecialization', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/swarm-and-emergent-behavior': [
+    { component: 'QuizAACSwarmAndEmergentBehavior', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACSwarmAndEmergentBehavior', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACSwarmAndEmergentBehavior', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/agentic-rag': [
+    { component: 'QuizAACAgenticRag', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACAgenticRag', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACAgenticRag', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/document-understanding': [
+    { component: 'QuizAACDocumentUnderstanding', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACDocumentUnderstanding', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACDocumentUnderstanding', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/dynamic-retrieval-decisions': [
+    { component: 'QuizAACDynamicRetrievalDecisions', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACDynamicRetrievalDecisions', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACDynamicRetrievalDecisions', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/hybrid-search-strategies': [
+    { component: 'QuizAACHybridSearchStrategies', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACHybridSearchStrategies', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACHybridSearchStrategies', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/knowledge-base-maintenance': [
+    { component: 'QuizAACKnowledgeBaseMaintenance', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACKnowledgeBaseMaintenance', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACKnowledgeBaseMaintenance', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/knowledge-graph-navigation': [
+    { component: 'QuizAACKnowledgeGraphNavigation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACKnowledgeGraphNavigation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACKnowledgeGraphNavigation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/query-reformulation': [
+    { component: 'QuizAACQueryReformulation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACQueryReformulation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACQueryReformulation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/source-verification': [
+    { component: 'QuizAACSourceVerification', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACSourceVerification', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACSourceVerification', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/agent-guardrails': [
+    { component: 'QuizAACAgentGuardrails', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACAgentGuardrails', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACAgentGuardrails', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/agent-sandboxing': [
+    { component: 'QuizAACAgentSandboxing', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACAgentSandboxing', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACAgentSandboxing', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/alignment-for-agents': [
+    { component: 'QuizAACAlignmentForAgents', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACAlignmentForAgents', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACAlignmentForAgents', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/authorization-and-permissions': [
+    { component: 'QuizAACAuthorizationAndPermissions', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACAuthorizationAndPermissions', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACAuthorizationAndPermissions', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/human-in-the-loop': [
+    { component: 'QuizAACHumanInTheLoop', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACHumanInTheLoop', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACHumanInTheLoop', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/monitoring-and-observability': [
+    { component: 'QuizAACMonitoringAndObservability', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACMonitoringAndObservability', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACMonitoringAndObservability', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/prompt-injection-defense': [
+    { component: 'QuizAACPromptInjectionDefense', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACPromptInjectionDefense', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACPromptInjectionDefense', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/resource-limits': [
+    { component: 'QuizAACResourceLimits', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACResourceLimits', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACResourceLimits', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/rollback-and-undo': [
+    { component: 'QuizAACRollbackAndUndo', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACRollbackAndUndo', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACRollbackAndUndo', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/trust-boundaries': [
+    { component: 'QuizAACTrustBoundaries', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACTrustBoundaries', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACTrustBoundaries', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/agent-benchmarks': [
+    { component: 'QuizAACAgentBenchmarks', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACAgentBenchmarks', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACAgentBenchmarks', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/agent-evaluation-methods': [
+    { component: 'QuizAACAgentEvaluationMethods', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACAgentEvaluationMethods', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACAgentEvaluationMethods', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/cost-efficiency-metrics': [
+    { component: 'QuizAACCostEfficiencyMetrics', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACCostEfficiencyMetrics', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACCostEfficiencyMetrics', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/latency-and-performance': [
+    { component: 'QuizAACLatencyAndPerformance', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACLatencyAndPerformance', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACLatencyAndPerformance', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/regression-testing': [
+    { component: 'QuizAACRegressionTesting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACRegressionTesting', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACRegressionTesting', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/reliability-and-reproducibility': [
+    { component: 'QuizAACReliabilityAndReproducibility', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACReliabilityAndReproducibility', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACReliabilityAndReproducibility', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/task-completion-metrics': [
+    { component: 'QuizAACTaskCompletionMetrics', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACTaskCompletionMetrics', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACTaskCompletionMetrics', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/trajectory-evaluation': [
+    { component: 'QuizAACTrajectoryEvaluation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACTrajectoryEvaluation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACTrajectoryEvaluation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/agent-deployment': [
+    { component: 'QuizAACAgentDeployment', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACAgentDeployment', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACAgentDeployment', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/agent-orchestration': [
+    { component: 'QuizAACAgentOrchestration', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACAgentOrchestration', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACAgentOrchestration', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/context-window-management': [
+    { component: 'QuizAACContextWindowManagement', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACContextWindowManagement', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACContextWindowManagement', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/cost-optimization': [
+    { component: 'QuizAACCostOptimization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACCostOptimization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACCostOptimization', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/error-handling-and-retries': [
+    { component: 'QuizAACErrorHandlingAndRetries', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACErrorHandlingAndRetries', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACErrorHandlingAndRetries', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/event-driven-architectures': [
+    { component: 'QuizAACEventDrivenArchitectures', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACEventDrivenArchitectures', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACEventDrivenArchitectures', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/logging-tracing-and-debugging': [
+    { component: 'QuizAACLoggingTracingAndDebugging', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACLoggingTracingAndDebugging', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACLoggingTracingAndDebugging', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/state-machines-and-graphs': [
+    { component: 'QuizAACStateMachinesAndGraphs', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACStateMachinesAndGraphs', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACStateMachinesAndGraphs', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/agent-distillation': [
+    { component: 'QuizAACAgentDistillation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACAgentDistillation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACAgentDistillation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/agent-operating-systems': [
+    { component: 'QuizAACAgentOperatingSystems', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACAgentOperatingSystems', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACAgentOperatingSystems', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/autonomous-coding-agents': [
+    { component: 'QuizAACAutonomousCodingAgents', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACAutonomousCodingAgents', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACAutonomousCodingAgents', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/computer-use-agents': [
+    { component: 'QuizAACComputerUseAgents', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACComputerUseAgents', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACComputerUseAgents', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/deep-research-agents': [
+    { component: 'QuizAACDeepResearchAgents', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACDeepResearchAgents', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACDeepResearchAgents', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/embodied-agents': [
+    { component: 'QuizAACEmbodiedAgents', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACEmbodiedAgents', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACEmbodiedAgents', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/generative-agents': [
+    { component: 'QuizAACGenerativeAgents', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACGenerativeAgents', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACGenerativeAgents', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/self-improving-agents': [
+    { component: 'QuizAACSelfImprovingAgents', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACSelfImprovingAgents', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACSelfImprovingAgents', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/simulation-environments': [
+    { component: 'QuizAACSimulationEnvironments', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACSimulationEnvironments', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACSimulationEnvironments', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-concepts/web-navigation-agents': [
+    { component: 'QuizAACWebNavigationAgents', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAACWebNavigationAgents', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAACWebNavigationAgents', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/compounding-errors-in-multi-step-tasks': [
+    { component: 'QuizAAECompoundingErrorsInMultiStepTasks', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAECompoundingErrorsInMultiStepTasks', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAECompoundingErrorsInMultiStepTasks', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/evaluation-dimensions-taxonomy': [
+    { component: 'QuizAAEEvaluationDimensionsTaxonomy', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEEvaluationDimensionsTaxonomy', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEEvaluationDimensionsTaxonomy', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/evaluation-driven-development': [
+    { component: 'QuizAAEEvaluationDrivenDevelopment', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEEvaluationDrivenDevelopment', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEEvaluationDrivenDevelopment', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/multiple-valid-solutions': [
+    { component: 'QuizAAEMultipleValidSolutions', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEMultipleValidSolutions', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEMultipleValidSolutions', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/outcome-vs-process-evaluation': [
+    { component: 'QuizAAEOutcomeVsProcessEvaluation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEOutcomeVsProcessEvaluation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEOutcomeVsProcessEvaluation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/the-non-determinism-problem': [
+    { component: 'QuizAAETheNonDeterminismProblem', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAETheNonDeterminismProblem', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAETheNonDeterminismProblem', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/why-agent-evaluation-is-hard': [
+    { component: 'QuizAAEWhyAgentEvaluationIsHard', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEWhyAgentEvaluationIsHard', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEWhyAgentEvaluationIsHard', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/benchmark-design-methodology': [
+    { component: 'QuizAAEBenchmarkDesignMethodology', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEBenchmarkDesignMethodology', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEBenchmarkDesignMethodology', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/benchmark-saturation-and-evolution': [
+    { component: 'QuizAAEBenchmarkSaturationAndEvolution', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEBenchmarkSaturationAndEvolution', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEBenchmarkSaturationAndEvolution', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/gaia-and-general-assistant-benchmarks': [
+    { component: 'QuizAAEGaiaAndGeneralAssistantBenchmarks', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEGaiaAndGeneralAssistantBenchmarks', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEGaiaAndGeneralAssistantBenchmarks', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/multi-agent-benchmarks': [
+    { component: 'QuizAAEMultiAgentBenchmarks', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEMultiAgentBenchmarks', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEMultiAgentBenchmarks', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/os-and-computer-use-benchmarks': [
+    { component: 'QuizAAEOsAndComputerUseBenchmarks', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEOsAndComputerUseBenchmarks', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEOsAndComputerUseBenchmarks', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/real-world-vs-synthetic-benchmarks': [
+    { component: 'QuizAAERealWorldVsSyntheticBenchmarks', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAERealWorldVsSyntheticBenchmarks', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAERealWorldVsSyntheticBenchmarks', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/swe-bench-deep-dive': [
+    { component: 'QuizAAESweBenchDeepDive', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAESweBenchDeepDive', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAESweBenchDeepDive', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/tool-use-benchmarks': [
+    { component: 'QuizAAEToolUseBenchmarks', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEToolUseBenchmarks', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEToolUseBenchmarks', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/web-benchmarks': [
+    { component: 'QuizAAEWebBenchmarks', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEWebBenchmarks', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEWebBenchmarks', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/agent-as-judge': [
+    { component: 'QuizAAEAgentAsJudge', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEAgentAsJudge', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEAgentAsJudge', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/code-execution-based-evaluation': [
+    { component: 'QuizAAECodeExecutionBasedEvaluation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAECodeExecutionBasedEvaluation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAECodeExecutionBasedEvaluation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/environment-state-evaluation': [
+    { component: 'QuizAAEEnvironmentStateEvaluation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEEnvironmentStateEvaluation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEEnvironmentStateEvaluation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/evaluation-pipeline-architecture': [
+    { component: 'QuizAAEEvaluationPipelineArchitecture', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEEvaluationPipelineArchitecture', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEEvaluationPipelineArchitecture', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/judge-calibration-and-validation': [
+    { component: 'QuizAAEJudgeCalibrationAndValidation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEJudgeCalibrationAndValidation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEJudgeCalibrationAndValidation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/multi-dimensional-debate-evaluation': [
+    { component: 'QuizAAEMultiDimensionalDebateEvaluation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEMultiDimensionalDebateEvaluation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEMultiDimensionalDebateEvaluation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/reference-free-evaluation': [
+    { component: 'QuizAAEReferenceFreeEvaluation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEReferenceFreeEvaluation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEReferenceFreeEvaluation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/rubric-engineering': [
+    { component: 'QuizAAERubricEngineering', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAERubricEngineering', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAERubricEngineering', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/comparative-trajectory-analysis': [
+    { component: 'QuizAAEComparativeTrajectoryAnalysis', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEComparativeTrajectoryAnalysis', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEComparativeTrajectoryAnalysis', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/error-recovery-evaluation': [
+    { component: 'QuizAAEErrorRecoveryEvaluation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEErrorRecoveryEvaluation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEErrorRecoveryEvaluation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/planning-quality-assessment': [
+    { component: 'QuizAAEPlanningQualityAssessment', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEPlanningQualityAssessment', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEPlanningQualityAssessment', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/process-reward-models': [
+    { component: 'QuizAAEProcessRewardModels', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEProcessRewardModels', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEProcessRewardModels', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/specification-gaming-detection': [
+    { component: 'QuizAAESpecificationGamingDetection', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAESpecificationGamingDetection', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAESpecificationGamingDetection', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/tool-use-correctness': [
+    { component: 'QuizAAEToolUseCorrectness', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEToolUseCorrectness', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEToolUseCorrectness', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/trajectory-quality-metrics': [
+    { component: 'QuizAAETrajectoryQualityMetrics', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAETrajectoryQualityMetrics', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAETrajectoryQualityMetrics', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/confidence-intervals-for-agent-metrics': [
+    { component: 'QuizAAEConfidenceIntervalsForAgentMetrics', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEConfidenceIntervalsForAgentMetrics', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEConfidenceIntervalsForAgentMetrics', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/effect-size-and-practical-significance': [
+    { component: 'QuizAAEEffectSizeAndPracticalSignificance', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEEffectSizeAndPracticalSignificance', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEEffectSizeAndPracticalSignificance', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/meta-evaluation': [
+    { component: 'QuizAAEMetaEvaluation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEMetaEvaluation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEMetaEvaluation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/regression-detection-statistics': [
+    { component: 'QuizAAERegressionDetectionStatistics', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAERegressionDetectionStatistics', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAERegressionDetectionStatistics', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/sample-size-and-power-analysis': [
+    { component: 'QuizAAESampleSizeAndPowerAnalysis', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAESampleSizeAndPowerAnalysis', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAESampleSizeAndPowerAnalysis', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/stratified-evaluation-design': [
+    { component: 'QuizAAEStratifiedEvaluationDesign', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEStratifiedEvaluationDesign', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEStratifiedEvaluationDesign', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/variance-decomposition': [
+    { component: 'QuizAAEVarianceDecomposition', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEVarianceDecomposition', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEVarianceDecomposition', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/cost-controlled-benchmarking': [
+    { component: 'QuizAAECostControlledBenchmarking', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAECostControlledBenchmarking', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAECostControlledBenchmarking', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/evaluation-at-scale': [
+    { component: 'QuizAAEEvaluationAtScale', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEEvaluationAtScale', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEEvaluationAtScale', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/evaluation-budget-optimization': [
+    { component: 'QuizAAEEvaluationBudgetOptimization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEEvaluationBudgetOptimization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEEvaluationBudgetOptimization', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/latency-aware-evaluation': [
+    { component: 'QuizAAELatencyAwareEvaluation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAELatencyAwareEvaluation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAELatencyAwareEvaluation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/model-cascading-evaluation': [
+    { component: 'QuizAAEModelCascadingEvaluation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEModelCascadingEvaluation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEModelCascadingEvaluation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/the-evaluation-triangle': [
+    { component: 'QuizAAETheEvaluationTriangle', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAETheEvaluationTriangle', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAETheEvaluationTriangle', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/agent-safety-red-teaming': [
+    { component: 'QuizAAEAgentSafetyRedTeaming', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEAgentSafetyRedTeaming', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEAgentSafetyRedTeaming', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/alignment-measurement': [
+    { component: 'QuizAAEAlignmentMeasurement', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEAlignmentMeasurement', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEAlignmentMeasurement', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/evaluating-refusal-behavior': [
+    { component: 'QuizAAEEvaluatingRefusalBehavior', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEEvaluatingRefusalBehavior', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEEvaluatingRefusalBehavior', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/harmful-action-detection-metrics': [
+    { component: 'QuizAAEHarmfulActionDetectionMetrics', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEHarmfulActionDetectionMetrics', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEHarmfulActionDetectionMetrics', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/permission-boundary-testing': [
+    { component: 'QuizAAEPermissionBoundaryTesting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEPermissionBoundaryTesting', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEPermissionBoundaryTesting', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/sandboxing-effectiveness-evaluation': [
+    { component: 'QuizAAESandboxingEffectivenessEvaluation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAESandboxingEffectivenessEvaluation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAESandboxingEffectivenessEvaluation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/side-effect-evaluation': [
+    { component: 'QuizAAESideEffectEvaluation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAESideEffectEvaluation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAESideEffectEvaluation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/trust-calibration-evaluation': [
+    { component: 'QuizAAETrustCalibrationEvaluation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAETrustCalibrationEvaluation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAETrustCalibrationEvaluation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/ci-cd-integration-for-agent-evaluation': [
+    { component: 'QuizAAECiCdIntegrationForAgentEvaluation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAECiCdIntegrationForAgentEvaluation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAECiCdIntegrationForAgentEvaluation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/custom-evaluator-development': [
+    { component: 'QuizAAECustomEvaluatorDevelopment', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAECustomEvaluatorDevelopment', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAECustomEvaluatorDevelopment', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/evaluation-dataset-management': [
+    { component: 'QuizAAEEvaluationDatasetManagement', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEEvaluationDatasetManagement', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEEvaluationDatasetManagement', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/evaluation-result-analysis-and-visualization': [
+    { component: 'QuizAAEEvaluationResultAnalysisAndVisualization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEEvaluationResultAnalysisAndVisualization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEEvaluationResultAnalysisAndVisualization', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/inspect-ai-and-open-source-frameworks': [
+    { component: 'QuizAAEInspectAiAndOpenSourceFrameworks', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEInspectAiAndOpenSourceFrameworks', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEInspectAiAndOpenSourceFrameworks', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/observability-platforms-for-evaluation': [
+    { component: 'QuizAAEObservabilityPlatformsForEvaluation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEObservabilityPlatformsForEvaluation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEObservabilityPlatformsForEvaluation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/sandboxed-evaluation-environments': [
+    { component: 'QuizAAESandboxedEvaluationEnvironments', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAESandboxedEvaluationEnvironments', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAESandboxedEvaluationEnvironments', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/a-b-testing-for-agents': [
+    { component: 'QuizAAEABTestingForAgents', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEABTestingForAgents', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEABTestingForAgents', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/drift-detection-and-model-updates': [
+    { component: 'QuizAAEDriftDetectionAndModelUpdates', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEDriftDetectionAndModelUpdates', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEDriftDetectionAndModelUpdates', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/incident-analysis-and-evaluation-improvement': [
+    { component: 'QuizAAEIncidentAnalysisAndEvaluationImprovement', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEIncidentAnalysisAndEvaluationImprovement', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEIncidentAnalysisAndEvaluationImprovement', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/online-vs-offline-evaluation': [
+    { component: 'QuizAAEOnlineVsOfflineEvaluation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEOnlineVsOfflineEvaluation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEOnlineVsOfflineEvaluation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/production-quality-monitoring': [
+    { component: 'QuizAAEProductionQualityMonitoring', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEProductionQualityMonitoring', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEProductionQualityMonitoring', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/user-feedback-as-evaluation-signal': [
+    { component: 'QuizAAEUserFeedbackAsEvaluationSignal', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEUserFeedbackAsEvaluationSignal', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEUserFeedbackAsEvaluationSignal', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/cross-domain-generalization-measurement': [
+    { component: 'QuizAAECrossDomainGeneralizationMeasurement', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAECrossDomainGeneralizationMeasurement', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAECrossDomainGeneralizationMeasurement', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/evaluating-emergent-system-behavior': [
+    { component: 'QuizAAEEvaluatingEmergentSystemBehavior', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEEvaluatingEmergentSystemBehavior', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEEvaluatingEmergentSystemBehavior', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/evaluation-for-learning-agents': [
+    { component: 'QuizAAEEvaluationForLearningAgents', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEEvaluationForLearningAgents', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEEvaluationForLearningAgents', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/human-agent-collaboration-evaluation': [
+    { component: 'QuizAAEHumanAgentCollaborationEvaluation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEHumanAgentCollaborationEvaluation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEHumanAgentCollaborationEvaluation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/long-horizon-task-evaluation': [
+    { component: 'QuizAAELongHorizonTaskEvaluation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAELongHorizonTaskEvaluation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAELongHorizonTaskEvaluation', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/multi-agent-evaluation-theory': [
+    { component: 'QuizAAEMultiAgentEvaluationTheory', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAEMultiAgentEvaluationTheory', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAEMultiAgentEvaluationTheory', afterSection: 'Why It Matters' },
+  ],
+  'ai-agent-evaluation/the-evaluation-scaling-problem': [
+    { component: 'QuizAAETheEvaluationScalingProblem', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyAAETheEvaluationScalingProblem', afterSectionStartsWith: 'What' },
+    { component: 'ScaleAAETheEvaluationScalingProblem', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/color-spaces': [
+    { component: 'QuizCVCColorSpaces', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCColorSpaces', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCColorSpaces', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/convolution-and-filtering': [
+    { component: 'QuizCVCConvolutionAndFiltering', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCConvolutionAndFiltering', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCConvolutionAndFiltering', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/digital-images-and-pixels': [
+    { component: 'QuizCVCDigitalImagesAndPixels', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCDigitalImagesAndPixels', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCDigitalImagesAndPixels', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/frequency-domain-and-fourier-transform': [
+    { component: 'QuizCVCFrequencyDomainAndFourierTransform', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCFrequencyDomainAndFourierTransform', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCFrequencyDomainAndFourierTransform', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/image-histograms': [
+    { component: 'QuizCVCImageHistograms', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCImageHistograms', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCImageHistograms', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/image-interpolation-and-resampling': [
+    { component: 'QuizCVCImageInterpolationAndResampling', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCImageInterpolationAndResampling', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCImageInterpolationAndResampling', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/image-noise-and-denoising': [
+    { component: 'QuizCVCImageNoiseAndDenoising', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCImageNoiseAndDenoising', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCImageNoiseAndDenoising', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/image-pyramids-and-scale-space': [
+    { component: 'QuizCVCImagePyramidsAndScaleSpace', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCImagePyramidsAndScaleSpace', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCImagePyramidsAndScaleSpace', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/morphological-operations': [
+    { component: 'QuizCVCMorphologicalOperations', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCMorphologicalOperations', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCMorphologicalOperations', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/camera-calibration-and-geometry': [
+    { component: 'QuizCVCCameraCalibrationAndGeometry', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCCameraCalibrationAndGeometry', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCCameraCalibrationAndGeometry', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/corner-detection': [
+    { component: 'QuizCVCCornerDetection', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCCornerDetection', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCCornerDetection', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/edge-detection': [
+    { component: 'QuizCVCEdgeDetection', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCEdgeDetection', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCEdgeDetection', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/hog': [
+    { component: 'QuizCVCHog', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCHog', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCHog', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/hough-transform': [
+    { component: 'QuizCVCHoughTransform', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCHoughTransform', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCHoughTransform', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/image-stitching-and-homography': [
+    { component: 'QuizCVCImageStitchingAndHomography', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCImageStitchingAndHomography', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCImageStitchingAndHomography', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/optical-flow': [
+    { component: 'QuizCVCOpticalFlow', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCOpticalFlow', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCOpticalFlow', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/orb-and-binary-descriptors': [
+    { component: 'QuizCVCOrbAndBinaryDescriptors', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCOrbAndBinaryDescriptors', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCOrbAndBinaryDescriptors', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/sift': [
+    { component: 'QuizCVCSift', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCSift', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCSift', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/template-matching': [
+    { component: 'QuizCVCTemplateMatching', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCTemplateMatching', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCTemplateMatching', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/alexnet': [
+    { component: 'QuizCVCAlexnet', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCAlexnet', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCAlexnet', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/convolution-in-neural-networks': [
+    { component: 'QuizCVCConvolutionInNeuralNetworks', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCConvolutionInNeuralNetworks', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCConvolutionInNeuralNetworks', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/densenet': [
+    { component: 'QuizCVCDensenet', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCDensenet', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCDensenet', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/depthwise-separable-convolutions': [
+    { component: 'QuizCVCDepthwiseSeparableConvolutions', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCDepthwiseSeparableConvolutions', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCDepthwiseSeparableConvolutions', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/efficientnet': [
+    { component: 'QuizCVCEfficientnet', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCEfficientnet', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCEfficientnet', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/inception': [
+    { component: 'QuizCVCInception', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCInception', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCInception', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/mobilenet': [
+    { component: 'QuizCVCMobilenet', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCMobilenet', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCMobilenet', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/neural-architecture-search': [
+    { component: 'QuizCVCNeuralArchitectureSearch', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCNeuralArchitectureSearch', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCNeuralArchitectureSearch', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/pooling-layers': [
+    { component: 'QuizCVCPoolingLayers', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCPoolingLayers', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCPoolingLayers', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/receptive-field': [
+    { component: 'QuizCVCReceptiveField', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCReceptiveField', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCReceptiveField', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/resnet': [
+    { component: 'QuizCVCResnet', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCResnet', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCResnet', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/vggnet': [
+    { component: 'QuizCVCVggnet', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCVggnet', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCVggnet', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/batch-normalization': [
+    { component: 'QuizCVCBatchNormalization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCBatchNormalization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCBatchNormalization', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/data-augmentation': [
+    { component: 'QuizCVCDataAugmentation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCDataAugmentation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCDataAugmentation', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/dropout-and-regularization': [
+    { component: 'QuizCVCDropoutAndRegularization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCDropoutAndRegularization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCDropoutAndRegularization', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/knowledge-distillation': [
+    { component: 'QuizCVCKnowledgeDistillation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCKnowledgeDistillation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCKnowledgeDistillation', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/label-smoothing': [
+    { component: 'QuizCVCLabelSmoothing', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCLabelSmoothing', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCLabelSmoothing', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/learning-rate-scheduling': [
+    { component: 'QuizCVCLearningRateScheduling', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCLearningRateScheduling', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCLearningRateScheduling', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/mixup-and-cutmix': [
+    { component: 'QuizCVCMixupAndCutmix', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCMixupAndCutmix', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCMixupAndCutmix', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/progressive-resizing': [
+    { component: 'QuizCVCProgressiveResizing', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCProgressiveResizing', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCProgressiveResizing', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/self-supervised-pretraining': [
+    { component: 'QuizCVCSelfSupervisedPretraining', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCSelfSupervisedPretraining', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCSelfSupervisedPretraining', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/transfer-learning': [
+    { component: 'QuizCVCTransferLearning', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCTransferLearning', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCTransferLearning', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/anchor-free-detection': [
+    { component: 'QuizCVCAnchorFreeDetection', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCAnchorFreeDetection', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCAnchorFreeDetection', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/detr': [
+    { component: 'QuizCVCDetr', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCDetr', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCDetr', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/fast-and-faster-rcnn': [
+    { component: 'QuizCVCFastAndFasterRcnn', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCFastAndFasterRcnn', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCFastAndFasterRcnn', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/feature-pyramid-network': [
+    { component: 'QuizCVCFeaturePyramidNetwork', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCFeaturePyramidNetwork', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCFeaturePyramidNetwork', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/focal-loss': [
+    { component: 'QuizCVCFocalLoss', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCFocalLoss', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCFocalLoss', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/intersection-over-union': [
+    { component: 'QuizCVCIntersectionOverUnion', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCIntersectionOverUnion', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCIntersectionOverUnion', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/multi-scale-detection': [
+    { component: 'QuizCVCMultiScaleDetection', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCMultiScaleDetection', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCMultiScaleDetection', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/non-maximum-suppression': [
+    { component: 'QuizCVCNonMaximumSuppression', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCNonMaximumSuppression', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCNonMaximumSuppression', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/r-cnn': [
+    { component: 'QuizCVCRCnn', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCRCnn', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCRCnn', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/sliding-window-and-region-proposals': [
+    { component: 'QuizCVCSlidingWindowAndRegionProposals', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCSlidingWindowAndRegionProposals', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCSlidingWindowAndRegionProposals', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/ssd': [
+    { component: 'QuizCVCSsd', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCSsd', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCSsd', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/yolo': [
+    { component: 'QuizCVCYolo', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCYolo', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCYolo', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/conditional-random-fields': [
+    { component: 'QuizCVCConditionalRandomFields', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCConditionalRandomFields', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCConditionalRandomFields', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/deeplab-and-atrous-convolution': [
+    { component: 'QuizCVCDeeplabAndAtrousConvolution', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCDeeplabAndAtrousConvolution', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCDeeplabAndAtrousConvolution', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/fully-convolutional-networks': [
+    { component: 'QuizCVCFullyConvolutionalNetworks', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCFullyConvolutionalNetworks', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCFullyConvolutionalNetworks', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/instance-segmentation': [
+    { component: 'QuizCVCInstanceSegmentation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCInstanceSegmentation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCInstanceSegmentation', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/mask-rcnn': [
+    { component: 'QuizCVCMaskRcnn', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCMaskRcnn', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCMaskRcnn', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/panoptic-segmentation': [
+    { component: 'QuizCVCPanopticSegmentation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCPanopticSegmentation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCPanopticSegmentation', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/segment-anything': [
+    { component: 'QuizCVCSegmentAnything', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCSegmentAnything', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCSegmentAnything', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/semantic-segmentation': [
+    { component: 'QuizCVCSemanticSegmentation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCSemanticSegmentation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCSemanticSegmentation', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/u-net': [
+    { component: 'QuizCVCUNet', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCUNet', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCUNet', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/autoencoders-and-vaes': [
+    { component: 'QuizCVCAutoencodersAndVaes', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCAutoencodersAndVaes', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCAutoencodersAndVaes', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/diffusion-models': [
+    { component: 'QuizCVCDiffusionModels', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCDiffusionModels', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCDiffusionModels', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/gan-training-dynamics': [
+    { component: 'QuizCVCGanTrainingDynamics', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCGanTrainingDynamics', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCGanTrainingDynamics', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/generative-adversarial-networks': [
+    { component: 'QuizCVCGenerativeAdversarialNetworks', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCGenerativeAdversarialNetworks', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCGenerativeAdversarialNetworks', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/image-inpainting': [
+    { component: 'QuizCVCImageInpainting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCImageInpainting', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCImageInpainting', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/image-super-resolution': [
+    { component: 'QuizCVCImageSuperResolution', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCImageSuperResolution', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCImageSuperResolution', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/image-to-image-translation': [
+    { component: 'QuizCVCImageToImageTranslation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCImageToImageTranslation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCImageToImageTranslation', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/latent-diffusion-and-stable-diffusion': [
+    { component: 'QuizCVCLatentDiffusionAndStableDiffusion', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCLatentDiffusionAndStableDiffusion', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCLatentDiffusionAndStableDiffusion', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/neural-style-transfer': [
+    { component: 'QuizCVCNeuralStyleTransfer', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCNeuralStyleTransfer', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCNeuralStyleTransfer', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/stylegan': [
+    { component: 'QuizCVCStylegan', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCStylegan', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCStylegan', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/attention-in-vision': [
+    { component: 'QuizCVCAttentionInVision', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCAttentionInVision', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCAttentionInVision', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/deit': [
+    { component: 'QuizCVCDeit', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCDeit', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCDeit', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/dino': [
+    { component: 'QuizCVCDino', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCDino', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCDino', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/hybrid-cnn-transformer': [
+    { component: 'QuizCVCHybridCnnTransformer', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCHybridCnnTransformer', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCHybridCnnTransformer', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/masked-image-modeling': [
+    { component: 'QuizCVCMaskedImageModeling', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCMaskedImageModeling', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCMaskedImageModeling', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/swin-transformer': [
+    { component: 'QuizCVCSwinTransformer', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCSwinTransformer', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCSwinTransformer', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/vision-transformer-scaling': [
+    { component: 'QuizCVCVisionTransformerScaling', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCVisionTransformerScaling', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCVisionTransformerScaling', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/vision-transformer': [
+    { component: 'QuizCVCVisionTransformer', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCVisionTransformer', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCVisionTransformer', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/3d-convolutions': [
+    { component: 'QuizCVC3dConvolutions', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVC3dConvolutions', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVC3dConvolutions', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/action-recognition': [
+    { component: 'QuizCVCActionRecognition', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCActionRecognition', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCActionRecognition', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/optical-flow-estimation': [
+    { component: 'QuizCVCOpticalFlowEstimation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCOpticalFlowEstimation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCOpticalFlowEstimation', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/two-stream-networks': [
+    { component: 'QuizCVCTwoStreamNetworks', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCTwoStreamNetworks', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCTwoStreamNetworks', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/video-generation': [
+    { component: 'QuizCVCVideoGeneration', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCVideoGeneration', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCVideoGeneration', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/video-object-tracking': [
+    { component: 'QuizCVCVideoObjectTracking', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCVideoObjectTracking', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCVideoObjectTracking', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/video-representation': [
+    { component: 'QuizCVCVideoRepresentation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCVideoRepresentation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCVideoRepresentation', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/video-transformers': [
+    { component: 'QuizCVCVideoTransformers', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCVideoTransformers', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCVideoTransformers', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/3d-gaussian-splatting': [
+    { component: 'QuizCVC3dGaussianSplatting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVC3dGaussianSplatting', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVC3dGaussianSplatting', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/3d-object-detection': [
+    { component: 'QuizCVC3dObjectDetection', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVC3dObjectDetection', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVC3dObjectDetection', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/3d-reconstruction': [
+    { component: 'QuizCVC3dReconstruction', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVC3dReconstruction', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVC3dReconstruction', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/depth-estimation': [
+    { component: 'QuizCVCDepthEstimation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCDepthEstimation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCDepthEstimation', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/multi-view-geometry': [
+    { component: 'QuizCVCMultiViewGeometry', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCMultiViewGeometry', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCMultiViewGeometry', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/neural-radiance-fields': [
+    { component: 'QuizCVCNeuralRadianceFields', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCNeuralRadianceFields', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCNeuralRadianceFields', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/point-cloud-processing': [
+    { component: 'QuizCVCPointCloudProcessing', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCPointCloudProcessing', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCPointCloudProcessing', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/pointnet': [
+    { component: 'QuizCVCPointnet', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCPointnet', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCPointnet', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/slam': [
+    { component: 'QuizCVCSlam', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCSlam', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCSlam', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/clip': [
+    { component: 'QuizCVCClip', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCClip', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCClip', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/dinov2': [
+    { component: 'QuizCVCDinov2', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCDinov2', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCDinov2', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/grounding-dino': [
+    { component: 'QuizCVCGroundingDino', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCGroundingDino', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCGroundingDino', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/image-captioning': [
+    { component: 'QuizCVCImageCaptioning', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCImageCaptioning', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCImageCaptioning', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/open-vocabulary-detection': [
+    { component: 'QuizCVCOpenVocabularyDetection', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCOpenVocabularyDetection', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCOpenVocabularyDetection', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/text-to-image-generation': [
+    { component: 'QuizCVCTextToImageGeneration', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCTextToImageGeneration', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCTextToImageGeneration', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/vision-foundation-models': [
+    { component: 'QuizCVCVisionFoundationModels', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCVisionFoundationModels', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCVisionFoundationModels', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/visual-question-answering': [
+    { component: 'QuizCVCVisualQuestionAnswering', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCVisualQuestionAnswering', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCVisualQuestionAnswering', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/zero-shot-classification': [
+    { component: 'QuizCVCZeroShotClassification', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCZeroShotClassification', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCZeroShotClassification', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/anomaly-detection': [
+    { component: 'QuizCVCAnomalyDetection', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCAnomalyDetection', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCAnomalyDetection', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/autonomous-driving-perception': [
+    { component: 'QuizCVCAutonomousDrivingPerception', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCAutonomousDrivingPerception', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCAutonomousDrivingPerception', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/edge-deployment': [
+    { component: 'QuizCVCEdgeDeployment', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCEdgeDeployment', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCEdgeDeployment', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/face-detection-and-recognition': [
+    { component: 'QuizCVCFaceDetectionAndRecognition', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCFaceDetectionAndRecognition', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCFaceDetectionAndRecognition', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/image-classification-in-practice': [
+    { component: 'QuizCVCImageClassificationInPractice', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCImageClassificationInPractice', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCImageClassificationInPractice', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/image-retrieval': [
+    { component: 'QuizCVCImageRetrieval', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCImageRetrieval', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCImageRetrieval', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/medical-image-analysis': [
+    { component: 'QuizCVCMedicalImageAnalysis', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCMedicalImageAnalysis', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCMedicalImageAnalysis', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/ocr-and-document-understanding': [
+    { component: 'QuizCVCOcrAndDocumentUnderstanding', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCOcrAndDocumentUnderstanding', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCOcrAndDocumentUnderstanding', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/benchmark-leaderboards': [
+    { component: 'QuizCVCBenchmarkLeaderboards', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCBenchmarkLeaderboards', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCBenchmarkLeaderboards', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/classification-metrics': [
+    { component: 'QuizCVCClassificationMetrics', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCClassificationMetrics', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCClassificationMetrics', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/detection-metrics': [
+    { component: 'QuizCVCDetectionMetrics', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCDetectionMetrics', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCDetectionMetrics', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/generative-model-metrics': [
+    { component: 'QuizCVCGenerativeModelMetrics', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCGenerativeModelMetrics', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCGenerativeModelMetrics', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/landmark-datasets': [
+    { component: 'QuizCVCLandmarkDatasets', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCLandmarkDatasets', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCLandmarkDatasets', afterSection: 'Why It Matters' },
+  ],
+  'computer-vision-concepts/segmentation-metrics': [
+    { component: 'QuizCVCSegmentationMetrics', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyCVCSegmentationMetrics', afterSectionStartsWith: 'What' },
+    { component: 'ScaleCVCSegmentationMetrics', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/edges-and-routing': [
+    { component: 'QuizLGAEdgesAndRouting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAEdgesAndRouting', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAEdgesAndRouting', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/graph-compilation': [
+    { component: 'QuizLGAGraphCompilation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAGraphCompilation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAGraphCompilation', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/nodes': [
+    { component: 'QuizLGANodes', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGANodes', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGANodes', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/state-and-state-schema': [
+    { component: 'QuizLGAStateAndStateSchema', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAStateAndStateSchema', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAStateAndStateSchema', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/the-command-api': [
+    { component: 'QuizLGATheCommandApi', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGATheCommandApi', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGATheCommandApi', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/what-is-langgraph': [
+    { component: 'QuizLGAWhatIsLanggraph', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAWhatIsLanggraph', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAWhatIsLanggraph', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/binding-tools-to-models': [
+    { component: 'QuizLGABindingToolsToModels', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGABindingToolsToModels', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGABindingToolsToModels', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/community-tools': [
+    { component: 'QuizLGACommunityTools', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGACommunityTools', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGACommunityTools', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/langchain-tool-decorator': [
+    { component: 'QuizLGALangchainToolDecorator', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGALangchainToolDecorator', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGALangchainToolDecorator', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/mcp-tools-integration': [
+    { component: 'QuizLGAMcpToolsIntegration', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAMcpToolsIntegration', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAMcpToolsIntegration', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/tool-error-handling': [
+    { component: 'QuizLGAToolErrorHandling', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAToolErrorHandling', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAToolErrorHandling', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/tool-node': [
+    { component: 'QuizLGAToolNode', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAToolNode', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAToolNode', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/tool-runtime-and-context': [
+    { component: 'QuizLGAToolRuntimeAndContext', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAToolRuntimeAndContext', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAToolRuntimeAndContext', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/tool-schemas-and-validation': [
+    { component: 'QuizLGAToolSchemasAndValidation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAToolSchemasAndValidation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAToolSchemasAndValidation', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/manual-react-agent': [
+    { component: 'QuizLGAManualReactAgent', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAManualReactAgent', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAManualReactAgent', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/prebuilt-react-agent': [
+    { component: 'QuizLGAPrebuiltReactAgent', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAPrebuiltReactAgent', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAPrebuiltReactAgent', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/structured-output': [
+    { component: 'QuizLGAStructuredOutput', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAStructuredOutput', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAStructuredOutput', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/tool-calling-loop': [
+    { component: 'QuizLGAToolCallingLoop', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAToolCallingLoop', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAToolCallingLoop', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/checkpointers': [
+    { component: 'QuizLGACheckpointers', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGACheckpointers', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGACheckpointers', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/long-term-memory-store': [
+    { component: 'QuizLGALongTermMemoryStore', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGALongTermMemoryStore', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGALongTermMemoryStore', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/state-inspection-and-replay': [
+    { component: 'QuizLGAStateInspectionAndReplay', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAStateInspectionAndReplay', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAStateInspectionAndReplay', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/state-schema-design': [
+    { component: 'QuizLGAStateSchemaDesign', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAStateSchemaDesign', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAStateSchemaDesign', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/thread-based-memory': [
+    { component: 'QuizLGAThreadBasedMemory', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAThreadBasedMemory', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAThreadBasedMemory', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/approval-gates': [
+    { component: 'QuizLGAApprovalGates', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAApprovalGates', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAApprovalGates', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/content-review-pattern': [
+    { component: 'QuizLGAContentReviewPattern', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAContentReviewPattern', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAContentReviewPattern', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/interrupt-and-resume': [
+    { component: 'QuizLGAInterruptAndResume', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAInterruptAndResume', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAInterruptAndResume', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/tool-level-approval': [
+    { component: 'QuizLGAToolLevelApproval', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAToolLevelApproval', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAToolLevelApproval', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/async-streaming': [
+    { component: 'QuizLGAAsyncStreaming', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAAsyncStreaming', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAAsyncStreaming', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/stream-modes': [
+    { component: 'QuizLGAStreamModes', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAStreamModes', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAStreamModes', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/streaming-in-production': [
+    { component: 'QuizLGAStreamingInProduction', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAStreamingInProduction', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAStreamingInProduction', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/token-streaming': [
+    { component: 'QuizLGATokenStreaming', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGATokenStreaming', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGATokenStreaming', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/agent-handoffs': [
+    { component: 'QuizLGAAgentHandoffs', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAAgentHandoffs', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAAgentHandoffs', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/evaluator-optimizer-pattern': [
+    { component: 'QuizLGAEvaluatorOptimizerPattern', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAEvaluatorOptimizerPattern', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAEvaluatorOptimizerPattern', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/subgraph-architecture': [
+    { component: 'QuizLGASubgraphArchitecture', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGASubgraphArchitecture', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGASubgraphArchitecture', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/supervisor-pattern': [
+    { component: 'QuizLGASupervisorPattern', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGASupervisorPattern', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGASupervisorPattern', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/evaluation-with-datasets': [
+    { component: 'QuizLGAEvaluationWithDatasets', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAEvaluationWithDatasets', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAEvaluationWithDatasets', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/langsmith-setup': [
+    { component: 'QuizLGALangsmithSetup', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGALangsmithSetup', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGALangsmithSetup', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/production-monitoring': [
+    { component: 'QuizLGAProductionMonitoring', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAProductionMonitoring', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAProductionMonitoring', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/tracing-and-debugging': [
+    { component: 'QuizLGATracingAndDebugging', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGATracingAndDebugging', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGATracingAndDebugging', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/cloud-provider-deployment': [
+    { component: 'QuizLGACloudProviderDeployment', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGACloudProviderDeployment', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGACloudProviderDeployment', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/containerization': [
+    { component: 'QuizLGAContainerization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAContainerization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAContainerization', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/fastapi-deployment': [
+    { component: 'QuizLGAFastapiDeployment', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAFastapiDeployment', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAFastapiDeployment', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/langgraph-dev-server': [
+    { component: 'QuizLGALanggraphDevServer', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGALanggraphDevServer', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGALanggraphDevServer', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/langgraph-platform': [
+    { component: 'QuizLGALanggraphPlatform', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGALanggraphPlatform', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGALanggraphPlatform', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/langgraph-sdk': [
+    { component: 'QuizLGALanggraphSdk', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGALanggraphSdk', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGALanggraphSdk', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/production-checklist': [
+    { component: 'QuizLGAProductionChecklist', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAProductionChecklist', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAProductionChecklist', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/customer-support-agent': [
+    { component: 'QuizLGACustomerSupportAgent', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGACustomerSupportAgent', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGACustomerSupportAgent', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/multi-agent-content-pipeline': [
+    { component: 'QuizLGAMultiAgentContentPipeline', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAMultiAgentContentPipeline', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAMultiAgentContentPipeline', afterSection: 'Why It Matters' },
+  ],
+  'langgraph-agents/research-assistant': [
+    { component: 'QuizLGAResearchAssistant', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLGAResearchAssistant', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLGAResearchAssistant', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/01-word-embeddings-word2vec-and-glove': [
+    { component: 'QuizLLE01WordEmbeddingsWord2vecAndGlove', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE01WordEmbeddingsWord2vecAndGlove', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE01WordEmbeddingsWord2vecAndGlove', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/02-recurrent-neural-networks-and-lstms': [
+    { component: 'QuizLLE02RecurrentNeuralNetworksAndLstms', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE02RecurrentNeuralNetworksAndLstms', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE02RecurrentNeuralNetworksAndLstms', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/03-sequence-to-sequence-models': [
+    { component: 'QuizLLE03SequenceToSequenceModels', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE03SequenceToSequenceModels', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE03SequenceToSequenceModels', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/04-attention-mechanism-origins': [
+    { component: 'QuizLLE04AttentionMechanismOrigins', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE04AttentionMechanismOrigins', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE04AttentionMechanismOrigins', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/05-elmo-and-contextual-embeddings': [
+    { component: 'QuizLLE05ElmoAndContextualEmbeddings', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE05ElmoAndContextualEmbeddings', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE05ElmoAndContextualEmbeddings', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/06-ulmfit-and-transfer-learning': [
+    { component: 'QuizLLE06UlmfitAndTransferLearning', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE06UlmfitAndTransferLearning', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE06UlmfitAndTransferLearning', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/07-the-bottlenecks-that-motivated-transformers': [
+    { component: 'QuizLLE07TheBottlenecksThatMotivatedTransformers', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE07TheBottlenecksThatMotivatedTransformers', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE07TheBottlenecksThatMotivatedTransformers', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/01-attention-is-all-you-need': [
+    { component: 'QuizLLE01AttentionIsAllYouNeed', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE01AttentionIsAllYouNeed', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE01AttentionIsAllYouNeed', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/02-gpt-1': [
+    { component: 'QuizLLE02Gpt1', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE02Gpt1', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE02Gpt1', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/03-bert': [
+    { component: 'QuizLLE03Bert', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE03Bert', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE03Bert', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/04-gpt-2': [
+    { component: 'QuizLLE04Gpt2', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE04Gpt2', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE04Gpt2', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/05-t5-text-to-text-framework': [
+    { component: 'QuizLLE05T5TextToTextFramework', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE05T5TextToTextFramework', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE05T5TextToTextFramework', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/06-xlnet': [
+    { component: 'QuizLLE06Xlnet', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE06Xlnet', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE06Xlnet', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/07-encoder-vs-decoder-vs-encoder-decoder': [
+    { component: 'QuizLLE07EncoderVsDecoderVsEncoderDecoder', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE07EncoderVsDecoderVsEncoderDecoder', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE07EncoderVsDecoderVsEncoderDecoder', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/01-roberta': [
+    { component: 'QuizLLE01Roberta', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE01Roberta', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE01Roberta', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/02-albert': [
+    { component: 'QuizLLE02Albert', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE02Albert', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE02Albert', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/03-distilbert': [
+    { component: 'QuizLLE03Distilbert', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE03Distilbert', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE03Distilbert', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/04-deberta': [
+    { component: 'QuizLLE04Deberta', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE04Deberta', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE04Deberta', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/05-electra': [
+    { component: 'QuizLLE05Electra', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE05Electra', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE05Electra', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/06-modernbert-and-the-encoder-revival': [
+    { component: 'QuizLLE06ModernbertAndTheEncoderRevival', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE06ModernbertAndTheEncoderRevival', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE06ModernbertAndTheEncoderRevival', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/01-gpt-3': [
+    { component: 'QuizLLE01Gpt3', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE01Gpt3', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE01Gpt3', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/02-kaplan-scaling-laws': [
+    { component: 'QuizLLE02KaplanScalingLaws', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE02KaplanScalingLaws', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE02KaplanScalingLaws', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/03-chinchilla-and-compute-optimal-training': [
+    { component: 'QuizLLE03ChinchillaAndComputeOptimalTraining', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE03ChinchillaAndComputeOptimalTraining', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE03ChinchillaAndComputeOptimalTraining', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/04-palm': [
+    { component: 'QuizLLE04Palm', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE04Palm', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE04Palm', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/05-codex-and-code-generation': [
+    { component: 'QuizLLE05CodexAndCodeGeneration', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE05CodexAndCodeGeneration', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE05CodexAndCodeGeneration', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/06-emergent-abilities': [
+    { component: 'QuizLLE06EmergentAbilities', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE06EmergentAbilities', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE06EmergentAbilities', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/07-lamda-and-conversational-ai': [
+    { component: 'QuizLLE07LamdaAndConversationalAi', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE07LamdaAndConversationalAi', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE07LamdaAndConversationalAi', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/08-the-scaling-hypothesis-debate': [
+    { component: 'QuizLLE08TheScalingHypothesisDebate', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE08TheScalingHypothesisDebate', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE08TheScalingHypothesisDebate', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/01-instructgpt-and-rlhf': [
+    { component: 'QuizLLE01InstructgptAndRlhf', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE01InstructgptAndRlhf', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE01InstructgptAndRlhf', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/02-chatgpt': [
+    { component: 'QuizLLE02Chatgpt', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE02Chatgpt', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE02Chatgpt', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/03-constitutional-ai': [
+    { component: 'QuizLLE03ConstitutionalAi', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE03ConstitutionalAi', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE03ConstitutionalAi', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/04-direct-preference-optimization': [
+    { component: 'QuizLLE04DirectPreferenceOptimization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE04DirectPreferenceOptimization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE04DirectPreferenceOptimization', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/05-instruction-tuning-and-flan': [
+    { component: 'QuizLLE05InstructionTuningAndFlan', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE05InstructionTuningAndFlan', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE05InstructionTuningAndFlan', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/06-synthetic-data-for-training': [
+    { component: 'QuizLLE06SyntheticDataForTraining', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE06SyntheticDataForTraining', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE06SyntheticDataForTraining', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/07-gpt-4': [
+    { component: 'QuizLLE07Gpt4', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE07Gpt4', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE07Gpt4', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/08-the-ai-arms-race-begins': [
+    { component: 'QuizLLE08TheAiArmsRaceBegins', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE08TheAiArmsRaceBegins', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE08TheAiArmsRaceBegins', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/01-llama-1': [
+    { component: 'QuizLLE01Llama1', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE01Llama1', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE01Llama1', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/02-the-alpaca-effect': [
+    { component: 'QuizLLE02TheAlpacaEffect', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE02TheAlpacaEffect', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE02TheAlpacaEffect', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/03-llama-2': [
+    { component: 'QuizLLE03Llama2', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE03Llama2', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE03Llama2', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/04-mistral-7b': [
+    { component: 'QuizLLE04Mistral7b', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE04Mistral7b', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE04Mistral7b', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/05-mixtral-8x7b': [
+    { component: 'QuizLLE05Mixtral8x7b', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE05Mixtral8x7b', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE05Mixtral8x7b', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/06-falcon': [
+    { component: 'QuizLLE06Falcon', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE06Falcon', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE06Falcon', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/07-claude-1-and-2': [
+    { component: 'QuizLLE07Claude1And2', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE07Claude1And2', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE07Claude1And2', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/08-gemini-1': [
+    { component: 'QuizLLE08Gemini1', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE08Gemini1', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE08Gemini1', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/01-claude-3-family': [
+    { component: 'QuizLLE01Claude3Family', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE01Claude3Family', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE01Claude3Family', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/02-gemini-1-5': [
+    { component: 'QuizLLE02Gemini15', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE02Gemini15', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE02Gemini15', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/03-gpt-4o': [
+    { component: 'QuizLLE03Gpt4o', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE03Gpt4o', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE03Gpt4o', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/04-claude-3-5-sonnet': [
+    { component: 'QuizLLE04Claude35Sonnet', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE04Claude35Sonnet', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE04Claude35Sonnet', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/05-llama-3-and-3-1': [
+    { component: 'QuizLLE05Llama3And31', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE05Llama3And31', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE05Llama3And31', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/06-llama-3-2-multimodal': [
+    { component: 'QuizLLE06Llama32Multimodal', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE06Llama32Multimodal', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE06Llama32Multimodal', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/07-grok-and-xai': [
+    { component: 'QuizLLE07GrokAndXai', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE07GrokAndXai', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE07GrokAndXai', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/08-palm-2-and-gemini-evolution': [
+    { component: 'QuizLLE08Palm2AndGeminiEvolution', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE08Palm2AndGeminiEvolution', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE08Palm2AndGeminiEvolution', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/09-mistral-large-and-enterprise': [
+    { component: 'QuizLLE09MistralLargeAndEnterprise', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE09MistralLargeAndEnterprise', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE09MistralLargeAndEnterprise', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/01-openai-o1': [
+    { component: 'QuizLLE01OpenaiO1', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE01OpenaiO1', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE01OpenaiO1', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/02-the-o-series-evolution': [
+    { component: 'QuizLLE02TheOSeriesEvolution', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE02TheOSeriesEvolution', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE02TheOSeriesEvolution', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/03-deepseek-r1': [
+    { component: 'QuizLLE03DeepseekR1', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE03DeepseekR1', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE03DeepseekR1', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/04-test-time-compute-scaling': [
+    { component: 'QuizLLE04TestTimeComputeScaling', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE04TestTimeComputeScaling', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE04TestTimeComputeScaling', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/05-the-reasoning-paradigm-shift': [
+    { component: 'QuizLLE05TheReasoningParadigmShift', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE05TheReasoningParadigmShift', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE05TheReasoningParadigmShift', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/06-hybrid-thinking-models': [
+    { component: 'QuizLLE06HybridThinkingModels', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE06HybridThinkingModels', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE06HybridThinkingModels', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/01-deepseek-v2-and-mla': [
+    { component: 'QuizLLE01DeepseekV2AndMla', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE01DeepseekV2AndMla', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE01DeepseekV2AndMla', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/02-deepseek-v3': [
+    { component: 'QuizLLE02DeepseekV3', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE02DeepseekV3', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE02DeepseekV3', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/03-the-deepseek-cost-revolution': [
+    { component: 'QuizLLE03TheDeepseekCostRevolution', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE03TheDeepseekCostRevolution', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE03TheDeepseekCostRevolution', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/04-qwen-1-and-2': [
+    { component: 'QuizLLE04Qwen1And2', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE04Qwen1And2', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE04Qwen1And2', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/05-qwen-3-and-open-frontier': [
+    { component: 'QuizLLE05Qwen3AndOpenFrontier', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE05Qwen3AndOpenFrontier', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE05Qwen3AndOpenFrontier', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/06-chinese-ai-labs': [
+    { component: 'QuizLLE06ChineseAiLabs', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE06ChineseAiLabs', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE06ChineseAiLabs', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/01-phi-series': [
+    { component: 'QuizLLE01PhiSeries', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE01PhiSeries', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE01PhiSeries', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/02-gemma': [
+    { component: 'QuizLLE02Gemma', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE02Gemma', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE02Gemma', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/03-knowledge-distillation-for-llms': [
+    { component: 'QuizLLE03KnowledgeDistillationForLlms', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE03KnowledgeDistillationForLlms', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE03KnowledgeDistillationForLlms', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/04-quantization-and-compression': [
+    { component: 'QuizLLE04QuantizationAndCompression', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE04QuantizationAndCompression', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE04QuantizationAndCompression', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/05-lora-and-fine-tuning-democratization': [
+    { component: 'QuizLLE05LoraAndFineTuningDemocratization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE05LoraAndFineTuningDemocratization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE05LoraAndFineTuningDemocratization', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/06-llama-cpp-and-local-inference': [
+    { component: 'QuizLLE06LlamaCppAndLocalInference', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE06LlamaCppAndLocalInference', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE06LlamaCppAndLocalInference', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/07-the-slm-revolution': [
+    { component: 'QuizLLE07TheSlmRevolution', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE07TheSlmRevolution', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE07TheSlmRevolution', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/01-claude-4-series': [
+    { component: 'QuizLLE01Claude4Series', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE01Claude4Series', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE01Claude4Series', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/02-gpt-5': [
+    { component: 'QuizLLE02Gpt5', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE02Gpt5', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE02Gpt5', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/03-gemini-2-and-beyond': [
+    { component: 'QuizLLE03Gemini2AndBeyond', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE03Gemini2AndBeyond', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE03Gemini2AndBeyond', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/04-llama-4': [
+    { component: 'QuizLLE04Llama4', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE04Llama4', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE04Llama4', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/05-qwen-3-coder-and-specialization': [
+    { component: 'QuizLLE05Qwen3CoderAndSpecialization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE05Qwen3CoderAndSpecialization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE05Qwen3CoderAndSpecialization', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/06-agent-native-models': [
+    { component: 'QuizLLE06AgentNativeModels', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE06AgentNativeModels', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE06AgentNativeModels', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/07-open-vs-closed-the-narrowing-gap': [
+    { component: 'QuizLLE07OpenVsClosedTheNarrowingGap', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE07OpenVsClosedTheNarrowingGap', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE07OpenVsClosedTheNarrowingGap', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/01-attention-mechanism-evolution': [
+    { component: 'QuizLLE01AttentionMechanismEvolution', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE01AttentionMechanismEvolution', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE01AttentionMechanismEvolution', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/02-positional-encoding-evolution': [
+    { component: 'QuizLLE02PositionalEncodingEvolution', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE02PositionalEncodingEvolution', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE02PositionalEncodingEvolution', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/03-flash-attention-and-hardware-aware-computing': [
+    { component: 'QuizLLE03FlashAttentionAndHardwareAwareComputing', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE03FlashAttentionAndHardwareAwareComputing', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE03FlashAttentionAndHardwareAwareComputing', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/04-mixture-of-experts-evolution': [
+    { component: 'QuizLLE04MixtureOfExpertsEvolution', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE04MixtureOfExpertsEvolution', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE04MixtureOfExpertsEvolution', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/05-state-space-models-and-mamba': [
+    { component: 'QuizLLE05StateSpaceModelsAndMamba', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE05StateSpaceModelsAndMamba', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE05StateSpaceModelsAndMamba', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/06-kv-cache-and-serving-optimization': [
+    { component: 'QuizLLE06KvCacheAndServingOptimization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE06KvCacheAndServingOptimization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE06KvCacheAndServingOptimization', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/07-long-context-techniques': [
+    { component: 'QuizLLE07LongContextTechniques', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE07LongContextTechniques', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE07LongContextTechniques', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/08-normalization-and-activation-evolution': [
+    { component: 'QuizLLE08NormalizationAndActivationEvolution', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE08NormalizationAndActivationEvolution', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE08NormalizationAndActivationEvolution', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/09-speculative-decoding-and-inference-speedups': [
+    { component: 'QuizLLE09SpeculativeDecodingAndInferenceSpeedups', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE09SpeculativeDecodingAndInferenceSpeedups', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE09SpeculativeDecodingAndInferenceSpeedups', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/01-pre-training-objectives-evolution': [
+    { component: 'QuizLLE01PreTrainingObjectivesEvolution', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE01PreTrainingObjectivesEvolution', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE01PreTrainingObjectivesEvolution', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/02-the-data-quality-revolution': [
+    { component: 'QuizLLE02TheDataQualityRevolution', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE02TheDataQualityRevolution', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE02TheDataQualityRevolution', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/03-alignment-method-evolution': [
+    { component: 'QuizLLE03AlignmentMethodEvolution', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE03AlignmentMethodEvolution', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE03AlignmentMethodEvolution', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/04-instruction-tuning-evolution': [
+    { component: 'QuizLLE04InstructionTuningEvolution', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE04InstructionTuningEvolution', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE04InstructionTuningEvolution', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/05-distributed-training-infrastructure': [
+    { component: 'QuizLLE05DistributedTrainingInfrastructure', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE05DistributedTrainingInfrastructure', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE05DistributedTrainingInfrastructure', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/06-the-synthetic-data-revolution': [
+    { component: 'QuizLLE06TheSyntheticDataRevolution', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE06TheSyntheticDataRevolution', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE06TheSyntheticDataRevolution', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/07-training-efficiency-breakthroughs': [
+    { component: 'QuizLLE07TrainingEfficiencyBreakthroughs', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE07TrainingEfficiencyBreakthroughs', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE07TrainingEfficiencyBreakthroughs', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/01-vision-language-models': [
+    { component: 'QuizLLE01VisionLanguageModels', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE01VisionLanguageModels', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE01VisionLanguageModels', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/02-native-multimodal-training': [
+    { component: 'QuizLLE02NativeMultimodalTraining', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE02NativeMultimodalTraining', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE02NativeMultimodalTraining', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/03-audio-and-speech-models': [
+    { component: 'QuizLLE03AudioAndSpeechModels', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE03AudioAndSpeechModels', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE03AudioAndSpeechModels', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/04-video-understanding': [
+    { component: 'QuizLLE04VideoUnderstanding', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE04VideoUnderstanding', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE04VideoUnderstanding', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/05-the-convergence-toward-omni-models': [
+    { component: 'QuizLLE05TheConvergenceTowardOmniModels', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE05TheConvergenceTowardOmniModels', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE05TheConvergenceTowardOmniModels', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/01-the-benchmark-and-evaluation-landscape': [
+    { component: 'QuizLLE01TheBenchmarkAndEvaluationLandscape', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE01TheBenchmarkAndEvaluationLandscape', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE01TheBenchmarkAndEvaluationLandscape', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/02-the-api-economy': [
+    { component: 'QuizLLE02TheApiEconomy', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE02TheApiEconomy', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE02TheApiEconomy', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/03-ai-safety-and-governance': [
+    { component: 'QuizLLE03AiSafetyAndGovernance', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE03AiSafetyAndGovernance', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE03AiSafetyAndGovernance', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/04-the-open-source-ecosystem': [
+    { component: 'QuizLLE04TheOpenSourceEcosystem', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE04TheOpenSourceEcosystem', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE04TheOpenSourceEcosystem', afterSection: 'Why It Matters' },
+  ],
+  'llm-evolution/05-where-llms-are-heading': [
+    { component: 'QuizLLE05WhereLlmsAreHeading', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyLLE05WhereLlmsAreHeading', afterSectionStartsWith: 'What' },
+    { component: 'ScaleLLE05WhereLlmsAreHeading', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/derivatives-and-gradients': [
+    { component: 'QuizMLFDerivativesAndGradients', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFDerivativesAndGradients', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFDerivativesAndGradients', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/information-theory': [
+    { component: 'QuizMLFInformationTheory', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFInformationTheory', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFInformationTheory', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/matrix-decompositions': [
+    { component: 'QuizMLFMatrixDecompositions', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFMatrixDecompositions', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFMatrixDecompositions', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/maximum-likelihood-estimation': [
+    { component: 'QuizMLFMaximumLikelihoodEstimation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFMaximumLikelihoodEstimation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFMaximumLikelihoodEstimation', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/norms-and-distance-metrics': [
+    { component: 'QuizMLFNormsAndDistanceMetrics', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFNormsAndDistanceMetrics', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFNormsAndDistanceMetrics', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/optimization-and-gradient-descent': [
+    { component: 'QuizMLFOptimizationAndGradientDescent', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFOptimizationAndGradientDescent', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFOptimizationAndGradientDescent', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/probability-fundamentals': [
+    { component: 'QuizMLFProbabilityFundamentals', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFProbabilityFundamentals', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFProbabilityFundamentals', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/statistical-inference': [
+    { component: 'QuizMLFStatisticalInference', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFStatisticalInference', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFStatisticalInference', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/vectors-and-matrices': [
+    { component: 'QuizMLFVectorsAndMatrices', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFVectorsAndMatrices', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFVectorsAndMatrices', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/data-cleaning-and-preprocessing': [
+    { component: 'QuizMLFDataCleaningAndPreprocessing', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFDataCleaningAndPreprocessing', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFDataCleaningAndPreprocessing', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/data-splitting-and-sampling': [
+    { component: 'QuizMLFDataSplittingAndSampling', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFDataSplittingAndSampling', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFDataSplittingAndSampling', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/data-types-and-structures': [
+    { component: 'QuizMLFDataTypesAndStructures', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFDataTypesAndStructures', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFDataTypesAndStructures', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/encoding-categorical-variables': [
+    { component: 'QuizMLFEncodingCategoricalVariables', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFEncodingCategoricalVariables', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFEncodingCategoricalVariables', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/exploratory-data-analysis': [
+    { component: 'QuizMLFExploratoryDataAnalysis', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFExploratoryDataAnalysis', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFExploratoryDataAnalysis', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/feature-scaling-and-normalization': [
+    { component: 'QuizMLFFeatureScalingAndNormalization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFFeatureScalingAndNormalization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFFeatureScalingAndNormalization', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/handling-missing-data': [
+    { component: 'QuizMLFHandlingMissingData', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFHandlingMissingData', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFHandlingMissingData', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/bias-variance-tradeoff': [
+    { component: 'QuizMLFBiasVarianceTradeoff', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFBiasVarianceTradeoff', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFBiasVarianceTradeoff', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/curse-of-dimensionality': [
+    { component: 'QuizMLFCurseOfDimensionality', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFCurseOfDimensionality', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFCurseOfDimensionality', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/empirical-risk-minimization': [
+    { component: 'QuizMLFEmpiricalRiskMinimization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFEmpiricalRiskMinimization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFEmpiricalRiskMinimization', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/loss-functions': [
+    { component: 'QuizMLFLossFunctions', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFLossFunctions', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFLossFunctions', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/overfitting-and-underfitting': [
+    { component: 'QuizMLFOverfittingAndUnderfitting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFOverfittingAndUnderfitting', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFOverfittingAndUnderfitting', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/regularization': [
+    { component: 'QuizMLFRegularization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFRegularization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFRegularization', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/types-of-machine-learning': [
+    { component: 'QuizMLFTypesOfMachineLearning', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFTypesOfMachineLearning', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFTypesOfMachineLearning', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/what-is-machine-learning': [
+    { component: 'QuizMLFWhatIsMachineLearning', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFWhatIsMachineLearning', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFWhatIsMachineLearning', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/generalized-linear-models': [
+    { component: 'QuizMLFGeneralizedLinearModels', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFGeneralizedLinearModels', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFGeneralizedLinearModels', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/linear-regression': [
+    { component: 'QuizMLFLinearRegression', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFLinearRegression', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFLinearRegression', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/polynomial-regression': [
+    { component: 'QuizMLFPolynomialRegression', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFPolynomialRegression', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFPolynomialRegression', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/regression-diagnostics': [
+    { component: 'QuizMLFRegressionDiagnostics', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFRegressionDiagnostics', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFRegressionDiagnostics', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/ridge-and-lasso-regression': [
+    { component: 'QuizMLFRidgeAndLassoRegression', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFRidgeAndLassoRegression', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFRidgeAndLassoRegression', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/decision-trees': [
+    { component: 'QuizMLFDecisionTrees', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFDecisionTrees', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFDecisionTrees', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/k-nearest-neighbors': [
+    { component: 'QuizMLFKNearestNeighbors', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFKNearestNeighbors', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFKNearestNeighbors', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/kernel-methods': [
+    { component: 'QuizMLFKernelMethods', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFKernelMethods', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFKernelMethods', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/logistic-regression': [
+    { component: 'QuizMLFLogisticRegression', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFLogisticRegression', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFLogisticRegression', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/multi-class-classification': [
+    { component: 'QuizMLFMultiClassClassification', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFMultiClassClassification', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFMultiClassClassification', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/naive-bayes': [
+    { component: 'QuizMLFNaiveBayes', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFNaiveBayes', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFNaiveBayes', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/support-vector-machines': [
+    { component: 'QuizMLFSupportVectorMachines', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFSupportVectorMachines', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFSupportVectorMachines', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/adaboost': [
+    { component: 'QuizMLFAdaboost', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFAdaboost', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFAdaboost', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/bagging-and-bootstrap': [
+    { component: 'QuizMLFBaggingAndBootstrap', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFBaggingAndBootstrap', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFBaggingAndBootstrap', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/gradient-boosting': [
+    { component: 'QuizMLFGradientBoosting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFGradientBoosting', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFGradientBoosting', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/random-forests': [
+    { component: 'QuizMLFRandomForests', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFRandomForests', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFRandomForests', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/stacking-and-blending': [
+    { component: 'QuizMLFStackingAndBlending', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFStackingAndBlending', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFStackingAndBlending', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/xgboost-lightgbm-catboost': [
+    { component: 'QuizMLFXgboostLightgbmCatboost', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFXgboostLightgbmCatboost', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFXgboostLightgbmCatboost', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/anomaly-detection': [
+    { component: 'QuizMLFAnomalyDetection', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFAnomalyDetection', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFAnomalyDetection', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/association-rules': [
+    { component: 'QuizMLFAssociationRules', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFAssociationRules', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFAssociationRules', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/dbscan': [
+    { component: 'QuizMLFDbscan', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFDbscan', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFDbscan', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/gaussian-mixture-models': [
+    { component: 'QuizMLFGaussianMixtureModels', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFGaussianMixtureModels', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFGaussianMixtureModels', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/hierarchical-clustering': [
+    { component: 'QuizMLFHierarchicalClustering', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFHierarchicalClustering', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFHierarchicalClustering', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/k-means-clustering': [
+    { component: 'QuizMLFKMeansClustering', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFKMeansClustering', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFKMeansClustering', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/principal-component-analysis': [
+    { component: 'QuizMLFPrincipalComponentAnalysis', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFPrincipalComponentAnalysis', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFPrincipalComponentAnalysis', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/tsne-and-umap': [
+    { component: 'QuizMLFTsneAndUmap', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFTsneAndUmap', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFTsneAndUmap', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/activation-functions': [
+    { component: 'QuizMLFActivationFunctions', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFActivationFunctions', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFActivationFunctions', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/backpropagation': [
+    { component: 'QuizMLFBackpropagation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFBackpropagation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFBackpropagation', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/batch-normalization': [
+    { component: 'QuizMLFBatchNormalization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFBatchNormalization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFBatchNormalization', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/dropout-and-regularization': [
+    { component: 'QuizMLFDropoutAndRegularization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFDropoutAndRegularization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFDropoutAndRegularization', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/optimizers': [
+    { component: 'QuizMLFOptimizers', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFOptimizers', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFOptimizers', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/perceptrons-and-multilayer-networks': [
+    { component: 'QuizMLFPerceptronsAndMultilayerNetworks', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFPerceptronsAndMultilayerNetworks', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFPerceptronsAndMultilayerNetworks', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/universal-approximation-theorem': [
+    { component: 'QuizMLFUniversalApproximationTheorem', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFUniversalApproximationTheorem', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFUniversalApproximationTheorem', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/weight-initialization': [
+    { component: 'QuizMLFWeightInitialization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFWeightInitialization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFWeightInitialization', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/bayesian-inference': [
+    { component: 'QuizMLFBayesianInference', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFBayesianInference', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFBayesianInference', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/expectation-maximization': [
+    { component: 'QuizMLFExpectationMaximization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFExpectationMaximization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFExpectationMaximization', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/gaussian-processes': [
+    { component: 'QuizMLFGaussianProcesses', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFGaussianProcesses', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFGaussianProcesses', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/graphical-models': [
+    { component: 'QuizMLFGraphicalModels', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFGraphicalModels', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFGraphicalModels', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/markov-chain-monte-carlo': [
+    { component: 'QuizMLFMarkovChainMonteCarlo', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFMarkovChainMonteCarlo', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFMarkovChainMonteCarlo', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/variational-inference': [
+    { component: 'QuizMLFVariationalInference', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFVariationalInference', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFVariationalInference', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/calibration': [
+    { component: 'QuizMLFCalibration', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFCalibration', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFCalibration', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/classification-metrics': [
+    { component: 'QuizMLFClassificationMetrics', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFClassificationMetrics', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFClassificationMetrics', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/cross-validation': [
+    { component: 'QuizMLFCrossValidation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFCrossValidation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFCrossValidation', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/hyperparameter-tuning': [
+    { component: 'QuizMLFHyperparameterTuning', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFHyperparameterTuning', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFHyperparameterTuning', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/learning-curves': [
+    { component: 'QuizMLFLearningCurves', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFLearningCurves', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFLearningCurves', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/model-comparison': [
+    { component: 'QuizMLFModelComparison', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFModelComparison', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFModelComparison', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/regression-metrics': [
+    { component: 'QuizMLFRegressionMetrics', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFRegressionMetrics', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFRegressionMetrics', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/automated-feature-engineering': [
+    { component: 'QuizMLFAutomatedFeatureEngineering', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFAutomatedFeatureEngineering', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFAutomatedFeatureEngineering', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/feature-extraction-and-transformation': [
+    { component: 'QuizMLFFeatureExtractionAndTransformation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFFeatureExtractionAndTransformation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFFeatureExtractionAndTransformation', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/feature-selection-methods': [
+    { component: 'QuizMLFFeatureSelectionMethods', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFFeatureSelectionMethods', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFFeatureSelectionMethods', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/handling-high-cardinality-features': [
+    { component: 'QuizMLFHandlingHighCardinalityFeatures', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFHandlingHighCardinalityFeatures', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFHandlingHighCardinalityFeatures', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/time-series-feature-engineering': [
+    { component: 'QuizMLFTimeSeriesFeatureEngineering', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFTimeSeriesFeatureEngineering', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFTimeSeriesFeatureEngineering', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/ab-testing-for-ml': [
+    { component: 'QuizMLFAbTestingForMl', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFAbTestingForMl', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFAbTestingForMl', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/data-drift-and-model-monitoring': [
+    { component: 'QuizMLFDataDriftAndModelMonitoring', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFDataDriftAndModelMonitoring', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFDataDriftAndModelMonitoring', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/experiment-tracking': [
+    { component: 'QuizMLFExperimentTracking', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFExperimentTracking', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFExperimentTracking', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/ml-pipelines': [
+    { component: 'QuizMLFMlPipelines', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFMlPipelines', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFMlPipelines', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/model-deployment-and-serving': [
+    { component: 'QuizMLFModelDeploymentAndServing', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFModelDeploymentAndServing', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFModelDeploymentAndServing', afterSection: 'Why It Matters' },
+  ],
+  'machine-learning-foundations/responsible-ai-and-fairness': [
+    { component: 'QuizMLFResponsibleAiAndFairness', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMLFResponsibleAiAndFairness', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMLFResponsibleAiAndFairness', afterSection: 'Why It Matters' },
+  ],
+  'mcp-server-supabase-course/00-course-overview': [
+    { component: 'QuizMCP00CourseOverview', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMCP00CourseOverview', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMCP00CourseOverview', afterSection: 'Why It Matters' },
+  ],
+  'mcp-server-supabase-course/01-what-is-mcp': [
+    { component: 'QuizMCP01WhatIsMcp', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMCP01WhatIsMcp', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMCP01WhatIsMcp', afterSection: 'Why It Matters' },
+  ],
+  'mcp-server-supabase-course/02-architecture-overview': [
+    { component: 'QuizMCP02ArchitectureOverview', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMCP02ArchitectureOverview', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMCP02ArchitectureOverview', afterSection: 'Why It Matters' },
+  ],
+  'mcp-server-supabase-course/03-setting-up-supabase': [
+    { component: 'QuizMCP03SettingUpSupabase', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMCP03SettingUpSupabase', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMCP03SettingUpSupabase', afterSection: 'Why It Matters' },
+  ],
+  'mcp-server-supabase-course/04-database-schema-and-data': [
+    { component: 'QuizMCP04DatabaseSchemaAndData', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMCP04DatabaseSchemaAndData', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMCP04DatabaseSchemaAndData', afterSection: 'Why It Matters' },
+  ],
+  'mcp-server-supabase-course/05-building-your-first-mcp-server': [
+    { component: 'QuizMCP05BuildingYourFirstMcpServer', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMCP05BuildingYourFirstMcpServer', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMCP05BuildingYourFirstMcpServer', afterSection: 'Why It Matters' },
+  ],
+  'mcp-server-supabase-course/06-adding-database-tools': [
+    { component: 'QuizMCP06AddingDatabaseTools', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMCP06AddingDatabaseTools', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMCP06AddingDatabaseTools', afterSection: 'Why It Matters' },
+  ],
+  'mcp-server-supabase-course/07-adding-resources': [
+    { component: 'QuizMCP07AddingResources', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMCP07AddingResources', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMCP07AddingResources', afterSection: 'Why It Matters' },
+  ],
+  'mcp-server-supabase-course/08-adding-prompts': [
+    { component: 'QuizMCP08AddingPrompts', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMCP08AddingPrompts', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMCP08AddingPrompts', afterSection: 'Why It Matters' },
+  ],
+  'mcp-server-supabase-course/09-local-development-and-testing': [
+    { component: 'QuizMCP09LocalDevelopmentAndTesting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMCP09LocalDevelopmentAndTesting', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMCP09LocalDevelopmentAndTesting', afterSection: 'Why It Matters' },
+  ],
+  'mcp-server-supabase-course/10-deploying-to-production': [
+    { component: 'QuizMCP10DeployingToProduction', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMCP10DeployingToProduction', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMCP10DeployingToProduction', afterSection: 'Why It Matters' },
+  ],
+  'mcp-server-supabase-course/11-connecting-ai-agents': [
+    { component: 'QuizMCP11ConnectingAiAgents', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMCP11ConnectingAiAgents', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMCP11ConnectingAiAgents', afterSection: 'Why It Matters' },
+  ],
+  'mcp-server-supabase-course/12-security-and-best-practices': [
+    { component: 'QuizMCP12SecurityAndBestPractices', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMCP12SecurityAndBestPractices', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMCP12SecurityAndBestPractices', afterSection: 'Why It Matters' },
+  ],
+  'mcp-server-supabase-course/13-complete-source-code': [
+    { component: 'QuizMCP13CompleteSourceCode', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyMCP13CompleteSourceCode', afterSectionStartsWith: 'What' },
+    { component: 'ScaleMCP13CompleteSourceCode', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/ambiguity-in-language': [
+    { component: 'QuizNLPAmbiguityInLanguage', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPAmbiguityInLanguage', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPAmbiguityInLanguage', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/levels-of-linguistic-analysis': [
+    { component: 'QuizNLPLevelsOfLinguisticAnalysis', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPLevelsOfLinguisticAnalysis', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPLevelsOfLinguisticAnalysis', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/morphology': [
+    { component: 'QuizNLPMorphology', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPMorphology', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPMorphology', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/pragmatics-and-discourse': [
+    { component: 'QuizNLPPragmaticsAndDiscourse', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPPragmaticsAndDiscourse', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPPragmaticsAndDiscourse', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/semantics': [
+    { component: 'QuizNLPSemantics', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPSemantics', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPSemantics', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/syntax-and-grammar': [
+    { component: 'QuizNLPSyntaxAndGrammar', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPSyntaxAndGrammar', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPSyntaxAndGrammar', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/text-as-data': [
+    { component: 'QuizNLPTextAsData', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPTextAsData', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPTextAsData', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/what-is-nlp': [
+    { component: 'QuizNLPWhatIsNlp', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPWhatIsNlp', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPWhatIsNlp', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/data-annotation-and-labeling': [
+    { component: 'QuizNLPDataAnnotationAndLabeling', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPDataAnnotationAndLabeling', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPDataAnnotationAndLabeling', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/regular-expressions-for-nlp': [
+    { component: 'QuizNLPRegularExpressionsForNlp', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPRegularExpressionsForNlp', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPRegularExpressionsForNlp', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/sentence-segmentation': [
+    { component: 'QuizNLPSentenceSegmentation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPSentenceSegmentation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPSentenceSegmentation', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/stemming-and-lemmatization': [
+    { component: 'QuizNLPStemmingAndLemmatization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPStemmingAndLemmatization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPStemmingAndLemmatization', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/stopword-removal': [
+    { component: 'QuizNLPStopwordRemoval', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPStopwordRemoval', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPStopwordRemoval', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/text-cleaning-and-noise-removal': [
+    { component: 'QuizNLPTextCleaningAndNoiseRemoval', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPTextCleaningAndNoiseRemoval', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPTextCleaningAndNoiseRemoval', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/text-normalization': [
+    { component: 'QuizNLPTextNormalization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPTextNormalization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPTextNormalization', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/tokenization-in-nlp': [
+    { component: 'QuizNLPTokenizationInNlp', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPTokenizationInNlp', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPTokenizationInNlp', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/bag-of-words': [
+    { component: 'QuizNLPBagOfWords', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPBagOfWords', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPBagOfWords', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/contextual-embeddings': [
+    { component: 'QuizNLPContextualEmbeddings', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPContextualEmbeddings', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPContextualEmbeddings', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/document-embeddings': [
+    { component: 'QuizNLPDocumentEmbeddings', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPDocumentEmbeddings', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPDocumentEmbeddings', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/fasttext': [
+    { component: 'QuizNLPFasttext', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPFasttext', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPFasttext', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/glove': [
+    { component: 'QuizNLPGlove', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPGlove', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPGlove', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/n-gram-language-models': [
+    { component: 'QuizNLPNGramLanguageModels', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPNGramLanguageModels', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPNGramLanguageModels', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/sentence-embeddings': [
+    { component: 'QuizNLPSentenceEmbeddings', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPSentenceEmbeddings', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPSentenceEmbeddings', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/tf-idf': [
+    { component: 'QuizNLPTfIdf', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPTfIdf', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPTfIdf', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/word2vec': [
+    { component: 'QuizNLPWord2vec', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPWord2vec', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPWord2vec', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/attention-mechanism': [
+    { component: 'QuizNLPAttentionMechanism', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPAttentionMechanism', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPAttentionMechanism', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/bidirectional-rnns': [
+    { component: 'QuizNLPBidirectionalRnns', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPBidirectionalRnns', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPBidirectionalRnns', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/convolutional-models-for-text': [
+    { component: 'QuizNLPConvolutionalModelsForText', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPConvolutionalModelsForText', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPConvolutionalModelsForText', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/gated-recurrent-units': [
+    { component: 'QuizNLPGatedRecurrentUnits', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPGatedRecurrentUnits', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPGatedRecurrentUnits', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/long-short-term-memory': [
+    { component: 'QuizNLPLongShortTermMemory', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPLongShortTermMemory', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPLongShortTermMemory', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/recurrent-neural-networks': [
+    { component: 'QuizNLPRecurrentNeuralNetworks', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPRecurrentNeuralNetworks', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPRecurrentNeuralNetworks', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/sequence-to-sequence-models': [
+    { component: 'QuizNLPSequenceToSequenceModels', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPSequenceToSequenceModels', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPSequenceToSequenceModels', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/constituency-parsing': [
+    { component: 'QuizNLPConstituencyParsing', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPConstituencyParsing', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPConstituencyParsing', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/coreference-resolution': [
+    { component: 'QuizNLPCoreferenceResolution', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPCoreferenceResolution', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPCoreferenceResolution', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/dependency-parsing': [
+    { component: 'QuizNLPDependencyParsing', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPDependencyParsing', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPDependencyParsing', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/named-entity-recognition': [
+    { component: 'QuizNLPNamedEntityRecognition', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPNamedEntityRecognition', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPNamedEntityRecognition', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/part-of-speech-tagging': [
+    { component: 'QuizNLPPartOfSpeechTagging', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPPartOfSpeechTagging', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPPartOfSpeechTagging', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/relation-extraction': [
+    { component: 'QuizNLPRelationExtraction', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPRelationExtraction', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPRelationExtraction', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/semantic-role-labeling': [
+    { component: 'QuizNLPSemanticRoleLabeling', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPSemanticRoleLabeling', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPSemanticRoleLabeling', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/sentiment-analysis': [
+    { component: 'QuizNLPSentimentAnalysis', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPSentimentAnalysis', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPSentimentAnalysis', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/text-classification': [
+    { component: 'QuizNLPTextClassification', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPTextClassification', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPTextClassification', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/data-to-text-generation': [
+    { component: 'QuizNLPDataToTextGeneration', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPDataToTextGeneration', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPDataToTextGeneration', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/dialogue-systems': [
+    { component: 'QuizNLPDialogueSystems', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPDialogueSystems', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPDialogueSystems', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/grammatical-error-correction': [
+    { component: 'QuizNLPGrammaticalErrorCorrection', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPGrammaticalErrorCorrection', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPGrammaticalErrorCorrection', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/machine-translation': [
+    { component: 'QuizNLPMachineTranslation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPMachineTranslation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPMachineTranslation', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/paraphrase-generation': [
+    { component: 'QuizNLPParaphraseGeneration', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPParaphraseGeneration', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPParaphraseGeneration', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/question-answering': [
+    { component: 'QuizNLPQuestionAnswering', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPQuestionAnswering', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPQuestionAnswering', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/text-generation': [
+    { component: 'QuizNLPTextGeneration', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPTextGeneration', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPTextGeneration', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/text-summarization': [
+    { component: 'QuizNLPTextSummarization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPTextSummarization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPTextSummarization', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/document-similarity': [
+    { component: 'QuizNLPDocumentSimilarity', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPDocumentSimilarity', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPDocumentSimilarity', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/event-extraction': [
+    { component: 'QuizNLPEventExtraction', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPEventExtraction', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPEventExtraction', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/information-extraction': [
+    { component: 'QuizNLPInformationExtraction', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPInformationExtraction', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPInformationExtraction', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/information-retrieval': [
+    { component: 'QuizNLPInformationRetrieval', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPInformationRetrieval', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPInformationRetrieval', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/keyword-extraction': [
+    { component: 'QuizNLPKeywordExtraction', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPKeywordExtraction', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPKeywordExtraction', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/knowledge-graphs-for-nlp': [
+    { component: 'QuizNLPKnowledgeGraphsForNlp', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPKnowledgeGraphsForNlp', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPKnowledgeGraphsForNlp', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/open-information-extraction': [
+    { component: 'QuizNLPOpenInformationExtraction', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPOpenInformationExtraction', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPOpenInformationExtraction', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/topic-modeling': [
+    { component: 'QuizNLPTopicModeling', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPTopicModeling', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPTopicModeling', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/aspect-based-sentiment-analysis': [
+    { component: 'QuizNLPAspectBasedSentimentAnalysis', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPAspectBasedSentimentAnalysis', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPAspectBasedSentimentAnalysis', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/commonsense-reasoning': [
+    { component: 'QuizNLPCommonsenseReasoning', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPCommonsenseReasoning', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPCommonsenseReasoning', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/natural-language-inference': [
+    { component: 'QuizNLPNaturalLanguageInference', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPNaturalLanguageInference', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPNaturalLanguageInference', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/negation-and-speculation-detection': [
+    { component: 'QuizNLPNegationAndSpeculationDetection', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPNegationAndSpeculationDetection', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPNegationAndSpeculationDetection', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/semantic-similarity': [
+    { component: 'QuizNLPSemanticSimilarity', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPSemanticSimilarity', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPSemanticSimilarity', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/temporal-reasoning': [
+    { component: 'QuizNLPTemporalReasoning', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPTemporalReasoning', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPTemporalReasoning', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/textual-entailment': [
+    { component: 'QuizNLPTextualEntailment', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPTextualEntailment', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPTextualEntailment', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/word-sense-disambiguation': [
+    { component: 'QuizNLPWordSenseDisambiguation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPWordSenseDisambiguation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPWordSenseDisambiguation', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/bert': [
+    { component: 'QuizNLPBert', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPBert', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPBert', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/cross-lingual-transfer': [
+    { component: 'QuizNLPCrossLingualTransfer', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPCrossLingualTransfer', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPCrossLingualTransfer', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/domain-adaptation': [
+    { component: 'QuizNLPDomainAdaptation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPDomainAdaptation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPDomainAdaptation', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/elmo': [
+    { component: 'QuizNLPElmo', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPElmo', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPElmo', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/gpt-for-nlp-tasks': [
+    { component: 'QuizNLPGptForNlpTasks', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPGptForNlpTasks', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPGptForNlpTasks', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/prompt-based-nlp': [
+    { component: 'QuizNLPPromptBasedNlp', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPPromptBasedNlp', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPPromptBasedNlp', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/t5-and-text-to-text': [
+    { component: 'QuizNLPT5AndTextToText', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPT5AndTextToText', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPT5AndTextToText', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/transfer-learning-in-nlp': [
+    { component: 'QuizNLPTransferLearningInNlp', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPTransferLearningInNlp', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPTransferLearningInNlp', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/cross-lingual-word-embeddings': [
+    { component: 'QuizNLPCrossLingualWordEmbeddings', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPCrossLingualWordEmbeddings', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPCrossLingualWordEmbeddings', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/data-augmentation-for-nlp': [
+    { component: 'QuizNLPDataAugmentationForNlp', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPDataAugmentationForNlp', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPDataAugmentationForNlp', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/language-diversity-and-typology': [
+    { component: 'QuizNLPLanguageDiversityAndTypology', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPLanguageDiversityAndTypology', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPLanguageDiversityAndTypology', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/low-resource-nlp': [
+    { component: 'QuizNLPLowResourceNlp', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPLowResourceNlp', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPLowResourceNlp', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/machine-translation-approaches': [
+    { component: 'QuizNLPMachineTranslationApproaches', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPMachineTranslationApproaches', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPMachineTranslationApproaches', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/multilingual-nlp': [
+    { component: 'QuizNLPMultilingualNlp', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPMultilingualNlp', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPMultilingualNlp', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/multilingual-transformers': [
+    { component: 'QuizNLPMultilingualTransformers', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPMultilingualTransformers', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPMultilingualTransformers', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/automatic-speech-recognition': [
+    { component: 'QuizNLPAutomaticSpeechRecognition', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPAutomaticSpeechRecognition', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPAutomaticSpeechRecognition', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/document-understanding': [
+    { component: 'QuizNLPDocumentUnderstanding', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPDocumentUnderstanding', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPDocumentUnderstanding', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/image-captioning': [
+    { component: 'QuizNLPImageCaptioning', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPImageCaptioning', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPImageCaptioning', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/multimodal-nlp': [
+    { component: 'QuizNLPMultimodalNlp', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPMultimodalNlp', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPMultimodalNlp', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/speech-language-models': [
+    { component: 'QuizNLPSpeechLanguageModels', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPSpeechLanguageModels', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPSpeechLanguageModels', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/text-to-speech': [
+    { component: 'QuizNLPTextToSpeech', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPTextToSpeech', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPTextToSpeech', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/visual-question-answering': [
+    { component: 'QuizNLPVisualQuestionAnswering', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPVisualQuestionAnswering', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPVisualQuestionAnswering', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/bias-in-nlp': [
+    { component: 'QuizNLPBiasInNlp', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPBiasInNlp', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPBiasInNlp', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/evaluation-metrics-for-nlp': [
+    { component: 'QuizNLPEvaluationMetricsForNlp', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPEvaluationMetricsForNlp', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPEvaluationMetricsForNlp', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/fairness-in-nlp': [
+    { component: 'QuizNLPFairnessInNlp', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPFairnessInNlp', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPFairnessInNlp', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/human-evaluation-for-nlp': [
+    { component: 'QuizNLPHumanEvaluationForNlp', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPHumanEvaluationForNlp', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPHumanEvaluationForNlp', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/intrinsic-vs-extrinsic-evaluation': [
+    { component: 'QuizNLPIntrinsicVsExtrinsicEvaluation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPIntrinsicVsExtrinsicEvaluation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPIntrinsicVsExtrinsicEvaluation', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/nlp-for-social-good': [
+    { component: 'QuizNLPNlpForSocialGood', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPNlpForSocialGood', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPNlpForSocialGood', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/privacy-in-nlp': [
+    { component: 'QuizNLPPrivacyInNlp', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPPrivacyInNlp', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPPrivacyInNlp', afterSection: 'Why It Matters' },
+  ],
+  'natural-language-processing/responsible-nlp-development': [
+    { component: 'QuizNLPResponsibleNlpDevelopment', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyNLPResponsibleNlpDevelopment', afterSectionStartsWith: 'What' },
+    { component: 'ScaleNLPResponsibleNlpDevelopment', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/attention-and-position-effects': [
+    { component: 'QuizPEAttentionAndPositionEffects', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEAttentionAndPositionEffects', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEAttentionAndPositionEffects', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/context-window-mechanics': [
+    { component: 'QuizPEContextWindowMechanics', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEContextWindowMechanics', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEContextWindowMechanics', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/how-llms-process-prompts': [
+    { component: 'QuizPEHowLlmsProcessPrompts', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEHowLlmsProcessPrompts', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEHowLlmsProcessPrompts', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/in-context-learning': [
+    { component: 'QuizPEInContextLearning', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEInContextLearning', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEInContextLearning', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/mental-models-for-prompting': [
+    { component: 'QuizPEMentalModelsForPrompting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEMentalModelsForPrompting', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEMentalModelsForPrompting', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/prompt-engineering-vs-context-engineering': [
+    { component: 'QuizPEPromptEngineeringVsContextEngineering', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEPromptEngineeringVsContextEngineering', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEPromptEngineeringVsContextEngineering', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/temperature-and-sampling': [
+    { component: 'QuizPETemperatureAndSampling', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPETemperatureAndSampling', afterSectionStartsWith: 'What' },
+    { component: 'ScalePETemperatureAndSampling', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/tokenization-for-prompt-engineers': [
+    { component: 'QuizPETokenizationForPromptEngineers', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPETokenizationForPromptEngineers', afterSectionStartsWith: 'What' },
+    { component: 'ScalePETokenizationForPromptEngineers', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/what-is-a-prompt': [
+    { component: 'QuizPEWhatIsAPrompt', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEWhatIsAPrompt', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEWhatIsAPrompt', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/delimiter-and-markup-strategies': [
+    { component: 'QuizPEDelimiterAndMarkupStrategies', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEDelimiterAndMarkupStrategies', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEDelimiterAndMarkupStrategies', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/few-shot-prompting': [
+    { component: 'QuizPEFewShotPrompting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEFewShotPrompting', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEFewShotPrompting', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/instruction-prompting': [
+    { component: 'QuizPEInstructionPrompting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEInstructionPrompting', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEInstructionPrompting', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/many-shot-prompting': [
+    { component: 'QuizPEManyShotPrompting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEManyShotPrompting', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEManyShotPrompting', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/negative-prompting-and-constraints': [
+    { component: 'QuizPENegativePromptingAndConstraints', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPENegativePromptingAndConstraints', afterSectionStartsWith: 'What' },
+    { component: 'ScalePENegativePromptingAndConstraints', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/prefilling-and-output-priming': [
+    { component: 'QuizPEPrefillingAndOutputPriming', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEPrefillingAndOutputPriming', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEPrefillingAndOutputPriming', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/prompt-chaining': [
+    { component: 'QuizPEPromptChaining', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEPromptChaining', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEPromptChaining', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/prompt-templates-and-variables': [
+    { component: 'QuizPEPromptTemplatesAndVariables', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEPromptTemplatesAndVariables', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEPromptTemplatesAndVariables', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/role-and-persona-prompting': [
+    { component: 'QuizPERoleAndPersonaPrompting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPERoleAndPersonaPrompting', afterSectionStartsWith: 'What' },
+    { component: 'ScalePERoleAndPersonaPrompting', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/zero-shot-prompting': [
+    { component: 'QuizPEZeroShotPrompting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEZeroShotPrompting', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEZeroShotPrompting', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/chain-of-thought-prompting': [
+    { component: 'QuizPEChainOfThoughtPrompting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEChainOfThoughtPrompting', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEChainOfThoughtPrompting', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/extended-thinking-and-thinking-budgets': [
+    { component: 'QuizPEExtendedThinkingAndThinkingBudgets', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEExtendedThinkingAndThinkingBudgets', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEExtendedThinkingAndThinkingBudgets', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/metacognitive-prompting': [
+    { component: 'QuizPEMetacognitivePrompting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEMetacognitivePrompting', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEMetacognitivePrompting', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/self-ask-and-decomposition': [
+    { component: 'QuizPESelfAskAndDecomposition', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPESelfAskAndDecomposition', afterSectionStartsWith: 'What' },
+    { component: 'ScalePESelfAskAndDecomposition', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/self-consistency': [
+    { component: 'QuizPESelfConsistency', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPESelfConsistency', afterSectionStartsWith: 'What' },
+    { component: 'ScalePESelfConsistency', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/step-back-prompting': [
+    { component: 'QuizPEStepBackPrompting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEStepBackPrompting', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEStepBackPrompting', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/structured-reasoning-formats': [
+    { component: 'QuizPEStructuredReasoningFormats', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEStructuredReasoningFormats', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEStructuredReasoningFormats', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/tree-of-thought-prompting': [
+    { component: 'QuizPETreeOfThoughtPrompting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPETreeOfThoughtPrompting', afterSectionStartsWith: 'What' },
+    { component: 'ScalePETreeOfThoughtPrompting', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/zero-shot-chain-of-thought': [
+    { component: 'QuizPEZeroShotChainOfThought', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEZeroShotChainOfThought', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEZeroShotChainOfThought', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/behavioral-constraints-and-rules': [
+    { component: 'QuizPEBehavioralConstraintsAndRules', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEBehavioralConstraintsAndRules', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEBehavioralConstraintsAndRules', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/dynamic-system-prompts': [
+    { component: 'QuizPEDynamicSystemPrompts', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEDynamicSystemPrompts', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEDynamicSystemPrompts', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/instruction-following-and-compliance': [
+    { component: 'QuizPEInstructionFollowingAndCompliance', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEInstructionFollowingAndCompliance', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEInstructionFollowingAndCompliance', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/instruction-hierarchy-design': [
+    { component: 'QuizPEInstructionHierarchyDesign', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEInstructionHierarchyDesign', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEInstructionHierarchyDesign', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/meta-prompting': [
+    { component: 'QuizPEMetaPrompting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEMetaPrompting', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEMetaPrompting', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/multi-turn-instruction-persistence': [
+    { component: 'QuizPEMultiTurnInstructionPersistence', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEMultiTurnInstructionPersistence', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEMultiTurnInstructionPersistence', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/prompt-versioning-and-management': [
+    { component: 'QuizPEPromptVersioningAndManagement', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEPromptVersioningAndManagement', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEPromptVersioningAndManagement', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/system-prompt-anatomy': [
+    { component: 'QuizPESystemPromptAnatomy', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPESystemPromptAnatomy', afterSectionStartsWith: 'What' },
+    { component: 'ScalePESystemPromptAnatomy', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/classification-and-labeling-output': [
+    { component: 'QuizPEClassificationAndLabelingOutput', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEClassificationAndLabelingOutput', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEClassificationAndLabelingOutput', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/constrained-decoding-from-prompt-perspective': [
+    { component: 'QuizPEConstrainedDecodingFromPromptPerspective', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEConstrainedDecodingFromPromptPerspective', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEConstrainedDecodingFromPromptPerspective', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/extraction-and-parsing-prompts': [
+    { component: 'QuizPEExtractionAndParsingPrompts', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEExtractionAndParsingPrompts', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEExtractionAndParsingPrompts', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/json-mode-and-schema-enforcement': [
+    { component: 'QuizPEJsonModeAndSchemaEnforcement', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEJsonModeAndSchemaEnforcement', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEJsonModeAndSchemaEnforcement', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/markdown-and-rich-text-output': [
+    { component: 'QuizPEMarkdownAndRichTextOutput', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEMarkdownAndRichTextOutput', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEMarkdownAndRichTextOutput', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/multi-step-output-pipelines': [
+    { component: 'QuizPEMultiStepOutputPipelines', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEMultiStepOutputPipelines', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEMultiStepOutputPipelines', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/output-length-control': [
+    { component: 'QuizPEOutputLengthControl', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEOutputLengthControl', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEOutputLengthControl', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/xml-and-tag-based-output': [
+    { component: 'QuizPEXmlAndTagBasedOutput', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEXmlAndTagBasedOutput', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEXmlAndTagBasedOutput', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/context-assembly-patterns': [
+    { component: 'QuizPEContextAssemblyPatterns', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEContextAssemblyPatterns', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEContextAssemblyPatterns', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/context-budget-allocation': [
+    { component: 'QuizPEContextBudgetAllocation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEContextBudgetAllocation', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEContextBudgetAllocation', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/context-caching-and-prefix-reuse': [
+    { component: 'QuizPEContextCachingAndPrefixReuse', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEContextCachingAndPrefixReuse', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEContextCachingAndPrefixReuse', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/context-compression-techniques': [
+    { component: 'QuizPEContextCompressionTechniques', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEContextCompressionTechniques', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEContextCompressionTechniques', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/conversation-history-management': [
+    { component: 'QuizPEConversationHistoryManagement', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEConversationHistoryManagement', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEConversationHistoryManagement', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/information-priority-and-ordering': [
+    { component: 'QuizPEInformationPriorityAndOrdering', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEInformationPriorityAndOrdering', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEInformationPriorityAndOrdering', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/long-context-design-patterns': [
+    { component: 'QuizPELongContextDesignPatterns', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPELongContextDesignPatterns', afterSectionStartsWith: 'What' },
+    { component: 'ScalePELongContextDesignPatterns', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/multi-modal-context-design': [
+    { component: 'QuizPEMultiModalContextDesign', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEMultiModalContextDesign', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEMultiModalContextDesign', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/state-and-memory-in-context': [
+    { component: 'QuizPEStateAndMemoryInContext', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEStateAndMemoryInContext', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEStateAndMemoryInContext', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/what-is-context-engineering': [
+    { component: 'QuizPEWhatIsContextEngineering', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEWhatIsContextEngineering', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEWhatIsContextEngineering', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/chunking-for-context-quality': [
+    { component: 'QuizPEChunkingForContextQuality', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEChunkingForContextQuality', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEChunkingForContextQuality', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/citation-and-attribution-prompting': [
+    { component: 'QuizPECitationAndAttributionPrompting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPECitationAndAttributionPrompting', afterSectionStartsWith: 'What' },
+    { component: 'ScalePECitationAndAttributionPrompting', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/dynamic-context-augmentation': [
+    { component: 'QuizPEDynamicContextAugmentation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEDynamicContextAugmentation', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEDynamicContextAugmentation', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/grounding-and-faithfulness': [
+    { component: 'QuizPEGroundingAndFaithfulness', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEGroundingAndFaithfulness', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEGroundingAndFaithfulness', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/hybrid-retrieval-context-patterns': [
+    { component: 'QuizPEHybridRetrievalContextPatterns', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEHybridRetrievalContextPatterns', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEHybridRetrievalContextPatterns', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/knowledge-conflicts-and-resolution': [
+    { component: 'QuizPEKnowledgeConflictsAndResolution', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEKnowledgeConflictsAndResolution', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEKnowledgeConflictsAndResolution', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/rag-prompt-design': [
+    { component: 'QuizPERagPromptDesign', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPERagPromptDesign', afterSectionStartsWith: 'What' },
+    { component: 'ScalePERagPromptDesign', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/reranking-and-context-selection': [
+    { component: 'QuizPERerankingAndContextSelection', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPERerankingAndContextSelection', afterSectionStartsWith: 'What' },
+    { component: 'ScalePERerankingAndContextSelection', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/retrieval-query-design': [
+    { component: 'QuizPERetrievalQueryDesign', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPERetrievalQueryDesign', afterSectionStartsWith: 'What' },
+    { component: 'ScalePERetrievalQueryDesign', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/classification-and-extraction-at-scale': [
+    { component: 'QuizPEClassificationAndExtractionAtScale', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEClassificationAndExtractionAtScale', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEClassificationAndExtractionAtScale', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/code-generation-prompting': [
+    { component: 'QuizPECodeGenerationPrompting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPECodeGenerationPrompting', afterSectionStartsWith: 'What' },
+    { component: 'ScalePECodeGenerationPrompting', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/code-review-and-debugging-prompts': [
+    { component: 'QuizPECodeReviewAndDebuggingPrompts', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPECodeReviewAndDebuggingPrompts', afterSectionStartsWith: 'What' },
+    { component: 'ScalePECodeReviewAndDebuggingPrompts', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/conversational-and-dialogue-design': [
+    { component: 'QuizPEConversationalAndDialogueDesign', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEConversationalAndDialogueDesign', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEConversationalAndDialogueDesign', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/creative-writing-prompting': [
+    { component: 'QuizPECreativeWritingPrompting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPECreativeWritingPrompting', afterSectionStartsWith: 'What' },
+    { component: 'ScalePECreativeWritingPrompting', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/data-analysis-and-summarization': [
+    { component: 'QuizPEDataAnalysisAndSummarization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEDataAnalysisAndSummarization', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEDataAnalysisAndSummarization', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/mathematical-and-logical-prompting': [
+    { component: 'QuizPEMathematicalAndLogicalPrompting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEMathematicalAndLogicalPrompting', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEMathematicalAndLogicalPrompting', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/translation-and-multilingual-prompting': [
+    { component: 'QuizPETranslationAndMultilingualPrompting', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPETranslationAndMultilingualPrompting', afterSectionStartsWith: 'What' },
+    { component: 'ScalePETranslationAndMultilingualPrompting', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/a-b-testing-and-prompt-experiments': [
+    { component: 'QuizPEABTestingAndPromptExperiments', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEABTestingAndPromptExperiments', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEABTestingAndPromptExperiments', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/cost-and-latency-optimization': [
+    { component: 'QuizPECostAndLatencyOptimization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPECostAndLatencyOptimization', afterSectionStartsWith: 'What' },
+    { component: 'ScalePECostAndLatencyOptimization', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/guardrails-and-output-filtering': [
+    { component: 'QuizPEGuardrailsAndOutputFiltering', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEGuardrailsAndOutputFiltering', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEGuardrailsAndOutputFiltering', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/prompt-debugging-and-failure-analysis': [
+    { component: 'QuizPEPromptDebuggingAndFailureAnalysis', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEPromptDebuggingAndFailureAnalysis', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEPromptDebuggingAndFailureAnalysis', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/prompt-injection-defense-techniques': [
+    { component: 'QuizPEPromptInjectionDefenseTechniques', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEPromptInjectionDefenseTechniques', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEPromptInjectionDefenseTechniques', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/prompt-optimization-techniques': [
+    { component: 'QuizPEPromptOptimizationTechniques', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEPromptOptimizationTechniques', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEPromptOptimizationTechniques', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/prompt-testing-and-evaluation': [
+    { component: 'QuizPEPromptTestingAndEvaluation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPEPromptTestingAndEvaluation', afterSectionStartsWith: 'What' },
+    { component: 'ScalePEPromptTestingAndEvaluation', afterSection: 'Why It Matters' },
+  ],
+  'prompt-engineering/red-teaming-prompts': [
+    { component: 'QuizPERedTeamingPrompts', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyPERedTeamingPrompts', afterSectionStartsWith: 'What' },
+    { component: 'ScalePERedTeamingPrompts', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/bellman-equations': [
+    { component: 'QuizRLBellmanEquations', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLBellmanEquations', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLBellmanEquations', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/exploration-vs-exploitation': [
+    { component: 'QuizRLExplorationVsExploitation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLExplorationVsExploitation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLExplorationVsExploitation', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/markov-decision-processes': [
+    { component: 'QuizRLMarkovDecisionProcesses', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLMarkovDecisionProcesses', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLMarkovDecisionProcesses', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/policies': [
+    { component: 'QuizRLPolicies', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLPolicies', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLPolicies', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/return-and-discount-factor': [
+    { component: 'QuizRLReturnAndDiscountFactor', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLReturnAndDiscountFactor', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLReturnAndDiscountFactor', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/states-actions-rewards': [
+    { component: 'QuizRLStatesActionsRewards', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLStatesActionsRewards', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLStatesActionsRewards', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/value-functions': [
+    { component: 'QuizRLValueFunctions', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLValueFunctions', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLValueFunctions', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/what-is-reinforcement-learning': [
+    { component: 'QuizRLWhatIsReinforcementLearning', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLWhatIsReinforcementLearning', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLWhatIsReinforcementLearning', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/dynamic-programming': [
+    { component: 'QuizRLDynamicProgramming', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLDynamicProgramming', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLDynamicProgramming', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/eligibility-traces': [
+    { component: 'QuizRLEligibilityTraces', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLEligibilityTraces', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLEligibilityTraces', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/monte-carlo-methods': [
+    { component: 'QuizRLMonteCarloMethods', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLMonteCarloMethods', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLMonteCarloMethods', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/n-step-methods': [
+    { component: 'QuizRLNStepMethods', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLNStepMethods', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLNStepMethods', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/q-learning': [
+    { component: 'QuizRLQLearning', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLQLearning', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLQLearning', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/sarsa': [
+    { component: 'QuizRLSarsa', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLSarsa', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLSarsa', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/temporal-difference-learning': [
+    { component: 'QuizRLTemporalDifferenceLearning', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLTemporalDifferenceLearning', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLTemporalDifferenceLearning', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/deep-q-networks': [
+    { component: 'QuizRLDeepQNetworks', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLDeepQNetworks', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLDeepQNetworks', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/double-dqn': [
+    { component: 'QuizRLDoubleDqn', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLDoubleDqn', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLDoubleDqn', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/dueling-dqn': [
+    { component: 'QuizRLDuelingDqn', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLDuelingDqn', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLDuelingDqn', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/experience-replay': [
+    { component: 'QuizRLExperienceReplay', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLExperienceReplay', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLExperienceReplay', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/function-approximation': [
+    { component: 'QuizRLFunctionApproximation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLFunctionApproximation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLFunctionApproximation', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/rainbow-dqn': [
+    { component: 'QuizRLRainbowDqn', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLRainbowDqn', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLRainbowDqn', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/target-networks': [
+    { component: 'QuizRLTargetNetworks', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLTargetNetworks', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLTargetNetworks', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/a2c-and-a3c': [
+    { component: 'QuizRLA2cAndA3c', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLA2cAndA3c', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLA2cAndA3c', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/actor-critic-methods': [
+    { component: 'QuizRLActorCriticMethods', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLActorCriticMethods', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLActorCriticMethods', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/advantage-estimation': [
+    { component: 'QuizRLAdvantageEstimation', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLAdvantageEstimation', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLAdvantageEstimation', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/entropy-regularization': [
+    { component: 'QuizRLEntropyRegularization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLEntropyRegularization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLEntropyRegularization', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/policy-gradient-theorem': [
+    { component: 'QuizRLPolicyGradientTheorem', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLPolicyGradientTheorem', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLPolicyGradientTheorem', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/proximal-policy-optimization': [
+    { component: 'QuizRLProximalPolicyOptimization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLProximalPolicyOptimization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLProximalPolicyOptimization', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/reinforce': [
+    { component: 'QuizRLReinforce', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLReinforce', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLReinforce', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/trust-region-methods': [
+    { component: 'QuizRLTrustRegionMethods', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLTrustRegionMethods', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLTrustRegionMethods', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/dyna-architecture': [
+    { component: 'QuizRLDynaArchitecture', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLDynaArchitecture', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLDynaArchitecture', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/model-based-vs-model-free': [
+    { component: 'QuizRLModelBasedVsModelFree', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLModelBasedVsModelFree', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLModelBasedVsModelFree', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/monte-carlo-tree-search': [
+    { component: 'QuizRLMonteCarloTreeSearch', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLMonteCarloTreeSearch', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLMonteCarloTreeSearch', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/muzero': [
+    { component: 'QuizRLMuzero', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLMuzero', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLMuzero', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/planning-with-learned-models': [
+    { component: 'QuizRLPlanningWithLearnedModels', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLPlanningWithLearnedModels', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLPlanningWithLearnedModels', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/world-models': [
+    { component: 'QuizRLWorldModels', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLWorldModels', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLWorldModels', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/curiosity-driven-exploration': [
+    { component: 'QuizRLCuriosityDrivenExploration', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLCuriosityDrivenExploration', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLCuriosityDrivenExploration', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/hierarchical-reinforcement-learning': [
+    { component: 'QuizRLHierarchicalReinforcementLearning', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLHierarchicalReinforcementLearning', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLHierarchicalReinforcementLearning', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/imitation-learning': [
+    { component: 'QuizRLImitationLearning', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLImitationLearning', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLImitationLearning', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/inverse-reinforcement-learning': [
+    { component: 'QuizRLInverseReinforcementLearning', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLInverseReinforcementLearning', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLInverseReinforcementLearning', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/meta-reinforcement-learning': [
+    { component: 'QuizRLMetaReinforcementLearning', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLMetaReinforcementLearning', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLMetaReinforcementLearning', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/multi-agent-reinforcement-learning': [
+    { component: 'QuizRLMultiAgentReinforcementLearning', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLMultiAgentReinforcementLearning', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLMultiAgentReinforcementLearning', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/offline-reinforcement-learning': [
+    { component: 'QuizRLOfflineReinforcementLearning', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLOfflineReinforcementLearning', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLOfflineReinforcementLearning', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/reward-shaping': [
+    { component: 'QuizRLRewardShaping', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLRewardShaping', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLRewardShaping', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/dpo-as-implicit-rl': [
+    { component: 'QuizRLDpoAsImplicitRl', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLDpoAsImplicitRl', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLDpoAsImplicitRl', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/grpo': [
+    { component: 'QuizRLGrpo', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLGrpo', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLGrpo', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/ppo-for-language-models': [
+    { component: 'QuizRLPpoForLanguageModels', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLPpoForLanguageModels', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLPpoForLanguageModels', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/reward-modeling-for-llms': [
+    { component: 'QuizRLRewardModelingForLlms', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLRewardModelingForLlms', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLRewardModelingForLlms', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/rlaif-and-constitutional-ai': [
+    { component: 'QuizRLRlaifAndConstitutionalAi', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLRlaifAndConstitutionalAi', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLRlaifAndConstitutionalAi', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/rlhf-pipeline': [
+    { component: 'QuizRLRlhfPipeline', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLRlhfPipeline', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLRlhfPipeline', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/rlvr': [
+    { component: 'QuizRLRlvr', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLRlvr', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLRlvr', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/alphago-and-board-games': [
+    { component: 'QuizRLAlphagoAndBoardGames', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLAlphagoAndBoardGames', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLAlphagoAndBoardGames', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/atari-and-arcade-games': [
+    { component: 'QuizRLAtariAndArcadeGames', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLAtariAndArcadeGames', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLAtariAndArcadeGames', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/recommendation-systems': [
+    { component: 'QuizRLRecommendationSystems', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLRecommendationSystems', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLRecommendationSystems', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/resource-optimization': [
+    { component: 'QuizRLResourceOptimization', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLResourceOptimization', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLResourceOptimization', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/rl-in-production': [
+    { component: 'QuizRLRlInProduction', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLRlInProduction', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLRlInProduction', afterSection: 'Why It Matters' },
+  ],
+  'reinforcement-learning/robotics-and-control': [
+    { component: 'QuizRLRoboticsAndControl', afterSection: 'Common Misconceptions' },
+    { component: 'AnalogyRLRoboticsAndControl', afterSectionStartsWith: 'What' },
+    { component: 'ScaleRLRoboticsAndControl', afterSection: 'Why It Matters' },
+  ]
 };
