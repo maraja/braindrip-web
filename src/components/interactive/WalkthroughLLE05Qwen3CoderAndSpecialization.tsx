@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Specialization Pipeline', desc: 'The foundation of qwen 3 coder: domain-specialized open models begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The MoE Architecture', desc: 'At this stage, the key transformation occurs — the core mechanism that makes qwen 3 coder: domain-specialized open models work.' },
-    { title: '3. Agentic Coding Capabilities', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Language and Framework Coverage', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Context and Long-Range Understanding', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Specialization Pipeline', desc: 'Qwen3-Coder\'s training followed a three-stage pipeline that has become the template for domain specialization:  Stage 1 — Code Pre-training: Starting from the general Qwen 3 base weights, the model underwent extended pre-training on a massive corpus of code.' },
+    { title: '2. The MoE Architecture', desc: 'At 480B total parameters with 35B active, Qwen3-Coder uses a MoE architecture similar to its general-purpose Qwen 3 siblings. The expert routing enables the model to maintain broad programming knowledge across the full parameter set while keeping inference cost at the 35B-active level.' },
+    { title: '3. Agentic Coding Capabilities', desc: 'Qwen3-Coder was trained not just to generate code snippets but to operate as an agentic coding assistant. Its capabilities include multi-file editing (understanding how changes in one file affect others), test generation (writing comprehensive test suites for existing code), debugging (diagnosing.' },
+    { title: '4. Language and Framework Coverage', desc: 'Qwen3-Coder supports coding across a broad range of programming languages and frameworks, with particular strength in Python, JavaScript/TypeScript, Java, C++, Go, and Rust.' },
+    { title: '5. Context and Long-Range Understanding', desc: 'Like its Qwen 3 foundation, Qwen3-Coder supports extended context windows, enabling it to process large files, multiple related files, and long conversation histories that are typical of real-world coding sessions.' },
 ];
 
 export default function WalkthroughLLE05Qwen3CoderAndSpecialization() {
@@ -17,10 +17,10 @@ export default function WalkthroughLLE05Qwen3CoderAndSpecialization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Qwen 3 Coder: Domain-Specialized Open Models — Step by Step
+          Qwen 3 Coder: Domain-Specialized Open Models \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how qwen 3 coder: domain-specialized open models works, one stage at a time.

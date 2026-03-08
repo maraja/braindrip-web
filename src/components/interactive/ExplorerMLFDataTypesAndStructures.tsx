@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Pandas dtype pitfalls', detail: 'Pandas infers types on load. A column of integers with one missing value becomes `float64` because `NaN` is a float. Use `Int64` (nullable integer) or careful casting.' },
+    { label: 'Pandas dtype pitfalls', detail: 'Pandas infers types on load. A column of integers with one missing value becomes float64 because NaN is a float. Use Int64 (nullable integer) or careful casting.' },
     { label: 'Cardinality', detail: 'The number of distinct values in a categorical column. High-cardinality features (e.g., zip codes with 40,000+ levels) require special encoding (hashing, embeddings) rather than naive one-hot expansion.' },
-    { label: 'Mixed types', detail: 'A column containing both \"42\" and \"N/A\" will be inferred as `object` (string). Always inspect dtypes after loading with `df.dtypes` and `df.describe(include=\'all\')`.' },
-    { label: 'Memory optimization', detail: 'Downcasting `float64` to `float32` halves memory. Categorical dtype in Pandas uses integer codes internally, reducing memory for repetitive strings by 90% or more.' },
+    { label: 'Mixed types', detail: 'A column containing both "42" and "N/A" will be inferred as object (string). Always inspect dtypes after loading with df.dtypes and df.describe(include=\'all\').' },
+    { label: 'Memory optimization', detail: 'Downcasting float64 to float32 halves memory. Categorical dtype in Pandas uses integer codes internally, reducing memory for repetitive strings by 90% or more.' },
 ];
 
 export default function ExplorerMLFDataTypesAndStructures() {
@@ -18,10 +18,10 @@ export default function ExplorerMLFDataTypesAndStructures() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Data Types and Structures — Key Details Explorer
+          Data Types and Structures \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of data types and structures.
+          Click each card to explore the technical details.
         </p>
       </div>
 

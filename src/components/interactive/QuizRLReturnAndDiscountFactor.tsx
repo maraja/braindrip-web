@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizRLReturnAndDiscountFactor() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Typical values: Most deep RL implementations use $\\gamma = 0.99$ (Atari DQN, PPO for MuJoCo, AlphaGo).', isTrue: true, explanation: 'This is a key technical detail of Return and Discount Factor.' },
-    { text: 'Some sparse-reward tasks use $\\gamma = 0.999$.', isTrue: true, explanation: 'This is a key technical detail of Return and Discount Factor.' },
-    { text: 'GAE (Generalized Advantage Estimation) uses a separate discount parameter $\\lambda$ in addition to $\\gamma$ for bias-variance control in advantage estimates (Schulman et al., 2016).', isTrue: true, explanation: 'This is a key technical detail of Return and Discount Factor.' },
+    { text: 'Gamma represents the probability of episode termination.', isTrue: false, explanation: 'This interpretation exists in some formulations (where 1 -  is the termination probability at each step), but in general,  is a preference parameter controlling the tradeoff between short-term and long-term reward.' },
+    { text: 'Most deep RL implementations use  = 0.99 (Atari DQN, PPO for MuJoCo, AlphaGo).', isTrue: true, explanation: 'Some sparse-reward tasks use  = 0.999.' },
+    { text: 'Lower gamma always makes learning easier.', isTrue: false, explanation: 'Lower  reduces variance but introduces bias toward short-sighted strategies. If the optimal behavior requires long-horizon planning, low  makes the optimal policy unreachable.' },
+    { text: 'normalizing returns by their running standard deviation helps stabilize training when  is close to 1.', isTrue: true, explanation: 'normalizing returns by their running standard deviation helps stabilize training when  is close to 1.' },
+    { text: 'Gamma = 1 means the agent values all rewards equally.', isTrue: false, explanation: 'Technically yes, but only in episodic settings. In continuing tasks,  = 1 makes the return undefined (potentially infinite), breaking most algorithms.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

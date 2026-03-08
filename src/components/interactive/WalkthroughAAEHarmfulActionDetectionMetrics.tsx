@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Action Classification Taxonomy', desc: 'The foundation of harmful action detection metrics begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Severity Scoring Framework', desc: 'At this stage, the key transformation occurs — the core mechanism that makes harmful action detection metrics work.' },
-    { title: '3. Detection Methods', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Precision-Recall Tradeoff', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Real-Time vs Post-Hoc Detection', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Action Classification Taxonomy', desc: 'A structured taxonomy organizes agent actions by harm severity, enabling consistent classification and appropriate response. Benign actions are normal operations within the agent\'s task scope.' },
+    { title: '2. Severity Scoring Framework', desc: 'Each detected action receives a severity score that drives the response. Low severity (1-3): Inefficiency or suboptimal behavior.' },
+    { title: '3. Detection Methods', desc: 'Rule-based filters define explicit patterns that indicate harmful actions. Examples: any command matching rm -rf /, any network request to a domain not on the allowlist, any database query containing DROP or TRUNCATE.' },
+    { title: '4. The Precision-Recall Tradeoff', desc: 'This is the central tension in harmful action detection. Setting detection thresholds aggressively (high recall) catches more harmful actions but also blocks more legitimate ones.' },
+    { title: '5. Real-Time vs Post-Hoc Detection', desc: 'Real-time detection evaluates each action before it executes. This prevents harm but adds latency and can block time-sensitive operations.' },
 ];
 
 export default function WalkthroughAAEHarmfulActionDetectionMetrics() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAEHarmfulActionDetectionMetrics() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Harmful Action Detection Metrics — Step by Step
+          Harmful Action Detection Metrics \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how harmful action detection metrics works, one stage at a time.

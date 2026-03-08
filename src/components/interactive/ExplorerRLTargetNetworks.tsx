@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Hard update frequency', detail: 'DQN uses $C = 10{,}000$ gradient steps. Values too small (e.g., $C = 100$) provide insufficient stability; values too large (e.g., $C = 100{,}000$) cause the target to lag excessively behind the learned value.' },
-    { label: 'Soft update rate', detail: '$\\tau = 0.005$ is standard for continuous-control algorithms (DDPG, TD3, SAC). Larger $\\tau$ values track faster but provide less stability.' },
+    { label: 'Hard update frequency', detail: 'DQN uses C = 10&#123;,&#125;000 gradient steps. Values too small (e.g., C = 100) provide insufficient stability; values too large (e.g., C = 100&#123;,&#125;000) cause the target to lag excessively behind the learned value.' },
+    { label: 'Soft update rate', detail: '= 0.005 is standard for continuous-control algorithms (DDPG, TD3, SAC). Larger  values track faster but provide less stability.' },
     { label: 'Hard vs. soft', detail: 'Hard updates are simpler but create discontinuities when the target network suddenly jumps. Soft updates are smoother but add a hyperparameter. In practice, soft updates are preferred for continuous-action domains; hard updates remain common for discrete-action domains.' },
     { label: 'Memory cost', detail: 'Target networks double the model\'s parameter memory. For DQN\'s ~1.7M parameters this is negligible; for large models it can matter.' },
-    { label: 'No gradient through targets', detail: 'The target $y = r + \\gamma \\max_{a\'} Q(s\', a\'; \\mathbf{w}^-)$ is treated as a constant during backpropagation. Gradients flow through $Q(s, a; \\mathbf{w})$ only.' },
+    { label: 'No gradient through targets', detail: 'The target y = r +  _&#123;a\'&#125; Q(s\', a\'; w^-) is treated as a constant during backpropagation. Gradients flow through Q(s, a; w) only.' },
     { label: 'Initialization', detail: 'The target network is initialized as an exact copy of the online network at the start of training.' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerRLTargetNetworks() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Target Networks — Key Details Explorer
+          Target Networks \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of target networks.
+          Click each card to explore the technical details.
         </p>
       </div>
 

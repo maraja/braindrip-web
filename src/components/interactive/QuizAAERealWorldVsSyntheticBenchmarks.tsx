@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAERealWorldVsSyntheticBenchmarks() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'SWE-bench contamination analysis: models show 8-15% higher resolution rates on pre-cutoff vs.', isTrue: true, explanation: 'This is a key technical detail of Real-World vs Synthetic Benchmarks.' },
-    { text: 'post-cutoff instances of matched difficulty Synthetic benchmark generation costs: approximately $0.01-0.10 per task (LLM-generated with human validation) vs.', isTrue: true, explanation: 'This is a key technical detail of Real-World vs Synthetic Benchmarks.' },
-    { text: 'The choice between benchmarks derived from real-world data and those constructed synthetically represents a fundamental tradeoff between ecological validity and experimental control, with hybrid approaches increasingly favored.', isTrue: true, explanation: 'This captures the core purpose of Real-World vs Synthetic Benchmarks.' },
+    { text: 'Real-world benchmarks are always more valid.', isTrue: false, explanation: 'A real-world benchmark with severe contamination is less valid than a well-designed synthetic benchmark. Validity depends on the benchmark\'s actual ability to predict performance on unseen tasks, not just on the provenance of its data.' },
+    { text: 'Synthetic benchmarks are just toy problems.', isTrue: false, explanation: 'Modern synthetic benchmarks like AppWorld feature hundreds of realistic APIs, complex multi-step workflows, and difficulty levels that stump frontier models. The "synthetic" label does not imply simplicity; it implies controlled construction.' },
+    { text: 'If an agent passes both real and synthetic benchmarks, it is ready for production.', isTrue: false, explanation: 'Both benchmark types exist in controlled, reproducible settings. Production environments introduce user variability, environmental drift, adversarial inputs, and scale effects that no benchmark fully captures.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

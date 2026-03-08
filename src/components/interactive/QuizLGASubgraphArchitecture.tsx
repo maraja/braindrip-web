@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGASubgraphArchitecture() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A compiled subgraph is added via builder.add_node("name", compiled_subgraph) -- it behaves like any other node.', isTrue: true, explanation: 'This is a key technical detail of Subgraph Architecture.' },
-    { text: 'Keys that exist in both parent and subgraph schemas are automatically mapped at the boundary.', isTrue: true, explanation: 'This is a key technical detail of Subgraph Architecture.' },
-    { text: 'Keys that exist only in the subgraph schema remain private and invisible to the parent graph.', isTrue: true, explanation: 'This is a key technical detail of Subgraph Architecture.' },
+    { text: 'Subgraphs must share the same state schema as the parent.', isTrue: false, explanation: 'Subgraphs can have completely different schemas. That is one of their primary advantages over plain nodes.' },
+    { text: 'Each agent is a fully independent StateGraph with its own state schema, compiled separately and invoked as a single node inside a parent graph for maximum encapsulation and modularity.', isTrue: true, explanation: 'This captures the core definition of Subgraph Architecture.' },
+    { text: 'Subgraph Architecture is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Subgraph Architecture is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

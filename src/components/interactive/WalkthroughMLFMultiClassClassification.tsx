@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. One-vs-Rest (OvR) Strategy', desc: 'The foundation of multi-class classification begins with understanding its core input requirements and initial setup.' },
-    { title: '2. One-vs-One (OvO) Strategy', desc: 'At this stage, the key transformation occurs — the core mechanism that makes multi-class classification work.' },
-    { title: '3. Native Multi-Class Methods', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Multi-Label Classification', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Error-Correcting Output Codes (ECOC)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. One-vs-Rest (OvR) Strategy', desc: 'The most common reduction from multi-class to binary. For each class k:  Construct a binary problem: label all examples of class k as positive, all others as negative.' },
+    { title: '2. One-vs-One (OvO) Strategy', desc: 'For each pair of classes (i, j):  Construct a binary problem using only examples from classes i and j. Train a classifier f_&#123;ij&#125;(x) for this pair.' },
+    { title: '3. Native Multi-Class Methods', desc: 'Some algorithms handle multiple classes directly without decomposition:  Softmax Regression (Multinomial Logistic Regression): Assigns a weight vector w_k to each class and computes:  [equation]  The loss is the categorical cross-entropy:  [equation]  This is the multi-class generalization of.' },
+    { title: '4. Multi-Label Classification', desc: 'Multi-class classification assigns exactly one label per example. Multi-label classification allows multiple labels simultaneously -- for example, a news article can be about both "politics" and "economics."  Binary Relevance: Train one binary classifier per label independently.' },
+    { title: '5. Error-Correcting Output Codes (ECOC)', desc: 'ECOC generalizes OvR and OvO by encoding each class as a binary codeword of length L. For each bit position l, a binary classifier is trained to distinguish the two groups defined by that bit.' },
+    { title: '6. Computational Tradeoffs', desc: 'where t is the prediction cost of a single binary classifier.' },
 ];
 
 export default function WalkthroughMLFMultiClassClassification() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFMultiClassClassification() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Multi-Class Classification — Step by Step
+          Multi-Class Classification \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how multi-class classification works, one stage at a time.

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACMemoryRetrievalStrategies() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Top-k selection: Retrieve 3-5 memories for injection into context.', isTrue: true, explanation: 'This is a key technical detail of Memory Retrieval Strategies.' },
-    { text: 'Below 3 risks missing relevant information; above 5 risks context pollution.', isTrue: true, explanation: 'This is a key technical detail of Memory Retrieval Strategies.' },
-    { text: 'Reranking 20 candidates adds ~200ms latency.', isTrue: true, explanation: 'This is a key technical detail of Memory Retrieval Strategies.' },
+    { text: 'Semantic similarity is sufficient for memory retrieval.', isTrue: false, explanation: 'Semantic similarity finds memories that are about similar topics, but does not consider recency, importance, or contextual appropriateness. A memory about "Python performance" from 2 years ago about Python 3.8 is semantically similar to a current query about Python performance but may contain outdated information.' },
+    { text: 'Retrieve 3-5 memories for injection into context.', isTrue: true, explanation: 'Below 3 risks missing relevant information; above 5 risks context pollution. For very important tasks, retrieve 10, then rerank to top-5' },
+    { text: 'More retrieval results are better.', isTrue: false, explanation: 'Each additional memory consumes context window tokens. Beyond the most relevant 3-5 memories, additional results provide diminishing value and increasing noise.' },
+    { text: 'Specialized retrieval models (Cohere embed-v3, Voyage-2) outperform general-purpose models (OpenAI ada-002) on retrieval benchmarks by 5-15% NDCG', isTrue: true, explanation: 'Specialized retrieval models (Cohere embed-v3, Voyage-2) outperform general-purpose models (OpenAI ada-002) on retrieval benchmarks by 5-15% NDCG' },
+    { text: 'Retrieval should be the same for all queries.', isTrue: false, explanation: 'Different types of queries benefit from different retrieval strategies. Factual queries ("What is the user\'s timezone?") benefit from exact keyword match.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

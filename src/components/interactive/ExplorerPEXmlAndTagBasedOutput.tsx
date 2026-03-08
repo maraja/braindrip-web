@@ -6,7 +6,7 @@ const DETAILS = [
     { label: 'Regex parsing handles 90-95% of XML-tagged LLM output', detail: 'correctly; the remaining cases typically involve unclosed tags or nested content matching.' },
     { label: 'BeautifulSoup with `html.parser`', detail: 'is the recommended tolerant parser for Python, handling malformed XML without raising exceptions.' },
     { label: 'Tag nesting beyond 3 levels', detail: 'significantly increases format compliance failures across all models.' },
-    { label: 'Self-closing tags', detail: '(like `<source url=\"...\" />`) are less reliably produced by LLMs; prefer open-close pairs with content between them.' },
+    { label: 'Self-closing tags', detail: '(like &lt;source url="..." /&gt;) are less reliably produced by LLMs; prefer open-close pairs with content between them.' },
 ];
 
 export default function ExplorerPEXmlAndTagBasedOutput() {
@@ -20,10 +20,10 @@ export default function ExplorerPEXmlAndTagBasedOutput() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          XML and Tag-Based Output — Key Details Explorer
+          XML and Tag-Based Output \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of xml and tag-based output.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Mixture of Experts Architecture', desc: 'The foundation of gemini 1.5 begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Million-Token Context Window', desc: 'At this stage, the key transformation occurs — the core mechanism that makes gemini 1.5 work.' },
-    { title: '3. Needle-in-a-Haystack Performance', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Multimodal Long Context', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Mixture of Experts Architecture', desc: 'Unlike dense models where every parameter activates for every token, Gemini 1.5 uses a Mixture of Experts design. The model contains many "expert" sub-networks, but for any given input, only a fraction of them activate.' },
+    { title: '2. The Million-Token Context Window', desc: 'The headline achievement was the 1 million token context window, later extended to 2 million tokens for select users. In research settings, Google tested context lengths up to 10 million tokens.' },
+    { title: '3. Needle-in-a-Haystack Performance', desc: 'The most impressive demonstration was near-perfect retrieval across the entire context. In "needle in a haystack" evaluations — where a specific piece of information is planted at a random position within a long document — Gemini 1.5 Pro achieved 99.7% recall accuracy at 1 million tokens.' },
+    { title: '4. Multimodal Long Context', desc: 'The context window was not limited to text. Gemini 1.5 could natively process interleaved text, images, audio, and video within the same prompt.' },
 ];
 
 export default function WalkthroughLLE02Gemini15() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE02Gemini15() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Gemini 1.5 — Step by Step
+          Gemini 1.5 \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how gemini 1.5 works, one stage at a time.

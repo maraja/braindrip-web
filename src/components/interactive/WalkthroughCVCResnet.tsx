@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Degradation Problem', desc: 'The foundation of resnet begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Residual Learning', desc: 'At this stage, the key transformation occurs — the core mechanism that makes resnet work.' },
-    { title: '3. Basic Block vs. Bottleneck Block', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Dimension Matching', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Architecture Variants', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Degradation Problem', desc: 'Before ResNet, a puzzling observation plagued deep network design: adding more layers to a sufficiently deep network actually increased both training and test error. This was not overfitting (training error also increased), but an optimization difficulty.' },
+    { title: '2. Residual Learning', desc: 'Instead of learning a mapping &#123;H&#125;(x) directly, a residual block learns:  [equation]  The output is then:  [equation]  If the optimal mapping is close to identity, pushing &#123;F&#125;(x) toward zero is easier than learning &#123;H&#125;(x) = x through a stack of nonlinear layers.' },
+    { title: '3. Basic Block vs. Bottleneck Block', desc: 'Basic Block (used in ResNet-18, ResNet-34):  Bottleneck Block (used in ResNet-50, ResNet-101, ResNet-152):  The bottleneck reduces channels with the first 1 x 1 conv (e.g., 256 to 64), applies the 3 x 3 conv on the reduced channels, then expands back with the second 1 x 1 conv.' },
+    { title: '4. Dimension Matching', desc: 'When the input and output dimensions differ (due to stride-2 downsampling or channel changes), the skip connection uses a 1 x 1 convolution with appropriate stride to match dimensions:  [equation]  where W_s is the projection matrix implemented as a 1 x 1 convolution.' },
+    { title: '5. Pre-activation ResNet', desc: '(2016) later proposed moving BN and ReLU before the convolution:  This "pre-activation" arrangement creates a true identity path and improves performance on CIFAR (4.62% error with a 1001-layer network). The identity mapping allows unimpeded gradient flow.' },
 ];
 
 export default function WalkthroughCVCResnet() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCResnet() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          ResNet — Step by Step
+          ResNet \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how resnet works, one stage at a time.

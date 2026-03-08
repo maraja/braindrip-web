@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Corpora: Where Text Data Comes From', desc: 'The foundation of text as data begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Annotation Schemes', desc: 'At this stage, the key transformation occurs — the core mechanism that makes text as data work.' },
-    { title: '3. Inter-Annotator Agreement', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. From Hand-Crafted Features to Learned Representations', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Data Quality and Curation', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Corpora: Where Text Data Comes From', desc: 'A corpus (plural: corpora) is a large, structured collection of text assembled for linguistic or NLP research. The design of a corpus -- what text it includes, how it was collected, what metadata accompanies it -- fundamentally shapes what can be learned from it.' },
+    { title: '2. Annotation Schemes', desc: 'Annotation is the process of adding structured labels to raw text -- marking word boundaries, part-of-speech tags, named entities, syntactic structure, sentiment, or any other linguistic or task-relevant property. Annotation transforms unstructured text into training data for supervised learning.' },
+    { title: '3. Inter-Annotator Agreement', desc: 'When multiple humans annotate the same data, they inevitably disagree on some items. Inter-annotator agreement (IAA) quantifies how consistent annotators are, serving both as a quality check on the annotation and as an empirical ceiling on how well automated systems can perform.' },
+    { title: '4. From Hand-Crafted Features to Learned Representations', desc: 'The "text as data" paradigm has undergone a fundamental shift in how features are defined:  Era 1 -- Feature Engineering (1990s--2012): Human experts designed features to convert text into numerical vectors.' },
+    { title: '5. Data Quality and Curation', desc: 'The maxim "garbage in, garbage out" applies forcefully to NLP. Key data quality considerations:  Deduplication: Common Crawl contains massive near-duplicate content.' },
 ];
 
 export default function WalkthroughNLPTextAsData() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPTextAsData() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Text as Data — Step by Step
+          Text as Data \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how text as data works, one stage at a time.

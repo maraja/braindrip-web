@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCProgressiveResizing() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The FLOP savings are quadratic in the resolution ratio: training at 128 instead of 224 is $(224/128)^2 \\approx 3.1$x cheaper per image.', isTrue: true, explanation: 'This is a key technical detail of Progressive Resizing.' },
-    { text: 'When increasing resolution, reduce the learning rate.', isTrue: true, explanation: 'This is a key technical detail of Progressive Resizing.' },
-    { text: 'The shift in feature statistics is similar to a domain change, and a high LR can cause instability.', isTrue: true, explanation: 'This is a key technical detail of Progressive Resizing.' },
+    { text: 'Progressive resizing only saves time, it does not improve accuracy.', isTrue: false, explanation: 'In several cases (particularly with strong augmentation), progressive resizing improves final accuracy by 0.1-0.5% because the coarse-to-fine curriculum provides implicit regularization. "You can just train at low resolution and test at high resolution." The train-test resolution discrepancy causes a significant accuracy drop (1-3%) due to mismatched crop statistics and object scales.' },
+    { text: 'Progressive resizing starts training on small images and gradually increases resolution, achieving faster convergence and often better accuracy by providing a natural curriculum from coarse to fine features.', isTrue: true, explanation: 'This captures the core definition of Progressive Resizing.' },
+    { text: 'Progressive Resizing is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Progressive Resizing is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

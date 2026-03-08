@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE01Gpt3() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'fine-tuned BERT baseline of 69.0) Released: May 2020 (paper), June 2020 (API)', isTrue: true, explanation: 'This is a key technical detail of GPT-3.' },
-    { text: 'OpenAI\'s 175-billion-parameter language model demonstrated that massive scale unlocks in-context learning, allowing a single model to perform diverse tasks from just a few examples in the prompt.', isTrue: true, explanation: 'This captures the core purpose of GPT-3.' },
-    { text: 'GPT-3 is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding GPT-3 is important for building on more advanced topics.' },
+    { text: 'GPT-3 introduced a new architecture.', isTrue: false, explanation: 'It used the same Transformer decoder as GPT-2, just scaled 100x larger. The innovation was in scale and evaluation methodology, not architecture.' },
+    { text: '175 billion (96 layers, 96 heads, d_model=12,288)', isTrue: true, explanation: '175 billion (96 layers, 96 heads, d_model=12,288)' },
+    { text: 'GPT-3 can learn new tasks.', isTrue: false, explanation: 'GPT-3\'s in-context learning involves no weight updates. It conditions on examples in the prompt to steer its outputs, but its parameters remain frozen.' },
+    { text: '~300B tokens from Common Crawl, WebText2, Books1, Books2, Wikipedia', isTrue: true, explanation: '~300B tokens from Common Crawl, WebText2, Books1, Books2, Wikipedia' },
+    { text: 'GPT-3 was trained on the entire internet.', isTrue: false, explanation: 'Its training data, while large, was a filtered subset of web text plus books and Wikipedia. The Common Crawl portion underwent significant filtering, reducing 45TB of raw text to the usable portion.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

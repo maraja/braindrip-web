@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Convergence rate', detail: 'for convex, smooth functions with batch GD: $O(1/T)$ for general convex, $O(\\rho^T)$ for strongly convex (linear convergence) where $\\rho = 1 - \\eta\\lambda_{\\min}$.' },
-    { label: 'Gradient clipping', detail: 'caps the norm of the gradient to prevent exploding updates: $\\mathbf{g} \\leftarrow \\mathbf{g} \\cdot \\min(1, c/\\|\\mathbf{g}\\|)$.' },
-    { label: 'Weight decay', detail: 'adds $\\lambda\\|\\boldsymbol{\\theta}\\|^2$ to the loss, equivalent to L2 regularization in SGD but subtly different in Adam (decoupled weight decay, or AdamW).' },
+    { label: 'Convergence rate', detail: 'for convex, smooth functions with batch GD: O(1/T) for general convex, O(^T) for strongly convex (linear convergence) where  = 1 - _&#123;&#125;.' },
+    { label: 'Gradient clipping', detail: 'caps the norm of the gradient to prevent exploding updates: g  g  (1, c/\\).' },
+    { label: 'Weight decay', detail: 'adds \\^2 to the loss, equivalent to L2 regularization in SGD but subtly different in Adam (decoupled weight decay, or AdamW).' },
 ];
 
 export default function ExplorerMLFOptimizationAndGradientDescent() {
@@ -17,10 +17,10 @@ export default function ExplorerMLFOptimizationAndGradientDescent() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Optimization and Gradient Descent — Key Details Explorer
+          Optimization and Gradient Descent \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of optimization and gradient descent.
+          Click each card to explore the technical details.
         </p>
       </div>
 

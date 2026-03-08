@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Phase 1: Planning', desc: 'The foundation of plan-and-execute begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Phase 2: Execution', desc: 'At this stage, the key transformation occurs — the core mechanism that makes plan-and-execute work.' },
-    { title: '3. Phase 3: Replanning', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Architecture Variants', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Phase 1: Planning', desc: 'The planner component receives the user\'s goal and generates a numbered list of steps. This is typically done with a single LLM call using a prompt like:  The planner should produce steps that are specific enough to be individually executable but abstract enough to allow flexibility in how each.' },
+    { title: '2. Phase 2: Execution', desc: 'The executor takes each step from the plan and carries it out, typically using a ReAct-style loop or a direct tool call. The executor operates with a narrower focus: it only needs to accomplish the current step, not reason about the overall strategy.' },
+    { title: '3. Phase 3: Replanning', desc: 'After each step completes (or after a step fails), the agent can optionally invoke the planner again with the updated context: "Here was the original plan, here are the results so far, and here is what went wrong. Generate an updated plan for the remaining work.' },
+    { title: '4. Architecture Variants', desc: 'Static Plan-and-Execute: The plan is generated once and executed without revision. Simplest to implement, but brittle if the plan has errors.' },
 ];
 
 export default function WalkthroughAACPlanAndExecute() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACPlanAndExecute() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Plan-and-Execute — Step by Step
+          Plan-and-Execute \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how plan-and-execute works, one stage at a time.

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Low-Rank Decomposition', desc: 'The foundation of lora and fine-tuning democratization begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Where LoRA Is Applied', desc: 'At this stage, the key transformation occurs — the core mechanism that makes lora and fine-tuning democratization work.' },
-    { title: '3. QLoRA: The Democratization Multiplier (May 2023)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Explosion of Fine-Tuned Models', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Beyond LoRA: The Adapter Family', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Low-Rank Decomposition', desc: 'Consider a weight matrix W in a Transformer layer with dimensions d x k (say, 4096 x 4096, or about 16 million parameters). In full fine-tuning, you\'d update all 16 million values.' },
+    { title: '2. Where LoRA Is Applied', desc: 'In practice, LoRA adapters are typically injected into the attention layers\' query (Q) and value (V) projection matrices, as these capture the most task-relevant information. Some implementations also adapt the key (K) projections, feed-forward layers, and embedding layers.' },
+    { title: '3. QLoRA: The Democratization Multiplier (May 2023)', desc: 'If LoRA reduced the cost of fine-tuning by 100x, QLoRA -- introduced by Tim Dettmers, Artidoro Pagnoni, and colleagues in May 2023 -- reduced it by another 10x.' },
+    { title: '4. The Explosion of Fine-Tuned Models', desc: 'LoRA and QLoRA catalyzed an explosion in the open-source model ecosystem. Before LoRA, there were perhaps a few dozen publicly available fine-tuned LLMs.' },
+    { title: '5. Beyond LoRA: The Adapter Family', desc: 'LoRA inspired a family of parameter-efficient fine-tuning (PEFT) methods:  DoRA (2024): Decomposes weight updates into magnitude and direction components, improving LoRA\'s expressiveness without increasing parameters significantly AdaLoRA: Dynamically allocates rank across layers based on.' },
 ];
 
 export default function WalkthroughLLE05LoraAndFineTuningDemocratization() {
@@ -17,10 +17,10 @@ export default function WalkthroughLLE05LoraAndFineTuningDemocratization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          LoRA and Fine-Tuning Democratization — Step by Step
+          LoRA and Fine-Tuning Democratization \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how lora and fine-tuning democratization works, one stage at a time.

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Cost Per Successful Completion', desc: 'The foundation of cost-efficiency metrics begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Token Consumption Analysis', desc: 'At this stage, the key transformation occurs — the core mechanism that makes cost-efficiency metrics work.' },
-    { title: '3. The Cost-Quality Pareto Frontier', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Model Cascading and Routing', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Cost Per Successful Completion', desc: 'The fundamental metric is cost per successful task completion. This is calculated as: total cost of all attempts (including failures) divided by the number of successful completions.' },
+    { title: '2. Token Consumption Analysis', desc: 'Tokens are the primary cost driver for LLM-based agents. Token analysis breaks down consumption by: input tokens (prompts, context, retrieved documents), output tokens (reasoning, tool call arguments, responses), and wasted tokens (tokens in failed attempts, unnecessary reasoning, verbose outputs).' },
+    { title: '3. The Cost-Quality Pareto Frontier', desc: 'Plot each agent configuration as a point on a graph where the x-axis is cost and the y-axis is quality (success rate, output quality score). The Pareto frontier is the set of configurations where no other configuration is both cheaper and better.' },
+    { title: '4. Model Cascading and Routing', desc: 'A powerful cost-optimization strategy is model cascading: route easy tasks to cheap models and hard tasks to expensive models. A classifier (itself a cheap model or heuristic) estimates task difficulty.' },
 ];
 
 export default function WalkthroughAACCostEfficiencyMetrics() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACCostEfficiencyMetrics() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Cost-Efficiency Metrics — Step by Step
+          Cost-Efficiency Metrics \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how cost-efficiency metrics works, one stage at a time.

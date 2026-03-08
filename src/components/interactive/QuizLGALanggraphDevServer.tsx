@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGALanggraphDevServer() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Install with pip install "langgraph-cli[inmem]"; the CLI provides the langgraph command.', isTrue: true, explanation: 'This is a key technical detail of LangGraph Dev Server.' },
-    { text: 'Requires Python 3.11+.', isTrue: true, explanation: 'This is a key technical detail of LangGraph Dev Server.' },
-    { text: 'The langgraph.json config file must be in the directory where you run the command.', isTrue: true, explanation: 'This is a key technical detail of LangGraph Dev Server.' },
+    { text: 'The dev server is production-ready.', isTrue: false, explanation: 'It is designed for local development and debugging only. It lacks production essentials like custom auth, rate limiting, horizontal scaling, and persistent storage.' },
+    { text: 'The langgraph dev command launches a built-in development server with an API, visual Studio UI, and auto-generated docs -- the fastest way to test and debug agents locally.', isTrue: true, explanation: 'This captures the core definition of LangGraph Dev Server.' },
+    { text: 'LangGraph Dev Server is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding LangGraph Dev Server is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

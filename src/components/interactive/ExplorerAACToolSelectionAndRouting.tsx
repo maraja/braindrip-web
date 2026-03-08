@@ -2,11 +2,11 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Description length sweet spot', detail: 'Tool descriptions between 50-150 words perform best. Shorter descriptions lack disambiguation cues; longer ones waste tokens and can confuse the model.' },
-    { label: 'Negative examples in descriptions', detail: 'Adding \"Do NOT use this tool for X\" is surprisingly effective at reducing misrouting, especially for tools with overlapping functionality.' },
+    { label: 'Negative examples in descriptions', detail: 'Adding "Do NOT use this tool for X" is surprisingly effective at reducing misrouting, especially for tools with overlapping functionality.' },
     { label: 'Embedding-based pre-filtering', detail: 'Convert tool descriptions to embeddings, compute cosine similarity with the user query embedding, and include only tools above a threshold (typically top 5-10). OpenAI embeddings or sentence-transformers work well for this.' },
-    { label: 'Tool name matters', detail: 'Models weight the function name heavily. A tool named `search_knowledge_base` is selected more accurately than one named `kb_query_v2`.' },
+    { label: 'Tool name matters', detail: 'Models weight the function name heavily. A tool named search_knowledge_base is selected more accurately than one named kb_query_v2.' },
     { label: 'Parallel selection', detail: 'When multiple tools are needed, models can select several in one turn. Accuracy of multi-tool selection is lower than single-tool selection and requires explicit prompting.' },
-    { label: 'Fallback behavior', detail: 'Always include a mechanism for the agent to say \"I don\'t have a suitable tool for this\" rather than forcing it to pick from an inadequate set.' },
+    { label: 'Fallback behavior', detail: 'Always include a mechanism for the agent to say "I don\'t have a suitable tool for this" rather than forcing it to pick from an inadequate set.' },
 ];
 
 export default function ExplorerAACToolSelectionAndRouting() {
@@ -20,10 +20,10 @@ export default function ExplorerAACToolSelectionAndRouting() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Tool Selection and Routing — Key Details Explorer
+          Tool Selection and Routing \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of tool selection and routing.
+          Click each card to explore the technical details.
         </p>
       </div>
 

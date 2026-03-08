@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCAnomalyDetection() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'MVTec AD benchmark: 15 categories (5 textures, 10 objects), 5,354 images total, 73 anomaly types.', isTrue: true, explanation: 'This is a key technical detail of Anomaly Detection.' },
-    { text: 'Image-level AUROC and pixel-level AUROC are the primary metrics.', isTrue: true, explanation: 'This is a key technical detail of Anomaly Detection.' },
-    { text: 'PatchCore: 99.6% image AUROC, 98.1% pixel AUROC on MVTec AD.', isTrue: true, explanation: 'This is a key technical detail of Anomaly Detection.' },
+    { text: 'Anomaly detection requires examples of anomalies.', isTrue: false, explanation: 'The defining characteristic of one-class AD is that only normal examples are used for training. Methods that require anomaly examples are supervised defect detection, not anomaly detection.' },
+    { text: '15 categories (5 textures, 10 objects), 5,354 images total, 73 anomaly types.', isTrue: true, explanation: 'Image-level AUROC and pixel-level AUROC are the primary metrics.' },
+    { text: '5 categories with logical anomalies.', isTrue: true, explanation: 'PatchCore drops to ~80% AUROC, showing the challenge of logical anomaly detection.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLGrpo() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Group size: $G = 16$--$64$ is typical.', isTrue: true, explanation: 'This is a key technical detail of GRPO.' },
-    { text: 'Larger groups provide better baseline estimates but require more generation compute.', isTrue: true, explanation: 'This is a key technical detail of GRPO.' },
-    { text: 'Sequence-level advantages: Unlike PPO\'s token-level advantages, GRPO assigns the same advantage to every token in a response.', isTrue: true, explanation: 'This is a key technical detail of GRPO.' },
+    { text: 'GRPO is just REINFORCE with a different baseline.', isTrue: false, explanation: 'While conceptually related, GRPO incorporates PPO\'s clipped objective for stable updates and per-group normalization for robust advantage estimation. Standard REINFORCE with a batch-mean baseline does not include clipping and uses a global rather than per-prompt baseline.' },
+    { text: 'G = 16--64 is typical.', isTrue: true, explanation: 'Larger groups provide better baseline estimates but require more generation compute.' },
+    { text: 'Unlike PPO\'s token-level advantages, GRPO assigns the same advantage to every token in a response.', isTrue: true, explanation: 'This is a simplification that works well in practice because the reward itself is sequence-level.' },
+    { text: 'Dividing the objective by response length $$ prevents a bias toward shorter responses when using sequence-level advantages.', isTrue: true, explanation: 'Dividing the objective by response length $$ prevents a bias toward shorter responses when using sequence-level advantages.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

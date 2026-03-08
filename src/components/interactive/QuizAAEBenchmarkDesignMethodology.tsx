@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEBenchmarkDesignMethodology() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Designing an effective agent benchmark requires deliberate decisions about task selection, environment design, metric construction, and contamination resistance -- each fraught with subtle pitfalls that can render the benchmark meaningless.', isTrue: true, explanation: 'This captures the core purpose of Benchmark Design Methodology.' },
-    { text: 'Benchmark Design Methodology is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Benchmark Design Methodology is important for building on more advanced topics.' },
-    { text: 'Benchmark Design Methodology is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Benchmark Design Methodology is important for building on more advanced topics.' },
+    { text: 'More tasks always make a better benchmark.', isTrue: false, explanation: 'Task quality matters more than quantity. 300 well-calibrated, diverse, unambiguous tasks outperform 3,000 noisy ones.' },
+    { text: 'Binary metrics are too strict.', isTrue: false, explanation: 'For tasks with clear success criteria (did the bug get fixed? did the item get added to the cart?), binary metrics are appropriate and eliminate the subjectivity of partial credit schemes.' },
+    { text: 'Real-world tasks are always better than synthetic ones.', isTrue: false, explanation: 'Real-world tasks carry contamination risk, messy edge cases, and update costs. Synthetic tasks with careful design can test the same capabilities more controllably.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

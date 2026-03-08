@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizPEStructuredReasoningFormats() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Format compliance: Modern instruction-tuned models (GPT-4, Claude 3.5+) follow structured formats with 85-95% compliance when the format is clearly specified with headers and few-shot examples.', isTrue: true, explanation: 'This is a key technical detail of Structured Reasoning Formats.' },
-    { text: 'Few-shot examples: 2-3 examples demonstrating the target format typically achieve high compliance; 1 example may be insufficient for complex formats like OTA.', isTrue: true, explanation: 'This is a key technical detail of Structured Reasoning Formats.' },
-    { text: 'ReAct (OTA) performance: The original ReAct paper showed 5-10% improvement on HotpotQA and Fever benchmarks compared to chain-of-thought alone.', isTrue: true, explanation: 'This is a key technical detail of Structured Reasoning Formats.' },
+    { text: 'One reasoning format works for all tasks.', isTrue: false, explanation: 'Each format embodies assumptions about the task structure. OTA assumes iterative interaction, Given-Find-Solution assumes well-defined problems, CER assumes argumentative analysis.' },
+    { text: 'Modern instruction-tuned models (GPT-4, Claude 3.5+) follow structured formats with 85-95% compliance when the format is clearly specified with headers and few-shot examples.', isTrue: true, explanation: 'Modern instruction-tuned models (GPT-4, Claude 3.5+) follow structured formats with 85-95% compliance when the format is clearly specified with headers and few-shot examples.' },
+    { text: 'Structured formats restrict the model\'s reasoning ability.', isTrue: false, explanation: 'Good formats channel reasoning into productive paths without eliminating flexibility within each section. The model can still reason freely within the "Thought" section of OTA or the "Solution" section of Given-Find-Solution.' },
+    { text: '2-3 examples demonstrating the target format typically achieve high compliance; 1 example may be insufficient for complex formats like OTA.', isTrue: true, explanation: '2-3 examples demonstrating the target format typically achieve high compliance; 1 example may be insufficient for complex formats like OTA.' },
+    { text: 'The model will automatically follow any format you describe.', isTrue: false, explanation: 'Complex or ambiguous format specifications often produce partial compliance. Clear section headers, explicit field descriptions, and 2-3 examples are usually necessary for reliable format adherence.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

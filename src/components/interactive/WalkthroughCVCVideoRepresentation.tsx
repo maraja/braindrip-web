@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Frame Stacking', desc: 'The foundation of video representation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Temporal Stride and Clip Sampling', desc: 'At this stage, the key transformation occurs — the core mechanism that makes video representation work.' },
-    { title: '3. Temporal Difference', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Optical Flow as Representation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Modern Tokenization for Transformers', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Frame Stacking', desc: 'The simplest approach stacks T consecutive RGB frames into a tensor of shape T x H x W x 3. Common choices for T range from 8 (lightweight models) to 64 (high-accuracy models like SlowFast).' },
+    { title: '2. Temporal Stride and Clip Sampling', desc: 'Raw videos at 30 fps contain massive redundancy. Temporal stride  selects every -th frame, so a clip of T frames with stride  covers T x  original frames.' },
+    { title: '3. Temporal Difference', desc: 'Instead of raw RGB values, temporal difference frames encode motion:  [equation]  where I_t is frame t. These difference images highlight moving regions and suppress static backgrounds.' },
+    { title: '4. Optical Flow as Representation', desc: 'Pre-computed optical flow fields provide dense motion vectors (u, v) per pixel. Stacking L consecutive flow fields produces a tensor of shape H x W x 2L.' },
+    { title: '5. Modern Tokenization for Transformers', desc: 'Video transformers like ViViT partition the video into non-overlapping spatiotemporal tubes of size t x h x w, where typical values are t=2, h=16, w=16. Each tube is linearly projected into a token embedding.' },
 ];
 
 export default function WalkthroughCVCVideoRepresentation() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCVideoRepresentation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Video Representation — Step by Step
+          Video Representation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how video representation works, one stage at a time.

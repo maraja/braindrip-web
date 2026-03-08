@@ -6,7 +6,7 @@ const DETAILS = [
     { label: 'Performance on morphological analogy', detail: 'On German, French, and Spanish morphological analogy tasks, FastText outperforms Word2Vec by 10-25% absolute accuracy.' },
     { label: 'Word similarity benchmarks', detail: 'On English word similarity tasks (WS-353, SimLex-999), FastText performs comparably to Word2Vec and GloVe. The advantage appears primarily on morphological and OOV-heavy evaluations.' },
     { label: 'Model size', detail: 'A 300-dimensional FastText model with 2 million n-gram buckets occupies roughly 2-4 GB uncompressed. Quantized models reduce this to 300-500 MB with minimal accuracy loss.' },
-    { label: 'Comparison to BPE tokenizers', detail: 'Modern subword tokenization (BPE, as used in `02-text-preprocessing/tokenization-in-nlp.md`) addresses OOV at the tokenization level. FastText addresses it at the embedding level. The approaches are complementary.' },
+    { label: 'Comparison to BPE tokenizers', detail: 'Modern subword tokenization (BPE, as used in 02-text-preprocessing/tokenization-in-nlp.md) addresses OOV at the tokenization level. FastText addresses it at the embedding level. The approaches are complementary.' },
 ];
 
 export default function ExplorerNLPFasttext() {
@@ -20,10 +20,10 @@ export default function ExplorerNLPFasttext() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          FastText — Key Details Explorer
+          FastText \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of fasttext.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE05T5TextToTextFramework() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'T5 (Raffel et al., 2019) unified every NLP task into a single text-to-text format, conducted the most systematic empirical study of transfer learning design choices, and introduced the C4 dataset — demonstrating that encoder-decoder models could match or exceed decoder-only approaches when all tasks are treated as text generation.', isTrue: true, explanation: 'This captures the core purpose of T5: The Text-to-Text Transfer Transformer.' },
-    { text: 'T5: The Text-to-Text Transfer Transformer is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding T5: The Text-to-Text Transfer Transformer is important for building on more advanced topics.' },
-    { text: 'T5: The Text-to-Text Transfer Transformer is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding T5: The Text-to-Text Transfer Transformer is important for building on more advanced topics.' },
+    { text: 'T5 proved encoder-decoder is better than decoder-only.', isTrue: false, explanation: 'The advantage was modest and task-dependent. For equivalent parameter counts, encoder-decoder slightly outperformed decoder-only on understanding tasks.' },
+    { text: 'T5-11B — 11 billion parameters, the largest model at time of publication', isTrue: true, explanation: 'T5-11B — 11 billion parameters, the largest model at time of publication' },
+    { text: 'T5 is just BERT with a decoder.', isTrue: false, explanation: 'T5\'s pre-training objective (span corruption) is different from BERT\'s MLM. The text-to-text framework means fine-tuning is fundamentally different — BERT adds task-specific heads, T5 generates text.' },
+    { text: 'C4 (Colossal Clean Crawled Corpus), ~750GB of clean English text from Common Crawl', isTrue: true, explanation: 'C4 (Colossal Clean Crawled Corpus), ~750GB of clean English text from Common Crawl' },
+    { text: 'The text-to-text framework is just a gimmick.', isTrue: false, explanation: 'Converting classification to text generation does add overhead (generating "positive" takes more compute than a softmax over 2 classes). But the unification benefit is real: one model, one training procedure, one codebase for every task.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

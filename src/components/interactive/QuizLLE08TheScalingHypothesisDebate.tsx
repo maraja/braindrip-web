@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE08TheScalingHypothesisDebate() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: '(2022), challenged by Schaeffer et al.', isTrue: true, explanation: 'This is a key technical detail of The Scaling Hypothesis Debate.' },
-    { text: '(2023) AI investment driven by scaling belief: $100B+ annually by 2024 Current consensus: Scale necessary but not sufficient; data quality, training, and post-training all critical', isTrue: true, explanation: 'This is a key technical detail of The Scaling Hypothesis Debate.' },
-    { text: 'The contested idea that intelligence is an emergent property of sufficient scale — that making models bigger and training them on more data will eventually produce general intelligence — became the defining intellectual debate of the LLM era.', isTrue: true, explanation: 'This captures the core purpose of The Scaling Hypothesis Debate.' },
+    { text: 'The scaling hypothesis says bigger is always better.', isTrue: false, explanation: 'Even scaling advocates acknowledge that data quality, training methodology, and post-training matter. The hypothesis is about the centrality of scale, not its exclusivity.' },
+    { text: 'Power-law improvement spanning 7+ orders of magnitude', isTrue: true, explanation: 'Power-law improvement spanning 7+ orders of magnitude' },
+    { text: 'The scaling hypothesis has been proven false.', isTrue: false, explanation: 'Neither proven nor disproven. Models keep getting better with scale, but it is unclear whether this trend will continue to AGI or plateau.' },
+    { text: '117M (GPT-1) -&gt; 1.5B (GPT-2) -&gt; 175B (GPT-3), each with qualitative capability jumps', isTrue: true, explanation: '117M (GPT-1) -&gt; 1.5B (GPT-2) -&gt; 175B (GPT-3), each with qualitative capability jumps' },
+    { text: 'If scaling works, we don\'t need any other research.', isTrue: false, explanation: 'Even strong scaling advocates at OpenAI and Google invest heavily in RLHF, data curation, architecture optimization, and safety research. Scale is a necessary condition, not a sufficient one, in virtually everyone\'s view.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

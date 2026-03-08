@@ -2,8 +2,8 @@ import { useState } from 'react';
 export default function QuizRLMetaReinforcementLearning() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Meta-RL trains agents across a distribution of tasks so they can adapt to new, unseen tasks in just a few episodes -- learning to learn rather than learning to solve one problem.', isTrue: true, explanation: 'This captures the core purpose of Meta-Reinforcement Learning.' },
-    { text: 'Meta-Reinforcement Learning is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Meta-Reinforcement Learning is important for building on more advanced topics.' },
+    { text: 'Meta-RL is the same as multi-task RL', isTrue: false, explanation: ': Multi-task RL optimizes a single policy across all tasks simultaneously. Meta-RL explicitly trains the adaptation mechanism -- the ability to specialize quickly to a new task.' },
+    { text: 'Meta-RL trains agents across a distribution of tasks so they can adapt to new, unseen tasks in just a few episodes -- learning to learn rather than learning to solve one problem.', isTrue: true, explanation: 'This captures the core definition of Meta-Reinforcement Learning.' },
     { text: 'Meta-Reinforcement Learning is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Meta-Reinforcement Learning is important for building on more advanced topics.' },
   ];
   return (

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPBidirectionalRnns() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Parameter count: A single BiLSTM layer with d_h = 512 per direction and d_x = 300 input has approximately 3.32M parameters (2x the unidirectional LSTM), producing 1024-dimensional outputs.', isTrue: true, explanation: 'This is a key technical detail of Bidirectional RNNs.' },
-    { text: 'Computational cost: Two full sequential passes over the sequence.', isTrue: true, explanation: 'This is a key technical detail of Bidirectional RNNs.' },
-    { text: 'Wall-clock time is approximately 2x a unidirectional model, though the forward and backward passes can run in parallel if memory allows.', isTrue: true, explanation: 'This is a key technical detail of Bidirectional RNNs.' },
+    { text: 'Bidirectional RNNs can be used for language modeling and text generation.', isTrue: false, explanation: 'They cannot be used for standard autoregressive generation because generating token t would require knowing tokens t+1, t+2, ..., T -- which have not been generated yet. Bidirectional models are for encoding (understanding) tasks, not decoding (generation) tasks.' },
+    { text: 'A single BiLSTM layer with d_h = 512 per direction and d_x = 300 input has approximately 3.32M parameters (2x the unidirectional LSTM), producing 1024-dimensional outputs.', isTrue: true, explanation: 'A single BiLSTM layer with d_h = 512 per direction and d_x = 300 input has approximately 3.32M parameters (2x the unidirectional LSTM), producing 1024-dimensional outputs.' },
+    { text: 'The backward pass is just the forward pass with reversed input.', isTrue: false, explanation: 'While the sequence is fed in reverse order, the backward RNN has its own separate set of parameters. It is a completely independent model that happens to read the sequence from right to left.' },
+    { text: 'Two full sequential passes over the sequence.', isTrue: true, explanation: 'Wall-clock time is approximately 2x a unidirectional model, though the forward and backward passes can run in parallel if memory allows.' },
+    { text: 'Bidirectional means the model can attend to any position.', isTrue: false, explanation: 'Bidirectional RNNs still process sequentially in each direction. The representation at position t in the forward pass only has information from positions 1 through t.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Feature Mapping Example', desc: 'The foundation of kernel methods begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Common Kernel Functions', desc: 'At this stage, the key transformation occurs — the core mechanism that makes kernel methods work.' },
-    { title: '3. Mercer\'s Theorem', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Kernel SVM', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Kernel Ridge Regression', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Feature Mapping Example', desc: 'Consider input x = (x_1, x_2)  &#123;R&#125;^2 and the polynomial mapping:  [equation]  The inner product in feature space is:  [equation]  So K(x, x\') = (x^T x\')^2 computes the inner product in the 3D feature space using only operations in the original 2D space.' },
+    { title: '2. Common Kernel Functions', desc: 'Linear Kernel: [equation] No mapping at all -- this recovers the standard linear model. Useful as a baseline and when the data is already high-dimensional (e.g., text with TF-IDF).' },
+    { title: '3. Mercer\'s Theorem', desc: 'Not every function of two arguments is a valid kernel. Mercer\'s theorem states that K(x, x\') is a valid kernel if and only if the kernel matrix (Gram matrix) K_&#123;ij&#125; = K(x_i, x_j) is positive semi-definite for any set of input points.' },
+    { title: '4. Kernel SVM', desc: 'The SVM dual formulation depends on data only through inner products:  [equation]  Replacing x_i^T x_j with K(x_i, x_j) is all that is needed to "kernelize" the SVM.' },
+    { title: '5. Kernel Ridge Regression', desc: 'Ridge regression with a kernel replaces the linear solution w = (X^T X +  I)^&#123;-1&#125; X^T y with:  [equation]  where K is the n x n kernel matrix. Predictions for a new point x^* are:  [equation]  This is known as kernel ridge regression and generalizes linear ridge regression to arbitrary nonlinear.' },
+    { title: '6. Computational Cost', desc: 'The central limitation of kernel methods is computational: Kernel matrix: Computing and storing the n x n Gram matrix requires O(n^2) space and O(n^2 d) time. Training: Solving kernel SVM or kernel ridge regression costs O(n^3) (matrix inversion or QP solving).' },
 ];
 
 export default function WalkthroughMLFKernelMethods() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFKernelMethods() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Kernel Methods — Step by Step
+          Kernel Methods \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how kernel methods works, one stage at a time.

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEOutputLengthControl() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'RLHF creates a systematic verbosity bias: models are trained to associate longer responses with higher human ratings, making conciseness an active override.', isTrue: true, explanation: 'This is a key technical detail of Output Length Control.' },
-    { text: 'Sentence-count instructions achieve 85-95% compliance, while word-count instructions achieve only 70-85% due to imprecise token-to-word mapping during generation.', isTrue: true, explanation: 'This is a key technical detail of Output Length Control.' },
-    { text: 'Word count variance is typically +-20% of the target — a "100 word" instruction produces 80-120 word responses.', isTrue: true, explanation: 'This is a key technical detail of Output Length Control.' },
+    { text: 'Saying \'be concise\' makes the model concise.', isTrue: false, explanation: 'Vague brevity instructions are among the least effective prompting techniques. Models routinely produce 300+ word responses after being told to "be brief." Use specific, measurable constraints instead.' },
+    { text: 'models are trained to associate longer responses with higher human ratings, making conciseness an active override.', isTrue: true, explanation: 'models are trained to associate longer responses with higher human ratings, making conciseness an active override.' },
+    { text: 'Output length control uses prompt instructions, parameter settings, and structural techniques to manage the trade-off between brevity and completeness in LLM responses.', isTrue: true, explanation: 'This captures the core definition of Output Length Control.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

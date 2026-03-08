@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Train/Test Split', desc: 'The foundation of data splitting and sampling begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Train/Validation/Test Split', desc: 'At this stage, the key transformation occurs — the core mechanism that makes data splitting and sampling work.' },
-    { title: '3. K-Fold Cross-Validation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Stratified Splitting', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Time Series Splitting', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Train/Test Split', desc: 'The simplest scheme: reserve a fraction (commonly 20-30%) of the data for testing and train on the rest. For a dataset of n observations with a test fraction :  [equation]  The split should be random but reproducible (set a random seed).' },
+    { title: '2. Train/Validation/Test Split', desc: 'Adding a validation set separates two concerns:  Training set (60-70%): Learn model parameters (weights, coefficients). Validation set (15-20%): Tune hyperparameters (learning rate, regularization strength, tree depth), select among candidate models, and decide when to stop training.' },
+    { title: '3. K-Fold Cross-Validation', desc: 'Cross-validation reduces the variance of the performance estimate by averaging over multiple splits:  Partition D into K equal-sized folds \\&#123;F_1, F_2, , F_K\\&#125;. For each fold k: train on D  F_k, evaluate on F_k.' },
+    { title: '4. Stratified Splitting', desc: 'When the target variable is imbalanced (e.g., 95% negative, 5% positive), a random split might produce a test fold with 0% positives by chance. Stratified splitting ensures each subset maintains the same class proportions as the full dataset.' },
+    { title: '5. Time Series Splitting', desc: 'Standard random splitting is invalid for time series data because it allows the model to train on future data and predict the past -- a severe form of data leakage. Temporal split: Train on data before time t, test on data after t.' },
+    { title: '6. Group Splitting', desc: 'When observations are grouped (e.g., multiple records per patient, multiple images per photographer), random splitting can place different records from the same group in both train and test sets. If the model learns patient-specific patterns, its test performance is inflated.' },
 ];
 
 export default function WalkthroughMLFDataSplittingAndSampling() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFDataSplittingAndSampling() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Data Splitting and Sampling — Step by Step
+          Data Splitting and Sampling \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how data splitting and sampling works, one stage at a time.

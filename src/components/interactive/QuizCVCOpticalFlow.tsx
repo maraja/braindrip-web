@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCOpticalFlow() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Lucas-Kanade on 200 tracked points runs in under 2 ms per frame on a modern CPU; it scales linearly with point count.', isTrue: true, explanation: 'This is a key technical detail of Optical Flow.' },
-    { text: 'Dense Farneback flow on 640x480 takes approximately 30--80 ms per frame on CPU, depending on pyramid levels and iteration count.', isTrue: true, explanation: 'This is a key technical detail of Optical Flow.' },
-    { text: 'End-point error (EPE) is the standard metric: average Euclidean distance between predicted and ground-truth flow vectors.', isTrue: true, explanation: 'This is a key technical detail of Optical Flow.' },
+    { text: 'Optical flow equals scene motion.', isTrue: false, explanation: 'Optical flow captures apparent 2D image motion, which conflates camera motion, object motion, and depth effects. A static object closer to the camera has larger flow than a moving distant object.' },
+    { text: 'Optical flow estimates the per-pixel apparent motion between consecutive video frames, using methods like Lucas-Kanade for sparse tracking and Horn-Schunck for dense fields.', isTrue: true, explanation: 'This captures the core definition of Optical Flow.' },
+    { text: 'Optical Flow is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Optical Flow is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Four-Component Architecture', desc: 'The foundation of inspect ai and open-source evaluation frameworks begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Sandboxing Infrastructure', desc: 'At this stage, the key transformation occurs — the core mechanism that makes inspect ai and open-source evaluation frameworks work.' },
-    { title: '3. Running an Evaluation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Broader Open-Source Ecosystem', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Four-Component Architecture', desc: 'Inspect AI decomposes every evaluation into four composable primitives:  Tasks define what to evaluate. A Task bundles together a dataset, a solver pipeline, and one or more scorers.' },
+    { title: '2. Sandboxing Infrastructure', desc: 'Agent evaluation often requires agents to execute code, browse the web, or manipulate files. Inspect AI provides first-class sandboxing support across multiple backends:  Docker: The default sandbox.' },
+    { title: '3. Running an Evaluation', desc: 'A typical Inspect AI evaluation follows this flow: define a Task that references a dataset, configure a Solver pipeline that represents the agent behavior under test, attach Scorers that grade the output, then execute with inspect eval.' },
+    { title: '4. The Broader Open-Source Ecosystem', desc: 'Vivaria (METR) is purpose-built for agent elicitation research -- studying how capable an agent can become under optimal prompting and scaffolding. It provides infrastructure for long-running agent tasks, detailed trajectory logging, and human-in-the-loop oversight during evaluation.' },
 ];
 
 export default function WalkthroughAAEInspectAiAndOpenSourceFrameworks() {
@@ -16,10 +16,10 @@ export default function WalkthroughAAEInspectAiAndOpenSourceFrameworks() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Inspect AI and Open-Source Evaluation Frameworks — Step by Step
+          Inspect AI and Open-Source Evaluation Frameworks \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how inspect ai and open-source evaluation frameworks works, one stage at a time.

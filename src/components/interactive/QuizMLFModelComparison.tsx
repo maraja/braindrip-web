@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFModelComparison() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Multiple comparisons: When comparing many model pairs, apply corrections (Bonferroni, Holm) to control the family-wise error rate.', isTrue: true, explanation: 'This is a key technical detail of Model Comparison.' },
-    { text: 'Power: McNemar\'s test has higher statistical power than paired t-tests on CV folds for large test sets because it uses individual predictions rather than fold aggregates.', isTrue: true, explanation: 'This is a key technical detail of Model Comparison.' },
-    { text: 'Assumptions matter: The paired t-test assumes normally distributed differences.', isTrue: true, explanation: 'This is a key technical detail of Model Comparison.' },
+    { text: 'The model with higher cross-validation accuracy is always better.', isTrue: false, explanation: 'Without a statistical test, you cannot know whether the difference is due to chance. Fold-level variance can be substantial.' },
+    { text: 'When comparing many model pairs, apply corrections (Bonferroni, Holm) to control the family-wise error rate.', isTrue: true, explanation: 'When comparing many model pairs, apply corrections (Bonferroni, Holm) to control the family-wise error rate.' },
+    { text: 'The paired t-test assumes normally distributed differences.', isTrue: true, explanation: 'When in doubt, use the Wilcoxon signed-rank test.' },
+    { text: 'A 0.1% accuracy improvement may be statistically significant on a large test set but practically meaningless.', isTrue: true, explanation: 'Always report effect sizes.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Style Control (Tone, Voice, Register)', desc: 'The foundation of creative writing prompting begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Voice Consistency Across Long Outputs', desc: 'At this stage, the key transformation occurs — the core mechanism that makes creative writing prompting work.' },
-    { title: '3. Creative Constraints', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Temperature and Creative Control', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Style Control (Tone, Voice, Register)', desc: 'Style has multiple independent dimensions that should be specified separately:  Tone: The emotional quality of the writing. "Write in a melancholic but not despairing tone — the sadness of autumn, not the despair of loss.' },
+    { title: '2. Voice Consistency Across Long Outputs', desc: 'Maintaining consistent voice over 1,000+ words is a specific challenge:  Character sheet approach: Define the voice comprehensively at the start, including vocabulary tendencies, sentence patterns, topics the voice gravitates toward and avoids, and characteristic phrases.' },
+    { title: '3. Creative Constraints', desc: 'Paradoxically, creative constraints often produce better creative output than open-ended prompts:  Structural constraints: "Write a story in exactly 6 words." "Structure the essay as a series of questions without answers." "Tell the story backwards, starting with the ending.' },
+    { title: '4. Temperature and Creative Control', desc: 'Temperature settings interact significantly with creative writing prompts:  Low temperature (0.1-0.3): Produces predictable, conventional output. Useful for formal writing, technical descriptions, and constrained formats where creativity should be restrained.' },
 ];
 
 export default function WalkthroughPECreativeWritingPrompting() {
@@ -16,10 +16,10 @@ export default function WalkthroughPECreativeWritingPrompting() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Creative Writing Prompting — Step by Step
+          Creative Writing Prompting \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how creative writing prompting works, one stage at a time.

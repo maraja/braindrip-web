@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizRLValueFunctions() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'DQN (Mnih et al., 2015) approximates $Q^*$ with a CNN and uses experience replay (buffer of $10^6$ transitions) and a target network (updated every $10&#123;,&#125;000$ steps) for stability.', isTrue: true, explanation: 'This is a key technical detail of Value Functions.' },
-    { text: 'Double Q-learning (van Hasselt et al., 2016) addresses overestimation bias in Q-learning by decoupling action selection from evaluation.', isTrue: true, explanation: 'This is a key technical detail of Value Functions.' },
-    { text: 'Dueling networks (Wang et al., 2016) decompose $Q(s, a) = V(s) + A(s, a)$ architecturally, sharing representation for the state-value.', isTrue: true, explanation: 'This is a key technical detail of Value Functions.' },
+    { text: 'V and Q contain different information.', isTrue: false, explanation: 'They encode the same information differently. Given the MDP dynamics, V and Q are fully interconvertible.' },
+    { text: 'Higher V(s) means the state is inherently better.', isTrue: false, explanation: 'V^(s) depends on the policy . A state might have high value under a good policy and low value under a bad one.' },
+    { text: 'Value functions are always accurate after training.', isTrue: false, explanation: 'Function approximation introduces systematic errors. Overestimation bias is a well-documented issue in Q-learning with function approximation, motivating techniques like double Q-learning and clipped double Q (used in TD3 and SAC).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEDriftDetectionAndModelUpdates() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Agent performance can degrade without any change to your code due to model provider updates, user behavior shifts, and environmental changes -- and detecting these silent regressions requires systematic statistical monitoring of quality distributions over time.', isTrue: true, explanation: 'This captures the core purpose of Drift Detection and Model Updates.' },
-    { text: 'Drift Detection and Model Updates is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Drift Detection and Model Updates is important for building on more advanced topics.' },
-    { text: 'Drift Detection and Model Updates is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Drift Detection and Model Updates is important for building on more advanced topics.' },
+    { text: 'We pin our model version, so drift cannot affect us.', isTrue: false, explanation: 'Pinning prevents one source of drift (model updates) but not others. User behavior shifts, environmental changes, and upstream API modifications all cause drift regardless of your model version.' },
+    { text: 'Drift detection is only relevant for ML models, not rule-based systems.', isTrue: false, explanation: 'Any system that interacts with external data sources, APIs, or users is subject to drift. Even a purely rule-based agent that calls external tools will experience drift when those tools change behavior.' },
+    { text: 'If our metrics are stable this week, there is no drift.', isTrue: false, explanation: 'Short-term stability does not rule out slow drift. A 0.3% weekly decline in quality is invisible in any single week\'s data but represents a 15% annual decline.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

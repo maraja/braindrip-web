@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFDecisionTrees() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Axis-aligned splits: Standard trees split on one feature at a time, producing rectangular decision regions.', isTrue: true, explanation: 'This is a key technical detail of Decision Trees.' },
-    { text: 'Oblique trees split on linear combinations but are more expensive.', isTrue: true, explanation: 'This is a key technical detail of Decision Trees.' },
-    { text: 'Instability: Small changes in data can produce very different trees.', isTrue: true, explanation: 'This is a key technical detail of Decision Trees.' },
+    { text: 'Decision trees are weak learners.', isTrue: false, explanation: 'A single deep tree can have very high capacity and overfit badly. The term "weak learner" refers to shallow (depth-1 or depth-2) trees used in boosting, not trees in general.' },
+    { text: 'Standard trees split on one feature at a time, producing rectangular decision regions.', isTrue: true, explanation: 'Oblique trees split on linear combinations but are more expensive.' },
+    { text: 'Small changes in data can produce very different trees.', isTrue: true, explanation: 'This is a feature, not a bug, for ensemble methods that exploit this variance.' },
+    { text: 'Trees handle categorical features naturally by testing subset membership (which categories go left vs.', isTrue: true, explanation: 'Trees handle categorical features naturally by testing subset membership (which categories go left vs.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

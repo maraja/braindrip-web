@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFResponsibleAiAndFairness() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Intersectionality: Fairness metrics computed on single protected attributes miss compounded disadvantages.', isTrue: true, explanation: 'This is a key technical detail of Responsible AI and Fairness.' },
-    { text: 'A model may be fair for women and fair for minorities but unfair for minority women specifically.', isTrue: true, explanation: 'This is a key technical detail of Responsible AI and Fairness.' },
-    { text: 'Proxy features: Removing the protected attribute from features does not eliminate bias.', isTrue: true, explanation: 'This is a key technical detail of Responsible AI and Fairness.' },
+    { text: 'Removing protected attributes from the data makes the model fair.', isTrue: false, explanation: 'Proxy variables carry the same information. A model without race as a feature can still discriminate via zip code, income, and education.' },
+    { text: 'Fairness metrics computed on single protected attributes miss compounded disadvantages.', isTrue: true, explanation: 'A model may be fair for women and fair for minorities but unfair for minority women specifically.' },
+    { text: 'Removing the protected attribute from features does not eliminate bias.', isTrue: true, explanation: 'Correlated features (zip code, name, education) can proxy for protected attributes. This is called "fairness through unawareness" and it does not work.' },
+    { text: 'Measure the accuracy cost of each fairness constraint.', isTrue: true, explanation: 'Often the tradeoff is small (1-2% accuracy) for significant fairness improvement.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

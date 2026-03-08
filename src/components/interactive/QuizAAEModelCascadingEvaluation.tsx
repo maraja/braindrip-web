@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEModelCascadingEvaluation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Model cascading routes easy tasks to cheap, fast models and hard tasks to expensive, capable models -- and evaluating these routing strategies requires measuring both the router\'s accuracy and the system\'s aggregate cost-quality tradeoff.', isTrue: true, explanation: 'This captures the core purpose of Model Cascading Evaluation.' },
-    { text: 'Model Cascading Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Model Cascading Evaluation is important for building on more advanced topics.' },
-    { text: 'Model Cascading Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Model Cascading Evaluation is important for building on more advanced topics.' },
+    { text: 'Cascading is just about saving money.', isTrue: false, explanation: 'While cost is the primary motivation, cascading also improves latency (most tasks hit faster models), enables graceful degradation (if the expensive model is down, cheap models still serve easy requests), and provides natural monitoring signals (routing distribution shifts indicate task distribution shifts).' },
+    { text: 'You only need to evaluate the overall cascade, not the router.', isTrue: false, explanation: 'If the router is poorly calibrated but happens to work on your benchmark distribution, it will fail when deployed on a different distribution. Evaluating the router\'s difficulty predictions independently from end-to-end performance is essential for robustness.' },
+    { text: 'More tiers are always better.', isTrue: false, explanation: 'Each additional tier adds routing complexity, latency overhead from potential escalation, and evaluation surface area. In practice, two to three tiers capture most of the benefit.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Three Power Laws', desc: 'The foundation of kaplan scaling laws begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Compute-Optimal Allocation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes kaplan scaling laws work.' },
-    { title: '3. Sample Efficiency of Larger Models', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. What Doesn\'t Matter (Much)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Three Power Laws', desc: 'The paper identified three key scaling relationships, each following the form L(x) = (x_0 / x)^alpha, where L is the cross-entropy loss and x is the scaling variable:  Model size (N): Loss scales as a power law with the number of non-embedding parameters. The exponent alpha_N was approximately 0.' },
+    { title: '2. The Compute-Optimal Allocation', desc: 'Perhaps the most actionable finding was the prescription for how to allocate a fixed compute budget. concluded that under a fixed compute budget, you should prioritize making the model as large as possible, even if this means training on relatively fewer tokens.' },
+    { title: '3. Sample Efficiency of Larger Models', desc: 'A key finding was that larger models are more sample-efficient — they extract more information from each training token. A 1B parameter model achieves the same loss on 10x fewer tokens than a 100M parameter model.' },
+    { title: '4. What Doesn\'t Matter (Much)', desc: 'Surprisingly, Kaplan et al. found that many architectural details had minimal impact on the scaling curves.' },
 ];
 
 export default function WalkthroughLLE02KaplanScalingLaws() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE02KaplanScalingLaws() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Kaplan Scaling Laws — Step by Step
+          Kaplan Scaling Laws \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how kaplan scaling laws works, one stage at a time.

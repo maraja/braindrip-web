@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCMultiViewGeometry() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The fundamental matrix has 7 DoF (9 entries - 1 scale - 1 rank constraint).', isTrue: true, explanation: 'This is a key technical detail of Multi-View Geometry.' },
-    { text: 'The essential matrix has 5 DoF.', isTrue: true, explanation: 'This is a key technical detail of Multi-View Geometry.' },
-    { text: 'RANSAC for F estimation with 50% outlier rate needs ~590 iterations (8-point) at 99% confidence.', isTrue: true, explanation: 'This is a key technical detail of Multi-View Geometry.' },
+    { text: 'The fundamental matrix gives you 3D structure.', isTrue: false, explanation: 'F encodes the geometric relationship between two views but does not directly give 3D points. You need F plus correspondences plus triangulation to recover 3D.' },
+    { text: 'Multi-view geometry provides the mathematical framework for relating 2D image observations from multiple cameras to 3D scene structure, grounded in epipolar geometry, the fundamental matrix, and triangulation.', isTrue: true, explanation: 'This captures the core definition of Multi-View Geometry.' },
+    { text: 'Multi-View Geometry is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Multi-View Geometry is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

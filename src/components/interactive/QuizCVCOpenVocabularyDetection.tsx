@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizCVCOpenVocabularyDetection() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Open-vocabulary detection extends object detection beyond fixed label sets by conditioning on arbitrary text queries, enabling detection of any object category described in natural language.', isTrue: true, explanation: 'This captures the core purpose of Open-Vocabulary Detection.' },
-    { text: 'Open-Vocabulary Detection is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Open-Vocabulary Detection is important for building on more advanced topics.' },
-    { text: 'Open-Vocabulary Detection is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Open-Vocabulary Detection is important for building on more advanced topics.' },
+    { text: 'Open-vocabulary detection can find anything.', isTrue: false, explanation: 'Performance degrades significantly for fine-grained distinctions (e.g., bird species), abstract concepts, and categories poorly represented in the pretraining text. It excels at common-noun object categories.' },
+    { text: 'The standard evaluation uses LVIS (1,203 categories) split into frequent, common, and rare; OVD models are evaluated primarily on rare categories in zero-shot settings', isTrue: true, explanation: 'The standard evaluation uses LVIS (1,203 categories) split into frequent, common, and rare; OVD models are evaluated primarily on rare categories in zero-shot settings' },
+    { text: 'You need detection annotations for all categories.', isTrue: false, explanation: 'The key insight is that you need detection annotations for proposal generation (class-agnostic) but not for classification. The text encoder generalizes classification to unseen categories.' },
+    { text: 'Models trained on COCO base categories (48 classes) are evaluated on novel categories (17 classes); top models reach ~60 AP on novel categories', isTrue: true, explanation: 'Models trained on COCO base categories (48 classes) are evaluated on novel categories (17 classes); top models reach ~60 AP on novel categories' },
+    { text: 'Open-vocabulary and zero-shot detection are the same thing.', isTrue: false, explanation: 'Zero-shot detection means no training examples for test categories. Open-vocabulary is broader -- it means the label set is defined by text at inference time, which may or may not include training categories.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

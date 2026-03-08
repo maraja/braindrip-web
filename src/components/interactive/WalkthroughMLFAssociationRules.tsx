@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Core Metrics', desc: 'The foundation of association rules begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Apriori Algorithm', desc: 'At this stage, the key transformation occurs — the core mechanism that makes association rules work.' },
-    { title: '3. Generating Rules from Frequent Itemsets', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. FP-Growth: A Faster Alternative', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Core Metrics', desc: 'Three measures quantify the strength of a rule A  B:  Support: The fraction of transactions containing both A and B:  [equation]  Support measures how frequently the pattern occurs. Low-support rules may be statistically unreliable.' },
+    { title: '2. The Apriori Algorithm', desc: 'Apriori (Agrawal and Srikant, 1994) discovers all frequent itemsets -- sets of items with support above a user-specified minimum threshold s_&#123;&#125; -- using a level-wise search:  Generate candidate 1-itemsets: Count the support of each individual item. Prune those below s_&#123;&#125;.' },
+    { title: '3. Generating Rules from Frequent Itemsets', desc: 'Once all frequent itemsets are discovered, generate rules by partitioning each frequent itemset F into antecedent A and consequent B = F  A:  For each non-empty subset A  F: Compute confidence(A  F  A) = &#123;support(F)&#125;&#123;support(A)&#125; If confidence exceeds the minimum threshold c_&#123;&#125;, output the rule.' },
+    { title: '4. FP-Growth: A Faster Alternative', desc: 'FP-Growth (Han et al., 2000) avoids the expensive candidate generation of Apriori:  Build an FP-tree: Scan the database twice. First, count item frequencies and discard infrequent items.' },
 ];
 
 export default function WalkthroughMLFAssociationRules() {
@@ -16,10 +16,10 @@ export default function WalkthroughMLFAssociationRules() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Association Rules — Step by Step
+          Association Rules \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how association rules works, one stage at a time.

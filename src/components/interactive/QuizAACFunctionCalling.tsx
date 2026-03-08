@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACFunctionCalling() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Parallel function calling: OpenAI and Anthropic both support the model requesting multiple function calls in a single response turn, enabling concurrent tool execution.', isTrue: true, explanation: 'This is a key technical detail of Function Calling.' },
-    { text: 'Token cost: Function schemas consume input tokens.', isTrue: true, explanation: 'This is a key technical detail of Function Calling.' },
-    { text: 'Ten functions with detailed schemas can easily add 2,000-3,000 tokens to every request.', isTrue: true, explanation: 'This is a key technical detail of Function Calling.' },
+    { text: 'The LLM executes the function', isTrue: false, explanation: ': The model only generates the call specification. Execution happens in the host application.' },
+    { text: 'OpenAI and Anthropic both support the model requesting multiple function calls in a single response turn, enabling concurrent tool execution.', isTrue: true, explanation: 'OpenAI and Anthropic both support the model requesting multiple function calls in a single response turn, enabling concurrent tool execution.' },
+    { text: 'You can constrain the model to always call a specific function (OpenAI\'s tool_choice: &#123;"type": "function", "function": &#123;"name": "X"&#125;&#125;) or to call any function (tool_choice: "required").', isTrue: true, explanation: 'You can constrain the model to always call a specific function (OpenAI\'s tool_choice: &#123;"type": "function", "function": &#123;"name": "X"&#125;&#125;) or to call any function (tool_choice: "required").' },
+    { text: 'Function schemas consume input tokens.', isTrue: true, explanation: 'Ten functions with detailed schemas can easily add 2,000-3,000 tokens to every request.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

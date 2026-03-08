@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Priority-Based Inclusion', desc: 'The foundation of context window management begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Compression Strategies', desc: 'At this stage, the key transformation occurs — the core mechanism that makes context window management work.' },
-    { title: '3. Sliding Window and Summarization', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Dynamic Context Assembly', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Priority-Based Inclusion', desc: 'Not all context is equally important. A practical priority hierarchy: (1) System prompt with agent identity, capabilities, and constraints -- always included.' },
+    { title: '2. Compression Strategies', desc: 'When raw context exceeds the window, compression reduces token count while preserving information. Common strategies include: Summarization -- use a smaller, cheaper LLM to summarize older conversation turns into a paragraph.' },
+    { title: '3. Sliding Window and Summarization', desc: 'The sliding window approach keeps the N most recent messages verbatim and summarizes everything older. A variation: maintain a "running summary" that is updated after every K turns.' },
+    { title: '4. Dynamic Context Assembly', desc: 'Advanced agents assemble context dynamically based on the current step. A coding agent about to write a function retrieves only the relevant source files, not the entire repository.' },
 ];
 
 export default function WalkthroughAACContextWindowManagement() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACContextWindowManagement() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Context Window Management — Step by Step
+          Context Window Management \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how context window management works, one stage at a time.

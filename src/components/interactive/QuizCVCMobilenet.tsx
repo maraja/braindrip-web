@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizCVCMobilenet() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'MobileNetV1: 4.2M params, 569M MAdds, 70.6% top-1 on ImageNet.', isTrue: true, explanation: 'This is a key technical detail of MobileNet.' },
-    { text: 'On a Pixel 1 phone: 113ms inference.', isTrue: true, explanation: 'This is a key technical detail of MobileNet.' },
-    { text: 'MobileNetV2: 3.4M params, 300M MAdds, 72.0% top-1.', isTrue: true, explanation: 'This is a key technical detail of MobileNet.' },
+    { text: 'MobileNet is just a compressed version of a larger network.', isTrue: false, explanation: 'MobileNet was designed from scratch for efficiency, not derived by pruning or distilling a larger model. The architecture itself embodies the efficiency, unlike post-hoc compression methods.' },
+    { text: '4.2M params, 569M MAdds, 70.6% top-1 on ImageNet.', isTrue: true, explanation: 'On a Pixel 1 phone: 113ms inference.' },
+    { text: '3.4M params, 300M MAdds, 72.0% top-1.', isTrue: true, explanation: 'Inference: 75ms on Pixel 1.' },
+    { text: '5.4M params, 219M MAdds, 75.2% top-1.', isTrue: true, explanation: 'Inference: 51ms on Pixel 1.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

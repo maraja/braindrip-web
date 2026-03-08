@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPNlpForSocialGood() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Clinical NER performance: Medication extraction achieves 93--95% F1; disease/condition extraction 86--91% F1; adverse event detection 84--88% F1 on i2b2/n2c2 benchmarks.', isTrue: true, explanation: 'This is a key technical detail of NLP for Social Good.' },
-    { text: 'AES agreement: Top AES systems achieve QWK of 0.78--0.85 with human raters, compared to human-human QWK of 0.80--0.90.', isTrue: true, explanation: 'This is a key technical detail of NLP for Social Good.' },
-    { text: 'Crisis tweet classification: Real-time systems process 10,000+ tweets per minute with latencies under 100ms using lightweight BERT models.', isTrue: true, explanation: 'This is a key technical detail of NLP for Social Good.' },
+    { text: 'NLP for social good is just regular NLP applied to new domains.', isTrue: false, explanation: 'The technical challenges are often secondary to the ethical, logistical, and community engagement challenges. Building a clinical NLP system requires navigating HIPAA compliance, obtaining IRB approval, partnering with clinicians, and validating in real clinical workflows -- not just training a model.' },
+    { text: 'Medication extraction achieves 93--95% F1; disease/condition extraction 86--91% F1; adverse event detection 84--88% F1 on i2b2/n2c2 benchmarks.', isTrue: true, explanation: 'Medication extraction achieves 93--95% F1; disease/condition extraction 86--91% F1; adverse event detection 84--88% F1 on i2b2/n2c2 benchmarks.' },
+    { text: 'More technology automatically means more social benefit.', isTrue: false, explanation: 'Deploying NLP in sensitive contexts without community input, cultural understanding, and appropriate safeguards can cause harm. Automated mental health monitoring without clinical oversight can lead to false alarms, stigmatization, or inappropriate interventions.' },
+    { text: 'Top AES systems achieve QWK of 0.78--0.85 with human raters, compared to human-human QWK of 0.80--0.90.', isTrue: true, explanation: 'Top AES systems achieve QWK of 0.78--0.85 with human raters, compared to human-human QWK of 0.80--0.90.' },
+    { text: 'Social good applications require state-of-the-art models.', isTrue: false, explanation: 'Many impactful applications use relatively simple NLP -- rule-based de-identification, keyword-based crisis monitoring, n-gram readability scoring. The bottleneck is often data access, domain expertise, and deployment infrastructure, not model sophistication.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

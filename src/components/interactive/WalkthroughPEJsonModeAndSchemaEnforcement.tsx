@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. API-Level JSON Mode', desc: 'The foundation of json mode and schema enforcement begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Schema-Constrained Generation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes json mode and schema enforcement work.' },
-    { title: '3. External Validation with Pydantic and Zod', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Prompt-Based JSON vs Constrained Decoding', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Two-Phase Reasoning-Then-Structure Pattern', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. API-Level JSON Mode', desc: 'OpenAI\'s response_format: &#123; type: "json_object" &#125; guarantees syntactically valid JSON output. Anthropic achieves similar results through tool use with defined schemas.' },
+    { title: '2. Schema-Constrained Generation', desc: 'Structured outputs with schema enforcement go beyond syntax. OpenAI\'s structured outputs accept a JSON Schema definition and guarantee the output matches it exactly — correct field names, types, required properties, and enum values.' },
+    { title: '3. External Validation with Pydantic and Zod', desc: 'When API-level schema enforcement is unavailable, external validation libraries fill the gap. Pydantic (Python) and Zod (TypeScript) let you define data models, parse the LLM\'s raw JSON output, and get typed, validated objects or clear error messages.' },
+    { title: '4. Prompt-Based JSON vs Constrained Decoding', desc: 'Relying solely on prompts like "Return valid JSON with fields: name, age, city" works most of the time but is fundamentally unreliable. Prompt-only JSON fails 5-15% of the time, with failure rates increasing for complex schemas, higher temperatures, and smaller models.' },
+    { title: '5. The Two-Phase Reasoning-Then-Structure Pattern', desc: 'For tasks requiring genuine reasoning before producing structured output, the two-phase pattern is the standard production approach. In phase one, prompt the model to think through the problem in natural language — analyzing input, weighing options, and reaching conclusions.' },
 ];
 
 export default function WalkthroughPEJsonModeAndSchemaEnforcement() {
@@ -17,10 +17,10 @@ export default function WalkthroughPEJsonModeAndSchemaEnforcement() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          JSON Mode and Schema Enforcement — Step by Step
+          JSON Mode and Schema Enforcement \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how json mode and schema enforcement works, one stage at a time.

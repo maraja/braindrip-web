@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFTypesOfMachineLearning() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Label cost drives paradigm choice: supervised requires full labels, semi-supervised requires few, self-supervised requires none.', isTrue: true, explanation: 'This is a key technical detail of Types of Machine Learning.' },
-    { text: 'Data volume: Self-supervised methods thrive on massive unlabeled corpora; supervised methods need proportionally more labels as complexity grows.', isTrue: true, explanation: 'This is a key technical detail of Types of Machine Learning.' },
-    { text: 'Supervised learning has the most mature theory (PAC learning, VC dimension); unsupervised learning theory is less developed.', isTrue: true, explanation: 'This is a key technical detail of Types of Machine Learning.' },
+    { text: 'Unsupervised learning requires no assumptions.', isTrue: false, explanation: 'Every unsupervised method encodes assumptions about what structure matters -- K-means assumes spherical clusters, PCA assumes linear subspaces. "Self-supervised is the same as unsupervised." Self-supervised learning creates a supervised signal from the data.' },
+    { text: 'supervised requires full labels, semi-supervised requires few, self-supervised requires none.', isTrue: true, explanation: 'supervised requires full labels, semi-supervised requires few, self-supervised requires none.' },
+    { text: 'Self-supervised methods thrive on massive unlabeled corpora; supervised methods need proportionally more labels as complexity grows.', isTrue: true, explanation: 'Self-supervised methods thrive on massive unlabeled corpora; supervised methods need proportionally more labels as complexity grows.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

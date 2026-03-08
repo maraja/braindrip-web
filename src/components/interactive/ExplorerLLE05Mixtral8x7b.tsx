@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Total parameters', detail: '46.7 billion' },
-    { label: 'Active parameters per token', detail: '12.9 billion (2 of 8 experts selected per layer)' },
+    { label: 'Active parameters per token', detail: '9 billion (2 of 8 experts selected per layer)' },
     { label: 'Experts', detail: '8 FFN experts per MoE layer, top-2 routing' },
     { label: 'Shared layers', detail: 'Attention, embeddings, and layer norms shared across all experts' },
-    { label: 'Context window', detail: '32,768 tokens' },
     { label: 'Layers', detail: '32 Transformer layers' },
+    { label: 'Architecture', detail: 'Decoder-only Transformer, GQA (8 KV heads), RoPE, SWA in attention layers' },
+    { label: 'Mixtral 8x7B MMLU', detail: '6% (5-shot), exceeding LLaMA 2 70B (68.9%)' },
 ];
 
 export default function ExplorerLLE05Mixtral8x7b() {
@@ -20,10 +20,10 @@ export default function ExplorerLLE05Mixtral8x7b() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Mixtral 8x7B — Key Details Explorer
+          Mixtral 8x7B \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of mixtral 8x7b.
+          Click each card to explore the technical details.
         </p>
       </div>
 

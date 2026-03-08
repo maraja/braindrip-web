@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Clairaut\'s theorem', detail: 'If second partials are continuous, $\\frac{\\partial^2 f}{\\partial x_i \\partial x_j} = \\frac{\\partial^2 f}{\\partial x_j \\partial x_i}$, so the Hessian is symmetric.' },
+    { label: 'Clairaut\'s theorem', detail: 'If second partials are continuous, &#123;^2 f&#125;&#123; x_i  x_j&#125; = &#123;^2 f&#125;&#123; x_j  x_i&#125;, so the Hessian is symmetric.' },
     { label: 'Vanishing and exploding gradients', detail: 'In deep networks, repeated chain rule applications can cause gradients to shrink toward zero or grow unboundedly. Architectural choices (residual connections, layer normalization) and careful initialization mitigate this.' },
 ];
 
@@ -16,10 +16,10 @@ export default function ExplorerMLFDerivativesAndGradients() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Derivatives and Gradients — Key Details Explorer
+          Derivatives and Gradients \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of derivatives and gradients.
+          Click each card to explore the technical details.
         </p>
       </div>
 

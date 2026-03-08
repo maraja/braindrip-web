@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPBagOfWords() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Sparsity: A typical BoW vector is over 99% zeros.', isTrue: true, explanation: 'This is a key technical detail of Bag of Words.' },
-    { text: 'A vocabulary of 100,000 words means each document vector has 100,000 dimensions, but an average document might use only 200-500 unique words.', isTrue: true, explanation: 'This is a key technical detail of Bag of Words.' },
-    { text: 'Storage: Sparse matrix formats (CSR, CSC) reduce storage from O(N x |V|) to O(nnz), where nnz is the number of non-zero entries.', isTrue: true, explanation: 'This is a key technical detail of Bag of Words.' },
+    { text: 'BoW is obsolete because of word embeddings.', isTrue: false, explanation: 'BoW remains the right choice in many scenarios -- small datasets, high-dimensional sparse features for linear classifiers, interpretability requirements, and as a feature in ensemble systems. Practitioners should benchmark BoW before assuming neural embeddings will outperform it.' },
+    { text: 'A typical BoW vector is over 99% zeros.', isTrue: true, explanation: 'A vocabulary of 100,000 words means each document vector has 100,000 dimensions, but an average document might use only 200-500 unique words.' },
+    { text: 'BoW captures no meaning at all.', isTrue: false, explanation: 'While BoW discards word order, the distribution of words still carries substantial semantic signal. Two documents about "machine learning" will share vocabulary even without order.' },
+    { text: 'Sparse matrix formats (CSR, CSC) reduce storage from O(N x ) to O(nnz), where nnz is the number of non-zero entries.', isTrue: true, explanation: 'Sparse matrix formats (CSR, CSC) reduce storage from O(N x ) to O(nnz), where nnz is the number of non-zero entries.' },
+    { text: 'Larger vocabularies always improve BoW performance.', isTrue: false, explanation: 'Beyond a certain point, rare words add noise rather than signal. Aggressive vocabulary pruning (keeping 10,000-50,000 features) often outperforms using the full vocabulary, particularly on smaller datasets.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

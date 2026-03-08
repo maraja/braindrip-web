@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Approval latency cost', detail: 'Each human approval step adds 10-60 seconds of wall-clock time. A 30-step task with per-step approval takes 5-30 minutes of human attention; the same task in semi-autonomous mode takes only the initial instruction plus occasional monitoring.' },
-    { label: 'Guardrail implementation', detail: 'Semi-autonomous agents typically use allowlists (permitted tools/commands) and blocklists (forbidden operations). Claude Code, for example, allows configuring `allow` and `deny` rules for specific tools and command patterns.' },
+    { label: 'Guardrail implementation', detail: 'Semi-autonomous agents typically use allowlists (permitted tools/commands) and blocklists (forbidden operations). Claude Code, for example, allows configuring allow and deny rules for specific tools and command patterns.' },
     { label: 'Error recovery rates by level', detail: 'Copilots have near-zero autonomous error recovery (human handles all errors). Semi-autonomous agents recover from ~70% of errors autonomously. Fully autonomous agents must recover from ~90%+ to be viable.' },
     { label: 'Cost per task vs. autonomy', detail: 'Higher autonomy generally means higher API costs (more LLM calls for error recovery, exploration, and self-verification) but lower human time costs. The crossover point depends on the hourly cost of human attention vs. API pricing.' },
     { label: 'Sandboxing for autonomous agents', detail: 'Docker containers, virtual machines, or restricted filesystem access are standard for fully autonomous agents. The agent operates in an environment where its worst-case mistakes are contained and reversible.' },
@@ -20,10 +20,10 @@ export default function ExplorerAACAutonomySpectrum() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The Autonomy Spectrum — Key Details Explorer
+          The Autonomy Spectrum \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of the autonomy spectrum.
+          Click each card to explore the technical details.
         </p>
       </div>
 

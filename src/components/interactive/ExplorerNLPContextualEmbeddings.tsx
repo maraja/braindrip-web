@@ -5,7 +5,7 @@ const DETAILS = [
     { label: 'BERT improvements', detail: 'BERT-large pushed SQuAD 2.0 F1 from 66.3% to 83.1%, MNLI accuracy from 80.6% to 86.7%, and CoNLL-2003 NER F1 from 92.0% to 92.8%.' },
     { label: 'Context window', detail: 'ELMo processes one sentence at a time. BERT-base handles 512 tokens. Longformer extends to 4,096 tokens. Modern models handle 8,192-128,000+ tokens.' },
     { label: 'Embedding dimensionality', detail: 'ELMo produces 1024-dimensional vectors (512 forward + 512 backward). BERT-base produces 768-dimensional vectors. BERT-large produces 1024-dimensional vectors.' },
-    { label: 'Anisotropy problem', detail: 'Contextual embeddings tend to occupy a narrow cone in vector space (high anisotropy), making raw cosine similarity unreliable without normalization or fine-tuning (see `sentence-embeddings.md` for solutions).' },
+    { label: 'Anisotropy problem', detail: 'Contextual embeddings tend to occupy a narrow cone in vector space (high anisotropy), making raw cosine similarity unreliable without normalization or fine-tuning (see sentence-embeddings.md for solutions).' },
     { label: 'Computational cost', detail: 'BERT-base inference requires ~22 GFLOPs per 512-token input. ELMo requires ~14 GFLOPs. For comparison, a GloVe lookup requires essentially zero computation.' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerNLPContextualEmbeddings() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Contextual Embeddings — Key Details Explorer
+          Contextual Embeddings \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of contextual embeddings.
+          Click each card to explore the technical details.
         </p>
       </div>
 

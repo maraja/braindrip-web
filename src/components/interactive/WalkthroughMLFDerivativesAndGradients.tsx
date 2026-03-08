@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Partial Derivatives', desc: 'The foundation of derivatives and gradients begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Gradient Vector', desc: 'At this stage, the key transformation occurs — the core mechanism that makes derivatives and gradients work.' },
-    { title: '3. Directional Derivatives', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Chain Rule', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Jacobian Matrix', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Partial Derivatives', desc: 'For f: &#123;R&#125;^n  &#123;R&#125;, the partial derivative with respect to x_i measures how f changes when only x_i varies:  [equation]' },
+    { title: '2. The Gradient Vector', desc: 'The gradient collects all partial derivatives into a single vector:  [equation]  Two critical properties: (1)  f points in the direction of steepest ascent, and (2)  f is orthogonal to level sets of f (the contours where f is constant).' },
+    { title: '3. Directional Derivatives', desc: 'The rate of change of f in an arbitrary direction u (unit vector) is:  [equation]  This is maximized when u is parallel to  f (confirming the steepest ascent interpretation) and zero when u is perpendicular to it.' },
+    { title: '4. The Chain Rule', desc: 'The chain rule is the single most important calculus result for ML. If y = f(g(x)), then:  [equation]  In the multivariate case, if y = f(g(x)) where f: &#123;R&#125;^m  &#123;R&#125;^p and g: &#123;R&#125;^n  &#123;R&#125;^m:  [equation]  This is a product of Jacobian matrices.' },
+    { title: '5. The Jacobian Matrix', desc: 'For a vector-valued function f: &#123;R&#125;^n  &#123;R&#125;^m, the Jacobian J  &#123;R&#125;^&#123;m x n&#125; collects all first-order partial derivatives:  [equation]  The Jacobian generalizes the gradient to functions with vector outputs.' },
+    { title: '6. The Hessian Matrix', desc: 'For f: &#123;R&#125;^n  &#123;R&#125;, the Hessian H  &#123;R&#125;^&#123;n x n&#125; contains all second-order partial derivatives:  [equation]  The Hessian encodes the curvature of f. If H is positive definite at a critical point, that point is a local minimum.' },
 ];
 
 export default function WalkthroughMLFDerivativesAndGradients() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFDerivativesAndGradients() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Derivatives and Gradients — Step by Step
+          Derivatives and Gradients \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how derivatives and gradients works, one stage at a time.

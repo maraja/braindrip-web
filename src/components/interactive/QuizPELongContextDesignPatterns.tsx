@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPELongContextDesignPatterns() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Effective context is 60-80% of nominal context for most tasks — plan context budgets accordingly, not at the nominal maximum.', isTrue: true, explanation: 'This is a key technical detail of Long-Context Design Patterns.' },
-    { text: 'Section markers improve information retrieval accuracy by 10-15% in contexts exceeding 50K tokens.', isTrue: true, explanation: 'This is a key technical detail of Long-Context Design Patterns.' },
-    { text: '"Search before answering" instructions improve long-context QA accuracy by 10-20% by focusing attention on relevant passages.', isTrue: true, explanation: 'This is a key technical detail of Long-Context Design Patterns.' },
+    { text: 'Longer context windows solve all information access problems.', isTrue: false, explanation: 'Longer windows enable more information but do not ensure the model uses it effectively. Organizational patterns are required to make long contexts useful.' },
+    { text: 'Long-context design patterns address the unique challenges of working with 100K+ token context windows, where effective capacity falls below nominal capacity and explicit organization strategies become essential for maintaining model performance.', isTrue: true, explanation: 'This captures the core definition of Long-Context Design Patterns.' },
+    { text: 'Long-Context Design Patterns is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Long-Context Design Patterns is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

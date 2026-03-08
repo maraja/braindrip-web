@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. API Mechanics', desc: 'The foundation of prefilling and output priming begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Common Prefill Patterns', desc: 'At this stage, the key transformation occurs — the core mechanism that makes prefilling and output priming work.' },
-    { title: '3. Combining with Constrained Decoding', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Prefill Length and Specificity', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. API Mechanics', desc: 'Prefilling is implemented differently across providers:  Anthropic (Claude): The Messages API supports an assistant turn in the message history. You include a partial assistant message as the last item:  Claude continues generation from &#123;"name": " — guaranteeing the output starts as JSON with the.' },
+    { title: '2. Common Prefill Patterns', desc: 'Different output formats benefit from different prefills:  JSON output:  The model generates valid JSON from this starting point. For complex schemas:  This constrains both the structure and the first field.' },
+    { title: '3. Combining with Constrained Decoding', desc: 'Some serving frameworks support constrained decoding (also called guided generation), which restricts the model\'s vocabulary at each generation step to tokens that maintain validity of a specified grammar (JSON schema, regex pattern, etc.).' },
+    { title: '4. Prefill Length and Specificity', desc: 'The optimal prefill length depends on the task:  1-3 tokens (&#123;, [, Step): Sufficient for format constraints. 5-20 tokens (&#123;"name": ", ## Summary): Sets both format and initial content direction.' },
 ];
 
 export default function WalkthroughPEPrefillingAndOutputPriming() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEPrefillingAndOutputPriming() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Prefilling and Output Priming — Step by Step
+          Prefilling and Output Priming \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how prefilling and output priming works, one stage at a time.

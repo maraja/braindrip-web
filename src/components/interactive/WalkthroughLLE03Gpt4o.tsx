@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. End-to-End Multimodal Architecture', desc: 'The foundation of gpt-4o begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Multimodal Input and Output', desc: 'At this stage, the key transformation occurs — the core mechanism that makes gpt-4o work.' },
-    { title: '3. Performance and Efficiency', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Pricing and Availability', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. End-to-End Multimodal Architecture', desc: 'The defining innovation of GPT-4o was end-to-end multimodal training. Rather than using separate models for different modalities (a vision encoder, a language model, a speech recognizer, and a speech synthesizer) and stitching them together, GPT-4o was trained as a single model across all.' },
+    { title: '2. Multimodal Input and Output', desc: 'GPT-4o accepted text, images, audio, and video as input. It could generate text, audio, and images as output.' },
+    { title: '3. Performance and Efficiency', desc: 'On standard text benchmarks, GPT-4o matched GPT-4 Turbo performance while being significantly cheaper and faster. It achieved 88.7% on MMLU (5-shot), competitive with the best models of the time.' },
+    { title: '4. Pricing and Availability', desc: 'The pricing strategy was as important as the technology. GPT-4o was priced at 5 per million input tokens and 15 per million output tokens — 50% cheaper than GPT-4 Turbo.' },
 ];
 
 export default function WalkthroughLLE03Gpt4o() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE03Gpt4o() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          GPT-4o — Step by Step
+          GPT-4o \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how gpt-4o works, one stage at a time.

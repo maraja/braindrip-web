@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Why ERM Makes Sense', desc: 'The foundation of empirical risk minimization begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Generalization Gap', desc: 'At this stage, the key transformation occurs — the core mechanism that makes empirical risk minimization work.' },
-    { title: '3. VC Dimension', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. PAC Learning', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Structural Risk Minimization', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Why ERM Makes Sense', desc: 'By the law of large numbers, as n  :  [equation]  for any fixed h. So with enough data, the empirical risk converges to the true risk.' },
+    { title: '2. The Generalization Gap', desc: 'The generalization gap is the difference between true risk and empirical risk:  [equation]  This gap is always non-negative in expectation (the model is optimized for the training data, so it naturally performs at least as well there). The central challenge of learning theory is bounding this gap.' },
+    { title: '3. VC Dimension', desc: 'The Vapnik-Chervonenkis (VC) dimension measures the capacity of a hypothesis class. It is the largest number of points that &#123;H&#125; can shatter -- that is, classify in all 2^d possible ways.' },
+    { title: '4. PAC Learning', desc: 'The Probably Approximately Correct (PAC) framework, introduced by Valiant (1984), formalizes learnability. A concept class &#123;C&#125; is PAC-learnable if there exists an algorithm that, for any  &gt; 0 and  &gt; 0, using at most poly(1/, 1/, d) samples, outputs a hypothesis h such that:  [equation]  That is,.' },
+    { title: '5. Structural Risk Minimization', desc: 'Pure ERM can overfit: a sufficiently complex &#123;H&#125; can achieve zero empirical risk while having high true risk. Structural Risk Minimization (SRM), proposed by Vapnik, addresses this by jointly minimizing empirical risk and model complexity:  [equation]  where  is a complexity penalty that increases.' },
+    { title: '6. When ERM Works and When It Fails', desc: 'ERM works well when: The sample size n is large relative to the complexity of &#123;H&#125;. The training data is representative of the true distribution (i.i.d.' },
 ];
 
 export default function WalkthroughMLFEmpiricalRiskMinimization() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFEmpiricalRiskMinimization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Empirical Risk Minimization — Step by Step
+          Empirical Risk Minimization \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how empirical risk minimization works, one stage at a time.

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAACCostOptimization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Token budgets set a maximum token spend per task.', isTrue: true, explanation: 'This is a key technical detail of Cost Optimization.' },
-    { text: 'The agent tracks cumulative token usage and switches to cheaper strategies (shorter prompts, smaller models, cached results) as it approaches the budget limit.', isTrue: true, explanation: 'This is a key technical detail of Cost Optimization.' },
-    { text: 'The Batch API from OpenAI processes requests at 50% discount with a 24-hour completion window, ideal for non-real-time agent tasks like nightly report generation or batch data processing.', isTrue: true, explanation: 'This is a key technical detail of Cost Optimization.' },
+    { text: 'Use the cheapest model for everything.', isTrue: false, explanation: 'Cheap models fail on complex tasks, causing retries, incorrect results, and user dissatisfaction. The cost of a failed task (wasted tokens + retry cost + user churn) often exceeds the savings from using a cheaper model.' },
+    { text: 'if the first 3,000 tokens of your prompt are identical across calls, they are processed once and cached, reducing input cost by 90% for the cached portion.', isTrue: true, explanation: 'if the first 3,000 tokens of your prompt are identical across calls, they are processed once and cached, reducing input cost by 90% for the cached portion.' },
+    { text: 'if the router sends 5% of hard tasks to the cheap model, the resulting quality degradation may outweigh the cost savings.', isTrue: true, explanation: 'if the router sends 5% of hard tasks to the cheap model, the resulting quality degradation may outweigh the cost savings.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

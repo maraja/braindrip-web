@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Rating Scales', desc: 'The foundation of human evaluation for nlp begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Inter-Annotator Agreement', desc: 'At this stage, the key transformation occurs — the core mechanism that makes human evaluation for nlp work.' },
-    { title: '3. Evaluation Dimensions for Generation Tasks', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Annotator Challenges', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Rating Scales', desc: 'Likert Scales: Annotators rate outputs on a fixed ordinal scale, typically 1--5 or 1--7. For example, a fluency Likert scale might define 1 = "incomprehensible," 3 = "understandable but awkward," 5 = "perfectly natural.' },
+    { title: '2. Inter-Annotator Agreement', desc: 'Measuring whether annotators agree is critical for establishing reliability:  Cohen\'s Kappa: Agreement between two annotators, corrected for chance. Kappa = (p_o - p_e) / (1 - p_e), where p_o is observed agreement and p_e is chance agreement.' },
+    { title: '3. Evaluation Dimensions for Generation Tasks', desc: 'Adequacy/Faithfulness: Does the output preserve the meaning of the source (in MT) or the key information (in summarization)? Rated on a 1--5 scale or via binary factual consistency checks.' },
+    { title: '4. Annotator Challenges', desc: 'Fatigue: Annotation quality degrades after 60--90 minutes of continuous work. Standard practice caps sessions at 1 hour with breaks, and uses attention-check items to detect degraded performance.' },
 ];
 
 export default function WalkthroughNLPHumanEvaluationForNlp() {
@@ -16,10 +16,10 @@ export default function WalkthroughNLPHumanEvaluationForNlp() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Human Evaluation for NLP — Step by Step
+          Human Evaluation for NLP \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how human evaluation for nlp works, one stage at a time.

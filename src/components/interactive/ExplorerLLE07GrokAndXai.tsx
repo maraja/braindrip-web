@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'xAI founded', detail: 'July 2023' },
     { label: 'Grok-1', detail: '314B parameters, MoE (8 experts, top-2 routing), ~86B active parameters, open-sourced March 2024' },
     { label: 'Grok-2', detail: 'Released August 2024, frontier-competitive, integrated with X platform' },
     { label: 'Grok-3', detail: 'Released February 2025, trained on Colossus cluster' },
     { label: 'Colossus cluster', detail: '100,000+ H100 GPUs, Memphis, Tennessee' },
     { label: 'LMArena ranking', detail: 'Reached #1 on Elo leaderboard by late 2025' },
+    { label: 'xAI funding', detail: 'Over $6 billion raised by late 2024' },
 ];
 
 export default function ExplorerLLE07GrokAndXai() {
@@ -20,10 +20,10 @@ export default function ExplorerLLE07GrokAndXai() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Grok and xAI — Key Details Explorer
+          Grok and xAI \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of grok and xai.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'COCO zero-shot', detail: '52.5 AP (Swin-L backbone) without any COCO training data; with COCO fine-tuning: 63.0 AP' },
+    { label: 'COCO zero-shot', detail: '5 AP (Swin-L backbone) without any COCO training data; with COCO fine-tuning: 63.0 AP' },
     { label: 'LVIS zero-shot', detail: 'Achieves strong results on rare categories, though exact numbers vary by evaluation protocol' },
     { label: 'Backbone variants', detail: 'Swin-T (~172M total parameters, faster) and Swin-L (~341M total parameters, more accurate)' },
     { label: 'Text encoder', detail: 'BERT-base (110M parameters) with maximum 256 token input' },
@@ -20,10 +20,10 @@ export default function ExplorerCVCGroundingDino() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Grounding DINO — Key Details Explorer
+          Grounding DINO \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of grounding dino.
+          Click each card to explore the technical details.
         </p>
       </div>
 

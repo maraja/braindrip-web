@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE02Chatgpt() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Released on November 30, 2022, ChatGPT was a conversationally fine-tuned GPT-3.5 model that reached 100 million users in two months, transforming large language models from research curiosities into the fastest-growing consumer product in history.', isTrue: true, explanation: 'This captures the core purpose of ChatGPT.' },
-    { text: 'ChatGPT is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding ChatGPT is important for building on more advanced topics.' },
-    { text: 'ChatGPT is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding ChatGPT is important for building on more advanced topics.' },
+    { text: 'ChatGPT was a major technical breakthrough.', isTrue: false, explanation: 'The underlying techniques — GPT-3.5, RLHF, conversational fine-tuning — were incremental improvements on prior work. ChatGPT\'s breakthrough was in product design, accessibility, and timing, not in fundamental technology.' },
+    { text: 'GPT-3.5 (further-trained GPT-3, details not fully published)', isTrue: true, explanation: 'GPT-3.5 (further-trained GPT-3, details not fully published)' },
+    { text: 'ChatGPT understands what it\'s saying.', isTrue: false, explanation: 'ChatGPT generates statistically likely continuations of the conversation. It produces remarkably coherent and often correct text, but has no understanding, beliefs, or intentions.' },
+    { text: 'Conversational RLHF (multi-turn dialogue training)', isTrue: true, explanation: 'Conversational RLHF (multi-turn dialogue training)' },
+    { text: 'ChatGPT made Google obsolete.', isTrue: false, explanation: 'Despite the hype, ChatGPT did not replace search. It struggled with factuality, could not access current information, and could not provide sources.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

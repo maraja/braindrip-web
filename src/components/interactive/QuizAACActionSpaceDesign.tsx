@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACActionSpaceDesign() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Optimal tool count range: 5-20 tools for most agent systems.', isTrue: true, explanation: 'This is a key technical detail of Action Space Design.' },
-    { text: 'Claude Code uses approximately 10-15 core tools.', isTrue: true, explanation: 'This is a key technical detail of Action Space Design.' },
-    { text: 'Cursor uses a similar range.', isTrue: true, explanation: 'This is a key technical detail of Action Space Design.' },
+    { text: 'More tools always means a more capable agent.', isTrue: false, explanation: 'Beyond approximately 20 tools, each additional tool reduces the agent\'s ability to select correctly from the existing set. Capability from additional tools must be weighed against the degradation in tool selection accuracy.' },
+    { text: '5-20 tools for most agent systems.', isTrue: true, explanation: 'Claude Code uses approximately 10-15 core tools. Cursor uses a similar range.' },
+    { text: 'Tools just need a name and parameters — descriptions don\'t matter much.', isTrue: false, explanation: 'Tool descriptions are the primary mechanism the LLM uses to decide which tool to call. In ablation studies, removing or degrading tool descriptions reduces tool selection accuracy by 20-40%.' },
+    { text: 'Each tool description consumes 100-500 tokens in the system prompt.', isTrue: true, explanation: '15 tools at 300 tokens each = 4,500 tokens of system prompt dedicated to tool definitions. This is a meaningful fraction of the context budget.' },
+    { text: 'The LLM can figure out how to use a tool from its name alone.', isTrue: false, explanation: 'LLMs often have training data about common tools (file operations, web search), but for custom tools, the LLM relies entirely on the description and schema. A tool named xq_process_v2 with no description will be used incorrectly or not at all.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPCrossLingualTransfer() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'mBERT: 110M parameters, 104 languages, trained on Wikipedia (~2.5B tokens across all languages), 110K shared WordPiece vocabulary.', isTrue: true, explanation: 'This is a key technical detail of Cross-Lingual Transfer.' },
-    { text: 'XLM-R Base: 270M parameters, 100 languages, 2.5TB of filtered CommonCrawl, 250K SentencePiece vocabulary.', isTrue: true, explanation: 'This is a key technical detail of Cross-Lingual Transfer.' },
-    { text: 'XLM-R Large: 550M parameters, same data and vocabulary as Base.', isTrue: true, explanation: 'This is a key technical detail of Cross-Lingual Transfer.' },
+    { text: 'Cross-lingual transfer requires parallel corpora.', isTrue: false, explanation: 'mBERT and XLM-R achieve strong cross-lingual transfer without any parallel data -- they are trained only on monolingual text from each language. Parallel data (as in XLM\'s TLM) helps but is not required.' },
+    { text: '270M parameters, 100 languages, 2.5TB of filtered CommonCrawl, 250K SentencePiece vocabulary.', isTrue: true, explanation: '270M parameters, 100 languages, 2.5TB of filtered CommonCrawl, 250K SentencePiece vocabulary.' },
+    { text: 'All languages transfer equally well.', isTrue: false, explanation: 'Transfer effectiveness varies dramatically by language pair. Typologically similar languages (English-German, Spanish-Portuguese) transfer well.' },
+    { text: '550M parameters, same data and vocabulary as Base.', isTrue: true, explanation: '550M parameters, same data and vocabulary as Base.' },
+    { text: 'Multilingual models are as good as monolingual models.', isTrue: false, explanation: 'For high-resource languages like English, monolingual BERT typically outperforms mBERT by 1-3% due to capacity dilution. The multilingual model trades peak performance in any single language for breadth across many languages.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

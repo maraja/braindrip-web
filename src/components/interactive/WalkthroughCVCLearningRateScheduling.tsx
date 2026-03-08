@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Step Decay', desc: 'The foundation of learning rate scheduling begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Cosine Annealing', desc: 'At this stage, the key transformation occurs — the core mechanism that makes learning rate scheduling work.' },
-    { title: '3. Cosine Annealing with Warm Restarts (SGDR)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Linear Warmup', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. One-Cycle Policy', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Step Decay', desc: 'The simplest and historically most common schedule. Multiply the learning rate by a factor  at predetermined epochs:  [equation]  where s is the step interval and  is typically 0.1.' },
+    { title: '2. Cosine Annealing', desc: 'Loshchilov & Hutter (2017) proposed a smooth decay following a cosine curve:  [equation]  where T is the total number of iterations and _&#123;&#125; is typically 0 or a small value like 1e-6. This has become the default schedule for most modern training recipes, including those for Vision Transformers.' },
+    { title: '3. Cosine Annealing with Warm Restarts (SGDR)', desc: 'Instead of a single cosine decay, periodically reset the learning rate to _&#123;&#125; and restart the cosine schedule. Each restart period T_i can grow geometrically:  [equation]  Warm restarts allow the optimizer to escape local minima and explore different basins, and the snapshot models from each.' },
+    { title: '4. Linear Warmup', desc: 'Modern training typically begins with a short warmup phase where  increases linearly from 0 (or a small value) to _&#123;&#125; over the first W iterations:  [equation]  Warmup is essential when using large batch sizes (Goyal et al.' },
+    { title: '5. One-Cycle Policy', desc: 'Smith & Topin (2019) proposed a single cycle of learning rate that first increases from _&#123;&#125; to _&#123;&#125; over the first ~30% of training, then decreases back below _&#123;&#125; for the remainder:  This "super-convergence" technique allows training at 5-10x higher peak learning rates and can reduce total training.' },
+    { title: '6. Polynomial Decay', desc: 'Common in segmentation tasks (used in DeepLab):  [equation]  where power is typically 0.9.' },
 ];
 
 export default function WalkthroughCVCLearningRateScheduling() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCLearningRateScheduling() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Learning Rate Scheduling — Step by Step
+          Learning Rate Scheduling \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how learning rate scheduling works, one stage at a time.

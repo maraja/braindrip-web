@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE02Albert() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ALBERT (Lan et al., 2019) introduced factorized embedding parameterization and cross-layer parameter sharing to reduce BERT\'s parameter count by up to 18x while maintaining competitive performance, replacing Next Sentence Prediction with the harder Sentence Order Prediction task — an early and influential exploration of parameter efficiency that foreshadowed the model compression revolution.', isTrue: true, explanation: 'This captures the core purpose of ALBERT: A Lite BERT.' },
-    { text: 'ALBERT: A Lite BERT is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding ALBERT: A Lite BERT is important for building on more advanced topics.' },
-    { text: 'ALBERT: A Lite BERT is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding ALBERT: A Lite BERT is important for building on more advanced topics.' },
+    { text: 'ALBERT is faster than BERT because it has fewer parameters.', isTrue: false, explanation: 'This is the most common misunderstanding. ALBERT has fewer unique parameters (less memory) but the same or greater computational cost.' },
+    { text: '12 layers, H=4096, 64 heads, 235M params — best performing configuration', isTrue: true, explanation: '12 layers, H=4096, 64 heads, 235M params — best performing configuration' },
+    { text: 'Cross-layer parameter sharing always hurts performance.', isTrue: false, explanation: 'It does hurt compared to unique parameters per layer — but less than you might expect. ALBERT-xxlarge with shared parameters outperformed BERT-Large with unique parameters, because the parameter savings were reinvested into a much wider hidden dimension.' },
+    { text: 'ALBERT-base 12M vs BERT-base 110M (9x); ALBERT-xxlarge 235M vs BERT-Large 340M (1.4x)', isTrue: true, explanation: 'ALBERT-base 12M vs BERT-base 110M (9x); ALBERT-xxlarge 235M vs BERT-Large 340M (1.4x)' },
+    { text: 'ALBERT made BERT obsolete.', isTrue: false, explanation: 'ALBERT explored an interesting point in the design space but did not replace BERT or RoBERTa in practice. Its inference speed disadvantage limited production adoption.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

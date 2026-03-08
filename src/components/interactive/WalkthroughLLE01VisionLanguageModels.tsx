@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. CLIP: Learning a Shared Embedding Space (2021)', desc: 'The foundation of vision-language models: connecting sight and language begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Flamingo: Visual Tokens Meet LLMs (2022)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes vision-language models: connecting sight and language work.' },
-    { title: '3. LLaVA: Simplicity Wins (2023)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. GPT-4V and the Frontier (2023-2024)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Advancing the Architecture Space (2023-2024)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. CLIP: Learning a Shared Embedding Space (2021)', desc: 'CLIP (Contrastive Language-Image Pre-training, Radford et al., January 2021) was the conceptual breakthrough. OpenAI trained a vision encoder (ViT-L/14) and a text encoder jointly on 400 million image-text pairs scraped from the internet.' },
+    { title: '2. Flamingo: Visual Tokens Meet LLMs (2022)', desc: 'DeepMind\'s Flamingo (Alayrac et al., April 2022) introduced the paradigm of connecting a vision encoder to a frozen large language model. Visual features from images or video frames are projected into "visual tokens" that are interleaved with text tokens and fed to the LLM via gated cross-attention.' },
+    { title: '3. LLaVA: Simplicity Wins (2023)', desc: 'LLaVA (Liu et al., April 2023) demonstrated that the adapter approach could be radically simplified. It used a single linear projection layer to map CLIP ViT-L/14 visual features into the LLaMA-13B token embedding space — no cross-attention, no perceiver, just a matrix multiplication.' },
+    { title: '4. GPT-4V and the Frontier (2023-2024)', desc: 'GPT-4V (September 2023) brought vision understanding to the frontier of AI capability. While architectural details remain unpublished, it demonstrated capabilities far beyond previous VLMs:  Reading handwritten text and understanding messy document layouts Interpreting charts, graphs, and.' },
+    { title: '5. Advancing the Architecture Space (2023-2024)', desc: 'SigLIP (Zhai et al., Google, 2023) refined CLIP\'s contrastive approach by replacing the softmax-based InfoNCE loss with a simpler sigmoid loss applied independently to each image-text pair. This scaled better to larger batch sizes and produced better representations for downstream adaptation.' },
 ];
 
 export default function WalkthroughLLE01VisionLanguageModels() {
@@ -17,10 +17,10 @@ export default function WalkthroughLLE01VisionLanguageModels() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Vision-Language Models: Connecting Sight and Language — Step by Step
+          Vision-Language Models: Connecting Sight and Language \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how vision-language models: connecting sight and language works, one stage at a time.

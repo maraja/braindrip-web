@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACMetacognition() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Calibration measurement: Compare the agent\'s stated confidence (e.g., "I\'m 80% sure") with actual accuracy.', isTrue: true, explanation: 'This is a key technical detail of Metacognition.' },
-    { text: 'Well-calibrated agents are right 80% of the time when they say 80%.', isTrue: true, explanation: 'This is a key technical detail of Metacognition.' },
-    { text: 'LLMs tend to be overconfident; explicit calibration prompting helps Abstention rate: The percentage of questions where the agent declines to answer or defers to a human.', isTrue: true, explanation: 'This is a key technical detail of Metacognition.' },
+    { text: 'LLMs cannot be metacognitive because they don\'t truly understand their knowledge.', isTrue: false, explanation: 'While LLMs do not have introspective access to their weights, they can approximate metacognition through prompting. The practical effect (better-calibrated outputs, appropriate help-seeking) is what matters, not the mechanism.' },
+    { text: 'Compare the agent\'s stated confidence (e.g., "I\'m 80% sure") with actual accuracy.', isTrue: true, explanation: 'Well-calibrated agents are right 80% of the time when they say 80%. LLMs tend to be overconfident; explicit calibration prompting helps' },
+    { text: 'Saying \'I don\'t know\' makes the agent less useful.', isTrue: false, explanation: 'The opposite is true. An agent that says "I don\'t know" when appropriate is more useful because every positive response can be trusted.' },
+    { text: 'The percentage of questions where the agent declines to answer or defers to a human.', isTrue: true, explanation: 'Too low suggests insufficient metacognition; too high suggests excessive caution. Optimal rates depend on the domain (medical: high abstention; general knowledge: lower)' },
+    { text: 'Confidence scores from LLMs are reliable.', isTrue: false, explanation: 'They are not, at least not without calibration. Raw LLM confidence tends to be overconfident.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

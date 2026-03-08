@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Replay Buffer', desc: 'The foundation of experience replay begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Why Random Sampling Helps', desc: 'At this stage, the key transformation occurs — the core mechanism that makes experience replay work.' },
-    { title: '3. Prioritized Experience Replay (PER)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Efficient Implementation: The Sum Tree', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Replay Buffer', desc: 'A replay buffer (or replay memory) &#123;D&#125; is a fixed-size circular buffer that stores transitions:  [equation]  where d_t is a boolean terminal flag. When the buffer is full, the oldest transitions are overwritten.' },
+    { title: '2. Why Random Sampling Helps', desc: 'Neural network training assumes that minibatch samples are approximately i.i.d. (independent and identically distributed).' },
+    { title: '3. Prioritized Experience Replay (PER)', desc: 'Not all transitions are equally informative. (2016) proposed sampling transitions with probability proportional to their TD error magnitude:  [equation]  where p_i =  +  is the priority of transition i, _i is the TD error,  is a small constant preventing zero probability, and   [0, 1] controls how.' },
+    { title: '4. Efficient Implementation: The Sum Tree', desc: 'Naive prioritized sampling from N transitions requires O(N) time. PER uses a sum tree (a binary tree where each leaf stores a priority and each parent stores the sum of its children) to achieve O( N) sampling and O( N) priority updates.' },
 ];
 
 export default function WalkthroughRLExperienceReplay() {
@@ -16,10 +16,10 @@ export default function WalkthroughRLExperienceReplay() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Experience Replay — Step by Step
+          Experience Replay \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how experience replay works, one stage at a time.

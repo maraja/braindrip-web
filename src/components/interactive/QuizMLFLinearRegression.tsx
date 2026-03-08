@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFLinearRegression() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The OLS estimator is unbiased: $\\mathbb&#123;E&#125;[\\hat&#123;\\boldsymbol&#123;\\beta&#125;&#125;] = \\boldsymbol&#123;\\beta&#125;$ under correct specification.', isTrue: true, explanation: 'This is a key technical detail of Linear Regression.' },
-    { text: 'The variance of the estimator is $\\text&#123;Var&#125;(\\hat&#123;\\boldsymbol&#123;\\beta&#125;&#125;) = \\sigma^2 (X^TX)^&#123;-1&#125;$, estimated by replacing $\\sigma^2$ with $s^2 = SS_&#123;res&#125;/(n-p-1)$.', isTrue: true, explanation: 'This is a key technical detail of Linear Regression.' },
-    { text: 'Inverting $X^TX$ costs $O(p^3)$; for large $p$, use gradient descent or QR decomposition.', isTrue: true, explanation: 'This is a key technical detail of Linear Regression.' },
+    { text: 'A high R-squared means the model is good.', isTrue: false, explanation: 'R^2 can be high due to overfitting, spurious correlations, or irrelevant predictors. Always check residuals and use adjusted R^2 or cross-validation.' },
+    { text: 'Fitting a hyperplane to data by minimizing squared errors -- the most interpretable and foundational predictive model.', isTrue: true, explanation: 'This captures the core definition of Linear Regression.' },
+    { text: 'Linear Regression is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Linear Regression is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

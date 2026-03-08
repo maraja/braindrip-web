@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Stage 1: Tokenization', desc: 'The foundation of how llms process prompts begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Stage 2: Embedding', desc: 'At this stage, the key transformation occurs — the core mechanism that makes how llms process prompts work.' },
-    { title: '3. Stage 3: Attention', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Stage 4: Generation (Autoregressive Decoding)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Two Phases of Inference: Prefill and Decode', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Stage 1: Tokenization', desc: 'The prompt string is split into tokens using a fixed vocabulary (typically 32K-100K+ tokens). The tokenizer is a deterministic algorithm, not a learned component — it runs before the neural network ever sees your input.' },
+    { title: '2. Stage 2: Embedding', desc: 'Each token ID is mapped to a dense vector (typically 4,096-12,288 dimensions in frontier models). These embeddings encode semantic meaning — tokens with similar meanings have vectors that are closer together in this high-dimensional space.' },
+    { title: '3. Stage 3: Attention', desc: 'The embedded tokens pass through dozens to over a hundred transformer layers, each containing multi-head self-attention mechanisms. In each attention head, every token computes how much it should "attend to" every other token in the sequence.' },
+    { title: '4. Stage 4: Generation (Autoregressive Decoding)', desc: 'The model generates output one token at a time. At each step, it produces a probability distribution over the entire vocabulary, and a sampling strategy (temperature, top-p, top-k) selects the next token.' },
+    { title: '5. The Two Phases of Inference: Prefill and Decode', desc: 'Understanding the processing pipeline also means understanding that inference happens in two distinct phases with different performance characteristics.' },
 ];
 
 export default function WalkthroughPEHowLlmsProcessPrompts() {
@@ -17,10 +17,10 @@ export default function WalkthroughPEHowLlmsProcessPrompts() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          How LLMs Process Prompts — Step by Step
+          How LLMs Process Prompts \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how how llms process prompts works, one stage at a time.

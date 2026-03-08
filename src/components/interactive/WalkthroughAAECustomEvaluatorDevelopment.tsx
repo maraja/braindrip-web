@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Custom Scorers', desc: 'The foundation of custom evaluator development begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Composite Metrics', desc: 'At this stage, the key transformation occurs — the core mechanism that makes custom evaluator development work.' },
-    { title: '3. Domain Evaluators', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Software Engineering Practices', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Versioning Evaluators Alongside the Agent', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Custom Scorers', desc: 'A scorer is a function that takes an agent\'s output (and optionally the input and reference answer) and produces a structured assessment. Custom scorers encode domain knowledge into this function.' },
+    { title: '2. Composite Metrics', desc: 'Real-world evaluation rarely reduces to a single score. Composite metrics combine multiple signals into an actionable summary:  Weighted aggregation: Assign importance weights to individual sub-scores.' },
+    { title: '3. Domain Evaluators', desc: 'Domain evaluators go beyond scoring individual outputs to assess domain-specific patterns across an evaluation suite:  Consistency evaluators: Do the agent\'s answers remain consistent when the same question is asked in different ways?' },
+    { title: '4. Software Engineering Practices', desc: 'Evaluation code is production code. It makes decisions about what gets deployed and what does not.' },
+    { title: '5. Versioning Evaluators Alongside the Agent', desc: 'Evaluator versioning requires care because evaluator changes affect result interpretation:  Pin evaluator versions to evaluation runs: Every evaluation result should record which evaluator version produced it. Results produced by different evaluator versions are not directly comparable.' },
+    { title: '6. When to Build Custom vs. Use Off-the-Shelf', desc: 'Build custom evaluators when:  Your domain has quality criteria that general-purpose tools cannot capture (medical accuracy, legal compliance, financial regulations) The agent\'s output format is non-standard and requires domain-specific parsing You need composite metrics that combine signals in.' },
 ];
 
 export default function WalkthroughAAECustomEvaluatorDevelopment() {
@@ -17,10 +18,10 @@ export default function WalkthroughAAECustomEvaluatorDevelopment() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Custom Evaluator Development — Step by Step
+          Custom Evaluator Development \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how custom evaluator development works, one stage at a time.

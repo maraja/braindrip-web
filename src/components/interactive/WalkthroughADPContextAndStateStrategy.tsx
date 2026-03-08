@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Context Budget Allocation', desc: 'The foundation of context and state strategy begins with understanding its core input requirements and initial setup.' },
-    { title: '2. State Prioritization Patterns', desc: 'At this stage, the key transformation occurs — the core mechanism that makes context and state strategy work.' },
-    { title: '3. Compression Strategy Selection', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Persistent Memory Design', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Context Monitoring', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Context Budget Allocation', desc: 'For a 128K-token context window, allocate zones with clear budgets:  Enforcement: Monitor token usage per zone after each turn. When a zone exceeds its budget, apply that zone\'s compression strategy (see below).' },
+    { title: '2. State Prioritization Patterns', desc: 'When the context window fills up, you must decide what to keep and what to remove. Three prioritization signals:  Recency: More recent information is more likely to be relevant.' },
+    { title: '3. Compression Strategy Selection', desc: 'When you must reduce the size of context content, choose the right compression method:  Summarization: Use an LLM to compress content while preserving key information. Best for conversation history and long-form text.' },
+    { title: '4. Persistent Memory Design', desc: 'Some information must survive beyond a single conversation: user preferences, learned facts, task history, and agent-discovered knowledge. Design your persistence layer around three questions:  What to persist: User-stated preferences and corrections ("I prefer metric units," "My timezone is EST").' },
+    { title: '5. Context Monitoring', desc: 'Track these metrics in production:  Context utilization: What percentage of the window is used per turn? If consistently above 80%, you are at risk of hitting limits.' },
 ];
 
 export default function WalkthroughADPContextAndStateStrategy() {
@@ -17,10 +17,10 @@ export default function WalkthroughADPContextAndStateStrategy() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Context and State Strategy — Step by Step
+          Context and State Strategy \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how context and state strategy works, one stage at a time.

@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Sparsity', detail: 'A typical BoW vector is over 99% zeros. A vocabulary of 100,000 words means each document vector has 100,000 dimensions, but an average document might use only 200-500 unique words.' },
-    { label: 'Storage', detail: 'Sparse matrix formats (CSR, CSC) reduce storage from O(N x |V|) to O(nnz), where nnz is the number of non-zero entries.' },
+    { label: 'Storage', detail: 'Sparse matrix formats (CSR, CSC) reduce storage from O(N x ) to O(nnz), where nnz is the number of non-zero entries.' },
     { label: 'Vocabulary pruning', detail: 'Removing words appearing in fewer than 2-5 documents (min_df) and more than 80-95% of documents (max_df) typically reduces vocabulary by 50-80% with minimal performance loss.' },
-    { label: 'scikit-learn implementation', detail: '`CountVectorizer` builds the document-term matrix with configurable tokenization, n-gram range, and frequency thresholds in a single API call.' },
+    { label: 'scikit-learn implementation', detail: 'CountVectorizer builds the document-term matrix with configurable tokenization, n-gram range, and frequency thresholds in a single API call.' },
     { label: 'Zipf\'s law', detail: 'A small number of words dominate counts (the top 100 words account for roughly 50% of all tokens in English), which motivates stopword removal and TF-IDF reweighting.' },
 ];
 
@@ -19,10 +19,10 @@ export default function ExplorerNLPBagOfWords() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Bag of Words — Key Details Explorer
+          Bag of Words \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of bag of words.
+          Click each card to explore the technical details.
         </p>
       </div>
 

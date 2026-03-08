@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCMedicalImageAnalysis() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'nnU-Net automatically adapts patch size, batch size, and network depth to available GPU memory; trained on a single V100 (32 GB) in most cases.', isTrue: true, explanation: 'This is a key technical detail of Medical Image Analysis.' },
-    { text: 'Dice scores for organ segmentation (liver, kidney) typically exceed 0.95; for tumor segmentation, 0.70--0.85 is considered strong.', isTrue: true, explanation: 'This is a key technical detail of Medical Image Analysis.' },
-    { text: 'A typical chest CT is 512x512x300 voxels at 0.7mm in-plane resolution and 1--3mm slice spacing, requiring ~300 MB per volume in float32.', isTrue: true, explanation: 'This is a key technical detail of Medical Image Analysis.' },
+    { text: 'Medical AI will replace radiologists.', isTrue: false, explanation: 'Current AI tools are decision-support systems, not autonomous diagnosticians (with rare exceptions like IDx-DR). Regulatory frameworks require physician oversight in almost all cases.' },
+    { text: 'Medical image analysis applies computer vision to radiology, pathology, and ophthalmology, where U-Net architectures dominate segmentation, data is scarce and 3D, and regulatory approval (FDA/CE) gates deployment.', isTrue: true, explanation: 'This captures the core definition of Medical Image Analysis.' },
+    { text: 'Medical Image Analysis is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Medical Image Analysis is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

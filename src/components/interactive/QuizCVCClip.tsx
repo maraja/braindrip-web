@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizCVCClip() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'CLIP learns a shared embedding space for images and text by training on 400 million image-text pairs with a contrastive objective, enabling zero-shot visual recognition without task-specific fine-tuning.', isTrue: true, explanation: 'This captures the core purpose of CLIP (Contrastive Language-Image Pretraining).' },
-    { text: 'CLIP (Contrastive Language-Image Pretraining) is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding CLIP (Contrastive Language-Image Pretraining) is important for building on more advanced topics.' },
-    { text: 'CLIP (Contrastive Language-Image Pretraining) is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding CLIP (Contrastive Language-Image Pretraining) is important for building on more advanced topics.' },
+    { text: 'CLIP understands images like humans do.', isTrue: false, explanation: 'CLIP matches text-image patterns statistically. It fails on systematic compositional reasoning (e.g., distinguishing "a red cube on a blue sphere" from "a blue cube on a red sphere") and struggles with counting, spatial relations, and negation.' },
+    { text: 'The largest model (ViT-L/14@336px) required ~12 days on 256 V100 GPUs, roughly 3,500 GPU-days', isTrue: true, explanation: 'The largest model (ViT-L/14@336px) required ~12 days on 256 V100 GPUs, roughly 3,500 GPU-days' },
+    { text: 'CLIP is only useful for classification.', isTrue: false, explanation: 'The shared embedding space enables retrieval, generation guidance, open-vocabulary detection, image-text matching, and content filtering -- classification is just the simplest application.' },
+    { text: '76.2% top-1 (ViT-L/14@336px), matching a fully supervised ResNet-50', isTrue: true, explanation: '76.2% top-1 (ViT-L/14@336px), matching a fully supervised ResNet-50' },
+    { text: 'Bigger datasets always help CLIP.', isTrue: false, explanation: 'Quality and diversity of image-text pairs matter as much as scale. Noisy web-crawled pairs with generic alt-text provide diminishing returns compared to descriptive captions.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

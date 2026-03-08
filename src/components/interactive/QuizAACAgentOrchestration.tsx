@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAACAgentOrchestration() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Agent orchestration is the coordination layer that manages execution flow, step scheduling, and state transitions across an agent\'s lifecycle.', isTrue: true, explanation: 'This captures the core purpose of Agent Orchestration.' },
-    { text: 'Agent Orchestration is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Agent Orchestration is important for building on more advanced topics.' },
-    { text: 'Agent Orchestration is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Agent Orchestration is important for building on more advanced topics.' },
+    { text: 'Orchestration is just a for loop over LLM calls.', isTrue: false, explanation: 'Simple agents use loops, but orchestration handles branching, parallelism, state persistence, human-in-the-loop, error recovery, and streaming -- capabilities a for loop cannot provide. "You always need a framework for orchestration." For simple sequential agents, a plain Python script with try/except blocks is fine.' },
+    { text: 'a single node in a parent graph can itself be an entire agent graph', isTrue: true, explanation: 'a single node in a parent graph can itself be an entire agent graph' },
+    { text: 'Agent orchestration is the coordination layer that manages execution flow, step scheduling, and state transitions across an agent\'s lifecycle.', isTrue: true, explanation: 'This captures the core definition of Agent Orchestration.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

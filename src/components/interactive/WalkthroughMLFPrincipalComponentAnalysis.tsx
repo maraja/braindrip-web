@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Eigendecomposition Approach', desc: 'The foundation of principal component analysis begins with understanding its core input requirements and initial setup.' },
-    { title: '2. SVD Approach', desc: 'At this stage, the key transformation occurs — the core mechanism that makes principal component analysis work.' },
-    { title: '3. Choosing the Number of Components', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. PCA for Preprocessing', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Kernel PCA', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Eigendecomposition Approach', desc: 'Center the data: subtract the mean &#123;x&#125; from each observation. Compute the covariance matrix:  = &#123;1&#125;&#123;n-1&#125; X^T X.' },
+    { title: '2. SVD Approach', desc: 'For large d, computing  explicitly is expensive (O(d^2 n) space). Instead, compute the thin SVD of the centered data matrix directly:  [equation]  The columns of V are the principal component directions (identical to the eigenvectors of ).' },
+    { title: '3. Choosing the Number of Components', desc: 'Explained variance ratio: The fraction of total variance captured by the first k components is _&#123;i=1&#125;^k _i / _&#123;i=1&#125;^d _i. A common threshold is 90-95%.' },
+    { title: '4. PCA for Preprocessing', desc: 'Beyond dimensionality reduction, PCA performs two useful transformations:  Decorrelation: The projected coordinates Z = XW are uncorrelated by construction. This benefits algorithms that assume feature independence (e.g., Naive Bayes).' },
+    { title: '5. Kernel PCA', desc: 'Standard PCA captures only linear structure. Kernel PCA (Scholkopf et al., 1998) applies PCA in a high-dimensional feature space induced by a kernel function (x_i, x_j), without explicitly computing the mapping.' },
+    { title: '6. Probabilistic PCA', desc: 'Probabilistic PCA (Tipping and Bishop, 1999) provides a latent variable interpretation. The generative model assumes:  [equation]  where W  &#123;R&#125;^&#123;d x k&#125; is the loading matrix.' },
 ];
 
 export default function WalkthroughMLFPrincipalComponentAnalysis() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFPrincipalComponentAnalysis() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Principal Component Analysis — Step by Step
+          Principal Component Analysis \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how principal component analysis works, one stage at a time.

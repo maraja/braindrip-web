@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Q-Learning Update Rule', desc: 'The foundation of q-learning begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Relationship to Bellman Optimality', desc: 'At this stage, the key transformation occurs — the core mechanism that makes q-learning work.' },
-    { title: '3. The Off-Policy Advantage', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Q-Learning Algorithm', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Convergence Conditions', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Q-Learning Update Rule', desc: 'After taking action A_t in state S_t, observing reward R_&#123;t+1&#125; and next state S_&#123;t+1&#125;, Q-learning updates:  [equation]  The critical term is _a Q(S_&#123;t+1&#125;, a). Rather than using the Q-value of whatever action was actually selected next, Q-learning uses the Q-value of the best action.' },
+    { title: '2. Relationship to Bellman Optimality', desc: 'The Q-learning update is a stochastic approximation to the Bellman optimality equation for action-values:  [equation]  Each observed transition (S_t, A_t, R_&#123;t+1&#125;, S_&#123;t+1&#125;) provides a single sample of this expectation, and the Q-learning update moves the estimate toward this sample.' },
+    { title: '3. The Off-Policy Advantage', desc: 'Because Q-learning always targets the greedy policy, the behavior policy used for data collection is decoupled from the policy being learned. This means:  The agent can explore aggressively (e.g., with high ) without corrupting the learned Q-values.' },
+    { title: '4. Convergence Conditions', desc: 'Q-learning converges to Q^* with probability 1 provided two conditions hold:  Sufficient exploration: All state-action pairs are visited infinitely often. Robbins-Monro step sizes: The learning rate schedule satisfies _t _t(s, a) =  and _t _t^2(s, a) &lt;  for all (s, a).' },
+    { title: '5. The Cliff-Walking Example', desc: 'The cliff-walking gridworld is the canonical illustration of Q-learning\'s character. An agent must navigate from start to goal along a cliff edge.' },
+    { title: '6. Maximization Bias', desc: 'Q-learning suffers from maximization bias: the  operator systematically overestimates Q-values when estimates are noisy. Consider a state where all true Q-values equal zero but estimates have random noise.' },
 ];
 
 export default function WalkthroughRLQLearning() {
@@ -17,10 +18,10 @@ export default function WalkthroughRLQLearning() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Q-Learning — Step by Step
+          Q-Learning \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how q-learning works, one stage at a time.

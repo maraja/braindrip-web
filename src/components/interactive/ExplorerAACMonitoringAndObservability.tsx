@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Trace schema for agents', detail: 'A well-designed trace includes: request_id, user_id, session_id, timestamp, total_duration, total_tokens, total_cost, and a tree of spans. Each span records: span_type (llm_call, tool_call, retrieval, guardrail), input, output, duration, tokens (for LLM spans), status (success/error), and metadata.' },
-    { label: 'Sampling strategies', detail: 'High-volume systems cannot store traces for every request. Head-based sampling (decide at request start) stores a percentage (1-10%) of all traces. Tail-based sampling (decide after completion) stores all traces for failed, slow, expensive, or anomalous requests. Tail-based sampling is more useful for debugging but requires buffering complete traces before the sampling decision.' },
+    { label: 'Sampling strategies', detail: 'High-volume systems cannot store traces for every request. Head-based sampling (decide at request start) stores a percentage (1-10%) of all traces. Tail-based sampling (decide after completion) stores all traces for failed, slow, expensive, or anomalous requests.' },
     { label: 'LLM-specific metrics', detail: 'Beyond standard application metrics, agent systems track: tokens per request (prompt + completion), model selection distribution (which models are used), cache hit rate (for prompt caching), and reasoning-to-action ratio (thinking tokens vs tool call tokens).' },
     { label: 'Correlation with user outcomes', detail: 'The most valuable monitoring links agent behavior to user outcomes. Correlating trace data with user satisfaction scores, task completion signals, and follow-up queries reveals which agent behaviors predict good or bad outcomes.' },
     { label: 'Retention policies', detail: 'Traces and detailed logs are expensive to store. Typical retention: full traces for 7-30 days, aggregated metrics for 1-2 years, safety-relevant events (guardrail triggers, HITL decisions) for regulatory retention periods (often 5-7 years).' },
@@ -20,10 +20,10 @@ export default function ExplorerAACMonitoringAndObservability() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Monitoring and Observability — Key Details Explorer
+          Monitoring and Observability \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of monitoring and observability.
+          Click each card to explore the technical details.
         </p>
       </div>
 

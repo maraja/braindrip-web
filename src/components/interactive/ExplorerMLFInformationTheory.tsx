@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Jensen\'s inequality', detail: 'underlies the non-negativity of KL divergence: $\\mathbb{E}[\\log(X)] \\leq \\log(\\mathbb{E}[X])$ for concave $\\log$.' },
-    { label: 'Data processing inequality', detail: 'For a Markov chain $X \\to Y \\to Z$, $I(X; Z) \\leq I(X; Y)$. Processing data cannot create information.' },
-    { label: 'KL divergence for Gaussians', detail: 'has a closed form: $D_{\\text{KL}}(\\mathcal{N}_0 \\| \\mathcal{N}_1) = \\frac{1}{2}[\\log\\frac{|\\Sigma_1|}{|\\Sigma_0|} - d + \\text{tr}(\\Sigma_1^{-1}\\Sigma_0) + (\\mu_1-\\mu_0)^T\\Sigma_1^{-1}(\\mu_1-\\mu_0)]$.' },
-    { label: 'Label smoothing', detail: 'in classification adds a small uniform component to one-hot labels, preventing the model from driving $q$ to extreme values and implicitly regularizing the cross-entropy.' },
+    { label: 'Jensen\'s inequality', detail: 'underlies the non-negativity of KL divergence: &#123;E&#125;[(X)]  (&#123;E&#125;[X]) for concave .' },
+    { label: 'Data processing inequality', detail: 'For a Markov chain X  Y  Z, I(X; Z)  I(X; Y). Processing data cannot create information.' },
+    { label: 'KL divergence for Gaussians', detail: 'has a closed form: D_&#123;KL&#125;(&#123;N&#125;_0 \\&#125; - d + tr(_1^&#123;-1&#125;_0) + (_1-_0)^T_1^&#123;-1&#125;(_1-_0)].' },
+    { label: 'Label smoothing', detail: 'in classification adds a small uniform component to one-hot labels, preventing the model from driving q to extreme values and implicitly regularizing the cross-entropy.' },
 ];
 
 export default function ExplorerMLFInformationTheory() {
@@ -18,10 +18,10 @@ export default function ExplorerMLFInformationTheory() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Information Theory — Key Details Explorer
+          Information Theory \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of information theory.
+          Click each card to explore the technical details.
         </p>
       </div>
 

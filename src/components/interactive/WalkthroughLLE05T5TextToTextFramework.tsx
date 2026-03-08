@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Text-to-Text Framework', desc: 'The foundation of t5: the text-to-text transfer transformer begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Architecture: Encoder-Decoder', desc: 'At this stage, the key transformation occurs — the core mechanism that makes t5: the text-to-text transfer transformer work.' },
-    { title: '3. C4: The Colossal Clean Crawled Corpus', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Systematic Exploration', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Text-to-Text Framework', desc: 'T5 converts every task into the same format by prepending a task-specific prefix:  Translation: "translate English to German: That is good." → "Das ist gut." Summarization: "summarize: [article text]" → "[summary text]" Classification: "cola sentence: The course is jumping well.' },
+    { title: '2. Architecture: Encoder-Decoder', desc: 'T5 uses the original encoder-decoder Transformer architecture from 01-attention-is-all-you-need.md, unlike the encoder-only BERT or decoder-only GPT. The encoder processes the full input with bidirectional attention (no causal mask), and the decoder generates the output autoregressively with causal.' },
+    { title: '3. C4: The Colossal Clean Crawled Corpus', desc: 'T5 introduced C4, a new pre-training dataset constructed by aggressively filtering Common Crawl. The cleaning pipeline removed: pages with profanity, pages shorter than 5 sentences, pages with boilerplate indicators (like "lorem ipsum" or "terms of service"), duplicate sentences (detected with.' },
+    { title: '4. The Systematic Exploration', desc: 'The paper systematically tested alternatives for each design choice:  Architectures: Encoder-decoder vs decoder-only vs prefix LM (decoder with non-causal prefix).' },
 ];
 
 export default function WalkthroughLLE05T5TextToTextFramework() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE05T5TextToTextFramework() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          T5: The Text-to-Text Transfer Transformer — Step by Step
+          T5: The Text-to-Text Transfer Transformer \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how t5: the text-to-text transfer transformer works, one stage at a time.

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Bug Identification Prompts', desc: 'The foundation of code review and debugging prompts begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Code Review Focus Areas', desc: 'At this stage, the key transformation occurs — the core mechanism that makes code review and debugging prompts work.' },
-    { title: '3. Diff-Based Review', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Refactoring Suggestions', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Bug Identification Prompts', desc: 'Effective bug identification requires three pieces of context: the code, the error (or unexpected behavior), and the expected behavior. The diagnostic triad: Code: The relevant code, including imports, surrounding context, and any configuration Error: The exact error message, stack trace, or.' },
+    { title: '2. Code Review Focus Areas', desc: 'Code review prompts should specify the review focus to avoid generic feedback:  Security review: "Review this code for security vulnerabilities. Focus on: input validation, SQL injection, XSS, authentication/authorization checks, sensitive data exposure, and insecure deserialization.' },
+    { title: '3. Diff-Based Review', desc: 'For code changes (pull requests, patches), providing the diff rather than the full file focuses the review on what changed:  Diff review prompt: "Review the following code diff.' },
+    { title: '4. Refactoring Suggestions', desc: 'Refactoring prompts ask the model to improve code without changing its behavior:  Pattern: "Refactor this code to [specific goal]. Maintain identical external behavior — the same inputs must produce the same outputs.' },
 ];
 
 export default function WalkthroughPECodeReviewAndDebuggingPrompts() {
@@ -16,10 +16,10 @@ export default function WalkthroughPECodeReviewAndDebuggingPrompts() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Code Review and Debugging Prompts — Step by Step
+          Code Review and Debugging Prompts \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how code review and debugging prompts works, one stage at a time.

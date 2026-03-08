@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Structuring Elements', desc: 'The foundation of morphological operations begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Erosion and Dilation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes morphological operations work.' },
-    { title: '3. Opening and Closing', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Advanced Operations', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Grayscale Morphology', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Structuring Elements', desc: 'The structuring element defines the "shape of the probe." Common choices:  Structuring element size matters: a larger element produces more aggressive erosion/dilation. The choice of shape (rectangle vs.' },
+    { title: '2. Erosion and Dilation', desc: 'Erosion effects: Removes foreground objects smaller than the structuring element. Shrinks all foreground objects by the element\'s radius.' },
+    { title: '3. Opening and Closing', desc: 'Opening (erosion followed by dilation): A  B = (A  B)  B  Opening removes small foreground protrusions and noise while approximately preserving the size and shape of larger objects. It is a morphological "low-pass filter" for shape.' },
+    { title: '4. Advanced Operations', desc: 'Morphological Gradient: grad(A) = (A  B) - (A  B)  The difference between dilation and erosion produces the outline of objects, similar to edge detection but operating on binary shape rather than intensity gradients.' },
+    { title: '5. Grayscale Morphology', desc: 'Morphological operations extend to grayscale images by replacing set union/intersection with max/min:  Grayscale dilation: Maximum filter within the structuring element footprint. Grayscale erosion: Minimum filter within the structuring element footprint.' },
+    { title: '6. Skeletonization and Distance Transform', desc: 'Skeletonization reduces binary objects to their 1-pixel-wide medial axis by iterative thinning (a sequence of hit-or-miss transforms). The skeleton preserves the topology and approximate geometry of the original shape.' },
 ];
 
 export default function WalkthroughCVCMorphologicalOperations() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCMorphologicalOperations() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Morphological Operations — Step by Step
+          Morphological Operations \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how morphological operations works, one stage at a time.

@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Five-Question Triage', desc: 'The foundation of do you need an agent begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Alternatives Spectrum', desc: 'At this stage, the key transformation occurs — the core mechanism that makes do you need an agent work.' },
-    { title: '3. Problem Complexity Scoring', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Cost Reality Check', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Five-Question Triage', desc: 'Before reaching for an agent framework, answer these five questions about your task:  If you answered "No" to any question, that row tells you the simpler alternative to use.' },
+    { title: '2. Problem Complexity Scoring', desc: 'Score your problem on these four dimensions (1-5 each):  Path unpredictability: How many different tool-call sequences could solve the task? (1 = one known path, 5 = completely open-ended) Intermediate reasoning: How much does step N+1 depend on interpreting the result of step N?' },
+    { title: '3. Cost Reality Check', desc: 'Concrete cost comparison for a "research a topic and write a summary" task:  Prompt chain (retrieve, synthesize, format): ~4,000 tokens input + ~1,500 output = ~5,500 tokens total. Predictable, fast.' },
 ];
 
 export default function WalkthroughADPDoYouNeedAnAgent() {
@@ -16,13 +15,13 @@ export default function WalkthroughADPDoYouNeedAnAgent() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Do You Need an Agent — Step by Step
+          Do You Need an Agent? \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Walk through how do you need an agent works, one stage at a time.
+          Walk through how do you need an agent? works, one stage at a time.
         </p>
       </div>
 

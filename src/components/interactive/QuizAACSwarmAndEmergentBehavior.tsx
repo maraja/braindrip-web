@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACSwarmAndEmergentBehavior() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Handoff context management: When handing off, the entire conversation history transfers to the new agent.', isTrue: true, explanation: 'This is a key technical detail of Swarm and Emergent Behavior.' },
-    { text: 'For long conversations, this can exceed context limits.', isTrue: true, explanation: 'This is a key technical detail of Swarm and Emergent Behavior.' },
-    { text: 'Summarizing the conversation at handoff points reduces this pressure but risks losing important details.', isTrue: true, explanation: 'This is a key technical detail of Swarm and Emergent Behavior.' },
+    { text: 'Swarm architecture is always superior because it\'s decentralized', isTrue: false, explanation: ': Decentralization is a trade-off, not a universal advantage. Tasks requiring coordinated multi-step plans (build a software project, write a research paper) are poorly served by swarms because no agent has a global view of the plan.' },
+    { text: 'When handing off, the entire conversation history transfers to the new agent.', isTrue: true, explanation: 'For long conversations, this can exceed context limits. Summarizing the conversation at handoff points reduces this pressure but risks losing important details.' },
+    { text: 'Without safeguards, agents can enter infinite handoff loops (A hands off to B, B hands off to A).', isTrue: true, explanation: 'Implement maximum handoff counts and loop detection at the runtime level.' },
+    { text: 'OpenAI Swarm supports context variables — a shared dictionary that persists across handoffs.', isTrue: true, explanation: 'This allows agents to communicate state (customer ID, issue category, escalation level) without including it in the conversation text.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

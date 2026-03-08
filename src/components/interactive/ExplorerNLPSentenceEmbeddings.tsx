@@ -4,7 +4,7 @@ const DETAILS = [
     { label: 'STS Benchmark results (Spearman correlation)', detail: 'Averaged GloVe ~58%, Averaged BERT ~47% (surprisingly poor), BERT [CLS] ~29%, InferSent ~68%, USE ~74%, SBERT (bert-base) ~85%, SimCSE (unsupervised) ~82%, all-MiniLM-L6-v2 ~82% (6x faster than SBERT-base).' },
     { label: 'Dimensionality', detail: 'Common dimensions are 384 (MiniLM), 512 (USE), 768 (SBERT-base), 1024 (SBERT-large). Matryoshka representation learning allows truncating vectors to smaller dimensions with graceful degradation.' },
     { label: 'Speed vs. accuracy trade-off', detail: 'all-MiniLM-L6-v2 encodes ~14,000 sentences/sec on GPU vs. ~2,000/sec for SBERT-base, with only ~3% lower STS correlation.' },
-    { label: 'Maximum sequence length', detail: 'Most sentence embedding models handle up to 256-512 tokens. Longer inputs are truncated, making them unsuitable for full documents (see `document-embeddings.md`).' },
+    { label: 'Maximum sequence length', detail: 'Most sentence embedding models handle up to 256-512 tokens. Longer inputs are truncated, making them unsuitable for full documents (see document-embeddings.md).' },
     { label: 'Normalization', detail: 'Sentence embedding vectors are typically L2-normalized so that cosine similarity reduces to a dot product, enabling efficient approximate nearest neighbor search.' },
 ];
 
@@ -19,10 +19,10 @@ export default function ExplorerNLPSentenceEmbeddings() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Sentence Embeddings — Key Details Explorer
+          Sentence Embeddings \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of sentence embeddings.
+          Click each card to explore the technical details.
         </p>
       </div>
 

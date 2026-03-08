@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Paper', detail: 'Warner et al., \"Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference\" (Dec 2024, arXiv:2412.13663)' },
+    { label: 'Paper', detail: 'Warner et al., "Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference" (Dec 2024, arXiv:2412.13663)' },
     { label: 'ModernBERT-base', detail: '22 layers, 768 hidden, 12 heads, 149M params, 8,192 context' },
     { label: 'ModernBERT-large', detail: '28 layers, 1024 hidden, 16 heads, 395M params, 8,192 context' },
     { label: 'Training data', detail: '2 trillion tokens (vs BERT\'s ~3.3B and RoBERTa\'s ~30B) — ~600x BERT' },
@@ -20,10 +20,10 @@ export default function ExplorerLLE06ModernbertAndTheEncoderRevival() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          ModernBERT and the Encoder Revival — Key Details Explorer
+          ModernBERT and the Encoder Revival \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of modernbert and the encoder revival.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Sources of Drift', desc: 'The foundation of drift detection and model updates begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Detection Methods', desc: 'At this stage, the key transformation occurs — the core mechanism that makes drift detection and model updates work.' },
-    { title: '3. Statistical Process Control Charts', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Distribution Comparison Tests', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Automated Regression Detection on Rolling Windows', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Sources of Drift', desc: 'Understanding what causes drift is essential to detecting and responding to it. Model provider updates are the most common and most frustrating source of drift.' },
+    { title: '2. Detection Methods', desc: '#### Statistical Process Control Charts  Control charts, borrowed from manufacturing quality management, are the workhouse of drift detection. A quality metric (e.g., daily task completion rate) is plotted over time.' },
+    { title: '3. Response Playbooks', desc: 'Detection without response is useless. A drift response playbook defines concrete actions for each scenario.' },
+    { title: '4. The Silent Update Problem', desc: 'Model providers updating models without notification deserves special attention because it is both common and difficult to manage. Practical defenses include:  Running a fixed set of "canary" prompts against the API daily and tracking response characteristics (length, formatting, key.' },
 ];
 
 export default function WalkthroughAAEDriftDetectionAndModelUpdates() {
@@ -17,10 +16,10 @@ export default function WalkthroughAAEDriftDetectionAndModelUpdates() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Drift Detection and Model Updates — Step by Step
+          Drift Detection and Model Updates \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how drift detection and model updates works, one stage at a time.

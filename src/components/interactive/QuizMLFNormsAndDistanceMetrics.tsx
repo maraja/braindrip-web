@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFNormsAndDistanceMetrics() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Curse of dimensionality: In high dimensions, the ratio of the distance to the nearest and farthest neighbor approaches 1, making distance-based methods (KNN, kernel methods) less discriminative.', isTrue: true, explanation: 'This is a key technical detail of Norms and Distance Metrics.' },
-    { text: 'L1 distance degrades more gracefully than L2.', isTrue: true, explanation: 'This is a key technical detail of Norms and Distance Metrics.' },
-    { text: 'Matrix norms: The Frobenius norm $\\|A\\|_F = \\sqrt&#123;\\sum_&#123;ij&#125; A_&#123;ij&#125;^2&#125;$ is the L2 norm of the vectorized matrix.', isTrue: true, explanation: 'This is a key technical detail of Norms and Distance Metrics.' },
+    { text: 'Euclidean distance is always the natural choice.', isTrue: false, explanation: 'It is the natural choice only when features are independent, equally scaled, and magnitude differences are meaningful. For text embeddings, cosine similarity is far more appropriate.' },
+    { text: 'In high dimensions, the ratio of the distance to the nearest and farthest neighbor approaches 1, making distance-based methods (KNN, kernel methods) less discriminative.', isTrue: true, explanation: 'L1 distance degrades more gracefully than L2.' },
+    { text: 'The Frobenius norm \\_2 = _&#123;&#125;(A) is the largest singular value.', isTrue: true, explanation: 'The Frobenius norm \\_2 = _&#123;&#125;(A) is the largest singular value.' },
+    { text: 'The dual of L^p is L^q where &#123;1&#125;&#123;p&#125; + &#123;1&#125;&#123;q&#125; = 1.', isTrue: true, explanation: 'This duality appears in optimization (Lagrangian duality of regularized problems).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

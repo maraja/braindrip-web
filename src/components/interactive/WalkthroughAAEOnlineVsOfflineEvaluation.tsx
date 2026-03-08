@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Offline Evaluation', desc: 'The foundation of online vs offline evaluation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Online Evaluation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes online vs offline evaluation work.' },
-    { title: '3. What Each Approach Catches', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Shadow Evaluation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Building a Combined Strategy', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Offline Evaluation', desc: 'Offline evaluation pipelines typically follow a standardized pattern. A curated dataset of input-output pairs (or input-trajectory pairs for agentic systems) is maintained in version control.' },
+    { title: '2. Online Evaluation', desc: 'Online evaluation instruments the production system to assess quality on live traffic. This can take several forms: sampling a percentage of interactions for automated scoring, running A/B tests between agent versions (see a-b-testing-for-agents.' },
+    { title: '3. What Each Approach Catches', desc: 'Offline evaluation excels at catching regressions -- if a model update breaks a capability that previously worked, offline tests surface this before any user is affected. It also catches systematic errors (e.g.' },
+    { title: '4. Shadow Evaluation', desc: 'Shadow evaluation (also called shadow mode or dark launching) bridges the two approaches. A new agent version processes production traffic in parallel with the current version, but only the current version\'s responses are served to users.' },
+    { title: '5. Building a Combined Strategy', desc: 'A mature evaluation strategy layers both approaches. A recommended pipeline is:  Development: offline evaluation on every code change (fast feedback, 5-10 minutes) Pre-deployment: full offline suite with expanded test cases (30-60 minutes) Shadow deployment: shadow evaluation on production traffic.' },
 ];
 
 export default function WalkthroughAAEOnlineVsOfflineEvaluation() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAEOnlineVsOfflineEvaluation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Online vs Offline Evaluation — Step by Step
+          Online vs Offline Evaluation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how online vs offline evaluation works, one stage at a time.

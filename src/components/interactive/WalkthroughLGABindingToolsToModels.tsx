@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Basic Tool Binding', desc: 'The foundation of binding tools to models begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Provider-Agnostic Initialization', desc: 'At this stage, the key transformation occurs — the core mechanism that makes binding tools to models work.' },
-    { title: '3. Inspecting Tool Calls in the Response', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Forcing a Specific Tool', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Provider-Agnostic Initialization', desc: 'init_chat_model() lets you swap providers without changing your tool-binding code.' },
+    { title: '2. Inspecting Tool Calls in the Response', desc: 'The response is an AIMessage with a tool_calls list. Each entry contains: name — which tool the model wants to invoke args — the arguments as a dictionary id — a unique identifier for matching results back to the call' },
+    { title: '3. Forcing a Specific Tool', desc: 'Setting tool_choice forces the model to always call a specific tool, useful for single-purpose pipelines.' },
 ];
 
 export default function WalkthroughLGABindingToolsToModels() {
@@ -16,10 +15,10 @@ export default function WalkthroughLGABindingToolsToModels() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Binding Tools to Models — Step by Step
+          Binding Tools to Models \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how binding tools to models works, one stage at a time.

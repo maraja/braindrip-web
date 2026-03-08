@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEHumanAgentCollaborationEvaluation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Evaluating human-agent teamwork requires measuring joint performance, handoff quality, shared understanding, and trust calibration -- metrics that neither human-only nor agent-only evaluation frameworks can capture.', isTrue: true, explanation: 'This captures the core purpose of Human-Agent Collaboration Evaluation.' },
-    { text: 'Human-Agent Collaboration Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Human-Agent Collaboration Evaluation is important for building on more advanced topics.' },
-    { text: 'Human-Agent Collaboration Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Human-Agent Collaboration Evaluation is important for building on more advanced topics.' },
+    { text: 'Better agents always improve collaboration outcomes.', isTrue: false, explanation: 'Counterintuitively, more capable agents can worsen collaboration if they change behavior in ways the human does not expect. A sudden capability upgrade can break calibrated trust, as the human\'s model of the agent\'s abilities becomes inaccurate.' },
+    { text: 'Human-agent collaboration evaluation is just user experience testing.', isTrue: false, explanation: 'While UX is a component, collaboration evaluation includes performance measurement, trust calibration, cognitive load assessment, and handoff quality -- quantitative dimensions that go far beyond subjective satisfaction surveys.' },
+    { text: 'If the agent explains its reasoning, the human will understand.', isTrue: false, explanation: 'Explanation and understanding are not the same thing. Agents that produce verbose explanations can actually decrease human understanding by overwhelming working memory.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFDataSplittingAndSampling() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Test set size: Must be large enough for statistically meaningful estimates.', isTrue: true, explanation: 'This is a key technical detail of Data Splitting and Sampling.' },
-    { text: 'For binary classification, at least 100-200 positive examples in the test set are needed for a reliable precision estimate.', isTrue: true, explanation: 'This is a key technical detail of Data Splitting and Sampling.' },
-    { text: 'Reproducibility: Always set a random seed for splits and document it.', isTrue: true, explanation: 'This is a key technical detail of Data Splitting and Sampling.' },
+    { text: 'A bigger test set is always better.', isTrue: false, explanation: 'A larger test set reduces evaluation variance but shrinks the training set, increasing model variance. The right balance depends on n: with 100 million rows, 1% is more than enough for testing; with 500 rows, even 30% is marginal.' },
+    { text: 'Must be large enough for statistically meaningful estimates.', isTrue: true, explanation: 'For binary classification, at least 100-200 positive examples in the test set are needed for a reliable precision estimate.' },
+    { text: 'Always set a random seed for splits and document it.', isTrue: true, explanation: 'Use deterministic splitting functions.' },
+    { text: 'For joint hyperparameter tuning and performance estimation, use an outer loop (for evaluation) wrapping an inner loop (for tuning).', isTrue: true, explanation: 'This prevents the hyperparameter search from overfitting to the evaluation folds.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

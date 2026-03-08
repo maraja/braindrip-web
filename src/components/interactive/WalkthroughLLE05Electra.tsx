@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Generator-Discriminator Framework', desc: 'The foundation of electra: efficiently learning an encoder that classifies token replacements accurately begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Not Adversarial Training', desc: 'At this stage, the key transformation occurs — the core mechanism that makes electra: efficiently learning an encoder that classifies token replacements accurately work.' },
-    { title: '3. Why Replaced Token Detection Works Better', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Model Sizes and Training', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Generator-Discriminator Framework', desc: 'ELECTRA uses two models: a small generator and the main discriminator. The generator is a small masked language model (typically 1/4 to 1/3 the size of the discriminator).' },
+    { title: '2. Not Adversarial Training', desc: 'Despite the generator-discriminator terminology, ELECTRA is not a GAN (Generative Adversarial Network). In GANs, the generator and discriminator are locked in a minimax game — the generator tries to fool the discriminator, and the discriminator tries to catch the generator.' },
+    { title: '3. Why Replaced Token Detection Works Better', desc: 'MLM trains the model to be a good language model at masked positions. But the signal is sparse: only 15% of tokens are masked, and the model learns nothing directly from the unmasked 85%.' },
+    { title: '4. Model Sizes and Training', desc: 'The generator is typically 1/4 to 1/3 the size of the discriminator. After pre-training, the generator is discarded — only the discriminator is used for downstream tasks.' },
 ];
 
 export default function WalkthroughLLE05Electra() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE05Electra() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          ELECTRA: Efficiently Learning an Encoder That Classifies Token Replacements Accurately — Step by Step
+          ELECTRA: Efficiently Learning an Encoder That Classifies Token Replacements Accurately \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how electra: efficiently learning an encoder that classifies token replacements accurately works, one stage at a time.

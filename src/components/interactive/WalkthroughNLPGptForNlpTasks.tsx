@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. GPT-1: Generative Pre-Training + Discriminative Fine-Tuning (2018)', desc: 'The foundation of gpt for nlp tasks begins with understanding its core input requirements and initial setup.' },
-    { title: '2. GPT-2: Zero-Shot Task Transfer (2019)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes gpt for nlp tasks work.' },
-    { title: '3. GPT-3: In-Context Learning Revolution (2020)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Prompt-Based Task Reformulation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Decoder-Only vs. Encoder-Only: The Paradigm Debate', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. GPT-1: Generative Pre-Training + Discriminative Fine-Tuning (2018)', desc: 'GPT-1 used a 12-layer transformer decoder (117M parameters) pre-trained on BooksCorpus (7,000 unpublished books, ~800M tokens) with a standard causal language modeling objective:  Each position can only attend to positions to its left (causal masking), enforcing autoregressive generation.' },
+    { title: '2. GPT-2: Zero-Shot Task Transfer (2019)', desc: 'GPT-2 scaled to 1.5B parameters (10x GPT-1) and trained on WebText, a curated dataset of 8 million web pages (40GB of text) sourced by following links from Reddit posts with 3+ upvotes. The key discovery was emergent zero-shot task performance.' },
+    { title: '3. GPT-3: In-Context Learning Revolution (2020)', desc: 'GPT-3 scaled to 175B parameters and trained on a filtered blend of Common Crawl, WebText2, Books1, Books2, and Wikipedia (~300B tokens). Its most transformative contribution was in-context learning -- the ability to perform tasks from just a few examples provided in the prompt, with no gradient.' },
+    { title: '4. Prompt-Based Task Reformulation', desc: 'GPT\'s approach requires reformulating every NLP task as text generation:  This reformulation connects directly to prompt-based-nlp.md, which explores systematic approaches to prompt design.' },
+    { title: '5. Decoder-Only vs. Encoder-Only: The Paradigm Debate', desc: 'The GPT (decoder-only) vs. BERT (encoder-only) debate centers on a fundamental trade-off:  BERT/Encoder: Bidirectional attention gives richer representations for understanding tasks (classification, NER, QA), but cannot generate text natively.' },
 ];
 
 export default function WalkthroughNLPGptForNlpTasks() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPGptForNlpTasks() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          GPT for NLP Tasks — Step by Step
+          GPT for NLP Tasks \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how gpt for nlp tasks works, one stage at a time.

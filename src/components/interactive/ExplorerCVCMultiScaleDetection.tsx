@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'COCO size definitions', detail: 'Small ($\\text{area} < 32^2$), Medium ($32^2 \\leq \\text{area} < 96^2$), Large ($\\text{area} \\geq 96^2$).' },
+    { label: 'COCO size definitions', detail: 'Small (area &lt; 32^2), Medium (32^2  area &lt; 96^2), Large (area  96^2).' },
     { label: 'Scale gap', detail: 'State-of-the-art detectors (2023) achieve ~35% AP_S vs. ~55% AP_L on COCO -- small objects remain ~20 AP points behind.' },
-    { label: 'FPN overhead', detail: 'Adds <5% FLOPs to the backbone, making it essentially free in terms of computation.' },
+    { label: 'FPN overhead', detail: 'Adds &lt;5% FLOPs to the backbone, making it essentially free in terms of computation.' },
     { label: 'Image pyramid cost', detail: 'Processing 5 scales costs ~4-5x single-scale inference time (not exactly 5x due to smaller scales being cheaper).' },
     { label: 'SNIP (2018)', detail: 'Singh and Davis showed that training on scale-appropriate instances only (ignoring too-small and too-large objects at each pyramid level) improves AP by ~2%.' },
     { label: 'Trident Networks (2019)', detail: 'Use dilated convolutions with different dilation rates to construct parallel branches for different scales, sharing all parameters.' },
@@ -20,10 +20,10 @@ export default function ExplorerCVCMultiScaleDetection() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Multi-Scale Detection — Key Details Explorer
+          Multi-Scale Detection \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of multi-scale detection.
+          Click each card to explore the technical details.
         </p>
       </div>
 

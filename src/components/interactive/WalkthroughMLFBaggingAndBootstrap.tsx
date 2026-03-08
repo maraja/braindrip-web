@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Bootstrap Sampling', desc: 'The foundation of bagging and bootstrap begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Bagging Algorithm', desc: 'At this stage, the key transformation occurs — the core mechanism that makes bagging and bootstrap work.' },
-    { title: '3. Variance Reduction Proof', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Out-of-Bag Estimation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Bootstrap Sampling', desc: 'Given a training set D = \\&#123;(x_1, y_1), , (x_n, y_n)\\&#125;, a bootstrap sample D^&#123;*&#125;_b is formed by drawing n examples uniformly at random with replacement from D. Because sampling is done with replacement, some examples appear multiple times while others are omitted entirely.' },
+    { title: '2. The Bagging Algorithm', desc: 'For b = 1, 2, , B:    - Draw a bootstrap sample D^&#123;*&#125;_b of size n from D. - Train a base learner &#123;f&#125;_b on D^&#123;*&#125;_b.' },
+    { title: '3. Variance Reduction Proof', desc: 'The core theoretical justification for bagging rests on a fundamental property of averaging. Let Z_1, Z_2, , Z_B be identically distributed random variables each with variance ^2, and let  be the pairwise correlation between any two variables.' },
+    { title: '4. Out-of-Bag Estimation', desc: 'Since each bootstrap sample leaves out ~36.8% of the data, we get a free validation mechanism. For each training example x_i, we collect predictions only from models whose bootstrap sample did not include x_i:  [equation]  where S_i = \\&#123;b : (x_i, y_i)  D^&#123;*&#125;_b\\&#125;.' },
 ];
 
 export default function WalkthroughMLFBaggingAndBootstrap() {
@@ -16,10 +16,10 @@ export default function WalkthroughMLFBaggingAndBootstrap() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Bagging and Bootstrap — Step by Step
+          Bagging and Bootstrap \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how bagging and bootstrap works, one stage at a time.

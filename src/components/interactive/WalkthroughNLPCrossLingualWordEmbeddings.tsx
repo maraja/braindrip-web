@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Supervised Alignment: The Linear Mapping Approach', desc: 'The foundation of cross-lingual word embeddings begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Procrustes Solution', desc: 'At this stage, the key transformation occurs — the core mechanism that makes cross-lingual word embeddings work.' },
-    { title: '3. Unsupervised Alignment: MUSE', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Evaluation: Bilingual Lexicon Induction (BLI)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Supervised Alignment: The Linear Mapping Approach', desc: '(2013) made the foundational observation that monolingual word embedding spaces exhibit similar geometric structures across languages. They proposed learning a linear mapping W from source to target space using a seed bilingual dictionary of n word pairs &#123;(x_i, y_i)&#125;:  where X is the d x n matrix.' },
+    { title: '2. The Procrustes Solution', desc: '(2015) and Smith et al. (2017) showed that constraining W to be orthogonal (preserving distances within each language\'s space) significantly improves alignment quality.' },
+    { title: '3. Unsupervised Alignment: MUSE', desc: '(2018) demonstrated that cross-lingual alignment is possible without any bilingual dictionary at all. Their MUSE (Multilingual Unsupervised and Supervised Embeddings) system uses adversarial training:  Adversarial step: Train a discriminator D to distinguish between WX_s (mapped source embeddings).' },
+    { title: '4. Evaluation: Bilingual Lexicon Induction (BLI)', desc: 'The standard evaluation task is bilingual lexicon induction: given a source word, retrieve its translation from the target embedding space by nearest-neighbor search. The MUSE benchmark covers 30 language pairs with ground-truth dictionaries.' },
 ];
 
 export default function WalkthroughNLPCrossLingualWordEmbeddings() {
@@ -16,10 +16,10 @@ export default function WalkthroughNLPCrossLingualWordEmbeddings() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Cross-Lingual Word Embeddings — Step by Step
+          Cross-Lingual Word Embeddings \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how cross-lingual word embeddings works, one stage at a time.

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE07OpenVsClosedTheNarrowingGap() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The capability gap between open-weight and closed frontier models collapsed from ~17.5 MMLU points in 2023 to near-parity by 2025, and by early 2026 the best open model trailed the best closed model by less than 1% on SWE-bench coding — driven by better training data, MoE architectures, and reasoning distillation, with remaining edges narrowing to multimodal, safety, and ecosystem differentiation.', isTrue: true, explanation: 'This captures the core purpose of Open vs Closed: The Narrowing Gap.' },
-    { text: 'Open vs Closed: The Narrowing Gap is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Open vs Closed: The Narrowing Gap is important for building on more advanced topics.' },
-    { text: 'Open vs Closed: The Narrowing Gap is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Open vs Closed: The Narrowing Gap is important for building on more advanced topics.' },
+    { text: 'Open models have fully caught up.', isTrue: false, explanation: 'On general benchmarks and specific tasks like coding and math, yes. But closed models maintain meaningful edges on multimodal capabilities (especially video and audio), safety and alignment quality, consistency across diverse prompts, and agentic task completion.' },
+    { text: 'Open means anyone can train these models.', isTrue: false, explanation: 'Releasing weights is "open." Training a frontier model still requires tens of millions of dollars in compute. The "openness" is in deployment and modification, not in the ability to replicate training from scratch.' },
+    { text: 'The gap will close completely.', isTrue: false, explanation: 'Closed labs invest billions in proprietary data, training infrastructure, and RLHF feedback that open models cannot easily replicate. The gap may reach a stable equilibrium where closed models maintain a small but persistent edge on the hardest tasks, while open models cover 90-95% of practical use cases.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

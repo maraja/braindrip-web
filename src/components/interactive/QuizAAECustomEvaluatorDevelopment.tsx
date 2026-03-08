@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAECustomEvaluatorDevelopment() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'When generic evaluation frameworks cannot capture domain-specific quality signals, teams must build custom evaluators -- scoring functions, composite metrics, and domain-aware assessment tools -- treated with the same engineering rigor as production code.', isTrue: true, explanation: 'This captures the core purpose of Custom Evaluator Development.' },
-    { text: 'Custom Evaluator Development is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Custom Evaluator Development is important for building on more advanced topics.' },
-    { text: 'Custom Evaluator Development is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Custom Evaluator Development is important for building on more advanced topics.' },
+    { text: 'LLM-as-judge makes custom evaluators unnecessary.', isTrue: false, explanation: 'LLM judges are powerful but not omniscient. They struggle with numerical verification, domain-specific compliance rules, and cases where surface quality diverges from substantive quality.' },
+    { text: 'Custom evaluators are too expensive to build.', isTrue: false, explanation: 'The alternative is either relying on inadequate generic metrics (leading to bad deployment decisions) or manual human evaluation (which does not scale). Custom evaluators have high upfront cost but low marginal cost per evaluation, making them economical over the evaluation suite\'s lifetime.' },
+    { text: 'Once built, evaluators do not need maintenance.', isTrue: false, explanation: 'Domain requirements evolve, agent output formats change, and edge cases are discovered over time. Evaluators that are not maintained drift from the actual quality criteria, producing increasingly misleading results.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

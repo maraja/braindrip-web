@@ -2,8 +2,8 @@ import { useState } from 'react';
 export default function QuizAACStateMachinesAndGraphs() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'State machines and directed graphs provide deterministic control flow structures that make agent behavior predictable, debuggable, and reliable.', isTrue: true, explanation: 'This captures the core purpose of State Machines and Graphs.' },
-    { text: 'State Machines and Graphs is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding State Machines and Graphs is important for building on more advanced topics.' },
+    { text: 'State machines make agents too rigid.', isTrue: false, explanation: 'The graph defines the macro structure; within each node, the LLM can reason freely. You get structure where it helps (control flow) and flexibility where it helps (reasoning).' },
+    { text: 'State machines and directed graphs provide deterministic control flow structures that make agent behavior predictable, debuggable, and reliable.', isTrue: true, explanation: 'This captures the core definition of State Machines and Graphs.' },
     { text: 'State Machines and Graphs is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding State Machines and Graphs is important for building on more advanced topics.' },
   ];
   return (

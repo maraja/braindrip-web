@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The EDD Cycle', desc: 'The foundation of evaluation-driven development begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Phase 1: Failure Collection (Start Here)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes evaluation-driven development work.' },
-    { title: '3. Phase 2: Eval Construction', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Phase 3: Agent Improvement', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Phase 4: Expansion from Production', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The EDD Cycle', desc: 'The evaluation-driven development cycle has four phases:  #### Phase 1: Failure Collection (Start Here)  Begin by collecting 20-50 real failure cases from your agent\'s target domain.' },
+    { title: '2. Industry Reality: The Evaluation Gap', desc: 'Despite the clear value of evaluations, adoption is alarmingly low:  5% of teams building AI agents run no evaluations at all (Galileo AI Industry Survey, 2024) 44% rely solely on manual/human evaluation with no automated pipeline Only 26.' },
+    { title: '3. Case Study: Claude Code\'s Eval Suite', desc: 'Claude Code\'s evaluation system illustrates EDD in practice:  Starting point: A handful of evals checking basic coding capabilities -- can the agent edit files, run commands, and produce valid code?' },
+    { title: '4. Building Your First Eval Suite', desc: 'A practical starting recipe:  Days 1-3: Use the agent on 30-50 tasks from your target domain. Document every failure, surprise, or suboptimal behavior.' },
 ];
 
 export default function WalkthroughAAEEvaluationDrivenDevelopment() {
@@ -17,10 +16,10 @@ export default function WalkthroughAAEEvaluationDrivenDevelopment() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Evaluation-Driven Development — Step by Step
+          Evaluation-Driven Development \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how evaluation-driven development works, one stage at a time.

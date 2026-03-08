@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Encoder-Decoder: CNN + LSTM', desc: 'The foundation of image captioning begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Attention-Based Captioning: Show, Attend and Tell', desc: 'At this stage, the key transformation occurs — the core mechanism that makes image captioning work.' },
-    { title: '3. Bottom-Up and Top-Down Attention', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Transformer-Based Captioning', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Evaluation Metrics', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Encoder-Decoder: CNN + LSTM', desc: 'The foundational approach (Vinyals et al., 2015 -- "Show and Tell") treats captioning as a sequence-to-sequence problem:  Encoder: A pre-trained CNN (typically Inception, ResNet, or VGG) extracts a fixed-length visual feature vector from the image.' },
+    { title: '2. Attention-Based Captioning: Show, Attend and Tell', desc: '(2015) introduced visual attention for captioning, allowing the decoder to focus on different image regions at each generation step:  The CNN encoder produces a spatial feature map (e.g., 14x14x512 from VGG or 7x7x2048 from ResNet) rather than a single vector.' },
+    { title: '3. Bottom-Up and Top-Down Attention', desc: '(2018) replaced grid-based spatial attention with object-level ("bottom-up") attention. A Faster R-CNN detector (pre-trained on Visual Genome with 1,600 object classes and 400 attribute classes) proposes ~36 salient regions per image, each represented as a 2,048-dimensional feature vector plus.' },
+    { title: '4. Transformer-Based Captioning', desc: 'Oscar (Li et al., 2020): Uses object tags (detected by Faster R-CNN) as anchor points to align image regions with text. The input to a BERT-like transformer is a triplet of (word tokens, object tags, region features).' },
+    { title: '5. Evaluation Metrics', desc: 'Captioning evaluation is notoriously difficult because multiple valid descriptions exist for any image:  BLEU (Papineni et al., 2002): Modified n-gram precision against reference captions. BLEU-4 is standard for captioning but correlates poorly with human judgment in this setting.' },
+    { title: '6. The Problem of Generic Captions', desc: 'A persistent issue: models learn to generate safe, generic captions that maximize metric scores against multiple references. "A man is standing in front of a building" is rarely wrong but also rarely informative.' },
 ];
 
 export default function WalkthroughNLPImageCaptioning() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPImageCaptioning() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Image Captioning — Step by Step
+          Image Captioning \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how image captioning works, one stage at a time.

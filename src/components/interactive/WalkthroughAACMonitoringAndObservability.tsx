@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Distributed Tracing', desc: 'The foundation of monitoring and observability begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Metrics Collection', desc: 'At this stage, the key transformation occurs — the core mechanism that makes monitoring and observability work.' },
-    { title: '3. Anomaly Detection', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Alerting and Dashboards', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Distributed Tracing', desc: 'Each agent request generates a trace -- a hierarchical record of every operation the agent performed. The trace starts with the user request and branches into child spans for each agent step: LLM calls (with prompt, completion, model, tokens used), tool invocations (with parameters, results,.' },
+    { title: '2. Metrics Collection', desc: 'Metrics aggregate behavior across many requests into quantitative measurements. Key agent metrics include: success rate (percentage of tasks completed successfully), latency (end-to-end time, time per step, time waiting for LLM vs tools), cost (tokens consumed, API calls made, dollar cost per.' },
+    { title: '3. Anomaly Detection', desc: 'Normal agent behavior has characteristic patterns: typical token consumption ranges, expected tool call sequences, standard latency distributions. Anomaly detection identifies deviations from these patterns that may indicate problems.' },
+    { title: '4. Alerting and Dashboards', desc: 'Metrics and anomalies feed into alerting systems that notify operators of problems requiring attention. Critical alerts (agent error rate above 20%, cost per request above 5x normal) page on-call engineers.' },
 ];
 
 export default function WalkthroughAACMonitoringAndObservability() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACMonitoringAndObservability() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Monitoring and Observability — Step by Step
+          Monitoring and Observability \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how monitoring and observability works, one stage at a time.

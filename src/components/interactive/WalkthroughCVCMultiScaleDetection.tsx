@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Strategy 1: Image Pyramids (Brute Force)', desc: 'The foundation of multi-scale detection begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Strategy 2: Single Feature Map (Naive)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes multi-scale detection work.' },
-    { title: '3. Strategy 3: Multi-Layer Prediction (SSD Approach)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Strategy 4: Feature Pyramid Network (Top-Down Enrichment)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Strategy 5: Scale-Aware Assignment', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Strategy 1: Image Pyramids (Brute Force)', desc: 'The simplest approach: resize the input image to multiple scales and run the detector independently at each scale. Pros: Each scale gets the full representational power of the network.' },
+    { title: '2. Strategy 2: Single Feature Map (Naive)', desc: 'Early CNN detectors (OverFeat, YOLOv1) predicted from a single feature map at the network\'s output stride. YOLOv1: Predicts from a 7 x 7 feature map (stride 64).' },
+    { title: '3. Strategy 3: Multi-Layer Prediction (SSD Approach)', desc: 'Attach detection heads to multiple layers within the network, each at a different resolution:  Problem: Lower layers have strong spatial resolution but weak semantics. Higher layers have strong semantics but coarse resolution.' },
+    { title: '4. Strategy 4: Feature Pyramid Network (Top-Down Enrichment)', desc: 'FPN solves the semantic gap by merging top-down semantic information with bottom-up spatial detail:  [equation]  Every pyramid level now has both fine spatial resolution (from the bottom-up path) and strong semantic features (from the top-down path).' },
+    { title: '5. Strategy 5: Scale-Aware Assignment', desc: 'Different detectors assign objects to scales differently:  Anchor-based (Faster R-CNN + FPN): Objects are assigned to the pyramid level l where their area best matches the anchor sizes at that level:  [equation]  Anchor-free (FCOS): Objects are assigned based on the regression target range at each.' },
+    { title: '6. Strategy 6: Deformable Convolutions', desc: '(2017) introduced convolutions with learned spatial offsets, allowing the network to adaptively adjust its receptive field to match object scale:  [equation]  where _k are learned offsets. This provides a form of implicit multi-scale handling.' },
 ];
 
 export default function WalkthroughCVCMultiScaleDetection() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCMultiScaleDetection() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Multi-Scale Detection — Step by Step
+          Multi-Scale Detection \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how multi-scale detection works, one stage at a time.

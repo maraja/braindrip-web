@@ -4,7 +4,7 @@ const DETAILS = [
     { label: 'Released', detail: 'March 14, 2023 (API and ChatGPT Plus)' },
     { label: 'Architecture', detail: 'Not officially disclosed; widely reported as MoE with ~1.7T total params, 16 experts, ~111B each, 2 active per token' },
     { label: 'Input', detail: 'Text + images (multimodal input, text-only output)' },
-    { label: 'MMLU (5-shot)', detail: '86.4% (vs. GPT-3.5\'s ~70%)' },
+    { label: 'MMLU (5-shot)', detail: '4% (vs. GPT-3.5\'s ~70%)' },
     { label: 'Bar exam', detail: '90th percentile (vs. GPT-3.5\'s ~10th percentile)' },
     { label: 'HumanEval (zero-shot)', detail: '~67% (vs. GPT-3.5\'s ~48%)' },
 ];
@@ -20,10 +20,10 @@ export default function ExplorerLLE07Gpt4() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          GPT-4 — Key Details Explorer
+          GPT-4 \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of gpt-4.
+          Click each card to explore the technical details.
         </p>
       </div>
 

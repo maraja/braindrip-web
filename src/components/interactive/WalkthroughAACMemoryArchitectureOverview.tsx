@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Sensory Memory: Raw Input Processing', desc: 'The foundation of memory architecture overview begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Working Memory: The Context Window', desc: 'At this stage, the key transformation occurs — the core mechanism that makes memory architecture overview work.' },
-    { title: '3. Long-Term Memory: Persistent Storage', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Information Flow Between Layers', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Sensory Memory: Raw Input Processing', desc: 'In cognitive science, sensory memory holds unprocessed perceptual input for a very brief period (milliseconds to seconds). For agents, the analog is the raw data that arrives from the environment before any processing:  The full text of a web page before extraction The complete API response.' },
+    { title: '2. Working Memory: The Context Window', desc: 'Working memory is the agent\'s active processing space, and for LLM-based agents, it maps directly to the context window. This is where the agent holds:  The current conversation history The active plan and progress status Recent tool outputs and observations Intermediate reasoning traces The system.' },
+    { title: '3. Long-Term Memory: Persistent Storage', desc: 'Long-term memory stores information that persists beyond the current context window and across sessions. This includes:  Vector stores: Embeddings of past conversations, documents, and knowledge, retrieved by semantic similarity Databases: Structured data stores (SQL, key-value) for facts,.' },
+    { title: '4. Information Flow Between Layers', desc: 'The memory architecture defines how information moves between layers:  Encoding (Sensory -&gt; Working): Raw input is processed, summarized, and loaded into the context window. This often involves truncation, extraction, or summarization to fit within token limits.' },
 ];
 
 export default function WalkthroughAACMemoryArchitectureOverview() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACMemoryArchitectureOverview() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Memory Architecture Overview — Step by Step
+          Memory Architecture Overview \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how memory architecture overview works, one stage at a time.

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Lexical Semantics: The Meaning of Words', desc: 'The foundation of semantics begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Compositional Semantics: Meaning from Parts', desc: 'At this stage, the key transformation occurs — the core mechanism that makes semantics work.' },
-    { title: '3. Distributional Semantics: Meaning from Context', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Semantic Representations in NLP', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Lexical Semantics: The Meaning of Words', desc: 'Lexical semantics studies the meanings of individual words and the relationships between them. Polysemy and homonymy: Most common words have multiple senses.' },
+    { title: '2. Compositional Semantics: Meaning from Parts', desc: 'Frege\'s Principle of Compositionality (1892) states that the meaning of a complex expression is determined by the meanings of its parts and the rules used to combine them.' },
+    { title: '3. Distributional Semantics: Meaning from Context', desc: 'The distributional hypothesis, crystallized in J.R. Firth\'s 1957 dictum "You shall know a word by the company it keeps," is arguably the most impactful idea in modern NLP.' },
+    { title: '4. Semantic Representations in NLP', desc: 'Modern NLP uses several types of semantic representation:  Predicate-argument structure: Who did what to whom. Semantic Role Labeling (see semantic-role-labeling.md) identifies agents, patients, instruments, and other roles.' },
 ];
 
 export default function WalkthroughNLPSemantics() {
@@ -16,10 +16,10 @@ export default function WalkthroughNLPSemantics() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Semantics — Step by Step
+          Semantics \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how semantics works, one stage at a time.

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Dense and MoE Model Families', desc: 'The foundation of qwen 3: the open frontier challenger begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Hybrid Thinking: Reasoning on Demand', desc: 'At this stage, the key transformation occurs — the core mechanism that makes qwen 3: the open frontier challenger work.' },
-    { title: '3. Multi-Stage Training Pipeline', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. 119-Language Support', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Dense and MoE Model Families', desc: 'Qwen 3 offered two architecture families to serve different deployment scenarios. The dense models ranged from 0.6B to 32B parameters, with each size trained from scratch on up to 36 trillion tokens.' },
+    { title: '2. Hybrid Thinking: Reasoning on Demand', desc: 'Qwen 3\'s signature feature was its hybrid thinking capability, available across both dense and MoE models. Models could operate in two modes, toggled by a simple API parameter or special prompt token.' },
+    { title: '3. Multi-Stage Training Pipeline', desc: 'Qwen 3\'s training pipeline reflected the accumulated best practices of the field as of early 2025. It proceeded through four distinct stages:  Stage 1: Pre-training on approximately 36 trillion tokens established broad world knowledge, language understanding across 119 languages, and code.' },
+    { title: '4. 119-Language Support', desc: 'Qwen 3 trained on curated data spanning 119 languages, a dramatic expansion from Qwen 2.5\'s 30+ and the most extensive multilingual coverage in any open model.' },
 ];
 
 export default function WalkthroughLLE05Qwen3AndOpenFrontier() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE05Qwen3AndOpenFrontier() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Qwen 3: The Open Frontier Challenger — Step by Step
+          Qwen 3: The Open Frontier Challenger \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how qwen 3: the open frontier challenger works, one stage at a time.

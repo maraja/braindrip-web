@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Self-Consistency Checks', desc: 'The foundation of reference-free evaluation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Constraint Satisfaction', desc: 'At this stage, the key transformation occurs — the core mechanism that makes reference-free evaluation work.' },
-    { title: '3. Logical Coherence Analysis', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Execution-Based Verification', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. When Reference-Free Works vs. When References Are Essential', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Self-Consistency Checks', desc: 'Run the agent on the same task multiple times (typically 5-10 runs) and measure agreement across outputs. High self-consistency suggests the agent has a reliable process for this task type; low consistency indicates uncertainty or sensitivity to random factors.' },
+    { title: '2. Constraint Satisfaction', desc: 'Many tasks come with explicit or implicit constraints that can be verified programmatically:  Format constraints: Does the output match the required schema (JSON, XML, specific data structure)? Length constraints: Does the response stay within specified word or token limits?' },
+    { title: '3. Logical Coherence Analysis', desc: 'Evaluate the internal logical structure of agent output and reasoning:  Entailment checking: Do later statements logically follow from earlier ones? Use NLI (Natural Language Inference) models to detect contradictions within the agent\'s output.' },
+    { title: '4. Execution-Based Verification', desc: 'For tasks with executable outputs, run the output and evaluate the result:  Code execution: Does generated code compile and run without errors? Test generation and execution: Have the agent generate its own test cases, then check if its solution passes them (see code-execution-based-evaluation.' },
+    { title: '5. When Reference-Free Works vs. When References Are Essential', desc: 'Reference-free works well for: Open-ended tasks with multiple valid solutions (code refactoring, summarization, creative tasks) Tasks where constraints are well-specified and verifiable Tasks with executable outputs where correctness can be tested Tasks where self-consistency is a strong proxy for.' },
 ];
 
 export default function WalkthroughAAEReferenceFreeEvaluation() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAEReferenceFreeEvaluation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Reference-Free Evaluation — Step by Step
+          Reference-Free Evaluation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how reference-free evaluation works, one stage at a time.

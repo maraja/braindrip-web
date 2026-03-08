@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Scaling Example Count', desc: 'The foundation of many-shot prompting begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Cost Analysis', desc: 'At this stage, the key transformation occurs — the core mechanism that makes many-shot prompting work.' },
-    { title: '3. Reinforced and Unsupervised ICL Variants', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Example Curation at Scale', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Scaling Example Count', desc: 'The quality curve as example count increases follows a characteristic pattern:  0 examples (zero-shot): Baseline performance, often 60-80% on classification tasks. 3-8 examples (few-shot): Significant jump, capturing format and basic patterns.' },
+    { title: '2. Cost Analysis', desc: 'Many-shot prompting has a direct cost tradeoff. If each example is 50-150 tokens:  50 examples × 100 tokens = 5,000 tokens of examples 200 examples × 100 tokens = 20,000 tokens of examples 500 examples × 100 tokens = 50,000 tokens of examples  At 2.50/1M input tokens (GPT-4o), 50,000 tokens costs 0.' },
+    { title: '3. Reinforced and Unsupervised ICL Variants', desc: '(2024) introduced variants that extend many-shot:  Reinforced ICL: Instead of human-written outputs, use model-generated rationales that were verified for correctness. This is cheaper to produce than expert-written examples and performs comparably.' },
+    { title: '4. Example Curation at Scale', desc: 'Curating 50-500 examples requires a systematic approach:  Stratified sampling: Ensure proportional representation of all categories, especially rare ones. Difficulty distribution: Include easy, moderate, and hard examples.' },
 ];
 
 export default function WalkthroughPEManyShotPrompting() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEManyShotPrompting() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Many-Shot Prompting — Step by Step
+          Many-Shot Prompting \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how many-shot prompting works, one stage at a time.

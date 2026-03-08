@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizADPErrorResiliencePatterns() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Structured output modes reduce malformation rates from 5-15% (prompt-only) to below 0.5% (constrained decoding).', isTrue: true, explanation: 'This is a key technical detail of Error Resilience Patterns.' },
-    { text: 'Always use them when available.', isTrue: true, explanation: 'This is a key technical detail of Error Resilience Patterns.' },
-    { text: 'Retry budgets should be capped at 2-3 retries per tool call with exponential backoff starting at 1 second.', isTrue: true, explanation: 'This is a key technical detail of Error Resilience Patterns.' },
+    { text: 'Error handling means adding try-catch blocks around tool calls.', isTrue: false, explanation: 'Try-catch is necessary but insufficient. Error resilience is an architectural concern that affects how you design tools, structure plans, manage state, and scope failures.' },
+    { text: '5 seconds for synchronous tool calls, 30 seconds for LLM calls, 300 seconds for total task execution.', isTrue: true, explanation: 'Adjust based on measured P95 latencies.' },
+    { text: 'If the LLM is good enough, you do not need resilience patterns.', isTrue: false, explanation: 'Even the best models produce malformed outputs, hallucinate tool names, and make reasoning errors. GPT-4 class models still fail on 10-20% of complex multi-step tasks in benchmarks.' },
+    { text: 'Retrying a failed step is always the right first response.', isTrue: false, explanation: 'Retries are only safe for idempotent operations. Retrying a non-idempotent tool call (e.g., sending an email, creating a database record) without idempotency protection causes duplicate side effects.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

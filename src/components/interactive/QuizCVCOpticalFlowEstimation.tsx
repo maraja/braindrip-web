@@ -2,8 +2,8 @@ import { useState } from 'react';
 export default function QuizCVCOpticalFlowEstimation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Optical flow estimation computes dense per-pixel motion vectors between consecutive video frames, evolving from variational energy minimization to learned architectures like FlowNet, PWC-Net, and RAFT.', isTrue: true, explanation: 'This captures the core purpose of Optical Flow Estimation.' },
-    { text: 'Optical Flow Estimation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Optical Flow Estimation is important for building on more advanced topics.' },
+    { text: 'Learned optical flow has completely replaced classical methods.', isTrue: false, explanation: 'TV-L1 remains widely used for pre-computing flow in action recognition pipelines due to its simplicity and sufficient quality. Classical methods also have no data distribution shift issues and work reliably on arbitrary inputs.' },
+    { text: 'Optical flow estimation computes dense per-pixel motion vectors between consecutive video frames, evolving from variational energy minimization to learned architectures like FlowNet, PWC-Net, and RAFT.', isTrue: true, explanation: 'This captures the core definition of Optical Flow Estimation.' },
     { text: 'Optical Flow Estimation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Optical Flow Estimation is important for building on more advanced topics.' },
   ];
   return (

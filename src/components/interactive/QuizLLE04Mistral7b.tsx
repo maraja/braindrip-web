@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE04Mistral7b() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'LLaMA 2 13B Chat at 6.65) HumanEval (code): 30.5% (vs.', isTrue: true, explanation: 'This is a key technical detail of Mistral 7B.' },
-    { text: 'A Paris-based startup released a 7.3-billion-parameter model via a torrent magnet link with no paper and no marketing, and it outperformed every open model twice its size.', isTrue: true, explanation: 'This captures the core purpose of Mistral 7B.' },
-    { text: 'Mistral 7B is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Mistral 7B is important for building on more advanced topics.' },
+    { text: 'Mistral 7B has a 4K context limit.', isTrue: false, explanation: 'The sliding window is 4,096 tokens, but information propagates across layers, giving an effective receptive field of 131,072 tokens. The model can process sequences much longer than 4,096 tokens, though direct attention is local.' },
+    { text: 'Decoder-only Transformer with SWA (4096 window), GQA (8 KV heads), RoPE', isTrue: true, explanation: 'Decoder-only Transformer with SWA (4096 window), GQA (8 KV heads), RoPE' },
+    { text: 'Mistral released no documentation.', isTrue: false, explanation: 'The initial release was just a magnet link, but Mistral later published a technical report and detailed blog post. The unconventional launch was a deliberate statement — letting the model speak for itself.' },
+    { text: '32 layers, hidden dimension 4096, 32 query heads, 8 KV heads', isTrue: true, explanation: '32 layers, hidden dimension 4096, 32 query heads, 8 KV heads' },
+    { text: 'A startup cannot compete with Big Tech on models.', isTrue: false, explanation: 'Mistral 7B decisively disproved this. Three ex-researchers with deep expertise produced a model that beat Meta\'s team in just four months.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

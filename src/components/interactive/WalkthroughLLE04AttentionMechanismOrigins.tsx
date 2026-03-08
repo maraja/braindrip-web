@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Bahdanau Attention (Additive Attention, 2014)', desc: 'The foundation of attention mechanism origins begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Luong Attention (Multiplicative Attention, 2015)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes attention mechanism origins work.' },
-    { title: '3. The Scaling Factor', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Attention as Soft Alignment', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Bahdanau Attention (Additive Attention, 2014)', desc: 'Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio at Universite de Montreal proposed what is now called additive or concatenation attention. At each decoder timestep t, the mechanism computes:  Alignment scores: e_&#123;t,i&#125; = v^T  tanh(W_a  s_&#123;t-1&#125; + U_a * h_i), where s_&#123;t-1&#125; is the decoder\'s previous.' },
+    { title: '2. Luong Attention (Multiplicative Attention, 2015)', desc: 'Minh-Thang Luong, Hieu Pham, and Christopher Manning at Stanford proposed a family of attention mechanisms in August 2015 that were simpler and more computationally efficient:  Dot-product attention: score(s_t, h_i) = s_t^T * h_i.' },
+    { title: '3. The Scaling Factor', desc: 'When the dimensionality d of the vectors is large, dot products can grow large in magnitude, pushing softmax into regions with very small gradients. The fix, introduced formally in 01-attention-is-all-you-need.md, is to scale by 1/sqrt(d): score = (Q * K^T) / sqrt(d_k).' },
+    { title: '4. Attention as Soft Alignment', desc: 'Traditional statistical machine translation used hard alignment — each target word was aligned to exactly one (or zero) source words. Attention introduced soft alignment: each target word attends to all source words with different weights.' },
 ];
 
 export default function WalkthroughLLE04AttentionMechanismOrigins() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE04AttentionMechanismOrigins() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Attention Mechanism Origins — Step by Step
+          Attention Mechanism Origins \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how attention mechanism origins works, one stage at a time.

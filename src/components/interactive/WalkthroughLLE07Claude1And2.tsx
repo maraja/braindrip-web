@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Constitutional AI in Practice', desc: 'The foundation of claude 1 and 2 begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Context Length Revolution', desc: 'At this stage, the key transformation occurs — the core mechanism that makes claude 1 and 2 work.' },
-    { title: '3. Tiered Model Strategy', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Reducing Hallucinations', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Constitutional AI in Practice', desc: 'Claude was the first commercial deployment of Constitutional AI (CAI), Anthropic\'s alignment methodology. Rather than relying solely on human preference ratings (as in OpenAI\'s RLHF approach), CAI trains the model to evaluate its own outputs against a set of explicit principles — a "constitution.' },
+    { title: '2. The Context Length Revolution', desc: 'Claude 2\'s 100K token context window (approximately 75,000 words) was a technical achievement that required careful engineering across multiple dimensions. Handling 100K tokens means the attention mechanism must process sequences where the KV cache alone can exceed available GPU memory.' },
+    { title: '3. Tiered Model Strategy', desc: 'Anthropic deployed a tiered model strategy throughout 2023:  Claude 1 (March 2023): Initial release, competitive with GPT-3.5 Claude 1.3 (mid-2023): Improved accuracy and instruction-following Claude Instant (2023): Smaller, faster, cheaper variant for high-volume use cases Claude 2 (July 2023):.' },
+    { title: '4. Reducing Hallucinations', desc: 'Claude 2.1 introduced significant improvements in factual grounding. Anthropic reported a 50% reduction in hallucination rates compared to Claude 2.0 on internal benchmarks.' },
 ];
 
 export default function WalkthroughLLE07Claude1And2() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE07Claude1And2() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Claude 1 and 2 — Step by Step
+          Claude 1 and 2 \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how claude 1 and 2 works, one stage at a time.

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Explicit Grounding Instructions', desc: 'The foundation of grounding and faithfulness begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Quote-Then-Answer Patterns', desc: 'At this stage, the key transformation occurs — the core mechanism that makes grounding and faithfulness work.' },
-    { title: '3. Attribution Chains', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Groundedness Metrics', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Explicit Grounding Instructions', desc: 'The simplest grounding technique is adding explicit instructions to the prompt that constrain the model to use only provided context:  Hard grounding: "You must answer ONLY based on the information provided in the context below.' },
+    { title: '2. Quote-Then-Answer Patterns', desc: 'This technique forces the model to extract relevant quotes before generating its answer:  By requiring explicit quote extraction as an intermediate step, the model must ground its reasoning in specific passages before generating.' },
+    { title: '3. Attribution Chains', desc: 'Attribution chains extend quote-then-answer by requiring the model to show its reasoning path:  Identify relevant context passages Extract specific claims from those passages Connect extracted claims to the user\'s question Generate the answer with explicit links to each supporting claim  This.' },
+    { title: '4. Groundedness Metrics', desc: 'Evaluating whether outputs are grounded requires automated metrics:  RAGAS Faithfulness: Decomposes the generated answer into individual claims, then checks each claim against the context using an NLI (natural language inference) model. Score = (number of supported claims) / (total claims).' },
 ];
 
 export default function WalkthroughPEGroundingAndFaithfulness() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEGroundingAndFaithfulness() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Grounding and Faithfulness — Step by Step
+          Grounding and Faithfulness \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how grounding and faithfulness works, one stage at a time.

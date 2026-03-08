@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAAERegressionDetectionStatistics() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'One-sided vs two-sided tests: For regression detection, use one-sided tests ($H_1: p_&#123;\\text&#123;new&#125;&#125; &lt; p_&#123;\\text&#123;old&#125;&#125;$).', isTrue: true, explanation: 'This is a key technical detail of Regression Detection Statistics.' },
-    { text: 'Two-sided tests waste power on detecting improvements, which is not the goal during regression testing.', isTrue: true, explanation: 'This is a key technical detail of Regression Detection Statistics.' },
-    { text: 'SPRT maximum sample size: Truncated SPRT adds a maximum sample size $N_&#123;\\max&#125;$ to guarantee termination.', isTrue: true, explanation: 'This is a key technical detail of Regression Detection Statistics.' },
+    { text: 'If the p-value is 0.06, we are safe to ship.', isTrue: false, explanation: 'A p-value of 0.06 is weak evidence against the null, not evidence for it. With low power (small n), a true 5% regression might easily produce p = 0.06.' },
+    { text: 'For regression detection, use one-sided tests (H_1: p_&#123;new&#125; &lt; p_&#123;old&#125;).', isTrue: true, explanation: 'Two-sided tests waste power on detecting improvements, which is not the goal during regression testing.' },
+    { text: 'Truncated SPRT adds a maximum sample size N_&#123;&#125; to guarantee termination.', isTrue: true, explanation: 'Set N_&#123;&#125; to 2-3x the fixed-sample equivalent.' },
+    { text: 'If both agent versions are evaluated on the same tasks, use McNemar\'s test for binary outcomes: ^2 = &#123;(b-c)^2&#125;&#123;b+c&#125; where b and c are discordant pairs.', isTrue: true, explanation: 'This substantially increases power.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

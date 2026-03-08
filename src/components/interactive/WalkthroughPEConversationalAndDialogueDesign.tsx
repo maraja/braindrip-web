@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Persona Consistency Over Multiple Turns', desc: 'The foundation of conversational and dialogue design begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Topic Management and Flow Control', desc: 'At this stage, the key transformation occurs — the core mechanism that makes conversational and dialogue design work.' },
-    { title: '3. Handling Off-Topic and Adversarial Inputs', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Maintaining Conversational State', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Persona Consistency Over Multiple Turns', desc: 'Persona consistency requires more than an initial character description — it requires reinforcement mechanisms that persist across turns:  Comprehensive persona definition: Define the character\'s communication style, knowledge boundaries, emotional range, and behavioral rules.' },
+    { title: '2. Topic Management and Flow Control', desc: 'Conversations need direction without feeling scripted:  Staying on topic: "Your purpose is to help users with cooking questions. If the conversation drifts to unrelated topics (politics, technology, personal advice), gently redirect: \'That\'s an interesting thought!' },
+    { title: '3. Handling Off-Topic and Adversarial Inputs', desc: 'Real conversations include off-topic, confusing, and adversarial inputs:  Off-topic handling: "If the user asks about something unrelated to your domain, briefly acknowledge it and redirect: \'Great question, but that\'s a bit outside my area. What I can help with is [relevant topic].' },
+    { title: '4. Maintaining Conversational State', desc: 'As conversations extend beyond the context window, state management becomes critical:  Running summary: Maintain a summary of key facts established in the conversation, updated after each turn.' },
 ];
 
 export default function WalkthroughPEConversationalAndDialogueDesign() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEConversationalAndDialogueDesign() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Conversational and Dialogue Design — Step by Step
+          Conversational and Dialogue Design \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how conversational and dialogue design works, one stage at a time.

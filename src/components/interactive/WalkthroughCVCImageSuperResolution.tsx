@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. SRCNN: The Pioneer', desc: 'The foundation of image super-resolution begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Sub-Pixel Convolution', desc: 'At this stage, the key transformation occurs — the core mechanism that makes image super-resolution work.' },
-    { title: '3. EDSR and Deeper Networks', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. SRGAN: Perceptual Super-Resolution', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. ESRGAN', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. SRCNN: The Pioneer', desc: '(2014) introduced the first deep learning SR method. SRCNN is a shallow 3-layer CNN applied to a bicubic-upsampled input:  Patch extraction: 9 x 9 conv, 64 filters Nonlinear mapping: 1 x 1 conv, 32 filters Reconstruction: 5 x 5 conv, 1 filter (or 3 for RGB)  Trained with MSE loss: &#123;L&#125; =.' },
+    { title: '2. Sub-Pixel Convolution', desc: '(2016) introduced an efficient upsampling strategy: instead of upsampling the input first, operate entirely at low resolution and use a sub-pixel shuffle (pixel shuffle) layer to rearrange r^2 channels into spatial dimensions:  [equation]  This is computationally cheaper than transposed.' },
+    { title: '3. EDSR and Deeper Networks', desc: '(2017) proposed Enhanced Deep Super-Resolution (EDSR), removing batch normalization from residual blocks (saving ~40% memory) and scaling residual connections by 0.1. With 32 residual blocks and 256 filters, EDSR achieved 32.46 dB PSNR on Set5 at 4x, a significant jump over earlier methods.' },
+    { title: '4. SRGAN: Perceptual Super-Resolution', desc: '(2017) recognized that MSE-optimized models produce high PSNR but perceptually blurry results. SRGAN introduced:  Perceptual loss (content loss): Compare VGG-19 features instead of pixels:  [equation]  where _j is the j-th layer feature map of a pretrained VGG-19.' },
+    { title: '5. ESRGAN', desc: '(2018) improved SRGAN with: Residual-in-Residual Dense Blocks (RRDB): Dense connections without batch normalization. Relativistic discriminator: D predicts whether a real image is "more realistic" than a fake one, rather than absolute real/fake.' },
+    { title: '6. Real-ESRGAN: Handling Real-World Degradation', desc: 'Classical SR assumes a simple bicubic downsampling degradation. Real images suffer from blur, noise, compression artifacts, and ringing -- simultaneously.' },
 ];
 
 export default function WalkthroughCVCImageSuperResolution() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCImageSuperResolution() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Image Super-Resolution — Step by Step
+          Image Super-Resolution \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how image super-resolution works, one stage at a time.

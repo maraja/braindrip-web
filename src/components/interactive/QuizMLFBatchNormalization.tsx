@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFBatchNormalization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'BatchNorm adds $2D$ learnable parameters per layer ($\\gamma, \\beta \\in \\mathbb&#123;R&#125;^D$) and stores $2D$ running statistics.', isTrue: true, explanation: 'This is a key technical detail of Batch Normalization.' },
-    { text: 'Effective batch sizes for BatchNorm should be at least 16-32 for reliable statistics; smaller batches favor GroupNorm or LayerNorm.', isTrue: true, explanation: 'This is a key technical detail of Batch Normalization.' },
-    { text: 'BatchNorm provides implicit regularization through the noise in mini-batch statistics.', isTrue: true, explanation: 'This is a key technical detail of Batch Normalization.' },
+    { text: 'BatchNorm works because it reduces internal covariate shift.', isTrue: false, explanation: 'This was the original hypothesis, but Santurkar et al. (2018) showed that BatchNorm\'s primary benefit is smoothing the loss landscape.' },
+    { text: 'Normalizing layer inputs within each mini-batch -- stabilizing training, enabling higher learning rates, and acting as regularization.', isTrue: true, explanation: 'This captures the core definition of Batch Normalization.' },
+    { text: 'Batch Normalization is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Batch Normalization is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

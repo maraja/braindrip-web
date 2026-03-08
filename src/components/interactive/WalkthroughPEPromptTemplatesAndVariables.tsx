@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Template Syntax Conventions', desc: 'The foundation of prompt templates and variables begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Variable Types and Sources', desc: 'At this stage, the key transformation occurs — the core mechanism that makes prompt templates and variables work.' },
-    { title: '3. Escaping and Injection Safety', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Version Management', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Template Libraries and Organization', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Template Syntax Conventions', desc: 'Different frameworks use different variable syntaxes, but the concepts are universal:  The key principle: static text (instructions, format specifications) is authored once, and dynamic content (user input, retrieved data) is injected at runtime.' },
+    { title: '2. Variable Types and Sources', desc: 'Variables in production templates come from diverse sources:  User input: The direct user query or uploaded content. &#123;user_query&#125;, &#123;uploaded_document&#125;.' },
+    { title: '3. Escaping and Injection Safety', desc: 'When user input is injected into templates, prompt injection becomes a risk. A user could submit input containing instructions that override the template\'s system prompt:  Injection defenses include:  Delimiters: Wrap user input in clear delimiters: &lt;user_input&gt;&#123;user_query&#125;&lt;/user_input&gt; and.' },
+    { title: '4. Version Management', desc: 'Production templates should be versioned like code:  Store templates in version control (Git) alongside application code. Tag template versions (v1.0, v1.1, v2.0) and log which version served each request.' },
+    { title: '5. Template Libraries and Organization', desc: 'For applications with multiple tasks, organize templates systematically:  Shared components (safety instructions, output format specifications) are defined once and imported into multiple templates. This prevents duplication and ensures consistency.' },
 ];
 
 export default function WalkthroughPEPromptTemplatesAndVariables() {
@@ -17,10 +17,10 @@ export default function WalkthroughPEPromptTemplatesAndVariables() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Prompt Templates and Variables — Step by Step
+          Prompt Templates and Variables \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how prompt templates and variables works, one stage at a time.

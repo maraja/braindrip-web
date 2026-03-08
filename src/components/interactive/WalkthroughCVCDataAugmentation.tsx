@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Classical Geometric Transforms', desc: 'The foundation of data augmentation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Color and Photometric Transforms', desc: 'At this stage, the key transformation occurs — the core mechanism that makes data augmentation work.' },
-    { title: '3. Erasing and Occlusion', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Learned and Automated Policies', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Classical Geometric Transforms', desc: 'The baseline augmentation toolkit includes:  Random horizontal flip (p=0.5) -- nearly universal for natural images, never for text or medical laterality tasks. Random crop -- e.g., resize to 256 pixels then take a random 224x224 crop.' },
+    { title: '2. Color and Photometric Transforms', desc: 'Color jitter -- random perturbation of brightness, contrast, saturation, and hue. PCA color augmentation (Fancy PCA) -- introduced in AlexNet (Krizhevsky et al., 2012).' },
+    { title: '3. Erasing and Occlusion', desc: 'Random Erasing (Zhong et al., 2020) -- replace a random rectangle with random pixel values. Simulates occlusion.' },
+    { title: '4. Learned and Automated Policies', desc: 'Manual augmentation design is suboptimal. Automated approaches search for the best policy:  AutoAugment (Cubuk et al., 2019) -- uses reinforcement learning to search over 16 geometric and color operations.' },
 ];
 
 export default function WalkthroughCVCDataAugmentation() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCDataAugmentation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Data Augmentation — Step by Step
+          Data Augmentation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how data augmentation works, one stage at a time.

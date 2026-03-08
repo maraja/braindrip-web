@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Core Requirements', desc: 'The foundation of sandboxed evaluation environments begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Implementation Approaches', desc: 'At this stage, the key transformation occurs — the core mechanism that makes sandboxed evaluation environments work.' },
-    { title: '3. Environment State Management', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Network Simulation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Gap Between Evaluation and Production', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Core Requirements', desc: 'Every sandboxed evaluation environment must satisfy four properties:  Deterministic reset: The environment must return to an identical starting state before each evaluation task. "Identical" means byte-for-byte identical file systems, database contents, network configurations, and system state.' },
+    { title: '2. Implementation Approaches', desc: 'Docker containers are the most common sandbox implementation for agent evaluation. Each evaluation task runs in a fresh container built from a defined image.' },
+    { title: '3. Environment State Management', desc: 'Database seeding: Evaluations requiring database interaction need the database pre-populated with specific data. Seed scripts should be deterministic (no random data, fixed timestamps) and versioned alongside the evaluation dataset.' },
+    { title: '4. Network Simulation', desc: 'Advanced evaluation scenarios require controlling network conditions:  Latency injection: Add artificial latency to API calls to test agent behavior under slow network conditions. Does the agent handle timeouts gracefully?' },
+    { title: '5. The Gap Between Evaluation and Production', desc: 'No sandbox perfectly replicates production. Key gaps to be aware of:  User behavior: Sandboxed evaluations use scripted tasks; real users are unpredictable, underspecified, and interrupt mid-conversation.' },
+    { title: '6. Cost of Environment Management at Scale', desc: 'At scale, sandbox management becomes a significant infrastructure concern:  Storage: Each Docker image or VM snapshot consumes storage. A library of 50 evaluation environments at 2-10GB each requires 100-500GB of maintained, versioned image storage.' },
 ];
 
 export default function WalkthroughAAESandboxedEvaluationEnvironments() {
@@ -17,10 +18,10 @@ export default function WalkthroughAAESandboxedEvaluationEnvironments() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Sandboxed Evaluation Environments — Step by Step
+          Sandboxed Evaluation Environments \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how sandboxed evaluation environments works, one stage at a time.

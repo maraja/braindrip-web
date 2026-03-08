@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE06ModernbertAndTheEncoderRevival() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ModernBERT (Warner et al., 2024) applied 2024-era techniques — RoPE positional encodings, Flash Attention 2, GeGLU activations, unpadding, and training on 2 trillion tokens — to the encoder-only architecture, outperforming all existing encoders and disproving the narrative that "encoders are dead" by showing they were not obsolete but simply under-invested.', isTrue: true, explanation: 'This captures the core purpose of ModernBERT and the Encoder Revival.' },
-    { text: 'ModernBERT and the Encoder Revival is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding ModernBERT and the Encoder Revival is important for building on more advanced topics.' },
-    { text: 'ModernBERT and the Encoder Revival is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding ModernBERT and the Encoder Revival is important for building on more advanced topics.' },
+    { text: 'ModernBERT is just BERT with more data.', isTrue: false, explanation: 'While the 600x increase in training data is the single largest improvement, the architectural changes (RoPE, Flash Attention, GeGLU, unpadding) are each individually significant. RoPE enables the 16x context extension.' },
+    { text: '22 layers, 768 hidden, 12 heads, 149M params, 8,192 context', isTrue: true, explanation: '22 layers, 768 hidden, 12 heads, 149M params, 8,192 context' },
+    { text: 'ModernBERT shows encoders are better than decoders.', isTrue: false, explanation: 'ModernBERT shows encoders are better than decoders for specific tasks (embedding, retrieval, classification) at specific scales (hundreds of millions of parameters). For generation, reasoning, dialogue, and general-purpose use, decoder-only models remain superior.' },
+    { text: '28 layers, 1024 hidden, 16 heads, 395M params, 8,192 context', isTrue: true, explanation: '28 layers, 1024 hidden, 16 heads, 395M params, 8,192 context' },
+    { text: 'The encoder was a dead architecture that got revived.', isTrue: false, explanation: 'Encoder models never stopped being used in production. Google Search still uses BERT-based models.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

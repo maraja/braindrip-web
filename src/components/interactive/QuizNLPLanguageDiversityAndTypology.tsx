@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPLanguageDiversityAndTypology() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Of the world\'s ~7,168 languages, approximately 42% are SVO, 45% SOV, 9% VSO, and 4% other orders (Dryer, 2013).', isTrue: true, explanation: 'This is a key technical detail of Language Diversity and Typology.' },
-    { text: 'The World Atlas of Language Structures (WALS) catalogs 192 structural features across 2,662 languages, forming the standard typological database.', isTrue: true, explanation: 'This is a key technical detail of Language Diversity and Typology.' },
-    { text: 'Chinese word segmentation SOTA: 96--97% F1 on standard benchmarks (PKU, MSR), using BiLSTM-CRF or BERT-based models.', isTrue: true, explanation: 'This is a key technical detail of Language Diversity and Typology.' },
+    { text: 'Most languages work like English.', isTrue: false, explanation: 'English is actually typologically unusual in several ways: relatively rigid SVO order, limited inflectional morphology (compared to most European languages), a deep orthography where spelling poorly predicts pronunciation. NLP techniques developed for English are not "default" -- they are specialized.' },
+    { text: 'Subword tokenization solves the morphology problem.', isTrue: false, explanation: 'BPE and SentencePiece provide a useful compromise but do not perform morphological analysis. They fragment agglutinative words into arbitrary substrings that may not correspond to meaningful morphemes.' },
+    { text: 'Word order does not matter for transformer models.', isTrue: false, explanation: 'While transformers can theoretically attend to any position, positional encodings and the statistics of training data create word-order biases. Models trained predominantly on SVO data systematically underperform on SOV languages, particularly for tasks requiring structural understanding (parsing, NLI).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

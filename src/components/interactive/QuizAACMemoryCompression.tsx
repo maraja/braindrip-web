@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACMemoryCompression() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Compression LLM calls: Each summarization costs one LLM call (typically 200-800 input tokens for the prompt + source, 100-500 output tokens for the summary).', isTrue: true, explanation: 'This is a key technical detail of Memory Compression.' },
-    { text: 'The 10-30% loss is primarily in nuance, hedging language, and peripheral details Lossless compression is impossible: Unlike data compression (ZIP, gzip), semantic compression is inherently lossy.', isTrue: true, explanation: 'This is a key technical detail of Memory Compression.' },
-    { text: 'Some information is always lost.', isTrue: true, explanation: 'This is a key technical detail of Memory Compression.' },
+    { text: 'Compression is only needed when the context window fills up.', isTrue: false, explanation: 'Proactive compression improves performance even when the context window is not full. A focused 20K-token context with compressed history outperforms a sprawling 100K-token context with full history, because attention quality is higher.' },
+    { text: 'Each summarization costs one LLM call (typically 200-800 input tokens for the prompt + source, 100-500 output tokens for the summary).', isTrue: true, explanation: 'For running summaries updated every 5 turns, this is ~2 LLM calls per 10 conversation turns' },
+    { text: 'LLM summarization preserves all important information.', isTrue: false, explanation: 'No summarization is perfect. LLMs may drop information that seems unimportant to the summarizer but is critical to the task.' },
+    { text: 'LLM-based summarization preserves 70-90% of task-relevant information at 10:1 compression ratios.', isTrue: true, explanation: 'The 10-30% loss is primarily in nuance, hedging language, and peripheral details' },
+    { text: 'Compression should happen at fixed intervals.', isTrue: false, explanation: 'Adaptive compression (triggered by token budget thresholds) is more efficient than fixed-interval compression. Compress when needed, not on a schedule.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

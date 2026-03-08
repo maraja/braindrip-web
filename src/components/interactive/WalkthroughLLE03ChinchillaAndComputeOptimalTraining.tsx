@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Experimental Design', desc: 'The foundation of chinchilla and compute-optimal training begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Chinchilla vs. the Giants', desc: 'At this stage, the key transformation occurs — the core mechanism that makes chinchilla and compute-optimal training work.' },
-    { title: '3. The Revised Scaling Law', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Implications for Inference Cost', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Experimental Design', desc: 'The DeepMind team used three complementary approaches to determine the optimal allocation of compute between model size and training data:  Approach 1: Fix several compute budgets, train models of varying sizes for each budget, and find the model size that minimizes loss for each budget level.' },
+    { title: '2. Chinchilla vs. the Giants', desc: 'Chinchilla (70B parameters, 1.4T tokens) was trained using the same compute budget as Gopher (280B parameters, 300B tokens). The results were decisive:  MMLU: Chinchilla scored 67.6% vs.' },
+    { title: '3. The Revised Scaling Law', desc: 'Where Kaplan had found that model size should scale faster than data, Hoffmann found approximately equal scaling. Specifically, if compute budget increases by a factor of k, both model size and training tokens should increase by approximately k^0.5.' },
+    { title: '4. Implications for Inference Cost', desc: 'A critical practical consequence: compute-optimal models are not just better at training time — they are cheaper at inference time. A 70B model that outperforms a 280B model requires 4x less memory, 4x fewer GPUs to serve, and generates tokens 4x faster.' },
 ];
 
 export default function WalkthroughLLE03ChinchillaAndComputeOptimalTraining() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE03ChinchillaAndComputeOptimalTraining() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Chinchilla and Compute-Optimal Training — Step by Step
+          Chinchilla and Compute-Optimal Training \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how chinchilla and compute-optimal training works, one stage at a time.

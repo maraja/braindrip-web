@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Line Detection in Normal Parameterization', desc: 'The foundation of hough transform begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Probabilistic Hough Transform', desc: 'At this stage, the key transformation occurs — the core mechanism that makes hough transform work.' },
-    { title: '3. Circle Detection (Hough Gradient Method)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Generalized Hough Transform', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Line Detection in Normal Parameterization', desc: 'A line in Cartesian coordinates y = mx + b has an unbounded slope parameter. The normal (Hesse) parameterization avoids this:  [equation]  where  is the perpendicular distance from the origin to the line and  is the angle of the perpendicular.' },
+    { title: '2. Probabilistic Hough Transform', desc: 'The standard Hough transform votes with every edge pixel for every , which is O(n  N_) where n is the number of edge pixels. The probabilistic variant (Matas et al.' },
+    { title: '3. Circle Detection (Hough Gradient Method)', desc: 'For circles parameterized by (a, b, r) (center and radius), a full 3D accumulator is expensive. OpenCV\'s HoughCircles uses the Hough gradient method:  For each edge pixel, vote along the gradient direction in a 2D (a, b) accumulator for potential circle centers.' },
+    { title: '4. Generalized Hough Transform', desc: 'Ballard (1981) extended the Hough transform to arbitrary shapes using an R-table (lookup table) that encodes the spatial relationship between boundary points and a reference point. This allows detection of any shape whose silhouette is known.' },
 ];
 
 export default function WalkthroughCVCHoughTransform() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCHoughTransform() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Hough Transform — Step by Step
+          Hough Transform \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how hough transform works, one stage at a time.

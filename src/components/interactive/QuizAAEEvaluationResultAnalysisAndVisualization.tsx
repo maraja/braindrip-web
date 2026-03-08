@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEEvaluationResultAnalysisAndVisualization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Evaluation results only drive improvement when they are analyzed for actionable patterns and visualized in ways that communicate clearly to developers, managers, and stakeholders.', isTrue: true, explanation: 'This captures the core purpose of Evaluation Result Analysis and Visualization.' },
-    { text: 'Evaluation Result Analysis and Visualization is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluation Result Analysis and Visualization is important for building on more advanced topics.' },
-    { text: 'Evaluation Result Analysis and Visualization is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluation Result Analysis and Visualization is important for building on more advanced topics.' },
+    { text: 'A single aggregate score is sufficient for tracking quality.', isTrue: false, explanation: 'Aggregate scores are useful headlines, but they compress away the dimensional information needed for debugging and prioritization. A score that goes from 0.83 to 0.82 might hide a safety regression from 0.97 to 0.88 offset by reasoning improvements.' },
+    { text: 'Visualization is a nice-to-have, not a requirement.', isTrue: false, explanation: 'Visualization is how humans process complex, multi-dimensional data. Teams that rely on raw score tables consistently miss patterns that would be obvious in a well-designed chart.' },
+    { text: 'Automated alerts can replace human analysis.', isTrue: false, explanation: 'Alerts catch known failure patterns (threshold violations, statistical regressions). They cannot catch novel failure modes, subtle behavioral shifts, or problems that only become apparent when combining information across multiple evaluation runs.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEVarianceDecomposition() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'REML estimation is preferred over ML for variance components because it corrects for the downward bias in ML estimates, especially in small samples.', isTrue: true, explanation: 'This is a key technical detail of Variance Decomposition.' },
-    { text: 'Negative variance estimates can occur with ANOVA-style estimation.', isTrue: true, explanation: 'This is a key technical detail of Variance Decomposition.' },
-    { text: 'Set these to zero and redistribute using constrained REML.', isTrue: true, explanation: 'This is a key technical detail of Variance Decomposition.' },
+    { text: 'Just run more trials to reduce noise.', isTrue: false, explanation: 'If 80% of variance comes from judge inconsistency, running more agent trials barely helps. You are averaging over a small noise source while the big one persists.' },
+    { text: 'logit(p_&#123;ijkl&#125;) =  + _i + _j + _k + _l.', isTrue: true, explanation: 'Variance components are on the latent logit scale.' },
+    { text: 'Tasks crossed with seeds is standard.', isTrue: true, explanation: 'Judges may be nested within runs (each run gets a fresh judge sample) or crossed (same judge set evaluates all runs). The design affects the estimable components.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

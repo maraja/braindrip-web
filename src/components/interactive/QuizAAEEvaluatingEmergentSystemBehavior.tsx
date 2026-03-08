@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEEvaluatingEmergentSystemBehavior() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Emergent behaviors arise from component interactions in ways that no single component exhibits alone, making them invisible to unit-level testing and demanding fundamentally different evaluation strategies.', isTrue: true, explanation: 'This captures the core purpose of Evaluating Emergent System Behavior.' },
-    { text: 'Evaluating Emergent System Behavior is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluating Emergent System Behavior is important for building on more advanced topics.' },
-    { text: 'Evaluating Emergent System Behavior is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluating Emergent System Behavior is important for building on more advanced topics.' },
+    { text: 'Emergent behavior is always dangerous and should be eliminated.', isTrue: false, explanation: 'Emergence is a fundamental property of complex systems, not a bug. Positive emergence -- agents discovering creative solutions by combining capabilities -- is precisely what makes agent systems valuable.' },
+    { text: 'Comprehensive unit testing will catch emergent issues eventually.', isTrue: false, explanation: 'This is mathematically impossible for nondeterministic systems. Even with 100% component-level coverage, the interaction space is combinatorial.' },
+    { text: 'Emergent behavior is rare in current agent systems.', isTrue: false, explanation: 'Studies of production agent systems consistently find emergent behaviors. Park et al.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

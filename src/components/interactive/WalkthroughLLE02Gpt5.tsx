@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Unified Architecture', desc: 'The foundation of gpt-5 begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Native Multimodality', desc: 'At this stage, the key transformation occurs — the core mechanism that makes gpt-5 work.' },
-    { title: '3. Tool Use and Agent Integration', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Training and Scale', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Pricing and Accessibility', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Unified Architecture', desc: 'GPT-5\'s defining architectural innovation is its internal complexity router. Rather than maintaining separate model weights for "fast" and "reasoning" modes, GPT-5 uses a single set of weights with a learned routing mechanism that dynamically allocates inference compute.' },
+    { title: '2. Native Multimodality', desc: 'GPT-5 processes and generates text, images, audio, and video natively within a single architecture, building on the multimodal foundations of GPT-4o. Image understanding is integrated at the token level rather than through external encoders.' },
+    { title: '3. Tool Use and Agent Integration', desc: 'GPT-5 was designed from training to integrate with OpenAI\'s tool-use and agent infrastructure. Function calling, code execution, web browsing, and file manipulation are not bolted-on capabilities but core competencies trained into the model\'s weights.' },
+    { title: '4. Training and Scale', desc: 'OpenAI disclosed limited details about GPT-5\'s training, consistent with their increasingly closed approach to technical documentation. The model is widely believed to use a Mixture of Experts architecture — continuing the approach rumored for GPT-4 — though OpenAI has not confirmed specific.' },
+    { title: '5. Pricing and Accessibility', desc: 'OpenAI positioned GPT-5 to be accessible despite its increased capabilities. The tiered pricing structure allowed lighter usage patterns (simple queries that trigger minimal reasoning) to cost less than heavy usage patterns (complex problems that trigger extended chain-of-thought).' },
+    { title: '6. GPT-5.2 and Codex (December 2025 - January 2026)', desc: 'Four months after GPT-5\'s release, OpenAI shipped GPT-5.2 on December 11, 2025 — a significant iteration that expanded the unified architecture into three distinct model variants: Instant (optimized for low-latency responses), Thinking (the standard reasoning mode), and Pro (maximum reasoning depth.' },
 ];
 
 export default function WalkthroughLLE02Gpt5() {
@@ -17,10 +18,10 @@ export default function WalkthroughLLE02Gpt5() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          GPT-5 — Step by Step
+          GPT-5 \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how gpt-5 works, one stage at a time.

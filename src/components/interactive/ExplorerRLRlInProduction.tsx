@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'OPE reliability', detail: 'Thomas & Brunskill (2016) showed that IS-based estimators with safety guarantees (high-confidence off-policy evaluation) can provide statistical assurance that a new policy improves over the baseline with probability $\\geq 1 - \\delta$.' },
+    { label: 'OPE reliability', detail: 'Thomas & Brunskill (2016) showed that IS-based estimators with safety guarantees (high-confidence off-policy evaluation) can provide statistical assurance that a new policy improves over the baseline with probability  1 - .' },
     { label: 'Retraining cadence', detail: 'Production RL systems typically retrain on fresh data weekly to monthly, depending on environment non-stationarity. Continuous learning is possible but introduces additional stability risks.' },
     { label: 'Fallback activation', detail: 'Best practice is to trigger fallback when any of: (1) reward drops below 2 standard deviations of the baseline mean, (2) a safety constraint is violated, (3) the state distribution diverges significantly from training data (measured by KL divergence or MMD).' },
     { label: 'Latency requirements', detail: 'Production RL policies must make decisions within milliseconds (recommendations) to seconds (cooling control). Complex planning methods (MCTS) may be too slow; amortized policies (neural networks) are preferred.' },
@@ -19,10 +19,10 @@ export default function ExplorerRLRlInProduction() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          RL in Production — Key Details Explorer
+          RL in Production \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of rl in production.
+          Click each card to explore the technical details.
         </p>
       </div>
 

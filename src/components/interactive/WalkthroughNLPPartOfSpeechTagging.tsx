@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Tag Sets', desc: 'The foundation of part-of-speech tagging begins with understanding its core input requirements and initial setup.' },
-    { title: '2. HMM Taggers', desc: 'At this stage, the key transformation occurs — the core mechanism that makes part-of-speech tagging work.' },
-    { title: '3. CRF Taggers', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Neural Taggers', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Tag Sets', desc: 'Penn Treebank (PTB): 36 tags covering fine-grained distinctions. Nouns split into NN (singular), NNS (plural), NNP (proper singular), NNPS (proper plural).' },
+    { title: '2. HMM Taggers', desc: 'Hidden Markov Models treat POS tagging as a generative sequence model. The model defines:  [equation]  where P(y_i  y_&#123;i-1&#125;) is the transition probability (tag bigram) and P(x_i  y_i) is the emission probability (word given tag).' },
+    { title: '3. CRF Taggers', desc: 'Conditional Random Fields (CRFs) model P(y_1, , y_n  x_1, , x_n) directly, allowing arbitrary feature functions over the entire input. Features include the current word, surrounding words, prefixes/suffixes, capitalization patterns, and word shapes.' },
+    { title: '4. Neural Taggers', desc: 'BiLSTM taggers encode the sentence bidirectionally and classify each token independently (or with a CRF layer on top). Pre-trained word embeddings from word2vec.md or glove.md provide the input representations.' },
 ];
 
 export default function WalkthroughNLPPartOfSpeechTagging() {
@@ -16,10 +16,10 @@ export default function WalkthroughNLPPartOfSpeechTagging() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Part-of-Speech Tagging — Step by Step
+          Part-of-Speech Tagging \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how part-of-speech tagging works, one stage at a time.

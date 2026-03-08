@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPKeywordExtraction() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'TextRank convergence: Typically converges in 20-30 iterations with damping factor d = 0.85 and co-occurrence window W = 2.', isTrue: true, explanation: 'This is a key technical detail of Keyword Extraction.' },
-    { text: 'performance: Achieves F1@10 of 18-22% on the Inspec dataset without any corpus dependency -- competitive with TF-IDF methods that require reference corpora.', isTrue: true, explanation: 'This is a key technical detail of Keyword Extraction.' },
-    { text: 'KeyBERT with MMR: Setting the diversity parameter lambda = 0.5-0.7 balances relevance and diversity, typically producing more informative keyword sets than pure cosine ranking.', isTrue: true, explanation: 'This is a key technical detail of Keyword Extraction.' },
+    { text: 'The most frequent words are the best keywords.', isTrue: false, explanation: 'High-frequency words are often generic (the, and, is) or domain-common terms that appear in every document. Good keywords are discriminative -- they distinguish this document from others.' },
+    { text: 'Typically converges in 20-30 iterations with damping factor d = 0.85 and co-occurrence window W = 2.', isTrue: true, explanation: 'Typically converges in 20-30 iterations with damping factor d = 0.85 and co-occurrence window W = 2.' },
+    { text: 'Keyword extraction and topic modeling are the same thing.', isTrue: false, explanation: 'Keyword extraction identifies terms describing individual documents, while topic modeling (see topic-modeling.md) discovers latent themes across a corpus. A keyword might be "BERT fine-tuning," while a topic is a distribution over many related words like &#123;model, training, fine-tune, parameters, loss&#125;.' },
+    { text: 'Achieves F1@10 of 18-22% on the Inspec dataset without any corpus dependency -- competitive with TF-IDF methods that require reference corpora.', isTrue: true, explanation: 'Achieves F1@10 of 18-22% on the Inspec dataset without any corpus dependency -- competitive with TF-IDF methods that require reference corpora.' },
+    { text: 'Unsupervised methods are always worse than supervised ones.', isTrue: false, explanation: 'On in-domain data with abundant training annotations, supervised models win. But unsupervised methods generalize better across domains -- a TextRank model for news articles works just as well on scientific papers, while a supervised model trained on news may fail on scientific text.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

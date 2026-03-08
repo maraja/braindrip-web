@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Kernel hyperparameters', detail: 'The RBF bandwidth $\\gamma$ and the SVM regularization $C$ are typically tuned jointly via grid search with cross-validation.' },
+    { label: 'Kernel hyperparameters', detail: 'The RBF bandwidth  and the SVM regularization C are typically tuned jointly via grid search with cross-validation.' },
     { label: 'Feature scaling', detail: 'Critical for RBF and polynomial kernels, since the kernel value depends on distances or inner products.' },
     { label: 'String and graph kernels', detail: 'Kernels can be defined on non-vectorial data (sequences, trees, graphs), extending SVM-style methods to structured data.' },
-    { label: 'Representer theorem', detail: 'For any kernel method with a regularized loss, the optimal solution lies in the span of the kernel evaluations at the training points: $f(x) = \\sum_{i=1}^n \\alpha_i K(x_i, x)$.' },
+    { label: 'Representer theorem', detail: 'For any kernel method with a regularized loss, the optimal solution lies in the span of the kernel evaluations at the training points: f(x) = _&#123;i=1&#125;^n _i K(x_i, x).' },
 ];
 
 export default function ExplorerMLFKernelMethods() {
@@ -18,10 +18,10 @@ export default function ExplorerMLFKernelMethods() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Kernel Methods — Key Details Explorer
+          Kernel Methods \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of kernel methods.
+          Click each card to explore the technical details.
         </p>
       </div>
 

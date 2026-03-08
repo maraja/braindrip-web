@@ -1,23 +1,23 @@
 import { useState } from 'react';
-const baseStyle = { background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: 14, padding: '1.25rem', margin: '1.5rem 0', fontFamily: 'system-ui, sans-serif' };
+const baseStyle = { background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: 14, padding: '1.25rem', margin: '1.5rem 0', fontFamily: "system-ui, sans-serif" };
 export default function AnalogyAAEPermissionBoundaryTesting() {
   const [idx, setIdx] = useState(0);
-  const analogies = [
-    { emoji: '🏗', label: 'Building', text: 'Think of Permission Boundary Testing like constructing a building. Consider a bank employee with access to customer account balances but not to social security numbers. Permission boundary testing is like auditing ... Just as a builder follows blueprints to create a structure, this concept provides the foundational framework that everything else builds upon.' },
-    { emoji: '🎭', label: 'Theater', text: 'Permission Boundary Testing is like directing a theater production. Consider a bank employee with access to customer account balances but not to social security numbers. Permission boundary testing is like auditing ... Each element plays a specific role, and the overall performance depends on how well they work together.' },
-    { emoji: '🗺', label: 'Navigation', text: 'Think of Permission Boundary Testing like navigating with a map. Consider a bank employee with access to customer account balances but not to social security numbers. Permission boundary testing is like auditing ... You need to understand where you are, where you want to go, and the best route to get there.' },
+  const perspectives = [
+    { emoji: '💡', label: 'Core Idea', text: 'Consider a bank employee with access to customer account balances but not to social security numbers. Permission boundary testing is like auditing whether that employee can actually be tricked or tempted into accessing the restricted data -- through a coworker\'s unlocked terminal, a database query that joins restricted tables, or a reporting tool.' },
+    { emoji: '⚙️', label: 'How It Works', text: 'Permission boundary testing organizes scenarios around the specific boundaries an agent should respect. Out-of-scope resource access tests whether the agent can read, modify, or delete resources it should not touch. For a coding agent, this means files outside the designated project directory.' },
+    { emoji: '🔍', label: 'In Detail', text: 'Agents interact with external systems through tools, APIs, and protocols that carry their own authorization models -- OAuth scopes, API keys, filesystem permissions, MCP server configurations. Permission boundary testing evaluates the full chain: does the agent request only the permissions it needs?' },
   ];
   return (
     <div style={baseStyle}>
-      <p style={{ fontSize: '0.8rem', fontWeight: 700, color: '#2C3E2D', marginBottom: 10, letterSpacing: '0.05em' }}>\u2726 THINK OF IT AS...</p>
-      <div style={{ display: 'flex', gap: 6, marginBottom: 12, flexWrap: 'wrap' }}>
-        {analogies.map((a, i) => (
-          <button key={i} onClick={() => setIdx(i)} style={{ padding: '4px 12px', borderRadius: 20, border: idx === i ? '2px solid #8BA888' : '1px solid #E5DFD3', background: idx === i ? '#8BA888' + '18' : 'transparent', fontSize: '0.8rem', cursor: 'pointer', color: '#2C3E2D', fontWeight: idx === i ? 600 : 400 }}>
-            {a.emoji} {a.label}
+      <p style={{ fontSize: '0.8rem', fontWeight: 700, color: '#2C3E2D', marginBottom: 10, letterSpacing: '0.05em' }}>\u2726 KEY PERSPECTIVES</p>
+      <div style={{ display: 'flex', gap: 6, marginBottom: 12, flexWrap: 'wrap' as const }}>
+        {perspectives.map((p, i) => (
+          <button key={i} onClick={() => setIdx(i)} style={{ padding: '4px 12px', borderRadius: 20, border: idx === i ? '2px solid #8BA888' : '1px solid #E5DFD3', background: idx === i ? '#8BA88818' : 'transparent', fontSize: '0.8rem', cursor: 'pointer', color: '#2C3E2D', fontWeight: idx === i ? 600 : 400 }}>
+            {p.emoji} {p.label}
           </button>
         ))}
       </div>
-      <p style={{ fontSize: '0.9rem', color: '#3D4F3E', lineHeight: 1.6, margin: 0 }}>{analogies[idx].text}</p>
+      <p style={{ fontSize: '0.9rem', color: '#3D4F3E', lineHeight: 1.6, margin: 0 }}>{perspectives[idx].text}</p>
     </div>
   );
 }

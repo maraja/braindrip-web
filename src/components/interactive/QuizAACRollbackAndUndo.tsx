@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACRollbackAndUndo() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Atomic action boundaries: Each agent action should be an atomic unit that can be independently rolled back.', isTrue: true, explanation: 'This is a key technical detail of Rollback and Undo.' },
-    { text: 'If an action involves multiple sub-steps (create file, write content, set permissions), they should be wrapped together so rollback reverts all sub-steps or none.', isTrue: true, explanation: 'This is a key technical detail of Rollback and Undo.' },
-    { text: 'Rollback time window: Rollback becomes harder over time as dependent actions accumulate.', isTrue: true, explanation: 'This is a key technical detail of Rollback and Undo.' },
+    { text: 'Just don\'t let the agent make mistakes.', isTrue: false, explanation: 'Error prevention is important but insufficient. No system achieves zero errors, especially non-deterministic AI systems.' },
+    { text: 'Each agent action should be an atomic unit that can be independently rolled back.', isTrue: true, explanation: 'If an action involves multiple sub-steps (create file, write content, set permissions), they should be wrapped together so rollback reverts all sub-steps or none.' },
+    { text: 'Git solves all rollback needs.', isTrue: false, explanation: 'Version control handles file changes but not database modifications, API calls, resource creation, or communication actions. A complete rollback strategy must cover all action types the agent can perform.' },
+    { text: 'Rollback becomes harder over time as dependent actions accumulate.', isTrue: true, explanation: 'A file change that happened 5 minutes ago is easy to revert; one from 3 weeks ago may have downstream dependencies. Systems should define a rollback window (typically 1-24 hours) within which rollback is guaranteed to be safe.' },
+    { text: 'Rollback is always possible.', isTrue: false, explanation: 'Some actions are genuinely irreversible. Data that has been viewed by unauthorized parties cannot be "unviewed." Financial transactions may have settlement windows.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

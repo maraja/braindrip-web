@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Environment Design', desc: 'The foundation of simulation environments begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Reproducible Evaluation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes simulation environments work.' },
-    { title: '3. Task Suites and Benchmarks', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Custom Environment Construction', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Environment Design', desc: 'A simulation environment consists of: State (the current configuration of the simulated world -- files in a repository, pages on a website, records in a database), Actions (the operations the agent can perform -- edit files, click buttons, run queries), Observations (what the agent perceives after.' },
+    { title: '2. Reproducible Evaluation', desc: 'Simulation environments enable reproducible evaluation: run the same agent on the same task 10 times and measure consistency. This is impossible in the real world where the environment changes between runs (websites update, APIs change, data evolves).' },
+    { title: '3. Task Suites and Benchmarks', desc: 'A simulation environment becomes useful when paired with a curated set of tasks. SWE-bench provides 2,294 GitHub issues with test patches: the environment is a repository snapshot, the task is to fix the issue, and evaluation checks whether the test patch passes.' },
+    { title: '4. Custom Environment Construction', desc: 'Beyond standard benchmarks, teams build custom simulation environments for their specific use cases. A company deploying a customer support agent simulates their support platform: a mock ticket system, a mock knowledge base, mock customer profiles.' },
 ];
 
 export default function WalkthroughAACSimulationEnvironments() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACSimulationEnvironments() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Simulation Environments — Step by Step
+          Simulation Environments \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how simulation environments works, one stage at a time.

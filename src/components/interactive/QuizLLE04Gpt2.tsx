@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE04Gpt2() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'GPT-2 (Radford et al., 2019) scaled the GPT-1 architecture to 1.5 billion parameters, demonstrated zero-shot task performance without any fine-tuning, sparked the first major AI safety debate with its "too dangerous to release" rollout, and established the scaling hypothesis that larger models develop qualitatively new capabilities.', isTrue: true, explanation: 'This captures the core purpose of GPT-2: Language Models Are Unsupervised Multitask Learners.' },
-    { text: 'GPT-2: Language Models Are Unsupervised Multitask Learners is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding GPT-2: Language Models Are Unsupervised Multitask Learners is important for building on more advanced topics.' },
-    { text: 'GPT-2: Language Models Are Unsupervised Multitask Learners is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding GPT-2: Language Models Are Unsupervised Multitask Learners is important for building on more advanced topics.' },
+    { text: 'GPT-2 was \'too dangerous to release.\'', isTrue: false, explanation: 'OpenAI\'s concern was about potential misuse, not that the model was sentient or uncontrollable. The staged release was a precautionary approach to gauge real-world impact.' },
+    { text: '48 layers, 1600 hidden, 25 heads, 1.5B parameters', isTrue: true, explanation: '48 layers, 1600 hidden, 25 heads, 1.5B parameters' },
+    { text: 'GPT-2 could reliably perform any NLP task zero-shot.', isTrue: false, explanation: 'Zero-shot performance was impressive for the time but still far below fine-tuned models on most benchmarks. The significance was that zero-shot worked at all, not that it was competitive.' },
+    { text: 'WebText, ~40GB of text from 8M web pages (Reddit links with 3+ karma)', isTrue: true, explanation: 'WebText, ~40GB of text from 8M web pages (Reddit links with 3+ karma)' },
+    { text: 'GPT-2 generates factually accurate text.', isTrue: false, explanation: 'GPT-2 generates plausible-sounding text, not accurate text. It confidently produces false statements, fabricated quotes, and invented statistics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

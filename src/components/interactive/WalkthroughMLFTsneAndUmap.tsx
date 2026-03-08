@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. t-SNE (t-Distributed Stochastic Neighbor Embedding)', desc: 'The foundation of t-sne and umap begins with understanding its core input requirements and initial setup.' },
-    { title: '2. UMAP (Uniform Manifold Approximation and Projection)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes t-sne and umap work.' },
-    { title: '3. Key Differences Between t-SNE and UMAP', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. When to Use Which', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Practical Example', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. t-SNE (t-Distributed Stochastic Neighbor Embedding)', desc: 'Step 1: Pairwise similarities in high-D. For each pair of points x_i, x_j, define a conditional probability reflecting how likely x_j is a neighbor of x_i under a Gaussian centered at x_i:  [equation]  Symmetrize: p_&#123;ij&#125; = &#123;p_&#123;jj&#125;&#125;&#123;2n&#125;.' },
+    { title: '2. UMAP (Uniform Manifold Approximation and Projection)', desc: 'UMAP (McInnes et al., 2018) is motivated by topological data analysis and Riemannian geometry, but its practical algorithm can be understood as follows:  Step 1: Build a fuzzy topological representation. Construct a weighted k-nearest-neighbor graph.' },
+    { title: '3. When to Use Which', desc: 'Use t-SNE when: You have a moderately sized dataset (up to ~100K points), you want fine-grained local structure visualization, and you are willing to tune perplexity carefully.' },
+    { title: '4. Practical Example', desc: 'In single-cell RNA sequencing, a dataset may contain gene expression measurements for 30,000 genes across 100,000 individual cells. The standard workflow is: (1) select the 2,000 most variable genes, (2) apply PCA to reduce to 50 dimensions, (3) run UMAP to produce a 2D embedding.' },
 ];
 
 export default function WalkthroughMLFTsneAndUmap() {
@@ -17,10 +16,10 @@ export default function WalkthroughMLFTsneAndUmap() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          t-SNE and UMAP — Step by Step
+          t-SNE and UMAP \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how t-sne and umap works, one stage at a time.

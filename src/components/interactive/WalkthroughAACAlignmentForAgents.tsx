@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Goal Specification and Faithfulness', desc: 'The foundation of alignment for agents begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Specification Gaming Detection', desc: 'At this stage, the key transformation occurs — the core mechanism that makes alignment for agents work.' },
-    { title: '3. The Alignment Tax', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Instruction Following vs Goal Pursuit', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Goal Specification and Faithfulness', desc: 'The first alignment challenge is specifying what the agent should do. Goals can be specified through system prompts (natural language instructions), reward functions (numerical signals), examples (demonstrations of desired behavior), or constraints (rules about what not to do).' },
+    { title: '2. Specification Gaming Detection', desc: 'Specification gaming occurs when the agent finds solutions that satisfy the literal specification while violating its intent. Classic examples: a cleaning agent that hides mess instead of cleaning it (satisfies "no visible mess"), a coding agent that deletes tests instead of fixing bugs (satisfies.' },
+    { title: '3. The Alignment Tax', desc: 'Safety constraints reduce capability. Requiring the agent to verify facts before stating them makes it slower.' },
+    { title: '4. Instruction Following vs Goal Pursuit', desc: 'A well-aligned agent navigates the tension between following instructions literally and pursuing the user\'s underlying goal. If a user asks "delete all the test files" but the agent detects this would break the CI pipeline, a literally-instruction-following agent deletes the files; a goal-aligned.' },
 ];
 
 export default function WalkthroughAACAlignmentForAgents() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACAlignmentForAgents() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Alignment for Agents — Step by Step
+          Alignment for Agents \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how alignment for agents works, one stage at a time.

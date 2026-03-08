@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFMarkovChainMonteCarlo() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'MCMC requires only the unnormalized posterior -- the normalizing constant cancels in acceptance ratios.', isTrue: true, explanation: 'This is a key technical detail of Markov Chain Monte Carlo.' },
-    { text: 'Metropolis-Hastings is the general framework; Gibbs sampling and HMC are important special cases.', isTrue: true, explanation: 'This is a key technical detail of Markov Chain Monte Carlo.' },
-    { text: 'Convergence diagnostics ($\\hat&#123;R&#125;$, ESS, trace plots) are essential -- never blindly trust MCMC output.', isTrue: true, explanation: 'This is a key technical detail of Markov Chain Monte Carlo.' },
+    { text: 'More samples always means better results.', isTrue: false, explanation: 'If the chain has not converged or mixes poorly, a million correlated samples may be less informative than a hundred well-mixed ones. Effective sample size matters, not raw sample count.' },
+    { text: 'A single long chain is sufficient.', isTrue: false, explanation: 'Running multiple independent chains enables convergence diagnostics (like &#123;R&#125;) and helps detect if a chain is stuck in one mode of a multimodal posterior.' },
+    { text: 'MCMC is always slow.', isTrue: false, explanation: 'For well-conditioned, moderate-dimensional posteriors, NUTS in Stan can produce thousands of effective samples in seconds. MCMC is slow when the posterior is very high-dimensional, strongly correlated, or multimodal.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

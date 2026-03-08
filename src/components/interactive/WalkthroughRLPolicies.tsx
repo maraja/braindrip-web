@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Formal Definition', desc: 'The foundation of policies begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Deterministic vs. Stochastic Policies', desc: 'At this stage, the key transformation occurs — the core mechanism that makes policies work.' },
-    { title: '3. Policy Parameterization', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Optimal Policy', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Policy Classes', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Formal Definition', desc: 'A policy  is a mapping from states to actions (or distributions over actions):  [equation]  [equation]  A stochastic policy assigns a probability to each action in each state, satisfying:  [equation]' },
+    { title: '2. Deterministic vs. Stochastic Policies', desc: 'Deterministic policies select a single action in each state: a = (s). They are simpler and, in fully observable MDPs, sufficient -- there always exists a deterministic optimal policy (Puterman, 1994).' },
+    { title: '3. Policy Parameterization', desc: 'In practice, policies are represented by parameterized functions _ with parameters . Tabular policies.' },
+    { title: '4. The Optimal Policy', desc: 'The optimal policy ^* achieves the highest expected return from every state simultaneously:  [equation]  where V^(s) is the state-value function under  (see value-functions.md).' },
+    { title: '5. Policy Classes', desc: 'Greedy policies always choose the action with the highest estimated value:  [equation]  Epsilon-greedy policies explore with probability  and exploit with probability 1 -  (see exploration-vs-exploitation.' },
+    { title: '6. Behavior Policy vs. Target Policy', desc: 'In off-policy learning, two policies coexist: The behavior policy b(a  s) generates the data (the actions actually taken). The target policy (a  s) is the policy being evaluated or improved.' },
 ];
 
 export default function WalkthroughRLPolicies() {
@@ -17,10 +18,10 @@ export default function WalkthroughRLPolicies() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Policies — Step by Step
+          Policies \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how policies works, one stage at a time.

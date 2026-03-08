@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizCVCVisualQuestionAnswering() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Visual question answering requires models to answer free-form natural language questions about images, demanding joint reasoning over visual content and linguistic structure.', isTrue: true, explanation: 'This captures the core purpose of Visual Question Answering (VQA).' },
-    { text: 'Visual Question Answering (VQA) is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Visual Question Answering (VQA) is important for building on more advanced topics.' },
-    { text: 'Visual Question Answering (VQA) is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Visual Question Answering (VQA) is important for building on more advanced topics.' },
+    { text: 'High VQA accuracy means the model understands the image.', isTrue: false, explanation: 'Models exploit strong language priors. For "What sport is being played?" the answer "tennis" is often correct without looking at the image.' },
+    { text: '1.1M questions on 204K COCO images, with 10 human answers per question; balanced to reduce language bias', isTrue: true, explanation: '1.1M questions on 204K COCO images, with 10 human answers per question; balanced to reduce language bias' },
+    { text: 'VQA is a solved problem.', isTrue: false, explanation: 'While headline numbers approach human performance (~82% vs ~83% on VQA v2.0), models still fail catastrophically on compositional questions, counting, spatial reasoning, and questions requiring world knowledge.' },
+    { text: 'Simple baselines ~50% (2015); attention models ~70% (2018); pretrained VL models ~76% (2021); multimodal LLMs ~82% (2023); human performance ~83%', isTrue: true, explanation: 'Simple baselines ~50% (2015); attention models ~70% (2018); pretrained VL models ~76% (2021); multimodal LLMs ~82% (2023); human performance ~83%' },
+    { text: 'Open-ended VQA is fundamentally different from classification VQA.', isTrue: false, explanation: 'In practice, 82% of VQA v2.0 answers come from a vocabulary of just 3,129 words. Generative models produce the same short answers; the two formulations converge on common benchmarks.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

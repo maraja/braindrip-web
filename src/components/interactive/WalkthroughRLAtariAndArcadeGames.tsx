@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Arcade Learning Environment (ALE)', desc: 'The foundation of atari and arcade games begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Raw Pixel Preprocessing', desc: 'At this stage, the key transformation occurs — the core mechanism that makes atari and arcade games work.' },
-    { title: '3. The DQN Architecture', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Two Key Stability Innovations', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Training Details', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Arcade Learning Environment (ALE)', desc: 'The experimental platform was the Arcade Learning Environment (Bellemare et al., 2013), a standardized interface to Atari 2600 game ROMs. ALE provides a uniform API: the agent receives a 210 x 160 RGB image at 60 Hz and selects from up to 18 discrete joystick actions.' },
+    { title: '2. Raw Pixel Preprocessing', desc: 'Raw frames undergo a pipeline before reaching the network:  Grayscale conversion -- reduces 210 x 160 x 3 RGB to 210 x 160 x 1 Downsampling -- rescaled to 84 x 84 pixels Frame stacking -- the last 4 frames are stacked into an 84 x 84 x 4 input tensor  Frame stacking is critical: a single frame.' },
+    { title: '3. The DQN Architecture', desc: 'The network maps the 84 x 84 x 4 input to Q-values for each possible action:  Conv layer 1: 32 filters, 8 x 8 kernel, stride 4, ReLU Conv layer 2: 64 filters, 4 x 4 kernel, stride 2, ReLU Conv layer 3: 64 filters, 3 x 3 kernel, stride 1, ReLU Fully connected: 512 units, ReLU Output: one Q-value per.' },
+    { title: '4. Two Key Stability Innovations', desc: 'DQN\'s success hinged on solving the instabilities of combining neural networks with Q-learning (the "deadly triad" from function-approximation.md):  Experience replay (see experience-replay.md): Transitions (s, a, r, s\') are stored in a replay buffer of size 10^6.' },
+    { title: '5. Training Details', desc: 'Optimizer: RMSProp with learning rate 2.5 x 10^&#123;-4&#125; Exploration: -greedy with  annealed from 1.0 to 0.1 over 1 million frames Discount factor:  = 0.99 Training duration: 50 million frames per game (~38 days of real-time play, ~8-10 days on 2015-era GPUs) Frame skipping: the agent sees every 4th.' },
 ];
 
 export default function WalkthroughRLAtariAndArcadeGames() {
@@ -17,10 +17,10 @@ export default function WalkthroughRLAtariAndArcadeGames() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Atari and Arcade Games — Step by Step
+          Atari and Arcade Games \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how atari and arcade games works, one stage at a time.

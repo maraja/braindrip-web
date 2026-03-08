@@ -1,18 +1,26 @@
 import { useState } from 'react';
-const baseStyle = { background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: 14, padding: '1.25rem', margin: '1.5rem 0', fontFamily: 'system-ui, sans-serif' };
+const baseStyle = { background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: 14, padding: '1.25rem', margin: '1.5rem 0', fontFamily: "system-ui, sans-serif" };
 export default function ScaleLLE04Deberta() {
   const [revealed, setRevealed] = useState(false);
   return (
     <div style={baseStyle}>
       <p style={{ fontSize: '0.8rem', fontWeight: 700, color: '#2C3E2D', marginBottom: 10, letterSpacing: '0.05em' }}>\u26A1 REAL-WORLD IMPACT</p>
-      <p style={{ fontSize: '0.9rem', color: '#3D4F3E', lineHeight: 1.5, marginBottom: 12 }}>Understanding DeBERTa: Decoding-Enhanced BERT with Disentangled Attention has real implications for how AI systems are built and deployed. What makes this concept especially important in practice?</p>
+      <p style={{ fontSize: '0.9rem', color: '#3D4F3E', lineHeight: 1.5, marginBottom: 12 }}>How does DeBERTa: Decoding-Enhanced BERT with Disentangled Attention matter in practice?</p>
       {!revealed ? (
         <button onClick={() => setRevealed(true)} style={{ padding: '6px 16px', borderRadius: 20, border: '1px solid #C76B4A', background: 'transparent', color: '#C76B4A', fontSize: '0.8rem', cursor: 'pointer', fontWeight: 600 }}>
           Reveal Impact \u2192
         </button>
       ) : (
-        <div style={{ padding: '0.75rem 1rem', background: '#C76B4A' + '0C', borderRadius: 10, borderLeft: '3px solid #C76B4A' }}>
-          <p style={{ fontSize: '0.9rem', color: '#2C3E2D', lineHeight: 1.5, margin: 0, fontWeight: 500 }}>### Surpassing Human Performance on SuperGLUE  In January 2021, DeBERTa surpassed the human baseline on SuperGLUE — a benchmark specifically designed to be challenging after BERT saturated the original GLUE. The score of 90.3 (vs human 89.8) was a symbolic milestone: an encoder model demonstrating s</p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          <div style={{ padding: '0.75rem 1rem', background: '#C76B4A0C', borderRadius: 10, borderLeft: '3px solid #C76B4A' }}>
+            <p style={{ fontSize: '0.82rem', color: '#2C3E2D', lineHeight: 1.5, margin: 0 }}><strong>Surpassing Human Performance on SuperGLUE:</strong> In January 2021, DeBERTa surpassed the human baseline on SuperGLUE — a benchmark specifically designed to be challenging after BERT saturated the original GLUE. The score of 90.3 (vs human 89.8) was a symbolic milestone: an encoder model demonstrating superhuman performance on a diverse set of language understanding tasks including reading comprehension, coreference resolution, word sense disambiguation, and natural language inference.</p>
+          </div>
+          <div style={{ padding: '0.75rem 1rem', background: '#C76B4A0C', borderRadius: 10, borderLeft: '3px solid #C76B4A' }}>
+            <p style={{ fontSize: '0.82rem', color: '#2C3E2D', lineHeight: 1.5, margin: 0 }}><strong>The Pinnacle of Encoder Innovation:</strong> DeBERTa represented the most sophisticated engineering of the encoder-only architecture. The disentangled attention mechanism was not just an incremental improvement — it was a principled rethinking of how Transformers handle position and content.</p>
+          </div>
+          <div style={{ padding: '0.75rem 1rem', background: '#C76B4A0C', borderRadius: 10, borderLeft: '3px solid #C76B4A' }}>
+            <p style={{ fontSize: '0.82rem', color: '#2C3E2D', lineHeight: 1.5, margin: 0 }}><strong>Lasting Impact on Attention Design:</strong> The disentangled attention concept influenced subsequent work on attention mechanisms. The idea that different kinds of information (content, position, maybe others) could be handled by separate attention pathways opened a design space that researchers continue to explore.</p>
+          </div>
         </div>
       )}
     </div>

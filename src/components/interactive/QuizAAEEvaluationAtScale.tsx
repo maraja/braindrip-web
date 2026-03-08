@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEEvaluationAtScale() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Scaling agent evaluation from 50 hand-run tasks to 50,000 automated runs requires fundamental shifts in infrastructure, organization, data management, and cost discipline -- transforming evaluation from a developer activity into a production service.', isTrue: true, explanation: 'This captures the core purpose of Evaluation at Scale.' },
-    { text: 'Evaluation at Scale is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluation at Scale is important for building on more advanced topics.' },
-    { text: 'Evaluation at Scale is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluation at Scale is important for building on more advanced topics.' },
+    { text: 'You can scale evaluation just by adding more machines.', isTrue: false, explanation: 'More machines help with execution speed but do not address data management, result analysis, cost control, or organizational processes. Scaling evaluation is a systems problem, not just a compute problem.' },
+    { text: 'Large evaluation suites are only for large companies.', isTrue: false, explanation: 'The principles of structured evaluation -- stratified task selection, adaptive depth, trend tracking -- apply at every scale. A startup with 200 tasks benefits from the same organizational practices, just at smaller scale.' },
+    { text: 'Running evaluation once is enough.', isTrue: false, explanation: 'Evaluation is a continuous process, not a one-time event. Agent behavior changes with model updates, prompt changes, tool modifications, and environment drift.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

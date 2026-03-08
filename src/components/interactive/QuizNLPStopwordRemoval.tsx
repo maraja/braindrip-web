@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPStopwordRemoval() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The 10 most frequent English words ("the," "be," "to," "of," "and," "a," "in," "that," "have," "I") account for approximately 25% of all tokens in the British National Corpus.', isTrue: true, explanation: 'This is a key technical detail of Stopword Removal.' },
-    { text: 'Removing NLTK\'s 179 stopwords from a typical English news corpus reduces total token count by 40-50%.', isTrue: true, explanation: 'This is a key technical detail of Stopword Removal.' },
-    { text: 'On the 20 Newsgroups classification benchmark, stopword removal improves SVM + TF-IDF accuracy by approximately 1-2% but has no significant effect on BERT fine-tuning (Devlin et al., 2019).', isTrue: true, explanation: 'This is a key technical detail of Stopword Removal.' },
+    { text: 'Stopword removal is always beneficial.', isTrue: false, explanation: 'For neural models like BERT (see bert.md) and GPT (see gpt-for-nlp-tasks.md), removing stopwords generally hurts performance. These models learn to use function words as syntactic scaffolding -- "not," "but," and "despite" carry important signals for understanding sentence structure and sentiment.' },
+    { text: 'There is a single correct stopword list.', isTrue: false, explanation: 'Every list is an engineering decision. The SMART system (1960s) used 571 stopwords; NLTK uses 179; some researchers use as few as 25.' },
+    { text: 'Stopwords carry no information.', isTrue: false, explanation: 'The word "the" before a noun phrase signals definiteness. "A" vs.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

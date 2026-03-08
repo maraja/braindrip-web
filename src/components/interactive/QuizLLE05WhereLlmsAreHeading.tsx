@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE05WhereLlmsAreHeading() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The trajectory of LLMs points toward a convergence of agentic autonomy, efficient reasoning, multimodal integration, and open-weight parity — raising fundamental questions about the nature of understanding, the economics of knowledge work, and the alignment of increasingly capable systems.', isTrue: true, explanation: 'This captures the core purpose of Where LLMs Are Heading.' },
-    { text: 'Where LLMs Are Heading is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Where LLMs Are Heading is important for building on more advanced topics.' },
-    { text: 'Where LLMs Are Heading is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Where LLMs Are Heading is important for building on more advanced topics.' },
+    { text: 'AGI is imminent.', isTrue: false, explanation: 'Current models are extraordinarily capable in narrow domains but lack robust common sense, consistent factual accuracy, and genuine learning from experience. The gap between benchmark performance and human-like general intelligence remains large, even if it is shrinking.' },
+    { text: 'Scaling laws will continue indefinitely.', isTrue: false, explanation: 'Pre-training scaling may be approaching diminishing returns at current data and compute scales. The shift to inference-time scaling (reasoning) suggests the field recognizes this.' },
+    { text: 'AI will replace all knowledge workers.', isTrue: false, explanation: 'AI augments far more tasks than it replaces. The most likely near-term outcome is dramatic productivity increases for knowledge workers who adopt AI tools, creating a divide between AI-augmented and non-augmented workers rather than mass unemployment.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -6,7 +6,7 @@ const DETAILS = [
     { label: 'Sub-question count', detail: 'Most multi-hop questions decompose into 2-4 sub-questions; generating more than 5-6 sub-questions often indicates over-decomposition.' },
     { label: 'Token overhead', detail: 'Self-ask generates 2-4x more tokens than direct answering due to the explicit sub-questions and intermediate answers.' },
     { label: 'Tool integration', detail: 'The multi-call version with search engine grounding improves factual accuracy by 15-25% compared to the single-prompt version on knowledge-intensive questions.' },
-    { label: 'Format sensitivity', detail: 'The specific format markers (\"Follow-up:\", \"Intermediate answer:\") are important; the model adheres to the decomposition pattern more reliably with these structured markers.' },
+    { label: 'Format sensitivity', detail: 'The specific format markers ("Follow-up:", "Intermediate answer:") are important; the model adheres to the decomposition pattern more reliably with these structured markers.' },
 ];
 
 export default function ExplorerPESelfAskAndDecomposition() {
@@ -20,10 +20,10 @@ export default function ExplorerPESelfAskAndDecomposition() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Self-Ask and Decomposition — Key Details Explorer
+          Self-Ask and Decomposition \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of self-ask and decomposition.
+          Click each card to explore the technical details.
         </p>
       </div>
 

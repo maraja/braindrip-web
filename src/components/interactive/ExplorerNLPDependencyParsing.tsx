@@ -6,7 +6,7 @@ const DETAILS = [
     { label: 'Biaffine parser (Dozat & Manning, 2017)', detail: '~95.7% UAS, ~94.1% LAS on PTB with BiLSTM; ~96.3% UAS with BERT.' },
     { label: 'Speed', detail: 'Transition-based parsers process ~1,000--2,000 sentences/sec; graph-based biaffine parsers ~200--500 sentences/sec on GPU.' },
     { label: 'Non-projective parsing', detail: '~10--15% of sentences in languages like Czech and Dutch contain non-projective arcs (crossing dependencies), requiring non-projective algorithms.' },
-    { label: 'Long-distance dependencies', detail: 'Accuracy drops for arcs spanning >5 tokens; BERT-based representations partially address this.' },
+    { label: 'Long-distance dependencies', detail: 'Accuracy drops for arcs spanning &gt;5 tokens; BERT-based representations partially address this.' },
 ];
 
 export default function ExplorerNLPDependencyParsing() {
@@ -20,10 +20,10 @@ export default function ExplorerNLPDependencyParsing() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Dependency Parsing — Key Details Explorer
+          Dependency Parsing \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of dependency parsing.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEHowLlmsProcessPrompts() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Frontier models use vocabularies of 32K-100K+ tokens; each token typically represents 3-4 characters in English.', isTrue: true, explanation: 'This is a key technical detail of How LLMs Process Prompts.' },
-    { text: 'Embedding dimensions range from 4,096 (smaller models) to 12,288+ (frontier models like GPT-4).', isTrue: true, explanation: 'This is a key technical detail of How LLMs Process Prompts.' },
-    { text: 'Transformer depth ranges from 32 layers (7B models) to 120+ layers (frontier models), each containing multi-head attention.', isTrue: true, explanation: 'This is a key technical detail of How LLMs Process Prompts.' },
+    { text: 'LLMs understand language the way humans do.', isTrue: false, explanation: 'LLMs process token sequences through matrix multiplications and attention patterns. They have no sensory grounding, no persistent memory, and no understanding in the human sense.' },
+    { text: 'The model reads the entire prompt simultaneously.', isTrue: false, explanation: 'While input tokens are processed in parallel during the prefill phase, the model\'s attention mechanism creates sequential dependencies. And during generation, the model is strictly sequential — each output token depends on all previous tokens.' },
+    { text: 'Longer prompts always give the model more to work with.', isTrue: false, explanation: 'Additional tokens increase noise alongside signal. The attention mechanism must distribute its capacity across all tokens, so irrelevant content actively competes for attention with relevant content.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

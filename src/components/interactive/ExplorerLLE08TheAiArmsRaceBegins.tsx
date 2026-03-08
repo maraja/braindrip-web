@@ -4,9 +4,9 @@ const DETAILS = [
     { label: 'ChatGPT launch', detail: 'November 30, 2022 (trigger event)' },
     { label: 'Google Bard announcement', detail: 'February 6, 2023' },
     { label: 'Microsoft-OpenAI investment', detail: '$10B+ announced January 2023' },
-    { label: 'Anthropic total funding by 2024', detail: '$7B+' },
-    { label: 'Meta LLaMA release', detail: 'February 2023' },
     { label: 'Nvidia H100 price', detail: '$40,000+ per chip, 6-12 month wait times' },
+    { label: 'Frontier model training cost', detail: '$50-100M+ (GPT-4, Gemini Ultra, Claude 3 Opus)' },
+    { label: 'Top researcher compensation', detail: '$5-10M+ annually at major labs' },
 ];
 
 export default function ExplorerLLE08TheAiArmsRaceBegins() {
@@ -20,10 +20,10 @@ export default function ExplorerLLE08TheAiArmsRaceBegins() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The AI Arms Race Begins — Key Details Explorer
+          The AI Arms Race Begins \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of the ai arms race begins.
+          Click each card to explore the technical details.
         </p>
       </div>
 

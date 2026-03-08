@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPNaturalLanguageInference() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'SNLI: 570,152 pairs, three-way labeled, drawn from Flickr30K captions.', isTrue: true, explanation: 'This is a key technical detail of Natural Language Inference.' },
-    { text: 'Inter-annotator agreement approximately 89%.', isTrue: true, explanation: 'This is a key technical detail of Natural Language Inference.' },
-    { text: 'MultiNLI: 432,702 pairs from 10 genres with matched/mismatched evaluation splits.', isTrue: true, explanation: 'This is a key technical detail of Natural Language Inference.' },
+    { text: 'NLI models truly understand language because they achieve ~91% accuracy on SNLI.', isTrue: false, explanation: 'High SNLI accuracy can be partially driven by annotation artifacts rather than genuine inference. The hypothesis-only baseline achieving approximately 67% shows significant exploitable bias.' },
+    { text: 'Entailment means paraphrase.', isTrue: false, explanation: 'Entailment is directional: "A dog runs in the park" entails "An animal is outdoors," but these are not paraphrases. Paraphrase implies bidirectional entailment (A entails B and B entails A).' },
+    { text: 'NLI requires specialized architectures.', isTrue: false, explanation: 'Pre-BERT, researchers designed increasingly complex cross-attention models for NLI. BERT showed that a general-purpose pre-trained encoder with a simple classification head matches or surpasses these specialized architectures.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

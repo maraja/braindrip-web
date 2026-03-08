@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPTextAsData() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The Brown Corpus (1961) took approximately 3 years to compile 1 million words.', isTrue: true, explanation: 'This is a key technical detail of Text as Data.' },
-    { text: 'GPT-3\'s training data (approximately 300 billion tokens) would take a human reader approximately 34,000 years to read at average speed.', isTrue: true, explanation: 'This is a key technical detail of Text as Data.' },
-    { text: 'Penn Treebank annotation cost approximately $1 million and took approximately 3 years with a team of annotators.', isTrue: true, explanation: 'This is a key technical detail of Text as Data.' },
+    { text: 'More data is always better.', isTrue: false, explanation: 'Data quality, diversity, and relevance matter as much as quantity. The Chinchilla scaling laws (Hoffmann et al., 2022) showed that many LLMs were undertrained relative to their size -- they needed more data, yes, but specifically high-quality, deduplicated data.' },
+    { text: 'Annotation is a simple mechanical task.', isTrue: false, explanation: 'Annotation requires linguistic expertise, clear guidelines, iterative refinement, and careful quality control. Ambiguous cases (which are frequent -- see ambiguity-in-language.md) require adjudication.' },
+    { text: 'Pre-trained models eliminate the need for annotated data.', isTrue: false, explanation: 'Pre-trained models reduce the amount of annotated data needed (few-shot learning, prompt-based methods), but they still require task-specific evaluation data at minimum. For domain-specific applications (clinical NLP, legal NLP), task-specific annotated data remains essential for reliable performance.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

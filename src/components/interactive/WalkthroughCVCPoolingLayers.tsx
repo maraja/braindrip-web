@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Max Pooling', desc: 'The foundation of pooling layers begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Average Pooling', desc: 'At this stage, the key transformation occurs — the core mechanism that makes pooling layers work.' },
-    { title: '3. Global Average Pooling', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Backpropagation Through Pooling', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Spatial Pyramid Pooling', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Max Pooling', desc: 'Selects the maximum value within each window:  [equation]  where &#123;R&#125; is the pooling region. Max pooling preserves the strongest activation, making it effective for detecting whether a feature is present somewhere within the window.' },
+    { title: '2. Average Pooling', desc: 'Computes the arithmetic mean of all values within each window:  [equation]  Average pooling retains more distributed information but may dilute strong activations.' },
+    { title: '3. Global Average Pooling', desc: '[equation]  This produces exactly one value per channel, eliminating spatial dimensions entirely. It acts as a structural regularizer since it enforces a direct correspondence between feature maps and output categories.' },
+    { title: '4. Backpropagation Through Pooling', desc: 'Max pooling: Gradients flow only through the position that held the maximum value (the "switch"). All other positions receive zero gradient.' },
+    { title: '5. Spatial Pyramid Pooling', desc: 'Spatial Pyramid Pooling (SPP), introduced by He et al. (2014), applies pooling at multiple grid scales (e.g., 1 x 1, 2 x 2, 4 x 4) and concatenates the results into a fixed-length vector.' },
+    { title: '6. Strided Convolutions as an Alternative', desc: 'Modern architectures increasingly replace pooling with strided convolutions (stride 2), which learn the downsampling function. ResNet, for example, uses stride-2 convolutions in its downsampling blocks.' },
 ];
 
 export default function WalkthroughCVCPoolingLayers() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCPoolingLayers() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Pooling Layers — Step by Step
+          Pooling Layers \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how pooling layers works, one stage at a time.

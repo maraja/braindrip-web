@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Healthcare NLP', desc: 'The foundation of nlp for social good begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Education', desc: 'At this stage, the key transformation occurs — the core mechanism that makes nlp for social good work.' },
-    { title: '3. Disaster Response and Crisis Informatics', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Accessibility', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Combating Misinformation', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Healthcare NLP', desc: 'Clinical Note Processing: Approximately 80% of healthcare data is unstructured text -- physician notes, discharge summaries, radiology reports, pathology findings. NLP systems extract structured information from these narratives to support clinical decision-making.' },
+    { title: '2. Education', desc: 'Automated Essay Scoring (AES): NLP models evaluate student essays on dimensions including grammar, coherence, argumentation, and content. The ASAP dataset benchmarks AES systems, with top models achieving quadratic weighted kappa of 0.75--0.' },
+    { title: '3. Disaster Response and Crisis Informatics', desc: 'Social Media Monitoring: During natural disasters, social media produces millions of relevant posts within hours. NLP systems classify messages by urgency, type (request for help, infrastructure damage, missing persons), and location.' },
+    { title: '4. Accessibility', desc: 'Screen Readers and Text Simplification: NLP powers screen reading technology for visually impaired users. Text simplification systems rewrite complex text into more accessible forms while preserving meaning, using techniques from text-summarization.md and paraphrase-generation.md.' },
+    { title: '5. Combating Misinformation', desc: 'Fact Verification: NLP systems decompose claims into verifiable sub-claims, retrieve evidence from knowledge bases and news archives, and classify claim-evidence pairs as supported, refuted, or insufficient. The FEVER benchmark (Thorne et al.' },
+    { title: '6. Endangered Language Preservation', desc: 'Language Documentation: NLP tools assist linguists in transcribing, annotating, and analyzing recordings of endangered languages. Automatic-speech-recognition.' },
 ];
 
 export default function WalkthroughNLPNlpForSocialGood() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPNlpForSocialGood() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          NLP for Social Good — Step by Step
+          NLP for Social Good \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how nlp for social good works, one stage at a time.

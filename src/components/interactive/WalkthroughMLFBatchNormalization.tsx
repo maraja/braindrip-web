@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The BatchNorm Formula', desc: 'The foundation of batch normalization begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Internal Covariate Shift', desc: 'At this stage, the key transformation occurs — the core mechanism that makes batch normalization work.' },
-    { title: '3. Training vs. Inference', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Where to Place BatchNorm', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Normalization Variants', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The BatchNorm Formula', desc: 'For a mini-batch &#123;B&#125; = \\&#123;x_1, , x_B\\&#125; of pre-activation values at a particular neuron:  Step 1: Compute batch statistics  [equation]  Step 2: Normalize  [equation]  where  (typically 10^&#123;-5&#125;) prevents division by zero.' },
+    { title: '2. Internal Covariate Shift', desc: 'The original motivation for BatchNorm was the internal covariate shift hypothesis: as parameters in earlier layers change during training, the distribution of inputs to later layers shifts, forcing those layers to continually adapt to a moving target.' },
+    { title: '3. Training vs. Inference', desc: 'During training, _&#123;B&#125; and _&#123;B&#125;^2 are computed from the current mini-batch. The network also maintains exponential moving averages:  [equation] [equation]  where  is the momentum (typically 0.1).' },
+    { title: '4. Where to Place BatchNorm', desc: 'There are two conventions: Pre-activation: z  BN(z)  f() (normalize before activation). This is the original formulation.' },
+    { title: '5. Normalization Variants', desc: 'Layer Normalization (LayerNorm): Normalizes across all features within a single example, rather than across the batch. Statistics are computed as  = &#123;1&#125;&#123;D&#125;_&#123;i=1&#125;^D x_i for each example independently.' },
 ];
 
 export default function WalkthroughMLFBatchNormalization() {
@@ -17,10 +17,10 @@ export default function WalkthroughMLFBatchNormalization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Batch Normalization — Step by Step
+          Batch Normalization \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how batch normalization works, one stage at a time.

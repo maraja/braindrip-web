@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAAgentHandoffs() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Command(update=&#123;...&#125;, goto="node_name") both updates state and routes in a single return.', isTrue: true, explanation: 'This is a key technical detail of Agent Handoffs.' },
-    { text: 'The goto value must match a registered node name or END.', isTrue: true, explanation: 'This is a key technical detail of Agent Handoffs.' },
-    { text: 'Command[Literal["a", "b"]] as a return type hint declares valid handoff targets for graph validation.', isTrue: true, explanation: 'This is a key technical detail of Agent Handoffs.' },
+    { text: 'Handoffs require a supervisor to coordinate.', isTrue: false, explanation: 'The entire point of the handoff pattern is that agents route directly to each other without any central coordinator. "Command replaces edges entirely." Command replaces the need for conditional edges between agents, but you still use add_edge(START, ...) for the entry point and can use edges for non-Command nodes.' },
+    { text: 'Agents transfer control directly to each other using the Command API, forming a peer network where any agent can hand off to any other without a central supervisor.', isTrue: true, explanation: 'This captures the core definition of Agent Handoffs.' },
+    { text: 'Agent Handoffs is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Agent Handoffs is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

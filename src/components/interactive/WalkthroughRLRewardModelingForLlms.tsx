@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Bradley-Terry Preference Model', desc: 'The foundation of reward modeling for llms begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Architecture', desc: 'At this stage, the key transformation occurs — the core mechanism that makes reward modeling for llms work.' },
-    { title: '3. Preference Data Collection', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Overoptimization Problem (Goodhart\'s Law)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Ensemble Approaches', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Bradley-Terry Preference Model', desc: 'Given a prompt x and two responses y_w (preferred) and y_l (dispreferred), the Bradley-Terry model assumes the probability that y_w is preferred follows a logistic function of the reward difference:  [equation]  The reward model r_ is trained by maximizing the log-likelihood of observed.' },
+    { title: '2. Architecture', desc: 'The reward model is typically a transformer initialized from the SFT model checkpoint:  Remove the language modeling head (token prediction layer) Add a scalar projection: the final hidden state of the last token is projected to a single scalar r  &#123;R&#125; Fine-tune the full model (or apply LoRA) on.' },
+    { title: '3. Preference Data Collection', desc: 'Human annotators are presented with a prompt and K candidate responses (typically K = 4--9) and rank them. From K responses, &#123;K&#125;&#123;2&#125; pairwise comparisons can be extracted, providing significant data efficiency.' },
+    { title: '4. The Overoptimization Problem (Goodhart\'s Law)', desc: 'The reward model is an imperfect proxy for true human preferences. As the policy is optimized against this proxy, it eventually finds inputs that score highly on r_ but are not genuinely good -- this is Goodhart\'s Law: "When a measure becomes a target, it ceases to be a good measure."  Gao et al.' },
+    { title: '5. Ensemble Approaches', desc: 'To mitigate overoptimization, practitioners train multiple reward models and use conservative reward estimates:  [equation]  where _&#123;RM&#125; and _&#123;RM&#125; are the mean and standard deviation across ensemble members.' },
 ];
 
 export default function WalkthroughRLRewardModelingForLlms() {
@@ -17,10 +17,10 @@ export default function WalkthroughRLRewardModelingForLlms() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Reward Modeling for LLMs — Step by Step
+          Reward Modeling for LLMs \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how reward modeling for llms works, one stage at a time.

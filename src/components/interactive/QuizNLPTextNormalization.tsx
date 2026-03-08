@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPTextNormalization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'NFC normalization passes are idempotent: applying NFC twice yields the same result as once.', isTrue: true, explanation: 'This is a key technical detail of Text Normalization.' },
-    { text: 'Python\'s str.lower() is locale-unaware.', isTrue: true, explanation: 'This is a key technical detail of Text Normalization.' },
-    { text: 'For Turkish text, a locale-aware lowering is required ("I" should map to "\\u0131", not "i").', isTrue: true, explanation: 'This is a key technical detail of Text Normalization.' },
+    { text: 'Always lowercase everything.', isTrue: false, explanation: 'Case is a powerful feature for tasks like NER, POS tagging (see part-of-speech-tagging.md), and sentence boundary detection (see sentence-segmentation.md). The decision should be task-dependent: lowercase for topic classification, preserve case for entity extraction.' },
+    { text: 'Unicode normalization is only for non-English text.', isTrue: false, explanation: 'English text from web scrapes routinely contains curly quotes (U+201C/U+201D), non-breaking spaces, and ligatures from PDF extraction. NFC normalization catches these.' },
+    { text: 'Normalization is a one-time preprocessing step.', isTrue: false, explanation: 'In production systems, normalization must be applied identically at training and inference time. A mismatch -- for example, normalizing training data but not user queries -- creates a silent distribution shift.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

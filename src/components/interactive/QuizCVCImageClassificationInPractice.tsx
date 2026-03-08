@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCImageClassificationInPractice() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ImageNet top-1 accuracy saturates above 90% (e.g., CoCa at 91.0%), but production accuracy on domain-specific data is typically 10--30 points lower without fine-tuning.', isTrue: true, explanation: 'This is a key technical detail of Image Classification in Practice.' },
-    { text: 'Focal loss with $\\gamma = 2$ is the most common starting point for imbalanced classification.', isTrue: true, explanation: 'This is a key technical detail of Image Classification in Practice.' },
-    { text: 'Temperature scaling adds exactly one learned parameter and is the simplest effective calibration method.', isTrue: true, explanation: 'This is a key technical detail of Image Classification in Practice.' },
+    { text: 'Higher ImageNet accuracy always means better production performance.', isTrue: false, explanation: 'Domain shift means a model scoring 85% on ImageNet may underperform a model scoring 80% that was fine-tuned on in-domain data. "Class imbalance is solved by collecting more data." If the imbalance reflects real-world frequency (e.g., rare diseases), more data preserves the same ratio.' },
+    { text: 'Deploying image classification beyond academic benchmarks requires handling class imbalance, domain shift, fine-grained distinctions, and serving millions of predictions per second.', isTrue: true, explanation: 'This captures the core definition of Image Classification in Practice.' },
+    { text: 'Image Classification in Practice is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Image Classification in Practice is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

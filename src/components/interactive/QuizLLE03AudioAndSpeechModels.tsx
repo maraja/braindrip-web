@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE03AudioAndSpeechModels() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Whisper (Sep 2022): Encoder-decoder Transformer.', isTrue: true, explanation: 'This is a key technical detail of Audio and Speech Models.' },
-    { text: '680K hours training data.', isTrue: true, explanation: 'This is a key technical detail of Audio and Speech Models.' },
-    { text: '1.55B params (large-v3).', isTrue: true, explanation: 'This is a key technical detail of Audio and Speech Models.' },
+    { text: 'Whisper is just another speech recognition system.', isTrue: false, explanation: 'Whisper is a universal audio model that performs speech recognition, translation across languages, language identification, and timestamping — all in a single model trained end-to-end. Its robustness to real-world conditions sets it apart from traditional ASR systems that require clean audio.' },
+    { text: 'Encoder-decoder Transformer.', isTrue: true, explanation: '680K hours training data. 97 languages.' },
+    { text: 'GPT-4o voice just uses a better TTS system.', isTrue: false, explanation: 'GPT-4o generates audio tokens natively — there is no separate TTS component. The emotional expression, timing, and prosody come from the same model that understands the conversation content.' },
+    { text: '~4.2% word error rate on LibriSpeech (near-human).', isTrue: true, explanation: 'Robust to noise and accents.' },
+    { text: 'Audio AI only matters for voice assistants.', isTrue: false, explanation: 'Audio understanding enables meeting analysis, podcast search, music generation, environmental sound monitoring, security applications, medical diagnostics (analyzing coughs, heart sounds, breathing patterns), industrial monitoring, and real-time translation. The modality has far broader applications than consumer voice assistants.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

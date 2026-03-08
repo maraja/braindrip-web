@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACAgentSandboxing() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Docker security profiles: AppArmor or Seccomp profiles restrict which system calls the container can make.', isTrue: true, explanation: 'This is a key technical detail of Agent Sandboxing.' },
-    { text: 'A well-configured profile blocks dangerous syscalls (mount, reboot, module loading) while allowing normal operation.', isTrue: true, explanation: 'This is a key technical detail of Agent Sandboxing.' },
-    { text: 'Docker\'s default seccomp profile blocks about 44 of the 300+ Linux syscalls.', isTrue: true, explanation: 'This is a key technical detail of Agent Sandboxing.' },
+    { text: 'Sandboxing slows agents down.', isTrue: false, explanation: 'With warm container pools and modern container runtimes, sandbox overhead is typically under 100ms for container assignment and negligible for runtime performance. The agent\'s execution speed inside a sandbox is essentially identical to bare-metal execution for most workloads.' },
+    { text: 'AppArmor or Seccomp profiles restrict which system calls the container can make.', isTrue: true, explanation: 'A well-configured profile blocks dangerous syscalls (mount, reboot, module loading) while allowing normal operation. Docker\'s default seccomp profile blocks about 44 of the 300+ Linux syscalls.' },
+    { text: 'Docker is secure enough for any use case.', isTrue: false, explanation: 'Docker containers share the host kernel, meaning kernel exploits can escape the container. For high-security applications or multi-tenant environments, microVMs (Firecracker, gVisor) provide stronger isolation.' },
+    { text: 'Docker provides OS-level isolation (shared kernel).', isTrue: true, explanation: 'Firecracker provides hardware-level isolation (separate lightweight VM). Firecracker is more secure but adds ~125ms boot time and slightly more memory overhead.' },
+    { text: 'If the agent has no code execution, sandboxing is unnecessary.', isTrue: false, explanation: 'Agents with tool access can still cause damage through tool misuse -- sending wrong API calls, modifying databases, or accessing unauthorized files. Sandboxing constrains not just code execution but all system interactions.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

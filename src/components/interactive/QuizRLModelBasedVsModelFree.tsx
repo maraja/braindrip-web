@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizRLModelBasedVsModelFree() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Model accuracy degrades in stochastic, high-dimensional environments.', isTrue: true, explanation: 'This is a key technical detail of Model-Based vs. Model-Free RL.' },
-    { text: 'Pixel-based models are far harder to learn than low-dimensional state-based models.', isTrue: true, explanation: 'This is a key technical detail of Model-Based vs. Model-Free RL.' },
-    { text: 'Model ensembles (typically 5-7 models) are standard practice to estimate epistemic uncertainty and prevent exploitation of model errors.', isTrue: true, explanation: 'This is a key technical detail of Model-Based vs. Model-Free RL.' },
+    { text: 'Model-based RL is always more sample efficient.', isTrue: false, explanation: 'Only when the model is accurate enough. In highly stochastic or adversarial environments, a poor model can actually hurt performance by introducing systematic bias that model-free methods would avoid.' },
+    { text: 'Model-free means the agent has no internal representations.', isTrue: false, explanation: 'Model-free agents still learn rich representations (e.g., convolutional features in DQN). The distinction is about whether the agent explicitly models state transitions and rewards, not about representation learning generally.' },
+    { text: 'You must choose one or the other.', isTrue: false, explanation: 'Modern state-of-the-art systems are overwhelmingly hybrid. MuZero, Dreamer, and MBPO all blend model-based and model-free components (see muzero.md).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

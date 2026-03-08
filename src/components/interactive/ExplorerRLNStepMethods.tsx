@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Optimal $n$', detail: 'Problem-dependent, but $n \\in [4, 16]$ frequently outperforms TD(0) and MC in tabular benchmarks.' },
-    { label: 'Memory requirement', detail: 'Must store the last $n$ states, actions, and rewards, requiring $O(n)$ additional memory per episode.' },
-    { label: 'Update delay', detail: 'Values for $S_t$ cannot be updated until time $t + n$, delaying credit assignment. This means the first $n - 1$ transitions of each episode produce no updates.' },
-    { label: 'Computational cost', detail: 'Each update costs $O(n)$ to compute the $n$-step return, compared to $O(1)$ for TD(0).' },
-    { label: 'Off-policy instability', detail: 'The product of $n$ importance sampling ratios $\\rho_{t:t+n-1}$ grows exponentially in variance with $n$, making off-policy $n$-step methods impractical for large $n$.' },
-    { label: 'Convergence', detail: '$N$-step TD converges to $V^\\pi$ under the same conditions as TD(0), with the rate depending on $n$, $\\alpha$, and the environment structure.' },
+    { label: 'Optimal $n$', detail: 'Problem-dependent, but n  [4, 16] frequently outperforms TD(0) and MC in tabular benchmarks.' },
+    { label: 'Memory requirement', detail: 'Must store the last n states, actions, and rewards, requiring O(n) additional memory per episode.' },
+    { label: 'Update delay', detail: 'Values for S_t cannot be updated until time t + n, delaying credit assignment. This means the first n - 1 transitions of each episode produce no updates.' },
+    { label: 'Computational cost', detail: 'Each update costs O(n) to compute the n-step return, compared to O(1) for TD(0).' },
+    { label: 'Off-policy instability', detail: 'The product of n importance sampling ratios _&#123;t:t+n-1&#125; grows exponentially in variance with n, making off-policy n-step methods impractical for large n.' },
+    { label: 'Convergence', detail: 'N-step TD converges to V^ under the same conditions as TD(0), with the rate depending on n, , and the environment structure.' },
 ];
 
 export default function ExplorerRLNStepMethods() {
@@ -20,10 +20,10 @@ export default function ExplorerRLNStepMethods() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          N-Step Methods — Key Details Explorer
+          N-Step Methods \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of n-step methods.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizRLMonteCarloTreeSearch() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Branching factor tolerance: MCTS handles branching factors of 250+ (Go), compared to ~35 for chess.', isTrue: true, explanation: 'This is a key technical detail of Monte Carlo Tree Search.' },
-    { text: 'This is possible because MCTS samples actions rather than enumerating them.', isTrue: true, explanation: 'This is a key technical detail of Monte Carlo Tree Search.' },
-    { text: 'Simulation count: AlphaGo used ~100,000 simulations per move; AlphaZero used ~800 simulations per move (but with a stronger network).', isTrue: true, explanation: 'This is a key technical detail of Monte Carlo Tree Search.' },
+    { text: 'MCTS requires random rollouts.', isTrue: false, explanation: 'Classical MCTS uses rollouts, but modern variants (AlphaZero, MuZero) replace them entirely with learned value functions. The rollout is the least essential component of the MCTS framework.' },
+    { text: 'MCTS handles branching factors of 250+ (Go), compared to ~35 for chess.', isTrue: true, explanation: 'This is possible because MCTS samples actions rather than enumerating them.' },
+    { text: 'MCTS only works for games with discrete actions.', isTrue: false, explanation: 'While most successful, MCTS has been adapted for continuous action spaces using progressive widening (Couetoux et al., 2011), where new actions are added to the tree at a rate proportional to N(s)^&#123;&#125; for  &lt; 1.' },
+    { text: 'AlphaGo used ~100,000 simulations per move; AlphaZero used ~800 simulations per move (but with a stronger network).', isTrue: true, explanation: 'Even 50-100 simulations provide meaningful improvement over the raw network policy.' },
+    { text: 'More simulations always help linearly.', isTrue: false, explanation: 'Returns are diminishing. Performance scales roughly logarithmically with simulation count -- doubling simulations from 100 to 200 helps much more than doubling from 10,000 to 20,000.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

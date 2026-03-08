@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Major Leaderboards and Their Metrics', desc: 'The foundation of benchmark leaderboards begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Papers With Code', desc: 'At this stage, the key transformation occurs — the core mechanism that makes benchmark leaderboards work.' },
-    { title: '3. EfficientNet and the Scaling Paradigm', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Standardized Evaluation Practices', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Competition-Driven Progress', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Major Leaderboards and Their Metrics', desc: 'ImageNet (ILSVRC): Metric: Top-1 and top-5 accuracy on 50K validation images. History: AlexNet (2012, 63.3% top-1) to CoCa (2022, 91.0% top-1).' },
+    { title: '2. Papers With Code', desc: 'Papers With Code (PwC) is the largest aggregator of benchmark results, tracking: 6,500+ benchmarks across vision, NLP, audio, and more. 100,000+ results from published papers.' },
+    { title: '3. EfficientNet and the Scaling Paradigm', desc: 'The EfficientNet family (Tan & Le, 2019) exemplifies how leaderboards drive systematic progress. Rather than designing one architecture, EfficientNet defines a compound scaling rule that uniformly scales depth, width, and resolution:  [equation]  subject to   ^2  ^2  2, where  controls overall.' },
+    { title: '4. Standardized Evaluation Practices', desc: 'Rigorous benchmarking requires:  Fixed test set: Labels are hidden; evaluation happens on a server. Prevents overfitting to test data.' },
+    { title: '5. Competition-Driven Progress', desc: 'Annual challenges at CVPR, ECCV, and ICCV organize competitive evaluation:  COCO Challenges: Detection, segmentation, keypoint, captioning. Running since 2015.' },
+    { title: '6. The Goodhart\'s Law Problem', desc: '"When a measure becomes a target, it ceases to be a good measure." Benchmark leaderboards suffer from this:  Overfitting to benchmarks: Models are tuned specifically for benchmark quirks (COCO\'s category distribution, ImageNet\'s class granularity) and may not generalize.' },
 ];
 
 export default function WalkthroughCVCBenchmarkLeaderboards() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCBenchmarkLeaderboards() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Benchmark Leaderboards — Step by Step
+          Benchmark Leaderboards \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how benchmark leaderboards works, one stage at a time.

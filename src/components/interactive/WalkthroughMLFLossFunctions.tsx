@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Regression Losses', desc: 'The foundation of loss functions begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Classification Losses', desc: 'At this stage, the key transformation occurs — the core mechanism that makes loss functions work.' },
-    { title: '3. How Loss Choice Shapes Learning', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Surrogate Losses', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Custom Loss Functions', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Regression Losses', desc: 'Mean Squared Error (MSE):  [equation]  MSE penalizes large errors quadratically, making it sensitive to outliers. It corresponds to maximum likelihood estimation under Gaussian noise: if y = f(x) +  with   &#123;N&#125;(0, ^2), then minimizing MSE is equivalent to maximizing the log-likelihood.' },
+    { title: '2. Classification Losses', desc: 'Binary Cross-Entropy (Log Loss):  For binary classification where &#123;p&#125; = P(y=1|x):  [equation]  Cross-entropy measures the dissimilarity between the true distribution (one-hot label) and the predicted probability distribution.' },
+    { title: '3. How Loss Choice Shapes Learning', desc: 'The loss function determines:  What the model optimizes for: MSE targets the mean, MAE targets the median, quantile loss targets a specific percentile. Sensitivity to outliers: Squared losses amplify outlier influence; absolute and Huber losses bound it.' },
+    { title: '4. Surrogate Losses', desc: 'Many evaluation metrics (accuracy, AUC, F1) are non-differentiable and cannot be directly optimized by gradient descent. Surrogate losses are differentiable functions that serve as proxies:  Cross-entropy is a surrogate for 0-1 loss (accuracy).' },
+    { title: '5. Custom Loss Functions', desc: 'Domain-specific problems often require tailored losses:  Weighted cross-entropy for class imbalance: multiply the loss for minority classes by a factor w_k &gt; 1. Focal loss (1-&#123;p&#125;)^  CE for extreme imbalance: down-weights easy examples, focusing learning on hard cases.' },
 ];
 
 export default function WalkthroughMLFLossFunctions() {
@@ -17,10 +17,10 @@ export default function WalkthroughMLFLossFunctions() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Loss Functions — Step by Step
+          Loss Functions \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how loss functions works, one stage at a time.

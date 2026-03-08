@@ -4,7 +4,7 @@ const DETAILS = [
     { label: 'Announced', detail: 'February 15, 2024; broadly available mid-2024' },
     { label: 'Architecture', detail: 'Mixture of Experts (MoE) Transformer' },
     { label: 'Context window', detail: '1M tokens standard, 2M tokens extended, 10M tested in research' },
-    { label: 'Needle-in-a-haystack', detail: '99.7% recall accuracy at 1M tokens' },
+    { label: 'Needle-in-a-haystack', detail: '7% recall accuracy at 1M tokens' },
     { label: 'Multimodal capacity', detail: '1 hour video, 11 hours audio, 30K+ lines of code, 700K+ words in a single prompt' },
     { label: 'Gemini 1.5 Pro', detail: 'Matched Gemini 1.0 Ultra quality at significantly lower cost' },
 ];
@@ -20,10 +20,10 @@ export default function ExplorerLLE02Gemini15() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Gemini 1.5 — Key Details Explorer
+          Gemini 1.5 \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of gemini 1.5.
+          Click each card to explore the technical details.
         </p>
       </div>
 

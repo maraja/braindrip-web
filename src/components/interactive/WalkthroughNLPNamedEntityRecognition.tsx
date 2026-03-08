@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The BIO/IOB2 Tagging Scheme', desc: 'The foundation of named entity recognition begins with understanding its core input requirements and initial setup.' },
-    { title: '2. CRF-Based Approaches', desc: 'At this stage, the key transformation occurs — the core mechanism that makes named entity recognition work.' },
-    { title: '3. BiLSTM-CRF', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. BERT for NER', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Nested and Few-Shot NER', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The BIO/IOB2 Tagging Scheme', desc: 'Because entities span multiple tokens, NER uses a positional tagging scheme. In IOB2 (Inside-Outside-Beginning), each entity-starting token gets a B-TYPE tag, continuation tokens get I-TYPE, and non-entity tokens get O:  This encoding resolves adjacency ambiguity: two consecutive entities of the.' },
+    { title: '2. CRF-Based Approaches', desc: 'Conditional Random Fields (CRFs) model the conditional probability of the entire label sequence given the input, capturing dependencies between adjacent labels (e.g., I-PER should not follow B-LOC).' },
+    { title: '3. BiLSTM-CRF', desc: '(2016) introduced the BiLSTM-CRF architecture that became the standard neural NER model for several years. The pipeline:  Character-level CNN/LSTM encodes sub-word features (capturing morphology, capitalization).' },
+    { title: '4. BERT for NER', desc: 'Fine-tuning BERT for NER treats each sub-word token as a classification target. Since BERT uses WordPiece tokenization, entity labels are typically assigned only to the first sub-token of each word, and the remaining sub-tokens are ignored during loss computation.' },
+    { title: '5. Nested and Few-Shot NER', desc: 'Nested NER handles overlapping entities: in "Bank of America headquarters," both "Bank of America" (ORG) and "America" (LOC) are valid entities. Span-based models that classify all possible spans, rather than tagging individual tokens, naturally handle nesting.' },
 ];
 
 export default function WalkthroughNLPNamedEntityRecognition() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPNamedEntityRecognition() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Named Entity Recognition — Step by Step
+          Named Entity Recognition \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how named entity recognition works, one stage at a time.

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPTfIdf() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'BM25 connection: BM25 (Best Matching 25) extends TF-IDF with saturation (diminishing returns for term frequency) and document length normalization.', isTrue: true, explanation: 'This is a key technical detail of TF-IDF.' },
-    { text: 'The TF component becomes (f(t,d)  (k1 + 1)) / (f(t,d) + k1  (1 - b + b * dl/avgdl)), where k1 = 1.2 and b = 0.75 are standard parameters.', isTrue: true, explanation: 'This is a key technical detail of TF-IDF.' },
-    { text: 'Typical vocabulary sizes: After pruning with min_df=2 and max_df=0.95, English corpora typically yield 10,000-100,000 features.', isTrue: true, explanation: 'This is a key technical detail of TF-IDF.' },
+    { text: 'TF-IDF eliminates the need for stopword removal.', isTrue: false, explanation: 'While IDF does downweight common words, explicit stopword removal still helps by reducing vocabulary size and computation. Some very common non-stopwords (e.g., "said" in news corpora) can still receive non-trivial TF-IDF weights.' },
+    { text: 'BM25 (Best Matching 25) extends TF-IDF with saturation (diminishing returns for term frequency) and document length normalization.', isTrue: true, explanation: 'The TF component becomes (f(t,d)  (k1 + 1)) / (f(t,d) + k1  (1 - b + b * dl/avgdl)), where k1 = 1.2 and b = 0.75 are standard parameters.' },
+    { text: 'Higher TF-IDF always means a better keyword.', isTrue: false, explanation: 'TF-IDF can assign high weights to rare misspellings, proper nouns, or domain jargon that are frequent in one document but absent elsewhere. These are not necessarily good keywords -- they are just rare.' },
+    { text: 'After pruning with min_df=2 and max_df=0.95, English corpora typically yield 10,000-100,000 features.', isTrue: true, explanation: 'The 20 Newsgroups dataset produces roughly 130,000 features without pruning, 25,000-35,000 after.' },
+    { text: 'TF-IDF captures word meaning.', isTrue: false, explanation: 'TF-IDF is purely statistical -- it knows nothing about synonyms, antonyms, or semantic relationships. "Automobile" and "car" are as orthogonal in TF-IDF space as "automobile" and "banana." This limitation is what motivated distributional embeddings like word2vec.md.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

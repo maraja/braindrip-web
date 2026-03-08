@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFClassificationMetrics() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Threshold dependence: Precision, recall, F1, and accuracy all depend on the classification threshold.', isTrue: true, explanation: 'This is a key technical detail of Classification Metrics.' },
-    { text: 'AUC-ROC and AUC-PR summarize performance across all thresholds.', isTrue: true, explanation: 'This is a key technical detail of Classification Metrics.' },
-    { text: 'Multiclass extension: Metrics extend to multiclass via macro-averaging (compute per class, then average), micro-averaging (pool all TP/FP/FN globally), or weighted averaging.', isTrue: true, explanation: 'This is a key technical detail of Classification Metrics.' },
+    { text: 'High accuracy means a good model.', isTrue: false, explanation: 'On imbalanced datasets, accuracy can be misleading. A model predicting the majority class always achieves high accuracy while being useless.' },
+    { text: 'Precision, recall, F1, and accuracy all depend on the classification threshold.', isTrue: true, explanation: 'AUC-ROC and AUC-PR summarize performance across all thresholds.' },
+    { text: 'Metrics extend to multiclass via macro-averaging (compute per class, then average), micro-averaging (pool all TP/FP/FN globally), or weighted averaging.', isTrue: true, explanation: 'Metrics extend to multiclass via macro-averaging (compute per class, then average), micro-averaging (pool all TP/FP/FN globally), or weighted averaging.' },
+    { text: 'AUC-PR, MCC, and F1 are more informative than accuracy and AUC-ROC on imbalanced data.', isTrue: true, explanation: 'AUC-PR, MCC, and F1 are more informative than accuracy and AUC-ROC on imbalanced data.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

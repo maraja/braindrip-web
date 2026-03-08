@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEContextBudgetAllocation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'System prompts should be 10-20% of the context window, with the exact allocation depending on the complexity of instructions and number of tool definitions.', isTrue: true, explanation: 'This is a key technical detail of Context Budget Allocation.' },
-    { text: 'Conversation history is the most aggressive consumer of context and requires active management (summarization or truncation) in any conversation exceeding 5-10 turns.', isTrue: true, explanation: 'This is a key technical detail of Context Budget Allocation.' },
-    { text: 'A 5-10% safety buffer prevents hard failures from token count estimation errors and unexpectedly large tool outputs.', isTrue: true, explanation: 'This is a key technical detail of Context Budget Allocation.' },
+    { text: 'Just use the biggest context window available.', isTrue: false, explanation: 'Larger windows cost more per request, have higher latency, and do not automatically improve quality. Budget allocation is about using the right amount of context, not the maximum amount.' },
+    { text: 'tiktoken (for OpenAI models) and model-specific tokenizers provide exact counts.', isTrue: true, explanation: 'Approximate methods (word count / 0.75) can be off by 10-20%.' },
+    { text: 'Context budget allocation divides the context window into purposeful zones — system prompt, conversation history, retrieved knowledge, tool results, and safety buffer — with specific token budgets that adapt to window size and task requirements.', isTrue: true, explanation: 'This captures the core definition of Context Budget Allocation.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

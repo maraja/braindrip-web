@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPFairnessInNlp() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'WinoBias gap: BERT-based coreference systems show 81% accuracy on pro-stereotypical examples vs.', isTrue: true, explanation: 'This is a key technical detail of Fairness in NLP.' },
-    { text: '63% on anti-stereotypical examples -- an 18-point gap.', isTrue: true, explanation: 'This is a key technical detail of Fairness in NLP.' },
-    { text: 'CrowS-Pairs: GPT-2 shows stereotypical preference in 56.4% of gender pairs, 62.3% of race pairs, and 66.7% of religion pairs.', isTrue: true, explanation: 'This is a key technical detail of Fairness in NLP.' },
+    { text: 'Fairness means treating everyone identically.', isTrue: false, explanation: 'Identical treatment (fairness through unawareness -- simply removing protected attributes) is insufficient because proxy variables carry demographic information. Removing gender from text does not prevent a model from inferring gender from occupation, writing style, or name.' },
+    { text: 'BERT-based coreference systems show 81% accuracy on pro-stereotypical examples vs.', isTrue: true, explanation: '63% on anti-stereotypical examples -- an 18-point gap.' },
+    { text: 'There is a single correct definition of fairness.', isTrue: false, explanation: 'The impossibility theorem proves this is mathematically false. Different fairness definitions embody different values, and the appropriate choice depends on the application context, the stakeholders involved, and the potential harms of different error types.' },
+    { text: 'GPT-2 shows stereotypical preference in 56.4% of gender pairs, 62.3% of race pairs, and 66.7% of religion pairs.', isTrue: true, explanation: 'GPT-2 shows stereotypical preference in 56.4% of gender pairs, 62.3% of race pairs, and 66.7% of religion pairs.' },
+    { text: 'Achieving fairness requires sacrificing accuracy.', isTrue: false, explanation: 'The accuracy-fairness trade-off is real but often overstated. For well-calibrated models, post-processing to achieve equalized odds typically costs 0.5--2% aggregate accuracy.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

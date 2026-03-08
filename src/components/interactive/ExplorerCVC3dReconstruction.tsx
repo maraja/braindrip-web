@@ -2,11 +2,11 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'COLMAP MVS', detail: 'Produces point clouds with ~1 mm accuracy for small objects; ~1 cm for rooms. Processing 100 images at 12 MP takes 1--4 hours on a modern GPU.' },
-    { label: 'TSDF resolution', detail: 'KinectFusion uses $512^3$ voxels for a $3 \\times 3 \\times 3$ m volume (5.9 mm voxel size). Voxel hashing scales to 50+ m rooms.' },
+    { label: 'TSDF resolution', detail: 'KinectFusion uses 512^3 voxels for a 3 x 3 x 3 m volume (5.9 mm voxel size). Voxel hashing scales to 50+ m rooms.' },
     { label: 'DeepSDF', detail: '256-dim shape code, 8-layer MLP with 512 hidden units. Reconstructs shapes at sub-millimeter accuracy on ShapeNet.' },
     { label: 'Occupancy Networks', detail: 'IoU of 0.571 on ShapeNet (single-image reconstruction), compared to 0.501 for Pixel2Mesh.' },
     { label: 'NeuS', detail: 'Achieves mean Chamfer distance of 0.83 mm on DTU dataset (15 scenes), outperforming NeRF-based geometry extraction.' },
-    { label: 'Marching Cubes', detail: '$O(N^3)$ time and space for grid resolution $N$. Output mesh size: a $256^3$ grid typically produces 200K--2M triangles.' },
+    { label: 'Marching Cubes', detail: 'O(N^3) time and space for grid resolution N. Output mesh size: a 256^3 grid typically produces 200K--2M triangles.' },
 ];
 
 export default function ExplorerCVC3dReconstruction() {
@@ -20,10 +20,10 @@ export default function ExplorerCVC3dReconstruction() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          3D Reconstruction — Key Details Explorer
+          3D Reconstruction \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of 3d reconstruction.
+          Click each card to explore the technical details.
         </p>
       </div>
 

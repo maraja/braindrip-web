@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPStemmingAndLemmatization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Porter Stemmer has a measured error rate of approximately 5% on the Lovins benchmark (over-stemming + under-stemming combined).', isTrue: true, explanation: 'This is a key technical detail of Stemming and Lemmatization.' },
-    { text: 'Lemmatization with correct POS tags achieves 97%+ accuracy on English; without POS, accuracy drops to approximately 88%.', isTrue: true, explanation: 'This is a key technical detail of Stemming and Lemmatization.' },
-    { text: 'Stemming is language-dependent: Snowball supports English, French, German, Spanish, Portuguese, Italian, Dutch, Swedish, Norwegian, Danish, Russian, Finnish, Hungarian, Romanian, and Turkish.', isTrue: true, explanation: 'This is a key technical detail of Stemming and Lemmatization.' },
+    { text: 'Stemming and lemmatization are interchangeable.', isTrue: false, explanation: 'Stemming is faster but cruder. For a sentiment analysis system, stemming "university" and "universe" to the same stem ("univers") introduces noise.' },
+    { text: 'Neural models have made stemming obsolete.', isTrue: false, explanation: 'For transformer-based models, yes -- subword tokenization handles morphology. But for TF-IDF classifiers, Elasticsearch indexes, keyword extraction (see keyword-extraction.md), and many production systems, stemming remains standard practice.' },
+    { text: 'Lemmatization always produces the right base form.', isTrue: false, explanation: 'Without context, lemmatizers cannot distinguish "saw" (past tense of "see") from "saw" (the noun). Accurate lemmatization depends on accurate POS tagging (see part-of-speech-tagging.md), creating a circular dependency that pipelines resolve by running POS tagging first.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE03ConstitutionalAi() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Published: December 2022 by Bai et al.', isTrue: true, explanation: 'This is a key technical detail of Constitutional AI.' },
-    { text: 'Anthropic\'s Constitutional AI replaced the need for extensive human labeling of harmful content by having the model critique and revise its own outputs according to a written set of principles, then training a preference model using AI-generated judgments (RLAIF).', isTrue: true, explanation: 'This captures the core purpose of Constitutional AI.' },
-    { text: 'Constitutional AI is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Constitutional AI is important for building on more advanced topics.' },
+    { text: 'Constitutional AI eliminates the need for human judgment.', isTrue: false, explanation: 'Humans write the constitution, validate the training pipeline, evaluate the final model, and iteratively refine the principles. The AI automates the per-example labeling, not the design of values.' },
+    { text: 'December 2022 by Bai et al.', isTrue: true, explanation: 'at Anthropic (51 authors)' },
+    { text: 'The constitution is a fixed, final document.', isTrue: false, explanation: 'The constitution is iteratively revised based on model behavior, red-teaming results, and evolving understanding of safety. It is a living document, not a set-in-stone rulebook.' },
+    { text: 'Model self-critiques against written principles, revised outputs become training data', isTrue: true, explanation: 'Model self-critiques against written principles, revised outputs become training data' },
+    { text: 'RLAIF produces lower-quality alignment than RLHF.', isTrue: false, explanation: 'The original paper showed that RLAIF achieved comparable or better results than RLHF on harmlessness evaluations. AI feedback is more consistent (no inter-labeler disagreement) and can be generated at far greater scale.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

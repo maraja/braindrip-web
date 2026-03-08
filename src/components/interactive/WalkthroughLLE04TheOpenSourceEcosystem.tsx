@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Hub: Hugging Face', desc: 'The foundation of the open-source ecosystem begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Inference Engines: From Research to Production', desc: 'At this stage, the key transformation occurs — the core mechanism that makes the open-source ecosystem work.' },
-    { title: '3. Training Frameworks', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Fine-Tuning Ecosystem', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Evaluation Infrastructure', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Hub: Hugging Face', desc: 'Hugging Face transformed from a chatbot startup (2016) into the central platform for the open AI ecosystem. Its Model Hub hosts over 500,000 models across every modality — text, vision, audio, multimodal — from single-GPU experiments to trillion-parameter frontier models.' },
+    { title: '2. Inference Engines: From Research to Production', desc: 'vLLM (UC Berkeley, 2023) introduced PagedAttention, which manages the KV cache like virtual memory pages — allocating, freeing, and sharing cache blocks dynamically. This solved the dominant inference bottleneck: memory fragmentation from varying-length sequences.' },
+    { title: '3. Training Frameworks', desc: 'Megatron-LM (NVIDIA) provides the distributed training infrastructure for most large-scale pre-training efforts. It implements 3D parallelism (data, tensor, pipeline) and has been used to train many frontier open models.' },
+    { title: '4. Fine-Tuning Ecosystem', desc: 'LoRA (Low-Rank Adaptation) and its ecosystem transformed fine-tuning from a resource-intensive operation into something anyone with a single GPU could do.' },
+    { title: '5. Evaluation Infrastructure', desc: 'lm-evaluation-harness (EleutherAI) provides a standardized framework for evaluating language models on hundreds of benchmarks. It is the backend for the Open LLM Leaderboard on Hugging Face, which ranks open models on standardized benchmarks and has become the community\'s primary comparison tool.' },
+    { title: '6. Open Datasets', desc: 'The quality of open models depends fundamentally on training data. Key open datasets include FineWeb (Hugging Face, 2024): 15T+ tokens of high-quality web data with careful filtering.' },
 ];
 
 export default function WalkthroughLLE04TheOpenSourceEcosystem() {
@@ -17,10 +18,10 @@ export default function WalkthroughLLE04TheOpenSourceEcosystem() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The Open-Source Ecosystem — Step by Step
+          The Open-Source Ecosystem \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how the open-source ecosystem works, one stage at a time.

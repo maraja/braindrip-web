@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. FCOS: Fully Convolutional One-Stage Detection (2019)', desc: 'The foundation of anchor-free detection begins with understanding its core input requirements and initial setup.' },
-    { title: '2. CenterNet: Objects as Points (2019)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes anchor-free detection work.' },
-    { title: '3. CornerNet (2018)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
+    { title: '1. FCOS: Fully Convolutional One-Stage Detection (2019)', desc: 'FCOS treats every location on the feature map as a potential detection point. Per-pixel prediction: For a location (x, y) on feature map level P_l, if it falls inside a ground-truth box, FCOS predicts: Classification: C-dimensional vector of class scores.' },
+    { title: '2. CenterNet: Objects as Points (2019)', desc: 'CenterNet (Zhou et al.) models each object as a single point -- its bounding box center. Heatmap prediction: For each class c, predict a heatmap &#123;Y&#125;_c  [0, 1]^&#123;H/R x W/R&#125; where R is the output stride (typically 4).' },
+    { title: '3. CornerNet (2018)', desc: 'An earlier anchor-free approach by Law and Deng that detects objects as pairs of top-left and bottom-right corner keypoints, grouped by an associative embedding. It introduced the idea of keypoint-based detection but required complex corner pooling and grouping.' },
 ];
 
 export default function WalkthroughCVCAnchorFreeDetection() {
@@ -15,10 +15,10 @@ export default function WalkthroughCVCAnchorFreeDetection() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Anchor-Free Detection — Step by Step
+          Anchor-Free Detection \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how anchor-free detection works, one stage at a time.

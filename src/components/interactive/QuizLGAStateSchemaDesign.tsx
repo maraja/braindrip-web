@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAStateSchemaDesign() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Use Annotated[list, add_messages] for message fields to ensure append behavior, not overwrite.', isTrue: true, explanation: 'This is a key technical detail of State Schema Design.' },
-    { text: 'Use Annotated[list[str], operator.add] for any accumulating list (audit logs, tool calls, errors).', isTrue: true, explanation: 'This is a key technical detail of State Schema Design.' },
-    { text: 'Fields without a reducer annotation use last-write-wins semantics -- the most recent node\'s return value replaces the previous value.', isTrue: true, explanation: 'This is a key technical detail of State Schema Design.' },
+    { text: 'You can add new fields to state at runtime without defining them in the schema.', isTrue: false, explanation: 'TypedDict schemas are fixed at definition time. Any field your nodes read or write must be declared in the schema.' },
+    { text: 'Well-designed state schemas keep agent data flat, typed, and organized with reducers for messages, audit trails, and error tracking -- making persistence, debugging, and scaling straightforward.', isTrue: true, explanation: 'This captures the core definition of State Schema Design.' },
+    { text: 'State Schema Design is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding State Schema Design is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Two-Stage Process', desc: 'The foundation of zero-shot chain-of-thought begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Trigger Phrase Variations', desc: 'At this stage, the key transformation occurs — the core mechanism that makes zero-shot chain-of-thought work.' },
-    { title: '3. Zero-Shot-CoT vs. Few-Shot-CoT Trade-offs', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Interaction with Modern Instruction-Tuned Models', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Two-Stage Process', desc: 'Zero-shot-CoT typically operates in two stages. In the first stage, the original question is augmented with the trigger phrase "Let\'s think step by step" and the model generates a reasoning trace.' },
+    { title: '2. Trigger Phrase Variations', desc: 'Not all trigger phrases are equally effective. tested multiple variations and found significant performance differences.' },
+    { title: '3. Zero-Shot-CoT vs. Few-Shot-CoT Trade-offs', desc: 'Zero-shot-CoT is faster to deploy and requires no example engineering, but few-shot-CoT generally achieves higher accuracy. On GSM8K, few-shot-CoT with PaLM 540B reached 58% while zero-shot-CoT reached approximately 43% -- a meaningful gap.' },
+    { title: '4. Interaction with Modern Instruction-Tuned Models', desc: 'Modern instruction-tuned models (GPT-4, Claude 3.5+, Gemini 1.5+) have been trained to follow instructions more reliably, which means zero-shot-CoT is more effective and more consistent with these models than with the base or early instruct models used in the original paper.' },
 ];
 
 export default function WalkthroughPEZeroShotChainOfThought() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEZeroShotChainOfThought() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Zero-Shot Chain-of-Thought — Step by Step
+          Zero-Shot Chain-of-Thought \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how zero-shot chain-of-thought works, one stage at a time.

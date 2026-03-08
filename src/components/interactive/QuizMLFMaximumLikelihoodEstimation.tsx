@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFMaximumLikelihoodEstimation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'MLE can overfit with limited data.', isTrue: true, explanation: 'This is a key technical detail of Maximum Likelihood Estimation.' },
-    { text: 'For example, the MLE for a Gaussian with one data point sets $\\sigma^2 = 0$.', isTrue: true, explanation: 'This is a key technical detail of Maximum Likelihood Estimation.' },
-    { text: 'Regularization (MAP) or Bayesian inference mitigate this.', isTrue: true, explanation: 'This is a key technical detail of Maximum Likelihood Estimation.' },
+    { text: 'MLE always gives the best estimate.', isTrue: false, explanation: 'MLE can overfit, especially in small samples or high-dimensional settings. Bayesian methods or regularized MLE often perform better.' },
+    { text: 'Finding the parameter values that make observed data most probable -- the dominant paradigm for fitting ML models.', isTrue: true, explanation: 'This captures the core definition of Maximum Likelihood Estimation.' },
+    { text: 'Maximum Likelihood Estimation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Maximum Likelihood Estimation is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

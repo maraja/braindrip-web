@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Training complexity', detail: '$O(nd)$ -- a single pass through the data.' },
-    { label: 'Prediction complexity', detail: '$O(dc)$ -- compute $d$ likelihoods for each of $c$ classes.' },
-    { label: 'Generative model', detail: 'Naive Bayes models $P(x, y) = P(x \\mid y)P(y)$, unlike discriminative models like logistic regression that model $P(y \\mid x)$ directly.' },
+    { label: 'Training complexity', detail: 'O(nd) -- a single pass through the data.' },
+    { label: 'Prediction complexity', detail: 'O(dc) -- compute d likelihoods for each of c classes.' },
+    { label: 'Generative model', detail: 'Naive Bayes models P(x, y) = P(x  y)P(y), unlike discriminative models like logistic regression that model P(y  x) directly.' },
     { label: 'Missing features', detail: 'Easily handled by simply omitting the missing feature from the product.' },
     { label: 'Incremental learning', detail: 'Parameters can be updated online as new data arrives without retraining from scratch.' },
     { label: 'Probability calibration', detail: 'Raw probabilities from Naive Bayes tend to be poorly calibrated (pushed toward 0 and 1). Use Platt scaling or isotonic regression if calibrated probabilities are needed.' },
@@ -20,10 +20,10 @@ export default function ExplorerMLFNaiveBayes() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Naive Bayes — Key Details Explorer
+          Naive Bayes \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of naive bayes.
+          Click each card to explore the technical details.
         </p>
       </div>
 

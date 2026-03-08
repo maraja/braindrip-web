@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Scaling Up Pre-Training', desc: 'The foundation of llama 2 begins with understanding its core input requirements and initial setup.' },
-    { title: '2. RLHF Alignment Pipeline', desc: 'At this stage, the key transformation occurs — the core mechanism that makes llama 2 work.' },
-    { title: '3. Ghost Attention (GAtt)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Safety and Red-Teaming', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Scaling Up Pre-Training', desc: 'LLaMA 2 was trained on 2 trillion tokens — a 40% increase over LLaMA 1\'s 1.0-1.4 trillion. The training corpus was drawn from publicly available sources, though Meta did not disclose the exact mixture.' },
+    { title: '2. RLHF Alignment Pipeline', desc: 'The chat models underwent a multi-stage alignment process. First, supervised fine-tuning (SFT) on a curated set of high-quality dialogue examples produced a base conversational model.' },
+    { title: '3. Ghost Attention (GAtt)', desc: 'One of LLaMA 2\'s most practical innovations was Ghost Attention, a technique to maintain system prompt adherence across multi-turn conversations. In standard training, models tend to "forget" their system prompt instructions after several conversational turns, reverting to default behavior.' },
+    { title: '4. Safety and Red-Teaming', desc: 'Meta invested heavily in safety for LLaMA 2 Chat. The safety RLHF training used adversarial prompts collected through extensive red-teaming exercises.' },
 ];
 
 export default function WalkthroughLLE03Llama2() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE03Llama2() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          LLaMA 2 — Step by Step
+          LLaMA 2 \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how llama 2 works, one stage at a time.

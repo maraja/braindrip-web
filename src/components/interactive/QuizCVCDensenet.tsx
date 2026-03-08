@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCDensenet() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Dense connections mean the network is harder to train.', isTrue: false, explanation: '"Dense connections mean the network is harder to train." The opposite is true -- dense connectivity actually improves gradient flow, making training easier. The challenge is the memory cost, not the o' },
-    { text: 'Growth rate $k$ is the most important hyperparameter.', isTrue: true, explanation: 'This is a key technical detail of DenseNet.' },
-    { text: '$k=32$ is standard for ImageNet; $k=12$ works well for CIFAR.', isTrue: true, explanation: 'This is a key technical detail of DenseNet.' },
+    { text: 'DenseNet is just ResNet with more skip connections.', isTrue: false, explanation: 'The key difference is concatenation vs. addition.' },
+    { text: 'DenseNet connects every layer to every other layer within a dense block, maximizing feature reuse and achieving strong accuracy with substantially fewer parameters than ResNet.', isTrue: true, explanation: 'This captures the core definition of DenseNet.' },
+    { text: 'DenseNet is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding DenseNet is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

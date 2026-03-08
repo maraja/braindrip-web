@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Qwen 1: Establishing the Foundation (August 2023)', desc: 'The foundation of qwen 1 and 2: alibaba\'s ascent begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Qwen 1.5: Multilingual Expansion (February 2024)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes qwen 1 and 2: alibaba\'s ascent work.' },
-    { title: '3. Qwen 2: The Quality Leap (June 2024)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Qwen 2.5: Data-Driven Frontier (September 2024)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Qwen 1: Establishing the Foundation (August 2023)', desc: 'Qwen 1 launched in August 2023 with 7B and 14B parameter models, later expanding to a 72B flagship. Trained on approximately 3 trillion tokens of Chinese and English text sourced from web crawls, books, code repositories, and curated datasets, it established a standard dense Transformer.' },
+    { title: '2. Qwen 1.5: Multilingual Expansion (February 2024)', desc: 'Released just six months after Qwen 1, the 1.5 version was a refinement rather than a redesign. The most significant architectural change was the addition of Grouped-Query Attention (GQA), which reduced the KV cache size and improved inference throughput without meaningful quality loss.' },
+    { title: '3. Qwen 2: The Quality Leap (June 2024)', desc: 'Qwen 2 represented the first major architectural and data overhaul. Training data expanded to 7 trillion tokens, more than double Qwen 1\'s dataset.' },
+    { title: '4. Qwen 2.5: Data-Driven Frontier (September 2024)', desc: 'Qwen 2.5 pushed training data to 18 trillion tokens, the largest dataset in the Qwen line and one of the largest publicly acknowledged training sets for any open model.' },
 ];
 
 export default function WalkthroughLLE04Qwen1And2() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE04Qwen1And2() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Qwen 1 and 2: Alibaba\'s Ascent — Step by Step
+          Qwen 1 and 2: Alibaba\'s Ascent \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how qwen 1 and 2: alibaba\'s ascent works, one stage at a time.

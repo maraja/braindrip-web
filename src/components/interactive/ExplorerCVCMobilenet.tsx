@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'MobileNetV1', detail: '4.2M params, 569M MAdds, 70.6% top-1 on ImageNet. On a Pixel 1 phone: 113ms inference.' },
-    { label: 'MobileNetV2', detail: '3.4M params, 300M MAdds, 72.0% top-1. Inference: 75ms on Pixel 1.' },
-    { label: 'MobileNetV3-Large', detail: '5.4M params, 219M MAdds, 75.2% top-1. Inference: 51ms on Pixel 1.' },
+    { label: 'MobileNetV1', detail: '2M params, 569M MAdds, 70.6% top-1 on ImageNet. On a Pixel 1 phone: 113ms inference.' },
+    { label: 'MobileNetV2', detail: '4M params, 300M MAdds, 72.0% top-1. Inference: 75ms on Pixel 1.' },
+    { label: 'MobileNetV3-Large', detail: '4M params, 219M MAdds, 75.2% top-1. Inference: 51ms on Pixel 1.' },
     { label: 'Expansion ratio $t = 6$', detail: 'in V2/V3 inverted residuals is the standard setting; higher values increase accuracy but also cost.' },
-    { label: 'ReLU6', detail: '($\\min(\\max(0, x), 6)$) was used in V1/V2 for numerical stability in fixed-point arithmetic on mobile processors.' },
+    { label: 'ReLU6', detail: '(((0, x), 6)) was used in V1/V2 for numerical stability in fixed-point arithmetic on mobile processors.' },
     { label: 'Quantization', detail: 'MobileNets are designed to be quantization-friendly. INT8 quantized MobileNetV2 runs 2-4x faster than float32 with less than 1% accuracy drop.' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerCVCMobilenet() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          MobileNet — Key Details Explorer
+          MobileNet \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of mobilenet.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -4,9 +4,9 @@ const DETAILS = [
     { label: 'LLaMA 3 release', detail: 'April 18, 2024 (8B and 70B)' },
     { label: 'LLaMA 3.1 release', detail: 'July 23, 2024 (8B, 70B, 405B)' },
     { label: 'Architecture', detail: 'Dense decoder-only Transformer (no MoE)' },
-    { label: 'Training tokens', detail: '~15T' },
-    { label: 'Context window', detail: '128K tokens' },
     { label: 'Vocabulary', detail: '128,256 tokens (tiktoken-based tokenizer)' },
+    { label: 'Training compute', detail: '16,000 H100 GPUs, ~39.3M GPU hours total' },
+    { label: 'License', detail: 'Meta LLaMA 3.1 Community License (permissive, with usage restrictions above 700M monthly active users)' },
 ];
 
 export default function ExplorerLLE05Llama3And31() {
@@ -20,10 +20,10 @@ export default function ExplorerLLE05Llama3And31() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          LLaMA 3 and LLaMA 3.1 — Key Details Explorer
+          LLaMA 3 and LLaMA 3.1 \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of llama 3 and llama 3.1.
+          Click each card to explore the technical details.
         </p>
       </div>
 

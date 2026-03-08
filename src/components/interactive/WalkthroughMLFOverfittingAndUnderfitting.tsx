@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Detecting the Problem', desc: 'The foundation of overfitting and underfitting begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Causes of Overfitting', desc: 'At this stage, the key transformation occurs — the core mechanism that makes overfitting and underfitting work.' },
-    { title: '3. Causes of Underfitting', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Diagnostic Tools', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Remedies for Overfitting', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Detecting the Problem', desc: 'The primary diagnostic is the gap between training performance and validation performance. Quantitatively, if training loss is &#123;L&#125;_&#123;train&#125; and validation loss is &#123;L&#125;_&#123;val&#125;:  Underfitting: &#123;L&#125;_&#123;train&#125; is high (the model cannot fit even the training data).' },
+    { title: '2. Causes of Overfitting', desc: 'Model too complex. A polynomial of degree 20 fitting 25 data points will interpolate perfectly but generalize terribly.' },
+    { title: '3. Causes of Underfitting', desc: 'Model too simple. A linear model cannot capture a quadratic relationship.' },
+    { title: '4. Diagnostic Tools', desc: 'Learning Curves. Plot training and validation error as a function of training set size n:  Overfitting signature: Training error is low and increases slowly with n; validation error is high but decreases.' },
+    { title: '5. Remedies for Overfitting', desc: 'Regularization: Add a penalty term to the loss. L1, L2, dropout, and early stopping all constrain effective model complexity.' },
+    { title: '6. Remedies for Underfitting', desc: 'More complex model: Deeper networks, higher-degree polynomials, more trees. Better features: Feature engineering, domain-specific transformations, polynomial features.' },
 ];
 
 export default function WalkthroughMLFOverfittingAndUnderfitting() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFOverfittingAndUnderfitting() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Overfitting and Underfitting — Step by Step
+          Overfitting and Underfitting \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how overfitting and underfitting works, one stage at a time.

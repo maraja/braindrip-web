@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Red Team Composition', desc: 'The foundation of agent safety red teaming begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Attack Vector Taxonomy', desc: 'At this stage, the key transformation occurs — the core mechanism that makes agent safety red teaming work.' },
-    { title: '3. Scenario Design', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Case Studies', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Metrics and Measurement', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Red Team Composition', desc: 'Effective agent red teams require diverse expertise. A well-composed team includes domain experts who understand the agent\'s intended use case and can craft realistic attack scenarios, security researchers who bring knowledge of system exploitation techniques and privilege escalation, creative.' },
+    { title: '2. Attack Vector Taxonomy', desc: 'Agent-specific attack vectors extend well beyond traditional LLM jailbreaking. Direct prompt injection targets the agent\'s system prompt or user input channel.' },
+    { title: '3. Scenario Design', desc: 'Red teaming scenarios should follow an escalation structure. Level 1 tests basic safety guardrails with obvious harmful requests.' },
+    { title: '4. Case Studies', desc: 'The UK AISI Agent Red-Teaming Challenge stands as the most comprehensive public safety evaluation. It tested multiple frontier agent systems against structured attack campaigns across categories including harmful content generation, dangerous capability elicitation, and unauthorized action.' },
+    { title: '5. Metrics and Measurement', desc: 'Quantifying red teaming results requires structured metrics. Attack success rate (ASR) measures the fraction of attempted attacks that achieve their objective.' },
 ];
 
 export default function WalkthroughAAEAgentSafetyRedTeaming() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAEAgentSafetyRedTeaming() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agent Safety Red Teaming — Step by Step
+          Agent Safety Red Teaming \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how agent safety red teaming works, one stage at a time.

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEContextWindowMechanics() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Context windows range from 8K tokens (small models) to 2M tokens (Gemini 1.5 Pro) as of 2025.', isTrue: true, explanation: 'This is a key technical detail of Context Window Mechanics.' },
-    { text: 'The input-output budget is shared: input_tokens + output_tokens &lt;= context_window (minus any provider-specific output cap).', isTrue: true, explanation: 'This is a key technical detail of Context Window Mechanics.' },
-    { text: 'Effective context length (&gt;90% recall accuracy) is typically 30-50% of nominal context for precise fact retrieval tasks.', isTrue: true, explanation: 'This is a key technical detail of Context Window Mechanics.' },
+    { text: 'A 128K context model can effectively use all 128K tokens.', isTrue: false, explanation: 'Nominal and effective context differ significantly. The "lost in the middle" effect means information placed in the central 60-80% of a full context window is recalled less accurately.' },
+    { text: 'Bigger context windows are always better.', isTrue: false, explanation: 'Larger contexts increase cost, latency, and attention diffusion. For many tasks, a well-curated 10K-token prompt outperforms a 100K-token prompt that includes irrelevant information.' },
+    { text: 'Context window size equals memory.', isTrue: false, explanation: 'The context window is not persistent memory — it resets with each API call. Multi-turn "memory" is simulated by including conversation history in each new request, consuming tokens and budget every time.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

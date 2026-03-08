@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. State-Value Function $V^\\pi(s)$', desc: 'The foundation of value functions begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Action-Value Function $Q^\\pi(s, a)$', desc: 'At this stage, the key transformation occurs — the core mechanism that makes value functions work.' },
-    { title: '3. Relationship Between V and Q', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Advantage Function', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Optimal Value Functions', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. State-Value Function $V^\\pi(s)$', desc: 'The state-value function under policy  gives the expected return starting from state s and following  thereafter:  [equation]  This answers: "How good is it to be in state s if I follow policy ?"' },
+    { title: '2. Action-Value Function $Q^\\pi(s, a)$', desc: 'The action-value function (or Q-function) under policy  gives the expected return starting from state s, taking action a, and following  thereafter:  [equation]  This answers: "How good is it to take action a in state s and then follow policy ?"  &lt;!' },
+    { title: '3. Relationship Between V and Q', desc: 'The two value functions are intimately connected:  [equation]  The state-value is the policy-weighted average of the action-values. Conversely:  [equation]  The action-value equals the immediate reward plus the discounted value of the next state, averaged over transition uncertainty.' },
+    { title: '4. The Advantage Function', desc: 'The advantage function measures how much better action a is compared to the average action under :  [equation]  Key properties: _a (a  s) A^(s, a) = 0 (the advantage is zero on average). A^(s, a) &gt; 0 means action a is better than the policy\'s average.' },
+    { title: '5. Optimal Value Functions', desc: 'The optimal state-value function V^*(s) is the maximum value achievable from state s under any policy:  [equation]  The optimal action-value function Q^*(s, a) is the maximum expected return achievable starting from (s, a):  [equation]  Once Q^* is known, the optimal policy is immediately.' },
+    { title: '6. Computing Value Functions', desc: 'For small state spaces, V and Q are stored as tables (arrays). V requires [equation]V^(s)  &#123;1&#125;&#123;N(s)&#125; _&#123;i=1&#125;^&#123;N(s)&#125; G_t^&#123;(i)&#125;[equation]V(S_t)  V(S_t) +  [ R_&#123;t+1&#125; +  V(S_&#123;t+1&#125;) - V(S_t) ]$  The term _t = R_&#123;t+1&#125; +  V(S_&#123;t+1&#125;) - V(S_t)$ is called the TD error.' },
 ];
 
 export default function WalkthroughRLValueFunctions() {
@@ -17,10 +18,10 @@ export default function WalkthroughRLValueFunctions() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Value Functions — Step by Step
+          Value Functions \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how value functions works, one stage at a time.

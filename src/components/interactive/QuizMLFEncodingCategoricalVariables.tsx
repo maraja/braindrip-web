@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFEncodingCategoricalVariables() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Encode after splitting.', isTrue: true, explanation: 'This is a key technical detail of Encoding Categorical Variables.' },
-    { text: 'Target encoding statistics must be computed on training data only.', isTrue: true, explanation: 'This is a key technical detail of Encoding Categorical Variables.' },
-    { text: 'Even one-hot encoding should learn its category vocabulary from training data; unseen categories in the test set should map to a catch-all "unknown" column (see Data Splitting and Sampling).', isTrue: true, explanation: 'This is a key technical detail of Encoding Categorical Variables.' },
+    { text: 'One-hot encoding is always the best default.', isTrue: false, explanation: 'It is safe but not always optimal. For high-cardinality features, it creates sparse, high-dimensional representations that slow training and may degrade performance compared to target or embedding-based encoding.' },
+    { text: 'map to "unknown," use hashing (which handles novel values by design), or use a fallback value in target encoding (the global mean).', isTrue: true, explanation: 'map to "unknown," use hashing (which handles novel values by design), or use a fallback value in target encoding (the global mean).' },
+    { text: 'One-hot, label, target, and embedding-based encoding -- translating categories into numbers without introducing false relationships.', isTrue: true, explanation: 'This captures the core definition of Encoding Categorical Variables.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

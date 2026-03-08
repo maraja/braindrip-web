@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Real-World Benchmarks', desc: 'The foundation of real-world vs synthetic benchmarks begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Synthetic Benchmarks', desc: 'At this stage, the key transformation occurs — the core mechanism that makes real-world vs synthetic benchmarks work.' },
-    { title: '3. Ecological Validity vs. Experimental Control', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Hybrid Approaches', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The 2026 AI Safety Report Finding', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Real-World Benchmarks', desc: 'SWE-bench is the canonical example. Tasks come directly from merged pull requests on popular Python repositories.' },
+    { title: '2. Synthetic Benchmarks', desc: 'Parameterized task generation: Define a task template with variable parameters, then generate instances by sampling parameter values. For example, a file-manipulation benchmark might have templates like "Find all files matching [pattern] in [directory structure] and [operation] them to.' },
+    { title: '3. Ecological Validity vs. Experimental Control', desc: 'The core tradeoff can be characterized along several axes:' },
+    { title: '4. Hybrid Approaches', desc: 'The most effective modern benchmarks combine both approaches:  Template-from-real: Extract structural patterns from real tasks, then generate new instances following those patterns. This preserves the distribution properties of real work while enabling fresh task generation.' },
+    { title: '5. The 2026 AI Safety Report Finding', desc: 'The International AI Safety Report (2026) highlighted that pre-deployment testing increasingly fails to reflect real-world behavior of deployed systems. Benchmark performance -- whether real-world or synthetic -- correlated only moderately (r = 0.4-0.' },
 ];
 
 export default function WalkthroughAAERealWorldVsSyntheticBenchmarks() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAERealWorldVsSyntheticBenchmarks() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Real-World vs Synthetic Benchmarks — Step by Step
+          Real-World vs Synthetic Benchmarks \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how real-world vs synthetic benchmarks works, one stage at a time.

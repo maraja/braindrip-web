@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCAutoencodersAndVaes() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Typical latent dimensions: 64--512 for image autoencoders; VQ-VAE uses codebooks of 512--8192 vectors.', isTrue: true, explanation: 'This is a key technical detail of Autoencoders and VAEs.' },
-    { text: 'VAEs trained on CelebA 64x64 typically achieve reconstruction FID around 40--60, significantly worse than GANs (~10) at the same resolution.', isTrue: true, explanation: 'This is a key technical detail of Autoencoders and VAEs.' },
-    { text: 'The "posterior collapse" problem occurs when the decoder is too powerful and ignores $z$; mitigation strategies include KL annealing, free bits, and cyclical schedules.', isTrue: true, explanation: 'This is a key technical detail of Autoencoders and VAEs.' },
+    { text: 'VAEs generate blurry images because the model is bad.', isTrue: false, explanation: 'The blurriness comes from optimizing pixel-wise reconstruction likelihood under a Gaussian assumption, which averages over modes. Using perceptual losses or adversarial training (VAE-GAN) substantially sharpens outputs.' },
+    { text: 'Autoencoders learn compressed latent representations by encoding inputs and reconstructing them, while Variational Autoencoders add a probabilistic structure that enables principled generation of new data.', isTrue: true, explanation: 'This captures the core definition of Autoencoders and VAEs.' },
+    { text: 'Autoencoders and VAEs is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Autoencoders and VAEs is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

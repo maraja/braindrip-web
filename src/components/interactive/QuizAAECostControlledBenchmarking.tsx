@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAECostControlledBenchmarking() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Instead of asking "what is the best score an agent can achieve?", cost-controlled benchmarking asks "what is the best score at a given cost per task?" -- a question far more relevant to production deployment decisions.', isTrue: true, explanation: 'This captures the core purpose of Cost-Controlled Benchmarking.' },
-    { text: 'Cost-Controlled Benchmarking is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Cost-Controlled Benchmarking is important for building on more advanced topics.' },
-    { text: 'Cost-Controlled Benchmarking is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Cost-Controlled Benchmarking is important for building on more advanced topics.' },
+    { text: 'The highest-scoring agent is the best agent.', isTrue: false, explanation: 'Without cost context, this statement is meaningless. The highest-scoring configuration might use ensemble voting across three frontier models with five retry attempts -- a setup costing $50 per task that no production system would deploy.' },
+    { text: 'Cost will become irrelevant as models get cheaper.', isTrue: false, explanation: 'Model inference costs are falling, but agent scaffolding costs (retries, tool use, context management) are not falling at the same rate. And as models get cheaper, teams expand usage rather than pocketing savings -- the cost constraint shifts but does not disappear.' },
+    { text: 'You can just compare cost per resolved task.', isTrue: false, explanation: 'Cost per resolved task penalizes agents that attempt hard tasks. An agent that only attempts easy tasks might have a low cost-per-resolution but fail completely on the tasks that matter most.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

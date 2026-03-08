@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAECodeExecutionBasedEvaluation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Code execution-based evaluation uses automated test suites as objective oracles for assessing coding agent output, providing reproducible and scalable correctness verification while facing limitations around test completeness and gaming vulnerability.', isTrue: true, explanation: 'This captures the core purpose of Code Execution-Based Evaluation.' },
-    { text: 'Code Execution-Based Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Code Execution-Based Evaluation is important for building on more advanced topics.' },
-    { text: 'Code Execution-Based Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Code Execution-Based Evaluation is important for building on more advanced topics.' },
+    { text: 'If all tests pass, the code is correct.', isTrue: false, explanation: 'Tests verify specific behaviors, not all behaviors. Test coverage is rarely 100%, and even full line coverage does not guarantee correctness.' },
+    { text: 'Agent-generated tests are as reliable as human-written tests.', isTrue: false, explanation: 'They are useful for scaling but less reliable. Agent-generated tests may miss edge cases, contain errors, or be overly aligned with the agent\'s own implementation approach, reducing their ability to catch bugs.' },
+    { text: 'Execution-based evaluation works for all agent tasks.', isTrue: false, explanation: 'It is limited to tasks with executable outputs. Customer service agents, research agents, and planning agents produce outputs that cannot be meaningfully "executed" against a test suite.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Multilingual Model Mechanisms', desc: 'The foundation of cross-lingual transfer begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Zero-Shot Cross-Lingual Transfer', desc: 'At this stage, the key transformation occurs — the core mechanism that makes cross-lingual transfer work.' },
-    { title: '3. Translate-Train vs. Translate-Test', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Key Multilingual Models', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Curse of Multilinguality', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Multilingual Model Mechanisms', desc: 'Shared Vocabulary. Models like mBERT and XLM-R use a single WordPiece or SentencePiece vocabulary shared across all training languages.' },
+    { title: '2. Zero-Shot Cross-Lingual Transfer', desc: 'The most common approach: Pre-train a multilingual model (mBERT, XLM-R) on unlabeled text from 100+ languages. Fine-tune on the downstream task using only English labeled data.' },
+    { title: '3. Translate-Train vs. Translate-Test', desc: 'Translate-Train: Machine-translate the English training data into target languages, then train the model on the translated data (possibly combined with the original English data). This can be more effective than zero-shot transfer but requires a machine translation system for each target language.' },
+    { title: '4. Key Multilingual Models', desc: 'mBERT (Devlin et al., 2019): Standard BERT pre-trained on Wikipedia text from 104 languages. Despite no explicit cross-lingual objective, mBERT achieves surprisingly strong cross-lingual transfer.' },
+    { title: '5. The Curse of Multilinguality', desc: 'A fundamental tension in multilingual models: adding more languages to a fixed-capacity model eventually degrades per-language performance. (2020) documented this trade-off:  Models with 7 languages outperform monolingual models (positive transfer from related languages).' },
 ];
 
 export default function WalkthroughNLPCrossLingualTransfer() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPCrossLingualTransfer() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Cross-Lingual Transfer — Step by Step
+          Cross-Lingual Transfer \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how cross-lingual transfer works, one stage at a time.

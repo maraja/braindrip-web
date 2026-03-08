@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACRoleBasedSpecialization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Prompt length for roles: Effective role prompts are typically 200-500 tokens.', isTrue: true, explanation: 'This is a key technical detail of Role-Based Specialization.' },
-    { text: 'Shorter prompts underspecify; longer prompts dilute focus.', isTrue: true, explanation: 'This is a key technical detail of Role-Based Specialization.' },
-    { text: 'Include the most important behavioral guidance first, as LLMs weight early context more heavily.', isTrue: true, explanation: 'This is a key technical detail of Role-Based Specialization.' },
+    { text: 'Role prompts need to be elaborate and detailed', isTrue: false, explanation: ': Some of the most effective role prompts are concise. "You are a code reviewer.' },
+    { text: 'Effective role prompts are typically 200-500 tokens.', isTrue: true, explanation: 'Shorter prompts underspecify; longer prompts dilute focus. Include the most important behavioral guidance first, as LLMs weight early context more heavily.' },
+    { text: 'Match model capability to role complexity.', isTrue: true, explanation: 'Simple roles (data formatting, basic search) can use smaller, cheaper models (GPT-4o-mini, Haiku). Complex roles (architectural decisions, nuanced analysis) benefit from larger models (GPT-4, Opus).' },
+    { text: 'A researcher with access to code execution tools may waste time writing scripts instead of searching.', isTrue: true, explanation: 'A coder with web search may spend time browsing instead of coding. Restricting tools to role-relevant ones keeps agents focused.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

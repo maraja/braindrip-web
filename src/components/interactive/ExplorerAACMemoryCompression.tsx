@@ -6,7 +6,7 @@ const DETAILS = [
     { label: 'Lossless compression is impossible', detail: 'Unlike data compression (ZIP, gzip), semantic compression is inherently lossy. Some information is always lost. The goal is to minimize loss of decision-relevant information' },
     { label: 'Compression latency', detail: 'Summarization calls add 0.5-2 seconds of latency. For running summaries triggered every 5 turns, this latency is experienced once per 5 turns, not every turn' },
     { label: 'Optimal summary length', detail: 'For conversation history, 200-500 tokens of summary per 10 conversation turns provides a good balance of compression and information retention' },
-    { label: 'Summary drift', detail: 'Over many incremental updates, running summaries can drift from the original content, emphasizing themes that were recently discussed while losing earlier themes. Periodic \"full refresh\" summarization (summarizing from raw history, not from the previous summary) corrects drift' },
+    { label: 'Summary drift', detail: 'Over many incremental updates, running summaries can drift from the original content, emphasizing themes that were recently discussed while losing earlier themes. Periodic "full refresh" summarization (summarizing from raw history, not from the previous summary) corrects drift' },
 ];
 
 export default function ExplorerAACMemoryCompression() {
@@ -20,10 +20,10 @@ export default function ExplorerAACMemoryCompression() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Memory Compression — Key Details Explorer
+          Memory Compression \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of memory compression.
+          Click each card to explore the technical details.
         </p>
       </div>
 

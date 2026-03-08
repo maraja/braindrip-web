@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'SWE-bench Verified scores', detail: '(as of early 2025): Claude 3.5 Sonnet with scaffolding achieves ~50%, GPT-4o with scaffolding achieves ~30-40%, open-source solutions achieve ~20-30%' },
-    { label: 'Token consumption per task', detail: 'solving a SWE-bench issue typically requires 50K-500K tokens across multiple LLM calls, costing $0.15-$7.50 at Sonnet pricing' },
+    { label: 'Token consumption per task', detail: 'solving a SWE-bench issue typically requires 50K-500K tokens across multiple LLM calls, costing 0.15-7.50 at Sonnet pricing' },
     { label: 'Iteration count', detail: 'successful solutions average 3-8 edit-test-debug iterations; failures often exhaust the maximum iteration budget (typically 15-25 iterations)' },
     { label: 'File editing strategies', detail: 'diff-based patching (apply a unified diff), search-and-replace (find exact string, replace with new string), and whole-file rewrite. Search-and-replace is most reliable for targeted changes; whole-file rewrite works for small files' },
     { label: 'Test selection', detail: 'matters: running the full test suite after each edit is slow. Agents that identify and run only the relevant test subset iterate faster and solve more problems within time budgets' },
@@ -20,10 +20,10 @@ export default function ExplorerAACAutonomousCodingAgents() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Autonomous Coding Agents — Key Details Explorer
+          Autonomous Coding Agents \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of autonomous coding agents.
+          Click each card to explore the technical details.
         </p>
       </div>
 

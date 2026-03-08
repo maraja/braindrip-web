@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEPlanningQualityAssessment() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Evaluating the quality of an agent\'s plans before execution begins, measuring completeness, feasibility, efficiency, and robustness as predictors of downstream success.', isTrue: true, explanation: 'This captures the core purpose of Planning Quality Assessment.' },
-    { text: 'Planning Quality Assessment is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Planning Quality Assessment is important for building on more advanced topics.' },
-    { text: 'Planning Quality Assessment is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Planning Quality Assessment is important for building on more advanced topics.' },
+    { text: 'Longer plans are better plans.', isTrue: false, explanation: 'Length is not quality. Verbose plans often include unnecessary steps that reduce efficiency without improving completeness.' },
+    { text: 'Plans should be evaluated in isolation from the agent\'s capabilities.', isTrue: false, explanation: 'A plan to "use the internet search tool to find documentation" is only feasible if the agent has a search tool. Plan evaluation must account for the agent\'s actual toolset and capabilities, not an idealized set.' },
+    { text: 'If the agent succeeds without a plan, planning evaluation is irrelevant.', isTrue: false, explanation: 'Agents can succeed on easy tasks without planning through reactive step-by-step reasoning. But this approach fails to scale to complex tasks.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

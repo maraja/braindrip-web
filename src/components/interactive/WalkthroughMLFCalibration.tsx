@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Why Calibration Matters Beyond Accuracy', desc: 'The foundation of calibration begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Calibration vs. Discrimination', desc: 'At this stage, the key transformation occurs — the core mechanism that makes calibration work.' },
-    { title: '3. Reliability Diagrams', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Expected Calibration Error (ECE)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Platt Scaling', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Why Calibration Matters Beyond Accuracy', desc: 'A model can have excellent discrimination (high AUC-ROC) while being poorly calibrated. Consider a model that correctly ranks all positives above all negatives (AUC = 1.0) but assigns probabilities of 0.99 to everything.' },
+    { title: '2. Calibration vs. Discrimination', desc: 'These are orthogonal properties:  You can fix calibration without changing discrimination (by monotonically transforming probabilities). You cannot easily fix discrimination after training.' },
+    { title: '3. Reliability Diagrams', desc: 'A reliability diagram (or calibration curve) is the primary diagnostic tool. Construction:  Sort predictions by predicted probability.' },
+    { title: '4. Expected Calibration Error (ECE)', desc: 'ECE quantifies calibration quality as a single number:  [equation]  where n_b is the number of samples in bin b, acc(b) is the observed accuracy in bin b, and conf(b) is the mean predicted confidence in bin b. ECE is a weighted average of the calibration gap across bins.' },
+    { title: '5. Platt Scaling', desc: 'Platt scaling (Platt, 1999) fits a logistic regression model on top of the raw model outputs (logits or scores):  [equation]  where z is the uncalibrated model output (logit),  is the sigmoid function, and a, b are learned parameters.' },
+    { title: '6. Temperature Scaling', desc: 'A special case of Platt scaling where b = 0 and a = 1/T:  [equation]  The single parameter T &gt; 0 is called the temperature. When T &gt; 1, predictions are softened (less confident).' },
 ];
 
 export default function WalkthroughMLFCalibration() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFCalibration() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Calibration — Step by Step
+          Calibration \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how calibration works, one stage at a time.

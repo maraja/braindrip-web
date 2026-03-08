@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Semantic Search (Dense Retrieval)', desc: 'The foundation of hybrid search strategies begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Keyword Search (Sparse Retrieval)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes hybrid search strategies work.' },
-    { title: '3. Structured Queries', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Fusion and Ranking', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Semantic Search (Dense Retrieval)', desc: 'Semantic search encodes both queries and documents into dense vector representations using embedding models (e.g., OpenAI text-embedding-3, Cohere embed-v3, or open-source models like BGE or E5).' },
+    { title: '2. Keyword Search (Sparse Retrieval)', desc: 'BM25 is the gold standard for keyword-based retrieval. It scores documents based on term frequency (how often query terms appear in the document), inverse document frequency (how rare the terms are across the corpus), and document length normalization.' },
+    { title: '3. Structured Queries', desc: 'For data with known schemas -- relational databases, knowledge graphs, metadata stores -- structured queries (SQL, Cypher, SPARQL) provide precise, deterministic retrieval.' },
+    { title: '4. Fusion and Ranking', desc: 'When multiple search strategies return results, they must be merged into a single ranked list. Reciprocal Rank Fusion (RRF) is the most common approach: for each document, compute 1 / (k + rank) for each strategy\'s ranking, then sum the scores across strategies.' },
 ];
 
 export default function WalkthroughAACHybridSearchStrategies() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACHybridSearchStrategies() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Hybrid Search Strategies — Step by Step
+          Hybrid Search Strategies \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how hybrid search strategies works, one stage at a time.

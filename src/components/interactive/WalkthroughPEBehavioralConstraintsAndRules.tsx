@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Positive Framing', desc: 'The foundation of behavioral constraints and rules begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Specificity and Precision', desc: 'At this stage, the key transformation occurs — the core mechanism that makes behavioral constraints and rules work.' },
-    { title: '3. Conditional Rules', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Boundary Statements', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Positive Framing', desc: 'Constraints framed positively ("always cite your sources") are followed more reliably than negatively framed equivalents ("don\'t make claims without sources").' },
+    { title: '2. Specificity and Precision', desc: 'Vague constraints produce vague compliance. "Be careful with personal information" is interpreted differently across conversations.' },
+    { title: '3. Conditional Rules', desc: 'Many real-world constraints are conditional: they apply only in specific circumstances. Effective conditional constraints use explicit if-then structure:  "If the user asks to delete their account, confirm the request before proceeding.' },
+    { title: '4. Boundary Statements', desc: 'Boundary statements define the scope of the model\'s capabilities and responsibilities: what it can help with, what it cannot help with, and where to redirect out-of-scope requests. For example: "You can help with questions about our product features, pricing, and troubleshooting.' },
 ];
 
 export default function WalkthroughPEBehavioralConstraintsAndRules() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEBehavioralConstraintsAndRules() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Behavioral Constraints and Rules — Step by Step
+          Behavioral Constraints and Rules \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how behavioral constraints and rules works, one stage at a time.

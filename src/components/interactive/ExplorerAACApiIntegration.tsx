@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'REST vs. GraphQL', detail: 'REST APIs have fixed endpoints returning fixed shapes. GraphQL APIs have a single endpoint where the agent specifies exactly what data to return. GraphQL reduces over-fetching but requires the agent to construct valid queries, which adds complexity.' },
-    { label: 'Pagination patterns', detail: 'APIs use cursor-based (`?cursor=abc123`), offset-based (`?page=2&limit=50`), or link-header pagination. Agents must recognize when results are truncated and issue follow-up requests to get complete data.' },
+    { label: 'Pagination patterns', detail: 'APIs use cursor-based (?cursor=abc123), offset-based (?page=2&limit=50), or link-header pagination. Agents must recognize when results are truncated and issue follow-up requests to get complete data.' },
     { label: 'Idempotency', detail: 'POST requests that create resources should include idempotency keys to prevent duplicate creation when retrying after ambiguous failures (timeout where you do not know if the server processed the request).' },
     { label: 'Response size management', detail: 'API responses can be very large. Agents should request only needed fields (GraphQL) or use query parameters to filter server-side. Dumping a 50KB JSON response into the LLM context is wasteful and can degrade performance.' },
     { label: 'Webhook vs. polling', detail: 'For async operations, agents can either poll an endpoint repeatedly or register a webhook callback. Webhooks are more efficient but require the agent system to expose an HTTP endpoint.' },
@@ -20,10 +20,10 @@ export default function ExplorerAACApiIntegration() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          API Integration — Key Details Explorer
+          API Integration \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of api integration.
+          Click each card to explore the technical details.
         </p>
       </div>
 

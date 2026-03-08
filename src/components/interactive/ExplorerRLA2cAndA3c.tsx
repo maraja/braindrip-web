@@ -2,11 +2,11 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Number of workers', detail: '16-32 is standard. More workers provide better decorrelation but with diminishing returns and increased communication overhead.' },
-    { label: 'N-step returns', detail: '$n = 5$ is the canonical choice from the original A3C paper. Larger $n$ reduces bias but increases variance.' },
+    { label: 'N-step returns', detail: 'n = 5 is the canonical choice from the original A3C paper. Larger n reduces bias but increases variance.' },
     { label: 'Shared vs. separate networks', detail: 'The original A3C paper uses a shared convolutional network with separate policy and value heads. This is computationally efficient but can cause gradient interference.' },
-    { label: 'Optimizer', detail: 'A3C originally used RMSProp with shared running statistics across workers. A2C commonly uses Adam with a learning rate of $2.5 \\times 10^{-4}$ to $7 \\times 10^{-4}$.' },
+    { label: 'Optimizer', detail: 'A3C originally used RMSProp with shared running statistics across workers. A2C commonly uses Adam with a learning rate of 2.5 x 10^&#123;-4&#125; to 7 x 10^&#123;-4&#125;.' },
     { label: 'No replay buffer', detail: 'Both A2C and A3C are on-policy. Data is used once and discarded. This is both a feature (no stale data) and a limitation (sample inefficiency).' },
-    { label: 'Entropy coefficient', detail: '$c_2 = 0.01$ is standard. Without entropy regularization, policies can collapse to deterministic behavior early in training, especially with many parallel workers that may all converge to the same suboptimal strategy.' },
+    { label: 'Entropy coefficient', detail: 'c_2 = 0.01 is standard. Without entropy regularization, policies can collapse to deterministic behavior early in training, especially with many parallel workers that may all converge to the same suboptimal strategy.' },
 ];
 
 export default function ExplorerRLA2cAndA3c() {
@@ -20,10 +20,10 @@ export default function ExplorerRLA2cAndA3c() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          A2C and A3C — Key Details Explorer
+          A2C and A3C \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of a2c and a3c.
+          Click each card to explore the technical details.
         </p>
       </div>
 

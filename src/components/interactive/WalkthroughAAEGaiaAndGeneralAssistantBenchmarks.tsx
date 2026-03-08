@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Difficulty Levels', desc: 'The foundation of gaia and general assistant benchmarks begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Required Capabilities', desc: 'At this stage, the key transformation occurs — the core mechanism that makes gaia and general assistant benchmarks work.' },
-    { title: '3. Evaluation Protocol', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Current Performance (Early 2026)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Difficulty Levels', desc: 'GAIA organizes its 466 questions into three difficulty tiers:  Level 1 (simple lookup, ~165 questions): Requires 1-2 steps, typically a single tool use. Example: "What was the closing price of AAPL on March 15, 2023?" An agent needs to query a financial data source and extract the answer.' },
+    { title: '2. Required Capabilities', desc: 'GAIA questions are designed to require combinations of:  Web browsing: Searching for and extracting information from websites File handling: Reading PDFs, spreadsheets, images, and audio files Computation: Performing arithmetic, unit conversions, date calculations Multi-source synthesis: Combining.' },
+    { title: '3. Evaluation Protocol', desc: 'The evaluation is refreshingly simple: exact-match on the final answer. Each question has a single canonical answer (or a small set of acceptable variants).' },
+    { title: '4. Current Performance (Early 2026)', desc: 'The persistent 17-point gap between the best agents and human performance on overall score -- and the 27-point gap on Level 3 -- indicates that complex, multi-step tool-augmented reasoning remains a genuine frontier challenge.' },
 ];
 
 export default function WalkthroughAAEGaiaAndGeneralAssistantBenchmarks() {
@@ -16,10 +16,10 @@ export default function WalkthroughAAEGaiaAndGeneralAssistantBenchmarks() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          GAIA and General Assistant Benchmarks — Step by Step
+          GAIA and General Assistant Benchmarks \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how gaia and general assistant benchmarks works, one stage at a time.

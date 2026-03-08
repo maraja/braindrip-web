@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Version Control for Prompts', desc: 'The foundation of prompt versioning and management begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Changelogs and Documentation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes prompt versioning and management work.' },
-    { title: '3. Regression Testing', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. A/B Testing Infrastructure', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Version Control for Prompts', desc: 'Prompts should be stored in version control (Git) alongside the application code, or in a dedicated prompt registry that provides versioning functionality. Each prompt version should have a unique identifier, a timestamp, an author, and a description of changes.' },
+    { title: '2. Changelogs and Documentation', desc: 'Every prompt change should be accompanied by a changelog entry that describes: what changed, why it changed, what problem it addresses, and what the expected impact is. Good changelogs enable team communication, onboarding of new team members, and retrospective analysis.' },
+    { title: '3. Regression Testing', desc: 'A prompt regression test suite is a set of test cases (input-expected output pairs) that are run against each prompt version before deployment. These test cases capture known failure modes, edge cases, and critical behaviors.' },
+    { title: '4. A/B Testing Infrastructure', desc: 'A/B testing for prompts requires: traffic splitting (routing a percentage of users to each prompt version), metric collection (measuring relevant outcomes per version), statistical analysis (determining if differences are significant), and decision criteria (when to declare a winner).' },
 ];
 
 export default function WalkthroughPEPromptVersioningAndManagement() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEPromptVersioningAndManagement() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Prompt Versioning and Management — Step by Step
+          Prompt Versioning and Management \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how prompt versioning and management works, one stage at a time.

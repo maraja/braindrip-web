@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizCVCDetr() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'DETR (ResNet-50): 42.0% AP on COCO, ~28 FPS on a V100 GPU.', isTrue: true, explanation: 'This is a key technical detail of DETR (Detection Transformer).' },
-    { text: 'Training requires 500 epochs (~3 days on 16 GPUs), roughly 10-20x longer than Faster R-CNN.', isTrue: true, explanation: 'This is a key technical detail of DETR (Detection Transformer).' },
-    { text: 'DETR (ResNet-101): 43.5% AP on COCO.', isTrue: true, explanation: 'This is a key technical detail of DETR (Detection Transformer).' },
+    { text: 'DETR is slow because of the transformer.', isTrue: false, explanation: 'The transformer encoder-decoder adds modest computation (~10ms). The slow training convergence (500 epochs) is the real bottleneck, not inference speed.' },
+    { text: '42.0% AP on COCO, ~28 FPS on a V100 GPU.', isTrue: true, explanation: 'Training requires 500 epochs (~3 days on 16 GPUs), roughly 10-20x longer than Faster R-CNN.' },
+    { text: 'DETR achieves 20.5% AP_S, significantly below Faster R-CNN\'s 24.1% AP_S.', isTrue: true, explanation: 'The coarse single-scale feature map (stride 32) limits small object detection.' },
+    { text: 'N = 100 is sufficient for COCO (max ~60 objects per image in practice).', isTrue: true, explanation: 'For denser datasets, N must be increased.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

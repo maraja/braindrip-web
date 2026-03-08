@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACAgentOperatingSystems() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'AIOS architecture places an "LLM Kernel" between agents and the LLM provider, managing context, scheduling, and memory.', isTrue: true, explanation: 'This is a key technical detail of Agent Operating Systems.' },
-    { text: 'Quotas prevent a single runaway agent from consuming all system resources Agent isolation ensures that one agent\'s failure does not crash other agents.', isTrue: true, explanation: 'This is a key technical detail of Agent Operating Systems.' },
-    { text: 'Agent operating systems provide OS-like abstractions -- process management, memory management, I/O management, and scheduling -- that treat AI agents as first-class computing entities requiring systematic resource coordination.', isTrue: true, explanation: 'This captures the core purpose of Agent Operating Systems.' },
+    { text: 'Agent operating systems are traditional OSes for robots.', isTrue: false, explanation: 'Agent OSes manage LLM inference, tool access, and knowledge sharing -- digital resource management. They run on top of traditional OSes (Linux, Windows), not in place of them.' },
+    { text: 'agent_create(), agent_schedule(), memory_read(), memory_write(), tool_call()', isTrue: true, explanation: 'agent_create(), agent_schedule(), memory_read(), memory_write(), tool_call()' },
+    { text: 'an agent acquires a lock on a resource (file, database record, API endpoint), performs its operation, and releases the lock.', isTrue: true, explanation: 'Deadlock detection prevents agents from waiting on each other indefinitely' },
+    { text: 'maximum tokens per minute, maximum tool calls per minute, maximum memory store size.', isTrue: true, explanation: 'Quotas prevent a single runaway agent from consuming all system resources' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

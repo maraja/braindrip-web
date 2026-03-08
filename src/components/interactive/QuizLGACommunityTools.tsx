@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGACommunityTools() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Install community tools via pip install langchain-community or specific packages like pip install langchain-tavily.', isTrue: true, explanation: 'This is a key technical detail of Community Tools.' },
-    { text: 'Tavily requires an API key set as TAVILY_API_KEY environment variable; free tier available at tavily.com.', isTrue: true, explanation: 'This is a key technical detail of Community Tools.' },
-    { text: 'PythonREPLTool lives in langchain-experimental due to its security implications.', isTrue: true, explanation: 'This is a key technical detail of Community Tools.' },
+    { text: 'Community tools require a different API than custom tools.', isTrue: false, explanation: 'They implement the same BaseTool interface and are used identically with bind_tools() and ToolNode. "Tavily is the only search option." Other search tools exist (DuckDuckGo, Google Search, Bing), but Tavily is optimized for LLM-friendly output.' },
+    { text: 'The LangChain ecosystem provides a rich library of pre-built tools — from web search to code execution — available through langchain-community and partner packages, so you can equip agents with real-world capabilities without writing tool logic from scratch.', isTrue: true, explanation: 'This captures the core definition of Community Tools.' },
+    { text: 'Community Tools is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Community Tools is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

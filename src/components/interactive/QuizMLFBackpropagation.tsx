@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFBackpropagation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Time complexity: one backward pass costs roughly 2x the forward pass in FLOPs.', isTrue: true, explanation: 'This is a key technical detail of Backpropagation.' },
-    { text: 'Memory complexity: all intermediate activations must be stored for the backward pass, which is the primary memory bottleneck in training.', isTrue: true, explanation: 'This is a key technical detail of Backpropagation.' },
-    { text: 'Gradient checkpointing trades compute for memory by recomputing activations during the backward pass instead of storing them.', isTrue: true, explanation: 'This is a key technical detail of Backpropagation.' },
+    { text: 'Backpropagation is a learning algorithm.', isTrue: false, explanation: 'Backpropagation only computes gradients. It must be paired with an optimization algorithm (SGD, Adam, etc.) that uses those gradients to update weights.' },
+    { text: 'Computing gradients layer by layer via the chain rule -- the algorithm that makes deep learning computationally feasible.', isTrue: true, explanation: 'This captures the core definition of Backpropagation.' },
+    { text: 'Backpropagation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Backpropagation is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFOptimizationAndGradientDescent() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Convergence rate for convex, smooth functions with batch GD: $O(1/T)$ for general convex, $O(\\rho^T)$ for strongly convex (linear convergence) where $\\rho = 1 - \\eta\\lambda_&#123;\\min&#125;$.', isTrue: true, explanation: 'This is a key technical detail of Optimization and Gradient Descent.' },
-    { text: 'Gradient clipping caps the norm of the gradient to prevent exploding updates: $\\mathbf&#123;g&#125; \\leftarrow \\mathbf&#123;g&#125; \\cdot \\min(1, c/\\|\\mathbf&#123;g&#125;\\|)$.', isTrue: true, explanation: 'This is a key technical detail of Optimization and Gradient Descent.' },
-    { text: 'Weight decay adds $\\lambda\\|\\boldsymbol&#123;\\theta&#125;\\|^2$ to the loss, equivalent to L2 regularization in SGD but subtly different in Adam (decoupled weight decay, or AdamW).', isTrue: true, explanation: 'This is a key technical detail of Optimization and Gradient Descent.' },
+    { text: 'SGD is worse than Adam.', isTrue: false, explanation: 'SGD with momentum often generalizes better than Adam in practice, especially for image classification. Adam converges faster but can converge to sharper, less generalizable minima.' },
+    { text: 'O(1/T) for general convex, O(^T) for strongly convex (linear convergence) where  = 1 - _&#123;&#125;.', isTrue: true, explanation: 'O(1/T) for general convex, O(^T) for strongly convex (linear convergence) where  = 1 - _&#123;&#125;.' },
+    { text: 'Iteratively adjusting parameters to minimize a loss function -- the engine that drives model training.', isTrue: true, explanation: 'This captures the core definition of Optimization and Gradient Descent.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

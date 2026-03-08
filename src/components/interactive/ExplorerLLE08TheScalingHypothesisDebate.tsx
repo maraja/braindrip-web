@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Kaplan scaling laws (2020)', detail: 'Power-law improvement spanning 7+ orders of magnitude' },
-    { label: 'GPT scaling sequence', detail: '117M (GPT-1) -> 1.5B (GPT-2) -> 175B (GPT-3), each with qualitative capability jumps' },
+    { label: 'GPT scaling sequence', detail: '117M (GPT-1) -&gt; 1.5B (GPT-2) -&gt; 175B (GPT-3), each with qualitative capability jumps' },
     { label: 'Chinchilla (2022)', detail: 'Showed data scaling is equally important as model scaling' },
-    { label: 'Phi-1.5 (2023)', detail: '1.3B model rivaling 10x larger models via data quality' },
+    { label: 'Phi-1.5 (2023)', detail: '3B model rivaling 10x larger models via data quality' },
     { label: 'Emergent abilities', detail: 'Documented by Wei et al. (2022), challenged by Schaeffer et al. (2023)' },
     { label: 'AI investment driven by scaling belief', detail: '$100B+ annually by 2024' },
 ];
@@ -20,10 +20,10 @@ export default function ExplorerLLE08TheScalingHypothesisDebate() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The Scaling Hypothesis Debate — Key Details Explorer
+          The Scaling Hypothesis Debate \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of the scaling hypothesis debate.
+          Click each card to explore the technical details.
         </p>
       </div>
 

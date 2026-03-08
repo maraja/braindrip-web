@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Claude Sonnet 4 and Opus 4 (May 2025)', desc: 'The foundation of claude 4 series begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Claude Sonnet 4.5 (September 2025)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes claude 4 series work.' },
-    { title: '3. Claude Opus 4.5 (November 2025)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Claude 4.6 (February 2026)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Computer Use: From Demonstration to Production', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Claude Sonnet 4 and Opus 4 (May 2025)', desc: 'The Claude 4 generation launched in May 2025 with two models positioned for different use cases:  Claude Opus 4 was designed as the apex model for complex, autonomous tasks.' },
+    { title: '2. Claude Sonnet 4.5 (September 2025)', desc: 'Released on September 29, 2025, Claude Sonnet 4.5 was the best coding model available at the time of its launch. It achieved 77.2% on SWE-bench Verified -- the highest score on that benchmark when it shipped -- and 61.' },
+    { title: '3. Claude Opus 4.5 (November 2025)', desc: 'Released on November 24, 2025, Opus 4.5 reclaimed the top position on SWE-bench Verified with an 80.9% score -- the highest any model had achieved at the time and the #1 overall ranking. Rather than simply scaling up from Sonnet 4.5, Opus 4.' },
+    { title: '4. Claude 4.6 (February 2026)', desc: 'The most architecturally ambitious generation, Claude 4.6 arrived in two waves and introduced several capabilities that represented qualitative leaps. Claude Opus 4.6 (February 5, 2026) led the generation with 80.' },
+    { title: '5. Computer Use: From Demonstration to Production', desc: 'One of Claude\'s most distinctive capabilities has been computer use -- the ability to interact with desktop interfaces by viewing screenshots, moving the mouse, clicking buttons, and typing. This capability launched with Claude 3.5 Sonnet in October 2024 at a modest 14.' },
+    { title: '6. Reason-Based Alignment (January 2026 Constitution Update)', desc: 'Anthropic updated Claude\'s constitution in January 2026, shifting from primarily rule-based constraints to reason-based alignment. Rather than encoding specific prohibitions ("never help with X"), the updated approach trained Claude to understand the reasoning behind safety guidelines and apply.' },
 ];
 
 export default function WalkthroughLLE01Claude4Series() {
@@ -17,10 +18,10 @@ export default function WalkthroughLLE01Claude4Series() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Claude 4 Series — Step by Step
+          Claude 4 Series \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how claude 4 series works, one stage at a time.

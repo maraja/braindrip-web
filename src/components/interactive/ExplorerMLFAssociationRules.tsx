@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Apriori complexity', detail: 'In the worst case, exponential in the number of items ($2^m$ possible subsets). In practice, the minimum support threshold keeps the number of frequent itemsets manageable.' },
-    { label: 'FP-Growth complexity', detail: '$O(n \\cdot m)$ for tree construction, where $n$ is the number of transactions and $m$ is the average transaction length. Mining complexity depends on tree structure.' },
+    { label: 'Apriori complexity', detail: 'In the worst case, exponential in the number of items (2^m possible subsets). In practice, the minimum support threshold keeps the number of frequent itemsets manageable.' },
+    { label: 'FP-Growth complexity', detail: 'O(n  m) for tree construction, where n is the number of transactions and m is the average transaction length. Mining complexity depends on tree structure.' },
     { label: 'Minimum support trade-off', detail: 'Too high and you miss interesting rare patterns. Too low and you drown in spurious associations and combinatorial explosion.' },
-    { label: 'Additional metrics', detail: 'Beyond support, confidence, and lift, practitioners use conviction ($\\frac{1 - \\text{support}(B)}{1 - \\text{confidence}(A \\Rightarrow B)}$), leverage ($P(A \\cap B) - P(A) \\cdot P(B)$), and cosine similarity to filter rules.' },
+    { label: 'Additional metrics', detail: 'Beyond support, confidence, and lift, practitioners use conviction (&#123;1 - support(B)&#125;&#123;1 - confidence(A  B)&#125;), leverage (P(A  B) - P(A)  P(B)), and cosine similarity to filter rules.' },
     { label: 'Handling continuous data', detail: 'Association rules require discrete items. Continuous features must be binned (e.g., age groups, price ranges) before mining.' },
     { label: 'Redundancy elimination', detail: 'Closed and maximal frequent itemsets reduce the output by removing subsets that carry no additional information beyond their supersets.' },
 ];
@@ -20,10 +20,10 @@ export default function ExplorerMLFAssociationRules() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Association Rules — Key Details Explorer
+          Association Rules \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of association rules.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The AdaBoost Algorithm (Binary Classification)', desc: 'The foundation of adaboost begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Weak Learners', desc: 'At this stage, the key transformation occurs — the core mechanism that makes adaboost work.' },
-    { title: '3. Exponential Loss Interpretation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Training Error Bound', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The AdaBoost Algorithm (Binary Classification)', desc: 'Given training data \\&#123;(x_i, y_i)\\&#125;_&#123;i=1&#125;^n with y_i  \\&#123;-1, +1\\&#125;:  Initialize sample weights: w_i^&#123;(1)&#125; = &#123;1&#125;&#123;n&#125; for all i. For t = 1, 2, , T:  Train weak learner h_t on the weighted dataset.' },
+    { title: '2. Weak Learners', desc: 'The canonical weak learner for AdaBoost is a decision stump -- a decision tree with a single split (depth 1). A stump partitions the input space with one threshold on one feature, producing a classifier only marginally better than random guessing.' },
+    { title: '3. Exponential Loss Interpretation', desc: 'Freund and Schapire\'s original presentation was combinatorial, but Friedman, Hastie, and Tibshirani (2000) showed that AdaBoost is equivalent to forward stagewise additive modeling with the exponential loss function:  [equation]  where f(x) = _&#123;t=1&#125;^T _t h_t(x).' },
+    { title: '4. Training Error Bound', desc: 'AdaBoost enjoys a remarkable theoretical guarantee. The training error of the final classifier satisfies:  [equation]  where _t = &#123;1&#125;&#123;2&#125; - _t is the edge of the t-th weak learner over random guessing.' },
 ];
 
 export default function WalkthroughMLFAdaboost() {
@@ -16,10 +16,10 @@ export default function WalkthroughMLFAdaboost() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          AdaBoost — Step by Step
+          AdaBoost \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how adaboost works, one stage at a time.

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. LangSmith', desc: 'The foundation of observability platforms for evaluation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Langfuse', desc: 'At this stage, the key transformation occurs — the core mechanism that makes observability platforms for evaluation work.' },
-    { title: '3. Braintrust', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. AgentOps', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Bloom (Anthropic)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. LangSmith', desc: 'LangSmith, built by LangChain, provides deep integration with the LangChain and LangGraph ecosystems. Its core capabilities include:  Step-by-step agent tracing: Every node in a LangGraph agent -- LLM calls, tool uses, routing decisions -- is captured as a nested span with full input/output data,.' },
+    { title: '2. Langfuse', desc: 'Langfuse takes an open-source-first approach to LLM observability. Key differentiators:  MIT-licensed with no usage limits on the self-hosted version -- organizations can instrument millions of traces without per-event charges.' },
+    { title: '3. Braintrust', desc: 'Braintrust differentiates through framework agnosticism and performance engineering:  Custom database architecture: Purpose-built storage engine claims 86x faster search than generic alternatives, enabling real-time exploration of large evaluation datasets.' },
+    { title: '4. AgentOps', desc: 'AgentOps targets enterprise requirements with a SaaS-first model:  Usage-based pricing: Pay per event, with no infrastructure management overhead. Compliance: SOC 2 Type II and HIPAA compliance certifications, critical for healthcare and financial services agent deployments.' },
+    { title: '5. Bloom (Anthropic)', desc: 'Bloom occupies a unique position as an open-source framework specifically designed for automated behavioral evaluation:  Scenario generation: Programmatically generates thousands of evaluation scenarios to test specific behavioral tendencies.' },
+    { title: '6. The Observability-Evaluation Feedback Loop', desc: 'The most powerful pattern emerging from these platforms is the production-to-evaluation pipeline:  Capture: Production traces are collected automatically during normal agent operation.' },
 ];
 
 export default function WalkthroughAAEObservabilityPlatformsForEvaluation() {
@@ -17,10 +18,10 @@ export default function WalkthroughAAEObservabilityPlatformsForEvaluation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Observability Platforms for Evaluation — Step by Step
+          Observability Platforms for Evaluation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how observability platforms for evaluation works, one stage at a time.

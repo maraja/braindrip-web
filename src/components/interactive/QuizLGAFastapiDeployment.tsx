@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAFastapiDeployment() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The agent must be initialized at module level so it is shared across requests, not recreated per call.', isTrue: true, explanation: 'This is a key technical detail of FastAPI Deployment.' },
-    { text: 'Use astream with stream_mode="messages" for token-level streaming via SSE.', isTrue: true, explanation: 'This is a key technical detail of FastAPI Deployment.' },
-    { text: 'The [DONE] sentinel follows the OpenAI SSE convention, making the API compatible with many existing chat clients.', isTrue: true, explanation: 'This is a key technical detail of FastAPI Deployment.' },
+    { text: 'You need LangServe or LangGraph Cloud to deploy LangGraph agents.', isTrue: false, explanation: 'Plain FastAPI works perfectly. LangServe adds convenience but is not required, and LangGraph Cloud is an optional managed service.' },
+    { text: 'Wrapping a LangGraph agent in FastAPI gives you a production-ready API with sync and streaming endpoints, full control over auth, rate limiting, and zero vendor lock-in.', isTrue: true, explanation: 'This captures the core definition of FastAPI Deployment.' },
+    { text: 'FastAPI Deployment is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding FastAPI Deployment is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

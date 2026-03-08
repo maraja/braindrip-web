@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Sequential Dependency Resolution', desc: 'The foundation of tool chaining begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Data Transformation Between Steps', desc: 'At this stage, the key transformation occurs — the core mechanism that makes tool chaining work.' },
-    { title: '3. Branching and Conditional Chains', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Pipeline Construction', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Sequential Dependency Resolution', desc: 'The simplest chain is linear: Tool A produces output X, which is passed as input to Tool B, producing output Y, passed to Tool C. The agent plans this chain (sometimes explicitly, sometimes implicitly through step-by-step reasoning) and executes it sequentially.' },
+    { title: '2. Data Transformation Between Steps', desc: 'Tool outputs rarely match the exact input format of the next tool. The agent must transform data: extracting fields from JSON objects, converting formats (date strings, number types), aggregating lists, or restructuring data.' },
+    { title: '3. Branching and Conditional Chains', desc: 'Not all chains are linear. The agent may need to branch based on tool output: If the search returns no results, try a different search strategy.' },
+    { title: '4. Pipeline Construction', desc: 'For repeating workflows, chains can be formalized into pipelines — predefined sequences of tool calls with variable slots. Frameworks like LangChain (LCEL), Haystack, and Prefect allow developers to define reusable pipelines where data flows through a series of processing steps.' },
 ];
 
 export default function WalkthroughAACToolChaining() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACToolChaining() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Tool Chaining — Step by Step
+          Tool Chaining \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how tool chaining works, one stage at a time.

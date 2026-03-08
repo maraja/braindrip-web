@@ -5,8 +5,8 @@ const DETAILS = [
     { label: 'PaLM 2 (May 2023)', detail: '~340B params (est.), 3.6T tokens, UL2 objectives, 100+ languages' },
     { label: 'Gemini 1.0 Ultra (Dec 2023)', detail: 'Natively multimodal, 90.0% MMLU (CoT), three sizes (Ultra/Pro/Nano)' },
     { label: 'Gemini 1.5 Pro (Feb 2024)', detail: 'MoE architecture, 1M token context, 99.7% needle-in-haystack' },
-    { label: 'Google Brain + DeepMind merger', detail: 'February 2023' },
     { label: 'Training infrastructure', detail: 'Google TPU v4 and v5 pods' },
+    { label: 'PaLM 2 multilingual', detail: 'Over 100 languages with significant non-English training data' },
 ];
 
 export default function ExplorerLLE08Palm2AndGeminiEvolution() {
@@ -20,10 +20,10 @@ export default function ExplorerLLE08Palm2AndGeminiEvolution() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          PaLM 2 and the Gemini Evolution — Key Details Explorer
+          PaLM 2 and the Gemini Evolution \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of palm 2 and the gemini evolution.
+          Click each card to explore the technical details.
         </p>
       </div>
 

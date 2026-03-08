@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCSlidingWindowAndRegionProposals() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Selective Search generates ~2,000 proposals per image with a recall of ~98% at IoU 0.5 on PASCAL VOC.', isTrue: true, explanation: 'This is a key technical detail of Sliding Window and Region Proposals.' },
-    { text: 'EdgeBoxes achieves comparable recall at 1,000 proposals, running ~8x faster than Selective Search.', isTrue: true, explanation: 'This is a key technical detail of Sliding Window and Region Proposals.' },
-    { text: 'Sliding window with HOG+SVM runs at ~0.07 seconds per window on CPU (2005 hardware), but requires tens of thousands of evaluations.', isTrue: true, explanation: 'This is a key technical detail of Sliding Window and Region Proposals.' },
+    { text: 'Sliding windows are obsolete.', isTrue: false, explanation: 'While no longer used for high-accuracy detection, sliding-window principles persist in anchor-based detectors like SSD and YOLO, which evaluate a fixed grid of locations and scales. "Region proposals find objects." Proposals are class-agnostic -- they identify regions likely to contain any object.' },
+    { text: 'Sliding windows exhaustively scan every location and scale in an image, while region proposals intelligently suggest a small subset of likely object locations to dramatically reduce computation.', isTrue: true, explanation: 'This captures the core definition of Sliding Window and Region Proposals.' },
+    { text: 'Sliding Window and Region Proposals is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Sliding Window and Region Proposals is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

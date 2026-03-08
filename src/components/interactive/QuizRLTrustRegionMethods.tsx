@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLTrustRegionMethods() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'KL constraint $\\delta$: Typically set to 0.01.', isTrue: true, explanation: 'This is a key technical detail of Trust Region Methods.' },
-    { text: 'Smaller values are more conservative; larger values allow faster but riskier learning.', isTrue: true, explanation: 'This is a key technical detail of Trust Region Methods.' },
-    { text: 'Values above 0.05 often cause instability.', isTrue: true, explanation: 'This is a key technical detail of Trust Region Methods.' },
+    { text: 'TRPO guarantees monotonic improvement in practice.', isTrue: false, explanation: 'The theoretical guarantee requires exact optimization and exact KL computation. In practice with function approximation, stochastic estimation, and finite batches, the guarantee is approximate.' },
+    { text: 'Typically set to 0.01.', isTrue: true, explanation: 'Smaller values are more conservative; larger values allow faster but riskier learning. Values above 0.05 often cause instability.' },
+    { text: '10-20 iterations are standard, providing a good approximate solution to F^&#123;-1&#125;g without computing F explicitly.', isTrue: true, explanation: '10-20 iterations are standard, providing a good approximate solution to F^&#123;-1&#125;g without computing F explicitly.' },
+    { text: 'Exponential backtracking with factor 0.5, typically up to 10 steps.', isTrue: true, explanation: 'This ensures the actual KL divergence satisfies the constraint (the CG solution is approximate).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

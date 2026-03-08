@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Finite State Machines for Agents', desc: 'The foundation of state machines and graphs begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Directed Graphs with Conditional Edges', desc: 'At this stage, the key transformation occurs — the core mechanism that makes state machines and graphs work.' },
-    { title: '3. Cycles and Iterative Refinement', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. State Typing and Validation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Finite State Machines for Agents', desc: 'A finite state machine (FSM) consists of states, transitions, and an initial state. For an agent, states might include "planning," "executing_tool," "waiting_for_human," "synthesizing_result," and "done.' },
+    { title: '2. Directed Graphs with Conditional Edges', desc: 'A directed graph extends the FSM by allowing edges with complex conditions and multiple paths from a single node. In LangGraph, you define a StateGraph with typed state, add nodes (Python functions that transform the state), and add edges that can be conditional.' },
+    { title: '3. Cycles and Iterative Refinement', desc: 'Unlike simple DAGs (directed acyclic graphs), agent graphs often need cycles. A code-writing agent might loop: write_code -&gt; run_tests -&gt; (if tests fail) -&gt; analyze_errors -&gt; write_code.' },
+    { title: '4. State Typing and Validation', desc: 'The state flowing through a graph should be typed. LangGraph uses Python\'s TypedDict or Pydantic models to define state schemas.' },
 ];
 
 export default function WalkthroughAACStateMachinesAndGraphs() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACStateMachinesAndGraphs() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          State Machines and Graphs — Step by Step
+          State Machines and Graphs \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how state machines and graphs works, one stage at a time.

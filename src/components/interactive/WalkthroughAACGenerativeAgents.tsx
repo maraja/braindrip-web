@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Memory Stream', desc: 'The foundation of generative agents begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Memory Retrieval', desc: 'At this stage, the key transformation occurs — the core mechanism that makes generative agents work.' },
-    { title: '3. Reflection', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Planning and Reacting', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Memory Stream', desc: 'The memory stream is the generative agent\'s autobiography. Every experience -- observations, conversations, actions, internal thoughts -- is recorded as a timestamped memory with an importance score.' },
+    { title: '2. Memory Retrieval', desc: 'When the agent needs to make a decision or respond in a conversation, it retrieves relevant memories from the stream. Retrieval uses three factors: Recency (recent memories are weighted higher using an exponential decay function), Importance (high-importance memories are weighted higher regardless.' },
+    { title: '3. Reflection', desc: 'Periodically (triggered when the sum of recent memory importance scores exceeds a threshold), the agent reflects on its experiences. Reflection generates higher-level abstractions from specific memories.' },
+    { title: '4. Planning and Reacting', desc: 'Each morning (in simulation time), the agent generates a high-level plan for the day: "Wake up at 7am, have breakfast, work at the pharmacy from 9am-5pm, attend the town meeting at 6pm, read before bed." This plan is recursively decomposed into finer-grained actions (15-minute to 1-hour blocks).' },
 ];
 
 export default function WalkthroughAACGenerativeAgents() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACGenerativeAgents() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Generative Agents — Step by Step
+          Generative Agents \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how generative agents works, one stage at a time.

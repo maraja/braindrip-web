@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Designing for Parseability', desc: 'The foundation of multi-step output pipelines begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Intermediate Format Selection', desc: 'At this stage, the key transformation occurs — the core mechanism that makes multi-step output pipelines work.' },
-    { title: '3. Error Handling Between Steps', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Pipeline Architecture Patterns', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Designing for Parseability', desc: 'Every intermediate output in a pipeline must be reliably parseable by code. This means choosing formats that are both machine-readable and well-suited to the content:  JSON for structured data: extracted fields, classification results, numerical outputs, configuration parameters.' },
+    { title: '2. Intermediate Format Selection', desc: 'The choice of intermediate format depends on who or what consumes it:  Code-consumed intermediates should use JSON with strict schemas. The consuming code expects specific fields with specific types.' },
+    { title: '3. Error Handling Between Steps', desc: 'Pipeline errors propagate: a failure in step 2 corrupts every subsequent step. Robust error handling requires:  Validation at each boundary: After each LLM call, validate the output structurally (schema conformance) and semantically (sanity checks).' },
+    { title: '4. Pipeline Architecture Patterns', desc: 'Linear pipelines: Step 1 -&gt; Step 2 -&gt; Step 3. Simple, predictable, easy to debug.' },
 ];
 
 export default function WalkthroughPEMultiStepOutputPipelines() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEMultiStepOutputPipelines() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Multi-Step Output Pipelines — Step by Step
+          Multi-Step Output Pipelines \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how multi-step output pipelines works, one stage at a time.

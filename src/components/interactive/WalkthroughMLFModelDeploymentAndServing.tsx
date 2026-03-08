@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Inference Patterns', desc: 'The foundation of model deployment and serving begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Containerization', desc: 'At this stage, the key transformation occurs — the core mechanism that makes model deployment and serving work.' },
-    { title: '3. Model Formats', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Edge Deployment', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Model Compression for Serving', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Inference Patterns', desc: 'Batch Inference: Run the model on a large dataset on a schedule (hourly, daily, weekly). Predictions are stored in a database or data warehouse and served to users via lookup.' },
+    { title: '2. Containerization', desc: 'Docker: Package the model, its dependencies, and the serving code into a self-contained container image. This eliminates "works on my machine" problems and ensures consistent behavior across environments.' },
+    { title: '3. Model Formats', desc: 'Models must be serialized into formats that serving infrastructure can load efficiently:  ONNX deserves special attention: it defines a standard computational graph format, enabling you to train in PyTorch and serve with TensorFlow, or optimize with TensorRT for NVIDIA GPUs.' },
+    { title: '4. Edge Deployment', desc: 'For latency-critical or offline scenarios, models run directly on user devices:  TensorFlow Lite (TFLite): Optimized runtime for mobile and embedded devices. Supports quantized models.' },
+    { title: '5. Model Compression for Serving', desc: 'Production latency and memory constraints often require smaller models:  Quantization: Reduce weight precision from 32-bit float to 8-bit integer. Typically 2-4x speedup with minimal accuracy loss.' },
+    { title: '6. Deployment Strategies', desc: 'Canary Deployment: Route a small fraction (1-5%) of traffic to the new model. Monitor for errors or performance degradation before increasing traffic.' },
 ];
 
 export default function WalkthroughMLFModelDeploymentAndServing() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFModelDeploymentAndServing() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Model Deployment and Serving — Step by Step
+          Model Deployment and Serving \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how model deployment and serving works, one stage at a time.

@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACToolChaining() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Context window pressure: Each tool call\'s output consumes context tokens.', isTrue: true, explanation: 'This is a key technical detail of Tool Chaining.' },
-    { text: 'A chain of 5 calls with 500-token outputs adds 2,500 tokens of intermediate state.', isTrue: true, explanation: 'This is a key technical detail of Tool Chaining.' },
-    { text: 'For long chains, agents must summarize or discard earlier results to stay within limits.', isTrue: true, explanation: 'This is a key technical detail of Tool Chaining.' },
+    { text: 'The agent plans the entire chain upfront', isTrue: false, explanation: ': Most agents do not plan complete chains in advance. They use a step-by-step approach (ReAct), deciding the next tool call after observing the result of the current one.' },
+    { text: 'Each tool call\'s output consumes context tokens.', isTrue: true, explanation: 'A chain of 5 calls with 500-token outputs adds 2,500 tokens of intermediate state. For long chains, agents must summarize or discard earlier results to stay within limits.' },
+    { text: 'When chain steps are independent (e.g., looking up weather in three different cities), they can be executed in parallel.', isTrue: true, explanation: 'The LLM can request multiple tool calls in a single turn. Dependencies must be sequential.' },
+    { text: 'The user typically sees only the final result, but developers need visibility into intermediate states for debugging.', isTrue: true, explanation: 'Logging each tool call\'s input/output is essential for understanding chain failures.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

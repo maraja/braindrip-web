@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Core Operation', desc: 'The foundation of batch normalization begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Placement in the Network', desc: 'At this stage, the key transformation occurs — the core mechanism that makes batch normalization work.' },
-    { title: '3. Training vs. Inference', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Alternatives: Group Norm, Layer Norm, Instance Norm', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Core Operation', desc: 'For a mini-batch &#123;B&#125; = \\&#123;x_1, , x_m\\&#125; of activations at a given layer:  [equation]  [equation]  [equation]  [equation]  where  (scale) and  (shift) are learned parameters, and   10^&#123;-5&#125; prevents division by zero.' },
+    { title: '2. Placement in the Network', desc: 'The standard placement is: Conv -&gt; BN -&gt; ReLU. Some work suggests Conv -&gt; ReLU -&gt; BN can work equally well, but the former is conventional and better supported by frameworks.' },
+    { title: '3. Training vs. Inference', desc: 'During training, BN uses mini-batch statistics. During inference, it uses running estimates (exponential moving average) accumulated during training:  [equation]  where  is the momentum (default 0.1 in PyTorch).' },
+    { title: '4. Alternatives: Group Norm, Layer Norm, Instance Norm', desc: 'Group Normalization (Wu & He, 2018) divides channels into groups (default G=32) and normalizes within each group. It is independent of batch size, making it the preferred choice when batch size per GPU drops below 8 (common in detection and segmentation with large images).' },
 ];
 
 export default function WalkthroughCVCBatchNormalization() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCBatchNormalization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Batch Normalization — Step by Step
+          Batch Normalization \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how batch normalization works, one stage at a time.

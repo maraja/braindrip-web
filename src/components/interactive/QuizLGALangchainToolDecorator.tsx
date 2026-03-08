@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGALangchainToolDecorator() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The decorator produces a StructuredTool instance, not a raw function.', isTrue: true, explanation: 'This is a key technical detail of LangChain @tool Decorator.' },
-    { text: 'The function\'s docstring is parsed in Google-style format; Args: sections become per-parameter descriptions in the schema.', isTrue: true, explanation: 'This is a key technical detail of LangChain @tool Decorator.' },
-    { text: 'If no docstring is provided, the LLM receives an empty description and will likely misuse or ignore the tool.', isTrue: true, explanation: 'This is a key technical detail of LangChain @tool Decorator.' },
+    { text: 'The docstring is just for developers reading the code.', isTrue: false, explanation: 'In LangChain tools, the docstring is the description sent to the LLM. It is the primary mechanism by which the model decides when to call the tool.' },
+    { text: 'The @tool decorator from langchain_core.tools transforms ordinary Python functions into structured, LLM-callable tools by extracting names, docstrings, and type hints automatically.', isTrue: true, explanation: 'This captures the core definition of LangChain @tool Decorator.' },
+    { text: 'LangChain @tool Decorator is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding LangChain @tool Decorator is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

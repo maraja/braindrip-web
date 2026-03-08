@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAProductionChecklist() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'recursion_limit defaults to 25 in LangGraph; set it explicitly so the limit is visible and intentional.', isTrue: true, explanation: 'This is a key technical detail of Production Checklist.' },
-    { text: 'RetryPolicy accepts max_attempts, backoff_factor, and retry_on (a callable that filters which exceptions to retry).', isTrue: true, explanation: 'This is a key technical detail of Production Checklist.' },
-    { text: 'LangSmith tracing is activated entirely through environment variables -- no code instrumentation required.', isTrue: true, explanation: 'This is a key technical detail of Production Checklist.' },
+    { text: 'MemorySaver is fine if you only have one server.', isTrue: false, explanation: 'A single server still restarts during deployments, crashes, and OS updates. Every restart loses all conversation history.' },
+    { text: 'Twelve essential steps that transform a working LangGraph prototype into a reliable, observable, and maintainable production system.', isTrue: true, explanation: 'This captures the core definition of Production Checklist.' },
+    { text: 'Production Checklist is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Production Checklist is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

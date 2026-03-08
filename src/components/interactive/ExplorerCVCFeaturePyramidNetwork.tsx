@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Channel dimension', detail: 'All pyramid levels use $d = 256$ channels, keeping memory and computation uniform.' },
+    { label: 'Channel dimension', detail: 'All pyramid levels use d = 256 channels, keeping memory and computation uniform.' },
     { label: 'Computation overhead', detail: 'FPN adds ~1-2ms to inference (negligible compared to backbone forward pass).' },
     { label: 'COCO results', detail: '(ResNet-101-FPN + Faster R-CNN): 36.2% AP, 59.1% AP50, 39.0% AP75.' },
-    { label: 'Small object AP', detail: '18.2% AP_S with FPN vs. ~10% without, on COCO.' },
+    { label: 'Small object AP', detail: '2% AP_S with FPN vs. ~10% without, on COCO.' },
     { label: 'Nearest-neighbor upsampling', detail: 'is used in the original paper; some variants use deconvolution or bilinear interpolation.' },
     { label: 'FPN variants', detail: 'PANet (2018) adds a bottom-up path on top of FPN; BiFPN (EfficientDet, 2020) uses weighted bidirectional fusion; NAS-FPN (2019) uses neural architecture search to find the fusion topology.' },
 ];
@@ -20,10 +20,10 @@ export default function ExplorerCVCFeaturePyramidNetwork() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Feature Pyramid Network — Key Details Explorer
+          Feature Pyramid Network \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of feature pyramid network.
+          Click each card to explore the technical details.
         </p>
       </div>
 

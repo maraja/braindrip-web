@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Mechanism', desc: 'The foundation of label smoothing begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Effect on Logits', desc: 'At this stage, the key transformation occurs — the core mechanism that makes label smoothing work.' },
-    { title: '3. Choosing Epsilon', desc: 'The intermediate results are processed and refined through the main pipeline.' },
+    { title: '1. Mechanism', desc: 'The cross-entropy loss with label smoothing becomes:  [equation]  where u = 1/K is the uniform distribution. This is equivalent to interpolating between the standard cross-entropy and the KL divergence from the uniform distribution:  [equation]' },
+    { title: '2. Effect on Logits', desc: 'Without label smoothing, the cross-entropy loss drives the logit of the correct class toward + and all other logits toward -. With label smoothing, the optimal logits have a finite gap between the correct and incorrect classes.' },
+    { title: '3. Choosing Epsilon', desc: 'The choice of  should reflect the expected label noise. For clean datasets like ImageNet,  = 0.1 is standard.' },
 ];
 
 export default function WalkthroughCVCLabelSmoothing() {
@@ -15,10 +15,10 @@ export default function WalkthroughCVCLabelSmoothing() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Label Smoothing — Step by Step
+          Label Smoothing \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how label smoothing works, one stage at a time.

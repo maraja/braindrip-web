@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Causal Language Modeling (CLM) -- The Foundation', desc: 'The foundation of pre-training objectives evolution begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Masked Language Modeling (MLM) — The Bidirectional Alternative', desc: 'At this stage, the key transformation occurs — the core mechanism that makes pre-training objectives evolution work.' },
-    { title: '3. Span Corruption and Replaced Token Detection', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Specialized Objectives for Specialized Needs', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Unification Attempts and Auxiliary Objectives', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Causal Language Modeling (CLM) -- The Foundation', desc: 'GPT-1 (2018) introduced causal language modeling (CLM): given all previous tokens, predict the next one. This is the simplest objective and the one that ultimately won.' },
+    { title: '2. Masked Language Modeling (MLM) — The Bidirectional Alternative', desc: 'BERT (2018) introduced masked language modeling: randomly mask 15% of tokens, then predict them from surrounding context in both directions. This bidirectional context gave BERT a massive advantage on understanding tasks like question answering, sentiment analysis, and natural language inference.' },
+    { title: '3. Span Corruption and Replaced Token Detection', desc: 'T5 (Raffel et al., 2020) generalized masking to span corruption: mask contiguous spans of varying length (mean length 3) and predict the filled content.' },
+    { title: '4. Specialized Objectives for Specialized Needs', desc: 'Fill-in-the-Middle (FIM) rearranges documents into a different format: split the text into prefix, middle, and suffix segments, then train the model to predict the missing middle given the prefix and suffix as context.' },
+    { title: '5. Unification Attempts and Auxiliary Objectives', desc: 'UL2 (Tay et al., 2022) proposed a unified framework mixing multiple denoising objectives with special mode tokens: [R] for regular denoising (like T5), [S] for sequential denoising (like CLM), and [X] for extreme denoising (very long spans).' },
 ];
 
 export default function WalkthroughLLE01PreTrainingObjectivesEvolution() {
@@ -17,10 +17,10 @@ export default function WalkthroughLLE01PreTrainingObjectivesEvolution() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Pre-Training Objectives Evolution — Step by Step
+          Pre-Training Objectives Evolution \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how pre-training objectives evolution works, one stage at a time.

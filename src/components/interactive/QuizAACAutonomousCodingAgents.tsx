@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACAutonomousCodingAgents() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Search-and-replace is most reliable for targeted changes; whole-file rewrite works for small files Test selection matters: running the full test suite after each edit is slow.', isTrue: true, explanation: 'This is a key technical detail of Autonomous Coding Agents.' },
-    { text: 'Beyond that, search and navigation becomes the bottleneck Language coverage: Python is best-supported due to SWE-bench focus.', isTrue: true, explanation: 'This is a key technical detail of Autonomous Coding Agents.' },
-    { text: 'TypeScript/JavaScript, Java, Go, and Rust support varies by agent.', isTrue: true, explanation: 'This is a key technical detail of Autonomous Coding Agents.' },
+    { text: 'Coding agents will replace developers.', isTrue: false, explanation: 'Current agents solve 50% of well-specified GitHub issues -- tasks with clear descriptions and test cases. They struggle with ambiguous requirements, system design, performance optimization, and tasks requiring deep domain knowledge.' },
+    { text: 'Claude 3.5 Sonnet with scaffolding achieves ~50%, GPT-4o with scaffolding achieves ~30-40%, open-source solutions achieve ~20-30%', isTrue: true, explanation: 'Claude 3.5 Sonnet with scaffolding achieves ~50%, GPT-4o with scaffolding achieves ~30-40%, open-source solutions achieve ~20-30%' },
+    { text: 'solving a SWE-bench issue typically requires 50K-500K tokens across multiple LLM calls, costing 0.15-7.50 at Sonnet pricing', isTrue: true, explanation: 'solving a SWE-bench issue typically requires 50K-500K tokens across multiple LLM calls, costing 0.15-7.50 at Sonnet pricing' },
+    { text: 'successful solutions average 3-8 edit-test-debug iterations; failures often exhaust the maximum iteration budget (typically 15-25 iterations)', isTrue: true, explanation: 'successful solutions average 3-8 edit-test-debug iterations; failures often exhaust the maximum iteration budget (typically 15-25 iterations)' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

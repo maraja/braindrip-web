@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Pixel Accuracy', desc: 'The foundation of segmentation metrics begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Mean Intersection over Union (mIoU)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes segmentation metrics work.' },
-    { title: '3. Dice Coefficient / F1 Score', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Boundary Metrics', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Instance Segmentation Metrics', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Pixel Accuracy', desc: 'The simplest metric: fraction of correctly classified pixels. [equation]  where n_&#123;ii&#125; is the number of pixels of class i correctly predicted, and t_i is the total number of pixels of class i.' },
+    { title: '2. Mean Intersection over Union (mIoU)', desc: 'The standard metric for semantic segmentation. For each class c, compute the IoU between predicted and ground-truth pixel sets:  [equation]  Then average across all C classes:  [equation]  mIoU treats all classes equally (macro average), so rare classes have equal influence.' },
+    { title: '3. Dice Coefficient / F1 Score', desc: 'The Dice coefficient is equivalent to the F1 score computed at the pixel level:  [equation]  The relationship to IoU: Dice = &#123;2  IoU&#125;&#123;1 + IoU&#125;. Dice is always  IoU for the same prediction.' },
+    { title: '4. Boundary Metrics', desc: 'Standard mIoU and Dice can be insensitive to boundary quality -- a prediction that is 2 pixels off everywhere gets nearly the same score as a perfect one. Boundary IoU (Cheng et al., 2021): Computes IoU only within a narrow band (d pixels) around the ground-truth boundary.' },
+    { title: '5. Instance Segmentation Metrics', desc: 'Instance segmentation uses mask AP -- the same COCO AP protocol as detection, but IoU is computed between predicted and ground-truth masks instead of bounding boxes. [equation]  COCO mask AP is evaluated at IoU thresholds 0.50 to 0.95 (same as box AP).' },
+    { title: '6. Panoptic Quality (PQ)', desc: 'Panoptic segmentation unifies semantic and instance segmentation. PQ (Kirillov et al., 2019) evaluates both recognition and segmentation quality:  [equation]  SQ: Average IoU of matched segments.' },
 ];
 
 export default function WalkthroughCVCSegmentationMetrics() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCSegmentationMetrics() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Segmentation Metrics — Step by Step
+          Segmentation Metrics \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how segmentation metrics works, one stage at a time.

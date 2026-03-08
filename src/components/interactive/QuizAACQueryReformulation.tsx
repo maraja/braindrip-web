@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACQueryReformulation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'This typically improves retrieval by 10-20% on diverse query sets.', isTrue: true, explanation: 'This is a key technical detail of Query Reformulation.' },
-    { text: 'Sub-query generation prompt: The decomposition prompt instructs the LLM to identify independent information needs and generate self-contained sub-queries.', isTrue: true, explanation: 'This is a key technical detail of Query Reformulation.' },
-    { text: 'Each sub-query should be answerable independently.', isTrue: true, explanation: 'This is a key technical detail of Query Reformulation.' },
+    { text: 'Query reformulation is just adding synonyms.', isTrue: false, explanation: 'Expansion is one technique among many. Decomposition, HyDE, and iterative refinement based on result analysis are fundamentally different approaches that address different failure modes.' },
+    { text: 'Generate a hypothetical answer using the LLM (zero-shot), encode it with the same embedding model used for the document corpus, and use the resulting vector for similarity search.', isTrue: true, explanation: 'This typically improves retrieval by 10-20% on diverse query sets.' },
+    { text: 'The user\'s original query is always the best starting point.', isTrue: false, explanation: 'User queries are optimized for human conversation, not retrieval. A reformulated query that looks nothing like the original can dramatically outperform it.' },
+    { text: 'The decomposition prompt instructs the LLM to identify independent information needs and generate self-contained sub-queries.', isTrue: true, explanation: 'Each sub-query should be answerable independently.' },
+    { text: 'Reformulation adds too much latency.', isTrue: false, explanation: 'A single LLM call for reformulation adds 200-500ms but can eliminate multiple failed retrieval rounds. The net effect is often faster time-to-correct-answer, even if time-to-first-retrieval increases.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

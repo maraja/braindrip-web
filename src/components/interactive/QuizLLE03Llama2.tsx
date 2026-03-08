@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE03Llama2() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Meta\'s LLaMA 2 was the first truly commercially licensed open-weight language model, combining 2 trillion tokens of training with extensive RLHF alignment to narrow the gap between open and closed AI.', isTrue: true, explanation: 'This captures the core purpose of LLaMA 2.' },
-    { text: 'LLaMA 2 is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding LLaMA 2 is important for building on more advanced topics.' },
-    { text: 'LLaMA 2 is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding LLaMA 2 is important for building on more advanced topics.' },
+    { text: 'LLaMA 2 is fully open-source.', isTrue: false, explanation: 'LLaMA 2 is open-weight, not open-source. The model weights are freely available, but the training code, data, and infrastructure details are proprietary.' },
+    { text: '7B, 13B, 70B (three-model family)', isTrue: true, explanation: '7B, 13B, 70B (three-model family)' },
+    { text: 'LLaMA 2 matched GPT-4.', isTrue: false, explanation: 'LLaMA 2 70B was competitive with early GPT-3.5 but remained significantly behind GPT-4 on reasoning, coding, and complex instruction-following. The gap was meaningful, even if it was narrower than before.' },
+    { text: '2 trillion (40% more than LLaMA 1)', isTrue: true, explanation: '2 trillion (40% more than LLaMA 1)' },
+    { text: 'The 700M MAU restriction was a dealbreaker.', isTrue: false, explanation: 'The license restricted use by companies with over 700 million monthly active users (essentially Meta\'s competitors: Google, Apple, Amazon, Microsoft). For the vast majority of companies, startups, and developers, the license was effectively unrestricted.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

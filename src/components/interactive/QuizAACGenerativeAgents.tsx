@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACGenerativeAgents() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Memory importance scoring uses the LLM to rate each observation on a 1-10 scale.', isTrue: true, explanation: 'This is a key technical detail of Generative Agents.' },
-    { text: 'Conversations terminate when one agent decides they have said what they needed to', isTrue: true, explanation: 'This is a key technical detail of Generative Agents.' },
-    { text: 'Generative agents are AI entities with persistent personalities, goals, memories, and social behaviors that produce believable human-like conduct in simulated environments through memory retrieval, reflection, and planning.', isTrue: true, explanation: 'This captures the core purpose of Generative Agents.' },
+    { text: 'Generative agents are conscious or sentient.', isTrue: false, explanation: 'They are LLM inference wrapped in memory and planning architectures. They have no subjective experience, no genuine emotions, and no understanding of their own existence.' },
+    { text: 'if everything is rated 8+, the recency and relevance signals dominate; if everything is rated 3-, important events are not distinguished from mundane ones', isTrue: true, explanation: 'if everything is rated 8+, the recency and relevance signals dominate; if everything is rated 3-, important events are not distinguished from mundane ones' },
+    { text: 'score = alpha  recency + beta  importance + gamma * relevance, where alpha, beta, gamma are tunable weights.', isTrue: true, explanation: 'Park et al. used equal weights (alpha = beta = gamma = 1) with normalized component scores' },
+    { text: 'triggered when the cumulative importance of new memories since the last reflection exceeds a threshold (e.g., 150 importance points).', isTrue: true, explanation: 'Too-frequent reflection wastes tokens; too-rare reflection fails to generate useful abstractions' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

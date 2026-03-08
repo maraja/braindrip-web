@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizADPContextAndStateStrategy() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Context windows range from 4K (small models) to 200K (Claude 3.5) to 1M (Gemini 1.5 Pro) tokens.', isTrue: true, explanation: 'This is a key technical detail of Context and State Strategy.' },
-    { text: 'Design for the model you deploy, not the largest available.', isTrue: true, explanation: 'This is a key technical detail of Context and State Strategy.' },
-    { text: 'Model performance degrades on tasks requiring information from the middle of long contexts ("lost in the middle" effect).', isTrue: true, explanation: 'This is a key technical detail of Context and State Strategy.' },
+    { text: 'Larger context windows solve context management.', isTrue: false, explanation: 'Larger windows help but do not eliminate the problem. They are more expensive (you pay per token), suffer from lost-in-the-middle effects at scale, and still have limits.' },
+    { text: 'Just save the entire conversation history.', isTrue: false, explanation: 'Raw conversation history is noisy. Much of it is intermediate reasoning, failed attempts, and social pleasantries.' },
+    { text: 'Vector databases are always the right choice for agent memory.', isTrue: false, explanation: 'Vector databases excel at semantic retrieval of unstructured text. But user preferences ("metric units," "timezone EST") are better served by a key-value store with deterministic lookup.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

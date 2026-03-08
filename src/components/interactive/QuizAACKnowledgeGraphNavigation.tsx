@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACKnowledgeGraphNavigation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Graph storage: Neo4j (property graph model) and Amazon Neptune (RDF + property graph) are the most common production graph databases.', isTrue: true, explanation: 'This is a key technical detail of Knowledge Graph Navigation.' },
-    { text: 'For smaller graphs, in-memory libraries like NetworkX suffice.', isTrue: true, explanation: 'This is a key technical detail of Knowledge Graph Navigation.' },
-    { text: 'Text-to-Cypher translation: LLMs convert natural language to Cypher queries with 60-80% accuracy on standard benchmarks.', isTrue: true, explanation: 'This is a key technical detail of Knowledge Graph Navigation.' },
+    { text: 'Knowledge graphs replace vector search.', isTrue: false, explanation: 'They complement it. Vector search excels at fuzzy semantic matching and handling unstructured text.' },
+    { text: 'Neo4j (property graph model) and Amazon Neptune (RDF + property graph) are the most common production graph databases.', isTrue: true, explanation: 'For smaller graphs, in-memory libraries like NetworkX suffice.' },
+    { text: 'Building a knowledge graph requires manual curation.', isTrue: false, explanation: 'While curated graphs are highest quality, LLM-based extraction can build useful graphs automatically from document collections. The quality is lower (expect 70-85% accuracy in extracted relations) but sufficient for many applications, especially when combined with human review of high-importance entities.' },
+    { text: 'LLMs convert natural language to Cypher queries with 60-80% accuracy on standard benchmarks.', isTrue: true, explanation: 'Providing the graph schema (node types, relationship types) in the prompt is essential for accurate translation.' },
+    { text: 'Graph queries are always more accurate than vector search.', isTrue: false, explanation: 'For single-hop factual questions or semantically nuanced questions, vector search often outperforms graph queries. Graphs win specifically on multi-hop, structured, and aggregation queries.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

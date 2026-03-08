@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. OSWorld', desc: 'The foundation of os and computer use benchmarks begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Screenshot-Based Evaluation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes os and computer use benchmarks work.' },
-    { title: '3. Terminal-Bench', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. CUB (Computer Use Benchmark)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The OSAgent Breakthrough', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. OSWorld', desc: 'OSWorld (Xie et al., 2024) is the most comprehensive OS-level benchmark, featuring 369 tasks across three operating systems:  Ubuntu Linux (~200 tasks): Terminal operations, GUI application management, system configuration Windows (~100 tasks): Office suite tasks, settings navigation, file.' },
+    { title: '2. Screenshot-Based Evaluation', desc: 'OSWorld pioneered screenshot-based evaluation: instead of checking internal application state through APIs, evaluation scripts analyze the screen or filesystem to determine whether the task was completed.' },
+    { title: '3. Terminal-Bench', desc: 'Terminal-Bench focuses specifically on command-line proficiency. Tasks include:  File manipulation (find, grep, sed, awk) System administration (user management, service configuration, networking) Development workflows (git operations, build systems, dependency management) Scripting challenges.' },
+    { title: '4. CUB (Computer Use Benchmark)', desc: 'CUB (2025) provides 106 real-world workflows across 7 industry verticals:  Finance: Spreadsheet analysis, report generation, data reconciliation Healthcare: EHR navigation, appointment scheduling, record management Legal: Document review, contract editing, case file organization Education: LMS.' },
+    { title: '5. The OSAgent Breakthrough', desc: 'OSAgent (late 2025) achieved 76.26% on the OSWorld benchmark, surpassing the estimated ~72% human baseline established through controlled studies. Key architectural features included:  Dual-mode observation: combining screenshots with accessibility tree data Hierarchical planning: decomposing tasks.' },
 ];
 
 export default function WalkthroughAAEOsAndComputerUseBenchmarks() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAEOsAndComputerUseBenchmarks() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          OS and Computer Use Benchmarks — Step by Step
+          OS and Computer Use Benchmarks \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how os and computer use benchmarks works, one stage at a time.

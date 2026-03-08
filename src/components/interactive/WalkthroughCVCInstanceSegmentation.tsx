@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Two Paradigms', desc: 'The foundation of instance segmentation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Top-Down Pipeline (Mask R-CNN Style)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes instance segmentation work.' },
-    { title: '3. Loss Function', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Evaluation: COCO Metrics', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Two Paradigms', desc: 'Top-down (detect-then-segment): Run an object detector (e.g., Faster R-CNN) to produce bounding-box proposals. For each proposal, predict a binary mask within the box region.' },
+    { title: '2. Top-Down Pipeline (Mask R-CNN Style)', desc: 'The mask head is a small fully convolutional network (typically 4 conv layers + 1 transposed conv) that predicts a 28 x 28 binary mask per class. The mask is then resized to the detected bounding box region.' },
+    { title: '3. Loss Function', desc: 'Instance segmentation losses combine detection and mask terms:  [equation]  &#123;L&#125;_&#123;cls&#125;: classification loss (cross-entropy) for the detected class. &#123;L&#125;_&#123;box&#125;: bounding box regression loss (smooth L1 or GIoU).' },
+    { title: '4. Evaluation: COCO Metrics', desc: 'The standard benchmark is MS COCO, using mask AP (average precision over IoU thresholds 0.50:0.05:0.95):  AP: primary metric, averaged over IoU thresholds and all 80 classes. AP_&#123;50&#125;: AP at IoU threshold 0.50 (lenient).' },
 ];
 
 export default function WalkthroughCVCInstanceSegmentation() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCInstanceSegmentation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Instance Segmentation — Step by Step
+          Instance Segmentation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how instance segmentation works, one stage at a time.

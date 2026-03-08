@@ -5,7 +5,7 @@ const DETAILS = [
     { label: 'Vector database scaling', detail: 'FAISS handles millions of vectors on a single machine. Pinecone and Weaviate scale to billions with distributed architectures. For most agent use cases, thousands to millions of memories are sufficient' },
     { label: 'Retrieval latency', detail: 'In-memory vector search (FAISS): 1-10ms. Managed vector databases: 10-100ms. Acceptable for interactive use when retrieving 3-5 memories per agent step' },
     { label: 'Memory chunk size', detail: 'Individual memory items should be 100-500 tokens. Too short (single sentences) loses context; too long (full documents) reduces retrieval precision' },
-    { label: 'Metadata filtering', detail: 'Combining vector similarity with metadata filters (e.g., \"find memories about Python from the last 30 days\") dramatically improves retrieval relevance' },
+    { label: 'Metadata filtering', detail: 'Combining vector similarity with metadata filters (e.g., "find memories about Python from the last 30 days") dramatically improves retrieval relevance' },
     { label: 'Storage costs', detail: 'Vector databases charge per vector stored and per query. At typical scales (10K-100K memories), costs are $5-50/month. Well within budget for most applications' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerAACLongTermPersistentMemory() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Long-Term Persistent Memory — Key Details Explorer
+          Long-Term Persistent Memory \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of long-term persistent memory.
+          Click each card to explore the technical details.
         </p>
       </div>
 

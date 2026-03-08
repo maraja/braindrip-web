@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACGoalSpecification() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'System prompt token budget: Production agent system prompts range from 500 to 8,000 tokens.', isTrue: true, explanation: 'This is a key technical detail of Goal Specification.' },
-    { text: 'Claude Code\'s system prompt is approximately 3,000-5,000 tokens.', isTrue: true, explanation: 'This is a key technical detail of Goal Specification.' },
-    { text: 'Each additional token of system prompt is consumed on every LLM call, making it a recurring cost.', isTrue: true, explanation: 'This is a key technical detail of Goal Specification.' },
+    { text: 'If the LLM is smart enough, you don\'t need to be precise in your instructions.', isTrue: false, explanation: 'Even the most capable LLMs cannot read minds. Ambiguous instructions produce variable results regardless of model capability.' },
+    { text: 'Production agent system prompts range from 500 to 8,000 tokens.', isTrue: true, explanation: 'Claude Code\'s system prompt is approximately 3,000-5,000 tokens. Each additional token of system prompt is consumed on every LLM call, making it a recurring cost.' },
+    { text: 'The system prompt is just boilerplate — the user\'s message is what matters.', isTrue: false, explanation: 'The system prompt profoundly shapes agent behavior. It determines tool usage patterns, safety compliance, communication style, and default assumptions.' },
+    { text: 'Well-calibrated agents ask clarifying questions on roughly 10-20% of tasks — enough to catch critical ambiguities without being annoying.', isTrue: true, explanation: 'Agents that never clarify make assumption errors on 15-25% of ambiguous tasks. Agents that always clarify frustrate users.' },
+    { text: 'Agents should never ask clarifying questions — they should just figure it out.', isTrue: false, explanation: 'This is only true for low-ambiguity tasks. For high-ambiguity tasks, making assumptions leads to wasted computation and incorrect results.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Types of Noise', desc: 'The foundation of image noise and denoising begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Signal-to-Noise Ratio (SNR)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes image noise and denoising work.' },
-    { title: '3. Spatial Filtering Methods', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Non-Local Means (NLM)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Frequency-Domain Denoising', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Types of Noise', desc: 'Gaussian (additive white) noise: Each pixel is corrupted by an independent sample from &#123;N&#125;(0, ^2). This models thermal noise in the sensor\'s electronics and readout circuitry.' },
+    { title: '2. Signal-to-Noise Ratio (SNR)', desc: '[equation]  A related metric for comparing denoised results to ground truth is Peak Signal-to-Noise Ratio (PSNR):  [equation]  where MAX is the maximum possible pixel value (255 for 8-bit).' },
+    { title: '3. Spatial Filtering Methods', desc: 'Mean (box) filter: Replaces each pixel with the average of its neighborhood. Simple but blurs edges.' },
+    { title: '4. Non-Local Means (NLM)', desc: '(2005) introduced a method that averages pixels not by spatial proximity but by patch similarity. For each pixel, NLM searches a wide window for patches (typically 7x7) that look similar to the patch centered on the current pixel, then averages the center values of all matching patches.' },
+    { title: '5. Frequency-Domain Denoising', desc: 'Wiener filter: The optimal linear filter in the MSE sense, formulated in the frequency domain:  [equation]  where H is the degradation function, S_ and S_f are the noise and signal power spectra.' },
+    { title: '6. Deep Learning Denoising', desc: 'DnCNN (Zhang et al., 2017): A 17-layer CNN trained to predict the noise residual &#123;&#125; rather than the clean image directly, with the denoised result obtained as &#123;I&#125; = I_&#123;noisy&#125; - &#123;&#125;. Batch normalization and residual learning enable training a single model effective across a range of noise levels.' },
 ];
 
 export default function WalkthroughCVCImageNoiseAndDenoising() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCImageNoiseAndDenoising() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Image Noise and Denoising — Step by Step
+          Image Noise and Denoising \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how image noise and denoising works, one stage at a time.

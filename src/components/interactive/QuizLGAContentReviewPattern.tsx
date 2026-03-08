@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAContentReviewPattern() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The interrupt payload should include the full generated content plus clear instructions for the reviewer.', isTrue: true, explanation: 'This is a key technical detail of Content Review Pattern.' },
-    { text: 'The resume value is typically a string (edited text) but can be a structured object for complex edits.', isTrue: true, explanation: 'This is a key technical detail of Content Review Pattern.' },
-    { text: 'Returning "ok" or an empty string is a common convention for accepting the draft without changes.', isTrue: true, explanation: 'This is a key technical detail of Content Review Pattern.' },
+    { text: 'The human must accept or reject the entire draft.', isTrue: false, explanation: 'The human can return any modification -- a single word change, a full rewrite, or the original text unchanged. The resume value replaces the draft entirely, giving complete flexibility.' },
+    { text: 'The content review pattern uses interrupt() to surface agent-generated content for human review and optional editing before the content is used downstream.', isTrue: true, explanation: 'This captures the core definition of Content Review Pattern.' },
+    { text: 'Content Review Pattern is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Content Review Pattern is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

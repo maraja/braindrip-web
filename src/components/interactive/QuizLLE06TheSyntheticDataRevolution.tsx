@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE06TheSyntheticDataRevolution() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Self-Instruct (Dec 2022): 175 seeds to 52K instructions.', isTrue: true, explanation: 'This is a key technical detail of The Synthetic Data Revolution.' },
-    { text: 'Alpaca (Mar 2023): 52K instructions from GPT-3.5, $600 cost.', isTrue: true, explanation: 'This is a key technical detail of The Synthetic Data Revolution.' },
-    { text: 'Evol-Instruct (Apr 2023): 30K seeds evolved to 250K complex instructions.', isTrue: true, explanation: 'This is a key technical detail of The Synthetic Data Revolution.' },
+    { text: 'Synthetic data is just a cheap substitute for real data.', isTrue: false, explanation: 'For post-training (instruction tuning, alignment, reasoning), synthetic data often outperforms real data because it can be systematically structured, controlled for quality, and optimized for specific learning objectives. It is not a compromise — it is often the better option.' },
+    { text: '175 seeds to 52K instructions.', isTrue: true, explanation: '175 seeds to 52K instructions.' },
+    { text: 'Training on model outputs leads to model collapse.', isTrue: false, explanation: 'Model collapse is a real risk when training on outputs from the same or weaker models without quality filtering. But training on outputs from stronger models (distillation) consistently improves the student.' },
+    { text: '52K instructions from GPT-3.5, $600 cost.', isTrue: true, explanation: '52K instructions from GPT-3.5, $600 cost.' },
+    { text: 'Distilling from proprietary models is always fine.', isTrue: false, explanation: 'Many proprietary model terms of service prohibit using outputs to train competing models. Alpaca was trained on GPT-3.5 outputs, raising legal questions that remain unresolved.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

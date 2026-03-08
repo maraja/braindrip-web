@@ -1,11 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Deployment Flow', desc: 'The foundation of langgraph platform begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Application Structure', desc: 'At this stage, the key transformation occurs — the core mechanism that makes langgraph platform work.' },
-    { title: '3. Deploying to LangSmith Cloud', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Testing the Deployment', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Testing via REST API', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Deployment Flow', desc: 'The deployment process starts with your langgraph.json configuration file and a GitHub repository:' },
+    { title: '2. Assistants (Configurable Agent Variants)', desc: 'Each graph in langgraph.json automatically becomes a default assistant. You can also create custom assistants -- same graph logic but different configurations:' },
+    { title: '3. Double-Texting (Concurrent Message Handling)', desc: 'When a user sends a new message while a previous run is still executing, the platform handles it via configurable multitask strategies:' },
 ];
 
 export default function WalkthroughLGALanggraphPlatform() {
@@ -17,10 +15,10 @@ export default function WalkthroughLGALanggraphPlatform() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          LangGraph Platform — Step by Step
+          LangGraph Platform \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how langgraph platform works, one stage at a time.

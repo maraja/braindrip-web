@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Task Format', desc: 'The foundation of swe-bench deep dive begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The \"Resolved\" Metric', desc: 'At this stage, the key transformation occurs — the core mechanism that makes swe-bench deep dive work.' },
-    { title: '3. Variants and Their Purpose', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Current State of the Art (Early 2026)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Evaluation Pipeline', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Task Format', desc: 'Each SWE-bench instance consists of:  Repository snapshot -- the codebase checked out at the commit just before the fix Issue description -- the original GitHub issue text (sometimes with additional context) Gold patch -- the human-authored pull request diff (used only to identify relevant tests,.' },
+    { title: '2. The "Resolved" Metric', desc: 'SWE-bench uses a binary evaluation metric: an instance is "resolved" if and only if all fail-to-pass tests (tests that failed before the patch but should pass after) now pass, and no previously passing tests have broken. There is no partial credit.' },
+    { title: '3. Variants and Their Purpose', desc: 'SWE-bench Full (2,294 tasks): The original dataset. Broad coverage but includes noisy, ambiguous, or trivially solvable instances.' },
+    { title: '4. Current State of the Art (Early 2026)', desc: 'On SWE-bench Verified, top agents have reached approximately 79% resolution rate (Sonar agent), up from roughly 30% when the benchmark launched in early 2024. Median cost per resolved issue has dropped to approximately $1.26, with average resolution time around 10.5 minutes.' },
+    { title: '5. The Evaluation Pipeline', desc: 'The pipeline requires Docker-based sandboxing because each task needs its specific repository environment with correct dependencies. The SWE-bench harness handles environment setup, patch application, and test execution.' },
 ];
 
 export default function WalkthroughAAESweBenchDeepDive() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAESweBenchDeepDive() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          SWE-bench Deep Dive — Step by Step
+          SWE-bench Deep Dive \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how swe-bench deep dive works, one stage at a time.

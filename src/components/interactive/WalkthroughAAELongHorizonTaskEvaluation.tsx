@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Challenges Unique to Long-Horizon Evaluation', desc: 'The foundation of long-horizon task evaluation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Milestone-Based Evaluation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes long-horizon task evaluation work.' },
-    { title: '3. Exploration-Exploitation Tradeoff', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Resource Management Over Extended Periods', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Challenges Unique to Long-Horizon Evaluation', desc: 'Context persistence across sessions. Long tasks inevitably span multiple agent invocations.' },
+    { title: '2. Milestone-Based Evaluation', desc: 'The most practical current approach defines intermediate milestones and evaluates progress toward each. A well-designed milestone framework has the following properties:  Hierarchical decomposition.' },
+    { title: '3. Exploration-Exploitation Tradeoff', desc: 'Long-horizon tasks introduce a strategic dimension absent from short tasks: the agent must decide when to explore new approaches versus exploit known good approaches. Early in a task, exploration is valuable -- trying different strategies to find what works.' },
+    { title: '4. Resource Management Over Extended Periods', desc: 'Long-horizon tasks have budgets: API calls, compute time, token usage, financial cost. An agent that achieves 95% quality while spending 10x the necessary resources is poorly evaluated by outcome-only metrics.' },
 ];
 
 export default function WalkthroughAAELongHorizonTaskEvaluation() {
@@ -16,10 +16,10 @@ export default function WalkthroughAAELongHorizonTaskEvaluation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Long-Horizon Task Evaluation — Step by Step
+          Long-Horizon Task Evaluation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how long-horizon task evaluation works, one stage at a time.

@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Three Paradigms', desc: 'The foundation of vision foundation models begins with understanding its core input requirements and initial setup.' },
-    { title: '2. What Makes a Foundation Model', desc: 'At this stage, the key transformation occurs — the core mechanism that makes vision foundation models work.' },
-    { title: '3. Scaling Laws and Emergent Properties', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Emerging Stack', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Training at Scale', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Three Paradigms', desc: 'Language-supervised: CLIP / SigLIP / EVA-CLIP Train on image-text pairs with contrastive objectives Learn features aligned with natural language semantics Strengths: zero-shot recognition, text-conditioned retrieval, multimodal reasoning Weakness: Spatial features are less precise than.' },
+    { title: '2. What Makes a Foundation Model', desc: 'The architectural pattern that unifies these models:  The backbone produces general-purpose features. Task-specific adaptation happens through:  Linear probing: Train only a single linear layer on top of frozen features (cheapest) Adapter tuning: Insert small trainable modules (e.g.' },
+    { title: '3. Scaling Laws and Emergent Properties', desc: 'Vision foundation models exhibit properties that emerge only at scale:  DINOv2: PCA of patch features produces semantic segmentation maps without any segmentation training -- this property emerges around ViT-B scale and improves further with ViT-L and ViT-g CLIP: Zero-shot performance on.' },
+    { title: '4. The Emerging Stack', desc: 'Modern vision systems increasingly compose foundation models:  DINOv2 for dense visual features (spatial understanding) CLIP for semantic alignment with language (open-vocabulary capability) SAM for interactive segmentation (precise mask generation) LLM (LLaMA, GPT-4) for reasoning and language.' },
 ];
 
 export default function WalkthroughCVCVisionFoundationModels() {
@@ -17,10 +16,10 @@ export default function WalkthroughCVCVisionFoundationModels() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Vision Foundation Models — Step by Step
+          Vision Foundation Models \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how vision foundation models works, one stage at a time.

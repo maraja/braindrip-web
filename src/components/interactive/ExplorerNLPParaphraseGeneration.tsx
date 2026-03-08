@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'MRPC', detail: '(Microsoft Research Paraphrase Corpus; Dolan and Brockett, 2005): 5,801 sentence pairs from news, labeled as paraphrase or not. Used primarily for paraphrase detection, not generation.' },
-    { label: 'QQP', detail: '(Quora Question Pairs): 400K question pairs labeled for semantic equivalence. Widely used for paraphrase identification training and evaluation.' },
     { label: 'ParaNMT-50M', detail: '(Wieting and Gimpel, 2018): 50 million paraphrase pairs from back-translation, the largest automatically generated paraphrase corpus.' },
     { label: 'PAWS', detail: '(Zhang et al., 2019): Paraphrase Adversaries from Word Scrambling, a challenging benchmark where high word-overlap pairs are not paraphrases and low-overlap pairs are, exposing shallow matching biases.' },
 ];
@@ -18,10 +17,10 @@ export default function ExplorerNLPParaphraseGeneration() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Paraphrase Generation — Key Details Explorer
+          Paraphrase Generation \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of paraphrase generation.
+          Click each card to explore the technical details.
         </p>
       </div>
 

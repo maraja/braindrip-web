@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACInterAgentCommunication() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Message schemas: Define explicit schemas for inter-agent messages.', isTrue: true, explanation: 'This is a key technical detail of Inter-Agent Communication.' },
-    { text: 'At minimum: sender ID, recipient ID (or topic), message type (task, result, question, escalation), timestamp, and payload.', isTrue: true, explanation: 'This is a key technical detail of Inter-Agent Communication.' },
-    { text: 'This structure enables routing, logging, and automated processing.', isTrue: true, explanation: 'This is a key technical detail of Inter-Agent Communication.' },
+    { text: 'Natural language communication between agents is always best because LLMs speak natural language', isTrue: false, explanation: ': Natural language introduces ambiguity that compounds across multiple exchanges. Structured communication for operational messages (tasks, results, status) combined with natural language for reasoning and analysis is more reliable than pure natural language.' },
+    { text: 'Define explicit schemas for inter-agent messages.', isTrue: true, explanation: 'At minimum: sender ID, recipient ID (or topic), message type (task, result, question, escalation), timestamp, and payload. This structure enables routing, logging, and automated processing.' },
+    { text: 'The most common communication failure is insufficient context.', isTrue: true, explanation: 'When Agent A delegates to Agent B, it must include not just the task but the relevant background: why this task matters, what constraints apply, what related work has been done. Err on the side of over-communicating.' },
+    { text: 'In turn-based communication, the conversation history grows with each exchange.', isTrue: true, explanation: 'Long agent-to-agent conversations face the same context window pressures as human-to-agent conversations. Implement summarization or sliding window approaches for long exchanges.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

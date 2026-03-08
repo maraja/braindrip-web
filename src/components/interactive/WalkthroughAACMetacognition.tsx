@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Confidence Calibration', desc: 'The foundation of metacognition begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Capability-Aware Task Routing', desc: 'At this stage, the key transformation occurs — the core mechanism that makes metacognition work.' },
-    { title: '3. \"I Don\'t Know\" as a Valid Response', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Self-Monitoring During Execution', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Knowing When to Ask', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Confidence Calibration', desc: 'Metacognitive agents estimate their confidence in planned actions and generated outputs:  High confidence: "The user asked for the sum of 2 + 2. I am certain the answer is 4.' },
+    { title: '2. Capability-Aware Task Routing', desc: 'A metacognitive agent assesses whether a task falls within its capabilities before attempting it:' },
+    { title: '3. "I Don\'t Know" as a Valid Response', desc: 'One of the most important metacognitive skills is the ability to say "I don\'t know" or "I\'m not sure." This requires overcoming the default tendency of language models to produce confident-sounding answers regardless of actual knowledge:  "I don\'t have reliable information about this topic after my.' },
+    { title: '4. Self-Monitoring During Execution', desc: 'During multi-step task execution, metacognitive monitoring tracks:  Progress: "Am I making progress toward the goal, or am I going in circles?" Coherence: "Is my current approach consistent with my earlier reasoning, or have I drifted?" Resource usage: "I\'ve used 60% of the context window.' },
+    { title: '5. Knowing When to Ask', desc: 'Metacognitive agents distinguish between situations where they should proceed autonomously and situations where they should ask the user:  Proceed: Clear instructions, high confidence, low risk, reversible actions.' },
 ];
 
 export default function WalkthroughAACMetacognition() {
@@ -17,10 +17,10 @@ export default function WalkthroughAACMetacognition() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Metacognition — Step by Step
+          Metacognition \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how metacognition works, one stage at a time.

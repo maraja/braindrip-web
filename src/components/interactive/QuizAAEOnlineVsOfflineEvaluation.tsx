@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEOnlineVsOfflineEvaluation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Offline evaluation tests agents against fixed datasets before deployment for reproducibility, while online evaluation assesses agents on live traffic under production conditions -- and a complete evaluation strategy requires both.', isTrue: true, explanation: 'This captures the core purpose of Online vs Offline Evaluation.' },
-    { text: 'Online vs Offline Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Online vs Offline Evaluation is important for building on more advanced topics.' },
-    { text: 'Online vs Offline Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Online vs Offline Evaluation is important for building on more advanced topics.' },
+    { text: 'If our offline eval scores are high, we don\'t need online evaluation.', isTrue: false, explanation: 'Offline scores reflect performance on your test distribution, which is always a simplified approximation of production. High offline scores with no online evaluation is like having a perfect driving simulation score but never taking the car on an actual road.' },
+    { text: 'Online evaluation means A/B testing.', isTrue: false, explanation: 'A/B testing is one form of online evaluation, but not the only one. Continuous quality monitoring, user feedback analysis, and shadow evaluation are all online evaluation methods that do not require traffic splitting.' },
+    { text: 'Shadow evaluation gives you the same signal as full online evaluation.', isTrue: false, explanation: 'Shadow evaluation cannot capture user reactions to agent responses, making it blind to multi-turn conversation quality, user satisfaction, and behavioral signals like retry rates. It is excellent for evaluating single-turn quality and catching regressions, but it does not replace live traffic evaluation.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEABTestingForAgents() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A/B testing for AI agents compares agent versions on live traffic through controlled experiments, but requires larger sample sizes and longer durations than traditional A/B tests due to agent non-determinism and high output variance.', isTrue: true, explanation: 'This captures the core purpose of A/B Testing for Agents.' },
-    { text: 'A/B Testing for Agents is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding A/B Testing for Agents is important for building on more advanced topics.' },
-    { text: 'A/B Testing for Agents is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding A/B Testing for Agents is important for building on more advanced topics.' },
+    { text: 'We can just compare this week\'s metrics to last week\'s.', isTrue: false, explanation: 'Before-after comparisons confound the agent change with every other change that occurred (traffic patterns, user demographics, external events). Only randomized assignment isolates the effect of the agent change itself.' },
+    { text: 'Statistical significance means the result matters.', isTrue: false, explanation: 'A statistically significant 0.1 percentage point improvement in task completion is real but possibly not worth the added complexity of the new version. Always pair significance testing with a practical significance threshold -- the minimum improvement that justifies deployment.' },
+    { text: 'We need to A/B test every change.', isTrue: false, explanation: 'A/B testing is expensive in time and organizational attention. Reserve it for changes where the direction of impact is uncertain or the stakes are high.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. MultiAgentBench (ACL 2025)', desc: 'The foundation of multi-agent benchmarks begins with understanding its core input requirements and initial setup.' },
-    { title: '2. DPAI Arena (JetBrains)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes multi-agent benchmarks work.' },
-    { title: '3. MedAgentBoard', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Measuring Coordination Quality', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. MultiAgentBench (ACL 2025)', desc: 'MultiAgentBench is the first systematic benchmark specifically designed for multi-agent system evaluation. It introduces two key innovations:  Milestone-based KPIs: Rather than evaluating only the final output, MultiAgentBench defines intermediate milestones that the agent group should achieve.' },
+    { title: '2. DPAI Arena (JetBrains)', desc: 'DPAI (Developer Productivity AI) Arena evaluates multi-agent systems on complete developer workflows:  Feature implementation: From spec to working code with tests Bug triage and fix: From bug report through diagnosis to verified resolution Code review and refactoring: Multi-pass review with.' },
+    { title: '3. MedAgentBoard', desc: 'MedAgentBoard applies multi-agent evaluation to the medical domain, where agent teams must collaborate on:  Differential diagnosis (combining specialist perspectives) Treatment planning (coordinating across care providers) Medical literature review (dividing and synthesizing research) Clinical.' },
+    { title: '4. Measuring Coordination Quality', desc: 'Multi-agent benchmarks must evaluate dimensions that do not exist in single-agent contexts:  Communication efficiency: Messages sent per task, information content per message, redundant communication ratio Task decomposition quality: Whether the work division matches agent specializations and.' },
 ];
 
 export default function WalkthroughAAEMultiAgentBenchmarks() {
@@ -16,10 +16,10 @@ export default function WalkthroughAAEMultiAgentBenchmarks() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Multi-Agent Benchmarks — Step by Step
+          Multi-Agent Benchmarks \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how multi-agent benchmarks works, one stage at a time.

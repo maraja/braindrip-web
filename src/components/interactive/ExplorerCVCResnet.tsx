@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Training', detail: 'SGD with momentum 0.9, weight decay $1 \\times 10^{-4}$, batch size 256. Learning rate starts at 0.1 and is divided by 10 at epochs 30 and 60 (90 epochs total).' },
+    { label: 'Training', detail: 'SGD with momentum 0.9, weight decay 1 x 10^&#123;-4&#125;, batch size 256. Learning rate starts at 0.1 and is divided by 10 at epochs 30 and 60 (90 epochs total).' },
     { label: 'Initialization', detail: 'Kaiming (He) initialization, designed specifically for ReLU networks.' },
     { label: 'Batch normalization', detail: 'is applied after every convolution and before ReLU (in the original formulation).' },
     { label: 'No dropout', detail: 'is used -- BN provides sufficient regularization.' },
@@ -20,10 +20,10 @@ export default function ExplorerCVCResnet() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          ResNet — Key Details Explorer
+          ResNet \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of resnet.
+          Click each card to explore the technical details.
         </p>
       </div>
 

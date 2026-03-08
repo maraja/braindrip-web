@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCFaceDetectionAndRecognition() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ArcFace with ResNet-100 backbone trained on MS1MV2 (5.8M images, 85K identities) achieves 99.83% on LFW.', isTrue: true, explanation: 'This is a key technical detail of Face Detection and Recognition.' },
-    { text: 'RetinaFace runs at ~30 FPS on a single GPU for VGA-resolution images.', isTrue: true, explanation: 'This is a key technical detail of Face Detection and Recognition.' },
-    { text: '512-dimensional embeddings at FP16 require 1 KB per face; a 10M-face gallery fits in ~10 GB.', isTrue: true, explanation: 'This is a key technical detail of Face Detection and Recognition.' },
+    { text: 'Face recognition is face detection.', isTrue: false, explanation: 'Detection finds faces; recognition identifies them. Many applications need only detection (e.g., autofocus, anonymization).' },
+    { text: 'Face detection locates faces in images while face recognition maps them to identities, evolving from Viola-Jones cascades to deep embedding models like ArcFace that achieve &gt;99.8% verification accuracy.', isTrue: true, explanation: 'This captures the core definition of Face Detection and Recognition.' },
+    { text: 'Face Detection and Recognition is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Face Detection and Recognition is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

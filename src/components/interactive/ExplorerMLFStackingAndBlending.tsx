@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Probability calibration', detail: 'When using predicted probabilities as meta-features for classification, ensure base learners produce well-calibrated probabilities. Platt scaling or isotonic regression can be applied before stacking.' },
-    { label: 'Feature augmentation', detail: 'The meta-learner can receive not only base model predictions but also the original features (or a subset). This \"stacking with passthrough\" allows the meta-learner to learn feature-dependent weighting of base models.' },
-    { label: 'Computational cost', detail: 'Cross-validated stacking requires training each base learner $K$ times (once per fold) plus once on full data. For $M$ base learners with $K$-fold CV, this means $M \\times (K + 1)$ training runs.' },
+    { label: 'Feature augmentation', detail: 'The meta-learner can receive not only base model predictions but also the original features (or a subset). This "stacking with passthrough" allows the meta-learner to learn feature-dependent weighting of base models.' },
+    { label: 'Computational cost', detail: 'Cross-validated stacking requires training each base learner K times (once per fold) plus once on full data. For M base learners with K-fold CV, this means M x (K + 1) training runs.' },
     { label: 'Diminishing returns', detail: 'The first few diverse base learners provide the most improvement. Adding the 10th base learner rarely helps as much as adding the 2nd or 3rd.' },
     { label: 'Target encoding risk', detail: 'When base learners include models that perform target encoding (like CatBoost), extra care is needed to prevent leakage through the stacking pipeline.' },
 ];
@@ -19,10 +19,10 @@ export default function ExplorerMLFStackingAndBlending() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Stacking and Blending — Key Details Explorer
+          Stacking and Blending \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of stacking and blending.
+          Click each card to explore the technical details.
         </p>
       </div>
 

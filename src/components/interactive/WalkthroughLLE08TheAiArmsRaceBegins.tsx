@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Google\'s \"Code Red\" (December 2022 - February 2023)', desc: 'The foundation of the ai arms race begins begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Microsoft\'s $10B+ Bet (January 2023)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes the ai arms race begins work.' },
-    { title: '3. Anthropic\'s Ascent (2023-2024)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Meta\'s Open-Source Pivot (February 2023)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The GPU Shortage and Infrastructure Race', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Google\'s "Code Red" (December 2022 - February 2023)', desc: 'Within days of ChatGPT\'s launch, Google CEO Sundar Pichai declared an internal "code red" — a rare company-wide priority shift. Google had the most advanced AI research organization in the world (Google Brain and DeepMind, which merged in April 2023) and had models comparable to ChatGPT in its labs.' },
+    { title: '2. Microsoft\'s $10B+ Bet (January 2023)', desc: 'Microsoft\'s initial 1B investment in OpenAI in 2019 looked prescient by January 2023. The company announced an extended partnership reportedly worth 10B or more, giving Microsoft exclusive cloud computing rights and deep integration with OpenAI\'s technology.' },
+    { title: '3. Anthropic\'s Ascent (2023-2024)', desc: 'Anthropic, founded in 2021 by former OpenAI researchers Dario and Daniela Amodei, was suddenly in enormous demand. The company had been operating quietly, publishing safety research and developing Claude.' },
+    { title: '4. Meta\'s Open-Source Pivot (February 2023)', desc: 'Meta had been doing significant AI research through FAIR (Facebook AI Research) but had not released a ChatGPT competitor. Instead, Meta chose a different strategy: open-source.' },
+    { title: '5. The GPU Shortage and Infrastructure Race', desc: 'The arms race was not just about models — it was about the hardware to train them. Nvidia\'s H100 GPU became the most sought-after piece of hardware in the world, with wait times exceeding 6-12 months and prices reaching 40,000+ per chip.' },
+    { title: '6. The Talent War', desc: 'The arms race extended to human capital. Top AI researchers — many of whom had been in academia or at a single company for their careers — became recruitment targets for every major player.' },
 ];
 
 export default function WalkthroughLLE08TheAiArmsRaceBegins() {
@@ -17,10 +18,10 @@ export default function WalkthroughLLE08TheAiArmsRaceBegins() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The AI Arms Race Begins — Step by Step
+          The AI Arms Race Begins \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how the ai arms race begins works, one stage at a time.

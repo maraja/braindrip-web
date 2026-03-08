@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFRegressionMetrics() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'MSE is decomposable: $\\text&#123;MSE&#125; = \\text&#123;Bias&#125;^2 + \\text&#123;Variance&#125; + \\text&#123;Irreducible Noise&#125;$, linking it directly to the bias-variance trade-off.', isTrue: true, explanation: 'This is a key technical detail of Regression Metrics.' },
-    { text: 'Robustness hierarchy: MedAE &gt; MAE &gt; RMSE &gt; MSE (from most to least robust to outliers).', isTrue: true, explanation: 'This is a key technical detail of Regression Metrics.' },
-    { text: '$R^2$ on test data: When computed on held-out data, $R^2$ is not bounded below by zero.', isTrue: true, explanation: 'This is a key technical detail of Regression Metrics.' },
+    { text: 'R^2 cannot be negative.', isTrue: false, explanation: 'It can, when the model is evaluated on test data or any data where it performs worse than the naive mean baseline. "Higher R^2 always means a better model." R^2 increases with model complexity even for irrelevant features.' },
+    { text: 'MSE = Bias^2 + Variance + Irreducible Noise, linking it directly to the bias-variance trade-off.', isTrue: true, explanation: 'MSE = Bias^2 + Variance + Irreducible Noise, linking it directly to the bias-variance trade-off.' },
+    { text: 'MedAE &gt; MAE &gt; RMSE &gt; MSE (from most to least robust to outliers).', isTrue: true, explanation: 'MedAE &gt; MAE &gt; RMSE &gt; MSE (from most to least robust to outliers).' },
+    { text: 'When computed on held-out data, R^2 is not bounded below by zero.', isTrue: true, explanation: 'Negative values signal the model generalizes poorly.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

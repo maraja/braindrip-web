@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizPEZeroShotChainOfThought() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Benchmark improvement: MultiArith accuracy went from 17.7% to 78.7% with zero-shot-CoT using InstructGPT (text-davinci-002).', isTrue: true, explanation: 'This is a key technical detail of Zero-Shot Chain-of-Thought.' },
-    { text: 'Best trigger phrase: "Let\'s think step by step" consistently outperformed alternatives across 12 benchmarks in the original study.', isTrue: true, explanation: 'This is a key technical detail of Zero-Shot Chain-of-Thought.' },
-    { text: 'few-shot-CoT: Zero-shot-CoT typically achieves 70-90% of few-shot-CoT performance, depending on task complexity and model capability.', isTrue: true, explanation: 'This is a key technical detail of Zero-Shot Chain-of-Thought.' },
+    { text: 'Zero-shot-CoT is always worse than few-shot-CoT.', isTrue: false, explanation: 'With modern frontier models and well-phrased instructions, zero-shot-CoT frequently closes the gap to within 1-3% of few-shot-CoT, especially on tasks where the model has strong pretraining coverage.' },
+    { text: 'MultiArith accuracy went from 17.7% to 78.7% with zero-shot-CoT using InstructGPT (text-davinci-002).', isTrue: true, explanation: 'MultiArith accuracy went from 17.7% to 78.7% with zero-shot-CoT using InstructGPT (text-davinci-002).' },
+    { text: 'Any instruction to \'think\' triggers CoT.', isTrue: false, explanation: 'Vague phrases like "think carefully" or "be thorough" do not reliably activate step-by-step reasoning generation. The trigger phrase must signal decomposition and sequential processing to be effective.' },
+    { text: '"Let\'s think step by step" consistently outperformed alternatives across 12 benchmarks in the original study.', isTrue: true, explanation: '"Let\'s think step by step" consistently outperformed alternatives across 12 benchmarks in the original study.' },
+    { text: 'Zero-shot-CoT eliminates the need for prompt engineering.', isTrue: false, explanation: 'It eliminates the need for example engineering, but the surrounding prompt still matters. Role assignment, output format specification, and constraint setting all interact with and modulate the effectiveness of zero-shot-CoT.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

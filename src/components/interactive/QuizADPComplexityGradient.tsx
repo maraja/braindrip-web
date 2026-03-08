@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizADPComplexityGradient() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A single well-crafted LLM call handles 70-80% of production LLM features (classification, extraction, summarization, simple generation).', isTrue: true, explanation: 'This is a key technical detail of Complexity Gradient.' },
-    { text: 'Most applications never need to leave rung 1.', isTrue: true, explanation: 'This is a key technical detail of Complexity Gradient.' },
-    { text: 'Prompt chains add roughly 1-2 seconds of latency per step.', isTrue: true, explanation: 'This is a key technical detail of Complexity Gradient.' },
+    { text: 'Starting simple means building a throwaway prototype.', isTrue: false, explanation: 'No. Each rung is production-grade code.' },
+    { text: 'More capable models eliminate the need for this gradient.', isTrue: false, explanation: 'Better models make each rung more capable, which means you can stay at lower rungs for more tasks. GPT-4-class models handle prompt chains that would have required agents with GPT-3.5.' },
+    { text: 'The gradient is just about saving money.', isTrue: false, explanation: 'Cost is one factor, but the more important factors are reliability, latency, and debuggability. Even with unlimited budget, an unnecessary agent is harder to maintain and more likely to fail than a workflow that does the same job.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

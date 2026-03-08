@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACAutonomySpectrum() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Approval latency cost: Each human approval step adds 10-60 seconds of wall-clock time.', isTrue: true, explanation: 'This is a key technical detail of The Autonomy Spectrum.' },
-    { text: 'A 30-step task with per-step approval takes 5-30 minutes of human attention; the same task in semi-autonomous mode takes only the initial instruction plus occasional monitoring.', isTrue: true, explanation: 'This is a key technical detail of The Autonomy Spectrum.' },
-    { text: 'Guardrail implementation: Semi-autonomous agents typically use allowlists (permitted tools/commands) and blocklists (forbidden operations).', isTrue: true, explanation: 'This is a key technical detail of The Autonomy Spectrum.' },
+    { text: 'Fully autonomous is always the goal.', isTrue: false, explanation: 'Higher autonomy is not inherently better. For many use cases, assistant-level autonomy (AI proposes, human approves) is the ideal balance.' },
+    { text: 'Each human approval step adds 10-60 seconds of wall-clock time.', isTrue: true, explanation: 'A 30-step task with per-step approval takes 5-30 minutes of human attention; the same task in semi-autonomous mode takes only the initial instruction plus occasional monitoring.' },
+    { text: 'Autonomy level is fixed for a given agent system.', isTrue: false, explanation: 'Most well-designed agents support configurable autonomy. Claude Code, for instance, can operate in interactive mode (assistant level) or headless mode (semi-autonomous to fully autonomous).' },
+    { text: 'Semi-autonomous agents typically use allowlists (permitted tools/commands) and blocklists (forbidden operations).', isTrue: true, explanation: 'Claude Code, for example, allows configuring allow and deny rules for specific tools and command patterns.' },
+    { text: 'Semi-autonomous means the agent asks for permission sometimes.', isTrue: false, explanation: 'Semi-autonomous means the agent acts without asking for most actions but has hard boundaries it cannot cross. The human monitors rather than approves.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

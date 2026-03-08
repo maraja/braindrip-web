@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEABTestingAndPromptExperiments() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A 50/50 traffic split maximizes statistical power; 90/10 splits require 5x more total traffic to achieve the same power.', isTrue: true, explanation: 'This is a key technical detail of A/B Testing and Prompt Experiments.' },
-    { text: 'For a binary metric with 70% baseline and 3-percentage-point MDE at 80% power and 5% significance, you need approximately 3,000 users per variant.', isTrue: true, explanation: 'This is a key technical detail of A/B Testing and Prompt Experiments.' },
-    { text: 'Experiment duration should account for weekly cycles — run for at least 7 days to capture day-of-week effects, ideally 14 days for stability.', isTrue: true, explanation: 'This is a key technical detail of A/B Testing and Prompt Experiments.' },
+    { text: 'A/B testing is always better than offline eval.', isTrue: false, explanation: 'A/B testing is slow, expensive, and requires production traffic. For most prompt iterations, offline eval is faster and sufficient.' },
+    { text: 'A/B testing prompts applies controlled experimentation to compare prompt variants with real users, measuring causal impact on task success, user satisfaction, and cost through statistically rigorous traffic splitting.', isTrue: true, explanation: 'This captures the core definition of A/B Testing and Prompt Experiments.' },
+    { text: 'A/B Testing and Prompt Experiments is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding A/B Testing and Prompt Experiments is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

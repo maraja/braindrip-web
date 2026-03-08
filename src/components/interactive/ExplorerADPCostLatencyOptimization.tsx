@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Model routing', detail: 'typically saves 40-70% on LLM costs with <5% quality degradation. The exact savings depend on workload composition (what fraction of steps are \"easy\").' },
+    { label: 'Model routing', detail: 'typically saves 40-70% on LLM costs with &lt;5% quality degradation. The exact savings depend on workload composition (what fraction of steps are "easy").' },
     { label: 'Prompt prefix caching', detail: 'reduces latency by 30-50% and cost by up to 50% on cached prefix tokens. Requires stable system prompts -- redesign prompts to maximize the static prefix length.' },
     { label: 'Semantic cache', detail: 'hit rates of 10-25% are typical for production agents. Set similarity thresholds conservatively (0.93+) to avoid serving wrong cached answers.' },
     { label: 'Token budget soft caps', detail: 'at 2x expected usage catch 95% of runaway loops while rarely constraining normal operation.' },
-    { label: 'Streaming', detail: 'reduces perceived latency by 40-60% for interactive use cases. Time-to-first-token of <500ms is the target.' },
+    { label: 'Streaming', detail: 'reduces perceived latency by 40-60% for interactive use cases. Time-to-first-token of &lt;500ms is the target.' },
     { label: 'Parallel tool execution', detail: 'can reduce tool latency by 50-80% when 2+ independent tools are called in the same step. Requires tools to be designed without ordering dependencies.' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerADPCostLatencyOptimization() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Cost-Latency Optimization — Key Details Explorer
+          Cost-Latency Optimization \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of cost-latency optimization.
+          Click each card to explore the technical details.
         </p>
       </div>
 

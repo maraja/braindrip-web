@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Trigger Strategies', desc: 'The foundation of ci/cd integration for agent evaluation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Cost Management', desc: 'At this stage, the key transformation occurs — the core mechanism that makes ci/cd integration for agent evaluation work.' },
-    { title: '3. Pass/Fail Criteria', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Handling Non-Determinism in Deterministic CI', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Pipeline Configuration Examples', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Trigger Strategies', desc: 'Different evaluation scopes are appropriate for different pipeline stages:  Every commit (fast, cheap evals): Run a small suite of 20-50 tasks with deterministic or near-deterministic scoring. Focus on smoke tests: does the agent still produce valid outputs?' },
+    { title: '2. Cost Management', desc: 'Agent evaluations consume real API credits, making cost management essential:  Budget limits per pipeline run: Set hard spending caps. If an evaluation exceeds its budget (due to runaway agent loops or unexpected token consumption), fail the run rather than draining the team\'s API budget.' },
+    { title: '3. Pass/Fail Criteria', desc: 'Naive pass/fail criteria ("score &gt; 0.85") fail in practice because evaluation scores have inherent variance. Robust criteria account for statistical uncertainty:  Statistical thresholds: Instead of "score &gt; X," use "score &gt; X with 95% confidence.' },
+    { title: '4. Handling Non-Determinism in Deterministic CI', desc: 'CI systems expect deterministic outcomes: a pipeline either passes or fails, and rerunning it should produce the same result. Agent evaluations violate this expectation.' },
+    { title: '5. Pipeline Configuration Examples', desc: 'A typical GitHub Actions workflow for agent evaluation:' },
+    { title: '6. The Eval-as-Code Pattern', desc: 'Treating evaluation as code means:  Evaluation configs live in the repo: Task definitions, scoring rubrics, dataset references, and threshold configurations are version-controlled alongside agent code.' },
 ];
 
 export default function WalkthroughAAECiCdIntegrationForAgentEvaluation() {
@@ -17,10 +18,10 @@ export default function WalkthroughAAECiCdIntegrationForAgentEvaluation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          CI/CD Integration for Agent Evaluation — Step by Step
+          CI/CD Integration for Agent Evaluation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how ci/cd integration for agent evaluation works, one stage at a time.

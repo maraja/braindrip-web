@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Document Ordering for 100K+ Contexts', desc: 'The foundation of long-context design patterns begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Section Markers and Anchors', desc: 'At this stage, the key transformation occurs — the core mechanism that makes long-context design patterns work.' },
-    { title: '3. Retrieval Within Long Context', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Quality Degradation Awareness', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Needle-in-a-Haystack Performance', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Document Ordering for 100K+ Contexts', desc: 'When placing many documents in a long context, ordering strategy becomes critical. The lost-in-the-middle effect is amplified in long contexts — documents placed in the 40K-80K token range of a 128K context receive significantly less attention than those at the beginning or end.' },
+    { title: '2. Section Markers and Anchors', desc: 'In long contexts, section markers serve as navigational infrastructure that helps the model locate information:  Markers work because they create distinctive token patterns that the attention mechanism can latch onto, functioning as landmarks in the token stream.' },
+    { title: '3. Retrieval Within Long Context', desc: 'An emerging pattern is "search before answering" — instructing the model to first locate relevant information within the long context before generating a response.' },
+    { title: '4. Quality Degradation Awareness', desc: 'Practitioners must internalize that performance degrades before the context window fills:  These ranges are approximate and task-dependent. Simple factual retrieval degrades less than complex multi-hop reasoning.' },
+    { title: '5. Needle-in-a-Haystack Performance', desc: 'The "needle in a haystack" (NIAH) test places a specific fact at various positions within a long context and tests whether the model can retrieve it. NIAH performance reveals:  Most current frontier models achieve 90-99% NIAH accuracy across their full context window under ideal conditions.' },
 ];
 
 export default function WalkthroughPELongContextDesignPatterns() {
@@ -17,10 +17,10 @@ export default function WalkthroughPELongContextDesignPatterns() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Long-Context Design Patterns — Step by Step
+          Long-Context Design Patterns \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how long-context design patterns works, one stage at a time.

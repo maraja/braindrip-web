@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEMultiModalContextDesign() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Image token costs range from 85 to 2,805 tokens per image depending on resolution and provider, making resolution selection a critical budget decision.', isTrue: true, explanation: 'This is a key technical detail of Multi-Modal Context Design.' },
-    { text: 'Low resolution (512x512) at 85 tokens is sufficient for scene understanding and general visual questions; high resolution is needed for text extraction and fine detail analysis.', isTrue: true, explanation: 'This is a key technical detail of Multi-Modal Context Design.' },
-    { text: 'PDF processing costs approximately 200-400 tokens per page with native PDF support (Anthropic, Google), less than converting to images.', isTrue: true, explanation: 'This is a key technical detail of Multi-Modal Context Design.' },
+    { text: 'Images are free to include — just add them.', isTrue: false, explanation: 'Images carry significant token costs, especially at high resolution. A single high-resolution image can cost 1,600+ tokens — equivalent to a full page of text.' },
+    { text: 'Multi-modal context design integrates images, audio, video, and PDFs alongside text in the context window, managing token costs, placement strategies, and modality-specific formatting to maximize model comprehension across input types.', isTrue: true, explanation: 'This captures the core definition of Multi-Modal Context Design.' },
+    { text: 'Multi-Modal Context Design is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Multi-Modal Context Design is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

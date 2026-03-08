@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizCVCResnet() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Training: SGD with momentum 0.9, weight decay $1 \\times 10^&#123;-4&#125;$, batch size 256.', isTrue: true, explanation: 'This is a key technical detail of ResNet.' },
-    { text: 'Learning rate starts at 0.1 and is divided by 10 at epochs 30 and 60 (90 epochs total).', isTrue: true, explanation: 'This is a key technical detail of ResNet.' },
-    { text: 'Initialization: Kaiming (He) initialization, designed specifically for ReLU networks.', isTrue: true, explanation: 'This is a key technical detail of ResNet.' },
+    { text: 'Skip connections solve vanishing gradients.', isTrue: false, explanation: 'More precisely, they provide an alternative gradient path that bypasses potentially vanishing paths. The residual branch can still have vanishing gradients, but the identity path ensures some gradient always flows through.' },
+    { text: 'SGD with momentum 0.9, weight decay 1 x 10^&#123;-4&#125;, batch size 256.', isTrue: true, explanation: 'Learning rate starts at 0.1 and is divided by 10 at epochs 30 and 60 (90 epochs total).' },
+    { text: 'Kaiming (He) initialization, designed specifically for ReLU networks.', isTrue: true, explanation: 'Kaiming (He) initialization, designed specifically for ReLU networks.' },
+    { text: '25.6M parameters, 4.1B FLOPs, and readily available pretrained in every major framework.', isTrue: true, explanation: '25.6M parameters, 4.1B FLOPs, and readily available pretrained in every major framework.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

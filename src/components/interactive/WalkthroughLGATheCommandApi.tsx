@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Basic Command Usage', desc: 'The foundation of the command api begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Registering a Command-Returning Node', desc: 'At this stage, the key transformation occurs — the core mechanism that makes the command api work.' },
-    { title: '3. Multi-Agent Handoff Pattern', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Command with goto=END', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Command with Multiple Destinations (Fan-Out)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Basic Command Usage', desc: 'The type hint Command[Literal["billing", "technical"]] tells LangGraph (and the compile validator) which nodes this function may route to.' },
+    { title: '2. Registering a Command-Returning Node', desc: 'Notice there is no add_conditional_edges call from triage. The Command return handles it.' },
+    { title: '3. Multi-Agent Handoff Pattern', desc: 'The supervisor simultaneously records the LLM\'s response in state and routes to the chosen sub-agent.' },
+    { title: '4. Command with goto=END', desc: 'To terminate the graph from within a node:' },
+    { title: '5. Command with Multiple Destinations (Fan-Out)', desc: 'goto can accept a list for parallel execution:' },
 ];
 
 export default function WalkthroughLGATheCommandApi() {
@@ -17,10 +17,10 @@ export default function WalkthroughLGATheCommandApi() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The Command API — Step by Step
+          The Command API \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how the command api works, one stage at a time.

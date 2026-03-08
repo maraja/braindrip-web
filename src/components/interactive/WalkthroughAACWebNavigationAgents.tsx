@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Observation Space: Screenshots vs DOM', desc: 'The foundation of web navigation agents begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Action Space', desc: 'At this stage, the key transformation occurs — the core mechanism that makes web navigation agents work.' },
-    { title: '3. Multi-Page Workflows', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Login and Authentication', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Observation Space: Screenshots vs DOM', desc: 'Web agents perceive web pages through two primary modalities. Screenshot-based agents receive rendered images of the web page and use vision models to understand the layout, read text, and identify interactive elements.' },
+    { title: '2. Action Space', desc: 'The agent\'s available actions mirror human browser interactions: click(element_id) or click(x, y) to click elements, type(element_id, text) to enter text in form fields, scroll(direction) to scroll the page, navigate(url) to go to a specific URL, go_back() to return to the previous page,.' },
+    { title: '3. Multi-Page Workflows', desc: 'Real web tasks span multiple pages. Booking a flight requires: search page (enter origin, destination, dates) -&gt; results page (compare options, select a flight) -&gt; passenger details page (enter name, passport info) -&gt; payment page (enter card details) -&gt; confirmation page (verify booking).' },
+    { title: '4. Login and Authentication', desc: 'Many web tasks require authenticated access. The agent must: navigate to the login page, enter credentials, handle two-factor authentication (if applicable), and maintain the session across subsequent pages.' },
 ];
 
 export default function WalkthroughAACWebNavigationAgents() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACWebNavigationAgents() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Web Navigation Agents — Step by Step
+          Web Navigation Agents \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how web navigation agents works, one stage at a time.

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Lexicon-Based Approaches', desc: 'The foundation of sentiment analysis begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Machine Learning Approaches', desc: 'At this stage, the key transformation occurs — the core mechanism that makes sentiment analysis work.' },
-    { title: '3. Fine-Grained Sentiment (1--5 Stars)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Emotion Detection', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Aspect-Based Sentiment Analysis (ABSA)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Lexicon-Based Approaches', desc: 'Lexicon-based methods assign sentiment scores using manually or semi-automatically constructed word-sentiment dictionaries. VADER (Valence Aware Dictionary and sEntiment Reasoner; Hutto & Gilbert, 2014) uses a curated lexicon of ~7,500 words with human-rated valence scores, combined with.' },
+    { title: '2. Machine Learning Approaches', desc: 'Traditional ML: Pang & Lee (2002) showed that Naive Bayes and SVMs trained on unigram/bigram features outperform lexicon methods on movie review sentiment. TF-IDF features with an SVM remain a competitive baseline, achieving ~88% accuracy on IMDB binary sentiment.' },
+    { title: '3. Fine-Grained Sentiment (1--5 Stars)', desc: 'Mapping text to a 5-point scale is substantially harder than binary classification. SST-5, the fine-grained Stanford Sentiment Treebank, has SOTA accuracy around 59%, illustrating how much information is lost when collapsing nuanced opinion into discrete levels.' },
+    { title: '4. Emotion Detection', desc: 'Beyond positive/negative polarity, emotion detection classifies text into discrete emotional categories. Ekman\'s six basic emotions (anger, disgust, fear, joy, sadness, surprise) provide one widely-used taxonomy.' },
+    { title: '5. Aspect-Based Sentiment Analysis (ABSA)', desc: 'ABSA involves two sub-tasks: (1) identifying aspect terms or categories ("battery life," "screen resolution") and (2) determining sentiment polarity toward each aspect. This can be modeled as a sequence labeling task for aspect extraction combined with targeted classification for polarity.' },
 ];
 
 export default function WalkthroughNLPSentimentAnalysis() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPSentimentAnalysis() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Sentiment Analysis — Step by Step
+          Sentiment Analysis \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how sentiment analysis works, one stage at a time.

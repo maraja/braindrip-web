@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACHybridSearchStrategies() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'BM25 parameters: The standard BM25 formula uses k1 (term frequency saturation, typically 1.2) and b (document length normalization, typically 0.75).', isTrue: true, explanation: 'This is a key technical detail of Hybrid Search Strategies.' },
-    { text: 'These rarely need tuning for hybrid systems since RRF fusion is robust to individual ranker calibration.', isTrue: true, explanation: 'This is a key technical detail of Hybrid Search Strategies.' },
-    { text: 'RRF constant k: The constant k in the RRF formula 1/(k+rank) controls how much rank position matters.', isTrue: true, explanation: 'This is a key technical detail of Hybrid Search Strategies.' },
+    { text: 'Semantic search is always better than keyword search.', isTrue: false, explanation: 'Semantic search is better for conceptual queries but strictly worse for exact matches. Searching for a UUID, IP address, or function name via embeddings is unreliable because embeddings are not designed to preserve character-level precision.' },
+    { text: 'The standard BM25 formula uses k1 (term frequency saturation, typically 1.2) and b (document length normalization, typically 0.75).', isTrue: true, explanation: 'These rarely need tuning for hybrid systems since RRF fusion is robust to individual ranker calibration.' },
+    { text: 'BM25 is outdated.', isTrue: false, explanation: 'BM25 remains competitive with dense retrieval on many benchmarks and is the backbone of production search engines. It is fast, well-understood, and handles exact matching better than any embedding model.' },
+    { text: 'The constant k in the RRF formula 1/(k+rank) controls how much rank position matters.', isTrue: true, explanation: 'Higher k values flatten the score differences between ranks. The standard value of 60 works well across most datasets.' },
+    { text: 'You need a complex fusion model.', isTrue: false, explanation: 'Simple RRF fusion with no learned parameters consistently matches or outperforms learned fusion models in practice. The engineering simplicity and robustness of RRF make it the default choice for most production systems.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

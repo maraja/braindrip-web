@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE03Bert() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'BERT (Devlin et al., 2018) introduced masked language modeling and bidirectional pre-training with an encoder-only Transformer, achieving state-of-the-art results on 11 NLP tasks and triggering the "BERT-ification" of the entire field — the most influential NLP paper since the Transformer itself.', isTrue: true, explanation: 'This captures the core purpose of BERT: Bidirectional Encoder Representations from Transformers.' },
-    { text: 'BERT: Bidirectional Encoder Representations from Transformers is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding BERT: Bidirectional Encoder Representations from Transformers is important for building on more advanced topics.' },
-    { text: 'BERT: Bidirectional Encoder Representations from Transformers is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding BERT: Bidirectional Encoder Representations from Transformers is important for building on more advanced topics.' },
+    { text: 'BERT is a generative model.', isTrue: false, explanation: 'BERT cannot generate text autoregressively. It is an encoder-only model designed for understanding tasks — classification, extraction, matching.' },
+    { text: '12 layers, 12 heads, 768 hidden, 110M params', isTrue: true, explanation: '12 layers, 12 heads, 768 hidden, 110M params' },
+    { text: 'BERT\'s bidirectional attention sees the future.', isTrue: false, explanation: 'In a sense, yes — BERT processes the entire input simultaneously, so position 5 can attend to position 10. But this is not "seeing the future" in the autoregressive sense.' },
+    { text: '24 layers, 16 heads, 1024 hidden, 340M params', isTrue: true, explanation: '24 layers, 16 heads, 1024 hidden, 340M params' },
+    { text: 'BERT is the best model for all NLP tasks.', isTrue: false, explanation: 'BERT excels at understanding tasks (classification, NER, QA) but cannot generate text. For generation, summarization, or translation, encoder-decoder (05-t5-text-to-text-framework.md) or decoder-only models are necessary.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

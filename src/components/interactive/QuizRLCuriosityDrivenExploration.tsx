@@ -2,8 +2,8 @@ import { useState } from 'react';
 export default function QuizRLCuriosityDrivenExploration() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Curiosity-driven exploration replaces external reward with intrinsic motivation from prediction error or information gain, enabling agents to explore systematically by seeking novelty rather than stumbling upon it by accident.', isTrue: true, explanation: 'This captures the core purpose of Curiosity-Driven Exploration.' },
-    { text: 'Curiosity-Driven Exploration is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Curiosity-Driven Exploration is important for building on more advanced topics.' },
+    { text: 'Curiosity replaces extrinsic rewards', isTrue: false, explanation: ': Curiosity is an exploration bonus, not a task specification. Without extrinsic rewards, the agent explores broadly but has no task objective.' },
+    { text: 'Curiosity-driven exploration replaces external reward with intrinsic motivation from prediction error or information gain, enabling agents to explore systematically by seeking novelty rather than stumbling upon it by accident.', isTrue: true, explanation: 'This captures the core definition of Curiosity-Driven Exploration.' },
     { text: 'Curiosity-Driven Exploration is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Curiosity-Driven Exploration is important for building on more advanced topics.' },
   ];
   return (

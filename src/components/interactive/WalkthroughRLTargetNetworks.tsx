@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Instability Problem', desc: 'The foundation of target networks begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Hard Target Updates', desc: 'At this stage, the key transformation occurs — the core mechanism that makes target networks work.' },
-    { title: '3. Soft (Polyak) Updates', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Why This Works: Stabilizing the Optimization Landscape', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Instability Problem', desc: 'Consider the Q-learning update with function approximation. At each step, we minimize:  [equation]  where the target is y = r +  _&#123;a\'&#125; Q(s\', a\'; w).' },
+    { title: '2. Hard Target Updates', desc: 'DQN\'s original approach (Mnih et al., 2015) uses hard updates: maintain a target network Q(s, a; w^-) that is an exact copy of the online network, refreshed every C steps:  [equation]  Between updates, w^- is completely frozen.' },
+    { title: '3. Soft (Polyak) Updates', desc: 'An alternative introduced by Lillicrap et al. (2016) in DDPG uses soft updates (also called Polyak averaging):  [equation]  This is applied after every gradient step, with   1 (typically  = 0.005 or  = 0.001).' },
+    { title: '4. Why This Works: Stabilizing the Optimization Landscape', desc: 'Target networks convert a non-stationary optimization problem into a series of approximately stationary ones. Between target updates, the loss surface L(w) has a fixed shape because the targets y are constant.' },
 ];
 
 export default function WalkthroughRLTargetNetworks() {
@@ -16,10 +16,10 @@ export default function WalkthroughRLTargetNetworks() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Target Networks — Step by Step
+          Target Networks \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how target networks works, one stage at a time.

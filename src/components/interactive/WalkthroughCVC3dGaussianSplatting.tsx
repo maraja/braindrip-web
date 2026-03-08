@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Gaussian Primitive Definition', desc: 'The foundation of 3d gaussian splatting begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Differentiable Rasterization', desc: 'At this stage, the key transformation occurs — the core mechanism that makes 3d gaussian splatting work.' },
-    { title: '3. Adaptive Density Control', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Training', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Comparison with NeRF', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Gaussian Primitive Definition', desc: 'Each Gaussian is parameterized by:  Position &#123;&#125;  &#123;R&#125;^3: The center in world coordinates. Covariance   &#123;R&#125;^&#123;3x3&#125;: Encodes shape and orientation.' },
+    { title: '2. Differentiable Rasterization', desc: 'Rendering proceeds in three steps:  Projection: Each 3D Gaussian with covariance  is projected to 2D using the viewing transform W and Jacobian J of the projective mapping:  [equation]  This yields a 2D Gaussian on the image plane. Tile-based sorting: The image is divided into 16 x 16 pixel tiles.' },
+    { title: '3. Adaptive Density Control', desc: 'During training, 3DGS adaptively manages the number of Gaussians:  Densification (cloning): Gaussians in under-reconstructed regions (high positional gradient, small scale) are duplicated. Densification (splitting): Large Gaussians covering too much area are split into two smaller ones.' },
+    { title: '4. Training', desc: 'The loss combines L1 photometric error with a D-SSIM term:  [equation]  with  = 0.2. Training uses Adam optimizer with separate learning rates: position (1.6 x 10^&#123;-4&#125;, exponentially decayed), opacity (0.05), scaling (5 x 10^&#123;-3&#125;), rotation (10^&#123;-3&#125;), SH coefficients (2.5 x 10^&#123;-3&#125;).' },
 ];
 
 export default function WalkthroughCVC3dGaussianSplatting() {
@@ -17,10 +16,10 @@ export default function WalkthroughCVC3dGaussianSplatting() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          3D Gaussian Splatting — Step by Step
+          3D Gaussian Splatting \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how 3d gaussian splatting works, one stage at a time.

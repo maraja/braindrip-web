@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Cross-Encoder Reranking', desc: 'The foundation of reranking and context selection begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Reciprocal Rank Fusion (RRF)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes reranking and context selection work.' },
-    { title: '3. Diversity Selection', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Context Window Packing', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Cross-Encoder Reranking', desc: 'Bi-encoder retrieval embeds queries and documents separately, then computes similarity via dot product or cosine distance. This is fast (milliseconds for millions of documents) but imprecise because the query and document never "see" each other during encoding.' },
+    { title: '2. Reciprocal Rank Fusion (RRF)', desc: 'When multiple retrieval methods or multiple queries produce separate ranked lists, reciprocal rank fusion merges them into a single ranking. The formula is:  RRF_score(d) = sum over all lists L of: 1 / (k + rank_L(d))  where k is a constant (typically 60) that controls how much weight is given to.' },
+    { title: '3. Diversity Selection', desc: 'After relevance-based reranking, the top results often cluster around the same topic or even the same document. Selecting the top-5 by relevance score alone may retrieve 5 slightly different passages all covering the same aspect of the answer, missing other important aspects entirely.' },
+    { title: '4. Context Window Packing', desc: 'Once chunks are reranked and selected, they must be ordered and formatted within the context window. Key decisions include:  Relevance ordering: Place highest-relevance chunks first (leverages primacy bias in attention) or last (leverages recency bias).' },
 ];
 
 export default function WalkthroughPERerankingAndContextSelection() {
@@ -16,10 +16,10 @@ export default function WalkthroughPERerankingAndContextSelection() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Reranking and Context Selection — Step by Step
+          Reranking and Context Selection \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how reranking and context selection works, one stage at a time.

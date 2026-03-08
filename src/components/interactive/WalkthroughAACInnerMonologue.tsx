@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architectural Separation', desc: 'The foundation of inner monologue begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Private Safety Deliberation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes inner monologue work.' },
-    { title: '3. Reasoning Depth Control', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Streaming Considerations', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Architectural Separation', desc: 'Inner monologue requires a clear architectural boundary between private reasoning and public output. This is implemented in several ways:  Dedicated thinking blocks: The API provides a separate field for thinking content.' },
+    { title: '2. Private Safety Deliberation', desc: 'One critical function of inner monologue is safety reasoning. The agent can privately evaluate whether a request is harmful, whether the current approach might cause unintended damage, or whether it should ask for confirmation before proceeding:  This deliberation would be awkward if exposed ("Here.' },
+    { title: '3. Reasoning Depth Control', desc: 'Inner monologue can be calibrated for different situations:  Shallow thinking (50-200 tokens): Simple tool calls, straightforward questions. "The user wants the weather.' },
+    { title: '4. Streaming Considerations', desc: 'In streaming responses, inner monologue creates a user experience challenge. The model may spend several seconds generating thinking tokens before producing any visible output.' },
 ];
 
 export default function WalkthroughAACInnerMonologue() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACInnerMonologue() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Inner Monologue — Step by Step
+          Inner Monologue \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how inner monologue works, one stage at a time.

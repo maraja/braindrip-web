@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE01VisionLanguageModels() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'CLIP (Jan 2021): ViT-L/14 vision encoder, 400M image-text pairs.', isTrue: true, explanation: 'This is a key technical detail of Vision-Language Models: Connecting Sight and Language.' },
-    { text: '76.2% zero-shot ImageNet accuracy.', isTrue: true, explanation: 'This is a key technical detail of Vision-Language Models: Connecting Sight and Language.' },
-    { text: 'Flamingo-80B (Apr 2022): Chinchilla-80B LLM + NFNet vision encoder + Perceiver Resampler.', isTrue: true, explanation: 'This is a key technical detail of Vision-Language Models: Connecting Sight and Language.' },
+    { text: 'VLMs understand images the same way humans do.', isTrue: false, explanation: 'VLMs process images as grids of patch tokens through statistical pattern matching. They can fail on spatial reasoning, counting objects, and fine-grained visual details that humans handle effortlessly.' },
+    { text: 'ViT-L/14 vision encoder, 400M image-text pairs.', isTrue: true, explanation: '76.2% zero-shot ImageNet accuracy.' },
+    { text: 'You need a complex architecture to connect vision and language.', isTrue: false, explanation: 'LLaVA showed that a simple linear projection works surprisingly well. The quality of the base LLM and the visual instruction tuning data matter far more than architectural complexity in the connector module.' },
+    { text: 'Chinchilla-80B LLM + NFNet vision encoder + Perceiver Resampler.', isTrue: true, explanation: '16 VQA benchmark SOTA.' },
+    { text: 'CLIP-style models can do visual reasoning.', isTrue: false, explanation: 'CLIP excels at matching images to descriptions but lacks the generative reasoning capability of full VLMs. It is a retrieval and classification system, not a reasoning system.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

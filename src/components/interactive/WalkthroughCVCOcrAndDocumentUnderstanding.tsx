@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Text Detection', desc: 'The foundation of ocr and document understanding begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Text Recognition', desc: 'At this stage, the key transformation occurs — the core mechanism that makes ocr and document understanding work.' },
-    { title: '3. Layout Analysis', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Table Extraction', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. End-to-End Document AI', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Text Detection', desc: 'Text detection locates text regions as bounding boxes or polygons in an image. EAST (Zhou et al., 2017): Efficient and Accurate Scene Text detector.' },
+    { title: '2. Text Recognition', desc: 'Given a cropped text region, recognition converts pixels to a character string. CRNN (Shi et al., 2016): Convolutional Recurrent Neural Network.' },
+    { title: '3. Layout Analysis', desc: 'Layout analysis identifies the spatial structure of a document: paragraphs, headings, tables, figures, and reading order. LayoutLM (Xu et al., 2020): Jointly pretrains on text content, 2D position embeddings (bounding box coordinates), and image features.' },
+    { title: '4. Table Extraction', desc: 'Tables in documents require detecting cell boundaries and associating rows and columns. Methods include:  Rule-based: Detect horizontal and vertical lines via Hough transform; works on well-formatted tables.' },
+    { title: '5. End-to-End Document AI', desc: 'Modern systems like Donut (Kim et al., 2022) bypass explicit OCR entirely. Donut uses a Swin Transformer encoder and a BART-style text decoder to directly generate structured output (JSON) from a document image.' },
+    { title: '6. Multilingual and Script Challenges', desc: 'OCR difficulty varies dramatically across writing systems:  Latin scripts: Near-solved for printed text. Character error rates &lt;0.5% with modern models.' },
 ];
 
 export default function WalkthroughCVCOcrAndDocumentUnderstanding() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCOcrAndDocumentUnderstanding() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          OCR and Document Understanding — Step by Step
+          OCR and Document Understanding \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how ocr and document understanding works, one stage at a time.

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'XGBoost key hyperparameters', detail: '`max_depth` (3--10), `learning_rate` (0.01--0.3), `n_estimators` (100--10000), `reg_alpha` (L1), `reg_lambda` (L2), `subsample`, `colsample_bytree`.' },
-    { label: 'LightGBM key hyperparameters', detail: '`num_leaves` (31--255, controls leaf-wise complexity), `learning_rate`, `n_estimators`, `min_child_samples`, `feature_fraction`, `bagging_fraction`.' },
-    { label: 'CatBoost key hyperparameters', detail: '`depth` (6--10), `learning_rate`, `iterations`, `l2_leaf_reg`, `random_strength`, `bagging_temperature`.' },
+    { label: 'XGBoost key hyperparameters', detail: 'max_depth (3--10), learning_rate (0.01--0.3), n_estimators (100--10000), reg_alpha (L1), reg_lambda (L2), subsample, colsample_bytree.' },
+    { label: 'LightGBM key hyperparameters', detail: 'num_leaves (31--255, controls leaf-wise complexity), learning_rate, n_estimators, min_child_samples, feature_fraction, bagging_fraction.' },
+    { label: 'CatBoost key hyperparameters', detail: 'depth (6--10), learning_rate, iterations, l2_leaf_reg, random_strength, bagging_temperature.' },
     { label: 'GPU acceleration', detail: 'All three support GPU training. XGBoost and CatBoost offer robust GPU implementations; LightGBM\'s GPU mode uses histogram-based methods that are particularly efficient.' },
     { label: 'Benchmarks', detail: 'On most tabular benchmarks, all three achieve comparable accuracy. LightGBM is typically fastest in training. CatBoost often wins when data has many categorical features. XGBoost is the most mature and widely supported.' },
 ];
@@ -19,10 +19,10 @@ export default function ExplorerMLFXgboostLightgbmCatboost() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          XGBoost, LightGBM, and CatBoost — Key Details Explorer
+          XGBoost, LightGBM, and CatBoost \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of xgboost, lightgbm, and catboost.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE06ChineseAiLabs() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Beyond DeepSeek and Qwen, a diverse ecosystem of Chinese AI labs emerged between 2023 and 2025, collectively challenging Western dominance through architectural innovation, massive domestic deployment, and creative adaptation to chip export restrictions.', isTrue: true, explanation: 'This captures the core purpose of Chinese AI Labs: The Global Competition Landscape.' },
-    { text: 'Chinese AI Labs: The Global Competition Landscape is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Chinese AI Labs: The Global Competition Landscape is important for building on more advanced topics.' },
-    { text: 'Chinese AI Labs: The Global Competition Landscape is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Chinese AI Labs: The Global Competition Landscape is important for building on more advanced topics.' },
+    { text: 'Chinese AI labs just copy Western research.', isTrue: false, explanation: 'While Chinese labs build on the global research literature (as all labs do), innovations like MLA, GRPO, auxiliary-loss-free load balancing, and pure-RL reasoning emergence were original Chinese contributions. Western labs studied and adopted these techniques.' },
+    { text: 'Chip export restrictions have crippled Chinese AI.', isTrue: false, explanation: 'Restrictions created friction and constrained total available compute, but they did not prevent Chinese labs from reaching frontier quality. DeepSeek V3 and R1 matched Western frontier models while operating under restrictions.' },
+    { text: 'All Chinese AI is state-controlled.', isTrue: false, explanation: 'While the Chinese government provides funding, regulatory frameworks, and strategic direction, most frontier AI labs are private companies (DeepSeek, MiniMax, Moonshot) or divisions of publicly traded corporations (Alibaba, ByteDance, Baidu). Their technical decisions are driven by commercial competition, talent acquisition, and market demands, not central planning.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

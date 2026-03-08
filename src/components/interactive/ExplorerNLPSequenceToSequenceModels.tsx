@@ -5,7 +5,7 @@ const DETAILS = [
     { label: 'Input reversal trick', detail: 'Reversing the source sequence improved BLEU from 30.6 to 33.3 (+2.7 points) on English-to-French, likely because it shortens the average gradient path between corresponding input-output pairs.' },
     { label: 'BLEU scores (pre-attention)', detail: 'Sutskever et al. achieved 34.8 BLEU (with ensembles of 5 models and beam search) on WMT\'14 En-Fr, competitive with the best statistical MT system (37.0 BLEU).' },
     { label: 'Beam search width', detail: 'Widths of 2-10 are standard; beyond 10, gains are marginal. Length normalization (dividing log-probability by sequence length raised to a power alpha, typically 0.6-0.7) is essential to avoid favoring short outputs.' },
-    { label: 'Vocabulary size', detail: 'A key limitation of early seq2seq models -- large vocabularies (50K-100K) were computationally expensive at the softmax. This motivated subword tokenization methods like BPE (`tokenization-in-nlp.md`).' },
+    { label: 'Vocabulary size', detail: 'A key limitation of early seq2seq models -- large vocabularies (50K-100K) were computationally expensive at the softmax. This motivated subword tokenization methods like BPE (tokenization-in-nlp.md).' },
     { label: 'Sequence length degradation', detail: 'Performance drops significantly for source sentences beyond 20-30 tokens in the basic encoder-decoder without attention.' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerNLPSequenceToSequenceModels() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Sequence-to-Sequence Models — Key Details Explorer
+          Sequence-to-Sequence Models \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of sequence-to-sequence models.
+          Click each card to explore the technical details.
         </p>
       </div>
 

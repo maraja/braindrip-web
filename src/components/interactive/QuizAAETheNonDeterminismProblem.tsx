@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAETheNonDeterminismProblem() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Agent evaluation must account for inherent randomness from LLM sampling, stochastic tool responses, and environment variability -- requiring multiple runs, confidence intervals, and specialized metrics like pass^k to produce reliable results.', isTrue: true, explanation: 'This captures the core purpose of The Non-Determinism Problem.' },
-    { text: 'The Non-Determinism Problem is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding The Non-Determinism Problem is important for building on more advanced topics.' },
-    { text: 'The Non-Determinism Problem is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding The Non-Determinism Problem is important for building on more advanced topics.' },
+    { text: 'Setting temperature to 0 makes evaluation deterministic.', isTrue: false, explanation: 'Temperature 0 eliminates sampling randomness but not GPU non-determinism, tool response variability, or environment changes. End-to-end determinism in agent evaluation is practically unattainable without heroic isolation efforts.' },
+    { text: 'More runs always helps.', isTrue: false, explanation: 'Beyond a certain point, additional runs provide diminishing returns. The confidence interval narrows as 1/&#123;n&#125;, so going from 10 to 100 runs (10x cost) only narrows the interval by ~3x.' },
+    { text: 'High variance means the agent is bad.', isTrue: false, explanation: 'Some variance is inherent and acceptable. An agent with 85% mean accuracy and 5% standard deviation is well-characterized and predictable.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

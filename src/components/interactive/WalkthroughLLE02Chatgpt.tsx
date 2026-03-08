@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. GPT-3.5: The Base Model', desc: 'The foundation of chatgpt begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Conversational RLHF Fine-Tuning', desc: 'At this stage, the key transformation occurs — the core mechanism that makes chatgpt work.' },
-    { title: '3. The Interface Revolution', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Limitations and Guardrails', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. GPT-3.5: The Base Model', desc: 'ChatGPT\'s foundation was GPT-3.5, a model family that OpenAI never formally published a paper on. GPT-3.5 is generally understood to be a descendant of GPT-3 that was further trained on a mixture of text, code, and instruction data.' },
+    { title: '2. Conversational RLHF Fine-Tuning', desc: 'While InstructGPT was trained on single-turn instruction-following, ChatGPT was specifically tuned for multi-turn conversation. The RLHF process used dialogue data: human trainers played both the user and the AI assistant, generating multi-turn conversations that demonstrated ideal assistant.' },
+    { title: '3. The Interface Revolution', desc: 'Much of ChatGPT\'s impact came not from the model but from the product design. The web interface was free, required only an email sign-up, and worked in a simple chat format that anyone could understand.' },
+    { title: '4. Limitations and Guardrails', desc: 'ChatGPT was far from perfect. It confidently generated false information (a behavior later called "hallucination"), struggled with math, had a knowledge cutoff (September 2021 at launch), could not access the internet, and occasionally produced biased or inappropriate outputs despite RLHF.' },
 ];
 
 export default function WalkthroughLLE02Chatgpt() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE02Chatgpt() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          ChatGPT — Step by Step
+          ChatGPT \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how chatgpt works, one stage at a time.

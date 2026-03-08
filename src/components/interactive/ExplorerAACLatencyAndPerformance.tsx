@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'LLM inference optimization', detail: 'The largest latency contributor. Optimizations include: prompt caching (reuse common prefixes, saving 50-80% of input processing time), model selection (smaller models for simpler sub-tasks), speculative decoding (use a small model to draft tokens, large model to verify), and batching (process multiple requests simultaneously for higher throughput).' },
+    { label: 'LLM inference optimization', detail: 'The largest latency contributor. Optimizations include: prompt caching (reuse common prefixes, saving 50-80% of input processing time), model selection (smaller models for simpler sub-tasks), speculative decoding (use a small model to draft tokens, large model to verify), and batching (process.' },
     { label: 'Streaming architecture', detail: 'Implement server-sent events (SSE) or WebSocket connections that stream agent output progressively. Show reasoning traces as they happen, tool call results as they return, and final responses token by token. This transforms a 60-second wait into a 60-second engagement.' },
     { label: 'Async tool execution', detail: 'Tool calls that do not depend on each other should execute asynchronously in parallel. Use a tool execution pool that dispatches independent calls simultaneously and aggregates results.' },
     { label: 'Latency budgets', detail: 'Allocate time budgets to each agent phase: 5 seconds for planning, 10 seconds for retrieval, 30 seconds for execution, 5 seconds for synthesis. If a phase exceeds its budget, the agent adapts (simpler plan, fewer retrievals, early termination).' },
@@ -20,10 +20,10 @@ export default function ExplorerAACLatencyAndPerformance() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Latency and Performance — Key Details Explorer
+          Latency and Performance \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of latency and performance.
+          Click each card to explore the technical details.
         </p>
       </div>
 

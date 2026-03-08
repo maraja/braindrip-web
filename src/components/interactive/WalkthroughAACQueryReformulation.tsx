@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Query Expansion', desc: 'The foundation of query reformulation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Query Decomposition', desc: 'At this stage, the key transformation occurs — the core mechanism that makes query reformulation work.' },
-    { title: '3. Hypothetical Document Embeddings (HyDE)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Iterative Refinement', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Query Expansion', desc: 'Query expansion enriches the original query with related terms, synonyms, and contextual keywords. An LLM can generate expanded queries by reasoning about what terms relevant documents would likely contain.' },
+    { title: '2. Query Decomposition', desc: 'Complex questions often contain multiple information needs bundled together. "Compare the pricing, features, and customer reviews of Slack and Microsoft Teams" is really three sub-queries.' },
+    { title: '3. Hypothetical Document Embeddings (HyDE)', desc: 'HyDE flips the retrieval paradigm. Instead of searching with the question, the agent first generates a hypothetical answer to the question (without retrieval), then uses that hypothetical answer as the search query.' },
+    { title: '4. Iterative Refinement', desc: 'When initial retrieval returns poor results, the agent assesses what went wrong. Were results off-topic (query was too vague)?' },
 ];
 
 export default function WalkthroughAACQueryReformulation() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACQueryReformulation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Query Reformulation — Step by Step
+          Query Reformulation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how query reformulation works, one stage at a time.

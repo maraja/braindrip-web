@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFWhatIsMachineLearning() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Hypothesis class $\\mathcal&#123;H&#125;$ determines the expressiveness of the model.', isTrue: true, explanation: 'This is a key technical detail of What Is Machine Learning?.' },
-    { text: 'Too small and you underfit; too large and you overfit.', isTrue: true, explanation: 'This is a key technical detail of What Is Machine Learning?.' },
-    { text: 'Inductive bias is the set of assumptions a learning algorithm uses to generalize beyond training data.', isTrue: true, explanation: 'This is a key technical detail of What Is Machine Learning?.' },
+    { text: 'ML is just statistics.', isTrue: false, explanation: 'ML draws heavily from statistics but also from optimization, computer science, and information theory. The emphasis on prediction, scalability, and computation distinguishes it from classical statistics.' },
+    { text: 'Learning patterns from data rather than programming rules explicitly -- the three paradigms and when each applies.', isTrue: true, explanation: 'This captures the core definition of What Is Machine Learning?.' },
+    { text: 'What Is Machine Learning? is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding What Is Machine Learning? is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

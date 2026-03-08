@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Cell State: A Conveyor Belt for Information', desc: 'The foundation of long short-term memory begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Gate Equations', desc: 'At this stage, the key transformation occurs — the core mechanism that makes long short-term memory work.' },
-    { title: '3. Why the Gates Solve Vanishing Gradients', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Peephole Connections', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Cell State: A Conveyor Belt for Information', desc: 'The cell state C_t is the defining feature of the LSTM. Think of it as a conveyor belt running through the entire sequence.' },
+    { title: '2. Gate Equations', desc: 'At each time step t, given input x_t and previous hidden state h_&#123;t-1&#125;:  Forget gate -- decides what to discard from the cell state:  Input gate -- decides what new information to store:  Candidate cell state -- proposes new values:  Cell state update -- the core operation combining forgetting and.' },
+    { title: '3. Why the Gates Solve Vanishing Gradients', desc: 'Consider the gradient of the loss with respect to C_k for some earlier time step k. The cell state update is C_t = f_t  C_&#123;t-1&#125; + i_t  C_tilde_t.' },
+    { title: '4. Peephole Connections', desc: 'A common variant adds "peephole" connections that allow the gates to look at the cell state directly:  Gers et al. (2000) introduced peephole connections, showing they help with tasks requiring precise timing, though they add computational cost and are not universally beneficial.' },
 ];
 
 export default function WalkthroughNLPLongShortTermMemory() {
@@ -16,10 +16,10 @@ export default function WalkthroughNLPLongShortTermMemory() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Long Short-Term Memory — Step by Step
+          Long Short-Term Memory \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how long short-term memory works, one stage at a time.

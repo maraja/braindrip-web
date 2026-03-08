@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Building Evaluation Datasets', desc: 'The foundation of evaluation dataset management begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Curating for Quality', desc: 'At this stage, the key transformation occurs — the core mechanism that makes evaluation dataset management work.' },
-    { title: '3. Versioning and Reproducibility', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Contamination Prevention', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Lifecycle Management', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Building Evaluation Datasets', desc: 'Task selection requires balancing three dimensions:  Representative coverage: Tasks should reflect the actual distribution of work the agent will encounter.' },
+    { title: '2. Curating for Quality', desc: 'Ongoing curation keeps datasets reliable:  Remove ambiguous tasks: If human experts disagree on the correct answer after discussion, the task is likely ambiguous. Remove it rather than forcing a single interpretation.' },
+    { title: '3. Versioning and Reproducibility', desc: 'Dataset versioning ensures that evaluation results remain comparable:  Semantic versioning: Use major versions for structural changes (new task categories, changed scoring criteria), minor versions for task additions/removals, and patch versions for answer corrections.' },
+    { title: '4. Contamination Prevention', desc: 'Training data contamination -- where evaluation tasks appear in model training data -- is the most serious threat to evaluation validity:  Dataset rotation: Regularly retire evaluation tasks and replace them with fresh ones.' },
+    { title: '5. Lifecycle Management', desc: 'Datasets follow a lifecycle: creation, active use, aging, and retirement. When to add tasks: After discovering new failure modes in production, when the agent gains new capabilities that need testing, or when existing tasks lose discriminative power because all models score above 95%.' },
+    { title: '6. Size Guidelines', desc: 'Dataset size depends on the evaluation\'s purpose:  20-50 tasks: Rapid iteration during development. Enough for directional signal but insufficient for statistical confidence.' },
 ];
 
 export default function WalkthroughAAEEvaluationDatasetManagement() {
@@ -17,10 +18,10 @@ export default function WalkthroughAAEEvaluationDatasetManagement() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Evaluation Dataset Management — Step by Step
+          Evaluation Dataset Management \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how evaluation dataset management works, one stage at a time.

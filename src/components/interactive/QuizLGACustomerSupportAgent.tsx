@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGACustomerSupportAgent() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The classifier uses a simple LLM prompt but could be replaced with a fine-tuned classifier for lower latency.', isTrue: true, explanation: 'This is a key technical detail of Customer Support Agent.' },
-    { text: 'interrupt() requires a checkpointer; without one, escalation raises a runtime error.', isTrue: true, explanation: 'This is a key technical detail of Customer Support Agent.' },
-    { text: 'Each handler ends with an edge to END, making the graph a single-pass pipeline rather than a loop.', isTrue: true, explanation: 'This is a key technical detail of Customer Support Agent.' },
+    { text: 'You need create_react_agent for any agent with tools.', isTrue: false, explanation: 'This project uses tools inside manually defined nodes with no ReAct loop, showing that tools and agents are independent concepts. "Interrupt stops the entire application." It only pauses the specific graph thread.' },
+    { text: 'A manually constructed support agent that routes simple questions to FAQ lookup, order queries to an order tool, and complex or sensitive issues to a human operator via interrupt().', isTrue: true, explanation: 'This captures the core definition of Customer Support Agent.' },
+    { text: 'Customer Support Agent is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Customer Support Agent is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

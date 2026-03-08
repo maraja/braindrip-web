@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFExperimentTracking() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Metric logging granularity: Log at the step/epoch level, not just at run completion.', isTrue: true, explanation: 'This is a key technical detail of Experiment Tracking.' },
-    { text: 'This enables early stopping analysis and learning curve comparison.', isTrue: true, explanation: 'This is a key technical detail of Experiment Tracking.' },
-    { text: 'Artifact storage: Large artifacts (model weights, datasets) should be stored in object storage (S3, GCS) with the tracking system storing only references.', isTrue: true, explanation: 'This is a key technical detail of Experiment Tracking.' },
+    { text: 'Git is sufficient for experiment tracking.', isTrue: false, explanation: 'Git versions code, but ML experiments depend on data, hyperparameters, and environment. Git alone cannot track metric trajectories or store large model artifacts efficiently.' },
+    { text: 'Log at the step/epoch level, not just at run completion.', isTrue: true, explanation: 'This enables early stopping analysis and learning curve comparison.' },
+    { text: 'Large artifacts (model weights, datasets) should be stored in object storage (S3, GCS) with the tracking system storing only references.', isTrue: true, explanation: 'Large artifacts (model weights, datasets) should be stored in object storage (S3, GCS) with the tracking system storing only references.' },
+    { text: 'Some systems compute a deterministic hash from (code version + data version + config) to detect when two runs should produce identical results.', isTrue: true, explanation: 'Some systems compute a deterministic hash from (code version + data version + config) to detect when two runs should produce identical results.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

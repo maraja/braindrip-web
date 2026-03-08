@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPWhatIsNlp() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Alan Turing\'s 1950 paper "Computing Machinery and Intelligence" proposed natural language dialogue as the test for machine intelligence -- the Turing Test.', isTrue: true, explanation: 'This is a key technical detail of What Is NLP.' },
-    { text: 'The Penn Treebank (Marcus et al., 1993), containing approximately 4.5 million words of annotated Wall Street Journal text, was the de facto benchmark for two decades of parsing research.', isTrue: true, explanation: 'This is a key technical detail of What Is NLP.' },
-    { text: 'BERT-base has 110 million parameters and was pre-trained on 3.3 billion words (BooksCorpus + English Wikipedia).', isTrue: true, explanation: 'This is a key technical detail of What Is NLP.' },
+    { text: 'NLP and NLU are the same thing.', isTrue: false, explanation: 'NLU is a subfield of NLP focused specifically on understanding -- mapping language to structured representations. NLP is the broader umbrella that also includes generation, speech processing, and information retrieval.' },
+    { text: 'Modern LLMs have solved NLP.', isTrue: false, explanation: 'Large language models have dramatically advanced the state of the art, but many challenges remain: robust reasoning, factual consistency, low-resource languages, domain-specific accuracy, computational cost, and genuine language understanding vs. sophisticated pattern matching.' },
+    { text: 'NLP started with deep learning.', isTrue: false, explanation: 'The field dates to the 1950s. Decades of work in formal linguistics, information retrieval, and statistical methods laid the foundation for today\'s neural approaches.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

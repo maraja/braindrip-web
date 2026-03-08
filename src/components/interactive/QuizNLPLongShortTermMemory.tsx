@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPLongShortTermMemory() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Parameter count: An LSTM layer with input dimension d_x and hidden dimension d_h has 4  (d_h  (d_h + d_x) + d_h) parameters (four gate/candidate sets, each with weights and biases).', isTrue: true, explanation: 'This is a key technical detail of Long Short-Term Memory.' },
-    { text: 'For d_h = 512 and d_x = 300, that is roughly 1.66 million parameters per layer.', isTrue: true, explanation: 'This is a key technical detail of Long Short-Term Memory.' },
-    { text: 'Typical hidden sizes: 256 to 1024 units; Google\'s Neural Machine Translation system (GNMT, 2016) used 1024-unit LSTMs with 8 layers.', isTrue: true, explanation: 'This is a key technical detail of Long Short-Term Memory.' },
+    { text: 'The cell state is the same as the hidden state.', isTrue: false, explanation: 'They are distinct vectors. The cell state C_t is the long-term memory that flows through the sequence with linear updates.' },
+    { text: 'An LSTM layer with input dimension d_x and hidden dimension d_h has 4  (d_h  (d_h + d_x) + d_h) parameters (four gate/candidate sets, each with weights and biases).', isTrue: true, explanation: 'For d_h = 512 and d_x = 300, that is roughly 1.66 million parameters per layer.' },
+    { text: 'LSTMs completely solve the vanishing gradient problem.', isTrue: false, explanation: 'LSTMs dramatically mitigate it but do not eliminate it entirely. For very long sequences (1000+ tokens), even LSTM gradients can degrade.' },
+    { text: '256 to 1024 units; Google\'s Neural Machine Translation system (GNMT, 2016) used 1024-unit LSTMs with 8 layers.', isTrue: true, explanation: '256 to 1024 units; Google\'s Neural Machine Translation system (GNMT, 2016) used 1024-unit LSTMs with 8 layers.' },
+    { text: 'More gates always mean better performance.', isTrue: false, explanation: 'The gated-recurrent-units.md (GRU) uses only two gates instead of three, yet achieves comparable performance on many tasks with fewer parameters. Greff et al.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

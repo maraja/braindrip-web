@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE04Claude35Sonnet() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: '38.0% for Claude 3 Opus) Speed: ~2x faster than Claude 3 Opus Pricing: $3/$15 per million input/output tokens Computer use: Introduced in October 2024 update (public beta)', isTrue: true, explanation: 'This is a key technical detail of Claude 3.5 Sonnet.' },
-    { text: 'Released on June 20, 2024, Claude 3.5 Sonnet shattered the assumption that mid-tier models must be inferior — it outperformed Claude 3 Opus on nearly every benchmark at 2x the speed and lower cost, becoming the most influential single model release of 2024.', isTrue: true, explanation: 'This captures the core purpose of Claude 3.5 Sonnet.' },
-    { text: 'Claude 3.5 Sonnet is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Claude 3.5 Sonnet is important for building on more advanced topics.' },
+    { text: 'Claude 3.5 Sonnet is just an incremental update to Claude 3 Sonnet.', isTrue: false, explanation: 'It was a dramatic capability jump, not an iteration. The performance gap between Claude 3 Sonnet and Claude 3.5 Sonnet was larger than many inter-generational leaps.' },
+    { text: '3/15 per million input/output tokens', isTrue: true, explanation: '3/15 per million input/output tokens' },
+    { text: 'A mid-tier model beating a flagship means the flagship was overhyped.', isTrue: false, explanation: 'Claude 3 Opus was genuinely the best model available when it launched. The lesson is that rapid iteration can surpass previous peaks faster than expected — three months of focused development produced a model that exceeded what had been the state of the art.' },
+    { text: 'Introduced in October 2024 update (public beta)', isTrue: true, explanation: 'Introduced in October 2024 update (public beta)' },
+    { text: 'Computer use means the model can fully automate any computer task.', isTrue: false, explanation: 'The computer use capability was impressive but imperfect. It was slow (requiring screenshots and deliberation for each action), could make mistakes on complex UIs, and was released as a beta feature.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

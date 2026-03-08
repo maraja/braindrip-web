@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGALanggraphSdk() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Install with pip install langgraph-sdk (Python) or npm install @langchain/langgraph-sdk (JavaScript).', isTrue: true, explanation: 'This is a key technical detail of LangGraph SDK.' },
-    { text: 'get_client() returns an async client; get_sync_client() returns a synchronous client.', isTrue: true, explanation: 'This is a key technical detail of LangGraph SDK.' },
-    { text: 'The stream_mode parameter controls what events you receive: "updates" (node outputs), "messages-tuple" (message chunks), "values" (full state snapshots).', isTrue: true, explanation: 'This is a key technical detail of LangGraph SDK.' },
+    { text: 'The SDK only works with LangSmith Cloud.', isTrue: false, explanation: 'It works with any LangGraph-compatible server, including langgraph dev and self-hosted FastAPI deployments that implement the API. "You need the SDK to use LangGraph agents." The SDK is for client-server communication.' },
+    { text: 'The langgraph-sdk package provides Python and JavaScript clients for interacting with any LangGraph server -- managing threads, streaming runs, inspecting state, and controlling agent execution through a unified API.', isTrue: true, explanation: 'This captures the core definition of LangGraph SDK.' },
+    { text: 'LangGraph SDK is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding LangGraph SDK is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

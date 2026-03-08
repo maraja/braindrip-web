@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAETrustCalibrationEvaluation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Evaluating whether agents accurately communicate their confidence and limitations, so that users can make well-informed decisions about when to trust agent output.', isTrue: true, explanation: 'This captures the core purpose of Trust Calibration Evaluation.' },
-    { text: 'Trust Calibration Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Trust Calibration Evaluation is important for building on more advanced topics.' },
-    { text: 'Trust Calibration Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Trust Calibration Evaluation is important for building on more advanced topics.' },
+    { text: 'If the agent is usually correct, calibration does not matter.', isTrue: false, explanation: 'An agent that is 90% accurate but expresses 99% confidence on everything is dangerously miscalibrated. Users trust the 99% confidence, skip verification, and the 10% error rate produces undetected mistakes.' },
+    { text: 'Confidence should be expressed as a probability.', isTrue: false, explanation: 'While useful for evaluation, explicit probability statements ("I am 73% confident") are unnatural and poorly understood by most users. Well-calibrated agents communicate confidence through natural language hedging, which must be consistent and reliable even if not numerically precise.' },
+    { text: 'Training agents to express more uncertainty solves overconfidence.', isTrue: false, explanation: 'Uniform uncertainty increase creates underconfidence without improving calibration. The goal is not more uncertainty but correctly placed uncertainty: high confidence on things the agent gets right, low confidence on things it gets wrong.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

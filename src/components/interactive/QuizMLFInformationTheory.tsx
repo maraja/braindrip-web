@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFInformationTheory() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Low entropy means a good model.', isTrue: false, explanation: '"Low entropy means a good model." A model can have low entropy by being overconfident about wrong predictions. Calibration matters as much as sharpness.' },
-    { text: 'Jensen\'s inequality underlies the non-negativity of KL divergence: $\\mathbb&#123;E&#125;[\\log(X)] \\leq \\log(\\mathbb&#123;E&#125;[X])$ for concave $\\log$.', isTrue: true, explanation: 'This is a key technical detail of Information Theory.' },
-    { text: 'Data processing inequality: For a Markov chain $X \\to Y \\to Z$, $I(X; Z) \\leq I(X; Y)$.', isTrue: true, explanation: 'This is a key technical detail of Information Theory.' },
+    { text: 'KL divergence is a distance metric.', isTrue: false, explanation: 'It is not symmetric and does not satisfy the triangle inequality. The Jensen-Shannon divergence &#123;1&#125;&#123;2&#125;D_&#123;KL&#125;(p) where m = &#123;p+q&#125;&#123;2&#125; is a true metric (after taking the square root).' },
+    { text: '&#123;E&#125;[(X)]  (&#123;E&#125;[X]) for concave .', isTrue: true, explanation: '&#123;E&#125;[(X)]  (&#123;E&#125;[X]) for concave .' },
+    { text: 'For a Markov chain X  Y  Z, I(X; Z)  I(X; Y).', isTrue: true, explanation: 'Processing data cannot create information.' },
+    { text: 'D_&#123;KL&#125;(&#123;N&#125;_0 \\&#125; - d + tr(_1^&#123;-1&#125;_0) + (_1-_0)^T_1^&#123;-1&#125;(_1-_0)].', isTrue: true, explanation: 'D_&#123;KL&#125;(&#123;N&#125;_0 \\&#125; - d + tr(_1^&#123;-1&#125;_0) + (_1-_0)^T_1^&#123;-1&#125;(_1-_0)].' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

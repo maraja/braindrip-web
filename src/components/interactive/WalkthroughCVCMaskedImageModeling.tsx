@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. BEiT: Discrete Token Reconstruction', desc: 'The foundation of masked image modeling begins with understanding its core input requirements and initial setup.' },
-    { title: '2. MAE: Pixel Reconstruction', desc: 'At this stage, the key transformation occurs — the core mechanism that makes masked image modeling work.' },
-    { title: '3. SimMIM: Simple Masked Image Modeling', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Comparison of MIM Methods', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. BEiT: Discrete Token Reconstruction', desc: 'BEiT (Bao et al., 2022, Microsoft) takes a two-stage approach:  Stage 1 -- Train a visual tokenizer: A discrete variational autoencoder (dVAE) compresses each 16 x 16 patch into one of 8192 discrete visual tokens. This tokenizer is trained separately on the image dataset.' },
+    { title: '2. MAE: Pixel Reconstruction', desc: 'MAE (He et al., 2022, Meta AI) takes a simpler, more radical approach:  Asymmetric encoder-decoder: Only the visible patches (25% of the image) are fed to the ViT encoder. This is the key efficiency insight -- the encoder never processes mask tokens, reducing compute by ~4x.' },
+    { title: '3. SimMIM: Simple Masked Image Modeling', desc: 'SimMIM (Xie et al., 2022, Microsoft) shows that a minimal design works well:  Mask patches with random masking at a moderate ratio (e.g., 60%) Replace masked patches with a learnable mask token in the input Feed all tokens (masked and visible) through the encoder Predict raw pixel values for masked.' },
 ];
 
 export default function WalkthroughCVCMaskedImageModeling() {
@@ -16,10 +15,10 @@ export default function WalkthroughCVCMaskedImageModeling() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Masked Image Modeling — Step by Step
+          Masked Image Modeling \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how masked image modeling works, one stage at a time.

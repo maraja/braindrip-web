@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Step Scheduling', desc: 'The foundation of agent orchestration begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Parallel vs Sequential Execution', desc: 'At this stage, the key transformation occurs — the core mechanism that makes agent orchestration work.' },
-    { title: '3. State Management Between Steps', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Framework Approaches', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Step Scheduling', desc: 'Every agent action -- an LLM call, a tool invocation, a memory retrieval -- is a "step." The orchestrator decides the execution order. In the simplest case, steps run sequentially: plan, then execute, then evaluate.' },
+    { title: '2. Parallel vs Sequential Execution', desc: 'Sequential execution is safe and simple: each step sees the complete output of the previous step. Parallel execution is faster but introduces complexity.' },
+    { title: '3. State Management Between Steps', desc: 'The orchestrator maintains a state object that flows through the execution graph. This state includes the conversation history, intermediate results, accumulated tool outputs, and any metadata needed for decision-making.' },
+    { title: '4. Framework Approaches', desc: 'LangGraph defines agents as compiled state graphs where nodes are Python functions and edges are conditional routing logic. CrewAI takes a higher-level approach: you define agents with roles, goals, and backstories, then assign them tasks with dependencies.' },
 ];
 
 export default function WalkthroughAACAgentOrchestration() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACAgentOrchestration() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agent Orchestration — Step by Step
+          Agent Orchestration \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how agent orchestration works, one stage at a time.

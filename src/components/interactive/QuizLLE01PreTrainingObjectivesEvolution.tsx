@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE01PreTrainingObjectivesEvolution() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'CLM: Used by GPT series, LLaMA, Mistral, DeepSeek.', isTrue: true, explanation: 'This is a key technical detail of Pre-Training Objectives Evolution.' },
-    { text: 'Trains on 100% of tokens autoregressively.', isTrue: true, explanation: 'This is a key technical detail of Pre-Training Objectives Evolution.' },
-    { text: 'MLM: BERT (2018), RoBERTa (2019).', isTrue: true, explanation: 'This is a key technical detail of Pre-Training Objectives Evolution.' },
+    { text: 'MLM is strictly better than CLM because it is bidirectional.', isTrue: false, explanation: 'Bidirectionality helps understanding tasks, but CLM scales better, generates fluently, and dominates at large scale. The most capable models all use CLM.' },
+    { text: 'Pre-training objectives are a solved problem.', isTrue: false, explanation: 'Active research continues. Multi-token prediction, UL2-style mixing, and objective-aware training remain areas of innovation.' },
+    { text: 'The pre-training objective determines model quality.', isTrue: false, explanation: 'At sufficient scale, architecture, data quality, and training compute often matter more than the specific objective. CLM\'s simplicity is a feature, not a limitation.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

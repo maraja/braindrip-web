@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAESampleSizeAndPowerAnalysis() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'For paired designs (same tasks, two agents), use McNemar\'s test: $n = \\frac&#123;(z_&#123;\\alpha/2&#125; + z_&#123;\\beta&#125;)^2&#125;&#123;(\\text&#123;OR&#125; - 1)^2 \\cdot p_d&#125;$ where $p_d$ is the discordant pair proportion.', isTrue: true, explanation: 'This is a key technical detail of Sample Size and Power Analysis.' },
-    { text: 'Paired designs can reduce $n$ by 40-60%.', isTrue: true, explanation: 'This is a key technical detail of Sample Size and Power Analysis.' },
-    { text: 'The continuity correction adds approximately $\\frac&#123;1&#125;&#123;\\Delta p&#125;$ to the sample size, which matters for small $\\Delta p$.', isTrue: true, explanation: 'This is a key technical detail of Sample Size and Power Analysis.' },
+    { text: '30 runs is always enough.', isTrue: false, explanation: 'Thirty runs gives you a rough confidence interval for a single agent, but it is woefully insufficient for comparing two agents. Detecting a 5% difference requires an order of magnitude more data.' },
+    { text: 'Power analysis determines how many evaluation runs you need to draw statistically valid conclusions about agent performance, balancing rigor against cost.', isTrue: true, explanation: 'This captures the core definition of Sample Size and Power Analysis.' },
+    { text: 'Sample Size and Power Analysis is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Sample Size and Power Analysis is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

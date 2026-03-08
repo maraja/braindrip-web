@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE04DirectPreferenceOptimization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Published: 2023 by Rafailov et al.', isTrue: true, explanation: 'This is a key technical detail of Direct Preference Optimization (DPO).' },
-    { text: 'Rafailov et al. showed that the RLHF objective could be mathematically reformulated as a simple classification loss on preference pairs, eliminating the need for a separate reward model and the instability of RL training while matching or exceeding PPO\'s quality.', isTrue: true, explanation: 'This captures the core purpose of Direct Preference Optimization (DPO).' },
-    { text: 'Direct Preference Optimization (DPO) is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Direct Preference Optimization (DPO) is important for building on more advanced topics.' },
+    { text: 'DPO eliminates the need for preference data.', isTrue: false, explanation: 'DPO still requires human (or AI) preference data — pairs of preferred and dispreferred responses. It eliminates the reward model and RL training, not the data collection step.' },
+    { text: '2023 by Rafailov et al.', isTrue: true, explanation: 'at Stanford University' },
+    { text: 'DPO is strictly better than PPO in all cases.', isTrue: false, explanation: 'For very large models and complex alignment objectives, some researchers have found that PPO with a well-tuned reward model can still outperform DPO. The advantage of DPO is in simplicity and stability, not always in peak performance.' },
+    { text: 'RLHF objective can be reformulated as classification loss on preference pairs', isTrue: true, explanation: 'RLHF objective can be reformulated as classification loss on preference pairs' },
+    { text: 'DPO makes alignment trivial.', isTrue: false, explanation: 'The hard part of alignment was never just the optimization algorithm — it is defining what "good" behavior means, collecting representative preference data, and evaluating whether the model is truly aligned. DPO simplifies the optimization step but not the broader alignment problem.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

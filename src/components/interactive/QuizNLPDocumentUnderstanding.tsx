@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPDocumentUnderstanding() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'LayoutLM was pre-trained on 11M document pages (IIT-CDIP dataset) with ~160M text tokens.', isTrue: true, explanation: 'This is a key technical detail of Document Understanding.' },
-    { text: 'LayoutLMv3 uses a smaller but more diverse pre-training set.', isTrue: true, explanation: 'This is a key technical detail of Document Understanding.' },
-    { text: 'Bounding box coordinates are normalized to [0, 1000] for both x and y axes relative to the page dimensions.', isTrue: true, explanation: 'This is a key technical detail of Document Understanding.' },
+    { text: 'OCR + NLP is sufficient for document understanding.', isTrue: false, explanation: 'Stripping text from a document and running NER or QA on the resulting flat string discards layout information that carries critical semantic meaning. Two adjacent cells in a table may appear as consecutive text after OCR but represent completely different fields.' },
+    { text: 'Document understanding is just NER on documents.', isTrue: false, explanation: 'While key information extraction resembles NER (see named-entity-recognition.md), document understanding also encompasses table extraction, document classification, document QA, layout analysis, and visual element recognition -- a much broader scope than entity tagging.' },
+    { text: 'Modern OCR is perfect and can be treated as a solved component.', isTrue: false, explanation: 'OCR accuracy on clean printed text is &gt;99%, but real-world documents feature handwriting, stamps, watermarks, poor scan quality, skew, mixed languages, and complex layouts. OCR errors propagate directly into downstream extraction errors, motivating OCR-free approaches like Donut.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

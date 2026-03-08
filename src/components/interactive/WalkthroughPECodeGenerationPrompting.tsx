@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Language and Environment Specification', desc: 'The foundation of code generation prompting begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Test-Driven Prompting', desc: 'At this stage, the key transformation occurs — the core mechanism that makes code generation prompting work.' },
-    { title: '3. Type Signatures and Interface Specification', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Context Inclusion Strategies', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Incremental Generation', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Language and Environment Specification', desc: 'Precise environment specification eliminates an entire category of errors:  Weak prompt: "Write a function to parse JSON." Strong prompt: "Write a Python 3.11 function using the standard library json module. The function should parse a JSON string and return a typed dictionary.' },
+    { title: '2. Test-Driven Prompting', desc: 'Providing tests before or alongside the code generation instruction dramatically improves correctness:  Test-first pattern: "Write a function that passes the following tests:" followed by the complete test suite.' },
+    { title: '3. Type Signatures and Interface Specification', desc: 'Providing type signatures or interfaces before asking for implementation constrains the model\'s output to the correct structure:  This pattern works because type signatures encode the most important structural decisions (parameter types, return types, async vs sync, error handling approach) without.' },
+    { title: '4. Context Inclusion Strategies', desc: 'Code generation benefits from relevant context that would normally be in the developer\'s working memory:  Existing code: Include the file or class the new code must integrate with. "Here is the existing database module.' },
+    { title: '5. Incremental Generation', desc: 'For complex implementations, break generation into stages:  First prompt: "Outline the approach — list the functions needed, their signatures, and their responsibilities." Second prompt: "Implement function X using the approach outlined above.' },
 ];
 
 export default function WalkthroughPECodeGenerationPrompting() {
@@ -17,10 +17,10 @@ export default function WalkthroughPECodeGenerationPrompting() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Code Generation Prompting — Step by Step
+          Code Generation Prompting \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how code generation prompting works, one stage at a time.

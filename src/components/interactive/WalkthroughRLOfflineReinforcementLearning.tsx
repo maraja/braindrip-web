@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Offline RL Problem', desc: 'The foundation of offline reinforcement learning begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Why Offline RL Is Hard: Extrapolation Error', desc: 'At this stage, the key transformation occurs — the core mechanism that makes offline reinforcement learning work.' },
-    { title: '3. Conservative Q-Learning (CQL)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Batch-Constrained Q-Learning (BCQ)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Implicit Q-Learning (IQL)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Offline RL Problem', desc: 'The agent is given a static dataset &#123;D&#125; = \\&#123;(s_i, a_i, r_i, s_i\')\\&#125;_&#123;i=1&#125;^N collected by some unknown behavior policy _. The goal is to learn a policy  that maximizes:  [equation]  using only &#123;D&#125;, with no environment interaction.' },
+    { title: '2. Why Offline RL Is Hard: Extrapolation Error', desc: 'The fundamental challenge is extrapolation error (also called distributional shift in the action dimension). Standard Q-learning updates use:  [equation]  The  operator selects the action with the highest Q-value in the next state.' },
+    { title: '3. Conservative Q-Learning (CQL)', desc: 'CQL (Kumar et al., 2020) addresses extrapolation error by adding a regularizer that explicitly pushes down Q-values for out-of-distribution actions:  [equation]  The first term penalizes high Q-values under a sampling distribution  (typically uniform or the current policy) while boosting Q-values.' },
+    { title: '4. Batch-Constrained Q-Learning (BCQ)', desc: 'BCQ (Fujimoto et al., 2019) takes a different approach: explicitly constraining the policy to only select actions similar to those in the dataset. It trains a generative model G_(s) of the behavior policy and restricts action selection:  [equation]  where _ is a small perturbation network.' },
+    { title: '5. Implicit Q-Learning (IQL)', desc: 'IQL (Kostrikov et al., 2022) avoids querying out-of-distribution actions entirely by reformulating the Bellman backup. Instead of using _&#123;a\'&#125; Q(s\', a\'), IQL learns the value function using expectile regression:  [equation]  where   (0, 1) controls the expectile.' },
+    { title: '6. Decision Transformers', desc: 'Decision Transformer (Chen et al., 2021) reframes offline RL as sequence modeling. It trains a transformer to predict actions conditioned on the desired return:  [equation]  where R_t = _&#123;t\'=t&#125;^T r_&#123;t\'&#125; is the return-to-go.' },
 ];
 
 export default function WalkthroughRLOfflineReinforcementLearning() {
@@ -17,10 +18,10 @@ export default function WalkthroughRLOfflineReinforcementLearning() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Offline Reinforcement Learning — Step by Step
+          Offline Reinforcement Learning \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how offline reinforcement learning works, one stage at a time.

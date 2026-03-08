@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Release date', detail: 'May 13, 2024' },
-    { label: 'Name', detail: 'GPT-4o (\"o\" for \"omni\")' },
+    { label: 'Name', detail: 'GPT-4o ("o" for "omni")' },
     { label: 'Input modalities', detail: 'Text, images, audio, video' },
     { label: 'Output modalities', detail: 'Text, audio, images' },
-    { label: 'Context window', detail: '128,000 tokens' },
-    { label: 'MMLU (5-shot)', detail: '88.7%' },
+    { label: 'Voice response latency', detail: 'Average 320 milliseconds (human-like)' },
+    { label: 'Pricing', detail: '5/15 per million input/output tokens (50% cheaper than GPT-4 Turbo)' },
+    { label: 'Speed', detail: '2x faster than GPT-4 Turbo' },
 ];
 
 export default function ExplorerLLE03Gpt4o() {
@@ -20,10 +20,10 @@ export default function ExplorerLLE03Gpt4o() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          GPT-4o — Key Details Explorer
+          GPT-4o \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of gpt-4o.
+          Click each card to explore the technical details.
         </p>
       </div>
 

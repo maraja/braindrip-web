@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCSift() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A typical image (640x480) yields 1,000--3,000 SIFT keypoints depending on texture richness.', isTrue: true, explanation: 'This is a key technical detail of SIFT (Scale-Invariant Feature Transform).' },
-    { text: 'Descriptor extraction takes approximately 50--100 ms per image on a single CPU core (not real-time without GPU acceleration or approximations).', isTrue: true, explanation: 'This is a key technical detail of SIFT (Scale-Invariant Feature Transform).' },
-    { text: 'SIFT is invariant to scale changes up to about 2.5 octaves and rotation.', isTrue: true, explanation: 'This is a key technical detail of SIFT (Scale-Invariant Feature Transform).' },
+    { text: 'SIFT is invariant to all viewpoint changes.', isTrue: false, explanation: 'SIFT handles scale and in-plane rotation well but degrades under large affine transformations or perspective distortion exceeding roughly 40 degrees. "SURF is just a faster SIFT." SURF (Bay et al., 2006) uses box-filter approximations of DoG and 64-D descriptors.' },
+    { text: 'SIFT detects keypoints and computes descriptors that remain stable across changes in scale, rotation, and illumination, enabling robust image matching and recognition.', isTrue: true, explanation: 'This captures the core definition of SIFT (Scale-Invariant Feature Transform).' },
+    { text: 'SIFT (Scale-Invariant Feature Transform) is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding SIFT (Scale-Invariant Feature Transform) is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

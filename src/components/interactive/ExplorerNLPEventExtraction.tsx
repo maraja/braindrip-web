@@ -4,7 +4,7 @@ const DETAILS = [
     { label: 'ACE 2005 SOTA (2024)', detail: 'Trigger identification F1 ~78%, trigger classification F1 ~76%, argument identification F1 ~60%, argument role classification F1 ~56-62%.' },
     { label: 'Cross-sentence arguments', detail: 'In the RAMS dataset, 65% of arguments appear in a different sentence from the trigger, and document-level models improve over sentence-level by 8-12% argument F1.' },
     { label: 'Biomedical event extraction', detail: 'On GENIA (BioNLP Shared Task), best systems achieve ~58% F1 on the full event extraction task, with simpler event types (Gene_expression) at ~80% F1 and complex nested events at ~40% F1.' },
-    { label: 'Event trigger ambiguity', detail: 'The same word can trigger different event types depending on context (\"fired\" can be a Conflict:Attack or Personnel:End-Position event).' },
+    { label: 'Event trigger ambiguity', detail: 'The same word can trigger different event types depending on context ("fired" can be a Conflict:Attack or Personnel:End-Position event).' },
     { label: 'Data scarcity', detail: 'ACE 2005 has only ~5,300 event mentions -- far less than datasets for NER (~200K+ mentions in OntoNotes). This data scarcity motivates few-shot and transfer learning approaches.' },
 ];
 
@@ -19,10 +19,10 @@ export default function ExplorerNLPEventExtraction() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Event Extraction — Key Details Explorer
+          Event Extraction \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of event extraction.
+          Click each card to explore the technical details.
         </p>
       </div>
 

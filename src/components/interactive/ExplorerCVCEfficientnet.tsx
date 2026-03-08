@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'SE (Squeeze-and-Excitation) ratio', detail: '0.25 in all MBConv blocks. The SE module first squeezes spatial dimensions via global average pooling, then uses two FC layers to compute channel-wise attention weights.' },
+    { label: 'SE (Squeeze-and-Excitation) ratio', detail: '25 in all MBConv blocks. The SE module first squeezes spatial dimensions via global average pooling, then uses two FC layers to compute channel-wise attention weights.' },
     { label: 'Stochastic depth', detail: 'with linearly increasing drop probability from 0 (early layers) to 0.2-0.3 (final layers) is critical for regularization in larger models.' },
     { label: 'The $\\alpha \\cdot \\beta^2 \\cdot \\gamma^2 \\approx 2$ constraint', detail: 'reflects that FLOPs scale linearly with depth, quadratically with width (both input and output channels), and quadratically with resolution (both spatial dimensions).' },
     { label: 'EfficientNet-B0 vs. ResNet-50', detail: 'B0 achieves 77.1% top-1 (vs. 76.0%) with 5.3M params (vs. 25.6M) and 0.39B FLOPs (vs. 4.1B).' },
@@ -19,10 +19,10 @@ export default function ExplorerCVCEfficientnet() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          EfficientNet — Key Details Explorer
+          EfficientNet \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of efficientnet.
+          Click each card to explore the technical details.
         </p>
       </div>
 

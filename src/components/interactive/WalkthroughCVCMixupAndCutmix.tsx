@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Mixup', desc: 'The foundation of mixup and cutmix begins with understanding its core input requirements and initial setup.' },
-    { title: '2. CutMix', desc: 'At this stage, the key transformation occurs — the core mechanism that makes mixup and cutmix work.' },
-    { title: '3. Key Difference', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Variants', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Mixup', desc: 'Given two training samples (x_i, y_i) and (x_j, y_j), Mixup (Zhang et al., 2018) creates a virtual sample:  [equation] [equation]  where   Beta(, ) and  is a hyperparameter controlling the strength of mixing. Common choices:   = 0.2: mild mixing, most  values near 0 or 1  = 1.' },
+    { title: '2. CutMix', desc: 'CutMix (Yun et al., 2019) replaces a rectangular region of one image with the corresponding region from another:  [equation] [equation]  where M  \\&#123;0, 1\\&#125;^&#123;W x H&#125; is a binary mask with a rectangular hole, and  is the area ratio of the retained region:  [equation]  The cut region dimensions are.' },
+    { title: '3. Key Difference', desc: 'Mixup blends globally, creating ghostly superimposed images that are unnatural. CutMix preserves local pixel statistics -- each region looks natural because it comes from a real image -- while still providing soft labels.' },
+    { title: '4. Variants', desc: 'Manifold Mixup (Verma et al., 2019): applies mixing in hidden layers rather than input space, providing stronger regularization. SaliencyMix (Uddin et al., 2021): pastes the salient region of one image onto another, ensuring informative content is mixed.' },
 ];
 
 export default function WalkthroughCVCMixupAndCutmix() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCMixupAndCutmix() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Mixup and CutMix — Step by Step
+          Mixup and CutMix \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how mixup and cutmix works, one stage at a time.

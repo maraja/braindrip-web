@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Why Negation Is Processed Unreliably', desc: 'The foundation of negative prompting and constraints begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Positive Reframing Pattern', desc: 'At this stage, the key transformation occurs — the core mechanism that makes negative prompting and constraints work.' },
-    { title: '3. Exclusion Patterns That Work', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Constraint Stacking Strategy', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Why Negation Is Processed Unreliably', desc: 'The attention mechanism in transformers assigns variable weight to tokens. When processing "Do not include personal opinions," the high-information tokens — "include," "personal," "opinions" — receive strong attention weights.' },
+    { title: '2. The Positive Reframing Pattern', desc: 'For every negative constraint, there is a positive reframing that specifies the desired behavior instead of the unwanted behavior:  The positive versions work better because they specify the target behavior directly, giving the model a clear generation target rather than a behavior to avoid.' },
+    { title: '3. Exclusion Patterns That Work', desc: 'Some negative instructions work better than others. Concrete, verifiable exclusions are followed more reliably:  Effective exclusions (concrete, verifiable): "Do not include any dates before 2020." "Exclude items priced above $100." "Do not mention competitor names: &#123;list&#125;.' },
+    { title: '4. Constraint Stacking Strategy', desc: 'For critical constraints, combine positive specification with negative reinforcement as a secondary layer:  This "positive first, negative second" pattern achieves higher adherence than either approach alone — approximately 90-95% compared to 85-90% for positive-only and 60-80% for negative-only.' },
 ];
 
 export default function WalkthroughPENegativePromptingAndConstraints() {
@@ -16,10 +16,10 @@ export default function WalkthroughPENegativePromptingAndConstraints() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Negative Prompting and Constraints — Step by Step
+          Negative Prompting and Constraints \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how negative prompting and constraints works, one stage at a time.

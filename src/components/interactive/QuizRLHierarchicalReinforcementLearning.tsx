@@ -2,8 +2,8 @@ import { useState } from 'react';
 export default function QuizRLHierarchicalReinforcementLearning() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Hierarchical RL decomposes complex, long-horizon tasks into layered subtask hierarchies, enabling agents to reason at multiple timescales through temporal abstraction.', isTrue: true, explanation: 'This captures the core purpose of Hierarchical Reinforcement Learning.' },
-    { text: 'Hierarchical Reinforcement Learning is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Hierarchical Reinforcement Learning is important for building on more advanced topics.' },
+    { text: 'HRL always outperforms flat RL', isTrue: false, explanation: ': On short-horizon, dense-reward tasks, flat RL often matches or beats hierarchical methods. HRL\'s advantages emerge primarily with long horizons and sparse rewards.' },
+    { text: 'Hierarchical RL decomposes complex, long-horizon tasks into layered subtask hierarchies, enabling agents to reason at multiple timescales through temporal abstraction.', isTrue: true, explanation: 'This captures the core definition of Hierarchical Reinforcement Learning.' },
     { text: 'Hierarchical Reinforcement Learning is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Hierarchical Reinforcement Learning is important for building on more advanced topics.' },
   ];
   return (

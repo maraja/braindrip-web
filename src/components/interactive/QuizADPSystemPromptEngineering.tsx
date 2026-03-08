@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizADPSystemPromptEngineering() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'System prompts under 1,500 tokens are generally sufficient for focused, single-domain agents.', isTrue: true, explanation: 'This is a key technical detail of System Prompt Engineering.' },
-    { text: 'Prompts above 3,000 tokens should be audited for bloat.', isTrue: true, explanation: 'This is a key technical detail of System Prompt Engineering.' },
-    { text: 'Numbered constraint lists are followed 15-20% more reliably than the same constraints written as prose paragraphs, based on evaluations across Claude and GPT-4-class models.', isTrue: true, explanation: 'This is a key technical detail of System Prompt Engineering.' },
+    { text: 'Longer prompts are more thorough and therefore better.', isTrue: false, explanation: 'Longer prompts increase cost, reduce the budget available for conversation history, and paradoxically reduce instruction-following because critical rules get lost in the middle. Conciseness is a feature.' },
+    { text: 'You can prevent all misuse with the system prompt.', isTrue: false, explanation: 'The system prompt is one layer of defense. It should be combined with input validation, output filtering, tool-level permissions, and monitoring.' },
+    { text: 'System prompts are just \'you are a helpful assistant\' plus some rules.', isTrue: false, explanation: 'The role definition is the least important part. The behavioral constraints, tool instructions, and examples are where the real engineering happens.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

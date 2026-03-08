@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Common Failure Modes', desc: 'The foundation of prompt debugging and failure analysis begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Reproduce-Isolate-Fix-Verify Workflow', desc: 'At this stage, the key transformation occurs — the core mechanism that makes prompt debugging and failure analysis work.' },
-    { title: '3. Log Analysis for Production Debugging', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Attribution Techniques', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Common Failure Modes', desc: 'Understanding the taxonomy of LLM failures is the first step toward diagnosing them:  Hallucination: The model generates information that is factually incorrect or fabricated. This includes fabricated citations, invented statistics, incorrect technical details, and confidently stated misinformation.' },
+    { title: '2. The Reproduce-Isolate-Fix-Verify Workflow', desc: 'Step 1: Reproduce. Capture the exact input that caused the failure, including the full prompt (system prompt + user message + any retrieved context), model parameters (temperature, max tokens, model version), and the specific output that was problematic.' },
+    { title: '3. Log Analysis for Production Debugging', desc: 'Production debugging adds the challenge of scale: you cannot manually review every response. Effective production debugging requires:  Structured logging: Log every request-response pair with metadata — timestamp, user ID, prompt version, model version, latency, token counts, guardrail triggers,.' },
+    { title: '4. Attribution Techniques', desc: 'When a failure occurs, determining which part of the prompt caused it is the hardest and most valuable step. Beyond ablation debugging, advanced attribution techniques include:  Attention analysis: Some models and APIs provide attention weights or token-level logits.' },
 ];
 
 export default function WalkthroughPEPromptDebuggingAndFailureAnalysis() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEPromptDebuggingAndFailureAnalysis() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Prompt Debugging and Failure Analysis — Step by Step
+          Prompt Debugging and Failure Analysis \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how prompt debugging and failure analysis works, one stage at a time.

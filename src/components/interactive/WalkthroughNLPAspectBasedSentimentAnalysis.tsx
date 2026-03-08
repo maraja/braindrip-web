@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Aspect Term Extraction (ATE)', desc: 'The foundation of aspect-based sentiment analysis begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Aspect Category Detection (ACD)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes aspect-based sentiment analysis work.' },
-    { title: '3. Aspect-Level Sentiment Classification (ASC)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Opinion Triplet Extraction', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. SemEval ABSA Shared Tasks', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Aspect Term Extraction (ATE)', desc: 'Aspect term extraction identifies the specific entities or features being discussed in a sentence. In "The battery life is amazing but the screen resolution is disappointing," the aspect terms are "battery life" and "screen resolution.' },
+    { title: '2. Aspect Category Detection (ACD)', desc: 'While aspect term extraction identifies explicit mentions, aspect category detection assigns predefined categories even when the aspect is not explicitly stated. In "This place is overpriced," there is no explicit aspect term, but the sentence expresses an opinion about the PRICE category.' },
+    { title: '3. Aspect-Level Sentiment Classification (ASC)', desc: 'Given a sentence and a specified aspect (term or category), aspect-level sentiment classification determines the sentiment toward that specific aspect. This is the most heavily studied ABSA subtask.' },
+    { title: '4. Opinion Triplet Extraction', desc: 'The most complete formulation of ABSA is opinion triplet extraction, which jointly identifies (aspect term, opinion term, sentiment polarity) triples. For "The food was delicious but overpriced":  Triple 1: (food, delicious, positive) Triple 2: (food, overpriced, negative)  Note that the same.' },
+    { title: '5. SemEval ABSA Shared Tasks', desc: 'The SemEval shared tasks have been the primary evaluation venue for ABSA:  SemEval-2014 Task 4 (Pontiki et al., 2014): Introduced the standard ABSA framework with four subtasks: aspect term extraction, aspect term polarity, aspect category detection, and aspect category polarity.' },
+    { title: '6. Neural Architecture Details', desc: 'Aspect-aware encoding: The key architectural innovation across ABSA models is making the sentence encoding aspect-conditional. Rather than computing a single representation of the sentence, the model produces different representations depending on which aspect is being evaluated.' },
 ];
 
 export default function WalkthroughNLPAspectBasedSentimentAnalysis() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPAspectBasedSentimentAnalysis() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Aspect-Based Sentiment Analysis — Step by Step
+          Aspect-Based Sentiment Analysis \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how aspect-based sentiment analysis works, one stage at a time.

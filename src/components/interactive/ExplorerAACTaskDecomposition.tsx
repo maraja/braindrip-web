@@ -3,10 +3,10 @@ import { useState } from 'react';
 const DETAILS = [
     { label: 'Optimal decomposition depth', detail: '2-3 levels for most tasks; deeper decomposition has diminishing returns and increases planning overhead' },
     { label: 'Ideal subtask count per level', detail: '3-7 subtasks; fewer than 3 suggests the decomposition is too coarse, more than 7 suggests it needs another level of hierarchy' },
-    { label: 'Decomposition prompt pattern', detail: '\"Break this goal into a numbered list of subtasks. Each subtask should be specific enough to execute with a single tool call. Include dependencies (which steps depend on which).\"' },
+    { label: 'Decomposition prompt pattern', detail: '"Break this goal into a numbered list of subtasks. Each subtask should be specific enough to execute with a single tool call. Include dependencies (which steps depend on which)."' },
     { label: 'Common failure', detail: 'Over-decomposition where the agent generates 20+ trivially small steps, spending more tokens on planning than execution would require' },
     { label: 'Dependency representation', detail: 'Often stored as a list of (task_id, depends_on: [task_ids]) pairs, enabling topological sort for execution ordering' },
-    { label: 'Verification criteria', detail: 'Each subtask should specify what \"done\" looks like, e.g., \"Search returns at least 3 relevant results\" or \"Summary is 200-300 words and covers all three perspectives\"' },
+    { label: 'Verification criteria', detail: 'Each subtask should specify what "done" looks like, e.g., "Search returns at least 3 relevant results" or "Summary is 200-300 words and covers all three perspectives"' },
 ];
 
 export default function ExplorerAACTaskDecomposition() {
@@ -20,10 +20,10 @@ export default function ExplorerAACTaskDecomposition() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Task Decomposition — Key Details Explorer
+          Task Decomposition \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of task decomposition.
+          Click each card to explore the technical details.
         </p>
       </div>
 

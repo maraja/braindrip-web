@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Latent Semantic Analysis (LSA)', desc: 'The foundation of topic modeling begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Latent Dirichlet Allocation (LDA)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes topic modeling work.' },
-    { title: '3. Non-negative Matrix Factorization (NMF)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Neural Topic Models', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Evaluation', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Latent Semantic Analysis (LSA)', desc: 'LSA (Deerwester et al., 1990) applies Truncated Singular Value Decomposition (SVD) to the term-document matrix. Given a term-document matrix X of size  x N (vocabulary by documents), SVD decomposes it as:  Where U_k ( x k) contains term-topic associations, S_k (k x k) holds singular values.' },
+    { title: '2. Latent Dirichlet Allocation (LDA)', desc: 'LDA (Blei, Pritchard, and Ng, 2003) is the most influential topic model. It defines a fully generative process:  The Generative Story: For each topic k = 1, ..., K: draw a word distribution phi_k ~ Dirichlet(beta) For each document d = 1, ..., N:    a.' },
+    { title: '3. Non-negative Matrix Factorization (NMF)', desc: 'NMF (Lee and Seung, 1999, applied to text by Xu et al., 2003) factorizes the term-document matrix X ≈ W * H, where all entries in W (_F or KL divergence.' },
+    { title: '4. Neural Topic Models', desc: 'Recent approaches combine the generative framework of LDA with neural network flexibility:  ProdLDA (Srivastava and Sutton, 2017): Replaces LDA\'s Dirichlet prior with a logistic-normal approximation and uses a Variational Autoencoder (VAE) architecture.' },
+    { title: '5. Evaluation', desc: 'Topic model evaluation is notoriously difficult because ground truth is rarely available:  Topic coherence (Mimno et al., 2011): Measures whether the top-N words in a topic tend to co-occur in a reference corpus. C_V coherence (Roder et al.' },
+    { title: '6. The Number-of-Topics Selection Problem', desc: 'Choosing K (the number of topics) remains an open challenge: Heuristic approaches: Try K = 10, 20, 50, 100 and select based on coherence scores. Hierarchical Dirichlet Process (HDP): A nonparametric extension of LDA that infers K from data, though it tends to produce many small topics.' },
 ];
 
 export default function WalkthroughNLPTopicModeling() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPTopicModeling() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Topic Modeling — Step by Step
+          Topic Modeling \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how topic modeling works, one stage at a time.

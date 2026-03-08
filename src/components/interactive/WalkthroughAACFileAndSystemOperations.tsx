@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. File Reading', desc: 'The foundation of file and system operations begins with understanding its core input requirements and initial setup.' },
-    { title: '2. File Writing and Editing', desc: 'At this stage, the key transformation occurs — the core mechanism that makes file and system operations work.' },
-    { title: '3. Search Operations', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. System Command Execution', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. File Reading', desc: 'Reading tools let the agent inspect file contents. Implementations range from simple (read entire file) to sophisticated:  Full file read: Returns the complete content of a file.' },
+    { title: '2. File Writing and Editing', desc: 'Writing tools range from overwrite (replace entire file) to surgical edit:  Full file write: Replace a file\'s entire content. Simple but risky for large files where the agent might inadvertently drop content.' },
+    { title: '3. Search Operations', desc: 'Search tools let the agent find information across a codebase or document collection:  Pattern search (grep/ripgrep): Search for regex patterns across files. Essential for finding function definitions, usages, configuration values, and error messages.' },
+    { title: '4. System Command Execution', desc: 'Running shell commands extends the agent beyond the file system:  Build commands: npm install, pip install, cargo build — setting up and building projects. Test runners: pytest, jest, go test — running test suites and interpreting results.' },
 ];
 
 export default function WalkthroughAACFileAndSystemOperations() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACFileAndSystemOperations() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          File and System Operations — Step by Step
+          File and System Operations \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how file and system operations works, one stage at a time.

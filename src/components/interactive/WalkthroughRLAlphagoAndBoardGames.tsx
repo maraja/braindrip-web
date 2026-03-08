@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. AlphaGo (2016): Human Data + RL + MCTS', desc: 'The foundation of alphago and board games begins with understanding its core input requirements and initial setup.' },
-    { title: '2. AlphaGo Zero (2017): No Human Data', desc: 'At this stage, the key transformation occurs — the core mechanism that makes alphago and board games work.' },
-    { title: '3. AlphaZero (2018): Generalization Across Games', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Move 37: Machine Creativity', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. AlphaGo (2016): Human Data + RL + MCTS', desc: 'AlphaGo combined four components:  Supervised learning policy network p_(a|s): A 13-layer CNN trained on 30 million positions from expert human games on the KGS Go server, achieving 57% accuracy in predicting expert moves.' },
+    { title: '2. AlphaGo Zero (2017): No Human Data', desc: 'AlphaGo Zero made three fundamental simplifications:  No human data: Training started from random weights and used only self-play. Single network: One network with two heads -- a policy head p = f_^p(s) and a value head v = f_^v(s) -- replaced the separate policy and value networks.' },
+    { title: '3. AlphaZero (2018): Generalization Across Games', desc: 'AlphaZero applied the same algorithm to Go, chess, and shogi with minimal game-specific modification. Key differences from AlphaGo Zero:  Draws are handled (chess and shogi have draws; Go does not) The network uses the same architecture across all three games No data augmentation exploiting Go\'s.' },
+    { title: '4. Move 37: Machine Creativity', desc: 'In Game 2 against Lee Sedol, AlphaGo played a move on the 37th turn -- a shoulder hit on the fifth line -- that no human expert had considered. Professional commentators initially called it a mistake.' },
 ];
 
 export default function WalkthroughRLAlphagoAndBoardGames() {
@@ -16,10 +16,10 @@ export default function WalkthroughRLAlphagoAndBoardGames() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          AlphaGo and Board Games — Step by Step
+          AlphaGo and Board Games \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how alphago and board games works, one stage at a time.

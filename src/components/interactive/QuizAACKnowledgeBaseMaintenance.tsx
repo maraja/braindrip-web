@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACKnowledgeBaseMaintenance() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Build it once and forget it.', isTrue: false, explanation: '"Build it once and forget it." This is the most dangerous misconception. RAG knowledge bases require ongoing maintenance proportional to the rate of change in the underlying domain. Neglecting mainten' },
-    { text: 'Source freshness tracking: Each chunk stores its source URL, last-checked timestamp, expected update frequency, and content hash.', isTrue: true, explanation: 'This is a key technical detail of Knowledge Base Maintenance.' },
-    { text: 'A background process periodically fetches sources and compares hashes to detect changes.', isTrue: true, explanation: 'This is a key technical detail of Knowledge Base Maintenance.' },
+    { text: 'Build it once and forget it.', isTrue: false, explanation: 'This is the most dangerous misconception. RAG knowledge bases require ongoing maintenance proportional to the rate of change in the underlying domain.' },
+    { text: 'Each chunk stores its source URL, last-checked timestamp, expected update frequency, and content hash.', isTrue: true, explanation: 'A background process periodically fetches sources and compares hashes to detect changes.' },
+    { text: 'Just add new content, don\'t remove old content.', isTrue: false, explanation: 'Keeping outdated content alongside current content creates contradictions and pollution. The system may retrieve the old (wrong) version instead of the new (correct) one, especially if the old version has more chunks or better keyword matches.' },
+    { text: 'When upgrading to a better embedding model, all existing embeddings become incompatible with new query embeddings.', isTrue: true, explanation: 'Migration requires re-embedding the entire corpus -- a potentially expensive operation for large knowledge bases. Blue-green deployment (maintaining two indexes during migration) avoids downtime.' },
+    { text: 'Deduplication is optional.', isTrue: false, explanation: 'In practice, duplication rates of 10-30% are common in enterprise knowledge bases that ingest from multiple sources. This directly impacts retrieval quality by wasting slots in the top-k results on redundant information.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

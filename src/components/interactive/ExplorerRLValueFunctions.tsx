@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'DQN', detail: '(Mnih et al., 2015) approximates $Q^*$ with a CNN and uses experience replay (buffer of $10^6$ transitions) and a target network (updated every $10{,}000$ steps) for stability.' },
     { label: 'Double Q-learning', detail: '(van Hasselt et al., 2016) addresses overestimation bias in Q-learning by decoupling action selection from evaluation.' },
-    { label: 'Dueling networks', detail: '(Wang et al., 2016) decompose $Q(s, a) = V(s) + A(s, a)$ architecturally, sharing representation for the state-value.' },
-    { label: 'Value function approximation can diverge', detail: 'in the off-policy, function approximation, bootstrapping setting (the \"deadly triad\" identified by Sutton & Barto).' },
+    { label: 'Dueling networks', detail: '(Wang et al., 2016) decompose Q(s, a) = V(s) + A(s, a) architecturally, sharing representation for the state-value.' },
+    { label: 'Value function approximation can diverge', detail: 'in the off-policy, function approximation, bootstrapping setting (the "deadly triad" identified by Sutton & Barto).' },
 ];
 
 export default function ExplorerRLValueFunctions() {
@@ -18,10 +17,10 @@ export default function ExplorerRLValueFunctions() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Value Functions — Key Details Explorer
+          Value Functions \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of value functions.
+          Click each card to explore the technical details.
         </p>
       </div>
 

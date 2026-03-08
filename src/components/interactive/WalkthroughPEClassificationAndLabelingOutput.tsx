@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Label Space Design', desc: 'The foundation of classification and labeling output begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Single-Label vs Multi-Label Classification', desc: 'At this stage, the key transformation occurs — the core mechanism that makes classification and labeling output work.' },
-    { title: '3. Chain-of-Thought Before Classification', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Hierarchical Classification', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Label Space Design', desc: 'The label space — the set of possible categories — is the foundation of any classification task. Two principles govern good label space design:  Exhaustiveness: Every possible input must fit into at least one category.' },
+    { title: '2. Single-Label vs Multi-Label Classification', desc: 'Single-label classification assigns exactly one category per input. The prompt should explicitly state this constraint: "Choose exactly one of the following categories." Multi-label classification allows multiple simultaneous labels — a support ticket might be both "Billing" and "Urgent.' },
+    { title: '3. Chain-of-Thought Before Classification', desc: 'Having the model reason before classifying improves accuracy by 5-10% on complex tasks. The pattern is:  Analyze the input and identify relevant features.' },
+    { title: '4. Hierarchical Classification', desc: 'Some classification tasks have natural hierarchies: "Electronics &gt; Computers &gt; Laptops &gt; Gaming Laptops." Two approaches work for hierarchical classification:  Top-down: Classify at the broadest level first, then narrow.' },
 ];
 
 export default function WalkthroughPEClassificationAndLabelingOutput() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEClassificationAndLabelingOutput() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Classification and Labeling Output — Step by Step
+          Classification and Labeling Output \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how classification and labeling output works, one stage at a time.

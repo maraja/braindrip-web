@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The General Knowledge Era: MMLU (2020-2024)', desc: 'The foundation of the benchmark and evaluation landscape begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Reasoning Challenge: GPQA Diamond and MATH', desc: 'At this stage, the key transformation occurs — the core mechanism that makes the benchmark and evaluation landscape work.' },
-    { title: '3. The New Frontier: ARC-AGI-1 and FrontierMath', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Practical Coding Test: SWE-bench', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Code Generation Benchmarks: HumanEval and MBPP', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The General Knowledge Era: MMLU (2020-2024)', desc: 'MMLU (Massive Multitask Language Understanding), introduced by Hendrycks et al. in 2020, became the de facto standard for measuring LLM capability.' },
+    { title: '2. The Reasoning Challenge: GPQA Diamond and MATH', desc: 'As MMLU saturated, harder benchmarks emerged. GPQA Diamond (Graduate-Level Google-Proof Q&A), introduced by Rein et al.' },
+    { title: '3. The New Frontier: ARC-AGI-1 and FrontierMath', desc: 'As traditional reasoning benchmarks saturated, two new benchmarks gained prominence. ARC-AGI-1 (Abstraction and Reasoning Corpus) tests general reasoning through visual pattern recognition and abstract problem-solving — capabilities that resist memorization and require genuine generalization.' },
+    { title: '4. The Practical Coding Test: SWE-bench', desc: 'SWE-bench (Jimenez et al., 2024) represented a qualitative shift in evaluation philosophy. Rather than testing knowledge or reasoning in isolation, SWE-bench measures whether a model can resolve real GitHub issues — understanding a codebase, diagnosing a bug, implementing a fix, and producing code.' },
+    { title: '5. Code Generation Benchmarks: HumanEval and MBPP', desc: 'HumanEval (Chen et al., 2021, OpenAI) contains 164 hand-written Python programming problems with test cases. MBPP (Mostly Basic Python Problems) provides 974 crowd-sourced programming challenges.' },
+    { title: '6. Competitive Programming: Codeforces', desc: 'Codeforces ELO ratings emerged as an evaluation method for reasoning models. OpenAI reported o1\'s and o3\'s competitive programming performance as Codeforces ELO equivalents, providing an intuitive scale (percentile ranking among human competitive programmers).' },
 ];
 
 export default function WalkthroughLLE01TheBenchmarkAndEvaluationLandscape() {
@@ -17,10 +18,10 @@ export default function WalkthroughLLE01TheBenchmarkAndEvaluationLandscape() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The Benchmark and Evaluation Landscape — Step by Step
+          The Benchmark and Evaluation Landscape \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how the benchmark and evaluation landscape works, one stage at a time.

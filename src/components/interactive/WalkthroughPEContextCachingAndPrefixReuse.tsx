@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. How KV Caching Works Internally', desc: 'The foundation of context caching and prefix reuse begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Provider Implementations', desc: 'At this stage, the key transformation occurs — the core mechanism that makes context caching and prefix reuse work.' },
-    { title: '3. Designing for Cache-Friendly Prompts', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Cache TTL Considerations', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. How KV Caching Works Internally', desc: 'When a transformer model processes a token, it generates key and value vectors that represent that token\'s contribution to the attention mechanism. For a 100K-token system prompt, the model must compute KV pairs for all 100K tokens before it can begin processing the user\'s query.' },
+    { title: '2. Provider Implementations', desc: 'Anthropic: Supports explicit cache control with cache_control markers in the message structure. You designate which message blocks should be cached.' },
+    { title: '3. Designing for Cache-Friendly Prompts', desc: 'To maximize cache hits, structure your prompts with stable content first and variable content last:  The longer the stable prefix, the greater the cache benefit.' },
+    { title: '4. Cache TTL Considerations', desc: 'Cache entries expire after a time-to-live (TTL) period. Understanding TTL behavior is important for design:  Short TTLs (Anthropic: 5 minutes): Caches benefit consecutive requests from the same user session or high-traffic endpoints where many requests hit the same prefix within minutes.' },
 ];
 
 export default function WalkthroughPEContextCachingAndPrefixReuse() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEContextCachingAndPrefixReuse() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Context Caching and Prefix Reuse — Step by Step
+          Context Caching and Prefix Reuse \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how context caching and prefix reuse works, one stage at a time.

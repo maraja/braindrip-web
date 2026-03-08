@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPETemperatureAndSampling() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Temperature mathematically scales logits before softmax: softmax(logits / T).', isTrue: true, explanation: 'This is a key technical detail of Temperature and Sampling.' },
-    { text: 'T=0 is implemented as argmax.', isTrue: true, explanation: 'This is a key technical detail of Temperature and Sampling.' },
-    { text: 'Top-p = 0.9 means the model samples from the smallest token set covering 90% cumulative probability.', isTrue: true, explanation: 'This is a key technical detail of Temperature and Sampling.' },
+    { text: 'Temperature controls the model\'s intelligence or reasoning ability.', isTrue: false, explanation: 'Temperature only affects how the model selects from its probability distribution. It does not change the distribution itself.' },
+    { text: 'Higher temperature means more creative and better writing.', isTrue: false, explanation: 'Higher temperature increases diversity but not quality. Beyond T=1.0, output quality typically degrades as the model increasingly selects low-probability (and often incoherent) tokens.' },
+    { text: 'T=0 is always best for production.', isTrue: false, explanation: 'T=0 is best for deterministic tasks, but for conversational applications, T=0 produces robotic, repetitive output. Users report higher satisfaction with T=0.5-0.8 for conversational AI.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

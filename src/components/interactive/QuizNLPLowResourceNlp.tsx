@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPLowResourceNlp() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Zero-shot cross-lingual transfer with XLM-R: 0 target-language labels needed; achieves 60--80% of supervised performance.', isTrue: true, explanation: 'This is a key technical detail of Low-Resource NLP.' },
-    { text: 'Few-shot with PET: 10 labels per class achieves within 5% of full supervision on English benchmarks.', isTrue: true, explanation: 'This is a key technical detail of Low-Resource NLP.' },
-    { text: 'GPT-3 in-context learning: 32 labeled examples in the prompt achieves 80--90% of fine-tuned BERT for classification.', isTrue: true, explanation: 'This is a key technical detail of Low-Resource NLP.' },
+    { text: 'Low-resource just means not enough labeled data.', isTrue: false, explanation: 'The compound effect is critical: low-resource languages also lack tokenizers, pretrained models, annotators, evaluation data, and often a standardized writing system. Data scarcity is the most visible symptom of a deeper infrastructure gap.' },
+    { text: 'Zero-shot transfer eliminates the need for target-language data.', isTrue: false, explanation: 'Zero-shot performance varies enormously by language. For languages typologically distant from English or underrepresented in multilingual pre-training data, zero-shot transfer may perform only marginally above random.' },
+    { text: 'Data augmentation can replace real labeled data.', isTrue: false, explanation: 'Augmentation amplifies existing signal but cannot create signal from nothing. With 0 labeled examples, augmentation is impossible.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

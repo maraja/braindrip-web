@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Decomposition', desc: 'The foundation of bias-variance tradeoff begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Deriving the Decomposition', desc: 'At this stage, the key transformation occurs — the core mechanism that makes bias-variance tradeoff work.' },
-    { title: '3. Model Complexity and the Tradeoff', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Concrete Example: Polynomial Regression', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Bullseye Diagram', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Decomposition', desc: 'Consider a regression setting where we want to predict y = f(x) + , with  being noise with &#123;E&#125;[] = 0 and Var() = ^2. Let &#123;f&#125;(x) be the model trained on a particular training set &#123;D&#125;.' },
+    { title: '2. Deriving the Decomposition', desc: 'Starting from the expected squared error and letting &#123;f&#125;(x) = &#123;E&#125;_&#123;&#123;D&#125;&#125;[&#123;f&#125;(x)]:  [equation]  [equation]  Since  is independent of &#123;f&#125; and has zero mean, the cross term vanishes:  [equation]  Now decompose the first term by adding and subtracting &#123;f&#125;:  [equation]  This yields Bias^2 + Variance,.' },
+    { title: '3. Model Complexity and the Tradeoff', desc: 'As model complexity increases:  Bias decreases: More flexible models can approximate the true function more closely. Variance increases: More flexible models are more sensitive to the specific training data.' },
+    { title: '4. Concrete Example: Polynomial Regression', desc: 'Fitting a polynomial of degree d to noisy data from a true cubic function:  d = 1 (linear): High bias (cannot capture curvature), low variance. The line is similar regardless of which training points you sample.' },
+    { title: '5. The Bullseye Diagram', desc: 'Visualize four scenarios on a dart board:  Low bias, low variance: Darts clustered tightly around the center. Ideal but hard to achieve.' },
+    { title: '6. Quantitative Example', desc: 'Suppose the true function is f(x) = (x) and we observe y = (x) +  with   &#123;N&#125;(0, 0.1). We fit models of varying complexity across 100 different training sets of size n = 30:  The cubic model achieves the lowest total error.' },
 ];
 
 export default function WalkthroughMLFBiasVarianceTradeoff() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFBiasVarianceTradeoff() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Bias-Variance Tradeoff — Step by Step
+          Bias-Variance Tradeoff \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how bias-variance tradeoff works, one stage at a time.

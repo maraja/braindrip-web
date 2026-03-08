@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizRLPolicyGradientTheorem() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The theorem holds for both episodic (finite horizon) and continuing (infinite horizon with discounting or average reward) settings.', isTrue: true, explanation: 'This is a key technical detail of Policy Gradient Theorem.' },
-    { text: 'The score function $\\nabla_\\theta \\log \\pi_\\theta(a|s)$ has expectation zero: $\\mathbb&#123;E&#125;_&#123;a \\sim \\pi_\\theta&#125;[\\nabla_\\theta \\log \\pi_\\theta(a|s)] = 0$.', isTrue: true, explanation: 'This is a key technical detail of Policy Gradient Theorem.' },
-    { text: 'This allows subtracting any state-dependent baseline without introducing bias.', isTrue: true, explanation: 'This is a key technical detail of Policy Gradient Theorem.' },
+    { text: 'The policy gradient theorem requires a differentiable environment.', isTrue: false, explanation: 'False -- this is precisely what the theorem avoids. The environment is treated as a black box; only the policy must be differentiable with respect to .' },
+    { text: 'The mathematical foundation that enables direct optimization of parameterized policies via gradient ascent on expected return, bypassing the need to differentiate through unknown environment dynamics.', isTrue: true, explanation: 'This captures the core definition of Policy Gradient Theorem.' },
+    { text: 'Policy Gradient Theorem is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Policy Gradient Theorem is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

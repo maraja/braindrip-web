@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Statistical Approaches: TF-IDF Based', desc: 'The foundation of keyword extraction begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Graph-Based Approaches: TextRank and RAKE', desc: 'At this stage, the key transformation occurs — the core mechanism that makes keyword extraction work.' },
-    { title: '3. Embedding-Based Approaches: KeyBERT', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Supervised Keyphrase Extraction', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Evaluation', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Statistical Approaches: TF-IDF Based', desc: 'The simplest keyword extraction method ranks candidate terms by their TF-IDF score (see 03-text-representation/tf-idf.md). Terms with high term frequency in the target document but low document frequency across the corpus are likely keywords.' },
+    { title: '2. Graph-Based Approaches: TextRank and RAKE', desc: 'TextRank (Mihalcea and Tarau, 2004) applies PageRank to a word co-occurrence graph. The algorithm: Build a graph where nodes are words (typically nouns and adjectives) and edges connect words co-occurring within a window of W words (usually W = 2-5).' },
+    { title: '3. Embedding-Based Approaches: KeyBERT', desc: 'KeyBERT (Grootendorst, 2020) leverages pre-trained sentence embeddings to find keywords that are semantically closest to the overall document:  Encode the full document into a single embedding using a sentence transformer (e.g., all-MiniLM-L6-v2).' },
+    { title: '4. Supervised Keyphrase Extraction', desc: 'Supervised approaches train sequence labeling or classification models on corpora with human-annotated keyphrases:  Sequence labeling: Tag each token as B-KP (beginning of keyphrase), I-KP (inside keyphrase), or O (outside).' },
+    { title: '5. Evaluation', desc: 'Keyword extraction is evaluated against human-annotated gold keyphrases: Exact match: Precision, recall, and F1 computed on exact string matches between predicted and gold keyphrases (after stemming). F1@5 and F1@10 are standard metrics.' },
 ];
 
 export default function WalkthroughNLPKeywordExtraction() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPKeywordExtraction() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Keyword Extraction — Step by Step
+          Keyword Extraction \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how keyword extraction works, one stage at a time.

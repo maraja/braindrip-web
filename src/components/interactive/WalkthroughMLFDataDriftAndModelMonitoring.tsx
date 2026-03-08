@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Types of Drift', desc: 'The foundation of data drift and model monitoring begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Drift Detection Methods', desc: 'At this stage, the key transformation occurs — the core mechanism that makes data drift and model monitoring work.' },
-    { title: '3. Model Performance Monitoring', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Alerting Thresholds', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Retraining Strategies', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Types of Drift', desc: 'There are several distinct forms of drift, each with different causes and detection strategies:  Covariate Shift (Feature Drift): The input distribution P(X) changes while the relationship P(Y|X) remains stable.' },
+    { title: '2. Drift Detection Methods', desc: 'Kolmogorov-Smirnov (KS) Test: A nonparametric test comparing two distributions. For each feature, compute the maximum difference between the empirical CDFs of the training and production data:  [equation]  Reject the null hypothesis (distributions are identical) when D exceeds a critical value.' },
+    { title: '3. Model Performance Monitoring', desc: 'Drift detection is a leading indicator. The lagging indicator is actual model performance degradation.' },
+    { title: '4. Alerting Thresholds', desc: 'Set alerts at multiple severity levels: Warning: PSI &gt; 0.1 on any feature, or KS test p-value &lt; 0.05 on multiple features simultaneously. Critical: PSI &gt; 0.25, or model performance drops below a defined SLA (e.g., AUC &lt; 0.85).' },
+    { title: '5. Retraining Strategies', desc: 'Scheduled retraining: Retrain on a fixed cadence (weekly, monthly). Simple but wasteful if data is stable, and too slow if drift is rapid.' },
+    { title: '6. Shadow Mode Deployment', desc: 'Before replacing a production model, deploy the new candidate in shadow mode: it receives the same traffic and makes predictions, but those predictions are not served to users. Compare shadow predictions against the current production model to validate improvement before switching.' },
 ];
 
 export default function WalkthroughMLFDataDriftAndModelMonitoring() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFDataDriftAndModelMonitoring() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Data Drift and Model Monitoring — Step by Step
+          Data Drift and Model Monitoring \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how data drift and model monitoring works, one stage at a time.

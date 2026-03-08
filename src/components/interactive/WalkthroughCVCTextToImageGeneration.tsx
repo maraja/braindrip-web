@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Diffusion Framework', desc: 'The foundation of text-to-image generation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Classifier-Free Guidance', desc: 'At this stage, the key transformation occurs — the core mechanism that makes text-to-image generation work.' },
-    { title: '3. Key Systems', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. FLUX (Black Forest Labs, 2024)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Diffusion Framework', desc: 'Text-to-image diffusion models learn to reverse a noising process. During training:  Take a clean image x_0 Add Gaussian noise over T steps: x_t = &#123;&#123;&#125;_t&#125;\\,x_0 + &#123;1 - &#123;&#125;_t&#125;\\,&#123;&#125; Train a neural network _(x_t, t, c) to predict the noise &#123;&#125; given the noisy image, timestep t, and text conditioning c  At.' },
+    { title: '2. Classifier-Free Guidance', desc: 'The most important practical technique for text-to-image quality. During training, the text condition is randomly dropped (replaced with null) some fraction of the time (typically 10%).' },
+    { title: '3. Key Systems', desc: 'DALL-E 2 (OpenAI, April 2022): Two-stage: a prior maps CLIP text embeddings to CLIP image embeddings, then a diffusion decoder generates pixels from the image embedding 5B parameter diffusion model, 64px base + two super-resolution stages to 1024px Demonstrated strong text-image alignment but.' },
+    { title: '4. FLUX (Black Forest Labs, 2024)', desc: 'Built by former Stability AI researchers Transformer-based architecture with flow matching instead of traditional diffusion FLUX.1 [dev] is open-weight; demonstrates strong prompt adherence and image quality Represents the trend toward flow-matching objectives replacing DDPM/DDIM' },
 ];
 
 export default function WalkthroughCVCTextToImageGeneration() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCTextToImageGeneration() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Text-to-Image Generation — Step by Step
+          Text-to-Image Generation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how text-to-image generation works, one stage at a time.

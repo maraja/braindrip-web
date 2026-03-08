@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCHybridCnnTransformer() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Replacing ViT\'s linear patch projection with a 5-layer convolutional stem consistently improves accuracy by 0.5-1.5% on ImageNet-1K without changing model size.', isTrue: true, explanation: 'This is a key technical detail of Hybrid CNN-Transformer Architectures.' },
-    { text: 'CoAtNet uses relative attention with learned position biases (similar to Swin) rather than absolute positional embeddings.', isTrue: true, explanation: 'This is a key technical detail of Hybrid CNN-Transformer Architectures.' },
-    { text: 'The depthwise convolution in CoAtNet\'s FFN has kernel size $3 \\times 3$, adding negligible parameters but providing local context.', isTrue: true, explanation: 'This is a key technical detail of Hybrid CNN-Transformer Architectures.' },
+    { text: 'Hybrids are just an intermediate step before pure Transformers take over.', isTrue: false, explanation: 'As of 2024, hybrid architectures still dominate efficiency-focused leaderboards. EfficientNetV2 (which blends Fused-MBConv and MBConv) and CoAtNet remain highly competitive.' },
+    { text: 'Hybrid models use CNN layers for early-stage local feature extraction and Transformer layers for later-stage global reasoning, combining the inductive biases of convolutions with the flexibility of self-attention.', isTrue: true, explanation: 'This captures the core definition of Hybrid CNN-Transformer Architectures.' },
+    { text: 'Hybrid CNN-Transformer Architectures is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Hybrid CNN-Transformer Architectures is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

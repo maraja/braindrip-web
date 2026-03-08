@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFHyperparameterTuning() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Budget allocation: With a fixed compute budget, random search with 60-100 trials is a strong baseline.', isTrue: true, explanation: 'This is a key technical detail of Hyperparameter Tuning.' },
-    { text: 'Bayesian optimization shines when each trial is expensive and the budget is &lt; 50 trials.', isTrue: true, explanation: 'This is a key technical detail of Hyperparameter Tuning.' },
-    { text: 'Warm starting: Some Bayesian optimization frameworks can initialize from previous runs, transferring knowledge across related tasks.', isTrue: true, explanation: 'This is a key technical detail of Hyperparameter Tuning.' },
+    { text: 'Grid search is the gold standard.', isTrue: false, explanation: 'Grid search is the most wasteful approach in high dimensions. Random search is strictly better for the same budget when some hyperparameters are unimportant.' },
+    { text: 'With a fixed compute budget, random search with 60-100 trials is a strong baseline.', isTrue: true, explanation: 'Bayesian optimization shines when each trial is expensive and the budget is &lt; 50 trials.' },
+    { text: 'Some Bayesian optimization frameworks can initialize from previous runs, transferring knowledge across related tasks.', isTrue: true, explanation: 'Some Bayesian optimization frameworks can initialize from previous runs, transferring knowledge across related tasks.' },
+    { text: 'Evaluating on smaller datasets or fewer epochs as a proxy.', isTrue: true, explanation: 'Hyperband automates this.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

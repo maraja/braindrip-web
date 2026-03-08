@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizMLFAdaboost() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Convergence: Training error drops exponentially with the number of rounds $T$, provided each weak learner maintains $\\epsilon_t &lt; 0.5$.', isTrue: true, explanation: 'This is a key technical detail of AdaBoost.' },
-    { text: 'Overfitting resistance: Empirically, AdaBoost often continues to improve test error even after training error reaches zero.', isTrue: true, explanation: 'This is a key technical detail of AdaBoost.' },
-    { text: 'This puzzling behavior is partially explained by the margin theory -- AdaBoost continues to increase the margin of correctly classified examples, improving generalization.', isTrue: true, explanation: 'This is a key technical detail of AdaBoost.' },
+    { text: 'AdaBoost creates complex base learners.', isTrue: false, explanation: 'The base learners are deliberately simple -- often single decision stumps. The complexity comes from the weighted combination, not from individual learner sophistication.' },
+    { text: 'Training error drops exponentially with the number of rounds T, provided each weak learner maintains _t &lt; 0.5.', isTrue: true, explanation: 'Training error drops exponentially with the number of rounds T, provided each weak learner maintains _t &lt; 0.5.' },
+    { text: 'Boosting always outperforms bagging.', isTrue: false, explanation: 'On noisy datasets, AdaBoost\'s aggressive focus on hard examples amplifies noise, leading to worse performance than bagging or Random Forests. The exponential loss is particularly sensitive to outliers.' },
+    { text: 'Empirically, AdaBoost often continues to improve test error even after training error reaches zero.', isTrue: true, explanation: 'This puzzling behavior is partially explained by the margin theory -- AdaBoost continues to increase the margin of correctly classified examples, improving generalization.' },
+    { text: 'The weak learning condition is hard to satisfy.', isTrue: false, explanation: 'For decision stumps on real-world data, achieving _t &lt; 0.5 is almost always trivially satisfied. The condition becomes challenging only in degenerate cases where no feature provides any predictive signal on the reweighted distribution.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

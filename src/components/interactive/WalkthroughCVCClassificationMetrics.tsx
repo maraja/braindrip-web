@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Confusion Matrix', desc: 'The foundation of classification metrics begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Core Metrics', desc: 'At this stage, the key transformation occurs — the core mechanism that makes classification metrics work.' },
-    { title: '3. Multi-Class Averaging', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Threshold-Independent Metrics', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Calibration Metrics', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Confusion Matrix', desc: 'For a binary classifier with classes Positive (P) and Negative (N):  For K classes, the confusion matrix is K x K, where entry (i, j) counts samples of true class i predicted as class j.' },
+    { title: '2. Core Metrics', desc: 'Accuracy: Fraction of correct predictions. [equation]  Simple and intuitive, but misleading under class imbalance.' },
+    { title: '3. Multi-Class Averaging', desc: 'For K-class problems, per-class precision and recall must be aggregated:  Macro Average: Compute the metric for each class, then average. Treats all classes equally regardless of size.' },
+    { title: '4. Threshold-Independent Metrics', desc: 'ROC-AUC (Receiver Operating Characteristic - Area Under Curve): Plots True Positive Rate vs. False Positive Rate at all thresholds.' },
+    { title: '5. Calibration Metrics', desc: 'Expected Calibration Error (ECE): Measures how well predicted probabilities match actual correctness rates. Bins predictions by confidence, computes the gap between average confidence and accuracy per bin:  [equation]  A well-calibrated model has ECE close to 0.' },
 ];
 
 export default function WalkthroughCVCClassificationMetrics() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCClassificationMetrics() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Classification Metrics — Step by Step
+          Classification Metrics \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how classification metrics works, one stage at a time.

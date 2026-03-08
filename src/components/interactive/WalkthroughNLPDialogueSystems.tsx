@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Task-Oriented Dialogue Systems', desc: 'The foundation of dialogue systems begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Open-Domain Dialogue Systems', desc: 'At this stage, the key transformation occurs — the core mechanism that makes dialogue systems work.' },
-    { title: '3. Evaluation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Modern LLM-Based Dialogue', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Task-Oriented Dialogue Systems', desc: 'The classic architecture follows a pipeline with four components:  Natural Language Understanding (NLU): Parses user utterances into structured intent and slot-value pairs.' },
+    { title: '2. Open-Domain Dialogue Systems', desc: 'Open-domain systems must converse on any topic without a predefined task structure. Retrieval-Based: Given the conversation history, retrieve the best response from a large candidate set.' },
+    { title: '3. Evaluation', desc: 'Dialogue evaluation is notoriously difficult:  Task-oriented metrics: Task completion rate (did the user achieve their goal?), slot accuracy, average number of turns to completion, and user satisfaction scores (1--5 Likert scale).' },
+    { title: '4. Modern LLM-Based Dialogue', desc: 'Large language models (ChatGPT, Claude, Gemini) have fundamentally changed dialogue systems:  No separate pipeline: A single model handles NLU, state tracking, decision-making, and NLG implicitly through next-token prediction.' },
 ];
 
 export default function WalkthroughNLPDialogueSystems() {
@@ -16,10 +16,10 @@ export default function WalkthroughNLPDialogueSystems() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Dialogue Systems — Step by Step
+          Dialogue Systems \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how dialogue systems works, one stage at a time.

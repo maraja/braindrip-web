@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPVisualQuestionAnswering() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'VQA v2.0 contains ~1.1M questions on ~204K COCO images with 10 human answers per question.', isTrue: true, explanation: 'This is a key technical detail of Visual Question Answering.' },
-    { text: 'The answer vocabulary of 3,129 answers covers ~90% of training instances.', isTrue: true, explanation: 'This is a key technical detail of Visual Question Answering.' },
-    { text: 'State-of-the-art on VQA v2.0 test-standard: PaLI-X at 86.1% (generative), with earlier discriminative models at ~80%.', isTrue: true, explanation: 'This is a key technical detail of Visual Question Answering.' },
+    { text: 'High VQA accuracy means the model truly understands images.', isTrue: false, explanation: 'Many VQA questions can be answered from language priors, common sense, or superficial visual features (e.g., detecting dominant colors). Consistency metrics, compositional tests, and adversarial evaluation provide more reliable assessments than aggregate accuracy.' },
+    { text: 'VQA is just image classification with extra steps.', isTrue: false, explanation: 'While some VQA questions reduce to classification ("What animal is this?"), many require spatial reasoning ("Is the cat on the table or under it?"), counting, reading text in images, understanding actions, or integrating external knowledge -- capabilities beyond standard classification.' },
+    { text: 'Free-form answer generation is always better than classification.', isTrue: false, explanation: 'Classification over a fixed answer vocabulary enables efficient training and evaluation, and covers ~90% of natural VQA questions. Generative approaches shine for long-tail answers, numerical reasoning, and open-ended questions but introduce evaluation challenges (how to score "a brown and white dog" vs.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE04MixtureOfExpertsEvolution() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Jacobs & Hinton (1991): Original MoE concept with gating network.', isTrue: true, explanation: 'This is a key technical detail of Mixture of Experts Evolution.' },
-    { text: '(2017): Sparsely-gated MoE, 137B+ parameters, 2048 experts, top-k routing with auxiliary load-balancing loss.', isTrue: true, explanation: 'This is a key technical detail of Mixture of Experts Evolution.' },
-    { text: 'GShard (2020): 600B parameters, 2048 experts, token-level routing, automatic sharding across 2048 TPU cores.', isTrue: true, explanation: 'This is a key technical detail of Mixture of Experts Evolution.' },
+    { text: 'MoE models need 8x the memory of their active parameter count.', isTrue: false, explanation: 'While total parameters determine memory for weights, the inference compute depends on active parameters. With expert parallelism across GPUs, memory can be distributed.' },
+    { text: 'MoE is just an ensemble of smaller models.', isTrue: false, explanation: 'Experts in modern MoE share the attention layers — only the feed-forward (MLP) layers are replicated as experts. The shared attention provides a common representation that all experts build upon.' },
+    { text: 'More experts always means better quality.', isTrue: false, explanation: 'There are diminishing returns. Going from 8 to 64 experts often helps; going from 256 to 1024 may not justify the routing complexity and memory overhead.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

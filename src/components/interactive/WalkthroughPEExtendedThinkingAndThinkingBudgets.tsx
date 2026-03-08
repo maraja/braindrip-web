@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Thinking Tokens vs. Output Tokens', desc: 'The foundation of extended thinking and thinking budgets begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Budget Allocation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes extended thinking and thinking budgets work.' },
-    { title: '3. When Extended Thinking Helps', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. When Extended Thinking Is Wasteful', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Thinking Tokens vs. Output Tokens', desc: 'In extended thinking models, the total generation is divided into two categories: thinking tokens and output tokens. Thinking tokens are the model\'s internal reasoning -- scratch work, hypothesis testing, self-correction, and deliberation.' },
+    { title: '2. Budget Allocation', desc: 'Extended thinking introduces a new dimension of prompt engineering: budget allocation. Key decisions include how many thinking tokens to allocate (the "thinking budget"), how this interacts with the maximum output tokens, and when extended thinking is worth the cost.' },
+    { title: '3. When Extended Thinking Helps', desc: 'Extended thinking provides the largest benefits on tasks that require genuine deliberation: complex mathematical proofs, multi-step code generation, intricate logical reasoning, nuanced analysis requiring weighing multiple factors, and tasks where the first intuition is often wrong.' },
+    { title: '4. When Extended Thinking Is Wasteful', desc: 'For simple tasks -- factual recall, straightforward classification, template-based generation, or tasks where the model is already near-perfect -- extended thinking consumes tokens (and cost) without improving quality. A simple question like "What is the capital of Japan?' },
 ];
 
 export default function WalkthroughPEExtendedThinkingAndThinkingBudgets() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEExtendedThinkingAndThinkingBudgets() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Extended Thinking and Thinking Budgets — Step by Step
+          Extended Thinking and Thinking Budgets \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how extended thinking and thinking budgets works, one stage at a time.

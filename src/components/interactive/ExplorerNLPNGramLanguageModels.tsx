@@ -5,7 +5,7 @@ const DETAILS = [
     { label: 'Storage', detail: 'Google\'s 1T Web n-gram corpus (2006) contains 1 trillion tokens, 13 million unique words, 314 million bigrams, and 977 million trigrams. Storage requires compact trie structures or hash tables.' },
     { label: 'Training data requirements', detail: 'Rough guideline: reliable trigram estimates need at least 1 million tokens; 5-grams need 100 million+ tokens.' },
     { label: 'Backoff vs. interpolation', detail: 'Backoff uses lower-order models only when higher-order counts are zero. Interpolation always combines all orders. Modified Kneser-Ney with interpolation consistently outperforms backoff variants.' },
-    { label: 'Start and end tokens', detail: 'Special tokens <s> and </s> are added to mark sentence boundaries, allowing the model to learn which words likely begin and end sentences.' },
+    { label: 'Start and end tokens', detail: 'Special tokens &lt;s&gt; and &lt;/s&gt; are added to mark sentence boundaries, allowing the model to learn which words likely begin and end sentences.' },
 ];
 
 export default function ExplorerNLPNGramLanguageModels() {
@@ -19,10 +19,10 @@ export default function ExplorerNLPNGramLanguageModels() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          N-Gram Language Models — Key Details Explorer
+          N-Gram Language Models \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of n-gram language models.
+          Click each card to explore the technical details.
         </p>
       </div>
 

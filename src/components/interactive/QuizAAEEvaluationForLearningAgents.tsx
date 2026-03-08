@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEEvaluationForLearningAgents() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Agents that improve through feedback, experience, or self-modification present a moving-target evaluation problem where capabilities change during the assessment period, requiring dynamic evaluation frameworks that measure learning itself, not just learned outcomes.', isTrue: true, explanation: 'This captures the core purpose of Evaluation for Learning Agents.' },
-    { text: 'Evaluation for Learning Agents is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluation for Learning Agents is important for building on more advanced topics.' },
-    { text: 'Evaluation for Learning Agents is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluation for Learning Agents is important for building on more advanced topics.' },
+    { text: 'Evaluate a learning agent after it has finished learning.', isTrue: false, explanation: 'Learning agents in realistic deployments never finish learning -- they continuously adapt to new tasks, users, and environments. There is no stable endpoint at which static evaluation becomes appropriate.' },
+    { text: 'A learning agent that improves on the benchmark is cheating.', isTrue: false, explanation: 'If the agent legitimately learns from experience (rather than memorizing test answers), improvement is the desired behavior, not a flaw. The evaluation framework must distinguish between genuine skill acquisition and test set memorization, but should not penalize real learning.' },
+    { text: 'Learning always improves performance.', isTrue: false, explanation: 'Learning can degrade performance through catastrophic forgetting, overfitting to recent experiences, or adopting strategies that exploit evaluation metrics rather than genuinely solving tasks. Not all learning is good learning, and evaluation must detect these failure modes.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

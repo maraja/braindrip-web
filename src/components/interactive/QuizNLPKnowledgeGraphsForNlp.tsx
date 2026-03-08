@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPKnowledgeGraphsForNlp() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Scale: Wikidata contains 100+ million items and 1.5+ billion statements; Google\'s Knowledge Graph reportedly contains 500+ billion facts.', isTrue: true, explanation: 'This is a key technical detail of Knowledge Graphs for NLP.' },
-    { text: 'TransE embedding dimensions: Typically d = 100-500.', isTrue: true, explanation: 'This is a key technical detail of Knowledge Graphs for NLP.' },
-    { text: 'Training on FB15k-237 takes 30-60 minutes on a single GPU.', isTrue: true, explanation: 'This is a key technical detail of Knowledge Graphs for NLP.' },
+    { text: 'Knowledge graphs are just databases.', isTrue: false, explanation: 'KGs differ from relational databases in their graph-native schema (triples, not tables), open-world assumption (absence of a fact does not mean it is false), and emphasis on entity identity and linking across sources. They are designed for flexible, evolving schema and cross-source integration.' },
+    { text: 'Typically d = 100-500.', isTrue: true, explanation: 'Training on FB15k-237 takes 30-60 minutes on a single GPU.' },
+    { text: 'KG embeddings understand the meaning of relations.', isTrue: false, explanation: 'Embedding models learn statistical patterns from the graph structure -- they do not understand that "born_in" implies a physical location or that "married_to" is symmetric. They capture co-occurrence patterns, not deep semantics.' },
+    { text: 'MRR = 0.338, Hits@1 = 0.241, Hits@10 = 0.533.', isTrue: true, explanation: 'On WN18RR: MRR = 0.476, Hits@10 = 0.571.' },
+    { text: 'Large language models make knowledge graphs obsolete.', isTrue: false, explanation: 'LLMs store knowledge implicitly in parameters, but this knowledge is unverifiable, hard to update, and prone to hallucination. KGs provide explicit, auditable, and dynamically updatable facts.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

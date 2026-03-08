@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFMlPipelines() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Idempotency: Each pipeline step should produce the same output given the same input, regardless of how many times it runs.', isTrue: true, explanation: 'This is a key technical detail of ML Pipelines.' },
-    { text: 'Training-serving skew: The most dangerous pipeline bug.', isTrue: true, explanation: 'This is a key technical detail of ML Pipelines.' },
-    { text: 'It occurs when preprocessing differs between training and inference.', isTrue: true, explanation: 'This is a key technical detail of ML Pipelines.' },
+    { text: 'A Jupyter notebook is a pipeline.', isTrue: false, explanation: 'Notebooks are great for exploration but lack reproducibility guarantees, error handling, scheduling, and modularity. A pipeline is a productionized, automated workflow.' },
+    { text: 'Each pipeline step should produce the same output given the same input, regardless of how many times it runs.', isTrue: true, explanation: 'Each pipeline step should produce the same output given the same input, regardless of how many times it runs.' },
+    { text: 'The most dangerous pipeline bug.', isTrue: true, explanation: 'It occurs when preprocessing differs between training and inference. Pipelines with shared transformation objects (like scikit-learn\'s Pipeline) mitigate this.' },
+    { text: 'Orchestrators cache intermediate outputs so unchanged upstream steps are not re-executed, reducing iteration time significantly.', isTrue: true, explanation: 'Orchestrators cache intermediate outputs so unchanged upstream steps are not re-executed, reducing iteration time significantly.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

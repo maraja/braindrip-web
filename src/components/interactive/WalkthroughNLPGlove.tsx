@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Building the Co-occurrence Matrix', desc: 'The foundation of glove begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Objective Function', desc: 'At this stage, the key transformation occurs — the core mechanism that makes glove work.' },
-    { title: '3. The Weighting Function', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Connection to Matrix Factorization', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Why Ratios Matter', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Building the Co-occurrence Matrix', desc: 'First, scan the entire corpus with a symmetric context window of size c (typically 10). For each word pair (i, j) within the window, increment X_ij.' },
+    { title: '2. The Objective Function', desc: 'GloVe trains word vectors w_i and context vectors w_j (plus bias terms b_i, b_j) to satisfy:  The loss function is a weighted least squares objective:' },
+    { title: '3. The Weighting Function', desc: 'The function f(X_ij) prevents rare and very frequent co-occurrences from dominating:  where x_max = 100 and alpha = 3/4 in the standard configuration. This means co-occurrence counts above 100 are treated equally, and very rare co-occurrences (which are noisy) receive reduced weight.' },
+    { title: '4. Connection to Matrix Factorization', desc: 'GloVe is explicitly a matrix factorization method. It approximately factorizes the log co-occurrence matrix (adjusted by biases) into the product of two low-rank matrices: W (word vectors) and W\' (context vectors).' },
+    { title: '5. Why Ratios Matter', desc: 'The central insight of GloVe is that ratios of co-occurrence probabilities, not raw probabilities, are the meaningful quantities. Consider three words: "ice," "steam," and a probe word k.' },
+    { title: '6. Training at Scale', desc: 'The pre-trained GloVe vectors are available in several sizes: 6B tokens (Wikipedia 2014 + Gigaword 5): 50d, 100d, 200d, 300d vectors for 400,000 words. 42B tokens (Common Crawl): 300d vectors for 1.9 million words.' },
 ];
 
 export default function WalkthroughNLPGlove() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPGlove() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          GloVe — Step by Step
+          GloVe \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how glove works, one stage at a time.

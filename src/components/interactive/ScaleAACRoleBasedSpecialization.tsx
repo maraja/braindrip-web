@@ -1,18 +1,26 @@
 import { useState } from 'react';
-const baseStyle = { background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: 14, padding: '1.25rem', margin: '1.5rem 0', fontFamily: 'system-ui, sans-serif' };
+const baseStyle = { background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: 14, padding: '1.25rem', margin: '1.5rem 0', fontFamily: "system-ui, sans-serif" };
 export default function ScaleAACRoleBasedSpecialization() {
   const [revealed, setRevealed] = useState(false);
   return (
     <div style={baseStyle}>
       <p style={{ fontSize: '0.8rem', fontWeight: 700, color: '#2C3E2D', marginBottom: 10, letterSpacing: '0.05em' }}>\u26A1 REAL-WORLD IMPACT</p>
-      <p style={{ fontSize: '0.9rem', color: '#3D4F3E', lineHeight: 1.5, marginBottom: 12 }}>Understanding Role-Based Specialization has real implications for how AI systems are built and deployed. What makes this concept especially important in practice?</p>
+      <p style={{ fontSize: '0.9rem', color: '#3D4F3E', lineHeight: 1.5, marginBottom: 12 }}>How does Role-Based Specialization matter in practice?</p>
       {!revealed ? (
         <button onClick={() => setRevealed(true)} style={{ padding: '6px 16px', borderRadius: 20, border: '1px solid #C76B4A', background: 'transparent', color: '#C76B4A', fontSize: '0.8rem', cursor: 'pointer', fontWeight: 600 }}>
           Reveal Impact \u2192
         </button>
       ) : (
-        <div style={{ padding: '0.75rem 1rem', background: '#C76B4A' + '0C', borderRadius: 10, borderLeft: '3px solid #C76B4A' }}>
-          <p style={{ fontSize: '0.9rem', color: '#2C3E2D', lineHeight: 1.5, margin: 0, fontWeight: 500 }}>### Quality Through Focus  An agent with a narrow, well-defined role produces higher-quality output within that domain than a generalist agent. This is empirically demonstrated: MetaGPT\'s role-specialized agents (product manager, architect, engineer, QA) produce higher-quality software than a single</p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          <div style={{ padding: '0.75rem 1rem', background: '#C76B4A0C', borderRadius: 10, borderLeft: '3px solid #C76B4A' }}>
+            <p style={{ fontSize: '0.82rem', color: '#2C3E2D', lineHeight: 1.5, margin: 0 }}><strong>Quality Through Focus:</strong> An agent with a narrow, well-defined role produces higher-quality output within that domain than a generalist agent. This is empirically demonstrated: MetaGPT\'s role-specialized agents (product manager, architect, engineer, QA) produce higher-quality software than a single agent handling all roles.</p>
+          </div>
+          <div style={{ padding: '0.75rem 1rem', background: '#C76B4A0C', borderRadius: 10, borderLeft: '3px solid #C76B4A' }}>
+            <p style={{ fontSize: '0.82rem', color: '#2C3E2D', lineHeight: 1.5, margin: 0 }}><strong>Reduced Error and Scope Creep:</strong> Without role boundaries, agents tend toward scope creep — a coding agent might start making design decisions, or a research agent might start writing conclusions. Role boundaries prevent this by explicitly constraining what each agent should and should not do.</p>
+          </div>
+          <div style={{ padding: '0.75rem 1rem', background: '#C76B4A0C', borderRadius: 10, borderLeft: '3px solid #C76B4A' }}>
+            <p style={{ fontSize: '0.82rem', color: '#2C3E2D', lineHeight: 1.5, margin: 0 }}><strong>Modular Improvement:</strong> When agents have distinct roles, you can improve the system by optimizing individual roles without affecting others. A better reviewer prompt does not require changing the coder prompt.</p>
+          </div>
         </div>
       )}
     </div>

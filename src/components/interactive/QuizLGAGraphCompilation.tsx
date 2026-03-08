@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAGraphCompilation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'builder.compile() returns a CompiledGraph instance that implements the Runnable protocol.', isTrue: true, explanation: 'This is a key technical detail of Graph Compilation.' },
-    { text: 'The compiled graph is immutable — calling add_node or add_edge after compile has no effect.', isTrue: true, explanation: 'This is a key technical detail of Graph Compilation.' },
-    { text: 'invoke() returns the complete final state dict after the graph reaches END.', isTrue: true, explanation: 'This is a key technical detail of Graph Compilation.' },
+    { text: 'You can modify the graph after compiling.', isTrue: false, explanation: 'The compiled graph is frozen. To change structure, modify the builder and compile again.' },
+    { text: 'Calling builder.compile() validates the graph structure, resolves all edges and nodes, and returns a frozen, executable CompiledGraph object that supports invoke, stream, and async execution.', isTrue: true, explanation: 'This captures the core definition of Graph Compilation.' },
+    { text: 'Graph Compilation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Graph Compilation is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

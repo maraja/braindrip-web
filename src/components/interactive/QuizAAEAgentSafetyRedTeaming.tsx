@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEAgentSafetyRedTeaming() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Systematic adversarial testing of agent systems to discover vulnerabilities, unsafe behaviors, and failure modes before deployment.', isTrue: true, explanation: 'This captures the core purpose of Agent Safety Red Teaming.' },
-    { text: 'Agent Safety Red Teaming is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Agent Safety Red Teaming is important for building on more advanced topics.' },
-    { text: 'Agent Safety Red Teaming is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Agent Safety Red Teaming is important for building on more advanced topics.' },
+    { text: 'Red teaming is just trying to jailbreak the agent.', isTrue: false, explanation: 'Jailbreaking is one attack vector among many. Agent red teaming encompasses tool misuse, privilege escalation, data exfiltration, social engineering, and indirect injection through the agent\'s information sources.' },
+    { text: 'Automated red teaming replaces human red teamers.', isTrue: false, explanation: 'Automated adversarial testing is valuable for regression testing known vulnerability patterns, but human creativity remains essential for discovering novel attack categories. The most impactful findings from major red teaming exercises consistently come from human testers pursuing unexpected angles.' },
+    { text: 'Passing a red team exercise means the agent is safe.', isTrue: false, explanation: 'Red teaming demonstrates the presence of vulnerabilities, not their absence. A clean red team result means the specific testers with their specific techniques in their specific time allocation did not find exploitable issues.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

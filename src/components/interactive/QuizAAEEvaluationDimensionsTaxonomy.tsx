@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEEvaluationDimensionsTaxonomy() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A systematic framework for the full space of agent evaluation dimensions -- accuracy, cost, latency, safety, reliability, tool use, planning quality, and security -- because single-metric evaluation is almost always misleading.', isTrue: true, explanation: 'This captures the core purpose of Evaluation Dimensions Taxonomy.' },
-    { text: 'Evaluation Dimensions Taxonomy is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluation Dimensions Taxonomy is important for building on more advanced topics.' },
-    { text: 'Evaluation Dimensions Taxonomy is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluation Dimensions Taxonomy is important for building on more advanced topics.' },
+    { text: 'Accuracy is the most important dimension.', isTrue: false, explanation: 'For production systems, reliability and safety often dominate. An agent that solves 60% of tasks with zero safety incidents and low variance may be preferable to one that solves 75% of tasks but occasionally deletes files and has high run-to-run variance.' },
+    { text: 'Cost is just a scaling issue.', isTrue: false, explanation: 'Cost is a fundamental evaluation dimension, not a deployment detail. An agent that costs 10x more to achieve the same accuracy is a worse agent, full stop.' },
+    { text: 'These dimensions are independent.', isTrue: false, explanation: 'Dimensions interact strongly. Increasing the number of retries improves accuracy but increases cost and latency.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

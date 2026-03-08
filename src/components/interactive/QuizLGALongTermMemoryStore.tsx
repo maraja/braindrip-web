@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGALongTermMemoryStore() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'InMemoryStore is for development only; data is lost on process restart.', isTrue: true, explanation: 'This is a key technical detail of Long-Term Memory Store.' },
-    { text: 'The Store uses a namespace-key-value structure: namespaces are tuples of strings, keys are strings, values are dictionaries.', isTrue: true, explanation: 'This is a key technical detail of Long-Term Memory Store.' },
-    { text: 'store.put() upserts -- calling it with an existing namespace+key replaces the value.', isTrue: true, explanation: 'This is a key technical detail of Long-Term Memory Store.' },
+    { text: 'The Store replaces the checkpointer.', isTrue: false, explanation: 'They serve different purposes. The checkpointer handles within-thread state (messages, current step).' },
+    { text: 'Cross-thread memory using a Store lets agents persist knowledge -- user preferences, learned facts, and accumulated context -- across entirely separate conversations.', isTrue: true, explanation: 'This captures the core definition of Long-Term Memory Store.' },
+    { text: 'Long-Term Memory Store is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Long-Term Memory Store is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEPromptDebuggingAndFailureAnalysis() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Hallucination rates vary from 5-15% on well-covered topics to 15-40% on niche or recent topics, depending on model and retrieval quality.', isTrue: true, explanation: 'This is a key technical detail of Prompt Debugging and Failure Analysis.' },
-    { text: 'Run failing inputs 5-10 times to determine stochastic failure rates; a 20% failure rate requires different fixes than a 100% failure rate.', isTrue: true, explanation: 'This is a key technical detail of Prompt Debugging and Failure Analysis.' },
-    { text: 'Ablation debugging on a 10-component prompt requires 10 eval runs (approximately 1-2 hours with a standard eval suite).', isTrue: true, explanation: 'This is a key technical detail of Prompt Debugging and Failure Analysis.' },
+    { text: 'If it works on my examples, it works in general.', isTrue: false, explanation: 'Development examples are typically clean, well-formed, and representative of the easy cases. Production traffic includes typos, ambiguous queries, edge cases, multilingual inputs, and adversarial probes.' },
+    { text: 'Prompt debugging systematically identifies why an LLM produces incorrect or unexpected outputs by reproducing failures, isolating causal components, and verifying fixes — applying the same disciplined methodology used to debug software.', isTrue: true, explanation: 'This captures the core definition of Prompt Debugging and Failure Analysis.' },
+    { text: 'Prompt Debugging and Failure Analysis is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Prompt Debugging and Failure Analysis is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

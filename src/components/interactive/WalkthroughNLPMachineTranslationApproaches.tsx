@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Rule-Based MT (1950s--1990s)', desc: 'The foundation of machine translation approaches begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Statistical MT (1990s--2015)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes machine translation approaches work.' },
-    { title: '3. Neural MT (2014--present)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Document-Level MT', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Unsupervised MT', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Rule-Based MT (1950s--1990s)', desc: 'Rule-Based MT (RBMT) encodes linguistic knowledge manually. Three architectures emerged:  Direct Transfer: Word-by-word replacement using bilingual dictionaries with minimal structural adjustment.' },
+    { title: '2. Statistical MT (1990s--2015)', desc: 'Statistical MT (SMT) replaced hand-coded rules with probabilities learned from parallel corpora. The Noisy Channel Model: Brown et al.' },
+    { title: '3. Neural MT (2014--present)', desc: 'Seq2Seq with Attention: Sutskever et al. (2014) introduced encoder-decoder RNNs for MT.' },
+    { title: '4. Document-Level MT', desc: 'Most MT systems translate sentence-by-sentence, losing discourse coherence. Document-level MT addresses: Pronoun consistency: "She ...' },
+    { title: '5. Unsupervised MT', desc: '(2018) and Artetxe et al. (2018) demonstrated MT without any parallel data at all, using: Cross-lingual word embeddings (see cross-lingual-word-embeddings.md) for initial word-by-word translation.' },
 ];
 
 export default function WalkthroughNLPMachineTranslationApproaches() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPMachineTranslationApproaches() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Machine Translation Approaches — Step by Step
+          Machine Translation Approaches \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how machine translation approaches works, one stage at a time.

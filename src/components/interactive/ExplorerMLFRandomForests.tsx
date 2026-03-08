@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Key hyperparameters', detail: '`n_estimators` (number of trees, typically 100--1000), `max_features` ($m$, the number of candidate features per split), `max_depth` (tree depth limit, often left unlimited), `min_samples_leaf` (minimum leaf size for regularization).' },
-    { label: 'Overfitting behavior', detail: 'Increasing $B$ (more trees) does not overfit. However, growing very deep trees with small `min_samples_leaf` can increase individual tree variance, though the ensemble averaging mitigates this.' },
+    { label: 'Key hyperparameters', detail: 'n_estimators (number of trees, typically 100--1000), max_features (m, the number of candidate features per split), max_depth (tree depth limit, often left unlimited), min_samples_leaf (minimum leaf size for regularization).' },
+    { label: 'Overfitting behavior', detail: 'Increasing B (more trees) does not overfit. However, growing very deep trees with small min_samples_leaf can increase individual tree variance, though the ensemble averaging mitigates this.' },
     { label: 'Missing values', detail: 'Random Forests can handle missing data through surrogate splits or proximity-based imputation, unlike many other algorithms.' },
-    { label: 'Scalability', detail: 'Training is $O(B \\cdot n \\cdot m \\cdot \\log n)$ where each tree considers $m$ features at each of $O(\\log n)$ depth levels across $n$ samples.' },
+    { label: 'Scalability', detail: 'Training is O(B  n  m   n) where each tree considers m features at each of O( n) depth levels across n samples.' },
     { label: 'Categorical features', detail: 'Breiman\'s original formulation handles categorical features natively by considering all possible binary partitions of categories at each split.' },
 ];
 
@@ -19,10 +19,10 @@ export default function ExplorerMLFRandomForests() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Random Forests — Key Details Explorer
+          Random Forests \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of random forests.
+          Click each card to explore the technical details.
         </p>
       </div>
 

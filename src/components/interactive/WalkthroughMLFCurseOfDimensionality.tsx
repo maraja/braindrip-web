@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Volume of High-Dimensional Spaces', desc: 'The foundation of curse of dimensionality begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Hypersphere vs. the Hypercube', desc: 'At this stage, the key transformation occurs — the core mechanism that makes curse of dimensionality work.' },
-    { title: '3. Distance Concentration', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Impact on KNN', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Impact on Density Estimation', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Volume of High-Dimensional Spaces', desc: 'Consider a hypercube [0, 1]^d. To cover this space such that each small region contains at least one data point, we need to divide each dimension into m bins.' },
+    { title: '2. The Hypersphere vs. the Hypercube', desc: 'The volume of a unit hypersphere (radius 1) in d dimensions is:  [equation]  While the volume of the enclosing hypercube [-1, 1]^d is 2^d, the ratio:  [equation]  In high dimensions, nearly all the volume of the cube lies outside the inscribed sphere -- in the corners.' },
+    { title: '3. Distance Concentration', desc: 'Perhaps the most devastating phenomenon is distance concentration. For random points uniformly distributed in [0,1]^d, the ratio of the maximum to minimum pairwise distance converges to 1:  [equation]  More precisely, for n random points in d dimensions, the expected distance between any two points.' },
+    { title: '4. Impact on KNN', desc: 'KNN predicts based on the k closest training points. In high dimensions:  All neighbors are far away.' },
+    { title: '5. Impact on Density Estimation', desc: 'Estimating a probability density function p(x) requires sufficient data in local regions. In d dimensions, the optimal kernel bandwidth h for a kernel density estimator scales as h  n^&#123;-1/(d+4)&#125;, and the convergence rate of the estimator slows to O(n^&#123;-4/(d+4)&#125;).' },
+    { title: '6. The Shell Phenomenon', desc: 'In high dimensions, most of the volume of a hypersphere is concentrated in a thin shell near the surface. For a Gaussian distribution &#123;N&#125;(0, I_d), the norm \\ concentrates around &#123;d&#125; with standard deviation O(1):  [equation]  Almost all probability mass sits at distance &#123;d&#125; from the origin, not near.' },
 ];
 
 export default function WalkthroughMLFCurseOfDimensionality() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFCurseOfDimensionality() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Curse of Dimensionality — Step by Step
+          Curse of Dimensionality \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how curse of dimensionality works, one stage at a time.

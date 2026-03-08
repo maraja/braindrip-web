@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Dimension Selection', desc: 'The foundation of rubric engineering begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Level Operationalization', desc: 'At this stage, the key transformation occurs — the core mechanism that makes rubric engineering work.' },
-    { title: '3. Anchor Examples', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Iterative Calibration', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Common Rubric Failures', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Step 1: Dimension Selection', desc: 'Identify the independent aspects of quality that matter for your evaluation context. Common dimensions for agent evaluation include:  Correctness: Does the output satisfy the task requirements?' },
+    { title: '2. Step 2: Level Operationalization', desc: 'For each dimension, define what each score level means in concrete, observable terms. Avoid abstract language.' },
+    { title: '3. Step 3: Anchor Examples', desc: 'Provide concrete examples for each score level on each dimension. Anchors serve two purposes: they calibrate the judge by showing exactly what each level looks like, and they reduce ambiguity in borderline cases.' },
+    { title: '4. Step 4: Iterative Calibration', desc: 'No rubric is correct on the first draft. The calibration loop:  Apply the rubric to 20-50 sample outputs using both the automated judge and human raters Compute inter-rater agreement (Cohen\'s kappa between judge and humans) Identify dimensions or levels where agreement is low Examine disagreements.' },
+    { title: '5. Common Rubric Failures', desc: 'Vague criteria: "Good code quality" means different things to different judges. Specify: "follows project naming conventions, includes error handling for all external calls, has no functions exceeding 50 lines.' },
 ];
 
 export default function WalkthroughAAERubricEngineering() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAERubricEngineering() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Rubric Engineering — Step by Step
+          Rubric Engineering \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how rubric engineering works, one stage at a time.

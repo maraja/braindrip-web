@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE05StateSpaceModelsAndMamba() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'S4 (Gu et al., late 2021): Structured state spaces.', isTrue: true, explanation: 'This is a key technical detail of State Space Models and Mamba.' },
-    { text: 'O(N) time, O(N) memory.', isTrue: true, explanation: 'This is a key technical detail of State Space Models and Mamba.' },
-    { text: 'State-of-the-art on Long Range Arena (88% on Path-X vs &lt;60% for Transformers).', isTrue: true, explanation: 'This is a key technical detail of State Space Models and Mamba.' },
+    { text: 'Mamba replaces Transformers.', isTrue: false, explanation: 'As of 2025, pure Mamba models have not matched Transformer quality on standard language benchmarks at scale. Hybrids are the practical path.' },
+    { text: 'SSMs cannot do in-context learning.', isTrue: false, explanation: 'Mamba demonstrates meaningful in-context learning (following instructions, few-shot examples). The selective mechanism provides content-based gating that enables this.' },
+    { text: 'Linear-time means SSMs are always faster.', isTrue: false, explanation: 'For short sequences (under ~2K tokens), Transformers with FlashAttention are often faster due to better hardware utilization. Mamba\'s advantage emerges at longer sequences where the quadratic cost of attention dominates.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

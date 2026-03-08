@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Sources of Non-Determinism', desc: 'The foundation of determinism vs. stochasticity begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Strategies for Increasing Determinism', desc: 'At this stage, the key transformation occurs — the core mechanism that makes determinism vs. stochasticity work.' },
-    { title: '3. When Stochasticity Is Useful', desc: 'The intermediate results are processed and refined through the main pipeline.' },
+    { title: '1. Sources of Non-Determinism', desc: 'Temperature and Top-p Sampling LLMs generate output by predicting probability distributions over tokens. The temperature parameter controls how these distributions are sampled: Temperature = 0: The model always selects the highest-probability token (greedy decoding).' },
+    { title: '2. Strategies for Increasing Determinism', desc: 'Temperature 0 with Seed Pinning Setting temperature to 0 and providing a fixed seed (where supported by the API) maximizes reproducibility. OpenAI\'s API supports a seed parameter; Anthropic\'s API uses temperature 0 without an explicit seed.' },
+    { title: '3. When Stochasticity Is Useful', desc: 'Non-determinism is not always a problem — sometimes it is a feature:  Exploration: When an agent is stuck (repeated failures with the same approach), increased temperature can help it explore alternative strategies.' },
 ];
 
 export default function WalkthroughAACDeterminismVsStochasticity() {
@@ -15,10 +15,10 @@ export default function WalkthroughAACDeterminismVsStochasticity() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Determinism vs. Stochasticity — Step by Step
+          Determinism vs. Stochasticity \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how determinism vs. stochasticity works, one stage at a time.

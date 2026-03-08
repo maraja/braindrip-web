@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEEvaluationBudgetOptimization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Given a fixed evaluation budget, maximize the information gained about agent performance through adaptive testing, early stopping, progressive evaluation, and intelligent budget allocation between breadth and depth.', isTrue: true, explanation: 'This captures the core purpose of Evaluation Budget Optimization.' },
-    { text: 'Evaluation Budget Optimization is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluation Budget Optimization is important for building on more advanced topics.' },
-    { text: 'Evaluation Budget Optimization is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluation Budget Optimization is important for building on more advanced topics.' },
+    { text: 'Every task needs the same number of runs.', isTrue: false, explanation: 'Equal allocation is the most common and most wasteful evaluation strategy. Tasks with extreme pass rates (near 0% or 100%) need far fewer runs than borderline tasks.' },
+    { text: 'You need to run all tasks in your benchmark.', isTrue: false, explanation: 'If budget is constrained, strategically selecting a subset of maximally informative tasks via IRT or stratified sampling produces better estimates than running the full suite with fewer runs per task.' },
+    { text: 'Progressive evaluation introduces bias.', isTrue: false, explanation: 'When properly designed, progressive evaluation does not bias results because each tier is strictly more stringent than the previous one. Tasks that pass at Tier 1 would also pass at Tier 5 -- you are just avoiding the cost of confirming this.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

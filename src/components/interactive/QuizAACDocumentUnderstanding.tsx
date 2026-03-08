@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACDocumentUnderstanding() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'PDF parsing libraries: PyMuPDF (fitz), pdfplumber, and PyPDF2 extract text from born-digital PDFs.', isTrue: true, explanation: 'This is a key technical detail of Document Understanding.' },
-    { text: 'pdfplumber is particularly strong at preserving table structure.', isTrue: true, explanation: 'This is a key technical detail of Document Understanding.' },
-    { text: 'For complex PDFs, combining library extraction with LLM-based correction yields the best results.', isTrue: true, explanation: 'This is a key technical detail of Document Understanding.' },
+    { text: 'PDFs are just text files.', isTrue: false, explanation: 'PDFs are a presentation format, not a data format. They specify where to draw characters on a page but do not encode paragraph structure, reading order, or table relationships.' },
+    { text: 'PyMuPDF (fitz), pdfplumber, and PyPDF2 extract text from born-digital PDFs.', isTrue: true, explanation: 'pdfplumber is particularly strong at preserving table structure. For complex PDFs, combining library extraction with LLM-based correction yields the best results.' },
+    { text: 'OCR is a solved problem.', isTrue: false, explanation: 'OCR works well on clean, printed documents with standard fonts. It degrades significantly on handwriting, degraded scans, unusual layouts, watermarks, and non-Latin scripts.' },
+    { text: 'Naive fixed-size chunking destroys document structure.', isTrue: true, explanation: 'Structure-aware chunking respects document sections, keeps tables intact, associates figures with their captions, and maintains header hierarchy. Each chunk should include its structural context (e.g., "Section 3.2 &gt; Table 4 &gt; Row: Q3 Revenue").' },
+    { text: 'Vision models eliminate the need for document parsing pipelines.', isTrue: false, explanation: 'Vision models are powerful but expensive ($0.01-0.05 per page), slow (seconds per page), and can hallucinate details in tables and figures. For high-volume processing, pipeline-based approaches are more cost-effective, with vision models reserved for complex pages that pipelines handle poorly.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

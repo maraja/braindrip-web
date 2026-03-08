@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Innovation Stack', desc: 'The foundation of the deepseek cost revolution begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Pricing Cascade', desc: 'At this stage, the key transformation occurs — the core mechanism that makes the deepseek cost revolution work.' },
-    { title: '3. The Geopolitical Dimension', desc: 'The intermediate results are processed and refined through the main pipeline.' },
+    { title: '1. The Innovation Stack', desc: 'DeepSeek\'s cost advantage was not a single trick but an accumulation of innovations, each addressing a different bottleneck in the model training and serving pipeline. Multi-head Latent Attention (MLA) compressed the KV cache by 93.' },
+    { title: '2. The Pricing Cascade', desc: 'Each innovation translated directly into lower API prices, and these prices were not loss leaders. V2 launched at 0.14 per million input tokens when GPT-4 Turbo charged approximately 10.' },
+    { title: '3. The Geopolitical Dimension', desc: 'DeepSeek achieved all of this under US chip export restrictions. Starting with the Bureau of Industry and Security (BIS) rules in October 2022 and expanded significantly in October 2023 and further in 2024, US policy limited Chinese companies\' access to NVIDIA\'s top-tier GPUs.' },
 ];
 
 export default function WalkthroughLLE03TheDeepseekCostRevolution() {
@@ -15,10 +15,10 @@ export default function WalkthroughLLE03TheDeepseekCostRevolution() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The DeepSeek Cost Revolution — Step by Step
+          The DeepSeek Cost Revolution \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how the deepseek cost revolution works, one stage at a time.

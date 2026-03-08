@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizCVCEfficientnet() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'SE (Squeeze-and-Excitation) ratio: 0.25 in all MBConv blocks.', isTrue: true, explanation: 'This is a key technical detail of EfficientNet.' },
-    { text: 'The SE module first squeezes spatial dimensions via global average pooling, then uses two FC layers to compute channel-wise attention weights.', isTrue: true, explanation: 'This is a key technical detail of EfficientNet.' },
-    { text: 'Stochastic depth with linearly increasing drop probability from 0 (early layers) to 0.2-0.3 (final layers) is critical for regularization in larger models.', isTrue: true, explanation: 'This is a key technical detail of EfficientNet.' },
+    { text: 'Compound scaling is specific to EfficientNet.', isTrue: false, explanation: 'The principle applies to any architecture. The authors showed compound scaling improves MobileNets and ResNets too, though the optimal ratios may differ.' },
+    { text: '0.25 in all MBConv blocks.', isTrue: true, explanation: 'The SE module first squeezes spatial dimensions via global average pooling, then uses two FC layers to compute channel-wise attention weights.' },
+    { text: 'B0 achieves 77.1% top-1 (vs.', isTrue: true, explanation: '76.0%) with 5.3M params (vs. 25.6M) and 0.39B FLOPs (vs.' },
+    { text: 'Using EfficientNet with semi-supervised learning achieved 88.4% top-1 on ImageNet, demonstrating the architecture\'s capacity when data is scaled.', isTrue: true, explanation: 'Using EfficientNet with semi-supervised learning achieved 88.4% top-1 on ImageNet, demonstrating the architecture\'s capacity when data is scaled.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

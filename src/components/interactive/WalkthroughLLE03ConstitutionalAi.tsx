@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Phase 1: Supervised Self-Critique and Revision (Constitutional SL)', desc: 'The foundation of constitutional ai begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Phase 2: Reinforcement Learning from AI Feedback (RLAIF)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes constitutional ai work.' },
-    { title: '3. The Constitution', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Comparison with Standard RLHF', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Phase 1: Supervised Self-Critique and Revision (Constitutional SL)', desc: 'The first phase generates training data through a self-improvement loop:  Red-team prompting: The model is prompted with requests designed to elicit harmful outputs (e.g., "How do I break into a house?"). The model generates an initial, potentially harmful response.' },
+    { title: '2. Phase 2: Reinforcement Learning from AI Feedback (RLAIF)', desc: 'The second phase replaces human preference labelers with AI judges:  Comparison generation: For each prompt, the model generates multiple responses. AI evaluation: A separate AI model (or the same model in a different context) evaluates which response better satisfies the constitutional principles,.' },
+    { title: '3. The Constitution', desc: 'The constitution itself is a set of natural-language principles covering topics like harmfulness, honesty, helpfulness, and respect for human autonomy. Examples include principles drawn from the UN Universal Declaration of Human Rights, guidelines about avoiding deception, and instructions to.' },
+    { title: '4. Comparison with Standard RLHF', desc: 'Constitutional AI and standard RLHF share the same goal (aligning model behavior with human values) but differ in method. RLHF relies on human labelers at every stage; Constitutional AI relies on human-authored principles that the AI applies autonomously.' },
 ];
 
 export default function WalkthroughLLE03ConstitutionalAi() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE03ConstitutionalAi() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Constitutional AI — Step by Step
+          Constitutional AI \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how constitutional ai works, one stage at a time.

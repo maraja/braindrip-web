@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Scalability wall', detail: 'joint action space grows as $|A|^N$, making naive centralized approaches intractable beyond a handful of agents' },
-    { label: 'Non-stationarity', detail: 'from agent $i$\'s perspective, $P(s\' \\mid s, a_i)$ changes as other agents update their policies' },
-    { label: 'Credit assignment', detail: 'in cooperative settings, determining which agent\'s action caused a team reward is the **multi-agent credit assignment** problem; QMIX and COMA address this differently' },
+    { label: 'Scalability wall', detail: 'joint action space grows as ^N, making naive centralized approaches intractable beyond a handful of agents' },
+    { label: 'Non-stationarity', detail: 'from agent i\'s perspective, P(s\'  s, a_i) changes as other agents update their policies' },
+    { label: 'Credit assignment', detail: 'in cooperative settings, determining which agent\'s action caused a team reward is the multi-agent credit assignment problem; QMIX and COMA address this differently' },
     { label: 'Self-play', detail: 'is the standard approach for competitive settings; fictitious self-play maintains a population of past policies to avoid cyclic non-convergence' },
     { label: 'Parameter sharing', detail: 'across agents of the same type can dramatically reduce sample complexity in homogeneous teams' },
 ];
@@ -19,10 +19,10 @@ export default function ExplorerRLMultiAgentReinforcementLearning() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Multi-Agent Reinforcement Learning — Key Details Explorer
+          Multi-Agent Reinforcement Learning \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of multi-agent reinforcement learning.
+          Click each card to explore the technical details.
         </p>
       </div>
 

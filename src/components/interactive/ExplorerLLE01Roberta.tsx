@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Paper', detail: 'Liu et al., \"RoBERTa: A Robustly Optimized BERT Pretraining Approach\" (Jul 2019, arXiv:1907.11692)' },
+    { label: 'Paper', detail: 'Liu et al., "RoBERTa: A Robustly Optimized BERT Pretraining Approach" (Jul 2019, arXiv:1907.11692)' },
     { label: 'RoBERTa-Base', detail: '12 layers, 12 heads, 768 hidden, 125M parameters' },
     { label: 'RoBERTa-Large', detail: '24 layers, 16 heads, 1024 hidden, 355M parameters' },
     { label: 'Training data', detail: '~160GB from BookCorpus + Wikipedia + CC-News + OpenWebText + Stories (10x BERT)' },
@@ -20,10 +20,10 @@ export default function ExplorerLLE01Roberta() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          RoBERTa: A Robustly Optimized BERT Pretraining Approach — Key Details Explorer
+          RoBERTa: A Robustly Optimized BERT Pretraining Approach \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of roberta: a robustly optimized bert pretraining approach.
+          Click each card to explore the technical details.
         </p>
       </div>
 

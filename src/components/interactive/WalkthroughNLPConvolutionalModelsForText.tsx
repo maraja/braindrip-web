@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. 1D Convolution Over Word Embeddings', desc: 'The foundation of convolutional models for text begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Multiple Filter Sizes for N-gram Detection', desc: 'At this stage, the key transformation occurs — the core mechanism that makes convolutional models for text work.' },
-    { title: '3. Max-Over-Time Pooling', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Kim (2014) Architecture', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Dilated (Atrous) Convolutions for Longer Range', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. 1D Convolution Over Word Embeddings', desc: 'Given an input sentence represented as a matrix X of shape (n x d), where n is the number of tokens and d is the embedding dimension (e.g., 300 for word2vec.md or glove.md):  A 1D convolutional filter of width w is a weight matrix W_f of shape (w x d).' },
+    { title: '2. Multiple Filter Sizes for N-gram Detection', desc: 'The key insight of Kim (2014) is to use multiple filter widths simultaneously. Common configurations:  Width 2: Detects bigram patterns (e.g., "very good," "not bad").' },
+    { title: '3. Max-Over-Time Pooling', desc: 'After computing all feature maps, max-over-time pooling selects the maximum value from each feature map:  This captures the single strongest activation for each filter, regardless of where it occurred in the sequence.' },
+    { title: '4. The Kim (2014) Architecture', desc: 'The CNN for sentence classification (Kim, 2014) is deceptively simple:  Input: Sentence represented as a (n x d) embedding matrix, where d = 300 (Word2Vec or GloVe). Convolution: Filter widths &#123;3, 4, 5&#125;, 100 filters per width.' },
+    { title: '5. Dilated (Atrous) Convolutions for Longer Range', desc: 'Standard convolutions have a receptive field limited to the filter width. To capture longer-range dependencies without increasing filter size or depth linearly, dilated convolutions introduce gaps between filter elements:  Dilation 1: Standard convolution, receptive field = w.' },
 ];
 
 export default function WalkthroughNLPConvolutionalModelsForText() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPConvolutionalModelsForText() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Convolutional Models for Text — Step by Step
+          Convolutional Models for Text \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how convolutional models for text works, one stage at a time.

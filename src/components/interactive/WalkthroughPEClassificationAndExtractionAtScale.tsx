@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Batch Processing Patterns', desc: 'The foundation of classification and extraction at scale begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Consistency Across Diverse Inputs', desc: 'At this stage, the key transformation occurs — the core mechanism that makes classification and extraction at scale work.' },
-    { title: '3. Drift Detection', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Calibration at Scale', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Sampling Strategies for Quality Monitoring', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Batch Processing Patterns', desc: 'Processing large volumes efficiently requires structured batch approaches:  Consistent prompt template: Use the exact same prompt template for every input. Variations in prompt wording (even minor ones) introduce inconsistencies.' },
+    { title: '2. Consistency Across Diverse Inputs', desc: 'Real-world data is messier than test data. Consistency mechanisms include:  Edge case handling: Define behavior for ambiguous cases explicitly in the prompt: "If a feedback item could fit multiple categories, choose the primary category.' },
+    { title: '3. Drift Detection', desc: 'Prompt performance degrades over time as data distributions change:  Distribution monitoring: Track the distribution of output categories over time. If "Bug Report" suddenly increases from 15% to 35% of classifications, either the actual bug rate increased or the prompt is misclassifying.' },
+    { title: '4. Calibration at Scale', desc: 'Confidence scores must be meaningful and consistent:  Calibration assessment: A well-calibrated model\'s confidence of 0.9 should be correct 90% of the time. Measure calibration by binning predictions by confidence level and comparing against actual accuracy.' },
+    { title: '5. Sampling Strategies for Quality Monitoring', desc: 'Monitoring all outputs is impractical; sampling strategies make quality assurance feasible:  Random sampling: Review a random 1-5% of outputs. This catches systematic issues but may miss rare failure modes.' },
 ];
 
 export default function WalkthroughPEClassificationAndExtractionAtScale() {
@@ -17,10 +17,10 @@ export default function WalkthroughPEClassificationAndExtractionAtScale() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Classification and Extraction at Scale — Step by Step
+          Classification and Extraction at Scale \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how classification and extraction at scale works, one stage at a time.

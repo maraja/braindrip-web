@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Spatial Stream', desc: 'The foundation of two-stream networks begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Temporal Stream', desc: 'At this stage, the key transformation occurs — the core mechanism that makes two-stream networks work.' },
-    { title: '3. Fusion Strategies', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Training Details', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Spatial Stream', desc: 'The spatial stream is a standard image classification CNN (originally VGG-M or VGG-16, later ResNets) applied to a single RGB frame sampled from the video clip. It captures appearance information: objects, scenes, textures, and poses.' },
+    { title: '2. Temporal Stream', desc: 'The temporal stream receives a stack of L consecutive optical flow fields as input. Each flow field has two channels (u, v) representing horizontal and vertical displacement.' },
+    { title: '3. Fusion Strategies', desc: 'The two streams must be combined to produce a final prediction. Key approaches:  Late fusion (score averaging): The simplest and original approach.' },
+    { title: '4. Training Details', desc: 'Both streams are initialized from ImageNet-pretrained weights (the temporal stream adapts the first convolutional layer to accept 20-channel input by averaging the pretrained 3-channel weights) Training uses SGD with momentum 0.9, initial learning rate 0.' },
 ];
 
 export default function WalkthroughCVCTwoStreamNetworks() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCTwoStreamNetworks() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Two-Stream Networks — Step by Step
+          Two-Stream Networks \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how two-stream networks works, one stage at a time.

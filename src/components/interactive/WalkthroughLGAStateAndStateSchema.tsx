@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Basic State Schema', desc: 'The foundation of state and state schema begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Reducers with Annotated', desc: 'At this stage, the key transformation occurs — the core mechanism that makes state and state schema work.' },
-    { title: '3. The add_messages Reducer', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Partial State Updates', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Custom Reducers', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Basic State Schema', desc: 'When a node returns &#123;"answer": "42"&#125;, the answer field is overwritten. All other fields remain unchanged.' },
+    { title: '2. Reducers with Annotated', desc: 'The Annotated[list, operator.add] syntax tells LangGraph: when a node returns &#123;"messages": [new_msg]&#125;, concatenate it with the existing list instead of replacing it.' },
+    { title: '3. The add_messages Reducer', desc: 'For chat-based agents, LangGraph provides a purpose-built reducer:  add_messages does more than simple append — it deduplicates by message ID. If you return a message with the same id as an existing one, it replaces that message in-place rather than appending a duplicate.' },
+    { title: '4. Partial State Updates', desc: 'Nodes return only the keys they want to change:' },
+    { title: '5. Custom Reducers', desc: 'You can write any binary function as a reducer:' },
 ];
 
 export default function WalkthroughLGAStateAndStateSchema() {
@@ -17,10 +17,10 @@ export default function WalkthroughLGAStateAndStateSchema() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          State and State Schema — Step by Step
+          State and State Schema \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how state and state schema works, one stage at a time.

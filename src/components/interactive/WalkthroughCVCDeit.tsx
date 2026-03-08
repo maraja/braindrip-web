@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Distillation Token', desc: 'The foundation of data-efficient image transformers (deit) begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Distillation Strategies', desc: 'At this stage, the key transformation occurs — the core mechanism that makes data-efficient image transformers (deit) work.' },
-    { title: '3. Training Recipe', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Model Variants', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Distillation Token', desc: 'DeiT introduces a dedicated distillation token alongside the standard class token. Both are prepended to the patch sequence:  [equation]  The class token is trained with the standard cross-entropy loss against ground-truth labels.' },
+    { title: '2. Distillation Strategies', desc: 'DeiT explores two forms of distillation:  Soft distillation minimizes the KL divergence between student and teacher softmax outputs:  [equation]  where  is the temperature and  controls the balance.' },
+    { title: '3. Training Recipe', desc: 'The augmentation and regularization pipeline is critical:  RandAugment: Random combinations of image transformations Mixup ( = 0.8) and CutMix ( = 1.0): Blending and pasting regions across training pairs Random Erasing (probability 0.25): Masking random patches Stochastic Depth (drop rate 0.' },
 ];
 
 export default function WalkthroughCVCDeit() {
@@ -16,10 +15,10 @@ export default function WalkthroughCVCDeit() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Data-Efficient Image Transformers (DeiT) — Step by Step
+          Data-Efficient Image Transformers (DeiT) \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how data-efficient image transformers (deit) works, one stage at a time.

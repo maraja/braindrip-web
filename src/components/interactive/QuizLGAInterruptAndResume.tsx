@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAInterruptAndResume() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'interrupt() is imported from langgraph.types, not langgraph.graph.', isTrue: true, explanation: 'This is a key technical detail of Interrupt and Resume.' },
-    { text: 'The interrupt payload must be JSON-serializable.', isTrue: true, explanation: 'This is a key technical detail of Interrupt and Resume.' },
-    { text: 'Without a checkpointer, calling interrupt() raises a runtime error.', isTrue: true, explanation: 'This is a key technical detail of Interrupt and Resume.' },
+    { text: 'You can use interrupt() without a checkpointer.', isTrue: false, explanation: 'No. The graph must be compiled with a checkpointer.' },
+    { text: 'The interrupt() function from langgraph.types pauses graph execution, surfaces a payload to the caller, and waits for human input before resuming via Command(resume=value).', isTrue: true, explanation: 'This captures the core definition of Interrupt and Resume.' },
+    { text: 'Interrupt and Resume is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Interrupt and Resume is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

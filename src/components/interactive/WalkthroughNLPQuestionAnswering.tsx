@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Extractive QA (Reading Comprehension)', desc: 'The foundation of question answering begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Abstractive / Generative QA', desc: 'At this stage, the key transformation occurs — the core mechanism that makes question answering work.' },
-    { title: '3. Open-Domain QA: Retriever-Reader Architecture', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Knowledge-Base QA (KBQA)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Multi-Hop QA', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Extractive QA (Reading Comprehension)', desc: 'Given a question and a context passage, extractive QA identifies the answer as a contiguous span within the passage. SQuAD-Style Architecture: The model encodes the question and passage jointly (typically with BERT or similar), then predicts start and end token positions of the answer.' },
+    { title: '2. Abstractive / Generative QA', desc: 'Some questions require synthesizing information or producing answers not present verbatim in any passage. Generative QA models (e.g., fine-tuned T5, GPT) produce free-form text answers.' },
+    { title: '3. Open-Domain QA: Retriever-Reader Architecture', desc: 'When no passage is provided, the system must first find relevant documents from a large corpus (e.g., all of Wikipedia). Classic Pipeline: Retriever: Finds top-k relevant passages.' },
+    { title: '4. Knowledge-Base QA (KBQA)', desc: 'Answers questions by querying structured knowledge bases (e.g., Wikidata, Freebase). The system parses the question into a logical form or SPARQL query:  "Who directed Inception?" maps to: ?x directedBy Inception returns "Christopher Nolan"  Semantic parsing approaches (Berant et al.' },
+    { title: '5. Multi-Hop QA', desc: 'Some questions require reasoning over multiple pieces of evidence. For example: "What is the capital of the country where the director of Inception was born?" requires identifying the director (Christopher Nolan), his birth country (UK), and its capital (London).' },
+    { title: '6. Evolution: IR-Based to Neural Reader to LLM-Based QA', desc: 'The field has progressed through distinct eras: IR-based (1999--2010): Retrieve passages, apply pattern matching or shallow NLP to extract answers. Neural reader (2015--2020): End-to-end trained models (BERT-based) dramatically improved reading comprehension.' },
 ];
 
 export default function WalkthroughNLPQuestionAnswering() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPQuestionAnswering() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Question Answering — Step by Step
+          Question Answering \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how question answering works, one stage at a time.

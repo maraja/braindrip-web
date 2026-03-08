@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEWhatIsAPrompt() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A prompt consists of four primary segments: system message, user message(s), assistant prefill, and tool/function results.', isTrue: true, explanation: 'This is a key technical detail of What Is a Prompt.' },
-    { text: 'System messages are treated with higher instruction-following priority than user messages by most instruction-tuned models.', isTrue: true, explanation: 'This is a key technical detail of What Is a Prompt.' },
-    { text: 'Token counts for production prompts typically range from 500 tokens (simple queries) to 100,000+ tokens (RAG-heavy applications).', isTrue: true, explanation: 'This is a key technical detail of What Is a Prompt.' },
+    { text: 'A prompt is just what the user types.', isTrue: false, explanation: 'In production, the user\'s typed input is typically less than 10% of the full prompt. The rest is system instructions, retrieved context, history, and formatting scaffolding assembled by application code.' },
+    { text: 'The system message is always followed perfectly.', isTrue: false, explanation: 'System message adherence is high (85-95%) but not absolute. Adversarial user inputs can override system instructions, which is why prompt injection is a real security concern.' },
+    { text: 'More context in the prompt is always better.', isTrue: false, explanation: 'Adding irrelevant context degrades performance. Studies show that including distracting documents alongside relevant ones can reduce accuracy by 10-20% compared to providing only relevant context.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

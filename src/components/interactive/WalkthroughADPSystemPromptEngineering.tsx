@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Prompt Anatomy: The Six Components', desc: 'The foundation of system prompt engineering begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Instruction Hierarchy', desc: 'At this stage, the key transformation occurs — the core mechanism that makes system prompt engineering work.' },
-    { title: '3. Behavioral Constraint Patterns', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Token Budget Management', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Prompt Testing and Iteration', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Prompt Anatomy: The Six Components', desc: 'Every effective agent system prompt contains these components, roughly in this order:  Ordering matters. Models attend to the beginning and end of the system prompt more strongly than the middle.' },
+    { title: '2. The Instruction Hierarchy', desc: 'Modern LLMs process instructions with an implicit priority order:  System prompt (highest priority) --- Set by the developer. The agent\'s "constitution." User messages --- Requests from the user.' },
+    { title: '3. Behavioral Constraint Patterns', desc: 'Effective constraints follow specific patterns:  Positive framing (tell the model what to do, not just what to avoid): Weak: "Don\'t make up information." Strong: "If you do not have sufficient information to answer, respond with: \'I don\'t have enough data to answer this.' },
+    { title: '4. Token Budget Management', desc: 'In a 128K context window, a practical budget allocation looks like:  System prompt compression techniques: Use terse, imperative sentences. "Search before answering" beats "You should always try to search for relevant information before providing an answer to the user.' },
+    { title: '5. Prompt Testing and Iteration', desc: 'System prompts should be tested like code:  Baseline eval set: Create 20-50 test cases covering normal use, edge cases, and adversarial inputs. Constraint violation tests: Specifically test each behavioral constraint with inputs designed to violate it.' },
 ];
 
 export default function WalkthroughADPSystemPromptEngineering() {
@@ -17,10 +17,10 @@ export default function WalkthroughADPSystemPromptEngineering() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          System Prompt Engineering — Step by Step
+          System Prompt Engineering \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how system prompt engineering works, one stage at a time.

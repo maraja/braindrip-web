@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAETheEvaluationScalingProblem() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'As AI agents approach and exceed human-level capability in specific domains, the fundamental assumption underlying all evaluation -- that the evaluator is more capable than the evaluated -- breaks down, creating an asymmetry that may define the central challenge of advanced AI development.', isTrue: true, explanation: 'This captures the core purpose of The Evaluation Scaling Problem.' },
-    { text: 'The Evaluation Scaling Problem is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding The Evaluation Scaling Problem is important for building on more advanced topics.' },
-    { text: 'The Evaluation Scaling Problem is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding The Evaluation Scaling Problem is important for building on more advanced topics.' },
+    { text: 'We can always just use a more capable AI to evaluate a less capable one.', isTrue: false, explanation: 'This works only while a hierarchy of capability exists. When frontier models evaluate each other, the evaluating model has no capability advantage.' },
+    { text: 'If the agent explains its reasoning, humans can evaluate it.', isTrue: false, explanation: 'Chain-of-thought explanations make evaluation easier for moderate-complexity tasks but do not solve the scaling problem. The explanation can be as hard to verify as the output itself.' },
+    { text: 'The evaluation scaling problem only affects superhuman AI.', isTrue: false, explanation: 'The problem appears whenever the agent exceeds the specific evaluator\'s capability in the specific domain being evaluated. A junior developer already cannot fully evaluate a senior-level agent\'s architectural decisions.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

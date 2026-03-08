@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture', desc: 'The foundation of u-net begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Skip Connections: Concatenation vs. Addition', desc: 'At this stage, the key transformation occurs — the core mechanism that makes u-net work.' },
-    { title: '3. Training with Limited Data', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Loss Function', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Architecture', desc: 'The network has two symmetric paths:  Contracting path (encoder): Repeated blocks of two 3x3 convolutions (each followed by ReLU), then 2x2 max pooling with stride 2. Each downsampling step doubles the number of feature channels: 64 -&gt; 128 -&gt; 256 -&gt; 512 -&gt; 1024.' },
+    { title: '2. Skip Connections: Concatenation vs. Addition', desc: 'U-Net concatenates encoder and decoder feature maps along the channel dimension. This differs from FCN\'s additive fusion and ResNet-style residual addition.' },
+    { title: '3. Training with Limited Data', desc: 'The original U-Net was trained on just 30 annotated electron microscopy images (512x512). Key strategies:  Overlap-tile strategy: to segment large images, extract overlapping tiles with mirrored borders so every pixel receives full context.' },
+    { title: '4. Loss Function', desc: 'Per-pixel cross-entropy weighted by the map above:  [equation]  where y(x) is the ground truth label at pixel x.' },
 ];
 
 export default function WalkthroughCVCUNet() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCUNet() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          U-Net — Step by Step
+          U-Net \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how u-net works, one stage at a time.

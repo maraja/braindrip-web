@@ -1,11 +1,8 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Installation', desc: 'The foundation of langgraph dev server begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Configuration File', desc: 'At this stage, the key transformation occurs — the core mechanism that makes langgraph dev server work.' },
-    { title: '3. Agent File', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Running the Dev Server', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Using the Studio UI', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Configuration File', desc: 'The dev server requires a langgraph.json file in your project root that tells it where to find your graph:  The "./agent.py:graph" syntax means: import the graph variable from agent.py. This must be a compiled CompiledStateGraph instance.' },
+    { title: '2. Using the Studio UI', desc: 'LangGraph Studio provides a visual interface for interacting with your agent:' },
 ];
 
 export default function WalkthroughLGALanggraphDevServer() {
@@ -17,10 +14,10 @@ export default function WalkthroughLGALanggraphDevServer() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          LangGraph Dev Server — Step by Step
+          LangGraph Dev Server \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how langgraph dev server works, one stage at a time.

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Edit-Test-Debug Loop', desc: 'The foundation of autonomous coding agents begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Codebase Understanding', desc: 'At this stage, the key transformation occurs — the core mechanism that makes autonomous coding agents work.' },
-    { title: '3. Tool Arsenal', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Benchmarking with SWE-bench', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Edit-Test-Debug Loop', desc: 'The core execution pattern: (1) Understand -- read the issue description, explore relevant source files, understand the codebase structure. (2) Plan -- decide which files to modify and what changes to make.' },
+    { title: '2. Codebase Understanding', desc: 'Before writing code, the agent must understand the existing codebase. This involves: File exploration using directory listings and file reading to understand project structure.' },
+    { title: '3. Tool Arsenal', desc: 'Coding agents typically have access to: File operations (read, write, edit, create, delete files). Terminal access (run arbitrary shell commands: tests, builds, linters, git operations).' },
+    { title: '4. Benchmarking with SWE-bench', desc: 'SWE-bench (Software Engineering Benchmark) is the standard evaluation for coding agents. It consists of real GitHub issues from popular Python repositories (Django, scikit-learn, Flask, etc.) with corresponding test patches.' },
 ];
 
 export default function WalkthroughAACAutonomousCodingAgents() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACAutonomousCodingAgents() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Autonomous Coding Agents — Step by Step
+          Autonomous Coding Agents \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how autonomous coding agents works, one stage at a time.

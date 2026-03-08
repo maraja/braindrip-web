@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Uniform convergence', detail: 'is the property that $\\hat{R}_n(h) \\to R(h)$ simultaneously for all $h \\in \\mathcal{H}$. It is sufficient (but not necessary) for ERM to succeed.' },
-    { label: 'Rademacher complexity', detail: 'provides tighter generalization bounds than VC dimension by measuring how well $\\mathcal{H}$ can correlate with random noise in the specific data at hand.' },
-    { label: 'Consistency', detail: 'An ERM algorithm is consistent if $R(h^*_{\\text{ERM}}) \\to \\inf_{h \\in \\mathcal{H}} R(h)$ as $n \\to \\infty$.' },
+    { label: 'Uniform convergence', detail: 'is the property that &#123;R&#125;_n(h)  R(h) simultaneously for all h  &#123;H&#125;. It is sufficient (but not necessary) for ERM to succeed.' },
+    { label: 'Rademacher complexity', detail: 'provides tighter generalization bounds than VC dimension by measuring how well &#123;H&#125; can correlate with random noise in the specific data at hand.' },
+    { label: 'Consistency', detail: 'An ERM algorithm is consistent if R(h^*_&#123;ERM&#125;)  _&#123;h  &#123;H&#125;&#125; R(h) as n  .' },
 ];
 
 export default function ExplorerMLFEmpiricalRiskMinimization() {
@@ -17,10 +17,10 @@ export default function ExplorerMLFEmpiricalRiskMinimization() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Empirical Risk Minimization — Key Details Explorer
+          Empirical Risk Minimization \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of empirical risk minimization.
+          Click each card to explore the technical details.
         </p>
       </div>
 

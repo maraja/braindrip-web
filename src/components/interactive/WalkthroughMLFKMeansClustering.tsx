@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Lloyd\'s Algorithm (1982)', desc: 'The foundation of k-means clustering begins with understanding its core input requirements and initial setup.' },
-    { title: '2. K-Means++ Initialization', desc: 'At this stage, the key transformation occurs — the core mechanism that makes k-means clustering work.' },
-    { title: '3. Choosing K', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Mini-Batch K-Means', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Variants and Extensions', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Lloyd\'s Algorithm (1982)', desc: 'The standard K-means procedure, known as Lloyd\'s algorithm, alternates two steps:  Assignment step: Assign each point to the cluster whose centroid is nearest: [equation]  Update step: Recompute centroids as the mean of assigned points: [equation]  These steps repeat until assignments stabilize.' },
+    { title: '2. K-Means++ Initialization', desc: 'Random initialization often leads to poor local minima. K-means++ (Arthur and Vassilvitskii, 2007) provides a principled seeding strategy:  Choose the first centroid uniformly at random from the data.' },
+    { title: '3. Choosing K', desc: 'There is no single correct method; several heuristics exist:  Elbow method: Plot WCSS vs. K and look for a "bend." The point where adding another cluster yields diminishing returns suggests a natural K.' },
+    { title: '4. Mini-Batch K-Means', desc: 'For large datasets, mini-batch K-means (Sculley, 2010) updates centroids using small random batches rather than the full dataset. Each iteration samples b points, assigns them, and takes a weighted average update:  [equation]  This trades a slight loss in cluster quality for significant speedup --.' },
+    { title: '5. Variants and Extensions', desc: 'K-Medoids (PAM): Instead of centroids (means), use actual data points (medoids) as cluster representatives. This allows arbitrary distance metrics and is more robust to outliers, but at O(n^2) cost per iteration.' },
+    { title: '6. Practical Example', desc: 'Consider clustering customer purchase data with features: annual spending, visit frequency, and average basket size. After standardizing features (zero mean, unit variance), run K-means++ with K = 3--8, compute silhouette scores, and select the K with the highest average score.' },
 ];
 
 export default function WalkthroughMLFKMeansClustering() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFKMeansClustering() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          K-Means Clustering — Step by Step
+          K-Means Clustering \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how k-means clustering works, one stage at a time.

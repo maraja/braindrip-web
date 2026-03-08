@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCHoughTransform() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Standard Hough for lines on a 640x480 Canny edge map (typically 5,000--20,000 edge pixels) runs in 5--20 ms with $1^\\circ$ angular resolution.', isTrue: true, explanation: 'This is a key technical detail of Hough Transform.' },
-    { text: 'Accumulator size for lines: $\\lceil 2d / \\Delta\\rho \\rceil \\times \\lceil 180 / \\Delta\\theta \\rceil$.', isTrue: true, explanation: 'This is a key technical detail of Hough Transform.' },
-    { text: 'For 640x480 with $\\Delta\\rho=1$, $\\Delta\\theta=1^\\circ$: approximately $1131 \\times 180 \\approx 204\\text&#123;K&#125;$ cells.', isTrue: true, explanation: 'This is a key technical detail of Hough Transform.' },
+    { text: 'The Hough transform finds shapes directly in the image.', isTrue: false, explanation: 'It operates on an edge map, not the raw image. The quality of edge detection directly determines the quality of Hough results.' },
+    { text: 'The Hough transform detects parametric shapes (lines, circles, ellipses) by having each edge pixel vote in a parameter space, where peaks correspond to the shapes present in the image.', isTrue: true, explanation: 'This captures the core definition of Hough Transform.' },
+    { text: 'Hough Transform is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Hough Transform is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

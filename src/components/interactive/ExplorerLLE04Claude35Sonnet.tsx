@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Initial release', detail: 'June 20, 2024' },
     { label: 'Updated version', detail: 'October 22, 2024' },
-    { label: 'Context window', detail: '200,000 tokens' },
-    { label: 'GPQA', detail: '59.4% (industry-leading at release)' },
-    { label: 'MMLU', detail: '88.7%' },
-    { label: 'HumanEval', detail: '92.0%' },
+    { label: 'GPQA', detail: '4% (industry-leading at release)' },
+    { label: 'Agentic coding', detail: '0% (vs. 38.0% for Claude 3 Opus)' },
+    { label: 'Speed', detail: '~2x faster than Claude 3 Opus' },
+    { label: 'Pricing', detail: '3/15 per million input/output tokens' },
+    { label: 'Computer use', detail: 'Introduced in October 2024 update (public beta)' },
 ];
 
 export default function ExplorerLLE04Claude35Sonnet() {
@@ -20,10 +20,10 @@ export default function ExplorerLLE04Claude35Sonnet() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Claude 3.5 Sonnet — Key Details Explorer
+          Claude 3.5 Sonnet \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of claude 3.5 sonnet.
+          Click each card to explore the technical details.
         </p>
       </div>
 

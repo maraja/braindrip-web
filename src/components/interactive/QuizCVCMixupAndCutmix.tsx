@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCMixupAndCutmix() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Standard recipe: apply Mixup or CutMix with probability 0.5 each per batch (randomly choosing one), with $\\alpha = 0.8$ for Mixup and $\\alpha = 1.0$ for CutMix (DeiT recipe).', isTrue: true, explanation: 'This is a key technical detail of Mixup and CutMix.' },
-    { text: 'Mixup and CutMix should NOT be applied during validation or testing.', isTrue: true, explanation: 'This is a key technical detail of Mixup and CutMix.' },
-    { text: 'For object detection, CutMix requires care -- pasted regions may introduce objects without corresponding bounding box annotations.', isTrue: true, explanation: 'This is a key technical detail of Mixup and CutMix.' },
+    { text: 'Mixup creates unrealistic images, so it should not help.', isTrue: false, explanation: 'The blended images are indeed unnatural, but they regularize the linear interpolation between class representations, which provably smooths the decision boundary. The model never sees these at test time.' },
+    { text: 'Mixup linearly blends pairs of images and their labels, while CutMix cuts and pastes rectangular regions between images, both producing soft training targets that improve generalization, calibration, and robustness.', isTrue: true, explanation: 'This captures the core definition of Mixup and CutMix.' },
+    { text: 'Mixup and CutMix is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Mixup and CutMix is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE02TheApiEconomy() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'GPT-3 API (June 2020): ~$60/M tokens.', isTrue: true, explanation: 'This is a key technical detail of The API Economy: How LLMs Are Commercialized.' },
-    { text: 'First commercial LLM API.', isTrue: true, explanation: 'This is a key technical detail of The API Economy: How LLMs Are Commercialized.' },
-    { text: 'GPT-3.5-turbo (March 2023): ~$2/M tokens.', isTrue: true, explanation: 'This is a key technical detail of The API Economy: How LLMs Are Commercialized.' },
+    { text: 'LLM APIs are expensive.', isTrue: false, explanation: 'At current pricing, a GPT-4o-mini API call costs roughly $0.00015 per typical request. For most applications, the API cost is negligible compared to development and infrastructure costs.' },
+    { text: 'Self-hosting open models is always cheaper.', isTrue: false, explanation: 'GPU hardware has significant fixed costs (purchase or rental), and maintaining an inference stack requires engineering expertise. For low-volume applications, API pricing is often cheaper than self-hosting.' },
+    { text: 'OpenAI has an unassailable API lead.', isTrue: false, explanation: 'While OpenAI\'s ecosystem is the largest, Anthropic\'s developer satisfaction scores are competitive, Google\'s Vertex AI offers enterprise integration, and open-model hosts like Together AI provide compelling price-performance. The API market is genuinely multi-provider.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

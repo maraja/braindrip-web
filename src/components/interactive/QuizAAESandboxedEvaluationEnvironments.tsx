@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAESandboxedEvaluationEnvironments() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Sandboxed environments provide the reproducible, isolated, and realistic execution contexts that agent evaluations require, ensuring that every evaluation run starts from an identical state and that agent actions cannot affect other evaluations or production systems.', isTrue: true, explanation: 'This captures the core purpose of Sandboxed Evaluation Environments.' },
-    { text: 'Sandboxed Evaluation Environments is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Sandboxed Evaluation Environments is important for building on more advanced topics.' },
-    { text: 'Sandboxed Evaluation Environments is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Sandboxed Evaluation Environments is important for building on more advanced topics.' },
+    { text: 'Docker provides sufficient security isolation for adversarial evaluations.', isTrue: false, explanation: 'Docker provides process and file system isolation, but containers share the host kernel. A sufficiently sophisticated agent could potentially escape container isolation.' },
+    { text: 'Mocking all external services is always the right approach.', isTrue: false, explanation: 'Over-mocking creates a gap between evaluation and production. Agents that perform well against simplified mocks may fail when confronting real API behavior, including rate limits, pagination, error responses, and undocumented edge cases.' },
+    { text: 'Environment setup time does not matter if you are running evaluations overnight.', isTrue: false, explanation: 'Slow environment setup limits iteration speed during development, when rapid feedback matters most. It also multiplies costs for cloud-based sandboxes, where per-minute billing makes startup time directly translate to dollars.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

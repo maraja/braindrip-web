@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Two-Stage Architecture', desc: 'The foundation of latent diffusion and stable diffusion begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Text Conditioning', desc: 'At this stage, the key transformation occurs — the core mechanism that makes latent diffusion and stable diffusion work.' },
-    { title: '3. Classifier-Free Guidance in Latent Space', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Stable Diffusion Architecture Details', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Conditioning Extensions', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Two-Stage Architecture', desc: 'Stage 1: Perceptual Compression (Autoencoder)  A VQ-VAE or KL-regularized autoencoder is trained to encode images x  &#123;R&#125;^&#123;H x W x 3&#125; into latent representations z  &#123;R&#125;^&#123;h x w x c&#125; with a spatial downsampling factor f:  [equation]  Stable Diffusion uses f = 8, so a 512x512 image becomes a 64x64x4.' },
+    { title: '2. Text Conditioning', desc: 'Text prompts are encoded into embeddings using a frozen text encoder:  Stable Diffusion v1.x: CLIP ViT-L/14 text encoder (77 token context, 768-d embeddings). Stable Diffusion v2.x: OpenCLIP ViT-H/14 (1024-d embeddings).' },
+    { title: '3. Classifier-Free Guidance in Latent Space', desc: 'During training, text conditioning is dropped with probability 10%. At inference:  [equation]  Stable Diffusion v1.5 typically uses guidance scale w = 7.5.' },
+    { title: '4. Stable Diffusion Architecture Details', desc: 'U-Net: ResNet blocks with GroupNorm, SiLU activations. Self-attention and cross-attention at resolutions 32x32, 16x16, and 8x8.' },
+    { title: '5. Conditioning Extensions', desc: 'The cross-attention mechanism makes latent diffusion easily extensible:  ControlNet (Zhang et al., 2023): Adds spatial conditioning (edges, depth, pose) via a trainable copy of the encoder. IP-Adapter: Image prompt conditioning via decoupled cross-attention for image features.' },
 ];
 
 export default function WalkthroughCVCLatentDiffusionAndStableDiffusion() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCLatentDiffusionAndStableDiffusion() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Latent Diffusion and Stable Diffusion — Step by Step
+          Latent Diffusion and Stable Diffusion \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how latent diffusion and stable diffusion works, one stage at a time.

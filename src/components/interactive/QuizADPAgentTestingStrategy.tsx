@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizADPAgentTestingStrategy() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Temperature 0 provides 85-95% reproducibility across runs.', isTrue: true, explanation: 'This is a key technical detail of Agent Testing Strategy.' },
-    { text: 'The remaining 5-15% variance comes from API-level non-determinism (batching, quantization).', isTrue: true, explanation: 'This is a key technical detail of Agent Testing Strategy.' },
-    { text: 'Minimum evaluation suite size is 50 tasks for statistically meaningful results.', isTrue: true, explanation: 'This is a key technical detail of Agent Testing Strategy.' },
+    { text: 'You can test agents the same way you test traditional software.', isTrue: false, explanation: 'Traditional testing assumes deterministic behavior: same input produces same output. Agent testing requires statistical evaluation, semantic assertions, and trajectory analysis.' },
+    { text: '$500-2000/month for evaluation runs.', isTrue: true, explanation: 'This is a small fraction of the production LLM cost.' },
+    { text: 'End-to-end evals are the only tests that matter for agents.', isTrue: false, explanation: 'End-to-end evals are essential but expensive, slow, and non-deterministic. Unit and integration tests are cheap, fast, and deterministic.' },
+    { text: 'With 100-task evaluation suites run 3 times each, you can reliably detect 5-percentage-point quality changes within one nightly run.', isTrue: true, explanation: 'With 100-task evaluation suites run 3 times each, you can reliably detect 5-percentage-point quality changes within one nightly run.' },
+    { text: 'If the agent passes evals at temperature 0, it works in production.', isTrue: false, explanation: 'Production runs at non-zero temperature, with diverse inputs, under variable load, and against live tool APIs that may behave differently from test environments. Eval results are a necessary but not sufficient indicator of production reliability.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

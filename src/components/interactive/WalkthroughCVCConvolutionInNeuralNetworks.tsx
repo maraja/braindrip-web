@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Local Connectivity', desc: 'The foundation of convolution in neural networks begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Weight Sharing', desc: 'At this stage, the key transformation occurs — the core mechanism that makes convolution in neural networks work.' },
-    { title: '3. Stride and Padding', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Transposed Convolution', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Dilated (Atrous) Convolution', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Local Connectivity', desc: 'Unlike a fully connected layer where every input unit connects to every output unit, a convolutional neuron only sees a small spatial neighborhood defined by the kernel size.' },
+    { title: '2. Weight Sharing', desc: 'The same kernel weights are reused at every spatial position. This has two critical consequences:  Dramatically fewer parameters.' },
+    { title: '3. Stride and Padding', desc: 'Stride s: The kernel moves s pixels at a time. Stride 2 halves the spatial dimensions.' },
+    { title: '4. Transposed Convolution', desc: 'Also called deconvolution or fractionally strided convolution, transposed convolutions upsample feature maps by inserting zeros between input elements and then applying a standard convolution.' },
+    { title: '5. Dilated (Atrous) Convolution', desc: 'Inserting gaps of size d - 1 between kernel elements expands the receptive field without increasing parameter count. A 3 x 3 kernel with dilation d = 2 covers a 5 x 5 effective area using only 9 weights.' },
+    { title: '6. Groups and 1x1 Convolutions', desc: 'Grouped convolutions partition input channels into g groups, each processed independently, reducing computation by a factor of g. When g = C_&#123;in&#125;, this becomes a depthwise convolution.' },
 ];
 
 export default function WalkthroughCVCConvolutionInNeuralNetworks() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCConvolutionInNeuralNetworks() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Convolution in Neural Networks — Step by Step
+          Convolution in Neural Networks \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how convolution in neural networks works, one stage at a time.

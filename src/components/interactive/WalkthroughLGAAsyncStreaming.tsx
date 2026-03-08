@@ -1,11 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Basic Async Streaming', desc: 'The foundation of async streaming begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Async Token Streaming', desc: 'At this stage, the key transformation occurs — the core mechanism that makes async streaming work.' },
-    { title: '3. Async Non-Streaming Invocation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. FastAPI Integration', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Running Multiple Graphs Concurrently', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Basic Async Streaming', desc: 'The only syntactic differences are async for instead of for and astream() instead of stream(). All four stream modes work identically.' },
+    { title: '2. Async Non-Streaming Invocation', desc: 'When you need the final result without intermediate chunks, use ainvoke().' },
+    { title: '3. Running Multiple Graphs Concurrently', desc: 'Async streaming lets you run independent graphs in parallel with asyncio.gather().' },
 ];
 
 export default function WalkthroughLGAAsyncStreaming() {
@@ -17,10 +15,10 @@ export default function WalkthroughLGAAsyncStreaming() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Async Streaming — Step by Step
+          Async Streaming \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how async streaming works, one stage at a time.

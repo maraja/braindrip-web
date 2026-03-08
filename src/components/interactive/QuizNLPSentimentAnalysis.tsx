@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPSentimentAnalysis() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'SST-2 (binary): SOTA ~97% accuracy (DeBERTa-v3); human agreement estimated at ~97%.', isTrue: true, explanation: 'This is a key technical detail of Sentiment Analysis.' },
-    { text: 'SST-5 (fine-grained, 5-class): SOTA ~59% accuracy; human agreement ~68%, showing inherent subjectivity.', isTrue: true, explanation: 'This is a key technical detail of Sentiment Analysis.' },
-    { text: 'IMDB (binary, 50k reviews): BERT-family models reach ~95.5%; an SVM with bigrams achieves ~89%.', isTrue: true, explanation: 'This is a key technical detail of Sentiment Analysis.' },
+    { text: 'Sentiment analysis is just positive vs. negative.', isTrue: false, explanation: 'Binary polarity is the simplest formulation. Real-world applications require fine-grained scales, aspect-level analysis, emotion detection, and handling of mixed sentiment within a single text.' },
+    { text: 'SOTA ~97% accuracy (DeBERTa-v3); human agreement estimated at ~97%.', isTrue: true, explanation: 'SOTA ~97% accuracy (DeBERTa-v3); human agreement estimated at ~97%.' },
+    { text: 'Lexicon-based methods are obsolete.', isTrue: false, explanation: 'VADER and similar tools remain valuable for domains with no labeled data, for interpretable baselines, and for real-time social media monitoring where speed matters. They also serve as useful features alongside neural models.' },
+    { text: 'SOTA ~59% accuracy; human agreement ~68%, showing inherent subjectivity.', isTrue: true, explanation: 'SOTA ~59% accuracy; human agreement ~68%, showing inherent subjectivity.' },
+    { text: 'Sentiment is objective.', isTrue: false, explanation: 'Human annotators disagree on sentiment labels roughly 3--10% of the time (depending on granularity), establishing a ceiling that no model can reliably exceed. Cultural context, personal experience, and domain knowledge all affect interpretation.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Boolean Model', desc: 'The foundation of information retrieval begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Vector Space Model (VSM)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes information retrieval work.' },
-    { title: '3. BM25: The Workhorse of Lexical Retrieval', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Inverted Indices', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Relevance Feedback', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Boolean Model', desc: 'The simplest retrieval model treats queries as Boolean expressions. A query like "machine learning" AND "neural networks" NOT "deep learning" returns all documents satisfying the Boolean predicate exactly.' },
+    { title: '2. The Vector Space Model (VSM)', desc: 'Salton\'s vector space model (1975) represents both documents and queries as vectors in R^ is the vocabulary size. Each dimension holds a TF-IDF weight (see 03-text-representation/tf-idf.md).' },
+    { title: '3. BM25: The Workhorse of Lexical Retrieval', desc: 'BM25 (Best Match 25), proposed by Robertson et al. (1994), refines TF-IDF scoring with saturation and document length normalization.' },
+    { title: '4. Inverted Indices', desc: 'Efficient retrieval requires an inverted index: a data structure mapping each term to a posting list of (document_id, term_frequency, positions) tuples.' },
+    { title: '5. Relevance Feedback', desc: 'Users often cannot articulate their information need precisely. Relevance feedback refines the query using user judgments: Explicit feedback: The user marks documents as relevant/non-relevant; the system reformulates the query (Rocchio algorithm: move the query vector toward relevant documents and.' },
+    { title: '6. Neural Dense Retrieval', desc: 'Traditional IR suffers from the lexical gap: queries and documents must share exact terms. Dense retrieval encodes queries and documents into dense vectors using neural encoders, then retrieves via approximate nearest-neighbor (ANN) search in vector space.' },
 ];
 
 export default function WalkthroughNLPInformationRetrieval() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPInformationRetrieval() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Information Retrieval — Step by Step
+          Information Retrieval \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how information retrieval works, one stage at a time.

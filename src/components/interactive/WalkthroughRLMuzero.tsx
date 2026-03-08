@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Three Networks', desc: 'The foundation of muzero begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Planning with MCTS in Latent Space', desc: 'At this stage, the key transformation occurs — the core mechanism that makes muzero work.' },
-    { title: '3. Training: Learning to Plan', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. How MuZero Differs from AlphaZero', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Three Networks', desc: 'MuZero learns three interconnected neural networks:  Representation Network h_: Encodes a real observation (or stack of recent observations) into an initial latent state:  [equation]  This compresses the raw observation history into a latent representation suitable for planning.' },
+    { title: '2. Planning with MCTS in Latent Space', desc: 'At decision time, MuZero runs MCTS using these three networks:  Root encoding: Convert the current real observation into a latent state s^0 = h_(o_t). Selection: Traverse the tree using PUCT (see monte-carlo-tree-search.md), with P(a|s) and V(s) from the prediction network.' },
+    { title: '3. Training: Learning to Plan', desc: 'MuZero trains on trajectories stored in a replay buffer. For each sampled trajectory, the model unrolls K hypothetical steps (typically K = 5) from each real state and is trained on three losses:  Policy loss: The predicted policy at each unrolled step k should match the MCTS policy computed during.' },
+    { title: '4. How MuZero Differs from AlphaZero', desc: 'The critical difference is that MuZero does not need the rules. AlphaZero calls the game engine to simulate moves; MuZero calls its own learned dynamics network.' },
 ];
 
 export default function WalkthroughRLMuzero() {
@@ -16,10 +16,10 @@ export default function WalkthroughRLMuzero() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          MuZero — Step by Step
+          MuZero \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how muzero works, one stage at a time.

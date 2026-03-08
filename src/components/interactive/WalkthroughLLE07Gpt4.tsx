@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture (What Is Known)', desc: 'The foundation of gpt-4 begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Multimodal Input', desc: 'At this stage, the key transformation occurs — the core mechanism that makes gpt-4 work.' },
-    { title: '3. Predictable Scaling', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Safety and Alignment', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Architecture (What Is Known)', desc: 'OpenAI disclosed almost nothing about GPT-4\'s architecture. The technical report stated only that it was a "Transformer-style model pre-trained to predict the next token in a document, using both publicly available data and data licensed from third-party providers.' },
+    { title: '2. Multimodal Input', desc: 'GPT-4 was the first major frontier model to accept image inputs alongside text. Users could upload images and ask the model to describe, analyze, or reason about them.' },
+    { title: '3. Predictable Scaling', desc: 'One of the most remarkable disclosures in the technical report was that OpenAI had developed infrastructure to predict GPT-4\'s performance from models trained with as little as 1/1,000th of the total compute.' },
+    { title: '4. Safety and Alignment', desc: 'GPT-4 was extensively aligned using RLHF and underwent a months-long "red teaming" process where external experts attempted to elicit harmful, biased, or dangerous outputs. OpenAI reported that GPT-4 was 82% less likely to produce disallowed content than GPT-3.' },
 ];
 
 export default function WalkthroughLLE07Gpt4() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE07Gpt4() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          GPT-4 — Step by Step
+          GPT-4 \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how gpt-4 works, one stage at a time.

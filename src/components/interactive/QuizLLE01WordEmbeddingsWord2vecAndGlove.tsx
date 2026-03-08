@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE01WordEmbeddingsWord2vecAndGlove() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Word2Vec uses a neural network, so it\'s deep learning.', isTrue: false, explanation: '"Word2Vec uses a neural network, so it\'s deep learning." Word2Vec is actually a shallow, two-layer network. Its power comes from the training objective and scale, not depth. This is why it trained so ' },
-    { text: 'Word2Vec: Published January and October 2013 by Mikolov et al.', isTrue: true, explanation: 'This is a key technical detail of Word Embeddings: Word2Vec and GloVe.' },
-    { text: 'at Google; 300-dimensional vectors; trained on 100B words from Google News GloVe: Published 2014 by Pennington et al.', isTrue: true, explanation: 'This is a key technical detail of Word Embeddings: Word2Vec and GloVe.' },
+    { text: 'Word2Vec uses a neural network, so it\'s deep learning.', isTrue: false, explanation: 'Word2Vec is actually a shallow, two-layer network. Its power comes from the training objective and scale, not depth.' },
+    { text: 'Published January and October 2013 by Mikolov et al.', isTrue: true, explanation: 'at Google; 300-dimensional vectors; trained on 100B words from Google News' },
+    { text: 'GloVe is fundamentally different from Word2Vec.', isTrue: false, explanation: 'Levy and Goldberg (2014) showed that Word2Vec\'s Skip-gram with negative sampling implicitly factorizes a shifted PMI matrix — making it mathematically similar to GloVe\'s explicit matrix factorization. The approaches converge more than they diverge.' },
+    { text: 'Published 2016 by Bojanowski et al.', isTrue: true, explanation: 'at Facebook AI Research; used character n-grams of length 3-6' },
+    { text: 'Word embeddings understand meaning.', isTrue: false, explanation: 'Embeddings capture distributional similarity, not true semantic understanding. They reflect biases in training data (e.g., gender stereotypes) and cannot distinguish between co-occurrence and causation.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE01Claude4Series() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Anthropic\'s Claude 4 series (2025-2026) pushed the frontier of coding, agentic capability, and alignment -- from Opus 4\'s autonomous task dominance through Sonnet 4.5\'s 30-hour sustained focus and Opus 4.5\'s benchmark-leading efficiency, to the 4.6 generation\'s agent teams, with Opus 4.6 Thinking reaching #1 on LMArena at 1506 Elo.', isTrue: true, explanation: 'This captures the core purpose of Claude 4 Series.' },
-    { text: 'Claude 4 Series is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Claude 4 Series is important for building on more advanced topics.' },
-    { text: 'Claude 4 Series is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Claude 4 Series is important for building on more advanced topics.' },
+    { text: 'Claude 4 is just a bigger model.', isTrue: false, explanation: 'The improvements are as much about training methodology, alignment techniques, and agentic scaffolding as about scale. Computer use, agent teams, and reason-based alignment represent qualitatively new capabilities, not just larger parameter counts.' },
+    { text: 'Computer use means Claude takes over your computer.', isTrue: false, explanation: 'Computer use operates within explicit user authorization and sandboxed environments. Claude requests permission, operates within defined boundaries, and can be stopped at any point.' },
+    { text: 'Alignment makes Claude less capable.', isTrue: false, explanation: 'The reason-based alignment approach actually makes Claude more capable in practice, because it can engage thoughtfully with nuanced requests rather than refusing them categorically. Better alignment produces better, more useful responses.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

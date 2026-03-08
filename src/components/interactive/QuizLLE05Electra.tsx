@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE05Electra() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ELECTRA (Clark et al., 2020) replaced masked language modeling with a generator-discriminator framework where a small generator creates plausible token replacements and the main model learns to detect which tokens were replaced — training on all input tokens instead of just 15%, achieving 4x greater sample efficiency and matching RoBERTa-level performance with a fraction of the compute.', isTrue: true, explanation: 'This captures the core purpose of ELECTRA: Efficiently Learning an Encoder That Classifies Token Replacements Accurately.' },
-    { text: 'ELECTRA: Efficiently Learning an Encoder That Classifies Token Replacements Accurately is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding ELECTRA: Efficiently Learning an Encoder That Classifies Token Replacements Accurately is important for building on more advanced topics.' },
-    { text: 'ELECTRA: Efficiently Learning an Encoder That Classifies Token Replacements Accurately is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding ELECTRA: Efficiently Learning an Encoder That Classifies Token Replacements Accurately is important for building on more advanced topics.' },
+    { text: 'ELECTRA is a GAN for text.', isTrue: false, explanation: 'ELECTRA borrows the generator-discriminator terminology but not the adversarial training paradigm. The generator is trained with maximum likelihood estimation, not to fool the discriminator.' },
+    { text: '14M discriminator params; matched GPT-1 performance at 1/35 the compute', isTrue: true, explanation: '14M discriminator params; matched GPT-1 performance at 1/35 the compute' },
+    { text: 'The generator learns to fool the discriminator.', isTrue: false, explanation: 'The generator does not interact with the discriminator during training. It is trained independently to predict masked tokens as accurately as possible.' },
+    { text: '110M discriminator params; matched BERT-Large on GLUE (85.1 vs 84.9)', isTrue: true, explanation: '110M discriminator params; matched BERT-Large on GLUE (85.1 vs 84.9)' },
+    { text: 'ELECTRA is only useful for small models.', isTrue: false, explanation: 'While ELECTRA\'s efficiency gains are most dramatic at small scale (ELECTRA-Small vs GPT-1), the benefits persist at larger scale. ELECTRA-Large matched RoBERTa-Large with 1/4 the compute.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

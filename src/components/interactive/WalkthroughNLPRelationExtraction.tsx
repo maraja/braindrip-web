@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Pipeline vs. Joint Extraction', desc: 'The foundation of relation extraction begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Pattern-Based Methods', desc: 'At this stage, the key transformation occurs — the core mechanism that makes relation extraction work.' },
-    { title: '3. Supervised Neural Methods', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Distant Supervision', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Few-Shot and Zero-Shot RE with LLMs', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Pipeline vs. Joint Extraction', desc: 'Pipeline approach: First run NER to identify entity mentions, then classify the relation for each entity pair. This is simpler to implement and debug but suffers from error propagation -- NER mistakes cannot be recovered by the relation classifier.' },
+    { title: '2. Pattern-Based Methods', desc: 'Early relation extraction relied on manually crafted or semi-automatically learned lexical-syntactic patterns. Hearst (1992) showed that patterns like "NP such as NP" reliably extract hyponymy relations.' },
+    { title: '3. Supervised Neural Methods', desc: 'CNN-based RE: Zeng et al. (2014) applied CNNs over word embeddings concatenated with position embeddings (distance from each token to the two entities).' },
+    { title: '4. Distant Supervision', desc: '(2009) introduced distant supervision to address the bottleneck of labeled training data. The key assumption: if a knowledge base contains the fact (Steve_Jobs, founded, Apple), then any sentence mentioning both "Steve Jobs" and "Apple" likely expresses the founded relation.' },
+    { title: '5. Few-Shot and Zero-Shot RE with LLMs', desc: 'Recent work explores relation extraction with minimal or no training data:  Few-shot RE: Given 5--10 examples of a new relation type, models use metric learning (prototype networks) or meta-learning to classify new instances. FewRel (Han et al.' },
 ];
 
 export default function WalkthroughNLPRelationExtraction() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPRelationExtraction() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Relation Extraction — Step by Step
+          Relation Extraction \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how relation extraction works, one stage at a time.

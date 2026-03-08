@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture', desc: 'The foundation of clip (contrastive language-image pretraining) begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Contrastive Training Objective', desc: 'At this stage, the key transformation occurs — the core mechanism that makes clip (contrastive language-image pretraining) work.' },
-    { title: '3. Zero-Shot Inference', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Training Data: WIT', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Architecture', desc: 'CLIP uses two parallel encoders:  Image encoder: Either a modified ResNet (ResNet-50, ResNet-50x4, ResNet-50x16, ResNet-50x64) or a Vision Transformer (ViT-B/32, ViT-B/16, ViT-L/14). The best-performing variant uses ViT-L/14 at 336px resolution.' },
+    { title: '2. Contrastive Training Objective', desc: 'Given a batch of N image-text pairs, CLIP computes an N x N matrix of cosine similarities:  [equation]  where I_i and T_j are the normalized embeddings and  is a learned temperature parameter (initialized to 0.07).' },
+    { title: '3. Zero-Shot Inference', desc: 'At test time, classification requires no retraining:  Encode each class name as text: "a photo of a &#123;class&#125;" Encode the query image Compute cosine similarity between the image and all class text embeddings Predict the class with highest similarity  Prompt engineering matters significantly.' },
+    { title: '4. Training Data: WIT', desc: 'CLIP was trained on WebImageText (WIT), a proprietary dataset of 400 million image-text pairs collected from the internet. The dataset was filtered but not manually curated, covering an enormous breadth of visual concepts and language descriptions.' },
 ];
 
 export default function WalkthroughCVCClip() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCClip() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          CLIP (Contrastive Language-Image Pretraining) — Step by Step
+          CLIP (Contrastive Language-Image Pretraining) \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how clip (contrastive language-image pretraining) works, one stage at a time.

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPTextClassification() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'AG News benchmark: 4-class news classification; BERT achieves ~94.5% accuracy, linear SVM ~92%.', isTrue: true, explanation: 'This is a key technical detail of Text Classification.' },
-    { text: 'IMDB sentiment (binary): BERT-family models reach ~95.5% accuracy; a simple BiLSTM with attention achieves ~90%.', isTrue: true, explanation: 'This is a key technical detail of Text Classification.' },
-    { text: 'SST-2 (Stanford Sentiment Treebank, binary): SOTA is ~97% accuracy (DeBERTa-v3).', isTrue: true, explanation: 'This is a key technical detail of Text Classification.' },
+    { text: 'More data always beats a better algorithm.', isTrue: false, explanation: 'While more labeled data helps, architecture matters significantly. BERT fine-tuned on 5,000 examples often outperforms an SVM trained on 50,000, because pre-training captures distributional knowledge from billions of tokens.' },
+    { text: '4-class news classification; BERT achieves ~94.5% accuracy, linear SVM ~92%.', isTrue: true, explanation: '4-class news classification; BERT achieves ~94.5% accuracy, linear SVM ~92%.' },
+    { text: 'Text classification is a solved problem.', isTrue: false, explanation: 'Accuracy on clean benchmarks is high, but real-world challenges -- domain shift, class imbalance (e.g., 0.1% fraud in transactions), adversarial inputs, and evolving label definitions -- mean production classifiers require continual monitoring and retraining.' },
+    { text: 'BERT-family models reach ~95.5% accuracy; a simple BiLSTM with attention achieves ~90%.', isTrue: true, explanation: 'BERT-family models reach ~95.5% accuracy; a simple BiLSTM with attention achieves ~90%.' },
+    { text: 'Deep learning always outperforms traditional methods.', isTrue: false, explanation: 'For small datasets (&lt;1,000 examples), high-dimensional sparse features, or when interpretability is required, Naive Bayes and SVMs remain competitive. A well-tuned TF-IDF + SVM pipeline is a responsible first baseline before reaching for BERT.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

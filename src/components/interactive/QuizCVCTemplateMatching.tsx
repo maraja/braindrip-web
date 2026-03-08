@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCTemplateMatching() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'For a 640x480 image and a 64x64 template, brute-force SSD evaluates roughly $577 \\times 417 \\times 4096 \\approx 10^9$ operations.', isTrue: true, explanation: 'This is a key technical detail of Template Matching.' },
-    { text: 'NCC adds mean subtraction and normalization overhead.', isTrue: true, explanation: 'This is a key technical detail of Template Matching.' },
-    { text: 'OpenCV\'s matchTemplate with TM_CCOEFF_NORMED uses integral images for the local mean and sum-of-squares terms, running in approximately 10--30 ms for the above scenario on a modern CPU.', isTrue: true, explanation: 'This is a key technical detail of Template Matching.' },
+    { text: 'Template matching is too simple to be useful.', isTrue: false, explanation: 'In controlled industrial settings with fixed cameras and known object appearance, it achieves near-perfect accuracy with minimal development time. "NCC handles all illumination changes." NCC is invariant to linear brightness and contrast changes ( I + ) but not to non-uniform illumination, shadows, or specular highlights.' },
+    { text: 'Template matching slides a reference image patch across a target image, computing a similarity score at every position to find where the template appears.', isTrue: true, explanation: 'This captures the core definition of Template Matching.' },
+    { text: 'Template Matching is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Template Matching is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,12 +1,11 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Release date', detail: 'March 4, 2024' },
     { label: 'Three tiers', detail: 'Haiku (fastest/cheapest), Sonnet (balanced), Opus (most capable)' },
     { label: 'Context window', detail: '200,000 tokens across all tiers' },
-    { label: 'Opus MMLU', detail: '86.8% (vs. GPT-4\'s 86.4%)' },
-    { label: 'Opus GPQA', detail: '50.4% (new state-of-the-art at release)' },
-    { label: 'Opus GSM8K', detail: '95.0%' },
+    { label: 'Opus MMLU', detail: '8% (vs. GPT-4\'s 86.4%)' },
+    { label: 'Opus GPQA', detail: '4% (new state-of-the-art at release)' },
+    { label: 'Vision', detail: 'All three tiers support image input natively' },
 ];
 
 export default function ExplorerLLE01Claude3Family() {
@@ -20,10 +19,10 @@ export default function ExplorerLLE01Claude3Family() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Claude 3 Family — Key Details Explorer
+          Claude 3 Family \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of claude 3 family.
+          Click each card to explore the technical details.
         </p>
       </div>
 

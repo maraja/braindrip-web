@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACTrajectoryEvaluation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Aggregate metrics are computed over these per-step annotations.', isTrue: true, explanation: 'This is a key technical detail of Trajectory Evaluation.' },
-    { text: 'Automated trajectory evaluation: LLM-based evaluators score trajectories by processing the full action log with evaluation criteria.', isTrue: true, explanation: 'This is a key technical detail of Trajectory Evaluation.' },
-    { text: 'The evaluator prompt provides the task description, the complete trajectory, and a rubric.', isTrue: true, explanation: 'This is a key technical detail of Trajectory Evaluation.' },
+    { text: 'If the outcome is correct, the process doesn\'t matter.', isTrue: false, explanation: 'This is the most dangerous misconception. Good outcomes from bad process are unreliable and unscalable.' },
+    { text: 'Each step is annotated with: step type (reasoning, tool_call, observation), relevance score (0-1), correctness score (0-1), necessity score (was this step needed), and a brief justification.', isTrue: true, explanation: 'Aggregate metrics are computed over these per-step annotations.' },
+    { text: 'Trajectory evaluation is too expensive to do at scale.', isTrue: false, explanation: 'Automated trajectory evaluation using LLM judges costs pennies per evaluation and scales to thousands of evaluations per hour. While human trajectory evaluation is expensive, automated evaluation provides useful signal at scale.' },
+    { text: 'LLM-based evaluators score trajectories by processing the full action log with evaluation criteria.', isTrue: true, explanation: 'The evaluator prompt provides the task description, the complete trajectory, and a rubric. The evaluator scores each step and provides an overall trajectory quality rating.' },
+    { text: 'The shortest trajectory is the best trajectory.', isTrue: false, explanation: 'Short trajectories are often efficient, but not always best. A thorough agent that verifies its results, checks edge cases, or explores alternatives before committing may take more steps but produce more reliable outcomes.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

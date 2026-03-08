@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLRewardModelingForLlms() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Data scale: InstructGPT used ~33K comparisons; modern systems use 100K--1M+ comparisons.', isTrue: true, explanation: 'This is a key technical detail of Reward Modeling for LLMs.' },
-    { text: 'Quality matters more than quantity.', isTrue: true, explanation: 'This is a key technical detail of Reward Modeling for LLMs.' },
-    { text: 'Inter-annotator agreement: Typically 60--75% on pairwise comparisons for open-ended tasks, setting a ceiling on reward model accuracy.', isTrue: true, explanation: 'This is a key technical detail of Reward Modeling for LLMs.' },
+    { text: 'The reward model learns an absolute quality score.', isTrue: false, explanation: 'It learns only to rank responses. The absolute scale is meaningless, and a reward of 3.5 does not indicate a specific quality level.' },
+    { text: 'InstructGPT used ~33K comparisons; modern systems use 100K--1M+ comparisons.', isTrue: true, explanation: 'Quality matters more than quantity.' },
+    { text: 'Typically 60--75% on pairwise comparisons for open-ended tasks, setting a ceiling on reward model accuracy.', isTrue: true, explanation: 'Typically 60--75% on pairwise comparisons for open-ended tasks, setting a ceiling on reward model accuracy.' },
+    { text: 'Usually the same architecture as the policy model, or smaller.', isTrue: true, explanation: 'InstructGPT used a 6B RM for a 175B policy.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

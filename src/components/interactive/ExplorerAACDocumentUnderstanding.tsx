@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'PDF parsing libraries', detail: 'PyMuPDF (fitz), pdfplumber, and PyPDF2 extract text from born-digital PDFs. pdfplumber is particularly strong at preserving table structure. For complex PDFs, combining library extraction with LLM-based correction yields the best results.' },
-    { label: 'Chunking strategies for structured documents', detail: 'Naive fixed-size chunking destroys document structure. Structure-aware chunking respects document sections, keeps tables intact, associates figures with their captions, and maintains header hierarchy. Each chunk should include its structural context (e.g., \"Section 3.2 > Table 4 > Row: Q3 Revenue\").' },
+    { label: 'Chunking strategies for structured documents', detail: 'Naive fixed-size chunking destroys document structure. Structure-aware chunking respects document sections, keeps tables intact, associates figures with their captions, and maintains header hierarchy. Each chunk should include its structural context (e.g., "Section 3.2 &gt; Table 4 &gt; Row: Q3 Revenue").' },
     { label: 'Image extraction and captioning', detail: 'Figures and charts embedded in documents are extracted as images and processed separately. Vision models generate descriptive captions or structured data (e.g., extracting data points from a bar chart). These captions are indexed alongside the text for retrieval.' },
     { label: 'Metadata preservation', detail: 'Document understanding preserves metadata: page numbers, section titles, document title, author, date, and the position of each element. This metadata is critical for source citation and for answering questions that reference specific locations in a document.' },
     { label: 'Quality scoring', detail: 'Each extracted element receives a quality score based on OCR confidence, layout detection confidence, and structural consistency. Low-quality extractions are flagged for human review or excluded from the retrieval index.' },
@@ -20,10 +20,10 @@ export default function ExplorerAACDocumentUnderstanding() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Document Understanding — Key Details Explorer
+          Document Understanding \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of document understanding.
+          Click each card to explore the technical details.
         </p>
       </div>
 

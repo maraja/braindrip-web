@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Docker security profiles', detail: 'AppArmor or Seccomp profiles restrict which system calls the container can make. A well-configured profile blocks dangerous syscalls (mount, reboot, module loading) while allowing normal operation. Docker\'s default seccomp profile blocks about 44 of the 300+ Linux syscalls.' },
-    { label: 'Firecracker vs Docker', detail: 'Docker provides OS-level isolation (shared kernel). Firecracker provides hardware-level isolation (separate lightweight VM). Firecracker is more secure but adds ~125ms boot time and slightly more memory overhead. For multi-tenant environments where agents from different users share infrastructure, Firecracker\'s stronger isolation is preferred.' },
+    { label: 'Firecracker vs Docker', detail: 'Docker provides OS-level isolation (shared kernel). Firecracker provides hardware-level isolation (separate lightweight VM). Firecracker is more secure but adds ~125ms boot time and slightly more memory overhead.' },
     { label: 'Ephemeral environments', detail: 'Sandboxes are created fresh for each agent session and destroyed afterward. No state persists between sessions unless explicitly exported through a controlled output channel. This prevents agents from establishing persistent footholds.' },
     { label: 'Output sanitization', detail: 'When the agent produces results that leave the sandbox (files, API responses, messages), the output channel sanitizes them to prevent sandbox escape through output manipulation. This includes scanning for executable content, scripts, or encoded payloads.' },
     { label: 'Monitoring within the sandbox', detail: 'System call tracing (strace/dtrace) and file system monitoring (inotify) inside the sandbox log every action the agent takes. These logs are stored outside the sandbox for post-hoc analysis and anomaly detection.' },
@@ -20,10 +20,10 @@ export default function ExplorerAACAgentSandboxing() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agent Sandboxing — Key Details Explorer
+          Agent Sandboxing \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of agent sandboxing.
+          Click each card to explore the technical details.
         </p>
       </div>
 

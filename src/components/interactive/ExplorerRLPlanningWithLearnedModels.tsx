@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'PETS', detail: '(Chua et al., 2018): Ensemble of 5 probabilistic neural networks + CEM planning. 200 candidate sequences, 3 CEM iterations, planning horizon $H = 30$. Matches model-free methods at ~1/100th the samples on MuJoCo.' },
-    { label: 'MBPO', detail: '(Janner et al., 2019): Rollout length $k$ increases from 1 to 5 as the model improves. Uses SAC for policy optimization. Achieves near-asymptotic SAC performance with ~20x fewer samples.' },
+    { label: 'PETS', detail: '(Chua et al., 2018): Ensemble of 5 probabilistic neural networks + CEM planning. 200 candidate sequences, 3 CEM iterations, planning horizon H = 30. Matches model-free methods at ~1/100th the samples on MuJoCo.' },
+    { label: 'MBPO', detail: '(Janner et al., 2019): Rollout length k increases from 1 to 5 as the model improves. Uses SAC for policy optimization. Achieves near-asymptotic SAC performance with ~20x fewer samples.' },
     { label: 'DreamerV3', detail: '(Hafner et al., 2023): Plans in latent space using an RSSM, achieving state-of-the-art on Atari, DMControl, and Minecraft with a single set of hyperparameters.' },
     { label: 'Model horizon selection', detail: 'Too short = insufficient benefit from planning. Too long = compounding error degrades performance. Adaptive horizon based on model uncertainty is an active research direction.' },
     { label: 'Computational overhead', detail: 'MPC with CEM typically requires 200-1000 model evaluations per real environment step. GPU parallelism makes this feasible but adds latency.' },
@@ -19,10 +19,10 @@ export default function ExplorerRLPlanningWithLearnedModels() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Planning with Learned Models — Key Details Explorer
+          Planning with Learned Models \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of planning with learned models.
+          Click each card to explore the technical details.
         </p>
       </div>
 

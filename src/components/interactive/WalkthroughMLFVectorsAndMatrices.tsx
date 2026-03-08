@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Vector Spaces and Operations', desc: 'The foundation of vectors and matrices begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Matrix Multiplication as Linear Transformation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes vectors and matrices work.' },
-    { title: '3. Transpose and Symmetry', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Inverse and Rank', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Column Space and Null Space', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Vector Spaces and Operations', desc: 'A vector space over &#123;R&#125; is a set V equipped with vector addition and scalar multiplication satisfying closure, associativity, commutativity, and the existence of additive identity and inverses. The canonical example is &#123;R&#125;^n.' },
+    { title: '2. Matrix Multiplication as Linear Transformation', desc: 'Matrix multiplication is not just a computational recipe; it is the algebraic encoding of a linear transformation. If A  &#123;R&#125;^&#123;m x n&#125;, then the map x  Ax sends vectors in &#123;R&#125;^n to vectors in &#123;R&#125;^m.' },
+    { title: '3. Transpose and Symmetry', desc: 'The transpose A^T is obtained by swapping rows and columns: (A^T)_&#123;ij&#125; = A_&#123;ji&#125;. A matrix is symmetric if A = A^T.' },
+    { title: '4. Inverse and Rank', desc: 'A square matrix A is invertible if there exists A^&#123;-1&#125; such that AA^&#123;-1&#125; = A^&#123;-1&#125;A = I. The inverse exists if and only if (A)  0, equivalently when A has full rank.' },
+    { title: '5. Column Space and Null Space', desc: 'The column space Col(A) is the span of A\'s columns -- the set of all vectors b for which Ax = b has a solution. The null space Null(A) is the set of all x satisfying Ax = 0.' },
 ];
 
 export default function WalkthroughMLFVectorsAndMatrices() {
@@ -17,10 +17,10 @@ export default function WalkthroughMLFVectorsAndMatrices() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Vectors and Matrices — Step by Step
+          Vectors and Matrices \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how vectors and matrices works, one stage at a time.

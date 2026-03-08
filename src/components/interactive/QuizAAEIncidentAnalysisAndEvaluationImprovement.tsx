@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEIncidentAnalysisAndEvaluationImprovement() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Every meaningful production failure should be systematically analyzed, converted into a regression test case, and used to identify gaps in the evaluation suite -- creating a feedback loop where incidents continuously strengthen the evaluation system that prevents future incidents.', isTrue: true, explanation: 'This captures the core purpose of Incident Analysis and Evaluation Improvement.' },
-    { text: 'Incident Analysis and Evaluation Improvement is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Incident Analysis and Evaluation Improvement is important for building on more advanced topics.' },
-    { text: 'Incident Analysis and Evaluation Improvement is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Incident Analysis and Evaluation Improvement is important for building on more advanced topics.' },
+    { text: 'Once we fix the bug, we are done.', isTrue: false, explanation: 'Fixing the immediate issue is necessary but insufficient. Without a corresponding test case, the same failure pattern can reappear in a future agent version.' },
+    { text: 'We only need post-mortems for severe incidents.', isTrue: false, explanation: 'S3 and S4 incidents, while individually minor, collectively reveal patterns that S1/S2 analysis misses. A lightweight analysis process for lower-severity incidents (30-minute review, 1-paragraph write-up, test case creation) captures these patterns without the full post-mortem overhead.' },
+    { text: 'Our evaluation suite is comprehensive enough -- we just need better monitoring.', isTrue: false, explanation: 'Monitoring detects problems in production; evaluation prevents them from reaching production. These are complementary, not substitutable.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

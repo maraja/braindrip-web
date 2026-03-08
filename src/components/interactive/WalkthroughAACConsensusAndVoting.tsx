@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Majority Vote', desc: 'The foundation of consensus and voting begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Weighted Voting', desc: 'At this stage, the key transformation occurs — the core mechanism that makes consensus and voting work.' },
-    { title: '3. Self-Consistency (Single Model)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Structured Debate Before Vote', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Answer Normalization', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Majority Vote', desc: 'The simplest consensus mechanism:  N agents (or N samples from one agent) independently answer the same question. Each answer is normalized (e.g., extracting the final numerical answer or classification label).' },
+    { title: '2. Weighted Voting', desc: 'Not all agents are equally reliable. Weighted voting assigns different weights to different agents:  Model-based weights: Agents using more capable models get higher weights.' },
+    { title: '3. Self-Consistency (Single Model)', desc: 'Self-consistency, introduced by Wang et al. (2023), applies voting to a single model:  Prompt the model with a chain-of-thought (CoT) question.' },
+    { title: '4. Structured Debate Before Vote', desc: 'A more sophisticated approach combines debate and voting:  Multiple agents independently generate answers with reasoning. Each agent sees all other agents\' answers and reasoning.' },
+    { title: '5. Answer Normalization', desc: 'For voting to work, answers must be comparable. This requires normalization:  Numerical answers: Round to the same precision, handle equivalent representations (1/2 vs.' },
 ];
 
 export default function WalkthroughAACConsensusAndVoting() {
@@ -17,10 +17,10 @@ export default function WalkthroughAACConsensusAndVoting() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Consensus and Voting — Step by Step
+          Consensus and Voting \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how consensus and voting works, one stage at a time.

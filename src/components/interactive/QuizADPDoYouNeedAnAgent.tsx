@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizADPDoYouNeedAnAgent() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Agents use 6-10x more tokens than coded workflows performing the same task, based on benchmarks from Anthropic and LangChain evaluations.', isTrue: true, explanation: 'This is a key technical detail of Do You Need an Agent?.' },
-    { text: 'Each agent loop iteration adds 1-3 seconds of latency per LLM call, making 5-loop agents take 5-15 seconds minimum.', isTrue: true, explanation: 'This is a key technical detail of Do You Need an Agent?.' },
-    { text: 'Agent success rates on tool-use benchmarks (e.g., BFCL, ToolBench) range from 65-85%, meaning 15-35% of runs produce errors or suboptimal results.', isTrue: true, explanation: 'This is a key technical detail of Do You Need an Agent?.' },
+    { text: 'Agents are always better because they can handle edge cases.', isTrue: false, explanation: 'Agents handle edge cases by spending more tokens reasoning about them. If your edge cases are enumerable, explicit branching in a coded workflow handles them more cheaply and reliably.' },
+    { text: 'I need an agent because my task uses tools.', isTrue: false, explanation: 'Tool use does not require an agent. A coded workflow can call tools in a fixed or branching sequence.' },
+    { text: 'Agents are too unreliable for production.', isTrue: false, explanation: 'Agents are unreliable for tasks that do not need agents. When applied to genuinely open-ended problems with proper guardrails, they achieve production-grade reliability.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

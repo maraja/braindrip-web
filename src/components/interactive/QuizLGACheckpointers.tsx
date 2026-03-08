@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGACheckpointers() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Checkpoints are saved after each node executes, not before.', isTrue: true, explanation: 'This is a key technical detail of Checkpointers.' },
-    { text: 'MemorySaver is an alias for InMemorySaver -- both are in-process and non-persistent across restarts.', isTrue: true, explanation: 'This is a key technical detail of Checkpointers.' },
-    { text: 'SqliteSaver requires langgraph-checkpoint-sqlite; PostgresSaver requires langgraph-checkpoint-postgres.', isTrue: true, explanation: 'This is a key technical detail of Checkpointers.' },
+    { text: 'MemorySaver is fine for production.', isTrue: false, explanation: 'MemorySaver stores everything in process memory. It is lost on restart and does not support multi-process deployments.' },
+    { text: 'Checkpointers save graph state at every step, enabling persistence, human-in-the-loop workflows, memory, time travel, and fault recovery.', isTrue: true, explanation: 'This captures the core definition of Checkpointers.' },
+    { text: 'Checkpointers is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Checkpointers is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

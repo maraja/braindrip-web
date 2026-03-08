@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Label Encoding (Integer Encoding)', desc: 'The foundation of encoding categorical variables begins with understanding its core input requirements and initial setup.' },
-    { title: '2. One-Hot Encoding', desc: 'At this stage, the key transformation occurs — the core mechanism that makes encoding categorical variables work.' },
-    { title: '3. Target Encoding (Mean Encoding)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Binary Encoding', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Feature Hashing (The Hashing Trick)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Label Encoding (Integer Encoding)', desc: 'Label encoding assigns each category an integer: (c_i) = i. If colors are \\&#123;red, green, blue\\&#125;, the encoding might be red  0, green  1, blue  2.' },
+    { title: '2. One-Hot Encoding', desc: 'One-hot encoding maps each category to a binary vector of length k with a single 1:  [equation]  For colors: red  [1, 0, 0], green  [0, 1, 0], blue  [0, 0, 1]. This ensures that all categories are equidistant: \\_2 = &#123;2&#125; for i  j.' },
+    { title: '3. Target Encoding (Mean Encoding)', desc: 'Target encoding replaces each category with the mean of the target variable for that category:  [equation]  where S_i = \\&#123;j : X_j = c_i\\&#125; is the set of observations with category c_i.' },
+    { title: '4. Binary Encoding', desc: 'Binary encoding converts the integer label to binary representation and uses each bit as a separate feature. For k categories, this produces  _2 k  columns instead of k.' },
+    { title: '5. Feature Hashing (The Hashing Trick)', desc: 'Apply a hash function h: &#123;C&#125;  \\&#123;0, 1, , m-1\\&#125; to map categories to a fixed-size feature vector of length m, where m  k:  [equation]  Hash collisions mean multiple categories map to the same bucket, introducing some noise.' },
+    { title: '6. Embedding Encoding', desc: 'Learned dense representations map each category to a low-dimensional continuous vector (c_i)  &#123;R&#125;^d where d  k. The embedding matrix E  &#123;R&#125;^&#123;k x d&#125; is trained end-to-end with the model (common in deep learning).' },
 ];
 
 export default function WalkthroughMLFEncodingCategoricalVariables() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFEncodingCategoricalVariables() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Encoding Categorical Variables — Step by Step
+          Encoding Categorical Variables \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how encoding categorical variables works, one stage at a time.

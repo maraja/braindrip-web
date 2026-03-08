@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Cohen\'s h for Proportion Differences', desc: 'The foundation of effect size and practical significance begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Cohen\'s d for Continuous Metrics', desc: 'At this stage, the key transformation occurs — the core mechanism that makes effect size and practical significance work.' },
-    { title: '3. The Cost-Benefit Framework', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Minimum Detectable Effect (MDE)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Confidence Intervals as Effect Size Communication', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Cohen\'s h for Proportion Differences', desc: 'When comparing binary success rates -- the most common agent evaluation setting -- Cohen\'s h measures effect size on the arcsine-transformed scale:  [equation]  This transformation stabilizes variance across the range of proportions. Conventional benchmarks:  For comparing an agent at p_1 = 0.' },
+    { title: '2. Cohen\'s d for Continuous Metrics', desc: 'For continuous metrics (cost, latency, trajectory quality scores), Cohen\'s d standardizes the mean difference by the pooled standard deviation:  [equation]  where:  [equation]  Conventional benchmarks:  = 0.2 (small), 0.5 (medium), 0.8 (large).' },
+    { title: '3. The Cost-Benefit Framework', desc: 'Practical significance requires a decision-theoretic framework. Define:   p = observed improvement in success rate C_&#123;eval&#125; = total evaluation cost to confirm the improvement C_&#123;deploy&#125; = deployment cost (re-testing, migration, risk) V_&#123;task&#125; = value of each successful task completion N_&#123;prod&#125; =.' },
+    { title: '4. Minimum Detectable Effect (MDE)', desc: 'The MDE is the smallest effect size your evaluation can reliably detect given its budget. For a two-proportion z-test:  [equation]  For n = 200, p = 0.70,  = 0.05,  = 0.20:  [equation]  Your evaluation can detect ~9 percentage-point differences but is blind to anything smaller.' },
+    { title: '5. Confidence Intervals as Effect Size Communication', desc: 'A well-constructed confidence interval for the difference communicates both statistical and practical significance simultaneously:  [equation]  Overlay this interval on a region of practical significance [_&#123;&#125;, ):  If the entire CI is above _&#123;&#125;: practically and statistically significant.' },
 ];
 
 export default function WalkthroughAAEEffectSizeAndPracticalSignificance() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAEEffectSizeAndPracticalSignificance() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Effect Size and Practical Significance — Step by Step
+          Effect Size and Practical Significance \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how effect size and practical significance works, one stage at a time.

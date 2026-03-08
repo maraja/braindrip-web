@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAAEStratifiedEvaluationDesign() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Minimum stratum sample size: For the Wilson CI to be reliable, require $n_k \\geq 30$ per stratum.', isTrue: true, explanation: 'This is a key technical detail of Stratified Evaluation Design.' },
-    { text: 'With fewer, use Clopper-Pearson exact intervals.', isTrue: true, explanation: 'This is a key technical detail of Stratified Evaluation Design.' },
-    { text: 'Stratum count vs precision trade-off: More strata provide finer-grained profiles but dilute the per-stratum sample size.', isTrue: true, explanation: 'This is a key technical detail of Stratified Evaluation Design.' },
+    { text: 'A single aggregate score is simpler and therefore better.', isTrue: false, explanation: 'Simplicity is a virtue only when it does not mislead. An aggregate score that averages over dramatically different strata is not simple -- it is wrong.' },
+    { text: 'For the Wilson CI to be reliable, require n_k  30 per stratum.', isTrue: true, explanation: 'With fewer, use Clopper-Pearson exact intervals.' },
+    { text: 'More strata provide finer-grained profiles but dilute the per-stratum sample size.', isTrue: true, explanation: 'For budget N, limit to K  N / 30 strata.' },
+    { text: 'Task difficulty x domain interactions can be significant (an agent may handle easy code tasks well but easy research tasks poorly).', isTrue: true, explanation: 'Consider crossed designs when budget permits.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

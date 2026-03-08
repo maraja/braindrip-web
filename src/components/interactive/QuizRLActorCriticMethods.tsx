@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizRLActorCriticMethods() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Separate learning rates for actor ($\\alpha_\\theta$) and critic ($\\alpha_\\phi$) are standard.', isTrue: true, explanation: 'This is a key technical detail of Actor-Critic Methods.' },
-    { text: 'The critic typically uses a higher learning rate (e.g., $3 \\times 10^&#123;-4&#125;$) than the actor (e.g., $1 \\times 10^&#123;-4&#125;$) because a good critic accelerates actor learning.', isTrue: true, explanation: 'This is a key technical detail of Actor-Critic Methods.' },
-    { text: 'The critic loss is typically MSE: $L_\\phi = \\frac&#123;1&#125;&#123;2&#125;(V_\\phi(s_t) - G_t^&#123;\\text&#123;target&#125;&#125;)^2$, sometimes clipped to prevent large updates.', isTrue: true, explanation: 'This is a key technical detail of Actor-Critic Methods.' },
+    { text: 'Actor-critic is a specific algorithm.', isTrue: false, explanation: 'It is an architecture and design pattern, not a single algorithm. A2C, A3C, PPO, SAC, and TD3 are all actor-critic algorithms with very different update rules.' },
+    { text: 'A two-network architecture that combines a policy (the actor) with a learned value function (the critic) to reduce the high variance of pure policy gradient methods while maintaining low bias.', isTrue: true, explanation: 'This captures the core definition of Actor-Critic Methods.' },
+    { text: 'Actor-Critic Methods is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Actor-Critic Methods is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

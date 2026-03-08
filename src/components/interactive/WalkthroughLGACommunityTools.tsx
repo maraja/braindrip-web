@@ -1,11 +1,8 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Tavily Web Search', desc: 'The foundation of community tools begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Wikipedia Search', desc: 'At this stage, the key transformation occurs — the core mechanism that makes community tools work.' },
-    { title: '3. Python REPL for Code Execution', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Combining Community and Custom Tools', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. HTTP Requests Tool', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Tavily Web Search', desc: 'Tavily returns structured results with url, content, and title fields, making them easy for the LLM to parse and cite.' },
+    { title: '2. Python REPL for Code Execution', desc: 'Warning: PythonREPLTool executes arbitrary code. Use it only in sandboxed environments.' },
 ];
 
 export default function WalkthroughLGACommunityTools() {
@@ -17,10 +14,10 @@ export default function WalkthroughLGACommunityTools() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Community Tools — Step by Step
+          Community Tools \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how community tools works, one stage at a time.

@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFPrincipalComponentAnalysis() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Always subtract $\\bar&#123;x&#125;$ before computing the covariance matrix Scale sensitivity: Features with larger scales dominate.', isTrue: true, explanation: 'This is a key technical detail of Principal Component Analysis.' },
-    { text: 'Standardize features (zero mean, unit variance) when they are on different scales.', isTrue: true, explanation: 'This is a key technical detail of Principal Component Analysis.' },
-    { text: 'Using the correlation matrix instead of the covariance matrix is equivalent to standardizing first Linearity: PCA only captures linear relationships.', isTrue: true, explanation: 'This is a key technical detail of Principal Component Analysis.' },
+    { text: 'PCA finds the most important features.', isTrue: false, explanation: 'PCA finds directions of maximum variance, which are linear combinations of all features. High variance does not necessarily mean high importance for a downstream task.' },
+    { text: 'O((nd^2, n^2d)) for full decomposition; randomized SVD achieves O(ndk) for the top k components', isTrue: true, explanation: 'O((nd^2, n^2d)) for full decomposition; randomized SVD achieves O(ndk) for the top k components' },
+    { text: 'PCA on uncentered data finds the direction of the mean, not of maximum variance.', isTrue: true, explanation: 'Always subtract &#123;x&#125; before computing the covariance matrix' },
+    { text: 'Features with larger scales dominate.', isTrue: true, explanation: 'Standardize features (zero mean, unit variance) when they are on different scales. Using the correlation matrix instead of the covariance matrix is equivalent to standardizing first' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

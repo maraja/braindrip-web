@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAToolErrorHandling() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ToolNode catches all exceptions by default and returns the error as ToolMessage content, keeping the agent loop alive.', isTrue: true, explanation: 'This is a key technical detail of Tool Error Handling.' },
-    { text: 'For tools where you want the exception to propagate (halting the graph), raise it outside the tool function or configure ToolNode to not handle errors.', isTrue: true, explanation: 'This is a key technical detail of Tool Error Handling.' },
-    { text: 'RetryPolicy applies at the node level, not the tool level.', isTrue: true, explanation: 'This is a key technical detail of Tool Error Handling.' },
+    { text: 'ToolNode crashes when a tool raises an exception.', isTrue: false, explanation: 'By default, it catches exceptions and returns the error as a message. The agent loop continues.' },
+    { text: 'Robust tool error handling in LangGraph means catching failures, storing them in state, and routing back to the LLM so it can analyze what went wrong and adapt its approach -- turning errors into recovery opportunities rather than crashes.', isTrue: true, explanation: 'This captures the core definition of Tool Error Handling.' },
+    { text: 'Tool Error Handling is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Tool Error Handling is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

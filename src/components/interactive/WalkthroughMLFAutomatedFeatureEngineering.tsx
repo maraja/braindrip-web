@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Deep Feature Synthesis (Featuretools)', desc: 'The foundation of automated feature engineering begins with understanding its core input requirements and initial setup.' },
-    { title: '2. AutoML Feature Engineering', desc: 'At this stage, the key transformation occurs — the core mechanism that makes automated feature engineering work.' },
-    { title: '3. Learned Representations: Autoencoders and Embeddings', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Neural Architecture Search and Tabular Deep Learning', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. When Automated Approaches Outperform Manual', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Deep Feature Synthesis (Featuretools)', desc: 'Deep Feature Synthesis (DFS), implemented in the open-source library Featuretools, is the most systematic approach to automated feature engineering for relational data. It works by:  Defining entities and relationships.' },
+    { title: '2. AutoML Feature Engineering', desc: 'Full AutoML frameworks integrate feature engineering into the broader pipeline of model selection and hyperparameter tuning. Auto-sklearn wraps scikit-learn with Bayesian optimization (SMAC) to jointly search over preprocessing steps (imputation, scaling, encoding, feature selection) and model.' },
+    { title: '3. Learned Representations: Autoencoders and Embeddings', desc: 'Neural networks can learn feature representations directly from data, bypassing explicit feature engineering. Autoencoders learn a compressed representation by training a network to reconstruct its input through a bottleneck:  [equation]  The bottleneck z  &#123;R&#125;^d with d  p forces the network to.' },
+    { title: '4. Neural Architecture Search and Tabular Deep Learning', desc: 'Neural Architecture Search (NAS) automates the design of the neural network itself, including the feature interaction layers. For tabular data, this includes searching over:  Embedding dimensions for each categorical feature Types of feature interaction layers (cross networks, attention,.' },
+    { title: '5. When Automated Approaches Outperform Manual', desc: 'Automated methods tend to outperform manual engineering in specific scenarios:  Complex relational data: When features must be derived from joins across many tables with various aggregation strategies, DFS systematically explores combinations a human would miss.' },
 ];
 
 export default function WalkthroughMLFAutomatedFeatureEngineering() {
@@ -17,10 +17,10 @@ export default function WalkthroughMLFAutomatedFeatureEngineering() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Automated Feature Engineering — Step by Step
+          Automated Feature Engineering \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how automated feature engineering works, one stage at a time.

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Budget allocation', detail: 'With a fixed compute budget, random search with 60-100 trials is a strong baseline. Bayesian optimization shines when each trial is expensive and the budget is < 50 trials.' },
+    { label: 'Budget allocation', detail: 'With a fixed compute budget, random search with 60-100 trials is a strong baseline. Bayesian optimization shines when each trial is expensive and the budget is &lt; 50 trials.' },
     { label: 'Warm starting', detail: 'Some Bayesian optimization frameworks can initialize from previous runs, transferring knowledge across related tasks.' },
     { label: 'Multi-fidelity', detail: 'Evaluating on smaller datasets or fewer epochs as a proxy. Hyperband automates this.' },
     { label: 'Reproducibility', detail: 'Always fix random seeds for the CV splits (not just the model) to ensure comparable evaluations across configurations.' },
@@ -18,10 +18,10 @@ export default function ExplorerMLFHyperparameterTuning() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Hyperparameter Tuning — Key Details Explorer
+          Hyperparameter Tuning \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of hyperparameter tuning.
+          Click each card to explore the technical details.
         </p>
       </div>
 

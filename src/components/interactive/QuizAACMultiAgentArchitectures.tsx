@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACMultiAgentArchitectures() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Agent identity: Each agent typically has its own system prompt defining its role, capabilities, and behavior.', isTrue: true, explanation: 'This is a key technical detail of Multi-Agent Architectures.' },
-    { text: 'The system prompt is the primary mechanism for differentiation — all agents may use the same underlying model.', isTrue: true, explanation: 'This is a key technical detail of Multi-Agent Architectures.' },
-    { text: 'Communication overhead: Each inter-agent message costs tokens.', isTrue: true, explanation: 'This is a key technical detail of Multi-Agent Architectures.' },
+    { text: 'More agents always means better results', isTrue: false, explanation: ': Additional agents add coordination overhead, increase cost, and introduce new failure modes. Many tasks are handled better by a single well-prompted agent with good tools than by a team of agents.' },
+    { text: 'Each agent typically has its own system prompt defining its role, capabilities, and behavior.', isTrue: true, explanation: 'The system prompt is the primary mechanism for differentiation — all agents may use the same underlying model.' },
+    { text: 'Each inter-agent message costs tokens.', isTrue: true, explanation: 'A hierarchy with 3 levels and 5 workers can consume 10-20x more tokens than a single agent doing the same task. Architecture selection must consider cost.' },
+    { text: 'Some architectures share context between agents (blackboard), others pass only specific outputs (pipeline).', isTrue: true, explanation: 'Shared context enables richer coordination but increases token usage and can introduce confusion.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

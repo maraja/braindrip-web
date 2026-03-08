@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'RetinaNet (ResNet-50-FPN)', detail: '35.7% AP on COCO at ~8 FPS. (ResNet-101-FPN): 39.1% AP at ~5 FPS.' },
-    { label: '$\\gamma$ sensitivity', detail: 'AP varies from 31.1% ($\\gamma = 0$, standard CE) to 36.0% ($\\gamma = 2$) on ResNet-50, a +4.9% AP gain from focal loss alone.' },
-    { label: '$\\alpha$ interaction', detail: 'The optimal $\\alpha$ decreases as $\\gamma$ increases (from $\\alpha = 0.75$ at $\\gamma = 0$ to $\\alpha = 0.25$ at $\\gamma = 2$) because focal loss already down-weights easy negatives.' },
+    { label: 'RetinaNet (ResNet-50-FPN)', detail: '7% AP on COCO at ~8 FPS. (ResNet-101-FPN): 39.1% AP at ~5 FPS.' },
+    { label: '$\\gamma$ sensitivity', detail: 'AP varies from 31.1% ( = 0, standard CE) to 36.0% ( = 2) on ResNet-50, a +4.9% AP gain from focal loss alone.' },
+    { label: '$\\alpha$ interaction', detail: 'The optimal  decreases as  increases (from  = 0.75 at  = 0 to  = 0.25 at  = 2) because focal loss already down-weights easy negatives.' },
     { label: 'Comparison with OHEM', detail: 'Online Hard Example Mining (OHEM) achieves 32.8% AP; focal loss achieves 36.0% AP on the same architecture, demonstrating that smooth re-weighting outperforms hard thresholding.' },
-    { label: 'Number of anchors', detail: '~100K per image, of which ~99.9% are negatives. Only ~10-50 anchors have IoU $\\geq 0.5$ with ground-truth.' },
+    { label: 'Number of anchors', detail: '~100K per image, of which ~99.9% are negatives. Only ~10-50 anchors have IoU  0.5 with ground-truth.' },
 ];
 
 export default function ExplorerCVCFocalLoss() {
@@ -19,10 +19,10 @@ export default function ExplorerCVCFocalLoss() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Focal Loss — Key Details Explorer
+          Focal Loss \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of focal loss.
+          Click each card to explore the technical details.
         </p>
       </div>
 

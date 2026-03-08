@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Minimum agents for discrimination analysis', detail: 'Kendall\'s $\\tau$ requires $K \\geq 5$ agents for a meaningful estimate. With fewer, use pairwise accuracy instead.' },
-    { label: 'Item Response Theory (IRT)', detail: 'For sophisticated item analysis, fit a 2-parameter IRT model: $P(\\text{success}_{ij}) = \\frac{1}{1+e^{-a_j(\\theta_i - b_j)}}$ where $a_j$ is discrimination, $b_j$ is difficulty, and $\\theta_i$ is agent ability. Items with $a_j < 0.5$ are poor discriminators.' },
-    { label: 'Test-retest reliability', detail: 'Run the same evaluation twice on the same agent. Compute Pearson\'s $r$ between the two score vectors. Target: $r \\geq 0.90$. Lower values indicate excessive evaluation noise (see `variance-decomposition.md`).' },
+    { label: 'Minimum agents for discrimination analysis', detail: 'Kendall\'s  requires K  5 agents for a meaningful estimate. With fewer, use pairwise accuracy instead.' },
+    { label: 'Item Response Theory (IRT)', detail: 'For sophisticated item analysis, fit a 2-parameter IRT model: P(success_&#123;ij&#125;) = &#123;1&#125;&#123;1+e^&#123;-a_j(_i - b_j)&#125;&#125; where a_j is discrimination, b_j is difficulty, and _i is agent ability. Items with a_j &lt; 0.5 are poor discriminators.' },
+    { label: 'Test-retest reliability', detail: 'Run the same evaluation twice on the same agent. Compute Pearson\'s r between the two score vectors. Target: r  0.90. Lower values indicate excessive evaluation noise (see variance-decomposition.md).' },
     { label: 'Contamination detection', detail: 'Check whether benchmark tasks appear in model training data. Use canary strings, membership inference attacks, or verbatim completion tests.' },
     { label: 'Versioned evaluation suites', detail: 'Always version your evaluation suite and log which version produced which results. This enables retrospective meta-analysis when Goodhart effects are suspected.' },
 ];
@@ -19,10 +19,10 @@ export default function ExplorerAAEMetaEvaluation() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Meta-Evaluation — Key Details Explorer
+          Meta-Evaluation \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of meta-evaluation.
+          Click each card to explore the technical details.
         </p>
       </div>
 

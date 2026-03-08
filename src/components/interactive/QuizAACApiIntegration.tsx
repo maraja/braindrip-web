@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACApiIntegration() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'GraphQL: REST APIs have fixed endpoints returning fixed shapes.', isTrue: true, explanation: 'This is a key technical detail of API Integration.' },
-    { text: 'GraphQL APIs have a single endpoint where the agent specifies exactly what data to return.', isTrue: true, explanation: 'This is a key technical detail of API Integration.' },
-    { text: 'GraphQL reduces over-fetching but requires the agent to construct valid queries, which adds complexity.', isTrue: true, explanation: 'This is a key technical detail of API Integration.' },
+    { text: 'The LLM makes HTTP requests directly', isTrue: false, explanation: ': The LLM generates a function call specifying the endpoint and parameters. The host application\'s runtime executes the actual HTTP request.' },
+    { text: 'REST APIs have fixed endpoints returning fixed shapes.', isTrue: true, explanation: 'GraphQL APIs have a single endpoint where the agent specifies exactly what data to return. GraphQL reduces over-fetching but requires the agent to construct valid queries, which adds complexity.' },
+    { text: 'API responses can be very large.', isTrue: true, explanation: 'Agents should request only needed fields (GraphQL) or use query parameters to filter server-side. Dumping a 50KB JSON response into the LLM context is wasteful and can degrade performance.' },
+    { text: 'For async operations, agents can either poll an endpoint repeatedly or register a webhook callback.', isTrue: true, explanation: 'Webhooks are more efficient but require the agent system to expose an HTTP endpoint.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

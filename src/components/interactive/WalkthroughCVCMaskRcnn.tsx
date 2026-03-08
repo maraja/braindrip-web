@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture Overview', desc: 'The foundation of mask r-cnn begins with understanding its core input requirements and initial setup.' },
-    { title: '2. RoIAlign: The Key Innovation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes mask r-cnn work.' },
-    { title: '3. Mask Head Design', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Decoupled Mask and Classification', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Full Training Loss', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. RoIAlign: The Key Innovation', desc: 'The problem with RoIPool: Faster R-CNN\'s RoI Pooling quantizes floating-point region coordinates to integer grid positions, then quantizes again when dividing the region into pooling bins. Each quantization introduces misalignment of up to 0.5 pixels.' },
+    { title: '2. Mask Head Design', desc: 'The mask branch is a small FCN applied to each RoI: 4 consecutive 3x3 convolutions with 256 channels (each followed by ReLU). 1 transposed convolution (2x2, stride 2) that upsamples from 14x14 to 28x28.' },
+    { title: '3. Decoupled Mask and Classification', desc: 'A crucial design choice: the mask head predicts a separate binary mask for each class, and only the mask corresponding to the predicted class is used. The mask loss is:  [equation]  where c^ is the ground-truth class, m = 28 is the mask resolution, and &#123;p&#125;^&#123;(c^)&#125; is the predicted mask for class c^*.' },
+    { title: '4. Full Training Loss', desc: '[equation]  All three losses are computed only on positive (matched) proposals. The mask loss adds negligible overhead since the mask head is lightweight.' },
+    { title: '5. Training Recipe', desc: 'Backbone: ResNet-50 or ResNet-101 with FPN, pretrained on ImageNet. Input: images resized so the shorter edge is 800 pixels.' },
 ];
 
 export default function WalkthroughCVCMaskRcnn() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCMaskRcnn() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Mask R-CNN — Step by Step
+          Mask R-CNN \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how mask r-cnn works, one stage at a time.

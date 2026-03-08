@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The ANOVA Model', desc: 'The foundation of variance decomposition begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Estimation via Nested ANOVA', desc: 'At this stage, the key transformation occurs — the core mechanism that makes variance decomposition work.' },
-    { title: '3. The Intraclass Correlation Coefficient', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Practical Decomposition Protocol', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The ANOVA Model', desc: 'Model agent evaluation results as a linear random-effects model. Let Y_&#123;ijkl&#125; be the outcome for model run l, evaluated by judge k, on task j, in environment instance i:  [equation]  where:  = grand mean (true agent performance) _i  N(0, ^2_&#123;env&#125;) = environment variance _j  N(0, ^2_&#123;task&#125;) = task.' },
+    { title: '2. Estimation via Nested ANOVA', desc: 'To estimate each component, run a factorial experiment:  Select T tasks from the evaluation suite. For each task, run the agent R times with different random seeds.' },
+    { title: '3. The Intraclass Correlation Coefficient', desc: 'Report each component as a fraction of total variance using the Intraclass Correlation Coefficient (ICC):  [equation]  A practical summary might look like:' },
+    { title: '4. Practical Decomposition Protocol', desc: 'A minimal but informative decomposition study requires:  Select 20+ tasks spanning the difficulty range. Run each task 10+ times with different random seeds (model variance).' },
 ];
 
 export default function WalkthroughAAEVarianceDecomposition() {
@@ -16,10 +16,10 @@ export default function WalkthroughAAEVarianceDecomposition() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Variance Decomposition — Step by Step
+          Variance Decomposition \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how variance decomposition works, one stage at a time.

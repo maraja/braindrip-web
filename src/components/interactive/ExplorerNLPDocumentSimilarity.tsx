@@ -3,7 +3,7 @@ import { useState } from 'react';
 const DETAILS = [
     { label: 'TF-IDF cosine efficiency', detail: 'With sparse vectors, cosine similarity of two documents with average 300 non-zero terms each takes microseconds. Over a corpus of 1 million documents, pre-computed inverted indices enable sub-second query times.' },
     { label: 'WMD k-NN accuracy', detail: 'On 8 document classification datasets, WMD-based k-NN achieved the lowest error rate on 6, with an average error reduction of 4-8% over TF-IDF cosine.' },
-    { label: 'MinHash with k = 200 signatures', detail: 'Estimates Jaccard similarity with standard error of ~0.05. Combined with LSH using 20 bands of 10 rows, candidate pairs with Jaccard > 0.5 are detected with ~97% probability.' },
+    { label: 'MinHash with k = 200 signatures', detail: 'Estimates Jaccard similarity with standard error of ~0.05. Combined with LSH using 20 bands of 10 rows, candidate pairs with Jaccard &gt; 0.5 are detected with ~97% probability.' },
     { label: 'Sentence transformer encoding speed', detail: 'all-MiniLM-L6-v2 encodes ~14,000 sentences per second on a single GPU; the bottleneck shifts from comparison to encoding.' },
     { label: 'Dimensionality', detail: 'TF-IDF vectors are sparse and high-dimensional (10,000-100,000 dims); embedding vectors are dense and low-dimensional (256-1024 dims). Storage and comparison trade-offs differ accordingly.' },
 ];
@@ -19,10 +19,10 @@ export default function ExplorerNLPDocumentSimilarity() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Document Similarity — Key Details Explorer
+          Document Similarity \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of document similarity.
+          Click each card to explore the technical details.
         </p>
       </div>
 

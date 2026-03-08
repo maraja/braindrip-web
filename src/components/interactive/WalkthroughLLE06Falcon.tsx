@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. RefinedWeb: The Data-Centric Innovation', desc: 'The foundation of falcon begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Multi-Query Attention for Efficient Inference', desc: 'At this stage, the key transformation occurs — the core mechanism that makes falcon work.' },
-    { title: '3. Architecture and Training', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The 180B Scale', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. RefinedWeb: The Data-Centric Innovation', desc: 'RefinedWeb was the centerpiece of Falcon\'s approach. Starting from Common Crawl, the TII team applied an aggressive multi-stage filtering pipeline:  Language identification (keeping only English text) URL filtering (removing adult, spam, and low-quality domains) Document-level deduplication using.' },
+    { title: '2. Multi-Query Attention for Efficient Inference', desc: 'Falcon adopted Multi-Query Attention (MQA), first proposed by Shazeer (2019). In standard multi-head attention, each attention head has its own key, value, and query projections.' },
+    { title: '3. Architecture and Training', desc: 'Falcon uses a standard decoder-only Transformer architecture with a few notable choices beyond MQA. The models use RoPE positional encodings and a parallel attention-FFN formulation, computing attention and feedforward in parallel rather than sequentially (following the approach used in PaLM).' },
+    { title: '4. The 180B Scale', desc: 'Falcon-180B, released in September 2023, was the largest openly available language model at its time of release. Trained on 3.5 trillion tokens, it approached GPT-3.5 quality on many benchmarks.' },
 ];
 
 export default function WalkthroughLLE06Falcon() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE06Falcon() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Falcon — Step by Step
+          Falcon \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how falcon works, one stage at a time.

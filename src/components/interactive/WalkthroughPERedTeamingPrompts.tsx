@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Attack Taxonomies', desc: 'The foundation of red-teaming prompts begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Building a Red-Team Eval Suite', desc: 'At this stage, the key transformation occurs — the core mechanism that makes red-teaming prompts work.' },
-    { title: '3. Human vs. Automated Red-Teaming', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Frequency and Timing', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Attack Taxonomies', desc: 'A structured red-teaming exercise uses an attack taxonomy — a categorized list of known vulnerability types — as a systematic checklist. The major categories include:  Jailbreaking: Attempts to bypass the model\'s safety training or the system prompt\'s restrictions.' },
+    { title: '2. Building a Red-Team Eval Suite', desc: 'Red-teaming findings should be systematized into a reusable eval suite. Each discovered vulnerability becomes a test case with: (1) the adversarial input that triggered the failure, (2) the undesirable output produced, (3) the attack category from the taxonomy, (4) the severity level (critical,.' },
+    { title: '3. Human vs. Automated Red-Teaming', desc: 'Human red-teaming leverages creativity, domain expertise, and adversarial intuition. Skilled red-teamers explore novel attack vectors that automated tools miss — multi-turn social engineering, cultural context exploits, and creative reframing that requires genuine understanding of the system\'s.' },
+    { title: '4. Frequency and Timing', desc: 'Red-teaming should occur at four points: (1) during development, as prompts are being written and refined, (2) before deployment, as a gate for production release, (3) after model updates, since provider model changes can alter vulnerability surfaces, and (4) on a regular cadence (monthly or.' },
 ];
 
 export default function WalkthroughPERedTeamingPrompts() {
@@ -16,10 +16,10 @@ export default function WalkthroughPERedTeamingPrompts() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Red-Teaming Prompts — Step by Step
+          Red-Teaming Prompts \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how red-teaming prompts works, one stage at a time.

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCNeuralRadianceFields() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Original NeRF: ~1.2M parameters, 1--2 days training per scene on a V100, renders at ~0.05 FPS (800x800).', isTrue: true, explanation: 'This is a key technical detail of Neural Radiance Fields (NeRF).' },
-    { text: 'Instant-NGP: 12M hash table entries + tiny MLP, trains in 5--15 seconds on an RTX 3090, renders at 15+ FPS.', isTrue: true, explanation: 'This is a key technical detail of Neural Radiance Fields (NeRF).' },
-    { text: 'Input requirements: 20--100 posed images (COLMAP is standard for pose estimation).', isTrue: true, explanation: 'This is a key technical detail of Neural Radiance Fields (NeRF).' },
+    { text: 'NeRF is a 3D model format.', isTrue: false, explanation: 'NeRF is an optimization procedure that produces a trained MLP for a specific scene. It is not a portable 3D format like a mesh or point cloud (though extraction methods exist).' },
+    { text: 'NeRF represents a 3D scene as a continuous volumetric function, implemented by an MLP that maps 5D coordinates (position + viewing direction) to color and density, enabling photorealistic novel view synthesis.', isTrue: true, explanation: 'This captures the core definition of Neural Radiance Fields (NeRF).' },
+    { text: 'Neural Radiance Fields (NeRF) is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Neural Radiance Fields (NeRF) is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

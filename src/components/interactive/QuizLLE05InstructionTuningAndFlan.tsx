@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE05InstructionTuningAndFlan() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Google\'s FLAN showed that fine-tuning language models on diverse NLP tasks phrased as natural-language instructions dramatically improves zero-shot generalization, and scaling to 1,800 tasks produced some of the largest gains in model capability per dollar ever observed.', isTrue: true, explanation: 'This captures the core purpose of Instruction Tuning and FLAN.' },
-    { text: 'Instruction Tuning and FLAN is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Instruction Tuning and FLAN is important for building on more advanced topics.' },
-    { text: 'Instruction Tuning and FLAN is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Instruction Tuning and FLAN is important for building on more advanced topics.' },
+    { text: 'Instruction tuning and RLHF are the same thing.', isTrue: false, explanation: 'Instruction tuning uses supervised learning on instruction-response pairs. RLHF uses reinforcement learning to optimize for human preferences.' },
+    { text: 'Wei et al., 137B model, 62 datasets, 12 task clusters', isTrue: true, explanation: 'Wei et al., 137B model, 62 datasets, 12 task clusters' },
+    { text: 'Instruction tuning teaches the model new knowledge.', isTrue: false, explanation: 'Like RLHF, instruction tuning primarily reorganizes existing knowledge to be accessible through instructions. The model does not learn new facts — it learns a new interface for surfacing what it already knows.' },
+    { text: 'Chung et al., PaLM 540B, 1,836 tasks, +9.4% avg improvement', isTrue: true, explanation: 'Chung et al., PaLM 540B, 1,836 tasks, +9.4% avg improvement' },
+    { text: 'More instruction data is always better.', isTrue: false, explanation: 'Research consistently shows that data quality and diversity matter more than quantity. LIMA (Zhou et al., 2023) showed that just 1,000 carefully curated examples could produce strong instruction following, challenging the assumption that scale of instruction data is critical.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

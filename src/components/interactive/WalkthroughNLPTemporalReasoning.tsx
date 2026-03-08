@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Temporal Expression Recognition and Normalization', desc: 'The foundation of temporal reasoning begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Temporal Relation Extraction', desc: 'At this stage, the key transformation occurs — the core mechanism that makes temporal reasoning work.' },
-    { title: '3. Timeline Construction', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. TempEval Shared Tasks', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Challenges', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Temporal Expression Recognition and Normalization', desc: 'TimeML and TIMEX3 Annotation  TimeML (Pustejovsky et al., 2003) is the most widely adopted annotation framework for temporal information in text. It defines three core annotation layers:  TIMEX3: Temporal expressions -- dates, times, durations, and frequencies.' },
+    { title: '2. Temporal Relation Extraction', desc: 'The core challenge of temporal reasoning is determining how events and times relate to each other. TimeML defines 13 temporal relation types, commonly simplified to the six Allen interval relations plus identity:  BEFORE: Event A occurs entirely before Event B AFTER: Event A occurs entirely after.' },
+    { title: '3. Timeline Construction', desc: 'The ultimate goal of temporal reasoning is constructing a coherent timeline -- a partial or total ordering of events and times in a document or document collection. This involves:  Extracting all events and temporal expressions.' },
+    { title: '4. TempEval Shared Tasks', desc: 'TempEval has been the primary evaluation venue for temporal reasoning, running as part of SemEval:  TempEval-1 (2007): Focused on three specific temporal relation classification subtasks (event-time, event-DCT, main event pairs).' },
+    { title: '5. Challenges', desc: 'Implicit temporal references: Many temporal relations are never explicitly stated. "She graduated from Harvard.' },
+    { title: '6. Domain Applications', desc: 'Clinical NLP: Medical records are inherently temporal -- disease onset, treatment dates, symptom progression, medication schedules. Clinical TempEval (Bethard et al., 2015, 2016, 2017) adapted temporal evaluation to clinical narratives, using the THYME corpus of clinical and pathology notes.' },
 ];
 
 export default function WalkthroughNLPTemporalReasoning() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPTemporalReasoning() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Temporal Reasoning — Step by Step
+          Temporal Reasoning \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how temporal reasoning works, one stage at a time.

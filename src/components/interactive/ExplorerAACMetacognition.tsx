@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Calibration measurement', detail: 'Compare the agent\'s stated confidence (e.g., \"I\'m 80% sure\") with actual accuracy. Well-calibrated agents are right 80% of the time when they say 80%. LLMs tend to be overconfident; explicit calibration prompting helps' },
+    { label: 'Calibration measurement', detail: 'Compare the agent\'s stated confidence (e.g., "I\'m 80% sure") with actual accuracy. Well-calibrated agents are right 80% of the time when they say 80%. LLMs tend to be overconfident; explicit calibration prompting helps' },
     { label: 'Abstention rate', detail: 'The percentage of questions where the agent declines to answer or defers to a human. Too low suggests insufficient metacognition; too high suggests excessive caution. Optimal rates depend on the domain (medical: high abstention; general knowledge: lower)' },
-    { label: 'Implementation via system prompts', detail: '\"Before answering, consider: (1) Do I have reliable knowledge about this topic? (2) Is the question ambiguous? (3) Could my answer cause harm if wrong? If any answer is concerning, communicate your uncertainty.\"' },
+    { label: 'Implementation via system prompts', detail: '"Before answering, consider: (1) Do I have reliable knowledge about this topic? (2) Is the question ambiguous? (3) Could my answer cause harm if wrong? If any answer is concerning, communicate your uncertainty."' },
     { label: 'Metacognitive overhead', detail: 'Adding explicit confidence assessment costs 50-200 tokens per response. This is negligible compared to the cost of recovering from confident errors' },
     { label: 'Dunning-Kruger in LLMs', detail: 'LLMs sometimes exhibit the inverse of the Dunning-Kruger effect: they are less confident on topics they actually know well (because they are aware of nuances) and more confident on topics they know less about (because they are unaware of what they are missing)' },
-    { label: 'Calibration degrades with pressure', detail: 'When prompted to \"always provide an answer\" or \"be helpful,\" models become less calibrated. Metacognitive prompting must explicitly give the model permission to express uncertainty' },
+    { label: 'Calibration degrades with pressure', detail: 'When prompted to "always provide an answer" or "be helpful," models become less calibrated. Metacognitive prompting must explicitly give the model permission to express uncertainty' },
 ];
 
 export default function ExplorerAACMetacognition() {
@@ -20,10 +20,10 @@ export default function ExplorerAACMetacognition() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Metacognition — Key Details Explorer
+          Metacognition \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of metacognition.
+          Click each card to explore the technical details.
         </p>
       </div>
 

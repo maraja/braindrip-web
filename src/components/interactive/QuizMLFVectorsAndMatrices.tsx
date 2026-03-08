@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFVectorsAndMatrices() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Matrix multiplication is not commutative: $AB \\neq BA$ in general.', isTrue: true, explanation: 'This is a key technical detail of Vectors and Matrices.' },
-    { text: '$(AB)^T = B^T A^T$ -- the transpose reverses the order of multiplication.', isTrue: true, explanation: 'This is a key technical detail of Vectors and Matrices.' },
-    { text: 'The Gram matrix $X^TX \\in \\mathbb&#123;R&#125;^&#123;n \\times n&#125;$ encodes pairwise dot products between features; $XX^T \\in \\mathbb&#123;R&#125;^&#123;m \\times m&#125;$ encodes pairwise dot products between samples.', isTrue: true, explanation: 'This is a key technical detail of Vectors and Matrices.' },
+    { text: 'A matrix is just a table of numbers.', isTrue: false, explanation: 'A matrix is an operator. The same grid of numbers can represent a dataset, a linear map, a covariance structure, or a graph adjacency.' },
+    { text: 'The fundamental data structures of ML -- representing data as points in high-dimensional space and transformations as matrices.', isTrue: true, explanation: 'This captures the core definition of Vectors and Matrices.' },
+    { text: 'Vectors and Matrices is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Vectors and Matrices is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

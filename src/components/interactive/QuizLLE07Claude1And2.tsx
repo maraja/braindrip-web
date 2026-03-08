@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE07Claude1And2() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'LLaMA 2 4K Deployment: API-only, no open weights; available via console, API, and AWS Bedrock Key differentiator: Long context + safety-first positioning', isTrue: true, explanation: 'This is a key technical detail of Claude 1 and 2.' },
-    { text: 'Anthropic\'s Claude models brought Constitutional AI from theory to product, establishing the "safety-first" brand in commercial AI and pioneering the long-context paradigm with 100K and eventually 200K token windows.', isTrue: true, explanation: 'This captures the core purpose of Claude 1 and 2.' },
-    { text: 'Claude 1 and 2 is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Claude 1 and 2 is important for building on more advanced topics.' },
+    { text: 'Claude was just a ChatGPT clone.', isTrue: false, explanation: 'Claude used fundamentally different alignment methodology (Constitutional AI vs. pure RLHF), had different safety-capability trade-offs, and pioneered long-context processing.' },
+    { text: 'Released March 2023, competitive with GPT-3.5, API-only', isTrue: true, explanation: 'Released March 2023, competitive with GPT-3.5, API-only' },
+    { text: '100K context means the model uses all 100K tokens equally well.', isTrue: false, explanation: 'Early long-context models, including Claude 2, showed degraded attention to information in the middle of very long contexts (the "lost in the middle" phenomenon). Claude 2.1 improved on this, but context utilization was not perfectly uniform.' },
+    { text: 'Improved version, mid-2023', isTrue: true, explanation: 'Improved version, mid-2023' },
+    { text: 'Anthropic was anti-AI development.', isTrue: false, explanation: 'Anthropic\'s thesis was not that AI should be slowed down but that it should be developed with safety as a first-class priority. The company actively competed at the frontier and pushed capabilities forward — it simply argued that safety and capability should advance together.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

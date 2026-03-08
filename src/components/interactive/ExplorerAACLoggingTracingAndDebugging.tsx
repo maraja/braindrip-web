@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'LangSmith', detail: 'stores traces as hierarchical run trees with parent-child relationships, supports filtering by metadata, latency, token count, and error status, and enables annotation for human evaluation' },
-    { label: 'OpenTelemetry (OTel) integration', detail: 'uses the `gen_ai` semantic conventions for LLM spans, capturing `gen_ai.system`, `gen_ai.request.model`, `gen_ai.usage.prompt_tokens`, and similar attributes' },
+    { label: 'OpenTelemetry (OTel) integration', detail: 'uses the gen_ai semantic conventions for LLM spans, capturing gen_ai.system, gen_ai.request.model, gen_ai.usage.prompt_tokens, and similar attributes' },
     { label: 'Trace sampling', detail: 'is necessary at scale: logging every trace for an agent handling 10,000 requests/day is expensive. Sample 100% of errors, 10% of successes, and 100% of slow requests (above a latency threshold)' },
     { label: 'PII redaction', detail: 'must be applied to traces before storage: user messages, tool outputs, and LLM responses often contain personal information that must be masked or removed for compliance' },
     { label: 'Cost attribution', detail: 'tags each trace span with its token cost, enabling per-task, per-step, and per-model cost breakdowns across the agent fleet' },
@@ -20,10 +20,10 @@ export default function ExplorerAACLoggingTracingAndDebugging() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Logging, Tracing, and Debugging — Key Details Explorer
+          Logging, Tracing, and Debugging \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of logging, tracing, and debugging.
+          Click each card to explore the technical details.
         </p>
       </div>
 

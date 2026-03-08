@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPERetrievalQueryDesign() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Query rewriting improves retrieval recall by 15-25% on average across standard benchmarks (Natural Questions, TriviaQA).', isTrue: true, explanation: 'This is a key technical detail of Retrieval Query Design.' },
-    { text: 'HyDE (Hypothetical Document Embeddings) improves zero-shot retrieval by 10-20% but adds 0.5-2 seconds of latency per query for the generation step.', isTrue: true, explanation: 'This is a key technical detail of Retrieval Query Design.' },
-    { text: 'Query decomposition generates 2-5 sub-queries per complex question and improves multi-hop QA accuracy by 25-35%.', isTrue: true, explanation: 'This is a key technical detail of Retrieval Query Design.' },
+    { text: 'The user\'s question is the best retrieval query.', isTrue: false, explanation: 'User questions contain conversational language, pronouns, ambiguity, and abbreviations that degrade retrieval. Even simple rewriting consistently improves results.' },
+    { text: 'HyDE requires the model to know the answer.', isTrue: false, explanation: 'HyDE works even when the hypothetical answer is factually wrong. The technique exploits linguistic similarity, not factual accuracy.' },
+    { text: 'Query decomposition is only for multi-hop questions.', isTrue: false, explanation: 'Even single-hop questions benefit from aspect decomposition. "Tell me about Python asyncio" decomposes into queries about event loops, coroutines, and async/await syntax, retrieving more comprehensive context than a single broad query.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

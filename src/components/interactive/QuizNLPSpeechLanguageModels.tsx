@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPSpeechLanguageModels() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Neural audio codecs (SoundStream, EnCodec) compress speech to 1.5--6 kbps using 4--8 RVQ codebooks at 50--75 Hz frame rate, yielding 200--600 tokens per second of audio.', isTrue: true, explanation: 'This is a key technical detail of Speech Language Models.' },
-    { text: 'VALL-E was trained on 60,000 hours of speech from 7,000+ speakers (LibriLight dataset).', isTrue: true, explanation: 'This is a key technical detail of Speech Language Models.' },
-    { text: 'By comparison, typical TTS training uses 10--100 hours from a single speaker.', isTrue: true, explanation: 'This is a key technical detail of Speech Language Models.' },
+    { text: 'Speech language models just chain ASR + LLM + TTS together.', isTrue: false, explanation: 'The key innovation is that speech tokens are first-class citizens in the vocabulary, processed by the same transformer alongside text tokens. This enables cross-modal attention, in-context learning from speech examples, and avoidance of the error cascade inherent in pipeline systems (ASR errors propagating to downstream components).' },
+    { text: 'Discrete speech tokens lose too much audio information.', isTrue: false, explanation: 'Residual vector quantization across multiple codebook levels preserves remarkable audio fidelity. EnCodec at 6 kbps (8 codebooks) is perceptually comparable to Opus at 12 kbps.' },
+    { text: 'These models require massive compute and are impractical.', isTrue: false, explanation: 'While training is indeed expensive, inference for models like VALL-E can run on a single GPU. Smaller variants and distillation techniques are actively being developed, and the consolidation of multiple models into one actually reduces total deployment cost.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

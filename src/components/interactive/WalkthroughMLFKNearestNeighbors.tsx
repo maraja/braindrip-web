@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Algorithm', desc: 'The foundation of k-nearest neighbors begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Choice of K', desc: 'At this stage, the key transformation occurs — the core mechanism that makes k-nearest neighbors work.' },
-    { title: '3. Distance Metrics', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Weighted KNN', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Curse of Dimensionality', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Algorithm', desc: 'Store the entire training set \\&#123;(x_i, y_i)\\&#125;_&#123;i=1&#125;^n. Given a query x_q, compute the distance d(x_q, x_i) to every training point.' },
+    { title: '2. Choice of K', desc: 'The hyperparameter K controls the bias-variance tradeoff:  K = 1: The decision boundary is highly irregular, perfectly fitting the training data (zero training error). This gives low bias but high variance.' },
+    { title: '3. Distance Metrics', desc: 'The choice of distance metric fundamentally shapes KNN\'s behavior:  Euclidean (L_2): d(x, x\') = &#123;_&#123;j=1&#125;^d (x_j - x\'_j)^2&#125; -- the default choice. Sensitive to feature scale.' },
+    { title: '4. Weighted KNN', desc: 'Standard KNN gives equal weight to all K neighbors, but closer neighbors are more informative. Weighted KNN assigns weight inversely proportional to distance:  [equation]  This softens the hard K boundary and often improves performance.' },
+    { title: '5. Curse of Dimensionality', desc: 'KNN suffers acutely from the curse of dimensionality. In high dimensions:  Distances between points converge: for uniformly distributed data in d dimensions, the ratio of the nearest to the farthest neighbor approaches 1 as d grows.' },
+    { title: '6. Efficient Search Structures', desc: 'Brute-force KNN computes O(nd) distances per query, which is prohibitive for large datasets. Tree-based data structures accelerate this:  KD-trees: Partition the space along coordinate axes using a binary tree.' },
 ];
 
 export default function WalkthroughMLFKNearestNeighbors() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFKNearestNeighbors() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          K-Nearest Neighbors — Step by Step
+          K-Nearest Neighbors \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how k-nearest neighbors works, one stage at a time.

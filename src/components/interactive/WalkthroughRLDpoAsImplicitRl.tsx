@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The RLHF Objective', desc: 'The foundation of dpo as implicit rl begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Closed-Form Optimal Policy', desc: 'At this stage, the key transformation occurs — the core mechanism that makes dpo as implicit rl work.' },
-    { title: '3. Rearranging to Express Reward in Terms of Policy', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Substituting into Bradley-Terry', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The DPO Loss', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The RLHF Objective', desc: 'Standard RLHF optimizes:  [equation]  This seeks a policy that maximizes reward while staying close to the reference policy.' },
+    { title: '2. The Closed-Form Optimal Policy', desc: 'The key mathematical derivation begins by recognizing that for a fixed reward function r(x, y), the optimal policy under the KL constraint has a known analytical solution:  [equation]  where Z(x) = _y _&#123;ref&#125;(y|x) (&#123;1&#125;&#123;&#125; r(x, y)) is the partition function (normalization constant).' },
+    { title: '3. Rearranging to Express Reward in Terms of Policy', desc: 'Rearranging the optimal policy equation to solve for the reward:  [equation]  This is the crucial insight: the reward is implicitly defined by the ratio between the optimal policy and the reference policy. The partition function Z(x) depends only on the prompt, not the response.' },
+    { title: '4. Substituting into Bradley-Terry', desc: 'Substituting this implicit reward into the Bradley-Terry preference model:  [equation]  The   Z(x) terms cancel because they are constant for a given prompt:  [equation]' },
+    { title: '5. The DPO Loss', desc: 'Replacing ^* with the parameterized policy _ and maximizing the log-likelihood of observed preferences yields the DPO loss:  [equation]  This loss increases _(y_wx), with the implicit margin controlled by .' },
+    { title: '6. What DPO Eliminates', desc: 'Compared to the full RLHF pipeline:' },
 ];
 
 export default function WalkthroughRLDpoAsImplicitRl() {
@@ -17,10 +18,10 @@ export default function WalkthroughRLDpoAsImplicitRl() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          DPO as Implicit RL — Step by Step
+          DPO as Implicit RL \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how dpo as implicit rl works, one stage at a time.

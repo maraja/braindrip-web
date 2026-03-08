@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCSlam() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ORB-SLAM3 accuracy: 0.35% translational error on KITTI (stereo), 0.04 m ATE on TUM RGB-D.', isTrue: true, explanation: 'This is a key technical detail of SLAM (Simultaneous Localization and Mapping).' },
-    { text: 'VINS-Mono accuracy: 0.08 m ATE on EuRoC MAV dataset (11 sequences).', isTrue: true, explanation: 'This is a key technical detail of SLAM (Simultaneous Localization and Mapping).' },
-    { text: 'Real-time requirements: Tracking must run at camera frame rate (30 Hz).', isTrue: true, explanation: 'This is a key technical detail of SLAM (Simultaneous Localization and Mapping).' },
+    { text: '0.35% translational error on KITTI (stereo), 0.04 m ATE on TUM RGB-D.', isTrue: true, explanation: '0.35% translational error on KITTI (stereo), 0.04 m ATE on TUM RGB-D.' },
+    { text: '0.08 m ATE on EuRoC MAV dataset (11 sequences).', isTrue: true, explanation: '0.08 m ATE on EuRoC MAV dataset (11 sequences).' },
+    { text: 'Tracking must run at camera frame rate (30 Hz).', isTrue: true, explanation: 'Mapping and loop closure run in parallel threads at lower rates.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

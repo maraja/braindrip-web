@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Ordinary Least Squares (OLS) Objective', desc: 'The foundation of linear regression begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Geometric Interpretation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes linear regression work.' },
-    { title: '3. Gradient Descent Alternative', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Assumptions of Classical Linear Regression', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. R-Squared and Model Fit', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Ordinary Least Squares (OLS) Objective', desc: 'We seek &#123;&#125; that minimizes the sum of squared residuals:  [equation]  Taking the gradient with respect to &#123;&#125;, setting it to zero, and solving yields the normal equations:  [equation]  When X^T X is invertible (i.e., no perfect multicollinearity), the closed-form solution is:  [equation]' },
+    { title: '2. Geometric Interpretation', desc: 'OLS has an elegant geometric meaning. The fitted values &#123;y&#125; = X&#123;&#123;&#125;&#125; are the orthogonal projection of y onto the column space of X.' },
+    { title: '3. Gradient Descent Alternative', desc: 'When n or p is very large, inverting X^TX (an O(p^3) operation) becomes impractical. Gradient descent offers an iterative alternative.' },
+    { title: '4. Assumptions of Classical Linear Regression', desc: 'Linearity: The true relationship between x and &#123;E&#125;[y|x] is linear in parameters. Independence: Observations are independent of one another.' },
+    { title: '5. R-Squared and Model Fit', desc: 'The coefficient of determination measures the proportion of variance explained:  [equation]  R^2 always increases (or stays the same) when predictors are added, so the adjusted R^2 penalizes model complexity:  [equation]' },
+    { title: '6. Practical Example', desc: 'Predicting house prices with square footage (x_1) and number of bedrooms (x_2):  [equation]  Interpretation: holding bedrooms constant, each additional square foot adds \\$150 to the predicted price. This direct interpretability is linear regression\'s greatest practical strength.' },
 ];
 
 export default function WalkthroughMLFLinearRegression() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFLinearRegression() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Linear Regression — Step by Step
+          Linear Regression \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how linear regression works, one stage at a time.

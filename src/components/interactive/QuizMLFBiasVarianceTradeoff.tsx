@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFBiasVarianceTradeoff() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The decomposition as presented applies exactly to squared error loss.', isTrue: true, explanation: 'This is a key technical detail of Bias-Variance Tradeoff.' },
-    { text: 'For other losses (e.g., 0-1 loss in classification), analogous but more complex decompositions exist.', isTrue: true, explanation: 'This is a key technical detail of Bias-Variance Tradeoff.' },
-    { text: 'Ensemble methods explicitly exploit the tradeoff: bagging (random forests) reduces variance by averaging many high-variance models; boosting reduces bias by sequentially correcting errors.', isTrue: true, explanation: 'This is a key technical detail of Bias-Variance Tradeoff.' },
+    { text: 'You must always trade off bias for variance.', isTrue: false, explanation: 'Techniques like ensemble methods, better features, and more data can reduce both simultaneously. The tradeoff is about what happens when you vary complexity with everything else held fixed.' },
+    { text: 'bagging (random forests) reduces variance by averaging many high-variance models; boosting reduces bias by sequentially correcting errors.', isTrue: true, explanation: 'bagging (random forests) reduces variance by averaging many high-variance models; boosting reduces bias by sequentially correcting errors.' },
+    { text: 'In highly over-parameterized models (e.g., deep neural networks), the test error can decrease again beyond the classical U-curve interpolation threshold.', isTrue: true, explanation: 'This challenges the simple U-shaped view but does not invalidate the underlying decomposition.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

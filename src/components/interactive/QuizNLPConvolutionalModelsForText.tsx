@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPConvolutionalModelsForText() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Kim (2014) performance: SST-2 binary sentiment: 88.1% accuracy.', isTrue: true, explanation: 'This is a key technical detail of Convolutional Models for Text.' },
-    { text: 'MR (movie reviews): 81.5%.', isTrue: true, explanation: 'This is a key technical detail of Convolutional Models for Text.' },
-    { text: 'TREC question classification: 93.6%.', isTrue: true, explanation: 'This is a key technical detail of Convolutional Models for Text.' },
+    { text: 'CNNs cannot capture any long-range dependencies.', isTrue: false, explanation: 'While a single convolutional layer is limited to its filter width, stacking layers increases the receptive field linearly (or exponentially with dilated convolutions). Deep CNNs can and do capture dependencies spanning 50+ tokens.' },
+    { text: 'SST-2 binary sentiment: 88.1% accuracy.', isTrue: true, explanation: 'MR (movie reviews): 81.5%. TREC question classification: 93.6%.' },
+    { text: 'CNNs are strictly inferior to RNNs for NLP.', isTrue: false, explanation: 'For sentence-level classification, CNNs are often equal or superior to RNNs while being faster to train. The RNN advantage emerges primarily for tasks requiring token-level predictions over long sequences (language modeling, machine translation without dilated convolutions).' },
+    { text: '40.51 BLEU on WMT\'14 En-Fr (vs.', isTrue: true, explanation: '38.95 for GNMT with attention). Trained in 1.5 days on 8 GPUs vs.' },
+    { text: 'Max-over-time pooling loses positional information.', isTrue: false, explanation: 'This is partially true -- max pooling discards exactly where a pattern was detected. For classification, position is often irrelevant ("terrible" is negative whether it appears at the beginning or end).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

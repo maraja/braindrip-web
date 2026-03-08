@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Disentangled Attention Mechanism', desc: 'The foundation of deberta: decoding-enhanced bert with disentangled attention begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Enhanced Mask Decoder (EMD)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes deberta: decoding-enhanced bert with disentangled attention work.' },
-    { title: '3. DeBERTa V2 and V3', desc: 'The intermediate results are processed and refined through the main pipeline.' },
+    { title: '1. Disentangled Attention Mechanism', desc: 'In standard Transformers (BERT, RoBERTa), each token is represented by a single vector that combines content and position: H_i = ContentEmbed(token_i) + PositionEmbed(i).' },
+    { title: '2. Enhanced Mask Decoder (EMD)', desc: 'The disentangled attention mechanism uses only relative position information — the distance between tokens, not their absolute position in the sentence. But for the masked language modeling prediction task, absolute position matters.' },
+    { title: '3. DeBERTa V2 and V3', desc: 'The original DeBERTa was followed by significant iterations:  DeBERTa V2 (2021) scaled the model up to 1.5 billion parameters (DeBERTa-xxlarge), the largest encoder model at the time. It introduced vocabulary expansion (128K tokens), span-based masking, and other training improvements.' },
 ];
 
 export default function WalkthroughLLE04Deberta() {
@@ -15,10 +15,10 @@ export default function WalkthroughLLE04Deberta() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          DeBERTa: Decoding-Enhanced BERT with Disentangled Attention — Step by Step
+          DeBERTa: Decoding-Enhanced BERT with Disentangled Attention \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how deberta: decoding-enhanced bert with disentangled attention works, one stage at a time.

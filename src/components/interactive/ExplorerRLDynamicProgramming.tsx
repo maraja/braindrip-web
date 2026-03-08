@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Computational complexity', detail: 'Each sweep of policy evaluation or value iteration costs $O(|S|^2 |A|)$ -- iterating over all states, all actions, and all successor states.' },
-    { label: 'Policy iteration', detail: 'typically converges in very few outer iterations (often $< 10$) but each policy evaluation step may require many sweeps.' },
+    { label: 'Computational complexity', detail: 'Each sweep of policy evaluation or value iteration costs O() -- iterating over all states, all actions, and all successor states.' },
+    { label: 'Policy iteration', detail: 'typically converges in very few outer iterations (often &lt; 10) but each policy evaluation step may require many sweeps.' },
     { label: 'Value iteration', detail: 'requires more total sweeps but each sweep is cheaper (no inner convergence loop).' },
     { label: 'Asynchronous DP', detail: 'updates states in any order, enabling prioritized sweeping of states with the largest Bellman residuals.' },
-    { label: 'Discount factor', detail: '$\\gamma < 1$ is required for convergence guarantees in infinite-horizon problems. For episodic tasks with absorbing terminal states, $\\gamma = 1$ is also valid.' },
-    { label: 'In-place updates', detail: '(updating $V(s)$ immediately rather than maintaining separate $V_k$ and $V_{k+1}$ arrays) often converge faster in practice.' },
+    { label: 'Discount factor', detail: '&lt; 1 is required for convergence guarantees in infinite-horizon problems. For episodic tasks with absorbing terminal states,  = 1 is also valid.' },
+    { label: 'In-place updates', detail: '(updating V(s) immediately rather than maintaining separate V_k and V_&#123;k+1&#125; arrays) often converge faster in practice.' },
 ];
 
 export default function ExplorerRLDynamicProgramming() {
@@ -20,10 +20,10 @@ export default function ExplorerRLDynamicProgramming() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Dynamic Programming — Key Details Explorer
+          Dynamic Programming \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of dynamic programming.
+          Click each card to explore the technical details.
         </p>
       </div>
 

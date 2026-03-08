@@ -4,7 +4,7 @@ const DETAILS = [
     { label: 'Data scale', detail: 'InstructGPT used ~33K comparisons; modern systems use 100K--1M+ comparisons. Quality matters more than quantity.' },
     { label: 'Inter-annotator agreement', detail: 'Typically 60--75% on pairwise comparisons for open-ended tasks, setting a ceiling on reward model accuracy.' },
     { label: 'Reward model size', detail: 'Usually the same architecture as the policy model, or smaller. InstructGPT used a 6B RM for a 175B policy.' },
-    { label: 'Calibration', detail: 'Reward models are poorly calibrated in absolute terms. A reward of 2.0 vs 1.0 does not mean \"twice as good.\" Only the ordering matters.' },
+    { label: 'Calibration', detail: 'Reward models are poorly calibrated in absolute terms. A reward of 2.0 vs 1.0 does not mean "twice as good." Only the ordering matters.' },
     { label: 'Training epochs', detail: '1--2 epochs over preference data. Overfitting to preference data causes reward models to memorize rather than generalize.' },
     { label: 'Reward model accuracy', detail: 'State-of-the-art models achieve 65--75% accuracy on held-out preference test sets, roughly matching inter-annotator agreement.' },
 ];
@@ -20,10 +20,10 @@ export default function ExplorerRLRewardModelingForLlms() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Reward Modeling for LLMs — Key Details Explorer
+          Reward Modeling for LLMs \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of reward modeling for llms.
+          Click each card to explore the technical details.
         </p>
       </div>
 

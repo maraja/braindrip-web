@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFTimeSeriesFeatureEngineering() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Leakage prevention is paramount.', isTrue: true, explanation: 'This is a key technical detail of Time-Series Feature Engineering.' },
-    { text: 'Every feature at time $t$ must be computed using only data from times $&lt; t$.', isTrue: true, explanation: 'This is a key technical detail of Time-Series Feature Engineering.' },
-    { text: 'A rolling mean that includes $y_t$ in its window leaks the target.', isTrue: true, explanation: 'This is a key technical detail of Time-Series Feature Engineering.' },
+    { text: 'Lag-1 is always the most important lag.', isTrue: false, explanation: 'In many seasonal series, the seasonal lag (e.g., lag 7 for daily data with weekly patterns) carries more information than lag 1. Always check the ACF.' },
+    { text: 'Lags, rolling statistics, seasonality decomposition, and calendar features -- encoding temporal patterns for ML models.', isTrue: true, explanation: 'This captures the core definition of Time-Series Feature Engineering.' },
+    { text: 'Time-Series Feature Engineering is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Time-Series Feature Engineering is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

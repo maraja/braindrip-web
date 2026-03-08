@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFDbscan() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Dimensionality reduction with PCA is a common preprocessing step Number of clusters: Determined automatically by the algorithm.', isTrue: true, explanation: 'This is a key technical detail of DBSCAN.' },
-    { text: 'Discovering arbitrarily-shaped clusters based on point density -- no need to specify K, naturally identifies outliers.', isTrue: true, explanation: 'This captures the core purpose of DBSCAN.' },
-    { text: 'DBSCAN is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding DBSCAN is important for building on more advanced topics.' },
+    { text: 'DBSCAN has no parameters.', isTrue: false, explanation: 'It has two:  and MinPts. These are less intuitive than K but equally important.' },
+    { text: 'O(n  n) with spatial indexing (e.g., KD-tree, ball tree); O(n^2) without indexing or in high dimensions where spatial indices degrade', isTrue: true, explanation: 'O(n  n) with spatial indexing (e.g., KD-tree, ball tree); O(n^2) without indexing or in high dimensions where spatial indices degrade' },
+    { text: 'O(n) beyond the distance computations -- significantly less than the O(n^2) required by hierarchical clustering', isTrue: true, explanation: 'O(n) beyond the distance computations -- significantly less than the O(n^2) required by hierarchical clustering' },
+    { text: 'DBSCAN is deterministic for core and noise points; border points reachable from multiple clusters may be assigned nondeterministically depending on processing order', isTrue: true, explanation: 'DBSCAN is deterministic for core and noise points; border points reachable from multiple clusters may be assigned nondeterministically depending on processing order' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

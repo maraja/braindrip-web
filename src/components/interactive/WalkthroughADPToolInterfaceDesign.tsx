@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Naming Conventions', desc: 'The foundation of tool interface design begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Description Writing', desc: 'At this stage, the key transformation occurs — the core mechanism that makes tool interface design work.' },
-    { title: '3. Parameter Schema Design', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Return Value Design', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Tool Granularity', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Naming Conventions', desc: 'Tool names are the model\'s first signal about what a tool does. Use the verb_noun pattern consistently:  Naming rules: 2-4 words, underscore-separated.' },
+    { title: '2. Description Writing', desc: 'The description is the most important field in the tool schema. It tells the model when to use the tool, what it does, and what to expect.' },
+    { title: '3. Parameter Schema Design', desc: 'Every parameter should have a type, a description, and constraints where applicable. Schema design rules: Use enums for any parameter with a fixed set of valid values.' },
+    { title: '4. Return Value Design', desc: 'What a tool returns shapes how the model interprets and presents the result. Return structured data, not prose: Good: &#123;"status": "shipped", "tracking_id": "1Z999AA10123456784", "eta": "2024-03-15"&#125; Bad: "Your order has been shipped!' },
+    { title: '5. Tool Granularity', desc: 'Fine-grained tools do one thing each: get_order_status, get_order_items, get_order_address. The model must call multiple tools to get complete information.' },
+    { title: '6. Common Anti-Patterns', desc: 'The god tool: One tool with 15 parameters that does everything. The model cannot reliably fill 15 parameters, and errors are hard to diagnose.' },
 ];
 
 export default function WalkthroughADPToolInterfaceDesign() {
@@ -17,10 +18,10 @@ export default function WalkthroughADPToolInterfaceDesign() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Tool Interface Design — Step by Step
+          Tool Interface Design \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how tool interface design works, one stage at a time.

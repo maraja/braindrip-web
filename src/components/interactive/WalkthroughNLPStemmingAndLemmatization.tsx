@@ -1,11 +1,8 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Stemming Algorithms', desc: 'The foundation of stemming and lemmatization begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Porter Stemmer', desc: 'At this stage, the key transformation occurs — the core mechanism that makes stemming and lemmatization work.' },
-    { title: '3. The Snowball Stemmer (Porter2)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Lancaster Stemmer', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Lemmatization Approaches', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Stemming Algorithms', desc: '#### The Porter Stemmer  Martin Porter\'s 1980 algorithm applies 5 phases of suffix-removal rules conditioned on a measure of the word\'s "consonant-vowel" pattern.' },
+    { title: '2. Lemmatization Approaches', desc: '#### WordNet Lemmatizer  Uses the WordNet lexical database to look up base forms. Requires the part-of-speech tag as input for accuracy:  Without POS, the default noun lookup may fail: wnl.lemmatize("better") returns "better" because there is no noun sense to reduce.' },
 ];
 
 export default function WalkthroughNLPStemmingAndLemmatization() {
@@ -17,10 +14,10 @@ export default function WalkthroughNLPStemmingAndLemmatization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Stemming and Lemmatization — Step by Step
+          Stemming and Lemmatization \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how stemming and lemmatization works, one stage at a time.

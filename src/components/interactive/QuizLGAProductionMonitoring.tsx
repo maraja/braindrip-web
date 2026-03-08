@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAProductionMonitoring() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'LangSmith dashboards show latency distribution (P50, P95, P99), error rates, token usage trends, and cost estimates over configurable time windows.', isTrue: true, explanation: 'This is a key technical detail of Production Monitoring.' },
-    { text: 'Feedback supports arbitrary keys (e.g., "accuracy", "helpfulness") with numeric scores and text comments.', isTrue: true, explanation: 'This is a key technical detail of Production Monitoring.' },
-    { text: 'Annotation queues support multiple reviewers with inter-annotator agreement tracking.', isTrue: true, explanation: 'This is a key technical detail of Production Monitoring.' },
+    { text: 'Application-level monitoring tools like Datadog replace LangSmith.', isTrue: false, explanation: 'General APM tools track HTTP status codes and response times but cannot inspect LLM prompt content, token usage, or agent decision paths. Both are needed.' },
+    { text: 'LangSmith provides production dashboards, user feedback collection, annotation queues, and alerting to monitor agent health and catch degradation.', isTrue: true, explanation: 'This captures the core definition of Production Monitoring.' },
+    { text: 'Production Monitoring is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Production Monitoring is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

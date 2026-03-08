@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACModelContextProtocol() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Transport options: Stdio transport launches the server as a local subprocess and communicates via stdin/stdout — simple, fast, secure (no network).', isTrue: true, explanation: 'This is a key technical detail of Model Context Protocol (MCP).' },
-    { text: 'SSE transport communicates over HTTP with Server-Sent Events — needed for remote servers but requires authentication and network security.', isTrue: true, explanation: 'This is a key technical detail of Model Context Protocol (MCP).' },
-    { text: 'JSON-RPC 2.0: All messages follow JSON-RPC format with method, params, id (for requests), and result/error (for responses).', isTrue: true, explanation: 'This is a key technical detail of Model Context Protocol (MCP).' },
+    { text: 'MCP replaces function calling', isTrue: false, explanation: ': MCP builds on function calling, not replacing it. The model still uses function calling to invoke tools.' },
+    { text: 'Stdio transport launches the server as a local subprocess and communicates via stdin/stdout — simple, fast, secure (no network).', isTrue: true, explanation: 'SSE transport communicates over HTTP with Server-Sent Events — needed for remote servers but requires authentication and network security.' },
+    { text: 'All messages follow JSON-RPC format with method, params, id (for requests), and result/error (for responses).', isTrue: true, explanation: 'This is a well-established protocol with broad library support.' },
+    { text: 'Tools can carry metadata indicating whether they are read-only or have side effects, enabling clients to implement appropriate confirmation flows.', isTrue: true, explanation: 'Tools can carry metadata indicating whether they are read-only or have side effects, enabling clients to implement appropriate confirmation flows.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

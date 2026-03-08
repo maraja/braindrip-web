@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPERagPromptDesign() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Context-before-query ordering improves faithfulness by 8-15% compared to query-before-context in benchmarks with context windows over 4K tokens.', isTrue: true, explanation: 'This is a key technical detail of RAG Prompt Design.' },
-    { text: 'The "lost in the middle" effect (Liu et al., 2023) shows models underweight information in the middle 30-50% of long contexts; placing critical context at the beginning or end mitigates this.', isTrue: true, explanation: 'This is a key technical detail of RAG Prompt Design.' },
-    { text: 'Explicit "do not use outside knowledge" instructions reduce hallucination rates from approximately 25% to 8-12% in domain-specific RAG.', isTrue: true, explanation: 'This is a key technical detail of RAG Prompt Design.' },
+    { text: 'More retrieved context always means better answers.', isTrue: false, explanation: 'Beyond 5-7 relevant chunks, additional context introduces noise and can degrade answer quality. The model\'s attention becomes diluted across too many sources, and irrelevant passages can mislead generation.' },
+    { text: 'RAG eliminates hallucination.', isTrue: false, explanation: 'RAG reduces but does not eliminate hallucination. Models can still generate claims not supported by context, misinterpret context, or blend context with parametric knowledge.' },
+    { text: 'The retrieval step is all that matters; the prompt is trivial.', isTrue: false, explanation: 'Template design has been shown to swing answer quality by 10-20 percentage points even with identical retrieved documents. The prompt template is as important as retrieval quality.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

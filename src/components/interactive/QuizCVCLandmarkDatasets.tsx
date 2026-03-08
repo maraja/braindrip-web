@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCLandmarkDatasets() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ImageNet-1K: 1,281,167 train / 50,000 val / 100,000 test.', isTrue: true, explanation: 'This is a key technical detail of Landmark Datasets.' },
-    { text: 'Images resized so shorter side = 256; standard crop: 224x224.', isTrue: true, explanation: 'This is a key technical detail of Landmark Datasets.' },
-    { text: 'COCO: 118,287 train / 5,000 val / 20,288 test-dev.', isTrue: true, explanation: 'This is a key technical detail of Landmark Datasets.' },
+    { text: 'ImageNet performance predicts real-world performance.', isTrue: false, explanation: 'ImageNet is curated, centered, and relatively clean. Real-world images are messy, cluttered, and out-of-distribution.' },
+    { text: 'Landmark datasets -- ImageNet (1.2M images, 1K classes), COCO (330K images, 80 categories), Pascal VOC, ADE20K, Cityscapes, and Open Images -- define the benchmarks that drive computer vision progress and shape architectural design decisions.', isTrue: true, explanation: 'This captures the core definition of Landmark Datasets.' },
+    { text: 'Landmark Datasets is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Landmark Datasets is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

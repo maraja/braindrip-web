@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE04TheOpenSourceEcosystem() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The open-source AI ecosystem — from Hugging Face\'s model hub to llama.cpp\'s local inference to vLLM\'s production serving — created the infrastructure that turned open model weights into a global innovation engine, enabling anyone to run, modify, and build on frontier AI.', isTrue: true, explanation: 'This captures the core purpose of The Open-Source Ecosystem.' },
-    { text: 'The Open-Source Ecosystem is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding The Open-Source Ecosystem is important for building on more advanced topics.' },
-    { text: 'The Open-Source Ecosystem is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding The Open-Source Ecosystem is important for building on more advanced topics.' },
+    { text: 'Open-source AI means anyone can train a frontier model.', isTrue: false, explanation: 'Open weights and tools lower the bar for using and fine-tuning models, but pre-training a frontier model still costs tens of millions of dollars. The "openness" is primarily in deployment and modification, not in replicating the full training pipeline.' },
+    { text: 'Local models are always worse than API models.', isTrue: false, explanation: 'With proper quantization, a 70B model running locally can match API-served models on many tasks. The gap depends on the specific models compared and the quantization level used.' },
+    { text: 'Hugging Face is just a hosting platform.', isTrue: false, explanation: 'Hugging Face\'s Transformers library, training utilities, evaluation tools, and community infrastructure make it the connective tissue of the open AI ecosystem. The platform is as much about tools and standards as storage.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

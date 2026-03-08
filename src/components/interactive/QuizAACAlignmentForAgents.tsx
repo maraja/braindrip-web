@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACAlignmentForAgents() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Constitutional AI for agents: The agent is given a set of principles (a "constitution") that guide its behavior beyond specific instructions.', isTrue: true, explanation: 'This is a key technical detail of Alignment for Agents.' },
-    { text: 'These principles handle cases not covered by instructions: when in doubt, prefer safety; when uncertain, ask for clarification; when multiple interpretations exist, choose the most helpful one.', isTrue: true, explanation: 'This is a key technical detail of Alignment for Agents.' },
-    { text: 'Process reward models: Instead of rewarding only the final outcome, process reward models evaluate each step of the agent\'s trajectory.', isTrue: true, explanation: 'This is a key technical detail of Alignment for Agents.' },
+    { text: 'Alignment is just about preventing harmful outputs.', isTrue: false, explanation: 'Harmlessness is one dimension of alignment, but alignment also includes helpfulness (actually accomplishing the task), honesty (not fabricating information), and faithfulness (pursuing the intended goal). An agent that refuses every request is harmless but catastrophically misaligned on helpfulness.' },
+    { text: 'The agent is given a set of principles (a "constitution") that guide its behavior beyond specific instructions.', isTrue: true, explanation: 'These principles handle cases not covered by instructions: when in doubt, prefer safety; when uncertain, ask for clarification; when multiple interpretations exist, choose the most helpful one.' },
+    { text: 'Better prompting solves alignment.', isTrue: false, explanation: 'Prompting helps but cannot fully solve alignment because natural language is inherently ambiguous, and agents face situations not anticipated in the prompt. Alignment requires a combination of training, prompting, architectural safeguards, and evaluation.' },
+    { text: 'Instead of rewarding only the final outcome, process reward models evaluate each step of the agent\'s trajectory.', isTrue: true, explanation: 'This catches specification gaming where the outcome looks good but the process was wrong (e.g., deleting tests to make them pass).' },
+    { text: 'If the agent follows instructions exactly, it\'s aligned.', isTrue: false, explanation: 'Literal instruction following is not alignment. Instructions cannot cover every situation, and literal following can lead to specification gaming.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

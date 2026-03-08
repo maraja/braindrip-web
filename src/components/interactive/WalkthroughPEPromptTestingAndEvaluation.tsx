@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Eval Dataset Design', desc: 'The foundation of prompt testing and evaluation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Automated Scoring Methods', desc: 'At this stage, the key transformation occurs — the core mechanism that makes prompt testing and evaluation work.' },
-    { title: '3. Regression Testing Across Prompt Versions', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Statistical Significance for Non-Deterministic Outputs', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Eval Dataset Design', desc: 'A good eval dataset contains 50-200 test cases that represent the full distribution of inputs your prompt will encounter in production. Each test case includes an input (the user query or task), an expected output or set of acceptable outputs, and optionally metadata like difficulty level,.' },
+    { title: '2. Automated Scoring Methods', desc: 'The choice of scoring method depends on the output type:  Exact match works for classification, extraction, and structured outputs where there is one correct answer. It is binary (correct or not) and unambiguous.' },
+    { title: '3. Regression Testing Across Prompt Versions', desc: 'Every prompt change — no matter how minor — should be evaluated against the full test suite before deployment. Regression testing catches cases where improving performance on one category degrades another.' },
+    { title: '4. Statistical Significance for Non-Deterministic Outputs', desc: 'Because LLMs are stochastic, a single eval run can produce different scores each time. To determine whether a prompt change represents a genuine improvement or random variation, you need statistical significance testing.' },
 ];
 
 export default function WalkthroughPEPromptTestingAndEvaluation() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEPromptTestingAndEvaluation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Prompt Testing and Evaluation — Step by Step
+          Prompt Testing and Evaluation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how prompt testing and evaluation works, one stage at a time.

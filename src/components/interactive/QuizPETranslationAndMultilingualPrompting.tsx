@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPETranslationAndMultilingualPrompting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'English-mediated reasoning (think in English, answer in target language) improves non-English task accuracy by 10-15% on average.', isTrue: true, explanation: 'This is a key technical detail of Translation and Multilingual Prompting.' },
-    { text: 'Tokenization costs vary by 2-3x across languages: English averages 1 token/word, while Chinese and Arabic average 2-3 tokens per semantic unit.', isTrue: true, explanation: 'This is a key technical detail of Translation and Multilingual Prompting.' },
-    { text: 'Translation quality for Tier 1 languages (French, German, Spanish) reaches 90-95% of professional human translation quality on BLEU and human evaluation metrics.', isTrue: true, explanation: 'This is a key technical detail of Translation and Multilingual Prompting.' },
+    { text: 'Modern LLMs are equally good at all languages.', isTrue: false, explanation: 'Quality varies dramatically across languages, with 20-40 percentage point gaps between English and lower-resource languages on standard benchmarks. Always test in the target language specifically.' },
+    { text: 'Translation is a solved problem for LLMs.', isTrue: false, explanation: 'While LLMs produce impressively fluent translations, they make subtle errors in register, cultural adaptation, and technical terminology that professional human translators catch. For high-stakes content, LLM translation should be reviewed by native speakers.' },
+    { text: 'Prompting in the target language always produces better results.', isTrue: false, explanation: 'For many non-English languages, English instructions with target-language output produce better results because the model\'s instruction-following was primarily trained on English. This counterintuitive finding is consistent across multiple model families.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

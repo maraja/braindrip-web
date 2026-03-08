@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPFasttext() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'N-gram range: Default character n-gram sizes are 3 to 6.', isTrue: true, explanation: 'This is a key technical detail of FastText.' },
-    { text: 'Shorter n-grams (2-3) capture common prefixes and suffixes; longer ones (5-6) capture word stems.', isTrue: true, explanation: 'This is a key technical detail of FastText.' },
-    { text: 'The total number of unique character n-grams is bounded using a hashing trick with a default bucket size of 2 million.', isTrue: true, explanation: 'This is a key technical detail of FastText.' },
+    { text: 'FastText is just Word2Vec with character n-grams.', isTrue: false, explanation: 'While architecturally similar, the subword enrichment fundamentally changes the model\'s behavior. FastText shares parameters across morphologically related words, enabling generalization that Word2Vec cannot achieve.' },
+    { text: 'Default character n-gram sizes are 3 to 6.', isTrue: true, explanation: 'Shorter n-grams (2-3) capture common prefixes and suffixes; longer ones (5-6) capture word stems. The total number of unique character n-grams is bounded using a hashing trick with a default bucket size of 2 million.' },
+    { text: 'FastText always outperforms Word2Vec.', isTrue: false, explanation: 'On English benchmarks with full vocabulary coverage (no OOV words), Word2Vec and FastText perform comparably. FastText\'s advantage is most pronounced when OOV words are common, the language is morphologically rich, or the training corpus is small relative to the vocabulary.' },
+    { text: 'A typical training run with 1 million unique words and 2 million n-gram buckets yields roughly 3 million vectors to learn.', isTrue: true, explanation: 'A typical training run with 1 million unique words and 2 million n-gram buckets yields roughly 3 million vectors to learn.' },
+    { text: 'Character n-grams capture true morphology.', isTrue: false, explanation: 'FastText\'s n-grams are a statistical approximation of morphology, not a linguistic analysis. The n-grams "tion" and "sion" happen to correspond to real suffixes, but "atio" (from "nation") does not.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

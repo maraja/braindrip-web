@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizRLDeepQNetworks() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Training time: 50 million frames per game (~38 days of game time at 60 FPS), approximately 10 days on a single GPU (circa 2015).', isTrue: true, explanation: 'This is a key technical detail of Deep Q-Networks.' },
-    { text: 'Reward clipping: All rewards clipped to $[-1, +1]$ to standardize across games.', isTrue: true, explanation: 'This is a key technical detail of Deep Q-Networks.' },
-    { text: 'Frame skipping: The agent selects an action every 4 frames (action repeat), with the last action repeated in between.', isTrue: true, explanation: 'This is a key technical detail of Deep Q-Networks.' },
+    { text: 'DQN learns to play games like humans do.', isTrue: false, explanation: 'DQN exploits pixel-level patterns and has no concept of game semantics. It may find strategies humans would never use -- and fail at tasks trivial for humans (like navigating a maze in Montezuma\'s Revenge).' },
+    { text: '50 million frames per game (~38 days of game time at 60 FPS), approximately 10 days on a single GPU (circa 2015).', isTrue: true, explanation: '50 million frames per game (~38 days of game time at 60 FPS), approximately 10 days on a single GPU (circa 2015).' },
+    { text: 'The convolutional architecture is what made DQN work.', isTrue: false, explanation: 'The CNN architecture is important for processing pixels, but the algorithmic innovations -- experience replay and target networks -- are what made training stable. Without them, even perfect architectures diverge.' },
+    { text: 'All rewards clipped to [-1, +1] to standardize across games.', isTrue: true, explanation: 'All rewards clipped to [-1, +1] to standardize across games.' },
+    { text: 'DQN is sample efficient.', isTrue: false, explanation: 'DQN requires roughly 200 million frames (about 925 hours of gameplay) across training. Humans typically achieve comparable performance in minutes.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

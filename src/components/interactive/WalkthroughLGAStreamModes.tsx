@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Updates Mode', desc: 'The foundation of stream modes begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Values Mode', desc: 'At this stage, the key transformation occurs — the core mechanism that makes stream modes work.' },
-    { title: '3. Messages Mode', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Events Mode', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Combining Multiple Modes', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Updates Mode', desc: 'The "updates" mode yields the state delta produced by each node. You see what changed, not the full picture.' },
+    { title: '2. Values Mode', desc: 'The "values" mode yields the complete state snapshot after each node finishes. Use this when downstream logic needs the full picture at every step, such as rendering an evolving dashboard.' },
+    { title: '3. Messages Mode', desc: 'The "messages" mode streams LLM tokens as they are generated. Each chunk is a (message_chunk, metadata) tuple.' },
+    { title: '4. Events Mode', desc: 'The "events" mode emits every internal event -- node starts, node ends, LLM calls, tool invocations, and more.' },
+    { title: '5. Combining Multiple Modes', desc: 'You can request several modes at once by passing a list. Chunks are then tagged with their mode.' },
 ];
 
 export default function WalkthroughLGAStreamModes() {
@@ -17,10 +17,10 @@ export default function WalkthroughLGAStreamModes() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Stream Modes — Step by Step
+          Stream Modes \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how stream modes works, one stage at a time.

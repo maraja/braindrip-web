@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Paper', detail: 'Lan et al., \"ALBERT: A Lite BERT for Self-supervised Learning of Language Representations\" (Sep 2019, arXiv:1909.11942, ICLR 2020)' },
+    { label: 'Paper', detail: 'Lan et al., "ALBERT: A Lite BERT for Self-supervised Learning of Language Representations" (Sep 2019, arXiv:1909.11942, ICLR 2020)' },
     { label: 'ALBERT-xxlarge', detail: '12 layers, H=4096, 64 heads, 235M params — best performing configuration' },
     { label: 'Parameter reduction', detail: 'ALBERT-base 12M vs BERT-base 110M (9x); ALBERT-xxlarge 235M vs BERT-Large 340M (1.4x)' },
     { label: 'Embedding factorization', detail: 'E=128, reducing embedding params by ~8x' },
@@ -20,10 +20,10 @@ export default function ExplorerLLE02Albert() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          ALBERT: A Lite BERT — Key Details Explorer
+          ALBERT: A Lite BERT \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of albert: a lite bert.
+          Click each card to explore the technical details.
         </p>
       </div>
 

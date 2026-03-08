@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Token Budgets', desc: 'The foundation of resource limits begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Time Limits', desc: 'At this stage, the key transformation occurs — the core mechanism that makes resource limits work.' },
-    { title: '3. Iteration and Step Limits', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Cost Caps', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Token Budgets', desc: 'Token budgets cap the total number of tokens an agent can consume across all LLM calls during a single task. This includes both input tokens (prompts, context, retrieved documents) and output tokens (reasoning, responses, tool call arguments).' },
+    { title: '2. Time Limits', desc: 'Time limits cap the wall-clock duration of agent execution. A simple query should complete in 30-60 seconds; a complex multi-step task might be allowed 5-15 minutes; a long-running automation might have a 1-hour limit.' },
+    { title: '3. Iteration and Step Limits', desc: 'Iteration limits cap the number of agent loop cycles -- the number of times the agent can think and act before being forced to stop. A step limit of 25 means the agent gets 25 reasoning-action pairs.' },
+    { title: '4. Cost Caps', desc: 'Cost caps express limits in dollar amounts rather than tokens. A per-request cap of $0.50 means the entire agent execution must cost less than fifty cents regardless of which models, tools, or services it uses.' },
 ];
 
 export default function WalkthroughAACResourceLimits() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACResourceLimits() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Resource Limits — Step by Step
+          Resource Limits \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how resource limits works, one stage at a time.

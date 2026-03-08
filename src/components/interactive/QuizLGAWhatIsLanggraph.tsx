@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAWhatIsLanggraph() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'LangGraph requires LangChain.', isTrue: false, explanation: '"LangGraph requires LangChain." Incorrect. LangGraph depends only on langgraph-checkpoint and a few lightweight packages. You can use any LLM client — OpenAI SDK, Anthropic SDK, or raw HTTP calls.' },
-    { text: 'LangGraph is installed via pip install langgraph (separate package from langchain).', isTrue: true, explanation: 'This is a key technical detail of What Is LangGraph.' },
-    { text: 'The StateGraph class is the primary builder; it is parameterized by the state type.', isTrue: true, explanation: 'This is a key technical detail of What Is LangGraph.' },
+    { text: 'LangGraph requires LangChain.', isTrue: false, explanation: 'Incorrect. LangGraph depends only on langgraph-checkpoint and a few lightweight packages.' },
+    { text: 'LangGraph is a low-level orchestration framework that models AI agent logic as a directed graph of nodes, edges, and shared state.', isTrue: true, explanation: 'This captures the core definition of What Is LangGraph.' },
+    { text: 'What Is LangGraph is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding What Is LangGraph is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

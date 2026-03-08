@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE05Mixtral8x7b() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'GPT-3.5 Turbo at 7.94) Inference speed: ~6x faster than LLaMA 2 70B for equivalent quality License: Apache 2.0 Released: December 11, 2023 Mixtral 8x22B follow-up: April 2024 (141B total, 39B active)', isTrue: true, explanation: 'This is a key technical detail of Mixtral 8x7B.' },
-    { text: 'Mistral AI\'s sparse Mixture of Experts model used 46.7 billion total parameters but only 12.9 billion per forward pass, matching LLaMA 2 70B quality at a fraction of the inference cost and proving MoE was practical for the open-source community.', isTrue: true, explanation: 'This captures the core purpose of Mixtral 8x7B.' },
-    { text: 'Mixtral 8x7B is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Mixtral 8x7B is important for building on more advanced topics.' },
+    { text: 'Mixtral 8x7B has 56B parameters.', isTrue: false, explanation: 'The name suggests 8 times 7B equals 56B, but shared attention layers and embeddings mean the actual total is 46.7B. And only 12.9B are active per token.' },
+    { text: '12.9 billion (2 of 8 experts selected per layer)', isTrue: true, explanation: '12.9 billion (2 of 8 experts selected per layer)' },
+    { text: 'MoE models are 8x more expensive to train.', isTrue: false, explanation: 'Training cost scales with total parameters (you must store all 46.7B), but the forward and backward pass compute scales with active parameters (12.9B). Training is more expensive than a 13B model but far less than a dense 47B model, and inference is dramatically cheaper than any dense model of equivalent quality.' },
+    { text: '8 FFN experts per MoE layer, top-2 routing', isTrue: true, explanation: '8 FFN experts per MoE layer, top-2 routing' },
+    { text: 'Each expert is a complete 7B model.', isTrue: false, explanation: 'Only the FFN layers are replicated as experts. The attention layers, embeddings, and normalization layers are shared across all experts.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

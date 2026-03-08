@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Persona Design Spectrum', desc: 'The foundation of role and persona prompting begins with understanding its core input requirements and initial setup.' },
-    { title: '2. How Personas Activate Knowledge Clusters', desc: 'At this stage, the key transformation occurs — the core mechanism that makes role and persona prompting work.' },
-    { title: '3. Combining Personas with Instructions', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Persona Conflicts and Resolution', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Persona Design Spectrum', desc: 'Personas range from minimal framing to elaborate character descriptions:  Light framing (5-20 tokens):  Minimal activation. Broadly biases toward technical helpfulness but does not strongly constrain domain or style.' },
+    { title: '2. How Personas Activate Knowledge Clusters', desc: 'The mechanical effect of persona prompting operates through the attention mechanism:  Vocabulary priming: The persona description contains domain-specific tokens ("oncologist," "clinical studies," "Johns Hopkins") that prime the attention mechanism to weight domain-relevant tokens more heavily in.' },
+    { title: '3. Combining Personas with Instructions', desc: 'The most effective prompts combine a persona with specific task instructions:  The persona sets the knowledge domain and professional frame. The instructions specify the exact task.' },
+    { title: '4. Persona Conflicts and Resolution', desc: 'When a persona\'s implicit behavior conflicts with explicit instructions, the model must resolve the tension. Common conflicts:  Persona says "You are a creative fiction writer" + instruction says "Only state facts from the document" — the creative persona may introduce embellishment.' },
 ];
 
 export default function WalkthroughPERoleAndPersonaPrompting() {
@@ -16,10 +16,10 @@ export default function WalkthroughPERoleAndPersonaPrompting() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Role and Persona Prompting — Step by Step
+          Role and Persona Prompting \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how role and persona prompting works, one stage at a time.

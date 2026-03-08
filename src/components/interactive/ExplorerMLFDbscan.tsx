@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Time complexity', detail: '$O(n \\log n)$ with spatial indexing (e.g., KD-tree, ball tree); $O(n^2)$ without indexing or in high dimensions where spatial indices degrade' },
-    { label: 'Space complexity', detail: '$O(n)$ beyond the distance computations -- significantly less than the $O(n^2)$ required by hierarchical clustering' },
+    { label: 'Time complexity', detail: 'O(n  n) with spatial indexing (e.g., KD-tree, ball tree); O(n^2) without indexing or in high dimensions where spatial indices degrade' },
+    { label: 'Space complexity', detail: 'O(n) beyond the distance computations -- significantly less than the O(n^2) required by hierarchical clustering' },
     { label: 'Determinism', detail: 'DBSCAN is deterministic for core and noise points; border points reachable from multiple clusters may be assigned nondeterministically depending on processing order' },
     { label: 'Metric requirement', detail: 'Works with any distance metric, not just Euclidean (unlike standard K-means). This includes Haversine for geographic coordinates, cosine for text, and edit distance for strings' },
-    { label: 'High-dimensional caveat', detail: 'As dimensionality grows, distances concentrate (curse of dimensionality), making $\\varepsilon$ selection increasingly difficult. Dimensionality reduction with PCA is a common preprocessing step' },
+    { label: 'High-dimensional caveat', detail: 'As dimensionality grows, distances concentrate (curse of dimensionality), making  selection increasingly difficult. Dimensionality reduction with PCA is a common preprocessing step' },
     { label: 'Number of clusters', detail: 'Determined automatically by the algorithm. Different parameter settings yield different numbers of clusters, so parameter tuning implicitly controls this' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerMLFDbscan() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          DBSCAN — Key Details Explorer
+          DBSCAN \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of dbscan.
+          Click each card to explore the technical details.
         </p>
       </div>
 

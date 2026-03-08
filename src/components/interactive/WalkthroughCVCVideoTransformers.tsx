@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Tokenization', desc: 'The foundation of video transformers begins with understanding its core input requirements and initial setup.' },
-    { title: '2. TimeSformer: Divided Space-Time Attention', desc: 'At this stage, the key transformation occurs — the core mechanism that makes video transformers work.' },
-    { title: '3. ViViT: Factorized Encoder', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. VideoMAE: Self-Supervised Video Transformers', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Computational Reality', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Tokenization', desc: 'A video of shape T x H x W x 3 is divided into tokens. Two main strategies exist:  Frame-level patches: Each frame is independently divided into &#123;H&#125;&#123;p&#125; x &#123;W&#125;&#123;p&#125; patches of size p x p.' },
+    { title: '2. TimeSformer: Divided Space-Time Attention', desc: 'Bertasius et al. (2021) proposed TimeSformer, which avoids full spatiotemporal attention by factorizing it into separate operations:  Temporal attention: Each spatial patch attends only to patches at the same spatial location across all frames.' },
+    { title: '3. ViViT: Factorized Encoder', desc: '(2021) proposed ViViT with four attention variants:  Model 1 -- Spatio-temporal attention: Full self-attention over all N tokens. Most accurate but O(N^2) cost.' },
+    { title: '4. VideoMAE: Self-Supervised Video Transformers', desc: '(2022) showed that masked autoencoding is highly effective for video transformers. By masking a very high ratio (90--95%) of spatiotemporal tubes and reconstructing them, VideoMAE learns strong representations without labels.' },
+    { title: '5. Computational Reality', desc: 'For a ViT-B model with d=768, 12 layers, and N tokens, the self-attention cost per layer is:  [equation]  The 2N^2 d term dominates for large N. With N=3&#123;,&#125;136 (32 frames, 224x224, patch 16):  Full attention per layer: ~15.1 GFLOPs Factorized (TimeSformer-style) per layer: ~2.' },
 ];
 
 export default function WalkthroughCVCVideoTransformers() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCVideoTransformers() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Video Transformers — Step by Step
+          Video Transformers \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how video transformers works, one stage at a time.

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Basic Mathematical Model', desc: 'The foundation of compounding errors in multi-step tasks begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Relaxing the Independence Assumption', desc: 'At this stage, the key transformation occurs — the core mechanism that makes compounding errors in multi-step tasks work.' },
-    { title: '3. Empirical Evidence', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Implications for Evaluation Design', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Test Long Trajectories, Not Just Short Ones', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Basic Mathematical Model', desc: 'Under the simplifying assumption that each step succeeds independently with probability p, the probability of an n-step task succeeding is:  [equation]  This gives us the following concrete numbers:  The numbers are sobering.' },
+    { title: '2. Relaxing the Independence Assumption', desc: 'The p^n model assumes independent step failures. In practice, step outcomes are often correlated:  Positive correlation (makes things worse): A misunderstanding in step 1 propagates to subsequent steps.' },
+    { title: '3. Empirical Evidence', desc: 'Data from real agent benchmarks confirms the compounding effect:  SWE-bench: Tasks requiring 1-3 file edits are resolved at roughly 2x the rate of tasks requiring 5+ file edits across all tested agents WebArena: Multi-page web navigation tasks (10+ steps) see success rates 40-60% lower than.' },
+    { title: '4. Implications for Evaluation Design', desc: 'Test Long Trajectories, Not Just Short Ones  Evaluation suites must include tasks spanning the full range of trajectory lengths expected in production. A suite of only 3-5 step tasks gives no information about 20-step performance due to the nonlinear relationship.' },
+    { title: '5. Mitigation Strategies (and Their Evaluation)', desc: 'Agents and agent frameworks use several strategies to combat error compounding:  Checkpointing and rollback: Save state at key points and revert to the last good state on failure. Evaluation should test whether rollback is triggered appropriately.' },
 ];
 
 export default function WalkthroughAAECompoundingErrorsInMultiStepTasks() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAECompoundingErrorsInMultiStepTasks() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Compounding Errors in Multi-Step Tasks — Step by Step
+          Compounding Errors in Multi-Step Tasks \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how compounding errors in multi-step tasks works, one stage at a time.

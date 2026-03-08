@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Data Parallelism (DP) -- The Simplest Approach', desc: 'The foundation of distributed training infrastructure begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Tensor Parallelism (TP) — Splitting Matrix Operations', desc: 'At this stage, the key transformation occurs — the core mechanism that makes distributed training infrastructure work.' },
-    { title: '3. Pipeline Parallelism (PP) — Splitting Layers', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Expert Parallelism (EP) — For Mixture of Experts', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. ZeRO and FSDP: Sharding Everything', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Data Parallelism (DP) -- The Simplest Approach', desc: 'Data parallelism replicates the entire model on every GPU and splits the training data across them. Each GPU processes a different mini-batch, computes gradients locally, and then all GPUs synchronize gradients via an all-reduce operation.' },
+    { title: '2. Tensor Parallelism (TP) — Splitting Matrix Operations', desc: 'Tensor Parallelism, pioneered by Megatron-LM (Shoeybi et al., 2019, NVIDIA), splits individual matrix multiplications across GPUs within a single node. A large weight matrix is partitioned column-wise or row-wise, each GPU computes its portion of the matrix multiplication, and results are combined.' },
+    { title: '3. Pipeline Parallelism (PP) — Splitting Layers', desc: 'Pipeline parallelism splits the model\'s layers across GPUs sequentially. GPU 0 processes layers 1-10, GPU 1 processes layers 11-20, and so on.' },
+    { title: '4. Expert Parallelism (EP) — For Mixture of Experts', desc: 'Expert Parallelism is specific to Mixture of Experts (MoE) models. Each expert resides on a different GPU, and tokens are routed between GPUs based on the gating function\'s decisions.' },
+    { title: '5. ZeRO and FSDP: Sharding Everything', desc: 'ZeRO (Zero Redundancy Optimizer, Rajbhandari et al., 2020, Microsoft DeepSpeed) recognized that data parallelism wastes memory by replicating optimizer states, gradients, and parameters on every GPU.' },
+    { title: '6. The 3D/4D Parallelism Stack', desc: 'Real training runs combine all strategies simultaneously. Megatron-LM pioneered 3D parallelism (TP + PP + DP) for training models beyond 100B parameters.' },
 ];
 
 export default function WalkthroughLLE05DistributedTrainingInfrastructure() {
@@ -17,10 +18,10 @@ export default function WalkthroughLLE05DistributedTrainingInfrastructure() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Distributed Training Infrastructure — Step by Step
+          Distributed Training Infrastructure \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how distributed training infrastructure works, one stage at a time.

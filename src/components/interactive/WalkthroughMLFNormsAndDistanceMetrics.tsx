@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Norms: Measuring Vector Size', desc: 'The foundation of norms and distance metrics begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The $L^p$ Norm Family', desc: 'At this stage, the key transformation occurs — the core mechanism that makes norms and distance metrics work.' },
-    { title: '3. Distance Metrics', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Cosine Similarity and Distance', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Mahalanobis Distance', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Norms: Measuring Vector Size', desc: 'A norm \\ on a vector space assigns a non-negative "length" to each vector, satisfying:  \\  0 with equality iff x = 0 (positive definiteness) \\ (absolute homogeneity) \\ (triangle inequality)' },
+    { title: '2. The $L^p$ Norm Family', desc: 'For x  &#123;R&#125;^n and p  1:  [equation]  L^1 norm (Manhattan norm): \\. The sum of absolute values.' },
+    { title: '3. Distance Metrics', desc: 'A metric d(x, y) satisfies: (1) d(x, y)  0, (2) d(x, y) = 0  x = y, (3) d(x, y) = d(y, x), (4) d(x, z)  d(x, y) + d(y, z). Any norm induces a distance: d(x, y) = \\.' },
+    { title: '4. Cosine Similarity and Distance', desc: 'Cosine similarity measures the angle between vectors, ignoring magnitude:  [equation]  Cosine distance: d(x, y) = 1 - sim(x, y). Cosine similarity is the workhorse of NLP and information retrieval.' },
+    { title: '5. Mahalanobis Distance', desc: 'Euclidean distance treats all directions equally. If features are correlated or have different variances, this can be misleading.' },
+    { title: '6. Connection to Regularization', desc: 'Regularization adds a norm-based penalty to the loss function:  [equation]  L1 regularization (p=1): Produces sparse solutions by driving irrelevant parameters exactly to zero. Used in Lasso regression and feature selection.' },
 ];
 
 export default function WalkthroughMLFNormsAndDistanceMetrics() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFNormsAndDistanceMetrics() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Norms and Distance Metrics — Step by Step
+          Norms and Distance Metrics \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how norms and distance metrics works, one stage at a time.

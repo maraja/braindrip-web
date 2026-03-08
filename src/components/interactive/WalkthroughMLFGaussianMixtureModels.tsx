@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The EM Algorithm for GMMs', desc: 'The foundation of gaussian mixture models begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Relationship to K-Means', desc: 'At this stage, the key transformation occurs — the core mechanism that makes gaussian mixture models work.' },
-    { title: '3. Covariance Constraints', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Model Selection', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Practical Example', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The EM Algorithm for GMMs', desc: 'Direct maximum likelihood optimization of GMM parameters is intractable because the log-likelihood involves a log of sums. The Expectation-Maximization (EM) algorithm resolves this by iterating between two steps:  E-step (Expectation): Compute the responsibility of each component k for each data.' },
+    { title: '2. Relationship to K-Means', desc: 'K-means is a special case of GMMs where: All covariances are _k = ^2 I (isotropic, equal variance). Responsibilities are hard: _&#123;ik&#125;  \\&#123;0, 1\\&#125; (each point belongs to exactly one cluster).' },
+    { title: '3. Covariance Constraints', desc: 'The full covariance matrix _k has O(d^2) parameters per component. When data is limited or d is large, this can lead to overfitting or singular covariances.' },
+    { title: '4. Model Selection', desc: 'Choosing K in GMMs requires balancing fit against complexity:  Bayesian Information Criterion (BIC): BIC = -2  L + p  n, where L is the maximized likelihood and p is the number of parameters. Penalizes complexity more heavily than AIC.' },
+    { title: '5. Practical Example', desc: 'In speaker diarization, audio features (MFCCs) from a meeting recording are modeled as a GMM. Each Gaussian component corresponds to one speaker.' },
+    { title: '6. Bayesian GMMs', desc: 'In a Bayesian treatment, priors are placed on all parameters (, _k, _k), and inference is performed via variational inference or MCMC. A Dirichlet process prior on the mixing weights allows the model to automatically infer the number of components from data -- eliminating the need to choose K and.' },
 ];
 
 export default function WalkthroughMLFGaussianMixtureModels() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFGaussianMixtureModels() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Gaussian Mixture Models — Step by Step
+          Gaussian Mixture Models \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how gaussian mixture models works, one stage at a time.

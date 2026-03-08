@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Knowledge Distillation: The Core Mechanism', desc: 'The foundation of distilbert: knowledge distillation applied to bert begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Triple Loss Function', desc: 'At this stage, the key transformation occurs — the core mechanism that makes distilbert: knowledge distillation applied to bert work.' },
-    { title: '3. Architecture: Half of BERT', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Training Details', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Knowledge Distillation: The Core Mechanism', desc: 'Knowledge distillation, introduced by Hinton et al. (2015), is based on a key insight: a trained model\'s output probability distribution contains far more information than hard labels.' },
+    { title: '2. Triple Loss Function', desc: 'DistilBERT used three loss components simultaneously:  Distillation loss (L_ce): Cross-entropy between the student\'s soft predictions and the teacher\'s soft predictions, both computed at temperature T.' },
+    { title: '3. Architecture: Half of BERT', desc: 'DistilBERT used a straightforward compression strategy: take BERT-Base\'s 12-layer architecture and reduce it to 6 layers, while keeping the hidden dimension (768), attention heads (12), and feed-forward dimension (3072) identical.' },
+    { title: '4. Training Details', desc: 'DistilBERT was trained on the same data as BERT (English Wikipedia + BooksCorpus, ~16GB). The training used the pre-trained BERT-Base as the teacher, running both teacher and student forward passes in parallel.' },
 ];
 
 export default function WalkthroughLLE03Distilbert() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE03Distilbert() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          DistilBERT: Knowledge Distillation Applied to BERT — Step by Step
+          DistilBERT: Knowledge Distillation Applied to BERT \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how distilbert: knowledge distillation applied to bert works, one stage at a time.

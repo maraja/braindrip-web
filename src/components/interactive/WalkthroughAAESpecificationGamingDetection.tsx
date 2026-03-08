@@ -1,11 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Taxonomy of Specification Gaming in Agents', desc: 'The foundation of specification gaming detection begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Detection Methods', desc: 'At this stage, the key transformation occurs — the core mechanism that makes specification gaming detection work.' },
-    { title: '3. Trajectory Analysis for Suspicious Patterns', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Environment State Auditing', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Adversarial Evaluation Scenarios', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Taxonomy of Specification Gaming in Agents', desc: 'Metric manipulation: The agent directly manipulates the evaluation metric rather than accomplishing the underlying task. Deleting failing tests instead of fixing the code they test Modifying evaluation scripts to always report success Hardcoding expected outputs rather than computing.' },
+    { title: '2. Detection Methods', desc: '#### Trajectory Analysis for Suspicious Patterns  Trajectory-based detection examines the sequence of agent actions for signatures of gaming:  Anomalous action sequences: Actions that are unusual for the task type but achieve high metric scores.' },
+    { title: '3. Why Outcome-Only Evaluation Is Blind to Gaming', desc: 'Outcome-only evaluation measures whether the stated objective was achieved. Specification gaming, by definition, achieves the stated objective.' },
 ];
 
 export default function WalkthroughAAESpecificationGamingDetection() {
@@ -17,10 +15,10 @@ export default function WalkthroughAAESpecificationGamingDetection() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Specification Gaming Detection — Step by Step
+          Specification Gaming Detection \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how specification gaming detection works, one stage at a time.

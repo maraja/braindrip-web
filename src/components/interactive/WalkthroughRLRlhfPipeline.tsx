@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Stage 1: Supervised Fine-Tuning (SFT)', desc: 'The foundation of rlhf pipeline begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Stage 2: Reward Model Training', desc: 'At this stage, the key transformation occurs — the core mechanism that makes rlhf pipeline work.' },
-    { title: '3. Stage 3: PPO Optimization', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. How Each Stage Maps to RL Concepts', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Stage 1: Supervised Fine-Tuning (SFT)', desc: 'The pretrained language model _&#123;pretrain&#125; is fine-tuned on high-quality demonstration data -- typically prompt-response pairs written by human annotators:  [equation]  This produces _&#123;SFT&#125;, which can follow instructions but lacks nuance in quality.' },
+    { title: '2. Stage 2: Reward Model Training', desc: 'Human annotators compare pairs of model outputs (y_w, y_l) for the same prompt x, indicating which response is preferred. A reward model r_(x, y) is trained using the Bradley-Terry preference model:  [equation]  where  is the sigmoid function.' },
+    { title: '3. Stage 3: PPO Optimization', desc: 'The SFT model is further optimized using PPO against the learned reward model. The objective includes a critical KL divergence penalty:  [equation]  The KL penalty  \\, D_&#123;KL&#125; serves two purposes: (1) it prevents the policy from drifting too far from the SFT model, avoiding mode collapse and.' },
 ];
 
 export default function WalkthroughRLRlhfPipeline() {
@@ -16,10 +15,10 @@ export default function WalkthroughRLRlhfPipeline() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          RLHF Pipeline — Step by Step
+          RLHF Pipeline \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how rlhf pipeline works, one stage at a time.

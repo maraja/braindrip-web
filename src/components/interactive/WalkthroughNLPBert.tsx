@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Pre-Training Objectives', desc: 'The foundation of bert begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Input Representation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes bert work.' },
-    { title: '3. Architecture', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Fine-Tuning for Downstream Tasks', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The BERT Variant Explosion', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Pre-Training Objectives', desc: 'Masked Language Modeling (MLM). BERT randomly masks 15% of input tokens and trains the model to predict them from their bidirectional context.' },
+    { title: '2. Input Representation', desc: 'Each input token is represented as the sum of three embeddings: Token embedding: WordPiece subword token (vocabulary of 30,522 tokens). Segment embedding: Indicates whether the token belongs to Sentence A or Sentence B (for sentence-pair tasks).' },
+    { title: '3. Architecture', desc: 'BERT uses only the encoder portion of the original transformer architecture (Vaswani et al., 2017). For a detailed treatment of transformer mechanics, see the LLM Concepts collection at llm-concepts/01-foundational-architecture/self-attention.md.' },
+    { title: '4. Fine-Tuning for Downstream Tasks', desc: 'BERT fine-tuning is remarkably uniform across tasks:  Classification (sentiment, NLI): Take the [CLS] representation, add a linear layer + softmax. Fine-tune entire model.' },
+    { title: '5. The BERT Variant Explosion', desc: 'BERT\'s success spawned an entire family of improved models:  RoBERTa (Liu et al., 2019): Removed NSP, trained longer with more data (160GB), dynamic masking. Improved GLUE from 82.1 to 88.5.' },
 ];
 
 export default function WalkthroughNLPBert() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPBert() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          BERT — Step by Step
+          BERT \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how bert works, one stage at a time.

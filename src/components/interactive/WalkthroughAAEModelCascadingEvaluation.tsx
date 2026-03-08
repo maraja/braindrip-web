@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Cascade Architecture', desc: 'The foundation of model cascading evaluation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Evaluating the Router', desc: 'At this stage, the key transformation occurs — the core mechanism that makes model cascading evaluation work.' },
-    { title: '3. Comparing Cascade vs. Single-Model Performance', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Failure Mode Analysis', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Routing Threshold Sensitivity Analysis', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Cascade Architecture', desc: 'A typical cascade has three components:  Router: Classifies task difficulty and selects the appropriate model. Can be a small LLM, a classifier trained on task features, a rule-based system, or a combination.' },
+    { title: '2. Evaluating the Router', desc: 'The router is the lynchpin. A perfect router would send each task to the cheapest model capable of solving it.' },
+    { title: '3. Comparing Cascade vs. Single-Model Performance', desc: 'The key comparison is not "cascade vs. best single model" but "cascade vs.' },
+    { title: '4. Failure Mode Analysis', desc: 'Cascading introduces failure modes that do not exist in single-model systems:  Cost blowup: The router sends too many tasks to the expensive tier, often because the difficulty classifier is poorly calibrated or because the task distribution has shifted.' },
+    { title: '5. Routing Threshold Sensitivity Analysis', desc: 'Most routers use a confidence or difficulty threshold to decide which tier receives each task. Evaluating the cascade requires sweeping this threshold and measuring performance at each setting:  This sensitivity analysis reveals the operating range where the cascade provides a meaningful advantage.' },
+    { title: '6. Industry Economics', desc: 'Real-world cascading deployments demonstrate substantial cost savings:  Customer service agents: Strategic routing sends 70-80% of requests to small models, reducing per-user costs from approximately 25/month to 2-3/month while maintaining 90%+ user satisfaction.' },
 ];
 
 export default function WalkthroughAAEModelCascadingEvaluation() {
@@ -17,10 +18,10 @@ export default function WalkthroughAAEModelCascadingEvaluation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Model Cascading Evaluation — Step by Step
+          Model Cascading Evaluation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how model cascading evaluation works, one stage at a time.

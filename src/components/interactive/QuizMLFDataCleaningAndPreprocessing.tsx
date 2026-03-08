@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFDataCleaningAndPreprocessing() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Cleaning must happen before splitting.', isTrue: true, explanation: 'This is a key technical detail of Data Cleaning and Preprocessing.' },
-    { text: 'If you deduplicate after splitting, the same record could appear in both train and test sets, causing data leakage (see Data Splitting and Sampling).', isTrue: true, explanation: 'This is a key technical detail of Data Cleaning and Preprocessing.' },
-    { text: 'cleaning: Cleaning fixes errors; imputation fills gaps.', isTrue: true, explanation: 'This is a key technical detail of Data Cleaning and Preprocessing.' },
+    { text: 'Clean data exists in the wild.', isTrue: false, explanation: 'It does not. Every real-world dataset has quality issues.' },
+    { text: 'Cleaning fixes errors; imputation fills gaps.', isTrue: true, explanation: 'A temperature reading of -9999 is a sentinel value (cleaning issue), not a missing value.' },
+    { text: 'A well-designed cleaning pipeline produces the same output when run twice on the same input.', isTrue: true, explanation: 'This is critical for reproducibility.' },
+    { text: 'Store raw data immutably and maintain cleaning scripts as code.', isTrue: true, explanation: 'Never overwrite the original dataset.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

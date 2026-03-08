@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Value-Advantage Decomposition', desc: 'The foundation of dueling dqn begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Aggregation Formula', desc: 'At this stage, the key transformation occurs — the core mechanism that makes dueling dqn work.' },
-    { title: '3. Architectural Details', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. When Dueling Helps Most', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Value-Advantage Decomposition', desc: 'Recall that the advantage function is defined as:  [equation]  The advantage measures how much better action a is compared to the average action under policy . By definition, _a (a|s) A_(s, a) = 0 -- advantages are zero-mean under the policy.' },
+    { title: '2. The Aggregation Formula', desc: 'The naive combination Q = V + A is unidentifiable: given a Q-value, you cannot uniquely decompose it into V and A (adding a constant to V and subtracting it from A yields the same Q).' },
+    { title: '3. Architectural Details', desc: 'The dueling architecture shares the convolutional feature extraction layers with standard DQN:  Shared backbone: Same convolutional layers as DQN (3 conv layers for Atari) Split: After the last convolutional layer, the representation feeds into two separate fully connected streams Value stream:.' },
+    { title: '4. When Dueling Helps Most', desc: 'The dueling architecture excels in states where the choice of action is irrelevant or nearly so:  In many Atari games, most frames involve coasting (no imminent threat, all actions roughly equivalent). A standard DQN must still estimate each action\'s Q-value accurately.' },
 ];
 
 export default function WalkthroughRLDuelingDqn() {
@@ -16,10 +16,10 @@ export default function WalkthroughRLDuelingDqn() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Dueling DQN — Step by Step
+          Dueling DQN \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how dueling dqn works, one stage at a time.

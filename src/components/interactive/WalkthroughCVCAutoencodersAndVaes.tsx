@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Deterministic Autoencoders', desc: 'The foundation of autoencoders and vaes begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Variational Autoencoders', desc: 'At this stage, the key transformation occurs — the core mechanism that makes autoencoders and vaes work.' },
-    { title: '3. The Reparameterization Trick', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Beta-VAE and Disentanglement', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. VQ-VAE', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Deterministic Autoencoders', desc: 'The encoder q_(zz) maps z back to the input space. Training minimizes pixel-wise MSE or binary cross-entropy between input and output.' },
+    { title: '2. Variational Autoencoders', desc: 'VAEs optimize the Evidence Lower Bound (ELBO):  [equation]  The first term is the reconstruction likelihood. The second term -- the KL divergence -- regularizes the encoder to produce latent distributions close to the prior p(z) = &#123;N&#125;(0, I).' },
+    { title: '3. The Reparameterization Trick', desc: 'Sampling z  q_(z|x) is not differentiable. The trick rewrites z =  +    with   &#123;N&#125;(0, I), pushing stochasticity outside the computational graph so gradients flow through  and .' },
+    { title: '4. Beta-VAE and Disentanglement', desc: '(2017) introduced -VAE, which scales the KL term by  &gt; 1:  [equation]  Higher  encourages disentangled latent factors at the cost of reconstruction quality.' },
+    { title: '5. VQ-VAE', desc: 'Van den Oord et al. (2017) proposed Vector Quantized VAE, replacing continuous latents with a discrete codebook of K embedding vectors e_k  &#123;R&#125;^d.' },
 ];
 
 export default function WalkthroughCVCAutoencodersAndVaes() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCAutoencodersAndVaes() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Autoencoders and VAEs — Step by Step
+          Autoencoders and VAEs \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how autoencoders and vaes works, one stage at a time.

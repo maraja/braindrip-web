@@ -2,8 +2,8 @@ import { useState } from 'react';
 export default function QuizCVCTwoStreamNetworks() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Two-stream networks process video through parallel spatial (RGB) and temporal (optical flow) pathways, fusing their predictions to capture both appearance and motion for action recognition.', isTrue: true, explanation: 'This captures the core purpose of Two-Stream Networks.' },
-    { text: 'Two-Stream Networks is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Two-Stream Networks is important for building on more advanced topics.' },
+    { text: 'Two-stream networks require optical flow at inference time and are therefore impractical.', isTrue: false, explanation: 'While the original formulation does require flow, later work (e.g., hidden two-stream by Zhu et al., 2017) learned to estimate flow internally, and architectures like I3D learn motion implicitly from RGB. The two-stream concept has been internalized into modern architectures.' },
+    { text: 'Two-stream networks process video through parallel spatial (RGB) and temporal (optical flow) pathways, fusing their predictions to capture both appearance and motion for action recognition.', isTrue: true, explanation: 'This captures the core definition of Two-Stream Networks.' },
     { text: 'Two-Stream Networks is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Two-Stream Networks is important for building on more advanced topics.' },
   ];
   return (

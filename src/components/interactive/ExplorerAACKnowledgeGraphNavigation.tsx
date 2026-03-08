@@ -3,7 +3,7 @@ import { useState } from 'react';
 const DETAILS = [
     { label: 'Graph storage', detail: 'Neo4j (property graph model) and Amazon Neptune (RDF + property graph) are the most common production graph databases. For smaller graphs, in-memory libraries like NetworkX suffice.' },
     { label: 'Text-to-Cypher translation', detail: 'LLMs convert natural language to Cypher queries with 60-80% accuracy on standard benchmarks. Providing the graph schema (node types, relationship types) in the prompt is essential for accurate translation.' },
-    { label: 'Entity resolution', detail: 'The same entity may appear with different names across documents (\"Microsoft Corp,\" \"MSFT,\" \"Microsoft Corporation\"). Entity resolution merges these into a single graph node, and failure to resolve leads to disconnected subgraphs.' },
+    { label: 'Entity resolution', detail: 'The same entity may appear with different names across documents ("Microsoft Corp," "MSFT," "Microsoft Corporation"). Entity resolution merges these into a single graph node, and failure to resolve leads to disconnected subgraphs.' },
     { label: 'Graph embedding', detail: 'For approximate or fuzzy graph queries, nodes and edges can be embedded in vector space (using TransE, RotatE, or similar methods), enabling similarity search over graph structures.' },
     { label: 'Hybrid graph-vector retrieval', detail: 'Many production systems combine graph traversal (for structured multi-hop queries) with vector search (for fuzzy semantic matching), using each where it is strongest.' },
     { label: 'Community detection', detail: 'GraphRAG uses Leiden algorithm to cluster densely connected entities into communities. Community summaries enable answering questions about themes and patterns in large corpora.' },
@@ -20,10 +20,10 @@ export default function ExplorerAACKnowledgeGraphNavigation() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Knowledge Graph Navigation — Key Details Explorer
+          Knowledge Graph Navigation \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of knowledge graph navigation.
+          Click each card to explore the technical details.
         </p>
       </div>
 

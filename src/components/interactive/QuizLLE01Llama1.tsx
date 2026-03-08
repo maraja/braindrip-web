@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE01Llama1() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Meta AI\'s LLaMA proved that smaller models trained on more data could outperform much larger ones, and its leaked weights ignited the open-source AI movement.', isTrue: true, explanation: 'This captures the core purpose of LLaMA 1.' },
-    { text: 'LLaMA 1 is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding LLaMA 1 is important for building on more advanced topics.' },
-    { text: 'LLaMA 1 is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding LLaMA 1 is important for building on more advanced topics.' },
+    { text: 'Meta intentionally open-sourced LLaMA.', isTrue: false, explanation: 'The original LLaMA 1 was released under a restrictive non-commercial license with gated access. The weights were leaked without authorization.' },
+    { text: '7B, 13B, 33B, 65B (four-model family)', isTrue: true, explanation: '7B, 13B, 33B, 65B (four-model family)' },
+    { text: 'LLaMA invented Chinchilla-optimal training.', isTrue: false, explanation: 'The Chinchilla scaling laws came from DeepMind\'s Hoffmann et al. in 2022.' },
+    { text: '1.0T (7B/13B) to 1.4T (33B/65B)', isTrue: true, explanation: '1.0T (7B/13B) to 1.4T (33B/65B)' },
+    { text: 'LLaMA was the first open language model.', isTrue: false, explanation: 'BLOOM (176B), OPT-175B, GPT-NeoX-20B, and others preceded it. LLaMA\'s distinction was its combination of small size, high quality, and the timing of the open-source AI movement.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

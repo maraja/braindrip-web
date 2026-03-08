@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAEdgesAndRouting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'add_edge(a, b) creates a static edge from node a to node b.', isTrue: true, explanation: 'This is a key technical detail of Edges and Routing.' },
-    { text: 'add_conditional_edges(source, path, path_map=None) creates a conditional edge.', isTrue: true, explanation: 'This is a key technical detail of Edges and Routing.' },
-    { text: 'The routing function receives the full current state and must return a str or list[str].', isTrue: true, explanation: 'This is a key technical detail of Edges and Routing.' },
+    { text: 'Conditional edges call the next node\'s function.', isTrue: false, explanation: 'The routing function only returns a name. LangGraph then invokes the corresponding node.' },
+    { text: 'Edges define execution flow between nodes — static edges for fixed paths, conditional edges for dynamic routing based on state, and parallel edges for concurrent fan-out execution.', isTrue: true, explanation: 'This captures the core definition of Edges and Routing.' },
+    { text: 'Edges and Routing is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Edges and Routing is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

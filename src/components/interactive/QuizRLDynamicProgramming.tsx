@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizRLDynamicProgramming() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Computational complexity: Each sweep of policy evaluation or value iteration costs $O(|S|^2 |A|)$ -- iterating over all states, all actions, and all successor states.', isTrue: true, explanation: 'This is a key technical detail of Dynamic Programming.' },
-    { text: 'Policy iteration typically converges in very few outer iterations (often $&lt; 10$) but each policy evaluation step may require many sweeps.', isTrue: true, explanation: 'This is a key technical detail of Dynamic Programming.' },
-    { text: 'Value iteration requires more total sweeps but each sweep is cheaper (no inner convergence loop).', isTrue: true, explanation: 'This is a key technical detail of Dynamic Programming.' },
+    { text: 'DP requires visiting states through interaction.', isTrue: false, explanation: 'No. DP uses the model to compute expectations analytically.' },
+    { text: 'Each sweep of policy evaluation or value iteration costs O() -- iterating over all states, all actions, and all successor states.', isTrue: true, explanation: 'Each sweep of policy evaluation or value iteration costs O() -- iterating over all states, all actions, and all successor states.' },
+    { text: 'Computing optimal policies via iterative Bellman updates when the full environment model is known -- the theoretical foundation of reinforcement learning.', isTrue: true, explanation: 'This captures the core definition of Dynamic Programming.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

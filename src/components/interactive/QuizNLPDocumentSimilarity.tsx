@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPDocumentSimilarity() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'TF-IDF cosine efficiency: With sparse vectors, cosine similarity of two documents with average 300 non-zero terms each takes microseconds.', isTrue: true, explanation: 'This is a key technical detail of Document Similarity.' },
-    { text: 'Over a corpus of 1 million documents, pre-computed inverted indices enable sub-second query times.', isTrue: true, explanation: 'This is a key technical detail of Document Similarity.' },
-    { text: 'WMD k-NN accuracy: On 8 document classification datasets, WMD-based k-NN achieved the lowest error rate on 6, with an average error reduction of 4-8% over TF-IDF cosine.', isTrue: true, explanation: 'This is a key technical detail of Document Similarity.' },
+    { text: 'High cosine similarity means the documents say the same thing.', isTrue: false, explanation: 'Two documents can have high TF-IDF cosine similarity because they use the same vocabulary but express opposite viewpoints. Sentiment-aware similarity and argument-level comparison are distinct problems.' },
+    { text: 'With sparse vectors, cosine similarity of two documents with average 300 non-zero terms each takes microseconds.', isTrue: true, explanation: 'Over a corpus of 1 million documents, pre-computed inverted indices enable sub-second query times.' },
+    { text: 'Embedding-based similarity is always superior to lexical methods.', isTrue: false, explanation: 'For exact term matching (e.g., finding documents containing a specific error code, part number, or person\'s name), TF-IDF cosine or Jaccard outperforms embedding methods, which may conflate semantically similar but factually distinct entities.' },
+    { text: 'On 8 document classification datasets, WMD-based k-NN achieved the lowest error rate on 6, with an average error reduction of 4-8% over TF-IDF cosine.', isTrue: true, explanation: 'On 8 document classification datasets, WMD-based k-NN achieved the lowest error rate on 6, with an average error reduction of 4-8% over TF-IDF cosine.' },
+    { text: 'Document similarity is symmetric.', isTrue: false, explanation: 'Most measures (Jaccard, cosine, WMD) are symmetric by definition: sim(A, B) = sim(B, A). However, conceptual "similarity" can be asymmetric -- "a dog is similar to an animal" feels more natural than "an animal is similar to a dog." Asymmetric measures exist but are rarely used for documents.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

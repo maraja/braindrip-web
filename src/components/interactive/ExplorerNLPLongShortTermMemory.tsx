@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Parameter count', detail: 'An LSTM layer with input dimension d_x and hidden dimension d_h has 4 * (d_h * (d_h + d_x) + d_h) parameters (four gate/candidate sets, each with weights and biases). For d_h = 512 and d_x = 300, that is roughly 1.66 million parameters per layer.' },
+    { label: 'Parameter count', detail: 'An LSTM layer with input dimension d_x and hidden dimension d_h has 4  (d_h  (d_h + d_x) + d_h) parameters (four gate/candidate sets, each with weights and biases). For d_h = 512 and d_x = 300, that is roughly 1.66 million parameters per layer.' },
     { label: 'Typical hidden sizes', detail: '256 to 1024 units; Google\'s Neural Machine Translation system (GNMT, 2016) used 1024-unit LSTMs with 8 layers.' },
     { label: 'Forget gate bias initialization', detail: 'Jozefowicz et al. (2015) showed that initializing the forget gate bias to 1.0 or 2.0 significantly improves performance, ensuring the network defaults to remembering rather than forgetting at the start of training.' },
     { label: 'Dropout for LSTMs', detail: 'Standard dropout between layers works, but Gal and Ghahramani (2016) showed that applying the same dropout mask across time steps (variational dropout) is more principled and effective, with typical rates of 0.2-0.5.' },
@@ -20,10 +20,10 @@ export default function ExplorerNLPLongShortTermMemory() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Long Short-Term Memory — Key Details Explorer
+          Long Short-Term Memory \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of long short-term memory.
+          Click each card to explore the technical details.
         </p>
       </div>
 

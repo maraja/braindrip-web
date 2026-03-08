@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPMachineTranslationApproaches() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'WMT (Workshop on Machine Translation) has been the primary shared task since 2006, covering dozens of language pairs with standardized test sets.', isTrue: true, explanation: 'This is a key technical detail of Machine Translation Approaches.' },
-    { text: 'BLEU milestones on WMT English-German: phrase-based SMT ~25 (2014), attention-based NMT ~28 (2016), Transformer ~33 (2018), current SOTA ~40+ (2024).', isTrue: true, explanation: 'This is a key technical detail of Machine Translation Approaches.' },
-    { text: 'Subword tokenization via BPE (Sennrich et al., 2016) with 32K--64K merge operations is standard, enabling open-vocabulary translation.', isTrue: true, explanation: 'This is a key technical detail of Machine Translation Approaches.' },
+    { text: 'Neural MT solved machine translation.', isTrue: false, explanation: 'NMT dramatically improved quality for the roughly 20 highest-resource language pairs. For the majority of language pairs, MT quality remains poor or unavailable.' },
+    { text: 'BLEU score captures translation quality.', isTrue: false, explanation: 'BLEU correlates with human judgments at the system level but poorly at the sentence level. It penalizes valid paraphrases, cannot detect critical meaning errors, and shows low correlation with human judgments for high-quality systems.' },
+    { text: 'Statistical MT is completely obsolete.', isTrue: false, explanation: 'While NMT dominates, SMT concepts persist: phrase-table-inspired memory-augmented NMT, the noisy channel approach in reranking, and MERT-style tuning. For extremely low-resource pairs where neural models cannot train, statistical methods can still outperform NMT.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Staleness Detection and Content Refresh', desc: 'The foundation of knowledge base maintenance begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Deduplication', desc: 'At this stage, the key transformation occurs — the core mechanism that makes knowledge base maintenance work.' },
-    { title: '3. Versioning and Temporal Management', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Incremental Indexing', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Staleness Detection and Content Refresh', desc: 'Content goes stale at different rates. API documentation may change with every release (weekly).' },
+    { title: '2. Deduplication', desc: 'Over time, the same information enters the knowledge base through multiple paths: a policy document is indexed from the wiki and also from an email attachment; the same FAQ appears in three different help center pages. Deduplication identifies and consolidates these duplicates.' },
+    { title: '3. Versioning and Temporal Management', desc: 'Some applications need to maintain multiple versions of the same content. A legal agent must know that regulation X applied before 2024 but regulation Y applies after.' },
+    { title: '4. Incremental Indexing', desc: 'When new content arrives or existing content is updated, the entire corpus does not need to be re-indexed. Incremental indexing adds, updates, or deletes individual chunks without rebuilding the full index.' },
 ];
 
 export default function WalkthroughAACKnowledgeBaseMaintenance() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACKnowledgeBaseMaintenance() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Knowledge Base Maintenance — Step by Step
+          Knowledge Base Maintenance \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how knowledge base maintenance works, one stage at a time.

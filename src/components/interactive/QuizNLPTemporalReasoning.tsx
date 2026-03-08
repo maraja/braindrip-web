@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPTemporalReasoning() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'TimeML defines 3 annotation layers (TIMEX3, EVENT, TLINK) with 13 temporal relation types, commonly reduced to 6 or 7 in practice.', isTrue: true, explanation: 'This is a key technical detail of Temporal Reasoning.' },
-    { text: 'TimeBank 1.2 contains 183 news documents with approximately 7,935 events, 1,414 temporal expressions, and 6,418 temporal links.', isTrue: true, explanation: 'This is a key technical detail of Temporal Reasoning.' },
-    { text: 'End-to-end temporal relation extraction (TempEval-3): best system approximately 36% F1, demonstrating the difficulty of the full pipeline.', isTrue: true, explanation: 'This is a key technical detail of Temporal Reasoning.' },
+    { text: 'Temporal reasoning is just named entity recognition for dates.', isTrue: false, explanation: 'Recognizing and normalizing temporal expressions is only the first step. The harder problem is determining how events relate temporally -- which happened first, which overlaps, which caused which -- and constructing a globally consistent timeline.' },
+    { text: 'Verb tense directly tells you temporal ordering.', isTrue: false, explanation: 'Tense provides clues but is not deterministic. "She said she would go" uses future tense ("would go") but describes a past utterance.' },
+    { text: 'If two events are mentioned in sequence, the first happened first.', isTrue: false, explanation: 'Narrative order does not equal temporal order. "The company went bankrupt.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

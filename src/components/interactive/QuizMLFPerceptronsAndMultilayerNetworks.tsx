@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFPerceptronsAndMultilayerNetworks() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A single perceptron computes a linear decision boundary (a hyperplane in $\\mathbb&#123;R&#125;^d$).', isTrue: true, explanation: 'This is a key technical detail of Perceptrons and Multilayer Networks.' },
-    { text: 'The perceptron learning rule converges in finite steps if and only if the data is linearly separable.', isTrue: true, explanation: 'This is a key technical detail of Perceptrons and Multilayer Networks.' },
-    { text: 'MLPs with at least one hidden layer and nonlinear activations are universal function approximators (see the Universal Approximation Theorem concept).', isTrue: true, explanation: 'This is a key technical detail of Perceptrons and Multilayer Networks.' },
+    { text: 'A perceptron is the same as logistic regression.', isTrue: false, explanation: 'A perceptron uses a step activation and the perceptron learning rule; logistic regression uses a sigmoid activation and maximizes likelihood. They share the linear decision boundary but differ in training and output semantics.' },
+    { text: 'From single linear classifiers to universal function approximators -- stacking layers creates representational power.', isTrue: true, explanation: 'This captures the core definition of Perceptrons and Multilayer Networks.' },
+    { text: 'Perceptrons and Multilayer Networks is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Perceptrons and Multilayer Networks is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

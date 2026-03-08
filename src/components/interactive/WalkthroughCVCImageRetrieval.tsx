@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Learned Embeddings', desc: 'The foundation of image retrieval begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Metric Learning Losses', desc: 'At this stage, the key transformation occurs — the core mechanism that makes image retrieval work.' },
-    { title: '3. Approximate Nearest Neighbor Search', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Re-Ranking', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Learned Embeddings', desc: 'A CNN or Vision Transformer backbone (typically ResNet-50, EfficientNet, or ViT-B/16) extracts a feature map, which is pooled into a single vector. Common pooling strategies:  Global Average Pooling (GAP): Simple mean over spatial dimensions.' },
+    { title: '2. Metric Learning Losses', desc: 'The backbone is trained so that embeddings of similar images are close and dissimilar images are far apart. Contrastive Loss (Hadsell et al., 2006): For pairs (x_i, x_j) with label y  \\&#123;0, 1\\&#125; (same/different):  [equation]  where d = \\ and m is the margin.' },
+    { title: '3. Approximate Nearest Neighbor Search', desc: 'Exact nearest neighbor search in a database of N embeddings of dimension d costs O(Nd), which is prohibitive for millions of images. ANN methods trade small accuracy for dramatic speedup.' },
+    { title: '4. Re-Ranking', desc: 'Initial ANN retrieval returns the top-K candidates (e.g., K = 100). Re-ranking refines this list:  Query Expansion (QE): Average the query embedding with top-k result embeddings and re-search.' },
 ];
 
 export default function WalkthroughCVCImageRetrieval() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCImageRetrieval() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Image Retrieval — Step by Step
+          Image Retrieval \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how image retrieval works, one stage at a time.

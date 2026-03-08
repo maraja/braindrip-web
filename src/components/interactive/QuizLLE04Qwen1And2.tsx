@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE04Qwen1And2() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Alibaba\'s Qwen model family evolved from a competent bilingual system in 2023 to a leading open-weight family by late 2024, demonstrating that consistent iteration on data quality and architecture could close the gap with Western frontier models.', isTrue: true, explanation: 'This captures the core purpose of Qwen 1 and 2: Alibaba\'s Ascent.' },
-    { text: 'Qwen 1 and 2: Alibaba\'s Ascent is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Qwen 1 and 2: Alibaba\'s Ascent is important for building on more advanced topics.' },
-    { text: 'Qwen 1 and 2: Alibaba\'s Ascent is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Qwen 1 and 2: Alibaba\'s Ascent is important for building on more advanced topics.' },
+    { text: 'Qwen is just a Chinese copy of LLaMA.', isTrue: false, explanation: 'While Qwen shares the standard Transformer architecture with LLaMA (as does virtually every modern LLM), Alibaba\'s training data, training recipes, alignment approaches, and multimodal extensions are independent developments. Many of Qwen\'s architectural choices (SwiGLU, RMSNorm, RoPE) predate or parallel LLaMA\'s adoption of the same techniques.' },
+    { text: 'Qwen models are only good for Chinese tasks.', isTrue: false, explanation: 'Qwen 2 and 2.5 are genuinely multilingual, supporting 30+ languages with competitive performance. English benchmark results consistently match or exceed comparably sized Western models.' },
+    { text: 'Smaller Qwen models are just distilled from larger ones.', isTrue: false, explanation: 'Each size in the Qwen family is trained from scratch with architecture and hyperparameters optimized for that specific scale. Learning rates, batch sizes, and training durations are all tuned per size.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

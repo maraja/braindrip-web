@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Point Estimation', desc: 'The foundation of statistical inference begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Confidence Intervals', desc: 'At this stage, the key transformation occurs — the core mechanism that makes statistical inference work.' },
-    { title: '3. Hypothesis Testing', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Central Limit Theorem', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Law of Large Numbers', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Point Estimation', desc: 'A point estimator &#123;&#125; is a function of the sample that produces a single "best guess" for a population parameter . For example, the sample mean &#123;X&#125; = &#123;1&#125;&#123;n&#125;_&#123;i=1&#125;^n X_i estimates the population mean .' },
+    { title: '2. Confidence Intervals', desc: 'A 95% confidence interval [L, U] is constructed so that, over many hypothetical repetitions of the experiment, 95% of such intervals would contain the true parameter . For a Gaussian population with known variance ^2:  [equation]  where z_&#123;/2&#125; = 1.96 for 95% confidence.' },
+    { title: '3. Hypothesis Testing', desc: 'Hypothesis testing formalizes the question "Is this effect real or just noise?"  State the null hypothesis H_0 (no effect, e.g.,  = 0) and alternative H_1 (effect exists, e.g.,   0). Choose a significance level  (commonly 0.05).' },
+    { title: '4. The Central Limit Theorem', desc: 'The CLT is the reason Gaussian distributions dominate statistical inference. For independent, identically distributed random variables X_1, , X_n with mean  and variance ^2:  [equation]  Regardless of the shape of the original distribution, the sample mean is approximately Gaussian for large n.' },
+    { title: '5. The Law of Large Numbers', desc: 'The strong law states that &#123;X&#125;_n   almost surely as n  . This guarantees that sample averages converge to population averages -- the theoretical basis for Monte Carlo estimation, which underlies stochastic gradient descent, reinforcement learning policy evaluation, and Bayesian approximate.' },
+    { title: '6. Frequentist vs. Bayesian Perspectives', desc: 'Frequentist: Parameters are fixed but unknown. Probability describes long-run frequencies of events.' },
 ];
 
 export default function WalkthroughMLFStatisticalInference() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFStatisticalInference() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Statistical Inference — Step by Step
+          Statistical Inference \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how statistical inference works, one stage at a time.

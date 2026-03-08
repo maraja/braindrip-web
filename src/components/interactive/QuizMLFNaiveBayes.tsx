@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFNaiveBayes() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Training complexity: $O(nd)$ -- a single pass through the data.', isTrue: true, explanation: 'This is a key technical detail of Naive Bayes.' },
-    { text: 'Prediction complexity: $O(dc)$ -- compute $d$ likelihoods for each of $c$ classes.', isTrue: true, explanation: 'This is a key technical detail of Naive Bayes.' },
-    { text: 'Generative model: Naive Bayes models $P(x, y) = P(x \\mid y)P(y)$, unlike discriminative models like logistic regression that model $P(y \\mid x)$ directly.', isTrue: true, explanation: 'This is a key technical detail of Naive Bayes.' },
+    { text: 'The independence assumption makes Naive Bayes unreliable.', isTrue: false, explanation: 'The independence assumption is almost always violated, yet the classifier often works well. What matters is the rank ordering of posterior probabilities, not their exact values.' },
+    { text: 'O(nd) -- a single pass through the data.', isTrue: true, explanation: 'O(nd) -- a single pass through the data.' },
+    { text: 'O(dc) -- compute d likelihoods for each of c classes.', isTrue: true, explanation: 'O(dc) -- compute d likelihoods for each of c classes.' },
+    { text: 'Naive Bayes models P(x, y) = P(x  y)P(y), unlike discriminative models like logistic regression that model P(y  x) directly.', isTrue: true, explanation: 'Naive Bayes models P(x, y) = P(x  y)P(y), unlike discriminative models like logistic regression that model P(y  x) directly.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

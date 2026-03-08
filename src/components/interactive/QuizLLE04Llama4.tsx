@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE04Llama4() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Meta\'s Llama 4 (April 2025) brought native Mixture of Experts and early-fusion multimodality to the open-weight frontier, with Scout\'s 10 million-token context window setting a new record for open models.', isTrue: true, explanation: 'This captures the core purpose of Llama 4.' },
-    { text: 'Llama 4 is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Llama 4 is important for building on more advanced topics.' },
-    { text: 'Llama 4 is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Llama 4 is important for building on more advanced topics.' },
+    { text: 'Llama 4 has 400 billion parameters you need to run.', isTrue: false, explanation: 'Maverick has 400B total parameters but only activates 17B per token. With expert parallelism, you need memory for all weights, but compute scales with active parameters.' },
+    { text: 'The 10M context means Scout is better than GPT-4o for long documents.', isTrue: false, explanation: 'Context length is a necessary but not sufficient condition for long-document performance. Retrieval accuracy, reasoning coherence, and attention quality across the full context all matter.' },
+    { text: 'Llama 4\'s benchmarks prove it matches GPT-4o.', isTrue: false, explanation: 'The mixed real-world feedback suggests that benchmark scores do not fully capture model quality. Factors like instruction following, tone, consistency, and handling of edge cases matter for practical usefulness but are poorly captured by standard benchmarks.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

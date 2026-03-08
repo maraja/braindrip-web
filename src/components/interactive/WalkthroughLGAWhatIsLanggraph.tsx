@@ -1,9 +1,8 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Three Primitives', desc: 'The foundation of langgraph begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Minimal Example', desc: 'At this stage, the key transformation occurs — the core mechanism that makes langgraph work.' },
-    { title: '3. Graph Lifecycle', desc: 'The intermediate results are processed and refined through the main pipeline.' },
+    { title: '1. The Three Primitives', desc: 'Every LangGraph application is built from three pieces:  State — a shared data object (typically a TypedDict) that flows through the graph. Nodes — Python functions that read state, do work, and return updates.' },
+    { title: '2. Graph Lifecycle', desc: 'Define the state schema. Add nodes — each is a callable that receives state and returns a partial update.' },
 ];
 
 export default function WalkthroughLGAWhatIsLanggraph() {
@@ -15,13 +14,13 @@ export default function WalkthroughLGAWhatIsLanggraph() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          LangGraph — Step by Step
+          What Is LangGraph \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Walk through how langgraph works, one stage at a time.
+          Walk through how what is langgraph works, one stage at a time.
         </p>
       </div>
 

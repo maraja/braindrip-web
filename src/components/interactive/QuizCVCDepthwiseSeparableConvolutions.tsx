@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCDepthwiseSeparableConvolutions() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The depthwise stage accounts for only about 3% of total computation but ~33% of total runtime on GPUs due to poor arithmetic intensity (low ratio of computation to memory access).', isTrue: true, explanation: 'This is a key technical detail of Depthwise Separable Convolutions.' },
-    { text: 'On CPUs and DSPs, depthwise separable convolutions are proportionally faster because these platforms are more memory-bound and the reduced computation translates directly to speedup.', isTrue: true, explanation: 'This is a key technical detail of Depthwise Separable Convolutions.' },
-    { text: 'Xception (Chollet, 2017) uses depthwise separable convolutions throughout and achieves 79.0% top-1 accuracy on ImageNet (vs.', isTrue: true, explanation: 'This is a key technical detail of Depthwise Separable Convolutions.' },
+    { text: 'Depthwise separable convolutions are always faster.', isTrue: false, explanation: 'On GPUs, the depthwise stage has very low arithmetic intensity, making it memory-bound and difficult to parallelize efficiently. The theoretical 8-9x FLOP reduction often translates to only 2-3x wall-clock speedup on GPUs without specialized kernels.' },
+    { text: 'Depthwise separable convolutions factorize a standard convolution into a spatial depthwise convolution and a channel-wise pointwise convolution, reducing computation by 8--9x with minimal accuracy loss.', isTrue: true, explanation: 'This captures the core definition of Depthwise Separable Convolutions.' },
+    { text: 'Depthwise Separable Convolutions is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Depthwise Separable Convolutions is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

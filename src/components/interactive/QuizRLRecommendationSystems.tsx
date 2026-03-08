@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLRecommendationSystems() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'YouTube uses RL for video recommendation, optimizing for long-term watch time rather than immediate click probability (Chen et al., 2019).', isTrue: true, explanation: 'This is a key technical detail of Recommendation Systems.' },
-    { text: 'They report significant engagement improvements from the RL approach.', isTrue: true, explanation: 'This is a key technical detail of Recommendation Systems.' },
-    { text: 'Spotify uses contextual bandits for playlist personalization, with Thompson sampling for exploration.', isTrue: true, explanation: 'This is a key technical detail of Recommendation Systems.' },
+    { text: 'RL is better than supervised learning for all recommenders.', isTrue: false, explanation: 'For simple, stateless recommendation tasks (e.g., "similar items"), supervised learning is simpler and often sufficient. RL shines when sequential dynamics and long-term outcomes matter.' },
+    { text: 'For catalogs of millions of items, direct RL is intractable.', isTrue: true, explanation: 'Practical systems use embedding-based action representations, hierarchical actions (category then item), or candidate pre-filtering.' },
+    { text: 'Clicks alone are a poor reward (clickbait scores high).', isTrue: true, explanation: 'Better rewards combine dwell time, explicit ratings, repeat visits, and subscription retention. Reward shaping is critical and domain-specific.' },
+    { text: 'User preferences, item catalogs, and trends change over time.', isTrue: true, explanation: 'RL policies must be periodically retrained or use continual learning approaches.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

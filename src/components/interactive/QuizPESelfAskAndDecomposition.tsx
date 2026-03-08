@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizPESelfAskAndDecomposition() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The model always decomposes correctly.', isTrue: false, explanation: '"The model always decomposes correctly." The model can generate irrelevant sub-questions, miss critical sub-questions, or decompose at the wrong granularity. The quality of few-shot examples is the pr' },
-    { text: 'Benchmark results: 10-15% improvement on multi-hop QA benchmarks (Bamboogle, Musique) compared to standard CoT with PaLM and GPT-3.', isTrue: true, explanation: 'This is a key technical detail of Self-Ask and Decomposition.' },
-    { text: 'Few-shot examples: 3-5 examples demonstrating the full decomposition-synthesis pattern typically suffice to establish the self-ask format.', isTrue: true, explanation: 'This is a key technical detail of Self-Ask and Decomposition.' },
+    { text: 'Self-ask is the same as chain-of-thought.', isTrue: false, explanation: 'CoT generates a linear reasoning narrative. Self-ask generates explicit questions and answers in a structured format.' },
+    { text: '10-15% improvement on multi-hop QA benchmarks (Bamboogle, Musique) compared to standard CoT with PaLM and GPT-3.', isTrue: true, explanation: '10-15% improvement on multi-hop QA benchmarks (Bamboogle, Musique) compared to standard CoT with PaLM and GPT-3.' },
+    { text: 'The model always decomposes correctly.', isTrue: false, explanation: 'The model can generate irrelevant sub-questions, miss critical sub-questions, or decompose at the wrong granularity. The quality of few-shot examples is the primary lever for improving decomposition quality.' },
+    { text: '3-5 examples demonstrating the full decomposition-synthesis pattern typically suffice to establish the self-ask format.', isTrue: true, explanation: '3-5 examples demonstrating the full decomposition-synthesis pattern typically suffice to establish the self-ask format.' },
+    { text: 'Self-ask only works for factual multi-hop questions.', isTrue: false, explanation: 'While it was designed for multi-hop QA, the decomposition pattern applies broadly: complex analysis tasks, planning problems, and multi-criteria evaluation tasks all benefit from explicit sub-question generation.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

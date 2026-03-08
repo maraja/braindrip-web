@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Markov Chains and Stationary Distributions', desc: 'The foundation of markov chain monte carlo begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Metropolis-Hastings Algorithm', desc: 'At this stage, the key transformation occurs — the core mechanism that makes markov chain monte carlo work.' },
-    { title: '3. Gibbs Sampling', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Burn-In and Thinning', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Convergence Diagnostics', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Markov Chains and Stationary Distributions', desc: 'A Markov chain is a sequence of random variables ^&#123;(0)&#125;, ^&#123;(1)&#125;,  where the distribution of ^&#123;(t+1)&#125; depends only on ^&#123;(t)&#125;, not on earlier states. A chain has a stationary distribution () if, once the chain\'s state is distributed as , all subsequent states remain distributed as .' },
+    { title: '2. The Metropolis-Hastings Algorithm', desc: 'Metropolis-Hastings (MH) is the foundational MCMC algorithm. Given current state ^&#123;(t)&#125;:  Propose a candidate \' from a proposal distribution q(\'  ^&#123;(t)&#125;).' },
+    { title: '3. Gibbs Sampling', desc: 'Gibbs sampling is a special case of MH where each variable is sampled from its full conditional distribution while holding all other variables fixed:  [equation]  Every proposal is accepted ( = 1).' },
+    { title: '4. Burn-In and Thinning', desc: 'Burn-in: The initial samples before the chain has converged to the stationary distribution are discarded. These early samples are influenced by the arbitrary initialization and do not represent the target posterior.' },
+    { title: '5. Convergence Diagnostics', desc: 'Since we never know for certain whether a chain has converged, several diagnostics help assess convergence:  Trace plots: Visual inspection of parameter values over iterations. A converged chain should look like a "fuzzy caterpillar" with no trends or drifts.' },
+    { title: '6. Hamiltonian Monte Carlo (HMC)', desc: 'HMC exploits gradient information to make large, informed moves through parameter space. It treats the negative log-posterior as a "potential energy" and introduces auxiliary "momentum" variables r:  [equation]  The algorithm simulates Hamiltonian dynamics using leapfrog integration for L steps.' },
 ];
 
 export default function WalkthroughMLFMarkovChainMonteCarlo() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFMarkovChainMonteCarlo() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Markov Chain Monte Carlo — Step by Step
+          Markov Chain Monte Carlo \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how markov chain monte carlo works, one stage at a time.

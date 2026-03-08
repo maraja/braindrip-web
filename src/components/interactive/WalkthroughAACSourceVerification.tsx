@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Cross-Reference Checking', desc: 'The foundation of source verification begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Contradiction Detection', desc: 'At this stage, the key transformation occurs — the core mechanism that makes source verification work.' },
-    { title: '3. Confidence Scoring', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Citation and Attribution', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Cross-Reference Checking', desc: 'The agent retrieves information from multiple independent sources for the same claim. If three different documents state that a company\'s revenue was 5.2 billion, confidence is high.' },
+    { title: '2. Contradiction Detection', desc: 'Contradictions can exist between retrieved documents, between retrieved data and the model\'s parametric knowledge, or between different parts of the same document.' },
+    { title: '3. Confidence Scoring', desc: 'Each retrieved fact receives a confidence score based on multiple signals: number of corroborating sources, source authority and credibility, recency of the information, internal consistency, and agreement with the model\'s parametric knowledge.' },
+    { title: '4. Citation and Attribution', desc: 'Verification is incomplete without attribution. The agent tracks which sources support which claims and includes citations in its output.' },
 ];
 
 export default function WalkthroughAACSourceVerification() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACSourceVerification() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Source Verification — Step by Step
+          Source Verification \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how source verification works, one stage at a time.

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Value iteration', detail: 'converges at rate $O(\\gamma^k)$: after $k$ iterations, $\\|V_k - V^*\\|_\\infty \\leq \\gamma^k \\|V_0 - V^*\\|_\\infty$. For $\\gamma = 0.99$, reaching $\\epsilon$-accuracy requires $k \\approx \\frac{\\log(1/\\epsilon)}{1 - \\gamma} \\approx 100 \\log(1/\\epsilon)$ iterations.' },
-    { label: 'Policy iteration', detail: 'alternates between solving $V^\\pi$ (policy evaluation) and updating $\\pi$ greedily (policy improvement). It converges in at most $|\\mathcal{A}|^{|\\mathcal{S}|}$ iterations (the number of deterministic policies), but in practice converges much faster.' },
+    { label: 'Value iteration', detail: 'converges at rate O(^k): after k iterations, \\_. For  = 0.99, reaching -accuracy requires k  &#123;(1/)&#125;&#123;1 - &#125;  100 (1/) iterations.' },
+    { label: 'Policy iteration', detail: 'alternates between solving V^ (policy evaluation) and updating  greedily (policy improvement). It converges in at most &#125; iterations (the number of deterministic policies), but in practice converges much faster.' },
     { label: 'The deadly triad', detail: 'Combining bootstrapping (Bellman equations), function approximation, and off-policy learning can cause divergence. This fundamental tension motivates algorithms like fitted Q-iteration, gradient TD, and emphatic TD.' },
-    { label: 'Q-learning\'s update rule', detail: 'is a stochastic approximation to the Bellman optimality equation: $Q(s,a) \\leftarrow Q(s,a) + \\alpha[r + \\gamma \\max_{a\'} Q(s\',a\') - Q(s,a)]$.' },
+    { label: 'Q-learning\'s update rule', detail: 'is a stochastic approximation to the Bellman optimality equation: Q(s,a)  Q(s,a) + [r +  _&#123;a\'&#125; Q(s\',a\') - Q(s,a)].' },
 ];
 
 export default function ExplorerRLBellmanEquations() {
@@ -18,10 +18,10 @@ export default function ExplorerRLBellmanEquations() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Bellman Equations — Key Details Explorer
+          Bellman Equations \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of bellman equations.
+          Click each card to explore the technical details.
         </p>
       </div>
 

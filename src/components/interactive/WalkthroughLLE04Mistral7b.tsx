@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Sliding Window Attention (SWA)', desc: 'The foundation of mistral 7b begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Grouped-Query Attention (GQA)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes mistral 7b work.' },
-    { title: '3. Rolling Buffer KV Cache', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Pre-Fill Chunking', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Sliding Window Attention (SWA)', desc: 'Standard self-attention requires every token to attend to every previous token, creating O(n^2) memory and compute costs. Mistral 7B uses Sliding Window Attention with a window size of 4,096 tokens: each token directly attends only to the 4,096 tokens before it.' },
+    { title: '2. Grouped-Query Attention (GQA)', desc: 'Mistral 7B uses Grouped-Query Attention with 8 key-value heads shared across 32 query heads (a 4:1 ratio). GQA was introduced by Ainslie et al.' },
+    { title: '3. Rolling Buffer KV Cache', desc: 'To complement SWA, Mistral 7B implements a rolling buffer for its key-value cache. Because each token only needs to attend to the previous 4,096 positions, the KV cache is stored as a circular buffer that overwrites the oldest entries.' },
+    { title: '4. Pre-Fill Chunking', desc: 'For efficient processing of long prompts, Mistral 7B supports pre-fill chunking: the prompt is split into chunks that match the window size, and each chunk\'s attention is computed independently with causal masking.' },
 ];
 
 export default function WalkthroughLLE04Mistral7b() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE04Mistral7b() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Mistral 7B — Step by Step
+          Mistral 7B \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how mistral 7b works, one stage at a time.

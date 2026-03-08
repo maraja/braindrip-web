@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Detecting and Removing Duplicates', desc: 'The foundation of data cleaning and preprocessing begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Handling Inconsistent Formats', desc: 'At this stage, the key transformation occurs — the core mechanism that makes data cleaning and preprocessing work.' },
-    { title: '3. Outlier Detection and Treatment', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Noise Reduction', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Data Validation', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Detecting and Removing Duplicates', desc: 'Exact duplicates (identical rows) are straightforward: df.drop_duplicates(). Near-duplicates require fuzzy matching.' },
+    { title: '2. Handling Inconsistent Formats', desc: 'Real-world data arrives in inconsistent formats:  Dates: "2024-03-15", "03/15/2024", "March 15, 2024", "15-Mar-24" all represent the same day. Parse everything into a canonical format (ISO 8601: YYYY-MM-DD) using pd.to_datetime() with explicit format strings.' },
+    { title: '3. Outlier Detection and Treatment', desc: 'Outliers are observations that deviate markedly from the bulk of the data. They are not inherently errors -- a 10 million transaction in a dataset of retail purchases may be legitimate.' },
+    { title: '4. Noise Reduction', desc: 'Noise is random variation that obscures the true signal. Smoothing: Moving averages or LOESS for time series data.' },
+    { title: '5. Data Validation', desc: 'Validation enforces domain constraints:  Range checks: Age  [0, 120], probability  [0, 1], temperature &gt; -273.15°C. Consistency checks: If discharge_date &lt; admission_date, something is wrong.' },
+    { title: '6. A Practical Cleaning Pipeline', desc: 'A typical cleaning workflow proceeds in this order:  Load and inspect dtypes, shape, and a sample of rows. Deduplicate on appropriate key columns.' },
 ];
 
 export default function WalkthroughMLFDataCleaningAndPreprocessing() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFDataCleaningAndPreprocessing() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Data Cleaning and Preprocessing — Step by Step
+          Data Cleaning and Preprocessing \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how data cleaning and preprocessing works, one stage at a time.

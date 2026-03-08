@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Polynomial Feature Expansion', desc: 'The foundation of polynomial regression begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Still Linear in Parameters', desc: 'At this stage, the key transformation occurs — the core mechanism that makes polynomial regression work.' },
-    { title: '3. Interaction Terms', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Overfitting with High-Degree Polynomials', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Choosing Polynomial Degree via Cross-Validation', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Polynomial Feature Expansion', desc: 'Given the original feature matrix X  &#123;R&#125;^&#123;n x p&#125;, we construct an expanded matrix  that includes all polynomial terms up to degree d. For a single feature, the mapping is:  [equation]  For multiple features x_1, x_2, a degree-2 expansion includes:  [equation]  The number of features in a full.' },
+    { title: '2. Still Linear in Parameters', desc: 'A critical insight: despite modeling nonlinear relationships in the original features, polynomial regression is linear in parameters. The coefficient vector &#123;&#125; enters the model linearly, so the OLS closed-form solution applies directly:  [equation]  This means all the statistical machinery of.' },
+    { title: '3. Interaction Terms', desc: 'Beyond pure powers, interaction terms capture how the effect of one predictor depends on another. For predictors x_1 and x_2:  [equation]  Here _3 represents the change in the slope of y with respect to x_1 per unit change in x_2.' },
+    { title: '4. Overfitting with High-Degree Polynomials', desc: 'Polynomial regression vividly illustrates the bias-variance tradeoff:  Low degree (d = 1): High bias, the model cannot capture curvature. Moderate degree (d = 2 or 3): Often the sweet spot -- enough flexibility without excess variance.' },
+    { title: '5. Choosing Polynomial Degree via Cross-Validation', desc: 'The degree d is a hyperparameter. The standard approach:  For each candidate d  \\&#123;1, 2, 3, , d_&#123;max&#125;\\&#125;, construct the polynomial features.' },
+    { title: '6. Comparison with Other Nonlinear Approaches', desc: 'Polynomial regression is not the only way to model nonlinearity:  Splines (piecewise polynomials): Fit low-degree polynomials on local intervals joined at knots. They avoid the wild oscillations of high-degree global polynomials.' },
 ];
 
 export default function WalkthroughMLFPolynomialRegression() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFPolynomialRegression() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Polynomial Regression — Step by Step
+          Polynomial Regression \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how polynomial regression works, one stage at a time.

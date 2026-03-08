@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPGptForNlpTasks() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'GPT-1: 12 layers, 768 hidden, 12 heads, 117M parameters, trained on BooksCorpus (~800M tokens).', isTrue: true, explanation: 'This is a key technical detail of GPT for NLP Tasks.' },
-    { text: 'GPT-2: 48 layers, 1600 hidden, 25 heads, 1.5B parameters, trained on WebText (~40GB).', isTrue: true, explanation: 'This is a key technical detail of GPT for NLP Tasks.' },
-    { text: 'GPT-3: 96 layers, 12288 hidden, 96 heads, 175B parameters, trained on ~300B tokens (filtered Common Crawl + books + Wikipedia).', isTrue: true, explanation: 'This is a key technical detail of GPT for NLP Tasks.' },
+    { text: 'GPT cannot do NLU tasks, only generation.', isTrue: false, explanation: 'GPT performs understanding tasks by reformulating them as generation. GPT-3 few-shot on COPA (causal reasoning) achieves 92% accuracy, and fine-tuned GPT-1 matched BERT on many GLUE tasks.' },
+    { text: 'Estimated $4.6M (in 2020 cloud compute prices), ~3,640 petaflop-days.', isTrue: true, explanation: 'Estimated $4.6M (in 2020 cloud compute prices), ~3,640 petaflop-days.' },
+    { text: 'Few-shot learning means the model learns from the examples.', isTrue: false, explanation: 'In-context learning does not involve gradient updates. The examples activate patterns already learned during pre-training.' },
+    { text: 'GPT-3 few-shot (32 examples) on SuperGLUE: 71.8 (vs.', isTrue: true, explanation: 'fine-tuned BERT-large: 82.1, fine-tuned T5-11B: 89.3).' },
+    { text: 'GPT-3 is always better than fine-tuned BERT.', isTrue: false, explanation: 'For specific tasks with sufficient labeled data, a fine-tuned BERT-large (340M parameters) often outperforms GPT-3 few-shot (175B parameters). Fine-tuned GPT-3 is typically best, but few-shot GPT-3 trades accuracy for flexibility and zero training cost.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

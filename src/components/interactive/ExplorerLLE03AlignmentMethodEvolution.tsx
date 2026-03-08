@@ -3,10 +3,10 @@ import { useState } from 'react';
 const DETAILS = [
     { label: 'InstructGPT RLHF', detail: '(Jan 2022): 40 contractors, ~37K training prompts, PPO with KL penalty. Cost: months of annotation.' },
     { label: 'Constitutional AI', detail: '(Dec 2022): 16 constitutional principles, self-critique then RLAIF. Used for Claude.' },
-    { label: 'DPO', detail: '(May 2023): Single-stage, closed-form loss. ~50% less compute than RLHF. Default for open models by late 2023.' },
-    { label: 'KTO', detail: '(Jan 2024): Binary feedback only (good/bad). No paired preferences required.' },
     { label: 'ORPO', detail: '(Mar 2024): Combined SFT + alignment in one step. Odds ratio penalty term.' },
     { label: 'SimPO', detail: '(May 2024): Reference-free DPO variant. Average log probability as implicit reward.' },
+    { label: 'GRPO', detail: '(Jan 2025): DeepSeek R1. Group-based policy optimization with verifiable rewards. No reward model.' },
+    { label: 'Iterative/Online DPO', detail: 'Generate new responses with current policy, collect preferences, realign. Self-improving loop.' },
 ];
 
 export default function ExplorerLLE03AlignmentMethodEvolution() {
@@ -20,10 +20,10 @@ export default function ExplorerLLE03AlignmentMethodEvolution() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Alignment Method Evolution — Key Details Explorer
+          Alignment Method Evolution \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of alignment method evolution.
+          Click each card to explore the technical details.
         </p>
       </div>
 

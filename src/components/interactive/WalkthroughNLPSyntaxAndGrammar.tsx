@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Constituency (Phrase Structure) Grammars', desc: 'The foundation of syntax and grammar begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Dependency Grammars', desc: 'At this stage, the key transformation occurs — the core mechanism that makes syntax and grammar work.' },
-    { title: '3. Constituency vs. Dependency: Trade-offs', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Chomsky Hierarchy', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Computational Complexity of Parsing', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Constituency (Phrase Structure) Grammars', desc: 'Constituency grammars model sentences as hierarchical trees of nested phrases. The sentence "The cat sat on the mat" has the structure:  Each non-terminal node (S, NP, VP, PP) represents a phrase type: S = sentence, NP = noun phrase, VP = verb phrase, PP = prepositional phrase.' },
+    { title: '2. Dependency Grammars', desc: 'Dependency grammars represent structure as directed links between individual words rather than nested phrases. Each word (except the root) has exactly one head (governor), and the link is labeled with a grammatical relation (subject, object, modifier, etc.).' },
+    { title: '3. Constituency vs. Dependency: Trade-offs', desc: 'In practice, the two formalisms are largely interconvertible. Head-finding rules can convert constituency trees to dependency trees (and vice versa, with some information loss).' },
+    { title: '4. The Chomsky Hierarchy', desc: 'Noam Chomsky\'s 1956 hierarchy classifies formal grammars by their generative power:  Natural language is generally modeled with mildly context-sensitive grammars -- more powerful than CFGs (to handle phenomena like cross-serial dependencies in Swiss German and Dutch) but far less than fully.' },
+    { title: '5. Computational Complexity of Parsing', desc: 'Regular grammars: O(n) -- linear time via finite automata. Sufficient for morphological patterns but not sentence structure.' },
+    { title: '6. Modern Neural Parsing', desc: 'Contemporary parsers use neural networks rather than explicit grammars:  Transition-based parsing (Chen and Manning, 2014): An LSTM or transformer reads the sentence and predicts a sequence of shift/reduce actions to build the tree incrementally.' },
 ];
 
 export default function WalkthroughNLPSyntaxAndGrammar() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPSyntaxAndGrammar() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Syntax and Grammar — Step by Step
+          Syntax and Grammar \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how syntax and grammar works, one stage at a time.

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Gradient Boosting Framework', desc: 'The foundation of gradient boosting begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Algorithm: Gradient Boosting Machine', desc: 'At this stage, the key transformation occurs — the core mechanism that makes gradient boosting work.' },
-    { title: '3. Gradient Descent in Function Space', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Loss Functions and Their Pseudo-Residuals', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Key Hyperparameters', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Gradient Boosting Framework', desc: 'We seek a function F(x) that minimizes a loss L(y, F(x)) over the training data. Gradient Boosting builds F as an additive expansion:  [equation]  where F_0(x) is an initial estimate (e.g.' },
+    { title: '2. Algorithm: Gradient Boosting Machine', desc: 'Initialize: F_0(x) = _ _&#123;i=1&#125;^n L(y_i, )  For t = 1, 2, , T:  Compute pseudo-residuals (negative gradients):  [equation]  Fit a base learner h_t(x) to the pseudo-residuals \\&#123;(x_i, r_&#123;it&#125;)\\&#125;_&#123;i=1&#125;^n.' },
+    { title: '3. Gradient Descent in Function Space', desc: 'The key insight -- Friedman\'s central contribution -- is interpreting this procedure as gradient descent in function space. In ordinary gradient descent, we update parameters:    -  _ L.' },
+    { title: '4. Loss Functions and Their Pseudo-Residuals', desc: 'Different loss functions yield different pseudo-residuals:  For squared error, the pseudo-residuals are literally the residuals, which gives the intuitive "fit trees to residuals" description. For other losses, the pseudo-residuals point in the direction of steepest descent for each observation.' },
+    { title: '5. Key Hyperparameters', desc: 'Learning rate (shrinkage) : Controls the contribution of each tree. Smaller values (0.01--0.1) require more trees but produce better generalization through regularization.' },
+    { title: '6. Stochastic Gradient Boosting', desc: 'Friedman (2002) proposed training each tree on a random subsample of the training data (without replacement), typically 50--80%. This introduces randomness analogous to stochastic gradient descent:  Reduces computation per iteration Acts as regularization, reducing overfitting Often improves.' },
 ];
 
 export default function WalkthroughMLFGradientBoosting() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFGradientBoosting() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Gradient Boosting — Step by Step
+          Gradient Boosting \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how gradient boosting works, one stage at a time.

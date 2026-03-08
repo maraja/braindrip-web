@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Prediction Error as Curiosity', desc: 'The foundation of curiosity-driven exploration begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Intrinsic Curiosity Module (ICM)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes curiosity-driven exploration work.' },
-    { title: '3. Random Network Distillation (RND)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Count-Based Exploration', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Noisy TV Problem', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Prediction Error as Curiosity', desc: 'The core idea: maintain a predictive model of the environment and define curiosity as the model\'s prediction error. States where the model predicts poorly are novel and worth exploring.' },
+    { title: '2. The Intrinsic Curiosity Module (ICM)', desc: 'The ICM (Pathak et al., 2017) addresses a critical problem: predicting raw observations (pixels) is dominated by irrelevant details like texture noise and lighting. ICM operates in a learned feature space that captures only task-relevant information.' },
+    { title: '3. Random Network Distillation (RND)', desc: 'RND (Burda et al., 2019) provides a simpler and remarkably effective alternative. It uses two neural networks:  A fixed, randomly initialized target network f_&#123;target&#125;(s) A trainable predictor network f_&#123;predictor&#125;(s; )  The intrinsic reward is the prediction error:  [equation]  For frequently.' },
+    { title: '4. Count-Based Exploration', desc: 'Classical exploration theory uses visit counts N(s) to bonus rarely visited states:  [equation]  In continuous or high-dimensional state spaces, exact counts are impossible. Pseudo-counts (Bellemare et al.' },
+    { title: '5. The Noisy TV Problem', desc: 'A fundamental failure mode of prediction-error curiosity is the noisy TV problem (Burda et al., 2019): if the environment contains a source of stochastic, unpredictable transitions (like a TV showing random static), the forward model\'s prediction error will remain permanently high regardless of how.' },
+    { title: '6. Information Gain Approaches', desc: 'Information gain measures the reduction in uncertainty about the agent\'s model of the world:  [equation]  where H(  &#123;D&#125;) is the entropy of the posterior over model parameters .' },
 ];
 
 export default function WalkthroughRLCuriosityDrivenExploration() {
@@ -17,10 +18,10 @@ export default function WalkthroughRLCuriosityDrivenExploration() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Curiosity-Driven Exploration — Step by Step
+          Curiosity-Driven Exploration \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how curiosity-driven exploration works, one stage at a time.

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizRLDoubleDqn() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Implementation cost: Changing one line of code -- the target computation.', isTrue: true, explanation: 'This is a key technical detail of Double DQN.' },
-    { text: 'No new networks, no new hyperparameters, no additional memory.', isTrue: true, explanation: 'This is a key technical detail of Double DQN.' },
-    { text: 'Atari results: Double DQN improves median human-normalized score from ~93% (DQN) to ~117% across 49 games.', isTrue: true, explanation: 'This is a key technical detail of Double DQN.' },
+    { text: 'Double DQN requires training two separate networks.', isTrue: false, explanation: 'It reuses the two networks DQN already maintains (online and target). There is no additional training, no additional forward passes during action selection, and no additional memory.' },
+    { text: 'Changing one line of code -- the target computation.', isTrue: true, explanation: 'No new networks, no new hyperparameters, no additional memory.' },
+    { text: 'Double DQN completely eliminates overestimation.', isTrue: false, explanation: 'It substantially reduces it but does not eliminate it entirely, because the online and target networks are correlated (the target is a delayed copy of the online network). However, the residual bias is small enough to be practically insignificant.' },
+    { text: 'Double DQN improves median human-normalized score from ~93% (DQN) to ~117% across 49 games.', isTrue: true, explanation: 'Several games improve dramatically (e.g., Asterix: 6,012 to 28,188).' },
+    { text: 'Overestimation is always bad.', isTrue: false, explanation: 'In principle, consistent overestimation that preserves the ranking of actions would not affect policy quality. The problem is that overestimation is uneven -- some actions get inflated more than others, distorting the ranking and degrading the policy.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

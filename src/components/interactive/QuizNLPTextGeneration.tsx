@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPTextGeneration() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Nucleus sampling (p = 0.9) produces significantly more diverse and human-like text than beam search for open-ended tasks, as shown by Holtzman et al.', isTrue: true, explanation: 'This is a key technical detail of Text Generation.' },
-    { text: 'Repetition penalties (dividing logit scores of previously generated tokens by a factor of 1.0--1.5) are widely used to prevent degenerate repetition loops.', isTrue: true, explanation: 'This is a key technical detail of Text Generation.' },
-    { text: 'Typical token generation speeds for modern LLMs range from 30--100 tokens/second on consumer GPUs to 200+ tokens/second on specialized inference hardware.', isTrue: true, explanation: 'This is a key technical detail of Text Generation.' },
+    { text: 'Beam search produces the best text.', isTrue: false, explanation: 'Beam search maximizes sequence probability, but the highest-probability sequence is often generic and repetitive ("I don\'t know. I don\'t know.' },
+    { text: 'Higher temperature always means more creative output.', isTrue: false, explanation: 'Very high temperatures (T &gt; 1.5) produce incoherent, random text. Creativity in generation comes from the interaction between the model\'s learned knowledge and moderate randomness (T ~ 0.7--1.0), not from pure noise.' },
+    { text: 'Text generation is just next-token prediction.', isTrue: false, explanation: 'While the mechanism is next-token prediction, the emergent behavior -- coherent multi-paragraph arguments, consistent character voices, logical reasoning -- involves implicit planning and knowledge that goes far beyond local token statistics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

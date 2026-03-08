@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE04VideoUnderstanding() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Gemini 1.5 Pro (Feb 2024): 1M token context.', isTrue: true, explanation: 'This is a key technical detail of Video Understanding.' },
-    { text: 'Up to 1 hour of video.', isTrue: true, explanation: 'This is a key technical detail of Video Understanding.' },
-    { text: 'Variable frame rate sampling.', isTrue: true, explanation: 'This is a key technical detail of Video Understanding.' },
+    { text: 'Video understanding is just image understanding applied to multiple frames.', isTrue: false, explanation: 'Temporal reasoning — understanding sequence, causality, duration, and change over time — is a fundamentally different capability from spatial visual understanding. Models that excel at image QA can fail at basic temporal video questions because they lack the ability to reason about how things change.' },
+    { text: 'At 256 tokens/frame: 1 min = 15,360 tokens; 10 min = 153,600; 1 hour = 921,600.', isTrue: true, explanation: 'At 256 tokens/frame: 1 min = 15,360 tokens; 10 min = 153,600; 1 hour = 921,600.' },
+    { text: 'Models truly \'watch\' videos like humans do.', isTrue: false, explanation: 'Current models process sampled frames, not continuous video. At 1 fps, they see one frame per second and miss everything between frames.' },
+    { text: 'Uniform sampling at 1-2 fps for short videos, 0.25-0.5 fps for hour-long videos.', isTrue: true, explanation: 'Uniform sampling at 1-2 fps for short videos, 0.25-0.5 fps for hour-long videos.' },
+    { text: 'Long-context models solve video understanding.', isTrue: false, explanation: 'Long context enables processing more frames, but the core challenge of temporal reasoning is not solved by context length alone. Models still struggle with precise temporal ordering and fine-grained causal reasoning even with million-token contexts.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

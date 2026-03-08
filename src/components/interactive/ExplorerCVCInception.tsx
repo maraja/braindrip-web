@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'GoogLeNet top-5 error', detail: '6.67% (single model), below 5% with ensemble.' },
-    { label: 'Parameters', detail: '6.8M (GoogLeNet), ~23.8M (Inception v3), ~55.8M (Inception v4).' },
-    { label: '$1 \\times 1$ convolution cost', detail: 'For a $28 \\times 28$ feature map with 192 input channels reduced to 16 output channels, the computation is $28 \\times 28 \\times 192 \\times 16 \\approx 2.4$M MACs -- compared to $28 \\times 28 \\times 192 \\times 32 \\times 25 \\approx 120$M MACs for a direct $5 \\times 5$ convolution to 32 channels.' },
-    { label: 'Auxiliary classifier weight', detail: '0.3 during training, discarded at inference.' },
-    { label: 'Label smoothing', detail: 'in Inception v3 uses $\\epsilon = 0.1$, which improved top-1 accuracy by ~0.2%.' },
+    { label: 'GoogLeNet top-5 error', detail: '67% (single model), below 5% with ensemble.' },
+    { label: 'Parameters', detail: '8M (GoogLeNet), ~23.8M (Inception v3), ~55.8M (Inception v4).' },
+    { label: '$1 \\times 1$ convolution cost', detail: 'For a 28 x 28 feature map with 192 input channels reduced to 16 output channels, the computation is 28 x 28 x 192 x 16  2.4M MACs -- compared to 28 x 28 x 192 x 32 x 25  120M MACs for a direct 5 x 5 convolution to 32 channels.' },
+    { label: 'Auxiliary classifier weight', detail: '3 during training, discarded at inference.' },
+    { label: 'Label smoothing', detail: 'in Inception v3 uses  = 0.1, which improved top-1 accuracy by ~0.2%.' },
 ];
 
 export default function ExplorerCVCInception() {
@@ -19,10 +19,10 @@ export default function ExplorerCVCInception() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Inception (GoogLeNet) — Key Details Explorer
+          Inception (GoogLeNet) \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of inception (googlenet).
+          Click each card to explore the technical details.
         </p>
       </div>
 

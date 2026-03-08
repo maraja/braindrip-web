@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Distillation via Synthetic Instructions', desc: 'The foundation of the alpaca effect begins with understanding its core input requirements and initial setup.' },
-    { title: '2. LoRA: Fine-Tuning on Consumer Hardware', desc: 'At this stage, the key transformation occurs — the core mechanism that makes the alpaca effect work.' },
-    { title: '3. The Vicuna Breakthrough', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. GPT4All and Running on Laptops', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Distillation via Synthetic Instructions', desc: 'Alpaca\'s training recipe was deceptively simple. The Stanford team used OpenAI\'s API to generate 52,000 instruction-input-output triples, starting from 175 seed tasks written by hand.' },
+    { title: '2. LoRA: Fine-Tuning on Consumer Hardware', desc: 'The Alpaca recipe was powerful, but full fine-tuning of even LLaMA-7B required expensive A100 GPUs. LoRA (Low-Rank Adaptation), introduced by Hu et al.' },
+    { title: '3. The Vicuna Breakthrough', desc: 'LMSYS (UC Berkeley) released Vicuna in March 2023, fine-tuning LLaMA-13B on approximately 70,000 conversations shared by users of ShareGPT (a Chrome extension that let users share their ChatGPT conversations).' },
+    { title: '4. GPT4All and Running on Laptops', desc: 'Nomic AI released GPT4All in late March 2023, quantizing a fine-tuned LLaMA model to 4-bit precision so it could run on consumer laptops with no GPU. The project recorded over 800,000 downloads in its first week.' },
 ];
 
 export default function WalkthroughLLE02TheAlpacaEffect() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE02TheAlpacaEffect() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The Alpaca Effect — Step by Step
+          The Alpaca Effect \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how the alpaca effect works, one stage at a time.

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Citation Format Design', desc: 'The foundation of citation and attribution prompting begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Instruction Design for Consistent Citations', desc: 'At this stage, the key transformation occurs — the core mechanism that makes citation and attribution prompting work.' },
-    { title: '3. Citation Verification', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Handling Citation Edge Cases', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Citation Format Design', desc: 'The citation format must be unambiguous, parseable, and consistent. Common formats include:  Numbered inline citations: Each source document is assigned a number, and claims are followed by the number in brackets.' },
+    { title: '2. Instruction Design for Consistent Citations', desc: 'Vague instructions produce inconsistent citations. Specific, structured instructions produce reliable ones:  Weak instruction: "Please cite your sources." Result: Inconsistent citation format, missing citations for many claims, occasional fabricated citations.' },
+    { title: '3. Citation Verification', desc: 'Production systems should verify citations programmatically:  Parse citations: Extract all citation markers and their associated claims from the generated text Match to sources: Map each citation number to the corresponding source document Verify support: Use an NLI model or LLM to check whether.' },
+    { title: '4. Handling Citation Edge Cases', desc: 'Real-world citation scenarios include complexities that instructions must address:  Claims from multiple sources: "If a claim is supported by multiple sources, cite all of them: [1][3]" Inferred claims: "If your answer requires inference from the sources (combining information from multiple.' },
 ];
 
 export default function WalkthroughPECitationAndAttributionPrompting() {
@@ -16,10 +16,10 @@ export default function WalkthroughPECitationAndAttributionPrompting() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Citation and Attribution Prompting — Step by Step
+          Citation and Attribution Prompting \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how citation and attribution prompting works, one stage at a time.

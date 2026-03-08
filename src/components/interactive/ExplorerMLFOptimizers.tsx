@@ -3,7 +3,7 @@ import { useState } from 'react';
 const DETAILS = [
     { label: 'SGD + momentum', detail: 'Fewer hyperparameters, often better generalization, but requires careful learning rate scheduling.' },
     { label: 'Adam', detail: 'Faster convergence, less sensitive to learning rate, but can generalize slightly worse without weight decay.' },
-    { label: 'AdamW', detail: 'The standard for transformers. Typical: $\\eta = 10^{-4}$ to $3 \\times 10^{-4}$, $\\lambda = 0.01$ to $0.1$.' },
+    { label: 'AdamW', detail: 'The standard for transformers. Typical:  = 10^&#123;-4&#125; to 3 x 10^&#123;-4&#125;,  = 0.01 to 0.1.' },
     { label: 'Memory', detail: 'Adam/AdamW store two additional tensors per parameter (first and second moments), tripling memory versus SGD.' },
     { label: 'Learning rate schedules', detail: '(cosine decay, linear decay, step decay) are as important as the optimizer choice itself.' },
 ];
@@ -19,10 +19,10 @@ export default function ExplorerMLFOptimizers() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Optimizers — Key Details Explorer
+          Optimizers \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of optimizers.
+          Click each card to explore the technical details.
         </p>
       </div>
 

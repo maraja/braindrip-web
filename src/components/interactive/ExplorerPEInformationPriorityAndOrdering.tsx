@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'The \"lost in the middle\" effect causes 10-20+ percentage point accuracy drops', detail: 'when key information is placed in the middle versus at the beginning or end of the context.' },
+    { label: 'The "lost in the middle" effect causes 10-20+ percentage point accuracy drops', detail: 'when key information is placed in the middle versus at the beginning or end of the context.' },
     { label: 'The U-shaped attention curve is consistent across model families', detail: '(GPT-4, Claude, Gemini, Llama) though severity varies by model and context length.' },
     { label: 'Relevance-at-extremes ordering', detail: '(best documents first and last, weakest in middle) outperforms both relevance-first and relevance-last strategies by 3-8 percentage points on average.' },
     { label: 'Instruction adherence degrades 15-30%', detail: 'when system prompt instructions are more than 50K tokens from the end of the context in long conversations.' },
@@ -20,10 +20,10 @@ export default function ExplorerPEInformationPriorityAndOrdering() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Information Priority and Ordering — Key Details Explorer
+          Information Priority and Ordering \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of information priority and ordering.
+          Click each card to explore the technical details.
         </p>
       </div>
 

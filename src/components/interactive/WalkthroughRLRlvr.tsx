@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Verifiable Reward Functions', desc: 'The foundation of rlvr begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The RLVR Training Pipeline', desc: 'At this stage, the key transformation occurs — the core mechanism that makes rlvr work.' },
-    { title: '3. Verifiable vs. Learned Rewards', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The DeepSeek-R1 RLVR Approach', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Verifiable Reward Functions', desc: 'RLVR defines domain-specific reward functions r(x, y) that return binary or graded scores based on objective verification:  Mathematical reasoning:  [equation]  The answer is extracted from the model\'s response (typically the content after "The answer is" or within a boxed expression) and compared.' },
+    { title: '2. The RLVR Training Pipeline', desc: 'The RLVR pipeline is simpler than RLHF because it eliminates the reward model entirely:  Start with a supervised fine-tuned (SFT) model or even a base pretrained model Sample a batch of problems with known correct answers Generate responses from _ (potentially multiple responses per problem for.' },
+    { title: '3. The DeepSeek-R1 RLVR Approach', desc: 'DeepSeek-R1 (2025) demonstrated the power of RLVR at scale. Starting from a base model (DeepSeek-V3-Base), they applied GRPO with verifiable rewards on math and coding problems:  Pure RLVR phase: Train only with verifiable rewards on math competition problems and coding challenges.' },
 ];
 
 export default function WalkthroughRLRlvr() {
@@ -16,10 +15,10 @@ export default function WalkthroughRLRlvr() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          RLVR — Step by Step
+          RLVR \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how rlvr works, one stage at a time.

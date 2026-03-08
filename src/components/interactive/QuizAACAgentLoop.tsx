@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACAgentLoop() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Typical loop iterations per task: Simple tasks complete in 3-8 iterations.', isTrue: true, explanation: 'This is a key technical detail of The Agent Loop.' },
-    { text: 'Moderate tasks require 10-30.', isTrue: true, explanation: 'This is a key technical detail of The Agent Loop.' },
-    { text: 'Complex tasks (multi-file refactoring, debugging) may require 50-150 iterations.', isTrue: true, explanation: 'This is a key technical detail of The Agent Loop.' },
+    { text: 'The agent plans all steps upfront and then executes them.', isTrue: false, explanation: 'Most agents do not create a complete plan and then execute it sequentially. They plan one or a few steps ahead, execute, observe results, and replan.' },
+    { text: 'Simple tasks complete in 3-8 iterations.', isTrue: true, explanation: 'Moderate tasks require 10-30. Complex tasks (multi-file refactoring, debugging) may require 50-150 iterations.' },
+    { text: 'More loop iterations always means better results.', isTrue: false, explanation: 'There is a clear point of diminishing returns. After roughly 50-100 iterations on a single task, agents tend to start looping unproductively — revisiting the same approaches, making contradictory changes, or losing coherence.' },
+    { text: 'Each iteration takes 1-10 seconds depending on LLM inference time (0.5-5s) plus tool execution time (0.1-5s).', isTrue: true, explanation: 'A 30-iteration task takes roughly 1-5 minutes wall-clock time.' },
+    { text: 'The loop runs until the LLM says \'I\'m done.\'', isTrue: false, explanation: 'While the LLM\'s decision to stop calling tools is one termination condition, it is not the only one and not always the most important. Max-step limits, token budgets, error thresholds, and human interrupts all serve as essential safety nets.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

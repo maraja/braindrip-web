@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE07TrainingEfficiencyBreakthroughs() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Mixed Precision (2018): FP16 compute + FP32 accumulation.', isTrue: true, explanation: 'This is a key technical detail of Training Efficiency Breakthroughs.' },
-    { text: 'BF16 (2020): 8-bit exponent, 7-bit mantissa.', isTrue: true, explanation: 'This is a key technical detail of Training Efficiency Breakthroughs.' },
-    { text: 'Default since A100/TPUv3.', isTrue: true, explanation: 'This is a key technical detail of Training Efficiency Breakthroughs.' },
+    { text: 'Efficiency gains are just about buying newer GPUs.', isTrue: false, explanation: 'While hardware improvements matter, algorithmic innovations like Flash Attention, FP8 training, and DualPipe contribute equally or more. DeepSeek V3 used the same H100 GPUs available to every other lab — the difference was software efficiency.' },
+    { text: 'FP16 compute + FP32 accumulation.', isTrue: true, explanation: 'Standard since V100. ~2x speedup.' },
+    { text: 'Lower precision always degrades model quality.', isTrue: false, explanation: 'With proper scaling techniques (loss scaling for FP16, per-tile quantization for FP8, selective full-precision accumulation for sensitive operations), lower-precision training produces models indistinguishable from full-precision training on benchmarks.' },
+    { text: '8-bit exponent, 7-bit mantissa.', isTrue: true, explanation: 'Default since A100/TPUv3. More stable than FP16.' },
+    { text: 'These optimizations only matter for training.', isTrue: false, explanation: 'Many efficiency techniques — Flash Attention, GQA, quantization — benefit inference even more than training. Flash Attention enables longer context windows in production.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

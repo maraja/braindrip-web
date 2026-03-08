@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture', desc: 'The foundation of alexnet begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Key Innovations', desc: 'At this stage, the key transformation occurs — the core mechanism that makes alexnet work.' },
-    { title: '3. Data Augmentation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Weight Initialization', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Architecture', desc: 'AlexNet processes 224 x 224 x 3 RGB images through 5 convolutional layers and 3 fully connected layers:  Total parameters: approximately 60 million, making it the largest CNN trained at scale at the time.' },
+    { title: '2. Key Innovations', desc: 'ReLU Activation: AlexNet used f(x) = (0, x) instead of sigmoid or tanh. ReLU trained roughly 6x faster on CIFAR-10, reaching 25% training error in far fewer epochs.' },
+    { title: '3. Data Augmentation', desc: 'Random 224 x 224 crops from 256 x 256 images (and horizontal flips), generating a 2048x augmentation factor at test time (10 crops). PCA-based color jittering: adding multiples of the principal components of RGB pixel values, reducing top-1 error by over 1%.' },
+    { title: '4. Weight Initialization', desc: 'The convolutional layers were initialized with zero-mean Gaussian random weights with standard deviation 0.01. Biases in layers 2, 4, and 5 were initialized to 1 (to provide positive inputs to ReLU early in training), while biases in the remaining layers were initialized to 0.' },
 ];
 
 export default function WalkthroughCVCAlexnet() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCAlexnet() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          AlexNet — Step by Step
+          AlexNet \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how alexnet works, one stage at a time.

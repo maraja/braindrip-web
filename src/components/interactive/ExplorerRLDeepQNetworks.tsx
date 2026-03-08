@@ -2,11 +2,11 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Training time', detail: '50 million frames per game (~38 days of game time at 60 FPS), approximately 10 days on a single GPU (circa 2015).' },
-    { label: 'Reward clipping', detail: 'All rewards clipped to $[-1, +1]$ to standardize across games.' },
+    { label: 'Reward clipping', detail: 'All rewards clipped to [-1, +1] to standardize across games.' },
     { label: 'Frame skipping', detail: 'The agent selects an action every 4 frames (action repeat), with the last action repeated in between.' },
-    { label: 'Optimizer', detail: 'RMSProp with learning rate $0.00025$, no momentum, $\\epsilon_{RMS} = 0.01$.' },
-    { label: 'Discount factor', detail: '$\\gamma = 0.99$.' },
-    { label: 'Replay buffer memory', detail: '1M transitions $\\approx$ 7 GB for Atari-sized frames (with frame deduplication optimization).' },
+    { label: 'Optimizer', detail: 'RMSProp with learning rate 0.00025, no momentum, _&#123;RMS&#125; = 0.01.' },
+    { label: 'Replay buffer memory', detail: '1M transitions  7 GB for Atari-sized frames (with frame deduplication optimization).' },
+    { label: 'Superhuman on 29 of 49 games', detail: ', but notably struggled on Montezuma\'s Revenge (sparse rewards, deep exploration) and games requiring long-term planning.' },
 ];
 
 export default function ExplorerRLDeepQNetworks() {
@@ -20,10 +20,10 @@ export default function ExplorerRLDeepQNetworks() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Deep Q-Networks — Key Details Explorer
+          Deep Q-Networks \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of deep q-networks.
+          Click each card to explore the technical details.
         </p>
       </div>
 

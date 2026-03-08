@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACHierarchicalAgentSystems() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'breadth trade-off: Deeper hierarchies (more levels) provide finer-grained decomposition but increase communication overhead and latency.', isTrue: true, explanation: 'This is a key technical detail of Hierarchical Agent Systems.' },
-    { text: 'Wider hierarchies (more agents per level) enable more parallelism but increase the manager\'s coordination burden.', isTrue: true, explanation: 'This is a key technical detail of Hierarchical Agent Systems.' },
-    { text: 'Most practical systems use 2-3 levels with 3-7 agents per manager.', isTrue: true, explanation: 'This is a key technical detail of Hierarchical Agent Systems.' },
+    { text: 'Deeper hierarchies are more capable', isTrue: false, explanation: ': Beyond 3 levels, hierarchies suffer from communication overhead, goal drift, and coordination complexity that outweigh the benefits of finer decomposition. Most effective systems use 2 levels (manager + workers).' },
+    { text: 'Deeper hierarchies (more levels) provide finer-grained decomposition but increase communication overhead and latency.', isTrue: true, explanation: 'Wider hierarchies (more agents per level) enable more parallelism but increase the manager\'s coordination burden. Most practical systems use 2-3 levels with 3-7 agents per manager.' },
+    { text: 'Define structured formats for downward communication (task specifications) and upward communication (status reports, results, escalations).', isTrue: true, explanation: 'Unstructured natural language between levels leads to information loss and misinterpretation.' },
+    { text: 'Hierarchical systems often need shared artifacts (a codebase, a document, a database) that multiple workers modify.', isTrue: true, explanation: 'Conflict resolution — what happens when two workers edit the same file — must be handled explicitly, either through locking, merge strategies, or sequential access.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

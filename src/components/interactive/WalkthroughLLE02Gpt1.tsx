@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture: Decoder-Only Transformer', desc: 'The foundation of gpt-1: generative pre-training begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Stage 1: Unsupervised Pre-training', desc: 'At this stage, the key transformation occurs — the core mechanism that makes gpt-1: generative pre-training work.' },
-    { title: '3. Stage 2: Supervised Fine-tuning', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Results', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Architecture: Decoder-Only Transformer', desc: 'GPT-1 used a 12-layer Transformer decoder with 12 attention heads and an embedding dimension of 768, totaling approximately 117 million parameters. Unlike the original Transformer (01-attention-is-all-you-need.md), GPT-1 dropped the encoder entirely.' },
+    { title: '2. Stage 1: Unsupervised Pre-training', desc: 'GPT-1 was pre-trained on BookCorpus — approximately 7,000 unpublished books (~800 million words, ~5GB of text) — using a standard causal language modeling objective: maximize P(token_t | token_1, ..., token_&#123;t-1&#125;). The model learned to predict the next word given all previous words in the sequence.' },
+    { title: '3. Stage 2: Supervised Fine-tuning', desc: 'For fine-tuning, GPT-1 added a single linear layer on top of the final Transformer block\'s output. The innovation was in how different tasks were formulated to fit the decoder architecture:  Classification (e.g., sentiment): Append a special [CLS] token; use its final representation for prediction.' },
+    { title: '4. Results', desc: 'GPT-1 achieved state-of-the-art results on 9 out of 12 evaluated tasks, including commonsense reasoning (Stories Cloze: 86.5%), question answering (RACE: 59.0%), and textual entailment (MNLI: 82.1%). On some tasks, it improved over the previous SOTA by 8-9%.' },
 ];
 
 export default function WalkthroughLLE02Gpt1() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE02Gpt1() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          GPT-1: Generative Pre-Training — Step by Step
+          GPT-1: Generative Pre-Training \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how gpt-1: generative pre-training works, one stage at a time.

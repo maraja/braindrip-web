@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Scaling Laws for ViTs', desc: 'The foundation of vision transformer scaling begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Data Requirements', desc: 'At this stage, the key transformation occurs — the core mechanism that makes vision transformer scaling work.' },
-    { title: '3. Model Size Scaling', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. ViT-22B', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. When ViTs Overtake CNNs', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Scaling Laws for ViTs', desc: '(2022) systematically varied model size and training data to establish scaling behavior. The key finding:  [equation]  where C is the total training compute (FLOPs) and  is a power-law exponent.' },
+    { title: '2. Data Requirements', desc: 'The data-hunger of ViTs is well-documented:  The crossover point where ViT-B matches a comparable ResNet is roughly 10-30 million images. Below this threshold, the CNN\'s inductive biases dominate.' },
+    { title: '3. Model Size Scaling', desc: 'The ViT family spans a wide range of model sizes:  Key observations from scaling studies:  Larger models are more data-efficient: ViT-L at 10M images outperforms ViT-B at 30M images, because larger models extract more information per sample.' },
+    { title: '4. ViT-22B', desc: 'ViT-22B (Dehghani et al., 2023, Google) is the largest dense vision Transformer:  22 billion parameters with hidden dimension 6144 and 48 layers Trained on JFT-4B (4 billion images) Achieves 89.' },
+    { title: '5. When ViTs Overtake CNNs', desc: 'The crossover depends on multiple factors:  On classification (ImageNet fine-tuned): With ImageNet-1K only: ViT-B underperforms ResNet-152; DeiT narrows the gap but doesn\'t clearly win. With ImageNet-21K (14M images): ViT-L surpasses all ResNet variants.' },
 ];
 
 export default function WalkthroughCVCVisionTransformerScaling() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCVisionTransformerScaling() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Vision Transformer Scaling — Step by Step
+          Vision Transformer Scaling \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how vision transformer scaling works, one stage at a time.

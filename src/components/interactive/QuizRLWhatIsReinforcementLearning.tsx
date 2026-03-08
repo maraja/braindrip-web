@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizRLWhatIsReinforcementLearning() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The formal framework underlying RL is the Markov Decision Process (see markov-decision-processes.md).', isTrue: true, explanation: 'This is a key technical detail of What Is Reinforcement Learning?.' },
-    { text: 'RL algorithms broadly divide into model-free (learn directly from experience) and model-based (learn a model of the environment, then plan).', isTrue: true, explanation: 'This is a key technical detail of What Is Reinforcement Learning?.' },
-    { text: 'Model-free methods further split into value-based (e.g., Q-learning), policy-based (e.g., REINFORCE), and actor-critic (hybrid).', isTrue: true, explanation: 'This is a key technical detail of What Is Reinforcement Learning?.' },
+    { text: 'RL is just trial and error.', isTrue: false, explanation: 'Trial and error is a component, but RL also involves systematic credit assignment -- determining which past actions were responsible for current rewards -- via mechanisms like temporal-difference learning and eligibility traces.' },
+    { text: 'RL always needs a simulator.', isTrue: false, explanation: 'While simulators dramatically accelerate training, real-world RL (e.g., robotic manipulation, clinical trials) is an active research area. Offline RL learns from pre-collected datasets without any environment interaction.' },
+    { text: 'RL replaces supervised learning.', isTrue: false, explanation: 'RL and supervised learning solve different problems. In practice, RL systems rely heavily on supervised learning components (e.g., learning state representations, pre-training networks).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

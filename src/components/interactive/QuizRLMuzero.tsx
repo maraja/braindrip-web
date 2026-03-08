@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizRLMuzero() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'MuZero uses 800 MCTS simulations per move in board games, 50 simulations in Atari.', isTrue: true, explanation: 'This is a key technical detail of MuZero.' },
-    { text: 'Even with just 50 simulations, the search significantly improves over the raw policy network.', isTrue: true, explanation: 'This is a key technical detail of MuZero.' },
-    { text: 'The unroll depth during training is $K = 5$ steps.', isTrue: true, explanation: 'This is a key technical detail of MuZero.' },
+    { text: 'MuZero learns the rules of the game.', isTrue: false, explanation: 'MuZero never learns explicit transition rules. It learns to predict what matters for planning -- rewards, values, and policies -- from latent states.' },
+    { text: 'MuZero\'s latent states must correspond to real states.', isTrue: false, explanation: 'There is no reconstruction loss and no constraint that latent states resemble real observations. The latent space is shaped purely by the planning losses.' },
+    { text: 'MuZero replaces model-free methods everywhere.', isTrue: false, explanation: 'MuZero\'s computational cost per decision is significantly higher than model-free methods due to the MCTS planning. For applications requiring fast real-time decisions (sub-millisecond), model-free policies evaluated in a single forward pass remain preferable.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

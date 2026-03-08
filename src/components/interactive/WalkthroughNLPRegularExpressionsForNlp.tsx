@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Basic Syntax', desc: 'The foundation of regular expressions for nlp begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Character Classes', desc: 'At this stage, the key transformation occurs — the core mechanism that makes regular expressions for nlp work.' },
-    { title: '3. Quantifiers', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Groups and Backreferences', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Lookaheads and Lookbehinds', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Character Classes', desc: 'Square brackets define custom character sets: [aeiou] -- any vowel [^aeiou] -- any non-vowel (negation) [a-zA-Z] -- any letter [0-9.,] -- digits, periods, commas' },
+    { title: '2. Quantifiers', desc: 'lazy distinction matters in NLP: matching &lt;.&gt; on "&lt;b&gt;bold&lt;/b&gt;" greedily captures "&lt;b&gt;bold&lt;/b&gt;" (everything between the first &lt; and last &gt;), while &lt;.?&gt; lazily captures "&lt;b&gt;" (the shortest match).' },
+    { title: '3. Groups and Backreferences', desc: 'Parentheses create capturing groups:  Named groups improve readability: (?P&lt;year&gt;&#123;4&#125;)-(?P&lt;month&gt;&#123;2&#125;)-(?P&lt;day&gt;&#123;2&#125;).' },
+    { title: '4. Lookaheads and Lookbehinds', desc: 'Zero-width assertions that match a position without consuming characters:  Positive lookahead (?=...): +(?= dollars) matches "50" in "50 dollars" Negative lookahead (?!...): +(?! dollars) matches "50" in "50 euros" Positive lookbehind (?&lt;=...): (?&lt;=\\)+ matches "50" in "50" Negative lookbehind (?&lt;!..' },
+    { title: '5. Common NLP Patterns', desc: '#### Email Extraction  #### URL Extraction  #### Phone Number Extraction (US)  #### Whitespace Normalization  #### Hashtag and Mention Extraction' },
+    { title: '6. Python\'s `re` Module', desc: 'Key functions for NLP work: re.search(pattern, string) -- first match anywhere in string re.match(pattern, string) -- match at string start only re.findall(pattern, string) -- all non-overlapping matches re.sub(pattern, replacement, string) -- search and replace re.' },
 ];
 
 export default function WalkthroughNLPRegularExpressionsForNlp() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPRegularExpressionsForNlp() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Regular Expressions for NLP — Step by Step
+          Regular Expressions for NLP \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how regular expressions for nlp works, one stage at a time.

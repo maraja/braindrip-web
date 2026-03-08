@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Level 1: Copilot (Human Drives, AI Assists)', desc: 'The foundation of the autonomy spectrum begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Level 2: Assistant (AI Proposes, Human Approves)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes the autonomy spectrum work.' },
-    { title: '3. Level 3: Semi-Autonomous (AI Acts, Human Monitors)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Level 4: Fully Autonomous (AI Acts Independently)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Level 1: Copilot (Human Drives, AI Assists)', desc: 'At the copilot level, the human is firmly in control of the workflow. The AI provides suggestions, completions, and information on demand, but the human makes every decision and performs every action.' },
+    { title: '2. Level 2: Assistant (AI Proposes, Human Approves)', desc: 'At the assistant level, the AI takes initiative by proposing multi-step plans or specific actions, but the human must explicitly approve before any action is executed. The AI reasons about what to do; the human decides whether to let it.' },
+    { title: '3. Level 3: Semi-Autonomous (AI Acts, Human Monitors)', desc: 'At the semi-autonomous level, the AI executes actions independently within defined boundaries, and the human monitors progress and intervenes only when needed. The agent has been granted trust to act, but guardrails and oversight mechanisms are in place.' },
+    { title: '4. Level 4: Fully Autonomous (AI Acts Independently)', desc: 'At the fully autonomous level, the AI receives a goal and executes it end-to-end without human involvement. It handles errors, makes judgment calls, and delivers results.' },
 ];
 
 export default function WalkthroughAACAutonomySpectrum() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACAutonomySpectrum() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The Autonomy Spectrum — Step by Step
+          The Autonomy Spectrum \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how the autonomy spectrum works, one stage at a time.

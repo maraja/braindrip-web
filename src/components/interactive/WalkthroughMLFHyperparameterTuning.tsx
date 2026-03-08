@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Hyperparameters vs. Parameters', desc: 'The foundation of hyperparameter tuning begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Grid Search', desc: 'At this stage, the key transformation occurs — the core mechanism that makes hyperparameter tuning work.' },
-    { title: '3. Random Search', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Bayesian Optimization', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Successive Halving and Hyperband', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Grid Search', desc: 'Grid search evaluates every combination in a predefined grid. If you have 3 hyperparameters with 5 values each, you evaluate 5^3 = 125 configurations.' },
+    { title: '2. Random Search', desc: 'Random search samples hyperparameter configurations uniformly (or from specified distributions) over the search space. The key insight from Bergstra & Bengio (2012): when only a few hyperparameters matter, random search explores the important dimensions more efficiently than grid search.' },
+    { title: '3. Bayesian Optimization', desc: 'Bayesian optimization builds a surrogate model of the objective function &#123;E&#125;_&#123;CV&#125;() and uses it to decide where to evaluate next. The procedure is sequential:  Initialize: Evaluate a few random configurations.' },
+    { title: '4. Successive Halving and Hyperband', desc: 'These methods exploit the idea that bad configurations can be identified early. Successive halving starts many configurations with a small budget (few epochs, small data subset), evaluates them, discards the bottom half, doubles the budget for survivors, and repeats.' },
+    { title: '5. Practical Search Space Design', desc: 'Log-uniform scales for learning rate, regularization strength: search over [10^&#123;-5&#125;, 10^&#123;0&#125;] rather than [0, 1]. Integer/categorical for tree depth, number of layers, activation functions.' },
+    { title: '6. Avoiding Overfitting to the Validation Set', desc: 'When tuning many hyperparameters on the same validation set, you risk overfitting to validation noise. Mitigations:  Nested cross-validation: The outer loop estimates the true performance of the entire tuning procedure.' },
 ];
 
 export default function WalkthroughMLFHyperparameterTuning() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFHyperparameterTuning() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Hyperparameter Tuning — Step by Step
+          Hyperparameter Tuning \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how hyperparameter tuning works, one stage at a time.

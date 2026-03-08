@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Screenshot Understanding', desc: 'The foundation of computer use agents begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Action Space', desc: 'At this stage, the key transformation occurs — the core mechanism that makes computer use agents work.' },
-    { title: '3. The Perception-Action Loop', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Error Recovery', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Screenshot Understanding', desc: 'The agent receives a screenshot (typically 1280x720 or 1920x1080 resolution) and must understand the visual layout: identify buttons, text fields, menus, dialog boxes, and their spatial relationships.' },
+    { title: '2. Action Space', desc: 'The agent controls the computer through a defined action space: mouse_move(x, y) positions the cursor, left_click() and right_click() simulate mouse buttons, type(text) enters text, key(combination) presses keyboard shortcuts (Ctrl+C, Alt+Tab), scroll(direction, amount) scrolls the page, and.' },
+    { title: '3. The Perception-Action Loop', desc: 'Computer use follows a tight loop: (1) Take a screenshot. (2) Analyze the screenshot to understand the current state.' },
+    { title: '4. Error Recovery', desc: 'Misclicks are inevitable. The agent clicks where it thinks a button is, but hits the wrong element due to imprecise coordinate prediction, a pop-up that appeared between screenshot and click, or a UI element that shifted during page loading.' },
 ];
 
 export default function WalkthroughAACComputerUseAgents() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACComputerUseAgents() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Computer Use Agents — Step by Step
+          Computer Use Agents \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how computer use agents works, one stage at a time.

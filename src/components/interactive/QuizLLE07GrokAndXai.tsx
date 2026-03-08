@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE07GrokAndXai() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Elon Musk\'s xAI built Grok from zero to frontier-competitive in under two years, open-sourcing the 314B parameter Grok-1, scaling on the massive Colossus GPU cluster, and reaching the top of LMArena rankings by late 2025 — embodying the "move fast, scale hard" philosophy.', isTrue: true, explanation: 'This captures the core purpose of Grok and xAI.' },
-    { text: 'Grok and xAI is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Grok and xAI is important for building on more advanced topics.' },
-    { text: 'Grok and xAI is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Grok and xAI is important for building on more advanced topics.' },
+    { text: 'Grok is just a meme model.', isTrue: false, explanation: 'Early versions of Grok leaned into humor and irreverence, which led some to dismiss it. By Grok-3, the model was a serious frontier competitor that topped major benchmarks and Elo rankings.' },
+    { text: '314B parameters, MoE (8 experts, top-2 routing), ~86B active parameters, open-sourced March 2024', isTrue: true, explanation: '314B parameters, MoE (8 experts, top-2 routing), ~86B active parameters, open-sourced March 2024' },
+    { text: 'xAI built everything from scratch.', isTrue: false, explanation: 'xAI recruited extensively from Google DeepMind, OpenAI, and other labs. The team brought deep institutional knowledge of how to train large models.' },
+    { text: 'Released August 2024, frontier-competitive, integrated with X platform', isTrue: true, explanation: 'Released August 2024, frontier-competitive, integrated with X platform' },
+    { text: 'More GPUs automatically means better models.', isTrue: false, explanation: 'While Colossus gave xAI an enormous compute advantage, the relationship between compute and model quality depends on data quality, training algorithms, and architectural choices. Compute is necessary but not sufficient.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

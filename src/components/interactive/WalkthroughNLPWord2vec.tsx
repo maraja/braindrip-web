@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Distributional Hypothesis', desc: 'The foundation of word2vec begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Skip-Gram Architecture', desc: 'At this stage, the key transformation occurs — the core mechanism that makes word2vec work.' },
-    { title: '3. CBOW (Continuous Bag of Words) Architecture', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Negative Sampling', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Training Details', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Distributional Hypothesis', desc: 'Word2Vec operationalizes the distributional hypothesis (Firth, 1957): "You shall know a word by the company it keeps." Words appearing in similar contexts should have similar representations.' },
+    { title: '2. Skip-Gram Architecture', desc: 'Given a target word, predict the surrounding context words within a window of size c. For the sentence "the cat sat on the mat" with window size 2, the target word "sat" generates training pairs: (sat, the), (sat, cat), (sat, on), (sat, the).' },
+    { title: '3. CBOW (Continuous Bag of Words) Architecture', desc: 'The reverse of Skip-gram: given the context words, predict the target word. CBOW averages the context word vectors and predicts the center word.' },
+    { title: '4. Negative Sampling', desc: 'Computing the full softmax over  words (often 100,000+) at every training step is prohibitively expensive. Negative sampling approximates this by training the model to distinguish the true context word from k randomly sampled "negative" words:  where sigma is the sigmoid function and P_n(w) is the.' },
+    { title: '5. Training Details', desc: 'Embedding dimension: 100-300 is standard. The original paper used 300 for Google News vectors.' },
 ];
 
 export default function WalkthroughNLPWord2vec() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPWord2vec() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Word2Vec — Step by Step
+          Word2Vec \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how word2vec works, one stage at a time.

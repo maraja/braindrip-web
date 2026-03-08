@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEPermissionBoundaryTesting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Evaluating whether agents respect authorization boundaries by systematically testing access controls, privilege escalation paths, and least-privilege adherence.', isTrue: true, explanation: 'This captures the core purpose of Permission Boundary Testing.' },
-    { text: 'Permission Boundary Testing is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Permission Boundary Testing is important for building on more advanced topics.' },
-    { text: 'Permission Boundary Testing is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Permission Boundary Testing is important for building on more advanced topics.' },
+    { text: 'If the API enforces permissions, the agent\'s behavior does not matter.', isTrue: false, explanation: 'Even with server-side enforcement, an agent that attempts unauthorized access reveals a design flaw. The attempt itself may trigger security alerts, log suspicious activity, or in some systems cause rate limiting that degrades legitimate operations.' },
+    { text: 'Least privilege is too restrictive for agents that need flexibility.', isTrue: false, explanation: 'Least privilege does not mean minimal capability -- it means the right capability at the right time. An agent can dynamically request elevated permissions when needed and relinquish them afterward.' },
+    { text: 'Permission testing is the same as authentication testing.', isTrue: false, explanation: 'Authentication verifies identity (who is the agent?). Permission testing verifies authorization (what can the agent do?).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

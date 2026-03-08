@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACAgentDeployment() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Health checks for agent services must go beyond HTTP 200: verify that the LLM provider is reachable, tool services are healthy, and the state store is accessible.', isTrue: true, explanation: 'This is a key technical detail of Agent Deployment.' },
-    { text: 'A "deep health check" runs a simple agent task end-to-end.', isTrue: true, explanation: 'This is a key technical detail of Agent Deployment.' },
-    { text: 'Deploying agents to production involves containerization, scaling strategies, version management of prompts and tools, and operational practices that account for agents being fundamentally harder to deploy than traditional APIs.', isTrue: true, explanation: 'This captures the core purpose of Agent Deployment.' },
+    { text: 'Deploying an agent is like deploying a microservice.', isTrue: false, explanation: 'Agents have non-deterministic behavior, variable latency (seconds to minutes), stateful execution, and quality that depends on external model providers. Standard microservice patterns are necessary but insufficient.' },
+    { text: 'verify that the LLM provider is reachable, tool services are healthy, and the state store is accessible.', isTrue: true, explanation: 'A "deep health check" runs a simple agent task end-to-end.' },
+    { text: 'set CPU, memory, and timeout limits per agent task to prevent runaway executions from consuming cluster resources', isTrue: true, explanation: 'set CPU, memory, and timeout limits per agent task to prevent runaway executions from consuming cluster resources' },
+    { text: 'if Claude Sonnet returns a 503, fall back to GPT-4o; if that fails, fall back to a local model for critical paths', isTrue: true, explanation: 'if Claude Sonnet returns a 503, fall back to GPT-4o; if that fails, fall back to a local model for critical paths' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

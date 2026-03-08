@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Cost-Quality-Latency Triangle', desc: 'The foundation of cost-latency optimization begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Model Routing Architecture', desc: 'At this stage, the key transformation occurs — the core mechanism that makes cost-latency optimization work.' },
-    { title: '3. Caching Architecture', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Latency Budget Design', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Token Budget Enforcement', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Cost-Quality-Latency Triangle', desc: 'Every design decision in an agent system trades off between these three dimensions. The first step is defining your constraints.' },
+    { title: '2. Model Routing Architecture', desc: 'Model routing is the highest-impact optimization pattern. The core insight: not every step in an agent workflow requires a frontier model.' },
+    { title: '3. Caching Architecture', desc: 'Caching eliminates redundant LLM calls entirely -- zero cost and zero latency for cache hits. Layer 1: Exact API cache.' },
+    { title: '4. Latency Budget Design', desc: 'A latency budget allocates the total acceptable response time across the components of an agent workflow. Example budget for a 10-second interactive agent:  Latency budget rules:  Always include a retry buffer (10-15% of total budget).' },
+    { title: '5. Token Budget Enforcement', desc: 'Token budgets cap the total tokens consumed per task to prevent cost blowouts from runaway agent loops. Hard caps: Absolute maximum tokens per task.' },
+    { title: '6. Measuring Optimization Impact', desc: 'Every optimization must be validated against the quality floor. The process:  Baseline: Measure cost, latency, and quality on a representative evaluation set using the unoptimized architecture.' },
 ];
 
 export default function WalkthroughADPCostLatencyOptimization() {
@@ -17,10 +18,10 @@ export default function WalkthroughADPCostLatencyOptimization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Cost-Latency Optimization — Step by Step
+          Cost-Latency Optimization \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how cost-latency optimization works, one stage at a time.

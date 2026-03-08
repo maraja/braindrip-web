@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizMLFBaggingAndBootstrap() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Base learner choice: Bagging benefits models with high variance and low bias -- deep, unpruned decision trees are the canonical choice.', isTrue: true, explanation: 'This is a key technical detail of Bagging and Bootstrap.' },
-    { text: 'Linear models gain little from bagging because they are already low-variance.', isTrue: true, explanation: 'This is a key technical detail of Bagging and Bootstrap.' },
-    { text: 'Number of models $B$: Unlike boosting, bagging does not overfit as $B$ increases.', isTrue: true, explanation: 'This is a key technical detail of Bagging and Bootstrap.' },
+    { text: 'Bagging always improves any model.', isTrue: false, explanation: 'Bagging primarily reduces variance. For high-bias models (e.g., shallow trees, linear regression), bagging provides negligible improvement because averaging biased estimators does not remove the bias.' },
+    { text: 'Bagging benefits models with high variance and low bias -- deep, unpruned decision trees are the canonical choice.', isTrue: true, explanation: 'Linear models gain little from bagging because they are already low-variance.' },
+    { text: 'More bagged models always means better performance.', isTrue: false, explanation: 'Performance plateaus once variance has been reduced to its floor (the ^2 term). Beyond that point, additional models increase computation without improving accuracy.' },
+    { text: 'Unlike boosting, bagging does not overfit as B increases.', isTrue: true, explanation: 'Performance monotonically improves and plateaus. Typical values range from 100 to 500.' },
+    { text: 'Bootstrap samples are independent.', isTrue: false, explanation: 'The bootstrap samples overlap substantially (~63.2% unique overlap on average), which introduces correlation between the trained models. This correlation limits the variance reduction achievable by averaging.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPWord2vec() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Vocabulary size: The pre-trained Google News vectors contain 3 million words/phrases, each as a 300-dimensional vector.', isTrue: true, explanation: 'This is a key technical detail of Word2Vec.' },
-    { text: 'Analogy task accuracy: On the original word analogy benchmark (19,544 questions), Word2Vec Skip-gram achieved ~65% accuracy on semantic analogies and ~70% on syntactic analogies.', isTrue: true, explanation: 'This is a key technical detail of Word2Vec.' },
-    { text: 'Embedding dimensions: Diminishing returns above 300 dimensions.', isTrue: true, explanation: 'This is a key technical detail of Word2Vec.' },
+    { text: 'Word2Vec understands word meaning.', isTrue: false, explanation: 'Word2Vec captures distributional similarity, not meaning. It places "good" and "bad" near each other because they appear in similar syntactic contexts ("that was ___"), despite being antonyms.' },
+    { text: 'The pre-trained Google News vectors contain 3 million words/phrases, each as a 300-dimensional vector.', isTrue: true, explanation: 'The pre-trained Google News vectors contain 3 million words/phrases, each as a 300-dimensional vector.' },
+    { text: 'The king-queen analogy always works perfectly.', isTrue: false, explanation: 'The analogy task has a success rate of about 65-75%, not 100%. Many analogies fail, especially for less frequent words or abstract relationships.' },
+    { text: 'On the original word analogy benchmark (19,544 questions), Word2Vec Skip-gram achieved ~65% accuracy on semantic analogies and ~70% on syntactic analogies.', isTrue: true, explanation: 'On the original word analogy benchmark (19,544 questions), Word2Vec Skip-gram achieved ~65% accuracy on semantic analogies and ~70% on syntactic analogies.' },
+    { text: 'Larger corpora always produce better embeddings.', isTrue: false, explanation: 'Corpus domain matters more than size for downstream tasks. Word2Vec trained on 1 billion words of biomedical text outperforms Google News vectors (100 billion words) on biomedical NLP tasks.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

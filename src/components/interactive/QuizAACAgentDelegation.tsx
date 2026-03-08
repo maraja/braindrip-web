@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACAgentDelegation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'routing: Some systems spawn new agent instances for each subtask (fresh context, full isolation).', isTrue: true, explanation: 'This is a key technical detail of Agent Delegation.' },
-    { text: 'Others route to pre-configured agent types (faster startup, shared configuration).', isTrue: true, explanation: 'This is a key technical detail of Agent Delegation.' },
-    { text: 'Spawning is more flexible; routing is more efficient.', isTrue: true, explanation: 'This is a key technical detail of Agent Delegation.' },
+    { text: 'The manager agent just needs to split the task', isTrue: false, explanation: ': Task splitting is the easy part. The hard part is writing clear specifications for each sub-agent, providing the right context, handling failures, and synthesizing potentially contradictory results.' },
+    { text: 'Some systems spawn new agent instances for each subtask (fresh context, full isolation).', isTrue: true, explanation: 'Others route to pre-configured agent types (faster startup, shared configuration). Spawning is more flexible; routing is more efficient.' },
+    { text: 'The manager should allocate token budgets to sub-agents based on subtask complexity.', isTrue: true, explanation: 'A simple lookup task gets a small budget; a complex analysis task gets more. This prevents sub-agents from rambling or the overall system from exceeding cost limits.' },
+    { text: 'When a sub-agent fails, the manager must decide: retry with adjusted instructions, assign to a different agent, skip the subtask, or escalate to the user.', isTrue: true, explanation: 'Robust delegation includes failure handling at the manager level.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

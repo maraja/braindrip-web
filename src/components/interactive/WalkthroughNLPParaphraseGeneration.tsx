@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Pivot-Based Paraphrasing (Round-Trip Translation)', desc: 'The foundation of paraphrase generation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Neural Paraphrase Models', desc: 'At this stage, the key transformation occurs — the core mechanism that makes paraphrase generation work.' },
-    { title: '3. Syntactic Control', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Evaluation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Pivot-Based Paraphrasing (Round-Trip Translation)', desc: 'The simplest neural paraphrase method leverages existing MT systems: translate the input to an intermediate (pivot) language and translate back. For example, English to German to English.' },
+    { title: '2. Neural Paraphrase Models', desc: 'Dedicated seq2seq models trained on paraphrase corpora:  Supervised Seq2Seq: Train an encoder-decoder (e.g., LSTM or Transformer) on aligned paraphrase pairs from datasets like ParaNMT-50M (Wieting and Gimpel, 2018), which contains 50 million paraphrase pairs derived from back-translation of the.' },
+    { title: '3. Syntactic Control', desc: 'Controlling the syntactic structure of paraphrases enables targeted augmentation and style transfer:  Template-based: Specify a target constituency parse template (e.g., S -&gt; NP VP -&gt; NP VP PP) and generate a paraphrase fitting that structure.' },
+    { title: '4. Evaluation', desc: 'Paraphrase quality requires measuring two competing objectives:  Semantic Similarity: The paraphrase must preserve meaning. Measured via: Sentence embedding cosine similarity (e.g., using Sentence-BERT; good paraphrases score &gt; 0.85).' },
 ];
 
 export default function WalkthroughNLPParaphraseGeneration() {
@@ -16,10 +16,10 @@ export default function WalkthroughNLPParaphraseGeneration() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Paraphrase Generation — Step by Step
+          Paraphrase Generation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how paraphrase generation works, one stage at a time.

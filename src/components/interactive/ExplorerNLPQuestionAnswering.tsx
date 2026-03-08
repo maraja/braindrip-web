@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'SQuAD 1.1', detail: '(Rajpurkar et al., 2016): 107K extractive QA pairs over Wikipedia paragraphs. **SQuAD 2.0** adds 53K unanswerable questions, requiring models to know when they do not know.' },
+    { label: 'SQuAD 1.1', detail: '(Rajpurkar et al., 2016): 107K extractive QA pairs over Wikipedia paragraphs. SQuAD 2.0 adds 53K unanswerable questions, requiring models to know when they do not know.' },
     { label: 'Natural Questions', detail: '(Kwiatkowski et al., 2019): 307K questions from real Google search queries with long and short answer annotations from full Wikipedia articles.' },
     { label: 'HotpotQA', detail: '(Yang et al., 2018): 113K multi-hop questions with sentence-level evidence annotations.' },
     { label: 'TriviaQA', detail: '(Joshi et al., 2017): 95K question-answer pairs sourced from trivia enthusiasts, with evidence documents.' },
@@ -18,10 +18,10 @@ export default function ExplorerNLPQuestionAnswering() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Question Answering — Key Details Explorer
+          Question Answering \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of question answering.
+          Click each card to explore the technical details.
         </p>
       </div>
 

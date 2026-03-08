@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLPolicies() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Policy gradient theorem (Sutton et al., 2000): $\\nabla_\\theta J(\\theta) = \\mathbb&#123;E&#125;_\\pi \\left[ \\nabla_\\theta \\log \\pi_\\theta(a \\mid s) \\cdot Q^\\pi(s, a) \\right]$.', isTrue: true, explanation: 'This is a key technical detail of Policies.' },
-    { text: 'This enables gradient-based optimization of stochastic policies.', isTrue: true, explanation: 'This is a key technical detail of Policies.' },
-    { text: 'A stationary policy does not change over time: $\\pi(a \\mid s)$ is independent of $t$.', isTrue: true, explanation: 'This is a key technical detail of Policies.' },
+    { text: 'A stochastic policy is always suboptimal.', isTrue: false, explanation: 'In fully observable MDPs, a deterministic optimal policy always exists. But stochastic policies can be optimal in POMDPs and are necessary in competitive multi-agent games.' },
+    { text: '_ J() = &#123;E&#125;_ [ _  _(a  s)  Q^(s, a) ].', isTrue: true, explanation: 'This enables gradient-based optimization of stochastic policies.' },
+    { text: 'Policy-based and value-based methods are fundamentally different.', isTrue: false, explanation: 'They are deeply connected. Value-based methods implicitly define a policy (greedy w.r.t.' },
+    { text: 'The optimal policy is unique.', isTrue: false, explanation: 'Multiple policies can be optimal if they achieve the same maximum value in all states but differ in states where multiple actions are equally good (ties in _a Q^*(s, a)).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

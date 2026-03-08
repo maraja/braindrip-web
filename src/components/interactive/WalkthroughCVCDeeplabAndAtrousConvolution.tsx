@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Atrous (Dilated) Convolution', desc: 'The foundation of deeplab and atrous convolution begins with understanding its core input requirements and initial setup.' },
-    { title: '2. DeepLab v1 (2015)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes deeplab and atrous convolution work.' },
-    { title: '3. DeepLab v2 (2017)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. DeepLab v3 (2017)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. DeepLab v3+ (2018)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Atrous (Dilated) Convolution', desc: 'A standard 2D convolution computes:  [equation]  An atrous convolution with dilation rate r computes:  [equation]  The effective receptive field of a k x k kernel with rate r is k_e = k + (k-1)(r-1).' },
+    { title: '2. DeepLab v1 (2015)', desc: 'Adapted VGG-16 by replacing the last two max-pooling layers with atrous convolutions (rates 2 and 4), maintaining an output stride of 8 instead of 32. Applied a dense CRF as post-processing to sharpen boundaries.' },
+    { title: '3. DeepLab v2 (2017)', desc: 'Introduced Atrous Spatial Pyramid Pooling (ASPP): parallel atrous convolutions at multiple dilation rates applied to the same feature map, capturing objects at different scales simultaneously. Each branch captures context at a different spatial scale.' },
+    { title: '4. DeepLab v3 (2017)', desc: 'Improved ASPP with batch normalization and an additional global average pooling branch (image-level features) to capture whole-image context. Removed the CRF post-processing -- the network alone was strong enough.' },
+    { title: '5. DeepLab v3+ (2018)', desc: 'Added a lightweight decoder module inspired by encoder-decoder architectures:  ASPP output (output stride 16) is upsampled 4x with bilinear interpolation. Concatenated with low-level features from an early encoder layer (after 1x1 conv to reduce channels to 48).' },
+    { title: '6. Output Stride', desc: 'A critical hyperparameter. Output stride = (input resolution) / (feature map resolution): Stride 32: standard classification network.' },
 ];
 
 export default function WalkthroughCVCDeeplabAndAtrousConvolution() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCDeeplabAndAtrousConvolution() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          DeepLab and Atrous Convolution — Step by Step
+          DeepLab and Atrous Convolution \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how deeplab and atrous convolution works, one stage at a time.

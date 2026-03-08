@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Inspecting Current State', desc: 'The foundation of state inspection and replay begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Walking Through State History', desc: 'At this stage, the key transformation occurs — the core mechanism that makes state inspection and replay work.' },
-    { title: '3. Replaying from a Specific Checkpoint', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Branching with Modified State', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Practical Debugging Workflow', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Inspecting Current State', desc: 'get_state() returns the current state of a thread along with metadata about what would execute next:' },
+    { title: '2. Walking Through State History', desc: 'get_state_history() returns every checkpoint in reverse chronological order:' },
+    { title: '3. Replaying from a Specific Checkpoint', desc: 'To resume execution from a historical checkpoint, include its checkpoint_id in the config:' },
+    { title: '4. Branching with Modified State', desc: 'You can also modify state before replaying, creating an alternative execution branch:' },
 ];
 
 export default function WalkthroughLGAStateInspectionAndReplay() {
@@ -17,10 +16,10 @@ export default function WalkthroughLGAStateInspectionAndReplay() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          State Inspection and Replay — Step by Step
+          State Inspection and Replay \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how state inspection and replay works, one stage at a time.

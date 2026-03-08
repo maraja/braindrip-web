@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEManyShotPrompting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Many-shot typically uses 20-500+ examples, consuming 2,000-50,000+ tokens depending on example length.', isTrue: true, explanation: 'This is a key technical detail of Many-Shot Prompting.' },
-    { text: 'Most quality gains are achieved by ~50 examples; the 50-to-200 range yields 2-5% additional improvement on most tasks.', isTrue: true, explanation: 'This is a key technical detail of Many-Shot Prompting.' },
-    { text: '(2024) showed many-shot ICL matching fine-tuned performance on GSM8K (math), MATH, and several NLU benchmarks.', isTrue: true, explanation: 'This is a key technical detail of Many-Shot Prompting.' },
+    { text: 'Many-shot is just few-shot with more examples.', isTrue: false, explanation: 'The quality dynamics change at scale. Many-shot can teach patterns that few-shot cannot, including novel task types and fine-grained distinctions that require dozens of examples to disambiguate.' },
+    { text: 'You need hundreds of examples for many-shot to work.', isTrue: false, explanation: 'The steepest quality gains are from 10 to 50 examples. Going from 50 to 500 provides much smaller improvements.' },
+    { text: 'Many-shot replaces fine-tuning.', isTrue: false, explanation: 'For high-volume applications, fine-tuning is more cost-efficient because examples are baked into model weights rather than repeated in every API call. Many-shot is best for low-to-medium volume or rapidly changing tasks where fine-tuning iteration speed is a bottleneck.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

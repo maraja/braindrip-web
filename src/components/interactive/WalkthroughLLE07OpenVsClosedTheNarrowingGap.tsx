@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Chasm (17.5 MMLU Points)', desc: 'The foundation of open vs closed: the narrowing gap begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Rapid Convergence (5 MMLU Points)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes open vs closed: the narrowing gap work.' },
-    { title: '3. Near-Parity on Core Tasks', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Late 2025 / Early 2026: The Sub-1% Gap on Coding', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Drivers of Convergence', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. 2023: The Chasm (17.5 MMLU Points)', desc: 'When Meta released LLaMA 1 (February 2023) with 65B parameters, it scored approximately 63.4% on MMLU. GPT-4, released the following month, scored approximately 86.4%.' },
+    { title: '2. 2024: Rapid Convergence (5 MMLU Points)', desc: 'LLaMA 3.1 405B (July 2024) scored approximately 88% on MMLU, while GPT-4o sat at approximately 88.7%. The gap had collapsed to under a single point on the benchmark that had defined the frontier for four years.' },
+    { title: '3. 2025: Near-Parity on Core Tasks', desc: 'By 2025, multiple open models matched or exceeded closed frontier models on specific dimensions:  Reasoning: DeepSeek R1 (January 2025) matched OpenAI o1 on mathematical and scientific reasoning benchmarks.' },
+    { title: '4. Late 2025 / Early 2026: The Sub-1% Gap on Coding', desc: 'By February 2026, the open-closed gap on the most consequential benchmark — SWE-bench Verified, measuring real-world software engineering — had narrowed to a margin barely distinguishable from noise. Claude Opus 4.5 led at 80.9%, but MiniMax M2.5, an open-weight model, reached 80.' },
+    { title: '5. The Drivers of Convergence', desc: 'Several factors explain why the gap closed so quickly:  Training data improvements: Open datasets like FineWeb, RedPajama, and Dolma reached trillions of tokens of curated, high-quality text. The "data moat" that closed labs once held evaporated as open data curation caught up.' },
+    { title: '6. Where the Gap Persists', desc: 'Despite the convergence on benchmarks, closed models maintained meaningful advantages in several areas as of mid-2025 — though even these edges continued to erode. Multimodal capabilities — especially audio and video — remained stronger in closed models with proprietary training data.' },
 ];
 
 export default function WalkthroughLLE07OpenVsClosedTheNarrowingGap() {
@@ -17,10 +18,10 @@ export default function WalkthroughLLE07OpenVsClosedTheNarrowingGap() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Open vs Closed: The Narrowing Gap — Step by Step
+          Open vs Closed: The Narrowing Gap \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how open vs closed: the narrowing gap works, one stage at a time.

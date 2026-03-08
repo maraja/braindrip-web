@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAStateInspectionAndReplay() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'get_state() returns a StateSnapshot with values, next, config, metadata, and parent_config.', isTrue: true, explanation: 'This is a key technical detail of State Inspection and Replay.' },
-    { text: 'get_state_history() yields snapshots in reverse chronological order (newest first).', isTrue: true, explanation: 'This is a key technical detail of State Inspection and Replay.' },
-    { text: 'Each snapshot\'s config contains a unique checkpoint_id that identifies that exact point in time.', isTrue: true, explanation: 'This is a key technical detail of State Inspection and Replay.' },
+    { text: 'Replay re-runs the entire graph from the start.', isTrue: false, explanation: 'Replay starts from the specified checkpoint. All state up to that point is restored from the saved snapshot, and only subsequent nodes are re-executed.' },
+    { text: 'Checkpointers let you inspect the current state, walk through the full history, and replay execution from any previous checkpoint -- enabling time travel for debugging and recovery.', isTrue: true, explanation: 'This captures the core definition of State Inspection and Replay.' },
+    { text: 'State Inspection and Replay is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding State Inspection and Replay is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

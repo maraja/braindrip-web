@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE05DistributedTrainingInfrastructure() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'GPT-3 (2020): Trained on ~1,000 V100 GPUs.', isTrue: true, explanation: 'This is a key technical detail of Distributed Training Infrastructure.' },
-    { text: 'Estimated $4.6M compute cost.', isTrue: true, explanation: 'This is a key technical detail of Distributed Training Infrastructure.' },
-    { text: 'PaLM (Apr 2022): 540B params, 6,144 TPUv4 chips, Pathways system.', isTrue: true, explanation: 'This is a key technical detail of Distributed Training Infrastructure.' },
+    { text: 'You just need more GPUs to train a bigger model.', isTrue: false, explanation: 'Adding GPUs without proper parallelism strategy can actually slow training due to communication overhead. Efficient distributed training requires careful co-design of parallelism strategies, network topology, and batch scheduling.' },
+    { text: 'Trained on ~1,000 V100 GPUs.', isTrue: true, explanation: 'Estimated $4.6M compute cost. 3D parallelism.' },
+    { text: 'Data parallelism is enough for any model.', isTrue: false, explanation: 'Pure data parallelism requires the full model to fit on each GPU. For models above ~3B parameters on 80GB GPUs, some form of model parallelism (TP, PP, or ZeRO-3) is mandatory.' },
+    { text: '540B params, 6,144 TPUv4 chips, Pathways system.', isTrue: true, explanation: '540B params, 6,144 TPUv4 chips, Pathways system.' },
+    { text: 'Distributed training is just an engineering problem, not a research problem.', isTrue: false, explanation: 'DeepSeek\'s DualPipe, Google\'s Pathways, and DeepSpeed\'s ZeRO represent genuine research innovations that required novel algorithms and mathematical analysis, not just implementation effort.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

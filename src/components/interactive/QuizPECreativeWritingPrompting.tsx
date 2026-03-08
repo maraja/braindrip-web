@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPECreativeWritingPrompting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Style exemplars (2-3 sample paragraphs demonstrating the desired voice) improve voice consistency by 30-40% compared to verbal style descriptions alone.', isTrue: true, explanation: 'This is a key technical detail of Creative Writing Prompting.' },
-    { text: 'Temperature settings of 0.5-0.7 produce the best trade-off between creativity and coherence for most creative writing tasks.', isTrue: true, explanation: 'This is a key technical detail of Creative Writing Prompting.' },
-    { text: 'Creative constraints (write without certain words, structural limits) reduce cliche usage by 25-35% compared to unconstrained generation.', isTrue: true, explanation: 'This is a key technical detail of Creative Writing Prompting.' },
+    { text: 'More detailed instructions produce better creative writing.', isTrue: false, explanation: 'Over-specification kills creativity. Prompts that dictate sentence structure, word choice, and every plot point produce mechanical output.' },
+    { text: 'High temperature equals more creative.', isTrue: false, explanation: 'High temperature increases randomness, not creativity. True creativity involves making unexpected connections that work — high temperature increases unexpected choices but does not ensure they are good ones.' },
+    { text: '\'Write in the style of [author]\' is a complete style instruction.', isTrue: false, explanation: 'Models approximate well-known authors\' most surface-level characteristics. For nuanced style control, you must identify and specify the specific techniques, patterns, and preferences that define the style.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

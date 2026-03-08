@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGATokenStreaming() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Each chunk is a (BaseMessageChunk, dict) tuple -- typically AIMessageChunk for LLM responses.', isTrue: true, explanation: 'This is a key technical detail of Token Streaming.' },
-    { text: 'The metadata dict always contains langgraph_node identifying the source node.', isTrue: true, explanation: 'This is a key technical detail of Token Streaming.' },
-    { text: 'The LLM must support streaming; most modern providers (OpenAI, Anthropic, Google) do by default.', isTrue: true, explanation: 'This is a key technical detail of Token Streaming.' },
+    { text: 'Token streaming requires special LLM configuration.', isTrue: false, explanation: 'Most LangChain chat model wrappers stream by default. You rarely need to set streaming=True explicitly.' },
+    { text: 'The "messages" stream mode delivers LLM output token-by-token as (message_chunk, metadata) tuples, enabling responsive real-time chat interfaces.', isTrue: true, explanation: 'This captures the core definition of Token Streaming.' },
+    { text: 'Token Streaming is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Token Streaming is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

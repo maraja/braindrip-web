@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFLogisticRegression() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Convex loss: Cross-entropy is convex, so any local minimum is the global minimum.', isTrue: true, explanation: 'This is a key technical detail of Logistic Regression.' },
-    { text: 'No closed-form solution: Must use iterative optimization (gradient descent, Newton\'s method, L-BFGS).', isTrue: true, explanation: 'This is a key technical detail of Logistic Regression.' },
-    { text: 'Feature scaling matters: Gradient descent converges faster with standardized features.', isTrue: true, explanation: 'This is a key technical detail of Logistic Regression.' },
+    { text: 'Logistic regression is a regression algorithm.', isTrue: false, explanation: 'Despite the name, it is a classifier. The "regression" refers to estimating a continuous probability, but the task is classification.' },
+    { text: 'Cross-entropy is convex, so any local minimum is the global minimum.', isTrue: true, explanation: 'Cross-entropy is convex, so any local minimum is the global minimum.' },
+    { text: 'Must use iterative optimization (gradient descent, Newton\'s method, L-BFGS).', isTrue: true, explanation: 'Must use iterative optimization (gradient descent, Newton\'s method, L-BFGS).' },
+    { text: 'Gradient descent converges faster with standardized features.', isTrue: true, explanation: 'Gradient descent converges faster with standardized features.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -3,7 +3,7 @@ import { useState } from 'react';
 const DETAILS = [
     { label: 'Results', detail: 'DQN achieved superhuman performance on 29 of 49 tested Atari games, measured against professional human game testers.' },
     { label: 'Star performers', detail: 'Breakout (score: 401 vs. human 31), Pong (21 vs. human 9.3), Video Pinball (42,684 vs. human 17,298).' },
-    { label: 'Failure cases', detail: 'Montezuma\'s Revenge (score: 0 vs. human 4,367), requiring deep exploration and long-horizon planning. This failure motivated an entire subfield of exploration research (see `curiosity-driven-exploration.md`).' },
+    { label: 'Failure cases', detail: 'Montezuma\'s Revenge (score: 0 vs. human 4,367), requiring deep exploration and long-horizon planning. This failure motivated an entire subfield of exploration research (see curiosity-driven-exploration.md).' },
     { label: 'Replay buffer size', detail: '1 million transitions (~7 GB of pixel data in the original implementation).' },
     { label: 'Reward clipping', detail: 'All positive rewards were clipped to +1 and negative to -1, sacrificing score magnitude information for training stability across games.' },
     { label: 'No-op starts', detail: 'At episode start, a random number (1--30) of no-op actions were executed to provide stochastic initial conditions.' },
@@ -20,10 +20,10 @@ export default function ExplorerRLAtariAndArcadeGames() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Atari and Arcade Games — Key Details Explorer
+          Atari and Arcade Games \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of atari and arcade games.
+          Click each card to explore the technical details.
         </p>
       </div>
 

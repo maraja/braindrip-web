@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE03AlignmentMethodEvolution() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'InstructGPT RLHF (Jan 2022): 40 contractors, ~37K training prompts, PPO with KL penalty.', isTrue: true, explanation: 'This is a key technical detail of Alignment Method Evolution.' },
-    { text: 'Cost: months of annotation.', isTrue: true, explanation: 'This is a key technical detail of Alignment Method Evolution.' },
-    { text: 'Constitutional AI (Dec 2022): 16 constitutional principles, self-critique then RLAIF.', isTrue: true, explanation: 'This is a key technical detail of Alignment Method Evolution.' },
+    { text: 'RLHF is still the best alignment method.', isTrue: false, explanation: 'For most practical purposes, DPO and its variants achieve comparable alignment quality with far less complexity. RLHF\'s advantage appears mainly at the frontier of very large models with complex safety requirements.' },
+    { text: '40 contractors, ~37K training prompts, PPO with KL penalty.', isTrue: true, explanation: 'Cost: months of annotation.' },
+    { text: 'Alignment is a solved problem.', isTrue: false, explanation: 'Current methods align well for helpfulness but struggle with subtle safety properties. Models can be aligned to be helpful while still being manipulable, sycophantic, or deceptive in edge cases.' },
+    { text: '16 constitutional principles, self-critique then RLAIF.', isTrue: true, explanation: '16 constitutional principles, self-critique then RLAIF.' },
+    { text: 'DPO completely replaces RLHF.', isTrue: false, explanation: 'Frontier labs (OpenAI, Anthropic, Google) still use RLHF variants for their most capable models. DPO dominates in the open-source ecosystem where simplicity and reproducibility matter most.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

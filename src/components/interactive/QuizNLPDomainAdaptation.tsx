@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPDomainAdaptation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'BioBERT pre-training: ~23 days on 8 NVIDIA V100 GPUs for biomedical domain adaptation; used the same vocabulary as BERT.', isTrue: true, explanation: 'This is a key technical detail of Domain Adaptation.' },
-    { text: 'SciBERT pre-training: ~1 week on a single TPU v3-8; learned a new 31K-token vocabulary from scientific text.', isTrue: true, explanation: 'This is a key technical detail of Domain Adaptation.' },
-    { text: 'Typical DAPT budget: 50M-1B tokens of domain text, trained for 12.5K-100K steps with the same MLM objective and hyperparameters as original pre-training.', isTrue: true, explanation: 'This is a key technical detail of Domain Adaptation.' },
+    { text: 'Domain adaptation requires pre-training from scratch.', isTrue: false, explanation: 'The whole point of domain adaptation is to avoid pre-training from scratch. Starting from a general pre-trained model and continuing on domain text is 10-100x cheaper than training a new model from scratch, and performs comparably or better because the general model provides a strong linguistic foundation.' },
+    { text: '~23 days on 8 NVIDIA V100 GPUs for biomedical domain adaptation; used the same vocabulary as BERT.', isTrue: true, explanation: '~23 days on 8 NVIDIA V100 GPUs for biomedical domain adaptation; used the same vocabulary as BERT.' },
+    { text: 'Any domain needs its own adapted model.', isTrue: false, explanation: 'Domain adaptation is most valuable when the target domain differs substantially from the general pre-training corpus. For domains well-represented in Common Crawl or Wikipedia (e.g., sports, technology news), general models already perform well, and the cost of domain adaptation may not be justified.' },
+    { text: '~1 week on a single TPU v3-8; learned a new 31K-token vocabulary from scientific text.', isTrue: true, explanation: '~1 week on a single TPU v3-8; learned a new 31K-token vocabulary from scientific text.' },
+    { text: 'More domain data always helps.', isTrue: false, explanation: 'Returns diminish rapidly after 500M-1B tokens of domain text. Beyond this point, the marginal improvement per additional token drops close to zero.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

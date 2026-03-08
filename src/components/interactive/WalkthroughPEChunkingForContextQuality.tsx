@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Chunking Strategies', desc: 'The foundation of chunking for context quality begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Overlap Strategies', desc: 'At this stage, the key transformation occurs — the core mechanism that makes chunking for context quality work.' },
-    { title: '3. Optimal Sizes by Use Case', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Metadata Enrichment', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Chunking Strategies', desc: 'Fixed-size chunking splits documents at regular token or character intervals (e.g., every 512 tokens). This is simple and predictable but often breaks mid-sentence or mid-paragraph, producing fragments that lack coherence.' },
+    { title: '2. Overlap Strategies', desc: 'Chunk overlap — repeating a portion of text at the boundary between adjacent chunks — addresses the problem of information split across chunk boundaries. Common approaches include:  Fixed overlap: 10-20% of chunk size (e.g.' },
+    { title: '3. Optimal Sizes by Use Case', desc: 'Chunk size selection should be driven by the downstream task:  Question answering: 256-512 tokens. Smaller chunks improve precision — the model gets focused, relevant context without noise.' },
+    { title: '4. Metadata Enrichment', desc: 'Raw chunks lose document-level context. Metadata enrichment adds structural information back:  Parent document reference: Link each chunk to its source document, section, and page Contextual header prepending: Prepend the document title and section heading to each chunk (e.g.' },
 ];
 
 export default function WalkthroughPEChunkingForContextQuality() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEChunkingForContextQuality() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Chunking for Context Quality — Step by Step
+          Chunking for Context Quality \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how chunking for context quality works, one stage at a time.

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture: Three Components', desc: 'The foundation of segment anything begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Ambiguity-Aware Output', desc: 'At this stage, the key transformation occurs — the core mechanism that makes segment anything work.' },
-    { title: '3. Data Engine and SA-1B Dataset', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Training', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Architecture: Three Components', desc: 'Image Encoder  A Vision Transformer (ViT-H by default) that processes the input image once to produce image embeddings: Input: 1024x1024 image (resized and padded). Architecture: ViT-H with 632M parameters, pre-trained with MAE (Masked Autoencoder).' },
+    { title: '2. Ambiguity-Aware Output', desc: 'A single point click can be ambiguous: clicking on a person\'s eye could mean "the eye," "the face," or "the whole person." SAM addresses this by predicting three masks at different granularity levels and a confidence score for each. The user or downstream system selects the appropriate one.' },
+    { title: '3. Data Engine and SA-1B Dataset', desc: 'SAM\'s dataset was built in three phases:  Assisted-manual (4.3M masks): human annotators used SAM (early version) as a tool, correcting and adding masks. Semi-automatic (5.9M masks): SAM generated confident masks automatically; annotators labeled remaining unannotated objects.' },
+    { title: '4. Training', desc: 'Loss: focal loss + dice loss on the predicted masks, plus MSE on IoU predictions. Prompt simulation: during training, prompts are simulated by sampling foreground/background points and bounding boxes from ground-truth masks.' },
 ];
 
 export default function WalkthroughCVCSegmentAnything() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCSegmentAnything() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Segment Anything — Step by Step
+          Segment Anything \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how segment anything works, one stage at a time.

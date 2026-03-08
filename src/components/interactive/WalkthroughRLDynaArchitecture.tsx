@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Dyna-Q Algorithm', desc: 'The foundation of the dyna architecture begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Planning-Learning Spectrum', desc: 'At this stage, the key transformation occurs — the core mechanism that makes the dyna architecture work.' },
-    { title: '3. The Effect of Planning Steps', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Dyna with Prioritized Sweeping', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. When the Model Is Wrong', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Dyna-Q Algorithm', desc: 'Dyna-Q extends tabular Q-learning with model learning and planning. At each real timestep:  Step 1 -- Act: Select action a in state s using an -greedy policy derived from Q.' },
+    { title: '2. The Planning-Learning Spectrum', desc: 'Dyna reveals that planning and learning are not fundamentally different operations. Both perform the same kind of update to the value function:  [equation]  The only difference is the source of the target: real experience (learning) or model-generated experience (planning).' },
+    { title: '3. The Effect of Planning Steps', desc: 'Sutton\'s original experiments on a simple gridworld maze showed dramatic results. With n = 50 planning steps per real step, the agent solved the maze in roughly 3 episodes.' },
+    { title: '4. Dyna with Prioritized Sweeping', desc: 'Random sampling of states for planning is wasteful. Prioritized sweeping (Moore & Atkeson, 1993) focuses planning on states whose values are most likely to change.' },
+    { title: '5. When the Model Is Wrong', desc: 'Dyna\'s critical vulnerability is model inaccuracy. If the environment changes (a shortcut opens, a wall appears), the model reflects the old environment, and planning propagates stale information.' },
 ];
 
 export default function WalkthroughRLDynaArchitecture() {
@@ -17,10 +17,10 @@ export default function WalkthroughRLDynaArchitecture() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The Dyna Architecture — Step by Step
+          The Dyna Architecture \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how the dyna architecture works, one stage at a time.

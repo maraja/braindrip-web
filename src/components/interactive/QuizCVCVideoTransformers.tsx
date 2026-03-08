@@ -2,8 +2,8 @@ import { useState } from 'react';
 export default function QuizCVCVideoTransformers() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Video transformers apply self-attention to spatiotemporal tokens extracted from video, achieving strong accuracy but facing a quadratic cost challenge that demands factorized attention strategies.', isTrue: true, explanation: 'This captures the core purpose of Video Transformers.' },
-    { text: 'Video Transformers is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Video Transformers is important for building on more advanced topics.' },
+    { text: 'Video transformers always outperform 3D CNNs.', isTrue: false, explanation: 'On datasets where temporal reasoning is critical (Something-Something V2), transformers show clear advantages. On appearance-dominated datasets (Kinetics), the gap over well-tuned 3D CNNs like SlowFast is modest (1--3%).' },
+    { text: 'Video transformers apply self-attention to spatiotemporal tokens extracted from video, achieving strong accuracy but facing a quadratic cost challenge that demands factorized attention strategies.', isTrue: true, explanation: 'This captures the core definition of Video Transformers.' },
     { text: 'Video Transformers is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Video Transformers is important for building on more advanced topics.' },
   ];
   return (

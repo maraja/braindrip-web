@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'State graphs', detail: 'in LangGraph are compiled once and executed many times, with each execution (\"thread\") maintaining its own state checkpoint history' },
+    { label: 'State graphs', detail: 'in LangGraph are compiled once and executed many times, with each execution ("thread") maintaining its own state checkpoint history' },
     { label: 'Conditional edges', detail: 'use Python functions that inspect the current state and return the name of the next node to execute' },
-    { label: 'Parallel execution', detail: 'in LangGraph uses the `Send` API to dispatch multiple copies of a node with different inputs' },
+    { label: 'Parallel execution', detail: 'in LangGraph uses the Send API to dispatch multiple copies of a node with different inputs' },
     { label: 'Checkpointing', detail: 'persists state to a database (SQLite, PostgreSQL) after each step, enabling resume-from-failure and time-travel debugging' },
     { label: 'Streaming', detail: 'allows orchestrators to emit intermediate results (partial LLM outputs, tool call progress) before the full execution completes' },
     { label: 'Subgraphs', detail: 'enable compositional orchestration: a single node in a parent graph can itself be an entire agent graph' },
@@ -20,10 +20,10 @@ export default function ExplorerAACAgentOrchestration() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agent Orchestration — Key Details Explorer
+          Agent Orchestration \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of agent orchestration.
+          Click each card to explore the technical details.
         </p>
       </div>
 

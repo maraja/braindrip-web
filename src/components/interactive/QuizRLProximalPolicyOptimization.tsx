@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLProximalPolicyOptimization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Clipping parameter $\\epsilon$: 0.2 is the near-universal default.', isTrue: true, explanation: 'This is a key technical detail of Proximal Policy Optimization (PPO).' },
-    { text: 'Smaller values (0.1) are more conservative; larger values (0.3) allow faster but riskier updates.', isTrue: true, explanation: 'This is a key technical detail of Proximal Policy Optimization (PPO).' },
-    { text: 'Number of epochs $K$: 3-10 per batch.', isTrue: true, explanation: 'This is a key technical detail of Proximal Policy Optimization (PPO).' },
+    { text: 'PPO clips the gradient.', isTrue: false, explanation: 'PPO clips the objective (the probability ratio), not the gradient. The gradient flows normally through the unclipped region and is zero in the clipped region.' },
+    { text: '0.2 is the near-universal default.', isTrue: true, explanation: 'Smaller values (0.1) are more conservative; larger values (0.3) allow faster but riskier updates.' },
+    { text: 'The batch is usually split into minibatches (e.g., 32-512 transitions) for stochastic optimization within each epoch.', isTrue: true, explanation: 'The batch is usually split into minibatches (e.g., 32-512 transitions) for stochastic optimization within each epoch.' },
+    { text: '= 0.99,  = 0.95 are standard defaults.', isTrue: true, explanation: '= 0.99,  = 0.95 are standard defaults.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizCVCPointnet() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Classification on ModelNet40: PointNet achieves 89.2% accuracy; PointNet++ reaches 91.9%.', isTrue: true, explanation: 'This is a key technical detail of PointNet.' },
-    { text: 'Current state-of-the-art (Point-MAE, 2022) reaches ~93.8%.', isTrue: true, explanation: 'This is a key technical detail of PointNet.' },
-    { text: 'Part segmentation on ShapeNet: PointNet achieves 83.7% mIoU; PointNet++ reaches 85.1%.', isTrue: true, explanation: 'This is a key technical detail of PointNet.' },
+    { text: 'PointNet captures local geometry well.', isTrue: false, explanation: 'Vanilla PointNet does not -- each point is processed independently before global pooling. Local structure is only captured by PointNet++ through hierarchical grouping.' },
+    { text: 'PointNet achieves 89.2% accuracy; PointNet++ reaches 91.9%.', isTrue: true, explanation: 'Current state-of-the-art (Point-MAE, 2022) reaches ~93.8%.' },
+    { text: 'PointNet achieves 83.7% mIoU; PointNet++ reaches 85.1%.', isTrue: true, explanation: 'PointNet achieves 83.7% mIoU; PointNet++ reaches 85.1%.' },
+    { text: 'Standard input is 1024 points sampled uniformly from mesh surfaces.', isTrue: true, explanation: 'PointNet++ typically uses 1024--4096 points.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

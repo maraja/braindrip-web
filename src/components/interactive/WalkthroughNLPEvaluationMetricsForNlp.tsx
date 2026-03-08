@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Classification Metrics: Precision, Recall, and F1', desc: 'The foundation of evaluation metrics for nlp begins with understanding its core input requirements and initial setup.' },
-    { title: '2. BLEU (Bilingual Evaluation Understudy)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes evaluation metrics for nlp work.' },
-    { title: '3. ROUGE (Recall-Oriented Understudy for Gisting Evaluation)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. METEOR', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. BERTScore', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Classification Metrics: Precision, Recall, and F1', desc: 'For tasks like text-classification.md, named-entity-recognition.md, and sentiment-analysis.md, the core metrics derive from the confusion matrix:  Precision = TP / (TP + FP) -- of everything the system labeled positive, how many were correct?' },
+    { title: '2. BLEU (Bilingual Evaluation Understudy)', desc: '(2002) designed BLEU for machine-translation.md. It computes modified n-gram precision for n = 1 to 4 against one or more references, with a brevity penalty (BP) to penalize overly short outputs:  where w_n = 1/4 (uniform weights), r = reference length, c = candidate length.' },
+    { title: '3. ROUGE (Recall-Oriented Understudy for Gisting Evaluation)', desc: 'Lin (2004) developed ROUGE for text-summarization.md. Unlike BLEU\'s precision focus, ROUGE emphasizes recall -- did the summary capture the important content?' },
+    { title: '4. METEOR', desc: 'Banerjee and Lavie (2005) designed METEOR to address BLEU\'s rigidity. It aligns words between candidate and reference using exact match, stemming (run/running), synonym lookup (via WordNet), and paraphrase tables.' },
+    { title: '5. BERTScore', desc: '(2020) compute cosine similarity between contextual embeddings (from bert.md) of candidate and reference tokens, then greedily match tokens to compute precision, recall, and F1 in embedding space.' },
+    { title: '6. CIDEr (Consensus-based Image Description Evaluation)', desc: '(2015) designed CIDEr for image-captioning.md. It computes TF-IDF weighted n-gram similarity between a candidate caption and multiple references, measuring consensus among references.' },
 ];
 
 export default function WalkthroughNLPEvaluationMetricsForNlp() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPEvaluationMetricsForNlp() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Evaluation Metrics for NLP — Step by Step
+          Evaluation Metrics for NLP \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how evaluation metrics for nlp works, one stage at a time.

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Direct Message Passing', desc: 'The foundation of inter-agent communication begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Shared Memory (Blackboard)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes inter-agent communication work.' },
-    { title: '3. Event-Based (Pub/Sub)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Structured vs. Natural Language Communication', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Direct Message Passing', desc: 'Agents communicate by sending messages directly to specific other agents. This is the most common pattern in current multi-agent frameworks:  Conversational: Agents exchange natural language messages in a turn-based conversation.' },
+    { title: '2. Shared Memory (Blackboard)', desc: 'All agents read from and write to a shared data structure:  Global state store: A key-value store, database, or document that all agents can access. Agents write their findings and read others\' contributions.' },
+    { title: '3. Event-Based (Pub/Sub)', desc: 'Agents publish events to named channels, and other agents subscribe to channels they care about:  Topic-based: Agents subscribe to topics ("code-changes", "test-results", "user-feedback"). When an agent publishes to a topic, all subscribers receive the message.' },
+    { title: '4. Structured vs. Natural Language Communication', desc: 'A fundamental design choice is the format of inter-agent messages:  Natural language: Agents communicate in prose, as they would with a human. This is flexible and easy to implement but introduces ambiguity.' },
 ];
 
 export default function WalkthroughAACInterAgentCommunication() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACInterAgentCommunication() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Inter-Agent Communication — Step by Step
+          Inter-Agent Communication \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how inter-agent communication works, one stage at a time.

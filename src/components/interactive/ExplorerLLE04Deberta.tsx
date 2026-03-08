@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Paper', detail: 'He et al., \"DeBERTa: Decoding-enhanced BERT with Disentangled Attention\" (Jun 2020, arXiv:2006.03654, ICLR 2021)' },
+    { label: 'Paper', detail: 'He et al., "DeBERTa: Decoding-enhanced BERT with Disentangled Attention" (Jun 2020, arXiv:2006.03654, ICLR 2021)' },
     { label: 'DeBERTa-Large', detail: '24 layers, 16 heads, 1024 hidden, 390M parameters' },
     { label: 'DeBERTa-XLarge', detail: '24 layers, 24 heads, 1536 hidden, 750M parameters' },
     { label: 'DeBERTa-XXLarge (V2)', detail: '48 layers, 24 heads, 1536 hidden, 1.5B parameters' },
     { label: 'Training data', detail: 'Similar to RoBERTa (160GB: Wikipedia + BookCorpus + OpenWebText + CC-News + Stories)' },
-    { label: 'SuperGLUE score', detail: '90.3 (DeBERTa-xxlarge, Jan 2021) vs human baseline 89.8' },
+    { label: 'SuperGLUE score', detail: '3 (DeBERTa-xxlarge, Jan 2021) vs human baseline 89.8' },
 ];
 
 export default function ExplorerLLE04Deberta() {
@@ -20,10 +20,10 @@ export default function ExplorerLLE04Deberta() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          DeBERTa: Decoding-Enhanced BERT with Disentangled Attention — Key Details Explorer
+          DeBERTa: Decoding-Enhanced BERT with Disentangled Attention \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of deberta: decoding-enhanced bert with disentangled attention.
+          Click each card to explore the technical details.
         </p>
       </div>
 

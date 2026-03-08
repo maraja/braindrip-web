@@ -3,9 +3,9 @@ import { useState } from 'react';
 const DETAILS = [
     { label: 'REML estimation', detail: 'is preferred over ML for variance components because it corrects for the downward bias in ML estimates, especially in small samples.' },
     { label: 'Negative variance estimates', detail: 'can occur with ANOVA-style estimation. Set these to zero and redistribute using constrained REML.' },
-    { label: 'For binary outcomes', detail: ', use a generalized linear mixed model (GLMM) with a logit link: $\\text{logit}(p_{ijkl}) = \\mu + \\alpha_i + \\beta_j + \\gamma_k + \\delta_l$. Variance components are on the latent logit scale.' },
+    { label: 'For binary outcomes', detail: ', use a generalized linear mixed model (GLMM) with a logit link: logit(p_&#123;ijkl&#125;) =  + _i + _j + _k + _l. Variance components are on the latent logit scale.' },
     { label: 'Crossed vs nested designs', detail: 'Tasks crossed with seeds is standard. Judges may be nested within runs (each run gets a fresh judge sample) or crossed (same judge set evaluates all runs). The design affects the estimable components.' },
-    { label: 'Generalizability theory', detail: '(G-theory) extends classical ANOVA by computing a generalizability coefficient $E\\rho^2$, which estimates how well observed scores generalize to the universe of possible evaluation conditions.' },
+    { label: 'Generalizability theory', detail: '(G-theory) extends classical ANOVA by computing a generalizability coefficient E^2, which estimates how well observed scores generalize to the universe of possible evaluation conditions.' },
 ];
 
 export default function ExplorerAAEVarianceDecomposition() {
@@ -19,10 +19,10 @@ export default function ExplorerAAEVarianceDecomposition() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Variance Decomposition — Key Details Explorer
+          Variance Decomposition \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of variance decomposition.
+          Click each card to explore the technical details.
         </p>
       </div>
 

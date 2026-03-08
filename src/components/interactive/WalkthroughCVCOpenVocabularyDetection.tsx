@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Core Architecture Pattern', desc: 'The foundation of open-vocabulary detection begins with understanding its core input requirements and initial setup.' },
-    { title: '2. OWL-ViT (Google, 2022)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes open-vocabulary detection work.' },
-    { title: '3. OWL-ViTv2 (2023)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Grounding DINO (2023)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. YOLO-World (2024)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Core Architecture Pattern', desc: 'Most OVD methods share a three-stage pipeline:  Region proposal: Generate class-agnostic bounding box candidates (RPN, deformable attention, or anchor-free heads) Region encoding: Extract visual features for each proposed region Text-conditioned classification: Score each region against text.' },
+    { title: '2. OWL-ViT (Google, 2022)', desc: 'OWL-ViT (Vision Transformer for Open-World Localization) takes a direct approach:  Starts from a pretrained CLIP ViT-L/14 model Removes CLIP\'s token pooling and attaches a lightweight detection head to per-patch token outputs Each patch token predicts a bounding box (4 coordinates) and an.' },
+    { title: '3. OWL-ViTv2 (2023)', desc: 'The successor introduces self-training at scale:  Uses OWL-ViT to generate pseudo-labels on web images Trains a student model on the combination of human-annotated and pseudo-labeled data Achieves 44.' },
+    { title: '4. Grounding DINO (2023)', desc: 'Grounding DINO fuses language and vision at multiple stages within the detector rather than only at the classification head:  Combines DINO (a DETR-based detector) with grounded pretraining Uses a text backbone (BERT) in parallel with an image backbone (Swin Transformer) Cross-modality fusion.' },
+    { title: '5. YOLO-World (2024)', desc: 'Brings open-vocabulary capability to real-time detection:  Builds on YOLOv8 with a Re-parameterizable Vision-Language Path Aggregation Network (RepVL-PAN) Pre-encodes text embeddings offline so inference requires only the vision branch Achieves 35.' },
 ];
 
 export default function WalkthroughCVCOpenVocabularyDetection() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCOpenVocabularyDetection() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Open-Vocabulary Detection — Step by Step
+          Open-Vocabulary Detection \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how open-vocabulary detection works, one stage at a time.

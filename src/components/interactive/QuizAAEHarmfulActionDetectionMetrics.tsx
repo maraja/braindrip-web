@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEHarmfulActionDetectionMetrics() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Metrics and methods for detecting when agents take harmful or unintended actions, balancing the cost of missed detections against the cost of false alarms.', isTrue: true, explanation: 'This captures the core purpose of Harmful Action Detection Metrics.' },
-    { text: 'Harmful Action Detection Metrics is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Harmful Action Detection Metrics is important for building on more advanced topics.' },
-    { text: 'Harmful Action Detection Metrics is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Harmful Action Detection Metrics is important for building on more advanced topics.' },
+    { text: 'Higher detection rates are always better.', isTrue: false, explanation: 'Detection rates must be evaluated alongside false positive rates. A system that blocks 99% of harmful actions but also blocks 30% of benign actions is worse than one that catches 90% of harmful actions while blocking only 2% of benign ones.' },
+    { text: 'Rule-based detection is obsolete now that we have LLM classifiers.', isTrue: false, explanation: 'Rules remain the fastest, most predictable, and most auditable detection layer. They are the appropriate choice for known high-severity patterns where zero latency and zero ambiguity are required.' },
+    { text: 'Harmful action detection can be added as an afterthought.', isTrue: false, explanation: 'Effective detection requires deep integration with the agent\'s execution pipeline, access to full context (task description, conversation history, environmental state), and careful calibration against representative action distributions. Bolting on a filter after deployment produces poor precision-recall characteristics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

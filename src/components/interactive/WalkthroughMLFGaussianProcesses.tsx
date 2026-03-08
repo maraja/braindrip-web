@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. GP Regression', desc: 'The foundation of gaussian processes begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Predictive Uncertainty', desc: 'At this stage, the key transformation occurs — the core mechanism that makes gaussian processes work.' },
-    { title: '3. Kernel Selection', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. GP Classification', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Computational Cost and Sparse Approximations', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. GP Regression', desc: 'Given training data \\&#123;(x_i, y_i)\\&#125;_&#123;i=1&#125;^n with observation model y_i = f(x_i) +  where   &#123;N&#125;(0, _n^2), and test inputs X_*, the posterior predictive distribution is:  [equation]  with:  [equation]  [equation]  The posterior mean &#123;f&#125;_* is a weighted combination of observed outputs.' },
+    { title: '2. Predictive Uncertainty', desc: 'At a test point x_*, the predictive distribution provides both a best estimate (the mean) and a calibrated uncertainty (the variance). This is invaluable for decision-making: a GP can say "I am confident here" vs "I have no idea here" -- something point-estimate models cannot do natively.' },
+    { title: '3. Kernel Selection', desc: 'The kernel function encodes assumptions about the function being modeled -- its smoothness, periodicity, and length scale. Common choices include:  Radial Basis Function (RBF / Squared Exponential):  [equation]  Produces infinitely differentiable (very smooth) functions.' },
+    { title: '4. GP Classification', desc: 'For classification, the likelihood is non-Gaussian (e.g., Bernoulli), so the posterior is no longer analytically tractable. Approximations such as the Laplace approximation or Expectation Propagation are used to obtain an approximate Gaussian posterior over the latent function, which is then passed.' },
+    { title: '5. Computational Cost and Sparse Approximations', desc: 'The dominant cost in GP regression is inverting the n x n kernel matrix, requiring O(n^3) time and O(n^2) storage. This limits standard GPs to datasets of roughly n  10&#123;,&#125;000.' },
+    { title: '6. Connection to Neural Networks', desc: 'Neal (1996) showed that a single-hidden-layer neural network with i.i.d. random weights converges to a GP as the width goes to infinity.' },
 ];
 
 export default function WalkthroughMLFGaussianProcesses() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFGaussianProcesses() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Gaussian Processes — Step by Step
+          Gaussian Processes \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how gaussian processes works, one stage at a time.

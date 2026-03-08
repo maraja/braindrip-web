@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. WebArena', desc: 'The foundation of web benchmarks begins with understanding its core input requirements and initial setup.' },
-    { title: '2. BrowserGym', desc: 'At this stage, the key transformation occurs — the core mechanism that makes web benchmarks work.' },
-    { title: '3. Task Types', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Evaluation Methods', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. WebArena', desc: 'WebArena (Zhou et al., 2024) is the most widely cited web agent benchmark. It comprises 812 tasks across four self-hosted web applications:  E-commerce (OpenStreetMap-based shopping site): product search, price comparison, cart management Forums (Reddit-style platform): posting, commenting,.' },
+    { title: '2. BrowserGym', desc: 'BrowserGym (Drouin et al., 2024) is a unifying framework that consolidates multiple web benchmarks into a single interface:  MiniWoB++: 125 simple web interaction tasks (click buttons, fill forms, navigate menus) WebArena: The full 812-task suite described above WorkArena: Enterprise software tasks.' },
+    { title: '3. Task Types', desc: 'Information retrieval: Find specific data on a website ("What is the most-commented issue in the Django repository?") Form filling: Complete multi-field forms with contextually appropriate data Multi-step navigation: Perform sequences of actions across multiple pages Content creation: Write posts,.' },
+    { title: '4. Evaluation Methods', desc: 'Web benchmark evaluation uses several strategies, often combined:  URL checking: Verify the agent navigated to the correct final page Element state verification: Check that specific DOM elements have expected values (e.g.' },
 ];
 
 export default function WalkthroughAAEWebBenchmarks() {
@@ -16,10 +16,10 @@ export default function WalkthroughAAEWebBenchmarks() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Web Benchmarks — Step by Step
+          Web Benchmarks \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how web benchmarks works, one stage at a time.

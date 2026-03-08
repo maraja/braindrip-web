@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFActivationFunctions() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Gradient magnitude: Sigmoid max derivative is 0.25; tanh is 1.0; ReLU is exactly 1.0 (for $z &gt; 0$).', isTrue: true, explanation: 'This is a key technical detail of Activation Functions.' },
-    { text: 'Computational cost: ReLU is cheapest (one comparison).', isTrue: true, explanation: 'This is a key technical detail of Activation Functions.' },
-    { text: 'GELU and SiLU require exponentiation or tanh.', isTrue: true, explanation: 'This is a key technical detail of Activation Functions.' },
+    { text: 'ReLU is always the best choice.', isTrue: false, explanation: 'For transformers, GELU consistently outperforms ReLU. For very deep convolutional networks, careful choices like SiLU or ELU can help.' },
+    { text: 'Sigmoid max derivative is 0.25; tanh is 1.0; ReLU is exactly 1.0 (for z &gt; 0).', isTrue: true, explanation: 'Sigmoid max derivative is 0.25; tanh is 1.0; ReLU is exactly 1.0 (for z &gt; 0).' },
+    { text: 'ReLU is cheapest (one comparison).', isTrue: true, explanation: 'GELU and SiLU require exponentiation or tanh.' },
+    { text: 'ReLU naturally zeros out ~50% of activations; this sparsity is absent in smooth activations.', isTrue: true, explanation: 'ReLU naturally zeros out ~50% of activations; this sparsity is absent in smooth activations.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

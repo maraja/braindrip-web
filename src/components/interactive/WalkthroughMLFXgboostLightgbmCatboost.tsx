@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. XGBoost (eXtreme Gradient Boosting)', desc: 'The foundation of xgboost, lightgbm, and catboost begins with understanding its core input requirements and initial setup.' },
-    { title: '2. LightGBM (Light Gradient Boosting Machine)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes xgboost, lightgbm, and catboost work.' },
-    { title: '3. CatBoost (Categorical Boosting)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
+    { title: '1. XGBoost (eXtreme Gradient Boosting)', desc: 'Introduced by Tianqi Chen in 2016, XGBoost was the first library to make gradient boosting both fast and scalable. Regularized objective.' },
+    { title: '2. LightGBM (Light Gradient Boosting Machine)', desc: 'Released by Microsoft in 2017, LightGBM prioritizes training speed and memory efficiency, often achieving 10--20x speedups over XGBoost. Leaf-wise (best-first) tree growth.' },
+    { title: '3. CatBoost (Categorical Boosting)', desc: 'Developed by Yandex in 2018, CatBoost addresses two subtle but important issues in gradient boosting: target leakage and categorical feature handling. Ordered boosting.' },
 ];
 
 export default function WalkthroughMLFXgboostLightgbmCatboost() {
@@ -15,10 +15,10 @@ export default function WalkthroughMLFXgboostLightgbmCatboost() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          XGBoost, LightGBM, and CatBoost — Step by Step
+          XGBoost, LightGBM, and CatBoost \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how xgboost, lightgbm, and catboost works, one stage at a time.

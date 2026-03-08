@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Benchmark Datasets', desc: 'The foundation of action recognition begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Evolution of Approaches', desc: 'At this stage, the key transformation occurs — the core mechanism that makes action recognition work.' },
-    { title: '3. Training and Evaluation Protocol', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Temporal Reasoning Challenge', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Benchmark Datasets', desc: 'The field is defined by its datasets, which have grown dramatically in scale:  UCF-101 and HMDB-51 are small and largely saturated (&gt;98% and &gt;85% accuracy). Kinetics-400 remains the primary benchmark.' },
+    { title: '2. Evolution of Approaches', desc: 'Phase 1: Hand-crafted features (2005--2014)  Improved Dense Trajectories (iDT) by Wang and Schmid (2013) tracked dense points through video and extracted HOG, HOF, and MBH descriptors along trajectories. Fisher vector encoding of these descriptors achieved 85.' },
+    { title: '3. Training and Evaluation Protocol', desc: 'Training: Clips of T frames are randomly sampled from videos. Standard augmentation includes random spatial cropping (224x224 from 256-scale), horizontal flipping, color jittering, and temporal jittering.' },
+    { title: '4. Temporal Reasoning Challenge', desc: 'Many Kinetics actions can be recognized from a single frame (e.g., "playing guitar" shows a guitar). The "single-frame baseline" achieves ~50% top-1 on Kinetics-400.' },
 ];
 
 export default function WalkthroughCVCActionRecognition() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCActionRecognition() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Action Recognition — Step by Step
+          Action Recognition \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how action recognition works, one stage at a time.

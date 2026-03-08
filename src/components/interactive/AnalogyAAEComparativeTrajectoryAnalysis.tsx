@@ -1,23 +1,23 @@
 import { useState } from 'react';
-const baseStyle = { background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: 14, padding: '1.25rem', margin: '1.5rem 0', fontFamily: 'system-ui, sans-serif' };
+const baseStyle = { background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: 14, padding: '1.25rem', margin: '1.5rem 0', fontFamily: "system-ui, sans-serif" };
 export default function AnalogyAAEComparativeTrajectoryAnalysis() {
   const [idx, setIdx] = useState(0);
-  const analogies = [
-    { emoji: '🏗', label: 'Building', text: 'Think of Comparative Trajectory Analysis like constructing a building. Consider a car manufacturer testing a new engine design. They don\'t just check whether the new car reaches the finish line; they instrument every a... Just as a builder follows blueprints to create a structure, this concept provides the foundational framework that everything else builds upon.' },
-    { emoji: '🎭', label: 'Theater', text: 'Comparative Trajectory Analysis is like directing a theater production. Consider a car manufacturer testing a new engine design. They don\'t just check whether the new car reaches the finish line; they instrument every a... Each element plays a specific role, and the overall performance depends on how well they work together.' },
-    { emoji: '🗺', label: 'Navigation', text: 'Think of Comparative Trajectory Analysis like navigating with a map. Consider a car manufacturer testing a new engine design. They don\'t just check whether the new car reaches the finish line; they instrument every a... You need to understand where you are, where you want to go, and the best route to get there.' },
+  const perspectives = [
+    { emoji: '💡', label: 'Core Idea', text: 'Consider a car manufacturer testing a new engine design. They don\'t just check whether the new car reaches the finish line; they instrument every aspect of both the old and new engines, comparing torque curves, fuel injection timing, exhaust temperatures, and vibration patterns.' },
+    { emoji: '⚙️', label: 'How It Works', text: 'Before comparing trajectories, corresponding steps must be aligned. Two trajectories for the same task will rarely have identical step counts or exact step correspondence. Alignment establishes which steps in Trajectory A correspond to which steps in Trajectory B.' },
+    { emoji: '🔍', label: 'In Detail', text: 'Comparative trajectory analysis is the systematic comparison of execution trajectories across different agent versions, configurations, model backbones, or prompting strategies.' },
   ];
   return (
     <div style={baseStyle}>
-      <p style={{ fontSize: '0.8rem', fontWeight: 700, color: '#2C3E2D', marginBottom: 10, letterSpacing: '0.05em' }}>\u2726 THINK OF IT AS...</p>
-      <div style={{ display: 'flex', gap: 6, marginBottom: 12, flexWrap: 'wrap' }}>
-        {analogies.map((a, i) => (
-          <button key={i} onClick={() => setIdx(i)} style={{ padding: '4px 12px', borderRadius: 20, border: idx === i ? '2px solid #8BA888' : '1px solid #E5DFD3', background: idx === i ? '#8BA888' + '18' : 'transparent', fontSize: '0.8rem', cursor: 'pointer', color: '#2C3E2D', fontWeight: idx === i ? 600 : 400 }}>
-            {a.emoji} {a.label}
+      <p style={{ fontSize: '0.8rem', fontWeight: 700, color: '#2C3E2D', marginBottom: 10, letterSpacing: '0.05em' }}>\u2726 KEY PERSPECTIVES</p>
+      <div style={{ display: 'flex', gap: 6, marginBottom: 12, flexWrap: 'wrap' as const }}>
+        {perspectives.map((p, i) => (
+          <button key={i} onClick={() => setIdx(i)} style={{ padding: '4px 12px', borderRadius: 20, border: idx === i ? '2px solid #8BA888' : '1px solid #E5DFD3', background: idx === i ? '#8BA88818' : 'transparent', fontSize: '0.8rem', cursor: 'pointer', color: '#2C3E2D', fontWeight: idx === i ? 600 : 400 }}>
+            {p.emoji} {p.label}
           </button>
         ))}
       </div>
-      <p style={{ fontSize: '0.9rem', color: '#3D4F3E', lineHeight: 1.6, margin: 0 }}>{analogies[idx].text}</p>
+      <p style={{ fontSize: '0.9rem', color: '#3D4F3E', lineHeight: 1.6, margin: 0 }}>{perspectives[idx].text}</p>
     </div>
   );
 }

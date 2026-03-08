@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAACErrorHandlingAndRetries() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Use idempotency keys where available.', isTrue: true, explanation: 'This is a key technical detail of Error Handling and Retries.' },
-    { text: 'Error budgets set a maximum acceptable failure rate (e.g., 1% of tasks may fail completely).', isTrue: true, explanation: 'This is a key technical detail of Error Handling and Retries.' },
-    { text: 'When the error budget is exceeded, the system pauses to investigate rather than continuing to fail.', isTrue: true, explanation: 'This is a key technical detail of Error Handling and Retries.' },
+    { text: 'Just retry everything three times.', isTrue: false, explanation: 'Retrying permanent errors wastes time and money. Retrying without backoff can worsen rate limiting.' },
+    { text: 'if a tool call has side effects (sending an email, creating a file), retrying after an ambiguous failure risks duplicate execution.', isTrue: true, explanation: 'Use idempotency keys where available.' },
+    { text: 'individual tool calls might timeout at 30 seconds, individual steps at 2 minutes, and the overall task at 30 minutes.', isTrue: true, explanation: 'Each level has its own handling logic.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

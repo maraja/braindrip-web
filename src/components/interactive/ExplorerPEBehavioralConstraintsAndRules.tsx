@@ -4,9 +4,9 @@ const DETAILS = [
     { label: 'Numbered lists vs. prose', detail: 'Constraints formatted as numbered lists show 15-20% better compliance than equivalent constraints written in paragraph form, based on evaluation across multiple models and tasks.' },
     { label: 'Optimal constraint count', detail: '5-15 constraints is the practical range. Fewer than 5 usually means important rules are missing. More than 15 causes instruction competition and declining marginal compliance.' },
     { label: 'Position matters', detail: 'Place the highest-priority constraints at the top and bottom of the constraint section (primacy and recency effects). Medium-priority constraints go in the middle.' },
-    { label: 'Specificity impact', detail: 'Replacing a vague constraint with a specific one (e.g., \"be careful with PII\" to \"never include SSNs or credit card numbers\") typically improves compliance by 20-30% for that specific rule.' },
+    { label: 'Specificity impact', detail: 'Replacing a vague constraint with a specific one (e.g., "be careful with PII" to "never include SSNs or credit card numbers") typically improves compliance by 20-30% for that specific rule.' },
     { label: 'Conditional rule compliance', detail: 'If-then rules are followed with 75-90% reliability in modern instruction-tuned models, compared to ~60% for implicit conditional logic.' },
-    { label: 'Negative framing risk', detail: 'Negatively framed rules (\"don\'t mention competitors\") can paradoxically increase the probability of mentioning the prohibited content by priming the model with the concept. Positive reframing (\"focus exclusively on our product features\") avoids this.' },
+    { label: 'Negative framing risk', detail: 'Negatively framed rules ("don\'t mention competitors") can paradoxically increase the probability of mentioning the prohibited content by priming the model with the concept. Positive reframing ("focus exclusively on our product features") avoids this.' },
 ];
 
 export default function ExplorerPEBehavioralConstraintsAndRules() {
@@ -20,10 +20,10 @@ export default function ExplorerPEBehavioralConstraintsAndRules() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Behavioral Constraints and Rules — Key Details Explorer
+          Behavioral Constraints and Rules \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of behavioral constraints and rules.
+          Click each card to explore the technical details.
         </p>
       </div>
 

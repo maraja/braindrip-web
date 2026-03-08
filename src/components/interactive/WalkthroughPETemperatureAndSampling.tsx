@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Temperature: Scaling the Distribution', desc: 'The foundation of temperature and sampling begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Top-k Sampling', desc: 'At this stage, the key transformation occurs — the core mechanism that makes temperature and sampling work.' },
-    { title: '3. Top-p (Nucleus Sampling)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Interaction with Prompt Design', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Temperature: Scaling the Distribution', desc: 'Temperature (T) is applied to the raw logits before the softmax function: softmax(logits / T). The effect is mathematically precise:  T = 0 (or effectively 0.01): The softmax becomes a hard argmax.' },
+    { title: '2. Top-k Sampling', desc: 'Top-k restricts selection to the k most probable tokens, then renormalizes the probabilities among them. If k=50, the model can only pick from the top 50 tokens regardless of their absolute probabilities.' },
+    { title: '3. Top-p (Nucleus Sampling)', desc: 'Top-p (nucleus sampling, Holtzman et al. 2019) dynamically adjusts the number of candidate tokens based on cumulative probability.' },
+    { title: '4. Interaction with Prompt Design', desc: 'Sampling parameters and prompt quality are compensatory. A vague prompt with T=0 produces deterministic but potentially misguided output — the model confidently generates the most likely (but not necessarily correct) completion.' },
 ];
 
 export default function WalkthroughPETemperatureAndSampling() {
@@ -16,10 +16,10 @@ export default function WalkthroughPETemperatureAndSampling() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Temperature and Sampling — Step by Step
+          Temperature and Sampling \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how temperature and sampling works, one stage at a time.

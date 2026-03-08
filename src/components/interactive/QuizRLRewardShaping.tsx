@@ -2,8 +2,8 @@ import { useState } from 'react';
 export default function QuizRLRewardShaping() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Reward shaping augments sparse environment rewards with intermediate signals to accelerate learning, but without mathematical guarantees, it risks teaching the agent to optimize the wrong objective entirely.', isTrue: true, explanation: 'This captures the core purpose of Reward Shaping.' },
-    { text: 'Reward Shaping is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Reward Shaping is important for building on more advanced topics.' },
+    { text: 'Any reasonable reward bonus is fine', isTrue: false, explanation: ': Without the potential-based form, even intuitive-seeming bonuses can catastrophically change the optimal policy. The CoastRunners example demonstrates this vividly.' },
+    { text: 'Reward shaping augments sparse environment rewards with intermediate signals to accelerate learning, but without mathematical guarantees, it risks teaching the agent to optimize the wrong objective entirely.', isTrue: true, explanation: 'This captures the core definition of Reward Shaping.' },
     { text: 'Reward Shaping is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Reward Shaping is important for building on more advanced topics.' },
   ];
   return (

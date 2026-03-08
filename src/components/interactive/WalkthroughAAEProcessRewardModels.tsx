@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Data Collection for PRM Training', desc: 'The foundation of process reward models begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Training Objectives', desc: 'At this stage, the key transformation occurs — the core mechanism that makes process reward models work.' },
-    { title: '3. Architecture Choices', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. PRMs vs. ORMs', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Application in Agent Evaluation', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Data Collection for PRM Training', desc: 'Training a PRM requires step-level quality labels. There are three primary approaches to collecting this data:  Human annotation is the gold standard.' },
+    { title: '2. Training Objectives', desc: 'PRMs are typically trained with one of two objectives:  Step-level reward prediction trains the model to predict the quality score of each individual step. The model takes as input the trajectory up to step t and outputs a scalar score for step t.' },
+    { title: '3. Architecture Choices', desc: 'Most PRMs are built on top of pretrained language models. The dominant architecture takes the full trajectory as a token sequence and adds a scalar prediction head after each step boundary token.' },
+    { title: '4. PRMs vs. ORMs', desc: 'Empirically, PRMs outperform ORMs for selecting correct solutions via best-of-N sampling. (2023) showed that PRM-guided selection solved 12.5% more math problems than ORM-guided selection at N=100 samples.' },
+    { title: '5. Application in Agent Evaluation', desc: 'In the agent evaluation context, PRMs serve as automated trajectory scorers that approximate the metrics defined in trajectory-quality-metrics.md. A trained PRM can:  Score each step in a trajectory, creating a step-quality profile Identify the specific steps where quality degrades Rank multiple.' },
 ];
 
 export default function WalkthroughAAEProcessRewardModels() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAEProcessRewardModels() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Process Reward Models — Step by Step
+          Process Reward Models \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how process reward models works, one stage at a time.

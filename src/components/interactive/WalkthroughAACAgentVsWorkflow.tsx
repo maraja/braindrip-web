@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Workflow Architecture', desc: 'The foundation of agent vs. workflow begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Agent Architecture', desc: 'At this stage, the key transformation occurs — the core mechanism that makes agent vs. workflow work.' },
-    { title: '3. The Decision Framework', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Hybrid Approaches', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Workflow Architecture', desc: 'A workflow is structured as a directed graph of steps. Each step performs a specific operation — an LLM call, an API request, a data transformation — and the edges between steps are defined in code.' },
+    { title: '2. Agent Architecture', desc: 'An agent places the LLM at the center of the control flow. Instead of coded edges between steps, the LLM decides what to do next based on the full context of the task so far.' },
+    { title: '3. The Decision Framework', desc: 'Use this framework to choose between agents and workflows:' },
+    { title: '4. Hybrid Approaches', desc: 'In practice, the best systems combine both. Common patterns:  Workflow with agent steps: A coded pipeline where one or more steps are handled by an agent.' },
 ];
 
 export default function WalkthroughAACAgentVsWorkflow() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACAgentVsWorkflow() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agent vs. Workflow — Step by Step
+          Agent vs. Workflow \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how agent vs. workflow works, one stage at a time.

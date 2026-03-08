@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Numerical Data', desc: 'The foundation of data types and structures begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Categorical Data', desc: 'At this stage, the key transformation occurs — the core mechanism that makes data types and structures work.' },
-    { title: '3. Text Data', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Time Series Data', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Image Data', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Numerical Data', desc: 'Numerical variables take on quantitative values where arithmetic operations (addition, averaging) are meaningful. Continuous: Can assume any real value within an interval.' },
+    { title: '2. Categorical Data', desc: 'Categorical variables represent group membership with no inherent arithmetic meaning. Nominal: Unordered categories.' },
+    { title: '3. Text Data', desc: 'Text is a sequence of tokens drawn from a vocabulary V. A document d can be represented as a bag-of-words vector x  &#123;R&#125;^&#123;&#125;, a TF-IDF weighted vector, or a dense embedding e  &#123;R&#125;^&#123;k&#125; from models like Word2Vec or BERT.' },
+    { title: '4. Time Series Data', desc: 'A time series is a sequence of observations indexed by time: \\&#123;x_&#123;t_1&#125;, x_&#123;t_2&#125;, , x_&#123;t_n&#125;\\&#125;. The temporal ordering is the defining feature -- shuffling rows destroys the signal.' },
+    { title: '5. Image Data', desc: 'An image is a tensor of pixel intensities. A grayscale image of height H and width W is a matrix I  &#123;R&#125;^&#123;H x W&#125;; a color image adds a channel dimension: I  &#123;R&#125;^&#123;H x W x 3&#125; (RGB).' },
+    { title: '6. Graph / Network Data', desc: 'Nodes and edges encode relational structure. A graph G = (V, E) with  = n nodes can be represented by an adjacency matrix A  \\&#123;0,1\\&#125;^&#123;n x n&#125; and a node feature matrix X  &#123;R&#125;^&#123;n x d&#125;.' },
 ];
 
 export default function WalkthroughMLFDataTypesAndStructures() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFDataTypesAndStructures() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Data Types and Structures — Step by Step
+          Data Types and Structures \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how data types and structures works, one stage at a time.

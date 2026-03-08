@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Server-Sent Events with FastAPI', desc: 'The foundation of streaming in production begins with understanding its core input requirements and initial setup.' },
-    { title: '2. WebSocket for Bidirectional Communication', desc: 'At this stage, the key transformation occurs — the core mechanism that makes streaming in production work.' },
-    { title: '3. Handling Interrupts During Streaming', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Production Resilience Patterns', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Server-Sent Events with FastAPI', desc: 'SSE is the most common transport for unidirectional streaming. The protocol is simple: the server sends lines formatted as data: &#123;json&#125; and the client reads them with an EventSource or fetch call.' },
+    { title: '2. WebSocket for Bidirectional Communication', desc: 'When the client needs to send messages during a stream -- such as cancellation signals or HITL approvals -- WebSockets provide a bidirectional channel.' },
+    { title: '3. Handling Interrupts During Streaming', desc: 'When a graph hits an interrupt(), the stream pauses. The server must detect this and signal the client to collect human input.' },
 ];
 
 export default function WalkthroughLGAStreamingInProduction() {
@@ -16,10 +15,10 @@ export default function WalkthroughLGAStreamingInProduction() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Streaming in Production — Step by Step
+          Streaming in Production \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how streaming in production works, one stage at a time.

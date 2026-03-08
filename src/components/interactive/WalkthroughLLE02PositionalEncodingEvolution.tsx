@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Sinusoidal Positional Encodings — The Original (2017)', desc: 'The foundation of positional encoding evolution begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Learned Positional Embeddings — Trainable but Bounded (2018-2019)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes positional encoding evolution work.' },
-    { title: '3. ALiBi — Attention with Linear Biases (2021)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Rotary Position Embeddings (RoPE) — The Current Standard (2021-Present)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. RoPE Extensions — Unlocking Long Context (2023-2024)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Sinusoidal Positional Encodings — The Original (2017)', desc: 'used fixed sinusoidal functions at different frequencies to encode position. For position pos and dimension i, PE(pos, 2i) = sin(pos / 10000^(2i/d_model)) and PE(pos, 2i+1) = cos(pos / 10000^(2i/d_model)).' },
+    { title: '2. Learned Positional Embeddings — Trainable but Bounded (2018-2019)', desc: 'GPT-1 and GPT-2 replaced fixed functions with learned embedding vectors — one trainable vector per position, up to the maximum sequence length (1024 for GPT-2). This gave the model more flexibility to represent position however it found useful.' },
+    { title: '3. ALiBi — Attention with Linear Biases (2021)', desc: 'Press, Smith, and Lewis proposed a radical simplification: do not add positional information to token embeddings at all. Instead, add a linear bias to attention scores based on the distance between query and key positions.' },
+    { title: '4. Rotary Position Embeddings (RoPE) — The Current Standard (2021-Present)', desc: 'introduced RoPE, which encodes position by rotating the query and key vectors in 2D subspaces. For position m and dimension pair (2i, 2i+1), the embedding applies a rotation of angle m * theta_i, where theta_i = 10000^(-2i/d).' },
+    { title: '5. RoPE Extensions — Unlocking Long Context (2023-2024)', desc: 'The critical question for RoPE: how do you extend a model trained at 4096 tokens to 128K or beyond? Several approaches emerged.' },
 ];
 
 export default function WalkthroughLLE02PositionalEncodingEvolution() {
@@ -17,10 +17,10 @@ export default function WalkthroughLLE02PositionalEncodingEvolution() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Positional Encoding Evolution — Step by Step
+          Positional Encoding Evolution \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how positional encoding evolution works, one stage at a time.

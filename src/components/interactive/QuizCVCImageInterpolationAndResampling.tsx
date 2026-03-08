@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCImageInterpolationAndResampling() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Bilinear interpolation on a 1-megapixel image takes approximately 1 ms on a modern CPU; bicubic takes approximately 4 ms; Lanczos-3 approximately 10 ms.', isTrue: true, explanation: 'This is a key technical detail of Image Interpolation and Resampling.' },
-    { text: 'For CNN input preprocessing, bilinear is the most common choice (used by default in PyTorch\'s F.interpolate and TensorFlow\'s tf.image.resize), balancing quality and speed.', isTrue: true, explanation: 'This is a key technical detail of Image Interpolation and Resampling.' },
-    { text: 'In GPU texture sampling, bilinear interpolation is hardware-accelerated and essentially free (built into the texture unit), which is why it is the standard for real-time rendering.', isTrue: true, explanation: 'This is a key technical detail of Image Interpolation and Resampling.' },
+    { text: 'Bicubic is always better than bilinear.', isTrue: false, explanation: 'For downsampling without pre-filtering, bicubic can actually produce worse results (more aliasing) than INTER_AREA because it does not properly band-limit the signal. The "best" method depends on the operation direction and content type.' },
+    { text: 'Interpolation creates new information.', isTrue: false, explanation: 'Interpolation estimates values between known samples based on assumptions about signal smoothness. It cannot recover information that was lost during the original sampling.' },
+    { text: 'Nearest-neighbor is always inferior.', isTrue: false, explanation: 'For categorical data (segmentation masks, label maps, indexed color), nearest-neighbor is the only correct choice. Bilinear interpolation of a binary mask produces gray values that have no semantic meaning; bilinear on a class-index map creates nonexistent class indices.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

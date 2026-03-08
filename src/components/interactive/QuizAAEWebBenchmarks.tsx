@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEWebBenchmarks() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Web benchmarks evaluate AI agents on their ability to perform complex, multi-step tasks within realistic web browser environments, measuring navigation, form interaction, and information retrieval capabilities.', isTrue: true, explanation: 'This captures the core purpose of Web Benchmarks.' },
-    { text: 'Web Benchmarks is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Web Benchmarks is important for building on more advanced topics.' },
-    { text: 'Web Benchmarks is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Web Benchmarks is important for building on more advanced topics.' },
+    { text: 'Web agents just need to read HTML.', isTrue: false, explanation: 'Modern web applications use dynamic rendering, JavaScript-heavy interfaces, shadow DOMs, and iframe nesting. Agents must handle the gap between raw HTML and the visual/interactive experience a human perceives.' },
+    { text: 'High scores on MiniWoB transfer to real web tasks.', isTrue: false, explanation: 'MiniWoB tasks are single-page, single-action exercises. Performance on MiniWoB has near-zero correlation with WebArena scores because real web tasks require multi-page reasoning, error recovery, and handling ambiguous instructions.' },
+    { text: 'Web benchmark scores reflect real-world web automation quality.', isTrue: false, explanation: 'Benchmark websites are simplified, deterministic, and static. Real websites have CAPTCHAs, A/B testing variations, session timeouts, pop-ups, cookie banners, and constantly changing layouts that benchmarks do not capture.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

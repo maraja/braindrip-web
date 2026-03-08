@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE03ChinchillaAndComputeOptimalTraining() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Published: March 2022, by Jordan Hoffmann et al.', isTrue: true, explanation: 'This is a key technical detail of Chinchilla and Compute-Optimal Training.' },
-    { text: 'DeepMind\'s Chinchilla paper overturned the prevailing wisdom on model scaling, proving that a 70B model trained on 1.4 trillion tokens could beat models 2-8x its size by simply using more training data.', isTrue: true, explanation: 'This captures the core purpose of Chinchilla and Compute-Optimal Training.' },
-    { text: 'Chinchilla and Compute-Optimal Training is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Chinchilla and Compute-Optimal Training is important for building on more advanced topics.' },
+    { text: 'Chinchilla proved bigger models are worse.', isTrue: false, explanation: 'Chinchilla proved that undertrained big models are worse than well-trained smaller ones. A 280B model trained on 5.6T tokens (Chinchilla-optimal) would outperform 70B Chinchilla — but no one had that much quality data or compute at the time.' },
+    { text: 'March 2022, by Jordan Hoffmann et al.', isTrue: true, explanation: 'March 2022, by Jordan Hoffmann et al.' },
+    { text: 'The 20:1 token-to-parameter ratio is a hard rule.', isTrue: false, explanation: 'It is an empirical finding for a specific compute-cost model. If inference costs dominate (as they do for widely deployed models), you may want to overtrain a smaller model, as LLaMA demonstrated.' },
+    { text: 'Over 400 training runs, model sizes from 70M to 16B', isTrue: true, explanation: 'Over 400 training runs, model sizes from 70M to 16B' },
+    { text: 'Chinchilla solved the scaling question.', isTrue: false, explanation: 'Subsequent work (Muennighoff et al., 2023) showed that data can be repeated with diminishing but positive returns, and that the optimal ratio depends on data quality. The Chinchilla ratio is a useful guideline, not a universal law.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

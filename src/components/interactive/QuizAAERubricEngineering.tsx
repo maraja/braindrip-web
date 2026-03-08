@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAERubricEngineering() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Rubric engineering is the systematic design of evaluation criteria that automated judges can apply consistently, transforming subjective quality assessments into reproducible, operationalized scoring frameworks.', isTrue: true, explanation: 'This captures the core purpose of Rubric Engineering.' },
-    { text: 'Rubric Engineering is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Rubric Engineering is important for building on more advanced topics.' },
-    { text: 'Rubric Engineering is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Rubric Engineering is important for building on more advanced topics.' },
+    { text: 'A detailed rubric makes the judge prompt too long and hurts performance.', isTrue: false, explanation: 'In practice, longer rubrics with concrete anchors improve judge consistency. The quality of the prompt content matters far more than its length within typical context window limits.' },
+    { text: 'One rubric works for all evaluation contexts.', isTrue: false, explanation: 'Rubrics must be tailored to the specific task domain, agent capabilities, and stakeholder priorities. A rubric for coding agents differs fundamentally from one for customer service agents.' },
+    { text: 'Rubric engineering is a one-time effort.', isTrue: false, explanation: 'Rubrics degrade as task distributions shift and agent capabilities evolve. Ongoing calibration (see judge-calibration-and-validation.md) is essential.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

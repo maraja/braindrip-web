@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPTopicModeling() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'LDA scalability: Online variational Bayes (Hoffman et al., 2010) processes documents in mini-batches, scaling LDA to millions of documents with constant memory.', isTrue: true, explanation: 'This is a key technical detail of Topic Modeling.' },
-    { text: 'Typical corpus sizes: LDA works well with 1,000+ documents; fewer than 500 often yields unstable topics.', isTrue: true, explanation: 'This is a key technical detail of Topic Modeling.' },
-    { text: 'NMF can work with smaller corpora.', isTrue: true, explanation: 'This is a key technical detail of Topic Modeling.' },
+    { text: 'Topics correspond to human-labeled categories.', isTrue: false, explanation: 'Topics are statistical patterns of word co-occurrence, not predefined categories. A topic might blend what a human would consider two separate themes, or split a single theme into multiple topics based on vocabulary variation.' },
+    { text: 'Online variational Bayes (Hoffman et al., 2010) processes documents in mini-batches, scaling LDA to millions of documents with constant memory.', isTrue: true, explanation: 'Online variational Bayes (Hoffman et al., 2010) processes documents in mini-batches, scaling LDA to millions of documents with constant memory.' },
+    { text: 'More topics always give a finer-grained understanding.', isTrue: false, explanation: 'Beyond a certain K, additional topics become redundant or incoherent. There is a sweet spot where topics are both distinct and interpretable -- more is not always better.' },
+    { text: 'LDA works well with 1,000+ documents; fewer than 500 often yields unstable topics.', isTrue: true, explanation: 'NMF can work with smaller corpora.' },
+    { text: 'Topic models understand word meaning.', isTrue: false, explanation: 'Classical topic models like LDA operate on word co-occurrence statistics, not semantics. "Bank" in a finance topic and "bank" in a geography topic are the same word to LDA.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

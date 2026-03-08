@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPResponsibleNlpDevelopment() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Model card adoption: Hugging Face hosts 500,000+ model cards as of 2024; Google, Meta, and OpenAI publish model cards for major releases.', isTrue: true, explanation: 'This is a key technical detail of Responsible NLP Development.' },
-    { text: 'Efficiency gains: DistilBERT (Sanh et al., 2019) achieves 97% of BERT\'s performance with 40% fewer parameters and 60% faster inference.', isTrue: true, explanation: 'This is a key technical detail of Responsible NLP Development.' },
-    { text: 'Quantization (INT8) reduces memory and compute by 2--4x with &lt;1% accuracy loss.', isTrue: true, explanation: 'This is a key technical detail of Responsible NLP Development.' },
+    { text: 'Responsible development slows down research.', isTrue: false, explanation: 'Documentation, bias evaluation, and ethics review add overhead, but they also catch errors, improve reproducibility, and prevent costly post-deployment failures. The cost of a bias scandal or regulatory fine far exceeds the cost of a pre-deployment audit.' },
+    { text: 'Hugging Face hosts 500,000+ model cards as of 2024; Google, Meta, and OpenAI publish model cards for major releases.', isTrue: true, explanation: 'Hugging Face hosts 500,000+ model cards as of 2024; Google, Meta, and OpenAI publish model cards for major releases.' },
+    { text: 'Model cards and datasheets are just bureaucratic checkboxes.', isTrue: false, explanation: 'When done well, model cards and datasheets force developers to think critically about their system\'s limitations and affected populations. The value is in the thinking process, not just the document.' },
+    { text: 'GPT-3 training ~552 tonnes CO2e; BLOOM (BigScience, 176B) reported 25 tonnes CO2e due to nuclear-powered compute -- demonstrating that energy source matters as much as compute volume.', isTrue: true, explanation: 'GPT-3 training ~552 tonnes CO2e; BLOOM (BigScience, 176B) reported 25 tonnes CO2e due to nuclear-powered compute -- demonstrating that energy source matters as much as compute volume.' },
+    { text: 'Environmental concerns are secondary to model performance.', isTrue: false, explanation: 'The NLP community\'s energy consumption is a legitimate ethical concern. Strubell et al.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

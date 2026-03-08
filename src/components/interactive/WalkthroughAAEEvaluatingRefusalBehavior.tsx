@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Over-Refusal: The Safety Cost of Caution', desc: 'The foundation of evaluating refusal behavior begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Under-Refusal: The Usefulness Cost of Permissiveness', desc: 'At this stage, the key transformation occurs — the core mechanism that makes evaluating refusal behavior work.' },
-    { title: '3. Refusal Calibration', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Refusal Quality Metrics', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Benchmark Design for Refusal Evaluation', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Over-Refusal: The Safety Cost of Caution', desc: 'Over-refusal occurs when an agent declines safe, legitimate requests. This is the most common user-facing complaint about safety-tuned agents and one of the hardest problems to evaluate because it requires determining ground truth for whether a request was actually safe.' },
+    { title: '2. Under-Refusal: The Usefulness Cost of Permissiveness', desc: 'Under-refusal occurs when an agent accepts requests it should decline. This is the direct safety risk and the primary concern of red teaming (see agent-safety-red-teaming.md).' },
+    { title: '3. Refusal Calibration', desc: 'The ideal agent has a refusal curve that closely tracks the actual risk distribution of incoming requests. Calibration measures the alignment between the agent\'s refusal probability and the true probability that a request is harmful.' },
+    { title: '4. Refusal Quality Metrics', desc: 'Beyond the binary refuse/accept decision, the quality of refusals matters. Explanation clarity measures whether the agent explains why it refused.' },
+    { title: '5. Benchmark Design for Refusal Evaluation', desc: 'A well-designed refusal benchmark includes three tiers of requests in specific proportions. Clearly safe requests (40-50%) establish the over-refusal baseline.' },
+    { title: '6. Safety-Helpfulness Tradeoff Data', desc: 'Real-world data from deployed systems illustrates the range of achievable safety-helpfulness tradeoffs. Claude\'s safety performance across modalities (Anthropic, 2025) demonstrates how refusal calibration varies by deployment context.' },
 ];
 
 export default function WalkthroughAAEEvaluatingRefusalBehavior() {
@@ -17,10 +18,10 @@ export default function WalkthroughAAEEvaluatingRefusalBehavior() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Evaluating Refusal Behavior — Step by Step
+          Evaluating Refusal Behavior \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how evaluating refusal behavior works, one stage at a time.

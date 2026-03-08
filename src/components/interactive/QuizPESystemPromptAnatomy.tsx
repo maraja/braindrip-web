@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizPESystemPromptAnatomy() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Token budget: System prompts should typically consume 10-20% of the total context window.', isTrue: true, explanation: 'This is a key technical detail of System Prompt Anatomy.' },
-    { text: 'For a 128K-token window, that means 12,800-25,600 tokens.', isTrue: true, explanation: 'This is a key technical detail of System Prompt Anatomy.' },
-    { text: 'Exceeding this leaves insufficient room for conversation history and user input.', isTrue: true, explanation: 'This is a key technical detail of System Prompt Anatomy.' },
+    { text: 'A longer system prompt is always better.', isTrue: false, explanation: 'Beyond a certain point, additional system prompt length causes instruction competition (rules fighting for attention) and context window pressure (less room for the actual conversation). Concise, well-organized prompts outperform verbose ones.' },
+    { text: 'System prompts should typically consume 10-20% of the total context window.', isTrue: true, explanation: 'For a 128K-token window, that means 12,800-25,600 tokens. Exceeding this leaves insufficient room for conversation history and user input.' },
+    { text: 'The system prompt is just a \'personality description.\'', isTrue: false, explanation: 'Role definition is only one of six components. A production system prompt must also address constraints, tools, formatting, and context.' },
+    { text: 'Critical rules should be placed at the top (primacy effect) and bottom (recency effect) of the system prompt.', isTrue: true, explanation: 'Context and reference material should be placed in the middle.' },
+    { text: 'System prompts are immutable once deployed.', isTrue: false, explanation: 'Production system prompts should be versioned, tested, and iterated like any other code artifact. Static system prompts accumulate technical debt as the application evolves and edge cases are discovered.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Problem Formulation: Stochastic Games', desc: 'The foundation of multi-agent reinforcement learning begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Independent Learners', desc: 'At this stage, the key transformation occurs — the core mechanism that makes multi-agent reinforcement learning work.' },
-    { title: '3. Centralized Training with Decentralized Execution (CTDE)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. QMIX: Monotonic Value Decomposition', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. MAPPO: Multi-Agent PPO', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Problem Formulation: Stochastic Games', desc: 'MARL extends the MDP to a stochastic game (also called a Markov game), defined by the tuple (N, S, \\&#123;A_i\\&#125;_&#123;i=1&#125;^N, T, \\&#123;R_i\\&#125;_&#123;i=1&#125;^N, ) where N is the number of agents, S is the shared state space, A_i is the action space of agent i, and the transition function depends on the joint.' },
+    { title: '2. Independent Learners', desc: 'The simplest approach is to have each agent run its own single-agent RL algorithm while treating other agents as part of the environment. Agent i learns Q_i(s, a_i) ignoring the actions of others.' },
+    { title: '3. Centralized Training with Decentralized Execution (CTDE)', desc: 'The dominant paradigm in modern MARL is CTDE: during training, a central critic has access to all agents\' observations and actions, but during execution, each agent acts using only its local observations.' },
+    { title: '4. QMIX: Monotonic Value Decomposition', desc: 'QMIX (Rashid et al., 2018) is a cooperative MARL algorithm that factors the joint action-value function into individual utilities while enforcing a monotonicity constraint:  [equation]  where f_s is a mixing network with non-negative weights (ensuring &#123; Q_&#123;tot&#125;&#125;&#123; Q_i&#125;  0).' },
+    { title: '5. MAPPO: Multi-Agent PPO', desc: 'Multi-Agent PPO (Yu et al., 2022) applies proximal policy optimization in the CTDE framework. Each agent has its own policy network _&#123;_i&#125;(a_i  o_i) and shares a centralized value function V_(s).' },
+    { title: '6. Nash Equilibrium and Solution Concepts', desc: 'In competitive settings, the goal shifts from joint reward maximization to finding a Nash equilibrium -- a joint policy where no agent can improve its return by unilaterally changing its strategy:  [equation]  Computing Nash equilibria is PPAD-complete in general, making it intractable for large.' },
 ];
 
 export default function WalkthroughRLMultiAgentReinforcementLearning() {
@@ -17,10 +18,10 @@ export default function WalkthroughRLMultiAgentReinforcementLearning() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Multi-Agent Reinforcement Learning — Step by Step
+          Multi-Agent Reinforcement Learning \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how multi-agent reinforcement learning works, one stage at a time.

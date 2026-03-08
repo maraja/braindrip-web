@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEAlignmentMeasurement() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Evaluating whether agents faithfully pursue user intent rather than drifting toward unintended objectives, being excessively helpful, or optimizing for proxy goals.', isTrue: true, explanation: 'This captures the core purpose of Alignment Measurement.' },
-    { text: 'Alignment Measurement is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Alignment Measurement is important for building on more advanced topics.' },
-    { text: 'Alignment Measurement is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Alignment Measurement is important for building on more advanced topics.' },
+    { text: 'Alignment just means the agent follows instructions.', isTrue: false, explanation: 'Instruction following is one dimension of alignment, but not the whole picture. A perfectly instruction-following agent that never questions flawed instructions is not well-aligned -- it is sycophantic.' },
+    { text: 'More capable agents are more aligned.', isTrue: false, explanation: 'Capability and alignment are orthogonal dimensions. A highly capable agent might be misaligned in more sophisticated ways -- drifting toward goals that are plausible interpretations of the user\'s request but not what the user actually wanted.' },
+    { text: 'Alignment can be measured with a single metric.', isTrue: false, explanation: 'Alignment is multidimensional: goal fidelity, instruction following, over-helpfulness avoidance, sycophancy resistance, and scope discipline each require distinct measurements. Collapsing these into a single score obscures the specific failure modes.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Dense Retrieval (Embedding Similarity)', desc: 'The foundation of hybrid retrieval context patterns begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Sparse Retrieval (BM25 Keyword Matching)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes hybrid retrieval context patterns work.' },
-    { title: '3. Structured Retrieval (SQL, Graph, Metadata)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Fusion Methods', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Dense Retrieval (Embedding Similarity)', desc: 'Dense retrieval encodes queries and documents into high-dimensional vectors (embeddings) using neural models, then finds documents whose embeddings are closest to the query embedding (typically by cosine similarity or dot product). Strengths: Captures semantic meaning, synonyms, and paraphrases.' },
+    { title: '2. Sparse Retrieval (BM25 Keyword Matching)', desc: 'Sparse retrieval uses term frequency-inverse document frequency (TF-IDF) variants — most commonly BM25 — to score documents based on exact keyword overlap with the query. Strengths: Excellent at exact term matching, rare words, proper nouns, codes, and identifiers.' },
+    { title: '3. Structured Retrieval (SQL, Graph, Metadata)', desc: 'Structured retrieval queries databases or knowledge graphs using precise filters:  SQL queries: "SELECT * FROM products WHERE price &lt; 100 AND category = \'electronics\'" — exact filtering on structured attributes Knowledge graph traversal: "Find all entities connected to \'GDPR\' within 2 hops" —.' },
+    { title: '4. Fusion Methods', desc: 'Merging results from multiple retrieval methods requires a principled fusion approach:  Reciprocal Rank Fusion (RRF): The standard fusion method. For each document d appearing in any result list, compute: RRF(d) = sum over lists of 1/(k + rank(d)), with k=60 as the standard constant.' },
 ];
 
 export default function WalkthroughPEHybridRetrievalContextPatterns() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEHybridRetrievalContextPatterns() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Hybrid Retrieval Context Patterns — Step by Step
+          Hybrid Retrieval Context Patterns \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how hybrid retrieval context patterns works, one stage at a time.

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Mean Squared Error (MSE)', desc: 'The foundation of regression metrics begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Root Mean Squared Error (RMSE)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes regression metrics work.' },
-    { title: '3. Mean Absolute Error (MAE)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Median Absolute Error (MedAE)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Mean Absolute Percentage Error (MAPE)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Mean Squared Error (MSE)', desc: '[equation]  MSE squares each residual before averaging. This has two consequences: (1) large errors are penalized quadratically, so a single prediction off by 10 contributes as much as one hundred predictions off by 1; (2) the units are squared (e.g.' },
+    { title: '2. Root Mean Squared Error (RMSE)', desc: '[equation]  RMSE restores the original units of y. If RMSE = 3.2 and the target is temperature in Celsius, then typical errors are around 3.2 degrees.' },
+    { title: '3. Mean Absolute Error (MAE)', desc: '[equation]  MAE treats all errors proportionally to their magnitude -- an error of 10 counts exactly ten times as much as an error of 1. This makes MAE more robust to outliers than MSE/RMSE.' },
+    { title: '4. Median Absolute Error (MedAE)', desc: '[equation]  Even more robust than MAE, MedAE ignores outlier residuals entirely. It is useful as a diagnostic -- if MedAE is much smaller than MAE, outlier errors are inflating the mean.' },
+    { title: '5. Mean Absolute Percentage Error (MAPE)', desc: '[equation]  MAPE expresses errors as a percentage of the true value, providing a scale-independent measure. An error of 5 on a target of 100 is 5%, while the same error on a target of 10 is 50%.' },
+    { title: '6. R-squared (Coefficient of Determination)', desc: '[equation]  R^2 measures the proportion of variance in y explained by the model. It compares the model\'s residual sum of squares (SS_&#123;res&#125;) to the variance of a naive baseline that always predicts the mean &#123;y&#125;.' },
 ];
 
 export default function WalkthroughMLFRegressionMetrics() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFRegressionMetrics() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Regression Metrics — Step by Step
+          Regression Metrics \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how regression metrics works, one stage at a time.

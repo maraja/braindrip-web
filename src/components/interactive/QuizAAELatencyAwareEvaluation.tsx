@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAELatencyAwareEvaluation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Time is a critical and often overlooked evaluation dimension -- measuring not just whether an agent succeeds but how quickly it succeeds, where the time goes, and how latency interacts with perceived and actual quality.', isTrue: true, explanation: 'This captures the core purpose of Latency-Aware Evaluation.' },
-    { text: 'Latency-Aware Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Latency-Aware Evaluation is important for building on more advanced topics.' },
-    { text: 'Latency-Aware Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Latency-Aware Evaluation is important for building on more advanced topics.' },
+    { text: 'Faster is always better.', isTrue: false, explanation: 'For complex tasks, premature responses harm quality. The quality-latency frontier shows that some tasks genuinely require more time.' },
+    { text: 'Median latency is sufficient to report.', isTrue: false, explanation: 'Median latency describes the typical case but hides worst-case behavior. An agent with a 5-second median but a 5-minute P99 has a fundamentally different reliability profile than one with a 10-second median and 15-second P99.' },
+    { text: 'Latency is purely a systems engineering problem.', isTrue: false, explanation: 'Agent latency is substantially determined by the agent\'s cognitive architecture -- how many reasoning steps it takes, how it decides when to stop thinking, how it handles uncertainty. These are AI design decisions, not infrastructure decisions.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

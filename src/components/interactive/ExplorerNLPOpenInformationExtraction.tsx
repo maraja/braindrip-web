@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'ReVerb extraction volume', detail: '15+ million triples from 500 million web pages with >80% precision at the highest confidence tier.' },
-    { label: 'OLLIE recall improvement', detail: '1.9x higher recall than ReVerb at comparable precision, primarily from capturing noun-mediated and adjective-mediated relations.' },
+    { label: 'ReVerb extraction volume', detail: '15+ million triples from 500 million web pages with &gt;80% precision at the highest confidence tier.' },
+    { label: 'OLLIE recall improvement', detail: '9x higher recall than ReVerb at comparable precision, primarily from capturing noun-mediated and adjective-mediated relations.' },
     { label: 'OpenIE6 benchmarks', detail: 'F1 of ~52% on the CaRB (Crowdsourced Benchmark for Open IE) evaluation, compared to ~38% for ReVerb and ~45% for OLLIE.' },
     { label: 'Extraction speed', detail: 'Rule-based systems (ReVerb, Stanford Open IE) process 1,000-10,000 sentences/second on a single CPU; neural systems (OpenIE6) process 50-200 sentences/second on GPU.' },
-    { label: 'Average extractions per sentence', detail: '1.5-3.0 triples per sentence for well-formed English text, depending on sentence complexity.' },
+    { label: 'Average extractions per sentence', detail: '5-3.0 triples per sentence for well-formed English text, depending on sentence complexity.' },
 ];
 
 export default function ExplorerNLPOpenInformationExtraction() {
@@ -19,10 +19,10 @@ export default function ExplorerNLPOpenInformationExtraction() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Open Information Extraction — Key Details Explorer
+          Open Information Extraction \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of open information extraction.
+          Click each card to explore the technical details.
         </p>
       </div>
 

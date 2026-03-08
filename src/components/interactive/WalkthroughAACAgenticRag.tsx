@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Retrieval Decision Layer', desc: 'The foundation of agentic rag begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Iterative Retrieval Loops', desc: 'At this stage, the key transformation occurs — the core mechanism that makes agentic rag work.' },
-    { title: '3. Multi-Source Orchestration', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Result Synthesis and Verification', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Retrieval Decision Layer', desc: 'Before any retrieval happens, the agent evaluates whether retrieval is necessary. This decision considers several factors: Is the question about factual, verifiable information?' },
+    { title: '2. Iterative Retrieval Loops', desc: 'When retrieval is warranted, agentic RAG does not stop at one round. The agent retrieves initial results, evaluates their relevance and completeness, and decides whether to continue.' },
+    { title: '3. Multi-Source Orchestration', desc: 'Real-world knowledge is scattered across multiple systems: vector stores, relational databases, APIs, knowledge graphs, and web search. The agentic RAG controller selects the appropriate source for each sub-question.' },
+    { title: '4. Result Synthesis and Verification', desc: 'After gathering information from potentially multiple rounds and sources, the agent synthesizes the results. This involves resolving contradictions between sources, weighing source reliability, and identifying gaps.' },
 ];
 
 export default function WalkthroughAACAgenticRag() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACAgenticRag() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agentic RAG — Step by Step
+          Agentic RAG \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how agentic rag works, one stage at a time.

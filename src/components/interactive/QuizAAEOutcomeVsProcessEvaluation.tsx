@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEOutcomeVsProcessEvaluation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Agent evaluation must weigh what the agent accomplished (outcome) against how it accomplished it (process), because either dimension alone can be dangerously misleading.', isTrue: true, explanation: 'This captures the core purpose of Outcome vs. Process Evaluation.' },
-    { text: 'Outcome vs. Process Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Outcome vs. Process Evaluation is important for building on more advanced topics.' },
-    { text: 'Outcome vs. Process Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Outcome vs. Process Evaluation is important for building on more advanced topics.' },
+    { text: 'If the tests pass, the agent succeeded.', isTrue: false, explanation: 'Test suites are incomplete specifications. An agent can pass all tests while introducing security vulnerabilities, degrading performance, violating coding standards, or making changes that are technically correct but unmaintainable.' },
+    { text: 'Process evaluation requires human reviewers.', isTrue: false, explanation: 'While human review provides the highest-fidelity process evaluation, automated trajectory analysis can catch many process failures: excessive tool calls, dangerous shell commands, circular reasoning, repeated failed attempts without strategy changes. LLM-as-judge can also assess trajectory quality at scale.' },
+    { text: 'You should always evaluate both.', isTrue: false, explanation: 'For some applications, pure outcome evaluation is appropriate. If you are evaluating an agent on well-defined mathematical problems with verifiable answers, the process is largely irrelevant -- what matters is correctness.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

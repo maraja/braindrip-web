@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE03AiSafetyAndGovernance() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'EU AI Act (2024): risk-based classification, conformity assessments for high-risk AI.', isTrue: true, explanation: 'This is a key technical detail of AI Safety and Governance.' },
-    { text: 'The rapid scaling of LLM capabilities from 2023 to 2025 outpaced governance frameworks, producing a patchwork of legislation (EU AI Act), voluntary commitments (Responsible Scaling Policies), and technical safety measures (red-teaming, model evaluations) that reflect deep disagreements about how to balance innovation with risk.', isTrue: true, explanation: 'This captures the core purpose of AI Safety and Governance.' },
-    { text: 'AI Safety and Governance is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding AI Safety and Governance is important for building on more advanced topics.' },
+    { text: 'AI safety is about preventing science fiction scenarios.', isTrue: false, explanation: 'While existential risk is part of the discourse, most AI safety work focuses on near-term, practical issues: bias, misinformation, privacy, reliability, and misuse. The frontier of concern has shifted from hypothetical to operational as models are deployed at scale.' },
+    { text: 'Regulation will stifle innovation.', isTrue: false, explanation: 'The EU AI Act exempts research and most AI applications. The heaviest obligations apply only to high-risk and frontier systems.' },
+    { text: 'Safety and capability are opposed.', isTrue: false, explanation: 'Models like Claude 4 demonstrate that strong safety properties can coexist with frontier capability. Reason-based alignment actually makes models more useful by enabling nuanced engagement with sensitive topics rather than blanket refusal.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

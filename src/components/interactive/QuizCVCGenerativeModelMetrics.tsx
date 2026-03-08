@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCGenerativeModelMetrics() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'FID is computed using pytorch-fid or cleanfid libraries.', isTrue: true, explanation: 'This is a key technical detail of Generative Model Metrics.' },
-    { text: 'Always specify the reference dataset, number of samples, and image resolution.', isTrue: true, explanation: 'This is a key technical detail of Generative Model Metrics.' },
-    { text: 'Standard FID benchmarks: CIFAR-10 (50K samples), FFHQ-256 (70K samples), COCO-30K (30K samples, text-conditioned).', isTrue: true, explanation: 'This is a key technical detail of Generative Model Metrics.' },
+    { text: 'Low FID means the model generates perfect images.', isTrue: false, explanation: 'FID measures distributional similarity, not individual image quality. A model can achieve low FID by generating diverse, slightly blurry images that match the overall statistics.' },
+    { text: 'Generative model quality is measured by FID (distribution distance, lower is better), Inception Score (diversity and quality), CLIP Score (text-image alignment), LPIPS (perceptual similarity), and KID (unbiased small-sample alternative to FID).', isTrue: true, explanation: 'This captures the core definition of Generative Model Metrics.' },
+    { text: 'Generative Model Metrics is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Generative Model Metrics is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

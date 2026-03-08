@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Variance of the CV estimate', detail: 'The standard error of K-fold CV is difficult to compute exactly because fold-level errors are not independent (they share training data). Naive $\\text{SE} = \\text{SD}(L_1, \\ldots, L_K) / \\sqrt{K}$ underestimates the true uncertainty.' },
-    { label: 'Computational cost', detail: 'K-fold requires $K$ model fits. For expensive models (deep networks), $K = 3$ or $K = 5$ may be the practical limit.' },
+    { label: 'Variance of the CV estimate', detail: 'The standard error of K-fold CV is difficult to compute exactly because fold-level errors are not independent (they share training data). Naive SE = SD(L_1, , L_K) / &#123;K&#125; underestimates the true uncertainty.' },
+    { label: 'Computational cost', detail: 'K-fold requires K model fits. For expensive models (deep networks), K = 3 or K = 5 may be the practical limit.' },
     { label: 'Stratification is almost free', detail: 'Always use stratified K-fold for classification. There is no downside and it reduces variance.' },
     { label: 'Shuffling', detail: 'Always shuffle data before splitting unless temporal or group structure exists.' },
 ];
@@ -18,10 +18,10 @@ export default function ExplorerMLFCrossValidation() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Cross-Validation — Key Details Explorer
+          Cross-Validation \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of cross-validation.
+          Click each card to explore the technical details.
         </p>
       </div>
 

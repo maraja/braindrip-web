@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Time complexity', detail: '$O(\\min(nd^2, n^2d))$ for full decomposition; randomized SVD achieves $O(ndk)$ for the top $k$ components' },
-    { label: 'Centering is essential', detail: 'PCA on uncentered data finds the direction of the mean, not of maximum variance. Always subtract $\\bar{x}$ before computing the covariance matrix' },
+    { label: 'Time complexity', detail: 'O((nd^2, n^2d)) for full decomposition; randomized SVD achieves O(ndk) for the top k components' },
+    { label: 'Centering is essential', detail: 'PCA on uncentered data finds the direction of the mean, not of maximum variance. Always subtract &#123;x&#125; before computing the covariance matrix' },
     { label: 'Scale sensitivity', detail: 'Features with larger scales dominate. Standardize features (zero mean, unit variance) when they are on different scales. Using the correlation matrix instead of the covariance matrix is equivalent to standardizing first' },
     { label: 'Linearity', detail: 'PCA only captures linear relationships. For nonlinear structure, use kernel PCA, t-SNE, or UMAP' },
-    { label: 'Reconstruction', detail: 'The original data can be approximately recovered as $\\hat{X} = ZW^T + \\bar{x}$, with reconstruction error equal to $\\sum_{i=k+1}^{d} \\lambda_i$' },
-    { label: 'Incremental PCA', detail: 'For datasets too large to fit in memory, incremental PCA processes the data in mini-batches, updating the eigendecomposition as new data arrives. This is available in scikit-learn as `IncrementalPCA`' },
+    { label: 'Reconstruction', detail: 'The original data can be approximately recovered as &#123;X&#125; = ZW^T + &#123;x&#125;, with reconstruction error equal to _&#123;i=k+1&#125;^&#123;d&#125; _i' },
+    { label: 'Incremental PCA', detail: 'For datasets too large to fit in memory, incremental PCA processes the data in mini-batches, updating the eigendecomposition as new data arrives. This is available in scikit-learn as IncrementalPCA' },
 ];
 
 export default function ExplorerMLFPrincipalComponentAnalysis() {
@@ -20,10 +20,10 @@ export default function ExplorerMLFPrincipalComponentAnalysis() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Principal Component Analysis — Key Details Explorer
+          Principal Component Analysis \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of principal component analysis.
+          Click each card to explore the technical details.
         </p>
       </div>
 

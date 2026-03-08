@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Classical Pipeline: Feature Extraction, Acoustic Model, Language Model, Decoder', desc: 'The foundation of automatic speech recognition begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Hybrid DNN-HMM Systems', desc: 'At this stage, the key transformation occurs — the core mechanism that makes automatic speech recognition work.' },
-    { title: '3. End-to-End Models', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Whisper (OpenAI, 2022)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Evaluation: Word Error Rate (WER)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Classical Pipeline: Feature Extraction, Acoustic Model, Language Model, Decoder', desc: 'Traditional ASR decomposes the problem into four stages:  Feature Extraction: Raw audio (sampled at 16 kHz typically) is converted into compact acoustic features.' },
+    { title: '2. Hybrid DNN-HMM Systems', desc: 'Starting around 2012, deep neural networks replaced GMMs as the emission model within the HMM framework. A DNN (typically 5--7 fully connected layers) takes a context window of acoustic frames and predicts the posterior probability of each HMM state (senone), with typical systems using.' },
+    { title: '3. End-to-End Models', desc: 'End-to-end models directly map audio features to character or subword sequences, eliminating the need for separate components:  CTC (Connectionist Temporal Classification): Graves et al. (2006) introduced CTC, which handles the alignment problem between variable-length audio and text.' },
+    { title: '4. Whisper (OpenAI, 2022)', desc: 'Whisper (Radford et al., 2022) demonstrated that scaling weakly-supervised data dramatically improves ASR robustness. Key design choices:  Data: Trained on 680,000 hours of audio-text pairs collected from the internet, spanning 99 languages.' },
+    { title: '5. Evaluation: Word Error Rate (WER)', desc: 'WER is the standard ASR metric, computed as:  Alignment between the hypothesis and reference is found via dynamic programming (minimum edit distance). A WER of 5% means roughly 1 in 20 words is wrong.' },
 ];
 
 export default function WalkthroughNLPAutomaticSpeechRecognition() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPAutomaticSpeechRecognition() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Automatic Speech Recognition — Step by Step
+          Automatic Speech Recognition \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how automatic speech recognition works, one stage at a time.

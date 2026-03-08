@@ -2,8 +2,8 @@ import { useState } from 'react';
 export default function QuizCVCVideoGeneration() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Video generation extends image synthesis to the temporal domain, using diffusion models or autoregressive approaches to produce temporally coherent frame sequences while battling flickering, motion artifacts, and immense computational costs.', isTrue: true, explanation: 'This captures the core purpose of Video Generation.' },
-    { text: 'Video Generation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Video Generation is important for building on more advanced topics.' },
+    { text: 'Video generation is just image generation applied per frame.', isTrue: false, explanation: 'Independent per-frame generation produces severe flickering and identity inconsistency. Temporal attention or convolution layers that enforce cross-frame coherence are essential components, not optional additions.' },
+    { text: 'Video generation extends image synthesis to the temporal domain, using diffusion models or autoregressive approaches to produce temporally coherent frame sequences while battling flickering, motion artifacts, and immense computational costs.', isTrue: true, explanation: 'This captures the core definition of Video Generation.' },
     { text: 'Video Generation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Video Generation is important for building on more advanced topics.' },
   ];
   return (

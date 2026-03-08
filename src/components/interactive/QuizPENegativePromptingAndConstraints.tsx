@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPENegativePromptingAndConstraints() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Negative instructions are followed with ~60-80% reliability; equivalent positive instructions achieve ~85-95% reliability.', isTrue: true, explanation: 'This is a key technical detail of Negative Prompting and Constraints.' },
-    { text: 'The "positive first, negative second" stacking pattern achieves ~90-95% constraint adherence.', isTrue: true, explanation: 'This is a key technical detail of Negative Prompting and Constraints.' },
-    { text: 'Abstract negations ("don\'t be verbose") are less effective than concrete negations ("do not exceed 100 words") by approximately 15-25%.', isTrue: true, explanation: 'This is a key technical detail of Negative Prompting and Constraints.' },
+    { text: 'Negative instructions don\'t work at all.', isTrue: false, explanation: 'Negative instructions do work — they are just less reliable than positive alternatives. For non-critical constraints, "do not include dates" is fine.' },
+    { text: 'If I write \'DO NOT\' in capitals, the model will follow it better.', isTrue: false, explanation: 'Capitalization has minimal effect on instruction adherence. The issue is structural (how attention processes negation), not emphasis-related.' },
+    { text: 'The solution is to repeat the negative instruction multiple times.', isTrue: false, explanation: 'Repetition helps marginally (5-10% improvement), but repeating a positive instruction is more effective than repeating a negative one. Three repetitions of "Do not hallucinate" are less effective than one statement of "Only cite provided sources."' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

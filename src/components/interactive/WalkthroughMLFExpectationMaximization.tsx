@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The EM Framework', desc: 'The foundation of expectation-maximization begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Derivation via Jensen\'s Inequality and the ELBO', desc: 'At this stage, the key transformation occurs — the core mechanism that makes expectation-maximization work.' },
-    { title: '3. Convergence Properties', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Canonical Example: Gaussian Mixture Models', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. K-Means as Hard EM', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The EM Framework', desc: 'Starting from an initial parameter estimate ^&#123;(0)&#125;, EM alternates:  E-step (Expectation): Compute the expected value of the complete-data log-likelihood with respect to the posterior distribution of latent variables given the current parameters:  [equation]  This requires computing p(Z  X, ^&#123;(t)&#125;),.' },
+    { title: '2. Derivation via Jensen\'s Inequality and the ELBO', desc: 'For any distribution q(Z) over latent variables, Jensen\'s inequality gives:  [equation]  The right-hand side is the Evidence Lower Bound (ELBO):  [equation]  The gap between  p(X  ) and the ELBO is exactly KL(q(Z) \\| p(Z  X, )). The E-step sets q(Z) = p(Z  X, ^&#123;(t)&#125;), closing this gap to zero.' },
+    { title: '3. Convergence Properties', desc: 'EM monotonically increases the incomplete-data log-likelihood and is guaranteed to converge to a local maximum (or saddle point) of (). It does not guarantee finding the global maximum.' },
+    { title: '4. Canonical Example: Gaussian Mixture Models', desc: 'A Gaussian Mixture Model (GMM) models data as arising from K Gaussian components:  [equation]  where _k are mixing weights, and  = \\&#123;_k, _k, _k\\&#125;_&#123;k=1&#125;^K. The latent variable z_i  \\&#123;1, , K\\&#125; indicates which component generated observation x_i.' },
+    { title: '5. K-Means as Hard EM', desc: 'K-means clustering can be viewed as a limiting case of EM for GMMs where responsibilities are "hard" (0 or 1) rather than soft. Each point is assigned to exactly one cluster (hard E-step), and cluster centroids are updated (M-step).' },
+    { title: '6. Applications Beyond GMMs', desc: 'EM is used in a wide range of models with latent variables and tractable complete-data likelihoods:  Hidden Markov Models: The Baum-Welch algorithm is EM applied to HMMs. The E-step computes forward-backward probabilities; the M-step updates transition and emission parameters.' },
 ];
 
 export default function WalkthroughMLFExpectationMaximization() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFExpectationMaximization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Expectation-Maximization — Step by Step
+          Expectation-Maximization \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how expectation-maximization works, one stage at a time.

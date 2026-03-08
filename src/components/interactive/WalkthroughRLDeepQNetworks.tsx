@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture', desc: 'The foundation of deep q-networks begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Loss Function', desc: 'At this stage, the key transformation occurs — the core mechanism that makes deep q-networks work.' },
-    { title: '3. Two Key Innovations', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Training Procedure', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Architecture', desc: 'DQN takes a stack of the last 4 grayscale game frames (84x84 pixels each) as input and outputs a Q-value for each possible action. The architecture for Atari is:  Input: 4 x 84 x 84 preprocessed grayscale frames Conv Layer 1: 32 filters, 8 x 8 kernel, stride 4, ReLU Conv Layer 2: 64 filters, 4 x 4.' },
+    { title: '2. The Loss Function', desc: 'DQN minimizes the mean squared Bellman error. For a transition (s, a, r, s\') sampled from the replay buffer, the loss is:  [equation]  where w are the online network weights and w^- are the target network weights (a periodically frozen copy).' },
+    { title: '3. Two Key Innovations', desc: 'DQN overcame the deadly triad (see function-approximation.md) with two stabilization mechanisms:  Experience Replay (detailed in experience-replay.md): Transitions (s_t, a_t, r_t, s_&#123;t+1&#125;) are stored in a circular buffer of size N = 1&#123;,&#125;000&#123;,&#125;000.' },
+    { title: '4. Training Procedure', desc: 'Initialize replay buffer &#123;D&#125; with capacity N; initialize Q with random weights w; set w^- = w. For each episode, observe initial state s_1 (stack of 4 frames).' },
 ];
 
 export default function WalkthroughRLDeepQNetworks() {
@@ -16,10 +16,10 @@ export default function WalkthroughRLDeepQNetworks() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Deep Q-Networks — Step by Step
+          Deep Q-Networks \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how deep q-networks works, one stage at a time.

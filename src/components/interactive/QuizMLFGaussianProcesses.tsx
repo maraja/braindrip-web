@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFGaussianProcesses() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A GP is fully specified by its mean function and kernel function.', isTrue: true, explanation: 'This is a key technical detail of Gaussian Processes.' },
-    { text: 'The posterior predictive distribution is available in closed form for regression with Gaussian noise.', isTrue: true, explanation: 'This is a key technical detail of Gaussian Processes.' },
-    { text: 'Kernel hyperparameters are learned by maximizing the log marginal likelihood (type-II maximum likelihood).', isTrue: true, explanation: 'This is a key technical detail of Gaussian Processes.' },
+    { text: 'GPs only work for small datasets.', isTrue: false, explanation: 'Sparse approximations and GPU-accelerated frameworks (GPyTorch, KeOps) enable GPs on datasets with hundreds of thousands or even millions of points.' },
+    { text: 'The RBF kernel is always a safe default.', isTrue: false, explanation: 'The RBF kernel assumes infinite smoothness, which can lead to overconfident predictions between data points. The Matern kernel with finite  is often a more realistic choice for physical processes.' },
+    { text: 'GPs are just kernel regression.', isTrue: false, explanation: 'GPs provide a full probabilistic framework with uncertainty estimates, marginal likelihood for model selection, and principled handling of noise -- kernel regression alone does not.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

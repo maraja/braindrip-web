@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Random Forest Algorithm', desc: 'The foundation of random forests begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Random Feature Selection', desc: 'At this stage, the key transformation occurs — the core mechanism that makes random forests work.' },
-    { title: '3. The Decorrelation Effect', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Feature Importance', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. OOB Error Estimate', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Random Forest Algorithm', desc: 'For b = 1, 2, , B:    - Draw a bootstrap sample D^&#123;*&#125;_b of size n from the training data D. - Grow a decision tree T_b on D^&#123;*&#125;_b, but at each internal node:      - Select m features uniformly at random from the full set of p features.' },
+    { title: '2. Random Feature Selection', desc: 'The key hyperparameter is m, the number of candidate features at each split:  Classification: m = &#123;p&#125; (Breiman\'s default recommendation) Regression: m =  p/3  Extreme case m = 1: Extremely Randomized Trees (Extra-Trees), which select both the feature and split point randomly.' },
+    { title: '3. The Decorrelation Effect', desc: 'Recall from the bagging analysis that the variance of the ensemble average is:  [equation]  By restricting each split to a random subset of features, Random Forests reduce the pairwise correlation  between trees.' },
+    { title: '4. Feature Importance', desc: 'Random Forests provide two built-in measures of feature relevance:  Permutation importance (Mean Decrease Accuracy): For each feature j, randomly shuffle its values in the OOB data and measure the increase in OOB error:  [equation]  This measures how much the model depends on the actual values of.' },
+    { title: '5. OOB Error Estimate', desc: 'Like bagging, Random Forests leverage out-of-bag samples for internal validation. Each tree T_b was not trained on approximately 36.8% of the data.' },
+    { title: '6. Proximity Matrix', desc: 'Random Forests can compute an n x n proximity matrix where entry (i, j) counts how often observations i and j land in the same terminal node across all trees, normalized by B.' },
 ];
 
 export default function WalkthroughMLFRandomForests() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFRandomForests() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Random Forests — Step by Step
+          Random Forests \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how random forests works, one stage at a time.

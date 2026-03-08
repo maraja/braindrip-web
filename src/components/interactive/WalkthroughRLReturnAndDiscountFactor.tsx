@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Undiscounted Return', desc: 'The foundation of return and discount factor begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Discounted Return', desc: 'At this stage, the key transformation occurs — the core mechanism that makes return and discount factor work.' },
-    { title: '3. The Recursive Structure', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Why Discount? Three Perspectives', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Effect of Gamma on Behavior', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Undiscounted Return', desc: 'The simplest aggregation of rewards is the undiscounted return -- the sum of all future rewards from timestep t:  [equation]  This works for episodic tasks with a finite horizon T (e.g., a game that always ends).' },
+    { title: '2. Discounted Return', desc: 'The discounted return solves this by geometrically decaying future rewards:  [equation]  where   [0, 1) is the discount factor. This sum is guaranteed to converge when rewards are bounded (  R_&#123;&#125;):  [equation]' },
+    { title: '3. The Recursive Structure', desc: 'A crucial property of the discounted return is its recursive decomposition:  [equation]  This identity is the foundation of the Bellman equations (see bellman-equations.md) and enables all temporal-difference learning algorithms. &lt;!' },
+    { title: '4. Why Discount? Three Perspectives', desc: 'Mathematical necessity. For continuing tasks with unbounded horizons, discounting ensures the return is finite and well-defined.' },
+    { title: '5. The Effect of Gamma on Behavior', desc: 'The effective horizon &#123;1&#125;&#123;1-&#125; gives the approximate number of future steps that significantly influence the return. Rewards beyond this horizon contribute negligibly.' },
+    { title: '6. Gamma as a Hyperparameter', desc: 'In practice,  is a tunable hyperparameter with profound effects on learning:  Low  (0.9--0.95): Faster learning, more stable training, but the agent may miss long-term strategies. Good for problems with short-horizon dependencies.' },
 ];
 
 export default function WalkthroughRLReturnAndDiscountFactor() {
@@ -17,10 +18,10 @@ export default function WalkthroughRLReturnAndDiscountFactor() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Return and Discount Factor — Step by Step
+          Return and Discount Factor \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how return and discount factor works, one stage at a time.

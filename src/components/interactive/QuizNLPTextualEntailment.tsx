@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPTextualEntailment() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'RTE-1 (2005) best system accuracy: approximately 59% on binary entailment, only 9 points above random chance.', isTrue: true, explanation: 'This is a key technical detail of Textual Entailment.' },
-    { text: 'SNLI contains 570,152 sentence pairs with three-way labels; inter-annotator agreement is approximately 89%.', isTrue: true, explanation: 'This is a key technical detail of Textual Entailment.' },
-    { text: 'BERT-large achieves approximately 91.0% accuracy on SNLI and approximately 86.3% on MultiNLI matched.', isTrue: true, explanation: 'This is a key technical detail of Textual Entailment.' },
+    { text: 'Textual entailment is the same as logical entailment.', isTrue: false, explanation: 'Textual entailment is softer than strict logical entailment. It asks whether a "reasonable person" would conclude H from P, allowing common-sense inferences that formal logic would not sanction.' },
+    { text: 'High word overlap means entailment.', isTrue: false, explanation: 'Lexical overlap is correlated with entailment but is not sufficient. "The dog bit the man" and "The man bit the dog" share all the same words but have different -- even contradictory -- meanings.' },
+    { text: 'Textual entailment and natural language inference are different tasks.', isTrue: false, explanation: 'They are essentially the same task under different names. "Textual entailment" was the original term from the RTE challenges (binary classification).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

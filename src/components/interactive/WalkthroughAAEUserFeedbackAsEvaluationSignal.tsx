@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Explicit Feedback Collection', desc: 'The foundation of user feedback as evaluation signal begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Implicit Feedback Signals', desc: 'At this stage, the key transformation occurs — the core mechanism that makes user feedback as evaluation signal work.' },
-    { title: '3. Bias Correction', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Integrating User Signals with Automated Evaluation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Privacy Considerations', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Explicit Feedback Collection', desc: 'Thumbs up/down is the simplest and most widely deployed mechanism. Its advantages are low user friction (one click), high response rates relative to other methods (typically 3-8% of interactions), and easy aggregation.' },
+    { title: '2. Implicit Feedback Signals', desc: 'Implicit signals are observable in every interaction, not just those where users choose to provide feedback. The key signals, ordered roughly by interpretability:  Task abandonment occurs when a user disengages mid-conversation without completing their goal.' },
+    { title: '3. Bias Correction', desc: 'The central challenge with user feedback is that feedback providers are not representative of all users. Known biases include:  Negativity bias: Users are 2-5x more likely to provide feedback after negative experiences than positive ones.' },
+    { title: '4. Integrating User Signals with Automated Evaluation', desc: 'User feedback serves a critical secondary purpose: training and calibrating automated evaluators. When a user marks an interaction as thumbs-down and writes "the agent hallucinated a nonexistent API endpoint," this becomes a labeled example for improving LLM-as-judge evaluators and rule-based.' },
+    { title: '5. Privacy Considerations', desc: 'User feedback data often contains sensitive information -- the content of their queries, their behavioral patterns, and their explicit assessments of their experience. Responsible feedback collection requires: anonymizing user identifiers before analysis, establishing data retention policies (e.g.' },
 ];
 
 export default function WalkthroughAAEUserFeedbackAsEvaluationSignal() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAEUserFeedbackAsEvaluationSignal() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          User Feedback as Evaluation Signal — Step by Step
+          User Feedback as Evaluation Signal \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how user feedback as evaluation signal works, one stage at a time.

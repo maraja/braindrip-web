@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAToolSchemasAndValidation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Field descriptions are optional nice-to-haves.', isTrue: false, explanation: '"Field descriptions are optional nice-to-haves." They are the primary way the LLM understands what each parameter means. Missing descriptions lead to hallucinated or incorrect values.' },
-    { text: 'Pass the schema via @tool(args_schema=MyModel) to override auto-generated schemas.', isTrue: true, explanation: 'This is a key technical detail of Tool Schemas and Validation.' },
-    { text: 'Every Field(description=...) value is visible to the LLM in the JSON Schema.', isTrue: true, explanation: 'This is a key technical detail of Tool Schemas and Validation.' },
+    { text: 'Field descriptions are optional nice-to-haves.', isTrue: false, explanation: 'They are the primary way the LLM understands what each parameter means. Missing descriptions lead to hallucinated or incorrect values.' },
+    { text: 'Pydantic BaseModel with Field() descriptors lets you define rich, validated input schemas for LangChain tools, giving LLMs detailed JSON Schema instructions for correct parameter generation.', isTrue: true, explanation: 'This captures the core definition of Tool Schemas and Validation.' },
+    { text: 'Tool Schemas and Validation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Tool Schemas and Validation is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

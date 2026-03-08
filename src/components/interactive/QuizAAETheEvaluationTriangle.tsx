@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAETheEvaluationTriangle() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Every evaluation decision involves a three-way tradeoff between thoroughness (how deep and broad the evaluation), cost (compute, API calls, human time), and speed (time to get actionable results).', isTrue: true, explanation: 'This captures the core purpose of The Evaluation Triangle.' },
-    { text: 'The Evaluation Triangle is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding The Evaluation Triangle is important for building on more advanced topics.' },
-    { text: 'The Evaluation Triangle is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding The Evaluation Triangle is important for building on more advanced topics.' },
+    { text: 'More evaluation is always better.', isTrue: false, explanation: 'Beyond a point, additional evaluation runs produce diminishing returns while linearly increasing cost. The optimal evaluation intensity depends on the decision being made, not on some absolute standard of rigor.' },
+    { text: 'You should run the same evaluation suite at every stage.', isTrue: false, explanation: 'Using your full pre-release suite during prototyping wastes resources and slows iteration. Using your prototyping suite for release decisions risks shipping broken agents.' },
+    { text: 'Cost is the main constraint.', isTrue: false, explanation: 'For many teams, speed is actually the binding constraint. An evaluation that costs 100 but takes 8 hours blocks a full day of development.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

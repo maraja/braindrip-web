@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE09MistralLargeAndEnterprise() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Mistral AI expanded from its scrappy open-source origins into a full enterprise AI platform through 2024, releasing Mistral Large 2 (123B dense), Codestral (22B code specialist), Pixtral (12B multimodal), and Mistral Nemo (12B) — establishing Europe\'s first credible frontier AI lab.', isTrue: true, explanation: 'This captures the core purpose of Mistral Large and Enterprise Expansion.' },
-    { text: 'Mistral Large and Enterprise Expansion is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Mistral Large and Enterprise Expansion is important for building on more advanced topics.' },
-    { text: 'Mistral Large and Enterprise Expansion is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Mistral Large and Enterprise Expansion is important for building on more advanced topics.' },
+    { text: 'Mistral is just a small model company.', isTrue: false, explanation: 'The Mistral 7B and Mixtral origins created this perception, but by mid-2024 Mistral had a full-spectrum lineup from 7B to 123B, covering text, code, vision, and multiple architectures.' },
+    { text: '123B dense, 128K context, 80+ programming languages, strong multilingual', isTrue: true, explanation: '123B dense, 128K context, 80+ programming languages, strong multilingual' },
+    { text: 'European AI labs can\'t compete with American ones.', isTrue: false, explanation: 'Mistral Large 3\'s 675B MoE under Apache 2.0 directly challenges the largest open models from Meta and DeepSeek. The constraint was primarily compute scale, and Mistral\'s aggressive fundraising and H200 access have steadily closed even that gap.' },
+    { text: '675B/41B MoE, 256K context, Apache 2.0, trained on 3,000 H200s, #2 open non-reasoning on LMArena', isTrue: true, explanation: '675B/41B MoE, 256K context, Apache 2.0, trained on 3,000 H200s, #2 open non-reasoning on LMArena' },
+    { text: 'Open-weight means Mistral doesn\'t make money.', isTrue: false, explanation: 'Open-weight releases drive adoption; enterprise services drive revenue. The model is commercially viable, as demonstrated by Mistral\'s growing customer base and rising valuation.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

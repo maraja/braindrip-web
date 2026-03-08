@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEConversationHistoryManagement() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Sliding windows with N=10 turns are the most common default in production conversational applications due to simplicity and predictability.', isTrue: true, explanation: 'This is a key technical detail of Conversation History Management.' },
-    { text: 'Summarization achieves 60-80% token reduction on conversation history while preserving 80-90% of key information.', isTrue: true, explanation: 'This is a key technical detail of Conversation History Management.' },
-    { text: 'Running summaries maintain constant token cost (~200-500 tokens) regardless of conversation length, at the cost of one additional LLM call per turn.', isTrue: true, explanation: 'This is a key technical detail of Conversation History Management.' },
+    { text: 'Full conversation history is always the best option.', isTrue: false, explanation: 'Full history maximizes coherence but at extreme token cost and potential quality degradation (lost-in-the-middle effects). Managed history often outperforms full history by focusing attention on relevant information.' },
+    { text: 'Conversation history management applies strategies like sliding windows, summarization, and selective retention to maintain conversational coherence while keeping token costs within the context budget.', isTrue: true, explanation: 'This captures the core definition of Conversation History Management.' },
+    { text: 'Conversation History Management is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Conversation History Management is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Jaccard Similarity', desc: 'The foundation of document similarity begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Cosine Similarity on TF-IDF Vectors', desc: 'At this stage, the key transformation occurs — the core mechanism that makes document similarity work.' },
-    { title: '3. Soft Cosine Measure', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Word Mover\'s Distance (WMD)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Embedding-Based Similarity', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Jaccard Similarity', desc: 'The simplest set-based measure. Treat each document as a set of words (or n-grams) and compute:  Jaccard similarity ranges from 0 (no overlap) to 1 (identical sets).' },
+    { title: '2. Cosine Similarity on TF-IDF Vectors', desc: 'The workhorse of traditional document similarity. Represent each document as a TF-IDF vector (see 03-text-representation/tf-idf.md) and compute:  Cosine similarity ranges from 0 (orthogonal, no shared terms) to 1 (identical term distributions), assuming non-negative TF-IDF weights.' },
+    { title: '3. Soft Cosine Measure', desc: 'The Soft Cosine Measure (Sidorov et al., 2014) generalizes cosine similarity by incorporating word-level similarity. Instead of treating vocabulary dimensions as orthogonal, it uses a word similarity matrix S where S_ij = similarity(word_i, word_j), computed from word embeddings:  This means "car".' },
+    { title: '4. Word Mover\'s Distance (WMD)', desc: 'WMD (Kusner et al., 2015) measures the minimum cumulative distance that words in document 1 must "travel" in embedding space to match words in document 2. Formally, it solves an optimal transport problem:  Where T is a transport matrix, x_i and x_j are word embeddings (e.g.' },
+    { title: '5. Embedding-Based Similarity', desc: 'Modern approaches represent entire documents as dense vectors and compute similarity via cosine distance or dot product:  Averaging word embeddings: Compute the mean of all word vectors in a document. Simple but surprisingly effective for short texts.' },
 ];
 
 export default function WalkthroughNLPDocumentSimilarity() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPDocumentSimilarity() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Document Similarity — Step by Step
+          Document Similarity \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how document similarity works, one stage at a time.

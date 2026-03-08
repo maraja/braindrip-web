@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Calibration Studies', desc: 'The foundation of judge calibration and validation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Agreement Metrics', desc: 'At this stage, the key transformation occurs — the core mechanism that makes judge calibration and validation work.' },
-    { title: '3. Known Biases in LLM Judges', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Bias Mitigation Strategies', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Monitoring Judge Drift', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Calibration Studies', desc: 'The core calibration process:  Assemble a calibration set: 100-500 agent outputs with expert human annotations. Multiple human raters (at least 3) should score each output to establish a reliable ground truth.' },
+    { title: '2. Agreement Metrics', desc: 'Cohen\'s Kappa measures agreement between two raters (e.g., judge vs. human consensus) corrected for chance agreement: kappa &lt; 0.20: Slight agreement 21-0.40: Fair agreement 41-0.60: Moderate agreement 61-0.80: Substantial agreement 81-1.00: Almost perfect agreement  Target: kappa &gt;= 0.' },
+    { title: '3. Known Biases in LLM Judges', desc: 'Position Bias: LLM judges systematically prefer responses presented first (or last) in pairwise comparisons. Studies show up to 25% score variation based on presentation order alone.' },
+    { title: '4. Bias Mitigation Strategies', desc: 'Position Swapping: Run each pairwise comparison twice with swapped positions. Average the scores.' },
+    { title: '5. Monitoring Judge Drift', desc: 'Judge quality can degrade over time due to: Model updates by the provider (API-served models change without notice) Distribution shift in the tasks being evaluated Rubric staleness as agent capabilities evolve  Establish a monitoring protocol: Re-run the calibration set monthly or after known model.' },
 ];
 
 export default function WalkthroughAAEJudgeCalibrationAndValidation() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAEJudgeCalibrationAndValidation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Judge Calibration and Validation — Step by Step
+          Judge Calibration and Validation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how judge calibration and validation works, one stage at a time.

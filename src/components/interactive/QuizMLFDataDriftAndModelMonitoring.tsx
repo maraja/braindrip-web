@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFDataDriftAndModelMonitoring() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Retraining on the latest data always fixes drift.', isTrue: false, explanation: '"Retraining on the latest data always fixes drift." If concept drift has occurred, old model architectures or features may be fundamentally wrong. Sometimes you need to redesign, not just retrain.' },
-    { text: 'Window size tradeoff: Small monitoring windows detect drift quickly but are noisy.', isTrue: true, explanation: 'This is a key technical detail of Data Drift and Model Monitoring.' },
-    { text: 'Large windows are stable but slow to detect changes.', isTrue: true, explanation: 'This is a key technical detail of Data Drift and Model Monitoring.' },
+    { text: 'If accuracy is stable, there\'s no drift.', isTrue: false, explanation: 'Accuracy can be maintained by compensating errors. Feature drift may be present even when aggregate metrics look fine, creating a fragile situation where small additional changes cause sudden collapse.' },
+    { text: 'Small monitoring windows detect drift quickly but are noisy.', isTrue: true, explanation: 'Large windows are stable but slow to detect changes. Adaptive windowing methods (e.g., ADWIN) balance this.' },
+    { text: 'Testing features independently misses correlations.', isTrue: true, explanation: 'Consider multivariate tests (e.g., Maximum Mean Discrepancy) for joint distribution shifts.' },
+    { text: 'Not all distribution changes are drift.', isTrue: true, explanation: 'Some are expected seasonal variation. Build seasonality into your baseline distributions.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

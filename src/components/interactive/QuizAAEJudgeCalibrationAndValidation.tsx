@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEJudgeCalibrationAndValidation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Judge calibration and validation is the practice of systematically verifying that automated evaluators produce scores aligned with human expert judgments, detecting and mitigating biases, and monitoring judge quality over time.', isTrue: true, explanation: 'This captures the core purpose of Judge Calibration and Validation.' },
-    { text: 'Judge Calibration and Validation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Judge Calibration and Validation is important for building on more advanced topics.' },
-    { text: 'Judge Calibration and Validation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Judge Calibration and Validation is important for building on more advanced topics.' },
+    { text: 'High accuracy on a benchmark means the judge is calibrated for my use case.', isTrue: false, explanation: 'Benchmark performance does not transfer. A judge validated on creative writing evaluation may perform poorly on code evaluation.' },
+    { text: 'Human agreement is always the gold standard.', isTrue: false, explanation: 'Humans are inconsistent too. If three human raters disagree significantly (kappa &lt; 0.50), the problem may be the rubric, not the judge.' },
+    { text: 'Calibration is a one-time setup cost.', isTrue: false, explanation: 'Judge drift is real and ongoing. Monthly recalibration checks are a minimum; continuous monitoring is better.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

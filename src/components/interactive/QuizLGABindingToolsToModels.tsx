@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGABindingToolsToModels() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'bind_tools() returns a new model instance; it does not mutate the original.', isTrue: true, explanation: 'This is a key technical detail of Binding Tools to Models.' },
-    { text: 'The method accepts a list of @tool-decorated functions, StructuredTool objects, or Pydantic models.', isTrue: true, explanation: 'This is a key technical detail of Binding Tools to Models.' },
-    { text: 'tool_calls is a list on AIMessage; it can contain zero, one, or multiple calls.', isTrue: true, explanation: 'This is a key technical detail of Binding Tools to Models.' },
+    { text: 'bind_tools() executes the tools when the model responds.', isTrue: false, explanation: 'It does not. The model only generates a call specification.' },
+    { text: 'model.bind_tools(tools) attaches tool definitions to a chat model so the LLM can generate structured tool_calls instead of plain text when it determines a tool should be used.', isTrue: true, explanation: 'This captures the core definition of Binding Tools to Models.' },
+    { text: 'Binding Tools to Models is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Binding Tools to Models is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Trend 1: From Chatbots to Agents', desc: 'The foundation of where llms are heading begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Trend 2: Reasoning Scaling as the New Frontier', desc: 'At this stage, the key transformation occurs — the core mechanism that makes where llms are heading work.' },
-    { title: '3. Trend 3: Multimodal Convergence', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Trend 4: Efficiency Revolution', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Trend 5: Open-Source Parity', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Trend 1: From Chatbots to Agents', desc: 'The most visible trajectory is the shift from models that generate text to models that take action. Claude Code, GPT-5\'s integrated tool use, Gemini\'s Project Astra and Mariner, and specialized coding agents like Jules represent the leading edge.' },
+    { title: '2. Trend 2: Reasoning Scaling as the New Frontier', desc: 'The pre-training scaling era (2018-2023) was defined by a simple dynamic: more compute at training time yielded better models. The reasoning era (2024-2025) introduced a second dimension: more compute at inference time also yields better results.' },
+    { title: '3. Trend 3: Multimodal Convergence', desc: 'By 2025, every frontier model processes text, images, and audio natively. Video understanding is emerging.' },
+    { title: '4. Trend 4: Efficiency Revolution', desc: 'DeepSeek V3\'s training cost ($5.6M for a frontier model) was a shock because it demonstrated that scaling laws could be exploited more efficiently — you do not need a billion-dollar training run to produce a frontier model.' },
+    { title: '5. Trend 5: Open-Source Parity', desc: 'The gap between open and closed models has narrowed from ~23 MMLU points (2023) to near-parity (2025). If the trajectory continues, open models will match closed models on all but the most resource-intensive capabilities (extreme-scale multimodal training, maximum agentic performance).' },
+    { title: '6. Trend 6: Specialization Within Generality', desc: 'Even as general models improve, specialized variants (Qwen3-Coder, DeepSeek-Coder, domain-specific fine-tunes) consistently outperform generalists on their target domains.' },
 ];
 
 export default function WalkthroughLLE05WhereLlmsAreHeading() {
@@ -17,10 +18,10 @@ export default function WalkthroughLLE05WhereLlmsAreHeading() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Where LLMs Are Heading — Step by Step
+          Where LLMs Are Heading \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how where llms are heading works, one stage at a time.

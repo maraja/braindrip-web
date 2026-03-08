@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Scale of human data', detail: 'InstructGPT used ~13K demonstrations for SFT and ~33K comparisons for reward modeling -- tiny relative to pretraining data (hundreds of billions of tokens).' },
-    { label: 'KL coefficient', detail: 'Typical $\\beta$ values range from 0.01 to 0.2. Too low leads to reward hacking; too high prevents meaningful optimization.' },
-    { label: 'Four models in memory', detail: 'During PPO, four models must be loaded simultaneously: the active policy $\\pi_\\theta$, the reference policy $\\pi_{\\text{SFT}}$ (for KL computation), the reward model $r_\\phi$, and the value function $V_\\psi$.' },
+    { label: 'KL coefficient', detail: 'Typical  values range from 0.01 to 0.2. Too low leads to reward hacking; too high prevents meaningful optimization.' },
+    { label: 'Four models in memory', detail: 'During PPO, four models must be loaded simultaneously: the active policy _, the reference policy _&#123;SFT&#125; (for KL computation), the reward model r_, and the value function V_.' },
     { label: 'Reward model size', detail: 'InstructGPT used a 6B reward model. Larger reward models generally produce better alignment, but with diminishing returns beyond the policy model\'s size.' },
-    { label: 'Training instability', detail: 'RLHF with PPO is notoriously sensitive to hyperparameters. Learning rates of $1 \\times 10^{-6}$ to $5 \\times 10^{-6}$ are common, far lower than standard supervised training.' },
+    { label: 'Training instability', detail: 'RLHF with PPO is notoriously sensitive to hyperparameters. Learning rates of 1 x 10^&#123;-6&#125; to 5 x 10^&#123;-6&#125; are common, far lower than standard supervised training.' },
     { label: 'Reward hacking', detail: 'Without the KL penalty, models quickly learn to exploit reward model weaknesses -- generating verbose, sycophantic, or formulaic responses that score highly but are not genuinely better.' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerRLRlhfPipeline() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          RLHF Pipeline — Key Details Explorer
+          RLHF Pipeline \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of rlhf pipeline.
+          Click each card to explore the technical details.
         </p>
       </div>
 

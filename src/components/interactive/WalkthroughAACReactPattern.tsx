@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Thought-Action-Observation Loop', desc: 'The foundation of react pattern begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Prompt Structure', desc: 'At this stage, the key transformation occurs — the core mechanism that makes react pattern work.' },
-    { title: '3. When to Use ReAct vs Other Patterns', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Implementation Details', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Thought-Action-Observation Loop', desc: 'The core structure of ReAct is a repeating three-part cycle:  Thought: The agent generates an internal reasoning trace. This is not sent to any external tool; it is the agent\'s private deliberation.' },
+    { title: '2. Prompt Structure', desc: 'A typical ReAct prompt includes few-shot examples that demonstrate the interleaved format:' },
+    { title: '3. When to Use ReAct vs Other Patterns', desc: 'ReAct is best suited for tasks that require grounded reasoning with external information retrieval: multi-hop question answering, fact-checking, interactive decision-making.' },
+    { title: '4. Implementation Details', desc: 'In practice, ReAct is implemented by formatting the agent\'s output into parseable segments. The framework (LangChain, LlamaIndex, or custom code) parses the agent\'s text output to extract the action name and parameters, executes the action, and appends the observation back into the context.' },
 ];
 
 export default function WalkthroughAACReactPattern() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACReactPattern() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          ReAct Pattern — Step by Step
+          ReAct Pattern \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how react pattern works, one stage at a time.

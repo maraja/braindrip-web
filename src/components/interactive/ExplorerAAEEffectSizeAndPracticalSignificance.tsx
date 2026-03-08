@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Always report both', detail: 'p-values and effect sizes serve complementary functions. A significant result with a tiny effect size is noteworthy for different reasons than a significant result with a large effect size.' },
-    { label: 'Effect size CI', detail: 'Report confidence intervals for effect sizes, not just point estimates. For Cohen\'s $h$: $\\text{SE}(h) \\approx \\sqrt{1/n_1 + 1/n_2}$.' },
-    { label: 'Equivalence testing (TOST)', detail: 'To actively demonstrate that two agents are equivalent (not just that you failed to detect a difference), use two one-sided tests. Reject $H_0: |\\Delta p| \\geq \\delta$ if both one-sided tests are significant.' },
-    { label: 'Non-inferiority margins', detail: 'In many settings, the new agent need not be better -- just not worse by more than $\\delta$. Non-inferiority testing uses $H_0: p_{\\text{new}} \\leq p_{\\text{old}} - \\delta$ and is more appropriate for regression testing than superiority testing.' },
+    { label: 'Effect size CI', detail: 'Report confidence intervals for effect sizes, not just point estimates. For Cohen\'s h: SE(h)  &#123;1/n_1 + 1/n_2&#125;.' },
+    { label: 'Equivalence testing (TOST)', detail: 'To actively demonstrate that two agents are equivalent (not just that you failed to detect a difference), use two one-sided tests. Reject H_0:    if both one-sided tests are significant.' },
+    { label: 'Non-inferiority margins', detail: 'In many settings, the new agent need not be better -- just not worse by more than . Non-inferiority testing uses H_0: p_&#123;new&#125;  p_&#123;old&#125; -  and is more appropriate for regression testing than superiority testing.' },
     { label: 'Domain-specific thresholds', detail: 'A 2% improvement on safety metrics may be critically important; a 2% improvement on a convenience metric may be irrelevant. Practical significance thresholds should be metric-specific.' },
 ];
 
@@ -19,10 +19,10 @@ export default function ExplorerAAEEffectSizeAndPracticalSignificance() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Effect Size and Practical Significance — Key Details Explorer
+          Effect Size and Practical Significance \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of effect size and practical significance.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCClassificationMetrics() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ImageNet benchmarks: top-1 and top-5 accuracy on 50K validation images across 1,000 classes.', isTrue: true, explanation: 'This is a key technical detail of Classification Metrics.' },
-    { text: 'For binary classification with 1% positive rate, a model predicting all negatives achieves 99% accuracy, 0% precision (undefined), 0% recall, and 0% F1.', isTrue: true, explanation: 'This is a key technical detail of Classification Metrics.' },
-    { text: 'Macro-F1 on a 1000-class dataset can be heavily influenced by classes with very few test samples; ensure sufficient samples per class for stable estimates.', isTrue: true, explanation: 'This is a key technical detail of Classification Metrics.' },
+    { text: 'Accuracy is the best metric for classification.', isTrue: false, explanation: 'Accuracy is only meaningful when classes are balanced and all errors are equally costly. In most real-world applications, neither condition holds.' },
+    { text: 'Classification metrics -- accuracy, precision, recall, F1, and their variants -- quantify model performance from different angles, with the choice of metric depending on class balance, error costs, and deployment context.', isTrue: true, explanation: 'This captures the core definition of Classification Metrics.' },
+    { text: 'Classification Metrics is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Classification Metrics is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

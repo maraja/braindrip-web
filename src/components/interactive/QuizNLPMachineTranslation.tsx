@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPMachineTranslation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'More parallel data always helps.', isTrue: false, explanation: '"More parallel data always helps." Data quality matters as much as quantity. Noisy web-crawled parallel data (e.g., from Paracrawl) can actually degrade performance without careful filtering, as shown' },
-    { text: 'WMT (Workshop on Machine Translation) is the primary shared task, running annually since 2006 with standardized benchmarks for dozens of language pairs.', isTrue: true, explanation: 'This is a key technical detail of Machine Translation.' },
-    { text: 'State-of-the-art systems in 2024 achieve BLEU scores above 40 on WMT English-German and above 45 on English-French, approaching human parity on news text.', isTrue: true, explanation: 'This is a key technical detail of Machine Translation.' },
+    { text: 'Neural MT solved machine translation.', isTrue: false, explanation: 'NMT dramatically improved quality for high-resource pairs, but low-resource languages (the majority of the world\'s 7,000+ languages) still have poor or no MT coverage. Domain shift, rare terminology, and document-level coherence remain unsolved.' },
+    { text: 'BLEU score fully captures translation quality.', isTrue: false, explanation: 'BLEU correlates with human judgments at the system level but poorly at the sentence level. It penalizes valid paraphrases, ignores fluency beyond n-gram overlap, and cannot detect critical meaning errors.' },
+    { text: 'MT is just a generation task.', isTrue: false, explanation: 'Effective MT requires deep understanding of source semantics, pragmatics, and cultural context. Idioms ("it\'s raining cats and dogs"), honorifics, gendered language, and register all demand more than surface-level pattern matching.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

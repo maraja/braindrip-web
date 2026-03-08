@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Idempotency', detail: 'Each pipeline step should produce the same output given the same input, regardless of how many times it runs.' },
-    { label: 'Training-serving skew', detail: 'The most dangerous pipeline bug. It occurs when preprocessing differs between training and inference. Pipelines with shared transformation objects (like scikit-learn\'s `Pipeline`) mitigate this.' },
+    { label: 'Training-serving skew', detail: 'The most dangerous pipeline bug. It occurs when preprocessing differs between training and inference. Pipelines with shared transformation objects (like scikit-learn\'s Pipeline) mitigate this.' },
     { label: 'Caching', detail: 'Orchestrators cache intermediate outputs so unchanged upstream steps are not re-executed, reducing iteration time significantly.' },
     { label: 'Parameterization', detail: 'Pipelines should accept configuration (hyperparameters, data paths, compute resources) as external parameters, not hardcoded values.' },
     { label: 'Testing', detail: 'Pipeline steps need unit tests (does this transform produce expected output?) and integration tests (do all steps compose correctly?).' },
@@ -19,10 +19,10 @@ export default function ExplorerMLFMlPipelines() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          ML Pipelines — Key Details Explorer
+          ML Pipelines \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of ml pipelines.
+          Click each card to explore the technical details.
         </p>
       </div>
 

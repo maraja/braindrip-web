@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Sampling Strategies', desc: 'The foundation of production quality monitoring begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Automated Quality Scoring', desc: 'At this stage, the key transformation occurs — the core mechanism that makes production quality monitoring work.' },
-    { title: '3. Anomaly Detection and Alerting', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Dashboard Design', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Cost of Monitoring', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Sampling Strategies', desc: 'Not all interactions need evaluation. The art of monitoring is selecting which interactions to score.' },
+    { title: '2. Automated Quality Scoring', desc: 'Sampled interactions need scoring. Three approaches are common, often used in combination.' },
+    { title: '3. Anomaly Detection and Alerting', desc: 'Raw scores become actionable through anomaly detection. Statistical process control (SPC), borrowed from manufacturing, provides a principled framework.' },
+    { title: '4. Dashboard Design', desc: 'An effective monitoring dashboard presents three layers of information. The real-time layer shows current quality metrics updated every 5-15 minutes with color-coded status indicators (green/yellow/red).' },
+    { title: '5. Cost of Monitoring', desc: 'The primary cost driver is LLM-as-judge evaluation. A practical budget model:  100,000 daily interactions at a 2% sampling rate = 2,000 evaluations per day Each evaluation uses approximately 2,000 input tokens + 200 output tokens At GPT-4o-mini pricing (~0.' },
 ];
 
 export default function WalkthroughAAEProductionQualityMonitoring() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAEProductionQualityMonitoring() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Production Quality Monitoring — Step by Step
+          Production Quality Monitoring \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how production quality monitoring works, one stage at a time.

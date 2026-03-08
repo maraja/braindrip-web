@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPGrammaticalErrorCorrection() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'CoNLL-2014 (Ng et al., 2014): 1,312 test sentences from NUCLE (NUS Corpus of Learner English) with annotations from 2 annotators.', isTrue: true, explanation: 'This is a key technical detail of Grammatical Error Correction.' },
-    { text: 'The primary GEC benchmark for years, scored with M2 F0.5.', isTrue: true, explanation: 'This is a key technical detail of Grammatical Error Correction.' },
-    { text: 'State-of-the-art systems achieve approximately 66--73 F0.5.', isTrue: true, explanation: 'This is a key technical detail of Grammatical Error Correction.' },
+    { text: 'GEC is solved by spell checkers.', isTrue: false, explanation: 'Spell checkers handle only one error type (misspellings). GEC encompasses article errors, preposition errors, verb form errors, subject-verb agreement, word order, sentence structure, and more.' },
+    { text: '1,312 test sentences from NUCLE (NUS Corpus of Learner English) with annotations from 2 annotators.', isTrue: true, explanation: 'The primary GEC benchmark for years, scored with M2 F0.5. State-of-the-art systems achieve approximately 66--73 F0.5.' },
+    { text: 'A grammar checker should fix every error.', isTrue: false, explanation: 'In practice, precision matters more than recall. Users lose trust quickly when a system "corrects" text that was already correct (false positives).' },
+    { text: 'Used the Write & Improve + LOCNESS corpus with 4,477 test sentences spanning three proficiency levels (beginner, intermediate, advanced).', isTrue: true, explanation: 'Provides a more representative evaluation across learner proficiency.' },
+    { text: 'GEC is just translation from bad text to good text.', isTrue: false, explanation: 'While the seq2seq framing works well, GEC has unique properties: most of the input is already correct (typically 85--95% of tokens are unchanged), the edits are usually local, and the system must preserve the author\'s intended meaning and style rather than generating a completely new sentence.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

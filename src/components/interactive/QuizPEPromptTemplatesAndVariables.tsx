@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEPromptTemplatesAndVariables() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Templates separate static instruction text (authored by prompt engineers) from dynamic content (injected at runtime by application code).', isTrue: true, explanation: 'This is a key technical detail of Prompt Templates and Variables.' },
-    { text: 'Common variable syntaxes: &#123;variable&#125; (Python/LangChain), &#123;&#123; variable &#125;&#125; (Jinja2), $&#123;variable&#125; (shell-like).', isTrue: true, explanation: 'This is a key technical detail of Prompt Templates and Variables.' },
-    { text: 'Template overhead (static tokens) should be measured and optimized: a 500-token template serving 1M requests/month costs $1,250/month at $2.50/1M input tokens.', isTrue: true, explanation: 'This is a key technical detail of Prompt Templates and Variables.' },
+    { text: 'Templates are just string concatenation.', isTrue: false, explanation: 'Good templates include token budget validation, input sanitization, version management, and evaluation integration. The string rendering is trivial; the engineering around it is what makes templates production-ready.' },
+    { text: 'Variables can be any length.', isTrue: false, explanation: 'Each variable must respect the context window budget. A template with 500 static tokens and a &#123;document&#125; variable in a 128K context model has a ~127K token budget for the document.' },
+    { text: 'Once a template works, it does not need maintenance.', isTrue: false, explanation: 'Templates need ongoing maintenance as models change (new versions may respond differently to the same template), task requirements evolve, and edge cases are discovered. Continuous evaluation against a test suite catches regressions.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

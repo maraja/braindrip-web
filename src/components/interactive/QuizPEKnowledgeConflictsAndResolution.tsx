@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEKnowledgeConflictsAndResolution() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Without conflict resolution instructions, models silently pick one version in 70-80% of inter-context conflicts and default to parametric knowledge in 40-60% of context-parametric conflicts.', isTrue: true, explanation: 'This is a key technical detail of Knowledge Conflicts and Resolution.' },
-    { text: 'Explicit conflict detection prompting reduces silent resolution to 20-30% of cases, surfacing most conflicts for user awareness.', isTrue: true, explanation: 'This is a key technical detail of Knowledge Conflicts and Resolution.' },
-    { text: 'Context-priority instructions cause models to follow retrieved context over training data in 70-85% of cases, compared to 40-60% baseline.', isTrue: true, explanation: 'This is a key technical detail of Knowledge Conflicts and Resolution.' },
+    { text: 'Knowledge conflicts are rare edge cases.', isTrue: false, explanation: 'In enterprise knowledge bases with documents spanning multiple years and authors, 15-25% of queries encounter conflicts. Outdated documents, regional variations, and evolving policies make conflicts common.' },
+    { text: 'The model will naturally prefer the retrieved context.', isTrue: false, explanation: 'Without explicit instructions, models follow retrieved context only 40-60% of the time when it conflicts with training data. The model\'s parametric knowledge exerts strong influence, especially on well-known topics.' },
+    { text: 'Newer information is always more accurate.', isTrue: false, explanation: 'Recency is a useful heuristic but not universally applicable. A recent blog post may be less accurate than an older peer-reviewed paper.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

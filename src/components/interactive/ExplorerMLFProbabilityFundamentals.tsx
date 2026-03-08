@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Law of total probability', detail: '$P(A) = \\sum_i P(A|B_i)P(B_i)$ for a partition $\\{B_i\\}$.' },
-    { label: 'Linearity of expectation', detail: '$\\mathbb{E}[aX + bY] = a\\mathbb{E}[X] + b\\mathbb{E}[Y]$, even if $X$ and $Y$ are dependent.' },
-    { label: 'Correlation', detail: '$\\rho(X,Y) = \\text{Cov}(X,Y)/(\\sigma_X \\sigma_Y) \\in [-1, 1]$. Zero correlation does not imply independence (except for Gaussians).' },
+    { label: 'Law of total probability', detail: 'P(A) = _i P(A|B_i)P(B_i) for a partition \\&#123;B_i\\&#125;.' },
+    { label: 'Linearity of expectation', detail: '&#123;E&#125;[aX + bY] = a&#123;E&#125;[X] + b&#123;E&#125;[Y], even if X and Y are dependent.' },
+    { label: 'Correlation', detail: '(X,Y) = Cov(X,Y)/(_X _Y)  [-1, 1]. Zero correlation does not imply independence (except for Gaussians).' },
 ];
 
 export default function ExplorerMLFProbabilityFundamentals() {
@@ -17,10 +17,10 @@ export default function ExplorerMLFProbabilityFundamentals() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Probability Fundamentals — Key Details Explorer
+          Probability Fundamentals \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of probability fundamentals.
+          Click each card to explore the technical details.
         </p>
       </div>
 

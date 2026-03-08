@@ -6,7 +6,7 @@ const DETAILS = [
     { label: 'Message role optimization', detail: 'System messages get special attention weight in most models. Placing critical instructions in the system prompt is more effective than placing them in early user messages' },
     { label: 'Context window sizes (as of early 2025)', detail: 'Claude 3.5 Sonnet: 200K tokens. GPT-4 Turbo: 128K tokens. Gemini 1.5 Pro: up to 2M tokens. Llama 3.1: 128K tokens' },
     { label: 'Cost implications', detail: 'Longer context windows cost more per request (input tokens are billed). A 100K token context costs roughly 25x more than a 4K token context. Context management is also cost management' },
-    { label: 'Conversation buffer libraries', detail: 'LangChain provides `ConversationBufferMemory`, `ConversationBufferWindowMemory`, `ConversationSummaryMemory`, and `ConversationSummaryBufferMemory` as standard components' },
+    { label: 'Conversation buffer libraries', detail: 'LangChain provides ConversationBufferMemory, ConversationBufferWindowMemory, ConversationSummaryMemory, and ConversationSummaryBufferMemory as standard components' },
 ];
 
 export default function ExplorerAACShortTermContextMemory() {
@@ -20,10 +20,10 @@ export default function ExplorerAACShortTermContextMemory() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Short-Term Context Memory — Key Details Explorer
+          Short-Term Context Memory \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of short-term context memory.
+          Click each card to explore the technical details.
         </p>
       </div>
 

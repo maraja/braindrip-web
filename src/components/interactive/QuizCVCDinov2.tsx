@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizCVCDinov2() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'DINOv2 is a family of self-supervised Vision Transformers trained by Meta with distillation at scale on 142 million curated images, producing visual features that match or surpass supervised pretraining across diverse downstream tasks without fine-tuning.', isTrue: true, explanation: 'This captures the core purpose of DINOv2.' },
-    { text: 'DINOv2 is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding DINOv2 is important for building on more advanced topics.' },
-    { text: 'DINOv2 is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding DINOv2 is important for building on more advanced topics.' },
+    { text: 'Self-supervised learning always produces weaker features than supervised.', isTrue: false, explanation: 'DINOv2 conclusively disproved this at sufficient scale. The key ingredients are data curation, training scale, and combining complementary self-supervised objectives.' },
+    { text: 'ViT-g/14: 86.3% top-1; ViT-L/14: 84.5%; ViT-B/14: 82.1%; ViT-S/14: 79.0%', isTrue: true, explanation: 'ViT-g/14: 86.3% top-1; ViT-L/14: 84.5%; ViT-B/14: 82.1%; ViT-S/14: 79.0%' },
+    { text: 'DINOv2 is just a bigger DINO.', isTrue: false, explanation: 'While it inherits the self-distillation framework, DINOv2 adds masked image modeling (iBOT), a curated 142M-image dataset, and systematic distillation -- these are substantive methodological advances, not just scaling.' },
+    { text: 'ViT-g trained for ~22,000 A100 GPU-hours (roughly 500 A100-days)', isTrue: true, explanation: 'ViT-g trained for ~22,000 A100 GPU-hours (roughly 500 A100-days)' },
+    { text: 'CLIP is always better because it uses language.', isTrue: false, explanation: 'DINOv2 matches CLIP on many benchmarks and significantly outperforms it on dense prediction tasks (segmentation, depth) because its patch-level features are more spatially precise. CLIP is better for tasks requiring text-image alignment; DINOv2 is better for pure visual understanding.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

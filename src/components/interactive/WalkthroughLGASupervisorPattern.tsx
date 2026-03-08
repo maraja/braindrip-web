@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Defining the State', desc: 'The foundation of supervisor pattern begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Building the Supervisor and Specialists', desc: 'At this stage, the key transformation occurs — the core mechanism that makes supervisor pattern work.' },
-    { title: '3. Wiring the Graph', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Ending the Loop', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Defining the State', desc: 'The next_agent field acts as a routing signal. The supervisor writes to it; conditional edges read from it.' },
+    { title: '2. Wiring the Graph', desc: 'Every specialist has a fixed edge back to the supervisor. The supervisor is the only node with conditional outbound edges, keeping the routing logic in one place.' },
+    { title: '3. Ending the Loop', desc: 'The supervisor can route to END when the task is complete:' },
 ];
 
 export default function WalkthroughLGASupervisorPattern() {
@@ -16,10 +15,10 @@ export default function WalkthroughLGASupervisorPattern() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Supervisor Pattern — Step by Step
+          Supervisor Pattern \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how supervisor pattern works, one stage at a time.

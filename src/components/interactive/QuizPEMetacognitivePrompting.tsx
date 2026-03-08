@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizPEMetacognitivePrompting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Confidence scale: 1-10 numerical scales produce more granular signals than binary (certain/uncertain); 1-5 scales are a reasonable compromise between granularity and consistency.', isTrue: true, explanation: 'This is a key technical detail of Metacognitive Prompting.' },
-    { text: 'Pre-answer reflection: Asking the model to identify potential error modes before answering reduces hallucination rates by an estimated 10-20% on knowledge-intensive tasks.', isTrue: true, explanation: 'This is a key technical detail of Metacognitive Prompting.' },
-    { text: 'Verbalized uncertainty: Models that include hedging language in responses are rated as more trustworthy by users in human evaluation studies.', isTrue: true, explanation: 'This is a key technical detail of Metacognitive Prompting.' },
+    { text: 'The model truly knows what it knows.', isTrue: false, explanation: 'LLMs do not have genuine self-awareness or introspective access to their parameters. When a model reports confidence, it is generating text that is likely given the prompt and its training data, not performing actual self-evaluation.' },
+    { text: '1-10 numerical scales produce more granular signals than binary (certain/uncertain); 1-5 scales are a reasonable compromise between granularity and consistency.', isTrue: true, explanation: '1-10 numerical scales produce more granular signals than binary (certain/uncertain); 1-5 scales are a reasonable compromise between granularity and consistency.' },
+    { text: 'Asking for confidence eliminates hallucination.', isTrue: false, explanation: 'A model can hallucinate and simultaneously report high confidence. Metacognitive prompting reduces the rate of confident hallucination but does not eliminate it.' },
+    { text: 'Asking the model to identify potential error modes before answering reduces hallucination rates by an estimated 10-20% on knowledge-intensive tasks.', isTrue: true, explanation: 'Asking the model to identify potential error modes before answering reduces hallucination rates by an estimated 10-20% on knowledge-intensive tasks.' },
+    { text: 'Low confidence means the answer is wrong.', isTrue: false, explanation: 'Low confidence means the model\'s generated text suggests uncertainty, which correlates with but does not determine incorrectness. Many low-confidence answers are correct; the model may express uncertainty about a fact that it actually has correct information about.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

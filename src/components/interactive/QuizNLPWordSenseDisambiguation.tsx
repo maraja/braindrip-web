@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPWordSenseDisambiguation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'WordNet 3.0 contains approximately 117,659 synsets and 206,941 word-sense pairs across nouns, verbs, adjectives, and adverbs.', isTrue: true, explanation: 'This is a key technical detail of Word Sense Disambiguation.' },
-    { text: 'SemCor contains approximately 226,000 manually sense-tagged instances, making it the largest openly available sense-annotated corpus for English.', isTrue: true, explanation: 'This is a key technical detail of Word Sense Disambiguation.' },
-    { text: 'The most frequent sense baseline achieves approximately 65% F1 on all-words WSD, making it a deceptively strong competitor.', isTrue: true, explanation: 'This is a key technical detail of Word Sense Disambiguation.' },
+    { text: 'WSD is a solved problem because contextual embeddings handle it.', isTrue: false, explanation: 'Contextual embeddings have dramatically improved WSD, but they do not eliminate the problem. Fine-grained sense distinctions, rare senses, and domain-specific meanings remain challenging.' },
+    { text: 'More senses in the inventory means better disambiguation.', isTrue: false, explanation: 'Finer-grained sense inventories actually make WSD harder and less reliable. Many fine-grained WordNet distinctions are difficult even for human annotators to consistently apply.' },
+    { text: 'WSD requires large sense-annotated training data.', isTrue: false, explanation: 'Knowledge-based and gloss-based approaches using only WordNet definitions (no annotated training examples) now approach the performance of fully supervised systems, thanks to contextual embeddings. BEM and similar models match annotated contexts against sense glosses without requiring SemCor-style training data.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

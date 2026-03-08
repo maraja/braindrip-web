@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPNamedEntityRecognition() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'CoNLL-2003 English benchmark: 4 entity types (PER, LOC, ORG, MISC); SOTA ~94 F1 (ensemble models with document context).', isTrue: true, explanation: 'This is a key technical detail of Named Entity Recognition.' },
-    { text: 'OntoNotes 5.0: 18 entity types; SOTA ~92 F1; more diverse and challenging than CoNLL-2003.', isTrue: true, explanation: 'This is a key technical detail of Named Entity Recognition.' },
-    { text: 'BiLSTM-CRF (Lample et al., 2016): ~91.0 F1 on CoNLL-2003 without external gazetteers.', isTrue: true, explanation: 'This is a key technical detail of Named Entity Recognition.' },
+    { text: 'NER is just dictionary lookup.', isTrue: false, explanation: 'Gazetteer-based lookup catches known entities but misses novel ones ("Elon Musk\'s new company Neuralink" before it was widely known), ambiguous mentions ("Apple" as company vs. fruit), and morphological variants.' },
+    { text: '4 entity types (PER, LOC, ORG, MISC); SOTA ~94 F1 (ensemble models with document context).', isTrue: true, explanation: '4 entity types (PER, LOC, ORG, MISC); SOTA ~94 F1 (ensemble models with document context).' },
+    { text: 'NER and entity linking are the same task.', isTrue: false, explanation: 'NER identifies entity mentions and their types; entity linking (or entity disambiguation) maps those mentions to specific entries in a knowledge base (e.g., mapping "Obama" to the Wikidata entity Q76). They are related but distinct pipeline stages.' },
+    { text: '18 entity types; SOTA ~92 F1; more diverse and challenging than CoNLL-2003.', isTrue: true, explanation: '18 entity types; SOTA ~92 F1; more diverse and challenging than CoNLL-2003.' },
+    { text: 'Flat NER is sufficient for all applications.', isTrue: false, explanation: 'Many real-world texts contain nested entities ("University of California, Berkeley" contains LOC "California" inside ORG). Flat IOB tagging cannot represent overlaps, motivating span-based and layered approaches.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

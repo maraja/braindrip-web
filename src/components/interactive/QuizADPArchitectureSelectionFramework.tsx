@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizADPArchitectureSelectionFramework() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ReAct loops average 3-7 iterations for typical tasks.', isTrue: true, explanation: 'This is a key technical detail of Architecture Selection Framework.' },
-    { text: 'Beyond 10 iterations, success rates drop below 50% as context fills with irrelevant history.', isTrue: true, explanation: 'This is a key technical detail of Architecture Selection Framework.' },
-    { text: 'Plan-and-execute adds 1-3 seconds for the planning step but reduces total iterations by 20-40% compared to ReAct on complex tasks.', isTrue: true, explanation: 'This is a key technical detail of Architecture Selection Framework.' },
+    { text: 'ReAct is the default agent pattern, so start there.', isTrue: false, explanation: 'ReAct is the simplest agent pattern, which makes it the right default when you need an agent for unstructured tasks. But for structured tasks, a state machine or DAG is simpler AND more capable.' },
+    { text: 'Multi-agent is more capable, so use it when possible.', isTrue: false, explanation: 'Multi-agent systems are more capable in the same way a 747 is more capable than a Cessna. The additional capability comes with proportional complexity.' },
+    { text: 'State machines are too rigid for LLM applications.', isTrue: false, explanation: 'The states are fixed, but the behavior within each state is LLM-driven. A state machine with LLM-powered transitions and in-state reasoning is both structured AND flexible.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

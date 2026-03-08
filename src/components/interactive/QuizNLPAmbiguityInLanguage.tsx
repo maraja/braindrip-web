@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPAmbiguityInLanguage() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The average English word has approximately 2.3 senses in WordNet, but the 1,000 most frequent words average approximately 4.5 senses.', isTrue: true, explanation: 'This is a key technical detail of Ambiguity in Language.' },
-    { text: 'Function words like "of," "in," and "to" have even higher polysemy.', isTrue: true, explanation: 'This is a key technical detail of Ambiguity in Language.' },
-    { text: 'PP-attachment is ambiguous in approximately 20--30% of cases in English text.', isTrue: true, explanation: 'This is a key technical detail of Ambiguity in Language.' },
+    { text: 'Ambiguity is a flaw in natural language that should be eliminated.', isTrue: false, explanation: 'Ambiguity is a feature, not a bug. It makes language compact and efficient -- speakers can reuse short, frequent words for multiple meanings, relying on context to disambiguate.' },
+    { text: 'Context always resolves ambiguity.', isTrue: false, explanation: 'Context resolves most ambiguity most of the time, but genuine irreducible ambiguity exists. Legal contracts, poetry, and political statements can be deliberately ambiguous.' },
+    { text: 'Neural models have solved ambiguity.', isTrue: false, explanation: 'Large pre-trained models handle many common ambiguities well, but they still fail on unusual constructions, rare word senses, complex scope interactions, and examples requiring deep world knowledge. Performance on adversarial ambiguity benchmarks (WinoGrande, WinoBias) reveals persistent weaknesses.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

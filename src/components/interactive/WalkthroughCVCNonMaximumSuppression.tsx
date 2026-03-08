@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Greedy NMS Algorithm', desc: 'The foundation of non-maximum suppression begins with understanding its core input requirements and initial setup.' },
-    { title: '2. IoU Threshold Selection', desc: 'At this stage, the key transformation occurs — the core mechanism that makes non-maximum suppression work.' },
-    { title: '3. Soft-NMS (2017)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. DIoU-NMS (2020)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. NMS Variants in Practice', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Greedy NMS Algorithm', desc: 'Time complexity: O(n^2) in the number of boxes (pairwise IoU computation), though in practice n is small after score thresholding (typically a few hundred per class).' },
+    { title: '2. IoU Threshold Selection', desc: '= 0.5: Standard choice. Removes clearly overlapping boxes while tolerating some spatial imprecision.' },
+    { title: '3. Soft-NMS (2017)', desc: 'observed that hard NMS can accidentally suppress valid detections when objects genuinely overlap (e.g., two people standing close together). Soft-NMS replaces the hard removal step with a score decay:  Linear decay: [equation]  Gaussian decay (more common): [equation]  where  controls the decay.' },
+    { title: '4. DIoU-NMS (2020)', desc: 'proposed replacing IoU with Distance-IoU in the suppression criterion:  [equation]  where  is the Euclidean distance between box centers and c is the diagonal of the smallest enclosing box. This considers center distance in addition to overlap, better handling occluded objects.' },
 ];
 
 export default function WalkthroughCVCNonMaximumSuppression() {
@@ -17,10 +16,10 @@ export default function WalkthroughCVCNonMaximumSuppression() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Non-Maximum Suppression — Step by Step
+          Non-Maximum Suppression \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how non-maximum suppression works, one stage at a time.

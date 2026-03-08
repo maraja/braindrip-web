@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEZeroShotPrompting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Zero-shot performance on classification tasks ranges from 70-95% depending on task clarity and model capability (GPT-4 class models achieve the upper range).', isTrue: true, explanation: 'This is a key technical detail of Zero-Shot Prompting.' },
-    { text: 'Instruction-tuned models outperform base models on zero-shot tasks by 20-40% on average, as instruction tuning specifically improves the model\'s ability to follow novel task specifications.', isTrue: true, explanation: 'This is a key technical detail of Zero-Shot Prompting.' },
-    { text: 'Output format compliance in zero-shot is 85-95% with explicit format instructions, dropping to 50-70% without them.', isTrue: true, explanation: 'This is a key technical detail of Zero-Shot Prompting.' },
+    { text: 'Zero-shot means the model has never seen this type of task.', isTrue: false, explanation: 'Zero-shot refers to the prompt containing no examples — not the model\'s pretraining. Models have seen millions of classification, summarization, and extraction tasks during pretraining.' },
+    { text: 'If zero-shot fails, the model cannot do the task.', isTrue: false, explanation: 'Zero-shot failure often means the instructions were insufficient, not that the model lacks the capability. Adding examples (few-shot), refining instructions, or decomposing the task often resolves the issue.' },
+    { text: 'Zero-shot is always worse than few-shot.', isTrue: false, explanation: 'For well-defined tasks on instruction-tuned models, zero-shot can match or even exceed few-shot performance, especially when examples are poorly chosen or when the task is so standard that examples add noise rather than signal. GPT-4 and Claude 3.5 perform at near-ceiling on many common tasks in zero-shot.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

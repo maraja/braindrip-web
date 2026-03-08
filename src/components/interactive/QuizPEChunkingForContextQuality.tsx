@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEChunkingForContextQuality() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Optimal chunk sizes for Q&A tasks are typically 256-512 tokens; for summarization, 1024-2048 tokens; studies show performance drops of 10-15% when sizes deviate significantly from these ranges.', isTrue: true, explanation: 'This is a key technical detail of Chunking for Context Quality.' },
-    { text: 'Chunk overlap of 10-20% reduces boundary information loss by 30-40% at the cost of proportionally increased storage.', isTrue: true, explanation: 'This is a key technical detail of Chunking for Context Quality.' },
-    { text: 'Semantic chunking (embedding similarity-based splitting) improves end-to-end RAG quality by 15-25% over fixed-size chunking on standard benchmarks.', isTrue: true, explanation: 'This is a key technical detail of Chunking for Context Quality.' },
+    { text: 'One chunk size fits all use cases.', isTrue: false, explanation: 'The optimal chunk size varies by 4-8x between use cases. Q&A, summarization, and conversational tasks each have distinct optimal ranges.' },
+    { text: 'Chunking is only a retrieval problem.', isTrue: false, explanation: 'Chunk quality directly affects generation. A chunk that retrieves perfectly (high recall) but lacks coherence will produce poor generated answers.' },
+    { text: 'Semantic chunking is always better than fixed-size.', isTrue: false, explanation: 'Semantic chunking adds computational overhead and can produce chunks of wildly varying sizes (some very small, some very large). For well-structured documents with consistent formatting, paragraph-level chunking often performs comparably at lower cost.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

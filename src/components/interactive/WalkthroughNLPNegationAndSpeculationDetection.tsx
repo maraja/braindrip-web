@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Negation Cues and Scope', desc: 'The foundation of negation and speculation detection begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Speculation and Hedge Detection', desc: 'At this stage, the key transformation occurs — the core mechanism that makes negation and speculation detection work.' },
-    { title: '3. The BioScope Corpus', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Rule-Based Approaches', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Neural Scope Resolution', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Negation Cues and Scope', desc: 'Negation cues are the linguistic triggers that reverse the polarity of a statement. They come in several forms:  Adverbs and particles: not, never, no, neither, nor, nowhere Prefixes: un-, in-/im-/ir-, dis-, non-, a- (e.g.' },
+    { title: '2. Speculation and Hedge Detection', desc: 'Speculation cues (also called hedging markers) signal that a proposition is uncertain, tentative, or conditional:  Modal verbs: may, might, could, should, would Adverbs: possibly, probably, perhaps, likely, approximately Adjectives: possible, probable, potential, suspected, apparent Verbs: suggest,.' },
+    { title: '3. The BioScope Corpus', desc: 'The BioScope corpus (Vincze et al., 2008) is the most influential annotated resource for negation and speculation detection. It contains:  Clinical records: 1,954 sentences from radiology reports Biomedical papers: 11,871 sentences from the GENIA corpus (biomedical abstracts) Biomedical paper full.' },
+    { title: '4. Rule-Based Approaches', desc: 'NegEx (Chapman et al., 2001) is the foundational rule-based negation detection system for clinical text. It uses a simple but effective approach:  Define a list of negation trigger phrases ("no," "denies," "without," "no evidence of," etc.).' },
+    { title: '5. Neural Scope Resolution', desc: 'Modern approaches frame scope resolution as a sequence labeling task: given a sentence with an identified cue, label each token as inside or outside the cue\'s scope. BiLSTM-CRF models (Fancellu et al.' },
+    { title: '6. Why This Matters for Information Extraction and Sentiment Analysis', desc: 'Information extraction: A system extracting drug-disease relationships from biomedical literature must distinguish "Drug X treats Disease Y" (positive finding) from "Drug X does not treat Disease Y" (negated finding) and "Drug X may treat Disease Y" (speculative finding).' },
 ];
 
 export default function WalkthroughNLPNegationAndSpeculationDetection() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPNegationAndSpeculationDetection() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Negation and Speculation Detection — Step by Step
+          Negation and Speculation Detection \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how negation and speculation detection works, one stage at a time.

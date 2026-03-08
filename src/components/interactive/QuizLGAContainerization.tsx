@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAContainerization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Use python:3.11-slim as the base image -- it is 150MB smaller than the full image and sufficient for LangGraph agents.', isTrue: true, explanation: 'This is a key technical detail of Containerization.' },
-    { text: 'Multi-stage builds keep the final image small by discarding build tools and caches from the first stage.', isTrue: true, explanation: 'This is a key technical detail of Containerization.' },
-    { text: 'The HEALTHCHECK directive lets Docker and orchestrators detect when the agent is unresponsive and restart it automatically.', isTrue: true, explanation: 'This is a key technical detail of Containerization.' },
+    { text: 'Docker adds significant latency to LLM calls.', isTrue: false, explanation: 'Container overhead is negligible -- networking adds microseconds, not milliseconds. LLM API latency dominates by orders of magnitude.' },
+    { text: 'Docker packages your LangGraph agent, its dependencies, and runtime into a portable container that runs identically everywhere -- from your laptop to production servers.', isTrue: true, explanation: 'This captures the core definition of Containerization.' },
+    { text: 'Containerization is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Containerization is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

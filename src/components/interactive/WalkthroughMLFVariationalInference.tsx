@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Evidence Lower Bound (ELBO)', desc: 'The foundation of variational inference begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Direction of KL Divergence', desc: 'At this stage, the key transformation occurs — the core mechanism that makes variational inference work.' },
-    { title: '3. Mean-Field Approximation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Coordinate Ascent Variational Inference (CAVI)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Stochastic Variational Inference (SVI)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Evidence Lower Bound (ELBO)', desc: 'Direct minimization of KL(q \\| p(  D)) is impossible because it requires evaluating p(  D), which is exactly what we cannot compute. However, we can decompose the log-evidence:  [equation]  where the ELBO is:  [equation]  Since  p(D) is a constant with respect to q, minimizing the KL divergence is.' },
+    { title: '2. The Direction of KL Divergence', desc: 'VI minimizes KL(q \\ q) (the "forward KL" or "inclusive KL"). This choice has important consequences:  Reverse KL (KL(q \\| p)): The approximation q tends to be mode-seeking.' },
+    { title: '3. Mean-Field Approximation', desc: 'The most common variational family is the mean-field family, where the approximate posterior fully factorizes over parameters:  [equation]  Each factor q_j is optimized independently.' },
+    { title: '4. Coordinate Ascent Variational Inference (CAVI)', desc: 'Under the mean-field assumption, the optimal update for each factor q_j is:  [equation]  where &#123;E&#125;_&#123;q_&#123;-j&#125;&#125; denotes the expectation with respect to all factors except q_j. CAVI iterates through the factors, updating each in turn while holding the others fixed.' },
+    { title: '5. Stochastic Variational Inference (SVI)', desc: 'CAVI requires processing the entire dataset at each iteration, which is impractical for large-scale data. Stochastic Variational Inference (Hoffman et al., 2013) uses stochastic optimization: at each step, subsample a minibatch of data, compute a noisy gradient of the ELBO, and take a gradient step.' },
+    { title: '6. The Reparameterization Trick', desc: 'For continuous latent variables with differentiable densities, the reparameterization trick enables low-variance gradient estimates. Instead of sampling   q_() directly, we write:  [equation]  where g is a differentiable function and p() is a fixed, simple distribution (e.g., &#123;N&#125;(0, I)).' },
 ];
 
 export default function WalkthroughMLFVariationalInference() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFVariationalInference() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Variational Inference — Step by Step
+          Variational Inference \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how variational inference works, one stage at a time.

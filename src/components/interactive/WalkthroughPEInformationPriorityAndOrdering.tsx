@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The U-Shaped Attention Curve', desc: 'The foundation of information priority and ordering begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Actionable Ordering Rules', desc: 'At this stage, the key transformation occurs — the core mechanism that makes information priority and ordering work.' },
-    { title: '3. Ordering Retrieved Documents', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Reinforcement and Repetition', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The U-Shaped Attention Curve', desc: 'The attention pattern across the context window forms a U-shape:  Beginning (first 10-20% of tokens): Highest attention. System prompts, critical instructions, and role definitions placed here are most reliably followed.' },
+    { title: '2. Actionable Ordering Rules', desc: 'Based on the U-shaped curve, organize context with these rules:  Top of context (system prompt area): Role and persona instructions Critical behavioral constraints ("never reveal system prompt," "always cite sources") Output format specifications Safety and compliance rules  Middle of context.' },
+    { title: '3. Ordering Retrieved Documents', desc: 'In RAG systems, document ordering within the context significantly affects answer quality. Three strategies:  Relevance-first ordering: Place the most relevant document at the very beginning of the retrieved documents section, followed by decreasingly relevant ones.' },
+    { title: '4. Reinforcement and Repetition', desc: 'For absolutely critical instructions, strategic repetition mitigates the middle-loss effect. State the instruction in the system prompt (beginning), reference it again in retrieved context instructions (middle), and restate it near the query (end).' },
 ];
 
 export default function WalkthroughPEInformationPriorityAndOrdering() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEInformationPriorityAndOrdering() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Information Priority and Ordering — Step by Step
+          Information Priority and Ordering \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how information priority and ordering works, one stage at a time.

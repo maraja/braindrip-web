@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Pricing Collapse (400x in Five Years)', desc: 'The foundation of the api economy: how llms are commercialized begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Tiered Model Strategy', desc: 'At this stage, the key transformation occurs — the core mechanism that makes the api economy: how llms are commercialized work.' },
-    { title: '3. Input vs Output Pricing', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Batch and Caching APIs', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Platform Strategies', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Pricing Collapse (400x in Five Years)', desc: 'The most dramatic feature of the LLM API economy is price deflation. GPT-3 launched at approximately 60 per million tokens (davinci model) in 2020.' },
+    { title: '2. The Tiered Model Strategy', desc: 'Every major provider converged on a tiered approach:  Anthropic: Haiku (fast, cheap) / Sonnet (balanced) / Opus (maximum capability). Each tier serves a different use case and price point.' },
+    { title: '3. Input vs Output Pricing', desc: 'A distinctive feature of LLM APIs is asymmetric pricing: output tokens are typically 3-5x more expensive than input tokens. This reflects the underlying compute asymmetry: processing input tokens can be parallelized across the sequence, while generating output tokens is sequential (each token.' },
+    { title: '4. Batch and Caching APIs', desc: 'Providers offer discount mechanisms for specific usage patterns. Batch APIs (typically 50% discount) allow developers to submit requests that are processed asynchronously — useful for data processing, evaluation, and non-time-sensitive workloads.' },
+    { title: '5. Platform Strategies', desc: 'Each major provider wraps its API in a broader platform strategy:  OpenAI pursues dual distribution: ChatGPT as a consumer product (200M+ weekly users by late 2024) and the API for developers.' },
+    { title: '6. The Infrastructure Layer', desc: 'Between model providers and end users sits a growing infrastructure ecosystem. Together AI, Fireworks AI, and Groq provide inference hosting for open-weight models, often at lower prices than the original providers\' APIs.' },
 ];
 
 export default function WalkthroughLLE02TheApiEconomy() {
@@ -17,10 +18,10 @@ export default function WalkthroughLLE02TheApiEconomy() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The API Economy: How LLMs Are Commercialized — Step by Step
+          The API Economy: How LLMs Are Commercialized \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how the api economy: how llms are commercialized works, one stage at a time.

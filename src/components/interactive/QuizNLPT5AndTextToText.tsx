@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPT5AndTextToText() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Pre-training data: C4, ~750GB of cleaned English web text from Common Crawl.', isTrue: true, explanation: 'This is a key technical detail of T5 and Text-to-Text.' },
-    { text: 'Pre-training compute: T5-11B trained for ~1T tokens; estimated cost comparable to GPT-3 pre-training (~$1M+ in 2020 cloud pricing).', isTrue: true, explanation: 'This is a key technical detail of T5 and Text-to-Text.' },
-    { text: 'Span corruption: 15% of tokens masked, average span length 3, sentinel tokens replacing each span.', isTrue: true, explanation: 'This is a key technical detail of T5 and Text-to-Text.' },
+    { text: 'T5 is just BART with a different name.', isTrue: false, explanation: 'While T5 and BART (Lewis et al., 2020) both use encoder-decoder architectures for pre-training, they differ substantially. BART uses a combination of corruption strategies (token masking, deletion, infilling, rotation, permutation), while T5 uses span corruption only.' },
+    { text: 'C4, ~750GB of cleaned English web text from Common Crawl.', isTrue: true, explanation: 'C4, ~750GB of cleaned English web text from Common Crawl.' },
+    { text: 'The text-to-text framework is inefficient for classification.', isTrue: false, explanation: 'Generating the word "positive" is more expensive than a single softmax, but the overhead is minimal (1-2 extra decoding steps). The benefit is architectural simplicity and the ability to handle any task without specialized output heads.' },
+    { text: 'T5-11B trained for ~1T tokens; estimated cost comparable to GPT-3 pre-training (~$1M+ in 2020 cloud pricing).', isTrue: true, explanation: 'T5-11B trained for ~1T tokens; estimated cost comparable to GPT-3 pre-training (~$1M+ in 2020 cloud pricing).' },
+    { text: 'T5-11B is necessary for good results.', isTrue: false, explanation: 'T5-Base (220M) already outperforms BERT-base (110M) on most benchmarks. T5-Large (770M) matches or exceeds BERT-large (340M).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

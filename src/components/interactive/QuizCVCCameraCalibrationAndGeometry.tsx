@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCCameraCalibrationAndGeometry() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A well-calibrated camera achieves mean reprojection error below 0.5 pixels.', isTrue: true, explanation: 'This is a key technical detail of Camera Calibration and Geometry.' },
-    { text: 'Errors above 1.0 pixel indicate poor calibration (insufficient images, bad corner detection, or overfitting distortion coefficients).', isTrue: true, explanation: 'This is a key technical detail of Camera Calibration and Geometry.' },
-    { text: 'Zhang\'s method requires a minimum of 3 checkerboard images for 5 intrinsic parameters, but 15--25 images at varied orientations produce more stable results.', isTrue: true, explanation: 'This is a key technical detail of Camera Calibration and Geometry.' },
+    { text: 'The principal point is always at the image center.', isTrue: false, explanation: 'Manufacturing tolerances, sensor mounting, and lens misalignment mean the principal point can be offset by 10--50 pixels from the geometric center. Always calibrate rather than assume.' },
+    { text: 'Camera calibration determines the intrinsic and extrinsic parameters that define how a camera maps 3D world points to 2D image pixels, based on the pinhole model and its extensions.', isTrue: true, explanation: 'This captures the core definition of Camera Calibration and Geometry.' },
+    { text: 'Camera Calibration and Geometry is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Camera Calibration and Geometry is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

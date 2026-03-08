@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Why Simulation First?', desc: 'The foundation of robotics and control begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Sim-to-Real Gap', desc: 'At this stage, the key transformation occurs — the core mechanism that makes robotics and control work.' },
-    { title: '3. Domain Randomization', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. System Identification and Adaptation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Landmark Results', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Why Simulation First?', desc: 'Training RL policies requires millions of environment interactions. DQN needed 50 million frames for Atari (atari-and-arcade-games.md); a physical robot operating at 10 Hz would need ~58 days of continuous operation for the equivalent, with no resets, no parallelism, and no room for destructive.' },
+    { title: '2. The Sim-to-Real Gap', desc: 'Simulations are approximations. They differ from reality in:  Physics fidelity: Contact dynamics, friction coefficients, deformable objects, and fluid interactions are hard to model accurately.' },
+    { title: '3. Domain Randomization', desc: 'The most widely used sim-to-real technique is domain randomization: during training, simulator parameters are randomly varied across a wide distribution so the policy cannot overfit to any single configuration.' },
+    { title: '4. System Identification and Adaptation', desc: 'An alternative to randomization is system identification: fitting simulator parameters to match real-world data. Given real-robot trajectories, the simulator\'s physics parameters are optimized to minimize the trajectory prediction error.' },
+    { title: '5. Landmark Results', desc: 'Dexterous manipulation (OpenAI, 2019): A Shadow Dexterous Hand with 24 degrees of freedom learned to reorient a Rubik\'s Cube using RL (PPO with LSTM policy, see proximal-policy-optimization.md). Trained across 64,000 CPU cores and 920 NVIDIA V100 GPUs.' },
 ];
 
 export default function WalkthroughRLRoboticsAndControl() {
@@ -17,10 +17,10 @@ export default function WalkthroughRLRoboticsAndControl() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Robotics and Control — Step by Step
+          Robotics and Control \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how robotics and control works, one stage at a time.

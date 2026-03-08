@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAEvaluatorOptimizerPattern() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The evaluator must use with_structured_output to return a typed Pydantic model, ensuring grades and feedback are machine-parseable.', isTrue: true, explanation: 'This is a key technical detail of Evaluator-Optimizer Pattern.' },
-    { text: 'The conditional edge after the evaluator inspects the grade field to decide whether to loop or exit.', isTrue: true, explanation: 'This is a key technical detail of Evaluator-Optimizer Pattern.' },
-    { text: 'The generator should include previous feedback in its prompt for meaningful iteration, not just retry blindly.', isTrue: true, explanation: 'This is a key technical detail of Evaluator-Optimizer Pattern.' },
+    { text: 'The evaluator and generator must be different LLMs.', isTrue: false, explanation: 'They can be the same model with different system prompts. Using separate models is an optimization, not a requirement.' },
+    { text: 'An iterative loop where one LLM generates content and another evaluates it with structured feedback, repeating until the output meets a defined quality threshold.', isTrue: true, explanation: 'This captures the core definition of Evaluator-Optimizer Pattern.' },
+    { text: 'Evaluator-Optimizer Pattern is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluator-Optimizer Pattern is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

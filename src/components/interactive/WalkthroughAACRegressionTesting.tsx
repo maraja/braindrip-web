@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Test Suite Construction', desc: 'The foundation of regression testing begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Continuous Integration Pipeline', desc: 'At this stage, the key transformation occurs — the core mechanism that makes regression testing work.' },
-    { title: '3. Statistical Regression Detection', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Root Cause Diagnosis', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Test Suite Construction', desc: 'A regression test suite consists of representative tasks spanning the agent\'s capabilities, with defined expected outcomes. Tasks are selected to cover: core capabilities (the most common and important tasks), edge cases (boundary conditions that have caused problems before), previously fixed bugs.' },
+    { title: '2. Continuous Integration Pipeline', desc: 'The regression suite runs automatically in CI/CD pipelines triggered by: prompt changes (committed to version control), tool implementation changes, orchestration code changes, and scheduled runs (daily or weekly) to catch external changes like model updates.' },
+    { title: '3. Statistical Regression Detection', desc: 'Because agents are non-deterministic, a single failure does not necessarily indicate regression. Statistical regression detection compares the current run\'s success distribution against the historical baseline.' },
+    { title: '4. Root Cause Diagnosis', desc: 'When a regression is detected, diagnosis determines the cause. The pipeline provides: which specific tasks regressed, what changed since the last passing run (commit log, model version, config diff), trajectory comparison (how the agent\'s behavior on the regressed tasks differs from baseline), and.' },
 ];
 
 export default function WalkthroughAACRegressionTesting() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACRegressionTesting() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Regression Testing — Step by Step
+          Regression Testing \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how regression testing works, one stage at a time.

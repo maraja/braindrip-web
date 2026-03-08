@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Test Scenario Categories', desc: 'The foundation of permission boundary testing begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Privilege Escalation Testing', desc: 'At this stage, the key transformation occurs — the core mechanism that makes permission boundary testing work.' },
-    { title: '3. Least Privilege Verification', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Connection to Authorization Protocols', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Test Scenario Categories', desc: 'Permission boundary testing organizes scenarios around the specific boundaries an agent should respect. Out-of-scope resource access tests whether the agent can read, modify, or delete resources it should not touch.' },
+    { title: '2. Privilege Escalation Testing', desc: 'Privilege escalation is the most dangerous permission boundary failure because it allows a chain of small, individually innocuous actions to compound into major unauthorized access. Vertical escalation occurs when the agent gains higher privilege levels than intended.' },
+    { title: '3. Least Privilege Verification', desc: 'Beyond preventing violations, testing should verify that agents practice the principle of least privilege proactively. Permission request accuracy measures whether the agent requests only the permissions it needs.' },
+    { title: '4. Connection to Authorization Protocols', desc: 'Modern agent systems use standardized authorization mechanisms that each present distinct testing surfaces. OAuth 2.0 scopes define what an agent can access through third-party APIs.' },
 ];
 
 export default function WalkthroughAAEPermissionBoundaryTesting() {
@@ -16,10 +16,10 @@ export default function WalkthroughAAEPermissionBoundaryTesting() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Permission Boundary Testing — Step by Step
+          Permission Boundary Testing \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how permission boundary testing works, one stage at a time.

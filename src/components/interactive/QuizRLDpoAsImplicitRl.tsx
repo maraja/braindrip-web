@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizRLDpoAsImplicitRl() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Beta parameter: $\\beta = 0.1$--$0.5$ controls the deviation from the reference policy.', isTrue: true, explanation: 'This is a key technical detail of DPO as Implicit RL.' },
-    { text: 'Lower $\\beta$ allows more deviation; higher $\\beta$ keeps the policy closer to the reference.', isTrue: true, explanation: 'This is a key technical detail of DPO as Implicit RL.' },
-    { text: 'Training: Standard supervised learning setup -- AdamW optimizer, learning rate $1 \\times 10^&#123;-6&#125;$ to $5 \\times 10^&#123;-7&#125;$, 1--3 epochs over preference data.', isTrue: true, explanation: 'This is a key technical detail of DPO as Implicit RL.' },
+    { text: '= 0.1--0.5 controls the deviation from the reference policy.', isTrue: true, explanation: 'Lower  allows more deviation; higher  keeps the policy closer to the reference.' },
+    { text: 'Standard supervised learning setup -- AdamW optimizer, learning rate 1 x 10^&#123;-6&#125; to 5 x 10^&#123;-7&#125;, 1--3 epochs over preference data.', isTrue: true, explanation: 'Standard supervised learning setup -- AdamW optimizer, learning rate 1 x 10^&#123;-6&#125; to 5 x 10^&#123;-7&#125;, 1--3 epochs over preference data.' },
+    { text: 'Must remain frozen throughout training.', isTrue: true, explanation: 'The reference log-probabilities are typically precomputed and cached to save memory.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCEdgeDetection() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Sobel runs in $O(n)$ per pixel for a $k \\times k$ kernel (separable into two 1D passes), making it suitable for real-time applications at 1080p and above.', isTrue: true, explanation: 'This is a key technical detail of Edge Detection.' },
-    { text: 'Canny\'s five-stage pipeline typically adds 3--5 ms per 640x480 frame on a modern CPU.', isTrue: true, explanation: 'This is a key technical detail of Edge Detection.' },
-    { text: 'The Gaussian $\\sigma$ in Canny controls the scale of detected edges: $\\sigma = 1$ captures fine texture; $\\sigma = 3$+ emphasizes coarse object boundaries.', isTrue: true, explanation: 'This is a key technical detail of Edge Detection.' },
+    { text: 'Canny is obsolete because we have deep learning.', isTrue: false, explanation: 'Canny is still widely used in robotics, embedded systems, and preprocessing pipelines. Learned edge detectors like HED achieve higher benchmark scores but require GPU inference.' },
+    { text: 'Edge detection identifies boundaries in images where pixel intensity changes sharply, using gradient-based operators like Sobel and multi-stage pipelines like Canny.', isTrue: true, explanation: 'This captures the core definition of Edge Detection.' },
+    { text: 'Edge Detection is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Edge Detection is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

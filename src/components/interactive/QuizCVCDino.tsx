@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCDino() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'DINO with ViT-B/16 achieves 78.3% top-1 on ImageNet using linear evaluation (frozen features + linear classifier).', isTrue: true, explanation: 'This is a key technical detail of DINO (Self-Distillation with No Labels).' },
-    { text: 'The projection head is a 3-layer MLP (2048-2048-256) with GELU activation and $\\ell_2$ normalization, followed by a weight-normalized fully connected layer to $K$ dimensions.', isTrue: true, explanation: 'This is a key technical detail of DINO (Self-Distillation with No Labels).' },
-    { text: 'Training uses LARS optimizer for the first 10 epochs (warmup), then switches to AdamW.', isTrue: true, explanation: 'This is a key technical detail of DINO (Self-Distillation with No Labels).' },
+    { text: 'DINO requires negative pairs like contrastive learning.', isTrue: false, explanation: 'DINO is not contrastive. It uses no negative pairs.' },
+    { text: 'DINO trains a Vision Transformer through self-distillation -- a student network learns to match the output of a momentum-updated teacher network on different augmented views of the same image -- producing features that exhibit emergent object segmentation without any labels.', isTrue: true, explanation: 'This captures the core definition of DINO (Self-Distillation with No Labels).' },
+    { text: 'DINO (Self-Distillation with No Labels) is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding DINO (Self-Distillation with No Labels) is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCImageHistograms() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Computing a histogram for a 12-megapixel image takes under 5 ms on a modern CPU.', isTrue: true, explanation: 'This is a key technical detail of Image Histograms.' },
-    { text: 'Otsu\'s method assumes a bimodal histogram.', isTrue: true, explanation: 'This is a key technical detail of Image Histograms.' },
-    { text: 'For multimodal distributions, multi-level Otsu or alternative methods (e.g., Kapur\'s entropy method) are needed.', isTrue: true, explanation: 'This is a key technical detail of Image Histograms.' },
+    { text: 'Two images with identical histograms look the same.', isTrue: false, explanation: 'A histogram discards all spatial information. A checkerboard and a half-black/half-white split image can have identical histograms but look completely different.' },
+    { text: 'Histogram equalization always improves image quality.', isTrue: false, explanation: 'Global equalization can wash out images that are intentionally low-contrast (e.g., foggy scenes) and amplify sensor noise in dark regions. It is a tool, not a universal enhancement.' },
+    { text: 'Otsu\'s method works on any image.', isTrue: false, explanation: 'Otsu assumes two dominant intensity classes. It fails on images with unimodal histograms (no clear foreground/background separation) or more than two peaks without extension to multi-threshold Otsu.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

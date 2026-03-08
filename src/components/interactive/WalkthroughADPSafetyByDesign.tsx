@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Agent Threat Modeling', desc: 'The foundation of safety by design begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Layered Defense Architecture', desc: 'At this stage, the key transformation occurs — the core mechanism that makes safety by design work.' },
-    { title: '3. The Safety-Capability Tradeoff', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Permission Architecture Design', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Pre-Production Safety Checklist', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Agent Threat Modeling', desc: 'Before designing defenses, enumerate what can go wrong. Agent-specific threats fall into five categories:  Threat modeling process:  List every tool the agent can access and classify each as read-only, write, or destructive.' },
+    { title: '2. Layered Defense Architecture', desc: 'Each layer operates independently. If one layer fails, the next layer catches the threat.' },
+    { title: '3. The Safety-Capability Tradeoff', desc: 'Every safety measure reduces the agent\'s capability or performance in some way. The question is not whether to accept this tradeoff but how to quantify it so you can make informed decisions.' },
+    { title: '4. Permission Architecture Design', desc: 'Three principles govern agent permissions:  Least privilege. The agent should have the minimum permissions needed for its current task, not the maximum permissions it might ever need.' },
+    { title: '5. Pre-Production Safety Checklist', desc: 'Before deploying an agent to production, verify:  Threat model complete. Every tool has been assessed for worst-case misuse, and every worst case has at least one defense layer.' },
 ];
 
 export default function WalkthroughADPSafetyByDesign() {
@@ -17,10 +17,10 @@ export default function WalkthroughADPSafetyByDesign() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Safety by Design — Step by Step
+          Safety by Design \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how safety by design works, one stage at a time.

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Typical values', detail: 'Most deep RL implementations use $\\gamma = 0.99$ (Atari DQN, PPO for MuJoCo, AlphaGo). Some sparse-reward tasks use $\\gamma = 0.999$.' },
-    { label: 'GAE (Generalized Advantage Estimation)', detail: 'uses a separate discount parameter $\\lambda$ in addition to $\\gamma$ for bias-variance control in advantage estimates (Schulman et al., 2016).' },
-    { label: 'Reward normalization', detail: 'interacts with $\\gamma$: normalizing returns by their running standard deviation helps stabilize training when $\\gamma$ is close to 1.' },
-    { label: 'Average reward formulation', detail: 'An alternative to discounting for continuing tasks uses the average reward rate $\\rho^\\pi = \\lim_{T \\to \\infty} \\frac{1}{T} \\sum_{t=1}^{T} \\mathbb{E}[R_t \\mid \\pi]$ as the objective.' },
+    { label: 'Typical values', detail: 'Most deep RL implementations use  = 0.99 (Atari DQN, PPO for MuJoCo, AlphaGo). Some sparse-reward tasks use  = 0.999.' },
+    { label: 'GAE (Generalized Advantage Estimation)', detail: 'uses a separate discount parameter  in addition to  for bias-variance control in advantage estimates (Schulman et al., 2016).' },
+    { label: 'Reward normalization', detail: 'interacts with : normalizing returns by their running standard deviation helps stabilize training when  is close to 1.' },
+    { label: 'Average reward formulation', detail: 'An alternative to discounting for continuing tasks uses the average reward rate ^ = _&#123;T  &#125; &#123;1&#125;&#123;T&#125; _&#123;t=1&#125;^&#123;T&#125; &#123;E&#125;[R_t  ] as the objective.' },
 ];
 
 export default function ExplorerRLReturnAndDiscountFactor() {
@@ -18,10 +18,10 @@ export default function ExplorerRLReturnAndDiscountFactor() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Return and Discount Factor — Key Details Explorer
+          Return and Discount Factor \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of return and discount factor.
+          Click each card to explore the technical details.
         </p>
       </div>
 

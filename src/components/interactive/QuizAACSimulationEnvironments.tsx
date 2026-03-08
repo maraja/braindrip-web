@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACSimulationEnvironments() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'SWE-bench uses Docker containers with pre-configured Python environments, specific library versions, and repository snapshots.', isTrue: true, explanation: 'This is a key technical detail of Simulation Environments.' },
-    { text: 'Level 1 tasks: ~90% human accuracy, ~30% best agent accuracy.', isTrue: true, explanation: 'This is a key technical detail of Simulation Environments.' },
-    { text: 'A 100-task evaluation suite can complete in minutes on a machine with 32 CPU cores, running 16-32 Docker containers in parallel', isTrue: true, explanation: 'This is a key technical detail of Simulation Environments.' },
+    { text: 'Simulation performance predicts real-world performance.', isTrue: false, explanation: 'Simulation is an approximation. Real environments have latency, rate limits, authentication failures, dynamic content, and edge cases that simulations rarely capture fully.' },
+    { text: '~90% human accuracy, ~30% best agent accuracy.', isTrue: true, explanation: 'Level 3 tasks: ~95% human accuracy, ~0-5% best agent accuracy' },
+    { text: 'higher fidelity (more realistic simulation) improves transfer to real deployment but increases setup cost and complexity.', isTrue: true, explanation: 'The right fidelity level depends on the agent\'s task domain' },
+    { text: 'SWE-bench uses binary pass/fail (test patch passes or not), WebArena uses task completion rate (binary per task), OSWorld uses success rate with partial credit for multi-step tasks', isTrue: true, explanation: 'SWE-bench uses binary pass/fail (test patch passes or not), WebArena uses task completion rate (binary per task), OSWorld uses success rate with partial credit for multi-step tasks' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

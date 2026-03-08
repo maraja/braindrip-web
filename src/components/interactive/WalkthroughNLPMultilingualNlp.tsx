@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Scale of the Problem', desc: 'The foundation of multilingual nlp begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Approaches to Multilingual NLP', desc: 'At this stage, the key transformation occurs — the core mechanism that makes multilingual nlp work.' },
-    { title: '3. The Typological Diversity Problem', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Evaluation Benchmarks', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Code-Switching and Transliteration', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Scale of the Problem', desc: 'There are approximately 7,168 living languages (Ethnologue, 2024), but the distribution of digital resources is staggeringly unequal. English alone accounts for roughly 60% of web content.' },
+    { title: '2. Approaches to Multilingual NLP', desc: 'Language-Specific Models: Train a separate model per language using language-specific data. This produces the best results when data is plentiful but is impossible to scale to thousands of languages and wastes shared structural knowledge.' },
+    { title: '3. The Typological Diversity Problem', desc: 'Languages vary along multiple typological dimensions (detailed in language-diversity-and-typology.md): Word order: SVO (English), SOV (Hindi, Japanese), VSO (Arabic, Welsh).' },
+    { title: '4. Evaluation Benchmarks', desc: 'Standardized multilingual benchmarks enable systematic comparison of approaches:  XNLI (Conneau et al., 2018): Natural language inference in 15 languages, translated from MultiNLI. The standard benchmark for cross-lingual understanding.' },
+    { title: '5. Code-Switching and Transliteration', desc: 'Real-world multilingual text frequently mixes languages within a single sentence (code-switching) or uses non-standard scripts (transliteration). For example, Hindi-English code-switching on social media: "Yeh movie bahut amazing thi!" ("This movie was very amazing!").' },
 ];
 
 export default function WalkthroughNLPMultilingualNlp() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPMultilingualNlp() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Multilingual NLP — Step by Step
+          Multilingual NLP \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how multilingual nlp works, one stage at a time.

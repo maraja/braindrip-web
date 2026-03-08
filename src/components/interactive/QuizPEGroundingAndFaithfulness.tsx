@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEGroundingAndFaithfulness() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'RAG systems without grounding instructions hallucinate at rates of 20-30%; proper grounding prompts reduce this to 5-10% (measured by RAGAS faithfulness and human evaluation).', isTrue: true, explanation: 'This is a key technical detail of Grounding and Faithfulness.' },
-    { text: 'Quote-then-answer patterns improve faithfulness by 15-20% over direct-answer patterns, as measured on Natural Questions and HotpotQA with RAG.', isTrue: true, explanation: 'This is a key technical detail of Grounding and Faithfulness.' },
-    { text: 'Hard grounding instructions ("only use provided context") increase refusal rates by 5-8% compared to no grounding, representing a precision-recall trade-off.', isTrue: true, explanation: 'This is a key technical detail of Grounding and Faithfulness.' },
+    { text: 'RAG systems don\'t hallucinate because they have the right context.', isTrue: false, explanation: 'Having the right context is necessary but not sufficient. Without grounding instructions, models routinely ignore or supplement context with parametric knowledge, producing claims not in the retrieved documents.' },
+    { text: 'Grounding instructions eliminate all hallucination.', isTrue: false, explanation: 'Grounding reduces but does not eliminate hallucination. Models can still misinterpret context, make unsupported inferences, or blend context passages incorrectly.' },
+    { text: 'Faithfulness and accuracy are the same thing.', isTrue: false, explanation: 'Faithfulness means the output reflects the provided context. Accuracy means the output reflects objective truth.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

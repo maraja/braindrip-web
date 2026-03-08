@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. What to Track', desc: 'The foundation of experiment tracking begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Experiment Hierarchy', desc: 'At this stage, the key transformation occurs — the core mechanism that makes experiment tracking work.' },
-    { title: '3. Tool Landscape', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Experiment Comparison', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Model Registry', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. What to Track', desc: 'A complete experiment record captures five dimensions:' },
+    { title: '2. The Experiment Hierarchy', desc: 'Most tracking systems organize runs hierarchically:  [equation]  A project groups related work (e.g., "fraud detection"). An experiment represents a hypothesis or approach (e.g., "transformer-based features").' },
+    { title: '3. Tool Landscape', desc: 'MLflow -- Open-source, framework-agnostic. Provides tracking, model registry, and deployment.' },
+    { title: '4. Experiment Comparison', desc: 'The real power of tracking emerges when comparing runs. A well-structured tracking system enables:  Parallel coordinate plots: Visualize how hyperparameters map to metrics across hundreds of runs.' },
+    { title: '5. The Model Registry', desc: 'A model registry is a versioned catalog of production-ready models. It extends experiment tracking by adding:  Model versioning: Each registered model has versions (v1, v2, ...) linked to specific runs.' },
+    { title: '6. Run Organization Best Practices', desc: 'Tag runs with meaningful metadata: &#123;"team": "fraud", "priority": "high", "data_version": "2024-Q3"&#125;. Use consistent naming conventions for parameters across experiments.' },
 ];
 
 export default function WalkthroughMLFExperimentTracking() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFExperimentTracking() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Experiment Tracking — Step by Step
+          Experiment Tracking \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how experiment tracking works, one stage at a time.

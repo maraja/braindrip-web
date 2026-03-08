@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLRlInProduction() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Retraining cadence: Production RL systems typically retrain on fresh data weekly to monthly, depending on environment non-stationarity.', isTrue: true, explanation: 'This is a key technical detail of RL in Production.' },
-    { text: 'Continuous learning is possible but introduces additional stability risks.', isTrue: true, explanation: 'This is a key technical detail of RL in Production.' },
-    { text: 'Latency requirements: Production RL policies must make decisions within milliseconds (recommendations) to seconds (cooling control).', isTrue: true, explanation: 'This is a key technical detail of RL in Production.' },
+    { text: 'If RL works in simulation, it will work in production.', isTrue: false, explanation: 'The sim-to-real gap encompasses model inaccuracy, unmodeled dynamics, distributional shift, and the absence of safety constraints. Simulation results are necessary but not sufficient.' },
+    { text: 'Production RL systems typically retrain on fresh data weekly to monthly, depending on environment non-stationarity.', isTrue: true, explanation: 'Continuous learning is possible but introduces additional stability risks.' },
+    { text: 'Production RL policies must make decisions within milliseconds (recommendations) to seconds (cooling control).', isTrue: true, explanation: 'Complex planning methods (MCTS) may be too slow; amortized policies (neural networks) are preferred.' },
+    { text: 'Deploying RL requires buy-in from multiple teams (ML engineering, domain experts, operations, product).', isTrue: true, explanation: 'Lack of explainability is a common organizational barrier.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

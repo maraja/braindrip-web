@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. LLM-Based Summarization', desc: 'The foundation of context compression techniques begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Truncation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes context compression techniques work.' },
-    { title: '3. Structured Extraction', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Deduplication', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Perplexity-Based Token Pruning (LLMLingua)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. LLM-Based Summarization', desc: 'The most flexible compression technique uses an LLM to summarize content. Feed the full text to a model with instructions like "Summarize the following document, preserving key facts, figures, and conclusions.' },
+    { title: '2. Truncation', desc: 'The simplest compression technique: cut content at a token limit. Remove the end of a document, the oldest conversation turns, or the bottom of a long tool output.' },
+    { title: '3. Structured Extraction', desc: 'Convert prose into structured key-value pairs, tables, or bullet points. A 500-word paragraph about a product review becomes:  Compression ratio: 5:1 to 10:1 — the highest compression ratio of any technique.' },
+    { title: '4. Deduplication', desc: 'When multiple retrieved documents contain overlapping information, deduplication identifies and removes redundant passages. In a RAG system retrieving 10 passages about "Python list comprehension," substantial overlap is likely — multiple sources define the same syntax, give similar examples, and.' },
+    { title: '5. Perplexity-Based Token Pruning (LLMLingua)', desc: 'LLMLingua and its successors use a small language model to estimate each token\'s importance via perplexity (how surprised the model is by the token). High-perplexity tokens carry more information; low-perplexity tokens are predictable and removable.' },
 ];
 
 export default function WalkthroughPEContextCompressionTechniques() {
@@ -17,10 +17,10 @@ export default function WalkthroughPEContextCompressionTechniques() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Context Compression Techniques — Step by Step
+          Context Compression Techniques \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how context compression techniques works, one stage at a time.

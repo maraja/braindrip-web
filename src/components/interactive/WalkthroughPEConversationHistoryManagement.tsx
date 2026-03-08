@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Sliding Window (Last N Turns)', desc: 'The foundation of conversation history management begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Summarization (Compress Old Turns)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes conversation history management work.' },
-    { title: '3. Selective Retention', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Running Summary (Incrementally Updated)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Sliding Window (Last N Turns)', desc: 'The simplest strategy keeps only the most recent N turns and drops everything older. When the conversation exceeds N turns, the oldest turn is removed before adding the newest one.' },
+    { title: '2. Summarization (Compress Old Turns)', desc: 'Summarization uses an LLM to compress older conversation turns into a shorter summary. The recent 3-5 turns are kept in full, and everything older is replaced by a running summary.' },
+    { title: '3. Selective Retention', desc: 'Selective retention keeps certain turns based on importance criteria and drops unimportant ones. Importance can be determined by:  Content type: Keep turns where the user stated preferences, made decisions, or provided critical information.' },
+    { title: '4. Running Summary (Incrementally Updated)', desc: 'A running summary is a single document that is updated after every turn, maintaining a current snapshot of the conversation\'s state. Unlike batch summarization, the running summary is a living document — new information is integrated incrementally.' },
 ];
 
 export default function WalkthroughPEConversationHistoryManagement() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEConversationHistoryManagement() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Conversation History Management — Step by Step
+          Conversation History Management \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how conversation history management works, one stage at a time.

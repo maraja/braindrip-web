@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Compound Scaling Method', desc: 'The foundation of efficientnet begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Baseline Architecture (EfficientNet-B0)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes efficientnet work.' },
-    { title: '3. Model Family', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Training Details', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. EfficientNetV2', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Compound Scaling Method', desc: 'The starting point is the observation that scaling any single dimension has diminishing returns. Scaling depth from 18 to 152 layers (ResNet) improves top-1 accuracy from 69.8% to 76.3% but going deeper yields marginal gains.' },
+    { title: '2. Baseline Architecture (EfficientNet-B0)', desc: 'B0 was discovered through NAS (specifically MnasNet-style search) optimizing for both accuracy and FLOPS:  MBConv denotes the mobile inverted bottleneck convolution block from MobileNetV2, with an expansion factor (1 or 6) and optional squeeze-and-excitation (SE) attention with a reduction ratio of.' },
+    { title: '3. Training Details', desc: 'Optimizer: RMSProp with decay 0.9 and momentum 0.9. Learning rate: 0.256, decayed by 0.97 every 2.4 epochs.' },
+    { title: '4. EfficientNetV2', desc: 'Tan & Le (2021) introduced EfficientNetV2 with several improvements:  Fused-MBConv blocks in early stages: replaces depthwise + pointwise with standard convolutions in the first few stages, which are faster on modern accelerators due to better arithmetic intensity.' },
 ];
 
 export default function WalkthroughCVCEfficientnet() {
@@ -17,10 +16,10 @@ export default function WalkthroughCVCEfficientnet() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          EfficientNet — Step by Step
+          EfficientNet \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how efficientnet works, one stage at a time.

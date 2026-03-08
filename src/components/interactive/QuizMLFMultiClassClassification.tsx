@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFMultiClassClassification() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Probability calibration: OvR and OvO do not naturally produce calibrated probabilities.', isTrue: true, explanation: 'This is a key technical detail of Multi-Class Classification.' },
-    { text: 'Platt scaling or isotonic regression can be applied post-hoc.', isTrue: true, explanation: 'This is a key technical detail of Multi-Class Classification.' },
-    { text: 'Class imbalance: Imbalance is amplified in OvR (one class vs.', isTrue: true, explanation: 'This is a key technical detail of Multi-Class Classification.' },
+    { text: 'OvR always outperforms OvO.', isTrue: false, explanation: 'OvO can be better for algorithms like SVMs where the O(n^2) training cost means smaller subproblems are much cheaper. The answer depends on the algorithm and dataset.' },
+    { text: 'OvR and OvO do not naturally produce calibrated probabilities.', isTrue: true, explanation: 'Platt scaling or isotonic regression can be applied post-hoc.' },
+    { text: 'Imbalance is amplified in OvR (one class vs.', isTrue: true, explanation: 'all others). Class weights, SMOTE, or stratified sampling can help.' },
+    { text: 'When classes have a natural hierarchy (e.g., animal taxonomy), hierarchical approaches that classify at each level can be more accurate and efficient than flat multi-class methods.', isTrue: true, explanation: 'When classes have a natural hierarchy (e.g., animal taxonomy), hierarchical approaches that classify at each level can be more accurate and efficient than flat multi-class methods.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

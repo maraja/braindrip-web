@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE01InstructgptAndRlhf() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Published: March 2022 by Ouyang et al.', isTrue: true, explanation: 'This is a key technical detail of InstructGPT and RLHF.' },
-    { text: 'OpenAI\'s InstructGPT demonstrated that a 1.3B parameter model aligned with human preferences via reinforcement learning from human feedback could be preferred over the 175B GPT-3, proving that alignment technique matters as much as raw scale.', isTrue: true, explanation: 'This captures the core purpose of InstructGPT and RLHF.' },
-    { text: 'InstructGPT and RLHF is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding InstructGPT and RLHF is important for building on more advanced topics.' },
+    { text: 'RLHF was invented for InstructGPT.', isTrue: false, explanation: 'The concept of learning from human preferences dates to work by Christiano et al. (2017) and earlier.' },
+    { text: 'March 2022 by Ouyang et al.', isTrue: true, explanation: 'March 2022 by Ouyang et al.' },
+    { text: 'InstructGPT learns new knowledge from RLHF.', isTrue: false, explanation: 'RLHF steers the model\'s existing knowledge toward desired behaviors. The model does not gain new factual information through the RLHF process — it learns which of its existing capabilities to surface and how to present them.' },
+    { text: 'GPT-3 (1.3B and 6B variants primarily; 175B also tested)', isTrue: true, explanation: 'GPT-3 (1.3B and 6B variants primarily; 175B also tested)' },
+    { text: 'The reward model perfectly captures human preferences.', isTrue: false, explanation: 'Reward models are imperfect approximations. They can be "gamed" by models that find responses that score highly on the reward model but are not actually preferred by humans (reward hacking).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

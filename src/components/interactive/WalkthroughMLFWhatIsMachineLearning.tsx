@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Traditional Programming vs. Machine Learning', desc: 'The foundation of machine learning begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Learning Pipeline', desc: 'At this stage, the key transformation occurs — the core mechanism that makes machine learning work.' },
-    { title: '3. The Three Paradigms', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. When ML Is Appropriate', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. A Concrete Example: House Price Prediction', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Traditional Programming vs. Machine Learning', desc: 'In traditional programming:  [equation]  In machine learning:  [equation]  This inversion is the core insight. Instead of encoding domain expertise as explicit instructions, ML systems extract statistical regularities from data.' },
+    { title: '2. The Learning Pipeline', desc: 'Every ML system follows a general pipeline:  Data Collection: Gather raw observations -- images, text, sensor readings, transactions. Feature Engineering / Representation: Transform raw data into a numerical representation x  &#123;R&#125;^d that captures relevant information.' },
+    { title: '3. The Three Paradigms', desc: 'Supervised Learning. The training data consists of input-output pairs \\&#123;(x_i, y_i)\\&#125;_&#123;i=1&#125;^n.' },
+    { title: '4. When ML Is Appropriate', desc: 'ML is the right tool when:  The problem has patterns that are difficult to articulate as rules. You have sufficient data to learn those patterns.' },
+    { title: '5. A Concrete Example: House Price Prediction', desc: 'Consider predicting house prices. In a traditional approach, an expert might write: "Price = 200 per square foot, plus 50,000 per bedroom, minus 10,000 if no garage." These hand-crafted rules are brittle and miss complex interactions.' },
+    { title: '6. The Role of Data Quality', desc: 'The pipeline above assumes clean, representative data. In practice:  Sampling bias means the training distribution P_&#123;train&#125; differs from the deployment distribution P_&#123;deploy&#125;.' },
 ];
 
 export default function WalkthroughMLFWhatIsMachineLearning() {
@@ -17,13 +18,13 @@ export default function WalkthroughMLFWhatIsMachineLearning() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Machine Learning — Step by Step
+          What Is Machine Learning? \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Walk through how machine learning works, one stage at a time.
+          Walk through how what is machine learning? works, one stage at a time.
         </p>
       </div>
 

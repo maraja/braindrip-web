@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAECompoundingErrorsInMultiStepTasks() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'When an agent executes a sequence of steps with independent per-step success probability $p$, the overall success probability decays exponentially as $p^n$, making long-horizon task evaluation fundamentally different from single-step evaluation.', isTrue: true, explanation: 'This captures the core purpose of Compounding Errors in Multi-Step Tasks.' },
-    { text: 'Compounding Errors in Multi-Step Tasks is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Compounding Errors in Multi-Step Tasks is important for building on more advanced topics.' },
-    { text: 'Compounding Errors in Multi-Step Tasks is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Compounding Errors in Multi-Step Tasks is important for building on more advanced topics.' },
+    { text: '95% per-step accuracy is good enough.', isTrue: false, explanation: 'It depends entirely on trajectory length. For 5-step tasks, 95% per step yields 77% success -- acceptable for many use cases.' },
+    { text: 'You can evaluate multi-step capability by testing individual steps.', isTrue: false, explanation: 'Individual step tests miss correlated errors, cascading failures, and the agent\'s ability to maintain coherent plans over long horizons. A step that works perfectly in isolation may fail in context because the agent has accumulated a misleading internal state.' },
+    { text: 'Error compounding makes long-horizon agents impractical.', isTrue: false, explanation: 'Error recovery, checkpointing, and self-verification substantially mitigate compounding. The goal is not to eliminate per-step errors but to build systems that detect and recover from them.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

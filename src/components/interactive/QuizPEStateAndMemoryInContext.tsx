@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEStateAndMemoryInContext() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Pinned facts should be 100-300 tokens — enough for 10-20 key-value pairs covering the most important persistent information.', isTrue: true, explanation: 'This is a key technical detail of State and Memory in Context.' },
-    { text: 'Scratchpad size should be capped at 500-1,000 tokens to prevent it from dominating the context budget.', isTrue: true, explanation: 'This is a key technical detail of State and Memory in Context.' },
-    { text: 'Summarize or rotate old scratchpad content.', isTrue: true, explanation: 'This is a key technical detail of State and Memory in Context.' },
+    { text: 'Conversation history is sufficient memory.', isTrue: false, explanation: 'History carries state implicitly, but extracting it requires the model to scan, locate, and synthesize — operations that fail with increasing frequency as conversations grow. Explicit state is direct access; history is search-and-inference.' },
+    { text: 'State and memory patterns — including scratchpads, pinned facts, running tallies, and working memory blocks — enable LLMs to maintain, update, and reference persistent information within and across conversation turns.', isTrue: true, explanation: 'This captures the core definition of State and Memory in Context.' },
+    { text: 'State and Memory in Context is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding State and Memory in Context is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

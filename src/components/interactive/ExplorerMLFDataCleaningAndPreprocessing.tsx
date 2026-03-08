@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Cleaning must happen before splitting.', detail: 'If you deduplicate after splitting, the same record could appear in both train and test sets, causing data leakage (see **Data Splitting and Sampling**).' },
-    { label: 'Imputation vs. cleaning', detail: 'Cleaning fixes *errors*; imputation fills *gaps*. A temperature reading of -9999 is a sentinel value (cleaning issue), not a missing value.' },
+    { label: 'Cleaning must happen before splitting.', detail: 'If you deduplicate after splitting, the same record could appear in both train and test sets, causing data leakage (see Data Splitting and Sampling).' },
+    { label: 'Imputation vs. cleaning', detail: 'Cleaning fixes errors; imputation fills gaps. A temperature reading of -9999 is a sentinel value (cleaning issue), not a missing value.' },
     { label: 'Idempotency', detail: 'A well-designed cleaning pipeline produces the same output when run twice on the same input. This is critical for reproducibility.' },
     { label: 'Version your data', detail: 'Store raw data immutably and maintain cleaning scripts as code. Never overwrite the original dataset.' },
     { label: 'Monitor data quality in production', detail: 'Data drift and schema changes are ongoing threats. Automated validation checks should run on every new data batch.' },
@@ -19,10 +19,10 @@ export default function ExplorerMLFDataCleaningAndPreprocessing() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Data Cleaning and Preprocessing — Key Details Explorer
+          Data Cleaning and Preprocessing \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of data cleaning and preprocessing.
+          Click each card to explore the technical details.
         </p>
       </div>
 

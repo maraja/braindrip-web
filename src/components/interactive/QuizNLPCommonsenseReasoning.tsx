@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPCommonsenseReasoning() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ConceptNet 5.7 contains over 21 million edges across 34 relation types, covering multiple languages.', isTrue: true, explanation: 'This is a key technical detail of Commonsense Reasoning.' },
-    { text: 'ATOMIC contains 877K inferential triples; ATOMIC2020 expands to 1.33 million triples across physical, social, and event commonsense.', isTrue: true, explanation: 'This is a key technical detail of Commonsense Reasoning.' },
-    { text: 'WinoGrande: 44,000 problems; human accuracy approximately 94%, RoBERTa-large approximately 79%.', isTrue: true, explanation: 'This is a key technical detail of Commonsense Reasoning.' },
+    { text: 'LLMs have solved commonsense reasoning because they perform well on benchmarks.', isTrue: false, explanation: 'Benchmark saturation can be misleading. Models often exploit surface patterns rather than performing genuine reasoning.' },
+    { text: 'Commonsense knowledge can be fully captured in a knowledge graph.', isTrue: false, explanation: 'Knowledge graphs like ConceptNet capture structured commonsense but cannot represent the full richness of human experience. Much commonsense is continuous (degrees of similarity, approximate magnitudes), context-dependent, and combinatorial in ways that resist discrete graph representation.' },
+    { text: 'More training data will eventually teach models all commonsense.', isTrue: false, explanation: 'Reporting bias means that text corpora systematically under-represent obvious facts. No amount of additional text will fully convey physical intuitions that require embodied experience.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

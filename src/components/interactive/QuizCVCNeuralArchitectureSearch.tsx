@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizCVCNeuralArchitectureSearch() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Original NAS cost: 12,800 architectures, each trained for 50 epochs on CIFAR-10, using 800 GPUs for 28 days (~22,400 GPU-days).', isTrue: true, explanation: 'This is a key technical detail of Neural Architecture Search.' },
-    { text: 'DARTS cost: 1.5 GPU-days on a single GPU -- a ~15,000x reduction from original NAS.', isTrue: true, explanation: 'This is a key technical detail of Neural Architecture Search.' },
-    { text: 'One-shot methods reduce search to ~8 GPU-hours for CIFAR-10 in some implementations.', isTrue: true, explanation: 'This is a key technical detail of Neural Architecture Search.' },
+    { text: 'NAS always finds better architectures than humans.', isTrue: false, explanation: 'NAS finds good architectures within the defined search space. If the search space is poorly designed, NAS will find the best of a mediocre set.' },
+    { text: '12,800 architectures, each trained for 50 epochs on CIFAR-10, using 800 GPUs for 28 days (~22,400 GPU-days).', isTrue: true, explanation: '12,800 architectures, each trained for 50 epochs on CIFAR-10, using 800 GPUs for 28 days (~22,400 GPU-days).' },
+    { text: '1.5 GPU-days on a single GPU -- a ~15,000x reduction from original NAS.', isTrue: true, explanation: '1.5 GPU-days on a single GPU -- a ~15,000x reduction from original NAS.' },
+    { text: 'A typical DARTS cell search space with 14 edges and 8 operations per edge has 8^&#123;14&#125;  4.4 x 10^&#123;12&#125; possible architectures.', isTrue: true, explanation: 'A typical DARTS cell search space with 14 edges and 8 operations per edge has 8^&#123;14&#125;  4.4 x 10^&#123;12&#125; possible architectures.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

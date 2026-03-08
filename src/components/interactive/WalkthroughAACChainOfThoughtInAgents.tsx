@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Scratchpad Patterns', desc: 'The foundation of chain-of-thought in agents begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Extended Thinking and Thinking Blocks', desc: 'At this stage, the key transformation occurs — the core mechanism that makes chain-of-thought in agents work.' },
-    { title: '3. Structured Reasoning Formats', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. CoT Length and Quality Trade-offs', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Scratchpad Patterns', desc: 'The most common implementation is a dedicated scratchpad section in the agent\'s prompt where it is instructed to reason before acting:  The scratchpad is consumed by the framework (parsed to extract the action) but the reasoning portion helps the model produce better actions by forcing it to think.' },
+    { title: '2. Extended Thinking and Thinking Blocks', desc: 'Modern LLM APIs provide explicit support for agent-level CoT through dedicated thinking blocks. Anthropic\'s extended thinking feature allocates a separate "thinking" section where the model can reason at length before producing its visible response.' },
+    { title: '3. Structured Reasoning Formats', desc: 'Some agent frameworks enforce specific reasoning structures:  Goal-Status-Plan (GSP): At each step, the agent states the goal, the current status toward that goal, and the plan for the next action.' },
+    { title: '4. CoT Length and Quality Trade-offs', desc: 'Longer CoT generally produces better actions, but with diminishing returns and increasing token costs. Research shows:  0 reasoning tokens (direct action): Baseline performance 50-100 reasoning tokens: Significant improvement on multi-step tasks (20-40% error reduction) 100-500 reasoning tokens:.' },
 ];
 
 export default function WalkthroughAACChainOfThoughtInAgents() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACChainOfThoughtInAgents() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Chain-of-Thought in Agents — Step by Step
+          Chain-of-Thought in Agents \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how chain-of-thought in agents works, one stage at a time.

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAThreadBasedMemory() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Thread-based memory is entirely powered by checkpointers; there is no separate "memory" component.', isTrue: true, explanation: 'This is a key technical detail of Thread-Based Memory.' },
-    { text: 'The thread_id is a string you control -- it can be a user ID, session token, UUID, or any unique identifier.', isTrue: true, explanation: 'This is a key technical detail of Thread-Based Memory.' },
-    { text: 'Messages accumulate indefinitely within a thread unless you explicitly trim or summarize them.', isTrue: true, explanation: 'This is a key technical detail of Thread-Based Memory.' },
+    { text: 'Thread memory persists across different thread IDs.', isTrue: false, explanation: 'Each thread_id is completely isolated. There is zero data sharing between threads unless you use a cross-thread store.' },
+    { text: 'Thread-based memory gives an agent short-term recall within a single conversation by persisting messages across invocations that share the same thread_id.', isTrue: true, explanation: 'This captures the core definition of Thread-Based Memory.' },
+    { text: 'Thread-Based Memory is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Thread-Based Memory is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

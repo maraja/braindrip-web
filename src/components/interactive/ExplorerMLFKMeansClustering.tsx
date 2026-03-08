@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Time complexity', detail: '$O(nKdT)$ where $T$ is the number of iterations, $d$ is dimensionality' },
-    { label: 'Space complexity', detail: '$O(nK + Kd)$ for assignments and centroids -- very memory efficient' },
-    { label: 'Convergence', detail: 'Guaranteed to a local minimum; global optimum is NP-hard in general even for $K = 2$' },
+    { label: 'Time complexity', detail: 'O(nKdT) where T is the number of iterations, d is dimensionality' },
+    { label: 'Space complexity', detail: 'O(nK + Kd) for assignments and centroids -- very memory efficient' },
+    { label: 'Convergence', detail: 'Guaranteed to a local minimum; global optimum is NP-hard in general even for K = 2' },
     { label: 'Typical iterations', detail: 'In practice, K-means converges in 10-100 iterations for most datasets, though worst-case iteration count can be exponential' },
     { label: 'Implicit assumption', detail: 'Clusters are spherical (isotropic) and roughly equal in size' },
     { label: 'Distance metric', detail: 'Standard K-means uses squared Euclidean; using other metrics requires K-medoids' },
@@ -20,10 +20,10 @@ export default function ExplorerMLFKMeansClustering() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          K-Means Clustering — Key Details Explorer
+          K-Means Clustering \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of k-means clustering.
+          Click each card to explore the technical details.
         </p>
       </div>
 

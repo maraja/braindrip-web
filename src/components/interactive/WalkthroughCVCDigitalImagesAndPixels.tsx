@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Spatial Sampling', desc: 'The foundation of digital images and pixels begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Intensity Quantization', desc: 'At this stage, the key transformation occurs — the core mechanism that makes digital images and pixels work.' },
-    { title: '3. Memory Layout', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Coordinate Conventions', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Common Image File Formats', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Spatial Sampling', desc: 'The camera sensor (CCD or CMOS) contains a 2D array of photosites. Each photosite integrates incoming photons over its area during the exposure time, producing one sample.' },
+    { title: '2. Intensity Quantization', desc: 'After sampling, each analog voltage is converted to a discrete integer by an analog-to-digital converter (ADC). With b bits per channel, there are 2^b possible levels:  Quantization introduces quantization noise, which for uniform quantization has an RMS value of approximately  / &#123;12&#125;, where  is.' },
+    { title: '3. Memory Layout', desc: 'Images are stored as contiguous arrays in row-major (C/NumPy) or column-major (MATLAB/Fortran) order. A single-channel 8-bit grayscale image of size H x W occupies H x W bytes.' },
+    { title: '4. Coordinate Conventions', desc: 'A persistent source of bugs: image libraries disagree on axis order. NumPy and OpenCV index as image[row, col] (y first, x second), while many graphics APIs use (x, y).' },
+    { title: '5. Common Image File Formats', desc: 'Different formats make different tradeoffs between file size, quality, and feature support:  JPEG: Lossy DCT-based compression. 8-bit per channel, no alpha.' },
 ];
 
 export default function WalkthroughCVCDigitalImagesAndPixels() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCDigitalImagesAndPixels() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Digital Images and Pixels — Step by Step
+          Digital Images and Pixels \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how digital images and pixels works, one stage at a time.

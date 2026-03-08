@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE01PhiSeries() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Microsoft Research\'s Phi models proved that training data quality matters more than model size, achieving frontier-class performance with models as small as 1.3 billion parameters.', isTrue: true, explanation: 'This captures the core purpose of Phi Series.' },
-    { text: 'Phi Series is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Phi Series is important for building on more advanced topics.' },
-    { text: 'Phi Series is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Phi Series is important for building on more advanced topics.' },
+    { text: 'Phi models are just distilled versions of GPT-4.', isTrue: false, explanation: 'While synthetic data is generated using larger models, Phi models are trained from scratch on this data -- they don\'t copy GPT-4\'s weights or architecture. The data generation is a form of knowledge distillation through data, not model distillation.' },
+    { text: 'Small models can\'t handle complex tasks.', isTrue: false, explanation: 'Phi-4 (14B) outperforms GPT-4o on specific math benchmarks, and Phi-3-mini handles multi-turn reasoning surprisingly well. Small models have genuine capability, not just surface-level pattern matching.' },
+    { text: 'The textbook approach only works for code.', isTrue: false, explanation: 'Phi-1 was code-focused, but Phi-2 onward demonstrated strong performance on general reasoning, common sense, and language understanding, proving the approach generalizes.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

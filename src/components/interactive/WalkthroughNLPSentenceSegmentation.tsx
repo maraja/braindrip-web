@@ -1,11 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Rule-Based Approaches', desc: 'The foundation of sentence segmentation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Simple Regex Splitting', desc: 'At this stage, the key transformation occurs — the core mechanism that makes sentence segmentation work.' },
-    { title: '3. Abbreviation Lists', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Finite-State Transducers', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Statistical Approaches', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Rule-Based Approaches', desc: '#### Simple Regex Splitting  The baseline approach uses a regular expression to split on sentence-ending punctuation followed by whitespace and a capital letter:  This handles clean, formal text but fails on abbreviations ("Dr. Smith"), acronyms ("U.S.A."), ellipses ("Wait...' },
+    { title: '2. Statistical Approaches', desc: '#### The Punkt Algorithm  Punkt (Kiss and Strunk, 2006) is the most widely used unsupervised sentence boundary detector. It learns abbreviation patterns from an unlabeled corpus using three key observations:  Abbreviation detection: Words that frequently appear with a trailing period and have a.' },
+    { title: '3. Neural Approaches', desc: 'Recent work applies character-level or token-level neural models. The Ersatz system (Wicks and Post, 2021) uses a transformer-based model that achieves state-of-the-art accuracy on multilingual sentence segmentation, particularly excelling on languages without clear punctuation conventions.' },
 ];
 
 export default function WalkthroughNLPSentenceSegmentation() {
@@ -17,10 +15,10 @@ export default function WalkthroughNLPSentenceSegmentation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Sentence Segmentation — Step by Step
+          Sentence Segmentation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how sentence segmentation works, one stage at a time.

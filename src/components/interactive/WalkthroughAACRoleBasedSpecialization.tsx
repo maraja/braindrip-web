@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Role Definition', desc: 'The foundation of role-based specialization begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Common Role Archetypes', desc: 'At this stage, the key transformation occurs — the core mechanism that makes role-based specialization work.' },
-    { title: '3. Specialization Through System Prompts', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Dynamic Role Assignment', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Role Definition', desc: 'A role specification typically includes:  Identity and expertise: "You are a senior backend engineer with 10 years of experience in distributed systems and Python." Responsibilities: "Your job is to implement the backend API endpoints according to the provided specifications.' },
+    { title: '2. Common Role Archetypes', desc: 'Planner/Architect: Analyzes tasks, creates plans, decomposes work. Does not execute — only directs.' },
+    { title: '3. Specialization Through System Prompts', desc: 'The system prompt is the primary mechanism for role specialization. Effective role prompts follow a pattern:  Who you are: Establish expertise and persona.' },
+    { title: '4. Dynamic Role Assignment', desc: 'In some systems, roles are not hardcoded but assigned dynamically based on the task. A manager agent analyzes the incoming request and determines which roles are needed, then configures sub-agents accordingly.' },
 ];
 
 export default function WalkthroughAACRoleBasedSpecialization() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACRoleBasedSpecialization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Role-Based Specialization — Step by Step
+          Role-Based Specialization \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how role-based specialization works, one stage at a time.

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Rubin Taxonomy of Missingness', desc: 'The foundation of handling missing data begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Deletion Methods', desc: 'At this stage, the key transformation occurs — the core mechanism that makes handling missing data work.' },
-    { title: '3. Simple Imputation Methods', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Model-Based Imputation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Missing Indicator Features', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Rubin Taxonomy of Missingness', desc: 'Donald Rubin\'s 1976 framework classifies missing data into three categories. Understanding which type you face is the single most important step.' },
+    { title: '2. Deletion Methods', desc: 'Listwise deletion (complete-case analysis): Drop any row with at least one missing value. Simple but wasteful -- if 20 features each have 5% missingness independently, you lose 1 - 0.95^&#123;20&#125;  64\\% of rows.' },
+    { title: '3. Simple Imputation Methods', desc: 'Mean imputation: Replace missing values with the feature\'s mean &#123;x&#125;_j. Fast and simple but reduces variance (all imputed values are identical) and distorts correlations.' },
+    { title: '4. Model-Based Imputation', desc: 'KNN imputation: For a missing value in observation i, find the k nearest neighbors (using observed features) and impute with the neighbors\' mean (or mode for categorical data). Respects local data structure but is O(n^2) in distance computation and sensitive to the choice of k and distance metric.' },
+    { title: '5. Missing Indicator Features', desc: 'A complementary strategy is to add a binary indicator feature M_j  \\&#123;0, 1\\&#125; for each feature j with missing values, where M_j = 1 if the original value was missing. This lets the model learn that the fact of being missing is itself informative (e.g., a missing credit score may predict default risk).' },
 ];
 
 export default function WalkthroughMLFHandlingMissingData() {
@@ -17,10 +17,10 @@ export default function WalkthroughMLFHandlingMissingData() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Handling Missing Data — Step by Step
+          Handling Missing Data \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how handling missing data works, one stage at a time.

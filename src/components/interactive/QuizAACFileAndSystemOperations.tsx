@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACFileAndSystemOperations() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Working directory management: Agents need a consistent working directory concept.', isTrue: true, explanation: 'This is a key technical detail of File and System Operations.' },
-    { text: 'Stateless shell environments (where each command starts fresh) require using absolute paths or explicit cd commands.', isTrue: true, explanation: 'This is a key technical detail of File and System Operations.' },
-    { text: 'Stateful environments maintain the working directory across commands.', isTrue: true, explanation: 'This is a key technical detail of File and System Operations.' },
+    { text: 'Agents should read entire codebases into context', isTrue: false, explanation: ': Even with large context windows (200K tokens), reading an entire codebase is wasteful and degrades performance. Effective agents use targeted search-then-read patterns, loading only the files relevant to the current task.' },
+    { text: 'Agents need a consistent working directory concept.', isTrue: true, explanation: 'Stateless shell environments (where each command starts fresh) require using absolute paths or explicit cd commands. Stateful environments maintain the working directory across commands.' },
+    { text: 'Reading files larger than 10,000 lines into the LLM context is impractical.', isTrue: true, explanation: 'Tools should implement pagination (read N lines starting at line M) and summary modes for large files.' },
+    { text: 'Files are not always UTF-8.', isTrue: true, explanation: 'Binary files, images, and files with different encodings need special handling. Attempting to read a binary file as text produces garbage output that wastes context.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEMultiAgentEvaluationTheory() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Evaluating systems of cooperating and competing agents requires game-theoretic metrics, communication analysis, and coordination quality measures that go far beyond single-agent performance scoring.', isTrue: true, explanation: 'This captures the core purpose of Multi-Agent Evaluation Theory.' },
-    { text: 'Multi-Agent Evaluation Theory is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Multi-Agent Evaluation Theory is important for building on more advanced topics.' },
-    { text: 'Multi-Agent Evaluation Theory is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Multi-Agent Evaluation Theory is important for building on more advanced topics.' },
+    { text: 'The best multi-agent system is built from the best individual agents.', isTrue: false, explanation: 'This is the superstar fallacy. Coordination quality often matters more than individual capability.' },
+    { text: 'More communication between agents is always better.', isTrue: false, explanation: 'Excessive communication introduces latency, increases cost, and can actually degrade performance through information overload. Optimal communication is task-dependent.' },
+    { text: 'Multi-agent evaluation is just single-agent evaluation run multiple times.', isTrue: false, explanation: 'This misses every system-level property: coordination quality, communication efficiency, emergent specialization, fairness, and stability. Averaging individual scores provides no information about whether agents work well together.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFGraphicalModels() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Directed models (Bayesian networks) factorize as products of conditionals; undirected models (MRFs) factorize over clique potentials.', isTrue: true, explanation: 'This is a key technical detail of Graphical Models.' },
-    { text: 'D-separation determines conditional independence in directed models; the Markov blanket does so in undirected models.', isTrue: true, explanation: 'This is a key technical detail of Graphical Models.' },
-    { text: 'Exact inference is tractable on trees (belief propagation) and low-treewidth graphs (junction tree).', isTrue: true, explanation: 'This is a key technical detail of Graphical Models.' },
+    { text: 'Bayesian networks must represent causal relationships.', isTrue: false, explanation: 'The arrows in a Bayesian network encode factorization and conditional dependencies, not necessarily causation. Causal Bayesian networks are a special case with additional assumptions (interventional semantics).' },
+    { text: 'Undirected and directed models are interchangeable.', isTrue: false, explanation: 'Some independence structures can only be represented by one type. The "explaining away" pattern (A  C  B where A \\!\\!\\!' },
+    { text: 'Belief propagation always converges on loopy graphs.', isTrue: false, explanation: 'Loopy BP can oscillate or diverge. Convergence is guaranteed only on trees.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

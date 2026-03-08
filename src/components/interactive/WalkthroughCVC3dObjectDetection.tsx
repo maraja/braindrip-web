@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. LiDAR-Based Methods', desc: 'The foundation of 3d object detection begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Camera-Based Methods', desc: 'At this stage, the key transformation occurs — the core mechanism that makes 3d object detection work.' },
-    { title: '3. Sensor Fusion', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Evaluation Metrics', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. LiDAR-Based Methods', desc: 'VoxelNet (Zhou & Tuzel, 2018): Divides the 3D space into voxels, applies a PointNet-like feature extractor within each voxel, then processes the resulting 3D feature grid with sparse 3D convolutions and a 2D detection head. Voxel size is typically (0.1, 0.1, 0.2) m for the KITTI benchmark.' },
+    { title: '2. Camera-Based Methods', desc: 'Camera-only 3D detection has gained traction for its lower sensor cost. BEVDet (Huang et al., 2022): Lifts multi-camera 2D features into a 3D voxel space using predicted depth distributions, then collapses to BEV for detection.' },
+    { title: '3. Sensor Fusion', desc: 'PointPainting (Vora et al., 2020): Projects LiDAR points onto camera images, appends semantic segmentation scores to each point, and feeds the decorated point cloud to a LiDAR detector. Simple but effective: +3-4 mAP improvement.' },
+    { title: '4. Evaluation Metrics', desc: 'The standard metric is 3D Average Precision (AP) at IoU thresholds (0.7 for cars, 0.5 for pedestrians/cyclists on KITTI). nuScenes uses NDS (nuScenes Detection Score), which combines mAP with metrics for translation, scale, orientation, velocity, and attribute errors.' },
 ];
 
 export default function WalkthroughCVC3dObjectDetection() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVC3dObjectDetection() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          3D Object Detection — Step by Step
+          3D Object Detection \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how 3d object detection works, one stage at a time.

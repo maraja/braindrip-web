@@ -1,23 +1,23 @@
 import { useState } from 'react';
-const baseStyle = { background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: 14, padding: '1.25rem', margin: '1.5rem 0', fontFamily: 'system-ui, sans-serif' };
+const baseStyle = { background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: 14, padding: '1.25rem', margin: '1.5rem 0', fontFamily: "system-ui, sans-serif" };
 export default function AnalogyNLPGrammaticalErrorCorrection() {
   const [idx, setIdx] = useState(0);
-  const analogies = [
-    { emoji: '🏗', label: 'Building', text: 'Think of Grammatical Error Correction like constructing a building. Imagine a meticulous copy editor reviewing a manuscript. They spot a subject-verb agreement error ("The data shows" should be "The data show" in fo... Just as a builder follows blueprints to create a structure, this concept provides the foundational framework that everything else builds upon.' },
-    { emoji: '🎭', label: 'Theater', text: 'Grammatical Error Correction is like directing a theater production. Imagine a meticulous copy editor reviewing a manuscript. They spot a subject-verb agreement error ("The data shows" should be "The data show" in fo... Each element plays a specific role, and the overall performance depends on how well they work together.' },
-    { emoji: '🗺', label: 'Navigation', text: 'Think of Grammatical Error Correction like navigating with a map. Imagine a meticulous copy editor reviewing a manuscript. They spot a subject-verb agreement error ("The data shows" should be "The data show" in fo... You need to understand where you are, where you want to go, and the best route to get there.' },
+  const perspectives = [
+    { emoji: '💡', label: 'Core Idea', text: 'Imagine a meticulous copy editor reviewing a manuscript. They spot a subject-verb agreement error ("The data shows" should be "The data show" in formal style), fix a preposition choice ("interested on" to "interested in"), correct a spelling mistake, and restructure an awkward sentence.' },
+    { emoji: '⚙️', label: 'How It Works', text: 'The earliest GEC systems relied on hand-crafted rules encoding grammatical knowledge:  Tools like LanguageTool (open-source, 2003--present) maintain thousands of pattern-based rules per language.' },
+    { emoji: '🔍', label: 'In Detail', text: 'Grammatical error correction (GEC) is the NLP task of automatically detecting and fixing errors in written text -- including grammatical mistakes (agreement, tense, articles), spelling errors, word choice issues (collocations, prepositions), and stylistic problems (awkward phrasing, wordiness).' },
   ];
   return (
     <div style={baseStyle}>
-      <p style={{ fontSize: '0.8rem', fontWeight: 700, color: '#2C3E2D', marginBottom: 10, letterSpacing: '0.05em' }}>\u2726 THINK OF IT AS...</p>
-      <div style={{ display: 'flex', gap: 6, marginBottom: 12, flexWrap: 'wrap' }}>
-        {analogies.map((a, i) => (
-          <button key={i} onClick={() => setIdx(i)} style={{ padding: '4px 12px', borderRadius: 20, border: idx === i ? '2px solid #8BA888' : '1px solid #E5DFD3', background: idx === i ? '#8BA888' + '18' : 'transparent', fontSize: '0.8rem', cursor: 'pointer', color: '#2C3E2D', fontWeight: idx === i ? 600 : 400 }}>
-            {a.emoji} {a.label}
+      <p style={{ fontSize: '0.8rem', fontWeight: 700, color: '#2C3E2D', marginBottom: 10, letterSpacing: '0.05em' }}>\u2726 KEY PERSPECTIVES</p>
+      <div style={{ display: 'flex', gap: 6, marginBottom: 12, flexWrap: 'wrap' as const }}>
+        {perspectives.map((p, i) => (
+          <button key={i} onClick={() => setIdx(i)} style={{ padding: '4px 12px', borderRadius: 20, border: idx === i ? '2px solid #8BA888' : '1px solid #E5DFD3', background: idx === i ? '#8BA88818' : 'transparent', fontSize: '0.8rem', cursor: 'pointer', color: '#2C3E2D', fontWeight: idx === i ? 600 : 400 }}>
+            {p.emoji} {p.label}
           </button>
         ))}
       </div>
-      <p style={{ fontSize: '0.9rem', color: '#3D4F3E', lineHeight: 1.6, margin: 0 }}>{analogies[idx].text}</p>
+      <p style={{ fontSize: '0.9rem', color: '#3D4F3E', lineHeight: 1.6, margin: 0 }}>{perspectives[idx].text}</p>
     </div>
   );
 }

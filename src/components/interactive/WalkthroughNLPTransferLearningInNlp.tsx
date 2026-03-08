@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Three Eras of NLP', desc: 'The foundation of transfer learning in nlp begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Feature-Based Transfer', desc: 'At this stage, the key transformation occurs — the core mechanism that makes transfer learning in nlp work.' },
-    { title: '3. Fine-Tuning-Based Transfer', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Why Transfer Learning Works', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Three Eras of NLP', desc: 'Era 1: Feature Engineering (pre-2013). Practitioners hand-crafted features -- POS tags, dependency parse paths, gazetteer lookups, n-gram patterns -- and fed them to classifiers like SVMs or logistic regression.' },
+    { title: '2. Feature-Based Transfer', desc: 'In feature-based transfer, pre-trained representations are extracted and used as input features for a separately trained task model. The pre-trained model\'s weights are frozen.' },
+    { title: '3. Fine-Tuning-Based Transfer', desc: 'Fine-tuning initializes a model with pre-trained weights, adds a thin task-specific output layer, and then updates the entire network (or selected layers) with task-specific data.' },
+    { title: '4. Why Transfer Learning Works', desc: 'Linguistic universals: Lower layers learn syntax and morphology, middle layers learn semantic relationships, and upper layers learn task-relevant abstractions. These hierarchical linguistic features are shared across tasks.' },
 ];
 
 export default function WalkthroughNLPTransferLearningInNlp() {
@@ -16,10 +16,10 @@ export default function WalkthroughNLPTransferLearningInNlp() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Transfer Learning in NLP — Step by Step
+          Transfer Learning in NLP \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how transfer learning in nlp works, one stage at a time.

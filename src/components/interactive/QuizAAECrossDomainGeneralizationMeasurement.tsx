@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAECrossDomainGeneralizationMeasurement() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Measuring whether agent capabilities transfer across domains -- from coding to research, from customer service to data analysis -- is essential for predicting real-world performance and designing benchmarks that reflect genuine competence rather than narrow specialization.', isTrue: true, explanation: 'This captures the core purpose of Cross-Domain Generalization Measurement.' },
-    { text: 'Cross-Domain Generalization Measurement is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Cross-Domain Generalization Measurement is important for building on more advanced topics.' },
-    { text: 'Cross-Domain Generalization Measurement is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Cross-Domain Generalization Measurement is important for building on more advanced topics.' },
+    { text: 'A high score on a diverse benchmark means the agent generalizes well.', isTrue: false, explanation: 'Diversity within a benchmark (multiple task types) is not the same as diversity across domains. An agent can score well on a benchmark with diverse coding tasks but fail on non-coding tasks entirely.' },
+    { text: 'Generalization is purely a property of the base model.', isTrue: false, explanation: 'While the base model\'s pretraining influences generalization, system-level factors -- prompting strategies, tool availability, memory systems -- also significantly affect cross-domain transfer. An agent with strong tool-use abstraction may generalize better than one with domain-specific tool configurations, regardless of base model.' },
+    { text: 'The best agent in one domain is the best agent in every domain.', isTrue: false, explanation: 'Rankings frequently change across domains. Agent A may outperform Agent B on coding tasks while Agent B outperforms Agent A on research tasks.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

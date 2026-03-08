@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCImageInpainting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Partial convolutions: Trained on 55,116 irregular masks from random strokes.', isTrue: true, explanation: 'This is a key technical detail of Image Inpainting.' },
-    { text: 'Handles masks covering 0--60% of image area.', isTrue: true, explanation: 'This is a key technical detail of Image Inpainting.' },
-    { text: 'DeepFill v2 (gated convolutions): FID 7.8 on Places2 at 256x256 with free-form masks.', isTrue: true, explanation: 'This is a key technical detail of Image Inpainting.' },
+    { text: 'Inpainting just copies nearby textures.', isTrue: false, explanation: 'Modern methods understand semantics: they can generate missing faces, complete architectural structures, and synthesize contextually appropriate objects. "GAN-based inpainting is always better than diffusion." For small masks and fast inference, GAN methods are competitive.' },
+    { text: 'Image inpainting fills in missing or masked regions of an image with plausible content, using contextual reasoning from surrounding pixels through techniques ranging from partial convolutions to diffusion-based generation.', isTrue: true, explanation: 'This captures the core definition of Image Inpainting.' },
+    { text: 'Image Inpainting is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Image Inpainting is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

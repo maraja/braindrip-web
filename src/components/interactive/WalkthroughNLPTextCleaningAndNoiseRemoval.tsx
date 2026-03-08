@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. HTML and Markup Stripping', desc: 'The foundation of text cleaning and noise removal begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Encoding Issues', desc: 'At this stage, the key transformation occurs — the core mechanism that makes text cleaning and noise removal work.' },
-    { title: '3. The Problem', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Common Encodings', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Detection and Repair', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. HTML and Markup Stripping', desc: 'Web-scraped text contains HTML tags, CSS, JavaScript, and navigation elements that are noise for NLP:  Key considerations: Entity decoding: &amp; to &, &lt; to &lt;, &#8212; to em-dash. Use BeautifulSoup or html.unescape().' },
+    { title: '2. Encoding Issues', desc: '#### The Problem  Text encoding mismatches produce mojibake: text decoded with the wrong character set. "caf00e9" encoded in UTF-8 (bytes 63 61 66 C3 A9) but decoded as Latin-1 produces "cafÃ©.' },
+    { title: '3. OCR Error Patterns', desc: 'Optical Character Recognition introduces systematic errors based on visual glyph similarity:  Post-OCR correction approaches: Dictionary-based: Flag tokens not in a dictionary and suggest nearest edit-distance matches. Statistical: N-gram language models (see n-gram-language-models.' },
+    { title: '4. Social Media Normalization', desc: 'Social media text violates nearly every assumption of standard NLP:  #### Hashtags Split #MakeAmericaGreatAgain into "Make America Great Again" using camelCase detection or a word segmentation model. The wordsegment library handles this with approximately 90% accuracy.' },
+    { title: '5. Deduplication', desc: 'Duplicate documents inflate training data and bias models. Three levels:  Exact deduplication: Hash each document (MD5, SHA-256) and remove identical hashes.' },
+    { title: '6. Language Detection', desc: 'Multilingual corpora require language identification before language-specific processing. Libraries:  langdetect (Python): Port of Google\'s language detection library, supports 55 languages, &gt;99% accuracy on texts longer than 50 characters.' },
 ];
 
 export default function WalkthroughNLPTextCleaningAndNoiseRemoval() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPTextCleaningAndNoiseRemoval() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Text Cleaning and Noise Removal — Step by Step
+          Text Cleaning and Noise Removal \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how text cleaning and noise removal works, one stage at a time.

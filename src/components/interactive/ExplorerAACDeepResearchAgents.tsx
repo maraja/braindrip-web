@@ -3,7 +3,7 @@ import { useState } from 'react';
 const DETAILS = [
     { label: 'Search breadth', detail: 'top deep research agents issue 20-100 search queries per research task, reading 30-200 documents before synthesizing' },
     { label: 'Time budget', detail: 'OpenAI\'s Deep Research spends 5-30 minutes per query; Gemini\'s Deep Research takes similar time. The time is dominated by sequential search-read cycles, each requiring LLM processing' },
-    { label: 'Token consumption', detail: 'a deep research task may consume 500K-2M tokens across all LLM calls (search query generation, document reading, extraction, synthesis), costing $1.50-$30 depending on model' },
+    { label: 'Token consumption', detail: 'a deep research task may consume 500K-2M tokens across all LLM calls (search query generation, document reading, extraction, synthesis), costing 1.50-30 depending on model' },
     { label: 'Source verification', detail: 'the agent should check whether multiple independent sources confirm a claim before stating it as fact; single-source claims should be qualified' },
     { label: 'Hallucination risk in synthesis', detail: 'the agent may blend facts from different sources incorrectly or generate plausible-sounding claims not present in any source. Citation verification (checking that cited claims actually appear in the cited source) is a critical quality measure' },
     { label: 'Structured output', detail: 'research reports benefit from structured formats -- executive summary, key findings by theme, methodology notes, limitations, bibliography -- that the agent should follow consistently' },
@@ -20,10 +20,10 @@ export default function ExplorerAACDeepResearchAgents() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Deep Research Agents — Key Details Explorer
+          Deep Research Agents \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of deep research agents.
+          Click each card to explore the technical details.
         </p>
       </div>
 

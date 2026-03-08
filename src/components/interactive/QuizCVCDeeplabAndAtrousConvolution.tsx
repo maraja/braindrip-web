@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCDeeplabAndAtrousConvolution() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ASPP rates in v3+: typically (6, 12, 18) at output stride 16, or (12, 24, 36) at output stride 8.', isTrue: true, explanation: 'This is a key technical detail of DeepLab and Atrous Convolution.' },
-    { text: 'DeepLab v3+ with Xception-65: 89.0% mIoU on VOC 2012 test, 82.1% on Cityscapes test.', isTrue: true, explanation: 'This is a key technical detail of DeepLab and Atrous Convolution.' },
-    { text: 'With a MobileNet-v2 backbone, DeepLab v3+ achieves 75.3% mIoU on VOC 2012 at 15+ FPS on a mobile GPU.', isTrue: true, explanation: 'This is a key technical detail of DeepLab and Atrous Convolution.' },
+    { text: 'Atrous convolution uses more parameters than standard convolution.', isTrue: false, explanation: 'It uses exactly the same number of parameters. A 3x3 atrous conv has 9 weights regardless of the dilation rate.' },
+    { text: 'DeepLab uses dilated (atrous) convolutions and Atrous Spatial Pyramid Pooling (ASPP) to expand the receptive field without reducing spatial resolution, achieving dense prediction with multi-scale context.', isTrue: true, explanation: 'This captures the core definition of DeepLab and Atrous Convolution.' },
+    { text: 'DeepLab and Atrous Convolution is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding DeepLab and Atrous Convolution is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

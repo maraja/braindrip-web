@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Paper', detail: 'Sutskever, Vinyals, Le, \"Sequence to Sequence Learning with Neural Networks\" (2014, NeurIPS, arXiv:1409.3215)' },
+    { label: 'Paper', detail: 'Sutskever, Vinyals, Le, "Sequence to Sequence Learning with Neural Networks" (2014, NeurIPS, arXiv:1409.3215)' },
     { label: 'Architecture', detail: '4-layer LSTM encoder + 4-layer LSTM decoder, 1000 hidden units per layer' },
     { label: 'Parameters', detail: '~384M for the ensemble of 5 models' },
     { label: 'Training data', detail: 'WMT\'14 English-French, 12M sentence pairs (348M French words, 304M English words)' },
-    { label: 'BLEU scores', detail: '34.81 (ensemble), 36.5 (rescoring phrase-based system) on English-to-French' },
+    { label: 'BLEU scores', detail: '81 (ensemble), 36.5 (rescoring phrase-based system) on English-to-French' },
     { label: 'Vocabulary', detail: 'Fixed 80K most frequent words for source and target; rare words mapped to UNK token' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerLLE03SequenceToSequenceModels() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Sequence-to-Sequence Models — Key Details Explorer
+          Sequence-to-Sequence Models \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of sequence-to-sequence models.
+          Click each card to explore the technical details.
         </p>
       </div>
 

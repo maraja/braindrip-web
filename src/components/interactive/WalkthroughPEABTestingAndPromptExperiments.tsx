@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Traffic Splitting and Experiment Design', desc: 'The foundation of a/b testing and prompt experiments begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Metrics Selection', desc: 'At this stage, the key transformation occurs — the core mechanism that makes a/b testing and prompt experiments work.' },
-    { title: '3. Statistical Power Analysis and Experiment Duration', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. When to Use A/B Testing vs. Offline Evaluation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Traffic Splitting and Experiment Design', desc: 'In a prompt A/B test, incoming requests are randomly assigned to one of two (or more) prompt variants. The randomization unit is typically the user (not the request) to ensure each user has a consistent experience throughout the experiment.' },
+    { title: '2. Metrics Selection', desc: 'Choosing the right metrics is critical. Primary metrics (also called "decision metrics") directly measure the goal of the experiment:  Task success rate: Did the user accomplish their goal?' },
+    { title: '3. Statistical Power Analysis and Experiment Duration', desc: 'Before launching, calculate the minimum sample size needed to detect a meaningful difference. Statistical power analysis requires four inputs: (1) baseline metric value, (2) minimum detectable effect (MDE) — the smallest improvement worth detecting, (3) significance level (typically 0.' },
+    { title: '4. When to Use A/B Testing vs. Offline Evaluation', desc: 'A/B testing is expensive — it requires production traffic, engineering infrastructure, and time. Use it when: (1) the prompt change affects user-facing experience, (2) the offline eval cannot capture the relevant quality dimensions (tone, engagement, satisfaction), (3) the stakes are high enough to.' },
 ];
 
 export default function WalkthroughPEABTestingAndPromptExperiments() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEABTestingAndPromptExperiments() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          A/B Testing and Prompt Experiments — Step by Step
+          A/B Testing and Prompt Experiments \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how a/b testing and prompt experiments works, one stage at a time.

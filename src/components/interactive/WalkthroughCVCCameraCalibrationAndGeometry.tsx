@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Pinhole Camera Model', desc: 'The foundation of camera calibration and geometry begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Lens Distortion', desc: 'At this stage, the key transformation occurs — the core mechanism that makes camera calibration and geometry work.' },
-    { title: '3. Zhang\'s Calibration Method', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Code Example', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Stereo Calibration', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Pinhole Camera Model', desc: 'The idealized pinhole model projects a 3D point P_w = (X, Y, Z)^T in world coordinates to a 2D pixel (u, v) through:  [equation]  where s is a scale factor and:  Intrinsic matrix K:  [equation]  f_x, f_y: focal lengths in pixel units (typically 500--2000 for standard lenses) (c_x, c_y): principal.' },
+    { title: '2. Lens Distortion', desc: 'Real lenses introduce distortion, primarily radial:  [equation] [equation]  where r^2 = x^2 + y^2 in normalized camera coordinates. Tangential distortion adds two more parameters (p_1, p_2).' },
+    { title: '3. Zhang\'s Calibration Method', desc: 'Zhang (2000) proposed the widely-used calibration method based on a planar pattern (typically a checkerboard):  Capture 10--25 images of a planar calibration target at varied orientations. Detect the inner corners of the checkerboard with sub-pixel accuracy using cv2.' },
+    { title: '4. Stereo Calibration', desc: 'For stereo cameras, calibrate each camera individually, then estimate the relative rotation R and translation t between them via cv2.stereoCalibrate. This enables depth estimation through triangulation:  [equation]  where B is the baseline (distance between cameras) and d is the disparity (pixel.' },
 ];
 
 export default function WalkthroughCVCCameraCalibrationAndGeometry() {
@@ -17,10 +16,10 @@ export default function WalkthroughCVCCameraCalibrationAndGeometry() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Camera Calibration and Geometry — Step by Step
+          Camera Calibration and Geometry \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how camera calibration and geometry works, one stage at a time.

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Six Fundamental Challenges', desc: 'The foundation of why agent evaluation is hard begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Non-Determinism', desc: 'At this stage, the key transformation occurs — the core mechanism that makes why agent evaluation is hard work.' },
-    { title: '3. Multi-Step Error Compounding', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Multiple Valid Solution Paths', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Environment Interaction and Side Effects', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Six Fundamental Challenges', desc: 'Agent evaluation must contend with challenges that do not arise -- or arise only weakly -- in simpler evaluation settings.' },
+    { title: '2. 1. Non-Determinism', desc: 'LLM-based agents use sampling (temperature &gt; 0) to generate actions. Even at temperature 0, floating-point non-determinism in GPU operations can produce different outputs.' },
+    { title: '3. 2. Multi-Step Error Compounding', desc: 'If an agent has a 95% chance of executing each individual step correctly, a 10-step task drops to roughly 0.95^&#123;10&#125;  60\\% success probability. A 20-step task falls to 0.95^&#123;20&#125;  36\\%.' },
+    { title: '4. 3. Multiple Valid Solution Paths', desc: 'Ask an agent to "refactor this module for better performance" and there are dozens of legitimate approaches. Reference-based evaluation -- comparing output to a gold standard -- fails when the space of correct answers is large or ill-defined.' },
+    { title: '5. 4. Environment Interaction and Side Effects', desc: 'Agents do not just produce text; they modify file systems, call APIs, execute code, send messages, and alter database state. Evaluating these side effects requires environment instrumentation far beyond output comparison.' },
+    { title: '6. 5. Emergent System-Level Behavior', desc: 'An agent is a system composed of an LLM, a prompt, tools, memory, and orchestration logic. Changing any one component can produce non-obvious effects on the whole.' },
 ];
 
 export default function WalkthroughAAEWhyAgentEvaluationIsHard() {
@@ -17,10 +18,10 @@ export default function WalkthroughAAEWhyAgentEvaluationIsHard() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Why Agent Evaluation Is Hard — Step by Step
+          Why Agent Evaluation Is Hard \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how why agent evaluation is hard works, one stage at a time.

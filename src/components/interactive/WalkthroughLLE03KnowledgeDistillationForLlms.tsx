@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Era 1: Classical Distillation -- DistilBERT (2019)', desc: 'The foundation of knowledge distillation for llms begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Era 2: Distillation Through Prompting -- Alpaca and Vicuna (2023)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes knowledge distillation for llms work.' },
-    { title: '3. Era 3: Reasoning Trace Distillation -- DeepSeek R1 (2025)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Modern Distillation Toolkit', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Era 1: Classical Distillation -- DistilBERT (2019)', desc: 'The earliest successful LLM distillation was DistilBERT from Hugging Face (Sanh et al., October 2019). The approach was straightforward: take BERT\'s 12-layer, 110M parameter architecture, remove every other layer to create a 6-layer, 66M parameter student, and train it to match BERT\'s output.' },
+    { title: '2. Era 2: Distillation Through Prompting -- Alpaca and Vicuna (2023)', desc: 'The pivotal shift came in March 2023 with Stanford\'s Alpaca. Instead of trying to match GPT-3.5\'s internal representations, the team simply prompted GPT-3.5 (text-davinci-003) to generate 52,000 instruction-following examples.' },
+    { title: '3. Era 3: Reasoning Trace Distillation -- DeepSeek R1 (2025)', desc: 'The most sophisticated form of distillation emerged with DeepSeek-R1 in January 2025. Rather than distilling only final answers or general instruction-following ability, DeepSeek distilled reasoning itself -- the step-by-step chain of thought that a model uses to work through complex problems.' },
+    { title: '4. The Modern Distillation Toolkit', desc: 'By 2025, practical distillation combines multiple approaches:  Instruction distillation: Teacher generates diverse instruction-response pairs covering a broad task distribution Chain-of-thought distillation: Teacher generates step-by-step reasoning for complex problems Preference distillation:.' },
 ];
 
 export default function WalkthroughLLE03KnowledgeDistillationForLlms() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE03KnowledgeDistillationForLlms() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Knowledge Distillation for LLMs — Step by Step
+          Knowledge Distillation for LLMs \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how knowledge distillation for llms works, one stage at a time.

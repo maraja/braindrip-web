@@ -6,7 +6,7 @@ const DETAILS = [
     { label: 'Caching is prefix-based', detail: 'any change in the prefix invalidates the cache from the point of change forward. Design for stable prefixes.' },
     { label: 'Latency reduction from caching is 30-50%', detail: 'for typical long-prefix applications, with larger benefits for longer prefixes.' },
     { label: 'Cache warmup', detail: '(the first request that populates the cache) is slightly more expensive due to the write operation. Subsequent requests benefit from reads.' },
-    { label: 'Cache hit rate', detail: 'is the key metric: track (cached_token_reads / total_prefix_tokens) to measure effectiveness. Target >80% for high-traffic applications.' },
+    { label: 'Cache hit rate', detail: 'is the key metric: track (cached_token_reads / total_prefix_tokens) to measure effectiveness. Target &gt;80% for high-traffic applications.' },
 ];
 
 export default function ExplorerPEContextCachingAndPrefixReuse() {
@@ -20,10 +20,10 @@ export default function ExplorerPEContextCachingAndPrefixReuse() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Context Caching and Prefix Reuse — Key Details Explorer
+          Context Caching and Prefix Reuse \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of context caching and prefix reuse.
+          Click each card to explore the technical details.
         </p>
       </div>
 

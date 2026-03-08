@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Content Classification Guards', desc: 'The foundation of guardrails and output filtering begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Schema and Format Validators', desc: 'At this stage, the key transformation occurs — the core mechanism that makes guardrails and output filtering work.' },
-    { title: '3. PII Detection and Redaction', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Topic Restriction and Factual Grounding', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Retry and Fallback Mechanisms', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Content Classification Guards', desc: 'Content classifiers analyze the model\'s output for unsafe or policy-violating content before delivery. These classifiers may be rule-based (keyword lists, regex patterns), ML-based (fine-tuned classifiers for toxicity, hate speech, or self-harm content), or LLM-based (a secondary model that.' },
+    { title: '2. Schema and Format Validators', desc: 'For applications requiring structured output (JSON, XML, specific templates), schema validators verify that the model\'s response conforms to the expected format before downstream systems consume it. JSON Schema validation catches missing fields, wrong types, and invalid values.' },
+    { title: '3. PII Detection and Redaction', desc: 'PII (Personally Identifiable Information) guards scan outputs for names, addresses, Social Security numbers, credit card numbers, email addresses, and other sensitive data patterns.' },
+    { title: '4. Topic Restriction and Factual Grounding', desc: 'Topic restriction guards ensure the model stays within its designated domain. A medical information chatbot should not provide legal advice; a customer support bot should not discuss competitors.' },
+    { title: '5. Retry and Fallback Mechanisms', desc: 'When a guardrail flags an output, the system needs a recovery strategy. The simplest approach is retry with feedback: the flagged output and the guardrail\'s rejection reason are fed back to the LLM as corrective context, and the model generates a new response.' },
 ];
 
 export default function WalkthroughPEGuardrailsAndOutputFiltering() {
@@ -17,10 +17,10 @@ export default function WalkthroughPEGuardrailsAndOutputFiltering() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Guardrails and Output Filtering — Step by Step
+          Guardrails and Output Filtering \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how guardrails and output filtering works, one stage at a time.

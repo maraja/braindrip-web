@@ -6,7 +6,7 @@ const DETAILS = [
     { label: 'Label ordering in the prompt creates position bias', detail: 'models slightly favor labels listed first. Randomize or alphabetize label order to mitigate.' },
     { label: 'Including 2-3 examples per category', detail: '(few-shot) improves accuracy by 10-15% compared to zero-shot classification, with the largest gains on domain-specific categories.' },
     { label: 'Confidence calibration', detail: 'asking the model to rate confidence (1-10 or percentage) correlates weakly with actual accuracy. Log-probabilities of the label token are a better calibration signal where available.' },
-    { label: 'The \"Other\" category is critical', detail: 'without it, the model force-assigns ambiguous inputs to the closest category, inflating false positive rates for all categories.' },
+    { label: 'The "Other" category is critical', detail: 'without it, the model force-assigns ambiguous inputs to the closest category, inflating false positive rates for all categories.' },
 ];
 
 export default function ExplorerPEClassificationAndLabelingOutput() {
@@ -20,10 +20,10 @@ export default function ExplorerPEClassificationAndLabelingOutput() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Classification and Labeling Output — Key Details Explorer
+          Classification and Labeling Output \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of classification and labeling output.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Agglomerative (Bottom-Up) Approach', desc: 'The foundation of hierarchical clustering begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Linkage Criteria', desc: 'At this stage, the key transformation occurs — the core mechanism that makes hierarchical clustering work.' },
-    { title: '3. Divisive (Top-Down) Approach', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Dendrogram Interpretation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Lance-Williams Recurrence', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Agglomerative (Bottom-Up) Approach', desc: 'The standard algorithm proceeds as follows:  Start with n clusters, each containing a single point. Compute the distance between every pair of clusters.' },
+    { title: '2. Linkage Criteria', desc: 'Single linkage (nearest neighbor): [equation] Tends to produce elongated, chain-like clusters. Sensitive to noise bridges between clusters.' },
+    { title: '3. Divisive (Top-Down) Approach', desc: 'Start with all points in one cluster and recursively split. At each step, choose the cluster with the largest diameter (or highest variance) and partition it -- often using K-means with K=2 or by finding the point most dissimilar to the rest.' },
+    { title: '4. Dendrogram Interpretation', desc: 'A dendrogram is a tree diagram where: Leaves represent individual data points. The height at which two branches merge represents the distance at which those clusters were joined.' },
+    { title: '5. The Lance-Williams Recurrence', desc: 'Rather than recomputing all pairwise distances after each merge, the Lance-Williams formula provides a unified update rule. When clusters A and B merge into A  B, the distance to any other cluster C is:  [equation]  Different linkage criteria correspond to different values of _A, _B, , .' },
+    { title: '6. Practical Example', desc: 'In gene expression analysis, researchers cluster genes based on expression profiles across conditions. Using average linkage with Pearson correlation distance, the resulting dendrogram groups co-expressed genes into functional modules.' },
 ];
 
 export default function WalkthroughMLFHierarchicalClustering() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFHierarchicalClustering() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Hierarchical Clustering — Step by Step
+          Hierarchical Clustering \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how hierarchical clustering works, one stage at a time.

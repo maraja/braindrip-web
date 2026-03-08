@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCInstanceSegmentation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'COCO instance segmentation has 80 "thing" categories (countable objects like person, car, dog).', isTrue: true, explanation: 'This is a key technical detail of Instance Segmentation.' },
-    { text: 'Mask R-CNN achieves ~37 mask AP on COCO test-dev with a ResNet-101-FPN backbone.', isTrue: true, explanation: 'This is a key technical detail of Instance Segmentation.' },
-    { text: 'Recent models like Mask2Former reach ~50 mask AP.', isTrue: true, explanation: 'This is a key technical detail of Instance Segmentation.' },
+    { text: 'Instance segmentation is just semantic segmentation with separate colors.', isTrue: false, explanation: 'It is fundamentally harder because the number of instances is unknown and variable, requiring either detection or learned grouping mechanisms. "You need bounding boxes to do instance segmentation." Bottom-up methods (SOLO, associative embedding) and query-based methods (Mask2Former) can produce instance masks without explicit bounding box predictions.' },
+    { text: 'Instance segmentation combines object detection and semantic segmentation to produce pixel-level masks for each individual object instance in an image, distinguishing between separate objects of the same class.', isTrue: true, explanation: 'This captures the core definition of Instance Segmentation.' },
+    { text: 'Instance Segmentation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Instance Segmentation is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

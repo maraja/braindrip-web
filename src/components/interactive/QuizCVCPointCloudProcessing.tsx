@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCPointCloudProcessing() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A single Velodyne VLP-128 scan contains ~300,000 points; a full 360-degree sweep at 10 Hz yields ~3 million points per second.', isTrue: true, explanation: 'This is a key technical detail of Point Cloud Processing.' },
-    { text: 'Voxel sizes for autonomous driving typically range from 0.05 m (fine) to 0.2 m (coarse).', isTrue: true, explanation: 'This is a key technical detail of Point Cloud Processing.' },
-    { text: 'PointPillars uses pillars of infinite height with 0.16 m x-y resolution.', isTrue: true, explanation: 'This is a key technical detail of Point Cloud Processing.' },
+    { text: 'Point clouds are just 3D images.', isTrue: false, explanation: 'Images have regular grid structure enabling standard convolutions. Point clouds are unordered and irregularly sampled, requiring entirely different architectures (PointNet, sparse convolutions, graph networks).' },
+    { text: 'Point cloud processing handles unordered sets of 3D points acquired from LiDAR, depth cameras, or photogrammetry, using specialized data structures and algorithms for efficient spatial reasoning.', isTrue: true, explanation: 'This captures the core definition of Point Cloud Processing.' },
+    { text: 'Point Cloud Processing is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Point Cloud Processing is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

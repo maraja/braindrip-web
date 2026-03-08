@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPTextCleaningAndNoiseRemoval() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'UTF-8 is the encoding of 98.2% of all web pages as of 2024 (W3Techs).', isTrue: true, explanation: 'This is a key technical detail of Text Cleaning and Noise Removal.' },
-    { text: 'Assuming UTF-8 is a reasonable default, but legacy databases often use Latin-1 or Windows-1252.', isTrue: true, explanation: 'This is a key technical detail of Text Cleaning and Noise Removal.' },
-    { text: 'The ftfy library fixes encoding errors in approximately 0.1ms per string, making it feasible for billion-document corpora.', isTrue: true, explanation: 'This is a key technical detail of Text Cleaning and Noise Removal.' },
+    { text: 'BeautifulSoup removes all HTML noise.', isTrue: false, explanation: 'BeautifulSoup strips tags but not boilerplate (navigation, footers, ads). Dedicated content extractors like Trafilatura, Newspaper3k, or Readability handle this.' },
+    { text: 'UTF-8 is backward-compatible with Latin-1.', isTrue: false, explanation: 'It is not. UTF-8 is backward-compatible with ASCII (7-bit).' },
+    { text: 'Clean data means removing everything non-alphabetic.', isTrue: false, explanation: 'Aggressive cleaning loses punctuation (needed for sentence-segmentation.md), numbers (needed for numerical reasoning), and special characters (needed for domain-specific tasks like chemical formulas or code).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAAsyncStreaming() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Every sync method has an async twin: invoke/ainvoke, stream/astream, batch/abatch.', isTrue: true, explanation: 'This is a key technical detail of Async Streaming.' },
-    { text: 'astream() accepts the same stream_mode parameter and all modes behave identically to sync.', isTrue: true, explanation: 'This is a key technical detail of Async Streaming.' },
-    { text: 'You must use async for to iterate over astream() -- a regular for loop will raise a TypeError.', isTrue: true, explanation: 'This is a key technical detail of Async Streaming.' },
+    { text: 'Async streaming is faster than sync streaming.', isTrue: false, explanation: 'Individual requests take the same time. The advantage is concurrency -- handling many requests simultaneously, not making one request faster.' },
+    { text: 'LangGraph\'s astream() and ainvoke() methods provide non-blocking async execution, essential for concurrent web applications built with FastAPI or asyncio.', isTrue: true, explanation: 'This captures the core definition of Async Streaming.' },
+    { text: 'Async Streaming is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Async Streaming is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

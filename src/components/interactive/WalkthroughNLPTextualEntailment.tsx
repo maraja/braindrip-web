@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The RTE Challenge', desc: 'The foundation of textual entailment begins with understanding its core input requirements and initial setup.' },
-    { title: '2. PASCAL RTE Datasets and Evolution', desc: 'At this stage, the key transformation occurs — the core mechanism that makes textual entailment work.' },
-    { title: '3. Feature-Based Approaches', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Neural Approaches', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Three-Way Classification', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The RTE Challenge', desc: 'The Recognizing Textual Entailment (RTE) Challenge, launched in 2005 as part of the PASCAL network, was the first systematic evaluation of textual entailment systems. The challenge provided text-hypothesis pairs with binary labels (entailment or not-entailment).' },
+    { title: '2. PASCAL RTE Datasets and Evolution', desc: 'The PASCAL RTE datasets were carefully constructed to require diverse reasoning capabilities:  Lexical inference: "bought" entails "acquired" (synonym/hypernym relations) Syntactic variation: Active/passive alternation preserving meaning World knowledge: "Paris is the capital of France" supports.' },
+    { title: '3. Feature-Based Approaches', desc: 'Early RTE systems relied on manually engineered features capturing various dimensions of the premise-hypothesis relationship:  Lexical overlap features: Word overlap, BLEU-style n-gram precision between P and H, and edit distance.' },
+    { title: '4. Neural Approaches', desc: 'Neural models for textual entailment process premise and hypothesis through shared or separate encoders and predict the entailment label from their representations.' },
+    { title: '5. The Three-Way Classification', desc: 'The shift from binary to three-way classification (entailment, contradiction, neutral) added significant nuance:  Entailment: P = "A dog is running through a field." H = "An animal is moving outdoors." (H follows from P) Contradiction: P = "A dog is running through a field.' },
 ];
 
 export default function WalkthroughNLPTextualEntailment() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPTextualEntailment() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Textual Entailment — Step by Step
+          Textual Entailment \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how textual entailment works, one stage at a time.

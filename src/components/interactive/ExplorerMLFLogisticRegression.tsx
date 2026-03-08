@@ -6,7 +6,7 @@ const DETAILS = [
     { label: 'Feature scaling matters', detail: 'Gradient descent converges faster with standardized features.' },
     { label: 'Probability calibration', detail: 'Logistic regression outputs are naturally well-calibrated, unlike SVMs or random forests.' },
     { label: 'Linearly separable data', detail: 'Weights diverge to infinity without regularization; L2 regularization prevents this.' },
-    { label: 'Computational complexity', detail: 'Training is $O(ndk)$ per epoch, where $n$ is samples, $d$ is features, $k$ is classes.' },
+    { label: 'Computational complexity', detail: 'Training is O(ndk) per epoch, where n is samples, d is features, k is classes.' },
 ];
 
 export default function ExplorerMLFLogisticRegression() {
@@ -20,10 +20,10 @@ export default function ExplorerMLFLogisticRegression() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Logistic Regression — Key Details Explorer
+          Logistic Regression \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of logistic regression.
+          Click each card to explore the technical details.
         </p>
       </div>
 

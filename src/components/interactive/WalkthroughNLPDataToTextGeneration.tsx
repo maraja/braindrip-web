@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Template-Based Generation', desc: 'The foundation of data-to-text generation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Statistical Generation (Content Selection + Surface Realization)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes data-to-text generation work.' },
-    { title: '3. Neural Data-to-Text Generation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Hallucination in Data-to-Text', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Template-Based Generation', desc: 'The oldest and most reliable approach fills in predefined templates with values from the data:  Strengths: Zero hallucination risk, predictable output, easy to maintain, and fast at inference. Production systems in weather reporting (WeatherGov) and financial reporting still rely on templates.' },
+    { title: '2. Statistical Generation (Content Selection + Surface Realization)', desc: 'The traditional NLG pipeline separates what to say from how to say it:  Content Selection: Choose which data elements to include. Given a table with 20 rows and 10 columns, the model selects the 5--10 most newsworthy cells.' },
+    { title: '3. Neural Data-to-Text Generation', desc: 'Modern approaches use encoder-decoder models that take linearized (serialized) data as input and generate text end-to-end. Linearization: Structured data is converted to a flat token sequence the model can process: Table: "player: LeBron James  assists: 6" KG triples: "&lt;LeBron_James, playsFor,.' },
+    { title: '4. Hallucination in Data-to-Text', desc: 'Hallucination is the most critical failure mode: the model generates text that is fluent and plausible but not supported by the input data. Types of hallucination: Intrinsic: Contradicts the input data ("scored 28 points" when the data says 31).' },
 ];
 
 export default function WalkthroughNLPDataToTextGeneration() {
@@ -16,10 +16,10 @@ export default function WalkthroughNLPDataToTextGeneration() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Data-to-Text Generation — Step by Step
+          Data-to-Text Generation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how data-to-text generation works, one stage at a time.

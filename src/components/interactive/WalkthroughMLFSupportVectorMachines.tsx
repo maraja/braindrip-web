@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Maximum Margin Intuition', desc: 'The foundation of support vector machines begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Hard-Margin SVM Formulation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes support vector machines work.' },
-    { title: '3. Support Vectors', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Soft-Margin SVM', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Hinge Loss Interpretation', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Maximum Margin Intuition', desc: 'The distance from a point x_i to the hyperplane w^T x + b = 0 is &#123;&#125;. The margin is twice the distance to the closest point:  [equation]  Maximizing &#123;2&#125;&#123;\\^2.' },
+    { title: '2. Hard-Margin SVM Formulation', desc: 'When the data is linearly separable, the hard-margin SVM solves:  [equation]  This is a convex quadratic program with linear inequality constraints. The constraint y_i(w^T x_i + b)  1 ensures every point is on the correct side of the margin.' },
+    { title: '3. Support Vectors', desc: 'The solution depends only on the training points that lie exactly on the margin boundary (where y_i(w^T x_i + b) = 1). These are the support vectors.' },
+    { title: '4. Soft-Margin SVM', desc: 'Real data is rarely perfectly separable. The soft-margin SVM introduces slack variables _i  0 that allow violations of the margin:  [equation]  The parameter C &gt; 0 controls the tradeoff: Large C: Small margin, few violations -- risk of overfitting.' },
+    { title: '5. Hinge Loss Interpretation', desc: 'The soft-margin objective can be rewritten without explicit constraints as:  [equation]  The function (z) = (0, 1 - z) is the hinge loss. It is zero when z  1 (correct classification with margin) and increases linearly when z &lt; 1.' },
+    { title: '6. The Dual Formulation', desc: 'Using Lagrange multipliers _i  0, the SVM dual is:  [equation]  The dual formulation is important for two reasons. First, the data enters only through inner products x_i^T x_j, which enables the kernel trick (see Kernel Methods).' },
 ];
 
 export default function WalkthroughMLFSupportVectorMachines() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFSupportVectorMachines() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Support Vector Machines — Step by Step
+          Support Vector Machines \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how support vector machines works, one stage at a time.

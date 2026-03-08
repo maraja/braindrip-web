@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Task Framing', desc: 'The foundation of zero-shot prompting begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Explicit Constraint Specification', desc: 'At this stage, the key transformation occurs — the core mechanism that makes zero-shot prompting work.' },
-    { title: '3. Output Format Specification', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. When Zero-Shot Fails', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Task Framing', desc: 'The core of zero-shot prompting is clear task framing. The model must understand what to do from instructions alone.' },
+    { title: '2. Explicit Constraint Specification', desc: 'Zero-shot prompts compensate for the absence of examples by being highly explicit about constraints. Where examples implicitly demonstrate output length, format, tone, and scope, zero-shot prompts must specify these explicitly:  Length: "Respond in exactly 3 sentences" rather than leaving length.' },
+    { title: '3. Output Format Specification', desc: 'Without examples showing the desired output format, the model falls back to its default formatting — which varies by model, prompt phrasing, and topic. Explicit format specification is critical:  This level of specificity achieves 85-95% format compliance in zero-shot.' },
+    { title: '4. When Zero-Shot Fails', desc: 'Zero-shot prompting fails predictably in several scenarios:  Novel or unusual output formats: If the desired output structure is uncommon in training data, the model cannot reliably produce it without examples.' },
 ];
 
 export default function WalkthroughPEZeroShotPrompting() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEZeroShotPrompting() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Zero-Shot Prompting — Step by Step
+          Zero-Shot Prompting \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how zero-shot prompting works, one stage at a time.

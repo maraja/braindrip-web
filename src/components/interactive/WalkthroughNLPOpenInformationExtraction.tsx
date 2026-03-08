@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Open IE Paradigm', desc: 'The foundation of open information extraction begins with understanding its core input requirements and initial setup.' },
-    { title: '2. ReVerb (Fader et al., 2011)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes open information extraction work.' },
-    { title: '3. OLLIE (Mausam et al., 2012)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Stanford Open IE (Angeli et al., 2015)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Modern Neural Open IE', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Open IE Paradigm', desc: 'The key insight driving Open IE is that syntactic patterns can reliably signal semantic relations without domain knowledge. A verb connecting two noun phrases almost always expresses a relationship between them.' },
+    { title: '2. ReVerb (Fader et al., 2011)', desc: 'ReVerb was the first Open IE system to achieve high precision by constraining extracted relation phrases to syntactically coherent verb-based expressions. It addressed the problem of incoherent extractions (fragmented or meaningless relation phrases) that plagued earlier systems like TextRunner.' },
+    { title: '3. OLLIE (Mausam et al., 2012)', desc: 'OLLIE (Open Language Learning for Information Extraction) expanded Open IE beyond verb-mediated relations to capture: Noun-mediated relations: "Bill Gates, the founder of Microsoft" yields (Bill Gates; is the founder of; Microsoft).' },
+    { title: '4. Stanford Open IE (Angeli et al., 2015)', desc: 'Stanford Open IE takes a different approach: instead of pattern matching, it systematically decomposes long, complex sentences into short, self-contained clauses, then extracts one triple per clause.' },
+    { title: '5. Modern Neural Open IE', desc: 'Recent systems use neural sequence labeling or generation:  OpenIE6 (Kolluru et al., 2020): A BERT-based sequence labeling model that iteratively extracts multiple triples from a sentence.' },
+    { title: '6. Confidence Scoring', desc: 'Open IE systems assign confidence scores to extracted triples, enabling downstream consumers to filter by reliability: Logistic regression classifiers: Trained on features like relation phrase length, POS patterns, and frequency (ReVerb, OLLIE).' },
 ];
 
 export default function WalkthroughNLPOpenInformationExtraction() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPOpenInformationExtraction() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Open Information Extraction — Step by Step
+          Open Information Extraction \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how open information extraction works, one stage at a time.

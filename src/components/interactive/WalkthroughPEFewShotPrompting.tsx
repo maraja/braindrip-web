@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Example Selection Strategy', desc: 'The foundation of few-shot prompting begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Ordering Effects', desc: 'At this stage, the key transformation occurs — the core mechanism that makes few-shot prompting work.' },
-    { title: '3. Label Balance', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Format-Over-Labels Finding', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Example Selection Strategy', desc: 'The examples you choose determine few-shot effectiveness. Key selection principles:  Diversity over quantity: 5 diverse examples outperform 8 similar ones.' },
+    { title: '2. Ordering Effects', desc: 'The order of few-shot examples measurably affects output quality:  Random ordering generally outperforms sorted ordering (Lu et al., 2022). When examples are sorted (e.g., all positive then all negative), the model may develop a recency bias toward the last-seen category.' },
+    { title: '3. Label Balance', desc: 'The distribution of labels across examples affects the model\'s output distribution:  If 5 out of 5 sentiment examples are positive, the model over-predicts positive sentiment by 15-25%. Balanced label distributions (equal representation of each category) produce the best-calibrated output.' },
+    { title: '4. The Format-Over-Labels Finding', desc: '(2022) showed that format consistency matters more than label correctness. In their experiments:  Correct labels: 82% accuracy.' },
 ];
 
 export default function WalkthroughPEFewShotPrompting() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEFewShotPrompting() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Few-Shot Prompting — Step by Step
+          Few-Shot Prompting \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how few-shot prompting works, one stage at a time.

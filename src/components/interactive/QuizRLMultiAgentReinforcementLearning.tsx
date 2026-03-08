@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLMultiAgentReinforcementLearning() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Multiple agents learning simultaneously in a shared environment create a non-stationary world where each agent\'s optimal strategy depends on what every other agent is doing.', isTrue: true, explanation: 'This captures the core purpose of Multi-Agent Reinforcement Learning.' },
-    { text: 'Multi-Agent Reinforcement Learning is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Multi-Agent Reinforcement Learning is important for building on more advanced topics.' },
-    { text: 'Multi-Agent Reinforcement Learning is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Multi-Agent Reinforcement Learning is important for building on more advanced topics.' },
+    { text: 'Independent learners cannot work', isTrue: false, explanation: ': While theoretically unjustified, independent Q-learners with experience replay often perform competitively. The non-stationarity is often mild in practice, especially with large replay buffers.' },
+    { text: 'joint action space grows as ^N, making naive centralized approaches intractable beyond a handful of agents', isTrue: true, explanation: 'joint action space grows as ^N, making naive centralized approaches intractable beyond a handful of agents' },
+    { text: 'from agent i\'s perspective, P(s\'  s, a_i) changes as other agents update their policies', isTrue: true, explanation: 'from agent i\'s perspective, P(s\'  s, a_i) changes as other agents update their policies' },
+    { text: 'in cooperative settings, determining which agent\'s action caused a team reward is the multi-agent credit assignment problem; QMIX and COMA address this differently', isTrue: true, explanation: 'in cooperative settings, determining which agent\'s action caused a team reward is the multi-agent credit assignment problem; QMIX and COMA address this differently' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEAttentionAndPositionEffects() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The U-shaped attention curve shows ~80-95% retrieval accuracy at context edges vs.', isTrue: true, explanation: 'This is a key technical detail of Attention and Position Effects.' },
-    { text: '~40-70% in the middle (Liu et al., 2023).', isTrue: true, explanation: 'This is a key technical detail of Attention and Position Effects.' },
-    { text: 'The effect is observed across all major model families: GPT-4, Claude, Gemini, and open-source models.', isTrue: true, explanation: 'This is a key technical detail of Attention and Position Effects.' },
+    { text: 'The lost-in-the-middle effect only applies to very long contexts.', isTrue: false, explanation: 'The effect is detectable at 4K tokens and becomes pronounced by 10K tokens. It is not exclusive to 100K+ contexts — even moderate-length prompts benefit from careful content placement.' },
+    { text: 'Newer models have fixed the lost-in-the-middle problem.', isTrue: false, explanation: 'While newer models show improvement (Claude 3.5 and GPT-4o handle long contexts better than their predecessors), the U-shaped curve persists. The magnitude has decreased, but the pattern remains structurally present.' },
+    { text: 'Position effects only matter for retrieval tasks.', isTrue: false, explanation: 'The attention curve affects instruction following, not just fact retrieval. Instructions placed in the middle of a long prompt are followed less reliably than identical instructions at the edges, regardless of whether the task involves "retrieval."' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

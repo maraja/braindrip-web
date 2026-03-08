@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Three Dimensions', desc: 'The foundation of the evaluation triangle begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Development Stage Profiles', desc: 'At this stage, the key transformation occurs — the core mechanism that makes the evaluation triangle work.' },
-    { title: '3. Prototyping Stage', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Iteration Stage', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Pre-Release Stage', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Three Dimensions', desc: 'Thoroughness encompasses three sub-dimensions: breadth (how many distinct tasks), depth (how many runs per task to account for non-determinism), and granularity (how detailed the analysis -- binary pass/fail vs. trajectory scoring vs.' },
+    { title: '2. Development Stage Profiles', desc: 'Different development stages demand fundamentally different positions on the evaluation triangle.' },
+    { title: '3. Prototyping Stage', desc: 'During prototyping, speed dominates. The goal is rapid iteration on agent architecture, prompt design, and tool integration.' },
+    { title: '4. Iteration Stage', desc: 'During active development, the balance shifts toward moderate thoroughness. You are making specific changes and need to detect regressions without waiting overnight.' },
+    { title: '5. Pre-Release Stage', desc: 'Before shipping, thoroughness takes priority. You need high confidence that the agent meets quality bars across the full task distribution.' },
+    { title: '6. Production Monitoring Stage', desc: 'In production, evaluation becomes continuous and must be cost-controlled. You cannot run the full suite on every request, so sampling and lightweight metrics dominate.' },
 ];
 
 export default function WalkthroughAAETheEvaluationTriangle() {
@@ -17,10 +18,10 @@ export default function WalkthroughAAETheEvaluationTriangle() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The Evaluation Triangle — Step by Step
+          The Evaluation Triangle \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how the evaluation triangle works, one stage at a time.

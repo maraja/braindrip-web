@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Computational cost', detail: 'Generating sample learning curves requires training the model many times at different dataset sizes, each with cross-validation. This can be expensive for large models.' },
-    { label: 'Monotonicity', detail: 'Training error is expected to increase with $n$ (more data is harder to memorize), while validation error is expected to decrease. Violations suggest problems with the evaluation setup.' },
-    { label: 'Log-scale axis', detail: 'For training set size, a log-scale x-axis often reveals the rate of improvement more clearly. Power law relationships $E \\propto n^{-\\alpha}$ appear as straight lines on a log-log plot.' },
+    { label: 'Monotonicity', detail: 'Training error is expected to increase with n (more data is harder to memorize), while validation error is expected to decrease. Violations suggest problems with the evaluation setup.' },
+    { label: 'Log-scale axis', detail: 'For training set size, a log-scale x-axis often reveals the rate of improvement more clearly. Power law relationships E  n^&#123;-&#125; appear as straight lines on a log-log plot.' },
     { label: 'Early stopping', detail: 'Iteration learning curves motivate early stopping -- halt training when validation loss stops decreasing to prevent overfitting.' },
 ];
 
@@ -18,10 +18,10 @@ export default function ExplorerMLFLearningCurves() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Learning Curves — Key Details Explorer
+          Learning Curves \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of learning curves.
+          Click each card to explore the technical details.
         </p>
       </div>
 

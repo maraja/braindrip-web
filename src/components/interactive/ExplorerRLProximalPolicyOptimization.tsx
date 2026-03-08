@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Clipping parameter $\\epsilon$', detail: '0.2 is the near-universal default. Smaller values (0.1) are more conservative; larger values (0.3) allow faster but riskier updates.' },
-    { label: 'Number of epochs $K$', detail: '3-10 per batch. More epochs extract more from each batch but risk overfitting to it. PPO for RLHF typically uses $K = 1$-$4$.' },
+    { label: 'Clipping parameter $\\epsilon$', detail: '2 is the near-universal default. Smaller values (0.1) are more conservative; larger values (0.3) allow faster but riskier updates.' },
+    { label: 'Number of epochs $K$', detail: '3-10 per batch. More epochs extract more from each batch but risk overfitting to it. PPO for RLHF typically uses K = 1-4.' },
     { label: 'Minibatch size', detail: 'The batch is usually split into minibatches (e.g., 32-512 transitions) for stochastic optimization within each epoch.' },
-    { label: 'GAE parameters', detail: '$\\gamma = 0.99$, $\\lambda = 0.95$ are standard defaults.' },
-    { label: 'Value function clipping', detail: 'Some implementations clip the value function update similarly to the policy, preventing large changes: $V_\\text{clipped} = V_{\\text{old}} + \\text{clip}(V - V_{\\text{old}}, -\\epsilon, \\epsilon)$.' },
-    { label: 'Learning rate', detail: 'Typically $3 \\times 10^{-4}$ for Atari, $3 \\times 10^{-4}$ for MuJoCo, often with linear decay to zero over training. RLHF uses $\\sim 1 \\times 10^{-5}$ to $5 \\times 10^{-6}$.' },
+    { label: 'GAE parameters', detail: '= 0.99,  = 0.95 are standard defaults.' },
+    { label: 'Value function clipping', detail: 'Some implementations clip the value function update similarly to the policy, preventing large changes: V_clipped = V_&#123;old&#125; + clip(V - V_&#123;old&#125;, -, ).' },
+    { label: 'Learning rate', detail: 'Typically 3 x 10^&#123;-4&#125; for Atari, 3 x 10^&#123;-4&#125; for MuJoCo, often with linear decay to zero over training. RLHF uses  1 x 10^&#123;-5&#125; to 5 x 10^&#123;-6&#125;.' },
 ];
 
 export default function ExplorerRLProximalPolicyOptimization() {
@@ -20,10 +20,10 @@ export default function ExplorerRLProximalPolicyOptimization() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Proximal Policy Optimization (PPO) — Key Details Explorer
+          Proximal Policy Optimization (PPO) \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of proximal policy optimization (ppo).
+          Click each card to explore the technical details.
         </p>
       </div>
 

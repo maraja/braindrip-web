@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACComputerUseAgents() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Resolution matters: Anthropic recommends scaling screenshots to specific resolutions (1024x768, 1280x800) that balance detail with token cost.', isTrue: true, explanation: 'This is a key technical detail of Computer Use Agents.' },
-    { text: 'Higher resolution improves coordinate accuracy but increases latency and cost.', isTrue: true, explanation: 'This is a key technical detail of Computer Use Agents.' },
-    { text: 'Coordinate prediction accuracy is typically within 5-15 pixels.', isTrue: true, explanation: 'This is a key technical detail of Computer Use Agents.' },
+    { text: 'Computer use agents can do anything a human can.', isTrue: false, explanation: 'Current agents struggle with complex visual reasoning (interpreting charts, understanding spatial layouts of complex forms), time-sensitive interactions (captchas, real-time applications), and multi-step workflows requiring long-term memory of previous visual states. "Computer use replaces APIs." APIs are faster, cheaper, more reliable, and more precise.' },
+    { text: 'Anthropic recommends scaling screenshots to specific resolutions (1024x768, 1280x800) that balance detail with token cost.', isTrue: true, explanation: 'Higher resolution improves coordinate accuracy but increases latency and cost.' },
+    { text: 'coarse localization then fine-grained clicking.', isTrue: true, explanation: 'coarse localization then fine-grained clicking.' },
+    { text: '2-5 seconds for the LLM call plus 0.5-2 seconds for UI response.', isTrue: true, explanation: 'A 20-step task takes 50-140 seconds. This is 10-50x slower than API-based automation.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

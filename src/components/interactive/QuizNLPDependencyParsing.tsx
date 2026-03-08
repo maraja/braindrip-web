@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPDependencyParsing() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Penn Treebank (English, Stanford Dependencies): SOTA ~96% UAS, ~94.5% LAS (biaffine parser with BERT).', isTrue: true, explanation: 'This is a key technical detail of Dependency Parsing.' },
-    { text: 'Universal Dependencies: Average ~92% UAS across high-resource languages; drops to ~70--80% for low-resource languages.', isTrue: true, explanation: 'This is a key technical detail of Dependency Parsing.' },
-    { text: 'Biaffine parser (Dozat & Manning, 2017): ~95.7% UAS, ~94.1% LAS on PTB with BiLSTM; ~96.3% UAS with BERT.', isTrue: true, explanation: 'This is a key technical detail of Dependency Parsing.' },
+    { text: 'Dependency parsing and constituency parsing are redundant.', isTrue: false, explanation: 'They encode complementary information. Dependencies capture head-modifier relations directly, while constituency trees encode hierarchical grouping.' },
+    { text: 'SOTA ~96% UAS, ~94.5% LAS (biaffine parser with BERT).', isTrue: true, explanation: 'SOTA ~96% UAS, ~94.5% LAS (biaffine parser with BERT).' },
+    { text: 'Transition-based parsers are always worse than graph-based ones.', isTrue: false, explanation: 'Modern neural transition-based parsers with beam search or global training match graph-based parsers in accuracy while being faster. The accuracy gap has narrowed significantly since the introduction of neural representations.' },
+    { text: 'Average ~92% UAS across high-resource languages; drops to ~70--80% for low-resource languages.', isTrue: true, explanation: 'Average ~92% UAS across high-resource languages; drops to ~70--80% for low-resource languages.' },
+    { text: 'Dependency parsing requires POS tags.', isTrue: false, explanation: 'While POS tags were essential features for traditional parsers, neural parsers with contextual embeddings from bert.md can achieve near-SOTA accuracy without explicit POS input. However, POS tags still provide a useful inductive bias for low-resource settings.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Problem Formulation', desc: 'The foundation of meta-reinforcement learning begins with understanding its core input requirements and initial setup.' },
-    { title: '2. MAML for RL: Gradient-Based Meta-Learning', desc: 'At this stage, the key transformation occurs — the core mechanism that makes meta-reinforcement learning work.' },
-    { title: '3. RL-Squared: Context-Based Meta-RL', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Context-Based Meta-RL and Task Inference', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Task Distributions', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Problem Formulation', desc: 'Meta-RL assumes a distribution over tasks p(&#123;T&#125;), where each task &#123;T&#125;_i is an MDP with its own reward function R_i and possibly its own transition dynamics T_i. The meta-objective is:  [equation]  where  are the meta-parameters and _i\' are the task-specific adapted parameters.' },
+    { title: '2. MAML for RL: Gradient-Based Meta-Learning', desc: 'Model-Agnostic Meta-Learning (MAML; Finn, Chelsea, Abbeel, and Levine, 2017) meta-learns an initialization  of the policy network such that a few gradient steps on a new task produce a good policy.' },
+    { title: '3. RL-Squared: Context-Based Meta-RL', desc: 'RL^2 (Duan et al., 2016) takes a fundamentally different approach: it encodes the adaptation mechanism directly into the agent\'s recurrent architecture.' },
+    { title: '4. Context-Based Meta-RL and Task Inference', desc: 'More recent context-based methods explicitly separate task inference from policy execution. PEARL (Rakelly et al., 2019) maintains a probabilistic context encoder:  [equation]  The context variable z is inferred from a small set of transitions and conditions the policy _(a  s, z) and value function.' },
+    { title: '5. Task Distributions', desc: 'The design of the task distribution p(&#123;T&#125;) is critical and often underappreciated:  Reward variation: same dynamics, different reward functions (e.g., navigate to different goals) Dynamics variation: same reward, different physics (e.g.' },
+    { title: '6. In-Context RL', desc: 'Recent work frames meta-RL as in-context learning using transformers. Algorithm Distillation (Laskin et al., 2022) trains a transformer on sequences of learning histories -- entire training runs of RL agents on different tasks.' },
 ];
 
 export default function WalkthroughRLMetaReinforcementLearning() {
@@ -17,10 +18,10 @@ export default function WalkthroughRLMetaReinforcementLearning() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Meta-Reinforcement Learning — Step by Step
+          Meta-Reinforcement Learning \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how meta-reinforcement learning works, one stage at a time.

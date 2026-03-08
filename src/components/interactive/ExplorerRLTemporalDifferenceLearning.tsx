@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Step size', detail: '$\\alpha$: Constant $\\alpha \\in (0, 1]$ enables tracking in non-stationary environments. For guaranteed convergence to $V^\\pi$, $\\alpha$ must satisfy the Robbins-Monro conditions: $\\sum_t \\alpha_t = \\infty$ and $\\sum_t \\alpha_t^2 < \\infty$.' },
-    { label: 'Convergence', detail: 'TD(0) converges to $V^\\pi$ with probability 1 under the Robbins-Monro conditions and sufficient state visitation. Convergence has been proven for the tabular case (Dayan, 1992; Tsitsiklis, 1994).' },
+    { label: 'Step size', detail: ': Constant   (0, 1] enables tracking in non-stationary environments. For guaranteed convergence to V^,  must satisfy the Robbins-Monro conditions: _t _t =  and _t _t^2 &lt; .' },
+    { label: 'Convergence', detail: 'TD(0) converges to V^ with probability 1 under the Robbins-Monro conditions and sufficient state visitation. Convergence has been proven for the tabular case (Dayan, 1992; Tsitsiklis, 1994).' },
     { label: 'Online learning', detail: 'TD updates after every transition, enabling learning mid-episode and in continuing (non-episodic) tasks -- a major advantage over MC.' },
-    { label: 'Computational cost per step', detail: '$O(1)$ -- only the current state\'s value is updated, compared to $O(T)$ for MC (where $T$ is episode length) when processing at termination.' },
+    { label: 'Computational cost per step', detail: 'O(1) -- only the current state\'s value is updated, compared to O(T) for MC (where T is episode length) when processing at termination.' },
     { label: 'Sensitivity to initial values', detail: 'Because TD bootstraps, poor initial value estimates propagate through updates. MC is immune to this since it uses actual returns.' },
 ];
 
@@ -19,10 +19,10 @@ export default function ExplorerRLTemporalDifferenceLearning() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Temporal Difference Learning — Key Details Explorer
+          Temporal Difference Learning \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of temporal difference learning.
+          Click each card to explore the technical details.
         </p>
       </div>
 

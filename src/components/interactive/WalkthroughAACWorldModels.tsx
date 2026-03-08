@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. State Representation', desc: 'The foundation of world models begins with understanding its core input requirements and initial setup.' },
-    { title: '2. State Transition Prediction', desc: 'At this stage, the key transformation occurs — the core mechanism that makes world models work.' },
-    { title: '3. Mental Simulation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Model Updating', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. State Representation', desc: 'The world model maintains a structured representation of relevant environment state. For different agent domains:  Coding agent world model:  Research agent world model:  The state representation does not need to be literally stored as a JSON object.' },
+    { title: '2. State Transition Prediction', desc: 'Given the current state S and a candidate action A, the world model predicts the next state S\':  Deterministic predictions: "If I write import pandas to utils.py, the file will have that import line, and any function in utils.py can now use pandas." These are straightforward and highly reliable.' },
+    { title: '3. Mental Simulation', desc: 'Before taking an action, the agent can run a mental simulation:  This simulation prevents the agent from making a change that would break other parts of the codebase, without needing to actually make the change and run tests to discover the breakage.' },
+    { title: '4. Model Updating', desc: 'After each action, the agent updates its world model based on the observation:  Expected outcome matches: State update is straightforward. "I created the file, and the file now exists.' },
 ];
 
 export default function WalkthroughAACWorldModels() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACWorldModels() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          World Models — Step by Step
+          World Models \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how world models works, one stage at a time.

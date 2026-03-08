@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. 2D Positional Encoding', desc: 'The foundation of attention mechanisms in vision begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Patch Size Tradeoffs', desc: 'At this stage, the key transformation occurs — the core mechanism that makes attention mechanisms in vision work.' },
-    { title: '3. The Quadratic Cost Problem', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Windowed and Efficient Attention', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Multi-Scale Attention', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. 2D Positional Encoding', desc: 'Unlike text, image tokens have spatial structure in two dimensions. Several encoding strategies exist:  Learnable 1D embeddings (ViT): Flatten patches into a 1D sequence and learn a separate embedding for each position.' },
+    { title: '2. Patch Size Tradeoffs', desc: 'Patch size P determines the number of tokens N = (H x W) / P^2 and directly controls the resolution-efficiency tradeoff:  Key observations:  Smaller patches preserve finer detail but dramatically increase compute. ViT-B/16 is 4x more expensive than ViT-B/32.' },
+    { title: '3. The Quadratic Cost Problem', desc: 'Standard self-attention computes pairwise similarities among all N tokens:  [equation]  For a 224 x 224 image with P = 16: N = 196, yielding 196^2 = 38,416 pairwise interactions per head. This is comparable to typical NLP sequence lengths and remains tractable.' },
+    { title: '4. Windowed and Efficient Attention', desc: 'Several strategies address the quadratic cost:  Windowed attention (Swin Transformer): Restrict attention to local M x M windows (typically M = 7), reducing cost to O(N  M^2). Shifted windows in alternating layers restore cross-window communication.' },
+    { title: '5. Multi-Scale Attention', desc: 'Some architectures vary the attention scope across layers:  Early layers: Local/windowed attention (cheap, captures local structure) Later layers: Global attention (expensive, captures semantics)  This mirrors the receptive field growth in CNNs and is used in architectures like CrossFormer and.' },
 ];
 
 export default function WalkthroughCVCAttentionInVision() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCAttentionInVision() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Attention Mechanisms in Vision — Step by Step
+          Attention Mechanisms in Vision \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how attention mechanisms in vision works, one stage at a time.

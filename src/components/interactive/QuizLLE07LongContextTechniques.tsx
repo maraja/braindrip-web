@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE07LongContextTechniques() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Training cost: 128K-token sequences are ~32x more expensive per sample than 4K (quadratic attention, even with FlashAttention).', isTrue: true, explanation: 'This is a key technical detail of Long-Context Techniques.' },
-    { text: 'Sliding window attention: Mistral 7B uses 4096-token windows.', isTrue: true, explanation: 'This is a key technical detail of Long-Context Techniques.' },
-    { text: 'Reduces memory but limits global reasoning.', isTrue: true, explanation: 'This is a key technical detail of Long-Context Techniques.' },
+    { text: 'A 1M-token context window means the model understands 1M tokens equally well.', isTrue: false, explanation: 'Effective utilization degrades with context length. Models perform best on information at the beginning and end of the context, with weaker performance in the middle.' },
+    { text: 'Long context makes RAG obsolete.', isTrue: false, explanation: 'For knowledge bases of billions of tokens, long context is insufficient. RAG and long context are complementary, not competing approaches.' },
+    { text: 'Extending context is just a matter of training on longer sequences.', isTrue: false, explanation: 'Without the right positional encoding, memory-efficient attention, and serving infrastructure, training on longer sequences alone does not work. All components must evolve together.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

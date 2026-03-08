@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture at Scale', desc: 'The foundation of gpt-3 begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Training Data and Compute', desc: 'At this stage, the key transformation occurs — the core mechanism that makes gpt-3 work.' },
-    { title: '3. In-Context Learning', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Eight-Model Suite', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Architecture at Scale', desc: 'GPT-3 uses a standard autoregressive Transformer decoder with 96 layers, 96 attention heads, and a hidden dimension of 12,288. The context window is 2,048 tokens, using the same BPE tokenizer as GPT-2.' },
+    { title: '2. Training Data and Compute', desc: 'The training corpus comprised approximately 300 billion tokens drawn from five sources: filtered Common Crawl (60% of training mix by weight, though only 410 billion tokens from a 45TB raw crawl), WebText2 (an expanded version of GPT-2\'s dataset), two internet-based book corpora (Books1 and.' },
+    { title: '3. In-Context Learning', desc: 'The paper\'s central discovery was in-context learning (ICL): the ability to perform tasks by conditioning on examples provided in the prompt, with absolutely no gradient updates to the model\'s weights.' },
+    { title: '4. The Eight-Model Suite', desc: 'OpenAI did not just train one model. They trained eight GPT-3 variants ranging from 125 million to 175 billion parameters (GPT-3 Small, Medium, Large, XL, 2.7B, 6.7B, 13B, and 175B).' },
 ];
 
 export default function WalkthroughLLE01Gpt3() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE01Gpt3() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          GPT-3 — Step by Step
+          GPT-3 \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how gpt-3 works, one stage at a time.

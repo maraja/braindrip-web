@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizMLFGradientBoosting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Bias reduction: Unlike bagging, gradient boosting primarily reduces bias.', isTrue: true, explanation: 'This is a key technical detail of Gradient Boosting.' },
-    { text: 'Each new tree corrects systematic errors in the current ensemble.', isTrue: true, explanation: 'This is a key technical detail of Gradient Boosting.' },
-    { text: 'Regularization is critical: Without shrinkage ($\\nu &lt; 1$), subsampling, or depth limits, gradient boosting easily overfits.', isTrue: true, explanation: 'This is a key technical detail of Gradient Boosting.' },
+    { text: 'Gradient boosting fits trees to residuals.', isTrue: false, explanation: 'This is only true for squared error loss. For general losses, the trees are fit to pseudo-residuals (negative gradients), which are not the same as actual residuals.' },
+    { text: 'Unlike bagging, gradient boosting primarily reduces bias.', isTrue: true, explanation: 'Each new tree corrects systematic errors in the current ensemble.' },
+    { text: 'A lower learning rate is always better.', isTrue: false, explanation: 'While smaller  generally improves generalization, it requires proportionally more trees, increasing training time. There is a practical optimum where the computational budget is balanced against the regularization benefit.' },
+    { text: 'Without shrinkage ( &lt; 1), subsampling, or depth limits, gradient boosting easily overfits.', isTrue: true, explanation: 'The interplay between  and T is key: smaller  requires larger T.' },
+    { text: 'Gradient boosting cannot handle categorical features.', isTrue: false, explanation: 'While the base algorithm uses decision trees that naturally handle ordered splits, standard implementations require encoding categoricals. However, CatBoost was specifically designed to handle categorical features natively.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

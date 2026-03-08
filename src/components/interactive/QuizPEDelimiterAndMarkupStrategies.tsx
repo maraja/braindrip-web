@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEDelimiterAndMarkupStrategies() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'XML tags are recommended by Anthropic for Claude; markdown headers work well across all providers.', isTrue: true, explanation: 'This is a key technical detail of Delimiter and Markup Strategies.' },
-    { text: 'Delimiter token overhead is typically 20-60 tokens per prompt (5-10 tag/header pairs), which is negligible relative to content.', isTrue: true, explanation: 'This is a key technical detail of Delimiter and Markup Strategies.' },
-    { text: 'Structured prompts with delimiters improve section adherence by 15-20% and reduce content contamination by 25-35%.', isTrue: true, explanation: 'This is a key technical detail of Delimiter and Markup Strategies.' },
+    { text: 'Delimiters are cosmetic — they only help humans read the prompt.', isTrue: false, explanation: 'Delimiters directly affect model processing. The attention mechanism uses structural tokens as anchors for identifying relevant content.' },
+    { text: 'Any delimiter style works equally well.', isTrue: false, explanation: 'Different models respond differently to different delimiter types. Claude strongly favors XML.' },
+    { text: 'Adding delimiters significantly increases cost.', isTrue: false, explanation: 'Typical delimiter overhead is 20-60 tokens per prompt — less than 1% of a 5,000-token prompt. The quality improvement far outweighs the marginal cost increase.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Web Environment Evaluation', desc: 'The foundation of environment-state evaluation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. File System Evaluation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes environment-state evaluation work.' },
-    { title: '3. Database Evaluation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Operating System Evaluation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Designing Robust State Checkers', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Web Environment Evaluation', desc: 'For web agents (agents that navigate and interact with websites):  Page state checks: After the agent completes a task like "fill out the registration form," verify that form fields contain the expected values, the correct page is displayed, and submission confirmations are present Element.' },
+    { title: '2. File System Evaluation', desc: 'For agents that modify files and directories:  File existence: Verify that expected files were created, moved, or deleted File content verification: Check that file contents match expectations using exact match, regex patterns, or semantic comparison Directory structure: Confirm the directory tree.' },
+    { title: '3. Database Evaluation', desc: 'For agents that modify data stores:  Query result verification: Run SQL or NoSQL queries and compare results against expected values Schema validation: Confirm that schema modifications (new tables, altered columns, added indices) match specifications Data integrity checks: Verify foreign key.' },
+    { title: '4. Operating System Evaluation', desc: 'For computer-use agents that interact with desktop environments:  Application state: Verify that the correct applications are open, in the expected state, with the expected content Window arrangement: Check window positions, sizes, and z-ordering for tasks involving workspace organization System.' },
+    { title: '5. Designing Robust State Checkers', desc: 'The central challenge is writing state checkers that accept all valid solution paths while rejecting invalid outcomes. Key principles:  Check outcomes, not methods.' },
+    { title: '6. The Challenge of Partial Credit', desc: 'Binary pass/fail evaluation loses information about near-misses. An agent that completes 9 of 10 subtasks scores the same as one that completes 0.' },
 ];
 
 export default function WalkthroughAAEEnvironmentStateEvaluation() {
@@ -17,10 +18,10 @@ export default function WalkthroughAAEEnvironmentStateEvaluation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Environment-State Evaluation — Step by Step
+          Environment-State Evaluation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how environment-state evaluation works, one stage at a time.

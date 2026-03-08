@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAAEConfidenceIntervalsForAgentMetrics() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Wilson vs Wald: Always prefer Wilson for binary metrics.', isTrue: true, explanation: 'This is a key technical detail of Confidence Intervals for Agent Metrics.' },
-    { text: 'The Wald interval has actual coverage as low as 85% when nominal is 95%, especially for $n &lt; 100$ or $p &gt; 0.9$.', isTrue: true, explanation: 'This is a key technical detail of Confidence Intervals for Agent Metrics.' },
-    { text: 'Bootstrap sample count: Use $B \\geq 10&#123;,&#125;000$ for publication-quality CIs.', isTrue: true, explanation: 'This is a key technical detail of Confidence Intervals for Agent Metrics.' },
+    { text: 'A 95% CI means there\'s a 95% probability the true value is in this interval.', isTrue: false, explanation: 'The true value is fixed; the interval is random. The correct interpretation is that 95% of intervals constructed this way contain the true value.' },
+    { text: 'Always prefer Wilson for binary metrics.', isTrue: true, explanation: 'The Wald interval has actual coverage as low as 85% when nominal is 95%, especially for n &lt; 100 or p &gt; 0.9.' },
+    { text: 'Use B  10&#123;,&#125;000 for publication-quality CIs.', isTrue: true, explanation: 'For quick iteration, B = 2&#123;,&#125;000 is acceptable.' },
+    { text: 'When reporting CIs for k metrics simultaneously, apply the Bonferroni correction (\' = /k) or use Scheffe\'s method to maintain family-wise coverage.', isTrue: true, explanation: 'When reporting CIs for k metrics simultaneously, apply the Bonferroni correction (\' = /k) or use Scheffe\'s method to maintain family-wise coverage.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

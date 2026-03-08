@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Three-Stage Pipeline', desc: 'The foundation of domain adaptation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Prominent Domain-Adapted Models', desc: 'At this stage, the key transformation occurs — the core mechanism that makes domain adaptation work.' },
-    { title: '3. Domain-Specific Vocabulary', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. How Much Domain Data Is Needed?', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. When Domain Adaptation Helps Most', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Three-Stage Pipeline', desc: 'Stage 1 produces a model with broad linguistic knowledge -- syntax, common-sense semantics, discourse structure -- from diverse general-domain text. Stage 2 (domain adaptation) continues the masked language modeling (or other pre-training objectives) on domain-specific text.' },
+    { title: '2. Prominent Domain-Adapted Models', desc: 'BioBERT (Lee et al., 2020): Continued pre-training of BERT on PubMed abstracts (4.5B words) and PubMed Central full-text articles (13.5B words). BioBERT outperforms general BERT on biomedical NER (+2.8% F1 on BC5CDR-Chemical), biomedical relation extraction (+7.4% F1 on GAD), and biomedical QA (+9.' },
+    { title: '3. Domain-Specific Vocabulary', desc: 'A critical decision in domain adaptation is whether to use the general vocabulary or learn a new one:  Reuse general vocabulary (BioBERT approach): Simpler, initializes from pre-trained embeddings, but domain terms are over-tokenized. "Hydroxychloroquine" might be split into 5+ subword tokens.' },
+    { title: '4. How Much Domain Data Is Needed?', desc: 'Gururangan et al. (2020) in "Don\'t Stop Pretraining" systematically studied this question:  Domain-Adaptive Pre-Training (DAPT): Even 50M tokens of domain text yields meaningful improvements.' },
+    { title: '5. When Domain Adaptation Helps Most', desc: 'Domain adaptation provides the largest gains when: Vocabulary mismatch is high: Domains with extensive specialized terminology (biomedical, legal, chemical) benefit most.' },
 ];
 
 export default function WalkthroughNLPDomainAdaptation() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPDomainAdaptation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Domain Adaptation — Step by Step
+          Domain Adaptation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how domain adaptation works, one stage at a time.

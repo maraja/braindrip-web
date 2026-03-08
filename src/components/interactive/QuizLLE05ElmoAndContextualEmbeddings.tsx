@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE05ElmoAndContextualEmbeddings() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ELMo (Peters et al., 2018) demonstrated that deep bidirectional LSTMs pre-trained on language modeling could generate context-dependent word representations, breaking the static embedding paradigm and pioneering the pre-train-then-fine-tune approach.', isTrue: true, explanation: 'This captures the core purpose of ELMo and Contextual Embeddings.' },
-    { text: 'ELMo and Contextual Embeddings is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding ELMo and Contextual Embeddings is important for building on more advanced topics.' },
-    { text: 'ELMo and Contextual Embeddings is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding ELMo and Contextual Embeddings is important for building on more advanced topics.' },
+    { text: 'ELMo is a transformer-based model.', isTrue: false, explanation: 'ELMo uses bidirectional LSTMs, not Transformers. It was published in February 2018, eight months after the Transformer paper, but did not adopt the Transformer architecture.' },
+    { text: 'Allen Institute for AI (AI2), with collaborators from UW', isTrue: true, explanation: 'Allen Institute for AI (AI2), with collaborators from UW' },
+    { text: 'ELMo generates a single embedding per word.', isTrue: false, explanation: 'ELMo generates a different embedding for every occurrence of a word based on its full sentential context. That is its defining innovation over 01-word-embeddings-word2vec-and-glove.md.' },
+    { text: '2-layer bidirectional LSTM with character-level CNN input; ~93.6M parameters', isTrue: true, explanation: '2-layer bidirectional LSTM with character-level CNN input; ~93.6M parameters' },
+    { text: 'ELMo is truly bidirectional.', isTrue: false, explanation: 'ELMo trains two independent unidirectional LSTMs (forward and backward) and concatenates their representations. Neither direction has access to the other\'s information.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

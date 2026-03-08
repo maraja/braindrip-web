@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Lag Features', desc: 'The foundation of time-series feature engineering begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Rolling and Expanding Window Statistics', desc: 'At this stage, the key transformation occurs — the core mechanism that makes time-series feature engineering work.' },
-    { title: '3. Date and Time Decomposition', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Fourier Features for Seasonality', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Trend Features', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Lag Features', desc: 'The most fundamental time-series features are lagged values of the target or covariates:  [equation]  A lag-1 feature gives the model yesterday\'s value; lag-7 gives the value from the same day last week.' },
+    { title: '2. Rolling and Expanding Window Statistics', desc: 'Rolling window features capture local trends and volatility by aggregating over a window of recent observations:  [equation]  [equation]  Common rolling statistics include mean, standard deviation, min, max, median, skewness, and quantiles. Multiple window sizes (e.g.' },
+    { title: '3. Date and Time Decomposition', desc: 'Raw timestamps contain rich information that must be explicitly extracted:  Calendar features: year, month, day of month, day of week (0=Monday to 6=Sunday), hour, minute, quarter, week of year Binary indicators: is_weekend, is_month_start, is_month_end, is_quarter_start, is_year_end Holiday.' },
+    { title: '4. Fourier Features for Seasonality', desc: 'Cyclic patterns (daily, weekly, yearly) are poorly represented by raw calendar integers because, for instance, day 7 (Sunday) is adjacent to day 1 (Monday), but their integer encoding places them far apart.' },
+    { title: '5. Trend Features', desc: 'Explicit trend features help models capture long-term directional movement:  Linear trend: simply the time index t (or days since a reference date) Piecewise linear trends: separate slopes for different regimes, with changepoints detected by algorithms like PELT or Prophet Difference features:  y_t.' },
+    { title: '6. Autocorrelation-Based Features', desc: 'Features derived from the autocorrelation structure itself:  Autocorrelation at lag k: computed over a rolling window, captures how self-similar the series is at different horizons Partial autocorrelation: the correlation at lag k after removing the effects of shorter lags Entropy measures:.' },
 ];
 
 export default function WalkthroughMLFTimeSeriesFeatureEngineering() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFTimeSeriesFeatureEngineering() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Time-Series Feature Engineering — Step by Step
+          Time-Series Feature Engineering \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how time-series feature engineering works, one stage at a time.

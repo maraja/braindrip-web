@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Supervised Learning', desc: 'The foundation of types of machine learning begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Unsupervised Learning', desc: 'At this stage, the key transformation occurs — the core mechanism that makes types of machine learning work.' },
-    { title: '3. Semi-Supervised Learning', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Self-Supervised Learning', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Transfer Learning', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Supervised Learning', desc: 'Given a dataset &#123;D&#125; = \\&#123;(x_i, y_i)\\&#125;_&#123;i=1&#125;^n where x_i  &#123;X&#125; are inputs and y_i  &#123;Y&#125; are labels, the goal is to learn f: &#123;X&#125;  &#123;Y&#125; that generalizes to unseen data. Classification: &#123;Y&#125; is a discrete set of categories.' },
+    { title: '2. Unsupervised Learning', desc: 'Given only &#123;D&#125; = \\&#123;x_i\\&#125;_&#123;i=1&#125;^n with no labels, the goal is to discover hidden structure. Clustering: Partition data into groups.' },
+    { title: '3. Semi-Supervised Learning', desc: 'You have a small labeled set &#123;D&#125;_l = \\&#123;(x_i, y_i)\\&#125;_&#123;i=1&#125;^l and a large unlabeled set &#123;D&#125;_u = \\&#123;x_j\\&#125;_&#123;j=1&#125;^u where u  l. The key assumption is that the structure of p(x) -- revealed by unlabeled data -- contains information about p(y|x).' },
+    { title: '4. Self-Supervised Learning', desc: 'The model generates its own supervision from the data through pretext tasks -- artificially constructed prediction problems. The key idea: design a task where the labels come for free from the data itself.' },
+    { title: '5. Transfer Learning', desc: 'A model trained on task A (source) is adapted to task B (target), typically with less data. The assumption is that low-level features learned on A are useful for B.' },
+    { title: '6. Online Learning', desc: 'Data arrives sequentially, and the model updates incrementally. At each round t, the learner predicts &#123;y&#125;_t, observes the true y_t, and updates.' },
 ];
 
 export default function WalkthroughMLFTypesOfMachineLearning() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFTypesOfMachineLearning() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Types of Machine Learning — Step by Step
+          Types of Machine Learning \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how types of machine learning works, one stage at a time.

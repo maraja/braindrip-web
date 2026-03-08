@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizRLWorldModels() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The original World Models paper used a latent space of dimension 32 for the VAE and a hidden state of 256 for the MDN-RNN.', isTrue: true, explanation: 'This is a key technical detail of World Models.' },
-    { text: 'DreamerV2 uses categorical latents: 32 distributions each over 32 classes, yielding a discrete latent space of $32^&#123;32&#125;$ possible states.', isTrue: true, explanation: 'This is a key technical detail of World Models.' },
-    { text: 'Discrete latents outperform Gaussian latents in practice.', isTrue: true, explanation: 'This is a key technical detail of World Models.' },
+    { text: 'World models must reconstruct pixel observations.', isTrue: false, explanation: 'Reconstruction is a training signal, not the goal. What matters is that the latent dynamics are accurate.' },
+    { text: 'Training in imagination introduces unrecoverable model bias.', isTrue: false, explanation: 'While imagined trajectories are imperfect, the policy is regularly re-grounded by encoding real observations. The interplay between real data (which updates the model) and imagined data (which updates the policy) creates a self-correcting loop.' },
+    { text: 'World models are only for visual environments.', isTrue: false, explanation: 'World models work with any observation modality. They are most advantageous when observations are high-dimensional and compressible (images, point clouds), but the latent dynamics framework applies equally to proprioceptive or structured state spaces.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

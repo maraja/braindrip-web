@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Table size', detail: '$|S| \\times |A|$ entries, making tabular Q-learning feasible only for small discrete state-action spaces (typically $< 10^6$ entries).' },
-    { label: 'Learning rate', detail: 'Common practice is $\\alpha \\in [0.01, 0.5]$, often decayed over time. Higher $\\alpha$ speeds initial learning but increases asymptotic noise.' },
-    { label: 'Exploration', detail: '$\\varepsilon$-greedy with $\\varepsilon$ decayed from ~0.1 to ~0.01 is standard. Too little exploration causes premature convergence; too much slows learning.' },
-    { label: 'Convergence speed', detail: 'Empirically, tabular Q-learning often requires $O(|S||A|/\\alpha)$ total steps to approach optimality, though worst-case bounds are much looser.' },
+    { label: 'Table size', detail: '$ entries, making tabular Q-learning feasible only for small discrete state-action spaces (typically &lt; 10^6$ entries).' },
+    { label: 'Learning rate', detail: 'Common practice is   [0.01, 0.5], often decayed over time. Higher  speeds initial learning but increases asymptotic noise.' },
+    { label: 'Exploration', detail: '-greedy with  decayed from ~0.1 to ~0.01 is standard. Too little exploration causes premature convergence; too much slows learning.' },
+    { label: 'Convergence speed', detail: 'Empirically, tabular Q-learning often requires O(/) total steps to approach optimality, though worst-case bounds are much looser.' },
     { label: 'Maximization bias', detail: 'Can overestimate Q-values by 5-30% in stochastic environments. Double Q-learning eliminates this bias.' },
-    { label: 'Memory', detail: '$O(|S| \\times |A|)$ -- just the Q-table. No episode storage required (unlike MC).' },
+    { label: 'Memory', detail: 'O() -- just the Q-table. No episode storage required (unlike MC).' },
 ];
 
 export default function ExplorerRLQLearning() {
@@ -20,10 +20,10 @@ export default function ExplorerRLQLearning() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Q-Learning — Key Details Explorer
+          Q-Learning \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of q-learning.
+          Click each card to explore the technical details.
         </p>
       </div>
 

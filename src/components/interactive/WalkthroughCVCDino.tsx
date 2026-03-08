@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Student-Teacher Framework', desc: 'The foundation of dino (self-distillation with no labels) begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Loss Function', desc: 'At this stage, the key transformation occurs — the core mechanism that makes dino (self-distillation with no labels) work.' },
-    { title: '3. Teacher Update via EMA', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Centering to Avoid Collapse', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Emergent Segmentation', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Student-Teacher Framework', desc: 'Both the student f_&#123;_s&#125; and teacher f_&#123;_t&#125; share the same ViT architecture. Given an image, two global crops and several local crops are generated:  Global crops: Two crops covering 50-100% of the image, resized to 224 x 224 Local crops: Multiple (typically 6-8) smaller crops covering 5-50% of the.' },
+    { title: '2. Loss Function', desc: 'Both networks produce probability distributions over K dimensions (typically K = 65536) using a projection head with a softmax:  [equation]  The loss minimizes the cross-entropy between teacher and student outputs across all crop pairs where the teacher sees a different view than the.' },
+    { title: '3. Teacher Update via EMA', desc: 'The teacher parameters are not trained by gradient descent. Instead, they are an exponential moving average of the student:  [equation]  The momentum coefficient  follows a cosine schedule from 0.996 to 1.0 during training.' },
+    { title: '4. Centering to Avoid Collapse', desc: 'Without precaution, both networks could collapse to outputting the same constant vector for all inputs. DINO prevents this with centering: the teacher\'s output is adjusted by subtracting a running mean:  [equation]  where &#123;g&#125;_t is the mean teacher output over the batch and m = 0.' },
+    { title: '5. Emergent Segmentation', desc: 'When visualizing the self-attention maps of the [&#123;CLS&#125;] token in the last layer, DINO-trained ViTs produce attention maps that cleanly segment foreground objects from background. Different attention heads specialize in different objects or parts.' },
 ];
 
 export default function WalkthroughCVCDino() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCDino() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          DINO (Self-Distillation with No Labels) — Step by Step
+          DINO (Self-Distillation with No Labels) \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how dino (self-distillation with no labels) works, one stage at a time.

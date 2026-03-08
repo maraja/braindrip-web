@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Evidence For Scaling', desc: 'The foundation of the scaling hypothesis debate begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Evidence Against (or Complicating) Scaling', desc: 'At this stage, the key transformation occurs — the core mechanism that makes the scaling hypothesis debate work.' },
-    { title: '3. The Current Consensus', desc: 'The intermediate results are processed and refined through the main pipeline.' },
+    { title: '1. The Evidence For Scaling', desc: 'The case for the scaling hypothesis rests on several pillars:  Kaplan\'s scaling laws (January 2020) showed that language model loss decreases as a smooth power law with model size, dataset size, and compute, with no sign of diminishing returns across seven orders of magnitude.' },
+    { title: '2. The Evidence Against (or Complicating) Scaling', desc: 'Chinchilla\'s correction (March 2022) showed that Kaplan\'s allocation was suboptimal — you need to scale data as much as model size. This did not refute scaling per se, but it showed that raw parameter count was not the right metric.' },
+    { title: '3. The Current Consensus', desc: 'By 2025, the field had converged on a nuanced view: scale is necessary but not sufficient. The strongest results come from combining large scale with high-quality data, sophisticated training pipelines (RLHF, DPO, constitutional methods), and increasingly, inference-time computation.' },
 ];
 
 export default function WalkthroughLLE08TheScalingHypothesisDebate() {
@@ -15,10 +15,10 @@ export default function WalkthroughLLE08TheScalingHypothesisDebate() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The Scaling Hypothesis Debate — Step by Step
+          The Scaling Hypothesis Debate \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how the scaling hypothesis debate works, one stage at a time.

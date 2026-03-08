@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Convergence', detail: 'Training error drops exponentially with the number of rounds $T$, provided each weak learner maintains $\\epsilon_t < 0.5$.' },
-    { label: 'Overfitting resistance', detail: 'Empirically, AdaBoost often continues to improve test error even after training error reaches zero. This puzzling behavior is partially explained by the **margin theory** -- AdaBoost continues to increase the margin of correctly classified examples, improving generalization.' },
+    { label: 'Convergence', detail: 'Training error drops exponentially with the number of rounds T, provided each weak learner maintains _t &lt; 0.5.' },
+    { label: 'Overfitting resistance', detail: 'Empirically, AdaBoost often continues to improve test error even after training error reaches zero. This puzzling behavior is partially explained by the margin theory -- AdaBoost continues to increase the margin of correctly classified examples, improving generalization.' },
     { label: 'Sensitivity to noise', detail: 'AdaBoost\'s exponential loss places extremely high weight on misclassified examples, making it highly sensitive to label noise and outliers. Noisy examples accumulate enormous weight, distorting the learning process.' },
     { label: 'Multiclass extensions', detail: 'AdaBoost.M1 handles multiclass problems directly. SAMME (Stagewise Additive Modeling using a Multi-class Exponential loss) provides a principled multiclass extension.' },
-    { label: 'Stopping criterion', detail: 'Unlike bagging, AdaBoost **can** overfit with too many rounds, especially on noisy data. Cross-validation is used to select $T$.' },
+    { label: 'Stopping criterion', detail: 'Unlike bagging, AdaBoost can overfit with too many rounds, especially on noisy data. Cross-validation is used to select T.' },
 ];
 
 export default function ExplorerMLFAdaboost() {
@@ -19,10 +19,10 @@ export default function ExplorerMLFAdaboost() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          AdaBoost — Key Details Explorer
+          AdaBoost \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of adaboost.
+          Click each card to explore the technical details.
         </p>
       </div>
 

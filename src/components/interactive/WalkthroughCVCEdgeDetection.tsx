@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Gradient Computation with Sobel', desc: 'The foundation of edge detection begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Canny Edge Detector', desc: 'At this stage, the key transformation occurs — the core mechanism that makes edge detection work.' },
-    { title: '3. Laplacian of Gaussian (LoG)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Code Example (OpenCV)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Gradient Computation with Sobel', desc: 'The Sobel operator convolves the image with two 3 x 3 kernels to estimate horizontal and vertical gradients:  [equation]  The gradient magnitude and direction are then:  [equation]  Sobel is fast (six additions and two multiplications per pixel per kernel) but produces thick edges and is sensitive.' },
+    { title: '2. The Canny Edge Detector', desc: 'Canny (1986) formalized three criteria for an optimal edge detector -- good detection, good localization, and single response -- and proposed a multi-stage pipeline:  Gaussian smoothing. Convolve with a Gaussian kernel ( typically 1.0--2.0) to suppress noise.' },
+    { title: '3. Laplacian of Gaussian (LoG)', desc: 'An alternative approach convolves the image with the Laplacian of a Gaussian:  [equation]  Zero crossings of the output indicate edges. The Difference of Gaussians (DoG) approximation is computationally cheaper and forms the basis of multi-scale edge analysis.' },
 ];
 
 export default function WalkthroughCVCEdgeDetection() {
@@ -16,10 +15,10 @@ export default function WalkthroughCVCEdgeDetection() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Edge Detection — Step by Step
+          Edge Detection \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how edge detection works, one stage at a time.

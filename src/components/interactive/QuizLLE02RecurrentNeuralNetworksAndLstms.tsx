@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE02RecurrentNeuralNetworksAndLstms() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'RNNs processed language one token at a time like reading left to right, and LSTMs solved their crippling memory problem with learned gates — dominating NLP from 2014 to 2017 before the Transformer made their sequential bottleneck obsolete.', isTrue: true, explanation: 'This captures the core purpose of Recurrent Neural Networks and LSTMs.' },
-    { text: 'Recurrent Neural Networks and LSTMs is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Recurrent Neural Networks and LSTMs is important for building on more advanced topics.' },
-    { text: 'Recurrent Neural Networks and LSTMs is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Recurrent Neural Networks and LSTMs is important for building on more advanced topics.' },
+    { text: 'LSTMs solved the vanishing gradient problem completely.', isTrue: false, explanation: 'LSTMs significantly mitigated it, extending effective memory from ~10 to ~200+ tokens. But they did not eliminate it — very long-range dependencies (thousands of tokens) still degraded.' },
+    { text: 'Elman networks (1990); effective memory of ~10-20 timesteps due to vanishing gradients', isTrue: true, explanation: 'Elman networks (1990); effective memory of ~10-20 timesteps due to vanishing gradients' },
+    { text: 'RNNs are obsolete and have no modern use.', isTrue: false, explanation: 'While Transformers dominate NLP, RNN variants like state-space models (Mamba, 2023) and RWKV have seen renewed interest for their linear-time inference scaling. The core idea of recurrent state has not died — it has been reimagined.' },
+    { text: 'Standard for NLP by 2015-2016; doubled parameter count but captured both forward and backward context', isTrue: true, explanation: 'Standard for NLP by 2015-2016; doubled parameter count but captured both forward and backward context' },
+    { text: 'GRUs are strictly worse than LSTMs.', isTrue: false, explanation: 'Empirical evidence is mixed. GRUs often match LSTMs on shorter sequences and smaller datasets while training faster.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

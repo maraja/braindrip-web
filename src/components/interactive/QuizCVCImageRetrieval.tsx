@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCImageRetrieval() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Embedding dimensions: 128--2048; 512 is a common sweet spot balancing accuracy and index size.', isTrue: true, explanation: 'This is a key technical detail of Image Retrieval.' },
-    { text: 'FAISS IVF-PQ with 64-byte codes indexes 1 billion 256-D vectors in ~64 GB RAM, answering queries in &lt;5 ms on a single CPU core.', isTrue: true, explanation: 'This is a key technical detail of Image Retrieval.' },
-    { text: 'Standard retrieval benchmarks: ROxford5k and RParis6k (revisited) with Easy, Medium, Hard protocols.', isTrue: true, explanation: 'This is a key technical detail of Image Retrieval.' },
+    { text: 'Image retrieval is just classification with many classes.', isTrue: false, explanation: 'Retrieval must handle open-set queries (unseen during training) and rank by continuous similarity rather than assigning discrete labels. "Bigger embeddings are always better." Beyond 512--1024 dimensions, accuracy gains are marginal while index size and search time grow linearly.' },
+    { text: 'Image retrieval finds visually similar images in a database by encoding images as compact embedding vectors and performing approximate nearest neighbor search, powered by metric learning and contrastive losses.', isTrue: true, explanation: 'This captures the core definition of Image Retrieval.' },
+    { text: 'Image Retrieval is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Image Retrieval is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

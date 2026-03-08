@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEToolUseBenchmarks() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Tool use benchmarks evaluate how well AI agents select, invoke, parameterize, and chain tools in realistic scenarios, revealing reliability gaps that single-call evaluations miss entirely.', isTrue: true, explanation: 'This captures the core purpose of Tool Use Benchmarks.' },
-    { text: 'Tool Use Benchmarks is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Tool Use Benchmarks is important for building on more advanced topics.' },
-    { text: 'Tool Use Benchmarks is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Tool Use Benchmarks is important for building on more advanced topics.' },
+    { text: 'Tool selection is the hard part.', isTrue: false, explanation: 'In practice, agents select the correct tool 80-90% of the time. The failures are overwhelmingly in parameterization: wrong date formats, incorrect field names, missing required parameters, and mishandled edge cases.' },
+    { text: 'pass^1 scores are sufficient for evaluating tool-use agents.', isTrue: false, explanation: 'A 48% pass^1 score sounds mediocre but workable. The corresponding ~25% pass^8 score reveals that the agent is unreliable on more than three-quarters of tasks when you need consistent performance.' },
+    { text: 'More tools always means better agents.', isTrue: false, explanation: 'Agents with access to more tools often perform worse due to selection confusion and context window pressure. Tool set curation -- providing the right tools for the task -- is as important as the agent\'s tool-use capability.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Lexical Ambiguity', desc: 'The foundation of ambiguity in language begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Syntactic Ambiguity', desc: 'At this stage, the key transformation occurs — the core mechanism that makes ambiguity in language work.' },
-    { title: '3. Semantic Ambiguity', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Referential Ambiguity', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. How NLP Systems Handle Ambiguity', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Lexical Ambiguity', desc: 'Lexical ambiguity occurs when a single word has multiple meanings. This is the most pervasive type of ambiguity.' },
+    { title: '2. Syntactic Ambiguity', desc: 'Syntactic ambiguity (also called structural ambiguity) occurs when a sentence has multiple valid parse trees. PP-attachment ambiguity is the most common type: "I saw the man with the telescope.' },
+    { title: '3. Semantic Ambiguity', desc: 'Semantic ambiguity arises when a syntactically unambiguous sentence has multiple logical interpretations. Scope ambiguity: "Every student read a book." Does this mean there is a single book that every student read (a &gt; every), or each student read a (possibly different) book (every &gt; a)?' },
+    { title: '4. Referential Ambiguity', desc: 'Referential ambiguity occurs when it is unclear which entity a pronoun or noun phrase refers to. "John told Bill that he was wrong." Does "he" refer to John or Bill?' },
+    { title: '5. How NLP Systems Handle Ambiguity', desc: 'Statistical disambiguation: Train models on annotated corpora where ambiguity has been resolved by human annotators. The model learns that "bank" in financial contexts means the institution, and "bank" near "river" means the shore.' },
 ];
 
 export default function WalkthroughNLPAmbiguityInLanguage() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPAmbiguityInLanguage() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Ambiguity in Language — Step by Step
+          Ambiguity in Language \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how ambiguity in language works, one stage at a time.

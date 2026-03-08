@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACStructuredOutputForActions() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Schema complexity limits: Constrained decoding slows down as schema complexity increases.', isTrue: true, explanation: 'This is a key technical detail of Structured Output for Actions.' },
-    { text: 'Deeply nested schemas (4+ levels), large enums (100+ values), or complex oneOf/anyOf patterns can degrade generation speed by 2-5x.', isTrue: true, explanation: 'This is a key technical detail of Structured Output for Actions.' },
-    { text: 'Pydantic v2 performance: Pydantic v2 (Rust-based core) validates JSON 5-50x faster than Pydantic v1.', isTrue: true, explanation: 'This is a key technical detail of Structured Output for Actions.' },
+    { text: 'Asking the model to output JSON in the prompt is sufficient', isTrue: false, explanation: ': Prompt-based JSON formatting fails 5-15% of the time, depending on the model and complexity. The model may add markdown code fences, include explanatory text, or produce syntactically invalid JSON.' },
+    { text: 'Constrained decoding slows down as schema complexity increases.', isTrue: true, explanation: 'Deeply nested schemas (4+ levels), large enums (100+ values), or complex oneOf/anyOf patterns can degrade generation speed by 2-5x.' },
+    { text: 'Pydantic v2 (Rust-based core) validates JSON 5-50x faster than Pydantic v1.', isTrue: true, explanation: 'For high-throughput agent systems, this difference matters. Always use v2 for new projects.' },
+    { text: 'Some providers do not support recursive JSON schemas (where a type references itself).', isTrue: true, explanation: 'This limits the ability to represent tree structures or recursive plans in constrained output.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

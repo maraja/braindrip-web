@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Agent-Environment Loop', desc: 'The foundation of reinforcement learning begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Three Paradigms Compared', desc: 'At this stage, the key transformation occurs — the core mechanism that makes reinforcement learning work.' },
-    { title: '3. Key Characteristics', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Objective', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. A Brief History', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Agent-Environment Loop', desc: 'The interaction follows a discrete-time loop. At each timestep t:  The agent observes state S_t The agent selects action A_t according to its policy  The environment transitions to state S_&#123;t+1&#125; and emits reward R_&#123;t+1&#125; The agent updates its knowledge  This cycle generates a trajectory: S_0, A_0,.' },
+    { title: '2. Key Characteristics', desc: 'Sequential decision-making. Actions have consequences that unfold over time.' },
+    { title: '3. The Objective', desc: 'The agent aims to find a policy ^* that maximizes the expected return -- the cumulative discounted reward:  [equation]  where   [0, 1) is the discount factor (see return-and-discount-factor.md).' },
+    { title: '4. A Brief History', desc: '1950s: Richard Bellman develops dynamic programming and the Bellman equation. 1972: Klopf\'s "hedonistic neuron" hypothesis links RL to neuroscience.' },
 ];
 
 export default function WalkthroughRLWhatIsReinforcementLearning() {
@@ -17,13 +16,13 @@ export default function WalkthroughRLWhatIsReinforcementLearning() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Reinforcement Learning — Step by Step
+          What Is Reinforcement Learning? \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Walk through how reinforcement learning works, one stage at a time.
+          Walk through how what is reinforcement learning? works, one stage at a time.
         </p>
       </div>
 

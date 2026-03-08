@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEContextAssemblyPatterns() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Static templates are sufficient for 60-70% of LLM applications that have predictable, stable context structures.', isTrue: true, explanation: 'This is a key technical detail of Context Assembly Patterns.' },
-    { text: 'Conditional assembly introduces combinatorial testing requirements: N binary conditions create 2^N possible context configurations.', isTrue: true, explanation: 'This is a key technical detail of Context Assembly Patterns.' },
-    { text: 'Test the critical paths, not all combinations.', isTrue: true, explanation: 'This is a key technical detail of Context Assembly Patterns.' },
+    { text: 'Context assembly is just string concatenation.', isTrue: false, explanation: 'Assembly involves retrieval, scoring, ranking, conditional logic, token counting, budget enforcement, ordering, and formatting. It is a software engineering system, not a string operation.' },
+    { text: 'N binary conditions create 2^N possible context configurations.', isTrue: true, explanation: 'Test the critical paths, not all combinations.' },
+    { text: 'Context assembly patterns are software engineering approaches for dynamically constructing the LLM context window at runtime, selecting and arranging information based on the current query, user state, and application logic.', isTrue: true, explanation: 'This captures the core definition of Context Assembly Patterns.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

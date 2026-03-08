@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. o1-preview to o1 Full (September-December 2024)', desc: 'The foundation of the o-series evolution: o1 to o4-mini (and beyond) begins with understanding its core input requirements and initial setup.' },
-    { title: '2. o3-mini: Efficient Reasoning (January 2025)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes the o-series evolution: o1 to o4-mini (and beyond) work.' },
-    { title: '3. o3: The Capability Leap (April 2025)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. o4-mini: Compact Frontier Reasoning (April 2025)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. o3-pro: Maximum Reliability (June 2025)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. o1-preview to o1 Full (September-December 2024)', desc: 'o1-preview, released September 12, 2024, was deliberately limited: no image input, no tool use, no structured outputs, no streaming. It was a research preview that demonstrated reasoning capability while OpenAI worked on productizing the technology.' },
+    { title: '2. o3-mini: Efficient Reasoning (January 2025)', desc: 'o3-mini, released January 31, 2025, was a pivotal moment in the o-series evolution. It demonstrated that reasoning capabilities could be compressed into a smaller, faster model without catastrophic quality loss.' },
+    { title: '3. o3: The Capability Leap (April 2025)', desc: 'o3, released April 16, 2025, represented the largest single capability jump in the series. It achieved a 2530 Elo rating on Codeforces, placing it at the expert competitive programming level.' },
+    { title: '4. o4-mini: Compact Frontier Reasoning (April 2025)', desc: 'Released alongside o3 on April 16, 2025, o4-mini was a compact reasoning model that achieved remarkable efficiency. It scored 93.4% on AIME 2025 and 93.4% on GPQA Diamond, rivaling or exceeding the full o3 on several benchmarks.' },
+    { title: '5. o3-pro: Maximum Reliability (June 2025)', desc: 'o3-pro was a variant of o3 designed to think longer and provide the most reliable, thoroughly reasoned responses. Available as an option in ChatGPT for Pro subscribers, o3-pro allocated significantly more inference compute per query than standard o3, targeting use cases where accuracy was paramount.' },
+    { title: '6. Absorption into GPT-5: The End of the Separate o-Series (August-December 2025)', desc: 'The o-series ultimately proved to be a transitional product line. On August 7, 2025, OpenAI released GPT-5, which unified the GPT and o-series lines into a single model.' },
 ];
 
 export default function WalkthroughLLE02TheOSeriesEvolution() {
@@ -17,10 +18,10 @@ export default function WalkthroughLLE02TheOSeriesEvolution() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The o-Series Evolution: o1 to o4-mini (and Beyond) — Step by Step
+          The o-Series Evolution: o1 to o4-mini (and Beyond) \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how the o-series evolution: o1 to o4-mini (and beyond) works, one stage at a time.

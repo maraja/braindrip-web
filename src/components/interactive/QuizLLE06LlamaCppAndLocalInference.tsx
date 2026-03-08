@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE06LlamaCppAndLocalInference() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Georgi Gerganov\'s llama.cpp project, started in March 2023 as a C/C++ port of LLaMA inference, sparked a revolution in local AI by proving that large language models could run on ordinary laptops and even phones without a GPU.', isTrue: true, explanation: 'This captures the core purpose of llama.cpp and Local Inference.' },
-    { text: 'llama.cpp and Local Inference is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding llama.cpp and Local Inference is important for building on more advanced topics.' },
-    { text: 'llama.cpp and Local Inference is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding llama.cpp and Local Inference is important for building on more advanced topics.' },
+    { text: 'Local models are too slow to be useful.', isTrue: false, explanation: 'A 7B model at 30-40 tokens/second on a MacBook is plenty fast for interactive use. Larger models are slower but still practical for tasks where latency tolerance is higher, like code generation or document analysis.' },
+    { text: 'You need an NVIDIA GPU.', isTrue: false, explanation: 'llama.cpp was designed CPU-first and works excellently on Apple Silicon Macs, AMD processors, and even ARM chips. GPU acceleration is optional and cross-vendor.' },
+    { text: 'Local models are much worse than cloud APIs.', isTrue: false, explanation: 'For many tasks, a well-quantized 70B model running locally is competitive with cloud-hosted models. The quality gap has narrowed dramatically, especially for coding, summarization, and domain-specific tasks.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

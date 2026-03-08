@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. States', desc: 'The foundation of states, actions, and rewards begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Actions', desc: 'At this stage, the key transformation occurs — the core mechanism that makes states, actions, and rewards work.' },
-    { title: '3. Rewards', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Reward Design Challenges', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. States', desc: 'The state S_t  &#123;S&#125; is the information available to the agent at time t. It should satisfy the Markov property (see markov-decision-processes.md): the state must contain enough information to predict future states and rewards without knowledge of the history.' },
+    { title: '2. Actions', desc: 'The action A_t  &#123;A&#125; (or A_t  &#123;A&#125;(S_t) when actions depend on state) represents the agent\'s choice at time t. Discrete action spaces.' },
+    { title: '3. Rewards', desc: 'The reward R_&#123;t+1&#125;  &#123;R&#125; is a scalar signal the agent receives after taking action A_t in state S_t. It encodes the designer\'s objective.' },
+    { title: '4. Reward Design Challenges', desc: 'Reward shaping adds intermediate rewards to guide learning without changing the optimal policy. (1999) proved that potential-based reward shaping preserves optimal policies:  [equation]  where  : &#123;S&#125;  &#123;R&#125; is an arbitrary potential function.' },
 ];
 
 export default function WalkthroughRLStatesActionsRewards() {
@@ -16,10 +16,10 @@ export default function WalkthroughRLStatesActionsRewards() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          States, Actions, and Rewards — Step by Step
+          States, Actions, and Rewards \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how states, actions, and rewards works, one stage at a time.

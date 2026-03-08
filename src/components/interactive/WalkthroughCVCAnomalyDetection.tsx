@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Problem Formulation', desc: 'The foundation of anomaly detection begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Feature-Embedding Approaches', desc: 'At this stage, the key transformation occurs — the core mechanism that makes anomaly detection work.' },
-    { title: '3. Student-Teacher Networks', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Reconstruction-Based Methods', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Normalizing Flows', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Problem Formulation', desc: 'Given a training set &#123;D&#125;_&#123;train&#125; = \\&#123;x_1, ..., x_N\\&#125; of normal images, learn a scoring function s(x) such that s(x) is low for normal images and high for anomalous ones. Anomaly localization further produces a pixel-level anomaly map s(x, i, j) for each spatial location.' },
+    { title: '2. Feature-Embedding Approaches', desc: 'The dominant paradigm extracts features from a pretrained network (typically ImageNet-pretrained ResNet or WideResNet) and models the distribution of normal features. PatchCore (Roth et al., 2022): The current standard for industrial anomaly detection.' },
+    { title: '3. Student-Teacher Networks', desc: 'STPM (Wang et al., 2021): A pretrained teacher network (e.g., ResNet-18) extracts features from normal images. A student network is trained to match the teacher\'s feature maps on normal data.' },
+    { title: '4. Reconstruction-Based Methods', desc: 'Autoencoders trained on normal images reconstruct normal inputs well but produce high reconstruction error on anomalies. However, modern autoencoders can be too powerful, reconstructing anomalies too.' },
+    { title: '5. Normalizing Flows', desc: 'CFLOW-AD (Gudovskiy et al., 2022): Uses conditional normalizing flows to model the density of normal features at each spatial position. The log-likelihood under the learned density serves as the normality score.' },
+    { title: '6. Logical vs. Structural Anomalies', desc: 'Structural anomalies: Local texture or appearance defects (scratches, stains, dents). Well-captured by patch-level methods.' },
 ];
 
 export default function WalkthroughCVCAnomalyDetection() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCAnomalyDetection() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Anomaly Detection — Step by Step
+          Anomaly Detection \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how anomaly detection works, one stage at a time.

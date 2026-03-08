@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPContextualEmbeddings() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ELMo improvements: Adding ELMo features improved SQuAD by 4.7% (F1), SNLI by 1.0%, SRL by 3.2%, NER by 2.1%, and SST-5 by 1.0% over previous state-of-the-art (2018).', isTrue: true, explanation: 'This is a key technical detail of Contextual Embeddings.' },
-    { text: 'BERT improvements: BERT-large pushed SQuAD 2.0 F1 from 66.3% to 83.1%, MNLI accuracy from 80.6% to 86.7%, and CoNLL-2003 NER F1 from 92.0% to 92.8%.', isTrue: true, explanation: 'This is a key technical detail of Contextual Embeddings.' },
-    { text: 'Context window: ELMo processes one sentence at a time.', isTrue: true, explanation: 'This is a key technical detail of Contextual Embeddings.' },
+    { text: 'Contextual embeddings make static embeddings useless.', isTrue: false, explanation: 'Static embeddings (Word2Vec, GloVe, FastText) remain valuable for resource-constrained environments (mobile, edge devices), as features in ensemble models, for fast nearest-neighbor lookup in vocabulary-scale applications, and as initialization for contextual models. BERT itself initializes from WordPiece embeddings.' },
+    { text: 'Adding ELMo features improved SQuAD by 4.7% (F1), SNLI by 1.0%, SRL by 3.2%, NER by 2.1%, and SST-5 by 1.0% over previous state-of-the-art (2018).', isTrue: true, explanation: 'Adding ELMo features improved SQuAD by 4.7% (F1), SNLI by 1.0%, SRL by 3.2%, NER by 2.1%, and SST-5 by 1.0% over previous state-of-the-art (2018).' },
+    { text: 'BERT\'s [CLS] token is a good sentence representation.', isTrue: false, explanation: 'The [CLS] token was trained for next sentence prediction, not sentence similarity. It performs poorly on semantic textual similarity tasks without fine-tuning.' },
+    { text: 'BERT-large pushed SQuAD 2.0 F1 from 66.3% to 83.1%, MNLI accuracy from 80.6% to 86.7%, and CoNLL-2003 NER F1 from 92.0% to 92.8%.', isTrue: true, explanation: 'BERT-large pushed SQuAD 2.0 F1 from 66.3% to 83.1%, MNLI accuracy from 80.6% to 86.7%, and CoNLL-2003 NER F1 from 92.0% to 92.8%.' },
+    { text: 'Deeper layers are always better for downstream tasks.', isTrue: false, explanation: 'The optimal layer depends on the task. POS tagging peaks at layers 1-3 in BERT; semantic tasks peak at layers 8-11.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

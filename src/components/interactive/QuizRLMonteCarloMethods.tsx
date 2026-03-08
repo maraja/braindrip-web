@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLMonteCarloMethods() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Requires episodic tasks: MC methods need complete returns, so episodes must terminate.', isTrue: true, explanation: 'This is a key technical detail of Monte Carlo Methods.' },
-    { text: 'They cannot be applied to continuing (infinite-horizon) tasks without modification.', isTrue: true, explanation: 'This is a key technical detail of Monte Carlo Methods.' },
-    { text: 'High variance, zero bias: MC returns $G_t$ are unbiased estimates of $V^\\pi(s)$ but can have high variance since they depend on all subsequent rewards in the episode.', isTrue: true, explanation: 'This is a key technical detail of Monte Carlo Methods.' },
+    { text: 'MC is always worse than TD because it has higher variance.', isTrue: false, explanation: 'MC has higher variance but zero bias, which can make it preferable when function approximation introduces bias. In tabular settings with sufficient data, MC converges to the correct values.' },
+    { text: 'MC methods need complete returns, so episodes must terminate.', isTrue: true, explanation: 'They cannot be applied to continuing (infinite-horizon) tasks without modification.' },
+    { text: 'MC returns G_t are unbiased estimates of V^(s) but can have high variance since they depend on all subsequent rewards in the episode.', isTrue: true, explanation: 'MC returns G_t are unbiased estimates of V^(s) but can have high variance since they depend on all subsequent rewards in the episode.' },
+    { text: 'MC does not update estimates based on other estimates, unlike TD methods.', isTrue: true, explanation: 'This means MC does not suffer from bias introduced by inaccurate value estimates.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

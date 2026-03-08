@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Sigmoid', desc: 'The foundation of activation functions begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Tanh', desc: 'At this stage, the key transformation occurs — the core mechanism that makes activation functions work.' },
-    { title: '3. ReLU (Rectified Linear Unit)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Leaky ReLU', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. ELU (Exponential Linear Unit)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Sigmoid', desc: '[equation]  The sigmoid squashes inputs to (0, 1), making it natural for probabilities. However, it has two critical problems: (1) saturation -- for   0, the derivative \'(z)  0, causing vanishing gradients; and (2) non-zero-centered outputs -- since (z) &gt; 0 always, gradients on weights are always.' },
+    { title: '2. Tanh', desc: '[equation]  Tanh outputs are in (-1, 1) and are zero-centered, solving one of sigmoid\'s problems. Its maximum derivative is \'(0) = 1, which is better for gradient flow.' },
+    { title: '3. ReLU (Rectified Linear Unit)', desc: '[equation]  ReLU was the breakthrough activation that enabled training of deep networks (Nair and Hinton, 2010; Glorot et al., 2011). Its advantages: (1) no saturation for positive inputs -- the gradient is exactly 1; (2) computational simplicity -- just a threshold; (3) sparse activation --.' },
+    { title: '4. Leaky ReLU', desc: '[equation]  where  is a small constant (typically 0.01). This ensures a nonzero gradient everywhere, preventing dying neurons.' },
+    { title: '5. ELU (Exponential Linear Unit)', desc: '[equation]  ELU has negative outputs that push mean activations toward zero, combining benefits of ReLU (no saturation for z &gt; 0) with zero-centered behavior. The exponential for z &lt; 0 makes it smoother than Leaky ReLU but more expensive to compute.' },
+    { title: '6. GELU (Gaussian Error Linear Unit)', desc: '[equation]  where (z) is the standard Gaussian CDF. GELU applies a stochastic gating: inputs are weighted by the probability that they are "positive" under a Gaussian distribution.' },
 ];
 
 export default function WalkthroughMLFActivationFunctions() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFActivationFunctions() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Activation Functions — Step by Step
+          Activation Functions \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how activation functions works, one stage at a time.

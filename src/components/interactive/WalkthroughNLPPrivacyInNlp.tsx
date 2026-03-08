@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Memorization in Language Models', desc: 'The foundation of privacy in nlp begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Membership Inference Attacks', desc: 'At this stage, the key transformation occurs — the core mechanism that makes privacy in nlp work.' },
-    { title: '3. Differential Privacy for NLP', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Federated Learning for Text', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. De-Identification', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Memorization in Language Models', desc: 'Training Data Extraction: Carlini et al. (2021) demonstrated that GPT-2 memorizes and can emit verbatim sequences from its training data.' },
+    { title: '2. Membership Inference Attacks', desc: 'Membership inference determines whether a specific data point was in the model\'s training set. (2017) introduced shadow model training: train multiple models on known data, then train an attack classifier to distinguish member vs.' },
+    { title: '3. Differential Privacy for NLP', desc: 'Differential Privacy (DP) provides a mathematical guarantee that any single training example has limited influence on the model\'s behavior. Formally, a mechanism M satisfies (epsilon, delta)-DP if for any two datasets D and D\' differing by one record, and any set of outcomes S: P(M(D) in S) &lt;=.' },
+    { title: '4. Federated Learning for Text', desc: 'Federated learning trains models without centralizing raw data. Each device (phone, hospital server) trains on its local data, sends only gradient updates to a central server, and the server aggregates updates to improve the global model.' },
+    { title: '5. De-Identification', desc: 'Clinical Text De-Identification: Removing or replacing PHI (Protected Health Information) from medical records before use. The HIPAA Safe Harbor standard requires removing 18 categories of identifiers (names, dates, locations, etc.).' },
+    { title: '6. GDPR and the Right to Be Forgotten', desc: 'The EU General Data Protection Regulation grants individuals the right to have their data deleted. For trained models, this creates a paradox: how do you "delete" a data point that has been absorbed into billions of parameters?' },
 ];
 
 export default function WalkthroughNLPPrivacyInNlp() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPPrivacyInNlp() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Privacy in NLP — Step by Step
+          Privacy in NLP \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how privacy in nlp works, one stage at a time.

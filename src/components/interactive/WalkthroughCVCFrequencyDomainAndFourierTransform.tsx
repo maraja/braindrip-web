@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Computing the DFT with FFT', desc: 'The foundation of frequency domain and fourier transform begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Magnitude and Phase Spectra', desc: 'At this stage, the key transformation occurs — the core mechanism that makes frequency domain and fourier transform work.' },
-    { title: '3. The Convolution Theorem', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Frequency-Domain Filtering', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Discrete Cosine Transform (DCT)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Computing the DFT with FFT', desc: 'The naive DFT requires O(M^2 N^2) operations. The Fast Fourier Transform (Cooley-Tukey, 1965) exploits symmetry and periodicity to reduce this to O(MN (MN)), making practical computation possible.' },
+    { title: '2. The Magnitude and Phase Spectra', desc: 'The magnitude spectrum $ tells you how much energy is present at each frequency and orientation. A bright spot at coordinates (u, v) in the centered spectrum indicates a strong sinusoidal pattern at that frequency tilted at angle  = (v / u).' },
+    { title: '3. The Convolution Theorem', desc: 'Convolution in the spatial domain equals element-wise multiplication in the frequency domain:  [equation]  This means a spatial convolution with an k x k kernel can be performed as: (1) FFT the image, (2) FFT the kernel (zero-padded to image size), (3) multiply point-wise, (4) inverse FFT.' },
+    { title: '4. Frequency-Domain Filtering', desc: 'Filters are designed as 2D masks applied to the frequency spectrum:  Low-pass filter -- Passes low frequencies, blocks high frequencies. Effect: blurring.' },
+    { title: '5. The Discrete Cosine Transform (DCT)', desc: 'The DCT is a real-valued variant of the DFT widely used in compression. JPEG compression works by:  Splitting the image into 8x8 blocks.' },
 ];
 
 export default function WalkthroughCVCFrequencyDomainAndFourierTransform() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCFrequencyDomainAndFourierTransform() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Frequency Domain and Fourier Transform — Step by Step
+          Frequency Domain and Fourier Transform \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how frequency domain and fourier transform works, one stage at a time.

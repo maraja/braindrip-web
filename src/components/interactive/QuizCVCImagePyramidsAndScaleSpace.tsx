@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCImagePyramidsAndScaleSpace() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A typical SIFT implementation uses 4 octaves with 3 DoG scales per octave, producing 12 DoG images from which keypoints are extracted.', isTrue: true, explanation: 'This is a key technical detail of Image Pyramids and Scale Space.' },
-    { text: 'The storage overhead for a complete Gaussian pyramid is exactly 1/3 of the original image (for a factor-of-2 pyramid: $1/4 + 1/16 + 1/64 + \\cdots = 1/3$).', isTrue: true, explanation: 'This is a key technical detail of Image Pyramids and Scale Space.' },
-    { text: 'cv2.pyrDown uses a 5x5 Gaussian kernel with weights $[1, 4, 6, 4, 1]/16$ before subsampling, following Burt and Adelson\'s original design.', isTrue: true, explanation: 'This is a key technical detail of Image Pyramids and Scale Space.' },
+    { text: 'You can just resize the image to handle multiple scales.', isTrue: false, explanation: 'Naive downsampling without anti-aliasing (Gaussian pre-filtering) introduces aliasing artifacts that corrupt both the image and any features detected on it. The smooth-then-subsample pipeline is essential.' },
+    { text: 'The Laplacian pyramid is the same as applying a Laplacian filter.', isTrue: false, explanation: 'The Laplacian pyramid captures band-pass differences between Gaussian levels. The Laplacian filter (^2) is a single second-derivative operator.' },
+    { text: 'Deep learning has made image pyramids obsolete.', isTrue: false, explanation: 'Feature Pyramid Networks and multi-scale training strategies are direct descendants of the pyramid concept. The idea persists; only the implementation has shifted from hand-crafted to learned representations.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

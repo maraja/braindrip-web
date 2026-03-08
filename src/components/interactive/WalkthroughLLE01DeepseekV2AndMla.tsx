@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Multi-head Latent Attention (MLA)', desc: 'The foundation of deepseek v2: multi-head latent attention begins with understanding its core input requirements and initial setup.' },
-    { title: '2. DeepSeekMoE Architecture', desc: 'At this stage, the key transformation occurs — the core mechanism that makes deepseek v2: multi-head latent attention work.' },
-    { title: '3. Auxiliary-Loss-Free Load Balancing', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Training Efficiency', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Multi-head Latent Attention (MLA)', desc: 'In standard multi-head attention (MHA), each attention head maintains separate key (K) and value (V) vectors for every token in the context. For a model with, say, 128 heads and 128 dimensions per head, each token requires storing 2 x 128 x 128 = 32,768 values in the KV cache.' },
+    { title: '2. DeepSeekMoE Architecture', desc: 'V2 employed an innovative Mixture-of-Experts design with 160 routed experts and 2 shared experts, activating 6 routed experts plus both shared experts per token.' },
+    { title: '3. Auxiliary-Loss-Free Load Balancing', desc: 'Traditional MoE models use auxiliary losses to prevent expert collapse, the phenomenon where the router sends nearly all tokens to a small subset of experts, leaving others underutilized. These auxiliary losses add a penalty term when load is imbalanced.' },
+    { title: '4. Training Efficiency', desc: 'DeepSeek V2 was trained on 8.1 trillion tokens for approximately $5.6 million (2.8 million H800 GPU hours). This was notably efficient given the model\'s competitive performance with LLaMA 3 70B and Mixtral 8x22B, models from labs with considerably larger compute budgets.' },
 ];
 
 export default function WalkthroughLLE01DeepseekV2AndMla() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE01DeepseekV2AndMla() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          DeepSeek V2: Multi-head Latent Attention — Step by Step
+          DeepSeek V2: Multi-head Latent Attention \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how deepseek v2: multi-head latent attention works, one stage at a time.

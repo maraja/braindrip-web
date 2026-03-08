@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPRelationExtraction() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'SemEval-2010 Task 8: 9 relation types + NONE; SOTA ~89--90% F1 (BERT-based); CNN baseline ~82%.', isTrue: true, explanation: 'This is a key technical detail of Relation Extraction.' },
-    { text: 'TACRED: 42 relation types, ~106k sentences; SOTA ~75% F1; more challenging due to class imbalance (~80% NONE).', isTrue: true, explanation: 'This is a key technical detail of Relation Extraction.' },
-    { text: 'DocRED: Document-level RE with 96 relation types; SOTA ~65% F1, reflecting the difficulty of cross-sentence RE.', isTrue: true, explanation: 'This is a key technical detail of Relation Extraction.' },
+    { text: 'Relation extraction and relation classification are the same.', isTrue: false, explanation: 'Relation classification assumes entity pairs are given and only assigns a label. Full relation extraction includes entity identification, pair enumeration, and classification -- a substantially harder pipeline.' },
+    { text: '9 relation types + NONE; SOTA ~89--90% F1 (BERT-based); CNN baseline ~82%.', isTrue: true, explanation: '9 relation types + NONE; SOTA ~89--90% F1 (BERT-based); CNN baseline ~82%.' },
+    { text: 'Distant supervision produces clean training data.', isTrue: false, explanation: 'The distant supervision assumption is frequently violated. Two entities may co-occur without the KB relation being expressed, or a different relation may hold.' },
+    { text: '42 relation types, ~106k sentences; SOTA ~75% F1; more challenging due to class imbalance (~80% NONE).', isTrue: true, explanation: '42 relation types, ~106k sentences; SOTA ~75% F1; more challenging due to class imbalance (~80% NONE).' },
+    { text: 'More relation types are always better.', isTrue: false, explanation: 'Fine-grained relation inventories increase ambiguity and data sparsity. The choice of relation ontology should balance coverage against annotability and downstream utility.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

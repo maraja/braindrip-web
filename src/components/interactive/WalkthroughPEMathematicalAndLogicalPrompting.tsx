@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Step-by-Step Verification', desc: 'The foundation of mathematical and logical prompting begins with understanding its core input requirements and initial setup.' },
-    { title: '2. LaTeX Formatting for Precision', desc: 'At this stage, the key transformation occurs — the core mechanism that makes mathematical and logical prompting work.' },
-    { title: '3. Delegation to Code', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Formal Logic Prompting', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Step-by-Step Verification', desc: 'Mathematical chain-of-thought requires explicit verification checkpoints:  Standard math CoT: "Solve this problem step by step." This produces reasoning but does not catch errors in intermediate steps. Verified math CoT: "Solve this problem step by step.' },
+    { title: '2. LaTeX Formatting for Precision', desc: 'For problems involving mathematical notation, specifying LaTeX formatting reduces ambiguity:  Without formatting: "The integral of x squared from 0 to 1 is one third." (Is this setting up the problem or claiming the answer?)  With LaTeX: "Evaluate _0^1 x^2 \\, dx.' },
+    { title: '3. Delegation to Code', desc: 'The boundary between LLM reasoning and computation tools is a critical design decision:  LLM excels at: Problem interpretation, equation setup, choosing solution approaches, explaining results, conceptual reasoning, proof strategies, simplification of symbolic expressions.' },
+    { title: '4. Formal Logic Prompting', desc: 'Logical reasoning requires structured formats:  Propositional logic: "Express the following argument in propositional logic. Identify the premises and conclusion.' },
 ];
 
 export default function WalkthroughPEMathematicalAndLogicalPrompting() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEMathematicalAndLogicalPrompting() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Mathematical and Logical Prompting — Step by Step
+          Mathematical and Logical Prompting \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how mathematical and logical prompting works, one stage at a time.

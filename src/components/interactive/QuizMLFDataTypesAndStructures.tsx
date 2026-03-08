@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFDataTypesAndStructures() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Pandas dtype pitfalls: Pandas infers types on load.', isTrue: true, explanation: 'This is a key technical detail of Data Types and Structures.' },
-    { text: 'A column of integers with one missing value becomes float64 because NaN is a float.', isTrue: true, explanation: 'This is a key technical detail of Data Types and Structures.' },
-    { text: 'Use Int64 (nullable integer) or careful casting.', isTrue: true, explanation: 'This is a key technical detail of Data Types and Structures.' },
+    { text: 'Ordinal encoding is fine for all categorical variables.', isTrue: false, explanation: 'It is only valid when categories have a genuine, meaningful rank. Applying it to nominal data (e.g., encoding countries as 1-195) injects a false metric structure.' },
+    { text: 'Pandas infers types on load.', isTrue: true, explanation: 'A column of integers with one missing value becomes float64 because NaN is a float. Use Int64 (nullable integer) or careful casting.' },
+    { text: 'The number of distinct values in a categorical column.', isTrue: true, explanation: 'High-cardinality features (e.g., zip codes with 40,000+ levels) require special encoding (hashing, embeddings) rather than naive one-hot expansion.' },
+    { text: 'A column containing both "42" and "N/A" will be inferred as object (string).', isTrue: true, explanation: 'Always inspect dtypes after loading with df.dtypes and df.describe(include=\'all\').' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

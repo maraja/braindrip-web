@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'One-sided vs two-sided tests', detail: 'For regression detection, use one-sided tests ($H_1: p_{\\text{new}} < p_{\\text{old}}$). Two-sided tests waste power on detecting improvements, which is not the goal during regression testing.' },
-    { label: 'SPRT maximum sample size', detail: 'Truncated SPRT adds a maximum sample size $N_{\\max}$ to guarantee termination. Set $N_{\\max}$ to 2-3x the fixed-sample equivalent.' },
-    { label: 'Paired vs unpaired', detail: 'If both agent versions are evaluated on the same tasks, use McNemar\'s test for binary outcomes: $\\chi^2 = \\frac{(b-c)^2}{b+c}$ where $b$ and $c$ are discordant pairs. This substantially increases power.' },
+    { label: 'One-sided vs two-sided tests', detail: 'For regression detection, use one-sided tests (H_1: p_&#123;new&#125; &lt; p_&#123;old&#125;). Two-sided tests waste power on detecting improvements, which is not the goal during regression testing.' },
+    { label: 'SPRT maximum sample size', detail: 'Truncated SPRT adds a maximum sample size N_&#123;&#125; to guarantee termination. Set N_&#123;&#125; to 2-3x the fixed-sample equivalent.' },
+    { label: 'Paired vs unpaired', detail: 'If both agent versions are evaluated on the same tasks, use McNemar\'s test for binary outcomes: ^2 = &#123;(b-c)^2&#125;&#123;b+c&#125; where b and c are discordant pairs. This substantially increases power.' },
     { label: 'Effect of non-stationarity', detail: 'Agent performance can drift over time due to external API changes. Detrend data before applying change-point detection.' },
     { label: 'Combining SPRT with CUSUM', detail: 'Use SPRT for version-to-version comparisons and CUSUM for continuous monitoring. They complement each other.' },
 ];
@@ -19,10 +19,10 @@ export default function ExplorerAAERegressionDetectionStatistics() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Regression Detection Statistics — Key Details Explorer
+          Regression Detection Statistics \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of regression detection statistics.
+          Click each card to explore the technical details.
         </p>
       </div>
 

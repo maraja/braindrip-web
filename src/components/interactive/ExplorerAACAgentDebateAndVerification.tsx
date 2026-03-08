@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Same model, different prompts', detail: 'Debate is effective even when all agents use the same underlying model. The different system prompts (proposer vs. critic, for vs. against) create sufficiently different reasoning contexts. Using different models (e.g., Claude and GPT-4) can further diversify perspectives.' },
-    { label: 'Critic specificity', detail: 'Vague critiques (\"this could be better\") are unhelpful. The critic prompt should request specific, actionable feedback: \"Identify factual errors with corrections. Point out unsupported claims. List missing considerations.\"' },
+    { label: 'Critic specificity', detail: 'Vague critiques ("this could be better") are unhelpful. The critic prompt should request specific, actionable feedback: "Identify factual errors with corrections. Point out unsupported claims. List missing considerations."' },
     { label: 'Convergence criteria', detail: 'Without explicit stopping conditions, debate can loop indefinitely. Common criteria: maximum rounds (2-3), critic finds no issues rated above a severity threshold, or diminishing changes between revisions.' },
     { label: 'Cost multiplier', detail: 'Debate multiplies token cost by the number of agents and rounds. A 3-round proposer-critic debate costs roughly 4-6x a single generation. This is justified for high-stakes outputs but excessive for routine tasks.' },
-    { label: 'Sycophancy in critics', detail: 'LLMs have a tendency toward agreement (sycophancy). Critic prompts must explicitly counteract this: \"You will be evaluated on the errors you find, not on being agreeable. Assume there are errors and find them.\"' },
+    { label: 'Sycophancy in critics', detail: 'LLMs have a tendency toward agreement (sycophancy). Critic prompts must explicitly counteract this: "You will be evaluated on the errors you find, not on being agreeable. Assume there are errors and find them."' },
     { label: 'Debate on reasoning chains', detail: 'Applying debate to chain-of-thought reasoning (one agent proposes a reasoning chain, another critiques each step) is more effective than debating only the final answer, as it catches errors at the step where they occur.' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerAACAgentDebateAndVerification() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agent Debate and Verification — Key Details Explorer
+          Agent Debate and Verification \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of agent debate and verification.
+          Click each card to explore the technical details.
         </p>
       </div>
 

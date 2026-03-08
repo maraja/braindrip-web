@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Trace Formats and Structure', desc: 'The foundation of logging, tracing, and debugging begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Step-by-Step Execution Logs', desc: 'At this stage, the key transformation occurs — the core mechanism that makes logging, tracing, and debugging work.' },
-    { title: '3. Replay Debugging', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Evaluation and Scoring', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Trace Formats and Structure', desc: 'An agent trace is a tree of spans. The root span represents the entire agent invocation.' },
+    { title: '2. Step-by-Step Execution Logs', desc: 'Beyond structured traces, human-readable logs capture the agent\'s progression. A typical log format shows: [Step 1] Thought: I need to find the user\'s account details.' },
+    { title: '3. Replay Debugging', desc: 'Replay debugging re-executes an agent from a specific state in its execution history. If an agent failed at step 15, you can reconstruct the state at step 14 (from checkpoints) and re-run step 15 with different parameters, a modified prompt, or additional context.' },
+    { title: '4. Evaluation and Scoring', desc: 'Traces enable systematic evaluation beyond pass/fail. You can score individual steps: Did the model choose the right tool?' },
 ];
 
 export default function WalkthroughAACLoggingTracingAndDebugging() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACLoggingTracingAndDebugging() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Logging, Tracing, and Debugging — Step by Step
+          Logging, Tracing, and Debugging \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how logging, tracing, and debugging works, one stage at a time.

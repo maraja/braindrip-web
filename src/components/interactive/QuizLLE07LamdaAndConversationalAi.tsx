@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE07LamdaAndConversationalAi() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Google\'s 137-billion-parameter dialogue model, trained on 1.56 trillion words of conversation data and optimized for safety, factual grounding, and conversational quality, became unexpectedly famous when a Google engineer claimed it was sentient.', isTrue: true, explanation: 'This captures the core purpose of LaMDA and Conversational AI.' },
-    { text: 'LaMDA and Conversational AI is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding LaMDA and Conversational AI is important for building on more advanced topics.' },
-    { text: 'LaMDA and Conversational AI is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding LaMDA and Conversational AI is important for building on more advanced topics.' },
+    { text: 'LaMDA was sentient or conscious.', isTrue: false, explanation: 'There is no scientific basis for this claim. LaMDA is an autoregressive language model that generates statistically likely continuations of input text.' },
+    { text: '137 billion (decoder-only Transformer)', isTrue: true, explanation: '137 billion (decoder-only Transformer)' },
+    { text: 'LaMDA was Google\'s answer to GPT-3.', isTrue: false, explanation: 'LaMDA served a different purpose. GPT-3 was a general-purpose few-shot learner; LaMDA was specifically designed for open-ended dialogue.' },
+    { text: '1.56 trillion words from Infiniset (dialogue-heavy mix)', isTrue: true, explanation: '1.56 trillion words from Infiniset (dialogue-heavy mix)' },
+    { text: 'The Lemoine incident showed AI safety research is unnecessary.', isTrue: false, explanation: 'If anything, it showed the opposite: LaMDA\'s ability to produce convincingly human-like responses demonstrated why safety research — including work on honesty, transparency, and user deception — is critical.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPElmo() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Model size: ~93.6 million parameters (modest compared to BERT-base\'s 110M).', isTrue: true, explanation: 'This is a key technical detail of ELMo.' },
-    { text: 'Pre-training data: 1B Word Benchmark (~800M tokens of news text).', isTrue: true, explanation: 'This is a key technical detail of ELMo.' },
-    { text: 'Hidden dimensions: 4,096 LSTM cells per layer, projected down to 512 dimensions; character CNN outputs 512 dimensions; concatenated forward/backward gives 1,024 per layer.', isTrue: true, explanation: 'This is a key technical detail of ELMo.' },
+    { text: 'ELMo is bidirectional in the same way as BERT.', isTrue: false, explanation: 'ELMo uses two independently trained unidirectional LSTMs (one forward, one backward) and concatenates their outputs. Each direction can only see context in one direction at each layer.' },
+    { text: '~93.6 million parameters (modest compared to BERT-base\'s 110M).', isTrue: true, explanation: '~93.6 million parameters (modest compared to BERT-base\'s 110M).' },
+    { text: 'ELMo replaces word embeddings.', isTrue: false, explanation: 'In practice, ELMo vectors are concatenated with existing static embeddings, not used as replacements. Peters et al.' },
+    { text: '1B Word Benchmark (~800M tokens of news text).', isTrue: true, explanation: '1B Word Benchmark (~800M tokens of news text).' },
+    { text: 'Only the top layer matters.', isTrue: false, explanation: 'The task-specific weighting mechanism is essential. Peters et al.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

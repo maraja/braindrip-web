@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizCVCTextToImageGeneration() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Higher resolution means better quality.', isTrue: false, explanation: '"Higher resolution means better quality." Upscaling adds detail but cannot fix compositional errors. A 1024px image with wrong spatial relationships is not better than a correct 512px image.' },
-    { text: 'Text-to-image generation synthesizes photorealistic or artistic images from natural language prompts using diffusion models guided by vision-language embeddings, with DALL-E, Stable Diffusion, and Midjourney as leading systems.', isTrue: true, explanation: 'This captures the core purpose of Text-to-Image Generation.' },
-    { text: 'Text-to-Image Generation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Text-to-Image Generation is important for building on more advanced topics.' },
+    { text: 'Text-to-image models understand language.', isTrue: false, explanation: 'They learn correlations between text patterns and visual patterns. Models still struggle with negation ("a room without chairs"), precise counting ("exactly five apples"), and complex spatial relationships ("A is to the left of B, which is behind C").' },
+    { text: 'Stable Diffusion\'s VAE compresses 512x512x3 images to 64x64x4 latents; SDXL uses 128x128x4 for 1024px images', isTrue: true, explanation: 'Stable Diffusion\'s VAE compresses 512x512x3 images to 64x64x4 latents; SDXL uses 128x128x4 for 1024px images' },
+    { text: 'Higher resolution means better quality.', isTrue: false, explanation: 'Upscaling adds detail but cannot fix compositional errors. A 1024px image with wrong spatial relationships is not better than a correct 512px image.' },
+    { text: '~4 seconds for 50-step DDPM on an A100 (Stable Diffusion 1.5); ~2 seconds with DDIM 20-step; ~8 seconds for SDXL', isTrue: true, explanation: '~4 seconds for 50-step DDPM on an A100 (Stable Diffusion 1.5); ~2 seconds with DDIM 20-step; ~8 seconds for SDXL' },
+    { text: 'These models copy training images.', isTrue: false, explanation: 'Studies show that direct memorization of training images occurs but is rare (&lt;1% of generations for Stable Diffusion). Most outputs are novel compositions that recombine learned visual concepts.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

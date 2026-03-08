@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPRecurrentNeuralNetworks() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Parameter sharing: The same W_hh, W_xh, and W_hy are used at every time step, so the number of parameters is O(d_h^2 + d_h  d_x + d_h  d_y), independent of sequence length.', isTrue: true, explanation: 'This is a key technical detail of Recurrent Neural Networks.' },
-    { text: 'Hidden state dimensions: Typical values range from 128 to 1024; Mikolov et al.', isTrue: true, explanation: 'This is a key technical detail of Recurrent Neural Networks.' },
-    { text: '(2010) used d_h = 250 for language modeling with a perplexity of approximately 124 on Penn Treebank.', isTrue: true, explanation: 'This is a key technical detail of Recurrent Neural Networks.' },
+    { text: 'RNNs have memory like a computer.', isTrue: false, explanation: 'RNN hidden states are fixed-size, continuously overwritten vectors -- more like a lossy running average than addressable storage. They cannot selectively store or retrieve specific past inputs the way long-short-term-memory.md cells can.' },
+    { text: 'The same W_hh, W_xh, and W_hy are used at every time step, so the number of parameters is O(d_h^2 + d_h  d_x + d_h  d_y), independent of sequence length.', isTrue: true, explanation: 'The same W_hh, W_xh, and W_hy are used at every time step, so the number of parameters is O(d_h^2 + d_h  d_x + d_h  d_y), independent of sequence length.' },
+    { text: 'Deeper RNNs always perform better.', isTrue: false, explanation: 'Stacking RNN layers (deep RNNs) can help, but each additional layer compounds the vanishing gradient problem. Without gating, stacking more than 2-3 layers yields diminishing returns or training instability.' },
+    { text: 'Typical values range from 128 to 1024; Mikolov et al.', isTrue: true, explanation: '(2010) used d_h = 250 for language modeling with a perplexity of approximately 124 on Penn Treebank.' },
+    { text: 'The vanishing gradient means gradients become zero.', isTrue: false, explanation: 'Vanishing gradients become exponentially small, not exactly zero. The problem is that they become indistinguishable from numerical noise, making it impossible for the optimizer to determine the direction of useful updates for long-range dependencies.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

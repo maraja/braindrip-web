@@ -6,7 +6,7 @@ const DETAILS = [
     { label: 'Action space reduction', detail: 'For catalogs of millions of items, direct RL is intractable. Practical systems use embedding-based action representations, hierarchical actions (category then item), or candidate pre-filtering.' },
     { label: 'Reward design', detail: 'Clicks alone are a poor reward (clickbait scores high). Better rewards combine dwell time, explicit ratings, repeat visits, and subscription retention. Reward shaping is critical and domain-specific.' },
     { label: 'Non-stationarity', detail: 'User preferences, item catalogs, and trends change over time. RL policies must be periodically retrained or use continual learning approaches.' },
-    { label: 'Delayed rewards', detail: 'The value of a recommendation may not be apparent for weeks (e.g., a book recommendation that builds reading habits). Long discount horizons ($\\gamma$ close to 1) are needed but make learning harder.' },
+    { label: 'Delayed rewards', detail: 'The value of a recommendation may not be apparent for weeks (e.g., a book recommendation that builds reading habits). Long discount horizons ( close to 1) are needed but make learning harder.' },
 ];
 
 export default function ExplorerRLRecommendationSystems() {
@@ -20,10 +20,10 @@ export default function ExplorerRLRecommendationSystems() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Recommendation Systems — Key Details Explorer
+          Recommendation Systems \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of recommendation systems.
+          Click each card to explore the technical details.
         </p>
       </div>
 

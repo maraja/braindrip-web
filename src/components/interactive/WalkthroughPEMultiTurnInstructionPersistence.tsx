@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Decay Curve', desc: 'The foundation of multi-turn instruction persistence begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Periodic Re-Injection', desc: 'At this stage, the key transformation occurs — the core mechanism that makes multi-turn instruction persistence work.' },
-    { title: '3. Anchor Instructions', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Summarization with Rule Preservation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Decay Curve', desc: 'Instruction adherence follows a characteristic decay pattern. For the first 5-10 turns, compliance is high (85-95% of instructions followed).' },
+    { title: '2. Periodic Re-Injection', desc: 'The most direct mitigation is to periodically re-inject critical instructions into the conversation. This can be done by appending key rules to the system prompt at regular intervals (e.g., every 10 turns) or by inserting a "system reminder" message into the conversation history.' },
+    { title: '3. Anchor Instructions', desc: 'Anchor instructions are phrases embedded in the system prompt that instruct the model to self-reinforce: "Before each response, silently review your core instructions: [list of 3-5 key rules].' },
+    { title: '4. Summarization with Rule Preservation', desc: 'For very long conversations, context window limits may force conversation summarization. When summarizing, it is critical to preserve system prompt rules within the summary.' },
 ];
 
 export default function WalkthroughPEMultiTurnInstructionPersistence() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEMultiTurnInstructionPersistence() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Multi-Turn Instruction Persistence — Step by Step
+          Multi-Turn Instruction Persistence \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how multi-turn instruction persistence works, one stage at a time.

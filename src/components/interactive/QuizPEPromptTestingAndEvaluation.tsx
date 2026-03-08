@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEPromptTestingAndEvaluation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Eval datasets should contain 50-200 test cases; below 50 results in low statistical power, above 200 has diminishing returns unless the task is highly diverse.', isTrue: true, explanation: 'This is a key technical detail of Prompt Testing and Evaluation.' },
-    { text: 'LLM-as-judge agreement with human raters: 80-85% with basic rubrics, 90%+ with calibrated examples and detailed scoring criteria.', isTrue: true, explanation: 'This is a key technical detail of Prompt Testing and Evaluation.' },
-    { text: 'Run each test case 3-5 times at production temperature to account for stochastic variation; use temperature 0 only if production uses temperature 0.', isTrue: true, explanation: 'This is a key technical detail of Prompt Testing and Evaluation.' },
+    { text: 'Manual spot-checking is good enough.', isTrue: false, explanation: 'Humans checking 5-10 examples catches obvious failures but misses systematic patterns. A team that spot-checks will miss a 10% regression in a specific input category that an automated suite catches immediately.' },
+    { text: 'Prompt evaluation uses structured test datasets, automated scoring methods, and regression testing to systematically measure prompt quality — treating prompts with the same rigor as software code.', isTrue: true, explanation: 'This captures the core definition of Prompt Testing and Evaluation.' },
+    { text: 'Prompt Testing and Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Prompt Testing and Evaluation is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

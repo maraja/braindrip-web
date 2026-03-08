@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Defining Agents with Command Returns', desc: 'The foundation of agent handoffs begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Type Hints for Safe Routing', desc: 'At this stage, the key transformation occurs — the core mechanism that makes agent handoffs work.' },
-    { title: '3. Assembling the Peer Network', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Ending the Conversation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Type Hints for Safe Routing', desc: 'The Command[Literal[...]] return type tells LangGraph which nodes this agent can hand off to. The framework validates these at compile time:' },
+    { title: '2. Assembling the Peer Network', desc: 'Notice that no explicit edges are defined between agents. The Command return type declares the possible transitions, and LangGraph infers the graph structure from the type hints.' },
+    { title: '3. Ending the Conversation', desc: 'An agent can end the workflow by routing to END:' },
 ];
 
 export default function WalkthroughLGAAgentHandoffs() {
@@ -16,10 +15,10 @@ export default function WalkthroughLGAAgentHandoffs() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agent Handoffs — Step by Step
+          Agent Handoffs \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how agent handoffs works, one stage at a time.

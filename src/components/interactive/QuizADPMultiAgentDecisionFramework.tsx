@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizADPMultiAgentDecisionFramework() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Single-agent ceiling: In practice, 70-80% of tasks that teams initially design as multi-agent can be handled by a well-designed single agent with the right model, tools, and prompts.', isTrue: true, explanation: 'This is a key technical detail of Multi-Agent Decision Framework.' },
-    { text: 'Coordination overhead target: Below 15% of total token usage.', isTrue: true, explanation: 'This is a key technical detail of Multi-Agent Decision Framework.' },
-    { text: 'Agent count guideline: Most justified multi-agent systems use 2-4 agents.', isTrue: true, explanation: 'This is a key technical detail of Multi-Agent Decision Framework.' },
+    { text: 'Multi-agent is always better for complex tasks.', isTrue: false, explanation: 'Multi-agent is better only when the task exceeds a single agent\'s structural limits (context window, tool count, parallelism needs). For tasks within those limits, a single agent is simpler, faster, cheaper, and easier to debug.' },
+    { text: 'In practice, 70-80% of tasks that teams initially design as multi-agent can be handled by a well-designed single agent with the right model, tools, and prompts.', isTrue: true, explanation: 'In practice, 70-80% of tasks that teams initially design as multi-agent can be handled by a well-designed single agent with the right model, tools, and prompts.' },
+    { text: 'More agents means more capability.', isTrue: false, explanation: 'Adding agents adds coordination overhead. Each additional agent must provide enough marginal capability to offset its coordination cost.' },
+    { text: 'Below 15% of total token usage.', isTrue: true, explanation: 'Below 15% of total token usage.' },
+    { text: 'Agents can coordinate as effectively as humans.', isTrue: false, explanation: 'LLM-based agents are poor at nuanced coordination. They misinterpret messages, lose context across handoffs, and cannot negotiate ambiguity the way human teams do.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

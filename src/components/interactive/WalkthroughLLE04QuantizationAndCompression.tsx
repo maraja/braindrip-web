@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Basics: Precision Formats', desc: 'The foundation of quantization and compression begins with understanding its core input requirements and initial setup.' },
-    { title: '2. GPTQ: Post-Training Quantization (2022)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes quantization and compression work.' },
-    { title: '3. AWQ: Activation-Aware Weight Quantization (2023)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. QLoRA: Quantization Meets Fine-Tuning (May 2023)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Modern Quantization Ecosystem', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Basics: Precision Formats', desc: 'Neural network weights are numbers, and the precision with which you store them determines both memory usage and computational accuracy:  FP32 (32-bit float): 4 bytes per parameter. Full precision, used during training.' },
+    { title: '2. GPTQ: Post-Training Quantization (2022)', desc: 'Elias Frantar and colleagues introduced GPTQ (GPT Quantization) in October 2022, building on the Optimal Brain Quantization framework. GPTQ works as a post-training method -- you take a fully trained FP16 model and quantize it without any additional training.' },
+    { title: '3. AWQ: Activation-Aware Weight Quantization (2023)', desc: 'Ji Lin and colleagues at MIT introduced AWQ in June 2023, with an insight that was elegant in its simplicity: not all weights are equally important, and the important ones can be identified by looking at activation magnitudes rather than weight magnitudes.' },
+    { title: '4. QLoRA: Quantization Meets Fine-Tuning (May 2023)', desc: 'Tim Dettmers and colleagues bridged quantization and fine-tuning with QLoRA -- a method that quantizes the base model to 4-bit precision using a novel "NormalFloat4" data type, then applies LoRA (Low-Rank Adaptation) adapters on top in higher precision.' },
+    { title: '5. The Modern Quantization Ecosystem', desc: 'By 2024-2025, quantization had matured into a rich ecosystem:  GGUF format: The community-standard format for quantized models, used by llama.cpp and its derivatives.' },
 ];
 
 export default function WalkthroughLLE04QuantizationAndCompression() {
@@ -17,10 +17,10 @@ export default function WalkthroughLLE04QuantizationAndCompression() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Quantization and Compression — Step by Step
+          Quantization and Compression \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how quantization and compression works, one stage at a time.

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Message Role Architecture', desc: 'The foundation of conversation management begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Dialogue State Tracking', desc: 'At this stage, the key transformation occurs — the core mechanism that makes conversation management work.' },
-    { title: '3. When to Summarize vs Keep Full History', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Multi-Turn Context Coherence', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Tool Output Management', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Message Role Architecture', desc: 'Modern LLM APIs structure conversations using role-based messages. Understanding and leveraging these roles is fundamental to conversation management:  System message: Sets the agent\'s behavior, personality, and constraints.' },
+    { title: '2. Dialogue State Tracking', desc: 'Beyond raw message history, conversation management maintains higher-level state:  Task state: What the user originally asked for, what has been accomplished, what remains. This is distinct from the message history; it is a summary of the conversation\'s purpose and progress.' },
+    { title: '3. When to Summarize vs Keep Full History', desc: 'The core trade-off in conversation management:  Keep full history when: The conversation is short (under 20 messages, under 10K tokens) Earlier messages contain specific details that may be referenced again (code snippets, data values, exact user phrasing) The user has corrected or refined their.' },
+    { title: '4. Multi-Turn Context Coherence', desc: 'Maintaining coherence across turns requires explicit tracking of:  Anaphora resolution: When the user says "Can you fix that?", the agent must determine what "that" refers to. This requires maintaining a reference chain from recent messages.' },
+    { title: '5. Tool Output Management', desc: 'Tool outputs are the biggest consumer of context window space in agent conversations. Management strategies:  Truncation: Cap tool output at N tokens (e.g., 1000).' },
 ];
 
 export default function WalkthroughAACConversationManagement() {
@@ -17,10 +17,10 @@ export default function WalkthroughAACConversationManagement() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Conversation Management — Step by Step
+          Conversation Management \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how conversation management works, one stage at a time.

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACInnerMonologue() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Anthropic\'s extended thinking: Uses thinking blocks that appear before the response.', isTrue: true, explanation: 'This is a key technical detail of Inner Monologue.' },
-    { text: 'Supports budgets up to 128K thinking tokens.', isTrue: true, explanation: 'This is a key technical detail of Inner Monologue.' },
-    { text: 'Thinking is included in API responses but marked as a separate content block type OpenAI\'s hidden CoT: In o1/o3 models, chain-of-thought is generated but not exposed through the API at all.', isTrue: true, explanation: 'This is a key technical detail of Inner Monologue.' },
+    { text: 'Inner monologue is just chain-of-thought that\'s hidden.', isTrue: false, explanation: 'While related, inner monologue serves additional purposes beyond reasoning: safety deliberation, uncertainty assessment, multi-step planning, and self-monitoring. It is a superset of CoT that includes strategic and safety reasoning.' },
+    { text: 'Uses thinking blocks that appear before the response.', isTrue: true, explanation: 'Supports budgets up to 128K thinking tokens. Thinking is included in API responses but marked as a separate content block type' },
+    { text: 'Users should always see the agent\'s reasoning.', isTrue: false, explanation: 'Exposing all reasoning can be overwhelming, confusing, and in some cases actively harmful (e.g., if it reveals safety bypass reasoning). The right approach is selective transparency: show high-level reasoning when it helps the user, keep detailed deliberation private.' },
+    { text: 'In o1/o3 models, chain-of-thought is generated but not exposed through the API at all.', isTrue: true, explanation: 'Users see only the final answer. Reasoning token count is reported but content is not accessible' },
+    { text: 'Hidden reasoning means the agent is being deceptive.', isTrue: false, explanation: 'Private deliberation is not deception; it is a normal part of effective communication. Humans routinely think before speaking without being considered deceptive.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

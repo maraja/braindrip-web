@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEInContextLearning() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ICL was demonstrated at scale in GPT-3 (175B parameters, Brown et al.', isTrue: true, explanation: 'This is a key technical detail of In-Context Learning.' },
-    { text: '2020) and has been replicated across all frontier model families.', isTrue: true, explanation: 'This is a key technical detail of In-Context Learning.' },
-    { text: 'The emergent threshold is roughly 1B parameters; below this, ICL is unreliable.', isTrue: true, explanation: 'This is a key technical detail of In-Context Learning.' },
+    { text: 'In-context learning teaches the model new knowledge.', isTrue: false, explanation: 'ICL does not add information to the model. It activates and steers existing capabilities acquired during pretraining.' },
+    { text: 'More examples always improve in-context learning.', isTrue: false, explanation: 'Returns are strongly diminishing. For most classification and formatting tasks, 3-8 examples capture the vast majority of ICL benefit.' },
+    { text: 'The labels in few-shot examples must be correct.', isTrue: false, explanation: 'Min et al. showed that format consistency matters more than label correctness for many tasks.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

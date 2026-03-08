@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Gaussian Pyramid', desc: 'The foundation of image pyramids and scale space begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Laplacian Pyramid', desc: 'At this stage, the key transformation occurs — the core mechanism that makes image pyramids and scale space work.' },
-    { title: '3. Scale-Space Feature Detection (SIFT)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Steerable Pyramids and Wavelets', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Gaussian Pyramid', desc: 'A Gaussian pyramid is a discrete multi-resolution representation built by repeated smooth-then-subsample steps:  Start with the original image at level 0. Convolve with a Gaussian kernel (typically  = 1.0).' },
+    { title: '2. Laplacian Pyramid', desc: 'The Laplacian pyramid stores the difference between consecutive Gaussian pyramid levels, capturing the band-pass detail lost at each downsampling step:  [equation]  where G_k is the Gaussian pyramid level k.' },
+    { title: '3. Scale-Space Feature Detection (SIFT)', desc: 'Lowe\'s SIFT (1999, 2004) builds a scale space by computing Difference-of-Gaussians (DoG) across octaves and scales:  For each octave (a factor-of-2 resolution level), compute Gaussian-blurred images at s scales per octave: , k, k^2,  where k = 2^&#123;1/s&#125;.' },
+    { title: '4. Steerable Pyramids and Wavelets', desc: 'Beyond Gaussian/Laplacian pyramids, other multi-scale decompositions exist:  Steerable pyramids (Simoncelli & Freeman, 1995): Decompose into oriented sub-bands, enabling rotation-invariant analysis. Used in texture synthesis and perceptual quality metrics.' },
 ];
 
 export default function WalkthroughCVCImagePyramidsAndScaleSpace() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCImagePyramidsAndScaleSpace() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Image Pyramids and Scale Space — Step by Step
+          Image Pyramids and Scale Space \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how image pyramids and scale space works, one stage at a time.

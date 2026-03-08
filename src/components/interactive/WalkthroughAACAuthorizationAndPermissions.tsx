@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Scope-Based Permissions', desc: 'The foundation of authorization and permissions begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Credential Management', desc: 'At this stage, the key transformation occurs — the core mechanism that makes authorization and permissions work.' },
-    { title: '3. Dynamic Access Control', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Per-Task Permission Scoping', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Scope-Based Permissions', desc: 'Rather than binary access (full access or none), permissions are scoped to specific resources and operations. OAuth 2.0 scopes provide a natural model: read:files, write:files, delete:files are separate permissions that can be granted independently.' },
+    { title: '2. Credential Management', desc: 'Agents need credentials (API keys, tokens, database passwords) to access external systems. These credentials must never be exposed to the agent\'s reasoning process -- they should be injected at the tool execution layer, invisible to the LLM.' },
+    { title: '3. Dynamic Access Control', desc: 'Some permissions should vary based on context. An agent handling a routine query might have read-only database access, but the same agent handling an approved data correction might temporarily receive write access.' },
+    { title: '4. Per-Task Permission Scoping', desc: 'Each agent task should run with the minimum permissions required for that specific task, not the union of all permissions the agent might ever need. If the current task requires only reading from the CRM and writing an email, the agent\'s database write permissions and file system access should be.' },
 ];
 
 export default function WalkthroughAACAuthorizationAndPermissions() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACAuthorizationAndPermissions() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Authorization and Permissions — Step by Step
+          Authorization and Permissions \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how authorization and permissions works, one stage at a time.

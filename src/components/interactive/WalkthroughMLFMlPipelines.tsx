@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Core Pipeline Components', desc: 'The foundation of ml pipelines begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Scikit-learn Pipeline: The Building Block', desc: 'At this stage, the key transformation occurs — the core mechanism that makes ml pipelines work.' },
-    { title: '3. DAG-Based Orchestration', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Feature Stores', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Reproducibility: The Triple Lock', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Core Pipeline Components', desc: 'A production ML pipeline typically consists of six stages:  Data Ingestion -- Pull data from databases, APIs, data lakes, or streaming sources. This stage handles schema validation and initial quality checks.' },
+    { title: '2. Scikit-learn Pipeline: The Building Block', desc: 'The simplest pipeline abstraction is scikit-learn\'s Pipeline, which chains transformers and an estimator:  This guarantees that the same preprocessing is applied during training and inference, eliminating a major source of training-serving skew.' },
+    { title: '3. DAG-Based Orchestration', desc: 'Production pipelines extend beyond a linear chain. Orchestrators represent the pipeline as a DAG where nodes execute when their upstream dependencies complete:  Apache Airflow -- General-purpose workflow orchestration.' },
+    { title: '4. Feature Stores', desc: 'A feature store is a centralized repository for feature definitions and computed feature values. It solves the dual-computation problem: features computed during training must be identically computed at serving time.' },
+    { title: '5. Reproducibility: The Triple Lock', desc: 'A reproducible pipeline versions three things:  [equation]  Data versioning (DVC, Delta Lake) ensures you can reconstruct the exact training dataset. Code versioning (Git) tracks all transformation and training logic.' },
+    { title: '6. CI/CD for ML', desc: 'Continuous Integration / Continuous Deployment adapted for ML adds: Continuous Training (CT): Automatically retrain models when new data arrives or performance degrades. Model validation gates: Automated checks (accuracy thresholds, fairness metrics, latency budgets) before deployment.' },
 ];
 
 export default function WalkthroughMLFMlPipelines() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFMlPipelines() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          ML Pipelines — Step by Step
+          ML Pipelines \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how ml pipelines works, one stage at a time.

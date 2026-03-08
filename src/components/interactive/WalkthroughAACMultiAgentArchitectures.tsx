@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Pipeline (Sequential Handoff)', desc: 'The foundation of multi-agent architectures begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Debate (Adversarial)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes multi-agent architectures work.' },
-    { title: '3. Hierarchy (Manager-Worker)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Swarm (Emergent)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Blackboard (Shared State)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Pipeline (Sequential Handoff)', desc: 'Agents process work in a fixed sequence, each receiving the output of the previous agent and producing input for the next. Agent A drafts content, Agent B reviews it, Agent C formats it, Agent D publishes it.' },
+    { title: '2. Debate (Adversarial)', desc: 'Two or more agents take opposing roles — one proposes, another critiques, and optionally a third judges. This creates a dialectic process where ideas are stress-tested before acceptance.' },
+    { title: '3. Hierarchy (Manager-Worker)', desc: 'A manager agent receives a complex task, decomposes it into subtasks, delegates each to specialist worker agents, and synthesizes their results. The hierarchy can be multi-level: a CEO agent delegates to manager agents, who delegate to worker agents.' },
+    { title: '4. Swarm (Emergent)', desc: '!Switch Transformer MoE architecture showing how inputs are routed to specialized experts Source: HuggingFace, "Mixture of Experts" blog — The Mixture of Experts routing pattern is conceptually analogous to multi-agent swarm routing: inputs are directed to specialized sub-systems based on local.' },
+    { title: '5. Blackboard (Shared State)', desc: 'All agents read from and write to a shared workspace (the "blackboard"). Each agent monitors the blackboard for information relevant to its expertise and contributes when it can.' },
 ];
 
 export default function WalkthroughAACMultiAgentArchitectures() {
@@ -17,10 +17,10 @@ export default function WalkthroughAACMultiAgentArchitectures() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Multi-Agent Architectures — Step by Step
+          Multi-Agent Architectures \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how multi-agent architectures works, one stage at a time.

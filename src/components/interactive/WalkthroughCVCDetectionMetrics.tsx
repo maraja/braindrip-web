@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Intersection over Union (IoU)', desc: 'The foundation of detection metrics begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Matching Predictions to Ground Truth', desc: 'At this stage, the key transformation occurs — the core mechanism that makes detection metrics work.' },
-    { title: '3. Precision-Recall Curve', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Average Precision (AP)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. COCO Evaluation Protocol', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Intersection over Union (IoU)', desc: 'IoU measures the spatial overlap between a predicted box B_p and a ground-truth box B_&#123;gt&#125;:  [equation]  IoU ranges from 0 (no overlap) to 1 (perfect overlap). A detection is considered a True Positive if IoU   for some threshold .' },
+    { title: '2. Matching Predictions to Ground Truth', desc: 'Sort all detections by confidence score (descending). For each detection, find the ground-truth box with highest IoU.' },
+    { title: '3. Precision-Recall Curve', desc: 'Walking through detections from highest to lowest confidence:  After each detection, update cumulative TP and FP counts. Precision_k = &#123;TP_k&#125;&#123;TP_k + FP_k&#125; Recall_k = &#123;TP_k&#125;&#123;Total Ground Truth&#125;  This generates a zigzag precision-recall curve that generally trends downward (precision drops as recall.' },
+    { title: '4. Average Precision (AP)', desc: 'AP is the area under the precision-recall curve. Two interpolation methods exist:  11-Point Interpolation (Pascal VOC 2007): Sample precision at 11 recall values \\&#123;0, 0.1, 0.2, ..., 1.0\\&#125;:  [equation]  where p_&#123;interp&#125;(r) = _&#123;r\'  r&#125; p(r\') is the maximum precision at recall  r.' },
+    { title: '5. COCO Evaluation Protocol', desc: 'COCO defines the comprehensive evaluation standard used by most modern detection papers:  Primary metric -- AP (or mAP): Averaged over 10 IoU thresholds from 0.50 to 0.95 in steps of 0.' },
+    { title: '6. Worked Example', desc: 'Consider 3 ground-truth boxes (GT1, GT2, GT3) and 5 detections sorted by confidence:  *D4 matches GT1, but GT1 was already matched by D1, so D4 is FP. At IoU threshold 0.50, AP is computed from the interpolated PR curve.' },
 ];
 
 export default function WalkthroughCVCDetectionMetrics() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCDetectionMetrics() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Detection Metrics — Step by Step
+          Detection Metrics \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how detection metrics works, one stage at a time.

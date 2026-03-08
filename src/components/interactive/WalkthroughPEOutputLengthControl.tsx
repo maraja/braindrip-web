@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Explicit Length Specifications', desc: 'The foundation of output length control begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The max_tokens Parameter', desc: 'At this stage, the key transformation occurs — the core mechanism that makes output length control work.' },
-    { title: '3. Compression Prompts', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Brevity-Completeness Trade-off', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Explicit Length Specifications', desc: 'The most effective length control uses concrete, measurable targets. "Respond in exactly 3 sentences" works far better than "be brief." Specific patterns that produce reliable results include:  Sentence count: "Answer in 2-3 sentences." Word count: "Keep your response under 100 words.' },
+    { title: '2. The max_tokens Parameter', desc: 'The max_tokens API parameter sets a hard ceiling on output length. When the model reaches this limit, generation stops immediately, potentially mid-sentence.' },
+    { title: '3. Compression Prompts', desc: 'When you need the model to fit complex information into a small space, compression prompts are more effective than simple length limits. Techniques include:  "Summarize in telegram style — omit articles and unnecessary words." "Respond as if each word costs $1.' },
+    { title: '4. The Brevity-Completeness Trade-off', desc: 'Every length constraint sacrifices some completeness. The key insight is that the relationship is not linear — the first 20% of tokens in a typical response carry roughly 80% of the information value.' },
 ];
 
 export default function WalkthroughPEOutputLengthControl() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEOutputLengthControl() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Output Length Control — Step by Step
+          Output Length Control \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how output length control works, one stage at a time.

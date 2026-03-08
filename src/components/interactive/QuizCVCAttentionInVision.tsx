@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCAttentionInVision() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Flash Attention reduces peak memory from $O(N^2)$ to $O(N)$ by computing attention in tiles and never materializing the full attention matrix.', isTrue: true, explanation: 'This is a key technical detail of Attention Mechanisms in Vision.' },
-    { text: 'It is now the standard implementation in PyTorch 2.0+.', isTrue: true, explanation: 'This is a key technical detail of Attention Mechanisms in Vision.' },
-    { text: 'Relative position biases generalize better to unseen resolutions than absolute embeddings.', isTrue: true, explanation: 'This is a key technical detail of Attention Mechanisms in Vision.' },
+    { text: 'Self-attention gives every patch global context from layer 1.', isTrue: false, explanation: 'While theoretically true, in practice early-layer attention weights are sharply peaked on local neighbors. The effective receptive field grows gradually across layers, similar to CNNs, just with a softer boundary.' },
+    { text: 'Applying self-attention to images requires careful handling of 2D spatial structure, patch size tradeoffs, and the quadratic cost of attention over thousands of visual tokens -- design choices that fundamentally shape every vision Transformer.', isTrue: true, explanation: 'This captures the core definition of Attention Mechanisms in Vision.' },
+    { text: 'Attention Mechanisms in Vision is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Attention Mechanisms in Vision is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

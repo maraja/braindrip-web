@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACLlmAsReasoningEngine() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Context window sizes (2024-2025): Claude 3.5/4 supports 200K tokens.', isTrue: true, explanation: 'This is a key technical detail of LLM as Reasoning Engine.' },
-    { text: 'GPT-4o supports 128K tokens.', isTrue: true, explanation: 'This is a key technical detail of LLM as Reasoning Engine.' },
-    { text: 'Gemini 1.5 Pro supports 1M tokens.', isTrue: true, explanation: 'This is a key technical detail of LLM as Reasoning Engine.' },
+    { text: 'The LLM understands the task the way a human does.', isTrue: false, explanation: 'LLMs process text statistically. They produce outputs that are consistent with patterns in training data.' },
+    { text: 'Claude 3.5/4 supports 200K tokens.', isTrue: true, explanation: 'GPT-4o supports 128K tokens. Gemini 1.5 Pro supports 1M tokens.' },
+    { text: 'A better LLM eliminates the need for good agent design.', isTrue: false, explanation: 'Even the most capable LLMs benefit enormously from well-designed tools, clear system prompts, and effective context management. A mediocre LLM with excellent agent design often outperforms a superior LLM with poor agent design.' },
+    { text: 'An LLM typically generates 100-500 tokens of reasoning (chain-of-thought) and 50-200 tokens of tool call per agent loop iteration.', isTrue: true, explanation: 'An LLM typically generates 100-500 tokens of reasoning (chain-of-thought) and 50-200 tokens of tool call per agent loop iteration.' },
+    { text: 'The LLM remembers previous conversations.', isTrue: false, explanation: 'The LLM is stateless. What appears to be memory is the message history being re-sent with each API call.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

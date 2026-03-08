@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Generation 1: CNN + LSTM (2015-2019)', desc: 'The foundation of image captioning begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Generation 2: Transformer-Based (2019-2022)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes image captioning work.' },
-    { title: '3. Generation 3: Unified Vision-Language Models (2022-present)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Generation 4: Multimodal LLMs (2023-present)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Generation 1: CNN + LSTM (2015-2019)', desc: 'The original "Show and Tell" approach (Vinyals et al., 2015):  Encode the image using a CNN (e.g., Inception-v3) to get a global feature vector Feed this vector as the initial hidden state of an LSTM Generate words autoregressively until an end token  Show, Attend and Tell (Xu et al.' },
+    { title: '2. Generation 2: Transformer-Based (2019-2022)', desc: 'Replacing LSTMs with Transformer decoders brought significant improvements:  OSCAR (2020): Uses object tags detected by Faster R-CNN as anchor points between vision and language, achieving 41.7 CIDEr on COCO. VinVL (2021): Improved visual features from a better object detector, reaching 140.' },
+    { title: '3. Generation 3: Unified Vision-Language Models (2022-present)', desc: 'BLIP (Salesforce, 2022): Jointly trains three objectives: image-text contrastive learning, image-text matching, and image-conditioned language modeling Uses a captioning-and-filtering (CapFilt) approach to bootstrap training data A captioner generates synthetic captions; a filter removes noisy.' },
+    { title: '4. Generation 4: Multimodal LLMs (2023-present)', desc: 'LLaVA (Large Language and Vision Assistant, 2023): Connects a CLIP ViT-L/14 image encoder to a Vicuna/LLaMA LLM via a simple linear projection Two-stage training: (1) pretraining the projection on CC3M captions, (2) instruction tuning on 158K multimodal conversations Generates detailed,.' },
 ];
 
 export default function WalkthroughCVCImageCaptioning() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCImageCaptioning() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Image Captioning — Step by Step
+          Image Captioning \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how image captioning works, one stage at a time.

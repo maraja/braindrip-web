@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEBenchmarkSaturationAndEvolution() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Benchmarks follow a predictable lifecycle from novel challenge to saturated metric, and understanding this cycle -- along with strategies to extend benchmark usefulness -- is essential for interpreting scores and planning evaluation roadmaps.', isTrue: true, explanation: 'This captures the core purpose of Benchmark Saturation and Evolution.' },
-    { text: 'Benchmark Saturation and Evolution is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Benchmark Saturation and Evolution is important for building on more advanced topics.' },
-    { text: 'Benchmark Saturation and Evolution is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Benchmark Saturation and Evolution is important for building on more advanced topics.' },
+    { text: 'A saturated benchmark means the problem is solved.', isTrue: false, explanation: 'Saturation means the benchmark no longer distinguishes between systems, not that the underlying capability is mastered. HumanEval was "solved" years before LLMs could reliably write production code.' },
+    { text: 'Live benchmarks solve the contamination problem completely.', isTrue: false, explanation: 'Live benchmarks address direct memorization but not indirect contamination from similar patterns, coding styles, or problem structures in training data. They also introduce their own challenges: difficulty calibration across refresh cycles and reduced historical comparability.' },
+    { text: 'Benchmark scores always reflect genuine capability improvements.', isTrue: false, explanation: 'Scores can improve through better prompting, scaffolding, retry strategies, and output formatting without any improvement in the underlying model\'s capability. The community increasingly distinguishes between "agent improvement" and "model improvement."' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Mention Detection', desc: 'The foundation of coreference resolution begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Approaches', desc: 'At this stage, the key transformation occurs — the core mechanism that makes coreference resolution work.' },
-    { title: '3. Higher-Order and Cluster-Level Models', desc: 'The intermediate results are processed and refined through the main pipeline.' },
+    { title: '1. Mention Detection', desc: 'The first step identifies candidate mentions -- spans of text that could refer to an entity. Common mention types:  Pronouns: he, she, it, they, his, their, etc.' },
+    { title: '2. Approaches', desc: 'Rule-Based: The Stanford Sieve System (Lee et al., 2013) applies a cascade of deterministic sieves, from highest precision to lowest:  Exact string match (highest precision). Precise constructs (appositives, predicate nominatives, acronyms).' },
+    { title: '3. Higher-Order and Cluster-Level Models', desc: 'The mention-pair approach makes independent pairwise decisions, potentially producing inconsistent clusters. Higher-order models incorporate cluster-level features -- for instance, an entity-level representation aggregated from all current cluster members -- to enforce global coherence.' },
 ];
 
 export default function WalkthroughNLPCoreferenceResolution() {
@@ -15,10 +15,10 @@ export default function WalkthroughNLPCoreferenceResolution() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Coreference Resolution — Step by Step
+          Coreference Resolution \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how coreference resolution works, one stage at a time.

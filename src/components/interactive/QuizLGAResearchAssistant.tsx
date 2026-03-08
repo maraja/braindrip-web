@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAResearchAssistant() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Tavily is used here but any search API (SerpAPI, Brave, Bing) works as a drop-in replacement via the @tool decorator.', isTrue: true, explanation: 'This is a key technical detail of Research Assistant Agent.' },
-    { text: 'The summarize tool delegates to a second LLM call; this is a common pattern for expensive sub-operations within tools.', isTrue: true, explanation: 'This is a key technical detail of Research Assistant Agent.' },
-    { text: 'format_report uses a string-based interface because tool arguments must be JSON-serializable primitives.', isTrue: true, explanation: 'This is a key technical detail of Research Assistant Agent.' },
+    { text: 'The agent always calls every tool on every turn.', isTrue: false, explanation: 'The LLM decides which tools to call based on the question. Simple follow-ups may skip searching entirely and use prior context.' },
+    { text: 'A multi-tool research agent that searches the web, synthesizes findings, and produces structured reports using create_react_agent with memory for iterative, multi-turn research sessions.', isTrue: true, explanation: 'This captures the core definition of Research Assistant Agent.' },
+    { text: 'Research Assistant Agent is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Research Assistant Agent is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

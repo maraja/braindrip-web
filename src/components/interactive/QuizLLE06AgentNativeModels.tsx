@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE06AgentNativeModels() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Agent-native models (2024-2026) represent a paradigm shift from language models designed to generate text toward models trained from the ground up for autonomous action — using tools, navigating interfaces, recovering from errors, and completing multi-step tasks in the real world.', isTrue: true, explanation: 'This captures the core purpose of Agent-Native Models: Built for Autonomy.' },
-    { text: 'Agent-Native Models: Built for Autonomy is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Agent-Native Models: Built for Autonomy is important for building on more advanced topics.' },
-    { text: 'Agent-Native Models: Built for Autonomy is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Agent-Native Models: Built for Autonomy is important for building on more advanced topics.' },
+    { text: 'Agent-native models are just LLMs with API calls.', isTrue: false, explanation: 'The integration goes deeper than post-hoc function calling. Agent-native models are trained on action-observation loops, rewarded for task completion, and evaluated on autonomous performance.' },
+    { text: 'Agents will replace human developers.', isTrue: false, explanation: 'Current agent-native models excel at well-specified tasks with clear success criteria. Ambiguous requirements, novel architectural decisions, and stakeholder communication remain deeply human.' },
+    { text: 'More autonomy is always better.', isTrue: false, explanation: 'The most effective agent systems maintain human oversight at appropriate checkpoints. Fully autonomous agents on high-stakes tasks risk compounding errors.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>
