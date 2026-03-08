@@ -79,8 +79,11 @@ export function remarkCrossReferences() {
     if (!CONCEPT_MAP || CONCEPT_MAP.size === 0) return;
 
     // Extract current course slug from file path
-    const filePath = file.history?.[0] || file.path || '';
-    const courseMatch = filePath.match(/courses\/([^/]+)\//);
+    // Normalize backslashes for cross-platform compatibility
+    const filePath = (file.history?.[0] || file.path || '').replace(/\\/g, '/');
+    // Try multiple patterns for different build environments (local, Vercel)
+    const courseMatch = filePath.match(/courses\/([^/]+)\//) ||
+                        filePath.match(/^([^/]+)\/[^/]+\/[^/]+\.mdx?$/);
     const currentCourse = courseMatch ? courseMatch[1] : null;
 
     visit(tree, 'inlineCode', (node, index, parent) => {
