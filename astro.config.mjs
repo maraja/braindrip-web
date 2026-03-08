@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import remarkMath from 'remark-math';
+import remarkSmartypants from 'remark-smartypants';
 import rehypeKatex from 'rehype-katex';
 import { remarkExtractMetadata } from './src/plugins/remark-extract-metadata.mjs';
 import { remarkCrossReferences } from './src/plugins/remark-cross-references.mjs';
@@ -19,6 +20,7 @@ export default defineConfig({
     remarkPlugins: [
       remarkExtractMetadata,
       remarkMath,
+      [remarkSmartypants, { dashes: 'oldschool' }],
       remarkCrossReferences,
     ],
     rehypePlugins: [
