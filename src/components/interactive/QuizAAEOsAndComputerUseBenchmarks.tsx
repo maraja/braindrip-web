@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEOsAndComputerUseBenchmarks() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'OS and computer use benchmarks evaluate AI agents on their ability to operate full desktop environments -- clicking, typing, navigating GUIs, and executing terminal commands -- across real operating systems.', isTrue: true, explanation: 'This captures the core purpose of OS and Computer Use Benchmarks.' },
-    { text: 'OS and Computer Use Benchmarks is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding OS and Computer Use Benchmarks is important for building on more advanced topics.' },
-    { text: 'OS and Computer Use Benchmarks is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding OS and Computer Use Benchmarks is important for building on more advanced topics.' },
+    { text: 'Surpassing the human baseline means agents are better than humans at using computers.', isTrue: false, explanation: 'The ~72% human baseline was measured under constrained conditions (unfamiliar OS, time limits, no internet search). Experienced users in their native OS would score significantly higher.' },
+    { text: 'Screenshot-only agents are the right approach because humans use vision.', isTrue: false, explanation: 'Humans also use spatial memory, peripheral vision, and thousands of hours of GUI familiarity. Agents that combine screenshots with accessibility tree data consistently outperform screenshot-only systems, suggesting pure vision is insufficient with current models.' },
+    { text: 'OS benchmarks subsume web benchmarks.', isTrue: false, explanation: 'While OS tasks include some web browsing, the evaluation methodology is different. Web benchmarks can check DOM state and database contents; OS benchmarks rely on screenshot or filesystem evaluation, which is less precise.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

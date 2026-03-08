@@ -2,8 +2,8 @@ import { useState } from 'react';
 export default function QuizCVCVideoObjectTracking() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Video object tracking localizes a target object across video frames, encompassing single-object tracking (SOT) with template matching and multi-object tracking (MOT) with detection-and-association pipelines.', isTrue: true, explanation: 'This captures the core purpose of Video Object Tracking.' },
-    { text: 'Video Object Tracking is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Video Object Tracking is important for building on more advanced topics.' },
+    { text: 'SOT and MOT are the same problem at different scales.', isTrue: false, explanation: 'They are fundamentally different. SOT is class-agnostic (track any object specified by a template) and focuses on appearance matching.' },
+    { text: 'Video object tracking localizes a target object across video frames, encompassing single-object tracking (SOT) with template matching and multi-object tracking (MOT) with detection-and-association pipelines.', isTrue: true, explanation: 'This captures the core definition of Video Object Tracking.' },
     { text: 'Video Object Tracking is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Video Object Tracking is important for building on more advanced topics.' },
   ];
   return (

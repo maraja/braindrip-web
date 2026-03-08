@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture: Character CNN + Bidirectional LSTM', desc: 'The foundation of elmo begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Task-Specific Layer Weighting', desc: 'At this stage, the key transformation occurs — the core mechanism that makes elmo work.' },
-    { title: '3. Integration with Downstream Tasks', desc: 'The intermediate results are processed and refined through the main pipeline.' },
+    { title: '1. Architecture: Character CNN + Bidirectional LSTM', desc: 'Character-Level Input. Unlike Word2Vec or GloVe, which use a fixed vocabulary of whole words, ELMo processes words through a character-level convolutional neural network.' },
+    { title: '2. Task-Specific Layer Weighting', desc: 'Instead of using only the top-layer representation, ELMo computes a task-specific weighted sum across all layers:  where s_j are softmax-normalized learned weights (one set per task), gamma is a task-specific scalar, and h_&#123;k,j&#125; is the representation at layer j for token k.' },
+    { title: '3. Integration with Downstream Tasks', desc: 'ELMo is used as a feature extractor, not fine-tuned end-to-end (though later work showed fine-tuning can help). The typical integration:  Run the pre-trained ELMo model on the input sentence to obtain contextualized vectors.' },
 ];
 
 export default function WalkthroughNLPElmo() {
@@ -15,10 +15,10 @@ export default function WalkthroughNLPElmo() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          ELMo — Step by Step
+          ELMo \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how elmo works, one stage at a time.

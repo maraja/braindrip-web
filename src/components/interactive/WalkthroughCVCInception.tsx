@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Naive Inception Module', desc: 'The foundation of inception (googlenet) begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Inception Module with Dimensionality Reduction', desc: 'At this stage, the key transformation occurs — the core mechanism that makes inception (googlenet) work.' },
-    { title: '3. GoogLeNet Architecture', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Auxiliary Classifiers', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Inception v2 and v3', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Naive Inception Module', desc: 'The basic idea applies multiple filter sizes in parallel:  The problem: if the input has 256 channels and each branch outputs 256 channels, concatenation yields 4 x 256 = 1024 channels. The 5 x 5 convolution alone on 256 input channels producing 256 output channels requires 5^2 x 256 x 256  1.' },
+    { title: '2. The Inception Module with Dimensionality Reduction', desc: 'The solution is inserting 1 x 1 convolutions before the expensive 3 x 3 and 5 x 5 branches to reduce channel depth:  The 1 x 1 convolutions (called "bottleneck" layers) reduce the channel dimension before the expensive spatial convolutions.' },
+    { title: '3. GoogLeNet Architecture', desc: 'GoogLeNet stacks 9 Inception modules in sequence:  Input: 224 x 224 x 3 Stem: Two conv layers + max pool (conventional layers to reduce resolution early). Inception 3a--3b: Two modules at 28 x 28 resolution.' },
+    { title: '4. Auxiliary Classifiers', desc: 'GoogLeNet added two auxiliary classification heads branching off intermediate layers (at Inception 4a and 4d). These compute a loss weighted at 0.3 and add it to the final loss, combating vanishing gradients in the early layers.' },
+    { title: '5. Inception v2 and v3', desc: 'refined the architecture through several principles:  Factorized convolutions: Replace 5 x 5 convolutions with two stacked 3 x 3 convolutions (same receptive field, 28% fewer parameters). Asymmetric factorization: Replace n x n convolutions with 1 x n followed by n x 1 convolutions.' },
+    { title: '6. Inception v4 and Inception-ResNet', desc: 'Inception v4 combined Inception modules with residual connections. Inception-ResNet-v2 achieved 3.1% top-5 error, showing that Inception and residual learning are complementary.' },
 ];
 
 export default function WalkthroughCVCInception() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCInception() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Inception (GoogLeNet) — Step by Step
+          Inception (GoogLeNet) \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how inception (googlenet) works, one stage at a time.

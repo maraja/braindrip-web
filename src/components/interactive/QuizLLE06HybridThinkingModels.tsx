@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE06HybridThinkingModels() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Hybrid thinking models give users the ability to toggle reasoning on and off and set thinking budgets, combining the speed of traditional LLMs with the depth of reasoning models in a single system.', isTrue: true, explanation: 'This captures the core purpose of Hybrid Thinking Models: On-Demand Reasoning.' },
-    { text: 'Hybrid Thinking Models: On-Demand Reasoning is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Hybrid Thinking Models: On-Demand Reasoning is important for building on more advanced topics.' },
-    { text: 'Hybrid Thinking Models: On-Demand Reasoning is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Hybrid Thinking Models: On-Demand Reasoning is important for building on more advanced topics.' },
+    { text: 'Hybrid models are just two models stitched together.', isTrue: false, explanation: 'They are a single model with unified weights trained to operate in multiple modes. The same parameters handle both fast and deep responses, maintaining consistent knowledge, personality, and safety behavior across modes.' },
+    { text: 'You should always enable thinking for better results.', isTrue: false, explanation: 'For simple factual queries, creative writing, or casual conversation, thinking mode can actually produce worse results by overthinking, introducing unnecessary qualifications, or wasting tokens on reasoning about questions that have straightforward answers. The skill is matching thinking depth to task complexity.' },
+    { text: 'Thinking budgets are just a rate-limiting mechanism.', isTrue: false, explanation: 'While budgets do limit cost, they also function as a signal to the model about expected depth. A model given 1,000 thinking tokens learns to reason concisely and focus on the most critical steps.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

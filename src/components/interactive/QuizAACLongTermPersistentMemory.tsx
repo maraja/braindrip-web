@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACLongTermPersistentMemory() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Embedding model dimensions: text-embedding-3-small: 1536d, text-embedding-3-large: 3072d, E5-large: 1024d.', isTrue: true, explanation: 'This is a key technical detail of Long-Term Persistent Memory.' },
-    { text: 'Higher dimensions improve retrieval accuracy at the cost of storage and compute Vector database scaling: FAISS handles millions of vectors on a single machine.', isTrue: true, explanation: 'This is a key technical detail of Long-Term Persistent Memory.' },
-    { text: 'Pinecone and Weaviate scale to billions with distributed architectures.', isTrue: true, explanation: 'This is a key technical detail of Long-Term Persistent Memory.' },
+    { text: 'Vector search always finds the right memories.', isTrue: false, explanation: 'Vector similarity is approximate. A query about "Python performance" might retrieve memories about "Monty Python performance" due to surface-level similarity.' },
+    { text: 'text-embedding-3-small: 1536d, text-embedding-3-large: 3072d, E5-large: 1024d.', isTrue: true, explanation: 'Higher dimensions improve retrieval accuracy at the cost of storage and compute' },
+    { text: 'More stored memories means a better memory system.', isTrue: false, explanation: 'Quality trumps quantity. A memory store with 1000 well-curated, deduplicated, high-relevance memories outperforms one with 100,000 noisy, redundant entries.' },
+    { text: 'FAISS handles millions of vectors on a single machine.', isTrue: true, explanation: 'Pinecone and Weaviate scale to billions with distributed architectures. For most agent use cases, thousands to millions of memories are sufficient' },
+    { text: 'Long-term memory replaces the need for good context management.', isTrue: false, explanation: 'Long-term memory supplements context management; it does not replace it. Retrieved memories still consume context window space.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

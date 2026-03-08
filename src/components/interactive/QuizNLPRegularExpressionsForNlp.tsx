@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPRegularExpressionsForNlp() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Python\'s re module uses a backtracking NFA engine, which means pathological patterns like (a+)+b on input "aaaaaaaaaaac" can exhibit exponential worst-case time (catastrophic backtracking).', isTrue: true, explanation: 'This is a key technical detail of Regular Expressions for NLP.' },
-    { text: 'The regex third-party module and RE2 (Google) use DFA-based engines that guarantee linear time.', isTrue: true, explanation: 'This is a key technical detail of Regular Expressions for NLP.' },
-    { text: 'Precompiling with re.compile() avoids re-parsing the pattern on each call, reducing overhead by 2-10x in tight loops.', isTrue: true, explanation: 'This is a key technical detail of Regular Expressions for NLP.' },
+    { text: 'Regex can parse HTML.', isTrue: false, explanation: 'Regular expressions describe regular languages (Type 3 in the Chomsky hierarchy). HTML is a context-free language (Type 2) with nested structures (&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;) that regex fundamentally cannot handle.' },
+    { text: 'More complex regex means better matching.', isTrue: false, explanation: 'Complex patterns are harder to maintain, debug, and test. In NLP pipelines, a cascade of simple patterns is almost always preferable to a single monolithic regex.' },
+    { text: 'Regex is obsolete because of neural NER.', isTrue: false, explanation: 'Neural models excel at recognizing entities in context but are overkill for deterministic patterns. Extracting US Social Security numbers (&#123;3&#125;-&#123;2&#125;-&#123;4&#125;), ISO dates, or email addresses is a regex task.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

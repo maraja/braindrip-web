@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEProcessRewardModels() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Domain-specific training data is currently necessary', isTrue: true, explanation: 'This is a key technical detail of Process Reward Models.' },
-    { text: 'Specialized models trained to score individual steps in an agent\'s trajectory, enabling automated fine-grained evaluation of reasoning and execution quality.', isTrue: true, explanation: 'This captures the core purpose of Process Reward Models.' },
-    { text: 'Process Reward Models is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Process Reward Models is important for building on more advanced topics.' },
+    { text: 'PRMs can perfectly identify good and bad steps.', isTrue: false, explanation: 'Current PRMs achieve 78-85% accuracy on step-level judgments in well-studied domains like math. In more complex agent domains, accuracy drops to 60-70%.' },
+    { text: 'PRMs eliminate the need for human evaluation.', isTrue: false, explanation: 'PRMs complement human evaluation by scaling it. The initial training data still requires human annotation, and PRM outputs should be periodically validated against human judgments to detect drift or systematic errors.' },
+    { text: 'A single PRM works across all agent tasks.', isTrue: false, explanation: 'PRMs are domain-sensitive. The features that indicate a good step in mathematical reasoning (logical validity) differ from those in web navigation (progress toward target page) or code generation (syntactic and semantic correctness).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Entropy Bonus', desc: 'The foundation of entropy regularization begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Why Policies Collapse Without It', desc: 'At this stage, the key transformation occurs — the core mechanism that makes entropy regularization work.' },
-    { title: '3. The Entropy Coefficient $\\alpha$', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Automatic Entropy Tuning', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Connection to Maximum Entropy RL', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Entropy Bonus', desc: 'For a discrete policy, the entropy is:  [equation]  For a continuous Gaussian policy _(|s) = &#123;N&#125;(_(s), _(s)^2):  [equation]  The entropy-regularized objective becomes:  [equation]  where  &gt; 0 is the entropy coefficient (also called the temperature parameter).' },
+    { title: '2. Why Policies Collapse Without It', desc: 'Policy gradient methods suffer from a positive feedback loop. Suppose action a_1 happens to receive a slightly higher return than action a_2 in some state.' },
+    { title: '3. The Entropy Coefficient $\\alpha$', desc: 'The coefficient  determines the strength of the exploration incentive:  Too small (  0): No exploration benefit. Policy collapses to deterministic behavior.' },
+    { title: '4. Automatic Entropy Tuning', desc: 'Manually tuning  is difficult because the appropriate amount of entropy changes during training (more early, less later) and varies across tasks. (2018) introduced automatic entropy adjustment in SAC by solving a dual optimization problem:  [equation]  where &#123;H&#125; is a target entropy (typically set.' },
+    { title: '5. Connection to Maximum Entropy RL', desc: 'Entropy regularization is the bridge to maximum entropy RL, a principled framework where the agent maximizes the entropy-augmented return:  [equation]  This framework leads to soft versions of the Bellman equations:  [equation]  [equation]  The optimal policy under this framework is the Boltzmann.' },
+    { title: '6. Temperature Parameter Interpretation', desc: 'The entropy coefficient  is often called the temperature by analogy with statistical mechanics. At high temperature (  ), all actions are equally likely (like molecules moving randomly at high energy).' },
 ];
 
 export default function WalkthroughRLEntropyRegularization() {
@@ -17,10 +18,10 @@ export default function WalkthroughRLEntropyRegularization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Entropy Regularization — Step by Step
+          Entropy Regularization \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how entropy regularization works, one stage at a time.

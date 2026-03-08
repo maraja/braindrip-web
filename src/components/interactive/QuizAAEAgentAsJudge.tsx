@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEAgentAsJudge() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Agent-as-Judge extends LLM-as-Judge by giving the evaluator its own tools, multi-step reasoning, and environment access to examine entire agent trajectories rather than just final outputs.', isTrue: true, explanation: 'This captures the core purpose of Agent-as-Judge.' },
-    { text: 'Agent-as-Judge is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Agent-as-Judge is important for building on more advanced topics.' },
-    { text: 'Agent-as-Judge is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Agent-as-Judge is important for building on more advanced topics.' },
+    { text: 'Agent-as-Judge is just LLM-as-Judge with a longer prompt.', isTrue: false, explanation: 'No. The fundamental difference is agentic capability: the judge can take actions in the environment, gather new information, and reason over multiple steps.' },
+    { text: 'Agent-as-Judge should replace LLM-as-Judge entirely.', isTrue: false, explanation: 'The 16x cost and 62x latency overhead make this impractical. The two approaches serve different purposes and are best used in combination: LLM-as-Judge for breadth, Agent-as-Judge for depth.' },
+    { text: 'The judge agent needs to be a more powerful model than the evaluated agent.', isTrue: false, explanation: 'Not necessarily. The judge needs appropriate tool access and well-designed evaluation criteria.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

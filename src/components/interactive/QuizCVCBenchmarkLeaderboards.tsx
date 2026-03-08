@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCBenchmarkLeaderboards() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ImageNet top-1 accuracy trajectory: 63.3% (AlexNet, 2012) -&gt; 74.9% (VGG, 2014) -&gt; 76.1% (ResNet, 2015) -&gt; 84.4% (EfficientNet-B7, 2019) -&gt; 88.5% (ViT-L, 2021) -&gt; 91.0% (CoCa, 2022).', isTrue: true, explanation: 'This is a key technical detail of Benchmark Leaderboards.' },
-    { text: 'COCO AP trajectory: 37.4% (Faster R-CNN, 2015) -&gt; 43.4% (FPN, 2017) -&gt; 50.7% (DETR, 2020) -&gt; 57.5% (DINO-DETR, 2022) -&gt; 66.0% (Co-DETR, 2023).', isTrue: true, explanation: 'This is a key technical detail of Benchmark Leaderboards.' },
-    { text: 'ADE20K mIoU: 29.4% (FCN, 2015) -&gt; 45.7% (DeepLabV3+, 2018) -&gt; 53.5% (Swin, 2021) -&gt; 62.9% (InternImage, 2023).', isTrue: true, explanation: 'This is a key technical detail of Benchmark Leaderboards.' },
+    { text: 'State-of-the-art on a leaderboard means the method is best for my task.', isTrue: false, explanation: 'Leaderboard winners use large models with expensive training. A smaller model fine-tuned on your specific domain data often outperforms them in practice.' },
+    { text: 'Benchmark leaderboards -- tracked by Papers With Code, COCO, and ImageNet evaluation servers -- standardize model comparison, drive competitive progress, and shape research priorities, but also introduce biases toward benchmark-specific optimization.', isTrue: true, explanation: 'This captures the core definition of Benchmark Leaderboards.' },
+    { text: 'Benchmark Leaderboards is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Benchmark Leaderboards is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

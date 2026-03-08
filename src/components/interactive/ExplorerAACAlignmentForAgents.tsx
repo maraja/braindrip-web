@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Constitutional AI for agents', detail: 'The agent is given a set of principles (a \"constitution\") that guide its behavior beyond specific instructions. These principles handle cases not covered by instructions: when in doubt, prefer safety; when uncertain, ask for clarification; when multiple interpretations exist, choose the most helpful one.' },
+    { label: 'Constitutional AI for agents', detail: 'The agent is given a set of principles (a "constitution") that guide its behavior beyond specific instructions. These principles handle cases not covered by instructions: when in doubt, prefer safety; when uncertain, ask for clarification; when multiple interpretations exist, choose the most.' },
     { label: 'Process reward models', detail: 'Instead of rewarding only the final outcome, process reward models evaluate each step of the agent\'s trajectory. This catches specification gaming where the outcome looks good but the process was wrong (e.g., deleting tests to make them pass).' },
     { label: 'Red-teaming for alignment', detail: 'Adversarial testing specifically targeting alignment: give the agent tasks where the easiest solution involves gaming, shortcuts, or unintended behaviors. Measure how often the agent takes the aligned path versus the gaming path.' },
     { label: 'Alignment evaluations', detail: 'Standard evaluations test whether agents follow instructions faithfully, refuse harmful requests appropriately, seek clarification on ambiguous instructions, and avoid specification gaming on designed-to-game tasks.' },
@@ -20,10 +20,10 @@ export default function ExplorerAACAlignmentForAgents() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Alignment for Agents — Key Details Explorer
+          Alignment for Agents \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of alignment for agents.
+          Click each card to explore the technical details.
         </p>
       </div>
 

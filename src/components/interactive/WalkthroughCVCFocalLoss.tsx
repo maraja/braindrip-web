@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Standard Cross-Entropy', desc: 'The foundation of focal loss begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Balanced Cross-Entropy', desc: 'At this stage, the key transformation occurs — the core mechanism that makes focal loss work.' },
-    { title: '3. Focal Loss Definition', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Effect of $\\gamma$ (Focusing Parameter)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. RetinaNet Architecture', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Standard Cross-Entropy', desc: 'For a binary classification with probability p of the correct class:  [equation]  where p_t = p if the example is positive, and p_t = 1 - p otherwise. The problem: when a background anchor is classified correctly with p_t = 0.9, the loss is -(0.9)  0.105.' },
+    { title: '2. Balanced Cross-Entropy', desc: 'A common first attempt: weight positive and negative examples by a factor _t:  [equation]  This addresses the imbalance in number of positives vs. negatives but does not distinguish between easy and hard examples.' },
+    { title: '3. Focal Loss Definition', desc: '[equation]  The modulating factor (1 - p_t)^ has two key properties: When an example is misclassified (p_t is small), the factor approaches 1, and the loss is unaffected. When an example is well-classified (p_t  1), the factor approaches 0, down-weighting the loss.' },
+    { title: '4. Effect of $\\gamma$ (Focusing Parameter)', desc: 'At  = 2 (the recommended value), an example with p_t = 0.9 has its loss reduced by a factor of 100 compared to CE. An example with p_t = 0.5 is only reduced by 4x.' },
+    { title: '5. RetinaNet Architecture', desc: 'Focal loss was introduced alongside RetinaNet, a single-stage detector designed to demonstrate that class imbalance (not architecture) was the reason single-stage detectors lagged behind two-stage ones:  Backbone: ResNet + FPN producing feature maps at 5 scales (P_3 through P_7).' },
+    { title: '6. Training Details', desc: '= 2,  = 0.25: Optimal values found by grid search on COCO val. Initialization bias: The classification subnet\'s final layer bias is initialized to b = -((1 - )/) where  = 0.01, ensuring the model starts by predicting low probability for all anchors.' },
 ];
 
 export default function WalkthroughCVCFocalLoss() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCFocalLoss() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Focal Loss — Step by Step
+          Focal Loss \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how focal loss works, one stage at a time.

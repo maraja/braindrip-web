@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAETrajectoryQualityMetrics() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Quantitative metrics that evaluate the quality of an agent\'s step-by-step execution path, not just whether it reached the goal.', isTrue: true, explanation: 'This captures the core purpose of Trajectory Quality Metrics.' },
-    { text: 'Trajectory Quality Metrics is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Trajectory Quality Metrics is important for building on more advanced topics.' },
-    { text: 'Trajectory Quality Metrics is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Trajectory Quality Metrics is important for building on more advanced topics.' },
+    { text: 'Higher SER always means a better agent.', isTrue: false, explanation: 'Not necessarily. Some tasks benefit from exploratory actions that increase step count but improve solution quality.' },
+    { text: 'Backtracking is always bad.', isTrue: false, explanation: 'Moderate backtracking is a sign of healthy self-correction. An agent that never backtracks may be blindly committed to bad plans.' },
+    { text: 'Trajectory metrics replace outcome metrics.', isTrue: false, explanation: 'They complement, not replace. An agent with beautiful trajectories that never reaches the goal is useless.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Tag Design Principles', desc: 'The foundation of xml and tag-based output begins with understanding its core input requirements and initial setup.' },
-    { title: '2. When XML Beats JSON', desc: 'At this stage, the key transformation occurs — the core mechanism that makes xml and tag-based output work.' },
-    { title: '3. Prompting for Tag-Based Output', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Parsing Strategies', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Tag Design Principles', desc: 'Effective tag-based output starts with meaningful tag names. Use descriptive, self-documenting names: &lt;reasoning&gt; instead of &lt;r&gt;, &lt;final_answer&gt; instead of &lt;a&gt;.' },
+    { title: '2. When XML Beats JSON', desc: 'XML outperforms JSON in several specific scenarios. First, nested mixed content: when the output contains paragraphs of text with inline annotations, XML handles this naturally while JSON requires awkward arrays of text fragments.' },
+    { title: '3. Prompting for Tag-Based Output', desc: 'The most reliable technique is to demonstrate the tag structure in the prompt itself. Include the tags in your system prompt or examples:  When using Claude, wrapping your input in tags like &lt;document&gt; and &lt;instructions&gt; further reinforces the XML convention.' },
+    { title: '4. Parsing Strategies', desc: 'XML-tagged LLM output is not always strictly valid XML (missing declarations, occasional unclosed tags), so use tolerant parsers. Python\'s re module with patterns like &lt;tag&gt;(.*?)&lt;/tag&gt; (with re.DOTALL) handles most cases.' },
 ];
 
 export default function WalkthroughPEXmlAndTagBasedOutput() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEXmlAndTagBasedOutput() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          XML and Tag-Based Output — Step by Step
+          XML and Tag-Based Output \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how xml and tag-based output works, one stage at a time.

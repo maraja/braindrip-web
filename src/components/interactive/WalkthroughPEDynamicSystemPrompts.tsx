@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Template-Based Assembly', desc: 'The foundation of dynamic system prompts begins with understanding its core input requirements and initial setup.' },
-    { title: '2. User Role-Based Instructions', desc: 'At this stage, the key transformation occurs — the core mechanism that makes dynamic system prompts work.' },
-    { title: '3. Feature Flags and A/B Testing', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Time-Sensitive and Contextual Injection', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Template-Based Assembly', desc: 'The most common architecture uses a template with placeholder slots that are filled at runtime. A template might look like:  Each block is a self-contained module maintained independently.' },
+    { title: '2. User Role-Based Instructions', desc: 'Different users may have different permissions, different interfaces, and different needs. A dynamic system prompt injects role-specific blocks based on the authenticated user.' },
+    { title: '3. Feature Flags and A/B Testing', desc: 'Dynamic system prompts integrate naturally with feature flag systems. A new prompt strategy can be deployed behind a feature flag, activated for a small percentage of users, and measured against the existing prompt.' },
+    { title: '4. Time-Sensitive and Contextual Injection', desc: 'Some system prompt content needs to change based on external context: the current date (for recency-aware responses), active promotions (for sales chatbots), system status (for support bots during outages), or regulatory updates (for compliance-sensitive applications).' },
 ];
 
 export default function WalkthroughPEDynamicSystemPrompts() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEDynamicSystemPrompts() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Dynamic System Prompts — Step by Step
+          Dynamic System Prompts \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how dynamic system prompts works, one stage at a time.

@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACWebNavigationAgents() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'WebArena scores (as of early 2025): best agents achieve ~35-42% task success rate using GPT-4o or Claude Sonnet with accessibility tree observation.', isTrue: true, explanation: 'This is a key technical detail of Web Navigation Agents.' },
-    { text: 'This significantly improves click accuracy Action history (the sequence of previous actions) is included in the prompt to maintain context.', isTrue: true, explanation: 'This is a key technical detail of Web Navigation Agents.' },
-    { text: 'Web navigation agents browse the web like humans -- filling forms, clicking links, navigating multi-page workflows, and extracting information -- using either screenshot-based or HTML/accessibility-tree-based approaches.', isTrue: true, explanation: 'This captures the core purpose of Web Navigation Agents.' },
+    { text: 'Web navigation agents are just web scrapers.', isTrue: false, explanation: 'Scrapers extract data from static pages. Navigation agents interact with dynamic web applications: filling forms, making selections, navigating workflows, and handling stateful multi-page processes.' },
+    { text: 'best agents achieve ~35-42% task success rate using GPT-4o or Claude Sonnet with accessibility tree observation.', isTrue: true, explanation: 'Human performance is ~78% (not 100% due to ambiguous task descriptions)' },
+    { text: '[button] Submit Order [id=42], [input] Email Address [id=17] [value=""], reducing a complex HTML page to 500-2,000 tokens of structured element descriptions', isTrue: true, explanation: '[button] Submit Order [id=42], [input] Email Address [id=17] [value=""], reducing a complex HTML page to 500-2,000 tokens of structured element descriptions' },
+    { text: 'last 5-10 actions with their observations', isTrue: true, explanation: 'last 5-10 actions with their observations' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

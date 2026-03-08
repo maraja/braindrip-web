@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFFeatureScalingAndNormalization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Standardization does not make data Gaussian.', isTrue: true, explanation: 'This is a key technical detail of Feature Scaling and Normalization.' },
-    { text: 'It shifts the mean to zero and scales variance to one, but the shape of the distribution is unchanged.', isTrue: true, explanation: 'This is a key technical detail of Feature Scaling and Normalization.' },
-    { text: 'If normality is required, use Box-Cox or Yeo-Johnson.', isTrue: true, explanation: 'This is a key technical detail of Feature Scaling and Normalization.' },
+    { text: 'Normalization and standardization are the same thing.', isTrue: false, explanation: 'Normalization typically refers to min-max scaling (mapping to [0,1]), while standardization refers to z-score scaling (zero mean, unit variance). The terms are often used loosely, so always clarify.' },
+    { text: 'Do not scale binary (0/1) columns.', isTrue: true, explanation: 'They are already on a natural scale, and standardization shifts them off the \\&#123;0, 1\\&#125; support.' },
+    { text: 'For regression, scaling the target can improve training stability.', isTrue: true, explanation: 'Predictions must be inverse-transformed before evaluation.' },
+    { text: 'Use sklearn.pipeline.Pipeline to bundle scaling with the model.', isTrue: true, explanation: 'This ensures correct fit/transform behavior during cross-validation.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

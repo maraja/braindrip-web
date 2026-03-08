@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Reinforcement Learning on Chain-of-Thought', desc: 'The foundation of openai o1: trained reasoning begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Hidden Chain-of-Thought', desc: 'At this stage, the key transformation occurs — the core mechanism that makes openai o1: trained reasoning work.' },
-    { title: '3. Inference-Time Compute Scaling', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Deliberative Alignment', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Reinforcement Learning on Chain-of-Thought', desc: 'Unlike previous models fine-tuned with RLHF on human preferences for helpfulness and harmlessness, o1 was trained with reinforcement learning specifically to produce effective reasoning chains.' },
+    { title: '2. Hidden Chain-of-Thought', desc: 'When o1 receives a query, it generates an internal chain-of-thought before producing a visible response. This hidden reasoning can span hundreds or thousands of tokens.' },
+    { title: '3. Inference-Time Compute Scaling', desc: 'The core insight behind o1 is that performance improves as the model is allowed to "think" longer. Given a harder problem, o1 will naturally produce a longer internal chain-of-thought, using more tokens and more compute.' },
+    { title: '4. Deliberative Alignment', desc: 'o1 introduced "deliberative alignment," where the model actively reasons about its safety policies during its hidden chain-of-thought. Rather than relying solely on trained instincts to refuse harmful requests, o1 can think through whether a request violates its guidelines, consider edge cases, and.' },
 ];
 
 export default function WalkthroughLLE01OpenaiO1() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE01OpenaiO1() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          OpenAI o1: Trained Reasoning — Step by Step
+          OpenAI o1: Trained Reasoning \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how openai o1: trained reasoning works, one stage at a time.

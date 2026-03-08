@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFKernelMethods() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Kernel hyperparameters: The RBF bandwidth $\\gamma$ and the SVM regularization $C$ are typically tuned jointly via grid search with cross-validation.', isTrue: true, explanation: 'This is a key technical detail of Kernel Methods.' },
-    { text: 'Feature scaling: Critical for RBF and polynomial kernels, since the kernel value depends on distances or inner products.', isTrue: true, explanation: 'This is a key technical detail of Kernel Methods.' },
-    { text: 'String and graph kernels: Kernels can be defined on non-vectorial data (sequences, trees, graphs), extending SVM-style methods to structured data.', isTrue: true, explanation: 'This is a key technical detail of Kernel Methods.' },
+    { text: 'You need to choose the right feature mapping.', isTrue: false, explanation: 'The whole point of the kernel trick is that you never need to define  explicitly. You choose a kernel, and the feature mapping is implicit.' },
+    { text: 'The RBF bandwidth  and the SVM regularization C are typically tuned jointly via grid search with cross-validation.', isTrue: true, explanation: 'The RBF bandwidth  and the SVM regularization C are typically tuned jointly via grid search with cross-validation.' },
+    { text: 'Critical for RBF and polynomial kernels, since the kernel value depends on distances or inner products.', isTrue: true, explanation: 'Critical for RBF and polynomial kernels, since the kernel value depends on distances or inner products.' },
+    { text: 'Kernels can be defined on non-vectorial data (sequences, trees, graphs), extending SVM-style methods to structured data.', isTrue: true, explanation: 'Kernels can be defined on non-vectorial data (sequences, trees, graphs), extending SVM-style methods to structured data.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

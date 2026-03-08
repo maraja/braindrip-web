@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEContextCachingAndPrefixReuse() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Anthropic\'s prompt caching provides up to 90% cost reduction on cached tokens, with a 5-minute TTL extended by cache hits.', isTrue: true, explanation: 'This is a key technical detail of Context Caching and Prefix Reuse.' },
-    { text: 'OpenAI\'s automatic caching activates for prompts over 1,024 tokens, providing 50% cost reduction on cached tokens.', isTrue: true, explanation: 'This is a key technical detail of Context Caching and Prefix Reuse.' },
-    { text: 'Caching is prefix-based: any change in the prefix invalidates the cache from the point of change forward.', isTrue: true, explanation: 'This is a key technical detail of Context Caching and Prefix Reuse.' },
+    { text: 'Caching requires code changes.', isTrue: false, explanation: 'OpenAI\'s caching is automatic — no code changes needed. Anthropic and Google require explicit cache control, but the implementation is minimal (adding cache markers to existing message structures).' },
+    { text: 'any change in the prefix invalidates the cache from the point of change forward.', isTrue: true, explanation: 'Design for stable prefixes.' },
+    { text: 'track (cached_token_reads / total_prefix_tokens) to measure effectiveness.', isTrue: true, explanation: 'Target &gt;80% for high-traffic applications.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

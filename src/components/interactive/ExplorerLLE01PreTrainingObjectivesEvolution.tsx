@@ -1,12 +1,8 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'CLM', detail: 'Used by GPT series, LLaMA, Mistral, DeepSeek. Trains on 100% of tokens autoregressively.' },
-    { label: 'MLM', detail: 'BERT (2018), RoBERTa (2019). Masks 15% of tokens, bidirectional. Dominated NLU benchmarks 2018-2020.' },
     { label: 'Span Corruption', detail: 'T5 (2020). Mean span length 3, corrupts 15% of tokens. More efficient than MLM.' },
-    { label: 'ELECTRA', detail: '2020. Replaced token detection on 100% of tokens. BERT-level results with 25% compute.' },
-    { label: 'FIM', detail: 'Used by Codex (2021), StarCoder (2023), Code Llama (2023). Critical for code infilling.' },
-    { label: 'MTP', detail: 'Meta (2024). Predicts 4 future tokens simultaneously. Used in DeepSeek V3 (2024).' },
+    { label: 'ELECTRA', detail: 'Replaced token detection on 100% of tokens. BERT-level results with 25% compute.' },
 ];
 
 export default function ExplorerLLE01PreTrainingObjectivesEvolution() {
@@ -20,10 +16,10 @@ export default function ExplorerLLE01PreTrainingObjectivesEvolution() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Pre-Training Objectives Evolution — Key Details Explorer
+          Pre-Training Objectives Evolution \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of pre-training objectives evolution.
+          Click each card to explore the technical details.
         </p>
       </div>
 

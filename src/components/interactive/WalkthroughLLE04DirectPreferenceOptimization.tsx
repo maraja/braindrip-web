@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Key Mathematical Insight', desc: 'The foundation of direct preference optimization (dpo) begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The DPO Loss Function', desc: 'At this stage, the key transformation occurs — the core mechanism that makes direct preference optimization (dpo) work.' },
-    { title: '3. Training Procedure', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Hyperparameters and Stability', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Key Mathematical Insight', desc: 'The standard RLHF objective maximizes expected reward while staying close to a reference policy (using a KL divergence penalty). showed that the optimal policy for this objective has a closed-form solution: the optimal policy pi* is proportional to the reference policy pi_ref multiplied by the.' },
+    { title: '2. The DPO Loss Function', desc: 'The resulting loss function is strikingly simple. For each preference pair (prompt x, preferred response y_w, dispreferred response y_l), the DPO loss is:  L_DPO = -log(sigma(beta * (log pi(y_wx))))  where sigma is the sigmoid function, beta is a temperature parameter controlling how much the.' },
+    { title: '3. Training Procedure', desc: 'The DPO training pipeline is:  Supervised fine-tuning (SFT): Same as RLHF — train the base model on instruction-following demonstrations. This produces the reference model pi_ref.' },
+    { title: '4. Hyperparameters and Stability', desc: 'DPO has essentially one key hyperparameter: beta, which controls the strength of the KL constraint. Higher beta means the model stays closer to the reference policy; lower beta allows more deviation.' },
 ];
 
 export default function WalkthroughLLE04DirectPreferenceOptimization() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE04DirectPreferenceOptimization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Direct Preference Optimization (DPO) — Step by Step
+          Direct Preference Optimization (DPO) \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how direct preference optimization (dpo) works, one stage at a time.

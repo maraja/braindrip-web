@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Traditional Approaches', desc: 'The foundation of text classification begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Neural Approaches', desc: 'At this stage, the key transformation occurs — the core mechanism that makes text classification work.' },
-    { title: '3. Multi-Label and Hierarchical Classification', desc: 'The intermediate results are processed and refined through the main pipeline.' },
+    { title: '1. Traditional Approaches', desc: 'Naive Bayes applies Bayes\' theorem with a conditional independence assumption over features. Given a document d and class c:  [equation]  Despite its simplifying assumption, Multinomial Naive Bayes trained on TF-IDF features achieves roughly 88--90% accuracy on standard topic classification.' },
+    { title: '2. Neural Approaches', desc: 'Convolutional Neural Networks (CNNs): Kim (2014) showed that a single-layer CNN with multiple filter widths (3, 4, 5) over pre-trained word embeddings achieves strong results on sentence classification.' },
+    { title: '3. Multi-Label and Hierarchical Classification', desc: 'In multi-label settings, each label receives an independent sigmoid output rather than a shared softmax, so multiple labels can be active simultaneously. Hierarchical classification introduces a label taxonomy (e.g.' },
 ];
 
 export default function WalkthroughNLPTextClassification() {
@@ -15,10 +15,10 @@ export default function WalkthroughNLPTextClassification() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Text Classification — Step by Step
+          Text Classification \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how text classification works, one stage at a time.

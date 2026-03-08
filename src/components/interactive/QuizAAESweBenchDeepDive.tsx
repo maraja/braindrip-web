@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAESweBenchDeepDive() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'SWE-bench is the dominant benchmark for evaluating coding agents on real-world software engineering tasks derived from GitHub issues and pull requests.', isTrue: true, explanation: 'This captures the core purpose of SWE-bench Deep Dive.' },
-    { text: 'SWE-bench Deep Dive is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding SWE-bench Deep Dive is important for building on more advanced topics.' },
-    { text: 'SWE-bench Deep Dive is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding SWE-bench Deep Dive is important for building on more advanced topics.' },
+    { text: 'A 79% SWE-bench Verified score means the agent can resolve 79% of real bugs.', isTrue: false, explanation: 'SWE-bench tasks are pre-filtered to have clear issue descriptions and verifiable test suites. Real-world issues are often vague, underspecified, or lack test coverage.' },
+    { text: 'Higher SWE-bench scores always mean a better coding agent.', isTrue: false, explanation: 'Score improvements can come from better scaffolding (retries, test feedback loops, multi-agent architectures) rather than better code understanding. Two agents with the same score may have very different failure modes and cost profiles.' },
+    { text: 'SWE-bench is Python-only, so it does not matter for other languages.', isTrue: false, explanation: 'While the tasks are Python, the cognitive skills tested -- codebase navigation, debugging, patch generation -- transfer. Language-specific benchmarks like Aider\'s polyglot tests complement SWE-bench but do not replace it.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

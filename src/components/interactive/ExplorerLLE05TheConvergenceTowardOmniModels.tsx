@@ -5,7 +5,7 @@ const DETAILS = [
     { label: 'CLIP', detail: '(Jan 2021): Shared vision-text embedding. 400M image-text pairs. Zero-shot classification.' },
     { label: 'Flamingo-80B', detail: '(Apr 2022): Visual tokens in frozen LLM. Adapter paradigm established.' },
     { label: 'Gemini 1.0 Ultra', detail: '(Dec 2023): First natively multimodal frontier model. Text + image + audio + video.' },
-    { label: 'GPT-4o', detail: '(May 2024): \"Omni\" model. Text + vision + audio. 232ms voice latency.' },
+    { label: 'GPT-4o', detail: '(May 2024): "Omni" model. Text + vision + audio. 232ms voice latency.' },
     { label: 'Gemini 1.5 Pro', detail: '(Feb 2024): 1M token context. 1 hour video, 11 hours audio.' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerLLE05TheConvergenceTowardOmniModels() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The Convergence Toward Omni-Models — Key Details Explorer
+          The Convergence Toward Omni-Models \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of the convergence toward omni-models.
+          Click each card to explore the technical details.
         </p>
       </div>
 

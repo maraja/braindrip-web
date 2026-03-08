@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACDeepResearchAgents() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Deep research agents perform multi-step investigation by iteratively searching, reading, extracting, synthesizing, identifying gaps, and refining -- producing comprehensive reports that would take a human researcher hours or days.', isTrue: true, explanation: 'This captures the core purpose of Deep Research Agents.' },
-    { text: 'Deep Research Agents is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Deep Research Agents is important for building on more advanced topics.' },
-    { text: 'Deep Research Agents is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Deep Research Agents is important for building on more advanced topics.' },
+    { text: 'Deep research agents just search and summarize.', isTrue: false, explanation: 'The critical difference is iteration: identifying gaps in the current synthesis and performing targeted follow-up research. A single search-summarize pass is RAG; iterative gap-filling is deep research.' },
+    { text: 'top deep research agents issue 20-100 search queries per research task, reading 30-200 documents before synthesizing', isTrue: true, explanation: 'top deep research agents issue 20-100 search queries per research task, reading 30-200 documents before synthesizing' },
+    { text: 'OpenAI\'s Deep Research spends 5-30 minutes per query; Gemini\'s Deep Research takes similar time.', isTrue: true, explanation: 'The time is dominated by sequential search-read cycles, each requiring LLM processing' },
+    { text: 'a deep research task may consume 500K-2M tokens across all LLM calls (search query generation, document reading, extraction, synthesis), costing 1.50-30 depending on model', isTrue: true, explanation: 'a deep research task may consume 500K-2M tokens across all LLM calls (search query generation, document reading, extraction, synthesis), costing 1.50-30 depending on model' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

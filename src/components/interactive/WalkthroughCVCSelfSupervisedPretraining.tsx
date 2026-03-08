@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Contrastive Learning', desc: 'The foundation of self-supervised pretraining begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Non-Contrastive Methods', desc: 'At this stage, the key transformation occurs — the core mechanism that makes self-supervised pretraining work.' },
-    { title: '3. Masked Image Modeling', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Augmentation Strategy Matters', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Contrastive Learning', desc: 'Contrastive methods learn by pulling together representations of different views of the same image (positive pairs) and pushing apart representations of different images (negative pairs). SimCLR (Chen et al., 2020): For each image in a batch of N, create two augmented views.' },
+    { title: '2. Non-Contrastive Methods', desc: 'These methods avoid the need for negative pairs entirely, preventing the representation from collapsing to a constant through architectural or algorithmic design. BYOL (Grill et al., 2020): Uses an online network and a target network (momentum-updated).' },
+    { title: '3. Masked Image Modeling', desc: 'Inspired by BERT\'s masked language modeling, these methods mask portions of the input image and train the model to reconstruct them. MAE (He et al., 2022): Masks 75% of image patches and trains a ViT encoder-decoder to reconstruct the raw pixels of the masked patches.' },
+    { title: '4. Augmentation Strategy Matters', desc: 'For contrastive methods, the augmentation pipeline is the learning signal. SimCLR found that random cropping combined with color jitter was essential -- removing either degraded performance by 5-10%.' },
 ];
 
 export default function WalkthroughCVCSelfSupervisedPretraining() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCSelfSupervisedPretraining() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Self-Supervised Pretraining — Step by Step
+          Self-Supervised Pretraining \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how self-supervised pretraining works, one stage at a time.

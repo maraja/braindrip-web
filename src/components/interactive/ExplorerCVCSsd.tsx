@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'SSD-300 (VGG-16)', detail: '74.3% mAP on VOC 2007, 59 FPS on Titan X GPU. 23.2% AP on COCO.' },
-    { label: 'SSD-512 (VGG-16)', detail: '76.8% mAP on VOC 2007, 22 FPS. 26.8% AP on COCO.' },
-    { label: 'Small object weakness', detail: 'SSD-300 achieves only ~6% AP_S on COCO, because the lowest feature map ($38 \\times 38$) has already lost fine spatial detail. SSD-512 partially mitigates this with higher resolution.' },
+    { label: 'SSD-300 (VGG-16)', detail: '3% mAP on VOC 2007, 59 FPS on Titan X GPU. 23.2% AP on COCO.' },
+    { label: 'SSD-512 (VGG-16)', detail: '8% mAP on VOC 2007, 22 FPS. 26.8% AP on COCO.' },
+    { label: 'Small object weakness', detail: 'SSD-300 achieves only ~6% AP_S on COCO, because the lowest feature map (38 x 38) has already lost fine spatial detail. SSD-512 partially mitigates this with higher resolution.' },
     { label: 'L2 normalization', detail: 'on Conv4_3 features is necessary because their magnitudes are ~10-20x larger than deeper layers.' },
     { label: 'Inference', detail: 'No proposal stage needed. A single forward pass produces all detections; NMS is applied per-class as a post-processing step.' },
     { label: 'Model size', detail: '~26M parameters (VGG-16 backbone dominates), ~95 MB.' },
@@ -20,10 +20,10 @@ export default function ExplorerCVCSsd() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          SSD (Single Shot MultiBox Detector) — Key Details Explorer
+          SSD (Single Shot MultiBox Detector) \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of ssd (single shot multibox detector).
+          Click each card to explore the technical details.
         </p>
       </div>
 

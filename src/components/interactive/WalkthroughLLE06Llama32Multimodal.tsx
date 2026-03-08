@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Vision Architecture', desc: 'The foundation of llama 3.2: multimodal and edge models begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Image Understanding Capabilities', desc: 'At this stage, the key transformation occurs — the core mechanism that makes llama 3.2: multimodal and edge models work.' },
-    { title: '3. The Tiny Text Models', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. LLaMA 3.3: The Efficient Frontier', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Vision Architecture', desc: 'The multimodal models (11B and 90B) used a vision adapter architecture rather than training from scratch as a natively multimodal model. The approach involved three components: a pre-trained image encoder based on a SigLIP-style architecture (a contrastive vision-language model), cross-attention.' },
+    { title: '2. Image Understanding Capabilities', desc: 'The vision models could handle a range of visual tasks: document understanding (reading and reasoning about PDFs, invoices, and forms), chart and graph interpretation (extracting data points, identifying trends, comparing values), image captioning and description, visual question answering, and.' },
+    { title: '3. The Tiny Text Models', desc: 'The 1B and 3B text-only models were a different bet entirely. These were not scaled-down versions of the larger models but purpose-built for on-device deployment.' },
+    { title: '4. LLaMA 3.3: The Efficient Frontier', desc: 'In December 2024, Meta released LLaMA 3.3 — a 70B parameter model that achieved performance matching the 405B LLaMA 3.1 on most benchmarks. At roughly 43GB in quantized form (compared to hundreds of GB for the 405B), this made frontier-competitive performance accessible on a single high-end GPU.' },
 ];
 
 export default function WalkthroughLLE06Llama32Multimodal() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE06Llama32Multimodal() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          LLaMA 3.2: Multimodal and Edge Models — Step by Step
+          LLaMA 3.2: Multimodal and Edge Models \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how llama 3.2: multimodal and edge models works, one stage at a time.

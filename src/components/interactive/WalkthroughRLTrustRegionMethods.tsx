@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Monotonic Improvement Theory', desc: 'The foundation of trust region methods begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The TRPO Optimization Problem', desc: 'At this stage, the key transformation occurs — the core mechanism that makes trust region methods work.' },
-    { title: '3. Conjugate Gradient Implementation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Natural Policy Gradients', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Monotonic Improvement Theory', desc: 'Kakade & Langford (2002) established that the performance difference between two policies  and &#123;&#125; can be expressed exactly as:  [equation]  where d^&#123;&#123;&#125;&#125; is the state visitation distribution under the new policy &#123;&#125;. The problem is that we cannot sample from d^&#123;&#123;&#125;&#125; before actually deploying &#123;&#125;.' },
+    { title: '2. The TRPO Optimization Problem', desc: 'TRPO (Trust Region Policy Optimization) replaces the penalty with a hard constraint:  [equation]  [equation]  The constraint  defines the trust region size (typically  = 0.01). The ratio &#123;_(as)&#125; is called the importance sampling ratio r_t().' },
+    { title: '3. Conjugate Gradient Implementation', desc: 'Directly solving this constrained optimization with the Hessian of the KL divergence is prohibitively expensive for neural network policies (the Hessian has ^2 entries).' },
+    { title: '4. Natural Policy Gradients', desc: 'The natural gradient is the steepest ascent direction in the space of probability distributions (as opposed to parameter space). It is computed as:  [equation]  The Fisher information matrix F acts as a preconditioner that accounts for the geometry of the policy\'s distribution space.' },
 ];
 
 export default function WalkthroughRLTrustRegionMethods() {
@@ -16,10 +16,10 @@ export default function WalkthroughRLTrustRegionMethods() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Trust Region Methods — Step by Step
+          Trust Region Methods \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how trust region methods works, one stage at a time.

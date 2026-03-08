@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Camera Model', desc: 'The foundation of multi-view geometry begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Epipolar Geometry', desc: 'At this stage, the key transformation occurs — the core mechanism that makes multi-view geometry work.' },
-    { title: '3. The 8-Point Algorithm', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Triangulation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Structure from Motion (SfM)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Camera Model', desc: 'A pinhole camera projects a 3D world point X = (X, Y, Z, 1)^T (homogeneous) to a 2D image point x = (u, v, 1)^T via:  [equation]  where K is the 3 x 3 intrinsic matrix (focal lengths f_x, f_y, principal point c_x, c_y), R is the 3 x 3 rotation, t is the translation, and P is the 3 x 4 projection.' },
+    { title: '2. Epipolar Geometry', desc: 'For two cameras observing the same scene, epipolar geometry constrains the relationship between corresponding points. If x and x\' are corresponding points in images 1 and 2:  [equation]  where F is the 3 x 3 fundamental matrix (rank 2, 7 degrees of freedom).' },
+    { title: '3. The 8-Point Algorithm', desc: 'The fundamental matrix is estimated from point correspondences using the 8-point algorithm (Longuet-Higgins, 1981; Hartley\'s normalized version, 1997):  Normalize: Translate and scale points so their centroid is at the origin and average distance from origin is &#123;2&#125;.' },
+    { title: '4. Triangulation', desc: 'Given correspondences and known cameras (P, P\'), triangulation recovers the 3D point. Each correspondence provides two equations per view.' },
+    { title: '5. Structure from Motion (SfM)', desc: 'SfM recovers both 3D structure and camera poses from unordered images:  Extract and match features (SIFT, SuperPoint + SuperGlue). Estimate pairwise F or E matrices with RANSAC.' },
+    { title: '6. Homography', desc: 'When all points lie on a plane (or the camera undergoes pure rotation), the mapping between views is a homography H (a 3 x 3 invertible matrix with 8 DoF):  [equation]  Estimated from 4+ correspondences via DLT. Used in panorama stitching, planar AR, and as a degeneracy check in SfM.' },
 ];
 
 export default function WalkthroughCVCMultiViewGeometry() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCMultiViewGeometry() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Multi-View Geometry — Step by Step
+          Multi-View Geometry \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how multi-view geometry works, one stage at a time.

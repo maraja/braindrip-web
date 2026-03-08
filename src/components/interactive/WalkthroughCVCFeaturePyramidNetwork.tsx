@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Bottom-Up Pathway', desc: 'The foundation of feature pyramid network begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Top-Down Pathway and Lateral Connections', desc: 'At this stage, the key transformation occurs — the core mechanism that makes feature pyramid network work.' },
-    { title: '3. Scale Assignment', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Integration with Detectors', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Bottom-Up Pathway', desc: 'A standard backbone (e.g., ResNet) naturally produces a feature pyramid through its stages. For ResNet, we use the output of each residual block group:  C_2: stride 4, 1/4 spatial resolution C_3: stride 8, 1/8 spatial resolution C_4: stride 16, 1/16 spatial resolution C_5: stride 32, 1/32 spatial.' },
+    { title: '2. Top-Down Pathway and Lateral Connections', desc: 'Starting from the coarsest level:  P_5 = Conv_&#123;1 x 1&#125;(C_5) -- reduce C_5 to d channels (typically d = 256). P_4 = Conv_&#123;1 x 1&#125;(C_4) + Upsample_&#123;2x&#125;(P_5) -- element-wise addition.' },
+    { title: '3. Scale Assignment', desc: 'Objects are assigned to pyramid levels based on their area:  [equation]  where l_0 = 4 is the canonical level for an object of area 224^2. Small objects go to finer levels (P_2, P_3), large objects to coarser levels (P_4, P_5).' },
+    { title: '4. Integration with Detectors', desc: 'FPN serves as a drop-in feature extractor. Each pyramid level independently feeds: Faster R-CNN: RPN anchors and RoI heads operate on the assigned level.' },
 ];
 
 export default function WalkthroughCVCFeaturePyramidNetwork() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCFeaturePyramidNetwork() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Feature Pyramid Network — Step by Step
+          Feature Pyramid Network \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how feature pyramid network works, one stage at a time.

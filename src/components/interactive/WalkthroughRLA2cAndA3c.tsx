@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. A3C Architecture', desc: 'The foundation of a2c and a3c begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Why Parallelism Helps: Decorrelation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes a2c and a3c work.' },
-    { title: '3. A2C: The Synchronous Alternative', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Loss Function Components', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. GPU vs. CPU Trade-offs', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. A3C Architecture', desc: 'Each of N workers (typically 16-32) runs the following loop independently:  Sync local parameters \'   from the global network. Collect n-step trajectory (s_t, a_t, r_t, , s_&#123;t+n&#125;) using _&#123;\'&#125;.' },
+    { title: '2. Why Parallelism Helps: Decorrelation', desc: 'The fundamental benefit is data decorrelation. A single agent\'s trajectory is temporally correlated: state s_&#123;t+1&#125; depends on state s_t.' },
+    { title: '3. A2C: The Synchronous Alternative', desc: 'A2C simplifies A3C by synchronizing all workers:  All N workers collect n-step trajectories in parallel. Wait for all workers to finish (synchronization barrier).' },
+    { title: '4. Loss Function Components', desc: 'The total loss combines three terms with balancing coefficients:  [equation]  Standard coefficients from Mnih et al. (2016): c_1 = 0.5, c_2 = 0.01.' },
+    { title: '5. GPU vs. CPU Trade-offs', desc: 'A3C was originally designed for CPU execution -- each worker runs on its own CPU thread with a lightweight copy of the environment. Asynchronous updates are CPU-friendly because workers never wait.' },
 ];
 
 export default function WalkthroughRLA2cAndA3c() {
@@ -17,10 +17,10 @@ export default function WalkthroughRLA2cAndA3c() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          A2C and A3C — Step by Step
+          A2C and A3C \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how a2c and a3c works, one stage at a time.

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizCVCGroundingDino() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: '(period); the model tokenizes and matches spans.', isTrue: true, explanation: 'This is a key technical detail of Grounding DINO.' },
-    { text: 'Grounding DINO combines the DINO detection Transformer with grounded language pretraining to perform open-set object detection, localizing objects in images from arbitrary text descriptions without being limited to predefined categories.', isTrue: true, explanation: 'This captures the core purpose of Grounding DINO.' },
-    { text: 'Grounding DINO is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Grounding DINO is important for building on more advanced topics.' },
+    { text: 'Grounding DINO uses CLIP for text encoding.', isTrue: false, explanation: 'It uses BERT, not CLIP. The text features are trained from scratch within the detection framework rather than borrowing from a frozen vision-language model.' },
+    { text: '52.5 AP (Swin-L backbone) without any COCO training data; with COCO fine-tuning: 63.0 AP', isTrue: true, explanation: '52.5 AP (Swin-L backbone) without any COCO training data; with COCO fine-tuning: 63.0 AP' },
+    { text: 'It can only detect noun phrases.', isTrue: false, explanation: 'Grounding DINO can ground referring expressions that include attributes, relationships, and context ("the tallest building in the background"). However, performance degrades for highly complex or abstract descriptions.' },
+    { text: 'Achieves strong results on rare categories, though exact numbers vary by evaluation protocol', isTrue: true, explanation: 'Achieves strong results on rare categories, though exact numbers vary by evaluation protocol' },
+    { text: 'Zero-shot means it works perfectly on any category.', isTrue: false, explanation: 'Performance on fine-grained or domain-specific categories (e.g., "Honda Civic vs Toyota Corolla") is significantly weaker than on common objects. The model generalizes best for categories well-represented in its training data\'s text distribution.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

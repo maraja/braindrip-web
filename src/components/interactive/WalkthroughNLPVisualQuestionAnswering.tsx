@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Task Formulation', desc: 'The foundation of visual question answering begins with understanding its core input requirements and initial setup.' },
-    { title: '2. VQA Datasets', desc: 'At this stage, the key transformation occurs — the core mechanism that makes visual question answering work.' },
-    { title: '3. Approaches', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Language Bias Problem', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Task Formulation', desc: 'VQA is most commonly formulated as a multi-class classification problem rather than open-ended generation. Given image I and question Q, predict answer a from a vocabulary of the most frequent ~3,129 answers (covering ~90% of the VQA v2.0 training answers).' },
+    { title: '2. VQA Datasets', desc: 'VQA v1.0 (Antol et al., 2015): The original VQA dataset with ~614K questions on ~204K MS COCO images. Questions span "yes/no" (38%), "number" (12%), and "other" (50%) types.' },
+    { title: '3. Approaches', desc: 'Joint Embedding Models (2015--2017): The earliest neural VQA approaches encoded the image with a CNN (VGGNet, ResNet) into a single global feature vector and the question with an LSTM into a sentence vector.' },
+    { title: '4. The Language Bias Problem', desc: 'VQA\'s most instructive contribution to the field is exposing how easily models exploit statistical shortcuts. (2016) demonstrated that a question-only model (no image input) achieves ~44% accuracy on VQA v1.0 -- models learn that "How many..." questions are usually answered with "2," "What sport...' },
 ];
 
 export default function WalkthroughNLPVisualQuestionAnswering() {
@@ -16,10 +16,10 @@ export default function WalkthroughNLPVisualQuestionAnswering() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Visual Question Answering — Step by Step
+          Visual Question Answering \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how visual question answering works, one stage at a time.

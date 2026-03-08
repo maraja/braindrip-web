@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Dense Connectivity', desc: 'The foundation of densenet begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Growth Rate', desc: 'At this stage, the key transformation occurs — the core mechanism that makes densenet work.' },
-    { title: '3. Bottleneck Layers (DenseNet-B)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Transition Layers', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. DenseNet Architecture', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Dense Connectivity', desc: 'In a dense block with L layers, layer l receives the concatenation of all preceding feature maps:  [equation]  where [] denotes channel-wise concatenation and H_l is a composite function (BN-ReLU-Conv). Crucially, features are concatenated, not summed as in ResNet.' },
+    { title: '2. Growth Rate', desc: 'Each layer H_l produces k new feature maps, where k is called the growth rate. If the input to a dense block has k_0 channels, layer l has k_0 + k x (l-1) input channels.' },
+    { title: '3. Bottleneck Layers (DenseNet-B)', desc: 'To manage the growing input size, a 1 x 1 bottleneck convolution reduces channels before the 3 x 3 convolution:  The 1 x 1 conv always produces 4k channels (e.g., 128 channels for k=32), regardless of the input size.' },
+    { title: '4. Transition Layers', desc: 'Between dense blocks, transition layers reduce spatial dimensions and channel count:  where m is the number of input channels and   (0, 1] is the compression factor. With  = 0.5 (DenseNet-BC), channels are halved at each transition.' },
+    { title: '5. DenseNet Architecture', desc: 'This is DenseNet-121 (121 = stem conv + 2*(6+12+24+16) layers + 3 transition convs + FC).' },
 ];
 
 export default function WalkthroughCVCDensenet() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCDensenet() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          DenseNet — Step by Step
+          DenseNet \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how densenet works, one stage at a time.

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAStructuredOutput() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'with_structured_output returns a new runnable; it does not modify the original model instance.', isTrue: true, explanation: 'This is a key technical detail of Structured Output.' },
-    { text: 'The schema is typically injected as a tool-call schema.', isTrue: true, explanation: 'This is a key technical detail of Structured Output.' },
-    { text: 'Some providers (OpenAI) also support a native response_format JSON mode.', isTrue: true, explanation: 'This is a key technical detail of Structured Output.' },
+    { text: 'Structured output is the same as asking the LLM to return JSON in the prompt.', isTrue: false, explanation: 'Prompt-based JSON is unreliable and unvalidated. with_structured_output uses the provider\'s native schema enforcement and returns a parsed Pydantic object.' },
+    { text: 'model.with_structured_output(Schema) forces LLM responses into typed Pydantic models, turning free-form text into reliable, parseable data structures.', isTrue: true, explanation: 'This captures the core definition of Structured Output.' },
+    { text: 'Structured Output is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Structured Output is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

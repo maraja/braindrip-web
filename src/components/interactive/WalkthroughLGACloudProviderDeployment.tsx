@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. AWS: ECS with Fargate', desc: 'The foundation of cloud provider deployment begins with understanding its core input requirements and initial setup.' },
-    { title: '2. GCP: Cloud Run', desc: 'At this stage, the key transformation occurs — the core mechanism that makes cloud provider deployment work.' },
-    { title: '3. Azure: Container Apps', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Database Considerations', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. AWS: ECS with Fargate', desc: 'Amazon ECS (Elastic Container Service) with Fargate is the most common choice for containerized agents on AWS. Fargate eliminates server management entirely -- you define the container, and AWS runs it.' },
+    { title: '2. GCP: Cloud Run', desc: 'Cloud Run is the simplest path on GCP -- it scales to zero when idle and charges only for active request time, making it cost-effective for agents with variable traffic.' },
+    { title: '3. Azure: Container Apps', desc: 'Azure Container Apps provides a serverless container platform with built-in scaling and ingress, similar to Cloud Run.' },
+    { title: '4. Database Considerations', desc: 'All cloud deployments need a managed PostgreSQL instance for the checkpointer:' },
 ];
 
 export default function WalkthroughLGACloudProviderDeployment() {
@@ -16,10 +16,10 @@ export default function WalkthroughLGACloudProviderDeployment() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Cloud Provider Deployment — Step by Step
+          Cloud Provider Deployment \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how cloud provider deployment works, one stage at a time.

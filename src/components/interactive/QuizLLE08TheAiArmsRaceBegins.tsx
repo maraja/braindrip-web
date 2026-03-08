@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE08TheAiArmsRaceBegins() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ChatGPT\'s explosive success in late 2022 triggered a global technology arms race, with Google declaring "code red," Microsoft investing $10B+ in OpenAI, and annual AI investment surpassing $100 billion as every major tech company scrambled to compete.', isTrue: true, explanation: 'This captures the core purpose of The AI Arms Race Begins.' },
-    { text: 'The AI Arms Race Begins is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding The AI Arms Race Begins is important for building on more advanced topics.' },
-    { text: 'The AI Arms Race Begins is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding The AI Arms Race Begins is important for building on more advanced topics.' },
+    { text: 'Google was caught off guard by AI.', isTrue: false, explanation: 'Google had invented the Transformer, trained PaLM, and had LaMDA ready. It was caught off guard by the speed of consumer adoption and the market\'s reaction, not by the technology itself.' },
+    { text: 'November 30, 2022 (trigger event)', isTrue: true, explanation: 'November 30, 2022 (trigger event)' },
+    { text: 'The AI race is just about building bigger models.', isTrue: false, explanation: 'By 2024, the race had expanded to encompass data curation, alignment techniques, inference optimization, multimodal capabilities, agent frameworks, tool use, and ecosystem development. Model size was just one dimension of competition.' },
+    { text: '$10B+ announced January 2023', isTrue: true, explanation: '$10B+ announced January 2023' },
+    { text: 'Open-source and closed-source are in a zero-sum competition.', isTrue: false, explanation: 'Meta\'s open-source strategy and OpenAI\'s closed-source strategy both thrived. Open-source models expanded the total market and drove adoption; closed-source models maintained a capability edge and captured direct revenue.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

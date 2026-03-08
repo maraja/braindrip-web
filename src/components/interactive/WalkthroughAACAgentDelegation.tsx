@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Task Decomposition', desc: 'The foundation of agent delegation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Sub-Agent Specification', desc: 'At this stage, the key transformation occurs — the core mechanism that makes agent delegation work.' },
-    { title: '3. Execution Patterns', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Result Synthesis', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Task Decomposition', desc: 'The manager agent analyzes the incoming task and breaks it into discrete, assignable subtasks. Effective decomposition follows principles:  Independence: Subtasks should be as independent as possible, minimizing dependencies between sub-agents.' },
+    { title: '2. Sub-Agent Specification', desc: 'Each sub-agent receives a specification that defines its operating context:  System prompt: Defines the agent\'s role, expertise, and behavioral guidelines (e.g., "You are a senior Python developer. Write clean, well-tested code.").' },
+    { title: '3. Execution Patterns', desc: 'Sequential delegation: Sub-agents run one after another, each receiving the previous one\'s output. Used when subtasks have dependencies.' },
+    { title: '4. Result Synthesis', desc: 'The manager collects sub-agent outputs and combines them into a coherent result. This may involve: Concatenating outputs (simple assembly) Resolving contradictions between agents Filling gaps where subtasks did not fully cover the original request Quality checking each output against the original.' },
 ];
 
 export default function WalkthroughAACAgentDelegation() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACAgentDelegation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agent Delegation — Step by Step
+          Agent Delegation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how agent delegation works, one stage at a time.

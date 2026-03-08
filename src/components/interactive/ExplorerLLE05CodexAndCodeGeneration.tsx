@@ -3,10 +3,10 @@ import { useState } from 'react';
 const DETAILS = [
     { label: 'Base model', detail: 'GPT-3 (12B variant for main results)' },
     { label: 'Training data', detail: '159 GB of Python code from 54M GitHub repositories' },
-    { label: 'HumanEval pass@1', detail: '28.8% (12B version), 0.5% for base GPT-3' },
-    { label: 'HumanEval pass@100', detail: '72.3% (12B version)' },
-    { label: 'Codex-S (fine-tuned on functions)', detail: '37.7% pass@1' },
+    { label: 'HumanEval pass@1', detail: '8% (12B version), 0.5% for base GPT-3' },
+    { label: 'HumanEval pass@100', detail: '3% (12B version)' },
     { label: 'Published', detail: 'August 2021 by Chen et al. at OpenAI' },
+    { label: 'Product', detail: 'Powered GitHub Copilot (launched June 2021 preview)' },
 ];
 
 export default function ExplorerLLE05CodexAndCodeGeneration() {
@@ -20,10 +20,10 @@ export default function ExplorerLLE05CodexAndCodeGeneration() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Codex and Code Generation — Key Details Explorer
+          Codex and Code Generation \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of codex and code generation.
+          Click each card to explore the technical details.
         </p>
       </div>
 

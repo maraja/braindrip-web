@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFHandlingHighCardinalityFeatures() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Target encoding must always use out-of-fold computation or regularization; in-fold encoding overfits severely, especially with small categories.', isTrue: true, explanation: 'This is a key technical detail of Handling High-Cardinality Features.' },
-    { text: 'Feature hashing with $k$ buckets has an expected collision rate of approximately $1 - (1 - 1/k)^&#123;|\\mathcal&#123;C&#125;|-1&#125;$ for any given category.', isTrue: true, explanation: 'This is a key technical detail of Handling High-Cardinality Features.' },
-    { text: 'Doubling $k$ roughly halves the collision probability.', isTrue: true, explanation: 'This is a key technical detail of Handling High-Cardinality Features.' },
+    { text: 'One-hot encoding is always fine for categorical features.', isTrue: false, explanation: 'It works for low cardinality (&lt; ~20 categories), but becomes harmful or infeasible at high cardinality due to dimensionality, sparsity, and insufficient statistics per category. "Target encoding is just label leakage." Done properly with cross-validation or regularization, target encoding introduces no more leakage than any other supervised feature engineering step.' },
+    { text: 'Target encoding, hashing, and embedding approaches for categorical features with thousands of unique values.', isTrue: true, explanation: 'This captures the core definition of Handling High-Cardinality Features.' },
+    { text: 'Handling High-Cardinality Features is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Handling High-Cardinality Features is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

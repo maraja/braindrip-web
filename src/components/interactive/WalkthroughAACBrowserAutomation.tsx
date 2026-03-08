@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. DOM-Based Automation (Playwright/Puppeteer)', desc: 'The foundation of browser automation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Screenshot-Based Automation (Computer Use)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes browser automation work.' },
-    { title: '3. Hybrid Approaches', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Challenges', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. DOM-Based Automation (Playwright/Puppeteer)', desc: 'DOM-based tools control a browser programmatically through its Document Object Model. The agent generates code or commands that:  Navigate to a URL (page.goto("https://example.com")) Wait for elements to load (page.waitForSelector(".results")) Extract content (page.textContent(".' },
+    { title: '2. Screenshot-Based Automation (Computer Use)', desc: 'Anthropic\'s computer use capability takes a different approach: the agent receives a screenshot of the current browser state, reasons about what it sees using vision capabilities, and issues low-level mouse/keyboard actions (move to coordinates, click, type text).' },
+    { title: '3. Hybrid Approaches', desc: 'Modern web agent frameworks increasingly combine both approaches. They use DOM parsing for structured data extraction (faster, cheaper) and fall back to screenshots for visual elements the DOM does not describe well (e.g., canvas-rendered content, complex CSS layouts, images with embedded text).' },
+    { title: '4. Challenges', desc: 'Dynamic content: Modern web apps load content asynchronously via JavaScript. The agent must wait for content to render, handle infinite scroll, and deal with single-page apps where URLs do not change.' },
 ];
 
 export default function WalkthroughAACBrowserAutomation() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACBrowserAutomation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Browser Automation — Step by Step
+          Browser Automation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how browser automation works, one stage at a time.

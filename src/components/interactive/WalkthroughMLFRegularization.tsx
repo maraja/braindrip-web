@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. L2 Regularization (Ridge / Weight Decay)', desc: 'The foundation of regularization begins with understanding its core input requirements and initial setup.' },
-    { title: '2. L1 Regularization (Lasso)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes regularization work.' },
-    { title: '3. Elastic Net', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Early Stopping', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Dropout (Neural Networks)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. L2 Regularization (Ridge / Weight Decay)', desc: 'The penalty is the squared L2 norm of the parameter vector:  [equation]  The full objective becomes:  [equation]  Effect: Weights are shrunk toward zero but never exactly to zero.' },
+    { title: '2. L1 Regularization (Lasso)', desc: 'The penalty is the L1 norm:  [equation]  Effect: L1 drives some weights exactly to zero, producing sparse models. This performs automatic feature selection -- irrelevant features get zeroed out.' },
+    { title: '3. Elastic Net', desc: 'Combines L1 and L2:  [equation]  where   [0, 1] controls the mix. This gets the sparsity benefits of L1 while retaining the stability of L2, particularly useful when features are correlated (L1 alone may arbitrarily select one from a group of correlated features).' },
+    { title: '4. Early Stopping', desc: 'In iterative optimization (gradient descent), the model\'s effective complexity increases with training iterations. Early stopping halts training when validation error begins to increase, even if training error continues to decrease.' },
+    { title: '5. Dropout (Neural Networks)', desc: 'During each training step, randomly set each neuron\'s activation to zero with probability p (typically p = 0.5 for hidden layers). At test time, use all neurons but scale weights by (1 - p).' },
+    { title: '6. Data Augmentation as Regularization', desc: 'Applying transformations to training data -- rotations, flips, crops, color jitter for images; synonym replacement, back-translation for text -- effectively increases the training set size and encodes invariances.' },
 ];
 
 export default function WalkthroughMLFRegularization() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFRegularization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Regularization — Step by Step
+          Regularization \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how regularization works, one stage at a time.

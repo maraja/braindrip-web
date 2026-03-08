@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Weight decay', detail: 'in neural network optimizers (like AdamW) is L2 regularization applied directly to the weight update, which is not exactly equivalent to adding $\\lambda \\|\\theta\\|_2^2$ to the loss when using adaptive optimizers like Adam.' },
+    { label: 'Weight decay', detail: 'in neural network optimizers (like AdamW) is L2 regularization applied directly to the weight update, which is not exactly equivalent to adding  \\_2^2 to the loss when using adaptive optimizers like Adam.' },
     { label: 'Batch normalization', detail: 'acts as an implicit regularizer by adding noise through mini-batch statistics.' },
-    { label: 'Label smoothing', detail: 'regularizes by replacing hard targets (0 or 1) with soft targets ($\\epsilon/K$ and $1 - \\epsilon + \\epsilon/K$), preventing the model from becoming overconfident.' },
+    { label: 'Label smoothing', detail: 'regularizes by replacing hard targets (0 or 1) with soft targets (/K and 1 -  + /K), preventing the model from becoming overconfident.' },
     { label: 'Spectral norm regularization', detail: 'constrains the Lipschitz constant of neural network layers.' },
 ];
 
@@ -18,10 +18,10 @@ export default function ExplorerMLFRegularization() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Regularization — Key Details Explorer
+          Regularization \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of regularization.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFExpectationMaximization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'EM monotonically increases the incomplete-data log-likelihood at each iteration.', isTrue: true, explanation: 'This is a key technical detail of Expectation-Maximization.' },
-    { text: 'Convergence is to a local maximum; multiple restarts are recommended.', isTrue: true, explanation: 'This is a key technical detail of Expectation-Maximization.' },
-    { text: 'The E-step computes the posterior over latent variables $p(Z \\mid X, \\theta^&#123;(t)&#125;)$.', isTrue: true, explanation: 'This is a key technical detail of Expectation-Maximization.' },
+    { text: 'EM always finds the global optimum.', isTrue: false, explanation: 'EM converges to a local maximum. The log-likelihood surface for mixture models is typically multimodal, so initialization matters significantly.' },
+    { text: 'EM is only for Gaussian mixtures.', isTrue: false, explanation: 'GMMs are the canonical example, but EM applies to any latent variable model with a tractable complete-data likelihood: HMMs, factor analysis, missing data problems, and many more.' },
+    { text: 'The E-step always requires computing the full posterior.', isTrue: false, explanation: 'In some models, only the expected sufficient statistics are needed, not the full posterior distribution. This can simplify computation considerably.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

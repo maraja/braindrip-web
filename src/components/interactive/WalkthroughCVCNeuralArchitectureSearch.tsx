@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Three Components of NAS', desc: 'The foundation of neural architecture search begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Search Space Design', desc: 'At this stage, the key transformation occurs — the core mechanism that makes neural architecture search work.' },
-    { title: '3. Search Strategies', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Key NAS Architectures', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Hardware-Aware NAS', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Three Components of NAS', desc: 'Every NAS method defines three things:  Search space: The set of possible architectures. This includes the types of operations (convolutions, pooling, skip connections), how they can be connected, and any structural constraints.' },
+    { title: '2. Search Space Design', desc: 'Cell-based search (NASNet, DARTS): Instead of searching for the entire network, search for a small repeatable cell that is stacked to form the full architecture. A cell typically has N nodes, where each node chooses an operation from a predefined set and two input connections.' },
+    { title: '3. Search Strategies', desc: 'Reinforcement Learning (RL): The original NAS (Zoph & Le, 2017) used an RNN controller that samples architecture descriptions as sequences of tokens. The controller is trained with REINFORCE to maximize the expected validation accuracy:  [equation]  where R_k is the validation accuracy of the k-th.' },
+    { title: '4. Key NAS Architectures', desc: 'NASNet (Zoph et al., 2018): Cell-based search on CIFAR-10, transferred to ImageNet. NASNet-A: 88.9M params, 23.8B FLOPs, 82.7% top-1 on ImageNet.' },
+    { title: '5. Hardware-Aware NAS', desc: 'Modern NAS increasingly incorporates hardware constraints directly into the search:  Latency-aware reward (MnasNet): Measures real inference time on target hardware.' },
 ];
 
 export default function WalkthroughCVCNeuralArchitectureSearch() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCNeuralArchitectureSearch() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Neural Architecture Search — Step by Step
+          Neural Architecture Search \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how neural architecture search works, one stage at a time.

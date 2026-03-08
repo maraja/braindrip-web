@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizRLBellmanEquations() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Value iteration converges at rate $O(\\gamma^k)$: after $k$ iterations, $\\|V_k - V^\\|_\\infty \\leq \\gamma^k \\|V_0 - V^\\|_\\infty$.', isTrue: true, explanation: 'This is a key technical detail of Bellman Equations.' },
-    { text: 'For $\\gamma = 0.99$, reaching $\\epsilon$-accuracy requires $k \\approx \\frac&#123;\\log(1/\\epsilon)&#125;&#123;1 - \\gamma&#125; \\approx 100 \\log(1/\\epsilon)$ iterations.', isTrue: true, explanation: 'This is a key technical detail of Bellman Equations.' },
-    { text: 'Policy iteration alternates between solving $V^\\pi$ (policy evaluation) and updating $\\pi$ greedily (policy improvement).', isTrue: true, explanation: 'This is a key technical detail of Bellman Equations.' },
+    { text: 'The Bellman equation is an update rule.', isTrue: false, explanation: 'The Bellman equation is an identity -- a condition that the true value function must satisfy. Algorithms like TD learning and value iteration use update rules inspired by the Bellman equation, but the equation itself is a mathematical relationship, not a procedure.' },
+    { text: 'after k iterations, \\_.', isTrue: true, explanation: 'For  = 0.99, reaching -accuracy requires k  &#123;(1/)&#125;&#123;1 - &#125;  100 (1/) iterations.' },
+    { text: 'You need the transition model to use Bellman equations.', isTrue: false, explanation: 'Model-free methods (TD, Q-learning, SARSA) use sample-based Bellman updates, replacing the expectation over transitions with single observed transitions. The model is not required.' },
+    { text: 'Combining bootstrapping (Bellman equations), function approximation, and off-policy learning can cause divergence.', isTrue: true, explanation: 'This fundamental tension motivates algorithms like fitted Q-iteration, gradient TD, and emphatic TD.' },
+    { text: 'Bellman optimality equations can be solved directly.', isTrue: false, explanation: 'The  operator makes them nonlinear. Unlike the expectation equations, there is no closed-form solution.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

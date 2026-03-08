@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLStatesActionsRewards() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'State aliasing occurs when different true states map to the same observation, confusing the agent.', isTrue: true, explanation: 'This is a key technical detail of States, Actions, and Rewards.' },
-    { text: 'This is the core issue in POMDPs.', isTrue: true, explanation: 'This is a key technical detail of States, Actions, and Rewards.' },
-    { text: 'For continuous actions, policies typically output parameters of a distribution (e.g., mean and variance of a Gaussian), then sample: $a \\sim \\mathcal&#123;N&#125;(\\mu_\\theta(s), \\sigma_\\theta^2(s))$.', isTrue: true, explanation: 'This is a key technical detail of States, Actions, and Rewards.' },
+    { text: 'The state is the same as the observation.', isTrue: false, explanation: 'In a fully observable MDP, yes. In a POMDP, the observation O_t is a lossy projection of the true state S_t.' },
+    { text: 'R_&#123;total&#125; = R_&#123;extrinsic&#125; +   R_&#123;intrinsic&#125;, where R_&#123;intrinsic&#125; might measure prediction error or state novelty (Pathak et al., 2017).', isTrue: true, explanation: 'R_&#123;total&#125; = R_&#123;extrinsic&#125; +   R_&#123;intrinsic&#125;, where R_&#123;intrinsic&#125; might measure prediction error or state novelty (Pathak et al., 2017).' },
+    { text: 'More reward signal is always better.', isTrue: false, explanation: 'Overly engineered dense rewards can introduce bias, guiding the agent toward a suboptimal strategy that happens to collect intermediate rewards. Sometimes less is more.' },
+    { text: 'Continuous action spaces are always harder.', isTrue: false, explanation: 'They eliminate the possibility of exhaustive enumeration, but algorithms like SAC achieve strong performance by leveraging gradient-based optimization through the policy. The difficulty depends on the structure of the problem, not just the space type.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

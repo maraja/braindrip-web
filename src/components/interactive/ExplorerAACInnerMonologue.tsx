@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Anthropic\'s extended thinking', detail: 'Uses `thinking` blocks that appear before the response. Supports budgets up to 128K thinking tokens. Thinking is included in API responses but marked as a separate content block type' },
+    { label: 'Anthropic\'s extended thinking', detail: 'Uses thinking blocks that appear before the response. Supports budgets up to 128K thinking tokens. Thinking is included in API responses but marked as a separate content block type' },
     { label: 'OpenAI\'s hidden CoT', detail: 'In o1/o3 models, chain-of-thought is generated but not exposed through the API at all. Users see only the final answer. Reasoning token count is reported but content is not accessible' },
     { label: 'Token accounting', detail: 'Thinking tokens count toward total token usage and billing. A response with 2000 thinking tokens and 500 response tokens costs the same as a 2500-token response' },
     { label: 'Thinking latency', detail: 'Extended thinking adds 1-10 seconds of latency before the first visible token streams. This is the most significant UX trade-off' },
@@ -20,10 +20,10 @@ export default function ExplorerAACInnerMonologue() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Inner Monologue — Key Details Explorer
+          Inner Monologue \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of inner monologue.
+          Click each card to explore the technical details.
         </p>
       </div>
 

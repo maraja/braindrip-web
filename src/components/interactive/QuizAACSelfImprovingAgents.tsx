@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACSelfImprovingAgents() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Self-improving agents get better over time by learning from user feedback, optimizing their own prompts, acquiring new skills, and refining their tool usage -- without requiring manual re-engineering.', isTrue: true, explanation: 'This captures the core purpose of Self-Improving Agents.' },
-    { text: 'Self-Improving Agents is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Self-Improving Agents is important for building on more advanced topics.' },
-    { text: 'Self-Improving Agents is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Self-Improving Agents is important for building on more advanced topics.' },
+    { text: 'Self-improving agents recursively improve themselves to superintelligence.', isTrue: false, explanation: 'Current self-improvement is incremental and bounded: better prompts, accumulated memories, learned tool usage patterns. There is no evidence of recursive unbounded improvement.' },
+    { text: 'a correction from a user might be wrong, a bootstrapped prompt optimization might overfit.', isTrue: true, explanation: 'Validation on held-out examples catches degradation before it reaches production' },
+    { text: 'when prompt optimization improves performance on one task type, it may degrade performance on others.', isTrue: true, explanation: 'Multi-task evaluation during optimization mitigates this' },
+    { text: 'in production, self-improvements should be staged (tested on a subset of traffic) before full deployment, similar to A/B testing code changes', isTrue: true, explanation: 'in production, self-improvements should be staged (tested on a subset of traffic) before full deployment, similar to A/B testing code changes' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

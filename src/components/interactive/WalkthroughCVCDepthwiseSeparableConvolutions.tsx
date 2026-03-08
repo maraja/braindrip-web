@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Standard Convolution Cost', desc: 'The foundation of depthwise separable convolutions begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Depthwise Convolution', desc: 'At this stage, the key transformation occurs — the core mechanism that makes depthwise separable convolutions work.' },
-    { title: '3. Pointwise Convolution', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Total Reduction', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Parameter Reduction', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Standard Convolution Cost', desc: 'For an input of size H x W x C_&#123;in&#125; and C_&#123;out&#125; output channels with kernel size k:  [equation]' },
+    { title: '2. Depthwise Convolution', desc: 'Each of the C_&#123;in&#125; channels is convolved independently with its own k x k filter:  [equation]  This produces C_&#123;in&#125; output feature maps. No inter-channel information is mixed at this stage.' },
+    { title: '3. Pointwise Convolution', desc: 'A standard 1 x 1 convolution combines the C_&#123;in&#125; depthwise outputs into C_&#123;out&#125; channels:  [equation]' },
+    { title: '4. Total Reduction', desc: '[equation]  The ratio of separable to standard convolution cost:  [equation]  For k = 3 and C_&#123;out&#125; = 256: ratio = &#123;1&#125;&#123;256&#125; + &#123;1&#125;&#123;9&#125;  0.115, which is approximately an 8.7x reduction in computation. For larger C_&#123;out&#125;, the savings approach &#123;1&#125;&#123;k^2&#125; (9x for 3 x 3 kernels).' },
+    { title: '5. Parameter Reduction', desc: 'Standard: k^2  C_&#123;in&#125;  C_&#123;out&#125; parameters. Separable: k^2  C_&#123;in&#125; + C_&#123;in&#125;  C_&#123;out&#125; parameters.' },
+    { title: '6. Implementation Details', desc: 'The groups parameter in nn.Conv2d controls the grouping. Setting groups=in_channels produces a depthwise convolution.' },
 ];
 
 export default function WalkthroughCVCDepthwiseSeparableConvolutions() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCDepthwiseSeparableConvolutions() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Depthwise Separable Convolutions — Step by Step
+          Depthwise Separable Convolutions \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how depthwise separable convolutions works, one stage at a time.

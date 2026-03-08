@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Energy Function', desc: 'The foundation of conditional random fields begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Fully Connected CRF', desc: 'At this stage, the key transformation occurs — the core mechanism that makes conditional random fields work.' },
-    { title: '3. Efficient Mean-Field Inference', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. CRF as Post-Processing Pipeline', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Learnable CRF (CRF-as-RNN)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Energy Function', desc: 'The fully connected CRF used in segmentation (Krahenbuhl and Koltun, 2011) defines:  [equation]  Unary potential _u(x_i): the cost of assigning label x_i to pixel i, derived directly from the neural network\'s softmax output:  [equation]  If the network is confident that pixel i is "road," the unary.' },
+    { title: '2. Fully Connected CRF', desc: 'Unlike grid-based CRFs that only connect neighboring pixels (4- or 8-connected), the fully connected CRF connects every pair of pixels. This is essential because distant pixels can share strong visual similarity (e.g., two sides of a road separated by a car).' },
+    { title: '3. Efficient Mean-Field Inference', desc: 'Krahenbuhl and Koltun (2011) showed that mean-field inference in this model can be performed efficiently by exploiting the Gaussian kernel structure. Each mean-field iteration involves:  Initialize: Q_i(x_i) = &#123;1&#125;&#123;Z_i&#125; (-_u(x_i)) for all pixels i.' },
+    { title: '4. CRF as Post-Processing Pipeline', desc: 'Typical hyperparameters: _ = 80--160 (spatial range for appearance kernel) _ = 3--13 (color range) _ = 3 (spatial range for smoothness kernel) w_1 = 3--5, w_2 = 1--3' },
+    { title: '5. Learnable CRF (CRF-as-RNN)', desc: '(2015) unrolled the mean-field iterations as layers in a neural network, making CRF parameters learnable via backpropagation. Each mean-field iteration becomes a recurrent neural network step:  Softmax normalization (message normalization).' },
 ];
 
 export default function WalkthroughCVCConditionalRandomFields() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCConditionalRandomFields() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Conditional Random Fields — Step by Step
+          Conditional Random Fields \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how conditional random fields works, one stage at a time.

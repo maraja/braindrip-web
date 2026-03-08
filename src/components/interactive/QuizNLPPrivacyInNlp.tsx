@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPPrivacyInNlp() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'GPT-2 memorization: Carlini et al.', isTrue: true, explanation: 'This is a key technical detail of Privacy in NLP.' },
-    { text: '(2021) extracted 604 unique memorized training sequences of 256+ tokens from GPT-2 (1.5B parameters) using 600,000 generated samples.', isTrue: true, explanation: 'This is a key technical detail of Privacy in NLP.' },
-    { text: 'Memorization scaling: Doubling model parameters increases extractable memorized content by ~1.5x (Carlini et al., 2023).', isTrue: true, explanation: 'This is a key technical detail of Privacy in NLP.' },
+    { text: 'Only models trained on private data have privacy issues.', isTrue: false, explanation: 'Models trained on "public" web data still memorize personal information -- email addresses, phone numbers, and home addresses posted online without the individual\'s awareness or consent. Carlini et al.\'s GPT-2 extraction targeted a model trained on publicly scraped web text, not private data.' },
+    { text: 'Doubling model parameters increases extractable memorized content by ~1.5x (Carlini et al., 2023).', isTrue: true, explanation: 'Doubling model parameters increases extractable memorized content by ~1.5x (Carlini et al., 2023).' },
+    { text: 'Differential privacy makes models useless.', isTrue: false, explanation: 'While the privacy-utility trade-off is real, recent advances in private fine-tuning (pre-train publicly, fine-tune privately) achieve reasonable utility at practical privacy budgets (epsilon = 3--8). For classification tasks, the accuracy gap is often 2--5%, not the 15--30% seen in full private training.' },
+    { text: 'DP training is 2--10x slower than non-private training due to per-example gradient clipping and noise addition.', isTrue: true, explanation: 'Memory overhead is ~2x because per-example gradients cannot be batched as efficiently.' },
+    { text: 'De-identification completely protects privacy.', isTrue: false, explanation: 'Even perfect de-identification of direct identifiers leaves re-identification risk from quasi-identifier combinations. Narrative text in clinical notes often contains implicit identifying information ("the mayor of Springfield who underwent surgery in March") that rule-based systems miss.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCGanTrainingDynamics() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'WGAN-GP: Gradient penalty coefficient $\\lambda = 10$, critic updates 5 per generator update, Adam with $\\beta_1 = 0$, $\\beta_2 = 0.9$.', isTrue: true, explanation: 'This is a key technical detail of GAN Training Dynamics.' },
-    { text: 'Spectral normalization: One power iteration per forward pass is sufficient; more iterations add cost without measurable benefit.', isTrue: true, explanation: 'This is a key technical detail of GAN Training Dynamics.' },
-    { text: 'Progressive growing: Each resolution phase trains for 600k--800k images on CelebA-HQ.', isTrue: true, explanation: 'This is a key technical detail of GAN Training Dynamics.' },
+    { text: 'Mode collapse means the GAN failed completely.', isTrue: false, explanation: 'Partial mode collapse is common and may still produce useful high-quality samples. The issue is reduced diversity, not necessarily poor quality.' },
+    { text: 'Training GANs is notoriously unstable due to the adversarial minimax objective, with mode collapse and oscillation as primary failure modes, mitigated by architectural and loss function innovations.', isTrue: true, explanation: 'This captures the core definition of GAN Training Dynamics.' },
+    { text: 'GAN Training Dynamics is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding GAN Training Dynamics is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

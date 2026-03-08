@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE05TheConvergenceTowardOmniModels() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: '2020 Landscape: GPT-3 (text), ViT (images), Wav2Vec 2.0 (audio) — separate models, separate pipelines.', isTrue: true, explanation: 'This is a key technical detail of The Convergence Toward Omni-Models.' },
-    { text: 'CLIP (Jan 2021): Shared vision-text embedding.', isTrue: true, explanation: 'This is a key technical detail of The Convergence Toward Omni-Models.' },
-    { text: '400M image-text pairs.', isTrue: true, explanation: 'This is a key technical detail of The Convergence Toward Omni-Models.' },
+    { text: 'Omni-models are just many specialist models packaged together.', isTrue: false, explanation: 'True omni-models process all modalities through shared parameters and develop genuinely cross-modal representations. This is architecturally different from running separate models behind a unified API, which still suffers from information loss at model boundaries.' },
+    { text: 'GPT-3 (text), ViT (images), Wav2Vec 2.0 (audio) — separate models, separate pipelines.', isTrue: true, explanation: 'GPT-3 (text), ViT (images), Wav2Vec 2.0 (audio) — separate models, separate pipelines.' },
+    { text: 'Separate specialist models will always outperform generalist omni-models.', isTrue: false, explanation: 'While specialists initially outperform generalists on their specific modality, omni-models at sufficient scale match or exceed specialists because cross-modal training provides additional learning signal. Visual training improves text understanding; code training improves reasoning.' },
+    { text: 'Shared vision-text embedding.', isTrue: true, explanation: '400M image-text pairs. Zero-shot classification.' },
+    { text: 'The convergence means we only need one model for everything.', isTrue: false, explanation: 'Omni-models handle most common tasks well, but specialized fine-tuned models still outperform them on specific domains like medical imaging, music transcription, or protein structure prediction. The convergence is about the base model, not the elimination of all specialization.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

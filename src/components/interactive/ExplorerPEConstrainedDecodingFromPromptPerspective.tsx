@@ -6,7 +6,7 @@ const DETAILS = [
     { label: 'LMQL supports Python-like constraint expressions', detail: 'including type constraints, length bounds, and set membership.' },
     { label: 'Schema-to-grammar compilation', detail: 'happens once at setup time; the grammar is then reused across all generations with that schema, making amortized overhead minimal.' },
     { label: 'Constrained decoding can reduce output diversity', detail: 'because masking tokens reduces the sampling space. This is desirable for structured output but potentially harmful for creative tasks.' },
-    { label: 'Token boundaries can cause issues', detail: 'a constrained value like \"California\" might span multiple tokens, and the grammar must track valid multi-token sequences correctly. Modern implementations handle this via token healing.' },
+    { label: 'Token boundaries can cause issues', detail: 'a constrained value like "California" might span multiple tokens, and the grammar must track valid multi-token sequences correctly. Modern implementations handle this via token healing.' },
 ];
 
 export default function ExplorerPEConstrainedDecodingFromPromptPerspective() {
@@ -20,10 +20,10 @@ export default function ExplorerPEConstrainedDecodingFromPromptPerspective() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Constrained Decoding from the Prompt Perspective — Key Details Explorer
+          Constrained Decoding from the Prompt Perspective \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of constrained decoding from the prompt perspective.
+          Click each card to explore the technical details.
         </p>
       </div>
 

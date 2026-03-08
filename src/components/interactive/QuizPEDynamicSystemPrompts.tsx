@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizPEDynamicSystemPrompts() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Template slot count: Most production dynamic prompts use 4-8 modular slots.', isTrue: true, explanation: 'This is a key technical detail of Dynamic System Prompts.' },
-    { text: 'More than 10 slots increases assembly complexity without proportional benefit.', isTrue: true, explanation: 'This is a key technical detail of Dynamic System Prompts.' },
-    { text: 'Assembly latency: Template assembly adds 1-5ms to request processing, negligible compared to LLM inference time.', isTrue: true, explanation: 'This is a key technical detail of Dynamic System Prompts.' },
+    { text: 'Dynamic prompts are just string concatenation.', isTrue: false, explanation: 'While the assembly is technically string concatenation, the design requires careful attention to component ordering, token budgets, cross-component consistency, and interaction effects. Two blocks that work well independently can conflict when combined.' },
+    { text: 'Most production dynamic prompts use 4-8 modular slots.', isTrue: true, explanation: 'More than 10 slots increases assembly complexity without proportional benefit.' },
+    { text: 'You need a complex framework for dynamic prompts.', isTrue: false, explanation: 'A basic implementation can be as simple as a dictionary of prompt blocks and a function that selects and concatenates them. Start simple and add complexity (caching, A/B testing, monitoring) as needed.' },
+    { text: 'Template assembly adds 1-5ms to request processing, negligible compared to LLM inference time.', isTrue: true, explanation: 'Template assembly adds 1-5ms to request processing, negligible compared to LLM inference time.' },
+    { text: 'Dynamic prompts eliminate the need for prompt versioning.', isTrue: false, explanation: 'Dynamic assembly adds a new dimension to versioning: you now need to version both individual components and the assembly logic. A prompt that works with role_v2 + context_v3 might fail with role_v2 + context_v4 due to interaction effects.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -6,7 +6,7 @@ const DETAILS = [
     { label: 'SST-2 (Stanford Sentiment Treebank, binary)', detail: 'SOTA is ~97% accuracy (DeBERTa-v3).' },
     { label: 'SST-5 (fine-grained, 5-class)', detail: 'SOTA around ~59% accuracy, reflecting the inherent difficulty of fine-grained distinctions.' },
     { label: 'Training data requirements', detail: 'Naive Bayes can work with as few as 100 labeled examples per class; BERT fine-tuning typically needs 1,000+ per class for strong results, though few-shot prompting can reduce this.' },
-    { label: 'Inference speed', detail: 'Naive Bayes/SVM classify a document in <1 ms; BERT-base takes ~10 ms on GPU per document (batch size 1).' },
+    { label: 'Inference speed', detail: 'Naive Bayes/SVM classify a document in &lt;1 ms; BERT-base takes ~10 ms on GPU per document (batch size 1).' },
 ];
 
 export default function ExplorerNLPTextClassification() {
@@ -20,10 +20,10 @@ export default function ExplorerNLPTextClassification() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Text Classification — Key Details Explorer
+          Text Classification \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of text classification.
+          Click each card to explore the technical details.
         </p>
       </div>
 

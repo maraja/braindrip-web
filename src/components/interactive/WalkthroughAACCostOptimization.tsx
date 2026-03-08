@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Model Routing', desc: 'The foundation of cost optimization begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Caching', desc: 'At this stage, the key transformation occurs — the core mechanism that makes cost optimization work.' },
-    { title: '3. Prompt Compression', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Batching and Parallelism', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Model Routing', desc: 'Model routing assigns each agent step to the cheapest model capable of handling it. A classification step (is this a billing question or a technical question?) does not need GPT-4o -- GPT-4o-mini or Claude Haiku handles it at 1/20th the cost with comparable accuracy.' },
+    { title: '2. Caching', desc: 'Agents frequently perform redundant work. If 100 users ask about the same product, the agent should not search the product database 100 times.' },
+    { title: '3. Prompt Compression', desc: 'Every token in the prompt costs money. Prompt compression reduces token count without sacrificing the information the model needs.' },
+    { title: '4. Batching and Parallelism', desc: 'When an agent needs to process multiple items (classify 50 emails, extract data from 20 documents), batching is cheaper and faster than sequential processing. OpenAI\'s Batch API offers 50% cost reduction for non-time-sensitive tasks by processing requests in bulk.' },
 ];
 
 export default function WalkthroughAACCostOptimization() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACCostOptimization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Cost Optimization — Step by Step
+          Cost Optimization \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how cost optimization works, one stage at a time.

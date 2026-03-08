@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. RDF Triples', desc: 'The foundation of knowledge graphs for nlp begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Knowledge Graph Construction from Text', desc: 'At this stage, the key transformation occurs — the core mechanism that makes knowledge graphs for nlp work.' },
-    { title: '3. Prominent Knowledge Graphs', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Knowledge Graph Embeddings', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Link Prediction', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. RDF Triples', desc: 'The Resource Description Framework (RDF) is the W3C standard for representing knowledge graph data. Every fact is a triple (subject, predicate, object):  RDF uses URIs for global uniqueness and supports literals (strings, numbers, dates) as objects.' },
+    { title: '2. Knowledge Graph Construction from Text', desc: 'Building a KG from text follows the IE pipeline (see information-extraction.md):  Entity extraction and linking: Identify entity mentions via NER (see 05-core-nlp-tasks-analysis/named-entity-recognition.md) and link them to canonical KG entities (entity linking/disambiguation).' },
+    { title: '3. Prominent Knowledge Graphs', desc: 'Freebase (Bollacker et al., 2008): Google\'s structured knowledge base, containing 1.9 billion triples about 125 million entities before its deprecation in 2016. Its data was migrated to Wikidata.' },
+    { title: '4. Knowledge Graph Embeddings', desc: 'To reason over knowledge graphs computationally, entities and relations are embedded as dense vectors in continuous space. The goal: for a true triple (h, r, t), the embedding-based score function f(h, r, t) should be high; for false triples, it should be low.' },
+    { title: '5. Link Prediction', desc: 'Link prediction is the core KG completion task: given a query (h, r, ?) or (?, r, t), rank all candidate entities to predict the missing element. Evaluation metrics:  Hits@k: Fraction of test triples where the correct entity ranks in the top-k predictions.' },
+    { title: '6. KG-Enhanced NLP', desc: 'Knowledge graphs enhance a wide range of NLP tasks:  Entity linking: Given a mention "Apple" in text, determine whether it refers to Apple Inc. or the fruit by comparing the textual context with the KG neighborhood of each candidate entity.' },
 ];
 
 export default function WalkthroughNLPKnowledgeGraphsForNlp() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPKnowledgeGraphsForNlp() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Knowledge Graphs for NLP — Step by Step
+          Knowledge Graphs for NLP \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how knowledge graphs for nlp works, one stage at a time.

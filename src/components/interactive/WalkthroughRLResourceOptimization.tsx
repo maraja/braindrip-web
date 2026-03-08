@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Google Data Center Cooling', desc: 'The foundation of resource optimization begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Chip Design and Placement', desc: 'At this stage, the key transformation occurs — the core mechanism that makes resource optimization work.' },
-    { title: '3. Network Routing and Traffic Optimization', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Inventory and Supply Chain Management', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Combinatorial Optimization', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Google Data Center Cooling', desc: 'Google\'s data center cooling optimization (Evans & Gao, 2016) is perhaps the most celebrated industrial RL application:  Problem: Data centers consume enormous energy for cooling (~40% of total).' },
+    { title: '2. Chip Design and Placement', desc: 'Mirhoseini et al. (2021, Nature) applied RL to chip floorplanning -- placing functional blocks (macros) on a chip die to minimize wire length, congestion, and timing violations:  RL formulation: State: Current partial placement + chip netlist (graph of connections between blocks) Actions: Place the.' },
+    { title: '3. Network Routing and Traffic Optimization', desc: 'RL optimizes network packet routing to minimize latency, maximize throughput, and balance load:  Traffic signal control: Wei et al. (2018) applied deep RL to traffic signal optimization across city intersections.' },
+    { title: '4. Inventory and Supply Chain Management', desc: 'RL optimizes inventory decisions across supply chains with uncertain demand:  State: Current inventory levels, pending orders, demand forecasts, supplier lead times Actions: Order quantities for each product at each location Reward: Revenue minus holding costs, stockout penalties, and ordering.' },
+    { title: '5. Combinatorial Optimization', desc: 'RL has been applied to classical NP-hard combinatorial problems:  Traveling Salesman Problem (TSP): Bello et al. (2017) trained a pointer network with REINFORCE to solve TSP, producing near-optimal tours without hand-designed heuristics.' },
 ];
 
 export default function WalkthroughRLResourceOptimization() {
@@ -17,10 +17,10 @@ export default function WalkthroughRLResourceOptimization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Resource Optimization — Step by Step
+          Resource Optimization \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how resource optimization works, one stage at a time.

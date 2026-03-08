@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFDerivativesAndGradients() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The gradient $\\nabla f$ lives in the same space as $\\mathbf&#123;x&#125;$ (parameter space), not in the output space.', isTrue: true, explanation: 'This is a key technical detail of Derivatives and Gradients.' },
-    { text: 'For $f: \\mathbb&#123;R&#125;^n \\to \\mathbb&#123;R&#125;$, reverse-mode AD computes the full gradient in $O(1)$ backward passes (relative to the forward pass cost).', isTrue: true, explanation: 'This is a key technical detail of Derivatives and Gradients.' },
-    { text: 'Forward-mode requires $O(n)$ passes.', isTrue: true, explanation: 'This is a key technical detail of Derivatives and Gradients.' },
+    { text: 'The gradient IS the derivative.', isTrue: false, explanation: 'The gradient is the derivative of a scalar function with respect to a vector. For vector-valued functions, the appropriate generalization is the Jacobian, not the gradient.' },
+    { text: 'If second partials are continuous, &#123;^2 f&#125;&#123; x_i  x_j&#125; = &#123;^2 f&#125;&#123; x_j  x_i&#125;, so the Hessian is symmetric.', isTrue: true, explanation: 'If second partials are continuous, &#123;^2 f&#125;&#123; x_i  x_j&#125; = &#123;^2 f&#125;&#123; x_j  x_i&#125;, so the Hessian is symmetric.' },
+    { text: 'In deep networks, repeated chain rule applications can cause gradients to shrink toward zero or grow unboundedly.', isTrue: true, explanation: 'Architectural choices (residual connections, layer normalization) and careful initialization mitigate this.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

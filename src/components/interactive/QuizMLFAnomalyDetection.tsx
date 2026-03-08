@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFAnomalyDetection() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Contamination parameter: Most methods require an estimate of the fraction of anomalies in the data.', isTrue: true, explanation: 'This is a key technical detail of Anomaly Detection.' },
-    { text: 'This can be tuned via domain knowledge or cross-validation when some labels exist.', isTrue: true, explanation: 'This is a key technical detail of Anomaly Detection.' },
-    { text: 'Feature engineering matters: Anomaly detection performance depends heavily on choosing features that make anomalies distinguishable.', isTrue: true, explanation: 'This is a key technical detail of Anomaly Detection.' },
+    { text: 'Anomaly detection finds all anomalies.', isTrue: false, explanation: 'Methods find deviations from the learned normal pattern. Novel types of anomalies not reflected in the training data may be missed (unknown unknowns).' },
+    { text: 'Most methods require an estimate of the fraction of anomalies in the data.', isTrue: true, explanation: 'This can be tuned via domain knowledge or cross-validation when some labels exist.' },
+    { text: 'Anomaly detection performance depends heavily on choosing features that make anomalies distinguishable.', isTrue: true, explanation: 'Domain expertise is crucial.' },
+    { text: 'Accuracy is meaningless with extreme class imbalance.', isTrue: true, explanation: 'Use precision-recall curves, F1 score, area under the ROC curve (AUC-ROC), or average precision (AUC-PR).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

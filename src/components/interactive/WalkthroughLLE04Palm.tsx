@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture and Innovations', desc: 'The foundation of palm begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Training at Scale with Pathways', desc: 'At this stage, the key transformation occurs — the core mechanism that makes palm work.' },
-    { title: '3. Training Data Composition', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Breakthrough Capabilities', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Architecture and Innovations', desc: 'PaLM uses a standard decoder-only Transformer with several important modifications. The most significant was parallel attention and feedforward computation: instead of computing attention and then the feedforward layer sequentially (as in standard Transformers), PaLM computes them in parallel and.' },
+    { title: '2. Training at Scale with Pathways', desc: 'PaLM was trained on 6,144 TPU v4 chips arranged in a pod-level configuration. The Pathways system enabled efficient model parallelism across this hardware — a combination of data parallelism (across pods) and model parallelism (within pods using 2-way data parallelism and 12-way model parallelism.' },
+    { title: '3. Training Data Composition', desc: 'The training mixture included: social media conversations (50% of tokens), filtered web pages (27%), books (13%), Wikipedia (4%), code from GitHub (5%), and a small amount of other sources.' },
+    { title: '4. Breakthrough Capabilities', desc: 'PaLM achieved state-of-the-art results on hundreds of benchmarks. On BIG-Bench, it outperformed the average human rater on 58% of tasks.' },
 ];
 
 export default function WalkthroughLLE04Palm() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE04Palm() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          PaLM — Step by Step
+          PaLM \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how palm works, one stage at a time.

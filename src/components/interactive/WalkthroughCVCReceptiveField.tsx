@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Computing Receptive Field Size', desc: 'The foundation of receptive field begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Effect of Stride and Pooling', desc: 'At this stage, the key transformation occurs — the core mechanism that makes receptive field work.' },
-    { title: '3. Effect of Dilated Convolutions', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Theoretical vs. Effective Receptive Field', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Computing Receptive Field Size', desc: 'For a sequential architecture, track two quantities layer by layer -- the receptive field size r and the cumulative stride (called the jump j):  Example: Three stacked 3 x 3 conv layers with stride 1: Layer 1: j=1, r = 1 + 2 x 1 = 3 Layer 2: j=1, r = 3 + 2 x 1 = 5 Layer 3: j=1, r = 5 + 2 x 1 =.' },
+    { title: '2. Effect of Stride and Pooling', desc: 'Stride-2 operations (whether convolutions or pooling) double the jump, causing subsequent layers to expand the receptive field faster:  Conv 3 x 3, stride 1: j=1, r=3 Max pool 2 x 2, stride 2: j=2, r=4 Conv 3 x 3, stride 1: j=2, r=8  The pooling layer doubles the effective stride, so each.' },
+    { title: '3. Effect of Dilated Convolutions', desc: 'A 3 x 3 convolution with dilation d has an effective kernel size of k_&#123;eff&#125; = k + (k-1)(d-1). With dilation 2, the effective size is 3 + 2 x 1 = 5, expanding the receptive field without additional parameters or pooling.' },
+    { title: '4. Theoretical vs. Effective Receptive Field', desc: 'The theoretical receptive field defines the maximum input region that can influence a neuron, but not all pixels contribute equally. (2016) showed that the effective receptive field (ERF) -- the region that has significant influence -- is much smaller, often roughly Gaussian-shaped and concentrated.' },
 ];
 
 export default function WalkthroughCVCReceptiveField() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCReceptiveField() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Receptive Field — Step by Step
+          Receptive Field \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how receptive field works, one stage at a time.

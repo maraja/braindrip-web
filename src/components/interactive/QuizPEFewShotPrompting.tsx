@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEFewShotPrompting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Optimal example count for most tasks: 3-8 examples.', isTrue: true, explanation: 'This is a key technical detail of Few-Shot Prompting.' },
-    { text: 'Returns diminish after 5-8 for standard classification and formatting tasks.', isTrue: true, explanation: 'This is a key technical detail of Few-Shot Prompting.' },
-    { text: 'Example ordering can affect accuracy by up to 30% (Lu et al., 2022); random ordering is a safe default.', isTrue: true, explanation: 'This is a key technical detail of Few-Shot Prompting.' },
+    { text: 'More examples always mean better results.', isTrue: false, explanation: 'Returns diminish rapidly. 3 well-chosen examples often match or outperform 8 poorly chosen ones.' },
+    { text: 'Any examples of the task will work.', isTrue: false, explanation: 'Example selection has a large effect. Examples that are too easy fail to demonstrate edge-case handling.' },
+    { text: 'Few-shot examples teach the model new knowledge.', isTrue: false, explanation: 'Few-shot examples demonstrate format and task type — they do not inject new knowledge into the model. If the model lacks domain knowledge, examples will not compensate.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

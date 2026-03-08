@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Temporal Coherence Challenge', desc: 'The foundation of video generation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Diffusion-Based Video Generation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes video generation work.' },
-    { title: '3. Autoregressive Video Generation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Key Systems', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Evaluation Metrics', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Temporal Coherence Challenge', desc: 'The fundamental difficulty of video generation is maintaining consistency across frames. Sources of temporal incoherence include:  Flickering: High-frequency random variations in pixel values between frames, visible as shimmering textures Object identity drift: Characters or objects gradually.' },
+    { title: '2. Diffusion-Based Video Generation', desc: 'The dominant approach extends latent diffusion models (LDMs) to video:  Spatial-temporal VAE: First, a video VAE compresses T x H x W x 3 into a latent representation T\' x H\' x W\' x C, with spatial downsampling (typically 8x) and optional temporal downsampling (2--4x).' },
+    { title: '3. Autoregressive Video Generation', desc: 'An alternative approach generates frames sequentially:  Generate frame 1 from text Generate frame 2 conditioned on frame 1 (and text) Continue for T frames  Advantages: Natural handling of variable-length videos; can generate arbitrarily long sequences. Each step only needs to produce one frame.' },
+    { title: '4. Key Systems', desc: 'Stable Video Diffusion (SVD) (Blattmann et al., 2023): Image-to-video model based on Stable Diffusion. Takes a single image and generates 14--25 frames at 576x1024.' },
+    { title: '5. Evaluation Metrics', desc: 'Video generation quality is notoriously difficult to evaluate:  FVD (Frechet Video Distance): Extension of FID to video using I3D features. Measures distributional similarity between generated and real videos.' },
+    { title: '6. Computational Requirements', desc: 'Video generation is extraordinarily expensive:  Training Sora-class models: estimated thousands of A100/H100 GPU-months SVD training: ~150k GPU-hours on A100s Inference for a single 4-second 512x512 clip: 30--120 seconds on a single A100 (diffusion with 50 sampling steps) Memory: generating 16.' },
 ];
 
 export default function WalkthroughCVCVideoGeneration() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCVideoGeneration() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Video Generation — Step by Step
+          Video Generation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how video generation works, one stage at a time.

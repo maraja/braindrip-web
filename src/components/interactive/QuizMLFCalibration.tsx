@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFCalibration() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Calibration set: Platt scaling and isotonic regression require a held-out calibration set.', isTrue: true, explanation: 'This is a key technical detail of Calibration.' },
-    { text: 'Never calibrate on training data.', isTrue: true, explanation: 'This is a key technical detail of Calibration.' },
-    { text: 'Cross-validation can be used when data is limited.', isTrue: true, explanation: 'This is a key technical detail of Calibration.' },
+    { text: 'A model with high accuracy is well-calibrated.', isTrue: false, explanation: 'Accuracy measures the fraction of correct hard predictions. A model can be highly accurate while assigning extreme and poorly calibrated probabilities to its correct predictions.' },
+    { text: 'Platt scaling and isotonic regression require a held-out calibration set.', isTrue: true, explanation: 'Never calibrate on training data. Cross-validation can be used when data is limited.' },
+    { text: 'ECE is sensitive to the number and type of bins (equal-width vs.', isTrue: true, explanation: 'equal-frequency). Equal-frequency bins are more robust.' },
+    { text: 'Platt scaling and temperature scaling are monotonic transformations.', isTrue: true, explanation: 'AUC-ROC and accuracy at a fixed threshold are preserved.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

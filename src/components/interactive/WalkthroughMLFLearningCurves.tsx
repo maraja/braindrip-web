@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Training Curves vs. Validation Curves', desc: 'The foundation of learning curves begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Diagnosing High Bias (Underfitting)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes learning curves work.' },
-    { title: '3. Diagnosing High Variance (Overfitting)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Effect of Adding More Data', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Effect of Model Complexity', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Training Curves vs. Validation Curves', desc: 'Two related but distinct diagnostic plots share the name "learning curve":  Sample learning curve (the classic form): Plots training error and validation error as a function of training set size n.' },
+    { title: '2. Diagnosing High Bias (Underfitting)', desc: 'A model with high bias is too simple to capture the underlying pattern. Signature on sample learning curves: Training error is high (the model cannot even fit the training data well).' },
+    { title: '3. Diagnosing High Variance (Overfitting)', desc: 'A model with high variance memorizes training data but fails to generalize. Signature on sample learning curves: Training error is low (the model fits the training data very well).' },
+    { title: '4. The Effect of Adding More Data', desc: 'Adding data helps when the model has high variance (the gap is large), because more training examples constrain the model, pulling validation error down toward training error.' },
+    { title: '5. The Effect of Model Complexity', desc: 'As complexity increases: Training error generally decreases (more capacity to fit the data). Validation error initially decreases (better representation), then increases (overfitting).' },
+    { title: '6. Validation Curves (Performance vs. Hyperparameter)', desc: 'A validation curve plots a performance metric against a single hyperparameter value. For example, plotting accuracy vs.' },
 ];
 
 export default function WalkthroughMLFLearningCurves() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFLearningCurves() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Learning Curves — Step by Step
+          Learning Curves \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how learning curves works, one stage at a time.

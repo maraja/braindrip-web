@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGATheCommandApi() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Command is imported from langgraph.types.', isTrue: true, explanation: 'This is a key technical detail of The Command API.' },
-    { text: 'The update field is a dict identical to what a normal node would return — it is merged via reducers.', isTrue: true, explanation: 'This is a key technical detail of The Command API.' },
-    { text: 'The goto field accepts a node name string, END (or "__end__"), or a list of names for fan-out.', isTrue: true, explanation: 'This is a key technical detail of The Command API.' },
+    { text: 'Command replaces all edges.', isTrue: false, explanation: 'Command replaces conditional edges from the node that returns it. You still need static edges for other nodes.' },
+    { text: 'The Command object lets a node simultaneously update state and control routing in a single return value, replacing the need for separate conditional edges in many scenarios.', isTrue: true, explanation: 'This captures the core definition of The Command API.' },
+    { text: 'The Command API is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding The Command API is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

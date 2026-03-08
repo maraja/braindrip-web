@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Model-Free Methods', desc: 'The foundation of model-based vs. model-free rl begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Model-Based Methods', desc: 'At this stage, the key transformation occurs — the core mechanism that makes model-based vs. model-free rl work.' },
-    { title: '3. The Sample Efficiency Gap', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Model Error Problem', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Hybrid Approaches', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Model-Free Methods', desc: 'Model-free algorithms optimize behavior without learning environment dynamics. Value-based methods learn Q^*(s,a) and derive a policy from it:  [equation]  Examples: Q-learning, DQN, Rainbow.' },
+    { title: '2. Model-Based Methods', desc: 'Model-based algorithms learn an approximate model of the environment:  [equation] [equation]  The agent then uses this model for planning -- generating simulated experience, performing lookahead search, or optimizing trajectories.' },
+    { title: '3. The Sample Efficiency Gap', desc: 'Model-based methods can be 10x-100x more sample-efficient than model-free counterparts. On continuous control benchmarks, MBPO (Janner et al., 2019) matches SAC\'s asymptotic performance using roughly 1/10th the environment interactions.' },
+    { title: '4. The Model Error Problem', desc: 'The Achilles\' heel of model-based RL is compounding model error. When the agent plans H steps into the future using a model with per-step error , the total error can grow as:  [equation]  In the worst case, errors compound exponentially, making long-horizon plans unreliable.' },
+    { title: '5. Hybrid Approaches', desc: 'The cleanest boundary is often blurred in practice:  Dyna (Sutton, 1991) interleaves real experience with model-generated experience to update a model-free value function (see dyna-architecture.md).' },
 ];
 
 export default function WalkthroughRLModelBasedVsModelFree() {
@@ -17,10 +17,10 @@ export default function WalkthroughRLModelBasedVsModelFree() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Model-Based vs. Model-Free RL — Step by Step
+          Model-Based vs. Model-Free RL \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how model-based vs. model-free rl works, one stage at a time.

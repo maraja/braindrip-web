@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACLoggingTracingAndDebugging() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'You only need traces when something goes wrong.', isTrue: false, explanation: '"You only need traces when something goes wrong." Traces of successful executions are equally valuable -- they reveal optimization opportunities, establish performance baselines, and serve as regressi' },
-    { text: 'Observability for agents requires capturing structured traces of thought-action-observation chains, enabling developers to replay, diagnose, and optimize multi-step agent behavior.', isTrue: true, explanation: 'This captures the core purpose of Logging, Tracing, and Debugging.' },
-    { text: 'Logging, Tracing, and Debugging is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Logging, Tracing, and Debugging is important for building on more advanced topics.' },
+    { text: 'print() statements are sufficient for agent debugging.', isTrue: false, explanation: 'Print statements capture point-in-time values but lack structure, hierarchy, timing, and the ability to search across thousands of executions. Structured tracing is fundamentally different in capability.' },
+    { text: 'logging every trace for an agent handling 10,000 requests/day is expensive.', isTrue: true, explanation: 'Sample 100% of errors, 10% of successes, and 100% of slow requests (above a latency threshold)' },
+    { text: 'user messages, tool outputs, and LLM responses often contain personal information that must be masked or removed for compliance', isTrue: true, explanation: 'user messages, tool outputs, and LLM responses often contain personal information that must be masked or removed for compliance' },
+    { text: 'if an agent calls an external API, the correlation ID connects the agent trace to the API\'s server-side trace, enabling end-to-end debugging', isTrue: true, explanation: 'if an agent calls an external API, the correlation ID connects the agent trace to the API\'s server-side trace, enabling end-to-end debugging' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

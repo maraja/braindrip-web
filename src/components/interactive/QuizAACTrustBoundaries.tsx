@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACTrustBoundaries() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Prompt architecture: Trust levels are reflected in prompt structure.', isTrue: true, explanation: 'This is a key technical detail of Trust Boundaries.' },
-    { text: 'System instructions go in the system message (highest priority).', isTrue: true, explanation: 'This is a key technical detail of Trust Boundaries.' },
-    { text: 'User input goes in the user message.', isTrue: true, explanation: 'This is a key technical detail of Trust Boundaries.' },
+    { text: 'The LLM naturally prioritizes system instructions.', isTrue: false, explanation: 'Base LLMs treat all text in the context window equally. Instruction hierarchy must be explicitly trained (through RLHF) and architecturally enforced (through prompt structure and processing policies).' },
+    { text: 'Trust levels are reflected in prompt structure.', isTrue: true, explanation: 'System instructions go in the system message (highest priority). User input goes in the user message.' },
+    { text: 'Authenticated users are fully trusted.', isTrue: false, explanation: 'Authentication establishes identity, not intent. Authenticated users may still attempt misuse (jailbreaking, policy violations) or make honest mistakes that could cause damage.' },
+    { text: 'Each piece of information in the agent\'s context carries a trust-level tag.', isTrue: true, explanation: 'These tags are maintained through the agent\'s reasoning process, so when the agent cites a fact, the trust level of its source propagates to the citation.' },
+    { text: 'Trust boundaries are overkill for internal tools.', isTrue: false, explanation: 'Even internal tools can be compromised, misconfigured, or return unexpected data. Internal APIs that return user-generated content (CRM notes, support tickets) carry the trust level of that user-generated content, not the trust level of the API itself.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

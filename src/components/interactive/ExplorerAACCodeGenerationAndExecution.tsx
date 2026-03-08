@@ -5,7 +5,7 @@ const DETAILS = [
     { label: 'Timeout enforcement', detail: 'Every code execution must have a hard timeout (typically 30-120 seconds). Without it, infinite loops or long-running computations can hang the agent indefinitely.' },
     { label: 'Output capture', detail: 'Capture both stdout and stderr, plus the return value of the last expression. Truncate output to a reasonable length (e.g., 10,000 characters) to avoid flooding the LLM context.' },
     { label: 'File I/O in sandbox', detail: 'Sandboxed environments typically provide a temporary directory where the agent can read/write files. Uploaded user files are placed there; generated files (charts, CSVs) can be returned from there.' },
-    { label: 'Package availability', detail: 'Pre-install common packages in the sandbox image. Allowing `pip install` at runtime adds flexibility but also latency and security risk. Many implementations use a curated set of ~50-100 pre-installed packages.' },
+    { label: 'Package availability', detail: 'Pre-install common packages in the sandbox image. Allowing pip install at runtime adds flexibility but also latency and security risk. Many implementations use a curated set of ~50-100 pre-installed packages.' },
     { label: 'Resource limits', detail: 'Set explicit limits: max 2 CPU cores, 512MB-2GB RAM, no network access (or restricted network), and max execution time. These prevent both accidental and adversarial resource abuse.' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerAACCodeGenerationAndExecution() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Code Generation and Execution — Key Details Explorer
+          Code Generation and Execution \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of code generation and execution.
+          Click each card to explore the technical details.
         </p>
       </div>
 

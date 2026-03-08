@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Power Analysis for Binary Outcomes', desc: 'The foundation of sample size and power analysis begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Variance Near Extreme Proportions', desc: 'At this stage, the key transformation occurs — the core mechanism that makes sample size and power analysis work.' },
-    { title: '3. Minimum Sample Sizes for Common Goals', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Cost Equation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Practical Budget-Sample Trade-offs', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Power Analysis for Binary Outcomes', desc: 'Most agent evaluations produce binary outcomes: the agent either completed the task or it didn\'t. Comparing two agents\' success rates is a two-proportion z-test.' },
+    { title: '2. Variance Near Extreme Proportions', desc: 'The required sample size depends on where the proportions fall. The variance of a Bernoulli variable is p(1-p), which is maximized at p = 0.5 and approaches zero near p = 0 or p = 1.' },
+    { title: '3. The Cost Equation', desc: 'Every evaluation run has a cost. At &#123;c&#125; dollars per run, the total evaluation budget for comparing two agents is:  [equation]  where k is the number of distinct tasks and n is runs per task.' },
+    { title: '4. Practical Budget-Sample Trade-offs', desc: 'The tension between statistical rigor and budget is the central challenge of evaluation design. Consider three realistic scenarios:  Startup with limited budget (500/evaluation): At \\1/run, you can afford 500 total runs.' },
 ];
 
 export default function WalkthroughAAESampleSizeAndPowerAnalysis() {
@@ -17,10 +16,10 @@ export default function WalkthroughAAESampleSizeAndPowerAnalysis() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Sample Size and Power Analysis — Step by Step
+          Sample Size and Power Analysis \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how sample size and power analysis works, one stage at a time.

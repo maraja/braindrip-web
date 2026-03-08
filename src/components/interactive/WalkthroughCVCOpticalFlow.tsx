@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Brightness Constancy Assumption', desc: 'The foundation of optical flow begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Lucas-Kanade: Sparse, Local Flow', desc: 'At this stage, the key transformation occurs — the core mechanism that makes optical flow work.' },
-    { title: '3. Horn-Schunck: Dense, Global Flow', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Modern Dense Methods', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Code Example', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Brightness Constancy Assumption', desc: 'The core constraint assumes a pixel\'s intensity does not change as it moves:  [equation]  Taking a first-order Taylor expansion and dividing by  t:  [equation]  where I_x, I_y are spatial gradients and I_t is the temporal derivative.' },
+    { title: '2. Lucas-Kanade: Sparse, Local Flow', desc: 'Lucas and Kanade (1981) assume flow is constant within a small window W (typically 5 x 5 to 15 x 15). For each window, the overdetermined system:  [equation]  is solved via least squares:  [equation]  where W is a diagonal Gaussian weighting matrix.' },
+    { title: '3. Horn-Schunck: Dense, Global Flow', desc: 'Horn and Schunck (1981) regularize the aperture problem by adding a global smoothness term:  [equation]  The smoothness weight  controls the trade-off: large  produces smooth flow fields; small  preserves motion discontinuities but may amplify noise.' },
+    { title: '4. Modern Dense Methods', desc: 'Farneback (2003): Approximates each neighborhood with a polynomial and estimates displacement analytically. OpenCV\'s calcOpticalFlowFarneback uses this method, running at approximately 10--20 fps on 640x480.' },
 ];
 
 export default function WalkthroughCVCOpticalFlow() {
@@ -17,10 +16,10 @@ export default function WalkthroughCVCOpticalFlow() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Optical Flow — Step by Step
+          Optical Flow \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how optical flow works, one stage at a time.

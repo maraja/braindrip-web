@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Language and Register Specification', desc: 'The foundation of translation and multilingual prompting begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Cultural Adaptation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes translation and multilingual prompting work.' },
-    { title: '3. Tokenization and Cost Disparities', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Bilingual Prompt Strategies', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Quality Variation Across Languages', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Language and Register Specification', desc: 'Translation quality depends heavily on how precisely the target language and register are specified:  Weak prompt: "Translate this to Japanese." Strong prompt: "Translate this to Japanese (formal keigo register, appropriate for business correspondence). Maintain the professional tone.' },
+    { title: '2. Cultural Adaptation', desc: 'Beyond linguistic translation, cultural adaptation adjusts references, examples, and conventions:  Idioms and metaphors: "When encountering idioms, do not translate literally. Find an equivalent expression in the target language that conveys the same meaning.' },
+    { title: '3. Tokenization and Cost Disparities', desc: 'Tokenization costs vary dramatically across languages, affecting context window utilization and API costs:  English: Approximately 1 token per word (4 characters per token on average). 1,000 words costs roughly 1,000-1,300 tokens.' },
+    { title: '4. Bilingual Prompt Strategies', desc: 'Using English for instructions while generating in another language can improve quality:  English instructions, target language output: "Answer the following question in formal Japanese. The question is about [topic].' },
+    { title: '5. Quality Variation Across Languages', desc: 'Model performance varies significantly across languages:  Tier 1 (near-English quality): French, German, Spanish, Portuguese, Italian — major European languages with abundant training data. 90-95% of English-language quality on most tasks.' },
 ];
 
 export default function WalkthroughPETranslationAndMultilingualPrompting() {
@@ -17,10 +17,10 @@ export default function WalkthroughPETranslationAndMultilingualPrompting() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Translation and Multilingual Prompting — Step by Step
+          Translation and Multilingual Prompting \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how translation and multilingual prompting works, one stage at a time.

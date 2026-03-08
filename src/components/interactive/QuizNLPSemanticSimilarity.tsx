@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPSemanticSimilarity() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'STS Benchmark contains 8,628 sentence pairs scored on a 0-5 scale across three domains (captions, news, forums).', isTrue: true, explanation: 'This is a key technical detail of Semantic Similarity.' },
-    { text: 'SimCSE achieves approximately 0.86 Spearman on STS-B using contrastive learning with NLI supervision.', isTrue: true, explanation: 'This is a key technical detail of Semantic Similarity.' },
-    { text: 'Human inter-annotator agreement on STS-B is approximately 0.83 Spearman, meaning current models approach the human ceiling.', isTrue: true, explanation: 'This is a key technical detail of Semantic Similarity.' },
+    { text: 'Semantic similarity and semantic relatedness are the same thing.', isTrue: false, explanation: 'Similarity measures how much two words are alike (synonymy, near-synonymy). Relatedness is broader, capturing any semantic connection including part-whole, cause-effect, or functional association.' },
+    { text: 'Cosine similarity between BERT [CLS] tokens gives good sentence similarity.', isTrue: false, explanation: 'Without fine-tuning, BERT\'s [CLS] token produces sentence representations that correlate poorly with human similarity judgments -- approximately 0.20 Spearman on STS-B, worse than averaged GloVe vectors. BERT must be fine-tuned with appropriate objectives (e.g., siamese networks on NLI data) to produce useful sentence embeddings.' },
+    { text: 'Higher-dimensional embeddings always give better similarity estimates.', isTrue: false, explanation: 'Embedding dimensionality interacts with training data size and model capacity. Increasing dimensions beyond what the data supports leads to overfitting and sparser representations.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

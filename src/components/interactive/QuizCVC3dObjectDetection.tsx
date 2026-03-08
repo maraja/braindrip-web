@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizCVC3dObjectDetection() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'KITTI benchmark (car, moderate): PointPillars 77.3 AP, SECOND 83.3 AP, CenterPoint ~84 AP (3D AP @ IoU 0.7).', isTrue: true, explanation: 'This is a key technical detail of 3D Object Detection.' },
-    { text: 'nuScenes test set: CenterPoint 67.3 NDS, BEVFusion 72.9 NDS, TransFusion 71.7 NDS.', isTrue: true, explanation: 'This is a key technical detail of 3D Object Detection.' },
-    { text: 'Latency: PointPillars runs at 62 Hz, CenterPoint at ~11 Hz, BEVFormer at ~4 Hz (on an A100).', isTrue: true, explanation: 'This is a key technical detail of 3D Object Detection.' },
+    { text: 'LiDAR-based methods always beat camera-based.', isTrue: false, explanation: 'As of 2024, camera-based methods like Far3D and StreamPETR approach or match early LiDAR methods on nuScenes. The gap has narrowed from ~20 NDS to ~5 NDS in three years.' },
+    { text: 'PointPillars 77.3 AP, SECOND 83.3 AP, CenterPoint ~84 AP (3D AP @ IoU 0.7).', isTrue: true, explanation: 'PointPillars 77.3 AP, SECOND 83.3 AP, CenterPoint ~84 AP (3D AP @ IoU 0.7).' },
+    { text: 'CenterPoint 67.3 NDS, BEVFusion 72.9 NDS, TransFusion 71.7 NDS.', isTrue: true, explanation: 'CenterPoint 67.3 NDS, BEVFusion 72.9 NDS, TransFusion 71.7 NDS.' },
+    { text: 'PointPillars runs at 62 Hz, CenterPoint at ~11 Hz, BEVFormer at ~4 Hz (on an A100).', isTrue: true, explanation: 'PointPillars runs at 62 Hz, CenterPoint at ~11 Hz, BEVFormer at ~4 Hz (on an A100).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

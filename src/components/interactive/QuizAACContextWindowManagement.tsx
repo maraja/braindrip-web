@@ -2,8 +2,8 @@ import { useState } from 'react';
 export default function QuizAACContextWindowManagement() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Context window management is the art of selecting, prioritizing, and compressing information to fit an LLM\'s limited input capacity while preserving the context most critical for the current reasoning step.', isTrue: true, explanation: 'This captures the core purpose of Context Window Management.' },
-    { text: 'Context Window Management is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Context Window Management is important for building on more advanced topics.' },
+    { text: 'Larger context windows solve the problem.', isTrue: false, explanation: 'Larger windows help but do not eliminate the need for context management. Performance still degrades with length, costs still scale with tokens, and most accumulated agent context is irrelevant to the current step.' },
+    { text: 'Context window management is the art of selecting, prioritizing, and compressing information to fit an LLM\'s limited input capacity while preserving the context most critical for the current reasoning step.', isTrue: true, explanation: 'This captures the core definition of Context Window Management.' },
     { text: 'Context Window Management is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Context Window Management is important for building on more advanced topics.' },
   ];
   return (

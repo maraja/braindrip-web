@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Origins — Gating Networks (1991-2016)', desc: 'The foundation of mixture of experts evolution begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Sparsely-Gated MoE — The Breakthrough (2017)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes mixture of experts evolution work.' },
-    { title: '3. GShard and the Scaling Push (2020-2021)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Mixtral — Open MoE Goes Mainstream (December 2023)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. DeepSeek V2/V3 — Fine-Grained Experts and Loss-Free Balancing (2024)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Origins — Gating Networks (1991-2016)', desc: 'Jacobs, Jordan, Nowlan, and Hinton introduced the Mixture of Experts concept in 1991: multiple "expert" networks, each specializing in a region of the input space, combined through a gating network that decides which experts to use.' },
+    { title: '2. Sparsely-Gated MoE — The Breakthrough (2017)', desc: '(2017) at Google demonstrated that MoE could scale to massive language models. Their key innovation was a sparsely-gated MoE layer: a learned gating network produces a sparse distribution over experts, selecting only the top-k (typically top-2) for each token.' },
+    { title: '3. GShard and the Scaling Push (2020-2021)', desc: 'Google\'s GShard (Lepikhin et al. 2020) scaled MoE to 600 billion parameters across 2048 experts with token-level routing and automatic sharding across TPUs.' },
+    { title: '4. Mixtral — Open MoE Goes Mainstream (December 2023)', desc: 'Mistral AI\'s Mixtral 8x7B was a watershed moment: the first high-quality open-weight MoE model. With 46.7B total parameters but only 12.9B active per token (top-2 of 8 experts), Mixtral matched or exceeded LLaMA 2 70B on most benchmarks while being dramatically faster to run.' },
+    { title: '5. DeepSeek V2/V3 — Fine-Grained Experts and Loss-Free Balancing (2024)', desc: 'DeepSeek took MoE in a new direction with fine-grained experts: DeepSeek V2 used 160 experts with top-6 routing (out of 2 shared + 160 routed experts). DeepSeek V3 expanded to 256 fine-grained experts plus 1 shared expert, with top-8 routing, totaling 671B parameters and 37B active.' },
+    { title: '6. Llama 4 — Open Natively Multimodal MoE (2025)', desc: 'Meta\'s Llama 4 brought MoE to the open multimodal frontier. Llama 4 Maverick uses 128 experts with top-1 routing, totaling approximately 400B parameters with roughly 17B active per token.' },
 ];
 
 export default function WalkthroughLLE04MixtureOfExpertsEvolution() {
@@ -17,10 +18,10 @@ export default function WalkthroughLLE04MixtureOfExpertsEvolution() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Mixture of Experts Evolution — Step by Step
+          Mixture of Experts Evolution \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how mixture of experts evolution works, one stage at a time.

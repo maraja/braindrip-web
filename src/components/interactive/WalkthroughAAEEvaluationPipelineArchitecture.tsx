@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Core Pipeline Components', desc: 'The foundation of evaluation pipeline architecture begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Orchestration Concerns', desc: 'At this stage, the key transformation occurs — the core mechanism that makes evaluation pipeline architecture work.' },
-    { title: '3. Infrastructure', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. How Production Frameworks Architect Their Pipelines', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Core Pipeline Components', desc: 'Task Loader: Reads task definitions from a task suite or benchmark. Handles task filtering (run only coding tasks, only safety tasks), sampling (run a random 10% for quick checks), and versioning (ensure the task set has not changed between evaluation runs).' },
+    { title: '2. Orchestration Concerns', desc: 'Parallel Execution: Running tasks sequentially is too slow. A 500-task evaluation at 5 minutes per task takes 42 hours sequentially but 1.5 hours with 30 parallel workers.' },
+    { title: '3. Infrastructure', desc: 'Containerized Environments: Docker containers (or lightweight VMs) provide the isolation and reproducibility that evaluation demands. Each task runs in a fresh container built from a version-pinned image.' },
+    { title: '4. How Production Frameworks Architect Their Pipelines', desc: 'Inspect AI (by UK AISI): Defines evaluations as Python functions with decorators. Tasks are loaded from datasets, agents run in sandboxed environments (Docker, local processes), and scorers are modular functions that can be composed.' },
 ];
 
 export default function WalkthroughAAEEvaluationPipelineArchitecture() {
@@ -16,10 +16,10 @@ export default function WalkthroughAAEEvaluationPipelineArchitecture() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Evaluation Pipeline Architecture — Step by Step
+          Evaluation Pipeline Architecture \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how evaluation pipeline architecture works, one stage at a time.

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE04Deberta() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'DeBERTa (He et al., 2020) introduced disentangled attention — separating content and position into independent representations with dedicated attention matrices — and an enhanced mask decoder that reintroduces absolute position for prediction, surpassing human performance on the SuperGLUE benchmark and representing the high-water mark of the encoder-only paradigm.', isTrue: true, explanation: 'This captures the core purpose of DeBERTa: Decoding-Enhanced BERT with Disentangled Attention.' },
-    { text: 'DeBERTa: Decoding-Enhanced BERT with Disentangled Attention is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding DeBERTa: Decoding-Enhanced BERT with Disentangled Attention is important for building on more advanced topics.' },
-    { text: 'DeBERTa: Decoding-Enhanced BERT with Disentangled Attention is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding DeBERTa: Decoding-Enhanced BERT with Disentangled Attention is important for building on more advanced topics.' },
+    { text: 'DeBERTa just adds more parameters to BERT.', isTrue: false, explanation: 'DeBERTa\'s improvements come from architectural innovation (disentangled attention, EMD), not just scale. DeBERTa-Large (390M) outperformed RoBERTa-Large (355M) — models of similar size — by a significant margin.' },
+    { text: '24 layers, 16 heads, 1024 hidden, 390M parameters', isTrue: true, explanation: '24 layers, 16 heads, 1024 hidden, 390M parameters' },
+    { text: 'Disentangled attention triples the computation.', isTrue: false, explanation: 'The three attention components share much of their computation (key/query projections are reused). The overhead is approximately 20-30% compared to standard attention — meaningful but not tripling.' },
+    { text: '24 layers, 24 heads, 1536 hidden, 750M parameters', isTrue: true, explanation: '24 layers, 24 heads, 1536 hidden, 750M parameters' },
+    { text: 'Surpassing human performance means DeBERTa understands language like humans.', isTrue: false, explanation: 'SuperGLUE measures specific types of language tasks in a controlled format. DeBERTa excels at pattern matching in these formats but lacks common sense, world knowledge, and the flexible reasoning that characterize human language understanding.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

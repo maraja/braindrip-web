@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Dependency Grammar and Universal Dependencies', desc: 'The foundation of dependency parsing begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Transition-Based Parsing', desc: 'At this stage, the key transformation occurs — the core mechanism that makes dependency parsing work.' },
-    { title: '3. Graph-Based Parsing', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Neural Dependency Parsers', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Evaluation Metrics', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Dependency Grammar and Universal Dependencies', desc: 'Dependency grammar (Tesniere, 1959) holds that syntactic structure is defined by binary, asymmetric relations between words. The Universal Dependencies (UD) project (Nivre et al.' },
+    { title: '2. Transition-Based Parsing', desc: 'Transition-based parsers build the dependency tree incrementally using a sequence of actions applied to a stack and buffer configuration. Arc-Standard system uses three transitions: SHIFT: Move the front of the buffer onto the stack.' },
+    { title: '3. Graph-Based Parsing', desc: 'Graph-based parsers score all possible arcs independently and find the tree that maximizes the total score. Maximum Spanning Tree (MST) algorithms (Eisner, 1996; McDonald et al., 2005) find the highest-scoring projective or non-projective tree.' },
+    { title: '4. Neural Dependency Parsers', desc: 'Modern neural dependency parsers use BiLSTM or transformer encoders to represent each token, then score head-dependent pairs using biaffine attention (Dozat & Manning, 2017).' },
+    { title: '5. Evaluation Metrics', desc: 'UAS (Unlabeled Attachment Score): Percentage of tokens assigned the correct head (ignoring the relation label). LAS (Labeled Attachment Score): Percentage of tokens with both the correct head and the correct relation label.' },
 ];
 
 export default function WalkthroughNLPDependencyParsing() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPDependencyParsing() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Dependency Parsing — Step by Step
+          Dependency Parsing \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how dependency parsing works, one stage at a time.

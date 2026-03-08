@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Forward View: $\\lambda$-Return', desc: 'The foundation of eligibility traces begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Backward View: Eligibility Traces', desc: 'At this stage, the key transformation occurs — the core mechanism that makes eligibility traces work.' },
-    { title: '3. TD($\\lambda$) Algorithm', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. SARSA($\\lambda$) and Q($\\lambda$)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Equivalence', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Forward View: $\\lambda$-Return', desc: 'The -return is a weighted average of all n-step returns:  [equation]  where G_t^&#123;(n)&#125; = R_&#123;t+1&#125; +  R_&#123;t+2&#125; +  + ^&#123;n-1&#125; R_&#123;t+n&#125; + ^n V(S_&#123;t+n&#125;) is the n-step return. The geometric weighting (1 - )^&#123;n-1&#125; sums to 1, creating a valid average.' },
+    { title: '2. The Backward View: Eligibility Traces', desc: 'Computing the -return in the forward view requires waiting until the end of the episode. The backward view achieves the same result incrementally using eligibility traces.' },
+    { title: '3. TD($\\lambda$) Algorithm', desc: 'At each time step:  Observe transition (S_t, A_t, R_&#123;t+1&#125;, S_&#123;t+1&#125;) Compute TD error: _t = R_&#123;t+1&#125; +  V(S_&#123;t+1&#125;) - V(S_t) Update trace: e_t(s) for all states Update all state values: V(s)  V(s) +  \\, _t \\, e_t(s) for all s  The key insight: the same TD error _t is used to update every state, but.' },
+    { title: '4. SARSA($\\lambda$) and Q($\\lambda$)', desc: 'Eligibility traces extend naturally to control:  SARSA(): Maintain traces over state-action pairs (s, a):  [equation]  [equation]  Watkins\'s Q(): Combines Q-learning with traces, but cuts the trace to zero whenever a non-greedy action is taken (because Q-learning is off-policy, and the trace should.' },
+    { title: '5. The Equivalence', desc: 'Sutton & Barto (2018) prove that the forward view (-return) and backward view (eligibility traces) produce identical total updates over an episode (for the offline/batch case). The backward view is computationally preferable because it updates incrementally at each step.' },
 ];
 
 export default function WalkthroughRLEligibilityTraces() {
@@ -17,10 +17,10 @@ export default function WalkthroughRLEligibilityTraces() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Eligibility Traces — Step by Step
+          Eligibility Traces \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how eligibility traces works, one stage at a time.

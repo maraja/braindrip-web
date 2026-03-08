@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE06UlmfitAndTransferLearning() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ULMFiT (Howard & Ruder, 2018) demonstrated that a three-stage transfer learning recipe — pre-train a language model, fine-tune it on domain text, then fine-tune on the task — could match or beat state-of-the-art NLP systems trained from scratch, establishing the methodology that GPT and BERT would scale to transformative effect.', isTrue: true, explanation: 'This captures the core purpose of ULMFiT and Transfer Learning for NLP.' },
-    { text: 'ULMFiT and Transfer Learning for NLP is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding ULMFiT and Transfer Learning for NLP is important for building on more advanced topics.' },
-    { text: 'ULMFiT and Transfer Learning for NLP is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding ULMFiT and Transfer Learning for NLP is important for building on more advanced topics.' },
+    { text: 'ULMFiT was the first use of pre-trained language models.', isTrue: false, explanation: 'Pre-trained word embeddings (Word2Vec, GloVe) and semi-supervised approaches existed before. ULMFiT\'s contribution was the fine-tuning methodology that made full model transfer learning work reliably for NLP.' },
+    { text: '3-layer AWD-LSTM (Merity et al., 2017); 1150 hidden units, 400-dimensional embeddings', isTrue: true, explanation: '3-layer AWD-LSTM (Merity et al., 2017); 1150 hidden units, 400-dimensional embeddings' },
+    { text: 'ULMFiT only works for text classification.', isTrue: false, explanation: 'The paper focused on classification, but the transfer learning techniques (discriminative LR, gradual unfreezing, STLR) are general. They\'ve been applied to sequence labeling, generation, and other tasks.' },
+    { text: 'Wikitext-103 (~103M tokens from 28,595 Wikipedia articles)', isTrue: true, explanation: 'Wikitext-103 (~103M tokens from 28,595 Wikipedia articles)' },
+    { text: 'Discriminative learning rates are just a heuristic.', isTrue: false, explanation: 'While the specific factor of 2.6 was found empirically, the principle is grounded in the observation (supported by visualization studies) that lower layers learn more general features and higher layers learn more task-specific features. Adjusting learning rates by layer is now standard practice.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

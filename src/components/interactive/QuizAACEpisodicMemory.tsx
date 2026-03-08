@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACEpisodicMemory() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Episode granularity: Store one episode per task or subtask, not per individual action.', isTrue: true, explanation: 'This is a key technical detail of Episodic Memory.' },
-    { text: 'Individual actions are too fine-grained for useful retrieval; entire conversation sessions are too coarse.', isTrue: true, explanation: 'This is a key technical detail of Episodic Memory.' },
-    { text: 'A single self-contained task attempt is the right unit Storage overhead: A typical episode is 200-500 tokens of text plus a 1536-dimensional embedding vector.', isTrue: true, explanation: 'This is a key technical detail of Episodic Memory.' },
+    { text: 'Episodic memory is just a chat history log.', isTrue: false, explanation: 'Chat history is raw data. Episodic memory is structured, annotated, and indexed.' },
+    { text: 'Store one episode per task or subtask, not per individual action.', isTrue: true, explanation: 'Individual actions are too fine-grained for useful retrieval; entire conversation sessions are too coarse. A single self-contained task attempt is the right unit' },
+    { text: 'Every interaction should be stored as an episode.', isTrue: false, explanation: 'Routine, unremarkable interactions generate low-value episodes that clutter the memory store. Episode storage should be selective: store interactions that contain novel information, unusual outcomes, or valuable lessons.' },
+    { text: 'A typical episode is 200-500 tokens of text plus a 1536-dimensional embedding vector.', isTrue: true, explanation: 'Storing 10,000 episodes requires approximately 15MB of vector storage and 2-5MB of text' },
+    { text: 'Episodes are only useful for the exact same task.', isTrue: false, explanation: 'The value of episodic memory comes from analogical reasoning: drawing lessons from similar but not identical situations. An episode about debugging a memory leak in Java is useful when debugging a memory leak in C++, because the diagnostic approach transfers.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

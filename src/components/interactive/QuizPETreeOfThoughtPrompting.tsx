@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizPETreeOfThoughtPrompting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Game of 24 benchmark: Standard prompting 4%, CoT 4%, ToT 74% -- demonstrating that some tasks fundamentally require exploration.', isTrue: true, explanation: 'This is a key technical detail of Tree-of-Thought Prompting.' },
-    { text: 'Creative writing benchmark: ToT achieved coherence scores 2-3x higher than CoT on a constrained creative writing task requiring satisfying multiple criteria simultaneously.', isTrue: true, explanation: 'This is a key technical detail of Tree-of-Thought Prompting.' },
-    { text: 'Cost: 10-100x a single API call, depending on branching factor and depth.', isTrue: true, explanation: 'This is a key technical detail of Tree-of-Thought Prompting.' },
+    { text: 'ToT is just self-consistency with more samples.', isTrue: false, explanation: 'Self-consistency samples complete, independent reasoning paths and votes on final answers. ToT generates partial reasoning steps, evaluates them, and uses evaluation to guide further exploration.' },
+    { text: 'Standard prompting 4%, CoT 4%, ToT 74% -- demonstrating that some tasks fundamentally require exploration.', isTrue: true, explanation: 'Standard prompting 4%, CoT 4%, ToT 74% -- demonstrating that some tasks fundamentally require exploration.' },
+    { text: 'You can do ToT in a single prompt.', isTrue: false, explanation: 'The prompting version of ToT can approximate tree exploration in a single prompt, but it is severely limited by the model\'s ability to maintain and navigate a complex tree structure within its context. The full algorithmic version requires multiple API calls orchestrated by external code.' },
+    { text: 'ToT achieved coherence scores 2-3x higher than CoT on a constrained creative writing task requiring satisfying multiple criteria simultaneously.', isTrue: true, explanation: 'ToT achieved coherence scores 2-3x higher than CoT on a constrained creative writing task requiring satisfying multiple criteria simultaneously.' },
+    { text: 'ToT is always better than CoT.', isTrue: false, explanation: 'ToT is dramatically better on exploration-dependent tasks but is overkill for tasks where linear reasoning suffices. Using ToT on a straightforward math word problem wastes 10-100x compute for marginal or no improvement.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

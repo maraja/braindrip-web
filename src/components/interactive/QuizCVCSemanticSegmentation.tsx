@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCSemanticSegmentation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'State-of-the-art mIoU on Cityscapes val exceeds 85% (e.g., SegFormer-B5 achieves 84.0%, InternImage reaches 86.2%).', isTrue: true, explanation: 'This is a key technical detail of Semantic Segmentation.' },
-    { text: 'ADE20K, with 150 classes, is considered the harder benchmark; top models reach ~60% mIoU.', isTrue: true, explanation: 'This is a key technical detail of Semantic Segmentation.' },
-    { text: 'Typical output stride (ratio of input resolution to feature map resolution before upsampling) is 8 or 16.', isTrue: true, explanation: 'This is a key technical detail of Semantic Segmentation.' },
+    { text: 'Semantic segmentation tells you how many objects there are.', isTrue: false, explanation: 'It does not. Two adjacent cars of the same class receive the same label.' },
+    { text: 'Semantic segmentation assigns a class label to every pixel in an image, producing a dense prediction map that tells you what is at each spatial location.', isTrue: true, explanation: 'This captures the core definition of Semantic Segmentation.' },
+    { text: 'Semantic Segmentation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Semantic Segmentation is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

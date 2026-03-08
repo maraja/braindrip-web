@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Language Model Decoding Strategies', desc: 'The foundation of text generation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Controllable Generation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes text generation work.' },
-    { title: '3. Evaluation Challenges', desc: 'The intermediate results are processed and refined through the main pipeline.' },
+    { title: '1. Language Model Decoding Strategies', desc: 'Given a language model that produces P(x_t | x_&#123;&lt;t&#125;) at each step, the decoding strategy selects which token to emit. Greedy Decoding: Always pick the highest-probability token: x_t = argmax P(x_t | x_&#123;&lt;t&#125;).' },
+    { title: '2. Controllable Generation', desc: 'Controlling attributes like topic, style, toxicity, or formality without retraining the entire model:  CTRL (Keskar et al., 2019): A 1.63B-parameter model trained with control codes (e.g., "Wikipedia", "Reviews", "Horror") prepended to training examples.' },
+    { title: '3. Evaluation Challenges', desc: 'Text generation is notoriously hard to evaluate automatically because there is no single correct output:  Perplexity: Measures how well the model predicts held-out text. Lower is better, but low perplexity does not guarantee good generation quality.' },
 ];
 
 export default function WalkthroughNLPTextGeneration() {
@@ -15,10 +15,10 @@ export default function WalkthroughNLPTextGeneration() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Text Generation — Step by Step
+          Text Generation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how text generation works, one stage at a time.

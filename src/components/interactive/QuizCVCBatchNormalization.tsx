@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCBatchNormalization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'BN adds 2 parameters per channel (negligible compared to Conv weight count) and stores 2 running statistics per channel.', isTrue: true, explanation: 'This is a key technical detail of Batch Normalization.' },
-    { text: 'Default momentum in PyTorch is 0.1; TensorFlow uses 0.99 (note: PyTorch defines momentum as $\\alpha$, TensorFlow as $1 - \\alpha$).', isTrue: true, explanation: 'This is a key technical detail of Batch Normalization.' },
-    { text: 'BN performs poorly with very small batch sizes (&lt; 4) because batch statistics become noisy.', isTrue: true, explanation: 'This is a key technical detail of Batch Normalization.' },
+    { text: 'BN works because it reduces internal covariate shift.', isTrue: false, explanation: 'The original paper (Ioffe & Szegedy, 2015) proposed this explanation, but Santurkar et al. (2018) showed that BN\'s primary benefit is smoothing the loss landscape, making optimization easier regardless of covariate shift.' },
+    { text: 'Batch normalization normalizes activations across the mini-batch at each layer, enabling higher learning rates, faster convergence, and acting as a mild regularizer.', isTrue: true, explanation: 'This captures the core definition of Batch Normalization.' },
+    { text: 'Batch Normalization is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Batch Normalization is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

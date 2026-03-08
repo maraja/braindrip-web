@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEInformationPriorityAndOrdering() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Just put everything in chronological order.', isTrue: false, explanation: '"Just put everything in chronological order." Chronological order is natural for conversation history but wrong for retrieved documents. Documents should be ordered by relevance, not by their publicat' },
-    { text: 'More documents always help — just add them all.', isTrue: false, explanation: '"More documents always help — just add them all." Additional low-relevance documents fill the middle of the context and can actually degrade performance by diluting attention on highly relevant docume' },
-    { text: 'The "lost in the middle" effect causes 10-20+ percentage point accuracy drops when key information is placed in the middle versus at the beginning or end of the context.', isTrue: true, explanation: 'This is a key technical detail of Information Priority and Ordering.' },
+    { text: 'Order doesn\'t matter — the model reads everything equally.', isTrue: false, explanation: 'Transformer attention is not uniform. Position effects are well-documented and produce measurable quality differences.' },
+    { text: 'Information positioning within the context window follows a U-shaped attention curve — models attend most to the beginning and end, losing information in the middle — making strategic ordering a critical factor in output quality.', isTrue: true, explanation: 'This captures the core definition of Information Priority and Ordering.' },
+    { text: 'Information Priority and Ordering is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Information Priority and Ordering is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

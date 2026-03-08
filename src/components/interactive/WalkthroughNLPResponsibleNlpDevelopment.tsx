@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Model Cards', desc: 'The foundation of responsible nlp development begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Datasheets for Datasets', desc: 'At this stage, the key transformation occurs — the core mechanism that makes responsible nlp development work.' },
-    { title: '3. Environmental Cost of Training', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Dual-Use Concerns', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Participatory Design', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Model Cards', desc: '(2019) introduced model cards as standardized documentation for trained models. A model card accompanies a released model and includes:  Model details: Architecture, training procedure, parameters, intended use cases.' },
+    { title: '2. Datasheets for Datasets', desc: '(2021) proposed datasheets for datasets, analogous to datasheets for electronic components. A datasheet answers:  Motivation: Why was the dataset created?' },
+    { title: '3. Environmental Cost of Training', desc: '(2019) estimated that training a single large NLP model (a Transformer with neural architecture search) produces approximately 284 tonnes of CO2 -- roughly 5x the lifetime emissions of an average American car.' },
+    { title: '4. Dual-Use Concerns', desc: 'NLP technologies designed for beneficial purposes can be repurposed for harm:  Text generation (text-generation.md): Models designed for creative writing or customer service can generate disinformation, phishing emails, or impersonation content at scale. Sentiment analysis (sentiment-analysis.' },
+    { title: '5. Participatory Design', desc: 'Participatory design involves the communities affected by an NLP system in its design, development, and evaluation. Rather than building a system for a community, developers build with the community:  Stakeholder identification: Who will be affected by the system?' },
+    { title: '6. ACL Ethics Review Process', desc: 'Since 2021, the Association for Computational Linguistics (ACL) requires authors to submit an ethics statement with their papers and has established an Ethics Review Committee. Reviewers assess:  Whether the paper adequately discusses limitations and potential negative societal impact.' },
 ];
 
 export default function WalkthroughNLPResponsibleNlpDevelopment() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPResponsibleNlpDevelopment() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Responsible NLP Development — Step by Step
+          Responsible NLP Development \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how responsible nlp development works, one stage at a time.

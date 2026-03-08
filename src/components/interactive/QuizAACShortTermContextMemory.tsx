@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACShortTermContextMemory() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Effective vs nominal context window: A model with a 128K token context window does not use all 128K tokens equally.', isTrue: true, explanation: 'This is a key technical detail of Short-Term Context Memory.' },
-    { text: 'Performance degrades for information placed in the middle of very long contexts.', isTrue: true, explanation: 'This is a key technical detail of Short-Term Context Memory.' },
-    { text: 'Approximate counting (4 characters per token) is unreliable for non-English text, code, and structured data Message role optimization: System messages get special attention weight in most models.', isTrue: true, explanation: 'This is a key technical detail of Short-Term Context Memory.' },
+    { text: 'The context window is unlimited working memory.', isTrue: false, explanation: 'Even a 2M-token context window has practical limits. Attention quality degrades over very long contexts.' },
+    { text: 'A model with a 128K token context window does not use all 128K tokens equally.', isTrue: true, explanation: 'Performance degrades for information placed in the middle of very long contexts. Effective working memory is typically 20-40K tokens for reliable use' },
+    { text: 'FIFO is a good default strategy.', isTrue: false, explanation: 'FIFO drops the oldest messages first, but the oldest messages often contain the most important context (the user\'s original request, the task definition, the initial plan). Anchored windowing or priority-based retention outperforms FIFO on most tasks.' },
+    { text: 'Accurate token counting requires the model\'s actual tokenizer (tiktoken for OpenAI, SentencePiece for many open-source models).', isTrue: true, explanation: 'Approximate counting (4 characters per token) is unreliable for non-English text, code, and structured data' },
+    { text: 'You should always use the full context window.', isTrue: false, explanation: 'Filling the context window with marginally relevant information can degrade performance by diluting attention. Including only high-relevance information in a smaller context often outperforms including everything in a larger context.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

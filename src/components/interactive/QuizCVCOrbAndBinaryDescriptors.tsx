@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCOrbAndBinaryDescriptors() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ORB typically extracts 500--2,000 keypoints per 640x480 frame in 5--15 ms on a laptop CPU.', isTrue: true, explanation: 'This is a key technical detail of ORB and Binary Descriptors.' },
-    { text: 'Matching 1,000 ORB features against 1,000 takes under 1 ms with brute-force Hamming; FLANN-based LSH reduces this further for large databases.', isTrue: true, explanation: 'This is a key technical detail of ORB and Binary Descriptors.' },
-    { text: 'The FAST detector threshold (default 20 in OpenCV) controls the sensitivity: lower values yield more keypoints but include weaker corners.', isTrue: true, explanation: 'This is a key technical detail of ORB and Binary Descriptors.' },
+    { text: 'Binary descriptors are less accurate than SIFT for all tasks.', isTrue: false, explanation: 'On planar scenes and moderate viewpoint changes, ORB achieves matching precision within 5--10% of SIFT while being 100x faster. The accuracy gap widens mainly under extreme scale or illumination changes.' },
+    { text: 'ORB, BRIEF, and BRISK encode local image patches as compact binary strings compared via Hamming distance, enabling feature matching orders of magnitude faster than floating-point descriptors like SIFT.', isTrue: true, explanation: 'This captures the core definition of ORB and Binary Descriptors.' },
+    { text: 'ORB and Binary Descriptors is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding ORB and Binary Descriptors is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

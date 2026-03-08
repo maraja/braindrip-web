@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Defining Strata', desc: 'The foundation of stratified evaluation design begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Allocation Strategies', desc: 'At this stage, the key transformation occurs — the core mechanism that makes stratified evaluation design work.' },
-    { title: '3. Computing Stratified Estimates', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Performance Profile Visualization', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Post-Stratification', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Defining Strata', desc: 'Effective stratification requires dimensions that are both meaningful and estimable. Common stratification dimensions for agent evaluation:  Task Difficulty: Easy / Medium / Hard (based on human solve rates or expert annotation) Objective proxy: number of required steps, tool calls, or reasoning.' },
+    { title: '2. Allocation Strategies', desc: 'Given a total evaluation budget of N runs across K strata, how should you allocate? Proportional allocation assigns samples proportional to stratum size in the production distribution:  [equation]  where W_k is the proportion of production tasks in stratum k.' },
+    { title: '3. Computing Stratified Estimates', desc: 'The stratified estimate of the overall success rate uses stratum weights:  [equation]  with variance:  [equation]  This is always at least as precise as the unstratified estimate when strata are informative (which they almost always are).' },
+    { title: '4. Performance Profile Visualization', desc: 'Report results as a performance matrix rather than a single number:  This profile reveals that the "overall improvement" is driven entirely by medium tasks, while hard tasks actually regressed -- a critical finding invisible in the aggregate.' },
+    { title: '5. Post-Stratification', desc: 'When historical data was not collected with stratification, post-stratification can still improve estimates. If you know the stratum membership of each completed evaluation, reweight after the fact:  [equation]  This adjusts for any imbalance between the evaluation sample and the target population,.' },
 ];
 
 export default function WalkthroughAAEStratifiedEvaluationDesign() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAEStratifiedEvaluationDesign() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Stratified Evaluation Design — Step by Step
+          Stratified Evaluation Design \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how stratified evaluation design works, one stage at a time.

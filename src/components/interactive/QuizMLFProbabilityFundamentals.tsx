@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFProbabilityFundamentals() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Law of total probability: $P(A) = \\sum_i P(A|B_i)P(B_i)$ for a partition $\\&#123;B_i\\&#125;$.', isTrue: true, explanation: 'This is a key technical detail of Probability Fundamentals.' },
-    { text: 'Linearity of expectation: $\\mathbb&#123;E&#125;[aX + bY] = a\\mathbb&#123;E&#125;[X] + b\\mathbb&#123;E&#125;[Y]$, even if $X$ and $Y$ are dependent.', isTrue: true, explanation: 'This is a key technical detail of Probability Fundamentals.' },
-    { text: '$\\text&#123;Var&#125;(aX + b) = a^2\\text&#123;Var&#125;(X)$.', isTrue: true, explanation: 'This is a key technical detail of Probability Fundamentals.' },
+    { text: 'Probability and likelihood are the same.', isTrue: false, explanation: 'Probability is a function of outcomes given fixed parameters. Likelihood is a function of parameters given fixed data.' },
+    { text: 'P(A) = _i P(A|B_i)P(B_i) for a partition \\&#123;B_i\\&#125;.', isTrue: true, explanation: 'P(A) = _i P(A|B_i)P(B_i) for a partition \\&#123;B_i\\&#125;.' },
+    { text: '&#123;E&#125;[aX + bY] = a&#123;E&#125;[X] + b&#123;E&#125;[Y], even if X and Y are dependent.', isTrue: true, explanation: '&#123;E&#125;[aX + bY] = a&#123;E&#125;[X] + b&#123;E&#125;[Y], even if X and Y are dependent.' },
+    { text: '(X,Y) = Cov(X,Y)/(_X _Y)  [-1, 1].', isTrue: true, explanation: 'Zero correlation does not imply independence (except for Gaussians).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

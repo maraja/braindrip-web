@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPCoreferenceResolution() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'OntoNotes 5.0 benchmark: English coreference with ~3,500 documents across 7 genres; SOTA ~80--83 CoNLL F1.', isTrue: true, explanation: 'This is a key technical detail of Coreference Resolution.' },
-    { text: 'CoNLL F1: Average of MUC, B-CUBED, and CEAF_e F1 scores (see evaluation metrics below).', isTrue: true, explanation: 'This is a key technical detail of Coreference Resolution.' },
-    { text: 'Evaluation metrics:   - MUC (Vilain et al., 1995): Counts minimum links needed to align predicted and gold clusters.', isTrue: true, explanation: 'This is a key technical detail of Coreference Resolution.' },
+    { text: 'Coreference resolution is just pronoun resolution.', isTrue: false, explanation: 'Pronoun resolution is one component, but coreference also involves linking nominal phrases ("the company" = "Google"), proper name variants ("Barack Obama" = "Obama" = "the president"), and resolving event coreference. Pronouns account for only ~30--40% of coreference links.' },
+    { text: 'English coreference with ~3,500 documents across 7 genres; SOTA ~80--83 CoNLL F1.', isTrue: true, explanation: 'English coreference with ~3,500 documents across 7 genres; SOTA ~80--83 CoNLL F1.' },
+    { text: 'Syntactic rules suffice for pronoun resolution.', isTrue: false, explanation: 'Binding theory and syntactic constraints (e.g., reflexives must be bound locally) handle some cases, but most real-world pronoun resolution requires world knowledge, pragmatic reasoning, and discourse context. The Winograd Schema Challenge explicitly tests this with examples like: "The trophy doesn\'t fit in the suitcase because it is too [big/small]."' },
+    { text: 'Average of MUC, B-CUBED, and CEAF_e F1 scores (see evaluation metrics below).', isTrue: true, explanation: 'Average of MUC, B-CUBED, and CEAF_e F1 scores (see evaluation metrics below).' },
+    { text: 'High CoNLL F1 means coreference is solved.', isTrue: false, explanation: 'The composite CoNLL F1 metric averages three sub-metrics that can mask specific weaknesses. Models still struggle with cataphora (forward references), long-distance coreference, and cases requiring commonsense reasoning.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPSentenceSegmentation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Punkt achieves 99.46% accuracy on the Wall Street Journal section of the Penn Treebank (English news).', isTrue: true, explanation: 'This is a key technical detail of Sentence Segmentation.' },
-    { text: 'On social media text (tweets, Reddit posts), sentence segmentation accuracy drops to 85-92% due to informal punctuation and missing capitalization.', isTrue: true, explanation: 'This is a key technical detail of Sentence Segmentation.' },
-    { text: 'The average English sentence in news text contains approximately 20-25 words; in academic text, approximately 25-30 words; in social media, approximately 10-15 words.', isTrue: true, explanation: 'This is a key technical detail of Sentence Segmentation.' },
+    { text: 'Splitting on periods is good enough.', isTrue: false, explanation: 'In a sample of 1,000 English news sentences, approximately 15% contain at least one non-sentence-ending period (abbreviations, initials, decimals). Naive splitting would produce approximately 15% erroneous boundaries.' },
+    { text: 'Sentence segmentation only matters for formal text.', isTrue: false, explanation: 'Social media analysis, dialogue systems (see dialogue-systems.md), and chatbot logs all require sentence segmentation, often on text with minimal or unconventional punctuation. These are the hardest cases.' },
+    { text: 'Question marks and exclamation points are unambiguous.', isTrue: false, explanation: 'In most contexts they are, but consider: "What?!" (two punctuation marks, one boundary) and "Did she really say \'What?\'?" (nested question mark). Also, Spanish uses inverted question marks ("00bfC00f3mo?"), adding language-specific complexity.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

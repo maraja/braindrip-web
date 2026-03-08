@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACMemoryArchitectureOverview() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'This is fast enough for interactive use but adds up over many retrievals per agent step Embedding dimensions: Common embedding models produce 768-3072 dimensional vectors.', isTrue: true, explanation: 'This is a key technical detail of Memory Architecture Overview.' },
-    { text: 'Stateless APIs do not provide this automatically', isTrue: true, explanation: 'This is a key technical detail of Memory Architecture Overview.' },
-    { text: 'Agent memory architectures mirror cognitive science\'s division of memory into sensory (raw input buffering), working (active processing), and long-term (persistent storage), with each type serving a distinct purpose and implemented through different technical mechanisms.', isTrue: true, explanation: 'This captures the core purpose of Memory Architecture Overview.' },
+    { text: 'Larger context windows eliminate the need for memory systems.', isTrue: false, explanation: 'Larger context windows expand working memory but do not replace long-term memory. A 200K-token context window cannot hold a year of conversation history.' },
+    { text: '~20-40K tokens for reliable information use, even in models with 100K+ context windows, due to attention dilution in the "lost in the middle" phenomenon', isTrue: true, explanation: '~20-40K tokens for reliable information use, even in models with 100K+ context windows, due to attention dilution in the "lost in the middle" phenomenon' },
+    { text: 'Vector search is all you need for memory retrieval.', isTrue: false, explanation: 'Vector search finds semantically similar content, but memory retrieval also requires recency awareness (recent memories are more relevant), importance scoring (critical memories should surface more often), and structured queries (looking up specific facts by key). Hybrid retrieval strategies outperform pure vector search.' },
+    { text: 'Vector store queries take 10-100ms; database queries take 1-50ms.', isTrue: true, explanation: 'This is fast enough for interactive use but adds up over many retrievals per agent step' },
+    { text: 'Memory should be managed automatically without user awareness.', isTrue: false, explanation: 'Users benefit from understanding what the agent remembers and does not remember. Transparency about memory capabilities and limitations prevents mismatched expectations.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

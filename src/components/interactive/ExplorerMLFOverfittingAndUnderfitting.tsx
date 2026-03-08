@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Effective degrees of freedom', detail: 'quantify model complexity more precisely than raw parameter count. A 1000-parameter model with strong regularization may have fewer effective degrees of freedom than a 50-parameter unregularized model.' },
-    { label: 'Double descent', detail: 'Extremely over-parameterized models (parameters $\\gg n$) can generalize well despite interpolating training data, challenging the classic view. This occurs due to implicit regularization in gradient descent.' },
-    { label: 'Cross-validation', detail: 'is the gold standard for estimating generalization error. $k$-fold CV trains $k$ models, each on $\\frac{k-1}{k}$ of the data, and evaluates on the held-out fold:' },
+    { label: 'Double descent', detail: 'Extremely over-parameterized models (parameters  n) can generalize well despite interpolating training data, challenging the classic view. This occurs due to implicit regularization in gradient descent.' },
+    { label: 'Cross-validation', detail: 'is the gold standard for estimating generalization error. k-fold CV trains k models, each on &#123;k-1&#125;&#123;k&#125; of the data, and evaluates on the held-out fold:' },
     { label: 'Train-validation-test split', detail: 'The validation set is for hyperparameter tuning; the test set is for final evaluation. Using the test set for tuning introduces optimistic bias.' },
 ];
 
@@ -18,10 +18,10 @@ export default function ExplorerMLFOverfittingAndUnderfitting() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Overfitting and Underfitting — Key Details Explorer
+          Overfitting and Underfitting \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of overfitting and underfitting.
+          Click each card to explore the technical details.
         </p>
       </div>
 

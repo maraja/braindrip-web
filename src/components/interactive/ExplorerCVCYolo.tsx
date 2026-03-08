@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'YOLOv1 limitations', detail: 'Struggles with small objects and groups of small objects (only 2 boxes per cell). Localization errors are the primary failure mode.' },
-    { label: 'YOLOv3 at 608', detail: '33.0% AP on COCO, roughly matching SSD-512 accuracy but 3x faster.' },
-    { label: 'YOLOv8-L', detail: '52.9% AP on COCO at ~80 FPS on an A100 GPU.' },
+    { label: 'YOLOv3 at 608', detail: '0% AP on COCO, roughly matching SSD-512 accuracy but 3x faster.' },
+    { label: 'YOLOv8-L', detail: '9% AP on COCO at ~80 FPS on an A100 GPU.' },
 ];
 
 export default function ExplorerCVCYolo() {
@@ -17,10 +17,10 @@ export default function ExplorerCVCYolo() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          YOLO (You Only Look Once) — Key Details Explorer
+          YOLO (You Only Look Once) \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of yolo (you only look once).
+          Click each card to explore the technical details.
         </p>
       </div>
 

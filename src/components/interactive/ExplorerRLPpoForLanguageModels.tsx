@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Clip parameter', detail: '$\\epsilon = 0.2$ is standard, sometimes reduced to $0.1$ for LLMs to enforce more conservative updates.' },
-    { label: 'Learning rate', detail: 'Typically $1 \\times 10^{-6}$ to $5 \\times 10^{-6}$, an order of magnitude lower than SFT learning rates.' },
+    { label: 'Clip parameter', detail: '= 0.2 is standard, sometimes reduced to 0.1 for LLMs to enforce more conservative updates.' },
+    { label: 'Learning rate', detail: 'Typically 1 x 10^&#123;-6&#125; to 5 x 10^&#123;-6&#125;, an order of magnitude lower than SFT learning rates.' },
     { label: 'Batch size', detail: '64--512 prompts per batch, with each prompt generating a response of 256--2048 tokens.' },
     { label: 'PPO epochs', detail: '1--4 optimization epochs per batch of generated data. More epochs risk overfitting to stale data.' },
-    { label: 'GAE parameters', detail: '$\\gamma = 1.0$ (no discounting within a response) and $\\lambda = 0.95$ are common starting points.' },
-    { label: 'KL coefficient', detail: '$\\beta \\approx 0.01$--$0.2$. Some implementations use adaptive KL targeting, increasing $\\beta$ when KL exceeds a target and decreasing when below.' },
+    { label: 'GAE parameters', detail: '= 1.0 (no discounting within a response) and  = 0.95 are common starting points.' },
+    { label: 'KL coefficient', detail: '0.01--0.2. Some implementations use adaptive KL targeting, increasing  when KL exceeds a target and decreasing when below.' },
 ];
 
 export default function ExplorerRLPpoForLanguageModels() {
@@ -20,10 +20,10 @@ export default function ExplorerRLPpoForLanguageModels() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          PPO for Language Models — Key Details Explorer
+          PPO for Language Models \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of ppo for language models.
+          Click each card to explore the technical details.
         </p>
       </div>
 

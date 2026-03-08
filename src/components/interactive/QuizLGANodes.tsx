@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGANodes() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A node function signature is (state: StateType) -&gt; dict | None.', isTrue: true, explanation: 'This is a key technical detail of Nodes.' },
-    { text: 'The returned dict must contain only keys that exist in the state schema.', isTrue: true, explanation: 'This is a key technical detail of Nodes.' },
-    { text: 'Returning a key triggers its reducer; omitting a key leaves it unchanged.', isTrue: true, explanation: 'This is a key technical detail of Nodes.' },
+    { text: 'Nodes must return the entire state.', isTrue: false, explanation: 'Nodes return only the keys they modify. LangGraph merges the partial update into the existing state.' },
+    { text: 'Nodes are Python functions that receive the current graph state, perform a unit of work, and return a partial state update dict — they are the computational building blocks of every LangGraph application.', isTrue: true, explanation: 'This captures the core definition of Nodes.' },
+    { text: 'Nodes is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Nodes is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

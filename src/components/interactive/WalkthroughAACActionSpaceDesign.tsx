@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Tool Anatomy', desc: 'The foundation of action space design begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Discrete vs. Parameterized Actions', desc: 'At this stage, the key transformation occurs — the core mechanism that makes action space design work.' },
-    { title: '3. The Tool Count Problem', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Safety Boundaries in the Action Space', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Tool Description Quality', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Tool Anatomy', desc: 'Every tool in the action space has four components:  The name must be descriptive and unambiguous. The description is critical — it is the primary mechanism the LLM uses to select the correct tool.' },
+    { title: '2. Discrete vs. Parameterized Actions', desc: 'Discrete actions have no parameters or only simple selectors. Example: list_directory with a path parameter.' },
+    { title: '3. The Tool Count Problem', desc: 'Empirical evidence shows a clear relationship between tool count and selection accuracy:  1-5 tools: LLMs select the correct tool 90-98% of the time. 6-15 tools: Accuracy remains high at 85-95%, with occasional confusion between similar tools.' },
+    { title: '4. Safety Boundaries in the Action Space', desc: 'Action space design is the primary mechanism for agent safety. Approaches include:  Allowlists: The agent can only use explicitly defined tools.' },
+    { title: '5. Tool Description Quality', desc: 'The LLM selects tools based on their descriptions. Poor descriptions lead to poor tool selection regardless of the LLM\'s capability.' },
 ];
 
 export default function WalkthroughAACActionSpaceDesign() {
@@ -17,10 +17,10 @@ export default function WalkthroughAACActionSpaceDesign() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Action Space Design — Step by Step
+          Action Space Design \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how action space design works, one stage at a time.

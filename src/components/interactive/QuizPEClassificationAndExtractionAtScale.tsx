@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEClassificationAndExtractionAtScale() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Batch-input processing (multiple items per API call) introduces ordering effects; limiting batches to 5-10 items reduces cross-contamination while maintaining efficiency.', isTrue: true, explanation: 'This is a key technical detail of Classification and Extraction at Scale.' },
-    { text: 'Structured output enforcement (JSON mode) reduces unparseable outputs from 1-3% to under 0.1% at scale.', isTrue: true, explanation: 'This is a key technical detail of Classification and Extraction at Scale.' },
-    { text: 'Label definitions with 2-3 examples per category reduce inter-annotator disagreement by 20-30% and improve prompt consistency proportionally.', isTrue: true, explanation: 'This is a key technical detail of Classification and Extraction at Scale.' },
+    { text: 'If the prompt works on 50 test examples, it will work at scale.', isTrue: false, explanation: 'Test sets are typically cleaner, more representative, and less diverse than production data. Edge cases, format variations, and distribution shifts at scale expose weaknesses invisible in small tests.' },
+    { text: 'Consistency issues are just accuracy issues.', isTrue: false, explanation: 'A prompt can be accurate on average but inconsistent on individual examples — classifying the same input differently on different runs. Consistency requires temperature 0 or very low temperature and deterministic processing pipelines.' },
+    { text: 'Once deployed, the prompt doesn\'t need monitoring.', isTrue: false, explanation: 'Data distributions shift over time (new product categories, changing customer language, seasonal patterns). A prompt designed for Q1 data may underperform on Q3 data.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

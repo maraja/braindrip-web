@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Joint Performance Metrics', desc: 'The foundation of human-agent collaboration evaluation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Handoff Quality', desc: 'At this stage, the key transformation occurs — the core mechanism that makes human-agent collaboration evaluation work.' },
-    { title: '3. Shared Mental Model', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Trust Calibration', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Centaur Model', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Joint Performance Metrics', desc: 'The foundational metric compares three baselines:  Performance uplift. Compare joint human-agent performance against human-only and agent-only baselines on identical tasks.' },
+    { title: '2. Handoff Quality', desc: 'The transitions between human work and agent work are critical failure points. Handoff quality measures:  Context transfer completeness.' },
+    { title: '3. Shared Mental Model', desc: 'A shared mental model means both human and agent have compatible understanding of: the current task state, the division of responsibilities, each other\'s capabilities, and the plan going forward. Mutual understanding accuracy.' },
+    { title: '4. Trust Calibration', desc: 'Trust calibration -- trusting the agent the right amount -- is among the most important and difficult aspects of collaboration evaluation. Over-trust (automation bias).' },
+    { title: '5. The Centaur Model', desc: 'The Centaur model -- named after chess centaurs (human-computer teams) -- proposes a division: human strategic oversight with agent tactical execution. Evaluating this model requires:  Strategic quality.' },
+    { title: '6. Evaluation Design: Controlled Studies', desc: 'Rigorous human-agent collaboration evaluation requires controlled experiments with real human participants:  Within-subjects design. Each participant completes tasks in three conditions: human-only, agent-only (with human judging final output), and human-agent collaboration.' },
 ];
 
 export default function WalkthroughAAEHumanAgentCollaborationEvaluation() {
@@ -17,10 +18,10 @@ export default function WalkthroughAAEHumanAgentCollaborationEvaluation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Human-Agent Collaboration Evaluation — Step by Step
+          Human-Agent Collaboration Evaluation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how human-agent collaboration evaluation works, one stage at a time.

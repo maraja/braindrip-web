@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGALanggraphPlatform() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Deploy from GitHub by connecting your repository in the LangSmith UI; the platform builds and deploys from your langgraph.json.', isTrue: true, explanation: 'This is a key technical detail of LangGraph Platform.' },
-    { text: 'The deployment exposes a REST API at a unique URL, authenticated via LangSmith API key (X-Api-Key header).', isTrue: true, explanation: 'This is a key technical detail of LangGraph Platform.' },
-    { text: 'Threads provide persistent conversation state; threadless runs (None) are stateless single interactions.', isTrue: true, explanation: 'This is a key technical detail of LangGraph Platform.' },
+    { text: 'LangGraph Platform is the only way to deploy LangGraph agents.', isTrue: false, explanation: 'It is one option. You can deploy with FastAPI, Docker, and any hosting provider.' },
+    { text: 'LangGraph Platform (deployed via LangSmith) is a managed hosting service purpose-built for stateful, long-running agents -- handling infrastructure, scaling, persistence, and operational concerns so you can deploy directly from a GitHub repository.', isTrue: true, explanation: 'This captures the core definition of LangGraph Platform.' },
+    { text: 'LangGraph Platform is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding LangGraph Platform is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

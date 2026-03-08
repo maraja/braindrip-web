@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Case Folding', desc: 'The foundation of text normalization begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Unicode Normalization', desc: 'At this stage, the key transformation occurs — the core mechanism that makes text normalization work.' },
-    { title: '3. Accent and Diacritics Removal', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Number and Date Standardization', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Whitespace and Punctuation Cleanup', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Case Folding', desc: 'Case folding maps all characters to a single case -- typically lowercase. In Python, str.lower() handles ASCII, while str.casefold() follows the Unicode Case Folding specification (Section 3.13 of the Unicode Standard), which collapses locale-sensitive cases such as the German sharp-s: "Stra00dfe".' },
+    { title: '2. Unicode Normalization', desc: 'Unicode allows the same visual character to have multiple code-point representations. The letter "e" (U+00E9) can also be expressed as "e" + combining acute accent (U+0065 U+0301).' },
+    { title: '3. Accent and Diacritics Removal', desc: 'After NFD decomposition, stripping characters in Unicode category "Mn" (Mark, Nonspacing) removes accents: "resume" from "r00e9sum00e9". This is useful for fuzzy matching and search but destructive for languages where diacritics are phonemically contrastive (Turkish "i" vs.' },
+    { title: '4. Number and Date Standardization', desc: 'Mapping numeric expressions to canonical tokens reduces sparsity. Common strategies include replacing all digits with a placeholder (&lt;NUM&gt;), normalizing date formats ("March 3rd, 2024" and "03/03/2024" to "2024-03-03"), and expanding currency symbols ("$5M" to "5000000 dollars").' },
+    { title: '5. Whitespace and Punctuation Cleanup', desc: 'Collapsing multiple spaces, converting non-breaking spaces (U+00A0) to standard spaces, and normalizing dash variants (em-dash, en-dash, hyphen-minus) to a single character eliminates silent tokenization failures.' },
 ];
 
 export default function WalkthroughNLPTextNormalization() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPTextNormalization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Text Normalization — Step by Step
+          Text Normalization \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how text normalization works, one stage at a time.

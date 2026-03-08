@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizCVCRCnn() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Inference time: ~47 seconds per image on a GPU (VGG-16 backbone), dominated by ~2,000 independent CNN forward passes.', isTrue: true, explanation: 'This is a key technical detail of R-CNN.' },
-    { text: 'Feature storage: Extracting features for PASCAL VOC 2007 requires ~200 GB of disk space for caching.', isTrue: true, explanation: 'This is a key technical detail of R-CNN.' },
-    { text: 'PASCAL VOC 2012 result: 53.3% mAP (with bounding box regression).', isTrue: true, explanation: 'This is a key technical detail of R-CNN.' },
+    { text: 'R-CNN uses the CNN\'s softmax for classification.', isTrue: false, explanation: 'The published R-CNN pipeline uses linear SVMs trained on CNN features, not the softmax layer. SVMs with hard negative mining outperformed softmax by ~4 mAP points in the original experiments.' },
+    { text: '~47 seconds per image on a GPU (VGG-16 backbone), dominated by ~2,000 independent CNN forward passes.', isTrue: true, explanation: '~47 seconds per image on a GPU (VGG-16 backbone), dominated by ~2,000 independent CNN forward passes.' },
+    { text: 'Extracting features for PASCAL VOC 2007 requires ~200 GB of disk space for caching.', isTrue: true, explanation: 'Extracting features for PASCAL VOC 2007 requires ~200 GB of disk space for caching.' },
+    { text: '53.3% mAP (with bounding box regression).', isTrue: true, explanation: '53.3% mAP (with bounding box regression).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

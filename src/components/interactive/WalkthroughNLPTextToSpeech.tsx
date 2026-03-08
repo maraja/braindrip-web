@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The TTS Pipeline', desc: 'The foundation of text-to-speech begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Concatenative Synthesis (1990s--2010s)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes text-to-speech work.' },
-    { title: '3. Parametric Synthesis', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Neural TTS: Tacotron Family', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Neural Vocoders', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The TTS Pipeline', desc: 'Most TTS systems decompose synthesis into three stages:  Text Analysis (Front-End): Converts raw text into a linguistic representation. This includes text normalization (expanding "Dr." to "Doctor," "$3.' },
+    { title: '2. Concatenative Synthesis (1990s--2010s)', desc: 'Concatenative TTS stores a large database of recorded speech segments (diphones, half-phones, or longer units) and selects and concatenates the best-matching segments for each utterance.' },
+    { title: '3. Parametric Synthesis', desc: 'Statistical parametric synthesis (Zen et al., 2009) uses HMMs or DNNs to predict acoustic parameters (fundamental frequency, spectral envelope, aperiodicity) frame by frame.' },
+    { title: '4. Neural TTS: Tacotron Family', desc: 'Tacotron (Wang et al., 2017) introduced end-to-end neural TTS using a sequence-to-sequence architecture with attention. The encoder processes character or phoneme sequences, and the decoder autoregressively generates Mel-spectrogram frames.' },
+    { title: '5. Neural Vocoders', desc: 'The vocoder is the bottleneck for audio quality:  WaveNet (van den Oord et al., 2016): An autoregressive model generating audio sample by sample using dilated causal convolutions.' },
+    { title: '6. FastSpeech: Non-Autoregressive Generation', desc: 'FastSpeech (Ren et al., 2019) and FastSpeech 2 (Ren et al., 2021) replaced autoregressive Mel-spectrogram generation with parallel (non-autoregressive) generation. A duration predictor explicitly models the length of each phoneme, enabling the model to generate all spectrogram frames simultaneously.' },
 ];
 
 export default function WalkthroughNLPTextToSpeech() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPTextToSpeech() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Text-to-Speech — Step by Step
+          Text-to-Speech \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how text-to-speech works, one stage at a time.

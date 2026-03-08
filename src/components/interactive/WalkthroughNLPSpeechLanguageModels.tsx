@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Speech Tokenization: Neural Audio Codecs', desc: 'The foundation of speech language models begins with understanding its core input requirements and initial setup.' },
-    { title: '2. AudioLM (Google, 2022)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes speech language models work.' },
-    { title: '3. VALL-E (Microsoft, 2023)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. AudioPaLM (Google, 2023)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. SpeechGPT (Fudan University, 2023)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Speech Tokenization: Neural Audio Codecs', desc: 'The foundation of speech language models is converting continuous audio into discrete tokens:  SoundStream (Zeghidour et al., 2021, Google): A neural audio codec that compresses audio using an encoder-decoder architecture with residual vector quantization (RVQ).' },
+    { title: '2. AudioLM (Google, 2022)', desc: '(2022) introduced AudioLM, the first model to demonstrate that audio generation can be framed as language modeling over discrete tokens. AudioLM uses a hierarchical approach:  Semantic tokens from w2v-BERT (a self-supervised speech model) capture linguistic content at ~25 Hz.' },
+    { title: '3. VALL-E (Microsoft, 2023)', desc: '(2023) introduced VALL-E, which reframes TTS as a conditional language modeling task over neural codec codes. Given a text transcript and a 3-second audio prompt from the target speaker:  The text is encoded as phoneme tokens.' },
+    { title: '4. AudioPaLM (Google, 2023)', desc: 'Rubenstein et al. (2023) merged a text language model (PaLM-2) with an audio language model (AudioLM) into a single multimodal model.' },
+    { title: '5. SpeechGPT (Fudan University, 2023)', desc: '(2023) built SpeechGPT by expanding LLaMA\'s vocabulary with discrete speech tokens (derived from HuBERT) and fine-tuning on speech-text paired data. The model can:  Perceive and generate speech end-to-end Follow spoken instructions Engage in spoken dialogue  SpeechGPT demonstrated a three-stage.' },
+    { title: '6. The Convergence Vision', desc: 'The trajectory points toward universal language models that natively handle text, speech, images, video, and other modalities through a common token vocabulary and architecture.' },
 ];
 
 export default function WalkthroughNLPSpeechLanguageModels() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPSpeechLanguageModels() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Speech Language Models — Step by Step
+          Speech Language Models \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how speech language models works, one stage at a time.

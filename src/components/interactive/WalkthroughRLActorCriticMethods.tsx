@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Core Idea: Bootstrapped Policy Gradients', desc: 'The foundation of actor-critic methods begins with understanding its core input requirements and initial setup.' },
-    { title: '2. One-Step Actor-Critic Algorithm', desc: 'At this stage, the key transformation occurs — the core mechanism that makes actor-critic methods work.' },
-    { title: '3. The Bias-Variance Trade-off vs. REINFORCE', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. N-Step Actor-Critic', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Shared vs. Separate Networks', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Core Idea: Bootstrapped Policy Gradients', desc: 'REINFORCE uses the full Monte Carlo return G_t to weight the policy gradient. Actor-critic replaces this with a bootstrapped target based on the TD error:  [equation]  The TD error _t is an unbiased estimate of the advantage A(s_t, a_t) when V_ = V^ (the true value function).' },
+    { title: '2. One-Step Actor-Critic Algorithm', desc: 'Initialize actor parameters  and critic parameters . Observe initial state s_0.' },
+    { title: '3. The Bias-Variance Trade-off vs. REINFORCE', desc: 'The critic introduces bias because V_ is an approximation. Early in training, when V_ is poor, the bias can be substantial.' },
+    { title: '4. N-Step Actor-Critic', desc: 'The one-step TD error uses a single reward before bootstrapping. We can interpolate between pure TD (one step) and pure Monte Carlo (all steps) using n-step returns:  [equation]  [equation]  Larger n reduces bias (more real rewards, less reliance on the imperfect critic) but increases variance.' },
+    { title: '5. Shared vs. Separate Networks', desc: 'A practical design choice is whether the actor and critic share neural network layers. Shared representations can improve data efficiency (both learn useful features), but can also create harmful gradient interference -- the critic\'s loss landscape may push shared features in directions that harm.' },
 ];
 
 export default function WalkthroughRLActorCriticMethods() {
@@ -17,10 +17,10 @@ export default function WalkthroughRLActorCriticMethods() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Actor-Critic Methods — Step by Step
+          Actor-Critic Methods \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how actor-critic methods works, one stage at a time.

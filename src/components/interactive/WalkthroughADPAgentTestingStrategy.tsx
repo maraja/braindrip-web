@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Unit Tests for Tools and Components', desc: 'The foundation of agent testing strategy begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Integration Tests for Agent Loops', desc: 'At this stage, the key transformation occurs — the core mechanism that makes agent testing strategy work.' },
-    { title: '3. End-to-End Evaluations', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Managing Non-Determinism', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Test Fixtures and Mocking', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Unit Tests for Tools and Components', desc: 'Unit tests validate individual components in isolation. For agent systems, the key unit-testable components are tools, prompt templates, output parsers, and routing logic.' },
+    { title: '2. Integration Tests for Agent Loops', desc: 'Integration tests verify that the agent loop -- the cycle of reasoning, tool selection, tool execution, and result incorporation -- works correctly with recorded or mocked interactions.' },
+    { title: '3. End-to-End Evaluations', desc: 'End-to-end evaluations (evals) run the agent against real tasks with real LLM calls and measure outcome quality. This is where you assess whether the agent actually solves problems.' },
+    { title: '4. Managing Non-Determinism', desc: 'Non-determinism is the fundamental challenge that distinguishes agent testing from traditional software testing. Temperature control: Set temperature to 0 for evaluation runs.' },
+    { title: '5. Test Fixtures and Mocking', desc: 'Mock tools simulate tool behavior without calling real APIs. Essential for unit and integration tests.' },
+    { title: '6. CI/CD for Agents', desc: 'Different tests run at different stages of the deployment pipeline:  Cost management: Use cached LLM responses for unit and integration tests (zero LLM cost). Run full evals only on significant changes.' },
 ];
 
 export default function WalkthroughADPAgentTestingStrategy() {
@@ -17,10 +18,10 @@ export default function WalkthroughADPAgentTestingStrategy() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agent Testing Strategy — Step by Step
+          Agent Testing Strategy \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how agent testing strategy works, one stage at a time.

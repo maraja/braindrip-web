@@ -4,7 +4,7 @@ const DETAILS = [
     { label: 'Scale', detail: 'Wikidata contains 100+ million items and 1.5+ billion statements; Google\'s Knowledge Graph reportedly contains 500+ billion facts.' },
     { label: 'TransE embedding dimensions', detail: 'Typically d = 100-500. Training on FB15k-237 takes 30-60 minutes on a single GPU.' },
     { label: 'RotatE on FB15k-237', detail: 'MRR = 0.338, Hits@1 = 0.241, Hits@10 = 0.533. On WN18RR: MRR = 0.476, Hits@10 = 0.571.' },
-    { label: 'Entity linking accuracy', detail: 'State-of-the-art systems achieve >90% accuracy on TAC-KBP entity linking benchmarks for English text.' },
+    { label: 'Entity linking accuracy', detail: 'State-of-the-art systems achieve &gt;90% accuracy on TAC-KBP entity linking benchmarks for English text.' },
     { label: 'ConceptNet coverage', detail: '21 million edges, 8 million nodes, 36 relation types, data sourced from 304 languages. NumberBatch embeddings trained on ConceptNet improve performance on commonsense reasoning benchmarks by 5-15%.' },
 ];
 
@@ -19,10 +19,10 @@ export default function ExplorerNLPKnowledgeGraphsForNlp() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Knowledge Graphs for NLP — Key Details Explorer
+          Knowledge Graphs for NLP \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of knowledge graphs for nlp.
+          Click each card to explore the technical details.
         </p>
       </div>
 

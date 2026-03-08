@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACWhatIsAnAiAgent() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Token budget per turn: A single agent turn typically consumes 1,000-4,000 input tokens (context) and 200-1,000 output tokens (reasoning + tool call).', isTrue: true, explanation: 'This is a key technical detail of What Is an AI Agent?.' },
-    { text: 'A full task may consume 50,000-500,000 total tokens.', isTrue: true, explanation: 'This is a key technical detail of What Is an AI Agent?.' },
-    { text: 'Tool call latency: Each tool execution adds 100ms-30s of latency depending on the tool (file read vs.', isTrue: true, explanation: 'This is a key technical detail of What Is an AI Agent?.' },
+    { text: 'An AI agent is just a chatbot with extra steps.', isTrue: false, explanation: 'A chatbot is stateless and reactive — it responds to prompts. An agent maintains a goal across multiple steps, takes actions that change the world, observes results, and adapts.' },
+    { text: 'A single agent turn typically consumes 1,000-4,000 input tokens (context) and 200-1,000 output tokens (reasoning + tool call).', isTrue: true, explanation: 'A full task may consume 50,000-500,000 total tokens.' },
+    { text: 'Agents are fully autonomous and don\'t need human involvement.', isTrue: false, explanation: 'Most production agents operate with significant human oversight. Users provide goals, approve critical actions, correct course when the agent goes astray, and validate outputs.' },
+    { text: 'Each tool execution adds 100ms-30s of latency depending on the tool (file read vs.', isTrue: true, explanation: 'web request vs. code execution).' },
+    { text: 'The LLM does everything — it runs tools, stores memory, and manages state.', isTrue: false, explanation: 'The LLM is a stateless text-generation function. Everything else — tool execution, state management, context assembly, retry logic — is handled by the agent runtime layer that wraps the LLM.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

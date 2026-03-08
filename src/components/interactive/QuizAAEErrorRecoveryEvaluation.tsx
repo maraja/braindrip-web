@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEErrorRecoveryEvaluation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A framework for measuring how effectively agents detect, diagnose, and recover from failures encountered during task execution.', isTrue: true, explanation: 'This captures the core purpose of Error Recovery Evaluation.' },
-    { text: 'Error Recovery Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Error Recovery Evaluation is important for building on more advanced topics.' },
-    { text: 'Error Recovery Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Error Recovery Evaluation is important for building on more advanced topics.' },
+    { text: 'Agents that never encounter errors don\'t need error recovery.', isTrue: false, explanation: 'Every agent eventually encounters errors in production. Evaluating only on clean tasks gives a misleadingly optimistic view of real-world performance.' },
+    { text: 'Retry logic is sufficient error recovery.', isTrue: false, explanation: 'Simple retries handle transient failures (network blips, rate limits) but are counterproductive for persistent errors (wrong credentials, missing files, logical errors). Agents need diagnostic capability to distinguish transient from persistent failures.' },
+    { text: 'Error recovery and task success are the same thing.', isTrue: false, explanation: 'An agent can succeed on a task despite poor error recovery (if errors are minor) or fail despite excellent recovery (if the task is impossible). Error recovery metrics are orthogonal to outcome metrics and capture a distinct capability.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

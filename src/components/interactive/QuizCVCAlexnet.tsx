@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizCVCAlexnet() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Top-5 error: 16.4% (single model), 15.3% (ensemble of 7 models).', isTrue: true, explanation: 'This is a key technical detail of AlexNet.' },
-    { text: 'Top-1 error: 38.1% (single model).', isTrue: true, explanation: 'This is a key technical detail of AlexNet.' },
-    { text: 'Parameters: ~60 million, with the vast majority (~58M) in the three fully connected layers.', isTrue: true, explanation: 'This is a key technical detail of AlexNet.' },
+    { text: 'AlexNet invented CNNs.', isTrue: false, explanation: 'Convolutional neural networks were introduced by LeCun et al. in the late 1980s (LeNet).' },
+    { text: '16.4% (single model), 15.3% (ensemble of 7 models).', isTrue: true, explanation: '16.4% (single model), 15.3% (ensemble of 7 models).' },
+    { text: '38.1% (single model).', isTrue: true, explanation: '38.1% (single model).' },
+    { text: '~60 million, with the vast majority (~58M) in the three fully connected layers.', isTrue: true, explanation: '~60 million, with the vast majority (~58M) in the three fully connected layers.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

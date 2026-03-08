@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Research Loop', desc: 'The foundation of deep research agents begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Multi-Source Search', desc: 'At this stage, the key transformation occurs — the core mechanism that makes deep research agents work.' },
-    { title: '3. Extraction and Fact Management', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Synthesis and Report Generation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Research Loop', desc: 'The core algorithm: (1) Decompose the question into sub-questions ("What are the economic impacts of UBI?" becomes: "What do RCTs show about employment effects?", "What are the fiscal costs?", "How does it affect entrepreneurship?").' },
+    { title: '2. Multi-Source Search', desc: 'Effective research queries multiple source types: Web search (Google, Bing) for general information and recent developments. Academic search (Semantic Scholar, Google Scholar, PubMed) for peer-reviewed research.' },
+    { title: '3. Extraction and Fact Management', desc: 'Raw documents are too long to include in full. The agent must extract the relevant information: key findings, methodology details, data points, author conclusions, and limitations.' },
+    { title: '4. Synthesis and Report Generation', desc: 'The final synthesis step transforms extracted facts into a coherent narrative. The agent must: Organize by theme rather than by source (a thematic structure is more useful than a list of summaries).' },
 ];
 
 export default function WalkthroughAACDeepResearchAgents() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACDeepResearchAgents() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Deep Research Agents — Step by Step
+          Deep Research Agents \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how deep research agents works, one stage at a time.

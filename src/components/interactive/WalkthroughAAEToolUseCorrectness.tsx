@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Selection Correctness', desc: 'The foundation of tool use correctness begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Parameter Correctness', desc: 'At this stage, the key transformation occurs — the core mechanism that makes tool use correctness work.' },
-    { title: '3. Result Interpretation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Chaining Logic', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Building Tool-Use Evaluation Datasets', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Selection Correctness', desc: 'Selection correctness measures whether the agent chose the appropriate tool for its current subgoal:  A selection is "correct" if the chosen tool is the most appropriate available option for the agent\'s stated or inferred intent.' },
+    { title: '2. Parameter Correctness', desc: 'Parameter correctness evaluates whether the agent provided valid, appropriate arguments to the selected tool:  Parameter evaluation has multiple dimensions:  Type correctness: Are parameter types valid?' },
+    { title: '3. Result Interpretation', desc: 'Result interpretation measures whether the agent correctly understands and acts on tool outputs:  An interpretation is "correct" if the agent extracts the right information from the tool output and incorporates it appropriately into its reasoning.' },
+    { title: '4. Chaining Logic', desc: 'Chaining logic evaluates whether sequences of tool calls follow a sensible order and information flow:  Dependency respect: Does the agent call tools in an order that respects data dependencies?' },
+    { title: '5. Building Tool-Use Evaluation Datasets', desc: 'Constructing robust tool-use evaluation datasets requires:  Task selection: Choose tasks that require 3-8 tool calls across 2+ distinct tools, ensuring evaluation exercises selection, not just usage of a single tool Reference trajectories: Have domain experts solve each task, recording the optimal.' },
 ];
 
 export default function WalkthroughAAEToolUseCorrectness() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAEToolUseCorrectness() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Tool Use Correctness — Step by Step
+          Tool Use Correctness \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how tool use correctness works, one stage at a time.

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizPEChainOfThoughtPrompting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Original benchmark: GSM8K accuracy improved from 17.7% (standard few-shot) to 58% (CoT) with PaLM 540B, a 3.3x improvement.', isTrue: true, explanation: 'This is a key technical detail of Chain-of-Thought Prompting.' },
-    { text: 'Optimal example count: 4-8 CoT examples typically saturate performance; more examples yield diminishing returns while consuming context window.', isTrue: true, explanation: 'This is a key technical detail of Chain-of-Thought Prompting.' },
-    { text: 'Token overhead: CoT increases output length by 2-5x compared to direct answering, proportionally increasing latency and cost.', isTrue: true, explanation: 'This is a key technical detail of Chain-of-Thought Prompting.' },
+    { text: 'CoT means just saying \'think step by step.\'', isTrue: false, explanation: 'That is zero-shot CoT (Kojima et al. 2022), a distinct technique.' },
+    { text: 'GSM8K accuracy improved from 17.7% (standard few-shot) to 58% (CoT) with PaLM 540B, a 3.3x improvement.', isTrue: true, explanation: 'GSM8K accuracy improved from 17.7% (standard few-shot) to 58% (CoT) with PaLM 540B, a 3.3x improvement.' },
+    { text: 'More reasoning steps always means better answers.', isTrue: false, explanation: 'Excessively long reasoning chains can introduce compounding errors, where each step has a small probability of error and long chains accumulate mistakes. The optimal chain length matches the actual complexity of the problem.' },
+    { text: '4-8 CoT examples typically saturate performance; more examples yield diminishing returns while consuming context window.', isTrue: true, explanation: '4-8 CoT examples typically saturate performance; more examples yield diminishing returns while consuming context window.' },
+    { text: 'CoT works equally well on all tasks.', isTrue: false, explanation: 'CoT provides minimal or negative benefit on tasks that do not require multi-step reasoning. Using CoT for simple factual retrieval wastes tokens and can reduce accuracy.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE06KvCacheAndServingOptimization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'KV cache per token per layer (FP16): 2  n_kv_heads  d_head * 2 bytes.', isTrue: true, explanation: 'This is a key technical detail of KV Cache and Serving Optimization.' },
-    { text: 'For LLaMA 2 70B (GQA-8, d_head=128): 4 KB/token/layer, ~320 KB/token total (80 layers).', isTrue: true, explanation: 'This is a key technical detail of KV Cache and Serving Optimization.' },
-    { text: 'LLaMA 2 70B at 4096 tokens: ~1.3 GB KV cache per request.', isTrue: true, explanation: 'This is a key technical detail of KV Cache and Serving Optimization.' },
+    { text: 'KV cache is a small overhead.', isTrue: false, explanation: 'For long sequences, KV cache can exceed model weights in memory consumption. At 128K tokens, KV cache for a 70B model can be 3-4x the size of the model weights.' },
+    { text: 'PagedAttention approximates attention.', isTrue: false, explanation: 'PagedAttention computes exact attention — it only changes how memory is allocated and accessed. The mathematical computation is identical.' },
+    { text: 'Bigger GPUs solve the KV cache problem.', isTrue: false, explanation: 'Bigger GPUs help but do not solve the fundamental scaling issue. Doubling GPU memory doubles your capacity, but doubling sequence length doubles the cache per request.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

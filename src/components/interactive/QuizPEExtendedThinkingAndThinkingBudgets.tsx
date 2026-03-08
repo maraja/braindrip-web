@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizPEExtendedThinkingAndThinkingBudgets() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Anthropic\'s implementation: The thinking parameter with budget_tokens controls the thinking budget.', isTrue: true, explanation: 'This is a key technical detail of Extended Thinking and Thinking Budgets.' },
-    { text: 'Thinking content is returned in a separate thinking content block.', isTrue: true, explanation: 'This is a key technical detail of Extended Thinking and Thinking Budgets.' },
-    { text: 'Minimum budget is 1,024 tokens; can go up to the full context window minus output tokens.', isTrue: true, explanation: 'This is a key technical detail of Extended Thinking and Thinking Budgets.' },
+    { text: 'Extended thinking is just chain-of-thought built into the model.', isTrue: false, explanation: 'While conceptually similar, extended thinking models have been specifically trained to use thinking tokens effectively, often with reinforcement learning on reasoning tasks. The model\'s thinking process is more sophisticated than the CoT traces produced by standard models following "think step by step" instructions.' },
+    { text: 'The thinking parameter with budget_tokens controls the thinking budget.', isTrue: true, explanation: 'Thinking content is returned in a separate thinking content block. Minimum budget is 1,024 tokens; can go up to the full context window minus output tokens.' },
+    { text: 'More thinking tokens is always better.', isTrue: false, explanation: 'Like all inference-time compute strategies, thinking budget exhibits diminishing returns. Additionally, excessive thinking on simple tasks can lead to overthinking -- generating unnecessary caveats, second-guessing correct intuitions, or finding problems that do not exist.' },
+    { text: 'The o1 and o3 models use hidden reasoning tokens controlled by reasoning_effort (low/medium/high).', isTrue: true, explanation: 'Reasoning tokens are billed but not visible to the user. The o3-mini model offers a lower-cost option with reduced reasoning capacity.' },
+    { text: 'Hidden reasoning tokens mean you cannot debug the model\'s reasoning.', isTrue: false, explanation: 'With OpenAI\'s o1/o3, reasoning tokens are hidden by default, but Anthropic\'s implementation exposes thinking tokens. Even with hidden tokens, you can often infer reasoning quality from output quality and use techniques like asking the model to "explain your reasoning" in the output.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

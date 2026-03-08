@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCFullyConvolutionalNetworks() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'FCN-8s achieved 62.2% mIoU on PASCAL VOC 2012 test -- a massive jump from prior non-deep methods (~40%).', isTrue: true, explanation: 'This is a key technical detail of Fully Convolutional Networks.' },
-    { text: 'Inference on a 500x500 image takes ~200ms on a NVIDIA Titan X (2015 GPU).', isTrue: true, explanation: 'This is a key technical detail of Fully Convolutional Networks.' },
-    { text: 'Modern reimplementations on current hardware are far faster.', isTrue: true, explanation: 'This is a key technical detail of Fully Convolutional Networks.' },
+    { text: 'FCN means no parameters.', isTrue: false, explanation: 'FCNs have as many parameters as the classification network they derive from, plus a few additional layers for scoring and upsampling. The "fully convolutional" label refers to the type of layer, not the parameter count.' },
+    { text: 'Fully Convolutional Networks (FCNs) replace the fully connected layers of classification CNNs with convolutional layers, enabling dense, pixel-wise prediction on inputs of arbitrary spatial size.', isTrue: true, explanation: 'This captures the core definition of Fully Convolutional Networks.' },
+    { text: 'Fully Convolutional Networks is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Fully Convolutional Networks is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

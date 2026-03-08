@@ -6,7 +6,7 @@ const DETAILS = [
     { label: 'TimeQA', detail: '11% accuracy improvement on temporal knowledge questions, where identifying the relevant time period is the key abstraction.' },
     { label: 'Two API calls required', detail: 'Step-back always requires at least two sequential LLM calls (abstraction + solution), doubling minimum latency compared to single-call CoT.' },
     { label: 'Step-back examples', detail: '2-4 few-shot examples demonstrating the abstraction pattern are typically sufficient.' },
-    { label: 'Abstraction granularity', detail: 'The step-back question should target the level of a \"principle\" or \"concept,\" not a \"field\" or \"equation\" -- mid-level abstraction works best.' },
+    { label: 'Abstraction granularity', detail: 'The step-back question should target the level of a "principle" or "concept," not a "field" or "equation" -- mid-level abstraction works best.' },
 ];
 
 export default function ExplorerPEStepBackPrompting() {
@@ -20,10 +20,10 @@ export default function ExplorerPEStepBackPrompting() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Step-Back Prompting — Key Details Explorer
+          Step-Back Prompting \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of step-back prompting.
+          Click each card to explore the technical details.
         </p>
       </div>
 

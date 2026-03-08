@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Vector Store Memory', desc: 'The foundation of long-term persistent memory begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Database-Backed Memory', desc: 'At this stage, the key transformation occurs — the core mechanism that makes long-term persistent memory work.' },
-    { title: '3. File-Based Memory', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The MemGPT Approach: Hierarchical Memory Management', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Vector Store Memory', desc: 'The most common implementation of long-term memory for agents uses vector embeddings:  Encoding: Text (conversation turns, facts, observations) is converted to dense vector embeddings using an embedding model (OpenAI\'s text-embedding-3-large, Cohere\'s embed-v3, or open-source alternatives like E5,.' },
+    { title: '2. Database-Backed Memory', desc: 'For structured information (user profiles, task histories, factual knowledge), traditional databases are more appropriate than vector stores:  Key-value stores (Redis, DynamoDB): Fast lookup of specific facts by key.' },
+    { title: '3. File-Based Memory', desc: 'Some agents persist memory as files:  Markdown notes: The agent writes summaries of each session to a file, creating a growing knowledge base JSON state files: The agent serializes its state (current task, preferences, accumulated knowledge) to JSON at the end of each session and reloads it at the.' },
+    { title: '4. The MemGPT Approach: Hierarchical Memory Management', desc: 'MemGPT (Packer et al., 2023) treats the LLM\'s context window as "main memory" and external storage as "disk," borrowing concepts from operating system virtual memory:  Main context (RAM): The current context window, limited in size but immediately accessible Archival storage (Disk): Unlimited.' },
 ];
 
 export default function WalkthroughAACLongTermPersistentMemory() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACLongTermPersistentMemory() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Long-Term Persistent Memory — Step by Step
+          Long-Term Persistent Memory \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how long-term persistent memory works, one stage at a time.

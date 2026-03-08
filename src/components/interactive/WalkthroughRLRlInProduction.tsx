@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Production RL Pipeline', desc: 'The foundation of rl in production begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Off-Policy Evaluation (OPE)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes rl in production work.' },
-    { title: '3. Safety Constraints', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Reward Specification', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Monitoring and Drift Detection', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Production RL Pipeline', desc: 'A production RL system involves far more than training an agent:  Each stage introduces engineering challenges absent from research:' },
+    { title: '2. Off-Policy Evaluation (OPE)', desc: 'Before deploying a new policy, estimate its performance using historical data collected by the current policy:  Importance Sampling (IS):  [equation]  The product of importance ratios causes exponential variance over long horizons, making IS unreliable for long episodes.' },
+    { title: '3. Safety Constraints', desc: 'Production RL must operate within hard constraints:  Action masking: Prevent the agent from taking dangerous actions by setting their probability to zero:  [equation]  Constrained MDPs (CMDPs): Optimize the primary objective subject to constraint budgets:  [equation]  where C_i are cost functions.' },
+    { title: '4. Reward Specification', desc: 'Reward design is the most common failure mode in production RL:  Proxy rewards: The metric you can measure (clicks, revenue) is a proxy for what you actually want (user satisfaction, long-term value). Optimizing the proxy leads to Goodhart\'s Law failures.' },
+    { title: '5. Monitoring and Drift Detection', desc: 'Deployed RL systems can degrade silently:  Distribution shift: The environment changes (new user behaviors, market conditions, seasonal effects), but the policy was trained on old data. Reward drift: The relationship between the proxy reward and the true objective changes.' },
+    { title: '6. Canary Deployment and A/B Testing', desc: 'Deploy new policies gradually:  Shadow mode: Run the new policy alongside the old one, logging what it would do, without acting Canary: Deploy to 1-5% of traffic, monitor all metrics Gradual rollout: Increase traffic over days/weeks if metrics are stable Full deployment: 100% traffic with.' },
 ];
 
 export default function WalkthroughRLRlInProduction() {
@@ -17,10 +18,10 @@ export default function WalkthroughRLRlInProduction() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          RL in Production — Step by Step
+          RL in Production \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how rl in production works, one stage at a time.

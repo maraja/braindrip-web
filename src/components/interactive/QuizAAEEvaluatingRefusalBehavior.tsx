@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEEvaluatingRefusalBehavior() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Measuring the quality of when agents say "no" -- balancing over-refusal that frustrates users against under-refusal that permits harmful actions.', isTrue: true, explanation: 'This captures the core purpose of Evaluating Refusal Behavior.' },
-    { text: 'Evaluating Refusal Behavior is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluating Refusal Behavior is important for building on more advanced topics.' },
-    { text: 'Evaluating Refusal Behavior is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluating Refusal Behavior is important for building on more advanced topics.' },
+    { text: 'Zero under-refusal is the correct target.', isTrue: false, explanation: 'Targeting zero under-refusal inevitably drives over-refusal to unacceptable levels. The correct target is the Pareto-optimal point where further reduction in under-refusal produces unacceptable increases in over-refusal for the given deployment context.' },
+    { text: 'Refusal evaluation only needs clearly safe and clearly unsafe examples.', isTrue: false, explanation: 'The hardest and most informative evaluation happens in the ambiguous zone. An agent that handles only clear cases correctly but fails on ambiguous ones will perform poorly in the real world, where the majority of interesting refusal decisions involve ambiguity.' },
+    { text: 'Users always prefer less refusal.', isTrue: false, explanation: 'Research shows that users prefer appropriate refusal over inappropriate compliance. When an agent completes a request that the user later realizes was harmful, user trust decreases more than when the agent refused and explained why.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

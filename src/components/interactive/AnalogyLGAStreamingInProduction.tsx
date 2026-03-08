@@ -1,23 +1,23 @@
 import { useState } from 'react';
-const baseStyle = { background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: 14, padding: '1.25rem', margin: '1.5rem 0', fontFamily: 'system-ui, sans-serif' };
+const baseStyle = { background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: 14, padding: '1.25rem', margin: '1.5rem 0', fontFamily: "system-ui, sans-serif" };
 export default function AnalogyLGAStreamingInProduction() {
   const [idx, setIdx] = useState(0);
-  const analogies = [
-    { emoji: '🏗', label: 'Building', text: 'Think of Streaming in Production like constructing a building. Building a streaming chat in a notebook is like testing a garden hose in your backyard. Production streaming is plumbing a high-rise building -- yo... Just as a builder follows blueprints to create a structure, this concept provides the foundational framework that everything else builds upon.' },
-    { emoji: '🎭', label: 'Theater', text: 'Streaming in Production is like directing a theater production. Building a streaming chat in a notebook is like testing a garden hose in your backyard. Production streaming is plumbing a high-rise building -- yo... Each element plays a specific role, and the overall performance depends on how well they work together.' },
-    { emoji: '🗺', label: 'Navigation', text: 'Think of Streaming in Production like navigating with a map. Building a streaming chat in a notebook is like testing a garden hose in your backyard. Production streaming is plumbing a high-rise building -- yo... You need to understand where you are, where you want to go, and the best route to get there.' },
+  const perspectives = [
+    { emoji: '💡', label: 'Core Idea', text: 'Building a streaming chat in a notebook is like testing a garden hose in your backyard. Production streaming is plumbing a high-rise building -- you need pressure regulators (backpressure), shutoff valves (timeouts), return pipes (bidirectional communication), and apartment numbers (thread IDs) so water reaches the right unit.' },
+    { emoji: '⚙️', label: 'How It Works', text: 'SSE is the most common transport for unidirectional streaming. The protocol is simple: the server sends lines formatted as data: &#123;json&#125; and the client reads them with an EventSource or fetch call. The [DONE] sentinel tells the client the stream is complete, following the convention established by the OpenAI API.' },
+    { emoji: '🔍', label: 'In Detail', text: 'In production, your LangGraph agent runs on a server and clients connect over HTTP or WebSocket. The server must stream tokens to the right client, maintain conversation state across requests, handle clients that disconnect mid-stream, and support human-in-the-loop interrupts without losing progress.' },
   ];
   return (
     <div style={baseStyle}>
-      <p style={{ fontSize: '0.8rem', fontWeight: 700, color: '#2C3E2D', marginBottom: 10, letterSpacing: '0.05em' }}>\u2726 THINK OF IT AS...</p>
-      <div style={{ display: 'flex', gap: 6, marginBottom: 12, flexWrap: 'wrap' }}>
-        {analogies.map((a, i) => (
-          <button key={i} onClick={() => setIdx(i)} style={{ padding: '4px 12px', borderRadius: 20, border: idx === i ? '2px solid #8BA888' : '1px solid #E5DFD3', background: idx === i ? '#8BA888' + '18' : 'transparent', fontSize: '0.8rem', cursor: 'pointer', color: '#2C3E2D', fontWeight: idx === i ? 600 : 400 }}>
-            {a.emoji} {a.label}
+      <p style={{ fontSize: '0.8rem', fontWeight: 700, color: '#2C3E2D', marginBottom: 10, letterSpacing: '0.05em' }}>\u2726 KEY PERSPECTIVES</p>
+      <div style={{ display: 'flex', gap: 6, marginBottom: 12, flexWrap: 'wrap' as const }}>
+        {perspectives.map((p, i) => (
+          <button key={i} onClick={() => setIdx(i)} style={{ padding: '4px 12px', borderRadius: 20, border: idx === i ? '2px solid #8BA888' : '1px solid #E5DFD3', background: idx === i ? '#8BA88818' : 'transparent', fontSize: '0.8rem', cursor: 'pointer', color: '#2C3E2D', fontWeight: idx === i ? 600 : 400 }}>
+            {p.emoji} {p.label}
           </button>
         ))}
       </div>
-      <p style={{ fontSize: '0.9rem', color: '#3D4F3E', lineHeight: 1.6, margin: 0 }}>{analogies[idx].text}</p>
+      <p style={{ fontSize: '0.9rem', color: '#3D4F3E', lineHeight: 1.6, margin: 0 }}>{perspectives[idx].text}</p>
     </div>
   );
 }

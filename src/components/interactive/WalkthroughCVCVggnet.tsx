@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Design Principles', desc: 'The foundation of vggnet begins with understanding its core input requirements and initial setup.' },
-    { title: '2. VGG-16 Architecture', desc: 'At this stage, the key transformation occurs — the core mechanism that makes vggnet work.' },
-    { title: '3. Why 3x3 Convolutions?', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Training Details', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Design Principles', desc: 'The core insight of VGGNet is architectural simplicity through uniformity:  All convolutional layers use 3 x 3 kernels with stride 1 and "same" padding. All max pooling layers use 2 x 2 windows with stride 2.' },
+    { title: '2. VGG-16 Architecture', desc: 'The "16" in VGG-16 refers to 16 weight layers (13 convolutional + 3 fully connected). VGG-19 adds one extra convolutional layer to each of blocks 3, 4, and 5 (16 conv + 3 FC = 19 weight layers).' },
+    { title: '3. Why 3x3 Convolutions?', desc: 'Two stacked 3 x 3 conv layers have an effective receptive field of 5 x 5. Three stacked 3 x 3 layers cover 7 x 7.' },
+    { title: '4. Training Details', desc: 'Optimizer: SGD with momentum 0.9, weight decay 5 x 10^&#123;-4&#125;, batch size 256. Learning rate: Initially 0.01, decreased by 10x three times during training.' },
 ];
 
 export default function WalkthroughCVCVggnet() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCVggnet() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          VGGNet — Step by Step
+          VGGNet \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how vggnet works, one stage at a time.

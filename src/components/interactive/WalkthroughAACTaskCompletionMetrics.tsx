@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Binary (Pass/Fail) Metrics', desc: 'The foundation of task completion metrics begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Graded (Partial Credit) Metrics', desc: 'At this stage, the key transformation occurs — the core mechanism that makes task completion metrics work.' },
-    { title: '3. Comparative (vs Baseline) Metrics', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Domain-Specific Metrics', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Binary (Pass/Fail) Metrics', desc: 'Binary metrics classify each task outcome as success or failure. For coding tasks: do all tests pass?' },
+    { title: '2. Graded (Partial Credit) Metrics', desc: 'Graded metrics assign scores on a continuous or multi-level scale. A research task might score 0.3 for finding relevant sources, 0.6 for accurate summarization, 0.8 for synthesis across sources, and 1.0 for nuanced analysis with caveats.' },
+    { title: '3. Comparative (vs Baseline) Metrics', desc: 'Comparative metrics evaluate the agent against a reference: another agent, a human, or a previous version. Instead of "how good is this output?", the question is "is this better than the baseline?" ELO ratings, win rates, and preference scores are comparative metrics.' },
+    { title: '4. Domain-Specific Metrics', desc: 'Different task domains require specialized metrics. Coding tasks: test pass rate, code correctness (exact match or functional equivalence), code quality (linting, complexity), and whether the code solves the underlying problem (not just the test cases).' },
 ];
 
 export default function WalkthroughAACTaskCompletionMetrics() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACTaskCompletionMetrics() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Task Completion Metrics — Step by Step
+          Task Completion Metrics \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how task completion metrics works, one stage at a time.

@@ -5,7 +5,7 @@ const DETAILS = [
     { label: 'Experiments', detail: 'Over 400 training runs, model sizes from 70M to 16B' },
     { label: 'Chinchilla model', detail: '70B parameters, 1.4T training tokens' },
     { label: 'Comparison model', detail: 'Gopher at 280B parameters, ~300B tokens (same compute budget)' },
-    { label: 'MMLU improvement', detail: '67.6% (Chinchilla) vs. 60.0% (Gopher)' },
+    { label: 'MMLU improvement', detail: '6% (Chinchilla) vs. 60.0% (Gopher)' },
     { label: 'Optimal ratio', detail: '~20 training tokens per parameter' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerLLE03ChinchillaAndComputeOptimalTraining() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Chinchilla and Compute-Optimal Training — Key Details Explorer
+          Chinchilla and Compute-Optimal Training \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of chinchilla and compute-optimal training.
+          Click each card to explore the technical details.
         </p>
       </div>
 

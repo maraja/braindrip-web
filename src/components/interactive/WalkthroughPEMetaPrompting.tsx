@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Two-Layer Architecture', desc: 'The foundation of meta-prompting begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Prompt Optimization Through Iteration', desc: 'At this stage, the key transformation occurs — the core mechanism that makes meta-prompting work.' },
-    { title: '3. Task-Specific Prompt Generation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Prompt Engineer Agent Pattern', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Two-Layer Architecture', desc: 'Meta-prompting involves at least two LLM calls in sequence. The first call (the meta-layer) receives a high-level description of the task and generates a specific, optimized prompt for that task.' },
+    { title: '2. Prompt Optimization Through Iteration', desc: 'The simplest form of meta-prompting generates a single prompt. More sophisticated approaches iterate: generate a prompt, test it on a set of examples, evaluate the results, and generate an improved prompt based on the evaluation.' },
+    { title: '3. Task-Specific Prompt Generation', desc: 'Instead of maintaining a library of pre-written prompts for different task types, meta-prompting can generate task-specific prompts on the fly. Given a task description ("Extract the invoice number, date, and total amount from this document"), the meta-layer generates an optimized prompt with.' },
+    { title: '4. The Prompt Engineer Agent Pattern', desc: 'The most advanced form of meta-prompting is an autonomous agent that maintains a prompt library, monitors execution performance, identifies failing cases, diagnoses root causes, and generates prompt improvements.' },
 ];
 
 export default function WalkthroughPEMetaPrompting() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEMetaPrompting() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Meta-Prompting — Step by Step
+          Meta-Prompting \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how meta-prompting works, one stage at a time.

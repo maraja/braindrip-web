@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Document Understanding Pipeline', desc: 'The foundation of document understanding begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The LayoutLM Family', desc: 'At this stage, the key transformation occurs — the core mechanism that makes document understanding work.' },
-    { title: '3. Key Information Extraction (KIE)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Table Extraction', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Document QA', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Document Understanding Pipeline', desc: 'A typical document understanding system involves:  Document Digitization / OCR: Converting scanned documents or images into machine-readable text with bounding box coordinates.' },
+    { title: '2. The LayoutLM Family', desc: 'LayoutLM (Xu et al., 2020, Microsoft): The foundational model that introduced layout-aware pre-training. LayoutLM extends BERT by adding 2D position embeddings to each text token:  Text tokens are embedded using WordPiece (as in BERT).' },
+    { title: '3. Key Information Extraction (KIE)', desc: 'KIE extracts specific field values from documents: vendor name, total amount, date, line items, etc. It is formulated as:  Token classification: Each OCR token is labeled with a semantic tag (B-TOTAL, I-TOTAL, B-DATE, etc.) using BIO or BIOES tagging, identical to named-entity-recognition.' },
+    { title: '4. Table Extraction', desc: 'Tables are particularly challenging because their structure is implicit -- cells are defined by visual alignment and ruling lines rather than explicit markup:  Table detection: Locating table regions in the document page (object detection task).' },
+    { title: '5. Document QA', desc: 'Document question answering (DocVQA) answers natural language questions about document content, requiring both reading comprehension (as in question-answering.md) and visual/layout understanding:  DocVQA benchmark (Mathew et al., 2021): 50K questions on 12K industry document images.' },
 ];
 
 export default function WalkthroughNLPDocumentUnderstanding() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPDocumentUnderstanding() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Document Understanding — Step by Step
+          Document Understanding \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how document understanding works, one stage at a time.

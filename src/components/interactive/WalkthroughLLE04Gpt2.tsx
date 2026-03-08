@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture: Scaled GPT-1', desc: 'The foundation of gpt-2: language models are unsupervised multitask learners begins with understanding its core input requirements and initial setup.' },
-    { title: '2. WebText: A New Training Corpus', desc: 'At this stage, the key transformation occurs — the core mechanism that makes gpt-2: language models are unsupervised multitask learners work.' },
-    { title: '3. Zero-Shot Task Performance', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The \"Emergent\" Capabilities', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Architecture: Scaled GPT-1', desc: 'GPT-2 used the same decoder-only Transformer architecture as 02-gpt-1.md, with several refinements:  Architectural changes from GPT-1: layer normalization was moved to the input of each sub-layer (pre-norm, rather than post-norm), an additional layer normalization was added after the final.' },
+    { title: '2. WebText: A New Training Corpus', desc: 'GPT-1 trained on BookCorpus (~5GB). GPT-2 trained on WebText — a new dataset of 40GB of text from 8 million web pages.' },
+    { title: '3. Zero-Shot Task Performance', desc: 'The paper\'s central contribution was demonstrating that GPT-2 could perform tasks without any task-specific training data or fine-tuning. The model was evaluated by formatting tasks as natural language prompts:  Translation: Prefix the prompt with example pairs like "natural language sentence =.' },
+    { title: '4. The "Emergent" Capabilities', desc: 'GPT-2 could generate remarkably coherent multi-paragraph text. Given a prompt about a discovered herd of unicorns in the Andes, the model produced a plausible news article with quotes, names, and narrative structure.' },
 ];
 
 export default function WalkthroughLLE04Gpt2() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE04Gpt2() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          GPT-2: Language Models Are Unsupervised Multitask Learners — Step by Step
+          GPT-2: Language Models Are Unsupervised Multitask Learners \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how gpt-2: language models are unsupervised multitask learners works, one stage at a time.

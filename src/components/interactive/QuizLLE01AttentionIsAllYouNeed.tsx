@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE01AttentionIsAllYouNeed() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Vaswani et al. (2017) introduced the Transformer — a fully parallel architecture based entirely on self-attention that eliminated recurrence, achieved 28.4 BLEU on English-German translation in 3.5 days on 8 GPUs, and became the foundational architecture for every major language model that followed.', isTrue: true, explanation: 'This captures the core purpose of Attention Is All You Need.' },
-    { text: 'Attention Is All You Need is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Attention Is All You Need is important for building on more advanced topics.' },
-    { text: 'Attention Is All You Need is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Attention Is All You Need is important for building on more advanced topics.' },
+    { text: 'The Transformer was a completely novel invention.', isTrue: false, explanation: 'Self-attention existed before (Parikh et al., 2016; Lin et al., 2017). Residual connections came from ResNet (He et al., 2015).' },
+    { text: '8 researchers at Google Brain / Google Research, all listed as equal contributors', isTrue: true, explanation: '8 researchers at Google Brain / Google Research, all listed as equal contributors' },
+    { text: 'Transformers can handle sequences of any length.', isTrue: false, explanation: 'Self-attention has O(n^2) memory and compute complexity. The original Transformer was limited to sequences of 512-1024 tokens.' },
+    { text: '6 layers, 8 heads, d_model=512, 65M parameters', isTrue: true, explanation: '6 layers, 8 heads, d_model=512, 65M parameters' },
+    { text: 'All Transformers use encoder-decoder architecture.', isTrue: false, explanation: 'The original Transformer was encoder-decoder, but the most successful LLMs use decoder-only (02-gpt-1.md, 04-gpt-2.md) or encoder-only (03-bert.md) variants. See 07-encoder-vs-decoder-vs-encoder-decoder.md for the full comparison.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

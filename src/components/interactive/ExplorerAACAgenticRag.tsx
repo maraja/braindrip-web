@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Retrieval-as-tool pattern', detail: 'Retrieval is exposed as one or more tools (e.g., `search_docs`, `query_database`, `web_search`) that the agent invokes through the standard tool-calling interface.' },
+    { label: 'Retrieval-as-tool pattern', detail: 'Retrieval is exposed as one or more tools (e.g., search_docs, query_database, web_search) that the agent invokes through the standard tool-calling interface.' },
     { label: 'Adaptive retrieval budgets', detail: 'The agent has a configurable maximum number of retrieval rounds (typically 1-5) to prevent infinite retrieval loops while allowing iterative refinement.' },
     { label: 'Relevance scoring', detail: 'After each retrieval, the agent (or a dedicated re-ranker) scores results for relevance, filtering out noise before including results in the generation context.' },
     { label: 'Query routing', detail: 'Different query types are routed to different retrieval backends -- semantic search for conceptual questions, keyword search for exact matches, SQL for structured data queries.' },
@@ -20,10 +20,10 @@ export default function ExplorerAACAgenticRag() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agentic RAG — Key Details Explorer
+          Agentic RAG \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of agentic rag.
+          Click each card to explore the technical details.
         </p>
       </div>
 

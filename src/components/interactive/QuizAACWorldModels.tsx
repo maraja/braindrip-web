@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACWorldModels() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Implicit vs explicit models: Most LLM agents maintain implicit world models within their context window (the accumulated conversation history IS the model).', isTrue: true, explanation: 'This is a key technical detail of World Models.' },
-    { text: 'Explicit models use structured data stores that are updated programmatically Model fidelity: LLM world models are approximate; they can lose track of state details over long conversations.', isTrue: true, explanation: 'This is a key technical detail of World Models.' },
-    { text: 'For well-understood domains (file operations, API calls), accuracy is high.', isTrue: true, explanation: 'This is a key technical detail of World Models.' },
+    { text: 'LLMs cannot maintain world models.', isTrue: false, explanation: 'LLMs demonstrate considerable world-modeling capability through in-context state tracking. They can track which files have been modified, what variables contain, and what the conversation state is.' },
+    { text: 'Most LLM agents maintain implicit world models within their context window (the accumulated conversation history IS the model).', isTrue: true, explanation: 'Explicit models use structured data stores that are updated programmatically' },
+    { text: 'World models must be formally specified.', isTrue: false, explanation: 'While formal state machines and planning domains (PDDL) are one approach, most practical agent world models are informal: natural language summaries of the current state maintained in the context window. The informality is a feature, not a bug, because it handles the open-ended nature of real-world agent tasks.' },
+    { text: 'LLM world models are approximate; they can lose track of state details over long conversations.', isTrue: true, explanation: 'Explicit state tracking (e.g., maintaining a file modification log) improves fidelity at the cost of implementation complexity' },
+    { text: 'Mental simulation replaces actual execution.', isTrue: false, explanation: 'Simulation is a complement to execution, not a replacement. Simulation helps the agent choose better actions, but the real environment always has the final word.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

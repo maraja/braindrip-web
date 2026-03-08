@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Word2Vec (Mikolov et al., 2013)', desc: 'The foundation of word embeddings: word2vec and glove begins with understanding its core input requirements and initial setup.' },
-    { title: '2. GloVe (Pennington et al., 2014)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes word embeddings: word2vec and glove work.' },
-    { title: '3. FastText (Bojanowski et al., 2016)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The \"King - Man + Woman = Queen\" Moment', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Word2Vec (Mikolov et al., 2013)', desc: 'Tomas Mikolov and colleagues at Google published two foundational papers in 2013 that introduced Word2Vec with two training architectures. CBOW (Continuous Bag of Words) predicts a target word from its surrounding context window — given "the cat ___ on the mat," predict "sat.' },
+    { title: '2. GloVe (Pennington et al., 2014)', desc: 'Jeffrey Pennington and colleagues at Stanford took a different approach with GloVe (Global Vectors for Word Representation). Rather than learning from local context windows like Word2Vec, GloVe explicitly factorizes the global word-word co-occurrence matrix.' },
+    { title: '3. FastText (Bojanowski et al., 2016)', desc: 'Facebook AI Research extended Word2Vec by representing each word as a bag of character n-grams. The word "where" might be represented by the n-grams "&lt;wh," "whe," "her," "ere," "re&gt;" plus the full word "&lt;where&gt;." Each n-gram gets its own vector, and the word vector is the sum.' },
+    { title: '4. The "King - Man + Woman = Queen" Moment', desc: 'The most famous demonstration of word embedding quality was vector arithmetic: vec("king") - vec("man") + vec("woman") approximates vec("queen"). This showed that embeddings captured abstract relational concepts — gender, tense, geography — as consistent directions in vector space.' },
 ];
 
 export default function WalkthroughLLE01WordEmbeddingsWord2vecAndGlove() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE01WordEmbeddingsWord2vecAndGlove() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Word Embeddings: Word2Vec and GloVe — Step by Step
+          Word Embeddings: Word2Vec and GloVe \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how word embeddings: word2vec and glove works, one stage at a time.

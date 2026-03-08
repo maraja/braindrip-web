@@ -3,7 +3,7 @@ import { useState } from 'react';
 const DETAILS = [
     { label: 'Effective context is 60-80% of nominal context', detail: 'for most tasks — plan context budgets accordingly, not at the nominal maximum.' },
     { label: 'Section markers improve information retrieval accuracy by 10-15%', detail: 'in contexts exceeding 50K tokens.' },
-    { label: '\"Search before answering\" instructions improve long-context QA accuracy by 10-20%', detail: 'by focusing attention on relevant passages.' },
+    { label: '"Search before answering" instructions improve long-context QA accuracy by 10-20%', detail: 'by focusing attention on relevant passages.' },
     { label: 'Frontier models achieve 90-99% on single-needle NIAH tests', detail: 'but 70-90% on multi-needle tasks requiring synthesis across passages.' },
     { label: 'Long-context inference costs scale linearly', detail: 'with context length — a 128K context costs roughly 16x more than an 8K context at the same per-token pricing.' },
     { label: 'Time-to-first-token scales quadratically', detail: 'with context length in standard attention implementations, though optimizations (Flash Attention, KV caching) reduce this in practice.' },
@@ -20,10 +20,10 @@ export default function ExplorerPELongContextDesignPatterns() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Long-Context Design Patterns — Key Details Explorer
+          Long-Context Design Patterns \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of long-context design patterns.
+          Click each card to explore the technical details.
         </p>
       </div>
 

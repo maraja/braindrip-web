@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEMultipleValidSolutions() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Agents solving open-ended tasks produce legitimately different solutions, making reference-based evaluation fundamentally inadequate and requiring solution-agnostic methods like test-based verification, constraint checking, and LLM-as-judge.', isTrue: true, explanation: 'This captures the core purpose of Multiple Valid Solutions.' },
-    { text: 'Multiple Valid Solutions is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Multiple Valid Solutions is important for building on more advanced topics.' },
-    { text: 'Multiple Valid Solutions is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Multiple Valid Solutions is important for building on more advanced topics.' },
+    { text: 'More reference solutions solve the problem.', isTrue: false, explanation: 'Having 5 reference solutions instead of 1 is better but still insufficient for tasks with combinatorially many valid approaches. You would need an impractical number of references to cover the solution space.' },
+    { text: 'LLM-as-judge replaces all other methods.', isTrue: false, explanation: 'LLM judges are powerful but have known biases: position bias (preferring the first option), verbosity bias (preferring longer outputs), and self-preference bias. They should complement, not replace, objective evaluation methods like test suites.' },
+    { text: 'If the agent\'s solution differs from mine, it is probably wrong.', isTrue: false, explanation: 'Human evaluators consistently exhibit anchoring bias toward their own solution. Studies show that evaluators rate correct-but-different solutions 15-20% lower than correct-and-similar solutions, even when both are objectively equivalent.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. BPE: The Dominant Algorithm', desc: 'The foundation of tokenization for prompt engineers begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Token-to-Word Ratios by Language', desc: 'At this stage, the key transformation occurs — the core mechanism that makes tokenization for prompt engineers work.' },
-    { title: '3. Cost Implications at Scale', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Whitespace, Formatting, and Edge Cases', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. BPE: The Dominant Algorithm', desc: 'Byte Pair Encoding starts with individual bytes (or characters) and iteratively merges the most frequent adjacent pairs. After thousands of merge operations on a large training corpus, the vocabulary emerges.' },
+    { title: '2. Token-to-Word Ratios by Language', desc: 'English is the most efficiently tokenized language because BPE vocabularies are built predominantly on English text. The ratios are stark:  English: ~1.0-1.3 tokens per word (approximately 4 characters per token) Spanish/French: ~1.2-1.5 tokens per word German: ~1.5-2.' },
+    { title: '3. Cost Implications at Scale', desc: 'At GPT-4o pricing (~2.50/1M input tokens, ~10/1M output tokens, as of early 2025) and Claude 3.5 Sonnet (~3/1M input, ~15/1M output), tokenization efficiency directly affects the bottom line.' },
+    { title: '4. Whitespace, Formatting, and Edge Cases', desc: 'Tokenizers treat whitespace inconsistently. A leading space before a word often merges with the word token (" Hello" → 1 token), while extra spaces create additional tokens.' },
 ];
 
 export default function WalkthroughPETokenizationForPromptEngineers() {
@@ -16,10 +16,10 @@ export default function WalkthroughPETokenizationForPromptEngineers() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Tokenization for Prompt Engineers — Step by Step
+          Tokenization for Prompt Engineers \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how tokenization for prompt engineers works, one stage at a time.

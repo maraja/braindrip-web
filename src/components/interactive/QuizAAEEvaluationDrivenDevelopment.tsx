@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEEvaluationDrivenDevelopment() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The most effective agent development methodology starts with a small set of real failure cases, builds evaluations around them, iterates the agent against those evaluations, and continuously expands the eval suite from production incidents -- yet 29.5% of teams run no evaluations at all.', isTrue: true, explanation: 'This captures the core purpose of Evaluation-Driven Development.' },
-    { text: 'Evaluation-Driven Development is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluation-Driven Development is important for building on more advanced topics.' },
-    { text: 'Evaluation-Driven Development is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluation-Driven Development is important for building on more advanced topics.' },
+    { text: 'You need a large benchmark before you can evaluate.', isTrue: false, explanation: 'This is the single most damaging misconception in agent development. Waiting for a perfect, comprehensive benchmark delays all progress.' },
+    { text: 'Public benchmarks are sufficient for development.', isTrue: false, explanation: 'Public benchmarks like SWE-bench measure general capability but not your specific use case. An agent that scores well on SWE-bench may fail on your codebase\'s conventions, your team\'s workflow, or your users\' typical requests.' },
+    { text: 'Evaluations should be synthetic and diverse.', isTrue: false, explanation: 'Synthetic evaluations -- generated from templates or by LLMs -- can pad out a suite but often lack the specificity and realism of cases derived from actual failures. Prioritize real cases.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

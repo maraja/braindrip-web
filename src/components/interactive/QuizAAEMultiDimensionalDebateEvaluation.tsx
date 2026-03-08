@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEMultiDimensionalDebateEvaluation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Multiple LLM judge agents, each representing a different evaluative dimension, debate the quality of agent output to surface issues that single-judge evaluation misses.', isTrue: true, explanation: 'This captures the core purpose of Multi-Dimensional Debate Evaluation.' },
-    { text: 'Multi-Dimensional Debate Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Multi-Dimensional Debate Evaluation is important for building on more advanced topics.' },
-    { text: 'Multi-Dimensional Debate Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Multi-Dimensional Debate Evaluation is important for building on more advanced topics.' },
+    { text: 'More judges always produce better evaluation.', isTrue: false, explanation: 'Additional judges increase cost and can introduce noise if their dimensions overlap or if the consensus protocol is poorly designed. The value comes from dimensional diversity, not judge count.' },
+    { text: 'The debate always converges to a consensus.', isTrue: false, explanation: 'Legitimate disagreement between dimensions is a feature, not a bug. When the Safety Advocate and the Helpfulness Advocate genuinely conflict, the correct output is a documented tension, not a forced consensus.' },
+    { text: 'Debate evaluation eliminates bias.', isTrue: false, explanation: 'It reduces the impact of any single judge\'s bias but introduces new risks: groupthink (if advocates are prompted too similarly), anchoring (if Round 1 scores overly influence later rounds), and moderator bias (if the synthesis model has its own preferences).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

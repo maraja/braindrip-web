@@ -5,7 +5,7 @@ const DETAILS = [
     { label: 'Embedding model choice matters', detail: 'Specialized retrieval models (Cohere embed-v3, Voyage-2) outperform general-purpose models (OpenAI ada-002) on retrieval benchmarks by 5-15% NDCG' },
     { label: 'BM25 + vector hybrid', detail: 'Research consistently shows 5-10% improvement over vector-only retrieval when combining with BM25 keyword search' },
     { label: 'Reranking cost', detail: 'A cross-encoder reranking step costs ~10ms per candidate. Reranking 20 candidates adds ~200ms latency. Worth it for high-stakes retrieval; excessive for routine queries' },
-    { label: 'Minimum relevance threshold', detail: 'Set a minimum similarity score (typically 0.3-0.5 cosine similarity) below which memories are not retrieved, even if they are the \"most similar.\" Retrieving low-relevance memories is worse than retrieving nothing' },
+    { label: 'Minimum relevance threshold', detail: 'Set a minimum similarity score (typically 0.3-0.5 cosine similarity) below which memories are not retrieved, even if they are the "most similar." Retrieving low-relevance memories is worse than retrieving nothing' },
     { label: 'Cold start problem', detail: 'When the memory store is empty or small, retrieval returns few or no results. Handle this gracefully: the agent should function without memories and not error when retrieval returns empty' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerAACMemoryRetrievalStrategies() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Memory Retrieval Strategies — Key Details Explorer
+          Memory Retrieval Strategies \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of memory retrieval strategies.
+          Click each card to explore the technical details.
         </p>
       </div>
 

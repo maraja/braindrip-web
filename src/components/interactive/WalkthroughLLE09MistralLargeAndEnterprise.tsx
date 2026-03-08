@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Mistral Large 2 (July 2024)', desc: 'The foundation of mistral large and enterprise expansion begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Codestral (2024)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes mistral large and enterprise expansion work.' },
-    { title: '3. Pixtral 12B (2024)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Mistral Nemo, Mistral Small 3, and the Full Lineup', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Mistral Large 2 (July 2024)', desc: 'Mistral Large 2 was the company\'s flagship: a 123 billion parameter dense Transformer with a 128K token context window. It supported over 80 programming languages and featured strong multilingual capabilities across English, French, German, Spanish, Italian, Portuguese, Arabic, Hindi, Russian,.' },
+    { title: '2. Codestral (2024)', desc: 'Codestral was Mistral\'s dedicated code model — a 22 billion parameter model trained specifically for code generation across over 80 programming languages. Released under the Apache 2.' },
+    { title: '3. Pixtral 12B (2024)', desc: 'Pixtral 12B was Mistral\'s entry into multimodal AI — a 12 billion parameter vision-language model capable of understanding images alongside text. It could analyze documents, interpret charts, caption images, and answer questions about visual content.' },
+    { title: '4. Mistral Nemo, Mistral Small 3, and the Full Lineup', desc: 'Mistral Nemo (12B parameters, 128K context, trained in collaboration with NVIDIA) used the Tekken tokenizer — a new tokenizer designed for better multilingual efficiency, particularly for non-Latin scripts.' },
 ];
 
 export default function WalkthroughLLE09MistralLargeAndEnterprise() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE09MistralLargeAndEnterprise() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Mistral Large and Enterprise Expansion — Step by Step
+          Mistral Large and Enterprise Expansion \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how mistral large and enterprise expansion works, one stage at a time.

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Back-Translation (Sennrich et al., 2016)', desc: 'The foundation of data augmentation for nlp begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Synonym Replacement: EDA (Wei and Zou, 2019)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes data augmentation for nlp work.' },
-    { title: '3. Contextual Augmentation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Paraphrase-Based Augmentation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Cross-Lingual Augmentation', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Back-Translation (Sennrich et al., 2016)', desc: 'Back-translation is the most consistently effective augmentation technique for NLP. The procedure:  Take a labeled example: (x, y) where x is text and y is the label.' },
+    { title: '2. Synonym Replacement: EDA (Wei and Zou, 2019)', desc: 'Easy Data Augmentation (EDA) proposes four simple text-level operations:  Synonym Replacement (SR): Randomly choose n non-stopwords and replace each with a random synonym from WordNet. Random Insertion (RI): Find a random synonym of a random non-stopword and insert it at a random position.' },
+    { title: '3. Contextual Augmentation', desc: 'Replace words using the predictions of a pre-trained language model, producing semantically coherent substitutions that respect context. BERT-based augmentation (Wu et al.' },
+    { title: '4. Paraphrase-Based Augmentation', desc: 'Generate meaning-preserving rephrasings using dedicated paraphrase models. PEGASUS for paraphrasing: Fine-tune a seq2seq model (like T5 or PEGASUS) on paraphrase corpora (e.g., Quora Question Pairs, PAWS) and use it to generate paraphrases of training examples.' },
+    { title: '5. Cross-Lingual Augmentation', desc: 'Leverage multilingual resources to augment training data in a target language. Translate-train: Translate English labeled data into the target language using MT, then train on the translated data.' },
+    { title: '6. Typical Improvement Ranges', desc: 'The effectiveness of augmentation depends heavily on baseline data size:  The pattern is consistent: augmentation helps most when data is scarcest, and the relative benefit diminishes as real data increases.' },
 ];
 
 export default function WalkthroughNLPDataAugmentationForNlp() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPDataAugmentationForNlp() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Data Augmentation for NLP — Step by Step
+          Data Augmentation for NLP \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how data augmentation for nlp works, one stage at a time.

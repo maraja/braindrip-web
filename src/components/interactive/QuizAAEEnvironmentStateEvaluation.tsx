@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEEnvironmentStateEvaluation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Environment-state evaluation assesses agent performance by checking the state of the world after the agent acts, verifying that the environment reflects the intended outcome regardless of the specific path the agent took.', isTrue: true, explanation: 'This captures the core purpose of Environment-State Evaluation.' },
-    { text: 'Environment-State Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Environment-State Evaluation is important for building on more advanced topics.' },
-    { text: 'Environment-State Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Environment-State Evaluation is important for building on more advanced topics.' },
+    { text: 'Environment state evaluation works for all agent tasks.', isTrue: false, explanation: 'It works well for tasks that modify observable environments. It is poorly suited for tasks whose value is in the agent\'s reasoning process, communication quality, or information synthesis.' },
+    { text: 'If the final state is correct, the agent\'s process was good.', isTrue: false, explanation: 'An agent might achieve the correct state through dangerous intermediate steps (deleting and recreating all data instead of updating in place). Process evaluation and state evaluation serve complementary purposes.' },
+    { text: 'State checkers are easy to write.', isTrue: false, explanation: 'Writing state checkers that are robust to different valid solution paths while catching all invalid states is a significant engineering challenge. Brittle checkers produce false negatives; overly permissive checkers produce false positives.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

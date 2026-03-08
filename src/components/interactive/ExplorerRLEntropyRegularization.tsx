@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Default entropy coefficient', detail: '$\\alpha = 0.01$ for A2C/A3C/PPO with discrete actions. For continuous control, $\\alpha$ varies more ($0.001$ to $0.2$) and is often auto-tuned.' },
-    { label: 'Entropy computation', detail: 'For categorical policies with $K$ actions, maximum entropy is $\\log K$. For Gaussian policies, entropy depends on $\\sigma$ and is unbounded above.' },
-    { label: 'Gradient of entropy', detail: 'For a categorical policy, $\\nabla_\\theta H = -\\nabla_\\theta \\sum_a \\pi_\\theta(a|s)[\\log \\pi_\\theta(a|s) + 1]$. Most deep learning frameworks compute this automatically.' },
-    { label: 'Entropy decay', detail: 'Some implementations anneal $\\alpha$ from a larger value to a smaller one during training, encouraging more exploration early and more exploitation later.' },
-    { label: 'Numerical stability', detail: 'When $\\pi_\\theta(a|s) \\approx 0$, the term $\\pi \\log \\pi$ can cause numerical issues. Adding a small constant (e.g., $10^{-8}$) inside the log prevents NaN values.' },
+    { label: 'Default entropy coefficient', detail: '= 0.01 for A2C/A3C/PPO with discrete actions. For continuous control,  varies more (0.001 to 0.2) and is often auto-tuned.' },
+    { label: 'Entropy computation', detail: 'For categorical policies with K actions, maximum entropy is  K. For Gaussian policies, entropy depends on  and is unbounded above.' },
+    { label: 'Gradient of entropy', detail: 'For a categorical policy, _ H = -_ _a _(as) + 1]. Most deep learning frameworks compute this automatically.' },
+    { label: 'Entropy decay', detail: 'Some implementations anneal  from a larger value to a smaller one during training, encouraging more exploration early and more exploitation later.' },
+    { label: 'Numerical stability', detail: 'When _(a|s)  0, the term    can cause numerical issues. Adding a small constant (e.g., 10^&#123;-8&#125;) inside the log prevents NaN values.' },
     { label: 'Entropy regularization is not the same as epsilon-greedy', detail: 'Epsilon-greedy exploration is uniform over random actions. Entropy regularization smoothly distributes probability, favoring near-optimal actions while maintaining stochasticity.' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerRLEntropyRegularization() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Entropy Regularization — Key Details Explorer
+          Entropy Regularization \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of entropy regularization.
+          Click each card to explore the technical details.
         </p>
       </div>
 

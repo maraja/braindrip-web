@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Blessing of dimensionality', detail: 'In some settings, higher dimensions help. Linear separability of random point sets increases with dimension (Cover\'s theorem). This is the basis for kernel methods that project data into higher dimensions.' },
-    { label: 'Intrinsic dimensionality', detail: 'is often much lower than ambient dimensionality. If data lies on a $k$-dimensional manifold in $\\mathbb{R}^d$, learning depends on $k$, not $d$.' },
-    { label: 'Sparsity', detail: 'helps: if only $s \\ll d$ features are relevant, methods like Lasso can recover them with $n = O(s \\log d)$ samples rather than $O(d)$.' },
+    { label: 'Intrinsic dimensionality', detail: 'is often much lower than ambient dimensionality. If data lies on a k-dimensional manifold in &#123;R&#125;^d, learning depends on k, not d.' },
+    { label: 'Sparsity', detail: 'helps: if only s  d features are relevant, methods like Lasso can recover them with n = O(s  d) samples rather than O(d).' },
 ];
 
 export default function ExplorerMLFCurseOfDimensionality() {
@@ -17,10 +17,10 @@ export default function ExplorerMLFCurseOfDimensionality() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Curse of Dimensionality — Key Details Explorer
+          Curse of Dimensionality \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of curse of dimensionality.
+          Click each card to explore the technical details.
         </p>
       </div>
 

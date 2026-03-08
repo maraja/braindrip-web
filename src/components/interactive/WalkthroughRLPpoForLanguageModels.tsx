@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Text Generation as a Markov Decision Process', desc: 'The foundation of ppo for language models begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The PPO Objective for LLMs', desc: 'At this stage, the key transformation occurs — the core mechanism that makes ppo for language models work.' },
-    { title: '3. The Four-Model Architecture', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Generation-Training Loop', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Text Generation as a Markov Decision Process', desc: 'The text generation process is cast as an MDP:  State s_t: The prompt x concatenated with all tokens generated so far (y_1, , y_&#123;t-1&#125;) Action a_t: The next token y_t selected from vocabulary &#123;V&#125; (typically   32&#123;,&#125;000--128&#123;,&#125;000) Transition: Deterministic -- appending the chosen token to the.' },
+    { title: '2. The PPO Objective for LLMs', desc: 'The clipped surrogate objective from standard PPO applies directly:  [equation]  where _t() = &#123;_(y_ts_t)&#125; is the importance sampling ratio and &#123;A&#125;_t is the estimated advantage using GAE:  [equation]' },
+    { title: '3. The Four-Model Architecture', desc: 'PPO for LLMs requires four models in GPU memory simultaneously:  Active policy _: The LLM being optimized (generates responses, gets updated) Reference policy _&#123;ref&#125;: A frozen copy of _&#123;SFT&#125; (computes KL penalty, never updated) Reward model r_: Predicts human preference scores (frozen during.' },
+    { title: '4. The Generation-Training Loop', desc: 'Unlike standard RL where environment steps are cheap, each "environment step" in LLM PPO involves full autoregressive generation:  Sample prompts from dataset &#123;D&#125; Generate responses from _ (expensive: sequential token generation) Score responses with r_ (single forward pass per response) Compute KL.' },
 ];
 
 export default function WalkthroughRLPpoForLanguageModels() {
@@ -16,10 +16,10 @@ export default function WalkthroughRLPpoForLanguageModels() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          PPO for Language Models — Step by Step
+          PPO for Language Models \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how ppo for language models works, one stage at a time.

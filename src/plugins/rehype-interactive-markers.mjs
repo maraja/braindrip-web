@@ -18,20 +18,64 @@ import { interactiveRegistry } from '../data/interactive-registry.mjs';
 export function rehypeInteractiveMarkers() {
   return function (tree, file) {
     // Extract concept slug and course slug from file path
-    const filePath = file.history?.[0] || file.path || '';
+    // Normalize backslashes to forward slashes for cross-platform compatibility
+    const filePath = (file.history?.[0] || file.path || '').replace(/\\/g, '/');
 
-    // Try to extract course/concept from path like .../courses/course-slug/module-dir/concept.md
-    const courseMatch = filePath.match(/courses\/([^/]+)\/[^/]+\/([^/]+)\.md$/);
-    const simpleMatch = filePath.match(/([^/]+)\.md$/);
+    // Try multiple path patterns to extract course slug and concept slug.
+    // Different build environments (local, Vercel, etc.) may produce different path formats.
+    const patterns = [
+      // .../courses/course-slug/module-dir/concept.md (standard local path)
+      /courses\/([^/]+)\/[^/]+\/([^/]+)\.md$/,
+      // .../courses/course-slug/module-dir/concept.mdx
+      /courses\/([^/]+)\/[^/]+\/([^/]+)\.mdx$/,
+      // Astro content collection ID format: course-slug/module-dir/concept.md
+      /^([^/]+)\/[^/]+\/([^/]+)\.mdx?$/,
+      // Any path with courses/ followed by 2+ segments
+      /courses\/([^/]+)\/(?:[^/]+\/)*([^/]+)\.mdx?$/,
+    ];
 
-    if (!courseMatch && !simpleMatch) return;
+    let courseSlug = null;
+    let slug = null;
 
-    const slug = courseMatch ? courseMatch[2] : simpleMatch[1];
-    const courseSlug = courseMatch ? courseMatch[1] : null;
+    for (const pattern of patterns) {
+      const match = filePath.match(pattern);
+      if (match) {
+        courseSlug = match[1];
+        slug = match[2];
+        break;
+      }
+    }
+
+    // Fallback: just extract the filename as slug
+    if (!slug) {
+      const simpleMatch = filePath.match(/([^/]+)\.mdx?$/);
+      if (!simpleMatch) return;
+      slug = simpleMatch[1];
+    }
+
+    // Also try to extract course slug from Astro's file.data if available
+    if (!courseSlug && file.data?.astro?.frontmatter?.courseSlug) {
+      courseSlug = file.data.astro.frontmatter.courseSlug;
+    }
 
     // Look up registry: try course-qualified key first, then plain slug
     const compositeKey = courseSlug ? `${courseSlug}/${slug}` : null;
-    const config = (compositeKey && interactiveRegistry[compositeKey]) || interactiveRegistry[slug];
+    let config = (compositeKey && interactiveRegistry[compositeKey]) || interactiveRegistry[slug];
+
+    // If no match yet, try matching registry keys ending with the slug.
+    // Only use this fallback when there's exactly one match (no ambiguity).
+    if (!config && slug) {
+      const matches = [];
+      for (const key of Object.keys(interactiveRegistry)) {
+        if (key.endsWith('/' + slug)) {
+          matches.push(key);
+        }
+      }
+      if (matches.length === 1) {
+        config = interactiveRegistry[matches[0]];
+      }
+    }
+
     if (!config || config.length === 0) return;
 
     // Separate exact-match and prefix-match entries

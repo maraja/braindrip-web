@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizCVC3dGaussianSplatting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Memory: A scene with 2M Gaussians requires ~500 MB of GPU memory (each Gaussian stores ~200 bytes: 3 position + 4 quaternion + 3 scale + 1 opacity + 48 SH = 59 floats).', isTrue: true, explanation: 'This is a key technical detail of 3D Gaussian Splatting.' },
-    { text: 'PSNR on Mip-NeRF 360 scenes: 3DGS achieves 27.2 dB average; Mip-NeRF 360 achieves 27.7 dB but renders 1000x slower.', isTrue: true, explanation: 'This is a key technical detail of 3D Gaussian Splatting.' },
-    { text: 'Rendering resolution: 1080p at 100--200 FPS, 4K at 30--60 FPS on an RTX 3090.', isTrue: true, explanation: 'This is a key technical detail of 3D Gaussian Splatting.' },
+    { text: '3DGS is just a faster NeRF.', isTrue: false, explanation: 'The representations are fundamentally different. NeRF stores the scene in MLP weights (implicit); 3DGS stores it as explicit point primitives.' },
+    { text: 'A scene with 2M Gaussians requires ~500 MB of GPU memory (each Gaussian stores ~200 bytes: 3 position + 4 quaternion + 3 scale + 1 opacity + 48 SH = 59 floats).', isTrue: true, explanation: 'A scene with 2M Gaussians requires ~500 MB of GPU memory (each Gaussian stores ~200 bytes: 3 position + 4 quaternion + 3 scale + 1 opacity + 48 SH = 59 floats).' },
+    { text: '3DGS achieves 27.2 dB average; Mip-NeRF 360 achieves 27.7 dB but renders 1000x slower.', isTrue: true, explanation: '3DGS achieves 27.2 dB average; Mip-NeRF 360 achieves 27.7 dB but renders 1000x slower.' },
+    { text: '1080p at 100--200 FPS, 4K at 30--60 FPS on an RTX 3090.', isTrue: true, explanation: '1080p at 100--200 FPS, 4K at 30--60 FPS on an RTX 3090.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

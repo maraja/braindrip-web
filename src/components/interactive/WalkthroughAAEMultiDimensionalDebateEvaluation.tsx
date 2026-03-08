@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture', desc: 'The foundation of multi-dimensional debate evaluation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Debate Protocol', desc: 'At this stage, the key transformation occurs — the core mechanism that makes multi-dimensional debate evaluation work.' },
-    { title: '3. Consensus Protocols', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Cost Analysis', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Architecture', desc: 'The debate evaluation system consists of:  Dimension Advocates: Separate LLM judge instances, each prompted with a specific evaluative dimension and its associated rubric.' },
+    { title: '2. Debate Protocol', desc: 'Round 1 -- Independent Assessment: Each advocate evaluates the agent output against its dimension\'s rubric, producing a score and justification. No advocate sees others\' assessments.' },
+    { title: '3. Consensus Protocols', desc: 'Different synthesis methods suit different evaluation contexts:  Majority Vote: Each advocate casts a pass/fail vote on its dimension. The agent output passes overall only if a majority (or all) dimensions pass.' },
+    { title: '4. Cost Analysis', desc: 'For a 4-dimension debate with 3 rounds: Round 1: 4 independent LLM calls Round 2: 4 cross-examination calls (each receiving 3 other assessments) Round 3: 4 rebuttal calls Synthesis: 1 moderator call Total: 13 LLM calls per evaluation (vs. 1 for standard LLM-as-Judge)  At ~0.' },
 ];
 
 export default function WalkthroughAAEMultiDimensionalDebateEvaluation() {
@@ -16,10 +16,10 @@ export default function WalkthroughAAEMultiDimensionalDebateEvaluation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Multi-Dimensional Debate Evaluation — Step by Step
+          Multi-Dimensional Debate Evaluation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how multi-dimensional debate evaluation works, one stage at a time.

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEInstructionPrompting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Moving from vague to specific instructions reduces output variance by 60-80% on formatting and structure tasks.', isTrue: true, explanation: 'This is a key technical detail of Instruction Prompting.' },
-    { text: 'Imperative framing ("Extract," "Classify") has 5-10% higher task adherence than declarative framing ("The output should contain") for primary tasks.', isTrue: true, explanation: 'This is a key technical detail of Instruction Prompting.' },
-    { text: 'Task decomposition into 3-5 numbered steps improves complex task performance by 10-25%.', isTrue: true, explanation: 'This is a key technical detail of Instruction Prompting.' },
+    { text: 'The model should understand what I mean from brief instructions.', isTrue: false, explanation: 'Models are literal and statistical, not telepathic. They optimize for the most likely interpretation of your words given their training data.' },
+    { text: 'More instructions are always better.', isTrue: false, explanation: 'Instruction overload is real. When instructions exceed 500-1,000 tokens, the model must parse a complex document before it can start the task.' },
+    { text: 'Instructions are less important when using few-shot.', isTrue: false, explanation: 'Instructions frame how the model interprets examples. Without instructions, the model may identify the wrong pattern in the examples (matching on irrelevant features rather than the intended task).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

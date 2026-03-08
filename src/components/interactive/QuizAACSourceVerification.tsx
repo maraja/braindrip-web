@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACSourceVerification() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Source independence heuristic: Two sources are considered independent if they have different authors, different publication dates, and neither cites the other.', isTrue: true, explanation: 'This is a key technical detail of Source Verification.' },
-    { text: 'The agent can use metadata comparison and text similarity to assess independence.', isTrue: true, explanation: 'This is a key technical detail of Source Verification.' },
-    { text: 'Temporal precedence: When sources conflict, more recent information generally takes precedence for facts that change over time (prices, personnel, regulations) but not for historical facts.', isTrue: true, explanation: 'This is a key technical detail of Source Verification.' },
+    { text: 'If it\'s in the knowledge base, it must be correct.', isTrue: false, explanation: 'Knowledge bases contain errors, outdated information, and biases. Documents may have been correct when written but are now stale.' },
+    { text: 'Two sources are considered independent if they have different authors, different publication dates, and neither cites the other.', isTrue: true, explanation: 'The agent can use metadata comparison and text similarity to assess independence.' },
+    { text: 'More sources always means higher confidence.', isTrue: false, explanation: 'Multiple sources that trace back to a single origin provide no additional verification. Ten articles all citing the same press release count as one source, not ten.' },
+    { text: 'When sources conflict, more recent information generally takes precedence for facts that change over time (prices, personnel, regulations) but not for historical facts.', isTrue: true, explanation: 'The agent must distinguish between time-sensitive and time-stable claims.' },
+    { text: 'The model can accurately judge source credibility.', isTrue: false, explanation: 'LLMs have limited ability to assess whether a specific source is authoritative in a specific domain. They can apply general heuristics (peer-reviewed &gt; blog post) but cannot evaluate individual source track records without explicit metadata.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

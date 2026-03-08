@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPEvaluationMetricsForNlp() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'BLEU on WMT En-De: State-of-the-art systems score 35--42; human translations score 30--40 against other human references due to valid variation.', isTrue: true, explanation: 'This is a key technical detail of Evaluation Metrics for NLP.' },
-    { text: 'ROUGE on CNN/DailyMail: Top abstractive systems achieve ROUGE-1/ROUGE-2/ROUGE-L of approximately 47/23/44.', isTrue: true, explanation: 'This is a key technical detail of Evaluation Metrics for NLP.' },
-    { text: 'BERTScore: Uses RoBERTa-large by default; adding IDF weighting from the test corpus improves correlation by ~1 point.', isTrue: true, explanation: 'This is a key technical detail of Evaluation Metrics for NLP.' },
+    { text: 'Higher BLEU always means better translation.', isTrue: false, explanation: 'BLEU is a corpus-level metric with poor sentence-level reliability. A system scoring 32 BLEU may produce individual translations that are superior to a system scoring 35 BLEU.' },
+    { text: 'State-of-the-art systems score 35--42; human translations score 30--40 against other human references due to valid variation.', isTrue: true, explanation: 'State-of-the-art systems score 35--42; human translations score 30--40 against other human references due to valid variation.' },
+    { text: 'ROUGE measures summary quality.', isTrue: false, explanation: 'ROUGE measures n-gram overlap with references, which correlates with but does not capture quality dimensions like factual consistency, coherence, and informativeness. A summary can have high ROUGE by copying sentences verbatim while missing the main point.' },
+    { text: 'Top abstractive systems achieve ROUGE-1/ROUGE-2/ROUGE-L of approximately 47/23/44.', isTrue: true, explanation: 'Top abstractive systems achieve ROUGE-1/ROUGE-2/ROUGE-L of approximately 47/23/44.' },
+    { text: 'Perplexity and generation quality are the same thing.', isTrue: false, explanation: 'Low perplexity means the model assigns high probability to the test data. But generation involves sampling or decoding from the model\'s distribution, where mode-seeking strategies (greedy/beam search) tend to produce repetitive text and stochastic strategies (nucleus sampling) may produce diverse but occasionally incoherent text.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

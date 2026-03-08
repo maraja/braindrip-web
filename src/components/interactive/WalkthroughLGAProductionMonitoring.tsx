@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Dashboard Metrics', desc: 'The foundation of production monitoring begins with understanding its core input requirements and initial setup.' },
-    { title: '2. User Feedback Collection', desc: 'At this stage, the key transformation occurs — the core mechanism that makes production monitoring work.' },
-    { title: '3. Annotation Queues for Human Review', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Alerting and External Integration', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Dashboard Metrics', desc: 'LangSmith automatically aggregates production traces into dashboard views:' },
+    { title: '2. User Feedback Collection', desc: 'Capture thumbs-up/down or scored feedback from end users and attach it to traces:' },
+    { title: '3. Annotation Queues for Human Review', desc: 'Route traces to human reviewers for quality assessment:' },
+    { title: '4. Alerting and External Integration', desc: 'Set up programmatic alerts and export to existing observability platforms:' },
 ];
 
 export default function WalkthroughLGAProductionMonitoring() {
@@ -16,10 +16,10 @@ export default function WalkthroughLGAProductionMonitoring() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Production Monitoring — Step by Step
+          Production Monitoring \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how production monitoring works, one stage at a time.

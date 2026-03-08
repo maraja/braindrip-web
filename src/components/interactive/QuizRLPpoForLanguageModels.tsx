@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLPpoForLanguageModels() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Clip parameter: $\\epsilon = 0.2$ is standard, sometimes reduced to $0.1$ for LLMs to enforce more conservative updates.', isTrue: true, explanation: 'This is a key technical detail of PPO for Language Models.' },
-    { text: 'Learning rate: Typically $1 \\times 10^&#123;-6&#125;$ to $5 \\times 10^&#123;-6&#125;$, an order of magnitude lower than SFT learning rates.', isTrue: true, explanation: 'This is a key technical detail of PPO for Language Models.' },
-    { text: 'Batch size: 64--512 prompts per batch, with each prompt generating a response of 256--2048 tokens.', isTrue: true, explanation: 'This is a key technical detail of PPO for Language Models.' },
+    { text: 'PPO for LLMs is the same algorithm as PPO for Atari.', isTrue: false, explanation: 'The algorithm is mathematically identical, but the engineering is radically different. The action space (50K+ discrete tokens vs.' },
+    { text: '= 0.2 is standard, sometimes reduced to 0.1 for LLMs to enforce more conservative updates.', isTrue: true, explanation: '= 0.2 is standard, sometimes reduced to 0.1 for LLMs to enforce more conservative updates.' },
+    { text: 'Typically 1 x 10^&#123;-6&#125; to 5 x 10^&#123;-6&#125;, an order of magnitude lower than SFT learning rates.', isTrue: true, explanation: 'Typically 1 x 10^&#123;-6&#125; to 5 x 10^&#123;-6&#125;, an order of magnitude lower than SFT learning rates.' },
+    { text: '64--512 prompts per batch, with each prompt generating a response of 256--2048 tokens.', isTrue: true, explanation: '64--512 prompts per batch, with each prompt generating a response of 256--2048 tokens.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

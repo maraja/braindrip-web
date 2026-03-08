@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizMLFStackingAndBlending() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Probability calibration: When using predicted probabilities as meta-features for classification, ensure base learners produce well-calibrated probabilities.', isTrue: true, explanation: 'This is a key technical detail of Stacking and Blending.' },
-    { text: 'Platt scaling or isotonic regression can be applied before stacking.', isTrue: true, explanation: 'This is a key technical detail of Stacking and Blending.' },
-    { text: 'Feature augmentation: The meta-learner can receive not only base model predictions but also the original features (or a subset).', isTrue: true, explanation: 'This is a key technical detail of Stacking and Blending.' },
+    { text: 'Stacking always beats the best individual model.', isTrue: false, explanation: 'On small datasets, the added complexity of stacking can lead to overfitting, producing worse results than a well-tuned single model. Stacking shines on larger datasets with sufficient diversity among base learners.' },
+    { text: 'When using predicted probabilities as meta-features for classification, ensure base learners produce well-calibrated probabilities.', isTrue: true, explanation: 'Platt scaling or isotonic regression can be applied before stacking.' },
+    { text: 'More base learners always improve stacking.', isTrue: false, explanation: 'Adding redundant base learners (those that make the same errors) does not help. The meta-learner\'s capacity is wasted on correlated meta-features.' },
+    { text: 'The meta-learner can receive not only base model predictions but also the original features (or a subset).', isTrue: true, explanation: 'This "stacking with passthrough" allows the meta-learner to learn feature-dependent weighting of base models.' },
+    { text: 'The meta-learner should be complex to capture interactions.', isTrue: false, explanation: 'A complex meta-learner on a small number of meta-features is a recipe for overfitting. Simple regularized linear models are the standard choice and rarely need to be replaced.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

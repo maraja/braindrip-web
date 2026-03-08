@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE05Qwen3CoderAndSpecialization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Alibaba\'s Qwen3-Coder (July 2025) demonstrated that domain-specialized open-weight models could approach frontier closed models on targeted tasks, representing a broader trend of specialization as a path to competitive performance.', isTrue: true, explanation: 'This captures the core purpose of Qwen 3 Coder: Domain-Specialized Open Models.' },
-    { text: 'Qwen 3 Coder: Domain-Specialized Open Models is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Qwen 3 Coder: Domain-Specialized Open Models is important for building on more advanced topics.' },
-    { text: 'Qwen 3 Coder: Domain-Specialized Open Models is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Qwen 3 Coder: Domain-Specialized Open Models is important for building on more advanced topics.' },
+    { text: 'Specialization means it can only write code.', isTrue: false, explanation: 'Qwen3-Coder retains significant general capability from its Qwen 3 base. It can discuss code architecture, write documentation, explain technical concepts, and reason about non-coding problems.' },
+    { text: 'Open models can\'t match closed models on coding.', isTrue: false, explanation: 'Qwen3-Coder\'s SWE-bench scores approach those of Claude Opus 4 and Gemini 2.5 Pro. While closed models may maintain edges on consistency, multimodal integration, and long-tail capabilities, the raw coding competence gap has nearly closed.' },
+    { text: 'RL with execution feedback is just testing if code compiles.', isTrue: false, explanation: 'The execution feedback is far richer than pass/fail compilation. It includes test suite results, runtime behavior analysis, performance characteristics, and functional correctness against specifications.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

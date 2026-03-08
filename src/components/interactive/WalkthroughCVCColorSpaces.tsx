@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. RGB (Red, Green, Blue)', desc: 'The foundation of color spaces begins with understanding its core input requirements and initial setup.' },
-    { title: '2. HSV / HSL (Hue, Saturation, Value / Lightness)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes color spaces work.' },
-    { title: '3. CIELAB (L\\*a\\*b\\*)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. YCbCr', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. RGB (Red, Green, Blue)', desc: 'RGB is an additive model matching the trichromatic nature of human vision and the physics of emissive displays. Each pixel stores three values, typically in [0, 255] for 8-bit:  [equation]  sRGB is the dominant standard for consumer imaging.' },
+    { title: '2. HSV / HSL (Hue, Saturation, Value / Lightness)', desc: 'HSV rearranges RGB into a cylindrical coordinate system:  Hue (H): Angle around the color wheel, 0--360 degrees (red at 0, green at 120, blue at 240). Saturation (S): Purity of the color, 0 (gray) to 1 (fully saturated).' },
+    { title: '3. CIELAB (L\\*a\\*b\\*)', desc: 'CIELAB was designed by the CIE in 1976 to be approximately perceptually uniform: a Euclidean distance  E_&#123;ab&#125;^&#123;*&#125; between two colors correlates with the perceived difference. L^*: Lightness, 0 (black) to 100 (white).' },
+    { title: '4. YCbCr', desc: 'YCbCr separates luminance (Y) from chrominance (Cb, Cr). This decomposition exploits the fact that the human visual system has higher spatial resolution for brightness than for color, enabling chroma subsampling (e.g., 4:2:0) that halves or quarters the color data with minimal perceived loss.' },
 ];
 
 export default function WalkthroughCVCColorSpaces() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCColorSpaces() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Color Spaces — Step by Step
+          Color Spaces \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how color spaces works, one stage at a time.

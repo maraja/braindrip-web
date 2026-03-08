@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE01AttentionMechanismEvolution() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'MHA (2017): Each head has independent Q, K, V.', isTrue: true, explanation: 'This is a key technical detail of Attention Mechanism Evolution.' },
-    { text: 'KV cache = 2  L  H  d_head  seq_len.', isTrue: true, explanation: 'This is a key technical detail of Attention Mechanism Evolution.' },
-    { text: 'Used in GPT-3 (96 heads, 128 dim each).', isTrue: true, explanation: 'This is a key technical detail of Attention Mechanism Evolution.' },
+    { text: 'MQA is strictly worse than MHA.', isTrue: false, explanation: 'MQA trades minimal quality (often &lt;1% on benchmarks) for massive inference speedup. For many applications, the trade-off is clearly worth it, and GQA recovers nearly all quality anyway.' },
+    { text: 'These attention variants change how the model learns.', isTrue: false, explanation: 'The quality differences are primarily visible at inference time through KV cache efficiency. Training compute is similar — the gains are almost entirely about serving cost and latency.' },
+    { text: 'Newer always means better.', isTrue: false, explanation: 'MHA is still appropriate for small models where KV cache is not a bottleneck. GQA is overkill for a 125M-parameter model.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Level 1: Phonetics and Phonology', desc: 'The foundation of levels of linguistic analysis begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Level 2: Morphology', desc: 'At this stage, the key transformation occurs — the core mechanism that makes levels of linguistic analysis work.' },
-    { title: '3. Level 3: Syntax', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Level 4: Semantics', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Level 5: Pragmatics', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Level 1: Phonetics and Phonology', desc: 'Phonetics studies the physical properties of speech sounds -- how the vocal tract shapes airflow into distinct acoustic signals. There are roughly 600 consonant sounds and 200 vowel sounds attested across the world\'s languages.' },
+    { title: '2. Level 2: Morphology', desc: 'Morphology analyzes how words are built from smaller meaningful units called morphemes. The word "unbreakable" contains three morphemes: "un-" (negation), "break" (root), and "-able" (capable of).' },
+    { title: '3. Level 3: Syntax', desc: 'Syntax governs how words combine into phrases and sentences according to grammatical rules. "The cat sat on the mat" is syntactically well-formed in English; "Mat the on sat cat the" is not, even though it contains the same words.' },
+    { title: '4. Level 4: Semantics', desc: 'Semantics is the study of meaning. Lexical semantics asks what individual words mean (and how multiple senses relate -- "bank" as financial institution vs.' },
+    { title: '5. Level 5: Pragmatics', desc: 'Pragmatics deals with how context shapes meaning beyond the literal content of words. The sentence "Can you pass the salt?" is syntactically a yes/no question but pragmatically a polite request.' },
+    { title: '6. Level 6: Discourse', desc: 'Discourse analyzes how sentences connect into coherent multi-sentence text. This includes anaphora resolution ("John went to the store.' },
 ];
 
 export default function WalkthroughNLPLevelsOfLinguisticAnalysis() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPLevelsOfLinguisticAnalysis() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Levels of Linguistic Analysis — Step by Step
+          Levels of Linguistic Analysis \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how levels of linguistic analysis works, one stage at a time.

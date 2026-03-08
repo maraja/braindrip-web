@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Paper', detail: 'Peters et al., \"Deep contextualized word representations\" (Feb 2018, NAACL 2018, arXiv:1802.05365)' },
+    { label: 'Paper', detail: 'Peters et al., "Deep contextualized word representations" (Feb 2018, NAACL 2018, arXiv:1802.05365)' },
     { label: 'Organization', detail: 'Allen Institute for AI (AI2), with collaborators from UW' },
     { label: 'Architecture', detail: '2-layer bidirectional LSTM with character-level CNN input; ~93.6M parameters' },
     { label: 'Pre-training data', detail: '1 Billion Word Benchmark (~800M tokens of news text)' },
@@ -20,10 +20,10 @@ export default function ExplorerLLE05ElmoAndContextualEmbeddings() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          ELMo and Contextual Embeddings — Key Details Explorer
+          ELMo and Contextual Embeddings \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of elmo and contextual embeddings.
+          Click each card to explore the technical details.
         </p>
       </div>
 

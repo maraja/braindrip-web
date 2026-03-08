@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE04InstructionTuningEvolution() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'FLAN (Sep 2021): 60 NLP tasks, instruction-formatted.', isTrue: true, explanation: 'This is a key technical detail of Instruction Tuning Evolution.' },
-    { text: 'First systematic instruction tuning.', isTrue: true, explanation: 'This is a key technical detail of Instruction Tuning Evolution.' },
-    { text: 'FLAN-v2 (Oct 2022): 1,836 tasks.', isTrue: true, explanation: 'This is a key technical detail of Instruction Tuning Evolution.' },
+    { text: 'Instruction tuning teaches models new knowledge.', isTrue: false, explanation: 'Instruction tuning primarily teaches models to express and apply knowledge they already acquired during pre-training. It unlocks existing capability rather than adding new facts.' },
+    { text: '60 NLP tasks, instruction-formatted.', isTrue: true, explanation: 'First systematic instruction tuning.' },
+    { text: 'More instruction data is always better.', isTrue: false, explanation: 'Beyond a few thousand high-quality examples, additional data shows diminishing returns. LIMA showed that 1,000 examples suffice; Alpaca used 52K but much of the value came from the first few thousand.' },
+    { text: '175 seed tasks, bootstrapped to 52K.', isTrue: true, explanation: '175 seed tasks, bootstrapped to 52K.' },
+    { text: 'Instruction tuning and RLHF are the same thing.', isTrue: false, explanation: 'Instruction tuning (SFT) teaches the model what good responses look like by showing examples. RLHF and DPO teach the model to prefer better responses over worse ones using comparison data.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

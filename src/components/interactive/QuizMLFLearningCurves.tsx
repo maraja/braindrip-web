@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFLearningCurves() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Computational cost: Generating sample learning curves requires training the model many times at different dataset sizes, each with cross-validation.', isTrue: true, explanation: 'This is a key technical detail of Learning Curves.' },
-    { text: 'This can be expensive for large models.', isTrue: true, explanation: 'This is a key technical detail of Learning Curves.' },
-    { text: 'Monotonicity: Training error is expected to increase with $n$ (more data is harder to memorize), while validation error is expected to decrease.', isTrue: true, explanation: 'This is a key technical detail of Learning Curves.' },
+    { text: 'If validation error is high, I always need more data.', isTrue: false, explanation: 'High validation error could indicate high bias (underfitting) rather than high variance. Only high-variance models benefit from more data.' },
+    { text: 'Generating sample learning curves requires training the model many times at different dataset sizes, each with cross-validation.', isTrue: true, explanation: 'This can be expensive for large models.' },
+    { text: 'Training error is expected to increase with n (more data is harder to memorize), while validation error is expected to decrease.', isTrue: true, explanation: 'Violations suggest problems with the evaluation setup.' },
+    { text: 'For training set size, a log-scale x-axis often reveals the rate of improvement more clearly.', isTrue: true, explanation: 'Power law relationships E  n^&#123;-&#125; appear as straight lines on a log-log plot.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

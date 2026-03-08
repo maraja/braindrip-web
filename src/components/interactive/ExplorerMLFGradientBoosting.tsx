@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Bias reduction', detail: 'Unlike bagging, gradient boosting primarily reduces bias. Each new tree corrects systematic errors in the current ensemble.' },
-    { label: 'Regularization is critical', detail: 'Without shrinkage ($\\nu < 1$), subsampling, or depth limits, gradient boosting easily overfits. The interplay between $\\nu$ and $T$ is key: smaller $\\nu$ requires larger $T$.' },
+    { label: 'Regularization is critical', detail: 'Without shrinkage ( &lt; 1), subsampling, or depth limits, gradient boosting easily overfits. The interplay between  and T is key: smaller  requires larger T.' },
     { label: 'Feature importance', detail: 'Like Random Forests, gradient boosting provides impurity-based feature importance summed across all trees in the ensemble.' },
     { label: 'Monotone constraints', detail: 'Many implementations allow enforcing monotonic relationships between features and predictions, useful for regulated industries.' },
-    { label: 'Early stopping', detail: 'Monitor validation loss and stop adding trees when it begins to increase. This is more principled than fixing $T$ in advance.' },
+    { label: 'Early stopping', detail: 'Monitor validation loss and stop adding trees when it begins to increase. This is more principled than fixing T in advance.' },
 ];
 
 export default function ExplorerMLFGradientBoosting() {
@@ -19,10 +19,10 @@ export default function ExplorerMLFGradientBoosting() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Gradient Boosting — Key Details Explorer
+          Gradient Boosting \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of gradient boosting.
+          Click each card to explore the technical details.
         </p>
       </div>
 

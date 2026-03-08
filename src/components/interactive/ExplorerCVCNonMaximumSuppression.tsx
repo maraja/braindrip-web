@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Standard threshold', detail: '$\\tau = 0.5$ for most benchmarks; some competitions use $\\tau = 0.3$.' },
+    { label: 'Standard threshold', detail: '= 0.5 for most benchmarks; some competitions use  = 0.3.' },
     { label: 'Per-class application', detail: 'NMS is typically run independently for each class, which means a person box and a car box at the same location are both kept.' },
     { label: 'Score pre-filtering', detail: 'Before NMS, detections with confidence below a threshold (e.g., 0.05) are removed to reduce computation.' },
     { label: 'Soft-NMS ($\\sigma = 0.5$)', detail: '+1.7% AP on COCO for Faster R-CNN, +1.3% AP for R-FCN (Bodla et al., 2017).' },
@@ -20,10 +20,10 @@ export default function ExplorerCVCNonMaximumSuppression() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Non-Maximum Suppression — Key Details Explorer
+          Non-Maximum Suppression \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of non-maximum suppression.
+          Click each card to explore the technical details.
         </p>
       </div>
 

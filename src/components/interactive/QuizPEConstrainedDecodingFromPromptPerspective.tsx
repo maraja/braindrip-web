@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEConstrainedDecodingFromPromptPerspective() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Constrained decoding makes prompts unnecessary.', isTrue: false, explanation: '"Constrained decoding makes prompts unnecessary." Constraints handle structure; prompts handle content. A constrained model will produce valid JSON with wrong values if the prompt does not specify wha' },
-    { text: 'Constrained decoding adds 5-15% latency overhead due to grammar checking at each token position, though optimized implementations minimize this.', isTrue: true, explanation: 'This is a key technical detail of Constrained Decoding from the Prompt Perspective.' },
-    { text: 'Outlines achieves 100% structural validity for any JSON Schema that can be expressed as a context-free grammar.', isTrue: true, explanation: 'This is a key technical detail of Constrained Decoding from the Prompt Perspective.' },
+    { text: 'Constrained decoding makes prompts unnecessary.', isTrue: false, explanation: 'Constraints handle structure; prompts handle content. A constrained model will produce valid JSON with wrong values if the prompt does not specify what to extract.' },
+    { text: 'a constrained value like "California" might span multiple tokens, and the grammar must track valid multi-token sequences correctly.', isTrue: true, explanation: 'Modern implementations handle this via token healing.' },
+    { text: 'Constrained decoding uses grammar-based filtering, regex constraints, and schema enforcement at the token level to guarantee structural output validity, complementing prompt-based format control.', isTrue: true, explanation: 'This captures the core definition of Constrained Decoding from the Prompt Perspective.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Basic Token Streaming', desc: 'The foundation of token streaming begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Understanding Metadata', desc: 'At this stage, the key transformation occurs — the core mechanism that makes token streaming work.' },
-    { title: '3. Filtering by Node in Multi-Node Graphs', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Collecting the Full Response', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Tool Call Chunks', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Basic Token Streaming', desc: 'Each msg is an AIMessageChunk object containing a small piece of the response. The end="" and flush=True arguments ensure tokens print on the same line without buffering.' },
+    { title: '2. Understanding Metadata', desc: 'The metadata dict tells you which node generated the chunk, allowing you to filter or route output.' },
+    { title: '3. Filtering by Node in Multi-Node Graphs', desc: 'In complex graphs with multiple LLM-calling nodes, you often want to stream from only one.' },
+    { title: '4. Collecting the Full Response', desc: 'You can accumulate chunks into a complete message while streaming.' },
+    { title: '5. Tool Call Chunks', desc: 'When the LLM decides to call a tool, the stream emits chunks with tool_call_chunks instead of content.' },
 ];
 
 export default function WalkthroughLGATokenStreaming() {
@@ -17,10 +17,10 @@ export default function WalkthroughLGATokenStreaming() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Token Streaming — Step by Step
+          Token Streaming \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how token streaming works, one stage at a time.

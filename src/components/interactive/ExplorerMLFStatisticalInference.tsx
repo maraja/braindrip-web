@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Multiple comparisons problem', detail: 'Testing many hypotheses inflates the Type I error rate. Bonferroni correction divides $\\alpha$ by the number of tests; the Benjamini-Hochberg procedure controls the false discovery rate.' },
-    { label: 'Sufficient statistics', detail: 'A statistic $T(X)$ is sufficient for $\\theta$ if $p(X|T, \\theta) = p(X|T)$. For exponential family distributions, sufficient statistics exist and are used by MLE.' },
+    { label: 'Multiple comparisons problem', detail: 'Testing many hypotheses inflates the Type I error rate. Bonferroni correction divides  by the number of tests; the Benjamini-Hochberg procedure controls the false discovery rate.' },
+    { label: 'Sufficient statistics', detail: 'A statistic T(X) is sufficient for  if p(XT). For exponential family distributions, sufficient statistics exist and are used by MLE.' },
 ];
 
 export default function ExplorerMLFStatisticalInference() {
@@ -16,10 +16,10 @@ export default function ExplorerMLFStatisticalInference() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Statistical Inference — Key Details Explorer
+          Statistical Inference \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of statistical inference.
+          Click each card to explore the technical details.
         </p>
       </div>
 

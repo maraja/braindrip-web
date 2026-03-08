@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Confusion Matrix', desc: 'The foundation of classification metrics begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Accuracy and Its Pitfalls', desc: 'At this stage, the key transformation occurs — the core mechanism that makes classification metrics work.' },
-    { title: '3. Precision and Recall', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. F1 Score', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. ROC Curve and AUC-ROC', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Confusion Matrix', desc: 'Every binary classification metric derives from four counts in the confusion matrix:  All metrics below are functions of TP, FP, TN, and FN.' },
+    { title: '2. Accuracy and Its Pitfalls', desc: '[equation]  Accuracy measures the overall fraction of correct predictions. It works well when classes are balanced.' },
+    { title: '3. Precision and Recall', desc: 'Precision (positive predictive value) answers: "Of all the items I flagged positive, how many truly are?"  [equation]  Recall (sensitivity, true positive rate) answers: "Of all the actual positives, how many did I catch?"  [equation]  These two are in tension.' },
+    { title: '4. F1 Score', desc: 'The F1 score is the harmonic mean of precision and recall:  [equation]  The harmonic mean is used rather than the arithmetic mean because it penalizes extreme imbalances: if either precision or recall is near zero, F_1 is pulled down sharply.' },
+    { title: '5. ROC Curve and AUC-ROC', desc: 'The Receiver Operating Characteristic curve plots the True Positive Rate (TPR = Recall) against the False Positive Rate (FPR = FP / (FP + TN)) at every classification threshold. A random classifier traces the diagonal (AUC = 0.5).' },
+    { title: '6. Precision-Recall Curve and AUC-PR', desc: 'When the positive class is rare, the ROC curve can look optimistic because FPR remains low even with many false positives (since TN dominates the denominator). The precision-recall curve plots precision vs.' },
 ];
 
 export default function WalkthroughMLFClassificationMetrics() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFClassificationMetrics() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Classification Metrics — Step by Step
+          Classification Metrics \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how classification metrics works, one stage at a time.

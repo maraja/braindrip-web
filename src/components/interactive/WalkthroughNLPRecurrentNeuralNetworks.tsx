@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Forward Pass Through Time', desc: 'The foundation of recurrent neural networks begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Backpropagation Through Time (BPTT)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes recurrent neural networks work.' },
-    { title: '3. The Vanishing and Exploding Gradient Problem', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Truncated BPTT', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Forward Pass Through Time', desc: 'Given a sequence of T tokens, the RNN "unrolls" into T copies of the same cell, each feeding its hidden state forward:  Initialize h_0 (typically a zero vector of dimension d_h).' },
+    { title: '2. Backpropagation Through Time (BPTT)', desc: 'Training an RNN requires computing gradients across the entire unrolled computation graph. The loss at time step t depends on all previous hidden states through the chain rule.' },
+    { title: '3. The Vanishing and Exploding Gradient Problem', desc: 'This is the fundamental limitation of vanilla RNNs. Consider the gradient flowing from time step t back to step k.' },
+    { title: '4. Truncated BPTT', desc: 'In practice, full BPTT over very long sequences is computationally expensive. Truncated BPTT limits backpropagation to a fixed window (e.g., 35 time steps in standard language modeling setups), trading off the ability to learn longer dependencies for computational tractability.' },
 ];
 
 export default function WalkthroughNLPRecurrentNeuralNetworks() {
@@ -16,10 +16,10 @@ export default function WalkthroughNLPRecurrentNeuralNetworks() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Recurrent Neural Networks — Step by Step
+          Recurrent Neural Networks \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how recurrent neural networks works, one stage at a time.

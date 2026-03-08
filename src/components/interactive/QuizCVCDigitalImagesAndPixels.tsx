@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCDigitalImagesAndPixels() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A standard 4K UHD frame (3840 x 2160 x 3 channels x 8 bits) is ~24.9 MB uncompressed; at 60 fps that is ~1.49 GB/s of raw data.', isTrue: true, explanation: 'This is a key technical detail of Digital Images and Pixels.' },
-    { text: 'JPEG compression typically achieves 10:1 to 20:1 ratios by exploiting frequency-domain redundancy, reducing that 24.9 MB 4K frame to roughly 1-2.5 MB.', isTrue: true, explanation: 'This is a key technical detail of Digital Images and Pixels.' },
-    { text: 'Integer overflow is a common pitfall: adding two uint8 pixels (e.g., 200 + 100) wraps to 44 instead of the expected 300 unless the computation is performed in a wider type.', isTrue: true, explanation: 'This is a key technical detail of Digital Images and Pixels.' },
+    { text: 'More megapixels always means a better image.', isTrue: false, explanation: 'Spatial resolution is only one factor. Sensor size, photosite area (which affects noise), lens quality, and dynamic range often matter more.' },
+    { text: 'Pixels have a fixed physical size.', isTrue: false, explanation: 'A pixel is a dimensionless sample. Its physical extent depends on how the image is displayed or printed.' },
+    { text: 'Zooming in reveals more detail.', isTrue: false, explanation: 'Enlarging a raster image beyond its native resolution only makes pixels larger (or triggers interpolation). The information content does not increase.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

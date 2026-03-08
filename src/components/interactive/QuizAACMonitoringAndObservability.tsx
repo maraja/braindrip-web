@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACMonitoringAndObservability() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Trace schema for agents: A well-designed trace includes: request_id, user_id, session_id, timestamp, total_duration, total_tokens, total_cost, and a tree of spans.', isTrue: true, explanation: 'This is a key technical detail of Monitoring and Observability.' },
-    { text: 'Each span records: span_type (llm_call, tool_call, retrieval, guardrail), input, output, duration, tokens (for LLM spans), status (success/error), and metadata.', isTrue: true, explanation: 'This is a key technical detail of Monitoring and Observability.' },
-    { text: 'Sampling strategies: High-volume systems cannot store traces for every request.', isTrue: true, explanation: 'This is a key technical detail of Monitoring and Observability.' },
+    { text: 'Logging is the same as observability.', isTrue: false, explanation: 'Logs are unstructured text records. Observability requires structured traces (hierarchical, searchable), metrics (aggregated, quantitative), and the tooling to correlate them.' },
+    { text: 'A well-designed trace includes: request_id, user_id, session_id, timestamp, total_duration, total_tokens, total_cost, and a tree of spans.', isTrue: true, explanation: 'Each span records: span_type (llm_call, tool_call, retrieval, guardrail), input, output, duration, tokens (for LLM spans), status (success/error), and metadata.' },
+    { text: 'We only need monitoring when something goes wrong.', isTrue: false, explanation: 'By the time you realize something is wrong, you need monitoring already in place with historical data to compare against. Monitoring must be implemented from the start and running continuously, not added reactively after incidents.' },
+    { text: 'High-volume systems cannot store traces for every request.', isTrue: true, explanation: 'Head-based sampling (decide at request start) stores a percentage (1-10%) of all traces. Tail-based sampling (decide after completion) stores all traces for failed, slow, expensive, or anomalous requests.' },
+    { text: 'Monitoring agent costs is optional.', isTrue: false, explanation: 'Agent costs are uniquely unpredictable because they depend on model reasoning, which varies per request. A single bad prompt template can cause a 10x cost increase across all requests.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

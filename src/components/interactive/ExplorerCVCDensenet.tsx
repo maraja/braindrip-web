@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Growth rate $k$', detail: 'is the most important hyperparameter. $k=32$ is standard for ImageNet; $k=12$ works well for CIFAR.' },
+    { label: 'Growth rate $k$', detail: 'is the most important hyperparameter. k=32 is standard for ImageNet; k=12 works well for CIFAR.' },
     { label: 'Compression $\\theta = 0.5$', detail: 'at transition layers is standard, halving the channel count between blocks.' },
     { label: 'Memory consumption', detail: 'is the main practical limitation. During training, all intermediate feature maps must be stored for concatenation, leading to memory that grows quadratically with block depth. DenseNet-264 requires significantly more GPU memory than a comparable ResNet despite having fewer parameters.' },
     { label: 'Memory-efficient DenseNet', detail: '(Pleiss et al., 2017) uses shared memory allocations and recomputation to reduce memory cost by 2--3x with minimal runtime overhead.' },
@@ -18,10 +18,10 @@ export default function ExplorerCVCDensenet() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          DenseNet — Key Details Explorer
+          DenseNet \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of densenet.
+          Click each card to explore the technical details.
         </p>
       </div>
 

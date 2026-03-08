@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizADPSafetyByDesign() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Prompt injection classifiers achieve 95-99% detection rates with &lt;1% false positive rates when fine-tuned on domain-specific data.', isTrue: true, explanation: 'This is a key technical detail of Safety by Design.' },
-    { text: 'Off-the-shelf classifiers typically achieve 85-92%.', isTrue: true, explanation: 'This is a key technical detail of Safety by Design.' },
-    { text: 'Tool permission enforcement adds negligible latency (&lt;1ms per check) when implemented as an allowlist lookup at the tool gateway.', isTrue: true, explanation: 'This is a key technical detail of Safety by Design.' },
+    { text: 'Safety is primarily about preventing prompt injection.', isTrue: false, explanation: 'Prompt injection is one threat among many. Tool misuse, scope creep, data exfiltration, and resource abuse are equally important and often more likely in practice.' },
+    { text: 'direct prompt injection, indirect prompt injection (in retrieved documents), tool parameter manipulation, scope escalation, and resource exhaustion.', isTrue: true, explanation: 'direct prompt injection, indirect prompt injection (in retrieved documents), tool parameter manipulation, scope escalation, and resource exhaustion.' },
+    { text: 'If you add enough safety measures, the agent becomes too restricted to be useful.', isTrue: false, explanation: 'Well-designed safety measures have minimal impact on normal operation. An input classifier with &lt;1% false positive rate blocks almost no legitimate queries.' },
+    { text: 'Safety testing can be done once before launch.', isTrue: false, explanation: 'Threat landscapes evolve. New prompt injection techniques emerge regularly.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

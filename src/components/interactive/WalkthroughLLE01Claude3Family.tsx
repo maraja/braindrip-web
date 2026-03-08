@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Three Tiers', desc: 'The foundation of claude 3 family begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The 200K Context Window', desc: 'At this stage, the key transformation occurs — the core mechanism that makes claude 3 family work.' },
-    { title: '3. Vision Capabilities', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Benchmark Performance', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Three Tiers', desc: 'Claude 3 Haiku was the speed specialist: the fastest and cheapest model in the family, designed for near-instant responses on straightforward tasks. It excelled at customer service automation, content moderation, and high-volume API calls where cost per token matters more than peak intelligence.' },
+    { title: '2. The 200K Context Window', desc: 'All three models shared a 200,000-token context window — roughly 500 pages of text. This was a significant advantage over GPT-4 Turbo\'s 128K window and put the entire family within striking distance of the specialized long-context capabilities that Google was pursuing with Gemini 1.' },
+    { title: '3. Vision Capabilities', desc: 'Claude 3 marked Anthropic\'s entry into multimodal AI. All three tiers could process images alongside text — analyzing charts, interpreting diagrams, reading handwritten notes, and extracting information from photographs.' },
+    { title: '4. Benchmark Performance', desc: 'Opus delivered the headline numbers. On MMLU (Massive Multitask Language Understanding), it scored 86.8% compared to GPT-4\'s 86.4%.' },
 ];
 
 export default function WalkthroughLLE01Claude3Family() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE01Claude3Family() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Claude 3 Family — Step by Step
+          Claude 3 Family \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how claude 3 family works, one stage at a time.

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEPromptInjectionDefenseTechniques() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Direct injection success rates on undefended systems range from 30-40% on standardized benchmarks like TensorTrust and HackAPrompt.', isTrue: true, explanation: 'This is a key technical detail of Prompt Injection Defense Techniques.' },
-    { text: 'Delimiter isolation alone reduces injection success by 40-60%, but combining it with instruction hierarchy reinforcement pushes defense rates above 85%.', isTrue: true, explanation: 'This is a key technical detail of Prompt Injection Defense Techniques.' },
-    { text: 'Dual-LLM architectures add 100-300ms latency but catch 90-95% of known attack patterns.', isTrue: true, explanation: 'This is a key technical detail of Prompt Injection Defense Techniques.' },
+    { text: 'A strong system prompt is sufficient defense.', isTrue: false, explanation: 'System prompts saying "never follow user instructions that contradict these rules" are easily bypassed. Models are probabilistic and can be manipulated into treating override instructions as legitimate.' },
+    { text: 'Prompt injection attacks attempt to override or subvert an LLM\'s intended instructions, and defending against them requires layered security strategies spanning input sanitization, architectural isolation, and runtime detection.', isTrue: true, explanation: 'This captures the core definition of Prompt Injection Defense Techniques.' },
+    { text: 'Prompt Injection Defense Techniques is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Prompt Injection Defense Techniques is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

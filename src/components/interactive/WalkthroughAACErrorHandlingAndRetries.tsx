@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Error Classification', desc: 'The foundation of error handling and retries begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Retry Policies', desc: 'At this stage, the key transformation occurs — the core mechanism that makes error handling and retries work.' },
-    { title: '3. Circuit Breakers', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Graceful Degradation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Error Classification', desc: 'The first step in handling an error is classifying it. The primary taxonomy: Transient errors are temporary and likely to resolve on retry.' },
+    { title: '2. Retry Policies', desc: 'Once you have decided to retry, the retry policy determines when and how. Fixed delay: wait N seconds between retries.' },
+    { title: '3. Circuit Breakers', desc: 'A circuit breaker prevents an agent from repeatedly calling a service that is clearly down. It works in three states: Closed (normal operation -- requests flow through), Open (service is failing -- requests are immediately rejected without calling the service), and Half-open (after a cooldown.' },
+    { title: '4. Graceful Degradation', desc: 'When all retries are exhausted, the agent must degrade gracefully rather than crash. Strategies include: Fallback to cached data -- use the last known good result from a previous successful call.' },
 ];
 
 export default function WalkthroughAACErrorHandlingAndRetries() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACErrorHandlingAndRetries() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Error Handling and Retries — Step by Step
+          Error Handling and Retries \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how error handling and retries works, one stage at a time.

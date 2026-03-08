@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The MDP Tuple', desc: 'The foundation of markov decision processes begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Markov Property', desc: 'At this stage, the key transformation occurs — the core mechanism that makes markov decision processes work.' },
-    { title: '3. Finite vs. Infinite MDPs', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Episodic vs. Continuing Tasks', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Dynamics Function', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The MDP Tuple', desc: 'An MDP is defined by a 5-tuple (&#123;S&#125;, &#123;A&#125;, P, R, ):  &#123;S&#125; -- A set of states (finite or infinite). See states-actions-rewards.md.' },
+    { title: '2. The Markov Property', desc: 'The defining feature of an MDP is the Markov property (also called "memorylessness"):  [equation]  The future depends on the past only through the present state. This is not a restriction on the environment -- it is a requirement on the state representation.' },
+    { title: '3. Finite vs. Infinite MDPs', desc: 'Finite MDPs have finite state and action spaces ($ tensor. Most theoretical results in RL are proven for finite MDPs.' },
+    { title: '4. Episodic vs. Continuing Tasks', desc: 'Episodic tasks have a natural terminal state. The interaction breaks into episodes, each starting from an initial state and ending at termination.' },
+    { title: '5. The Dynamics Function', desc: 'The full dynamics of an MDP are captured by the four-argument function:  [equation]  From this, we can derive: Transition probabilities: P(s\'  s, a) = _r p(s\', r  s, a) Expected reward: r(s, a) = _r r _&#123;s\'&#125; p(s\', r  s, a) Expected reward given transition: r(s, a, s\') = _r r  &#123;p(s\', r  s, a)&#125;&#123;P(s\' .' },
 ];
 
 export default function WalkthroughRLMarkovDecisionProcesses() {
@@ -17,10 +17,10 @@ export default function WalkthroughRLMarkovDecisionProcesses() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Markov Decision Processes — Step by Step
+          Markov Decision Processes \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how markov decision processes works, one stage at a time.

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Learning from User Feedback', desc: 'The foundation of self-improving agents begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Prompt Optimization with DSPy', desc: 'At this stage, the key transformation occurs — the core mechanism that makes self-improving agents work.' },
-    { title: '3. Skill Acquisition', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Tool Improvement', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Learning from User Feedback', desc: 'The most accessible form of self-improvement: the user tells the agent what it did wrong, and the agent remembers. Implementation: when a user corrects an output ("actually, our company uses British spelling, not American"), the agent stores this as a persistent memory or preference.' },
+    { title: '2. Prompt Optimization with DSPy', desc: 'DSPy treats prompt engineering as an optimization problem. Instead of manually crafting prompts, you define: Signatures (input/output specifications for each LLM call), Modules (composable prompt components), and Metrics (how to score outputs).' },
+    { title: '3. Skill Acquisition', desc: 'Voyager introduced the concept of agents learning new "skills" -- reusable capabilities stored as verified code functions. When the Minecraft agent encounters a novel challenge (build a shelter before nightfall), it writes a function to solve it, verifies the function works in the game, and stores.' },
+    { title: '4. Tool Improvement', desc: 'Agents can learn to use tools more effectively. If a search tool consistently returns irrelevant results for a certain type of query, the agent can learn to reformulate those queries.' },
 ];
 
 export default function WalkthroughAACSelfImprovingAgents() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACSelfImprovingAgents() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Self-Improving Agents — Step by Step
+          Self-Improving Agents \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how self-improving agents works, one stage at a time.

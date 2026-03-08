@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Time complexity', detail: '$O(nKd^2)$ per EM iteration for full covariance; $O(nKd)$ for diagonal' },
+    { label: 'Time complexity', detail: 'O(nKd^2) per EM iteration for full covariance; O(nKd) for diagonal' },
     { label: 'Initialization', detail: 'Highly sensitive to starting parameters. Common strategies include running K-means first, random restarts, or K-means++ followed by a few EM iterations' },
-    { label: 'Singularities', detail: 'If a component collapses onto a single point, its covariance becomes singular and the likelihood diverges. Regularization (adding a small value $\\epsilon$ to the diagonal of $\\Sigma_k$) prevents this' },
+    { label: 'Singularities', detail: 'If a component collapses onto a single point, its covariance becomes singular and the likelihood diverges. Regularization (adding a small value  to the diagonal of _k) prevents this' },
     { label: 'Convergence', detail: 'EM converges to a local maximum; global maximum is not guaranteed. Typical convergence requires 50-200 iterations depending on data complexity' },
     { label: 'Identifiability', detail: 'Permuting component labels gives the same model (label switching), which complicates Bayesian inference' },
-    { label: 'Parameter count', detail: 'A full GMM with $K$ components in $d$ dimensions has $K \\cdot (d + d(d+1)/2 + 1) - 1$ free parameters. For $K=5$ and $d=50$, this exceeds 6,000 parameters -- demanding ample data or constrained covariances' },
+    { label: 'Parameter count', detail: 'A full GMM with K components in d dimensions has K  (d + d(d+1)/2 + 1) - 1 free parameters. For K=5 and d=50, this exceeds 6,000 parameters -- demanding ample data or constrained covariances' },
 ];
 
 export default function ExplorerMLFGaussianMixtureModels() {
@@ -20,10 +20,10 @@ export default function ExplorerMLFGaussianMixtureModels() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Gaussian Mixture Models — Key Details Explorer
+          Gaussian Mixture Models \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of gaussian mixture models.
+          Click each card to explore the technical details.
         </p>
       </div>
 

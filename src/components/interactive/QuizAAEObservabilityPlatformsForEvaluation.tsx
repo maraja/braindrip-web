@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEObservabilityPlatformsForEvaluation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Observability platforms combine tracing, logging, and evaluation capabilities into unified systems that let teams debug agent behavior in development and extract evaluation datasets from production.', isTrue: true, explanation: 'This captures the core purpose of Observability Platforms for Evaluation.' },
-    { text: 'Observability Platforms for Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Observability Platforms for Evaluation is important for building on more advanced topics.' },
-    { text: 'Observability Platforms for Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Observability Platforms for Evaluation is important for building on more advanced topics.' },
+    { text: 'Observability is just logging with a fancier name.', isTrue: false, explanation: 'Logging captures events. Observability captures structured relationships between events -- the causal chain from input to tool call to intermediate reasoning to output.' },
+    { text: 'You need to pick either an observability platform or an evaluation framework.', isTrue: false, explanation: 'These serve complementary purposes. An observability platform captures production behavior; an evaluation framework runs controlled experiments.' },
+    { text: 'Open-source platforms are always cheaper.', isTrue: false, explanation: 'Self-hosted platforms eliminate per-event fees but introduce infrastructure management costs: server provisioning, database maintenance, upgrades, and on-call responsibilities. For small teams, managed SaaS platforms may have lower total cost of ownership.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

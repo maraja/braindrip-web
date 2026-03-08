@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPParaphraseGeneration() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'MRPC (Microsoft Research Paraphrase Corpus; Dolan and Brockett, 2005): 5,801 sentence pairs from news, labeled as paraphrase or not.', isTrue: true, explanation: 'This is a key technical detail of Paraphrase Generation.' },
-    { text: 'Used primarily for paraphrase detection, not generation.', isTrue: true, explanation: 'This is a key technical detail of Paraphrase Generation.' },
-    { text: 'QQP (Quora Question Pairs): 400K question pairs labeled for semantic equivalence.', isTrue: true, explanation: 'This is a key technical detail of Paraphrase Generation.' },
+    { text: 'Paraphrase means synonym substitution.', isTrue: false, explanation: 'Replacing individual words with synonyms is the most superficial form of paraphrasing. True paraphrasing involves syntactic restructuring (active to passive), information reordering, abstraction ("three dogs and two cats" to "five pets"), and clause restructuring.' },
+    { text: '5,801 sentence pairs from news, labeled as paraphrase or not.', isTrue: true, explanation: 'Used primarily for paraphrase detection, not generation.' },
+    { text: 'Round-trip translation always produces good paraphrases.', isTrue: false, explanation: 'Round-trip translation frequently introduces semantic drift, especially for nuanced or idiomatic input. "The spirit is willing but the flesh is weak" famously back-translated via Russian as "The vodka is strong but the meat is rotten." Quality filtering with semantic similarity thresholds (&gt; 0.8) is essential.' },
+    { text: '400K question pairs labeled for semantic equivalence.', isTrue: true, explanation: 'Widely used for paraphrase identification training and evaluation.' },
+    { text: 'If two sentences have high word overlap, they are paraphrases.', isTrue: false, explanation: 'The PAWS dataset was designed to expose exactly this fallacy. "Flights from New York to Paris" and "Flights from Paris to New York" have near-identical word overlap but opposite meanings.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

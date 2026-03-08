@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Setting Up the Store', desc: 'The foundation of long-term memory store begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Writing to the Store', desc: 'At this stage, the key transformation occurs — the core mechanism that makes long-term memory store work.' },
-    { title: '3. Reading from the Store', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Full Example -- Cross-Thread Recall', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Namespace Design Patterns', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Setting Up the Store', desc: 'Compile your graph with both a checkpointer (short-term) and a store (long-term):' },
+    { title: '2. Writing to the Store', desc: 'Inside a node function, access the store via the config and save items under a namespace:' },
+    { title: '3. Reading from the Store', desc: 'Retrieve items from any thread, as long as you know the namespace:' },
+    { title: '4. Namespace Design Patterns', desc: 'Organize stored data with meaningful namespace tuples:' },
 ];
 
 export default function WalkthroughLGALongTermMemoryStore() {
@@ -17,10 +16,10 @@ export default function WalkthroughLGALongTermMemoryStore() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Long-Term Memory Store — Step by Step
+          Long-Term Memory Store \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how long-term memory store works, one stage at a time.

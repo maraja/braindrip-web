@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Nearest-Neighbor Interpolation', desc: 'The foundation of image interpolation and resampling begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Bilinear Interpolation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes image interpolation and resampling work.' },
-    { title: '3. Bicubic Interpolation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Lanczos Interpolation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Anti-Aliasing for Downsampling', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Nearest-Neighbor Interpolation', desc: 'The simplest method: assign the value of the closest integer-coordinate pixel. [equation]  Kernel: A box function of width 1 centered at the origin.' },
+    { title: '2. Bilinear Interpolation', desc: 'Performs linear interpolation in two directions. For a query point (x, y) surrounded by four neighbors at integer coordinates:  [equation]  where  = x - x_0,  = y - y_0, (x_0, y_0) is the top-left neighbor, and (x_1, y_1) = (x_0 + 1, y_0 + 1).' },
+    { title: '3. Bicubic Interpolation', desc: 'Fits a cubic polynomial through 16 surrounding neighbors (4x4 grid). The standard cubic convolution kernel (Keys, 1981):  [equation]  where a = -0.5 (the Catmull-Rom spline, which matches the ideal sinc function through the sample points) or a = -0.' },
+    { title: '4. Lanczos Interpolation', desc: 'Uses a windowed sinc kernel with support over 2a samples (typically a = 3, examining 36 neighbors in 2D):  [equation]  where sinc(t) = ( t) / ( t). The sinc function is the ideal interpolation kernel (it perfectly reconstructs bandlimited signals), but it has infinite support.' },
+    { title: '5. Anti-Aliasing for Downsampling', desc: 'Interpolation methods described above are designed for upsampling (mapping to positions between existing samples). When downsampling (reducing resolution), you must first apply a low-pass filter to prevent aliasing -- the same principle as the Nyquist theorem.' },
+    { title: '6. Geometric Transformations', desc: 'Interpolation is triggered whenever a geometric transformation T maps output coordinates (x\', y\') to non-integer input coordinates (x, y) = T^&#123;-1&#125;(x\', y\'). Common transformations:  All of these require interpolation at the transformed coordinates.' },
 ];
 
 export default function WalkthroughCVCImageInterpolationAndResampling() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCImageInterpolationAndResampling() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Image Interpolation and Resampling — Step by Step
+          Image Interpolation and Resampling \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how image interpolation and resampling works, one stage at a time.

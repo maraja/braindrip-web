@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAToolLevelApproval() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The interrupt() call goes inside the tool function body, before the side-effect code.', isTrue: true, explanation: 'This is a key technical detail of Tool-Level Approval.' },
-    { text: 'The tool must be used in a graph compiled with a checkpointer; otherwise interrupt() fails.', isTrue: true, explanation: 'This is a key technical detail of Tool-Level Approval.' },
-    { text: 'Read-only tools should not call interrupt() to avoid unnecessary human involvement.', isTrue: true, explanation: 'This is a key technical detail of Tool-Level Approval.' },
+    { text: 'Tool-level approval requires modifying ToolNode or the agent loop.', isTrue: false, explanation: 'It does not. The interrupt() call lives inside the tool function itself.' },
+    { text: 'Tool-level approval places an interrupt() call inside individual tool functions, pausing execution for human review before the tool\'s side effect runs, with support for parameter modification.', isTrue: true, explanation: 'This captures the core definition of Tool-Level Approval.' },
+    { text: 'Tool-Level Approval is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Tool-Level Approval is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

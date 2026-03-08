@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. LLM-as-Judge: The Baseline', desc: 'The foundation of agent-as-judge begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Agent-as-Judge: The Extension', desc: 'At this stage, the key transformation occurs — the core mechanism that makes agent-as-judge work.' },
-    { title: '3. Trajectory Evaluation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. When to Use Which', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. LLM-as-Judge: The Baseline', desc: 'A standard LLM-as-Judge call follows a simple pattern: construct a prompt containing the evaluation criteria, the agent\'s input, and the agent\'s output. Send it to an LLM.' },
+    { title: '2. Agent-as-Judge: The Extension', desc: 'Agent-as-Judge wraps the judge in an agentic loop. The judge LLM can:  Execute code to verify that generated programs actually run and produce correct output Browse the web to fact-check claims made by the evaluated agent Query databases to confirm that data modifications were applied.' },
+    { title: '3. Trajectory Evaluation', desc: 'A key advantage of Agent-as-Judge is trajectory-level evaluation. Rather than scoring only the final output, the judge examines the sequence of actions the agent took:  Did the agent explore reasonable approaches before committing?' },
 ];
 
 export default function WalkthroughAAEAgentAsJudge() {
@@ -16,10 +15,10 @@ export default function WalkthroughAAEAgentAsJudge() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agent-as-Judge — Step by Step
+          Agent-as-Judge \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how agent-as-judge works, one stage at a time.

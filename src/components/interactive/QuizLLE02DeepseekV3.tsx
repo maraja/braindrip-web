@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE02DeepseekV3() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'DeepSeek V3 matched Claude 3.5 Sonnet and GPT-4o across most benchmarks while training for just $5.576 million, combining innovations in FP8 training, multi-token prediction, and efficient MoE routing to shatter assumptions about the cost of frontier AI.', isTrue: true, explanation: 'This captures the core purpose of DeepSeek V3: Frontier Quality at Startup Cost.' },
-    { text: 'DeepSeek V3: Frontier Quality at Startup Cost is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding DeepSeek V3: Frontier Quality at Startup Cost is important for building on more advanced topics.' },
-    { text: 'DeepSeek V3: Frontier Quality at Startup Cost is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding DeepSeek V3: Frontier Quality at Startup Cost is important for building on more advanced topics.' },
+    { text: 'V3 is only cheap because it uses H800s instead of H100s.', isTrue: false, explanation: 'The H800 is a restricted export version of the H100 with similar compute capability but significantly lower inter-chip communication bandwidth (400 GB/s NVLink vs 900 GB/s). The cost savings came from algorithmic innovations (FP8 training, MLA, efficient MoE, DualPipe), not from cheaper hardware.' },
+    { text: '$5.576 million is the total cost of creating V3.', isTrue: false, explanation: 'This figure covers only the final training run. It does not include the cost of developing the architecture, running preliminary experiments, training V1 and V2, building the software infrastructure, or employing the research team.' },
+    { text: 'V3 only matched frontier models by cutting corners on safety.', isTrue: false, explanation: 'DeepSeek applied standard safety training through supervised fine-tuning and reward modeling. The cost savings came from training efficiency innovations, not from skipping alignment steps.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

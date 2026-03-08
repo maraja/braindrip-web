@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizRLDuelingDqn() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Performance gains: On Atari, dueling DQN improves median human-normalized score from ~117% (Double DQN baseline) to ~140%, with large gains on games with many "irrelevant-action" states.', isTrue: true, explanation: 'This is a key technical detail of Dueling DQN.' },
-    { text: 'Parameter overhead: Minimal.', isTrue: true, explanation: 'This is a key technical detail of Dueling DQN.' },
-    { text: 'Replacing one 512-to-$|\\mathcal&#123;A&#125;|$ output layer with two streams (512-to-1 and 512-to-$|\\mathcal&#123;A&#125;|$) adds roughly 512 parameters.', isTrue: true, explanation: 'This is a key technical detail of Dueling DQN.' },
+    { text: 'Dueling DQN uses two separate networks.', isTrue: false, explanation: 'It is a single network with a shared backbone and two heads (streams). There is only one set of convolutional features, and the entire network is trained end-to-end with a single loss.' },
+    { text: 'On Atari, dueling DQN improves median human-normalized score from ~117% (Double DQN baseline) to ~140%, with large gains on games with many "irrelevant-action" states.', isTrue: true, explanation: 'On Atari, dueling DQN improves median human-normalized score from ~117% (Double DQN baseline) to ~140%, with large gains on games with many "irrelevant-action" states.' },
+    { text: 'The value stream learns V^ exactly.', isTrue: false, explanation: 'The value stream learns an approximation shaped by the mean-subtraction identifiability constraint. It is not supervised to match V^ directly -- it is trained only through the combined Q-value loss.' },
+    { text: 'Mean subtraction (&#123;1&#125;&#123;&#125; A) is preferred over max subtraction ( A) because it provides smoother gradients and does not change the optimal action ranking.', isTrue: true, explanation: 'Mean subtraction (&#123;1&#125;&#123;&#125; A) is preferred over max subtraction ( A) because it provides smoother gradients and does not change the optimal action ranking.' },
+    { text: 'Dueling DQN is only useful for large action spaces.', isTrue: false, explanation: 'While the benefit scales with action space size, the architecture also helps in small action spaces by providing better gradient flow to the value estimate. It improved Atari performance even with only 4--18 actions.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

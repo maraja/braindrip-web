@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. TF-IDF + Dimensionality Reduction (LSA/SVD)', desc: 'The foundation of document embeddings begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Doc2Vec (Paragraph Vectors)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes document embeddings work.' },
-    { title: '3. Averaging Word/Sentence Embeddings', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Neural Document Encoders', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Retrieval-Oriented Document Embeddings', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. TF-IDF + Dimensionality Reduction (LSA/SVD)', desc: 'The classic approach constructs a TF-IDF-weighted document-term matrix and then applies truncated Singular Value Decomposition (SVD) to reduce dimensionality:  This is Latent Semantic Analysis (LSA). The SVD discovers latent "concepts" that group co-occurring terms.' },
+    { title: '2. Doc2Vec (Paragraph Vectors)', desc: 'Introduced by Le and Mikolov (2014), Doc2Vec extends Word2Vec with a document-specific vector:  PV-DM: Concatenates a document vector with word vectors in a sliding window to predict the next word. The document vector serves as a "memory" of the document\'s topic.' },
+    { title: '3. Averaging Word/Sentence Embeddings', desc: 'A simple and competitive approach:  Weighted variants (TF-IDF weights, SIF) typically improve over uniform averaging. Alternatively, segment the document into sentences, embed each with a sentence encoder (see sentence-embeddings.md), and average the sentence vectors.' },
+    { title: '4. Neural Document Encoders', desc: 'Modern transformer-based approaches:  Hierarchical models: Encode sentences independently with a sentence encoder, then aggregate sentence vectors with a second-level transformer or attention mechanism. This two-stage approach handles documents of arbitrary length.' },
+    { title: '5. Retrieval-Oriented Document Embeddings', desc: 'For information retrieval specifically:  DPR (Dense Passage Retrieval): Encodes passages (typically 100-word chunks) with BERT, trained with contrastive learning on question-passage pairs.' },
 ];
 
 export default function WalkthroughNLPDocumentEmbeddings() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPDocumentEmbeddings() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Document Embeddings — Step by Step
+          Document Embeddings \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how document embeddings works, one stage at a time.

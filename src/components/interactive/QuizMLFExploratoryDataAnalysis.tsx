@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFExploratoryDataAnalysis() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Always plot before computing statistics.', isTrue: true, explanation: 'This is a key technical detail of Exploratory Data Analysis.' },
-    { text: 'The mean of a bimodal distribution is meaningless despite being mathematically correct.', isTrue: true, explanation: 'This is a key technical detail of Exploratory Data Analysis.' },
-    { text: 'Check for data leakage during EDA.', isTrue: true, explanation: 'This is a key technical detail of Exploratory Data Analysis.' },
+    { text: 'EDA is just making pretty plots.', isTrue: false, explanation: 'Visualization is a tool, not the goal. EDA is hypothesis generation and assumption verification.' },
+    { text: 'Visualizing distributions, correlations, and anomalies before modeling -- the most undervalued step in the ML pipeline.', isTrue: true, explanation: 'This captures the core definition of Exploratory Data Analysis.' },
+    { text: 'Exploratory Data Analysis is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Exploratory Data Analysis is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

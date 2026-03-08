@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE06SyntheticDataForTraining() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The practice of using language models to generate training data for other (or the same) models became a defining technique of the LLM era, enabling everything from Stanford Alpaca\'s $600 chatbot to DeepSeek-R1\'s reasoning breakthroughs.', isTrue: true, explanation: 'This captures the core purpose of Synthetic Data for Training.' },
-    { text: 'Synthetic Data for Training is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Synthetic Data for Training is important for building on more advanced topics.' },
-    { text: 'Synthetic Data for Training is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Synthetic Data for Training is important for building on more advanced topics.' },
+    { text: 'Synthetic data is lower quality than human data.', isTrue: false, explanation: 'It depends entirely on the generation process. Carefully filtered synthetic data from capable models can exceed the average quality of scraped web text.' },
+    { text: '175 seed tasks -&gt; 52K generated examples, 33% improvement on GPT-3', isTrue: true, explanation: '175 seed tasks -&gt; 52K generated examples, 33% improvement on GPT-3' },
+    { text: 'Training on synthetic data leads to model collapse.', isTrue: false, explanation: 'Shumailov et al. (2023) showed that iteratively training on self-generated data without fresh data can degrade quality.' },
+    { text: '$600 of GPT-3.5 API calls -&gt; 52K examples -&gt; fine-tuned LLaMA 7B', isTrue: true, explanation: '$600 of GPT-3.5 API calls -&gt; 52K examples -&gt; fine-tuned LLaMA 7B' },
+    { text: 'Synthetic data is just copying the teacher model.', isTrue: false, explanation: 'Synthetic data generation involves the teacher model producing novel outputs (new instructions, new reasoning traces, new examples) that it was not explicitly trained on. The diversity of synthetic data often exceeds what any single training example from the teacher could provide.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

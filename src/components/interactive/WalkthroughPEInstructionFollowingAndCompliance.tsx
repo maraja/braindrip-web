@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Instruction Salience', desc: 'The foundation of instruction following and compliance begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Instruction Competition', desc: 'At this stage, the key transformation occurs — the core mechanism that makes instruction following and compliance work.' },
-    { title: '3. RLHF and Instruction-Following Training', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Attention Budget Model', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Instruction Salience', desc: 'Salience is how "loud" an instruction is in the model\'s attention landscape. High-salience instructions stand out from surrounding text and are more likely to be attended to.' },
+    { title: '2. Instruction Competition', desc: 'When a prompt contains multiple instructions, they compete for the model\'s attention budget. The model cannot attend equally to all instructions simultaneously; it allocates attention based on salience, relevance to the current generation, and proximity.' },
+    { title: '3. RLHF and Instruction-Following Training', desc: 'Modern instruction-tuned models (GPT-4, Claude, Gemini) are trained through reinforcement learning from human feedback (RLHF) or constitutional AI (CAI) to follow instructions. This training shapes which instruction patterns the model is most responsive to.' },
+    { title: '4. The Attention Budget Model', desc: 'A useful mental model is that the model has a finite "attention budget" for instructions. Each instruction consumes a portion of this budget based on its salience and complexity.' },
 ];
 
 export default function WalkthroughPEInstructionFollowingAndCompliance() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEInstructionFollowingAndCompliance() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Instruction Following and Compliance — Step by Step
+          Instruction Following and Compliance \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how instruction following and compliance works, one stage at a time.

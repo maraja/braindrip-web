@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'WMT human evaluation', detail: 'Annually evaluates ~150 MT systems across 15+ language pairs using Direct Assessment with ~1,000 annotators and ~500,000 individual judgments.' },
-    { label: 'Cost estimates', detail: 'Professional human evaluation for a single MT system on one language pair costs $2,000--$5,000. Crowdsourced evaluation via Amazon Mechanical Turk costs $500--$1,500 for the same scope.' },
+    { label: 'Cost estimates', detail: 'Professional human evaluation for a single MT system on one language pair costs 2,000--5,000. Crowdsourced evaluation via Amazon Mechanical Turk costs 500--1,500 for the same scope.' },
     { label: 'Chatbot Arena', detail: '(Zheng et al., 2023): Uses pairwise comparison with crowdsourced human judges; over 500,000 votes have been collected, producing Elo ratings that are considered the most reliable LLM quality ranking.' },
     { label: 'Sample sizes', detail: 'A minimum of 100--200 evaluated outputs is typically needed for statistically significant system-level differences. Sentence-level significance requires 500+ items.' },
     { label: 'Annotation speed', detail: 'Experienced annotators evaluate ~20--40 sentences per hour for DA, or ~30--50 pairwise comparisons per hour.' },
@@ -20,10 +20,10 @@ export default function ExplorerNLPHumanEvaluationForNlp() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Human Evaluation for NLP — Key Details Explorer
+          Human Evaluation for NLP \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of human evaluation for nlp.
+          Click each card to explore the technical details.
         </p>
       </div>
 

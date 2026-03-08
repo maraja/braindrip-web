@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Constitutional AI Pipeline', desc: 'The foundation of rlaif and constitutional ai begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Constitution', desc: 'At this stage, the key transformation occurs — the core mechanism that makes rlaif and constitutional ai work.' },
-    { title: '3. The RLAIF Preference Generation Process', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Cost Analysis', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Constitutional AI Pipeline', desc: 'CAI operates in two phases, replacing human annotation at both the SFT and RL stages:  Phase 1: Supervised Learning from AI Self-Critique  Generate responses to harmful or adversarial prompts using a helpful-only model Ask the model to critique its own response according to a principle (e.g.' },
+    { title: '2. The Constitution', desc: 'The constitution is a set of natural language principles that guide AI judgment. Examples from Anthropic\'s original paper:  "Choose the response that is most helpful, honest, and harmless." "Choose the response that is least likely to be used for illegal or harmful purposes.' },
+    { title: '3. The RLAIF Preference Generation Process', desc: 'For a prompt x with candidate responses y_1, y_2, the AI evaluator is given:  The AI produces chain-of-thought reasoning and a final selection. The probability assigned to each choice can also be used as a soft label:  [equation]  Using soft probabilities rather than hard binary labels reduces.' },
+    { title: '4. Cost Analysis', desc: 'The economics are decisive:  For 100K comparisons: human feedback costs 100K--1M; AI feedback costs approximately $100.' },
 ];
 
 export default function WalkthroughRLRlaifAndConstitutionalAi() {
@@ -16,10 +16,10 @@ export default function WalkthroughRLRlaifAndConstitutionalAi() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          RLAIF and Constitutional AI — Step by Step
+          RLAIF and Constitutional AI \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how rlaif and constitutional ai works, one stage at a time.

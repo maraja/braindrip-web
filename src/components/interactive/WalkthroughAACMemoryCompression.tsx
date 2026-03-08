@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Summarization-Based Compression', desc: 'The foundation of memory compression begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Hierarchical Compression', desc: 'At this stage, the key transformation occurs — the core mechanism that makes memory compression work.' },
-    { title: '3. Running Summaries', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Selective Forgetting', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Token Budget Management', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Summarization-Based Compression', desc: 'The most straightforward compression technique: use an LLM to generate a summary of a block of conversation or memory content. Single-pass summarization: Take a block of text (e.g., 5000 tokens of conversation history) and produce a summary (e.g.' },
+    { title: '2. Hierarchical Compression', desc: 'Different information ages deserve different compression levels. Recent information is kept in full detail; older information is progressively compressed:  This tiered approach mimics human memory: vivid detail for recent events, progressively compressed summaries for older events.' },
+    { title: '3. Running Summaries', desc: 'Instead of periodically summarizing the entire history, maintain a running summary that is updated incrementally:  Start with an empty summary After each N turns (typically 3-5), generate an updated summary that incorporates the new turns into the existing summary The summary grows slowly (or stays.' },
+    { title: '4. Selective Forgetting', desc: 'Not all information deserves to be remembered, even in compressed form. Strategic forgetting improves memory quality:  Importance-based forgetting: Memories with low importance scores are candidates for deletion.' },
+    { title: '5. Token Budget Management', desc: 'Compression is ultimately about fitting information into a token budget. Effective budget management requires:  When any category exceeds its budget, compression is triggered for that category.' },
 ];
 
 export default function WalkthroughAACMemoryCompression() {
@@ -17,10 +17,10 @@ export default function WalkthroughAACMemoryCompression() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Memory Compression — Step by Step
+          Memory Compression \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how memory compression works, one stage at a time.

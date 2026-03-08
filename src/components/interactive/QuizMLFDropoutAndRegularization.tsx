@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFDropoutAndRegularization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Dropout is applied during training only (unless using MC dropout for uncertainty).', isTrue: true, explanation: 'This is a key technical detail of Dropout and Regularization.' },
-    { text: 'Inverted dropout scales by $1/(1-p)$ during training; standard dropout scales by $(1-p)$ at test time.', isTrue: true, explanation: 'This is a key technical detail of Dropout and Regularization.' },
-    { text: 'The result is identical.', isTrue: true, explanation: 'This is a key technical detail of Dropout and Regularization.' },
+    { text: 'Dropout slows down convergence.', isTrue: false, explanation: 'Dropout typically slows per-epoch progress (because each step trains a sub-network), but the regularization effect often leads to better final performance with fewer total epochs than an unregularized network would need to avoid overfitting. "Dropout rate 0.5 means half the information is lost." The network learns redundant representations precisely because neurons are dropped.' },
+    { text: 'Randomly zeroing activations during training -- an implicit ensemble that prevents co-adaptation of neurons.', isTrue: true, explanation: 'This captures the core definition of Dropout and Regularization.' },
+    { text: 'Dropout and Regularization is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Dropout and Regularization is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

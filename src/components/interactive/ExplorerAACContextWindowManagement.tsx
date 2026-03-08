@@ -3,7 +3,7 @@ import { useState } from 'react';
 const DETAILS = [
     { label: 'Token counting', detail: 'must be done with the model\'s actual tokenizer (tiktoken for OpenAI, the appropriate tokenizer for Claude) since word count is an unreliable proxy for token count' },
     { label: 'Prompt caching', detail: '(available in Claude and GPT APIs) reduces cost for stable context prefixes; structure your context so the system prompt and stable instructions come first, with variable content at the end' },
-    { label: 'The \"lost in the middle\" effect', detail: 'is strongest for models with shorter context windows; 200K-context models like Claude show less degradation but are not immune' },
+    { label: 'The "lost in the middle" effect', detail: 'is strongest for models with shorter context windows; 200K-context models like Claude show less degradation but are not immune' },
     { label: 'Summarization quality', detail: 'depends on the summarizer model; using GPT-4o-mini or Claude Haiku for summarization is cost-effective while preserving key information' },
     { label: 'Token budgets', detail: 'should reserve 20-30% of the context window for the model\'s output, especially when generating long responses or detailed plans' },
     { label: 'Context assembly latency', detail: 'matters for real-time agents; RAG retrieval and summarization add 100-500ms per LLM call, which compounds over many steps' },
@@ -20,10 +20,10 @@ export default function ExplorerAACContextWindowManagement() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Context Window Management — Key Details Explorer
+          Context Window Management \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of context window management.
+          Click each card to explore the technical details.
         </p>
       </div>
 

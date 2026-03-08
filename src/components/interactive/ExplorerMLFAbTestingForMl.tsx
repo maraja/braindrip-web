@@ -3,7 +3,7 @@ import { useState } from 'react';
 const DETAILS = [
     { label: 'Novelty and primacy effects', detail: 'Users may initially engage more (or less) with a new experience simply because it is different. Run tests long enough for these effects to wash out.' },
     { label: 'Network effects and interference', detail: 'If users interact with each other (social platforms), treating one user may affect control users, violating the stable unit treatment value assumption (SUTVA). Solutions include cluster randomization.' },
-    { label: 'Guardrail metrics', detail: 'Define metrics that must *not* degrade (e.g., page load time, crash rate). A model that improves revenue but increases crashes is not a win.' },
+    { label: 'Guardrail metrics', detail: 'Define metrics that must not degrade (e.g., page load time, crash rate). A model that improves revenue but increases crashes is not a win.' },
     { label: 'Sequential testing', detail: 'Methods like always-valid p-values allow continuous monitoring of test results without inflating false positive rates.' },
 ];
 
@@ -18,10 +18,10 @@ export default function ExplorerMLFAbTestingForMl() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          A/B Testing for ML — Key Details Explorer
+          A/B Testing for ML \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of a/b testing for ml.
+          Click each card to explore the technical details.
         </p>
       </div>
 

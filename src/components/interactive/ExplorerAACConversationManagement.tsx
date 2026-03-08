@@ -6,7 +6,7 @@ const DETAILS = [
     { label: 'Role-specific token budgets', detail: 'System message: 5-15% of total budget. Conversation history: 40-60%. Current exchange: 20-30%. Retrieved context: 10-20%. Reserve 15% for response generation' },
     { label: 'Message deduplication', detail: 'When the same information appears in multiple messages (user repeats request, tool returns overlapping results), deduplicate during summarization to avoid wasting tokens' },
     { label: 'Conversation checkpointing', detail: 'For long conversations, periodically save a full snapshot (all messages + state) to persistent storage. This enables recovery from context window overflow and allows the conversation to span multiple sessions' },
-    { label: 'Framework implementations', detail: 'LangChain\'s `ConversationSummaryBufferMemory` combines a summary of old messages with a buffer of recent messages. This is the recommended default for most agent applications' },
+    { label: 'Framework implementations', detail: 'LangChain\'s ConversationSummaryBufferMemory combines a summary of old messages with a buffer of recent messages. This is the recommended default for most agent applications' },
 ];
 
 export default function ExplorerAACConversationManagement() {
@@ -20,10 +20,10 @@ export default function ExplorerAACConversationManagement() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Conversation Management — Key Details Explorer
+          Conversation Management \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of conversation management.
+          Click each card to explore the technical details.
         </p>
       </div>
 

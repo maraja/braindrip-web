@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. From Static to Contextual', desc: 'The foundation of contextual embeddings begins with understanding its core input requirements and initial setup.' },
-    { title: '2. ELMo: Bidirectional LSTMs', desc: 'At this stage, the key transformation occurs — the core mechanism that makes contextual embeddings work.' },
-    { title: '3. BERT: Masked Language Modeling with Transformers', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Layer-Wise Representations', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Shift from Static to Contextual', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. From Static to Contextual', desc: 'Static embeddings map each word type to a fixed vector:  Contextual embeddings map each word token (in context) to a vector:  The two vectors for "bank" will be substantially different, reflecting the different meanings.' },
+    { title: '2. ELMo: Bidirectional LSTMs', desc: 'ELMo (Embeddings from Language Models), introduced by Peters et al. at Allen AI in 2018, was the first major contextual embedding model.' },
+    { title: '3. BERT: Masked Language Modeling with Transformers', desc: 'BERT (Bidirectional Encoder Representations from Transformers), introduced by Devlin et al. at Google in 2018, replaced LSTMs with the transformer architecture and changed the pre-training objective:  Masked Language Modeling (MLM): Randomly mask 15% of input tokens and train the model to predict.' },
+    { title: '4. Layer-Wise Representations', desc: 'A 12-layer BERT model produces 13 different representations for each token (input embedding + 12 layer outputs). Research has shown:  Lower layers (1-4): Encode surface-level features -- token identity, position, POS tags.' },
+    { title: '5. The Shift from Static to Contextual', desc: 'The transition unfolded rapidly: Pre-2018: Word2Vec/GloVe embeddings used as input features; task-specific architectures trained from scratch. February 2018: ELMo shows that contextual features improve every task by 1-5%.' },
 ];
 
 export default function WalkthroughNLPContextualEmbeddings() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPContextualEmbeddings() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Contextual Embeddings — Step by Step
+          Contextual Embeddings \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how contextual embeddings works, one stage at a time.

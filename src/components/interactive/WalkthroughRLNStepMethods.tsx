@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The N-Step Return', desc: 'The foundation of n-step methods begins with understanding its core input requirements and initial setup.' },
-    { title: '2. N-Step TD Prediction', desc: 'At this stage, the key transformation occurs — the core mechanism that makes n-step methods work.' },
-    { title: '3. N-Step SARSA', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. N-Step Off-Policy Learning', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Bias-Variance Trade-Off', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The N-Step Return', desc: 'The n-step return from time t is defined as:  [equation]  More compactly:  [equation]  Special cases reveal the unifying nature: n = 1: G_&#123;t:t+1&#125; = R_&#123;t+1&#125; +  V(S_&#123;t+1&#125;) -- the TD(0) target.' },
+    { title: '2. N-Step TD Prediction', desc: 'The value update uses the n-step return as the target:  [equation]  This update can only be made at time t + n (when R_&#123;t+n&#125; and S_&#123;t+n&#125; are known), introducing a delay of n steps between experiencing a transition and updating the value.' },
+    { title: '3. N-Step SARSA', desc: 'Extending to control, n-step SARSA uses action-value n-step returns:  [equation]  The update becomes:  [equation]  This naturally extends to n-step Expected SARSA by replacing Q(S_&#123;t+n&#125;, A_&#123;t+n&#125;) with _a (a  S_&#123;t+n&#125;) Q(S_&#123;t+n&#125;, a).' },
+    { title: '4. N-Step Off-Policy Learning', desc: 'For off-policy n-step methods, importance sampling ratios correct for the distribution mismatch:  [equation]  The update becomes:  [equation]  The product of n importance sampling ratios can have high variance for large n, which is a practical limitation of off-policy n-step methods.' },
+    { title: '5. The Bias-Variance Trade-Off', desc: 'The choice of n controls a fundamental trade-off:  The optimal n is problem-dependent. The classic result from Sutton and Barto\'s 19-state random walk shows that intermediate values of n (around 4-8) consistently outperform both extremes across a range of learning rates.' },
+    { title: '6. Truncated N-Step Returns', desc: 'Near episode boundaries, when fewer than n steps remain, the return is naturally truncated:  [equation]  This graceful degradation means n-step methods automatically become MC-like near episode termination, using whatever steps are available.' },
 ];
 
 export default function WalkthroughRLNStepMethods() {
@@ -17,10 +18,10 @@ export default function WalkthroughRLNStepMethods() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          N-Step Methods — Step by Step
+          N-Step Methods \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how n-step methods works, one stage at a time.

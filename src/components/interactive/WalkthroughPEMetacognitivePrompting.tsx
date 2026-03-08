@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Confidence Elicitation', desc: 'The foundation of metacognitive prompting begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Known-Unknown Matrix', desc: 'At this stage, the key transformation occurs — the core mechanism that makes metacognitive prompting work.' },
-    { title: '3. Epistemic Hedging Instructions', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Pre-Answer Reflection', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Confidence Elicitation', desc: 'The simplest metacognitive technique is to ask the model to rate its confidence. This can be done with a direct prompt: "Answer the following question.' },
+    { title: '2. The Known-Unknown Matrix', desc: 'A more structured approach prompts the model to categorize its knowledge state explicitly:  Known knowns: "What do I know for certain about this topic?" Known unknowns: "What aspects of this question am I uncertain about?" Unknown unknowns: "What might I be missing that I haven\'t considered?' },
+    { title: '3. Epistemic Hedging Instructions', desc: 'Rather than asking for a confidence score, you can instruct the model to embed uncertainty directly into its responses: "When you are uncertain, use phrases like \'I believe,\' \'based on my training data,\' or \'this is likely but I am not certain.\' When you are confident, state facts directly.' },
+    { title: '4. Pre-Answer Reflection', desc: 'A more advanced technique asks the model to reflect before answering: "Before answering, consider: (1) What information would you need to be completely sure of your answer? (2) What are the most likely ways your answer could be wrong?' },
 ];
 
 export default function WalkthroughPEMetacognitivePrompting() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEMetacognitivePrompting() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Metacognitive Prompting — Step by Step
+          Metacognitive Prompting \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how metacognitive prompting works, one stage at a time.

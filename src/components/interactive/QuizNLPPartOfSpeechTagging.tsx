@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPPartOfSpeechTagging() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Penn Treebank (English): 36 tags; SOTA ~97.9% accuracy; ~1 million annotated tokens from Wall Street Journal text.', isTrue: true, explanation: 'This is a key technical detail of Part-of-Speech Tagging.' },
-    { text: 'Universal Dependencies: 17 tags across 100+ languages; accuracy varies from ~98% (English, German) to ~85% (low-resource languages).', isTrue: true, explanation: 'This is a key technical detail of Part-of-Speech Tagging.' },
-    { text: 'Human agreement: Estimated at ~97--98% on PTB, meaning current models are near ceiling.', isTrue: true, explanation: 'This is a key technical detail of Part-of-Speech Tagging.' },
+    { text: 'POS tagging is a solved problem.', isTrue: false, explanation: 'At ~98% accuracy on clean news text, it may seem solved, but accuracy drops to ~90--93% on social media, historical text, and code-switched multilingual data. The long tail of errors (ambiguous words in unusual contexts) still matters for downstream tasks.' },
+    { text: '36 tags; SOTA ~97.9% accuracy; ~1 million annotated tokens from Wall Street Journal text.', isTrue: true, explanation: '36 tags; SOTA ~97.9% accuracy; ~1 million annotated tokens from Wall Street Journal text.' },
+    { text: 'Each word has one POS tag.', isTrue: false, explanation: 'Many words are systematically ambiguous: "run" can be NN or VB; "that" can be DT, IN, WDT, or RB depending on context. Roughly 40% of English word types are ambiguous across POS categories, though the most frequent tag is correct ~90% of the time (baseline heuristic).' },
+    { text: '17 tags across 100+ languages; accuracy varies from ~98% (English, German) to ~85% (low-resource languages).', isTrue: true, explanation: '17 tags across 100+ languages; accuracy varies from ~98% (English, German) to ~85% (low-resource languages).' },
+    { text: 'POS tagging is irrelevant in the era of BERT.', isTrue: false, explanation: 'While end-to-end models can sometimes bypass explicit POS features, POS tags remain useful for interpretability, rule-based post-processing, linguistic analysis, and as auxiliary training signals. Many production NLP pipelines still include an explicit POS tagging step.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPETokenizationForPromptEngineers() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'GPT-4/4o uses the cl100k_base tokenizer with ~100,256 vocabulary entries; GPT-3.5 used the same.', isTrue: true, explanation: 'This is a key technical detail of Tokenization for Prompt Engineers.' },
-    { text: 'Claude models use a proprietary BPE tokenizer of similar scale (exact vocab size not publicly documented).', isTrue: true, explanation: 'This is a key technical detail of Tokenization for Prompt Engineers.' },
-    { text: 'English text averages ~1.0-1.3 tokens per word; CJK languages average ~2-3 tokens per character.', isTrue: true, explanation: 'This is a key technical detail of Tokenization for Prompt Engineers.' },
+    { text: 'One word equals one token.', isTrue: false, explanation: 'English averages 1.0-1.3 tokens per word, but code, numbers, punctuation, and non-English text can be 2-5x less efficient. "Hello" is 1 token, but "Hello!!!" might be 3 tokens.' },
+    { text: 'All languages cost the same to process.', isTrue: false, explanation: 'The same semantic content in Chinese or Japanese can cost 3-5x more tokens than in English. This is a structural bias built into BPE vocabularies trained predominantly on English corpora.' },
+    { text: 'Tokenization does not affect model quality.', isTrue: false, explanation: 'Token boundaries influence reasoning. Tasks requiring character-level awareness (spelling, letter counting, acronym expansion) are harder because the model operates on subword chunks, not individual characters.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

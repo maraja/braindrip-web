@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Likelihood Function', desc: 'The foundation of maximum likelihood estimation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Log-Likelihood', desc: 'At this stage, the key transformation occurs — the core mechanism that makes maximum likelihood estimation work.' },
-    { title: '3. MLE for a Gaussian Distribution', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. MLE for a Bernoulli Distribution', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Connection to Cross-Entropy Loss', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Likelihood Function', desc: 'The likelihood function &#123;L&#125;() is the joint probability of the observed data, viewed as a function of the parameters:  [equation]  The product arises from assuming the observations are independent and identically distributed (i.i.d.).' },
+    { title: '2. The Log-Likelihood', desc: 'Products of many small probabilities cause numerical underflow. Taking the logarithm converts products to sums and is monotonic, so the maximizer is unchanged:  [equation]  The negative log-likelihood (NLL) -() is the quantity minimized in practice, turning maximum likelihood into a minimization.' },
+    { title: '3. MLE for a Gaussian Distribution', desc: 'Given x_1, , x_n  &#123;N&#125;(, ^2), the log-likelihood is:  [equation]  Setting &#123; &#125;&#123; &#125; = 0:  [equation]  Setting &#123; &#125;&#123; ^2&#125; = 0:  [equation]  Note that &#123;&#125;^2_&#123;MLE&#125; divides by n, not n-1, making it a biased estimator (it systematically underestimates the true variance). This bias vanishes as n  .' },
+    { title: '4. MLE for a Bernoulli Distribution', desc: 'Given x_1, , x_n  Bernoulli(p) where x_i  \\&#123;0, 1\\&#125;:  [equation]  Setting &#123; &#125;&#123; p&#125; = 0:  [equation]  This log-likelihood is precisely the negative binary cross-entropy loss. When you train a logistic regression model by minimizing binary cross-entropy, you are performing MLE under a Bernoulli model.' },
+    { title: '5. Connection to Cross-Entropy Loss', desc: 'For a classification model with predicted probabilities q(yx):  [equation]  For one-hot encoded labels (p puts all mass on the true class), this becomes - q(y_&#123;true&#125;|x) -- exactly the negative log-likelihood. Minimizing cross-entropy loss is MLE.' },
+    { title: '6. Regularity Conditions and Properties', desc: 'Under regularity conditions (the parameter space is open, the model is identifiable, the log-likelihood is sufficiently smooth), MLE has several attractive asymptotic properties:  Consistency: &#123;&#125;_&#123;MLE&#125; &#123;p&#125; _&#123;true&#125; as n  .' },
 ];
 
 export default function WalkthroughMLFMaximumLikelihoodEstimation() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFMaximumLikelihoodEstimation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Maximum Likelihood Estimation — Step by Step
+          Maximum Likelihood Estimation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how maximum likelihood estimation works, one stage at a time.

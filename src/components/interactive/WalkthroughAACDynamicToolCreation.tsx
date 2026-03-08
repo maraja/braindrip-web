@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Tool Generation Process', desc: 'The foundation of dynamic tool creation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Implementation Patterns', desc: 'At this stage, the key transformation occurs — the core mechanism that makes dynamic tool creation work.' },
-    { title: '3. Validation and Safety', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Storage and Retrieval', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Tool Generation Process', desc: 'Dynamic tool creation follows a consistent pipeline:  Gap identification: The agent encounters a sub-task where no existing tool is suitable. This might be explicit ("I don\'t have a tool for this") or implicit (attempting to use an existing tool and failing).' },
+    { title: '2. Implementation Patterns', desc: 'Code generation + exec: The simplest pattern. The agent generates Python code defining a function, executes it in a persistent runtime (making the function available in memory), and adds it to the tool registry.' },
+    { title: '3. Validation and Safety', desc: 'Generated tools carry risks that predefined tools do not:  Correctness: The function might have bugs that only surface with certain inputs. Testing with diverse inputs helps but cannot guarantee correctness.' },
+    { title: '4. Storage and Retrieval', desc: 'For dynamic tools to provide lasting value, they must be stored and retrieved across sessions:  Tool registry: A database or file store containing tool definitions (name, description, code, metadata like creation date and success rate).' },
 ];
 
 export default function WalkthroughAACDynamicToolCreation() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACDynamicToolCreation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Dynamic Tool Creation — Step by Step
+          Dynamic Tool Creation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how dynamic tool creation works, one stage at a time.

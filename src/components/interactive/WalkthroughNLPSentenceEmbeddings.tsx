@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Averaging Word Vectors', desc: 'The foundation of sentence embeddings begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Doc2Vec / Paragraph Vectors', desc: 'At this stage, the key transformation occurs — the core mechanism that makes sentence embeddings work.' },
-    { title: '3. InferSent', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Universal Sentence Encoder (USE)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Sentence-BERT (SBERT)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Averaging Word Vectors', desc: 'The simplest approach: average all word vectors in the sentence. Surprisingly effective for many tasks.' },
+    { title: '2. Doc2Vec / Paragraph Vectors', desc: 'Proposed by Le and Mikolov (2014), Doc2Vec extends Word2Vec by adding a "paragraph ID" vector that is concatenated with word vectors during training. Two variants exist:  PV-DM (Distributed Memory): Like CBOW but with an additional paragraph vector that acts as memory of the sentence context.' },
+    { title: '3. InferSent', desc: 'Developed by Facebook AI Research (Conneau et al., 2017), InferSent trains a BiLSTM encoder on the Stanford Natural Language Inference (SNLI) dataset (570,000 sentence pairs).' },
+    { title: '4. Universal Sentence Encoder (USE)', desc: 'Released by Google in 2018, USE comes in two variants:  Transformer-based: Higher accuracy, slower. Uses a transformer encoder trained on multiple tasks (skip-thought, conversational response prediction, NLI).' },
+    { title: '5. Sentence-BERT (SBERT)', desc: 'The current standard for sentence embeddings (Reimers and Gurevych, 2019). SBERT fine-tunes a pre-trained BERT model using a Siamese or triplet network architecture on NLI and STS data:  Pass sentence A through BERT, apply mean pooling over token embeddings to get vector u.' },
+    { title: '6. Contrastive Learning Approaches', desc: 'More recent methods use contrastive learning to train sentence encoders without labeled data:  SimCSE (Gao et al., 2021): Uses dropout as minimal data augmentation -- the same sentence passed through the encoder twice with different dropout masks produces a positive pair.' },
 ];
 
 export default function WalkthroughNLPSentenceEmbeddings() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPSentenceEmbeddings() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Sentence Embeddings — Step by Step
+          Sentence Embeddings \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how sentence embeddings works, one stage at a time.

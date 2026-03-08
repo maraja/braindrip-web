@@ -4,7 +4,7 @@ const DETAILS = [
     { label: 'Classification on ModelNet40', detail: 'PointNet achieves 89.2% accuracy; PointNet++ reaches 91.9%. Current state-of-the-art (Point-MAE, 2022) reaches ~93.8%.' },
     { label: 'Part segmentation on ShapeNet', detail: 'PointNet achieves 83.7% mIoU; PointNet++ reaches 85.1%.' },
     { label: 'Input size', detail: 'Standard input is 1024 points sampled uniformly from mesh surfaces. PointNet++ typically uses 1024--4096 points.' },
-    { label: 'T-Net regularization weight', detail: '$\\lambda = 0.001$ for the orthogonality constraint.' },
+    { label: 'T-Net regularization weight', detail: '= 0.001 for the orthogonality constraint.' },
     { label: 'Training', detail: 'Adam optimizer, batch size 32, learning rate 0.001 with decay. Converges in ~200 epochs on ModelNet40.' },
     { label: 'Parameters', detail: 'PointNet classification network has ~3.5M parameters. PointNet++ MSG has ~1.7M parameters.' },
 ];
@@ -20,10 +20,10 @@ export default function ExplorerCVCPointnet() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          PointNet — Key Details Explorer
+          PointNet \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of pointnet.
+          Click each card to explore the technical details.
         </p>
       </div>
 

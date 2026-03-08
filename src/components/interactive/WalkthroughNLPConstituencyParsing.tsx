@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Context-Free Grammars (CFGs)', desc: 'The foundation of constituency parsing begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The CKY Algorithm', desc: 'At this stage, the key transformation occurs — the core mechanism that makes constituency parsing work.' },
-    { title: '3. Probabilistic Context-Free Grammars (PCFGs)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Neural Constituency Parsers', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Comparison to Dependency Parsing', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Context-Free Grammars (CFGs)', desc: 'A CFG G = (N, , R, S) consists of non-terminal symbols N (phrasal categories), terminal symbols  (words), production rules R (e.g., VP -&gt; VBD NP), and a start symbol S. A sentence is grammatical if it can be derived from S using the rules in R.' },
+    { title: '2. The CKY Algorithm', desc: 'The Cocke-Kasami-Younger (CKY) algorithm is a dynamic programming chart parser that finds all valid parses of a sentence under a CFG in Chomsky Normal Form (rules restricted to A -&gt; B C or A -&gt; w). It fills an n x n triangular chart bottom-up in O(n^3  is the grammar size.' },
+    { title: '3. Probabilistic Context-Free Grammars (PCFGs)', desc: 'PCFGs augment each rule with a probability: P(VP  VBD NP) = 0.35. The probability of a tree is the product of all rule probabilities used in the derivation.' },
+    { title: '4. Neural Constituency Parsers', desc: 'The breakthrough came with neural chart parsers. (2017) used a BiLSTM encoder to score each span and label, then applied CKY to find the highest-scoring tree.' },
+    { title: '5. Comparison to Dependency Parsing', desc: 'Constituency and dependency trees are inter-convertible under certain assumptions (head rules), and both carry complementary syntactic information. Many NLP systems use whichever representation better suits the downstream task.' },
 ];
 
 export default function WalkthroughNLPConstituencyParsing() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPConstituencyParsing() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Constituency Parsing — Step by Step
+          Constituency Parsing \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how constituency parsing works, one stage at a time.

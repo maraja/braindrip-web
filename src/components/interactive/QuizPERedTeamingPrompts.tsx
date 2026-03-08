@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPERedTeamingPrompts() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A structured human red-teaming session with 3-5 testers over 4-8 hours typically produces 30-80 unique vulnerability findings.', isTrue: true, explanation: 'This is a key technical detail of Red-Teaming Prompts.' },
-    { text: 'Automated red-teaming tools (Garak, PyRIT) can generate and test 1,000-10,000 attack variants per hour, catching 60-70% of vulnerabilities that human teams find.', isTrue: true, explanation: 'This is a key technical detail of Red-Teaming Prompts.' },
-    { text: 'A mature red-team eval suite contains 100-300 test cases across all attack categories, growing by 20-40 cases per quarter.', isTrue: true, explanation: 'This is a key technical detail of Red-Teaming Prompts.' },
+    { text: 'If the model provider red-teamed the model, we do not need to red-team our application.', isTrue: false, explanation: 'Model-level red-teaming tests the base model\'s safety. Application-level red-teaming tests the complete system — the prompt, the tools, the guardrails, and their interactions.' },
+    { text: 'Red-teaming is systematic adversarial testing of LLM applications — hiring a locksmith to test your locks — using structured attack taxonomies, human creativity, and automated tools to discover vulnerabilities before real attackers do.', isTrue: true, explanation: 'This captures the core definition of Red-Teaming Prompts.' },
+    { text: 'Red-Teaming Prompts is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Red-Teaming Prompts is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

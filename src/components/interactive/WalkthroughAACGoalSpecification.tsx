@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Layers of Goal Specification', desc: 'The foundation of goal specification begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Intent-Specification Gap', desc: 'At this stage, the key transformation occurs — the core mechanism that makes goal specification work.' },
-    { title: '3. Multi-Turn Goal Refinement', desc: 'The intermediate results are processed and refined through the main pipeline.' },
+    { title: '1. Layers of Goal Specification', desc: 'Goal specification is not a single input but a layered system, with each layer adding specificity:  Layer 1: System Prompt (Identity and Constraints) The system prompt defines who the agent is and how it should behave. It establishes: The agent\'s role ("You are an expert software engineer...' },
+    { title: '2. The Intent-Specification Gap', desc: 'The gap between human intent and machine-readable objectives manifests in several ways:  Unstated context: "Fix the bug" assumes the agent knows which bug, in which file, and what correct behavior looks like. Humans operate with enormous amounts of implicit context that they do not articulate.' },
+    { title: '3. Multi-Turn Goal Refinement', desc: 'The most effective agent interactions involve multi-turn refinement:  Initial instruction: User provides the task. Agent investigation: Agent examines the codebase, asks clarifying questions.' },
 ];
 
 export default function WalkthroughAACGoalSpecification() {
@@ -15,10 +15,10 @@ export default function WalkthroughAACGoalSpecification() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Goal Specification — Step by Step
+          Goal Specification \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how goal specification works, one stage at a time.

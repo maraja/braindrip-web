@@ -3,7 +3,7 @@ import { useState } from 'react';
 const DETAILS = [
     { label: 'Version identifier format', detail: 'Use semantic versioning (e.g., v2.3.1) or date-based versioning (e.g., 2024-01-15-a) to clearly identify prompt versions. Include a hash for exact match verification.' },
     { label: 'Regression test suite size', detail: '20-50 test cases per prompt is a practical starting point; critical applications may require 100-200+. Tests should cover both positive cases (correct behavior) and negative cases (constraint adherence).' },
-    { label: 'Test execution cost', detail: 'Running a 50-test regression suite against a prompt costs 50 API calls. At $0.01-0.10 per call (depending on model and prompt length), a full regression run costs $0.50-5.00, cheap enough to run on every prompt change.' },
+    { label: 'Test execution cost', detail: 'Running a 50-test regression suite against a prompt costs 50 API calls. At 0.01-0.10 per call (depending on model and prompt length), a full regression run costs 0.50-5.00, cheap enough to run on every prompt change.' },
     { label: 'A/B test duration', detail: 'Typical prompt A/B tests require 1-4 weeks to reach statistical significance, depending on traffic volume. Minimum 500 conversations per variant for most metrics.' },
     { label: 'Rollback time', detail: 'With a prompt registry, rollback is effectively instant (change the active version pointer). Without one, rollback requires a code deployment, taking minutes to hours.' },
     { label: 'Prompt registry features', detail: 'A production prompt registry should support: versioning, access control, deployment status tracking, A/B test assignment, metric tagging, and integration with CI/CD pipelines.' },
@@ -20,10 +20,10 @@ export default function ExplorerPEPromptVersioningAndManagement() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Prompt Versioning and Management — Key Details Explorer
+          Prompt Versioning and Management \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of prompt versioning and management.
+          Click each card to explore the technical details.
         </p>
       </div>
 

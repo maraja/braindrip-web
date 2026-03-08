@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEPromptChaining() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Typical chains have 3-7 steps; more than 7 steps introduces excessive latency and error propagation risk.', isTrue: true, explanation: 'This is a key technical detail of Prompt Chaining.' },
-    { text: 'Error propagation follows approximately p^n: 90% per-step accuracy yields 59% over 5 steps without validation.', isTrue: true, explanation: 'This is a key technical detail of Prompt Chaining.' },
-    { text: 'Validation gates (programmatic + LLM-based) can boost effective per-step accuracy from 90% to 99%+.', isTrue: true, explanation: 'This is a key technical detail of Prompt Chaining.' },
+    { text: 'Chaining always produces better results than a single prompt.', isTrue: false, explanation: 'For simple tasks, chaining adds latency, cost, and error propagation without quality benefit. Chaining helps when the task is complex enough that a single prompt struggles — typically when the task has 3+ distinct sub-tasks or exceeds model capability in a single pass.' },
+    { text: 'More steps mean more control.', isTrue: false, explanation: 'Each additional step is an opportunity for error and a latency cost. The goal is the minimum number of steps needed for reliability, not the maximum decomposition.' },
+    { text: 'Error propagation is unavoidable.', isTrue: false, explanation: 'Validation gates dramatically reduce compounding errors. A well-designed chain with validation at every step can achieve 95%+ end-to-end accuracy even with mediocre per-step accuracy.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

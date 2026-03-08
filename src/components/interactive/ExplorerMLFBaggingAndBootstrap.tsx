@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Base learner choice', detail: 'Bagging benefits models with high variance and low bias -- deep, unpruned decision trees are the canonical choice. Linear models gain little from bagging because they are already low-variance.' },
-    { label: 'Number of models $B$', detail: 'Unlike boosting, bagging does not overfit as $B$ increases. Performance monotonically improves and plateaus. Typical values range from 100 to 500.' },
-    { label: 'Computational cost', detail: 'Each bootstrap model is independent, making bagging **embarrassingly parallel**. Training scales linearly with the number of processors.' },
-    { label: 'Bias preservation', detail: 'Bagging does not reduce bias. If each base learner has bias $\\beta$, the ensemble also has bias $\\beta$ because $E[\\frac{1}{B}\\sum \\hat{f}_b] = E[\\hat{f}_b]$.' },
-    { label: 'Bootstrap sample size', detail: 'While the standard approach draws $n$ samples, sub-bagging (using smaller samples without replacement) can sometimes achieve comparable results with less computation.' },
+    { label: 'Number of models $B$', detail: 'Unlike boosting, bagging does not overfit as B increases. Performance monotonically improves and plateaus. Typical values range from 100 to 500.' },
+    { label: 'Computational cost', detail: 'Each bootstrap model is independent, making bagging embarrassingly parallel. Training scales linearly with the number of processors.' },
+    { label: 'Bias preservation', detail: 'Bagging does not reduce bias. If each base learner has bias , the ensemble also has bias  because E[&#123;1&#125;&#123;B&#125; &#123;f&#125;_b] = E[&#123;f&#125;_b].' },
+    { label: 'Bootstrap sample size', detail: 'While the standard approach draws n samples, sub-bagging (using smaller samples without replacement) can sometimes achieve comparable results with less computation.' },
 ];
 
 export default function ExplorerMLFBaggingAndBootstrap() {
@@ -19,10 +19,10 @@ export default function ExplorerMLFBaggingAndBootstrap() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Bagging and Bootstrap — Key Details Explorer
+          Bagging and Bootstrap \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of bagging and bootstrap.
+          Click each card to explore the technical details.
         </p>
       </div>
 

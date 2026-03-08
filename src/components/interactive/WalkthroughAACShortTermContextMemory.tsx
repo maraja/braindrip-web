@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Conversation Buffers', desc: 'The foundation of short-term context memory begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Sliding Window Strategies', desc: 'At this stage, the key transformation occurs — the core mechanism that makes short-term context memory work.' },
-    { title: '3. Smart Context Management', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Token Budget Allocation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Conversation Buffers', desc: 'The simplest context memory strategy is a conversation buffer: store all messages in order and include as many as fit in the context window. When the buffer exceeds the token limit, the oldest messages are removed (FIFO -- First In, First Out).' },
+    { title: '2. Sliding Window Strategies', desc: 'A sliding window keeps the most recent N messages (or N tokens) in context. Variants include:  Fixed-count window: Keep the last K messages regardless of length.' },
+    { title: '3. Smart Context Management', desc: 'Beyond simple windowing, sophisticated agents actively manage their context:  Selective inclusion: Not all tool outputs need full inclusion. A search that returned 10 results can be summarized to the top 3.' },
+    { title: '4. Token Budget Allocation', desc: 'A well-designed agent allocates its token budget explicitly:  These allocations should be configurable and may vary by task type. A research task might allocate more to retrieved memories; a conversation task might allocate more to history.' },
 ];
 
 export default function WalkthroughAACShortTermContextMemory() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACShortTermContextMemory() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Short-Term Context Memory — Step by Step
+          Short-Term Context Memory \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how short-term context memory works, one stage at a time.

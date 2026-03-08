@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLPlanningWithLearnedModels() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'PETS (Chua et al., 2018): Ensemble of 5 probabilistic neural networks + CEM planning.', isTrue: true, explanation: 'This is a key technical detail of Planning with Learned Models.' },
-    { text: '200 candidate sequences, 3 CEM iterations, planning horizon $H = 30$.', isTrue: true, explanation: 'This is a key technical detail of Planning with Learned Models.' },
-    { text: 'Matches model-free methods at ~1/100th the samples on MuJoCo.', isTrue: true, explanation: 'This is a key technical detail of Planning with Learned Models.' },
+    { text: 'Learned models are too inaccurate for planning.', isTrue: false, explanation: 'Short-horizon planning (1-5 steps) from real states is remarkably robust to model error. MPC with replanning further mitigates errors since the agent corrects itself at each real step.' },
+    { text: 'Ensemble of 5 probabilistic neural networks + CEM planning.', isTrue: true, explanation: '200 candidate sequences, 3 CEM iterations, planning horizon H = 30. Matches model-free methods at ~1/100th the samples on MuJoCo.' },
+    { text: 'Rollout length k increases from 1 to 5 as the model improves.', isTrue: true, explanation: 'Uses SAC for policy optimization. Achieves near-asymptotic SAC performance with ~20x fewer samples.' },
+    { text: 'Plans in latent space using an RSSM, achieving state-of-the-art on Atari, DMControl, and Minecraft with a single set of hyperparameters.', isTrue: true, explanation: 'Plans in latent space using an RSSM, achieving state-of-the-art on Atari, DMControl, and Minecraft with a single set of hyperparameters.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizPESelfConsistency() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Benchmark result: GSM8K accuracy improved from 58% (single CoT) to 74.4% (40-sample self-consistency) with PaLM 540B, a 16.4 percentage point gain.', isTrue: true, explanation: 'This is a key technical detail of Self-Consistency.' },
-    { text: 'Optimal temperature: 0.5-0.7 provides good diversity without excessive incoherence; temperature 0 defeats the purpose (identical outputs), temperature 1.0+ introduces too much noise.', isTrue: true, explanation: 'This is a key technical detail of Self-Consistency.' },
-    { text: 'Practical sweet spot: 3-5 samples capture 60-80% of the maximum accuracy gain at 3-5x cost.', isTrue: true, explanation: 'This is a key technical detail of Self-Consistency.' },
+    { text: 'Self-consistency requires different prompts for each sample.', isTrue: false, explanation: 'All samples use the identical prompt. Diversity comes solely from temperature-based sampling during generation, not from prompt variation.' },
+    { text: 'GSM8K accuracy improved from 58% (single CoT) to 74.4% (40-sample self-consistency) with PaLM 540B, a 16.4 percentage point gain.', isTrue: true, explanation: 'GSM8K accuracy improved from 58% (single CoT) to 74.4% (40-sample self-consistency) with PaLM 540B, a 16.4 percentage point gain.' },
+    { text: 'More samples is always worth the cost.', isTrue: false, explanation: 'The diminishing returns curve means that doubling from 5 to 10 samples might yield only a 2-3% accuracy gain while doubling cost. For most applications, 3-5 samples hit the optimal cost-accuracy trade-off.' },
+    { text: '0.5-0.7 provides good diversity without excessive incoherence; temperature 0 defeats the purpose (identical outputs), temperature 1.0+ introduces too much noise.', isTrue: true, explanation: '0.5-0.7 provides good diversity without excessive incoherence; temperature 0 defeats the purpose (identical outputs), temperature 1.0+ introduces too much noise.' },
+    { text: 'Self-consistency works for any task.', isTrue: false, explanation: 'It works best on tasks with discrete, verifiable answers (math, classification, multiple-choice). For open-ended generation (essay writing, creative tasks), there is no clear notion of "majority vote" and the technique does not directly apply.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

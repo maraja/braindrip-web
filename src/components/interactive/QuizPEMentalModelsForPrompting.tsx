@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEMentalModelsForPrompting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Base models respond primarily as completion engines; instruction-tuned models respond primarily as instruction followers.', isTrue: true, explanation: 'This is a key technical detail of Mental Models for Prompting.' },
-    { text: 'Persona prompting has been measured to improve domain-specific task performance by 10-20% (depends on task and model).', isTrue: true, explanation: 'This is a key technical detail of Mental Models for Prompting.' },
-    { text: 'Few-shot pattern matching (ICL) reaches ~85% of its maximum benefit with 3-8 examples for most formatting and classification tasks.', isTrue: true, explanation: 'This is a key technical detail of Mental Models for Prompting.' },
+    { text: 'One mental model is correct and the others are wrong.', isTrue: false, explanation: 'All four models capture real aspects of LLM behavior. The completion engine is the most mechanistically accurate, but the instruction follower and pattern matcher models are more practically useful for prompt design with instruction-tuned models.' },
+    { text: 'Instruction-tuned models only respond to instructions.', isTrue: false, explanation: 'Instruction-tuned models still exhibit completion engine behavior (they continue patterns), role player behavior (they respond to personas), and pattern matcher behavior (they replicate few-shot formats). Instruction tuning adds instruction-following capability; it does not remove the other behaviors.' },
+    { text: 'The completion engine model means LLMs are \'just\' autocomplete.', isTrue: false, explanation: 'While mechanistically accurate, this framing understates the emergent capabilities that arise from next-token prediction at scale. The completion engine model explains the mechanism but not the full range of emergent behaviors, including reasoning, planning, and creative generation.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

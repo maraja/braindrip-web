@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Adaptive Testing', desc: 'The foundation of evaluation budget optimization begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Early Stopping', desc: 'At this stage, the key transformation occurs — the core mechanism that makes evaluation budget optimization work.' },
-    { title: '3. Progressive Evaluation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Item Response Theory for Task Selection', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Breadth vs. Depth Allocation', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Adaptive Testing', desc: 'Adaptive testing allocates evaluation runs dynamically based on observed results, rather than committing to a fixed number of runs per task upfront. The basic algorithm works as follows: start by running each task once.' },
+    { title: '2. Early Stopping', desc: 'Early stopping is a special case of adaptive testing focused on efficiency at the extremes. If an agent fails a task on 9 out of 10 runs, continuing to 20 runs is unlikely to change the conclusion.' },
+    { title: '3. Progressive Evaluation', desc: 'Progressive evaluation applies increasingly expensive evaluation methods only when cheaper methods produce ambiguous results. It functions as a cost-efficient evaluation cascade:  Tier 1 -- Syntax and static checks (0.001/task): Does the output parse?' },
+    { title: '4. Item Response Theory for Task Selection', desc: 'Item Response Theory (IRT), borrowed from psychometrics, models both task difficulty and agent ability simultaneously. Each task j has a difficulty parameter _j and a discrimination parameter _j.' },
+    { title: '5. Breadth vs. Depth Allocation', desc: 'The fundamental budget allocation decision is between breadth (more tasks, fewer runs each) and depth (fewer tasks, more runs each). The optimal split depends on two factors:  Task-level variance: If the agent\'s pass rate varies widely across tasks (some easy, some hard), breadth is more valuable.' },
 ];
 
 export default function WalkthroughAAEEvaluationBudgetOptimization() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAEEvaluationBudgetOptimization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Evaluation Budget Optimization — Step by Step
+          Evaluation Budget Optimization \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how evaluation budget optimization works, one stage at a time.

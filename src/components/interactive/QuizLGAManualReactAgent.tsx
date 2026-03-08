@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAManualReactAgent() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'add_messages is a reducer, not a setter.', isTrue: true, explanation: 'This is a key technical detail of Manual ReAct Agent.' },
-    { text: 'Returning &#123;"messages": [response]&#125; appends rather than replaces.', isTrue: true, explanation: 'This is a key technical detail of Manual ReAct Agent.' },
-    { text: 'tools_condition returns the string "tools" or END.', isTrue: true, explanation: 'This is a key technical detail of Manual ReAct Agent.' },
+    { text: 'You need the manual approach to get production quality.', isTrue: false, explanation: 'The prebuilt agent produces the exact same compiled graph. Use manual construction when you need structural changes, not as a quality measure.' },
+    { text: 'Building the ReAct pattern by hand with StateGraph gives you full control over every node, edge, and routing decision in the agent loop.', isTrue: true, explanation: 'This captures the core definition of Manual ReAct Agent.' },
+    { text: 'Manual ReAct Agent is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Manual ReAct Agent is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

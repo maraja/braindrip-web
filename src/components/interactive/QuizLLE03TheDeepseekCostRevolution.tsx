@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE03TheDeepseekCostRevolution() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'DeepSeek demonstrated through V2, V3, and R1 that frontier AI could be built for a fraction of Western lab budgets, triggering a trillion-dollar market shock and forcing the entire industry to rethink the relationship between compute spending and AI capability.', isTrue: true, explanation: 'This captures the core purpose of The DeepSeek Cost Revolution.' },
-    { text: 'The DeepSeek Cost Revolution is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding The DeepSeek Cost Revolution is important for building on more advanced topics.' },
-    { text: 'The DeepSeek Cost Revolution is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding The DeepSeek Cost Revolution is important for building on more advanced topics.' },
+    { text: 'DeepSeek must be cutting corners on quality to achieve low costs.', isTrue: false, explanation: 'Benchmark results consistently showed V3 and R1 matching or exceeding Western frontier models on standard evaluations including MMLU, HumanEval, MATH, and GPQA Diamond. The cost savings came from engineering efficiency, not from producing an inferior product.' },
+    { text: 'The $5.576M figure proves anyone can train a frontier model cheaply.', isTrue: false, explanation: 'That figure covers only the final training run. The full cost includes years of research, failed experiments, infrastructure development, the V1 and V2 precursors, and team salaries.' },
+    { text: 'DeepSeek\'s success proves chip export controls are useless.', isTrue: false, explanation: 'The relationship is nuanced. Controls clearly did not prevent frontier achievement and may have spurred efficiency innovation.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

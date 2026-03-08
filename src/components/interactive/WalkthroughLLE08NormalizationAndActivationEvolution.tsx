@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Normalization: From LayerNorm to RMSNorm', desc: 'The foundation of normalization and activation evolution begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Activation Functions: From ReLU to SwiGLU', desc: 'At this stage, the key transformation occurs — the core mechanism that makes normalization and activation evolution work.' },
-    { title: '3. The Timeline of Adoption', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Interaction Effects', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Normalization: From LayerNorm to RMSNorm', desc: 'LayerNorm (Ba, Kiros, & Hinton, 2016) was the normalization method used in the original Transformer. For each token\'s representation, LayerNorm computes the mean and variance across all features, subtracts the mean (centering), and divides by the standard deviation (scaling).' },
+    { title: '2. Activation Functions: From ReLU to SwiGLU', desc: 'ReLU (Rectified Linear Unit) was the activation function used in the original Transformer\'s feed-forward network (FFN). ReLU simply zeros out negative values: f(x) = max(0, x).' },
+    { title: '3. The Timeline of Adoption', desc: 'The adoption of these innovations followed a remarkably consistent pattern. Academic papers proposing improvements were published 1-3 years before widespread adoption.' },
+    { title: '4. Interaction Effects', desc: 'Normalization and activation choices do not exist in isolation. RMSNorm interacts with the choice of positional encoding (RoPE), attention mechanism (GQA/MQA), and model depth.' },
 ];
 
 export default function WalkthroughLLE08NormalizationAndActivationEvolution() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE08NormalizationAndActivationEvolution() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Normalization and Activation Evolution — Step by Step
+          Normalization and Activation Evolution \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how normalization and activation evolution works, one stage at a time.

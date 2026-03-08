@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Vision-Language Pre-training: CLIP and ALIGN', desc: 'The foundation of multimodal nlp begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Multimodal Pre-training Objectives', desc: 'At this stage, the key transformation occurs — the core mechanism that makes multimodal nlp work.' },
-    { title: '3. Multimodal Fusion Strategies', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Multimodal Large Language Models', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Vision-Language Pre-training: CLIP and ALIGN', desc: 'CLIP (Radford et al., 2021, OpenAI) learns a shared embedding space for images and text via contrastive learning. The architecture is simple:  An image encoder (ViT-L/14 or ResNet) maps images to vectors.' },
+    { title: '2. Multimodal Pre-training Objectives', desc: 'Beyond contrastive learning, multimodal models use several pre-training objectives:  Image-Text Matching (ITM): Binary classification of whether an image-text pair is matched or mismatched, requiring finer-grained cross-modal understanding than contrastive loss alone.' },
+    { title: '3. Multimodal Fusion Strategies', desc: 'How information from different modalities is combined is a fundamental design choice:  Early Fusion: Concatenate raw inputs (or early features) from all modalities and process them jointly through a single model.' },
+    { title: '4. Multimodal Large Language Models', desc: 'Flamingo (Alayrac et al., 2022, DeepMind): Interleaves frozen visual encoder features into a frozen large language model via cross-attention layers. Trained on interleaved image-text web data, Flamingo achieves strong few-shot performance on VQA, captioning, and visual dialogue by conditioning on a.' },
 ];
 
 export default function WalkthroughNLPMultimodalNlp() {
@@ -16,10 +16,10 @@ export default function WalkthroughNLPMultimodalNlp() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Multimodal NLP — Step by Step
+          Multimodal NLP \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how multimodal nlp works, one stage at a time.

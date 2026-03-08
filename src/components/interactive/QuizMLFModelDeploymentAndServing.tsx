@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFModelDeploymentAndServing() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Batch and real-time are interchangeable.', isTrue: false, explanation: '"Batch and real-time are interchangeable." They serve fundamentally different use cases. Batch is for precomputation; real-time is for context-dependent predictions. Choosing incorrectly leads to stal' },
-    { text: 'Latency budgets: Decompose end-to-end latency: network (~5ms), feature lookup (~10ms), model inference (~20ms), post-processing (~5ms).', isTrue: true, explanation: 'This is a key technical detail of Model Deployment and Serving.' },
-    { text: 'Optimize the largest contributor.', isTrue: true, explanation: 'This is a key technical detail of Model Deployment and Serving.' },
+    { text: 'Deploying a model means wrapping it in a Flask app.', isTrue: false, explanation: 'A Flask prototype works for demos but lacks health checks, autoscaling, logging, monitoring, and graceful shutdown. Production serving requires purpose-built infrastructure.' },
+    { text: 'Decompose end-to-end latency: network (~5ms), feature lookup (~10ms), model inference (~20ms), post-processing (~5ms).', isTrue: true, explanation: 'Optimize the largest contributor.' },
+    { text: 'Accumulate requests over a short window (e.g., 10ms) and process as a batch for GPU efficiency.', isTrue: true, explanation: 'Trades latency for throughput.' },
+    { text: 'Load the model and run a few dummy predictions before accepting traffic.', isTrue: true, explanation: 'Avoids cold-start latency spikes.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

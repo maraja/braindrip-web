@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAToolRuntimeAndContext() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ToolRuntime is imported from langchain.tools and is a generic type parameterized by your context dataclass.', isTrue: true, explanation: 'This is a key technical detail of Tool Runtime and Context.' },
-    { text: 'The runtime parameter is automatically excluded from the tool\'s JSON schema -- the LLM never sees it.', isTrue: true, explanation: 'This is a key technical detail of Tool Runtime and Context.' },
-    { text: 'runtime.store gives access to the same store instance passed to create_agent().', isTrue: true, explanation: 'This is a key technical detail of Tool Runtime and Context.' },
+    { text: 'The LLM needs to provide the user_id to the tool.', isTrue: false, explanation: 'No. ToolRuntime injects context automatically.' },
+    { text: 'ToolRuntime is a special parameter type that gives tools access to runtime context, long-term memory (store), and user-specific data -- enabling tools to read and write persistent state without polluting the LLM\'s tool schema.', isTrue: true, explanation: 'This captures the core definition of Tool Runtime and Context.' },
+    { text: 'Tool Runtime and Context is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Tool Runtime and Context is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Encoder', desc: 'The foundation of sequence-to-sequence models begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Decoder', desc: 'At this stage, the key transformation occurs — the core mechanism that makes sequence-to-sequence models work.' },
-    { title: '3. Teacher Forcing', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Beam Search Decoding', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Bottleneck Problem', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Encoder', desc: 'The encoder processes the source sequence using an RNN (typically a multi-layer LSTM or GRU):  For LSTMs, the context vector includes both the final hidden state and cell state: c = (h_S, C_S). Sutskever et al.' },
+    { title: '2. The Decoder', desc: 'The decoder is a separate RNN that generates the output sequence:  At each step, the decoder receives the embedding of the previously generated token y_&#123;t-1&#125; (or the ground truth during training -- see teacher forcing below), updates its hidden state, and produces a probability distribution over.' },
+    { title: '3. Teacher Forcing', desc: 'During training, there is a choice at each decoder step: feed the model\'s own previous prediction (free running) or the ground-truth previous token (teacher forcing). Teacher forcing is standard because:  It provides a stronger training signal (the decoder always sees correct history).' },
+    { title: '4. Beam Search Decoding', desc: 'At inference time, greedily choosing the most probable token at each step often produces suboptimal sequences. Beam search maintains the top-k (beam width) partial hypotheses at each step:  Start with the start-of-sequence token.' },
+    { title: '5. The Bottleneck Problem', desc: 'The fundamental weakness of the basic seq2seq architecture is that the entire source sequence must be compressed into a single fixed-size vector c. For a 50-word sentence, the encoder\'s final hidden state of dimension 1000 must capture all syntactic structure, semantic content, and word-level.' },
 ];
 
 export default function WalkthroughNLPSequenceToSequenceModels() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPSequenceToSequenceModels() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Sequence-to-Sequence Models — Step by Step
+          Sequence-to-Sequence Models \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how sequence-to-sequence models works, one stage at a time.

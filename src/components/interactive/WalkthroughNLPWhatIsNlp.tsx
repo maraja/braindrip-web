@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Four Paradigm Shifts', desc: 'The foundation of nlp begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Pipeline vs. End-to-End', desc: 'At this stage, the key transformation occurs — the core mechanism that makes nlp work.' },
-    { title: '3. Subfields at a Glance', desc: 'The intermediate results are processed and refined through the main pipeline.' },
+    { title: '1. The Four Paradigm Shifts', desc: 'NLP\'s history is a story of four major paradigm shifts, each expanding what machines can do with language. Rule-Based Systems (1950s--1980s)  The earliest NLP systems relied on hand-crafted rules.' },
+    { title: '2. Pipeline vs. End-to-End', desc: 'Traditional NLP used a pipeline architecture: raw text flows through tokenization, POS tagging, parsing, named entity recognition, and finally a task-specific module. Each stage hands structured output to the next.' },
+    { title: '3. Subfields at a Glance', desc: 'Computational Linguistics: The scientific study of language using computational methods (corpus linguistics, formal grammars, linguistic annotation). NLU: Mapping language to meaning -- classification, extraction, inference.' },
 ];
 
 export default function WalkthroughNLPWhatIsNlp() {
@@ -15,13 +15,13 @@ export default function WalkthroughNLPWhatIsNlp() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          NLP — Step by Step
+          What Is NLP \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Walk through how nlp works, one stage at a time.
+          Walk through how what is nlp works, one stage at a time.
         </p>
       </div>
 

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Recency-Based Retrieval', desc: 'The foundation of memory retrieval strategies begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Relevance-Based Retrieval', desc: 'At this stage, the key transformation occurs — the core mechanism that makes memory retrieval strategies work.' },
-    { title: '3. Importance-Based Retrieval', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Hybrid Scoring', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Time-Weighted Retrieval', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Recency-Based Retrieval', desc: 'The simplest retrieval signal: prefer memories from the recent past. Exponential decay: Each memory\'s recency score decays exponentially with time:  Step function: Memories within a time window (e.g., last 7 days) get full score; older memories get zero.' },
+    { title: '2. Relevance-Based Retrieval', desc: 'The most sophisticated retrieval signal: semantic similarity between the current query and stored memories. Vector similarity search: The current query or context is embedded into the same vector space as stored memories.' },
+    { title: '3. Importance-Based Retrieval', desc: 'Not all memories are equally important. Some are critical (user preferences, task outcomes, error patterns) while others are routine (standard greetings, trivial observations).' },
+    { title: '4. Hybrid Scoring', desc: 'The state-of-the-art approach combines all three signals into a single score:  The Generative Agents paper (Park et al., 2023) used a similar formula, normalizing each component to [0,1] before weighting.' },
+    { title: '5. Time-Weighted Retrieval', desc: 'A specific variant where recency modulates relevance. Instead of treating recency and relevance as independent signals, the relevance score is multiplied by a time decay:  This ensures that a highly relevant but very old memory scores lower than a moderately relevant but recent memory.' },
+    { title: '6. Reranking', desc: 'After initial retrieval returns the top-k candidates (typically 10-20), a reranking step uses a more expensive model to refine the ranking:  Initial retrieval: Fast vector search returns top-20 candidates Reranking: A cross-encoder model or LLM scores each candidate for relevance to the specific.' },
 ];
 
 export default function WalkthroughAACMemoryRetrievalStrategies() {
@@ -17,10 +18,10 @@ export default function WalkthroughAACMemoryRetrievalStrategies() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Memory Retrieval Strategies — Step by Step
+          Memory Retrieval Strategies \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how memory retrieval strategies works, one stage at a time.

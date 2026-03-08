@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizMLFRandomForests() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Overfitting behavior: Increasing $B$ (more trees) does not overfit.', isTrue: true, explanation: 'This is a key technical detail of Random Forests.' },
-    { text: 'However, growing very deep trees with small min_samples_leaf can increase individual tree variance, though the ensemble averaging mitigates this.', isTrue: true, explanation: 'This is a key technical detail of Random Forests.' },
-    { text: 'Missing values: Random Forests can handle missing data through surrogate splits or proximity-based imputation, unlike many other algorithms.', isTrue: true, explanation: 'This is a key technical detail of Random Forests.' },
+    { text: 'Random Forests cannot overfit.', isTrue: false, explanation: 'Individual trees in the forest can overfit. The ensemble averaging prevents overfitting with respect to B (number of trees), but excessively deep trees on small datasets can still cause the ensemble to overfit.' },
+    { text: 'Increasing B (more trees) does not overfit.', isTrue: true, explanation: 'However, growing very deep trees with small min_samples_leaf can increase individual tree variance, though the ensemble averaging mitigates this.' },
+    { text: 'Feature importance rankings are definitive.', isTrue: false, explanation: 'Impurity-based importance is biased toward high-cardinality and correlated features. Permutation importance is more reliable but can underestimate the importance of correlated feature groups.' },
+    { text: 'Random Forests can handle missing data through surrogate splits or proximity-based imputation, unlike many other algorithms.', isTrue: true, explanation: 'Random Forests can handle missing data through surrogate splits or proximity-based imputation, unlike many other algorithms.' },
+    { text: 'Random Forests are always inferior to gradient boosting.', isTrue: false, explanation: 'While gradient boosting (XGBoost, LightGBM) often wins competitions on tabular data, Random Forests are more robust to hyperparameter choices, easier to parallelize, and more resistant to overfitting. For many practical applications, Random Forests are the better default choice.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPECodeReviewAndDebuggingPrompts() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The diagnostic triad (code + error + expected behavior) improves bug identification accuracy by 30-40% compared to providing code alone.', isTrue: true, explanation: 'This is a key technical detail of Code Review and Debugging Prompts.' },
-    { text: 'Focused review prompts (specifying security, performance, or readability) produce 2-3x more actionable findings than generic "review this code" prompts.', isTrue: true, explanation: 'This is a key technical detail of Code Review and Debugging Prompts.' },
-    { text: 'Security-focused review prompts detect 60-75% of common vulnerabilities (OWASP Top 10) compared to 30-40% for generic review prompts.', isTrue: true, explanation: 'This is a key technical detail of Code Review and Debugging Prompts.' },
+    { text: 'Code review prompts are just code generation prompts in reverse.', isTrue: false, explanation: 'Code review requires different reasoning patterns: pattern matching against known vulnerability classes, systematic checking against standards, and hypothesis-driven debugging. The prompt structure and instructions differ significantly.' },
+    { text: 'The model can review any amount of code effectively.', isTrue: false, explanation: 'Review quality degrades significantly beyond 200-300 lines in a single prompt. For larger codebases, break the review into file-level or function-level segments with appropriate context for each.' },
+    { text: 'A model that generates good code will automatically find bugs well.', isTrue: false, explanation: 'Generation and analysis are different skills. Models can generate code with a subtle bug and fail to identify that same bug when asked to review the code.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

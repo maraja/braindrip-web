@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Computing IoU for Axis-Aligned Boxes', desc: 'The foundation of intersection over union begins with understanding its core input requirements and initial setup.' },
-    { title: '2. IoU Thresholds in Evaluation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes intersection over union work.' },
-    { title: '3. IoU as a Loss Function', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Generalized IoU (GIoU, 2019)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Distance-IoU (DIoU) and Complete-IoU (CIoU, 2020)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Computing IoU for Axis-Aligned Boxes', desc: 'Given two boxes defined by their corners: Box A: (x_1^A, y_1^A, x_2^A, y_2^A) Box B: (x_1^B, y_1^B, x_2^B, y_2^B)  Step 1: Compute intersection coordinates: [equation] [equation]  Step 2: Compute intersection area: [equation]  Step 3: Compute union area: [equation]  Step 4: Compute IoU: [equation]' },
+    { title: '2. IoU Thresholds in Evaluation', desc: 'A detection is a true positive if IoU with a matched ground-truth box exceeds the threshold and the class is correct; otherwise, it is a false positive.' },
+    { title: '3. IoU as a Loss Function', desc: 'Standard IoU loss for bounding box regression: [equation]  This has a critical flaw: when boxes do not overlap (IoU = 0), the gradient is zero, providing no learning signal.' },
+    { title: '4. Generalized IoU (GIoU, 2019)', desc: 'Rezatofighi et al. addressed the zero-gradient problem:  [equation]  where C is the smallest enclosing box of A and B.' },
+    { title: '5. Distance-IoU (DIoU) and Complete-IoU (CIoU, 2020)', desc: '[equation]  where  is the Euclidean distance between box centers and c is the diagonal of the enclosing box. CIoU adds an aspect ratio consistency term: [equation]  where v measures aspect ratio consistency and  is a balancing parameter.' },
 ];
 
 export default function WalkthroughCVCIntersectionOverUnion() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCIntersectionOverUnion() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Intersection over Union — Step by Step
+          Intersection over Union \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how intersection over union works, one stage at a time.

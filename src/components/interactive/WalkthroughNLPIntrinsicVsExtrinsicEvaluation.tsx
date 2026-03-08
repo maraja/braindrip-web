@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Intrinsic Evaluation Methods', desc: 'The foundation of intrinsic vs. extrinsic evaluation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Extrinsic Evaluation Methods', desc: 'At this stage, the key transformation occurs — the core mechanism that makes intrinsic vs. extrinsic evaluation work.' },
-    { title: '3. The Intrinsic-Extrinsic Gap', desc: 'The intermediate results are processed and refined through the main pipeline.' },
+    { title: '1. Intrinsic Evaluation Methods', desc: 'Perplexity for Language Models: The most common intrinsic metric for language models (see n-gram-language-models.md, gpt-for-nlp-tasks.md) measures how well the model predicts held-out text. Lower perplexity means better prediction.' },
+    { title: '2. Extrinsic Evaluation Methods', desc: 'Downstream Task Performance: The gold standard for extrinsic evaluation. Replace one component (e.g., swap random embeddings for GloVe) and measure the change in task metrics -- classification accuracy, NER F1, translation BLEU.' },
+    { title: '3. The Intrinsic-Extrinsic Gap', desc: 'The gap between intrinsic and extrinsic results is well-documented. (2016) found that word embedding dimensions optimized for word similarity benchmarks differed from those optimal for NER.' },
 ];
 
 export default function WalkthroughNLPIntrinsicVsExtrinsicEvaluation() {
@@ -15,10 +15,10 @@ export default function WalkthroughNLPIntrinsicVsExtrinsicEvaluation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Intrinsic vs. Extrinsic Evaluation — Step by Step
+          Intrinsic vs. Extrinsic Evaluation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how intrinsic vs. extrinsic evaluation works, one stage at a time.

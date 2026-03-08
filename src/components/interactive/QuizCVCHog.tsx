@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCHog() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Computing HOG over a $64 \\times 128$ window takes roughly 0.5 ms on a modern CPU; scanning a full 640x480 image at multiple scales requires 50--200 ms.', isTrue: true, explanation: 'This is a key technical detail of HOG (Histogram of Oriented Gradients).' },
-    { text: 'The 3780-D descriptor is dense but linear-SVM-friendly: training converges quickly and inference is a single dot product.', isTrue: true, explanation: 'This is a key technical detail of HOG (Histogram of Oriented Gradients).' },
-    { text: 'Unsigned gradients ($0$--$180^\\circ$) outperform signed gradients ($0$--$360^\\circ$) for pedestrian detection by about 1.5% in miss rate.', isTrue: true, explanation: 'This is a key technical detail of HOG (Histogram of Oriented Gradients).' },
+    { text: 'HOG is a feature detector.', isTrue: false, explanation: 'HOG is a descriptor, not a detector. It describes a fixed-size window.' },
+    { text: 'HOG captures local shape and appearance by aggregating gradient orientation histograms over dense spatial cells, forming the classical descriptor behind the breakthrough Dalal-Triggs pedestrian detector.', isTrue: true, explanation: 'This captures the core definition of HOG (Histogram of Oriented Gradients).' },
+    { text: 'HOG (Histogram of Oriented Gradients) is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding HOG (Histogram of Oriented Gradients) is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

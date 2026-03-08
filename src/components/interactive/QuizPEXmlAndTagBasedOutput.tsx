@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEXmlAndTagBasedOutput() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'XML tags confuse the model.', isTrue: false, explanation: '"XML tags confuse the model." Well-designed XML tags actually help models organize their output. The explicit structure reduces formatting errors and improves content organization, particularly for co' },
-    { text: 'Anthropic\'s Claude models achieve near-100% XML format compliance when the prompt itself uses XML tags to structure instructions.', isTrue: true, explanation: 'This is a key technical detail of XML and Tag-Based Output.' },
-    { text: 'XML token overhead is approximately 15-25% more than plain text, compared to JSON\'s 30% overhead — XML tags are generally shorter than JSON\'s structural syntax.', isTrue: true, explanation: 'This is a key technical detail of XML and Tag-Based Output.' },
+    { text: 'XML is outdated and should never be used.', isTrue: false, explanation: 'XML fell out of favor for web APIs, but its mixed-content capabilities make it ideal for LLM output. The use case is fundamentally different from data interchange between services.' },
+    { text: 'use XML tags to section the output and JSON within specific tags for structured data fields.', isTrue: true, explanation: 'use XML tags to section the output and JSON within specific tags for structured data fields.' },
+    { text: '//..." confidence="high"&gt;) is supported but less reliable than nested child tags.', isTrue: true, explanation: 'For critical metadata, prefer child elements: &lt;source&gt;&lt;url&gt;https://...&lt;/url&gt;&lt;confidence&gt;high&lt;/confidence&gt;&lt;/source&gt; produces more consistent results across models.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

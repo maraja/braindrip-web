@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCDeit() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Knowledge distillation always means soft labels.', isTrue: false, explanation: '"Knowledge distillation always means soft labels." In DeiT, hard-label distillation (using argmax teacher predictions) actually works better than soft-label KL divergence, challenging the conventional' },
-    { text: 'The default teacher is a RegNetY-16GF (84.0% top-1), a CNN chosen because CNNs provide complementary inductive biases to the ViT student.', isTrue: true, explanation: 'This is a key technical detail of Data-Efficient Image Transformers (DeiT).' },
-    { text: 'A CNN teacher outperforms a Transformer teacher for distillation into a ViT -- the inductive bias transfer is what provides the benefit.', isTrue: true, explanation: 'This is a key technical detail of Data-Efficient Image Transformers (DeiT).' },
+    { text: 'DeiT is a new architecture.', isTrue: false, explanation: 'DeiT uses the exact same ViT architecture (with one additional token). The contribution is entirely in the training strategy: distillation, augmentation, and regularization.' },
+    { text: 'DeiT demonstrates that Vision Transformers can be trained competitively on ImageNet-1K alone -- without hundreds of millions of private images -- by using knowledge distillation from a CNN teacher and aggressive data augmentation.', isTrue: true, explanation: 'This captures the core definition of Data-Efficient Image Transformers (DeiT).' },
+    { text: 'Data-Efficient Image Transformers (DeiT) is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Data-Efficient Image Transformers (DeiT) is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

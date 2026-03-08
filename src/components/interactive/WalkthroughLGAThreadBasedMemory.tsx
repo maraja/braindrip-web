@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Enabling Thread-Based Memory', desc: 'The foundation of thread-based memory begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Conversational Continuity', desc: 'At this stage, the key transformation occurs — the core mechanism that makes thread-based memory work.' },
-    { title: '3. Thread Isolation in Practice', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Accessing Thread State Programmatically', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Managing Thread Lifecycle', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Enabling Thread-Based Memory', desc: 'Thread-based memory requires two things: a checkpointer and a thread_id. There is no additional configuration:' },
+    { title: '2. Conversational Continuity', desc: 'Each invocation with the same thread_id continues the conversation:' },
+    { title: '3. Thread Isolation in Practice', desc: 'Different thread_id values create completely separate conversations:' },
+    { title: '4. Accessing Thread State Programmatically', desc: 'You can inspect any thread\'s current state without invoking the graph:' },
+    { title: '5. Managing Thread Lifecycle', desc: 'Threads accumulate messages over time. For long conversations, manage context window limits by trimming or summarizing:' },
 ];
 
 export default function WalkthroughLGAThreadBasedMemory() {
@@ -17,10 +17,10 @@ export default function WalkthroughLGAThreadBasedMemory() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Thread-Based Memory — Step by Step
+          Thread-Based Memory \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how thread-based memory works, one stage at a time.

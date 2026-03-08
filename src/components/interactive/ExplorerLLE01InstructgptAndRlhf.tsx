@@ -5,7 +5,7 @@ const DETAILS = [
     { label: 'Base model', detail: 'GPT-3 (1.3B and 6B variants primarily; 175B also tested)' },
     { label: 'SFT training data', detail: '~13,000 human-written demonstrations' },
     { label: 'RM training data', detail: '~33,000 human preference comparisons' },
-    { label: 'Key result', detail: '1.3B InstructGPT preferred over 175B GPT-3 by human raters' },
+    { label: 'Key result', detail: '3B InstructGPT preferred over 175B GPT-3 by human raters' },
     { label: 'Labelers', detail: '~40 contractors, carefully selected and trained' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerLLE01InstructgptAndRlhf() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          InstructGPT and RLHF — Key Details Explorer
+          InstructGPT and RLHF \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of instructgpt and rlhf.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCVisionTransformer() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Pre-trained on JFT-300M (Google internal), ViT-H/14 achieved 88.55% top-1 on ImageNet, exceeding the prior CNN SOTA.', isTrue: true, explanation: 'This is a key technical detail of Vision Transformer (ViT).' },
-    { text: 'When trained only on ImageNet-1K (1.28M images), ViT-B/16 underperforms a comparable ResNet -- large-scale pre-training is critical.', isTrue: true, explanation: 'This is a key technical detail of Vision Transformer (ViT).' },
-    { text: 'Fine-tuning at higher resolution (e.g., 384 or 512) is common; positional embeddings are bilinearly interpolated to handle the longer sequence.', isTrue: true, explanation: 'This is a key technical detail of Vision Transformer (ViT).' },
+    { text: 'ViT has no inductive bias for images, so it can never work on small datasets.', isTrue: false, explanation: 'While ViT lacks the translation equivariance of convolutions, techniques like DeiT, strong augmentation, and distillation have closed the gap on ImageNet-1K training. The inductive bias gap narrows with more data but is not an absolute barrier.' },
+    { text: 'The Vision Transformer splits an image into fixed-size patches, treats each patch as a token, and processes the sequence with a standard Transformer encoder to perform image classification.', isTrue: true, explanation: 'This captures the core definition of Vision Transformer (ViT).' },
+    { text: 'Vision Transformer (ViT) is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Vision Transformer (ViT) is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

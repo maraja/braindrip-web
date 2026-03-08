@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE02Gemma() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Google DeepMind\'s Gemma series brought Gemini-class technology to the open-weight ecosystem, evolving from simple text models to multimodal, multilingual systems designed for edge deployment.', isTrue: true, explanation: 'This captures the core purpose of Gemma.' },
-    { text: 'Gemma is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Gemma is important for building on more advanced topics.' },
-    { text: 'Gemma is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Gemma is important for building on more advanced topics.' },
+    { text: 'Gemma is just a smaller Gemini.', isTrue: false, explanation: 'While Gemma shares research lineage with Gemini, it has its own distinct architecture, training process, and optimizations. Gemma 2 and 3 include architectural innovations (like Matformer) not present in Gemini.' },
+    { text: 'Open weights means open source.', isTrue: false, explanation: 'Gemma\'s license permits commercial use but includes restrictions (e.g., usage policies and redistribution terms) that differ from truly permissive licenses like MIT. It is "open weights," not "open source" in the strict sense.' },
+    { text: 'Small models can\'t do multimodal well.', isTrue: false, explanation: 'Gemma 3\'s 4B model demonstrates competent image understanding via SigLIP integration, and the 12B and 27B variants are genuinely capable multimodal reasoners.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

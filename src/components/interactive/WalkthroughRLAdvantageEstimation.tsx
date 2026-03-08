@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Why Not Just Use Returns?', desc: 'The foundation of advantage estimation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Estimating the Advantage', desc: 'At this stage, the key transformation occurs — the core mechanism that makes advantage estimation work.' },
-    { title: '3. Generalized Advantage Estimation (GAE)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Efficient Computation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. GAE in the Policy Gradient', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Why Not Just Use Returns?', desc: 'Policy gradients weight the score function _  _(a|s) by some estimate of how good the action was. Using raw returns G_t (as in REINFORCE) injects enormous variance because G_t includes rewards from the distant future that have nothing to do with action a_t.' },
+    { title: '2. Estimating the Advantage', desc: 'We rarely know Q^ and V^ exactly. Common estimators include:  Monte Carlo Advantage: [equation] Unbiased but high variance.' },
+    { title: '3. Generalized Advantage Estimation (GAE)', desc: 'GAE, introduced by Schulman et al. (2016), elegantly unifies all n-step estimators through an exponentially weighted average.' },
+    { title: '4. Efficient Computation', desc: 'GAE is computed efficiently via a backward recursion:  [equation] [equation]  This runs in O(T) time and is trivially parallelizable across trajectories within a batch.' },
+    { title: '5. GAE in the Policy Gradient', desc: 'The policy gradient with GAE becomes:  [equation]  This is the gradient estimator used by PPO (proximal-policy-optimization.md) and essentially all modern policy gradient implementations.' },
 ];
 
 export default function WalkthroughRLAdvantageEstimation() {
@@ -17,10 +17,10 @@ export default function WalkthroughRLAdvantageEstimation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Advantage Estimation — Step by Step
+          Advantage Estimation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how advantage estimation works, one stage at a time.

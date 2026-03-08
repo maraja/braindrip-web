@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The TD(0) Update Rule', desc: 'The foundation of temporal difference learning begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Comparison: TD vs MC vs DP', desc: 'At this stage, the key transformation occurs — the core mechanism that makes temporal difference learning work.' },
-    { title: '3. Why Bootstrapping Helps', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. TD Prediction Algorithm', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Batch TD Solution', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The TD(0) Update Rule', desc: 'The simplest TD method, TD(0), updates the value of a state immediately after observing the next reward and next state:  [equation]  The key quantity is the TD error (or TD residual):  [equation]  This measures the discrepancy between the current estimate V(S_t) and the TD target R_&#123;t+1&#125; + .' },
+    { title: '2. Comparison: TD vs MC vs DP', desc: 'The three methods differ in what target they drive the value estimate toward:  MC target G_t is an unbiased estimate of V^(S_t) but has high variance (it depends on all subsequent random events in the episode).' },
+    { title: '3. Why Bootstrapping Helps', desc: 'Bootstrapping introduces bias but dramatically reduces variance. In practice, this trade-off is overwhelmingly favorable: TD methods typically learn useful value estimates much faster than MC methods, especially in environments with long episodes or high stochasticity.' },
+    { title: '4. TD Prediction Algorithm', desc: 'Note that unlike MC, the value update happens at every step, not at the end of the episode. This allows TD to learn online and from incomplete episodes.' },
+    { title: '5. The Batch TD Solution', desc: 'When the same finite batch of experience is replayed repeatedly, TD(0) converges to a different solution than MC. TD converges to the maximum-likelihood MDP estimate -- the value function of the MDP that best explains the observed transitions.' },
 ];
 
 export default function WalkthroughRLTemporalDifferenceLearning() {
@@ -17,10 +17,10 @@ export default function WalkthroughRLTemporalDifferenceLearning() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Temporal Difference Learning — Step by Step
+          Temporal Difference Learning \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how temporal difference learning works, one stage at a time.

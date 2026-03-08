@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFEmpiricalRiskMinimization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Uniform convergence is the property that $\\hat&#123;R&#125;_n(h) \\to R(h)$ simultaneously for all $h \\in \\mathcal&#123;H&#125;$.', isTrue: true, explanation: 'This is a key technical detail of Empirical Risk Minimization.' },
-    { text: 'It is sufficient (but not necessary) for ERM to succeed.', isTrue: true, explanation: 'This is a key technical detail of Empirical Risk Minimization.' },
-    { text: 'Rademacher complexity provides tighter generalization bounds than VC dimension by measuring how well $\\mathcal&#123;H&#125;$ can correlate with random noise in the specific data at hand.', isTrue: true, explanation: 'This is a key technical detail of Empirical Risk Minimization.' },
+    { text: 'ERM means just minimizing training loss.', isTrue: false, explanation: 'Technically yes, but the theory tells us when and why this succeeds, and what additional ingredients (regularization, proper &#123;H&#125; choice) are needed. "VC dimension is the number of parameters." VC dimension and parameter count are related but not identical.' },
+    { text: 'An ERM algorithm is consistent if R(h^*_&#123;ERM&#125;)  _&#123;h  &#123;H&#125;&#125; R(h) as n  .', isTrue: true, explanation: 'An ERM algorithm is consistent if R(h^*_&#123;ERM&#125;)  _&#123;h  &#123;H&#125;&#125; R(h) as n  .' },
+    { text: 'Minimizing average loss on training data as a proxy for true risk -- the theoretical framework underlying most ML algorithms.', isTrue: true, explanation: 'This captures the core definition of Empirical Risk Minimization.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

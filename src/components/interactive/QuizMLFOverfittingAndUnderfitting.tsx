@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFOverfittingAndUnderfitting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Effective degrees of freedom quantify model complexity more precisely than raw parameter count.', isTrue: true, explanation: 'This is a key technical detail of Overfitting and Underfitting.' },
-    { text: 'A 1000-parameter model with strong regularization may have fewer effective degrees of freedom than a 50-parameter unregularized model.', isTrue: true, explanation: 'This is a key technical detail of Overfitting and Underfitting.' },
-    { text: 'Double descent: Extremely over-parameterized models (parameters $\\gg n$) can generalize well despite interpolating training data, challenging the classic view.', isTrue: true, explanation: 'This is a key technical detail of Overfitting and Underfitting.' },
+    { text: 'A model with 100% training accuracy is good.', isTrue: false, explanation: 'It may be memorizing the data. Always check validation performance.' },
+    { text: 'Extremely over-parameterized models (parameters  n) can generalize well despite interpolating training data, challenging the classic view.', isTrue: true, explanation: 'This occurs due to implicit regularization in gradient descent.' },
+    { text: 'The validation set is for hyperparameter tuning; the test set is for final evaluation.', isTrue: true, explanation: 'Using the test set for tuning introduces optimistic bias.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

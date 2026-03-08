@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Whisper: Universal Speech Recognition (2022)', desc: 'The foundation of audio and speech models begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Pipeline Era: STT to LLM to TTS (2023)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes audio and speech models work.' },
-    { title: '3. GPT-4o: Native Audio Understanding and Generation (2024)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Gemini Audio Capabilities (2024-2025)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Music and Non-Speech Audio', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Whisper: Universal Speech Recognition (2022)', desc: 'Whisper (Radford et al., September 2022) was the breakthrough that brought speech into the LLM paradigm. OpenAI trained an encoder-decoder Transformer on 680,000 hours of multilingual audio paired with transcriptions scraped from the internet.' },
+    { title: '2. The Pipeline Era: STT to LLM to TTS (2023)', desc: 'Before native audio models, voice interaction with LLMs worked as a three-stage pipeline:  Speech-to-Text (STT): Whisper or similar converts audio to text Language Model: The LLM processes text and generates a text response Text-to-Speech (TTS): A synthesis model converts the response back to.' },
+    { title: '3. GPT-4o: Native Audio Understanding and Generation (2024)', desc: 'GPT-4o ("omni," May 2024) collapsed the pipeline into a single model. Audio is tokenized and processed directly alongside text and image tokens in a unified Transformer.' },
+    { title: '4. Gemini Audio Capabilities (2024-2025)', desc: 'Google\'s Gemini 1.5 Pro (February 2024) brought native audio understanding with its 1 million token context window. Users could upload hours of audio — meetings, lectures, podcasts — and ask questions about specific moments, speakers, topics, or emotional dynamics.' },
+    { title: '5. Music and Non-Speech Audio', desc: 'AudioLM (Borsos et al., Google, October 2022) demonstrated that language modeling could generate realistic audio continuations — given a few seconds of music or speech, the model predicts what comes next, maintaining coherent structure, timbre, and rhythm. MusicLM (Agostinelli et al.' },
 ];
 
 export default function WalkthroughLLE03AudioAndSpeechModels() {
@@ -17,10 +17,10 @@ export default function WalkthroughLLE03AudioAndSpeechModels() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Audio and Speech Models — Step by Step
+          Audio and Speech Models \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how audio and speech models works, one stage at a time.

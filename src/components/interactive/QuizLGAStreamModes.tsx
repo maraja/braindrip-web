@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAStreamModes() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The default stream_mode is "values" when no mode is specified.', isTrue: true, explanation: 'This is a key technical detail of Stream Modes.' },
-    { text: '"messages" mode only yields chunks when an LLM is invoked inside a node; non-LLM nodes produce no output in this mode.', isTrue: true, explanation: 'This is a key technical detail of Stream Modes.' },
-    { text: '"events" mode follows the LangChain event streaming protocol and includes event, name, data, and run_id fields.', isTrue: true, explanation: 'This is a key technical detail of Stream Modes.' },
+    { text: 'You must choose one stream mode per graph.', isTrue: false, explanation: 'You can pass a list of modes to stream_mode and receive tagged chunks from all of them in a single run. "The messages mode works for any node output." It only streams content from LLM calls.' },
+    { text: 'LangGraph provides four streaming modes -- updates, values, messages, and events -- each offering a different granularity of visibility into graph execution.', isTrue: true, explanation: 'This captures the core definition of Stream Modes.' },
+    { text: 'Stream Modes is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Stream Modes is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

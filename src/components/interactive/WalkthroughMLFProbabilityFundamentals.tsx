@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Sample Spaces, Events, and Axioms', desc: 'The foundation of probability fundamentals begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Conditional Probability and Independence', desc: 'At this stage, the key transformation occurs — the core mechanism that makes probability fundamentals work.' },
-    { title: '3. Bayes\' Theorem', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Random Variables', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Common Distributions', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Sample Spaces, Events, and Axioms', desc: 'A sample space  is the set of all possible outcomes. An event A   is a subset of outcomes.' },
+    { title: '2. Conditional Probability and Independence', desc: 'The probability of A given that B has occurred:  [equation]  Events A and B are independent if P(A  B) = P(A)P(B), equivalently P(A|B) = P(A). In ML, feature independence is a strong assumption (used in Naive Bayes) that rarely holds exactly but often works surprisingly well.' },
+    { title: '3. Bayes\' Theorem', desc: 'Bayes\' theorem reverses conditioning:  [equation]  In ML language: posterior  likelihood x prior. This is the foundation of Bayesian inference:  P(): prior belief about parameters before seeing data P(D|): likelihood of observing data given parameters P(|D): posterior belief after observing.' },
+    { title: '4. Random Variables', desc: 'A random variable X is a function from the sample space to real numbers: X:   &#123;R&#125;. Discrete random variables take countably many values.' },
+    { title: '5. Common Distributions', desc: 'Bernoulli(p): Binary outcome with P(X=1) = p. Models coin flips, click/no-click, spam/not-spam.' },
+    { title: '6. Expectation, Variance, and Covariance', desc: 'Expectation (mean):  [equation]  Variance:  [equation]  Covariance measures linear co-dependence between two variables:  [equation]  The covariance matrix  for a random vector X has entries _&#123;ij&#125; = Cov(X_i, X_j).' },
 ];
 
 export default function WalkthroughMLFProbabilityFundamentals() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFProbabilityFundamentals() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Probability Fundamentals — Step by Step
+          Probability Fundamentals \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how probability fundamentals works, one stage at a time.

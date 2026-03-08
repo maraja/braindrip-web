@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Minimum stratum sample size', detail: 'For the Wilson CI to be reliable, require $n_k \\geq 30$ per stratum. With fewer, use Clopper-Pearson exact intervals.' },
-    { label: 'Stratum count vs precision trade-off', detail: 'More strata provide finer-grained profiles but dilute the per-stratum sample size. For budget $N$, limit to $K \\leq N / 30$ strata.' },
-    { label: 'Interaction effects', detail: 'Task difficulty $\\times$ domain interactions can be significant (an agent may handle easy code tasks well but easy research tasks poorly). Consider crossed designs when budget permits.' },
+    { label: 'Minimum stratum sample size', detail: 'For the Wilson CI to be reliable, require n_k  30 per stratum. With fewer, use Clopper-Pearson exact intervals.' },
+    { label: 'Stratum count vs precision trade-off', detail: 'More strata provide finer-grained profiles but dilute the per-stratum sample size. For budget N, limit to K  N / 30 strata.' },
+    { label: 'Interaction effects', detail: 'Task difficulty x domain interactions can be significant (an agent may handle easy code tasks well but easy research tasks poorly). Consider crossed designs when budget permits.' },
     { label: 'Stratification by difficulty requires calibration', detail: 'Task difficulty labels must come from an independent source (human solve rates, prior agent versions). Using the current agent\'s performance to define difficulty is circular.' },
     { label: 'Simpson\'s paradox', detail: 'Stratification can reverse aggregate conclusions. Agent A may outperform Agent B in every stratum while underperforming in the aggregate if it is tested more on hard tasks. Always report both stratified and aggregate results.' },
 ];
@@ -19,10 +19,10 @@ export default function ExplorerAAEStratifiedEvaluationDesign() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Stratified Evaluation Design — Key Details Explorer
+          Stratified Evaluation Design \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of stratified evaluation design.
+          Click each card to explore the technical details.
         </p>
       </div>
 

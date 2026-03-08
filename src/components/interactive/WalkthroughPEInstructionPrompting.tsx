@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Specificity Gradient', desc: 'The foundation of instruction prompting begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Imperative vs. Declarative Framing', desc: 'At this stage, the key transformation occurs — the core mechanism that makes instruction prompting work.' },
-    { title: '3. Task Decomposition Within Instructions', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Negative vs. Positive Instructions', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Specificity Gradient', desc: 'Instructions exist on a spectrum from vague to precise. Each level of specificity constrains the model\'s output space:  Level 1 — Vague: "Summarize this." The model must guess: How long?' },
+    { title: '2. Imperative vs. Declarative Framing', desc: 'Instructions can be framed imperatively ("Extract the names") or declaratively ("The output should contain all names"). Research and practice suggest:  Imperative framing ("Extract," "List," "Classify," "Generate") is more reliable for task specification.' },
+    { title: '3. Task Decomposition Within Instructions', desc: 'Complex tasks benefit from being broken into sequential sub-steps within the instructions:  This numbered decomposition achieves two things: it guides the model through a logical process (similar to chain-of-thought), and it makes the instruction unambiguous by specifying the order of operations.' },
+    { title: '4. Negative vs. Positive Instructions', desc: 'How you frame constraints matters. The model processes positive and negative instructions differently:  Negative (avoid): "Do not include personal opinions." "Do not hallucinate." "Do not use technical jargon." Positive (do): "Only include facts from the provided document.' },
 ];
 
 export default function WalkthroughPEInstructionPrompting() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEInstructionPrompting() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Instruction Prompting — Step by Step
+          Instruction Prompting \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how instruction prompting works, one stage at a time.

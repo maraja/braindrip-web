@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Options Framework', desc: 'The foundation of hierarchical reinforcement learning begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Feudal Networks and Feudal Hierarchies', desc: 'At this stage, the key transformation occurs — the core mechanism that makes hierarchical reinforcement learning work.' },
-    { title: '3. Goal-Conditioned RL and HIRO', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Hierarchy of Abstract Machines (HAM)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Subgoal Discovery', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Options Framework', desc: 'The most influential formalization of HRL is the options framework (Sutton, Precup, and Singh, 1999). An option  is a triple (I_, _, _) where:  I_  S is the initiation set (states where the option can start) _(a  s) is the intra-option policy (how the option behaves) _(s)  [0, 1] is the termination.' },
+    { title: '2. Feudal Networks and Feudal Hierarchies', desc: 'Feudal RL (Dayan and Hinton, 1993; Vezhnevets et al., 2017) structures agents as a manager-worker hierarchy. The manager operates at a coarser timescale, producing a goal or direction vector g_t every k steps.' },
+    { title: '3. Goal-Conditioned RL and HIRO', desc: 'Goal-conditioned RL trains a universal policy (a  s, g) that can achieve arbitrary goals g from the goal space &#123;G&#125;. The reward function is typically sparse:  [equation]  or shaped using the negative distance R = -\\.' },
+    { title: '4. Hierarchy of Abstract Machines (HAM)', desc: 'HAMs (Parr and Russell, 1998) constrain the agent\'s policy space using partial programs -- finite-state machines with states that can call lower-level machines, choose actions, or branch stochastically.' },
+    { title: '5. Subgoal Discovery', desc: 'A central open problem in HRL is automatic subgoal discovery -- finding the right abstractions without human specification. Approaches include:  Bottleneck states: identifying states that lie on many optimal trajectories (graph-theoretic methods on state transition graphs) Skill chaining: learning.' },
 ];
 
 export default function WalkthroughRLHierarchicalReinforcementLearning() {
@@ -17,10 +17,10 @@ export default function WalkthroughRLHierarchicalReinforcementLearning() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Hierarchical Reinforcement Learning — Step by Step
+          Hierarchical Reinforcement Learning \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how hierarchical reinforcement learning works, one stage at a time.

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Self-Ask Pattern', desc: 'The foundation of self-ask and decomposition begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Single-Prompt vs. Multi-Call Decomposition', desc: 'At this stage, the key transformation occurs — the core mechanism that makes self-ask and decomposition work.' },
-    { title: '3. Decomposition Strategies', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Compositionality and Synthesis', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Self-Ask Pattern', desc: 'In a self-ask prompt, the model generates text in a structured format: "Are follow-up questions needed here: Yes." "Follow-up: [sub-question 1]" "Intermediate answer: [answer to sub-question 1]" "Follow-up: [sub-question 2]" "Intermediate answer: [answer to sub-question 2]" "So the final answer is:.' },
+    { title: '2. Single-Prompt vs. Multi-Call Decomposition', desc: 'Self-ask can be implemented in two ways. In the single-prompt version, the model generates all sub-questions and sub-answers within a single generation, as described above.' },
+    { title: '3. Decomposition Strategies', desc: 'Not all decompositions are equally effective. Good decompositions have several properties: each sub-question should be independently answerable (no circular dependencies), the sub-questions should collectively cover all information needed for the final answer, and the sub-questions should be.' },
+    { title: '4. Compositionality and Synthesis', desc: 'The synthesis step -- combining sub-answers into a final answer -- is often the weakest link. The model must correctly identify how the sub-answers relate to the original question and combine them logically.' },
 ];
 
 export default function WalkthroughPESelfAskAndDecomposition() {
@@ -16,10 +16,10 @@ export default function WalkthroughPESelfAskAndDecomposition() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Self-Ask and Decomposition — Step by Step
+          Self-Ask and Decomposition \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how self-ask and decomposition works, one stage at a time.

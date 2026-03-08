@@ -1,23 +1,23 @@
 import { useState } from 'react';
-const baseStyle = { background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: 14, padding: '1.25rem', margin: '1.5rem 0', fontFamily: 'system-ui, sans-serif' };
+const baseStyle = { background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: 14, padding: '1.25rem', margin: '1.5rem 0', fontFamily: "system-ui, sans-serif" };
 export default function AnalogyNLPFasttext() {
   const [idx, setIdx] = useState(0);
-  const analogies = [
-    { emoji: '🏗', label: 'Building', text: 'Think of FastText like constructing a building. Imagine you encounter the word "unfriendliness" for the first time. Even without having seen it before, you can parse its meaning: "un-" (negation)... Just as a builder follows blueprints to create a structure, this concept provides the foundational framework that everything else builds upon.' },
-    { emoji: '🎭', label: 'Theater', text: 'FastText is like directing a theater production. Imagine you encounter the word "unfriendliness" for the first time. Even without having seen it before, you can parse its meaning: "un-" (negation)... Each element plays a specific role, and the overall performance depends on how well they work together.' },
-    { emoji: '🗺', label: 'Navigation', text: 'Think of FastText like navigating with a map. Imagine you encounter the word "unfriendliness" for the first time. Even without having seen it before, you can parse its meaning: "un-" (negation)... You need to understand where you are, where you want to go, and the best route to get there.' },
+  const perspectives = [
+    { emoji: '💡', label: 'Core Idea', text: 'Imagine you encounter the word "unfriendliness" for the first time. Even without having seen it before, you can parse its meaning: "un-" (negation) + "friend" (the root) + "-li" + "-ness" (noun-forming suffix). You decompose the word into familiar parts.' },
+    { emoji: '⚙️', label: 'How It Works', text: 'Each word is augmented with special boundary markers "&lt;" and "&gt;", then decomposed into character n-grams of sizes 3 to 6 (by default). For example, the word "where" becomes:  Plus the word itself as a special token. In practice, FastText typically generates 3-grams through 6-grams.' },
+    { emoji: '🔍', label: 'In Detail', text: 'Developed by Facebook AI Research (Bojanowski, Grave, Joulin, and Mikolov) in 2017, FastText extends the Word2Vec Skip-gram model by enriching it with subword information. This seemingly simple change addresses two major limitations of standard word embeddings: inability to handle out-of-vocabulary (OOV) words and insensitivity to morphological.' },
   ];
   return (
     <div style={baseStyle}>
-      <p style={{ fontSize: '0.8rem', fontWeight: 700, color: '#2C3E2D', marginBottom: 10, letterSpacing: '0.05em' }}>\u2726 THINK OF IT AS...</p>
-      <div style={{ display: 'flex', gap: 6, marginBottom: 12, flexWrap: 'wrap' }}>
-        {analogies.map((a, i) => (
-          <button key={i} onClick={() => setIdx(i)} style={{ padding: '4px 12px', borderRadius: 20, border: idx === i ? '2px solid #8BA888' : '1px solid #E5DFD3', background: idx === i ? '#8BA888' + '18' : 'transparent', fontSize: '0.8rem', cursor: 'pointer', color: '#2C3E2D', fontWeight: idx === i ? 600 : 400 }}>
-            {a.emoji} {a.label}
+      <p style={{ fontSize: '0.8rem', fontWeight: 700, color: '#2C3E2D', marginBottom: 10, letterSpacing: '0.05em' }}>\u2726 KEY PERSPECTIVES</p>
+      <div style={{ display: 'flex', gap: 6, marginBottom: 12, flexWrap: 'wrap' as const }}>
+        {perspectives.map((p, i) => (
+          <button key={i} onClick={() => setIdx(i)} style={{ padding: '4px 12px', borderRadius: 20, border: idx === i ? '2px solid #8BA888' : '1px solid #E5DFD3', background: idx === i ? '#8BA88818' : 'transparent', fontSize: '0.8rem', cursor: 'pointer', color: '#2C3E2D', fontWeight: idx === i ? 600 : 400 }}>
+            {p.emoji} {p.label}
           </button>
         ))}
       </div>
-      <p style={{ fontSize: '0.9rem', color: '#3D4F3E', lineHeight: 1.6, margin: 0 }}>{analogies[idx].text}</p>
+      <p style={{ fontSize: '0.9rem', color: '#3D4F3E', lineHeight: 1.6, margin: 0 }}>{perspectives[idx].text}</p>
     </div>
   );
 }

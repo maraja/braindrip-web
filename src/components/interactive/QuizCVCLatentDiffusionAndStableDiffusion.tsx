@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCLatentDiffusionAndStableDiffusion() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Autoencoder downsampling factor: $f = 8$ (Stable Diffusion), $f = 4$ (some research variants).', isTrue: true, explanation: 'This is a key technical detail of Latent Diffusion and Stable Diffusion.' },
-    { text: 'Reconstruction FID &lt; 1.0, meaning the autoencoder is near-lossless for perceptual quality.', isTrue: true, explanation: 'This is a key technical detail of Latent Diffusion and Stable Diffusion.' },
-    { text: 'Training data: SD v1.5 trained on LAION-5B subset (~2B image-text pairs).', isTrue: true, explanation: 'This is a key technical detail of Latent Diffusion and Stable Diffusion.' },
+    { text: 'Latent diffusion sacrifices quality for speed.', isTrue: false, explanation: 'The autoencoder preserves perceptual quality nearly perfectly (LPIPS &lt; 0.01 reconstruction error). The latent space discards imperceptible high-frequency details.' },
+    { text: 'Latent diffusion models run the diffusion process in a compressed latent space rather than pixel space, dramatically reducing computational cost and enabling practical high-resolution text-to-image generation as realized in Stable Diffusion.', isTrue: true, explanation: 'This captures the core definition of Latent Diffusion and Stable Diffusion.' },
+    { text: 'Latent Diffusion and Stable Diffusion is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Latent Diffusion and Stable Diffusion is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

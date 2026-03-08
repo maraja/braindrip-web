@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Pix2Pix (Paired Translation)', desc: 'The foundation of image-to-image translation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. CycleGAN (Unpaired Translation)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes image-to-image translation work.' },
-    { title: '3. Limitations of Cycle Consistency', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. SPADE (Semantic Image Synthesis)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Contrastive Unpaired Translation (CUT)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Pix2Pix (Paired Translation)', desc: '(2017) proposed a general-purpose framework for paired image-to-image translation using a conditional GAN:  [equation]  combined with an L1 reconstruction loss:  [equation]  The total objective is &#123;L&#125; = &#123;L&#125;_&#123;cGAN&#125; +  &#123;L&#125;_&#123;L1&#125; with  = 100.' },
+    { title: '2. CycleGAN (Unpaired Translation)', desc: '(2017) removed the need for paired data by introducing cycle consistency. Given two domains X and Y with no correspondence, CycleGAN trains two generators G: X  Y and F: Y  X with the constraint that translating and translating back should recover the original:  [equation]  The full objective.' },
+    { title: '3. Limitations of Cycle Consistency', desc: 'Cycle consistency constrains the mapping to be approximately bijective, which means: It cannot handle large geometric changes (e.g., cat to dog with different body structure).' },
+    { title: '4. SPADE (Semantic Image Synthesis)', desc: '(2019) introduced Spatially-Adaptive Normalization for generating photorealistic images from semantic segmentation maps. Instead of feeding the layout as input, SPADE modulates normalization parameters spatially:  [equation]  where m is the segmentation map and ,  are learned spatial functions.' },
+    { title: '5. Contrastive Unpaired Translation (CUT)', desc: '(2020) replaced cycle consistency with contrastive learning. Corresponding patches between input and output should have similar features (positive pairs), while non-corresponding patches should differ (negative pairs).' },
 ];
 
 export default function WalkthroughCVCImageToImageTranslation() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCImageToImageTranslation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Image-to-Image Translation — Step by Step
+          Image-to-Image Translation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how image-to-image translation works, one stage at a time.

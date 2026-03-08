@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFFeatureSelectionMethods() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Filter methods assume features contribute independently; they miss interaction effects (e.g., $X_1 \\cdot X_2$ is predictive but neither alone is).', isTrue: true, explanation: 'This is a key technical detail of Feature Selection Methods.' },
-    { text: 'Wrapper methods capture interactions but are computationally expensive and risk overfitting to the validation set.', isTrue: true, explanation: 'This is a key technical detail of Feature Selection Methods.' },
-    { text: 'L1 regularization can be unstable when features are highly correlated -- it may arbitrarily select one of several correlated features.', isTrue: true, explanation: 'This is a key technical detail of Feature Selection Methods.' },
+    { text: 'Removing correlated features always helps.', isTrue: false, explanation: 'Correlation between features does not mean redundancy with respect to the target. Two correlated features may each contribute unique predictive information from different angles.' },
+    { text: 'Filter, wrapper, and embedded approaches for identifying the most informative features -- removing noise to improve generalization.', isTrue: true, explanation: 'This captures the core definition of Feature Selection Methods.' },
+    { text: 'Feature Selection Methods is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Feature Selection Methods is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

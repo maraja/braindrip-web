@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEReferenceFreeEvaluation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Self-consistency means the agent is correct.', isTrue: false, explanation: '"Self-consistency means the agent is correct." An agent can be consistently wrong. Self-consistency measures reliability, not accuracy. It is a necessary but not sufficient condition for quality.' },
-    { text: 'Reference-free evaluation assesses agent output quality without gold-standard answers, using methods like self-consistency checks, constraint satisfaction verification, logical coherence analysis, and execution-based testing.', isTrue: true, explanation: 'This captures the core purpose of Reference-Free Evaluation.' },
-    { text: 'Reference-Free Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Reference-Free Evaluation is important for building on more advanced topics.' },
+    { text: 'Reference-free evaluation is less rigorous than reference-based evaluation.', isTrue: false, explanation: 'For the right task types, reference-free methods can be more rigorous. Execution-based verification provides objective ground truth that reference comparison cannot -- a program either runs correctly or it does not.' },
+    { text: 'Self-consistency means the agent is correct.', isTrue: false, explanation: 'An agent can be consistently wrong. Self-consistency measures reliability, not accuracy.' },
+    { text: 'Constraint satisfaction covers all quality dimensions.', isTrue: false, explanation: 'Constraints capture the "what" (did the agent do what was asked?) but not the "how well" (was the solution elegant, efficient, maintainable?). Combine with qualitative methods for complete evaluation.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEProductionQualityMonitoring() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Production quality monitoring continuously evaluates live agent interactions through sampling strategies, automated scoring, and anomaly detection to catch quality degradation within hours rather than days.', isTrue: true, explanation: 'This captures the core purpose of Production Quality Monitoring.' },
-    { text: 'Production Quality Monitoring is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Production Quality Monitoring is important for building on more advanced topics.' },
-    { text: 'Production Quality Monitoring is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Production Quality Monitoring is important for building on more advanced topics.' },
+    { text: 'Monitoring 100% of traffic with LLM judges is the gold standard.', isTrue: false, explanation: 'Full-traffic evaluation is prohibitively expensive for most systems and rarely provides meaningfully better signal than a well-designed 2-5% sample. The marginal information gain from evaluating the 96th through 100th percentile of traffic almost never justifies the cost.' },
+    { text: 'Rule-based checks are obsolete now that we have LLM judges.', isTrue: false, explanation: 'Rule-based checks are faster, cheaper, and more reliable for well-defined failure modes. They catch structural problems (malformed tool calls, empty responses, language mismatches) with zero false positives.' },
+    { text: 'If users are not complaining, quality is fine.', isTrue: false, explanation: 'Most users never report quality issues -- they simply leave. Explicit complaint rates typically represent less than 2% of actual dissatisfaction.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

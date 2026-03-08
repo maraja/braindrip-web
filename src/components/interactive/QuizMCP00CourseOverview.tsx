@@ -2,7 +2,7 @@ import { useState } from 'react';
 export default function QuizMCP00CourseOverview() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Learn how to build a production-ready Model Context Protocol (MCP) server using Supabase Edge Functions and a Supabase Postgres database -- giving any AI agent (Claude, Cursor, Windsurf, etc.) the ability to query, create, update, and delete data in your database through natural language.', isTrue: true, explanation: 'This captures the core purpose of Building MCP Servers on Supabase: A Comprehensive Course.' },
+    { text: 'Learn how to build a production-ready Model Context Protocol (MCP) server using Supabase Edge Functions and a Supabase Postgres database -- giving any AI agent (Claude, Cursor, Windsurf, etc.) the ability to query, create, update, and delete data in your database through natural language.', isTrue: true, explanation: 'This captures the core definition of Building MCP Servers on Supabase: A Comprehensive Course.' },
     { text: 'Building MCP Servers on Supabase: A Comprehensive Course is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Building MCP Servers on Supabase: A Comprehensive Course is important for building on more advanced topics.' },
     { text: 'Building MCP Servers on Supabase: A Comprehensive Course is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Building MCP Servers on Supabase: A Comprehensive Course is important for building on more advanced topics.' },
   ];

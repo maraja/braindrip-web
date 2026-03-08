@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The GGML Tensor Library', desc: 'The foundation of llama.cpp and local inference begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The GGUF Format', desc: 'At this stage, the key transformation occurs — the core mechanism that makes llama.cpp and local inference work.' },
-    { title: '3. Supported Hardware and Backends', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Performance Characteristics', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The GGML Tensor Library', desc: 'At the heart of llama.cpp is GGML (Georgi Gerganov Machine Learning), a custom tensor computation library written in C. Unlike PyTorch or TensorFlow, which are designed for flexibility and GPU-first computation, GGML is optimized for a specific use case: running Transformer inference efficiently on.' },
+    { title: '2. The GGUF Format', desc: 'Early llama.cpp used a format called GGML, but as the project grew, the community developed GGUF (GPT-Generated Unified Format) -- a self-contained binary format that stores everything needed to load and run a model in a single file: architecture metadata, tokenizer vocabulary, quantization.' },
+    { title: '3. Supported Hardware and Backends', desc: 'What started as a CPU-only project expanded to support an impressive range of hardware:  CPU: x86 (Intel, AMD) and ARM, with architecture-specific optimizations Apple Metal: GPU acceleration on Macs and iPhones, leveraging unified memory CUDA: NVIDIA GPU support for users who have discrete.' },
+    { title: '4. Performance Characteristics', desc: 'Real-world performance depends on model size, quantization level, and hardware. Representative numbers as of 2024-2025:  7B model, Q4_K_M, M2 MacBook Air: ~30-40 tokens/second 13B model, Q4_K_M, M2 Pro Mac: ~20-30 tokens/second 70B model, Q4_K_M, M3 Max 128GB Mac: ~10-15 tokens/second 7B model,.' },
 ];
 
 export default function WalkthroughLLE06LlamaCppAndLocalInference() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE06LlamaCppAndLocalInference() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          llama.cpp and Local Inference — Step by Step
+          llama.cpp and Local Inference \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how llama.cpp and local inference works, one stage at a time.

@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizPEContextCompressionTechniques() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'LLMLingua achieves up to 75% token reduction while maintaining 80-90% task performance on downstream question-answering and summarization tasks.', isTrue: true, explanation: 'This is a key technical detail of Context Compression Techniques.' },
-    { text: 'LLM-based summarization preserves 80-90% of key facts at a 3:1 to 5:1 compression ratio.', isTrue: true, explanation: 'This is a key technical detail of Context Compression Techniques.' },
-    { text: 'Structured extraction achieves 5:1 to 10:1 compression but is only suitable for factual, data-oriented content.', isTrue: true, explanation: 'This is a key technical detail of Context Compression Techniques.' },
+    { text: 'Compression always degrades quality.', isTrue: false, explanation: 'Properly applied compression often improves quality by removing noise and irrelevant content, concentrating the model\'s attention on information that matters. Quality degradation occurs when compression is too aggressive or poorly targeted.' },
+    { text: '1 to 5:1 compression ratio.', isTrue: true, explanation: '1 to 5:1 compression ratio.' },
+    { text: '1 to 10:1 compression but is only suitable for factual, data-oriented content.', isTrue: true, explanation: '1 to 10:1 compression but is only suitable for factual, data-oriented content.' },
+    { text: 'summarization for prose, extraction for data, truncation for logs, deduplication for RAG passages.', isTrue: true, explanation: 'summarization for prose, extraction for data, truncation for logs, deduplication for RAG passages.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Memory Hierarchy Problem', desc: 'The foundation of flash attention and hardware-aware computing begins with understanding its core input requirements and initial setup.' },
-    { title: '2. FlashAttention v1 — IO-Aware Tiling (May 2022)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes flash attention and hardware-aware computing work.' },
-    { title: '3. FlashAttention-2 — Better Parallelism (July 2023)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. FlashAttention-3 — Asynchronous and Low-Precision (2024)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Broader Hardware-Aware Computing Movement', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Memory Hierarchy Problem', desc: 'Modern GPUs like the NVIDIA A100 have two levels of memory: SRAM (on-chip, ~20 MB, ~19 TB/s bandwidth) and HBM (off-chip, 40-80 GB, ~2 TB/s bandwidth). That is a 10x bandwidth gap.' },
+    { title: '2. FlashAttention v1 — IO-Aware Tiling (May 2022)', desc: 'Dao\'s key insight was to decompose the attention computation into tiles that fit in SRAM. The algorithm processes Q in blocks of size B_r and K, V in blocks of size B_c.' },
+    { title: '3. FlashAttention-2 — Better Parallelism (July 2023)', desc: 'The second version improved hardware utilization from roughly 50-70% of theoretical FLOPs to 70-90%. Key changes: reducing non-matmul FLOPs (which GPUs handle less efficiently), better work partitioning across thread blocks (parallelizing over the sequence length dimension rather than batch and.' },
+    { title: '4. FlashAttention-3 — Asynchronous and Low-Precision (2024)', desc: 'Targeting NVIDIA\'s Hopper architecture (H100), FlashAttention-3 exploited new hardware features: asynchronous execution of WGMMA (Warp Group Matrix Multiply-Accumulate) operations, FP8 tensor core support for attention computation, and hardware-assisted memory operations.' },
+    { title: '5. The Broader Hardware-Aware Computing Movement', desc: 'FlashAttention catalyzed a mindset shift: algorithms must be designed for the hardware they run on, not in abstract mathematical elegance. This spawned a generation of hardware-aware optimizations.' },
 ];
 
 export default function WalkthroughLLE03FlashAttentionAndHardwareAwareComputing() {
@@ -17,10 +17,10 @@ export default function WalkthroughLLE03FlashAttentionAndHardwareAwareComputing(
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Flash Attention and Hardware-Aware Computing — Step by Step
+          Flash Attention and Hardware-Aware Computing \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how flash attention and hardware-aware computing works, one stage at a time.

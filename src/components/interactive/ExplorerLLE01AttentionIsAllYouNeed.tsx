@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Paper', detail: 'Vaswani et al., \"Attention Is All You Need\" (Jun 2017, arXiv:1706.03762, NeurIPS 2017)' },
+    { label: 'Paper', detail: 'Vaswani et al., "Attention Is All You Need" (Jun 2017, arXiv:1706.03762, NeurIPS 2017)' },
     { label: 'Authors', detail: '8 researchers at Google Brain / Google Research, all listed as equal contributors' },
     { label: 'Base model', detail: '6 layers, 8 heads, d_model=512, 65M parameters' },
     { label: 'Big model', detail: '6 layers, 16 heads, d_model=1024, 213M parameters' },
-    { label: 'EN-DE BLEU', detail: '28.4 (big model), +2.0 over previous SOTA' },
-    { label: 'EN-FR BLEU', detail: '41.8 (big model), outperforming all ensembles at 1/4 the training cost' },
+    { label: 'EN-DE BLEU', detail: '4 (big model), +2.0 over previous SOTA' },
+    { label: 'EN-FR BLEU', detail: '8 (big model), outperforming all ensembles at 1/4 the training cost' },
 ];
 
 export default function ExplorerLLE01AttentionIsAllYouNeed() {
@@ -20,10 +20,10 @@ export default function ExplorerLLE01AttentionIsAllYouNeed() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Attention Is All You Need — Key Details Explorer
+          Attention Is All You Need \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of attention is all you need.
+          Click each card to explore the technical details.
         </p>
       </div>
 

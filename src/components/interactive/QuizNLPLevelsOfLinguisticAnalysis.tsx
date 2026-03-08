@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPLevelsOfLinguisticAnalysis() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The International Phonetic Alphabet (IPA) provides a standard notation for approximately 800 phonetic symbols covering all attested human speech sounds.', isTrue: true, explanation: 'This is a key technical detail of Levels of Linguistic Analysis.' },
-    { text: 'WordNet 3.1 contains approximately 117,000 synsets (sets of synonymous word senses) organized into semantic hierarchies -- a hand-built resource capturing lexical semantics.', isTrue: true, explanation: 'This is a key technical detail of Levels of Linguistic Analysis.' },
-    { text: 'The hierarchy from phonology to pragmatics -- each level adding structure that NLP systems must capture to move from raw sound or text to genuine understanding.', isTrue: true, explanation: 'This captures the core purpose of Levels of Linguistic Analysis.' },
+    { text: 'These levels are strictly sequential -- you must fully solve phonology before tackling syntax.', isTrue: false, explanation: 'In reality, humans process multiple levels simultaneously, and information flows both bottom-up and top-down. You use syntactic expectations to resolve phonetic ambiguity ("recognize speech" vs.' },
+    { text: 'Syntax is the hardest level for NLP.', isTrue: false, explanation: 'Syntax was the focus of decades of NLP research, but modern parsers achieve over 96% labeled attachment score on English newswire. Pragmatics and discourse -- reasoning about context, intention, and coherence -- remain far more challenging and less well-benchmarked.' },
+    { text: 'Deep learning models do not need linguistic knowledge.', isTrue: false, explanation: 'While neural models learn implicit linguistic representations from data, understanding the linguistic hierarchy helps practitioners diagnose errors, design evaluation metrics, and build more robust systems. Linguistic knowledge also remains essential for low-resource languages where data alone is insufficient.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

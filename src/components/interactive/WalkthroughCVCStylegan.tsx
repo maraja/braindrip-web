@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture Overview', desc: 'The foundation of stylegan begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Style Mixing', desc: 'At this stage, the key transformation occurs — the core mechanism that makes stylegan work.' },
-    { title: '3. $\\mathcal{W}$ vs $\\mathcal{Z}$ Space', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. StyleGAN2 Improvements', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. StyleGAN3', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Architecture Overview', desc: 'StyleGAN replaces the traditional generator input with a constant learned tensor 4 x 4 x 512 and introduces three new components:  Mapping Network f: An 8-layer MLP that maps the input noise z  &#123;R&#125;^&#123;512&#125; to an intermediate latent space w  &#123;W&#125;  &#123;R&#125;^&#123;512&#125;.' },
+    { title: '2. Style Mixing', desc: 'Because styles are injected independently at each layer, using different w vectors at different resolutions (style mixing) allows compositing coarse features from one latent code with fine features from another. Coarse styles (4x4 -- 8x8) control pose, face shape, and glasses.' },
+    { title: '3. $\\mathcal&#123;W&#125;$ vs $\\mathcal&#123;Z&#125;$ Space', desc: 'The intermediate latent space &#123;W&#125; is empirically more disentangled than the input space &#123;Z&#125;. Linear interpolation in &#123;W&#125; produces smoother, more semantically meaningful transitions.' },
+    { title: '4. StyleGAN2 Improvements', desc: '(2020) addressed several artifacts:  Droplet artifacts: Caused by AdaIN normalizing away useful signal. Fixed by replacing AdaIN with weight demodulation -- modulating convolution weights directly instead of feature statistics.' },
+    { title: '5. StyleGAN3', desc: '(2021) tackled texture sticking -- fine details that stay fixed in screen coordinates rather than moving with objects during latent space animation. The solution involved alias-free signal processing: carefully filtered nonlinearities and upsampling to ensure strict equivariance to continuous.' },
+    { title: '6. GAN Inversion', desc: 'GAN inversion -- projecting a real image into StyleGAN\'s latent space -- enables editing real photographs. Three main approaches exist:  Optimization-based: Directly optimize w to minimize \\ plus perceptual loss.' },
 ];
 
 export default function WalkthroughCVCStylegan() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCStylegan() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          StyleGAN — Step by Step
+          StyleGAN \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how stylegan works, one stage at a time.

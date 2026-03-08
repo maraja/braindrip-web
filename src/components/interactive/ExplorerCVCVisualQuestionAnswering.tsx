@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'VQA v2.0 dataset', detail: '1.1M questions on 204K COCO images, with 10 human answers per question; balanced to reduce language bias' },
+    { label: 'VQA v2.0 dataset', detail: '1M questions on 204K COCO images, with 10 human answers per question; balanced to reduce language bias' },
     { label: 'Accuracy progression', detail: 'Simple baselines ~50% (2015); attention models ~70% (2018); pretrained VL models ~76% (2021); multimodal LLMs ~82% (2023); human performance ~83%' },
     { label: 'Language bias', detail: 'A text-only model (no image) achieves ~44% on VQA v1.0, exposing severe dataset bias; VQA v2.0 reduced this to ~28% by adding complementary image pairs' },
-    { label: 'Question types', detail: '\"Yes/No\" (~38%), \"Number\" (~12%), \"Other\" (~50%) in VQA v2.0; models are strongest on Yes/No and weakest on counting' },
+    { label: 'Question types', detail: '"Yes/No" (~38%), "Number" (~12%), "Other" (~50%) in VQA v2.0; models are strongest on Yes/No and weakest on counting' },
     { label: 'Region features', detail: 'Bottom-Up features (36 regions from Faster R-CNN) dominated for 3+ years; now replaced by ViT patch features in modern architectures' },
     { label: 'Out-of-domain VQA', detail: 'GQA (Hudson & Manning, 2019) tests compositional reasoning; OK-VQA requires external knowledge; TextVQA requires reading text in images' },
 ];
@@ -20,10 +20,10 @@ export default function ExplorerCVCVisualQuestionAnswering() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Visual Question Answering (VQA) — Key Details Explorer
+          Visual Question Answering (VQA) \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of visual question answering (vqa).
+          Click each card to explore the technical details.
         </p>
       </div>
 

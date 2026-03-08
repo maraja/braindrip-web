@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizCVCMultiScaleDetection() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'COCO size definitions: Small ($\\text&#123;area&#125; &lt; 32^2$), Medium ($32^2 \\leq \\text&#123;area&#125; &lt; 96^2$), Large ($\\text&#123;area&#125; \\geq 96^2$).', isTrue: true, explanation: 'This is a key technical detail of Multi-Scale Detection.' },
-    { text: 'Scale gap: State-of-the-art detectors (2023) achieve ~35% AP_S vs.', isTrue: true, explanation: 'This is a key technical detail of Multi-Scale Detection.' },
-    { text: '~55% AP_L on COCO -- small objects remain ~20 AP points behind.', isTrue: true, explanation: 'This is a key technical detail of Multi-Scale Detection.' },
+    { text: 'FPN completely solves multi-scale detection.', isTrue: false, explanation: 'FPN significantly narrows the gap, but small object detection remains much harder than large object detection. The fundamental challenge is that small objects have very few pixels of information, regardless of feature map resolution.' },
+    { text: 'Small (area &lt; 32^2), Medium (32^2  area &lt; 96^2), Large (area  96^2).', isTrue: true, explanation: 'Small (area &lt; 32^2), Medium (32^2  area &lt; 96^2), Large (area  96^2).' },
+    { text: 'State-of-the-art detectors (2023) achieve ~35% AP_S vs.', isTrue: true, explanation: '~55% AP_L on COCO -- small objects remain ~20 AP points behind.' },
+    { text: 'Adds &lt;5% FLOPs to the backbone, making it essentially free in terms of computation.', isTrue: true, explanation: 'Adds &lt;5% FLOPs to the backbone, making it essentially free in terms of computation.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Sigmoid Function', desc: 'The foundation of logistic regression begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Log-Odds Interpretation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes logistic regression work.' },
-    { title: '3. Decision Boundary', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Cross-Entropy Loss Derivation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Gradient Descent for Logistic Regression', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Sigmoid Function', desc: 'The sigmoid (z) has several useful properties: Its output is always in (0, 1), suitable for probabilities. It is monotonically increasing: higher scores mean higher probability.' },
+    { title: '2. Log-Odds Interpretation', desc: 'Logistic regression is linear in log-odds space. The log-odds (logit) of the positive class is:  [equation]  This means each feature x_j contributes additively to the log-odds.' },
+    { title: '3. Decision Boundary', desc: 'The model predicts class 1 when P(y=1  x)  0.5, which occurs when w^T x + b  0. This defines a hyperplane in feature space.' },
+    { title: '4. Cross-Entropy Loss Derivation', desc: 'Given training data \\&#123;(x_i, y_i)\\&#125;_&#123;i=1&#125;^n with y_i  \\&#123;0,1\\&#125;, the likelihood of the data under the model is:  [equation]  where &#123;p&#125;_i = (w^T x_i + b). Taking the negative log-likelihood gives the binary cross-entropy loss:  [equation]  This loss is convex in w and b, guaranteeing that gradient.' },
+    { title: '5. Gradient Descent for Logistic Regression', desc: 'The gradient of the cross-entropy loss with respect to the weights is:  [equation]  This has the same form as the gradient for linear regression with MSE loss, but with &#123;p&#125;_i replacing &#123;y&#125;_i.' },
+    { title: '6. Regularized Logistic Regression', desc: 'To prevent overfitting, we add a penalty to the loss:  L2 regularization (Ridge): &#123;L&#125; + &#123;&#125;&#123;2&#125; \\_2^2 -- shrinks weights toward zero. L1 regularization (Lasso): &#123;L&#125; +  \\_1 -- encourages sparse weights, performing implicit feature selection.' },
 ];
 
 export default function WalkthroughMLFLogisticRegression() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFLogisticRegression() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Logistic Regression — Step by Step
+          Logistic Regression \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how logistic regression works, one stage at a time.

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCKnowledgeDistillation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Temperature $T$: typically 3-20.', isTrue: true, explanation: 'This is a key technical detail of Knowledge Distillation.' },
-    { text: 'Higher $T$ for large class counts.', isTrue: true, explanation: 'This is a key technical detail of Knowledge Distillation.' },
-    { text: 'Start with $T = 4$ and tune.', isTrue: true, explanation: 'This is a key technical detail of Knowledge Distillation.' },
+    { text: 'The student can match the teacher\'s accuracy.', isTrue: false, explanation: 'Generally, the student is worse than the teacher. Distillation closes the gap but rarely eliminates it.' },
+    { text: 'Knowledge distillation transfers the learned behavior of a large teacher network into a smaller student network by training the student to match the teacher\'s soft output probabilities, capturing inter-class relationships that hard labels miss.', isTrue: true, explanation: 'This captures the core definition of Knowledge Distillation.' },
+    { text: 'Knowledge Distillation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Knowledge Distillation is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

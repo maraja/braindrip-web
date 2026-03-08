@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPTextSummarization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'CNN/DailyMail (Hermann et al., 2015; Nallapati et al., 2016): ~300K news articles with multi-sentence summaries.', isTrue: true, explanation: 'This is a key technical detail of Text Summarization.' },
-    { text: 'The most widely used benchmark, though its summaries are relatively extractive.', isTrue: true, explanation: 'This is a key technical detail of Text Summarization.' },
-    { text: 'XSum (Narayan et al., 2018): ~227K BBC articles with single-sentence abstractive summaries, requiring more aggressive compression and abstraction.', isTrue: true, explanation: 'This is a key technical detail of Text Summarization.' },
+    { text: 'Extractive summarization is obsolete.', isTrue: false, explanation: 'Extractive methods remain valuable because they guarantee faithfulness -- every sentence comes directly from the source. In high-stakes domains like law and medicine, this property is critical.' },
+    { text: '~300K news articles with multi-sentence summaries.', isTrue: true, explanation: 'The most widely used benchmark, though its summaries are relatively extractive.' },
+    { text: 'Higher ROUGE means better summaries.', isTrue: false, explanation: 'ROUGE measures lexical overlap with reference summaries and correlates only moderately with human judgments of quality. A system can achieve high ROUGE by copying long extractive fragments while producing an incoherent summary.' },
+    { text: '~227K BBC articles with single-sentence abstractive summaries, requiring more aggressive compression and abstraction.', isTrue: true, explanation: '~227K BBC articles with single-sentence abstractive summaries, requiring more aggressive compression and abstraction.' },
+    { text: 'Summarization just removes less important sentences.', isTrue: false, explanation: 'Abstractive summarization involves paraphrasing, fusion (combining information from multiple sentences), compression, and generalization -- all requiring deep language understanding, not just filtering.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

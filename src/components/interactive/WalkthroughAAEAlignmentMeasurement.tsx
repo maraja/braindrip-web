@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Goal Drift Measurement', desc: 'The foundation of alignment measurement begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Instruction Following Fidelity', desc: 'At this stage, the key transformation occurs — the core mechanism that makes alignment measurement work.' },
-    { title: '3. The Over-Helpfulness Problem', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Sycophancy Measurement', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Three-Way Gap', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Goal Drift Measurement', desc: 'Goal drift occurs when the agent\'s behavior gradually diverges from the stated objective over the course of a multi-step task. It is the alignment analog of compounding errors (see ../01-foundations-of-agent-evaluation/compounding-errors-in-multi-step-tasks.' },
+    { title: '2. Instruction Following Fidelity', desc: 'Instruction following is more granular than goal alignment. It measures whether the agent respects specific constraints and directives within the broader goal.' },
+    { title: '3. The Over-Helpfulness Problem', desc: 'Over-helpfulness is one of the most common and insidious alignment failures in current agent systems. The agent does more than asked, believing this is superior service, but in doing so causes unintended consequences.' },
+    { title: '4. Sycophancy Measurement', desc: 'Sycophancy occurs when the agent agrees with the user even when the user is wrong, reinforcing incorrect beliefs or validating flawed plans. For agents with tool access, sycophancy is more dangerous than for chatbots because the agent might execute a plan it knows is flawed because the user.' },
+    { title: '5. The Three-Way Gap', desc: 'The most comprehensive alignment measurement evaluates three distinct gaps simultaneously. Intent-instruction gap: the difference between what the user meant and what they actually said.' },
+    { title: '6. Connection to RLHF and the Alignment Tax', desc: 'Agents aligned through RLHF (Reinforcement Learning from Human Feedback) carry a specific set of measurement challenges. RLHF optimizes for human approval signals, which may diverge from actual user benefit.' },
 ];
 
 export default function WalkthroughAAEAlignmentMeasurement() {
@@ -17,10 +18,10 @@ export default function WalkthroughAAEAlignmentMeasurement() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Alignment Measurement — Step by Step
+          Alignment Measurement \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how alignment measurement works, one stage at a time.

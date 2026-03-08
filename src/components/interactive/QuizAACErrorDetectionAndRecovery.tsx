@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACErrorDetectionAndRecovery() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Retrying is always the right first response.', isTrue: false, explanation: '"Retrying is always the right first response." Retrying only works for transient errors. Retrying a logical error or a fundamentally wrong approach wastes resources. The agent must first classify the ' },
-    { text: 'Semantic error detection costs one additional LLM call per action (~200-500 tokens).', isTrue: true, explanation: 'This is a key technical detail of Error Detection and Recovery.' },
-    { text: 'Logical error detection via self-critique costs ~500-1000 tokens Common failure pattern: The agent enters a "retry loop" where it retries the same failing action with minimal variation.', isTrue: true, explanation: 'This is a key technical detail of Error Detection and Recovery.' },
+    { text: 'Good agents don\'t make errors.', isTrue: false, explanation: 'All agents operating in real environments encounter errors. The quality of an agent is measured not by the absence of errors but by the sophistication of its error handling.' },
+    { text: 'Transient errors (rate limits, timeouts) resolve on retry 70-90% of the time with appropriate backoff; semantic errors resolve on rephrase-and-retry 40-60% of the time', isTrue: true, explanation: 'Transient errors (rate limits, timeouts) resolve on retry 70-90% of the time with appropriate backoff; semantic errors resolve on rephrase-and-retry 40-60% of the time' },
+    { text: 'Retrying is always the right first response.', isTrue: false, explanation: 'Retrying only works for transient errors. Retrying a logical error or a fundamentally wrong approach wastes resources.' },
+    { text: 'Explicit error detection is essentially free (status code check).', isTrue: true, explanation: 'Semantic error detection costs one additional LLM call per action (~200-500 tokens). Logical error detection via self-critique costs ~500-1000 tokens' },
+    { text: 'Error handling is an edge case concern.', isTrue: false, explanation: 'In production systems, error handling code often exceeds the happy-path code in both volume and complexity. Treating it as an afterthought produces fragile systems.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

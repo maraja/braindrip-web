@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAEvaluationWithDatasets() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Datasets are stored server-side in LangSmith and versioned, so evaluation results always reference the exact data used.', isTrue: true, explanation: 'This is a key technical detail of Evaluation with Datasets.' },
-    { text: 'The evaluate() function runs predictions and evaluators concurrently with configurable max_concurrency.', isTrue: true, explanation: 'This is a key technical detail of Evaluation with Datasets.' },
-    { text: 'Each evaluation run creates an experiment that appears as a column in the dataset\'s comparison view.', isTrue: true, explanation: 'This is a key technical detail of Evaluation with Datasets.' },
+    { text: 'Evaluation datasets need hundreds of examples to be useful.', isTrue: false, explanation: 'Even 10 to 20 well-chosen examples covering core scenarios and known edge cases provide significant regression protection. "Custom evaluators must use LLM-based grading." Simple heuristic evaluators using string matching, keyword checks, or structured output validation are fast, cheap, and often sufficient.' },
+    { text: 'LangSmith datasets and the evaluate() function enable systematic, repeatable testing of agent behavior with custom evaluators and regression tracking.', isTrue: true, explanation: 'This captures the core definition of Evaluation with Datasets.' },
+    { text: 'Evaluation with Datasets is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluation with Datasets is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

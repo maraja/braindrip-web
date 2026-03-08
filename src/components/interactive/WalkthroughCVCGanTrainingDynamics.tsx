@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Mode Collapse', desc: 'The foundation of gan training dynamics begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Training Instability and Oscillation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes gan training dynamics work.' },
-    { title: '3. Wasserstein GAN (WGAN)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Spectral Normalization', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Progressive Growing', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Mode Collapse', desc: 'Mode collapse occurs when the generator maps many different noise vectors to a small set of outputs, covering only a few modes of the data distribution. In the extreme case, G produces a single image regardless of input z.' },
+    { title: '2. Training Instability and Oscillation', desc: 'The simultaneous gradient descent on competing objectives can produce:  Oscillation: G and D chase each other without converging. Loss curves fluctuate without trending downward.' },
+    { title: '3. Wasserstein GAN (WGAN)', desc: '(2017) replaced the Jensen-Shannon divergence with the Earth Mover (Wasserstein-1) distance:  [equation]  The practical objective becomes:  [equation]  where &#123;D&#125;_L is the set of 1-Lipschitz functions.' },
+    { title: '4. Spectral Normalization', desc: '(2018) proposed normalizing each weight matrix W by its spectral norm (largest singular value):  [equation]  This ensures each layer is Lipschitz-1, making the entire discriminator Lipschitz-bounded without gradient penalties or weight clipping.' },
+    { title: '5. Progressive Growing', desc: '(2017) introduced progressive training for high-resolution generation. Training starts at 4x4 resolution and progressively doubles spatial dimensions:  4x4 -&gt; 8x8 -&gt; 16x16 -&gt; 32x32 -&gt; ...' },
+    { title: '6. Other Stabilization Techniques', desc: 'Two-timescale update rule (TTUR): Use a higher learning rate for D than G (e.g., D: 4e-4, G: 1e-4). (2017) showed this converges to a local Nash equilibrium.' },
 ];
 
 export default function WalkthroughCVCGanTrainingDynamics() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCGanTrainingDynamics() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          GAN Training Dynamics — Step by Step
+          GAN Training Dynamics \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how gan training dynamics works, one stage at a time.

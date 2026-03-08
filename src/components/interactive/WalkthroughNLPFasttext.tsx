@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Character N-Gram Representation', desc: 'The foundation of fasttext begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Embedding Computation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes fasttext work.' },
-    { title: '3. Training Objective', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Handling OOV Words', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. FastText for Text Classification', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Character N-Gram Representation', desc: 'Each word is augmented with special boundary markers "&lt;" and "&gt;", then decomposed into character n-grams of sizes 3 to 6 (by default). For example, the word "where" becomes:  Plus the word itself as a special token.' },
+    { title: '2. Embedding Computation', desc: 'The vector for a word w is the sum of its constituent n-gram vectors:  where z_w is the vector for the whole word (if in vocabulary), G(w) is the set of character n-grams of w, and z_g is the embedding vector for n-gram g.' },
+    { title: '3. Training Objective', desc: 'FastText uses the same Skip-gram objective as Word2Vec, but with the enriched word representation. For a target-context pair (w_t, w_c):  The model is trained with negative sampling, identical to Word2Vec\'s approach.' },
+    { title: '4. Handling OOV Words', desc: 'When encountering a word not in the training vocabulary, FastText computes its embedding by summing the vectors of its character n-grams -- which were learned during training from many different words.' },
+    { title: '5. FastText for Text Classification', desc: 'Beyond embeddings, the fastText library includes a text classification model that is remarkably fast and accurate:  The classifier averages word (and n-gram) embeddings for the input text and feeds them through a linear classifier.' },
 ];
 
 export default function WalkthroughNLPFasttext() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPFasttext() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          FastText — Step by Step
+          FastText \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how fasttext works, one stage at a time.

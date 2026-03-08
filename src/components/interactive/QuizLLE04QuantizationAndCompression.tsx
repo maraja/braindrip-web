@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE04QuantizationAndCompression() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Quantization techniques evolved from a niche optimization into the critical bridge that brought frontier-class language models from data center clusters to consumer laptops, shrinking memory requirements by 4x with less than 1% quality loss.', isTrue: true, explanation: 'This captures the core purpose of Quantization and Compression.' },
-    { text: 'Quantization and Compression is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Quantization and Compression is important for building on more advanced topics.' },
-    { text: 'Quantization and Compression is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Quantization and Compression is important for building on more advanced topics.' },
+    { text: 'Quantization destroys model quality.', isTrue: false, explanation: 'At INT8, quality loss is essentially unmeasurable. At INT4, it\'s typically under 1% on standard benchmarks.' },
+    { text: 'You need to retrain the model after quantization.', isTrue: false, explanation: 'Post-training quantization methods like GPTQ and AWQ work on pre-trained models with no additional training -- just a small calibration dataset and a few hours of processing.' },
+    { text: 'Quantized models are slower.', isTrue: false, explanation: 'They\'re actually faster for most deployments because they require less memory bandwidth, which is typically the bottleneck for inference. A 4-bit model can process tokens 2-3x faster than the same model in FP16 on the same hardware.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

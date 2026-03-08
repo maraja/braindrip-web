@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPEventExtraction() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ACE 2005 SOTA (2024): Trigger identification F1 ~78%, trigger classification F1 ~76%, argument identification F1 ~60%, argument role classification F1 ~56-62%.', isTrue: true, explanation: 'This is a key technical detail of Event Extraction.' },
-    { text: 'Cross-sentence arguments: In the RAMS dataset, 65% of arguments appear in a different sentence from the trigger, and document-level models improve over sentence-level by 8-12% argument F1.', isTrue: true, explanation: 'This is a key technical detail of Event Extraction.' },
-    { text: 'Event trigger ambiguity: The same word can trigger different event types depending on context ("fired" can be a Conflict:Attack or Personnel:End-Position event).', isTrue: true, explanation: 'This is a key technical detail of Event Extraction.' },
+    { text: 'Event extraction is just NER plus relation extraction.', isTrue: false, explanation: 'Events have fundamentally different structure: they are anchored by triggers (often verbs, not noun phrases), involve typed argument roles specific to each event type, and carry temporal and modal properties. The task requires dedicated modeling beyond entity-relation extraction.' },
+    { text: 'Trigger identification F1 ~78%, trigger classification F1 ~76%, argument identification F1 ~60%, argument role classification F1 ~56-62%.', isTrue: true, explanation: 'Trigger identification F1 ~78%, trigger classification F1 ~76%, argument identification F1 ~60%, argument role classification F1 ~56-62%.' },
+    { text: 'Extracting the event trigger is the hard part.', isTrue: false, explanation: 'Trigger detection achieves ~78% F1 on ACE 2005, but argument role classification lags at ~58% F1. The bottleneck is argument extraction, especially for roles that require long-range reasoning or world knowledge.' },
+    { text: 'In the RAMS dataset, 65% of arguments appear in a different sentence from the trigger, and document-level models improve over sentence-level by 8-12% argument F1.', isTrue: true, explanation: 'In the RAMS dataset, 65% of arguments appear in a different sentence from the trigger, and document-level models improve over sentence-level by 8-12% argument F1.' },
+    { text: 'Events are always expressed by verbs.', isTrue: false, explanation: 'Nominalizations ("the bombing," "his resignation"), adjectives ("the dead soldiers"), and even implicit constructions express events without overt verb triggers. Systems focusing only on verb triggers miss a substantial portion of events.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

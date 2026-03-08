@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Container Isolation', desc: 'The foundation of agent sandboxing begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Filesystem Restrictions', desc: 'At this stage, the key transformation occurs — the core mechanism that makes agent sandboxing work.' },
-    { title: '3. Network Controls', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Resource Limits', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Container Isolation', desc: 'The primary sandboxing mechanism is containerization. Docker containers provide process isolation, filesystem isolation, and network namespace separation from the host.' },
+    { title: '2. Filesystem Restrictions', desc: 'Within the sandbox, the filesystem is tightly controlled. The agent typically gets a writable workspace directory (for creating and modifying files), read-only access to relevant code repositories or documents, and no access to system files, other users\' data, or sensitive configurations.' },
+    { title: '3. Network Controls', desc: 'Network restrictions prevent agents from making unauthorized external connections. A strict sandbox blocks all outbound network access, allowing only approved API endpoints through an allowlist.' },
+    { title: '4. Resource Limits', desc: 'Containers enforce resource limits: maximum CPU time, memory allocation, disk usage, and process count. These prevent runaway agent processes (infinite loops, memory leaks, fork bombs) from affecting the host system.' },
 ];
 
 export default function WalkthroughAACAgentSandboxing() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACAgentSandboxing() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agent Sandboxing — Step by Step
+          Agent Sandboxing \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how agent sandboxing works, one stage at a time.

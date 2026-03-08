@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizCVCIntersectionOverUnion() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Computation cost: IoU between two boxes requires ~10 arithmetic operations.', isTrue: true, explanation: 'This is a key technical detail of Intersection over Union.' },
-    { text: 'Pairwise IoU for $n$ boxes is $O(n^2)$.', isTrue: true, explanation: 'This is a key technical detail of Intersection over Union.' },
-    { text: 'Scale invariance: IoU is invariant to box scale -- a 50% overlap at $32 \\times 32$ scores the same as at $512 \\times 512$.', isTrue: true, explanation: 'This is a key technical detail of Intersection over Union.' },
+    { text: 'IoU 0.5 means the prediction is 50% correct.', isTrue: false, explanation: 'IoU 0.5 means 50% of the union area is shared, but the prediction may include significant background or miss part of the object. Visually, IoU 0.5 boxes can look quite misaligned.' },
+    { text: 'IoU between two boxes requires ~10 arithmetic operations.', isTrue: true, explanation: 'Pairwise IoU for n boxes is O(n^2).' },
+    { text: 'IoU is invariant to box scale -- a 50% overlap at 32 x 32 scores the same as at 512 x 512.', isTrue: true, explanation: 'IoU is invariant to box scale -- a 50% overlap at 32 x 32 scores the same as at 512 x 512.' },
+    { text: '0.05:0.95), which is much stricter.', isTrue: true, explanation: '0.05:0.95), which is much stricter.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

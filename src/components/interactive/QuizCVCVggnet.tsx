@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizCVCVggnet() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'VGG-16: 138 million parameters, ~15.5 billion FLOPs per forward pass.', isTrue: true, explanation: 'This is a key technical detail of VGGNet.' },
-    { text: 'VGG-19: 144 million parameters, ~19.6 billion FLOPs.', isTrue: true, explanation: 'This is a key technical detail of VGGNet.' },
-    { text: 'Parameter distribution: The first FC layer ($7 \\times 7 \\times 512 \\times 4096$) alone contains ~102M parameters -- 74% of the total.', isTrue: true, explanation: 'This is a key technical detail of VGGNet.' },
+    { text: 'VGGNet won ImageNet 2014.', isTrue: false, explanation: 'GoogLeNet won the classification task with 6.7% top-5 error. VGGNet placed second at 7.3%.' },
+    { text: '138 million parameters, ~15.5 billion FLOPs per forward pass.', isTrue: true, explanation: '138 million parameters, ~15.5 billion FLOPs per forward pass.' },
+    { text: '144 million parameters, ~19.6 billion FLOPs.', isTrue: true, explanation: '144 million parameters, ~19.6 billion FLOPs.' },
+    { text: 'The first FC layer (7 x 7 x 512 x 4096) alone contains ~102M parameters -- 74% of the total.', isTrue: true, explanation: 'The convolutional layers contain only ~14.7M parameters.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

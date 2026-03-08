@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Hierarchical Feature Maps via Patch Merging', desc: 'The foundation of swin transformer begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Window-Based Multi-Head Self-Attention (W-MSA)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes swin transformer work.' },
-    { title: '3. Shifted Window Multi-Head Self-Attention (SW-MSA)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Relative Position Bias', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Model Variants', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Hierarchical Feature Maps via Patch Merging', desc: 'Swin builds a feature pyramid analogous to a CNN backbone:  Stage 1: 4 x 4 patch embedding, producing &#123;H&#125;&#123;4&#125; x &#123;W&#125;&#123;4&#125; tokens with dimension C Stage 2: Patch merging (concatenating 2 x 2 neighboring patches and projecting), producing &#123;H&#125;&#123;8&#125; x &#123;W&#125;&#123;8&#125; tokens with dimension 2C Stage 3: &#123;H&#125;&#123;16&#125; x.' },
+    { title: '2. Window-Based Multi-Head Self-Attention (W-MSA)', desc: 'Instead of global self-attention over all N tokens, Swin partitions the feature map into non-overlapping windows of size M x M (default M = 7). Attention is computed independently within each window:  [equation]  where B is a learnable relative position bias.' },
+    { title: '3. Shifted Window Multi-Head Self-Attention (SW-MSA)', desc: 'Window attention alone would isolate each window. Swin alternates between two configurations:  Layer : Regular window partition (W-MSA) Layer +1: Windows shifted by ( M/2 ,  M/2 ) pixels (SW-MSA)  The shift creates cross-window connections.' },
+    { title: '4. Relative Position Bias', desc: 'Rather than absolute positional embeddings, Swin uses a learnable relative position bias B  &#123;R&#125;^&#123;M^2 x M^2&#125; indexed from a bias table of size (2M-1) x (2M-1). This relative encoding is critical -- removing it drops ImageNet accuracy by ~1.2%.' },
 ];
 
 export default function WalkthroughCVCSwinTransformer() {
@@ -17,10 +16,10 @@ export default function WalkthroughCVCSwinTransformer() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Swin Transformer — Step by Step
+          Swin Transformer \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how swin transformer works, one stage at a time.

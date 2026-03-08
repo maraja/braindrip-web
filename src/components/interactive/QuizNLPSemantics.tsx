@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPSemantics() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'WordNet 3.1 contains approximately 117,000 synsets covering approximately 155,000 words.', isTrue: true, explanation: 'This is a key technical detail of Semantics.' },
-    { text: 'The average polysemy of English nouns in WordNet is approximately 1.24 senses, but the 1,000 most frequent nouns average approximately 3.5 senses.', isTrue: true, explanation: 'This is a key technical detail of Semantics.' },
-    { text: 'Word2Vec trained on 100 billion words from Google News produces 300-dimensional vectors that achieve approximately 74% accuracy on the word analogy task (Mikolov et al., 2013).', isTrue: true, explanation: 'This is a key technical detail of Semantics.' },
+    { text: 'Distributional semantics captures the full meaning of words.', isTrue: false, explanation: 'Distributional vectors capture associative and relational similarity but miss aspects of meaning that require grounding: they cannot distinguish "above" from "below" from co-occurrence patterns alone, and they lack the embodied understanding that connects "red" to an actual perceptual experience. This is the "grounding problem" (Bender and Koller, 2020).' },
+    { text: 'WordNet is obsolete in the age of embeddings.', isTrue: false, explanation: 'WordNet\'s explicit relational structure (hypernymy, meronymy) provides knowledge that is complementary to distributional information. Many state-of-the-art WSD systems combine distributional features with WordNet\'s graph structure, and WordNet remains the standard evaluation resource for lexical semantics tasks.' },
+    { text: 'Formal semantics and distributional semantics are incompatible.', isTrue: false, explanation: 'There is active research on combining the scalability of distributional methods with the precision of formal logic. Neural-symbolic approaches, programs that generate logical forms from natural language, and embedding-based knowledge graph reasoning all bridge these traditions.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

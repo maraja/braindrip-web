@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Self-Instruct: The Bootstrap Approach', desc: 'The foundation of synthetic data for training begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Alpaca and the Distillation Paradigm', desc: 'At this stage, the key transformation occurs — the core mechanism that makes synthetic data for training work.' },
-    { title: '3. Chain-of-Thought and Reasoning Distillation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. GLAN and Systematic Generation (2024)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. DeepSeek-R1 and RL-Generated Reasoning', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Self-Instruct: The Bootstrap Approach', desc: 'Wang et al.\'s Self-Instruct (2022) established the foundational methodology. Starting from a seed set of 175 manually-written tasks, the process iterates:  Instruction generation: The model generates new task instructions, prompted by randomly sampled examples from the existing pool.' },
+    { title: '2. Alpaca and the Distillation Paradigm', desc: 'Stanford Alpaca (March 2023) adapted Self-Instruct by using GPT-3.5 (a more capable model) to generate training data for LLaMA 7B (a smaller, open-weight model).' },
+    { title: '3. Chain-of-Thought and Reasoning Distillation', desc: 'A particularly powerful application of synthetic data emerged in reasoning. Rather than just generating instruction-output pairs, researchers used large models to generate step-by-step reasoning traces:  Chain-of-thought distillation: A large model (the "teacher") solves math or reasoning problems.' },
+    { title: '4. GLAN and Systematic Generation (2024)', desc: 'Li et al.\'s GLAN (Generalized Instruction Tuning via Synthetic Data, 2024) took a more systematic approach. Rather than generating random instructions, GLAN used a human-designed taxonomy of knowledge domains and skills.' },
+    { title: '5. DeepSeek-R1 and RL-Generated Reasoning', desc: 'DeepSeek-R1 (2025) represented the frontier of synthetic data for reasoning. Rather than distilling reasoning from a teacher model, DeepSeek used reinforcement learning to have the model discover its own reasoning strategies.' },
 ];
 
 export default function WalkthroughLLE06SyntheticDataForTraining() {
@@ -17,10 +17,10 @@ export default function WalkthroughLLE06SyntheticDataForTraining() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Synthetic Data for Training — Step by Step
+          Synthetic Data for Training \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how synthetic data for training works, one stage at a time.

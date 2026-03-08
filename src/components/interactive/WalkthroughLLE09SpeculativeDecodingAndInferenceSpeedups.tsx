@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Classical Speculative Decoding (2023)', desc: 'The foundation of speculative decoding and inference speedups begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Medusa: Self-Speculative Heads (2024)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes speculative decoding and inference speedups work.' },
-    { title: '3. EAGLE: Feature-Level Speculation (2024)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Multi-Token Prediction (MTP)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Beyond Speculation: Complementary Techniques', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Classical Speculative Decoding (2023)', desc: 'Two groups independently published the core algorithm in 2023: Leviathan, Kalman, and Matias at Google ("Fast Inference from Transformers via Speculative Decoding") and Chen, Borgeaud, et al. at DeepMind ("Accelerating Large Language Model Decoding with Speculative Sampling").' },
+    { title: '2. Medusa: Self-Speculative Heads (2024)', desc: '(2024) eliminated the need for a separate draft model entirely. Medusa adds multiple lightweight prediction heads to the target model itself, each predicting a different future token position.' },
+    { title: '3. EAGLE: Feature-Level Speculation (2024)', desc: '(2024) introduced EAGLE (Extrapolation Algorithm for Greater Language-model Efficiency), which speculates at the feature level rather than the token level.' },
+    { title: '4. Multi-Token Prediction (MTP)', desc: 'DeepSeek V3 introduced a training-time version of this idea: training the model to predict multiple next tokens simultaneously using additional prediction heads.' },
+    { title: '5. Beyond Speculation: Complementary Techniques', desc: 'Speculative decoding is one of several inference speedup techniques that can be combined:  Continuous batching (used in vLLM and TensorRT-LLM): Rather than waiting for an entire batch to finish before starting new requests, continuous batching dynamically adds and removes requests from the active.' },
 ];
 
 export default function WalkthroughLLE09SpeculativeDecodingAndInferenceSpeedups() {
@@ -17,10 +17,10 @@ export default function WalkthroughLLE09SpeculativeDecodingAndInferenceSpeedups(
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Speculative Decoding and Inference Speedups — Step by Step
+          Speculative Decoding and Inference Speedups \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how speculative decoding and inference speedups works, one stage at a time.

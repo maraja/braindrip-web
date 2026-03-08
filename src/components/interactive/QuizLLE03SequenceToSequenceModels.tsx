@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE03SequenceToSequenceModels() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: '(2014) published a similar encoder-decoder model with GRUs at nearly the same time', isTrue: true, explanation: 'This is a key technical detail of Sequence-to-Sequence Models.' },
-    { text: 'The Seq2Seq framework (Sutskever et al., 2014) established the encoder-decoder paradigm for mapping variable-length inputs to variable-length outputs, achieving breakthrough machine translation results while revealing the fixed-length bottleneck that would drive the invention of attention.', isTrue: true, explanation: 'This captures the core purpose of Sequence-to-Sequence Models.' },
-    { text: 'Sequence-to-Sequence Models is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Sequence-to-Sequence Models is important for building on more advanced topics.' },
+    { text: 'Seq2Seq was only for machine translation.', isTrue: false, explanation: 'While MT was the flagship application, the architecture was quickly applied to summarization, dialogue systems, image captioning (with a CNN encoder), speech recognition, and code generation. The framework is general-purpose.' },
+    { text: '4-layer LSTM encoder + 4-layer LSTM decoder, 1000 hidden units per layer', isTrue: true, explanation: '4-layer LSTM encoder + 4-layer LSTM decoder, 1000 hidden units per layer' },
+    { text: 'The decoder generates all tokens independently.', isTrue: false, explanation: 'The decoder is autoregressive — each token is conditioned on all previously generated tokens (through the hidden state). This sequential dependency is what makes beam search necessary and generation inherently serial.' },
+    { text: '~384M for the ensemble of 5 models', isTrue: true, explanation: '~384M for the ensemble of 5 models' },
+    { text: 'Seq2Seq models understood language.', isTrue: false, explanation: 'They learned statistical patterns of translation from parallel corpora. They had no explicit representations of syntax, semantics, or world knowledge.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

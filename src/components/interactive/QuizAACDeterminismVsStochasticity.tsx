@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACDeterminismVsStochasticity() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Temperature 0 reproducibility rate: With temperature 0 and identical prompts, single LLM calls reproduce the same output roughly 85-95% of the time (varying by provider and model).', isTrue: true, explanation: 'This is a key technical detail of Determinism vs. Stochasticity.' },
-    { text: 'This drops to 30-60% for full agent task runs of 20+ steps.', isTrue: true, explanation: 'This is a key technical detail of Determinism vs. Stochasticity.' },
-    { text: 'Seed parameter support: OpenAI supports a seed parameter in API calls (introduced late 2023).', isTrue: true, explanation: 'This is a key technical detail of Determinism vs. Stochasticity.' },
+    { text: 'Setting temperature to 0 makes the agent deterministic.', isTrue: false, explanation: 'Temperature 0 makes the LLM\'s sampling deterministic (greedy decoding), but floating-point non-determinism, infrastructure variability, and tool output changes still introduce variation. Temperature 0 is necessary but not sufficient for determinism.' },
+    { text: 'With temperature 0 and identical prompts, single LLM calls reproduce the same output roughly 85-95% of the time (varying by provider and model).', isTrue: true, explanation: 'This drops to 30-60% for full agent task runs of 20+ steps.' },
+    { text: 'Non-determinism is always a bug to be fixed.', isTrue: false, explanation: 'In many agent applications, exact reproducibility is unnecessary. What matters is that the agent consistently achieves the correct outcome, even if it takes different paths to get there.' },
+    { text: 'OpenAI supports a seed parameter in API calls (introduced late 2023).', isTrue: true, explanation: 'Anthropic does not expose an explicit seed parameter but uses temperature 0 for maximum consistency. Google\'s Gemini supports temperature 0 but not explicit seeding.' },
+    { text: 'Agents should behave like traditional software — same input, same output.', isTrue: false, explanation: 'This expectation is unrealistic for LLM-based systems and leads to brittle testing and misaligned quality criteria. Agent evaluation should focus on outcome correctness and behavioral properties rather than exact output matching.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

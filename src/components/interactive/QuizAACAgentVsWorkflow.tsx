@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACAgentVsWorkflow() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Token efficiency ratio: Workflows use 3-10x fewer tokens than agents for equivalent tasks with well-defined steps, because the LLM does not need to reason about orchestration.', isTrue: true, explanation: 'This is a key technical detail of Agent vs. Workflow.' },
-    { text: 'Latency comparison: A three-step workflow with parallel execution completes in the time of the slowest step (1-3 seconds).', isTrue: true, explanation: 'This is a key technical detail of Agent vs. Workflow.' },
-    { text: 'An agent taking 3 steps sequentially takes 3-10 seconds due to serial LLM calls.', isTrue: true, explanation: 'This is a key technical detail of Agent vs. Workflow.' },
+    { text: 'Agents are always better because they\'re more flexible.', isTrue: false, explanation: 'Flexibility comes at the cost of predictability, cost, and debuggability. For well-defined tasks, a workflow is strictly superior — faster, cheaper, more reliable, and easier to test.' },
+    { text: 'Workflows use 3-10x fewer tokens than agents for equivalent tasks with well-defined steps, because the LLM does not need to reason about orchestration.', isTrue: true, explanation: 'Workflows use 3-10x fewer tokens than agents for equivalent tasks with well-defined steps, because the LLM does not need to reason about orchestration.' },
+    { text: 'Workflows can\'t use LLMs.', isTrue: false, explanation: 'Workflows frequently use LLMs at individual steps — for classification, extraction, summarization, or generation. The distinction is not whether LLMs are involved, but whether the LLM controls the orchestration (agent) or the code controls the orchestration (workflow).' },
+    { text: 'A three-step workflow with parallel execution completes in the time of the slowest step (1-3 seconds).', isTrue: true, explanation: 'An agent taking 3 steps sequentially takes 3-10 seconds due to serial LLM calls.' },
+    { text: 'You must choose one or the other.', isTrue: false, explanation: 'Hybrid approaches are the norm in production systems. A common and effective pattern is a workflow backbone with agent-powered steps for subtasks that require judgment and flexibility.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

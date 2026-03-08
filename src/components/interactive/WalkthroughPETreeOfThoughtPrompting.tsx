@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Tree Structure', desc: 'The foundation of tree-of-thought prompting begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Search Strategies: BFS vs. DFS', desc: 'At this stage, the key transformation occurs — the core mechanism that makes tree-of-thought prompting work.' },
-    { title: '3. Evaluation and Pruning', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Prompting Version vs. the Algorithmic Version', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Tree Structure', desc: 'In ToT, each node in the tree represents a partial solution or intermediate reasoning state. From each node, the model generates multiple candidate next steps (branches).' },
+    { title: '2. Search Strategies: BFS vs. DFS', desc: 'ToT supports two primary search strategies. Breadth-first search (BFS) explores all candidates at each level before moving deeper, maintaining a "frontier" of the k most promising partial solutions.' },
+    { title: '3. Evaluation and Pruning', desc: 'At each node, the model evaluates whether the partial solution is promising. This evaluation can be done by the same LLM through a separate prompt ("Given this partial solution, rate its promise on a scale of 1-10 and explain why") or through a programmatic check (e.g.' },
+    { title: '4. The Prompting Version vs. the Algorithmic Version', desc: 'There are two distinct implementations of ToT. The algorithmic version (Yao et al.) uses an external program to manage the tree, make API calls for generation and evaluation at each node, and implement the search algorithm.' },
 ];
 
 export default function WalkthroughPETreeOfThoughtPrompting() {
@@ -16,10 +16,10 @@ export default function WalkthroughPETreeOfThoughtPrompting() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Tree-of-Thought Prompting — Step by Step
+          Tree-of-Thought Prompting \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how tree-of-thought prompting works, one stage at a time.

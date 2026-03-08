@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Rule-Based Approaches', desc: 'The foundation of grammatical error correction begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Classifier-Based Approaches', desc: 'At this stage, the key transformation occurs — the core mechanism that makes grammatical error correction work.' },
-    { title: '3. Seq2Seq Approaches (GEC as Translation)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Evaluation Metrics', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. LLM-Based Correction', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Rule-Based Approaches', desc: 'The earliest GEC systems relied on hand-crafted rules encoding grammatical knowledge:  Tools like LanguageTool (open-source, 2003--present) maintain thousands of pattern-based rules per language.' },
+    { title: '2. Classifier-Based Approaches', desc: 'Instead of hand-crafted rules, train separate classifiers for specific error types:  Article classifier: For each noun phrase, predict the correct article (a, an, the, or none) from a set of features (POS tags, head noun, context).' },
+    { title: '3. Seq2Seq Approaches (GEC as Translation)', desc: 'A breakthrough insight: treat GEC as monolingual translation from "bad English" to "good English."  Encoder-Decoder GEC: Encode the erroneous sentence, decode the corrected version. Yuan and Briscoe (2016) first applied attention-based seq2seq to GEC.' },
+    { title: '4. Evaluation Metrics', desc: 'GEC uses specialized metrics because standard NLP metrics do not capture edit-level correctness:  MaxMatch (M2) (Dahlmeier and Ng, 2012): Computes the maximum overlap between the system\'s edits and a set of gold-standard edits, reporting precision, recall, and F-score.' },
+    { title: '5. LLM-Based Correction', desc: 'Modern LLMs perform GEC via prompting without task-specific fine-tuning:  Fang et al. (2023) showed that GPT-4 achieves 71.1 F0.5 on the CoNLL-2014 test set in a zero-shot setting -- competitive with fine-tuned systems.' },
 ];
 
 export default function WalkthroughNLPGrammaticalErrorCorrection() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPGrammaticalErrorCorrection() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Grammatical Error Correction — Step by Step
+          Grammatical Error Correction \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how grammatical error correction works, one stage at a time.

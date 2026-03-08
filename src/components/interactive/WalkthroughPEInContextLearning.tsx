@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Brown et al. Discovery (GPT-3, 2020)', desc: 'The foundation of in-context learning begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Min et al. Finding: Format Over Labels (2022)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes in-context learning work.' },
-    { title: '3. Theoretical Explanations', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Scaling Properties', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Brown et al. Discovery (GPT-3, 2020)', desc: 'GPT-3\'s paper demonstrated that a 175B-parameter language model could perform tasks with zero, one, or a few examples provided in the prompt. The key experimental setup: provide the model with examples formatted as "Input: X → Output: Y" and then a new "Input: Z → Output:" and let the model.' },
+    { title: '2. The Min et al. Finding: Format Over Labels (2022)', desc: 'In a result that surprised the field, Min et al. (2022) showed that the correctness of labels in few-shot examples matters far less than the format and input distribution.' },
+    { title: '3. Theoretical Explanations', desc: 'Several theoretical frameworks attempt to explain ICL:  Implicit Bayesian inference: The model implicitly conditions on a distribution of tasks consistent with the examples, then generates output from the posterior predictive distribution.' },
+    { title: '4. Scaling Properties', desc: 'ICL capability scales with model size, example count, and model quality:  Model size: ICL is weak or absent below ~1B parameters, emergent at 1-10B, and robust at 100B+.' },
 ];
 
 export default function WalkthroughPEInContextLearning() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEInContextLearning() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          In-Context Learning — Step by Step
+          In-Context Learning \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how in-context learning works, one stage at a time.

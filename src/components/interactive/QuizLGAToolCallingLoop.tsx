@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAToolCallingLoop() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The LLM executes the tools itself.', isTrue: false, explanation: '"The LLM executes the tools itself." The LLM only generates a structured request. A separate runtime -- your Python process -- actually calls the functions and returns results.' },
-    { text: 'Tool schemas follow the OpenAI function-calling JSON Schema format; most LLM providers have adopted this standard.', isTrue: true, explanation: 'This is a key technical detail of Tool-Calling Loop.' },
-    { text: 'Each tool_call has a unique id that the corresponding ToolMessage must reference via tool_call_id -- mismatched IDs cause errors.', isTrue: true, explanation: 'This is a key technical detail of Tool-Calling Loop.' },
+    { text: 'The LLM executes the tools itself.', isTrue: false, explanation: 'The LLM only generates a structured request. A separate runtime -- your Python process -- actually calls the functions and returns results.' },
+    { text: 'The tool-calling loop is the fundamental cycle where an LLM reasons about a task, invokes tools, observes results, and repeats until it can answer without further tool use.', isTrue: true, explanation: 'This captures the core definition of Tool-Calling Loop.' },
+    { text: 'Tool-Calling Loop is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Tool-Calling Loop is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

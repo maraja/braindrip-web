@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Prompt Engineering: Crafting the Directive Layer', desc: 'The foundation of prompt engineering vs. context engineering begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Context Engineering: Designing the Information Environment', desc: 'At this stage, the key transformation occurs — the core mechanism that makes prompt engineering vs. context engineering work.' },
-    { title: '3. Where They Intersect', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Karpathy Framing', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Prompt Engineering: Crafting the Directive Layer', desc: 'PE operates on the instruction and example content of the prompt. Its techniques include:  System message design: Writing the persona, behavioral constraints, and global instructions that frame model behavior.' },
+    { title: '2. Context Engineering: Designing the Information Environment', desc: 'CE operates on the non-directive content that fills the context window. Its challenges include:  Retrieval strategy: Deciding what documents, code, or data to retrieve and include.' },
+    { title: '3. Where They Intersect', desc: 'The boundary between PE and CE is not always crisp. A few-shot example is both an instruction (showing the desired behavior) and context (providing reference information).' },
+    { title: '4. The Karpathy Framing', desc: 'Andrej Karpathy\'s articulation of context engineering (2024-2025) emphasizes that as LLM applications mature, the bottleneck shifts from "how to write good prompts" to "how to build systems that assemble the right context for each interaction.' },
 ];
 
 export default function WalkthroughPEPromptEngineeringVsContextEngineering() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEPromptEngineeringVsContextEngineering() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Prompt Engineering vs. Context Engineering — Step by Step
+          Prompt Engineering vs. Context Engineering \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how prompt engineering vs. context engineering works, one stage at a time.

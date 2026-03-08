@@ -6,7 +6,7 @@ const DETAILS = [
     { label: 'Loss function', detail: 'Binary cross-entropy (sigmoid of log-probability ratios)' },
     { label: 'Key hyperparameter', detail: 'beta (KL constraint strength, typically 0.1-0.5)' },
     { label: 'Eliminates', detail: 'Separate reward model, RL training, PPO hyperparameters' },
-    { label: 'Pipeline', detail: 'SFT -> DPO (2 stages vs. RLHF\'s 3 stages)' },
+    { label: 'Pipeline', detail: 'SFT -&gt; DPO (2 stages vs. RLHF\'s 3 stages)' },
 ];
 
 export default function ExplorerLLE04DirectPreferenceOptimization() {
@@ -20,10 +20,10 @@ export default function ExplorerLLE04DirectPreferenceOptimization() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Direct Preference Optimization (DPO) — Key Details Explorer
+          Direct Preference Optimization (DPO) \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of direct preference optimization (dpo).
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizRLAdvantageEstimation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The standard value of $\\lambda$ in practice is 0.95 (PPO default), which leans toward lower bias at the cost of moderately higher variance.', isTrue: true, explanation: 'This is a key technical detail of Advantage Estimation.' },
-    { text: 'Most environments perform well with $\\lambda \\in [0.9, 0.99]$.', isTrue: true, explanation: 'This is a key technical detail of Advantage Estimation.' },
-    { text: 'GAE requires a trained value function $V_\\phi$.', isTrue: true, explanation: 'This is a key technical detail of Advantage Estimation.' },
+    { text: 'The advantage can be any positive number.', isTrue: false, explanation: 'By definition, &#123;E&#125;_&#123;a  &#125;[A^(s,a)] = 0 for every state. The advantage is always centered -- some actions have positive advantage and others have negative advantage.' },
+    { text: 'Methods for estimating how much better a specific action is compared to the average action in a given state -- the key signal that drives stable, efficient policy gradient updates.', isTrue: true, explanation: 'This captures the core definition of Advantage Estimation.' },
+    { text: 'Advantage Estimation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Advantage Estimation is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

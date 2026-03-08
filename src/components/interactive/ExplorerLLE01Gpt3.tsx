@@ -4,9 +4,9 @@ const DETAILS = [
     { label: 'Parameters', detail: '175 billion (96 layers, 96 heads, d_model=12,288)' },
     { label: 'Training data', detail: '~300B tokens from Common Crawl, WebText2, Books1, Books2, Wikipedia' },
     { label: 'Training cost', detail: 'Approximately $4.6M in compute' },
-    { label: 'Context window', detail: '2,048 tokens' },
     { label: 'Eight model sizes', detail: '125M, 350M, 760M, 1.3B, 2.7B, 6.7B, 13B, 175B parameters' },
-    { label: 'Few-shot TriviaQA', detail: '71.2% accuracy (closed-book, no fine-tuning)' },
+    { label: 'Few-shot TriviaQA', detail: '2% accuracy (closed-book, no fine-tuning)' },
+    { label: 'SuperGLUE few-shot', detail: '8 (vs. fine-tuned BERT baseline of 69.0)' },
 ];
 
 export default function ExplorerLLE01Gpt3() {
@@ -20,10 +20,10 @@ export default function ExplorerLLE01Gpt3() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          GPT-3 — Key Details Explorer
+          GPT-3 \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of gpt-3.
+          Click each card to explore the technical details.
         </p>
       </div>
 

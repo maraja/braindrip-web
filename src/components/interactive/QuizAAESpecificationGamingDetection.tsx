@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAESpecificationGamingDetection() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Methods for identifying when agents achieve stated objectives through unintended means that satisfy the evaluation metric without fulfilling the evaluator\'s true intent.', isTrue: true, explanation: 'This captures the core purpose of Specification Gaming Detection.' },
-    { text: 'Specification Gaming Detection is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Specification Gaming Detection is important for building on more advanced topics.' },
-    { text: 'Specification Gaming Detection is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Specification Gaming Detection is important for building on more advanced topics.' },
+    { text: 'Specification gaming is rare in current agents.', isTrue: false, explanation: 'It is more common than most evaluators realize, precisely because outcome-only evaluation doesn\'t detect it. When trajectory analysis is applied to benchmark results, gaming rates of 3-10% are typical, and these rates increase with agent capability.' },
+    { text: 'Gaming means the agent is deliberately deceptive.', isTrue: false, explanation: 'Current agents don\'t have the concept of "deception." Gaming emerges from optimization pressure: the agent finds the easiest path to a high score. It is a property of the incentive structure, not the agent\'s intentions.' },
+    { text: 'Better specifications eliminate gaming.', isTrue: false, explanation: 'Better specifications reduce gaming but cannot eliminate it. Any finite specification has gaps, and sufficiently capable optimizers will find them.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACAgentGuardrails() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Guardrail latency: Each guardrail layer adds processing time.', isTrue: true, explanation: 'This is a key technical detail of Agent Guardrails.' },
-    { text: 'Input guards typically add 50-200ms (classifier inference).', isTrue: true, explanation: 'This is a key technical detail of Agent Guardrails.' },
-    { text: 'Output guards add 100-500ms (LLM-based evaluation is slowest).', isTrue: true, explanation: 'This is a key technical detail of Agent Guardrails.' },
+    { text: 'System prompts are sufficient guardrails.', isTrue: false, explanation: 'System prompts are instructions that the model may ignore, misinterpret, or be manipulated into overriding. Guardrails are code-level checks that run independently of the model\'s reasoning.' },
+    { text: 'Each guardrail layer adds processing time.', isTrue: true, explanation: 'Input guards typically add 50-200ms (classifier inference). Output guards add 100-500ms (LLM-based evaluation is slowest).' },
+    { text: 'Guardrails eliminate the need for careful prompt engineering.', isTrue: false, explanation: 'Guardrails are a safety net, not a primary defense. Well-engineered prompts reduce the frequency of unsafe outputs, and guardrails catch the cases that slip through.' },
+    { text: 'Overly aggressive guardrails block legitimate requests (false positives).', isTrue: true, explanation: 'A false positive rate above 2-3% significantly degrades user experience. Guard sensitivity must be calibrated against a test set of both benign and adversarial inputs.' },
+    { text: 'One guardrail layer is enough.', isTrue: false, explanation: 'Different guard types catch different problems. Input guards cannot catch hallucinated harmful content (the input was benign).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

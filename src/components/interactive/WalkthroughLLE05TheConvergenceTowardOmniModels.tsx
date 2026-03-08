@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Phase 1: Separate Specialists (2018-2021)', desc: 'The foundation of the convergence toward omni-models begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Phase 2: Adapter-Connected Models (2022-2023)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes the convergence toward omni-models work.' },
-    { title: '3. Phase 3: Native Multimodal Training (2023-2024)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Phase 4: Omni-Models With Generation (2025)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Phase 1: Separate Specialists (2018-2021)', desc: 'The early deep learning era was defined by specialization. BERT (2018) and GPT-3 (2020) dominated text.' },
+    { title: '2. Phase 2: Adapter-Connected Models (2022-2023)', desc: 'CLIP (January 2021) demonstrated that vision and language could share an embedding space. Flamingo (April 2022) showed that visual tokens could be injected into a frozen LLM.' },
+    { title: '3. Phase 3: Native Multimodal Training (2023-2024)', desc: 'Gemini (December 2023) was the first frontier model designed as natively multimodal from the start. Text, images, audio, and video were all tokenized and processed through the same Transformer architecture during pre-training.' },
+    { title: '4. Phase 4: Omni-Models With Generation (2025)', desc: 'The frontier in 2025 extends beyond understanding to generation across modalities. GPT-4o gained native image generation capabilities (March 2025), allowing the same model that understands images and text to create new images from text descriptions or modify existing images based on natural.' },
 ];
 
 export default function WalkthroughLLE05TheConvergenceTowardOmniModels() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE05TheConvergenceTowardOmniModels() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The Convergence Toward Omni-Models — Step by Step
+          The Convergence Toward Omni-Models \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how the convergence toward omni-models works, one stage at a time.

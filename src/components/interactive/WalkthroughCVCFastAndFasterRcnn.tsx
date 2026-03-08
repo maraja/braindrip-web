@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Fast R-CNN', desc: 'The foundation of fast r-cnn and faster r-cnn begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Faster R-CNN: Region Proposal Network', desc: 'At this stage, the key transformation occurs — the core mechanism that makes fast r-cnn and faster r-cnn work.' },
-    { title: '3. Training Faster R-CNN', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Architecture Summary', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Fast R-CNN', desc: 'Shared feature map: The entire image is passed through a CNN backbone (e.g., VGG-16) to produce a convolutional feature map. RoI Pooling: For each proposal (still from Selective Search), project its coordinates onto the feature map and divide the region into a fixed H x W grid (e.g., 7 x 7).' },
+    { title: '2. Faster R-CNN: Region Proposal Network', desc: 'The RPN is a small fully convolutional network that slides over the shared feature map:  At each spatial location, place k anchor boxes of different scales and aspect ratios (typically k = 9: 3 scales x 3 ratios).' },
+    { title: '3. Training Faster R-CNN', desc: 'The original paper describes 4-step alternating training: Train RPN initialized from ImageNet-pretrained backbone. Train Fast R-CNN using proposals from step 1 (separate backbone).' },
 ];
 
 export default function WalkthroughCVCFastAndFasterRcnn() {
@@ -16,10 +15,10 @@ export default function WalkthroughCVCFastAndFasterRcnn() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Fast R-CNN and Faster R-CNN — Step by Step
+          Fast R-CNN and Faster R-CNN \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how fast r-cnn and faster r-cnn works, one stage at a time.

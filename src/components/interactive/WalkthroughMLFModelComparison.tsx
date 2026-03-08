@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Why Comparing Means Is Not Enough', desc: 'The foundation of model comparison begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Paired t-Test on CV Folds', desc: 'At this stage, the key transformation occurs — the core mechanism that makes model comparison work.' },
-    { title: '3. Corrected Resampled t-Test (Nadeau & Bengio)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. McNemar\'s Test (Classification)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Wilcoxon Signed-Rank Test (Non-Parametric)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Why Comparing Means Is Not Enough', desc: 'Suppose 5-fold CV produces accuracy estimates for two models:  Mean: A = 0.850, B = 0.850. Yet looking fold-by-fold, sometimes A wins, sometimes B wins.' },
+    { title: '2. Paired t-Test on CV Folds', desc: 'The most straightforward approach: compute the difference d_k = L_A^&#123;(k)&#125; - L_B^&#123;(k)&#125; for each fold k, then test whether the mean difference &#123;d&#125; is significantly different from zero. [equation]  where s_d is the standard deviation of the d_k values and K is the number of folds.' },
+    { title: '3. Corrected Resampled t-Test (Nadeau & Bengio)', desc: 'Nadeau & Bengio (2003) proposed a correction that adjusts the variance estimate to account for the training set overlap:  [equation]  where n_&#123;test&#125; and n_&#123;train&#125; are the sizes of the test and training sets in each fold, and &#123;&#125;^2 is the variance of the fold-level differences:  [equation]  This.' },
+    { title: '4. McNemar\'s Test (Classification)', desc: 'McNemar\'s test operates on the predictions themselves rather than on aggregate metrics. It uses a 2x2 contingency table of how two classifiers differ on individual test examples:  Only the discordant pairs (n_&#123;01&#125; and n_&#123;10&#125;) carry information about which model is better.' },
+    { title: '5. Wilcoxon Signed-Rank Test (Non-Parametric)', desc: 'When fold-level differences are not normally distributed, the Wilcoxon signed-rank test is a robust alternative. It ranks the absolute differences [equation] values from smallest to largest.' },
+    { title: '6. Friedman Test (Comparing Multiple Models)', desc: 'When comparing M &gt; 2 models across K datasets (or folds), the Friedman test is a non-parametric alternative to repeated-measures ANOVA. For each fold, models are ranked from best to worst.' },
 ];
 
 export default function WalkthroughMLFModelComparison() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFModelComparison() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Model Comparison — Step by Step
+          Model Comparison \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how model comparison works, one stage at a time.

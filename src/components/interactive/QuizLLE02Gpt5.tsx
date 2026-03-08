@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE02Gpt5() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'OpenAI\'s GPT-5 (August 2025) unified traditional language modeling, chain-of-thought reasoning, and native tool use into a single architecture, converging the separate GPT and o-series product lines into one model — then GPT-5.2 (December 2025) pushed the frontier further with three model variants and near-saturating benchmark scores, followed by GPT-5.2-Codex (January 2026) for agentic coding.', isTrue: true, explanation: 'This captures the core purpose of GPT-5.' },
-    { text: 'GPT-5 is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding GPT-5 is important for building on more advanced topics.' },
-    { text: 'GPT-5 is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding GPT-5 is important for building on more advanced topics.' },
+    { text: 'GPT-5 is just GPT-4 with o3 bolted on.', isTrue: false, explanation: 'The integration is architectural, not a pipeline. The model was trained end-to-end to route between reasoning modes, not as two models in a trench coat.' },
+    { text: 'GPT-5 makes o-series models obsolete.', isTrue: false, explanation: 'While GPT-5 subsumes most o-series capabilities, specialized reasoning models may still be trained for domains where maximum reasoning depth is worth the latency cost. The o-series research informed GPT-5 but the line may continue for extreme reasoning tasks.' },
+    { text: 'GPT-5 is the clear #1 model.', isTrue: false, explanation: 'The frontier in August 2025 was intensely competitive. Claude Opus 4 led on agentic tasks and sustained coding.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

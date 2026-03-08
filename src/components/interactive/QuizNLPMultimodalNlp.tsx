@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPMultimodalNlp() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'CLIP was trained on 400M image-text pairs using a batch size of 32,768 with in-batch negative sampling.', isTrue: true, explanation: 'This is a key technical detail of Multimodal NLP.' },
-    { text: 'The contrastive loss creates 32,768^2 - 32,768 negative pairs per batch.', isTrue: true, explanation: 'This is a key technical detail of Multimodal NLP.' },
-    { text: 'CLIP ViT-L/14 achieves 76.2% zero-shot top-1 accuracy on ImageNet; with fine-tuning, this reaches 88.7%.', isTrue: true, explanation: 'This is a key technical detail of Multimodal NLP.' },
+    { text: 'Multimodal models understand images like humans do.', isTrue: false, explanation: 'Current models struggle with spatial reasoning ("is the cup to the left or right of the plate?"), counting, fine-grained attribute binding ("the red cube and the blue sphere" vs. "the blue cube and the red sphere"), and understanding physical causality in images.' },
+    { text: 'CLIP understands language deeply.', isTrue: false, explanation: 'CLIP\'s text encoder is relatively shallow compared to dedicated language models. It excels at matching nouns and objects but struggles with negation ("a photo without a dog"), relationships, and compositional language.' },
+    { text: 'More modalities always help.', isTrue: false, explanation: 'Adding modalities introduces noise when the modalities are not aligned or relevant. Multimodal sentiment analysis, for example, sometimes performs worse than text-only models when audio/visual signals are uninformative or contradictory.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

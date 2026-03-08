@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Dropout', desc: 'The foundation of dropout and regularization begins with understanding its core input requirements and initial setup.' },
-    { title: '2. DropBlock for Convolutional Networks', desc: 'At this stage, the key transformation occurs — the core mechanism that makes dropout and regularization work.' },
-    { title: '3. L2 Regularization (Weight Decay)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Other Regularization Techniques', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Dropout', desc: 'During training, for a layer with activation vector h:  [equation] [equation]  where p is the drop probability (typically 0.5 for fully connected layers, 0.1-0.3 for other positions). At test time, no neurons are dropped and no scaling is applied (inverted dropout handles this automatically).' },
+    { title: '2. DropBlock for Convolutional Networks', desc: 'Standard dropout is ineffective for conv layers because adjacent activations are highly correlated -- dropping individual pixels is easily compensated by neighbors. DropBlock (Ghiasi et al., 2018) addresses this by dropping contiguous rectangular regions of the feature map.' },
+    { title: '3. L2 Regularization (Weight Decay)', desc: 'L2 regularization adds a penalty on the squared magnitude of weights to the loss:  [equation]  This encourages smaller weights, which smooths the decision boundary. In SGD, this is equivalent to weight decay: w  (1 -  ) w -   &#123;L&#125;_&#123;data&#125;.' },
+    { title: '4. Other Regularization Techniques', desc: 'L1 regularization: Encourages sparsity ( ), less common in vision. Stochastic Depth (Huang et al., 2016): Randomly drops entire residual blocks during training.' },
 ];
 
 export default function WalkthroughCVCDropoutAndRegularization() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCDropoutAndRegularization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Dropout and Regularization — Step by Step
+          Dropout and Regularization \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how dropout and regularization works, one stage at a time.

@@ -1,11 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Why Reference-Based Evaluation Fails', desc: 'The foundation of multiple valid solutions begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Solution-Agnostic Evaluation Methods', desc: 'At this stage, the key transformation occurs — the core mechanism that makes multiple valid solutions work.' },
-    { title: '3. Test-Based Verification', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Constraint Checking', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. LLM-as-Judge', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Why Reference-Based Evaluation Fails', desc: 'Reference-based evaluation compares agent output to one or more gold-standard answers using similarity metrics. Common approaches include:  Exact match: Output must be character-for-character identical to the reference BLEU/ROUGE scores: N-gram overlap between output and reference Embedding.' },
+    { title: '2. Solution-Agnostic Evaluation Methods', desc: 'The alternative is to define correctness through properties the solution must satisfy, rather than through similarity to a reference. Test-Based Verification  The most widely used approach, and the foundation of benchmarks like SWE-bench and HumanEval:  Define a test suite that any correct solution.' },
+    { title: '3. The Challenge of Creative and Exploratory Tasks', desc: 'Some agent tasks have genuinely subjective correctness criteria:  "Write a research summary of recent progress in protein folding": Many valid structures, emphases, and conclusions "Suggest improvements to this codebase architecture": Dependent on priorities, constraints, and taste "Design a.' },
 ];
 
 export default function WalkthroughAAEMultipleValidSolutions() {
@@ -17,10 +15,10 @@ export default function WalkthroughAAEMultipleValidSolutions() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Multiple Valid Solutions — Step by Step
+          Multiple Valid Solutions \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how multiple valid solutions works, one stage at a time.

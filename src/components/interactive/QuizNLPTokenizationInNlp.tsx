@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPTokenizationInNlp() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'English whitespace tokenization produces roughly 1.2 tokens per whitespace-delimited word (due to punctuation splitting).', isTrue: true, explanation: 'This is a key technical detail of Tokenization in NLP.' },
-    { text: 'Penn Treebank tokenization on the Wall Street Journal corpus averages approximately 23.5 tokens per sentence.', isTrue: true, explanation: 'This is a key technical detail of Tokenization in NLP.' },
-    { text: 'Chinese word segmentation state-of-the-art on the PKU benchmark (SIGHAN 2005) is 96.5% F1; on CTB it reaches 97.6% F1.', isTrue: true, explanation: 'This is a key technical detail of Tokenization in NLP.' },
+    { text: 'Tokenization is a solved problem.', isTrue: false, explanation: 'For English news text, perhaps. But tokenization accuracy drops significantly on code-mixed text (e.g., Hindi-English), social media (see text-cleaning-and-noise-removal.md), and historical documents.' },
+    { text: 'Subword tokenization (BPE) replaces word tokenization.', isTrue: false, explanation: 'Subword tokenization is the standard for transformer models, but many NLP applications -- keyword extraction (see keyword-extraction.md), concordance analysis, readability scoring, and linguistic annotation -- still require word-level tokens.' },
+    { text: 'More tokens means better granularity.', isTrue: false, explanation: 'Over-splitting loses semantic units. Splitting "ice cream" into "ice" and "cream" makes it harder for a bag-of-words model to capture the compound meaning.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

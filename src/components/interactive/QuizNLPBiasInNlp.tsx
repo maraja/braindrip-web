@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPBiasInNlp() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'WEAT effect sizes: Gender bias (male/female vs.', isTrue: true, explanation: 'This is a key technical detail of Bias in NLP.' },
-    { text: 'career/family) d = 1.81 in GloVe; racial bias (European/African American names vs.', isTrue: true, explanation: 'This is a key technical detail of Bias in NLP.' },
-    { text: 'pleasant/unpleasant) d = 1.41.', isTrue: true, explanation: 'This is a key technical detail of Bias in NLP.' },
+    { text: 'Bias is just a data problem -- get better data and it goes away.', isTrue: false, explanation: 'While training data is the primary source, bias also enters through annotation schemes, model architectures, evaluation benchmarks, and deployment contexts. Even with perfectly balanced data, models can learn to exploit proxy variables (zip code as a proxy for race, writing style as a proxy for socioeconomic status).' },
+    { text: 'Gender bias (male/female vs.', isTrue: true, explanation: 'career/family) d = 1.81 in GloVe; racial bias (European/African American names vs. pleasant/unpleasant) d = 1.41.' },
+    { text: 'Debiasing embeddings solves NLP bias.', isTrue: false, explanation: 'Bolukbasi-style debiasing reduces performance on bias benchmarks like WEAT but does not eliminate bias from downstream tasks. Gonen and Goldberg (2019) showed that debiased embeddings still cluster stereotypical words together -- the bias is cosmetically removed from one test while persisting in the representation\'s deeper structure.' },
+    { text: 'Google Translate achieved only ~50% accuracy on gender-neutral-to-English pronoun translation for stereotypically gendered occupations (tested on Turkish, Hungarian, Finnish) as of 2020.', isTrue: true, explanation: 'Google Translate achieved only ~50% accuracy on gender-neutral-to-English pronoun translation for stereotypically gendered occupations (tested on Turkish, Hungarian, Finnish) as of 2020.' },
+    { text: 'Bias only affects marginalized groups.', isTrue: false, explanation: 'Bias also produces inaccurate representations of majority groups (e.g., reinforcing stereotypes about men being unemotional or aggressive). While the harm is disproportionate for marginalized groups, biased models are less accurate for everyone because they rely on stereotypical shortcuts rather than genuine linguistic understanding.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizRLFunctionApproximation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Tile coding is a popular linear method using overlapping grids; typically 8--16 tilings with learning rate $\\alpha = 0.1 / \\text&#123;num\\_tilings&#125;$.', isTrue: true, explanation: 'This is a key technical detail of Function Approximation.' },
-    { text: 'Radial basis functions (RBFs) provide smooth generalization with Gaussian features centered at prototype states.', isTrue: true, explanation: 'This is a key technical detail of Function Approximation.' },
-    { text: 'Linear TD(0) converges in the mean for diminishing step sizes satisfying the Robbins-Monro conditions: $\\sum \\alpha_t = \\infty$, $\\sum \\alpha_t^2 &lt; \\infty$.', isTrue: true, explanation: 'This is a key technical detail of Function Approximation.' },
+    { text: 'Function approximation just means neural networks.', isTrue: false, explanation: 'Neural networks are one choice. Linear methods, decision trees, kernel methods, and even Fourier basis functions are all valid function approximators.' },
+    { text: 'More parameters always means better approximation.', isTrue: false, explanation: 'Over-parameterization can cause overfitting to recently visited states and catastrophic forgetting of earlier ones. The interplay between approximation capacity and training stability is delicate.' },
+    { text: 'The deadly triad means we should avoid function approximation.', isTrue: false, explanation: 'The triad warns about a specific dangerous combination. Careful algorithmic design (experience replay, target networks, on-policy methods) mitigates the risks.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

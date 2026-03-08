@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Trajectory Collection', desc: 'The foundation of agent distillation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Trajectory Preprocessing', desc: 'At this stage, the key transformation occurs — the core mechanism that makes agent distillation work.' },
-    { title: '3. Fine-Tuning the Student Model', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Iterative Distillation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Trajectory Collection', desc: 'The first step is collecting successful agent trajectories from the frontier model. A trajectory is the complete sequence of (state, action, observation) triples from a task\'s start to its successful completion.' },
+    { title: '2. Trajectory Preprocessing', desc: 'Raw trajectories from frontier models are often noisy. The model may have taken exploratory detours, made mistakes that it later corrected, or included verbose reasoning that is not necessary for the solution.' },
+    { title: '3. Fine-Tuning the Student Model', desc: 'The preprocessed trajectories become supervised training data. The student model is fine-tuned to predict the correct action given the current state.' },
+    { title: '4. Iterative Distillation', desc: 'A single round of distillation rarely achieves optimal results. Iterative distillation improves the student across multiple rounds: (1) Collect trajectories from the teacher.' },
 ];
 
 export default function WalkthroughAACAgentDistillation() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACAgentDistillation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agent Distillation — Step by Step
+          Agent Distillation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how agent distillation works, one stage at a time.

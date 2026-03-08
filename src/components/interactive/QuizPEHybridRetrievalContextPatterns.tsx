@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEHybridRetrievalContextPatterns() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Hybrid retrieval (dense + sparse) outperforms either method alone by 5-15% on BEIR benchmarks, with larger gains on heterogeneous query sets.', isTrue: true, explanation: 'This is a key technical detail of Hybrid Retrieval Context Patterns.' },
-    { text: 'BM25 outperforms dense retrieval on 30-40% of query types, particularly those with rare terms, exact codes, and proper nouns.', isTrue: true, explanation: 'This is a key technical detail of Hybrid Retrieval Context Patterns.' },
-    { text: 'RRF with k=60 is the most widely used fusion method and requires no training; it is the default in Elasticsearch 8.x hybrid search.', isTrue: true, explanation: 'This is a key technical detail of Hybrid Retrieval Context Patterns.' },
+    { text: 'Dense retrieval has made keyword search obsolete.', isTrue: false, explanation: 'BM25 remains superior for exact term matching, rare words, and domain-specific jargon. On the BEIR benchmark, BM25 outperforms the best dense models on 4 out of 18 datasets, and it provides complementary signal on all of them.' },
+    { text: 'Hybrid retrieval is too complex for production.', isTrue: false, explanation: 'Modern search platforms (Elasticsearch 8.x, Weaviate, Qdrant) support hybrid retrieval with built-in RRF fusion as a configuration option. The implementation complexity is minimal.' },
+    { text: 'You need to choose between dense and sparse.', isTrue: false, explanation: 'This is a false dichotomy. The marginal cost of running both methods is small (BM25 adds 5-20ms), and the quality improvement of 5-15% is substantial.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

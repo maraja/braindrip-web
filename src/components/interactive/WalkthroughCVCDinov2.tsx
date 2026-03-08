@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Training Objectives', desc: 'The foundation of dinov2 begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Data Curation: LVD-142M', desc: 'At this stage, the key transformation occurs — the core mechanism that makes dinov2 work.' },
-    { title: '3. Distillation for Model Scaling', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Feature Properties', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Training Objectives', desc: 'DINOv2 combines two complementary self-supervised losses:  Self-distillation (DINO/iBOT image-level loss): A student network and an exponential moving average (EMA) teacher network process different augmented views of the same image.' },
+    { title: '2. Data Curation: LVD-142M', desc: 'A critical contribution is the curated dataset of 142 million images (LVD-142M):  Start with a pool of 1.2 billion uncurated web images Use a pretrained model to compute image embeddings Deduplicate images: remove near-duplicates within and across datasets Rebalance by retrieving images similar to.' },
+    { title: '3. Distillation for Model Scaling', desc: 'DINOv2 trains a large teacher model (ViT-g/14, 1.1B parameters) and then distills it into smaller student models:  ViT-S/14 (21M parameters): distilled from ViT-g ViT-B/14 (86M parameters): distilled from ViT-g ViT-L/14 (300M parameters): distilled from ViT-g ViT-g/14 (1.' },
+    { title: '4. Feature Properties', desc: 'DINOv2 features exhibit remarkable properties:  Patch features are semantically meaningful: Individual patch tokens correspond to semantic parts (e.g., a dog\'s ear, a car\'s wheel) without any supervision PCA of patch features produces segmentation: The first few principal components of DINOv2 patch.' },
 ];
 
 export default function WalkthroughCVCDinov2() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCDinov2() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          DINOv2 — Step by Step
+          DINOv2 \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how dinov2 works, one stage at a time.

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Time Metrics Taxonomy', desc: 'The foundation of latency-aware evaluation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Distribution Analysis', desc: 'At this stage, the key transformation occurs — the core mechanism that makes latency-aware evaluation work.' },
-    { title: '3. Latency Budgets as Evaluation Criteria', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Quality-Latency Pareto Frontier', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Where Time Goes: Latency Decomposition', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Time Metrics Taxonomy', desc: 'Latency-aware evaluation requires multiple time metrics, each capturing a different aspect of the user experience:  Time-to-first-action (TTFA): How long before the agent begins doing something visible to the user.' },
+    { title: '2. Distribution Analysis', desc: 'Reporting median latency alone is as misleading as reporting mean pass rate. Latency distributions for agents are typically heavy-tailed: most tasks complete quickly, but a minority take dramatically longer.' },
+    { title: '3. Latency Budgets as Evaluation Criteria', desc: 'Production deployments set latency budgets -- maximum acceptable completion times that function as hard evaluation criteria:  "Must complete in under 60 seconds for 95% of tasks" (interactive coding assistant) "Must produce first response in under 5 seconds" (customer support agent) "Must complete.' },
+    { title: '4. The Quality-Latency Pareto Frontier', desc: 'Just as cost-controlled benchmarking plots accuracy against cost, latency-aware evaluation plots accuracy against completion time to reveal the quality-latency Pareto frontier. Modern reasoning models illustrate this vividly.' },
+    { title: '5. Where Time Goes: Latency Decomposition', desc: 'Understanding time allocation reveals optimization opportunities. A typical agent task decomposes as:  LLM inference: 30-60% of total time.' },
+    { title: '6. Perceived Latency and User Experience', desc: 'Research on human-computer interaction reveals a counterintuitive finding: adding deliberate latency signals can make agents feel more competent to users. Showing "Analyzing your codebase..." for 2 seconds before a pre-computed response feels more trustworthy than an instant reply.' },
 ];
 
 export default function WalkthroughAAELatencyAwareEvaluation() {
@@ -17,10 +18,10 @@ export default function WalkthroughAAELatencyAwareEvaluation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Latency-Aware Evaluation — Step by Step
+          Latency-Aware Evaluation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how latency-aware evaluation works, one stage at a time.

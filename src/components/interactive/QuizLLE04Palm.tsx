@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE04Palm() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'at Google Key innovation: Parallel attention + FFN computation (~15% throughput gain)', isTrue: true, explanation: 'This is a key technical detail of PaLM.' },
-    { text: 'Google\'s 540-billion-parameter Pathways Language Model demonstrated that a single dense Transformer, trained across 6,144 TPU v4 chips, could achieve breakthrough performance on reasoning, code, and multilingual tasks simultaneously.', isTrue: true, explanation: 'This captures the core purpose of PaLM.' },
-    { text: 'PaLM is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding PaLM is important for building on more advanced topics.' },
+    { text: 'PaLM was compute-optimal by Chinchilla standards.', isTrue: false, explanation: 'At 540B parameters trained on 780B tokens, PaLM was significantly undertrained by the Chinchilla prescription (~20 tokens per parameter would require ~10.8T tokens). It was designed before Chinchilla\'s results were widely known.' },
+    { text: '540 billion (118 layers, 48 heads, d_model=18,432)', isTrue: true, explanation: '540 billion (118 layers, 48 heads, d_model=18,432)' },
+    { text: 'PaLM was the first model to use rotary position embeddings.', isTrue: false, explanation: 'RoPE was developed by Su et al. in 2021 and used in several earlier models.' },
+    { text: '~780 billion tokens across web, books, code, Wikipedia, conversations', isTrue: true, explanation: '~780 billion tokens across web, books, code, Wikipedia, conversations' },
+    { text: 'Parallel attention+FFN always helps.', isTrue: false, explanation: 'The paper showed this technique slightly hurts quality at smaller scales. It is specifically beneficial at very large scales where the hardware efficiency gains outweigh the minor quality cost.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

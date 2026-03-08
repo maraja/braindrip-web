@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Paper', detail: 'Raffel et al., \"Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer\" (Oct 2019, arXiv:1910.10683, JMLR 2020)' },
+    { label: 'Paper', detail: 'Raffel et al., "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer" (Oct 2019, arXiv:1910.10683, JMLR 2020)' },
     { label: 'Largest model', detail: 'T5-11B — 11 billion parameters, the largest model at time of publication' },
     { label: 'Pre-training data', detail: 'C4 (Colossal Clean Crawled Corpus), ~750GB of clean English text from Common Crawl' },
     { label: 'Pre-training objective', detail: 'Span corruption — mask contiguous spans of mean length 3, covering 15% of tokens' },
@@ -20,10 +20,10 @@ export default function ExplorerLLE05T5TextToTextFramework() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          T5: The Text-to-Text Transfer Transformer — Key Details Explorer
+          T5: The Text-to-Text Transfer Transformer \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of t5: the text-to-text transfer transformer.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Gemini 2.0 Flash (December 2024)', desc: 'The foundation of gemini 2.x and 3: google\'s agent era begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Gemini 2.0 Flash Thinking (December 2024)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes gemini 2.x and 3: google\'s agent era work.' },
-    { title: '3. Gemini 2.5 Pro (March 2025)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Gemini 2.5 Flash (May 2025, GA Mid-2025)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Gemini 2.5 Flash-Lite (Preview, Mid-2025)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Gemini 2.0 Flash (December 2024)', desc: 'The 2.x era launched with Gemini 2.0 Flash, an experimental model built for agentic workloads. Its key innovations were native tool use — the ability to call Google Search, execute code, and invoke external functions as first-class operations — and real-time multimodal streaming, enabling.' },
+    { title: '2. Gemini 2.0 Flash Thinking (December 2024)', desc: 'Released alongside standard Flash, the "Thinking" variant introduced visible reasoning traces — the model\'s chain-of-thought process exposed to the user.' },
+    { title: '3. Gemini 2.5 Pro (March 2025)', desc: 'The flagship of the 2.x generation, Gemini 2.5 Pro was positioned as a "thinking model" — a native reasoner that could dynamically allocate inference compute to problem difficulty.' },
+    { title: '4. Gemini 2.5 Flash (May 2025, GA Mid-2025)', desc: 'Perhaps the most strategically significant release, 2.5 Flash combined thinking capabilities with aggressive cost optimization. It achieved the best cost-performance ratio of any frontier model: near-Pro-level quality at a fraction of the inference cost.' },
+    { title: '5. Gemini 2.5 Flash-Lite (Preview, Mid-2025)', desc: 'Google expanded the 2.5 Flash family downward with Flash-Lite, a new preview model offering the lowest latency and cost in the entire 2.5 lineup. Flash-Lite targeted the highest-throughput use cases — classification, routing, extraction, and other tasks where speed and cost matter more than maximum.' },
+    { title: '6. Gemini 2.5 Flash Native Audio (Mid-2025)', desc: 'Also arriving in mid-2025, Gemini 2.5 Flash Native Audio was an enhanced variant specifically optimized for building live voice agents. By processing audio natively rather than through a transcription-then-reasoning pipeline, it enabled lower-latency, more natural voice interactions — a critical.' },
 ];
 
 export default function WalkthroughLLE03Gemini2AndBeyond() {
@@ -17,10 +18,10 @@ export default function WalkthroughLLE03Gemini2AndBeyond() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Gemini 2.x and 3: Google\'s Agent Era — Step by Step
+          Gemini 2.x and 3: Google\'s Agent Era \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how gemini 2.x and 3: google\'s agent era works, one stage at a time.

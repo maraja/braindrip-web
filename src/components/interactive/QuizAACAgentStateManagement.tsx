@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACAgentStateManagement() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'State growth rate: Typical agents accumulate 1,500-3,000 tokens of state per loop iteration (assistant message + tool call + tool result).', isTrue: true, explanation: 'This is a key technical detail of Agent State Management.' },
-    { text: 'A 50-iteration task accumulates 75,000-150,000 tokens of raw state.', isTrue: true, explanation: 'This is a key technical detail of Agent State Management.' },
-    { text: 'Summarization compression ratio: LLM-based summarization typically achieves 5:1 to 15:1 compression.', isTrue: true, explanation: 'This is a key technical detail of Agent State Management.' },
+    { text: 'The LLM remembers everything from previous turns.', isTrue: false, explanation: 'The LLM remembers nothing. Every piece of information it appears to "remember" is actually present in the message history sent with each API call.' },
+    { text: 'Typical agents accumulate 1,500-3,000 tokens of state per loop iteration (assistant message + tool call + tool result).', isTrue: true, explanation: 'A 50-iteration task accumulates 75,000-150,000 tokens of raw state.' },
+    { text: 'More state is always better — include everything.', isTrue: false, explanation: 'Including all state without filtering creates the "lost in the middle" problem: the LLM struggles to find relevant information among irrelevant details. Curated, relevant state outperforms exhaustive state.' },
+    { text: 'LLM-based summarization typically achieves 5:1 to 15:1 compression.', isTrue: true, explanation: 'A 20,000-token history segment can be summarized to 1,500-4,000 tokens while retaining the key information.' },
+    { text: 'Conversation history is the only state that matters.', isTrue: false, explanation: 'Conversation history is the most visible state, but not the only important one. Environmental state (what files look like now, not when they were last read), task progress (explicit tracking of completed vs.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

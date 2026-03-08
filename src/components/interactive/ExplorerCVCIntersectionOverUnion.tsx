@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Computation cost', detail: 'IoU between two boxes requires ~10 arithmetic operations. Pairwise IoU for $n$ boxes is $O(n^2)$.' },
-    { label: 'Scale invariance', detail: 'IoU is invariant to box scale -- a 50% overlap at $32 \\times 32$ scores the same as at $512 \\times 512$.' },
-    { label: 'GIoU loss', detail: 'improves Faster R-CNN by ~1% AP and YOLOv3 by ~2-3% AP compared to smooth $L_1$ loss.' },
+    { label: 'Computation cost', detail: 'IoU between two boxes requires ~10 arithmetic operations. Pairwise IoU for n boxes is O(n^2).' },
+    { label: 'Scale invariance', detail: 'IoU is invariant to box scale -- a 50% overlap at 32 x 32 scores the same as at 512 x 512.' },
+    { label: 'GIoU loss', detail: 'improves Faster R-CNN by ~1% AP and YOLOv3 by ~2-3% AP compared to smooth L_1 loss.' },
     { label: 'CIoU loss', detail: 'further improves over GIoU by ~0.5-1% AP by incorporating center distance and aspect ratio.' },
-    { label: 'PASCAL VOC uses AP50', detail: '(IoU $\\geq 0.5$); COCO uses AP (averaged over 0.5:0.05:0.95), which is much stricter.' },
+    { label: 'PASCAL VOC uses AP50', detail: '(IoU  0.5); COCO uses AP (averaged over 0.5:0.05:0.95), which is much stricter.' },
     { label: 'IoU 0.5 vs. 0.75', detail: 'A detector scoring 50% AP50 might score only 30% AP75, revealing coarse localization.' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerCVCIntersectionOverUnion() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Intersection over Union — Key Details Explorer
+          Intersection over Union \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of intersection over union.
+          Click each card to explore the technical details.
         </p>
       </div>
 

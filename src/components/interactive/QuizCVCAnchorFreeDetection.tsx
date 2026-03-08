@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizCVCAnchorFreeDetection() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'FCOS (ResNet-101-FPN): 44.7% AP on COCO, ~18 FPS on a V100 GPU.', isTrue: true, explanation: 'This is a key technical detail of Anchor-Free Detection.' },
-    { text: 'CenterNet (Hourglass-104): 45.1% AP on COCO, ~7.8 FPS.', isTrue: true, explanation: 'This is a key technical detail of Anchor-Free Detection.' },
-    { text: 'With DLA-34 backbone: 37.4% AP at ~52 FPS.', isTrue: true, explanation: 'This is a key technical detail of Anchor-Free Detection.' },
+    { text: 'Anchor-free means no predefined spatial structure.', isTrue: false, explanation: 'FCOS still uses FPN levels with defined stride and regression ranges. CenterNet uses a fixed output stride.' },
+    { text: '44.7% AP on COCO, ~18 FPS on a V100 GPU.', isTrue: true, explanation: '44.7% AP on COCO, ~18 FPS on a V100 GPU.' },
+    { text: '45.1% AP on COCO, ~7.8 FPS.', isTrue: true, explanation: 'With DLA-34 backbone: 37.4% AP at ~52 FPS.' },
+    { text: '28.1% AP on COCO at ~142 FPS -- suitable for real-time edge deployment.', isTrue: true, explanation: '28.1% AP on COCO at ~142 FPS -- suitable for real-time edge deployment.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

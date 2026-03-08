@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Government Regulation', desc: 'The foundation of ai safety and governance begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Corporate Self-Regulation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes ai safety and governance work.' },
-    { title: '3. Technical Safety Measures', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The AI Safety Summit Process', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The NIST AI Risk Management Framework', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Government Regulation', desc: 'The EU AI Act (2024) was the world\'s first comprehensive AI legislation. It classifies AI systems by risk level: unacceptable (banned outright: social scoring, real-time facial recognition in public spaces), high-risk (subject to conformity assessments: healthcare, education, employment), and.' },
+    { title: '2. Corporate Self-Regulation', desc: 'Responsible Scaling Policies (RSPs): Anthropic introduced ASL (AI Safety Level) classifications, analogous to biosafety levels. ASL-1 is no meaningful risk.' },
+    { title: '3. Technical Safety Measures', desc: 'Red-teaming involves systematic adversarial testing of models before deployment. Teams of researchers (and sometimes external domain experts) attempt to elicit harmful outputs, bypass safety filters, and find failure modes.' },
+    { title: '4. The AI Safety Summit Process', desc: 'The UK-hosted AI Safety Summit at Bletchley Park (November 2023) convened governments and industry leaders to discuss frontier AI risks. It produced the Bletchley Declaration, signed by 28 countries, acknowledging risks from frontier AI.' },
+    { title: '5. The NIST AI Risk Management Framework', desc: 'NIST published the AI RMF in 2023 as a voluntary US framework for managing AI risks. It organizes risk management around four functions: Govern (establish policies), Map (identify risks), Measure (assess risks), and Manage (mitigate risks).' },
 ];
 
 export default function WalkthroughLLE03AiSafetyAndGovernance() {
@@ -17,10 +17,10 @@ export default function WalkthroughLLE03AiSafetyAndGovernance() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          AI Safety and Governance — Step by Step
+          AI Safety and Governance \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how ai safety and governance works, one stage at a time.

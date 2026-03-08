@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Gatys et al. Framework', desc: 'The foundation of neural style transfer begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Why Gram Matrices Capture Style', desc: 'At this stage, the key transformation occurs — the core mechanism that makes neural style transfer work.' },
-    { title: '3. Optimization Details', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Fast (Feed-Forward) Style Transfer', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Arbitrary Style Transfer', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Gatys et al. Framework', desc: 'Given a content image p, a style image a, and a generated image x (initialized as noise or the content image), the method minimizes:  [equation]  using gradient descent directly on the pixel values of x (not on network weights).' },
+    { title: '2. Why Gram Matrices Capture Style', desc: 'Gram matrices encode the distribution of features irrespective of spatial arrangement. Two images with similar Gram matrices share texture properties -- color distributions, stroke patterns, scale of structures -- even if the objects and layout differ entirely.' },
+    { title: '3. Optimization Details', desc: 'Network: VGG-19 pretrained on ImageNet, with max-pooling replaced by average-pooling (smoother gradients). Optimizer: L-BFGS is standard for the original method (converges in ~300--500 iterations).' },
+    { title: '4. Fast (Feed-Forward) Style Transfer', desc: '(2016) and Ulyanov et al. (2016) replaced per-image optimization with a trained feed-forward network:  Train a transformation network f_W to minimize the same content + style losses on a dataset of content images with a fixed style.' },
+    { title: '5. Arbitrary Style Transfer', desc: 'AdaIN (Huang and Belongie, 2017): Align mean and variance of content features to match style features:  [equation]  A single network handles arbitrary styles by taking both content and style images as input. Quality is slightly lower than per-style networks but vastly more flexible.' },
+    { title: '6. Total Variation Loss', desc: 'An optional smoothness regularizer reduces noise and artifacts:  [equation]  Typical weight: 10^&#123;-4&#125; to 10^&#123;-3&#125; relative to style loss.' },
 ];
 
 export default function WalkthroughCVCNeuralStyleTransfer() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCNeuralStyleTransfer() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Neural Style Transfer — Step by Step
+          Neural Style Transfer \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how neural style transfer works, one stage at a time.

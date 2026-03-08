@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPECodeGenerationPrompting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Adding environment specification (language version, framework, dependencies) to prompts improves code correctness by 15-25% by eliminating version-specific errors.', isTrue: true, explanation: 'This is a key technical detail of Code Generation Prompting.' },
-    { text: 'Test-driven prompting (providing tests before implementation) improves correctness by 20-30% on HumanEval-style benchmarks.', isTrue: true, explanation: 'This is a key technical detail of Code Generation Prompting.' },
-    { text: 'Type signature-first prompting reduces type errors by 40-50% compared to description-only prompts in typed languages (TypeScript, Rust, Go).', isTrue: true, explanation: 'This is a key technical detail of Code Generation Prompting.' },
+    { text: 'Just describe what you want and the model will figure out the details.', isTrue: false, explanation: 'Underspecified prompts produce code that works for the happy path but fails on edge cases, uses wrong API versions, or imports unavailable packages. Precision in technical specifications directly correlates with output quality.' },
+    { text: 'Code generation models understand your entire codebase.', isTrue: false, explanation: 'Models can only work with the context provided in the prompt. Without the existing codebase context, generated code uses different naming conventions, incompatible patterns, or redundant implementations.' },
+    { text: 'If the code runs, it\'s correct.', isTrue: false, explanation: 'Code that passes basic tests may have subtle bugs (race conditions, memory leaks, security vulnerabilities) that only manifest under production conditions. Include non-functional requirements and edge case tests in the prompt.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

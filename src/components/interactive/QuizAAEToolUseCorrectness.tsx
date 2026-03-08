@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEToolUseCorrectness() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'minimal descriptions The number of available tools affects selection accuracy nonlinearly: accuracy is stable up to ~10 tools, then degrades significantly.', isTrue: true, explanation: 'This is a key technical detail of Tool Use Correctness.' },
-    { text: 'A comprehensive evaluation framework for assessing the full lifecycle of agent tool usage, from selection through parameterization, execution, and result interpretation.', isTrue: true, explanation: 'This captures the core purpose of Tool Use Correctness.' },
-    { text: 'Tool Use Correctness is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Tool Use Correctness is important for building on more advanced topics.' },
+    { text: 'If the tool call succeeds, the tool use was correct.', isTrue: false, explanation: 'Tools often silently accept incorrect parameters and return misleading results. A search tool with a misspelled query returns empty results rather than an error.' },
+    { text: 'Tool use is a binary correct/incorrect judgment.', isTrue: false, explanation: 'Tool use exists on a spectrum. An agent might select the right tool, provide mostly correct parameters but miss an optional parameter that would have improved results, and partially interpret the output.' },
+    { text: 'Better tool descriptions always improve tool use.', isTrue: false, explanation: 'Beyond a quality threshold, additional tool documentation can actually hurt performance by increasing context length and creating confusion between similar-sounding tools. The optimal documentation length is typically 50-150 words per tool.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

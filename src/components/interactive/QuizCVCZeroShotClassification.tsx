@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizCVCZeroShotClassification() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Zero-shot classification recognizes visual categories never seen during training by using natural language descriptions as class prototypes in a shared vision-language embedding space.', isTrue: true, explanation: 'This captures the core purpose of Zero-Shot Classification.' },
-    { text: 'Zero-Shot Classification is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Zero-Shot Classification is important for building on more advanced topics.' },
-    { text: 'Zero-Shot Classification is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Zero-Shot Classification is important for building on more advanced topics.' },
+    { text: 'Zero-shot means no training at all.', isTrue: false, explanation: 'The model is extensively pretrained on hundreds of millions of image-text pairs. "Zero-shot" refers specifically to the target classification task -- no examples from those categories were used during pretraining in a labeled sense.' },
+    { text: 'CLIP ViT-L/14@336px: 76.2%; OpenCLIP ViT-G/14: 80.1%; SigLIP ViT-SO400M: 83.1%; EVA-CLIP ViT-18B: 83.8%', isTrue: true, explanation: 'CLIP ViT-L/14@336px: 76.2%; OpenCLIP ViT-G/14: 80.1%; SigLIP ViT-SO400M: 83.1%; EVA-CLIP ViT-18B: 83.8%' },
+    { text: 'Zero-shot classification works equally well for all domains.', isTrue: false, explanation: 'Performance varies enormously by domain. CLIP\'s accuracy can range from 95%+ on simple benchmarks (CIFAR-10) to below 50% on specialized domains (fine-grained medical, satellite imagery).' },
+    { text: 'Zero-shot accuracy drops sharply on specialized domains -- CLIP achieves 76.2% on ImageNet but only 58.8% on EuroSAT (satellite) and 43.3% on DTD (textures)', isTrue: true, explanation: 'Zero-shot accuracy drops sharply on specialized domains -- CLIP achieves 76.2% on ImageNet but only 58.8% on EuroSAT (satellite) and 43.3% on DTD (textures)' },
+    { text: 'Text embeddings are a drop-in replacement for trained classifiers.', isTrue: false, explanation: 'On in-distribution data, a linear probe trained on even 16 labeled examples per class typically outperforms zero-shot classification by 5-15 percentage points. Zero-shot is powerful when labeled data is unavailable, not when it is plentiful.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,8 +2,8 @@ import { useState } from 'react';
 export default function QuizCVCActionRecognition() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Action recognition classifies human activities in video clips, evolving from hand-crafted features through two-stream CNNs and 3D convolutions to transformer-based models evaluated on benchmarks like Kinetics, UCF-101, and HMDB-51.', isTrue: true, explanation: 'This captures the core purpose of Action Recognition.' },
-    { text: 'Action Recognition is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Action Recognition is important for building on more advanced topics.' },
+    { text: 'High accuracy on Kinetics proves the model understands temporal dynamics.', isTrue: false, explanation: 'Many Kinetics classes are recognizable from scene or object context alone. Models achieving 85%+ on Kinetics may still fail on temporally challenging datasets like SSv2.' },
+    { text: 'Action recognition classifies human activities in video clips, evolving from hand-crafted features through two-stream CNNs and 3D convolutions to transformer-based models evaluated on benchmarks like Kinetics, UCF-101, and HMDB-51.', isTrue: true, explanation: 'This captures the core definition of Action Recognition.' },
     { text: 'Action Recognition is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Action Recognition is important for building on more advanced topics.' },
   ];
   return (

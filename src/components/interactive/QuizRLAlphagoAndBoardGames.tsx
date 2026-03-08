@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizRLAlphagoAndBoardGames() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'AlphaGo computational cost: Distributed across 1,920 CPUs and 280 GPUs for match play; the policy network trained on 50 GPUs for 3 weeks.', isTrue: true, explanation: 'This is a key technical detail of AlphaGo and Board Games.' },
-    { text: 'AlphaGo Zero: Trained on 4 TPUs for 3 days to surpass Lee Sedol version; 40 days on 4 TPUs for maximum strength.', isTrue: true, explanation: 'This is a key technical detail of AlphaGo and Board Games.' },
-    { text: 'AlphaZero chess training: 9 hours on 5,000 first-generation TPUs (approximately 44 million self-play games).', isTrue: true, explanation: 'This is a key technical detail of AlphaGo and Board Games.' },
+    { text: 'AlphaGo won because of superior brute-force computation.', isTrue: false, explanation: 'AlphaGo searched approximately 10^4 positions per move. The 1997 Deep Blue searched 2 x 10^8 positions per move in chess.' },
+    { text: 'Distributed across 1,920 CPUs and 280 GPUs for match play; the policy network trained on 50 GPUs for 3 weeks.', isTrue: true, explanation: 'Distributed across 1,920 CPUs and 280 GPUs for match play; the policy network trained on 50 GPUs for 3 weeks.' },
+    { text: 'AlphaZero proves RL does not need human data.', isTrue: false, explanation: 'AlphaZero works in perfect-information, deterministic, two-player, zero-sum games with known rules. Removing human data is feasible precisely because self-play provides an infinite, perfectly labeled training signal.' },
+    { text: 'Trained on 4 TPUs for 3 days to surpass Lee Sedol version; 40 days on 4 TPUs for maximum strength.', isTrue: true, explanation: 'Trained on 4 TPUs for 3 days to surpass Lee Sedol version; 40 days on 4 TPUs for maximum strength.' },
+    { text: 'AlphaZero\'s chess play is incomprehensible to humans.', isTrue: false, explanation: 'Grandmasters analyzing AlphaZero\'s games found its play highly instructive -- favoring piece activity and long-term positional factors over material. The games are not mysterious; they revealed strategic principles humans had underweighted.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

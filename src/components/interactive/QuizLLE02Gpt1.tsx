@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE02Gpt1() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'GPT-1 (Radford et al., 2018) combined a decoder-only Transformer with unsupervised generative pre-training followed by supervised fine-tuning, establishing the paradigm that decoder-only models trained on next-token prediction could develop broad language understanding.', isTrue: true, explanation: 'This captures the core purpose of GPT-1: Generative Pre-Training.' },
-    { text: 'GPT-1: Generative Pre-Training is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding GPT-1: Generative Pre-Training is important for building on more advanced topics.' },
-    { text: 'GPT-1: Generative Pre-Training is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding GPT-1: Generative Pre-Training is important for building on more advanced topics.' },
+    { text: 'GPT-1 was primarily a text generation model.', isTrue: false, explanation: 'GPT-1 was evaluated and promoted primarily as a language understanding model — note the subtitle "Improving Language Understanding." Text generation was not the focus. The generative capabilities that would make GPT-2 famous were latent in GPT-1 but not emphasized.' },
+    { text: '12-layer decoder-only Transformer, 12 heads, d_model=768, ~117M parameters', isTrue: true, explanation: '12-layer decoder-only Transformer, 12 heads, d_model=768, ~117M parameters' },
+    { text: 'GPT-1 was immediately recognized as more important than BERT.', isTrue: false, explanation: 'The opposite. BERT dominated the NLP landscape from late 2018 through 2020.' },
+    { text: 'BookCorpus (~7,000 books, ~800M words, ~5GB)', isTrue: true, explanation: 'BookCorpus (~7,000 books, ~800M words, ~5GB)' },
+    { text: 'GPT-1 used massive amounts of training data.', isTrue: false, explanation: 'BookCorpus (~800M words) was modest by later standards. GPT-2 used 40GB of web text; GPT-3 used 570GB.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

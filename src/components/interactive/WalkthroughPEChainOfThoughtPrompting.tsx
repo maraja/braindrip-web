@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Mechanism: Reasoning as Token Generation', desc: 'The foundation of chain-of-thought prompting begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Constructing CoT Examples', desc: 'At this stage, the key transformation occurs — the core mechanism that makes chain-of-thought prompting work.' },
-    { title: '3. When CoT Helps vs. When It Hurts', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Scaling Properties', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Mechanism: Reasoning as Token Generation', desc: 'LLMs generate text one token at a time. When a model must jump directly from a question to an answer, it has to compress all reasoning into the hidden states of a single forward pass.' },
+    { title: '2. Constructing CoT Examples', desc: 'A chain-of-thought prompt consists of few-shot examples where each example contains three parts: (1) the input question, (2) a step-by-step reasoning trace, and (3) the final answer. The reasoning trace should mirror the natural problem-solving process a human expert would follow.' },
+    { title: '3. When CoT Helps vs. When It Hurts', desc: 'Chain-of-thought prompting is not universally beneficial. It provides the largest gains on tasks that require multi-step reasoning: arithmetic and math word problems, logical deduction, multi-hop question answering, code generation with complex logic, and tasks requiring planning.' },
+    { title: '4. Scaling Properties', desc: 'CoT exhibits a strong scaling relationship with model size. found that CoT provides negligible or even negative benefit for models below roughly 60 billion parameters.' },
 ];
 
 export default function WalkthroughPEChainOfThoughtPrompting() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEChainOfThoughtPrompting() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Chain-of-Thought Prompting — Step by Step
+          Chain-of-Thought Prompting \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how chain-of-thought prompting works, one stage at a time.

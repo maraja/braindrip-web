@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Point Cloud Acquisition', desc: 'The foundation of point cloud processing begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Core Data Structures', desc: 'At this stage, the key transformation occurs — the core mechanism that makes point cloud processing work.' },
-    { title: '3. Preprocessing Operations', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Feature Descriptors', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Point Cloud Acquisition', desc: 'LiDAR (Light Detection and Ranging): Emits laser pulses and measures time-of-flight. Automotive LiDAR (e.g., Velodyne VLP-64) produces ~2.2 million points per second with range up to 120 m.' },
+    { title: '2. Core Data Structures', desc: 'Voxel grids partition 3D space into regular cubes of side length s. A point (x, y, z) maps to voxel index:  [equation]  Voxel grids enable O(1) neighbor lookups and are used in VoxelNet, SECOND, and 3D convolution methods.' },
+    { title: '3. Preprocessing Operations', desc: 'Downsampling reduces point count for efficiency. Voxel grid downsampling replaces all points within each voxel with their centroid, typically reducing counts by 5--20x.' },
+    { title: '4. Feature Descriptors', desc: 'FPFH (Fast Point Feature Histograms): Encodes local geometry in a 33-dimensional histogram. Used for coarse registration and keypoint matching.' },
 ];
 
 export default function WalkthroughCVCPointCloudProcessing() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCPointCloudProcessing() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Point Cloud Processing — Step by Step
+          Point Cloud Processing \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how point cloud processing works, one stage at a time.

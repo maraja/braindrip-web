@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizADPCostLatencyOptimization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Model routing typically saves 40-70% on LLM costs with &lt;5% quality degradation.', isTrue: true, explanation: 'This is a key technical detail of Cost-Latency Optimization.' },
-    { text: 'The exact savings depend on workload composition (what fraction of steps are "easy").', isTrue: true, explanation: 'This is a key technical detail of Cost-Latency Optimization.' },
-    { text: 'Prompt prefix caching reduces latency by 30-50% and cost by up to 50% on cached prefix tokens.', isTrue: true, explanation: 'This is a key technical detail of Cost-Latency Optimization.' },
+    { text: 'Use the cheapest model possible to minimize cost.', isTrue: false, explanation: 'The cheapest model is only cheapest if it succeeds. A model that costs 1/10th as much but fails 3x as often has a higher cost per successful task.' },
+    { text: 'Caching does not work for agent systems because every request is unique.', isTrue: false, explanation: 'Exact-match caching has low hit rates for agents, but semantic caching, prompt prefix caching, and tool result caching all provide meaningful savings. The combined cache hit rate across all layers is typically 20-40%.' },
+    { text: 'Latency optimization means making each LLM call faster.', isTrue: false, explanation: 'The biggest latency wins come from eliminating calls entirely (caching), parallelizing independent calls, and routing to faster models. Making a single call 10% faster is far less impactful than eliminating one of five calls.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

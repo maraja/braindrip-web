@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPERoleAndPersonaPrompting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Persona prompting improves domain-specific task performance by 10-20% on average, with higher gains for specialized domains.', isTrue: true, explanation: 'This is a key technical detail of Role and Persona Prompting.' },
-    { text: 'Detailed personas (100-300 tokens) outperform light framing (5-20 tokens) by 5-15% on domain-specific tasks.', isTrue: true, explanation: 'This is a key technical detail of Role and Persona Prompting.' },
-    { text: 'Persona descriptions are most effective in the system message (first position), leveraging primacy effects.', isTrue: true, explanation: 'This is a key technical detail of Role and Persona Prompting.' },
+    { text: 'Persona prompting gives the model new knowledge.', isTrue: false, explanation: 'The persona activates existing knowledge from pretraining. If the model was not trained on tax law content, a tax attorney persona will not create tax law expertise from nothing.' },
+    { text: 'Any persona description will work.', isTrue: false, explanation: 'Vague personas ("You are an expert") produce minimal effect. Effective personas are specific: domain, experience level, institution, communication style, and behavioral constraints.' },
+    { text: 'Persona prompting is just cosmetic — it only changes the tone.', isTrue: false, explanation: 'Persona prompting changes vocabulary, reasoning depth, domain coverage, and factual precision — not just tone. A financial analyst persona produces different analytical conclusions than a journalist persona, even on the same data, because the activated knowledge clusters differ.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

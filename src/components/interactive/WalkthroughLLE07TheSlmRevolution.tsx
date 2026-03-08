@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Evidence: Small Models Punch Above Their Weight', desc: 'The foundation of the slm revolution begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Why Small Models Work So Well', desc: 'At this stage, the key transformation occurs — the core mechanism that makes the slm revolution work.' },
-    { title: '3. The Economics of Right-Sizing', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Model Routing: The Best of Both Worlds', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. On-Device AI: The Ultimate Right-Sizing', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Evidence: Small Models Punch Above Their Weight', desc: 'The case for SLMs isn\'t theoretical -- it\'s backed by benchmark data that repeatedly shows small models competing with those many times their size:  Phi-2 (2.' },
+    { title: '2. Why Small Models Work So Well', desc: 'Several converging insights explain why the size-performance relationship isn\'t linear:  Data quality over quantity: Phi demonstrated that training on textbook-quality data -- clean, pedagogically structured, diverse -- can substitute for raw parameter count.' },
+    { title: '3. The Economics of Right-Sizing', desc: 'The cost argument for SLMs is overwhelming:  For a company handling 100 million queries per day, the difference between 0.05/1M tokens and 5/1M tokens is 500 versus 50,000 per day -- $18 million per year.' },
+    { title: '4. Model Routing: The Best of Both Worlds', desc: 'The most sophisticated deployment strategy isn\'t choosing between small and large models -- it\'s using both. Model routing (also called cascading or tiered inference) directs each query to the smallest model capable of handling it:  Simple queries (greetings, FAQs, formatting) go to a tiny model.' },
+    { title: '5. On-Device AI: The Ultimate Right-Sizing', desc: 'The ultimate expression of the SLM revolution is on-device inference: models running directly on phones, tablets, and edge devices. Apple Intelligence uses on-device models for text summarization and rewriting.' },
 ];
 
 export default function WalkthroughLLE07TheSlmRevolution() {
@@ -17,10 +17,10 @@ export default function WalkthroughLLE07TheSlmRevolution() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The SLM Revolution — Step by Step
+          The SLM Revolution \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how the slm revolution works, one stage at a time.

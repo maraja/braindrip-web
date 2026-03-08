@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Optimization', detail: 'The primal is a QP; the dual is also a QP. Efficient solvers include SMO (Sequential Minimal Optimization) and libSVM.' },
-    { label: 'Scaling', detail: 'Standard SVMs scale $O(n^2)$ to $O(n^3)$ in memory and time due to the kernel matrix. For large datasets, linear SVMs (liblinear) are $O(nd)$.' },
+    { label: 'Scaling', detail: 'Standard SVMs scale O(n^2) to O(n^3) in memory and time due to the kernel matrix. For large datasets, linear SVMs (liblinear) are O(nd).' },
     { label: 'Multiclass', detail: 'SVMs are inherently binary. Multiclass is handled via one-vs-rest or one-vs-one (see Multi-Class Classification).' },
     { label: 'Feature scaling', detail: 'Critical -- SVMs are sensitive to feature magnitudes because the margin depends on distances.' },
     { label: 'Probability estimates', detail: 'Platt scaling fits a sigmoid on top of SVM scores to produce calibrated probabilities, but this is a post-hoc approximation, not a native output of the model.' },
@@ -19,10 +19,10 @@ export default function ExplorerMLFSupportVectorMachines() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Support Vector Machines — Key Details Explorer
+          Support Vector Machines \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of support vector machines.
+          Click each card to explore the technical details.
         </p>
       </div>
 

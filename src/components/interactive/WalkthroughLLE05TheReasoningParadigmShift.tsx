@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Phase 1: Chain-of-Thought Prompting (2022-2023)', desc: 'The foundation of the reasoning paradigm shift begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Phase 2: Search and Self-Consistency (2023)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes the reasoning paradigm shift work.' },
-    { title: '3. Phase 3: Trained Reasoning via RL (2024-2025)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Reward Models: Process vs Outcome', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. GRPO and Alternative RL Methods', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Phase 1: Chain-of-Thought Prompting (2022-2023)', desc: '(2022) showed that providing a few worked examples with intermediate reasoning steps, or simply appending "Let\'s think step by step" (Kojima et al., 2022), could unlock latent reasoning abilities in large language models.' },
+    { title: '2. Phase 2: Search and Self-Consistency (2023)', desc: 'The limitations of single-chain reasoning motivated exploration of search-based approaches. (2023) introduced self-consistency: instead of taking the model\'s first chain-of-thought answer, sample multiple reasoning paths and take a majority vote.' },
+    { title: '3. Phase 3: Trained Reasoning via RL (2024-2025)', desc: 'The breakthrough came when OpenAI (o1, September 2024) and DeepSeek (R1, January 2025) trained models to reason using reinforcement learning. Instead of hoping the model would produce good reasoning chains, these models were explicitly rewarded for producing reasoning that led to correct answers.' },
+    { title: '4. Reward Models: Process vs Outcome', desc: 'Central to Phase 3 was the distinction between Process Reward Models (PRMs) and Outcome Reward Models (ORMs). ORMs evaluate only whether the final answer is correct, providing a single reward signal at the end.' },
+    { title: '5. GRPO and Alternative RL Methods', desc: 'DeepSeek introduced GRPO (Group Relative Policy Optimization) as an alternative to PPO for training reasoning. GRPO eliminates the need for a separate value function model by computing baselines from groups of sampled outputs.' },
 ];
 
 export default function WalkthroughLLE05TheReasoningParadigmShift() {
@@ -17,10 +17,10 @@ export default function WalkthroughLLE05TheReasoningParadigmShift() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The Reasoning Paradigm Shift — Step by Step
+          The Reasoning Paradigm Shift \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how the reasoning paradigm shift works, one stage at a time.

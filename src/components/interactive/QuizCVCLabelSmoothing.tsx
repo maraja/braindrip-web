@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCLabelSmoothing() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Higher epsilon is always more regularization.', isTrue: false, explanation: '"Higher epsilon is always more regularization." Beyond a certain point, excessive smoothing destroys the training signal. The model struggles to learn when the correct class target is barely above the' },
-    { text: 'Computational cost: effectively zero.', isTrue: true, explanation: 'This is a key technical detail of Label Smoothing.' },
-    { text: 'It changes only the target vector, not the forward or backward pass complexity.', isTrue: true, explanation: 'This is a key technical detail of Label Smoothing.' },
+    { text: 'Label smoothing is just a minor trick.', isTrue: false, explanation: 'It is a small code change but has a meaningful and consistent effect on generalization, calibration, and robustness. It appears in virtually every competitive training recipe.' },
+    { text: 'Label smoothing replaces hard one-hot target vectors with soft distributions, preventing the model from becoming overconfident and improving generalization and calibration.', isTrue: true, explanation: 'This captures the core definition of Label Smoothing.' },
+    { text: 'Label Smoothing is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Label Smoothing is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

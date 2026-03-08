@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Process Management', desc: 'The foundation of agent operating systems begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Memory Management', desc: 'At this stage, the key transformation occurs — the core mechanism that makes agent operating systems work.' },
-    { title: '3. I/O Management', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Scheduling and Prioritization', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Process Management', desc: 'In a traditional OS, process management handles creating, scheduling, suspending, and terminating processes. In an agent OS, "processes" are agent instances.' },
+    { title: '2. Memory Management', desc: 'Agents have multiple memory needs that parallel OS memory hierarchy. Working memory (context window): the immediate information available to the agent, analogous to CPU registers and L1 cache.' },
+    { title: '3. I/O Management', desc: 'Agents interact with the world through tools (APIs, file systems, browsers, databases). The I/O manager provides: Tool registration (making tools available to agents with standardized interfaces), Access control (which agents can use which tools), Concurrency control (preventing two agents from.' },
+    { title: '4. Scheduling and Prioritization', desc: 'When multiple agents compete for limited LLM inference capacity, the scheduler decides who runs next. Scheduling policies include: Priority-based (urgent tasks get LLM access first), Fair-share (each agent gets an equal share of inference capacity), Deadline-driven (agents with approaching.' },
 ];
 
 export default function WalkthroughAACAgentOperatingSystems() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACAgentOperatingSystems() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agent Operating Systems — Step by Step
+          Agent Operating Systems \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how agent operating systems works, one stage at a time.

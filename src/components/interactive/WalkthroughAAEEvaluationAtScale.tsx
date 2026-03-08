@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Infrastructure Requirements', desc: 'The foundation of evaluation at scale begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Distributed Execution', desc: 'At this stage, the key transformation occurs — the core mechanism that makes evaluation at scale work.' },
-    { title: '3. Result Aggregation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Organizational Practices', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Evaluation Teams', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Infrastructure Requirements', desc: '#### Distributed Execution  At scale, evaluation tasks must run in parallel across many workers. A suite of 5,000 tasks with 10 runs each requires 50,000 individual task executions.' },
+    { title: '2. Organizational Practices', desc: '#### Evaluation Teams  At scale, evaluation becomes a dedicated function, not a side responsibility. Large labs structure evaluation teams with distinct roles:  Evaluation engineers: Build and maintain execution infrastructure, pipeline tooling, and result dashboards.' },
+    { title: '3. Data Management', desc: '#### Storing Evaluation Results  Millions of evaluation runs generate substantial data. A single run might produce:  Task metadata (ID, category, difficulty, parameters): ~1 KB Agent trajectory (all LLM calls, tool invocations, intermediate outputs): 50-500 KB Environment state (file diffs,.' },
+    { title: '4. Cost Management at Scale', desc: 'The arithmetic of scale is unforgiving. Consider a monthly evaluation cadence:  At full scale -- 50,000 tasks, 10 runs each, 0.50/run -- a single evaluation cycle costs 250,000 in API calls alone.' },
+    { title: '5. The Transition: From Manual to Production Service', desc: 'The evolution from manual evaluation to evaluation-as-a-service follows a predictable path:  Stage 1 -- Ad hoc (1-2 engineers): Scripts run on laptops. Results in spreadsheets.' },
 ];
 
 export default function WalkthroughAAEEvaluationAtScale() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAEEvaluationAtScale() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Evaluation at Scale — Step by Step
+          Evaluation at Scale \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how evaluation at scale works, one stage at a time.

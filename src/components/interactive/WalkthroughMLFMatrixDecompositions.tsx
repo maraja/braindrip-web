@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Eigendecomposition', desc: 'The foundation of matrix decompositions begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Singular Value Decomposition (SVD)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes matrix decompositions work.' },
-    { title: '3. Truncated SVD for Compression', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Cholesky Decomposition', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Connection to PCA', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Eigendecomposition', desc: 'An eigenvector v of a square matrix A satisfies:  [equation]  where  is the corresponding eigenvalue. Geometrically, A stretches v by a factor of  without changing its direction.' },
+    { title: '2. Singular Value Decomposition (SVD)', desc: 'SVD generalizes eigendecomposition to any matrix A  &#123;R&#125;^&#123;m x n&#125;, not just square ones:  [equation]  where U  &#123;R&#125;^&#123;m x m&#125; (left singular vectors),   &#123;R&#125;^&#123;m x n&#125; (diagonal matrix of singular values _1  _2    0), and V  &#123;R&#125;^&#123;n x n&#125; (right singular vectors).' },
+    { title: '3. Truncated SVD for Compression', desc: 'The Eckart-Young theorem states that the best rank-k approximation (in both Frobenius and spectral norm) is obtained by keeping only the top k singular values:  [equation]  where U_k has k columns, _k is k x k, and V_k has k columns.' },
+    { title: '4. Cholesky Decomposition', desc: 'If A is symmetric positive definite (all eigenvalues &gt; 0), then it has a unique factorization:  [equation]  where L is lower triangular with positive diagonal entries. Cholesky is roughly twice as fast as LU decomposition and numerically more stable.' },
+    { title: '5. Connection to PCA', desc: 'Principal Component Analysis is eigendecomposition of the covariance matrix C = &#123;1&#125;&#123;n-1&#125;X^TX (for centered data X). Equivalently, PCA can be computed via SVD of X itself.' },
 ];
 
 export default function WalkthroughMLFMatrixDecompositions() {
@@ -17,10 +17,10 @@ export default function WalkthroughMLFMatrixDecompositions() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Matrix Decompositions — Step by Step
+          Matrix Decompositions \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how matrix decompositions works, one stage at a time.

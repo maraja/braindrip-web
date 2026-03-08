@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Ha & Schmidhuber (2018): The Original World Models', desc: 'The foundation of world models begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Dreamer and the RSSM Architecture', desc: 'At this stage, the key transformation occurs — the core mechanism that makes world models work.' },
-    { title: '3. Dreaming: Imagination-Based Policy Training', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. DreamerV3: Scaling Across Domains', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Ha & Schmidhuber (2018): The Original World Models', desc: 'The seminal "World Models" paper proposed a three-component architecture:  Vision Model (VAE): A variational autoencoder compresses each observation o_t (e.g.' },
+    { title: '2. Dreamer and the RSSM Architecture', desc: '(2020, 2021, 2023) developed the Dreamer family (DreamerV1, V2, V3), which substantially advanced world models using the Recurrent State-Space Model (RSSM).' },
+    { title: '3. Dreaming: Imagination-Based Policy Training', desc: 'Once the world model is trained, Dreamer trains an actor-critic policy entirely within imagined latent trajectories:  Start from a real state s_t encoded into (h_t, z_t). Roll out H steps (typically H = 15) using only the prior and the policy: a_t  _(a  h_&#123;t+1&#125;).' },
+    { title: '4. DreamerV3: Scaling Across Domains', desc: 'DreamerV3 (Hafner et al., 2023) introduced key innovations for generality: discrete latent states using categorical distributions (32 classes x 32 categories), symlog predictions for reward and value normalization, and careful hyperparameter robustness.' },
 ];
 
 export default function WalkthroughRLWorldModels() {
@@ -16,10 +16,10 @@ export default function WalkthroughRLWorldModels() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          World Models — Step by Step
+          World Models \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how world models works, one stage at a time.

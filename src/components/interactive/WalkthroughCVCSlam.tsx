@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The SLAM Problem Formulation', desc: 'The foundation of slam (simultaneous localization and mapping) begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Visual SLAM Pipeline', desc: 'At this stage, the key transformation occurs — the core mechanism that makes slam (simultaneous localization and mapping) work.' },
-    { title: '3. ORB-SLAM (Mur-Artal et al., 2015, 2017)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Visual-Inertial SLAM', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. LiDAR SLAM', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The SLAM Problem Formulation', desc: 'At time t, the system state includes the sensor pose x_t = (R_t, t_t) and a map &#123;M&#125; (a set of 3D landmarks \\&#123;m_j\\&#125;). Given sensor observations z_&#123;1:t&#125; and control inputs u_&#123;1:t&#125;, SLAM estimates the joint posterior:  [equation]  This can be solved via filtering (EKF-SLAM, particle filters) or.' },
+    { title: '2. Visual SLAM Pipeline', desc: 'A typical visual SLAM system (monocular, stereo, or RGB-D) has four main components:  Frontend -- Tracking: Estimates the camera pose for each new frame. Extract features (ORB, SIFT, or learned features like SuperPoint).' },
+    { title: '3. ORB-SLAM (Mur-Artal et al., 2015, 2017)', desc: 'ORB-SLAM is the most widely cited visual SLAM system:  Uses ORB features (fast binary descriptor, rotation invariant). Three parallel threads: tracking, local mapping, loop closing.' },
+    { title: '4. Visual-Inertial SLAM', desc: 'Fusing camera data with an IMU (Inertial Measurement Unit) provides: Metric scale recovery (monocular SLAM is scale-ambiguous; IMU gives absolute scale). Robust tracking during fast motion and visual degradation.' },
+    { title: '5. LiDAR SLAM', desc: 'LiDAR-based SLAM (LOAM, LeGO-LOAM, LIO-SAM) uses point cloud registration instead of feature matching:  Extract edge and planar features from LiDAR scans. Register consecutive scans using point-to-edge and point-to-plane ICP variants.' },
+    { title: '6. Dense and Neural SLAM', desc: 'Recent systems build dense maps rather than sparse landmark maps:  DTAM (2011): Dense tracking and mapping using photometric alignment on every pixel. KinectFusion (2011): Real-time dense reconstruction using TSDF fusion from depth cameras.' },
 ];
 
 export default function WalkthroughCVCSlam() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCSlam() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          SLAM (Simultaneous Localization and Mapping) — Step by Step
+          SLAM (Simultaneous Localization and Mapping) \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how slam (simultaneous localization and mapping) works, one stage at a time.

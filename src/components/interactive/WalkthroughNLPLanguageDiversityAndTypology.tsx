@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Word Order Typology', desc: 'The foundation of language diversity and typology begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Morphological Typology', desc: 'At this stage, the key transformation occurs — the core mechanism that makes language diversity and typology work.' },
-    { title: '3. Writing Systems', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Specific Language Challenges for NLP', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Word Order Typology', desc: 'Languages vary in the default ordering of subject (S), verb (V), and object (O):  SVO (Subject-Verb-Object): English, Chinese, French, Russian, Swahili. "The cat (S) caught (V) the mouse (O)." Approximately 42% of the world\'s languages.' },
+    { title: '2. Morphological Typology', desc: 'Languages vary in how much information is encoded within individual words:  Isolating (analytic): Each word carries one morpheme (unit of meaning). Mandarin Chinese and Vietnamese are prototypical: "I will not go" requires four separate words in Chinese, each with a single meaning.' },
+    { title: '3. Writing Systems', desc: 'Alphabetic (Latin, Cyrillic, Greek, etc.): Letters roughly correspond to phonemes. English, French, Russian, Hindi (Devanagari).' },
+    { title: '4. Specific Language Challenges for NLP', desc: 'Chinese word segmentation: No whitespace between words. The sentence "put information in the computer" can segment differently to mean "inform the computer" or "put the information in." State-of-the-art: 96--97% F1 on PKU and MSR benchmarks, but errors cascade.' },
 ];
 
 export default function WalkthroughNLPLanguageDiversityAndTypology() {
@@ -16,10 +16,10 @@ export default function WalkthroughNLPLanguageDiversityAndTypology() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Language Diversity and Typology — Step by Step
+          Language Diversity and Typology \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how language diversity and typology works, one stage at a time.

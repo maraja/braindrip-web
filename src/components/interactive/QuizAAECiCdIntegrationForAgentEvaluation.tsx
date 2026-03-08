@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAECiCdIntegrationForAgentEvaluation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Integrating agent evaluations into CI/CD pipelines transforms evaluation from an occasional manual activity into an automated quality gate that catches regressions before they reach production.', isTrue: true, explanation: 'This captures the core purpose of CI/CD Integration for Agent Evaluation.' },
-    { text: 'CI/CD Integration for Agent Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding CI/CD Integration for Agent Evaluation is important for building on more advanced topics.' },
-    { text: 'CI/CD Integration for Agent Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding CI/CD Integration for Agent Evaluation is important for building on more advanced topics.' },
+    { text: 'Agent evaluation is too slow for CI.', isTrue: false, explanation: 'The tiered approach solves this. Commit-level evaluations (20-50 tasks, deterministic scoring) complete in under 5 minutes.' },
+    { text: 'Non-determinism makes CI evaluation unreliable.', isTrue: false, explanation: 'Statistical methods exist precisely for this. Running multiple passes and applying confidence intervals converts stochastic evaluation into reliable pass/fail decisions.' },
+    { text: 'Evaluation costs will spiral out of control.', isTrue: false, explanation: 'Caching, incremental evaluation, and tiered model selection keep costs manageable. A well-optimized pipeline spends $100-500/month for a team making 50 PRs/week -- comparable to a single developer\'s cloud IDE subscription.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

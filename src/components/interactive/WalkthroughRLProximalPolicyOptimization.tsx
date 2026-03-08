@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Probability Ratio', desc: 'The foundation of proximal policy optimization (ppo) begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The PPO-Clip Objective', desc: 'At this stage, the key transformation occurs — the core mechanism that makes proximal policy optimization (ppo) work.' },
-    { title: '3. The Full PPO Algorithm', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. PPO vs. TRPO: Simplicity Wins', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. PPO for RLHF (Language Models)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Probability Ratio', desc: 'Define the ratio between the new and old policy\'s probability of taking action a_t in state s_t:  [equation]  When  = _old, this ratio equals 1. The standard surrogate objective from TRPO is:  [equation]  Without any constraint, maximizing L^&#123;CPI&#125; can lead to destructively large policy updates when.' },
+    { title: '2. The PPO-Clip Objective', desc: 'PPO constrains the ratio by clipping it:  [equation]  where  is the clipping parameter (default: 0.2). The  operation selects the more pessimistic (conservative) estimate of the improvement.' },
+    { title: '3. The Full PPO Algorithm', desc: 'Collect a batch of trajectories using the current policy _&#123;_old&#125;. Compute advantages &#123;A&#125;_t using GAE (advantage-estimation.md).' },
+    { title: '4. PPO for RLHF (Language Models)', desc: 'In Reinforcement Learning from Human Feedback, PPO is used to fine-tune a language model _ to maximize a learned reward model R while staying close to a reference policy _ref. The RLHF objective is:  [equation]  PPO optimizes this by treating token generation as a sequential decision process.' },
 ];
 
 export default function WalkthroughRLProximalPolicyOptimization() {
@@ -17,10 +16,10 @@ export default function WalkthroughRLProximalPolicyOptimization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Proximal Policy Optimization (PPO) — Step by Step
+          Proximal Policy Optimization (PPO) \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how proximal policy optimization (ppo) works, one stage at a time.

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Estimating the Components', desc: 'The foundation of naive bayes begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Gaussian Naive Bayes', desc: 'At this stage, the key transformation occurs — the core mechanism that makes naive bayes work.' },
-    { title: '3. Multinomial Naive Bayes', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Bernoulli Naive Bayes', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Laplace Smoothing', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Estimating the Components', desc: 'Naive Bayes requires two things: Class priors P(y = c): estimated as the fraction of training examples in class c. Likelihoods P(x_j  y = c): estimated differently depending on the feature type, giving rise to different Naive Bayes variants.' },
+    { title: '2. Gaussian Naive Bayes', desc: 'For continuous features, assume each P(x_j  y = c) is Gaussian:  [equation]  where _&#123;jc&#125; and _&#123;jc&#125;^2 are the mean and variance of feature j for class c, estimated from the training data. This variant works well when features are roughly bell-shaped but can fail on skewed or multimodal distributions.' },
+    { title: '3. Multinomial Naive Bayes', desc: 'For count-valued features (e.g., word counts in a document), the multinomial model is appropriate. Given a document represented as word counts x = (x_1, , x_d):  [equation]  where _&#123;jc&#125; = P(word  j  class  c) is estimated as:  [equation]  This is the standard model for text classification tasks.' },
+    { title: '4. Bernoulli Naive Bayes', desc: 'For binary features (word present/absent rather than counts):  [equation]  Unlike the multinomial model, Bernoulli NB explicitly penalizes the absence of features. For short documents, this distinction matters: a word not appearing in a spam email is itself evidence.' },
+    { title: '5. Laplace Smoothing', desc: 'If a feature value never appears with a particular class in the training data, P(x_j  y = c) = 0, which zeroes out the entire product. Laplace smoothing (additive smoothing) fixes this:  [equation]  where  &gt; 0 is the smoothing parameter (typically  = 1) and V is the vocabulary size.' },
+    { title: '6. Working in Log-Space', desc: 'In practice, multiplying many small probabilities causes numerical underflow. The standard implementation works in log-space:  [equation]  This turns products into sums, which is both numerically stable and computationally efficient.' },
 ];
 
 export default function WalkthroughMLFNaiveBayes() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFNaiveBayes() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Naive Bayes — Step by Step
+          Naive Bayes \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how naive bayes works, one stage at a time.

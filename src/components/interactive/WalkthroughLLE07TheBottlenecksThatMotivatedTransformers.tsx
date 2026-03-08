@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Understanding The Bottlenecks That Motivated Transformers', desc: 'The foundation of the bottlenecks that motivated transformers begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Core Mechanism', desc: 'At this stage, the key transformation occurs — the core mechanism that makes the bottlenecks that motivated transformers work.' },
-    { title: '3. Processing Flow', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Output and Results', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Bottleneck 1: Sequential Computation Prevents Parallelization', desc: 'An RNN computes h_t = f(h_&#123;t-1&#125;, x_t). This means h_2 depends on h_1, h_3 depends on h_2, and so on.' },
+    { title: '2. Bottleneck 2: Vanishing and Exploding Gradients Limit Effective Memory', desc: 'Even with LSTM\'s gated cell state, information degraded over long distances. (1994) showed that gradients in vanilla RNNs decay exponentially with sequence length.' },
+    { title: '3. Bottleneck 3: The Fixed-Length Representation Bottleneck', desc: 'In standard Seq2Seq (03-sequence-to-sequence-models.md), the encoder\'s final hidden state — a single vector of fixed dimensionality (typically 512 or 1024) — had to encode the entire meaning of the input sequence. For a 5-word sentence, 1024 dimensions was generous.' },
+    { title: '4. The Convergence: Why 2017 Was the Moment', desc: 'Several factors converged to make the Transformer possible and necessary in 2017:  Hardware: NVIDIA\'s V100 GPU (2017) offered massive parallel throughput, but RNNs couldn\'t use it. Attention as a building block: Bahdanau and Luong had proven attention\'s power for sequence-to-sequence tasks.' },
 ];
 
 export default function WalkthroughLLE07TheBottlenecksThatMotivatedTransformers() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE07TheBottlenecksThatMotivatedTransformers(
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The Bottlenecks That Motivated Transformers — Step by Step
+          The Bottlenecks That Motivated Transformers \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how the bottlenecks that motivated transformers works, one stage at a time.

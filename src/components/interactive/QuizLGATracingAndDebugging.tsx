@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGATracingAndDebugging() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Traces are hierarchical: a graph run contains node runs, which contain LLM runs, which may contain tool runs.', isTrue: true, explanation: 'This is a key technical detail of Tracing and Debugging.' },
-    { text: 'The @traceable decorator works on both sync and async functions with the same syntax.', isTrue: true, explanation: 'This is a key technical detail of Tracing and Debugging.' },
-    { text: 'Custom spans created with @traceable automatically nest under the nearest parent span in the call stack.', isTrue: true, explanation: 'This is a key technical detail of Tracing and Debugging.' },
+    { text: 'I need @traceable on every function in my codebase.', isTrue: false, explanation: 'Only decorate functions whose inputs and outputs you want visible in traces. LangChain and LangGraph components are already auto-instrumented.' },
+    { text: 'LangSmith traces provide nested span visibility into every node, edge, and LLM call, with the @traceable decorator extending coverage to custom functions.', isTrue: true, explanation: 'This captures the core definition of Tracing and Debugging.' },
+    { text: 'Tracing and Debugging is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Tracing and Debugging is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

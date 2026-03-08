@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCReceptiveField() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The theoretical receptive field tells you what the neuron actually uses.', isTrue: false, explanation: '"The theoretical receptive field tells you what the neuron actually uses." The effective receptive field is much smaller and concentrated centrally. Pixels at the periphery of the theoretical RF have ' },
-    { text: 'VGG-16\'s last conv layer has a theoretical receptive field of $212 \\times 212$ pixels on a $224 \\times 224$ input, covering most of the image.', isTrue: true, explanation: 'This is a key technical detail of Receptive Field.' },
-    { text: 'ResNet-50 has a theoretical receptive field of $483 \\times 483$ -- larger than the standard $224 \\times 224$ input -- meaning boundary effects constrain the actual receptive field.', isTrue: true, explanation: 'This is a key technical detail of Receptive Field.' },
+    { text: 'The theoretical receptive field tells you what the neuron actually uses.', isTrue: false, explanation: 'The effective receptive field is much smaller and concentrated centrally. Pixels at the periphery of the theoretical RF have negligible influence.' },
+    { text: 'The Gaussian shape of the effective receptive field means that network predictions are disproportionately influenced by central pixels.', isTrue: true, explanation: 'This has implications for object detection at image boundaries and for the design of padding strategies.' },
+    { text: 'The receptive field of a neuron is the region of the input image that can influence its activation, growing with network depth through successive convolutions and pooling operations.', isTrue: true, explanation: 'This captures the core definition of Receptive Field.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Policy Evaluation (Prediction)', desc: 'The foundation of dynamic programming begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Policy Improvement', desc: 'At this stage, the key transformation occurs — the core mechanism that makes dynamic programming work.' },
-    { title: '3. Policy Iteration', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Value Iteration', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Convergence Guarantees', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Policy Evaluation (Prediction)', desc: 'Given a fixed policy , policy evaluation computes the state-value function V^(s) by iteratively applying the Bellman expectation equation as an update rule:  [equation]  Starting from an arbitrary V_0, each sweep over all states produces a better approximation.' },
+    { title: '2. Policy Improvement', desc: 'Once we have V^, we can construct a strictly better (or equal) policy by acting greedily with respect to the current value function:  [equation]  The policy improvement theorem guarantees that if \'  , then V^&#123;\'&#125;(s)  V^(s) for all states s. If \' = , then  is already optimal.' },
+    { title: '3. Policy Iteration', desc: 'Policy iteration alternates between evaluation and improvement:  Initialize  arbitrarily. Policy Evaluation: Compute V^ (iterative sweeps until convergence).' },
+    { title: '4. Value Iteration', desc: 'Value iteration collapses evaluation and improvement into a single update by applying the Bellman optimality equation directly:  [equation]  This is equivalent to performing a single sweep of policy evaluation followed by policy improvement at every step.' },
+    { title: '5. Convergence Guarantees', desc: 'Both algorithms rest on the contraction mapping theorem. The Bellman operator T satisfies:  [equation]  This guarantees a unique fixed point and geometric convergence at rate .' },
 ];
 
 export default function WalkthroughRLDynamicProgramming() {
@@ -17,10 +17,10 @@ export default function WalkthroughRLDynamicProgramming() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Dynamic Programming — Step by Step
+          Dynamic Programming \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how dynamic programming works, one stage at a time.

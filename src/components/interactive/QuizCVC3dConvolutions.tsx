@@ -2,8 +2,8 @@ import { useState } from 'react';
 export default function QuizCVC3dConvolutions() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: '3D convolutions extend standard 2D spatial filters with a temporal dimension, enabling neural networks to learn spatiotemporal features directly from raw video clips.', isTrue: true, explanation: 'This captures the core purpose of 3D Convolutions.' },
-    { text: '3D Convolutions is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding 3D Convolutions is important for building on more advanced topics.' },
+    { text: '3D convolutions are just 2D convolutions applied independently to each frame.', isTrue: false, explanation: 'A 2D convolution applied per frame (i.e., 1 x 3 x 3 kernel) shares no information across time. True 3D convolutions with k_t &gt; 1 jointly process multiple frames, enabling the detection of motion patterns like direction changes and speed.' },
+    { text: '3D convolutions extend standard 2D spatial filters with a temporal dimension, enabling neural networks to learn spatiotemporal features directly from raw video clips.', isTrue: true, explanation: 'This captures the core definition of 3D Convolutions.' },
     { text: '3D Convolutions is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding 3D Convolutions is important for building on more advanced topics.' },
   ];
   return (

@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Always plot before computing statistics.', detail: 'The mean of a bimodal distribution is meaningless despite being mathematically correct.' },
-    { label: 'Check for data leakage during EDA.', detail: 'If a feature correlates suspiciously well ($r > 0.95$) with the target, investigate whether it was derived from the target or is only available at prediction time.' },
+    { label: 'Check for data leakage during EDA.', detail: 'If a feature correlates suspiciously well (r &gt; 0.95) with the target, investigate whether it was derived from the target or is only available at prediction time.' },
     { label: 'Use log-scale axes', detail: 'for features spanning several orders of magnitude (e.g., income, population). Linear-scale histograms will compress the bulk of the data into a single bin.' },
-    { label: 'EDA is iterative.', detail: 'Initial findings lead to new questions. A bimodal distribution prompts: \"What subgroups exist?\" A sudden drop in a time series prompts: \"Was there a data collection change?\"' },
+    { label: 'EDA is iterative.', detail: 'Initial findings lead to new questions. A bimodal distribution prompts: "What subgroups exist?" A sudden drop in a time series prompts: "Was there a data collection change?"' },
     { label: 'Document your findings.', detail: 'EDA notebooks should be reproducible artifacts, not throwaway explorations.' },
 ];
 
@@ -19,10 +19,10 @@ export default function ExplorerMLFExploratoryDataAnalysis() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Exploratory Data Analysis — Key Details Explorer
+          Exploratory Data Analysis \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of exploratory data analysis.
+          Click each card to explore the technical details.
         </p>
       </div>
 

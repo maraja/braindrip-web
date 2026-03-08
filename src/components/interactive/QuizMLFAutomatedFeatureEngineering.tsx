@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFAutomatedFeatureEngineering() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'DFS at depth $&gt; 2$ rarely improves performance and dramatically increases the number of candidate features.', isTrue: true, explanation: 'This is a key technical detail of Automated Feature Engineering.' },
-    { text: 'Depth 2 is the practical sweet spot for most datasets.', isTrue: true, explanation: 'This is a key technical detail of Automated Feature Engineering.' },
-    { text: 'AutoML systems typically require significant compute resources: Auto-sklearn recommends at least 1 hour of runtime for meaningful search; TPOT\'s genetic search can take many hours.', isTrue: true, explanation: 'This is a key technical detail of Automated Feature Engineering.' },
+    { text: 'Automated feature engineering replaces domain expertise.', isTrue: false, explanation: 'Automated systems explore generic transformations. Domain-specific features (e.g., "days since last customer complaint" or "ratio of LDL to HDL cholesterol") still require human insight and typically provide the largest performance gains.' },
+    { text: 'AutoML, Featuretools, and neural feature learning -- when manual engineering doesn\'t scale.', isTrue: true, explanation: 'This captures the core definition of Automated Feature Engineering.' },
+    { text: 'Automated Feature Engineering is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Automated Feature Engineering is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

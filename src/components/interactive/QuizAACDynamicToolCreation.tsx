@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACDynamicToolCreation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Name and description quality: A generated tool is only useful if the agent can find and select it later.', isTrue: true, explanation: 'This is a key technical detail of Dynamic Tool Creation.' },
-    { text: 'The agent must generate clear, descriptive names and docstrings — the same qualities that make predefined tools discoverable.', isTrue: true, explanation: 'This is a key technical detail of Dynamic Tool Creation.' },
-    { text: 'Parameter typing: Generated tools should have typed parameters (Python type hints or JSON schema) so the LLM can generate valid calls.', isTrue: true, explanation: 'This is a key technical detail of Dynamic Tool Creation.' },
+    { text: 'Dynamic tool creation means the agent can do anything', isTrue: false, explanation: ': The agent is limited by its code generation capabilities, available libraries, sandbox constraints, and the data it can access. It cannot create tools that require resources outside its environment.' },
+    { text: 'A generated tool is only useful if the agent can find and select it later.', isTrue: true, explanation: 'The agent must generate clear, descriptive names and docstrings — the same qualities that make predefined tools discoverable.' },
+    { text: 'Generated tools should have typed parameters (Python type hints or JSON schema) so the LLM can generate valid calls.', isTrue: true, explanation: 'Untyped tools lead to more invocation errors.' },
+    { text: 'Generated tools may require libraries not in the standard environment.', isTrue: true, explanation: 'The system must handle import failures gracefully, potentially installing missing packages or falling back to alternative implementations.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

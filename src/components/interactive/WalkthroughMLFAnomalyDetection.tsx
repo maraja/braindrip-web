@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Statistical Methods', desc: 'The foundation of anomaly detection begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Isolation Forest', desc: 'At this stage, the key transformation occurs — the core mechanism that makes anomaly detection work.' },
-    { title: '3. One-Class SVM', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Autoencoder-Based Detection', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Local Outlier Factor (LOF)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Statistical Methods', desc: 'The simplest approaches use distributional assumptions:  Z-score: For univariate data assumed to be Gaussian, flag points where  /  &gt;  (typically  = 3). In multivariate settings, use the Mahalanobis distance: d_M(x) = &#123;(x - )^T ^&#123;-1&#125; (x - )&#125;.' },
+    { title: '2. Isolation Forest', desc: 'Isolation Forest (Liu et al., 2008) exploits a key insight: anomalies are few and different, so they are easier to isolate. The algorithm:  Build an ensemble of random trees (isolation trees).' },
+    { title: '3. One-Class SVM', desc: 'One-Class SVM (Scholkopf et al., 1999) learns a decision boundary around normal data in a kernel-induced feature space. It solves:  [equation]  subject to w  (x_i)   - _i and _i  0.' },
+    { title: '4. Autoencoder-Based Detection', desc: 'An autoencoder is a neural network trained to reconstruct its input through a bottleneck:  [equation]  The key insight: an autoencoder trained on normal data learns to reconstruct normal patterns.' },
+    { title: '5. Local Outlier Factor (LOF)', desc: 'LOF (Breunig et al., 2000) measures the local density deviation of a point relative to its neighbors:  [equation]  where lrd_k(x) is the local reachability density -- roughly the inverse of the average reachability distance to k nearest neighbors.' },
+    { title: '6. Supervised vs. Unsupervised Anomaly Detection', desc: 'Unsupervised: No labels required. Assumes anomalies are rare and different.' },
 ];
 
 export default function WalkthroughMLFAnomalyDetection() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFAnomalyDetection() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Anomaly Detection — Step by Step
+          Anomaly Detection \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how anomaly detection works, one stage at a time.

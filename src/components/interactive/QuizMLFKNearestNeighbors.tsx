@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFKNearestNeighbors() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'K=1 always overfits.', isTrue: false, explanation: '"K=1 always overfits." In low-noise settings with abundant data, $K=1$ can actually perform very well. Overfitting depends on the noise level relative to the data density.' },
-    { text: 'Training time: $O(1)$ (just store the data).', isTrue: true, explanation: 'This is a key technical detail of K-Nearest Neighbors.' },
-    { text: 'Prediction time: $O(nd)$ brute-force, $O(d \\log n)$ with KD-trees in low dimensions.', isTrue: true, explanation: 'This is a key technical detail of K-Nearest Neighbors.' },
+    { text: 'KNN has no training phase, so it\'s fast.', isTrue: false, explanation: 'The training phase is trivial, but prediction is expensive: O(nd) per query without acceleration structures. In production, this is often the bottleneck.' },
+    { text: 'O(1) (just store the data).', isTrue: true, explanation: 'Prediction time: O(nd) brute-force, O(d  n) with KD-trees in low dimensions.' },
+    { text: 'O(nd) -- the entire training set must be stored.', isTrue: true, explanation: 'O(nd) -- the entire training set must be stored.' },
+    { text: 'KNN provides no insight into which features drive predictions.', isTrue: true, explanation: 'KNN provides no insight into which features drive predictions.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

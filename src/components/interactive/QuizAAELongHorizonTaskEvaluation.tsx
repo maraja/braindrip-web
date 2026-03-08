@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAELongHorizonTaskEvaluation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Evaluating tasks that span hours, days, or weeks requires fundamentally different approaches than short-task benchmarks, including milestone-based progress measurement, context persistence strategies, and principled handling of environmental change.', isTrue: true, explanation: 'This captures the core purpose of Long-Horizon Task Evaluation.' },
-    { text: 'Long-Horizon Task Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Long-Horizon Task Evaluation is important for building on more advanced topics.' },
-    { text: 'Long-Horizon Task Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Long-Horizon Task Evaluation is important for building on more advanced topics.' },
+    { text: 'Long-horizon evaluation is just short-horizon evaluation repeated many times.', isTrue: false, explanation: 'This fundamentally misunderstands the challenge. Long-horizon tasks have emergent properties -- context management, strategic planning, resource allocation, adaptation -- that do not appear in any number of short-task repetitions.' },
+    { text: 'Milestone-based evaluation solves the long-horizon problem.', isTrue: false, explanation: 'Milestones help, but they introduce their own challenges: defining good milestones requires domain expertise, milestones may not cover all aspects of task quality, and agents can game milestone metrics (optimizing for checkpoints rather than overall task success). Milestones are a necessary tool, not a complete solution.' },
+    { text: 'If an agent can plan well, it can handle long-horizon tasks.', isTrue: false, explanation: 'Planning is necessary but insufficient. Long-horizon execution requires replanning (adapting to unexpected results), context management (maintaining relevant information), and resource management (budgeting over time).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

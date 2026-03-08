@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACConversationManagement() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Summarization cost: Generating a conversation summary costs one LLM call (typically 500-1500 tokens).', isTrue: true, explanation: 'This is a key technical detail of Conversation Management.' },
-    { text: 'This is amortized across many turns: summarize every 5-10 turns, not every turn Summary quality matters: A lossy summary can cause the agent to lose critical details.', isTrue: true, explanation: 'This is a key technical detail of Conversation Management.' },
-    { text: 'Include key decisions, specific data points, and unresolved items.', isTrue: true, explanation: 'This is a key technical detail of Conversation Management.' },
+    { text: 'Just keep all messages and let the model figure it out.', isTrue: false, explanation: 'This works for short conversations but fails as conversations grow. Context window limits are hard constraints, and even within limits, attention quality degrades with length.' },
+    { text: 'Generating a conversation summary costs one LLM call (typically 500-1500 tokens).', isTrue: true, explanation: 'This is amortized across many turns: summarize every 5-10 turns, not every turn' },
+    { text: 'Summarization always loses important information.', isTrue: false, explanation: 'Well-designed summarization preserves key information while discarding redundant content. The net effect is often positive: a focused summary in the context window is more useful than verbose raw history that dilutes attention.' },
+    { text: 'A lossy summary can cause the agent to lose critical details.', isTrue: true, explanation: 'Include key decisions, specific data points, and unresolved items. Exclude pleasantries, routine acknowledgments, and verbose tool outputs' },
+    { text: 'The system message should be minimal.', isTrue: false, explanation: 'System messages receive elevated attention weight. Using this space effectively (including task context, user preferences, and behavioral guidelines) significantly improves response quality.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

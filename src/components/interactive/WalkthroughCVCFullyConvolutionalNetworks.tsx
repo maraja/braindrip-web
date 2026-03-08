@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Converting Classification Networks to FCNs', desc: 'The foundation of fully convolutional networks begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Upsampling to Full Resolution', desc: 'At this stage, the key transformation occurs — the core mechanism that makes fully convolutional networks work.' },
-    { title: '3. Skip Connections for Multi-Scale Fusion', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Training Details', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Converting Classification Networks to FCNs', desc: '(2015) showed that any classification CNN can be "convolutionalized":  Take a trained classifier (e.g., VGG-16 with three 4096-d FC layers). Reinterpret each FC layer as a 1x1 convolution.' },
+    { title: '2. Upsampling to Full Resolution', desc: 'The coarse score map must be upsampled back to the input resolution. FCN introduced learnable transposed convolutions (also called deconvolutions, though they are not true mathematical deconvolutions):  [equation]  where W^T denotes the transposed filter and * is the convolution operation.' },
+    { title: '3. Skip Connections for Multi-Scale Fusion', desc: 'A 32x upsampling from the final layer produces very coarse boundaries. FCN addressed this with skip architectures that fuse predictions from multiple encoder stages:  FCN-32s: upsample the final layer 32x directly.' },
+    { title: '4. Training Details', desc: 'Loss: per-pixel cross-entropy, summed over all spatial locations. Initialization: backbone weights from ImageNet-pretrained VGG-16.' },
 ];
 
 export default function WalkthroughCVCFullyConvolutionalNetworks() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCFullyConvolutionalNetworks() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Fully Convolutional Networks — Step by Step
+          Fully Convolutional Networks \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how fully convolutional networks works, one stage at a time.

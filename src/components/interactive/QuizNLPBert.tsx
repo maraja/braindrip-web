@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPBert() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Pre-training data: BooksCorpus (800M words) + English Wikipedia (2,500M words) = 3.3B tokens total.', isTrue: true, explanation: 'This is a key technical detail of BERT.' },
-    { text: 'Pre-training compute: 4 days on 4-16 Cloud TPUs (BERT-base); 4 days on 64 TPUs (BERT-large).', isTrue: true, explanation: 'This is a key technical detail of BERT.' },
-    { text: 'Estimated cost: $10K-$50K.', isTrue: true, explanation: 'This is a key technical detail of BERT.' },
+    { text: 'BERT is a language model.', isTrue: false, explanation: 'Strictly, BERT is not a language model in the traditional sense -- it cannot generate text autoregressively. MLM is a denoising objective (predict masked tokens from context), not a left-to-right generative model.' },
+    { text: 'BooksCorpus (800M words) + English Wikipedia (2,500M words) = 3.3B tokens total.', isTrue: true, explanation: 'BooksCorpus (800M words) + English Wikipedia (2,500M words) = 3.3B tokens total.' },
+    { text: 'BERT understands language.', isTrue: false, explanation: 'BERT learns statistical patterns from massive text corpora. It excels at tasks that require pattern matching over surface forms and distributional semantics, but it does not reason in a human-like way.' },
+    { text: '4 days on 4-16 Cloud TPUs (BERT-base); 4 days on 64 TPUs (BERT-large).', isTrue: true, explanation: 'Estimated cost: 10K-50K.' },
+    { text: 'Bigger BERT is always better.', isTrue: false, explanation: 'BERT-large outperforms BERT-base on most benchmarks, but the gap is often small (1-3 points) while compute triples. On small datasets, BERT-large can actually underperform BERT-base due to overfitting.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

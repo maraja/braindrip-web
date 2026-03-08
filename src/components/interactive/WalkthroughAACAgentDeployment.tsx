@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Containerization', desc: 'The foundation of agent deployment begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Scaling Strategies', desc: 'At this stage, the key transformation occurs — the core mechanism that makes agent deployment work.' },
-    { title: '3. Versioning', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. A/B Testing and Canary Releases', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Containerization', desc: 'Agent code, dependencies, and configuration are packaged into Docker containers. The container includes: the orchestration framework (LangGraph, CrewAI), tool implementations, prompt templates, configuration files, and any local models or embeddings.' },
+    { title: '2. Scaling Strategies', desc: 'Agents present unique scaling challenges. Horizontal scaling for concurrent users: run multiple agent container replicas behind a load balancer.' },
+    { title: '3. Versioning', desc: 'Agent behavior depends on at least three versioned components: Prompt versions (system prompts, tool descriptions, few-shot examples), Tool versions (API schemas, tool implementations, external service versions), and Model versions (GPT-4-turbo-2024-04-09 vs GPT-4o-2024-08-06).' },
+    { title: '4. A/B Testing and Canary Releases', desc: 'Given the stochastic nature of agents, A/B testing is essential for evaluating changes. Route 10% of traffic to the new agent configuration and 90% to the current production version.' },
 ];
 
 export default function WalkthroughAACAgentDeployment() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACAgentDeployment() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agent Deployment — Step by Step
+          Agent Deployment \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how agent deployment works, one stage at a time.

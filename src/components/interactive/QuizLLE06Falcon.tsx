@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE06Falcon() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The Technology Innovation Institute\'s Falcon models proved that exceptional data curation alone — without novel architectures or proprietary text — could produce world-class language models, briefly topping the Hugging Face Open LLM Leaderboard.', isTrue: true, explanation: 'This captures the core purpose of Falcon.' },
-    { text: 'Falcon is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Falcon is important for building on more advanced topics.' },
-    { text: 'Falcon is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Falcon is important for building on more advanced topics.' },
+    { text: 'Falcon used proprietary training data.', isTrue: false, explanation: 'The opposite is true. Falcon\'s entire training corpus was derived from Common Crawl, a publicly available web scrape.' },
+    { text: '7 billion parameters, trained on 1.5T tokens of RefinedWeb', isTrue: true, explanation: '7 billion parameters, trained on 1.5T tokens of RefinedWeb' },
+    { text: 'Falcon 180B was better than GPT-4.', isTrue: false, explanation: 'Falcon 180B approached GPT-3.5 quality on many benchmarks but was well below GPT-4. Its significance was being the largest open model, not the best model overall.' },
+    { text: '40 billion parameters, 60 layers, d_model=8192, trained on 1T tokens', isTrue: true, explanation: '40 billion parameters, 60 layers, d_model=8192, trained on 1T tokens' },
+    { text: 'Multi-Query Attention significantly hurts quality.', isTrue: false, explanation: 'MQA does involve a small quality trade-off compared to full multi-head attention, but Falcon showed the degradation was minimal — typically less than 1% on benchmarks — while the inference speedup was dramatic.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

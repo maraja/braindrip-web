@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Numerical Precision: From FP32 to FP8', desc: 'The foundation of training efficiency breakthroughs begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Flash Attention: IO-Aware Computation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes training efficiency breakthroughs work.' },
-    { title: '3. Communication-Compute Overlap', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Architectural Efficiency Innovations', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Memory Optimization Techniques', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Numerical Precision: From FP32 to FP8', desc: 'The most direct way to speed up training is to use fewer bits per number. FP32 (32-bit floating point) was the default for early neural networks — safe but slow and memory-hungry.' },
+    { title: '2. Flash Attention: IO-Aware Computation', desc: 'Standard attention computes the full N x N attention matrix, materializing it in GPU high-bandwidth memory (HBM). Flash Attention (Dao et al., June 2022) recognized that the bottleneck was not arithmetic compute but memory bandwidth — reading and writing the massive attention matrix to and from HBM.' },
+    { title: '3. Communication-Compute Overlap', desc: 'In distributed training, GPUs spend significant time communicating gradients, parameters, and activations between each other. Every moment spent communicating is a moment not spent computing.' },
+    { title: '4. Architectural Efficiency Innovations', desc: 'Small architectural changes compound significantly when applied across billions of tokens. SwiGLU activation (Shazeer, 2020) replaces standard ReLU or GELU with a gated linear unit using the Swish activation, improving quality by approximately 1% on benchmarks at minimal compute cost.' },
+    { title: '5. Memory Optimization Techniques', desc: 'Gradient checkpointing (Chen et al., 2016) trades compute for memory by not storing intermediate activations during the forward pass. Instead, activations are recomputed during the backward pass as needed.' },
 ];
 
 export default function WalkthroughLLE07TrainingEfficiencyBreakthroughs() {
@@ -17,10 +17,10 @@ export default function WalkthroughLLE07TrainingEfficiencyBreakthroughs() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Training Efficiency Breakthroughs — Step by Step
+          Training Efficiency Breakthroughs \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how training efficiency breakthroughs works, one stage at a time.

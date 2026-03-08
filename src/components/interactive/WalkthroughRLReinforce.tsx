@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Algorithm', desc: 'The foundation of reinforce begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The High Variance Problem', desc: 'At this stage, the key transformation occurs — the core mechanism that makes reinforce work.' },
-    { title: '3. Baseline Subtraction', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. REINFORCE with Baseline (Pseudocode)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Algorithm', desc: 'Initialize policy parameters . Repeat:    - Sample a complete trajectory  = (s_0, a_0, r_0, , s_&#123;T-1&#125;, a_&#123;T-1&#125;, r_&#123;T-1&#125;) by following _.' },
+    { title: '2. The High Variance Problem', desc: 'REINFORCE suffers from extreme variance. Consider why: the return G_t is a single random sample of the expected future reward.' },
+    { title: '3. Baseline Subtraction', desc: 'The most important variance reduction technique is subtracting a baseline b(s_t) from the return:  [equation]  Crucially, any baseline that depends only on the state (not the action) leaves the gradient unbiased.' },
+    { title: '4. REINFORCE with Baseline (Pseudocode)', desc: 'Initialize policy parameters  and value parameters . Repeat:    - Sample trajectory  under _.' },
 ];
 
 export default function WalkthroughRLReinforce() {
@@ -16,10 +16,10 @@ export default function WalkthroughRLReinforce() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          REINFORCE — Step by Step
+          REINFORCE \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how reinforce works, one stage at a time.

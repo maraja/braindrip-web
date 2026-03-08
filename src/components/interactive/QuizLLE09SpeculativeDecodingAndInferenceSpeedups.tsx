@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE09SpeculativeDecodingAndInferenceSpeedups() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Speculative decoding and related inference optimization techniques overcome the autoregressive bottleneck — generating tokens one at a time — to achieve 2-10x speedups in production LLM serving without sacrificing output quality.', isTrue: true, explanation: 'This captures the core purpose of Speculative Decoding and Inference Speedups.' },
-    { text: 'Speculative Decoding and Inference Speedups is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Speculative Decoding and Inference Speedups is important for building on more advanced topics.' },
-    { text: 'Speculative Decoding and Inference Speedups is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Speculative Decoding and Inference Speedups is important for building on more advanced topics.' },
+    { text: 'Speculative decoding changes the model\'s outputs.', isTrue: false, explanation: 'Classical speculative decoding with proper rejection sampling produces statistically identical outputs to standard autoregressive generation. It is a pure speedup with no quality trade-off.' },
+    { text: 'You need a perfectly matched draft model.', isTrue: false, explanation: 'The draft model does not need to be a smaller version of the target model. Any model that approximately matches the target\'s distribution works.' },
+    { text: 'Speculative decoding helps equally for all text.', isTrue: false, explanation: 'Speedup varies by content. Predictable text (boilerplate, common patterns) achieves high acceptance rates and large speedups.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

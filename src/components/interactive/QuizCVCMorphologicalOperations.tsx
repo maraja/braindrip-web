@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCMorphologicalOperations() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'OpenCV\'s iterations parameter applies the operation multiple times; eroding with a 3x3 element for 2 iterations is equivalent to eroding once with a 5x5 element (approximately, for rectangles).', isTrue: true, explanation: 'This is a key technical detail of Morphological Operations.' },
-    { text: 'Opening is anti-extensive ($A \\circ B \\subseteq A$), closing is extensive ($A \\bullet B \\supseteq A$), and both are idempotent (applying them twice gives the same result as once).', isTrue: true, explanation: 'This is a key technical detail of Morphological Operations.' },
-    { text: 'For connected component analysis after morphological cleanup, cv2.connectedComponentsWithStats() provides labeled regions with area, bounding box, and centroid.', isTrue: true, explanation: 'This is a key technical detail of Morphological Operations.' },
+    { text: 'Morphological operations only work on binary images.', isTrue: false, explanation: 'Grayscale morphology (using max/min within the structuring element) is well-defined and widely used for background correction (top-hat), contrast enhancement, and noise removal.' },
+    { text: 'Opening then closing is the same as closing then opening.', isTrue: false, explanation: 'These operations are not commutative. Opening first removes small bright noise, then closing fills holes.' },
+    { text: 'Larger structuring elements are always better for noise removal.', isTrue: false, explanation: 'Overly large elements will erode thin structures and bridge distinct objects. The structuring element size should match the scale of the noise to be removed, not exceed it.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

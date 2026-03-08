@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Hypothesis class', detail: '$\\mathcal{H}$ determines the expressiveness of the model. Too small and you underfit; too large and you overfit.' },
+    { label: 'Hypothesis class', detail: '&#123;H&#125; determines the expressiveness of the model. Too small and you underfit; too large and you overfit.' },
     { label: 'Inductive bias', detail: 'is the set of assumptions a learning algorithm uses to generalize beyond training data. Every algorithm has one.' },
     { label: 'Generalization', detail: '-- performing well on unseen data -- is the central goal, not memorizing training examples.' },
 ];
@@ -17,10 +17,10 @@ export default function ExplorerMLFWhatIsMachineLearning() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Machine Learning — Key Details Explorer
+          What Is Machine Learning? \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of machine learning.
+          Click each card to explore the technical details.
         </p>
       </div>
 

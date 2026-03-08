@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. C3D: The Pioneer', desc: 'The foundation of 3d convolutions begins with understanding its core input requirements and initial setup.' },
-    { title: '2. I3D: Inflating 2D into 3D', desc: 'At this stage, the key transformation occurs — the core mechanism that makes 3d convolutions work.' },
-    { title: '3. R(2+1)D: Factorized 3D Convolutions', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. SlowFast Networks', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Computational Considerations', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. C3D: The Pioneer', desc: 'C3D (Tran et al., 2015) was the first successful deep 3D CNN for video. Key design choices:  All convolution kernels: 3 x 3 x 3 (found optimal over k_t  \\&#123;1, 3, 5, 7\\&#125;) Architecture: 8 convolutional layers, 5 max-pooling layers, 2 fully connected layers Input: 16-frame clips at 112 x 112 Trained on.' },
+    { title: '2. I3D: Inflating 2D into 3D', desc: 'Inflated 3D ConvNets (I3D) by Carreira and Zisserman (2017) addressed C3D\'s limitations by "inflating" proven 2D architectures. The key insight: a 2D kernel of size k x k pretrained on ImageNet can be expanded to k x k x k by repeating the weights along the temporal dimension and dividing by.' },
+    { title: '3. R(2+1)D: Factorized 3D Convolutions', desc: '(2018) showed that a 3 x 3 x 3 3D convolution can be factorized into a spatial 1 x 3 x 3 convolution followed by a temporal 3 x 1 x 1 convolution. Benefits:  Doubles the number of nonlinearities (ReLU between the two operations) Reduces parameters while maintaining the receptive field Easier to.' },
+    { title: '4. SlowFast Networks', desc: 'Feichtenhofer et al. (2019) proposed processing video at two temporal resolutions simultaneously:  Slow pathway: Operates at low frame rate (T=4 or 8 frames, stride =16).' },
+    { title: '5. Computational Considerations', desc: 'A single 3D convolution layer with C_&#123;in&#125; input channels, C_&#123;out&#125; output channels, and kernel k_t x k_h x k_w has:  [equation]  The FLOPs scale as:  [equation]  For a 3 x 3 x 3 kernel, this is 3x the cost of a 3 x 3 2D convolution -- and that multiplier compounds across all layers.' },
 ];
 
 export default function WalkthroughCVC3dConvolutions() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVC3dConvolutions() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          3D Convolutions — Step by Step
+          3D Convolutions \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how 3d convolutions works, one stage at a time.

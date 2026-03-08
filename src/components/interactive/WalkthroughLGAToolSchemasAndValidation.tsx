@@ -1,10 +1,8 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Defining a Schema with Pydantic', desc: 'The foundation of tool schemas and validation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. What the LLM Sees', desc: 'At this stage, the key transformation occurs — the core mechanism that makes tool schemas and validation work.' },
-    { title: '3. Nested and Complex Schemas', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Validation in Action', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. What the LLM Sees', desc: 'The Pydantic model is serialized to JSON Schema and included in the model\'s tool definition:' },
+    { title: '2. Validation in Action', desc: 'Pydantic validates inputs before the tool function executes, catching invalid LLM outputs early.' },
 ];
 
 export default function WalkthroughLGAToolSchemasAndValidation() {
@@ -16,10 +14,10 @@ export default function WalkthroughLGAToolSchemasAndValidation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Tool Schemas and Validation — Step by Step
+          Tool Schemas and Validation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how tool schemas and validation works, one stage at a time.

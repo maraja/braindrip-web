@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Removing Next Sentence Prediction', desc: 'The foundation of roberta: a robustly optimized bert pretraining approach begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Dynamic Masking', desc: 'At this stage, the key transformation occurs — the core mechanism that makes roberta: a robustly optimized bert pretraining approach work.' },
-    { title: '3. Larger Batches, More Data, Longer Training', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Byte-Level BPE Tokenizer', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Removing Next Sentence Prediction', desc: 'BERT used two pre-training objectives: Masked Language Modeling (MLM) and Next Sentence Prediction (NSP). RoBERTa\'s first finding was that NSP actively hurt performance.' },
+    { title: '2. Dynamic Masking', desc: 'BERT used static masking: the masking pattern was determined once during data preprocessing and reused across all training epochs. Every time the model saw a particular training example, the same tokens were masked.' },
+    { title: '3. Larger Batches, More Data, Longer Training', desc: 'BERT-Large was trained with a batch size of 256 sequences for 1M steps. RoBERTa systematically explored larger batch sizes and found that training with a batch size of 8,192 sequences (with appropriate learning rate scaling) significantly improved perplexity and downstream task performance.' },
+    { title: '4. Byte-Level BPE Tokenizer', desc: 'BERT used a character-level WordPiece tokenizer with a 30K vocabulary. RoBERTa adopted the byte-level BPE tokenizer from 04-gpt-2.md with a 50K vocabulary.' },
 ];
 
 export default function WalkthroughLLE01Roberta() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE01Roberta() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          RoBERTa: A Robustly Optimized BERT Pretraining Approach — Step by Step
+          RoBERTa: A Robustly Optimized BERT Pretraining Approach \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how roberta: a robustly optimized bert pretraining approach works, one stage at a time.

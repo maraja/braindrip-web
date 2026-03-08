@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEComparativeTrajectoryAnalysis() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A comparison corpus of 1000 task pairs requires 100-600 MB Automated divergence classification (planning vs.', isTrue: true, explanation: 'This is a key technical detail of Comparative Trajectory Analysis.' },
-    { text: 'reasoning) achieves 72-80% agreement with human classification using LLM-based categorizers', isTrue: true, explanation: 'This is a key technical detail of Comparative Trajectory Analysis.' },
-    { text: 'Systematic methods for comparing agent trajectories across versions, configurations, or models to diagnose performance differences and identify regression points.', isTrue: true, explanation: 'This captures the core purpose of Comparative Trajectory Analysis.' },
+    { text: 'Comparing final scores is sufficient for versioning decisions.', isTrue: false, explanation: 'Final scores show what changed but not why or where. A new version with the same aggregate score might have improved planning but regressed in tool use.' },
+    { text: 'Trajectory alignment is straightforward.', isTrue: false, explanation: 'Alignment is one of the hardest technical challenges in comparative analysis. Agents that take fundamentally different approaches to the same task may have no meaningful step-level alignment.' },
+    { text: 'More divergence means worse performance.', isTrue: false, explanation: 'Divergence is change, not necessarily regression. A new agent version might diverge in beneficial ways (better strategies, more efficient approaches).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

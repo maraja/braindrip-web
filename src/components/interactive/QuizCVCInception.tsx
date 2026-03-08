@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizCVCInception() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'GoogLeNet top-5 error: 6.67% (single model), below 5% with ensemble.', isTrue: true, explanation: 'This is a key technical detail of Inception (GoogLeNet).' },
-    { text: 'Parameters: 6.8M (GoogLeNet), ~23.8M (Inception v3), ~55.8M (Inception v4).', isTrue: true, explanation: 'This is a key technical detail of Inception (GoogLeNet).' },
-    { text: 'Auxiliary classifier weight: 0.3 during training, discarded at inference.', isTrue: true, explanation: 'This is a key technical detail of Inception (GoogLeNet).' },
+    { text: 'Inception modules always use 5x5 convolutions.', isTrue: false, explanation: 'Starting with Inception v2, 5 x 5 convolutions were replaced by two stacked 3 x 3 convolutions or asymmetric 1 x n / n x 1 factorizations. "The multi-branch design makes Inception slow on GPUs." While branching adds implementation complexity, the total FLOPs are much lower than VGGNet.' },
+    { text: '6.67% (single model), below 5% with ensemble.', isTrue: true, explanation: '6.67% (single model), below 5% with ensemble.' },
+    { text: '6.8M (GoogLeNet), ~23.8M (Inception v3), ~55.8M (Inception v4).', isTrue: true, explanation: '6.8M (GoogLeNet), ~23.8M (Inception v3), ~55.8M (Inception v4).' },
+    { text: '0.3 during training, discarded at inference.', isTrue: true, explanation: '0.3 during training, discarded at inference.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

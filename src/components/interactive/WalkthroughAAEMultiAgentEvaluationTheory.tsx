@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Game-Theoretic Evaluation Metrics', desc: 'The foundation of multi-agent evaluation theory begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Communication Efficiency', desc: 'At this stage, the key transformation occurs — the core mechanism that makes multi-agent evaluation theory work.' },
-    { title: '3. Coordination Quality', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Individual vs. Collective Performance', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. MultiAgentBench and Current Benchmarks', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Game-Theoretic Evaluation Metrics', desc: 'Game theory provides the mathematical foundation for multi-agent evaluation. Key metrics include:  Nash equilibrium convergence.' },
+    { title: '2. Communication Efficiency', desc: 'Not all communication is useful. Multi-agent evaluation must measure:  Information throughput.' },
+    { title: '3. Coordination Quality', desc: 'Labor division efficiency. Given a task that can be decomposed, do agents divide work in a way that minimizes total effort?' },
+    { title: '4. Individual vs. Collective Performance', desc: 'A critical insight in multi-agent evaluation: the system can outperform any individual agent while some individual agents underperform. This creates measurement paradoxes.' },
+    { title: '5. MultiAgentBench and Current Benchmarks', desc: 'MultiAgentBench (ACL 2025) represents the first systematic attempt at standardized multi-agent evaluation. It provides structured scenarios across cooperation, competition, and mixed-motive settings with metrics for both individual and collective performance.' },
 ];
 
 export default function WalkthroughAAEMultiAgentEvaluationTheory() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAEMultiAgentEvaluationTheory() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Multi-Agent Evaluation Theory — Step by Step
+          Multi-Agent Evaluation Theory \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how multi-agent evaluation theory works, one stage at a time.

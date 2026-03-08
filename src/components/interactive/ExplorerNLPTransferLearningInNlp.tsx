@@ -6,7 +6,7 @@ const DETAILS = [
     { label: 'Fine-tuning hyperparameters', detail: 'Learning rate 2e-5 to 5e-5, batch size 16-32, 3-4 epochs for BERT-style models; higher rates cause catastrophic forgetting, lower rates underfit.' },
     { label: 'Catastrophic forgetting', detail: 'The risk that fine-tuning overwrites useful pre-trained knowledge. Mitigated by low learning rates, short training, and techniques like elastic weight consolidation (EWC).' },
     { label: 'GLUE benchmark trajectory', detail: 'Pre-transfer baseline ~70, ELMo ~79, BERT-large ~82, RoBERTa ~88, DeBERTa-v3 ~91, human baseline ~87.' },
-    { label: 'Compute asymmetry', detail: 'Pre-training BERT-large costs ~$10K-50K in cloud compute; fine-tuning costs $1-10. The investment is amortized across unlimited downstream tasks.' },
+    { label: 'Compute asymmetry', detail: 'Pre-training BERT-large costs ~10K-50K in cloud compute; fine-tuning costs 1-10. The investment is amortized across unlimited downstream tasks.' },
 ];
 
 export default function ExplorerNLPTransferLearningInNlp() {
@@ -20,10 +20,10 @@ export default function ExplorerNLPTransferLearningInNlp() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Transfer Learning in NLP — Key Details Explorer
+          Transfer Learning in NLP \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of transfer learning in nlp.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Pre-Training on Dialogue', desc: 'The foundation of lamda and conversational ai begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Fine-Tuning for Quality, Safety, and Groundedness', desc: 'At this stage, the key transformation occurs — the core mechanism that makes lamda and conversational ai work.' },
-    { title: '3. Evaluation Methodology', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Sentience Controversy', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Pre-Training on Dialogue', desc: 'LaMDA was pre-trained on 1.56 trillion words from a corpus called "Infiniset," comprising public forums, dialogue from the web, and other conversational text sources, in addition to standard web documents.' },
+    { title: '2. Fine-Tuning for Quality, Safety, and Groundedness', desc: 'The key innovation in LaMDA was its multi-objective fine-tuning approach, which targeted three specific qualities:  Quality (SSI — Sensibleness, Specificity, Interestingness): Human raters evaluated whether responses were sensible (not contradictory or nonsensical), specific (not generic), and.' },
+    { title: '3. Evaluation Methodology', desc: 'LaMDA was evaluated not on traditional NLP benchmarks but on human ratings of open-ended conversations. Crowd raters assessed thousands of dialogue turns across the three dimensions (quality, safety, groundedness).' },
+    { title: '4. The Sentience Controversy', desc: 'In June 2022, Blake Lemoine, a Google engineer who had been tasked with testing LaMDA for safety, publicly claimed that the model was sentient. He published transcripts of his conversations with LaMDA in which the model discussed its fears, desires, and sense of self.' },
 ];
 
 export default function WalkthroughLLE07LamdaAndConversationalAi() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE07LamdaAndConversationalAi() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          LaMDA and Conversational AI — Step by Step
+          LaMDA and Conversational AI \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how lamda and conversational ai works, one stage at a time.

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Error Detection Mechanisms', desc: 'The foundation of error detection and recovery begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Error Taxonomy', desc: 'At this stage, the key transformation occurs — the core mechanism that makes error detection and recovery work.' },
-    { title: '3. Recovery Strategies', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Error Budgets', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Error Detection Mechanisms', desc: 'Explicit error signals: Tool calls return error codes or exception messages. API responses include HTTP status codes (4xx, 5xx).' },
+    { title: '2. Error Taxonomy', desc: 'A practical error taxonomy for agents:' },
+    { title: '3. Recovery Strategies', desc: 'Retry: Execute the same action again, possibly with exponential backoff for rate limits or transient errors. Appropriate for: tool failures, timeouts, rate limits.' },
+    { title: '4. Error Budgets', desc: 'An error budget defines how many failures the agent will tolerate before changing strategy. For example:  Per-step budget: 3 retries before escalating to replan Per-task budget: 5 total errors before asking the user for guidance Time budget: 60 seconds per step before timeout Token budget: Reserve.' },
 ];
 
 export default function WalkthroughAACErrorDetectionAndRecovery() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACErrorDetectionAndRecovery() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Error Detection and Recovery — Step by Step
+          Error Detection and Recovery \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how error detection and recovery works, one stage at a time.

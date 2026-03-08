@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFStatisticalInference() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The bootstrap resamples the data with replacement to empirically estimate the sampling distribution of any statistic, bypassing distributional assumptions.', isTrue: true, explanation: 'This is a key technical detail of Statistical Inference.' },
-    { text: 'Multiple comparisons problem: Testing many hypotheses inflates the Type I error rate.', isTrue: true, explanation: 'This is a key technical detail of Statistical Inference.' },
-    { text: 'Bonferroni correction divides $\\alpha$ by the number of tests; the Benjamini-Hochberg procedure controls the false discovery rate.', isTrue: true, explanation: 'This is a key technical detail of Statistical Inference.' },
+    { text: 'A p-value of 0.03 means there is a 3% chance the null is true.', isTrue: false, explanation: 'The p-value is P(datadata). The latter requires Bayes\' theorem and a prior on H_0.' },
+    { text: 'Testing many hypotheses inflates the Type I error rate.', isTrue: true, explanation: 'Bonferroni correction divides  by the number of tests; the Benjamini-Hochberg procedure controls the false discovery rate.' },
+    { text: 'A statistic T(X) is sufficient for  if p(XT).', isTrue: true, explanation: 'For exponential family distributions, sufficient statistics exist and are used by MLE.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

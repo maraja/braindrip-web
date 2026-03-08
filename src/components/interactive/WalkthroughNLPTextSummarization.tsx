@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Extractive Summarization', desc: 'The foundation of text summarization begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Abstractive Summarization', desc: 'At this stage, the key transformation occurs — the core mechanism that makes text summarization work.' },
-    { title: '3. Evaluation: ROUGE Scores', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Faithfulness and Factual Consistency', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Extractive Summarization', desc: 'Extractive methods select a subset of sentences (or passages) from the source document to form the summary. LEAD-3 Baseline: Simply take the first three sentences of the document.' },
+    { title: '2. Abstractive Summarization', desc: 'Abstractive methods generate novel text, potentially using words and phrases not present in the source. Seq2Seq with Attention: Rush et al.' },
+    { title: '3. Evaluation: ROUGE Scores', desc: 'ROUGE (Recall-Oriented Understudy for Gisting Evaluation) by Lin (2004) is the standard automatic metric:  ROUGE-N: N-gram recall between system summary and reference. ROUGE-1 (unigrams) captures content overlap; ROUGE-2 (bigrams) captures fluency.' },
+    { title: '4. Faithfulness and Factual Consistency', desc: 'A major challenge for abstractive summarization: models generate fluent text that contradicts or fabricates facts not in the source. Kryscinski et al.' },
 ];
 
 export default function WalkthroughNLPTextSummarization() {
@@ -16,10 +16,10 @@ export default function WalkthroughNLPTextSummarization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Text Summarization — Step by Step
+          Text Summarization \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how text summarization works, one stage at a time.

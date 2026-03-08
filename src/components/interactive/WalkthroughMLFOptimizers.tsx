@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Stochastic Gradient Descent (SGD)', desc: 'The foundation of optimizers begins with understanding its core input requirements and initial setup.' },
-    { title: '2. SGD with Momentum', desc: 'At this stage, the key transformation occurs — the core mechanism that makes optimizers work.' },
-    { title: '3. Nesterov Accelerated Gradient (NAG)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Adagrad', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. RMSProp', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Stochastic Gradient Descent (SGD)', desc: 'The simplest optimizer computes gradients on a mini-batch and updates directly:  [equation]  where  is the learning rate. SGD is noisy due to mini-batch sampling, but this noise can help escape shallow local minima.' },
+    { title: '2. SGD with Momentum', desc: 'Momentum accumulates a running average of past gradients, smoothing updates and accelerating convergence along consistent gradient directions:  [equation] [equation]  where   [0, 1) is the momentum coefficient (typically 0.9).' },
+    { title: '3. Nesterov Accelerated Gradient (NAG)', desc: 'Nesterov momentum evaluates the gradient at the "lookahead" position rather than the current position:  [equation] [equation]  This "look before you leap" approach provides a corrective factor that reduces overshooting.' },
+    { title: '4. Adagrad', desc: 'Adagrad adapts the learning rate per-parameter based on the history of squared gradients:  [equation] [equation]  Parameters with large cumulative gradients get smaller learning rates; parameters with small gradients get larger ones.' },
+    { title: '5. RMSProp', desc: 'RMSProp (Hinton, unpublished lecture notes, 2012) fixes Adagrad\'s decaying learning rate by using an exponential moving average of squared gradients:  [equation] [equation]  where  is the decay rate (typically 0.99).' },
+    { title: '6. Adam (Adaptive Moment Estimation)', desc: 'Adam (Kingma and Ba, 2014) combines momentum (first moment) with RMSProp (second moment), plus bias correction:  [equation] [equation] [equation] [equation]  Default hyperparameters: _1 = 0.9, _2 = 0.999,  = 10^&#123;-8&#125;.' },
 ];
 
 export default function WalkthroughMLFOptimizers() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFOptimizers() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Optimizers — Step by Step
+          Optimizers \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how optimizers works, one stage at a time.

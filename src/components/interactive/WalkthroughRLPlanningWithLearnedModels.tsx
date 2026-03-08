@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Learning the Dynamics Model', desc: 'The foundation of planning with learned models begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Model Predictive Control (MPC)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes planning with learned models work.' },
-    { title: '3. Cross-Entropy Method (CEM)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Model Ensembles for Uncertainty', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Model-Based Policy Optimization (MBPO)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Learning the Dynamics Model', desc: 'The dynamics model predicts next state and reward given current state and action:  [equation]  Training uses supervised learning on collected transitions (s_t, a_t, s_&#123;t+1&#125;, r_&#123;t+1&#125;):  [equation]  For stochastic environments, the model may predict a distribution: p_(s_&#123;t+1&#125;, r_&#123;t+1&#125; | s_t, a_t),.' },
+    { title: '2. Model Predictive Control (MPC)', desc: 'At each time step, use the learned model to plan a short horizon ahead using shooting methods:  Sample N candidate action sequences of length H: \\&#123;a_0^&#123;(i)&#125;, , a_&#123;H-1&#125;^&#123;(i)&#125;\\&#125;_&#123;i=1&#125;^N Simulate each sequence through the learned model to predict returns Select the first action from the best.' },
+    { title: '3. Cross-Entropy Method (CEM)', desc: 'CEM is the most popular action optimization method for MPC with learned models:  Initialize a distribution over action sequences: a_&#123;0:H-1&#125;  &#123;N&#125;(, ^2) Sample N candidate sequences Evaluate each via model rollouts, compute total predicted return Select the top-K sequences (the "elite" set) Refit .' },
+    { title: '4. Model Ensembles for Uncertainty', desc: 'A single neural network model gives overconfident predictions. Ensembles of B independently trained models (typically B = 5-7) provide uncertainty estimation:  [equation]  The disagreement between ensemble members indicates epistemic uncertainty.' },
+    { title: '5. Model-Based Policy Optimization (MBPO)', desc: '(2019) introduced a principled framework for combining learned models with model-free policy optimization:  Collect real data by interacting with the environment Train an ensemble dynamics model on real data Generate synthetic rollouts of length k from real states using the model Add synthetic data.' },
+    { title: '6. The Compounding Error Problem', desc: 'Model errors compound exponentially over multi-step predictions:  [equation]  For a model with 1% single-step error, a 50-step rollout accumulates roughly 50% total error.' },
 ];
 
 export default function WalkthroughRLPlanningWithLearnedModels() {
@@ -17,10 +18,10 @@ export default function WalkthroughRLPlanningWithLearnedModels() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Planning with Learned Models — Step by Step
+          Planning with Learned Models \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how planning with learned models works, one stage at a time.

@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLTemporalDifferenceLearning() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Step size $\\alpha$: Constant $\\alpha \\in (0, 1]$ enables tracking in non-stationary environments.', isTrue: true, explanation: 'This is a key technical detail of Temporal Difference Learning.' },
-    { text: 'For guaranteed convergence to $V^\\pi$, $\\alpha$ must satisfy the Robbins-Monro conditions: $\\sum_t \\alpha_t = \\infty$ and $\\sum_t \\alpha_t^2 &lt; \\infty$.', isTrue: true, explanation: 'This is a key technical detail of Temporal Difference Learning.' },
-    { text: 'Convergence: TD(0) converges to $V^\\pi$ with probability 1 under the Robbins-Monro conditions and sufficient state visitation.', isTrue: true, explanation: 'This is a key technical detail of Temporal Difference Learning.' },
+    { text: 'TD bias means TD converges to the wrong answer.', isTrue: false, explanation: 'The bias in TD is transient -- it arises because V(S_&#123;t+1&#125;) is initially inaccurate. As V improves, the bias vanishes and TD converges to the correct V^.' },
+    { text: 'Constant   (0, 1] enables tracking in non-stationary environments.', isTrue: true, explanation: 'For guaranteed convergence to V^,  must satisfy the Robbins-Monro conditions: _t _t =  and _t _t^2 &lt; .' },
+    { text: 'TD(0) converges to V^ with probability 1 under the Robbins-Monro conditions and sufficient state visitation.', isTrue: true, explanation: 'Convergence has been proven for the tabular case (Dayan, 1992; Tsitsiklis, 1994).' },
+    { text: 'TD updates after every transition, enabling learning mid-episode and in continuing (non-episodic) tasks -- a major advantage over MC.', isTrue: true, explanation: 'TD updates after every transition, enabling learning mid-episode and in continuing (non-episodic) tasks -- a major advantage over MC.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

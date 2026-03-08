@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Benchmark result', detail: 'GSM8K accuracy improved from 58% (single CoT) to 74.4% (40-sample self-consistency) with PaLM 540B, a 16.4 percentage point gain.' },
-    { label: 'Optimal temperature', detail: '0.5-0.7 provides good diversity without excessive incoherence; temperature 0 defeats the purpose (identical outputs), temperature 1.0+ introduces too much noise.' },
+    { label: 'Optimal temperature', detail: '5-0.7 provides good diversity without excessive incoherence; temperature 0 defeats the purpose (identical outputs), temperature 1.0+ introduces too much noise.' },
     { label: 'Practical sweet spot', detail: '3-5 samples capture 60-80% of the maximum accuracy gain at 3-5x cost.' },
     { label: 'Diminishing returns', detail: 'Going from 1 to 5 samples yields roughly 2x the improvement of going from 5 to 40 samples.' },
     { label: 'Cost scaling', detail: 'Linear in N -- 5 samples costs 5x a single call in both tokens and latency (though samples can be parallelized).' },
@@ -20,10 +20,10 @@ export default function ExplorerPESelfConsistency() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Self-Consistency — Key Details Explorer
+          Self-Consistency \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of self-consistency.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Query Rewriting', desc: 'The foundation of retrieval query design begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Query Decomposition', desc: 'At this stage, the key transformation occurs — the core mechanism that makes retrieval query design work.' },
-    { title: '3. Hypothetical Document Embeddings (HyDE)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Multi-Query Retrieval', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Query Rewriting', desc: 'Query rewriting transforms the user\'s raw input into a more effective retrieval query. This can be done with simple rules or by prompting the LLM itself:  Expansion: Add synonyms, expand acronyms, and include domain context.' },
+    { title: '2. Query Decomposition', desc: 'Complex questions often require information from multiple documents. Query decomposition breaks a single complex question into multiple simpler sub-queries:  Multi-hop decomposition: "How did Company A\'s revenue compare to Company B\'s in the year they both entered the Asian market?' },
+    { title: '3. Hypothetical Document Embeddings (HyDE)', desc: 'HyDE is a counterintuitive but effective technique: instead of embedding the user\'s question, you first prompt the LLM to generate a hypothetical answer to the question, then embed that hypothetical answer and use it as the retrieval query.' },
+    { title: '4. Multi-Query Retrieval', desc: 'Rather than betting on a single query formulation, multi-query retrieval generates multiple query variations and retrieves with all of them:  Generate 3-5 query variations using an LLM: different phrasings, perspectives, and specificity levels Run retrieval for each query independently Merge.' },
 ];
 
 export default function WalkthroughPERetrievalQueryDesign() {
@@ -16,10 +16,10 @@ export default function WalkthroughPERetrievalQueryDesign() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Retrieval Query Design — Step by Step
+          Retrieval Query Design \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how retrieval query design works, one stage at a time.

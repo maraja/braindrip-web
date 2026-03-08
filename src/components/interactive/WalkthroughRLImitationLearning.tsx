@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Behavioral Cloning', desc: 'The foundation of imitation learning begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Distribution Shift Problem', desc: 'At this stage, the key transformation occurs — the core mechanism that makes imitation learning work.' },
-    { title: '3. DAgger: Dataset Aggregation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Variants Reducing Expert Burden', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. GAIL as Imitation Learning', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Behavioral Cloning', desc: 'Behavioral cloning (BC) treats imitation as supervised learning. Given a dataset of expert state-action pairs &#123;D&#125; = \\&#123;(s_i, a_i)\\&#125;_&#123;i=1&#125;^N collected from an expert policy ^*, BC trains a policy _ by minimizing:  [equation]  where  is a loss function -- mean squared error for continuous actions,.' },
+    { title: '2. The Distribution Shift Problem', desc: 'The fatal flaw of behavioral cloning is distribution shift through compounding errors. The expert demonstrations are collected under the expert\'s state distribution d^&#123;^*&#125;, but at test time, the learned policy _ induces its own distribution d^&#123;_&#125;.' },
+    { title: '3. DAgger: Dataset Aggregation', desc: 'DAgger (Ross, Gordon, and Bagnell, 2011) addresses distribution shift through an iterative process that queries the expert on the learner\'s own state distribution:  Train initial policy _1 on expert dataset &#123;D&#125;_0 For iteration n = 1, 2, , N:    - Execute current policy _n to collect states \\&#123;s_1,.' },
+    { title: '4. Variants Reducing Expert Burden', desc: 'Several methods reduce DAgger\'s reliance on continuous expert access:  SMILe (Ross and Bagnell, 2010): forward training that learns a sequence of non-stationary policies AggreVaTe: queries the expert for action values rather than actions, reducing the cost per query HG-DAgger: uses human gaze or.' },
+    { title: '5. GAIL as Imitation Learning', desc: 'Generative Adversarial Imitation Learning (Ho and Ermon, 2016) frames imitation as distribution matching. Rather than matching individual state-action pairs, GAIL matches the occupancy measure -- the distribution over state-action pairs visited by the policy:  [equation]  GAIL minimizes the.' },
+    { title: '6. When Imitation Beats RL', desc: 'Imitation learning outperforms RL when: The reward function is unknown or difficult to specify Expert demonstrations are available and cheaper than reward engineering The task horizon is moderate (BC works) or expert access is available (DAgger works) Sample efficiency is critical -- BC requires.' },
 ];
 
 export default function WalkthroughRLImitationLearning() {
@@ -17,10 +18,10 @@ export default function WalkthroughRLImitationLearning() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Imitation Learning — Step by Step
+          Imitation Learning \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how imitation learning works, one stage at a time.

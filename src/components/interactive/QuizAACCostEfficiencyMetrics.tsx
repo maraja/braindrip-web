@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACCostEfficiencyMetrics() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'LLM inference typically dominates (60-90% of total cost).', isTrue: true, explanation: 'This is a key technical detail of Cost-Efficiency Metrics.' },
-    { text: 'Token price tracking: Model providers change pricing frequently.', isTrue: true, explanation: 'This is a key technical detail of Cost-Efficiency Metrics.' },
-    { text: 'Cost tracking systems should use real-time pricing or configurable price tables.', isTrue: true, explanation: 'This is a key technical detail of Cost-Efficiency Metrics.' },
+    { text: 'The best model is always the most cost-efficient.', isTrue: false, explanation: 'The best model achieves the highest quality, but cost-efficiency considers the ratio of quality to cost. A model that is 5% better but 10x more expensive is less cost-efficient.' },
+    { text: 'Model providers change pricing frequently.', isTrue: true, explanation: 'Cost tracking systems should use real-time pricing or configurable price tables. Include both input and output token prices, which often differ significantly (output tokens typically cost 3-4x more than input tokens).' },
+    { text: 'Reducing token count always reduces cost.', isTrue: false, explanation: 'Reducing input tokens reduces cost, but aggressively shortening prompts can reduce quality, requiring more retries and potentially increasing total cost. The goal is optimal token usage, not minimal.' },
+    { text: 'For multi-step agent tasks, attribute costs to each step.', isTrue: true, explanation: 'This reveals which steps are most expensive and where optimization effort should focus. Common finding: context-heavy steps (large prompts with retrieved documents) are often the biggest cost drivers.' },
+    { text: 'Cost-efficiency is a fixed property of an agent.', isTrue: false, explanation: 'Cost-efficiency varies by task type, difficulty, and domain. An agent might be very cost-efficient for simple tasks and terribly inefficient for complex ones.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

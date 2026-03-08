@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Objective', desc: 'The foundation of policy gradient theorem begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Why Differentiation Is Non-Trivial', desc: 'At this stage, the key transformation occurs — the core mechanism that makes policy gradient theorem work.' },
-    { title: '3. The Log-Probability Trick', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Dynamics Cancel', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Score Function Estimator', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Objective', desc: 'We seek to maximize the expected return under policy _:  [equation]  where  = (s_0, a_0, r_0, s_1, a_1, r_1, ) is a trajectory sampled under _.' },
+    { title: '2. Why Differentiation Is Non-Trivial', desc: 'Expanding J() reveals the problem. The probability of a trajectory is:  [equation]  Differentiating J() = _ P(,a).' },
+    { title: '3. The Log-Probability Trick', desc: 'The key identity is deceptively simple. For any function f(x):  [equation]  This follows from   f = &#123; f&#125;&#123;f&#125;.' },
+    { title: '4. The Dynamics Cancel', desc: 'Taking the log of the trajectory probability:  [equation]  When we differentiate with respect to , the initial state distribution (s_0) and the transition dynamics P(s\'|s,a) vanish because they do not depend on .' },
+    { title: '5. The Score Function Estimator', desc: 'The term _  _(a|s) is called the score function. It indicates the direction in parameter space that increases the probability of action a in state s.' },
 ];
 
 export default function WalkthroughRLPolicyGradientTheorem() {
@@ -17,10 +17,10 @@ export default function WalkthroughRLPolicyGradientTheorem() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Policy Gradient Theorem — Step by Step
+          Policy Gradient Theorem \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how policy gradient theorem works, one stage at a time.

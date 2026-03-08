@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPAutomaticSpeechRecognition() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'State-of-the-art WER on LibriSpeech test-clean: ~1.4% (supervised models fine-tuned on LibriSpeech) and ~3% (zero-shot Whisper Large-v2).', isTrue: true, explanation: 'This is a key technical detail of Automatic Speech Recognition.' },
-    { text: 'Human WER on this benchmark is approximately 5.8%, meaning machines now surpass humans on clean read speech.', isTrue: true, explanation: 'This is a key technical detail of Automatic Speech Recognition.' },
-    { text: 'On noisy/conversational benchmarks like Switchboard, WER is 5--6% for best systems, with the CHiME challenges targeting far-field and multi-speaker scenarios at 15--30% WER.', isTrue: true, explanation: 'This is a key technical detail of Automatic Speech Recognition.' },
+    { text: 'ASR is a solved problem.', isTrue: false, explanation: 'While WER on clean English read speech is impressively low (~2--5%), performance degrades significantly with background noise, overlapping speakers, accented speech, code-switching, domain-specific jargon, and spontaneous disfluencies. The gap between clean and real-world performance remains substantial.' },
+    { text: 'Lower WER always means a better user experience.', isTrue: false, explanation: 'WER treats all errors equally, but deleting a function word ("the") is far less disruptive than substituting a content word ("cancer" vs. "dancer").' },
+    { text: 'End-to-end models eliminated the need for language models.', isTrue: false, explanation: 'External language models still improve end-to-end ASR. Shallow fusion (log-linear combination with an LM at decode time) typically reduces WER by 5--15% relative, and many production systems use this approach.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

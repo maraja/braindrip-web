@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizPEMetaPrompting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Cost overhead: Meta-prompting adds the cost of the meta-layer call(s).', isTrue: true, explanation: 'This is a key technical detail of Meta-Prompting.' },
-    { text: 'For a single meta-prompt generation, this is 1x additional cost.', isTrue: true, explanation: 'This is a key technical detail of Meta-Prompting.' },
-    { text: 'For iterative optimization with 5-10 rounds, the total cost during optimization can be 10-50x a single call, though the optimized prompt is then reused across many executions.', isTrue: true, explanation: 'This is a key technical detail of Meta-Prompting.' },
+    { text: 'Meta-prompting means the model writes a perfect prompt on the first try.', isTrue: false, explanation: 'The initial generated prompt is rarely optimal. Meta-prompting\'s value comes from iterative refinement, where each round improves upon the last based on evaluation feedback.' },
+    { text: 'Meta-prompting adds the cost of the meta-layer call(s).', isTrue: true, explanation: 'For a single meta-prompt generation, this is 1x additional cost. For iterative optimization with 5-10 rounds, the total cost during optimization can be 10-50x a single call, though the optimized prompt is then reused across many executions.' },
+    { text: 'Meta-prompting eliminates the need for prompt engineering expertise.', isTrue: false, explanation: 'It reduces the need for manual prompt crafting but introduces new challenges: designing the meta-prompt itself, building evaluation functions, setting up optimization infrastructure, and reviewing generated prompts for safety. The expertise shifts rather than disappears.' },
+    { text: 'Iterative prompt optimization typically converges within 5-15 rounds on well-defined tasks, with the majority of improvement in the first 3-5 rounds.', isTrue: true, explanation: 'Iterative prompt optimization typically converges within 5-15 rounds on well-defined tasks, with the majority of improvement in the first 3-5 rounds.' },
+    { text: 'Any model can do meta-prompting.', isTrue: false, explanation: 'The meta-layer requires strong instruction following, reasoning about task requirements, and knowledge of effective prompt patterns. Weaker models generate lower-quality prompts.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

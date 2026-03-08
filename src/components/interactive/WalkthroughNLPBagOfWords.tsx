@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Vocabulary Construction', desc: 'The foundation of bag of words begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Document-Term Matrix', desc: 'At this stage, the key transformation occurs — the core mechanism that makes bag of words work.' },
-    { title: '3. Example', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. N-Gram Extension', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Use in Classifiers', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Vocabulary Construction', desc: 'First, build a vocabulary V = &#123;w_1, w_2, ..., w_&#125; from the entire corpus. Typical steps include lowercasing, removing punctuation, applying stopword removal, and optionally stemming or lemmatizing.' },
+    { title: '2. Document-Term Matrix', desc: 'Given a corpus of N documents and vocabulary size  matrix where entry (i, j) encodes how document i relates to word j. Three common encoding schemes exist:  Binary BoW: 1 if word is present, 0 otherwise.' },
+    { title: '3. Example', desc: 'Given two documents: D1: "the cat sat on the mat" D2: "the dog sat on the log"  Vocabulary: &#123;cat, dog, log, mat, on, sat, the&#125;  Count vectors: D1: [1, 0, 0, 1, 1, 1, 2] D2: [0, 1, 1, 0, 1, 1, 2]' },
+    { title: '4. N-Gram Extension', desc: 'Instead of single words (unigrams), BoW can use n-grams as features. Bigram BoW adds pairs like "cat_sat" and "sat_on" to the vocabulary, partially recovering local word order.' },
+    { title: '5. Use in Classifiers', desc: 'BoW vectors feed directly into classical machine learning models:  Naive Bayes: Assumes feature independence -- each word contributes independently to the class probability. Multinomial Naive Bayes uses count BoW; Bernoulli Naive Bayes uses binary BoW.' },
 ];
 
 export default function WalkthroughNLPBagOfWords() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPBagOfWords() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Bag of Words — Step by Step
+          Bag of Words \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how bag of words works, one stage at a time.

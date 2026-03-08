@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFFeatureExtractionAndTransformation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Polynomial feature expansion of degree $d$ on $p$ features creates $O(p^d)$ terms -- always pair with regularization or feature selection.', isTrue: true, explanation: 'This is a key technical detail of Feature Extraction and Transformation.' },
-    { text: 'Box-Cox $\\lambda$ should be estimated on the training set and applied consistently to test data to avoid data leakage.', isTrue: true, explanation: 'This is a key technical detail of Feature Extraction and Transformation.' },
-    { text: 'Binning introduces information loss; use it deliberately when the step-function approximation is appropriate.', isTrue: true, explanation: 'This is a key technical detail of Feature Extraction and Transformation.' },
+    { text: 'More features always improve the model.', isTrue: false, explanation: 'Without regularization or selection, additional features increase overfitting risk. Every new feature should earn its place through validated improvement.' },
+    { text: 'Creating new informative features from raw data through domain knowledge, mathematical transforms, and automated methods.', isTrue: true, explanation: 'This captures the core definition of Feature Extraction and Transformation.' },
+    { text: 'Feature Extraction and Transformation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Feature Extraction and Transformation is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

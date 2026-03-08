@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE02KaplanScalingLaws() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Published: January 2020, by Jared Kaplan et al.', isTrue: true, explanation: 'This is a key technical detail of Kaplan Scaling Laws.' },
-    { text: 'Kaplan et al. discovered that language model loss follows smooth power-law relationships with model size, dataset size, and compute, providing a quantitative roadmap for building ever-larger models.', isTrue: true, explanation: 'This captures the core purpose of Kaplan Scaling Laws.' },
-    { text: 'Kaplan Scaling Laws is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Kaplan Scaling Laws is important for building on more advanced topics.' },
+    { text: 'The scaling laws prove bigger is always better.', isTrue: false, explanation: 'The laws describe loss scaling, not task performance. A model can have lower loss but still fail on specific tasks.' },
+    { text: 'January 2020, by Jared Kaplan et al.', isTrue: true, explanation: 'January 2020, by Jared Kaplan et al.' },
+    { text: 'Architecture doesn\'t matter.', isTrue: false, explanation: 'Kaplan found that architectural details don\'t change the power-law exponents much, but this applies within the Transformer family. The Transformer architecture itself was essential — RNNs and LSTMs would not show the same scaling behavior.' },
+    { text: 'Hundreds, ranging from 768 to ~1.5B non-embedding parameters', isTrue: true, explanation: 'Hundreds, ranging from 768 to ~1.5B non-embedding parameters' },
+    { text: 'The power laws will hold forever.', isTrue: false, explanation: 'Empirical laws describe observed ranges. There is no theoretical guarantee that the smooth power-law trends will continue at scales far beyond those tested.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEWhatIsContextEngineering() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Context windows range from 8K to 200K+ tokens across current frontier models, with effective performance often degrading before the nominal limit.', isTrue: true, explanation: 'This is a key technical detail of What Is Context Engineering.' },
-    { text: 'Prompt instructions typically occupy 5-15% of the context in production applications; the remaining 85-95% is engineered context.', isTrue: true, explanation: 'This is a key technical detail of What Is Context Engineering.' },
-    { text: 'Retrieval quality explains 60-80% of answer quality variance in RAG systems, making context selection the dominant quality lever.', isTrue: true, explanation: 'This is a key technical detail of What Is Context Engineering.' },
+    { text: 'Context engineering is just prompt engineering with a new name.', isTrue: false, explanation: 'Prompt engineering focuses on instruction phrasing. Context engineering encompasses the entire context window: what information to include, how to organize it, what to compress, what to cache, and how to manage state across turns.' },
+    { text: 'it is about what goes in, not just how you ask.', isTrue: true, explanation: 'it is about what goes in, not just how you ask.' },
+    { text: 'embedding queries, running retrieval, compressing history, and assembling context all consume resources before the LLM call even begins.', isTrue: true, explanation: 'embedding queries, running retrieval, compressing history, and assembling context all consume resources before the LLM call even begins.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

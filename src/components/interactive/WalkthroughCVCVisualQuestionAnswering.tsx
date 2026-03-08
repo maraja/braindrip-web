@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Task Formulations', desc: 'The foundation of visual question answering (vqa) begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Fusion Architectures', desc: 'At this stage, the key transformation occurs — the core mechanism that makes visual question answering (vqa) work.' },
-    { title: '3. Evolution of VQA Models', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Evaluation Metrics', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Task Formulations', desc: 'VQA has been approached in three main ways:  Classification over a fixed answer set: Treat VQA as selecting from the top 3,129 most frequent answers in the training set. Simple but limited.' },
+    { title: '2. Fusion Architectures', desc: 'The core challenge is how to combine visual and textual information:  Early fusion: Concatenate image features and question features before processing Simple but limited interaction between modalities  Late fusion: Process image and question independently, combine only at the prediction.' },
+    { title: '3. Evolution of VQA Models', desc: 'Phase 1: CNN + LSTM (2015-2018) Extract image features with a CNN (VGG, ResNet) Encode the question with an LSTM Fuse via element-wise multiplication or concatenation Classify over the answer vocabulary VQA v1 challenge winner: ~58% accuracy  Phase 2: Attention-based (2016-2020) Bottom-Up and.' },
+    { title: '4. Evaluation Metrics', desc: 'The standard VQA v2.0 metric accounts for human disagreement:  [equation]  An answer is considered 100% correct if at least 3 out of 10 annotators gave the same answer. This soft metric acknowledges that reasonable people may answer the same question differently.' },
 ];
 
 export default function WalkthroughCVCVisualQuestionAnswering() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCVisualQuestionAnswering() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Visual Question Answering (VQA) — Step by Step
+          Visual Question Answering (VQA) \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how visual question answering (vqa) works, one stage at a time.

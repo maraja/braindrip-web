@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFSupportVectorMachines() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Optimization: The primal is a QP; the dual is also a QP.', isTrue: true, explanation: 'This is a key technical detail of Support Vector Machines.' },
-    { text: 'Efficient solvers include SMO (Sequential Minimal Optimization) and libSVM.', isTrue: true, explanation: 'This is a key technical detail of Support Vector Machines.' },
-    { text: 'Scaling: Standard SVMs scale $O(n^2)$ to $O(n^3)$ in memory and time due to the kernel matrix.', isTrue: true, explanation: 'This is a key technical detail of Support Vector Machines.' },
+    { text: 'SVMs always find the globally optimal solution.', isTrue: false, explanation: 'The primal and dual are convex, so the optimizer does find the global minimum of the SVM objective. However, the choice of C and kernel parameters still requires tuning.' },
+    { text: 'The primal is a QP; the dual is also a QP.', isTrue: true, explanation: 'Efficient solvers include SMO (Sequential Minimal Optimization) and libSVM.' },
+    { text: 'Standard SVMs scale O(n^2) to O(n^3) in memory and time due to the kernel matrix.', isTrue: true, explanation: 'For large datasets, linear SVMs (liblinear) are O(nd).' },
+    { text: 'SVMs are inherently binary.', isTrue: true, explanation: 'Multiclass is handled via one-vs-rest or one-vs-one (see Multi-Class Classification).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

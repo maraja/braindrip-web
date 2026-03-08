@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAApprovalGates() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The approve node must call interrupt() to pause execution; this requires a checkpointer and thread_id.', isTrue: true, explanation: 'This is a key technical detail of Approval Gates.' },
-    { text: 'The interrupt payload should contain enough context for the human to make an informed decision.', isTrue: true, explanation: 'This is a key technical detail of Approval Gates.' },
-    { text: 'The resume value can be any type: a boolean, a string like "yes"/"no", or a structured object with modifications.', isTrue: true, explanation: 'This is a key technical detail of Approval Gates.' },
+    { text: 'The agent stops completely when it hits the gate.', isTrue: false, explanation: 'Only the current graph execution pauses. Other threads and other graphs continue running independently.' },
+    { text: 'An approval gate is a graph pattern where the agent proposes an action, pauses for human approval via interrupt(), then executes or cancels based on the human\'s response.', isTrue: true, explanation: 'This captures the core definition of Approval Gates.' },
+    { text: 'Approval Gates is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Approval Gates is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Chain Rule for Compositions', desc: 'The foundation of backpropagation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Forward Pass', desc: 'At this stage, the key transformation occurs — the core mechanism that makes backpropagation work.' },
-    { title: '3. Backward Pass', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Worked Example: Two-Layer Network', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Computational Graphs and Automatic Differentiation', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Chain Rule for Compositions', desc: 'For a composite function L = L(f(g(x))), the chain rule gives:  [equation]  In a neural network with L layers, the loss depends on the parameters through a chain of compositions. Backpropagation evaluates this chain from right to left (output to input), accumulating products of local Jacobians.' },
+    { title: '2. Forward Pass', desc: 'Given input x, the forward pass computes and caches all intermediate quantities:  [equation]  for l = 1, , L, followed by the loss &#123;L&#125; = Loss(h^&#123;(L)&#125;, y).' },
+    { title: '3. Backward Pass', desc: 'Starting from &#123; &#123;L&#125;&#125;&#123; h^&#123;(L)&#125;&#125;, we propagate gradients backward. At each layer l:  [equation]  [equation]  [equation]  [equation]  The symbol  denotes elementwise multiplication.' },
+    { title: '4. Worked Example: Two-Layer Network', desc: 'Consider a network with one hidden layer, ReLU activation, and mean squared error loss. Input x  &#123;R&#125;, hidden unit h = (0, w_1 x + b_1), output &#123;y&#125; = w_2 h + b_2, loss &#123;L&#125; = &#123;1&#125;&#123;2&#125;(&#123;y&#125; - y)^2.' },
+    { title: '5. Computational Graphs and Automatic Differentiation', desc: 'Modern frameworks (PyTorch, JAX, TensorFlow) implement backpropagation through automatic differentiation (autodiff). Each operation records itself on a computational graph during the forward pass.' },
+    { title: '6. Vanishing and Exploding Gradients', desc: 'When gradients propagate through many layers, they are repeatedly multiplied by weight matrices and activation derivatives. If these factors are consistently less than 1, gradients vanish (shrink exponentially).' },
 ];
 
 export default function WalkthroughMLFBackpropagation() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFBackpropagation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Backpropagation — Step by Step
+          Backpropagation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how backpropagation works, one stage at a time.

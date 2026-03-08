@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACAuthorizationAndPermissions() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'OAuth 2.0 for agents: OAuth scopes are the most natural permission model for API-connected agents.', isTrue: true, explanation: 'This is a key technical detail of Authorization and Permissions.' },
-    { text: 'The agent authenticates with scoped tokens that grant specific capabilities.', isTrue: true, explanation: 'This is a key technical detail of Authorization and Permissions.' },
-    { text: 'Token expiration ensures permissions are time-limited.', isTrue: true, explanation: 'This is a key technical detail of Authorization and Permissions.' },
+    { text: 'Admin access makes development easier, so it\'s fine for production.', isTrue: false, explanation: 'Development convenience is not a production requirement. The 10 minutes saved by not configuring proper permissions costs days of incident response when the agent misuses its access.' },
+    { text: 'OAuth scopes are the most natural permission model for API-connected agents.', isTrue: true, explanation: 'The agent authenticates with scoped tokens that grant specific capabilities. Token expiration ensures permissions are time-limited.' },
+    { text: 'The agent will follow its instructions not to use certain permissions.', isTrue: false, explanation: 'Instruction-level restrictions are unreliable. The agent might misunderstand, hallucinate, or be manipulated through prompt injection.' },
+    { text: 'The LLM prompt layer should never see raw credentials.', isTrue: true, explanation: 'Tool implementations inject credentials at runtime from a secure store. The LLM sees only the tool name and parameters, not the authentication details.' },
+    { text: 'API keys in environment variables are secure enough.', isTrue: false, explanation: 'Environment variables inside the agent\'s sandbox may be accessible through code execution or debugging tools. Credentials should be injected at the tool layer by a credential broker that the agent cannot directly access.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

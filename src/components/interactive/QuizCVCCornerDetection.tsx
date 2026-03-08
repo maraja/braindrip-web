@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCCornerDetection() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Harris response computation costs roughly 15 multiply-accumulate operations per pixel (for a $3 \\times 3$ Sobel and $3 \\times 3$ Gaussian window).', isTrue: true, explanation: 'This is a key technical detail of Corner Detection.' },
-    { text: 'The Harris detector is rotation-invariant but not scale-invariant.', isTrue: true, explanation: 'This is a key technical detail of Corner Detection.' },
-    { text: 'Multi-scale extensions build Gaussian pyramids and detect at each level.', isTrue: true, explanation: 'This is a key technical detail of Corner Detection.' },
+    { text: 'Harris corners correspond to geometric corners of objects.', isTrue: false, explanation: 'Not necessarily. Harris detects any point with high gradient variation in two directions -- textured patches, T-junctions, and even some texture patterns qualify.' },
+    { text: 'Corner detection identifies points where image intensity changes sharply in multiple directions, producing stable landmarks for tracking and matching via methods like Harris and Shi-Tomasi.', isTrue: true, explanation: 'This captures the core definition of Corner Detection.' },
+    { text: 'Corner Detection is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Corner Detection is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

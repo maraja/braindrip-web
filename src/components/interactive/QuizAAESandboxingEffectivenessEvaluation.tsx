@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAESandboxingEffectivenessEvaluation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Measuring whether agent sandboxes actually contain behavior within intended boundaries, rather than merely claiming to do so.', isTrue: true, explanation: 'This captures the core purpose of Sandboxing Effectiveness Evaluation.' },
-    { text: 'Sandboxing Effectiveness Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Sandboxing Effectiveness Evaluation is important for building on more advanced topics.' },
-    { text: 'Sandboxing Effectiveness Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Sandboxing Effectiveness Evaluation is important for building on more advanced topics.' },
+    { text: 'Using Docker means the agent is sandboxed.', isTrue: false, explanation: 'Docker provides a containment layer, but its effectiveness depends entirely on configuration. Privileged containers, mounted Docker sockets, host network mode, and excessive capabilities can reduce Docker sandboxing to near zero.' },
+    { text: 'Network firewalls are sufficient for network isolation.', isTrue: false, explanation: 'Firewalls operate at the IP and port level. Agents can exfiltrate data through DNS queries, encode information in allowed HTTPS request patterns, or use timing channels.' },
+    { text: 'If the agent cannot execute shell commands, it cannot escape the sandbox.', isTrue: false, explanation: 'Many sandbox escapes do not require shell access. File read/write tools can be used to modify configuration, API tools can reach unintended endpoints, and the agent\'s own LLM capabilities can be used to encode and decode data through side channels.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

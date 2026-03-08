@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE03Gemini2AndBeyond() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Google\'s Gemini series from 2.0 through 3.1 (2024-2026) evolved from a fast multimodal model into the industry\'s most aggressive push toward agent-native AI, combining native tool use, visible reasoning traces, million-token context, and deep integration with Google\'s ecosystem — culminating in Gemini 3 Flash outperforming its own flagship on agentic coding, and Gemini 3.1 Pro achieving 94.3% GPQA Diamond and #1 rankings on 12 of 18 tracked benchmarks.', isTrue: true, explanation: 'This captures the core purpose of Gemini 2.x and 3: Google\'s Agent Era.' },
-    { text: 'Gemini 2.x and 3: Google\'s Agent Era is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Gemini 2.x and 3: Google\'s Agent Era is important for building on more advanced topics.' },
-    { text: 'Gemini 2.x and 3: Google\'s Agent Era is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Gemini 2.x and 3: Google\'s Agent Era is important for building on more advanced topics.' },
+    { text: 'Gemini is just Google\'s ChatGPT clone.', isTrue: false, explanation: 'Gemini\'s architecture is natively multimodal from the ground up, and its integration with Google\'s ecosystem gives it capabilities no standalone chatbot can match. The agent projects (Astra, Mariner, Jules) represent fundamentally different interaction paradigms.' },
+    { text: 'The bigger model is always better.', isTrue: false, explanation: 'Gemini 3 Flash outperformed both Gemini 2.5 Pro and Gemini 3 Pro on SWE-bench Verified for agentic coding. Model size and tier no longer reliably predict performance on specific tasks.' },
+    { text: 'Google is behind in the AI race.', isTrue: false, explanation: 'Gemini 2.5 Pro reached #1 on WebDev Arena and LMArena, and Gemini 3 Pro ranks #3 on LMArena as of early 2026. Google\'s challenge is more about product execution and developer mindshare than model capability.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

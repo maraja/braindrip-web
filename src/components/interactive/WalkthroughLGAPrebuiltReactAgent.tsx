@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Minimal Example', desc: 'The foundation of prebuilt react agent begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Using a Model String', desc: 'At this stage, the key transformation occurs — the core mechanism that makes prebuilt react agent work.' },
-    { title: '3. Adding Memory with a Checkpointer', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. What the Function Builds Internally', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Using a Model String', desc: 'You can pass a model identifier string instead of an instance. LangGraph resolves it using the init_chat_model interface:' },
+    { title: '2. Adding Memory with a Checkpointer', desc: 'To make the agent remember previous turns across invocations, pass a checkpointer and a thread_id in the config:' },
+    { title: '3. What the Function Builds Internally', desc: 'When you call create_react_agent, it constructs a StateGraph equivalent to:  An agent node that calls the LLM with the current messages and available tool schemas. A tools node (ToolNode) that executes any tool calls the LLM requested.' },
 ];
 
 export default function WalkthroughLGAPrebuiltReactAgent() {
@@ -16,10 +15,10 @@ export default function WalkthroughLGAPrebuiltReactAgent() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Prebuilt ReAct Agent — Step by Step
+          Prebuilt ReAct Agent \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how prebuilt react agent works, one stage at a time.

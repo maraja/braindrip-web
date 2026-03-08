@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Convex vs. Non-Convex Optimization', desc: 'The foundation of optimization and gradient descent begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Gradient Descent Update Rule', desc: 'At this stage, the key transformation occurs — the core mechanism that makes optimization and gradient descent work.' },
-    { title: '3. The Learning Rate', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Variants: Batch, Stochastic, and Mini-Batch', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Momentum', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Convex vs. Non-Convex Optimization', desc: 'A function f is convex if the line segment between any two points on its graph lies above or on the graph:  [equation]  For convex functions, every local minimum is a global minimum, and gradient descent is guaranteed to converge to it.' },
+    { title: '2. The Gradient Descent Update Rule', desc: 'The basic update at iteration t is:  [equation]  where  &gt; 0 is the learning rate. The negative gradient - &#123;L&#125; is the direction of steepest descent.' },
+    { title: '3. The Learning Rate', desc: 'The learning rate  is arguably the most important hyperparameter:  Too large: The updates overshoot, oscillate, or diverge. Too small: Convergence is painfully slow and the optimizer may get stuck in shallow local minima.' },
+    { title: '4. Variants: Batch, Stochastic, and Mini-Batch', desc: 'Batch gradient descent computes the gradient over the entire dataset:  [equation]  This is exact but expensive for large N. Stochastic gradient descent (SGD) uses a single random sample:  [equation]  This is an unbiased estimator of the true gradient but has high variance, introducing noise that.' },
+    { title: '5. Momentum', desc: 'Vanilla SGD oscillates in ravines (directions with high curvature) and progresses slowly along the bottom (low curvature). Momentum adds a velocity term that accumulates past gradients:  [equation] [equation]  where   [0, 1) (typically 0.9).' },
+    { title: '6. Adaptive Learning Rate Methods', desc: 'Different parameters may need different learning rates. Adaptive methods adjust per-parameter:  AdaGrad: Scales learning rate by inverse square root of accumulated squared gradients.' },
 ];
 
 export default function WalkthroughMLFOptimizationAndGradientDescent() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFOptimizationAndGradientDescent() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Optimization and Gradient Descent — Step by Step
+          Optimization and Gradient Descent \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how optimization and gradient descent works, one stage at a time.

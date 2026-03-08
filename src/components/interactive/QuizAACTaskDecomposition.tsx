@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACTaskDecomposition() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Each subtask should be specific enough to execute with a single tool call.', isTrue: true, explanation: 'This is a key technical detail of Task Decomposition.' },
-    { text: 'Task decomposition breaks complex, ambiguous goals into atomic, executable subtasks, transforming vague instructions like "research topic X" into concrete sequences of retrievable, verifiable actions.', isTrue: true, explanation: 'This captures the core purpose of Task Decomposition.' },
-    { text: 'Task Decomposition is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Task Decomposition is important for building on more advanced topics.' },
+    { text: 'Decomposition is just making a to-do list.', isTrue: false, explanation: 'A to-do list is a flat, ordered sequence. Proper decomposition produces a DAG with dependencies, verification criteria, and hierarchical structure.' },
+    { text: '2-3 levels for most tasks; deeper decomposition has diminishing returns and increases planning overhead', isTrue: true, explanation: '2-3 levels for most tasks; deeper decomposition has diminishing returns and increases planning overhead' },
+    { text: 'The LLM should decompose the entire task before starting any work.', isTrue: false, explanation: 'For exploratory tasks, full upfront decomposition is impossible because later steps depend on discoveries made in earlier steps. Partial decomposition with lazy expansion of later steps is often more practical.' },
+    { text: '3-7 subtasks; fewer than 3 suggests the decomposition is too coarse, more than 7 suggests it needs another level of hierarchy', isTrue: true, explanation: '3-7 subtasks; fewer than 3 suggests the decomposition is too coarse, more than 7 suggests it needs another level of hierarchy' },
+    { text: 'Smaller subtasks are always better.', isTrue: false, explanation: 'Over-decomposition creates overhead: more planning tokens, more context management, more opportunities for the plan to drift. The goal is the right granularity, not the finest granularity.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

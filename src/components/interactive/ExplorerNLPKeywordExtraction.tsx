@@ -4,7 +4,7 @@ const DETAILS = [
     { label: 'TextRank convergence', detail: 'Typically converges in 20-30 iterations with damping factor d = 0.85 and co-occurrence window W = 2.' },
     { label: 'YAKE! performance', detail: 'Achieves F1@10 of 18-22% on the Inspec dataset without any corpus dependency -- competitive with TF-IDF methods that require reference corpora.' },
     { label: 'KeyBERT with MMR', detail: 'Setting the diversity parameter lambda = 0.5-0.7 balances relevance and diversity, typically producing more informative keyword sets than pure cosine ranking.' },
-    { label: 'Candidate generation', detail: 'Restricting candidates to noun phrases (using POS tag patterns like `(ADJ)*(NOUN)+`) reduces the candidate set by 60-80% and improves precision.' },
+    { label: 'Candidate generation', detail: 'Restricting candidates to noun phrases (using POS tag patterns like (ADJ)*(NOUN)+) reduces the candidate set by 60-80% and improves precision.' },
     { label: 'Absent keyphrases', detail: 'In the SemEval-2010 benchmark, approximately 38% of gold keyphrases do not appear in the source document, motivating generative approaches.' },
 ];
 
@@ -19,10 +19,10 @@ export default function ExplorerNLPKeywordExtraction() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Keyword Extraction — Key Details Explorer
+          Keyword Extraction \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of keyword extraction.
+          Click each card to explore the technical details.
         </p>
       </div>
 

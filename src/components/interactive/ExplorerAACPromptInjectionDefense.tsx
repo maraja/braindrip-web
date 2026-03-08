@@ -2,11 +2,11 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Instruction delimiter hardening', detail: 'Use unique, non-guessable delimiters between system instructions, user input, and retrieved content. Random tokens or hashed delimiters are harder for attackers to guess and close/reopen than standard XML tags or markdown formatting.' },
-    { label: 'Dual-LLM architecture', detail: 'Use a separate, restricted LLM instance (the \"quarantine\" model) to process untrusted content. This model extracts relevant facts and returns structured data to the main agent, never passing raw untrusted text through. The quarantine model has no tool access and cannot take actions.' },
+    { label: 'Dual-LLM architecture', detail: 'Use a separate, restricted LLM instance (the "quarantine" model) to process untrusted content. This model extracts relevant facts and returns structured data to the main agent, never passing raw untrusted text through. The quarantine model has no tool access and cannot take actions.' },
     { label: 'Canary tokens', detail: 'Include hidden canary values in system prompts. If these values appear in the agent\'s output, it indicates the system prompt has been leaked through injection, triggering an immediate alert and session termination.' },
     { label: 'Injection classifier accuracy', detail: 'State-of-the-art injection classifiers achieve 90-95% detection on known attack patterns but 60-80% on novel attacks. This gap is why classifiers must be one layer among many, not the sole defense.' },
-    { label: 'Spotlighting', detail: 'A technique where retrieved content is transformed to reduce its instruction-following potential -- for example, by adding random characters between words, converting to a representation that preserves meaning but breaks instruction patterns, or encoding content in a format the model reads as data rather than instructions.' },
-    { label: 'Behavioral invariant checks', detail: 'After the agent proposes an action, verify that the action is consistent with the original user request and the agent\'s defined capabilities. An agent asked \"summarize this document\" should not propose \"send email to external-address@domain.com.\"' },
+    { label: 'Spotlighting', detail: 'A technique where retrieved content is transformed to reduce its instruction-following potential -- for example, by adding random characters between words, converting to a representation that preserves meaning but breaks instruction patterns, or encoding content in a format the model reads as data.' },
+    { label: 'Behavioral invariant checks', detail: 'After the agent proposes an action, verify that the action is consistent with the original user request and the agent\'s defined capabilities. An agent asked "summarize this document" should not propose "send email to external-address@domain.com."' },
 ];
 
 export default function ExplorerAACPromptInjectionDefense() {
@@ -20,10 +20,10 @@ export default function ExplorerAACPromptInjectionDefense() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Prompt Injection Defense — Key Details Explorer
+          Prompt Injection Defense \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of prompt injection defense.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Outcome Evaluation', desc: 'The foundation of outcome vs. process evaluation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Process Evaluation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes outcome vs. process evaluation work.' },
-    { title: '3. When Outcome-Only Evaluation Is Dangerous', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. When Process-Only Evaluation Is Too Strict', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. A Framework for Combining Both', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Outcome Evaluation', desc: 'Outcome evaluation assesses the end-state of the agent\'s execution against success criteria. Common implementations include:  Test-based verification: Run a test suite against the agent\'s output (used by SWE-bench, HumanEval) State comparison: Diff the final environment state against an expected.' },
+    { title: '2. Process Evaluation', desc: 'Process evaluation assesses the agent\'s trajectory -- the sequence of thoughts, actions, tool calls, and intermediate states. Common implementations include:  Trajectory analysis: Score the sequence of actions against an ideal or acceptable trajectory set Tool use correctness: Verify that tools.' },
+    { title: '3. When Outcome-Only Evaluation Is Dangerous', desc: 'Outcome-only evaluation creates perverse incentives. Real examples from agent development:  Test deletion: A coding agent tasked with "making all tests pass" deleted the failing tests.' },
+    { title: '4. When Process-Only Evaluation Is Too Strict', desc: 'Process evaluation penalizes legitimate creativity:  Novel strategies: An agent discovers an unconventional but superior approach to a coding task. A rigid process evaluator penalizes it for not following the expected tool-call sequence.' },
+    { title: '5. A Framework for Combining Both', desc: 'The most effective evaluation systems use a weighted combination:  [equation]  where s_T is the final state, _&#123;0:T&#125; is the full trajectory, and  balances the two.' },
 ];
 
 export default function WalkthroughAAEOutcomeVsProcessEvaluation() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAEOutcomeVsProcessEvaluation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Outcome vs. Process Evaluation — Step by Step
+          Outcome vs. Process Evaluation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how outcome vs. process evaluation works, one stage at a time.

@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. BRIEF: Binary Robust Independent Elementary Features', desc: 'The foundation of orb and binary descriptors begins with understanding its core input requirements and initial setup.' },
-    { title: '2. ORB: Oriented FAST and Rotated BRIEF', desc: 'At this stage, the key transformation occurs — the core mechanism that makes orb and binary descriptors work.' },
-    { title: '3. BRISK: Binary Robust Invariant Scalable Keypoints', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Code Example', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. BRIEF: Binary Robust Independent Elementary Features', desc: '(2010) proposed BRIEF as the first practical binary descriptor:  Smooth the patch with a Gaussian (  2) to reduce noise sensitivity. Select n pairs of pixel locations (p_i, q_i) within the patch (typically n = 256).' },
+    { title: '2. ORB: Oriented FAST and Rotated BRIEF', desc: 'ORB addresses BRIEF\'s limitations in two stages:  Detection (oFAST). Use the FAST-9 corner detector across an image pyramid (typically 8 levels, scale factor 1.2).' },
+    { title: '3. BRISK: Binary Robust Invariant Scalable Keypoints', desc: 'Leutenegger et al. (2011) proposed BRISK with scale-space FAST detection and a hand-crafted circular sampling pattern:  Short pairs (distance &lt; _&#123;&#125;): Used for the 512-bit descriptor.' },
 ];
 
 export default function WalkthroughCVCOrbAndBinaryDescriptors() {
@@ -16,10 +15,10 @@ export default function WalkthroughCVCOrbAndBinaryDescriptors() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          ORB and Binary Descriptors — Step by Step
+          ORB and Binary Descriptors \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how orb and binary descriptors works, one stage at a time.

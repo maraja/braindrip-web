@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACChainOfThoughtInAgents() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Chain-of-thought reasoning within agent loops provides structured scratchpad space where agents reason through complex decisions before acting, reducing errors in multi-step tasks by making the reasoning process explicit and auditable.', isTrue: true, explanation: 'This captures the core purpose of Chain-of-Thought in Agents.' },
-    { text: 'Chain-of-Thought in Agents is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Chain-of-Thought in Agents is important for building on more advanced topics.' },
-    { text: 'Chain-of-Thought in Agents is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Chain-of-Thought in Agents is important for building on more advanced topics.' },
+    { text: 'CoT in agents is the same as CoT for question answering.', isTrue: false, explanation: 'Agent CoT must be action-oriented and state-aware. It incorporates observations from the environment, tracks progress toward a goal, and produces a concrete next action.' },
+    { text: 'CoT typically adds 50-300 tokens per agent step; for a 10-step task, this is 500-3000 additional tokens, roughly 10-30% overhead on total token usage', isTrue: true, explanation: 'CoT typically adds 50-300 tokens per agent step; for a 10-step task, this is 500-3000 additional tokens, roughly 10-30% overhead on total token usage' },
+    { text: 'More reasoning is always better.', isTrue: false, explanation: 'Excessive reasoning can lead to analysis paralysis, where the agent overthinks and generates contradictory considerations that confuse the final action selection. CoT should be focused and goal-directed.' },
+    { text: 'Anthropic\'s extended thinking allows up to 128K thinking tokens; most agent steps use 200-2000 thinking tokens effectively', isTrue: true, explanation: 'Anthropic\'s extended thinking allows up to 128K thinking tokens; most agent steps use 200-2000 thinking tokens effectively' },
+    { text: 'CoT makes agent reasoning trustworthy.', isTrue: false, explanation: 'CoT improves transparency but does not guarantee faithfulness. The model may produce plausible-sounding reasoning that does not reflect its actual decision process.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

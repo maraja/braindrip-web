@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPMorphology() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'English has approximately 8 inflectional affixes (-s, -es, -ed, -en, -ing, -er, -est, -\'s) compared to Turkish\'s 100+ suffixes and Finnish\'s approximately 200 suffixes.', isTrue: true, explanation: 'This is a key technical detail of Morphology.' },
-    { text: 'Morfessor 2.0 achieves F1 scores of approximately 65--85% on morphological segmentation across languages, with performance varying significantly by morphological type.', isTrue: true, explanation: 'This is a key technical detail of Morphology.' },
-    { text: 'BPE with a vocabulary of 32,000 subword tokens is a common default in modern NLP systems.', isTrue: true, explanation: 'This is a key technical detail of Morphology.' },
+    { text: 'English has simple morphology, so morphology does not matter for NLP.', isTrue: false, explanation: 'English morphology is simpler than Turkish or Finnish but is far from trivial. English has irregular verbs ("go/went/gone"), productive derivation ("un-friend-ly"), and compounding ("snowboard").' },
+    { text: 'Subword tokenization solves the morphology problem.', isTrue: false, explanation: 'BPE and WordPiece capture frequent morphological patterns but are not true morphological analyzers. They are driven by corpus frequency, not linguistic structure, so they may split words at non-morphemic boundaries ("unhappy" might tokenize as "un" + "happy" or "unh" + "appy" depending on the training corpus).' },
+    { text: 'Agglutinative languages are harder for NLP than fusional ones.', isTrue: false, explanation: 'Agglutinative languages have many morphemes per word but each morpheme boundary is clean and predictable. Fusional languages have fewer morphemes per word but the boundaries are ambiguous and a single morpheme encodes multiple features.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

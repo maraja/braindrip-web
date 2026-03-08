@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Manual Prompts and Cloze-Style Reformulation', desc: 'The foundation of prompt-based nlp begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Verbalizers: Mapping Labels to Words', desc: 'At this stage, the key transformation occurs — the core mechanism that makes prompt-based nlp work.' },
-    { title: '3. Prompt Tuning and Soft Prompts', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Pattern-Exploiting Training (PET)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Connection to In-Context Learning', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Manual Prompts and Cloze-Style Reformulation', desc: 'A cloze prompt converts a classification task into a fill-in-the-blank problem compatible with masked language modeling (MLM):  Sentiment Analysis:  Topic Classification:  Natural Language Inference:  For generation-based models (GPT-style), the prompt is formatted as a prefix that the model.' },
+    { title: '2. Verbalizers: Mapping Labels to Words', desc: 'A verbalizer defines the mapping between task labels and natural language words that the MLM or LM is likely to predict. This mapping is critical and non-trivial:  The choice of verbalizer significantly impacts performance.' },
+    { title: '3. Prompt Tuning and Soft Prompts', desc: 'Manual prompt engineering is labor-intensive and sensitive to wording. Automated approaches learn optimal prompts:  P-tuning (Liu et al., 2021): Replaces discrete prompt tokens with continuous embeddings that are learned through gradient descent while keeping the pre-trained model frozen.' },
+    { title: '4. Pattern-Exploiting Training (PET)', desc: 'Schick and Schutze (2021) introduced PET, which combines prompt-based classification with semi-supervised learning:  Define multiple prompt templates (patterns) with verbalizers for the same task. Fine-tune a model on a small labeled set (e.g., 32 examples) using each pattern independently.' },
+    { title: '5. Connection to In-Context Learning', desc: 'Prompt-based NLP and in-context learning (from gpt-for-nlp-tasks.md) share the principle of task reformulation through natural language. The distinction:  Prompt-based (with fine-tuning): The model is updated (even if only prompt parameters) on task data.' },
 ];
 
 export default function WalkthroughNLPPromptBasedNlp() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPPromptBasedNlp() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Prompt-Based NLP — Step by Step
+          Prompt-Based NLP \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how prompt-based nlp works, one stage at a time.

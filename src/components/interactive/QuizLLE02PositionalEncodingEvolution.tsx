@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE02PositionalEncodingEvolution() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Sinusoidal (2017): Fixed, parameter-free.', isTrue: true, explanation: 'This is a key technical detail of Positional Encoding Evolution.' },
-    { text: 'Max useful length limited to training length.', isTrue: true, explanation: 'This is a key technical detail of Positional Encoding Evolution.' },
-    { text: 'Used in original Transformer.', isTrue: true, explanation: 'This is a key technical detail of Positional Encoding Evolution.' },
+    { text: 'Positional encoding is a minor detail.', isTrue: false, explanation: 'It is one of the most consequential architectural choices. The difference between a 4K-context model and a 128K-context model is largely determined by positional encoding.' },
+    { text: 'RoPE is just another way to add position to embeddings.', isTrue: false, explanation: 'RoPE is fundamentally different from additive encodings because it operates through rotation, which preserves vector norms and naturally encodes relative distance through dot-product structure.' },
+    { text: 'You can always extend a model to longer contexts by fine-tuning.', isTrue: false, explanation: 'Without the right positional encoding, fine-tuning on longer sequences helps minimally. A model with learned positional embeddings at 2048 positions cannot meaningfully extend to 100K, regardless of fine-tuning data.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

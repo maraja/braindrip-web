@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The \"Textbook Quality\" Data Philosophy', desc: 'The foundation of phi series begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Evolution: Phi-1 Through Phi-4', desc: 'At this stage, the key transformation occurs — the core mechanism that makes phi series work.' },
-    { title: '3. Synthetic Data Generation Pipeline', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Licensing and Accessibility', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The "Textbook Quality" Data Philosophy', desc: 'The core insight behind Phi is that most web-crawled training data is noisy, repetitive, and poorly structured. Forum posts contain incorrect answers alongside correct ones.' },
+    { title: '2. The Evolution: Phi-1 Through Phi-4', desc: 'Phi-1 (June 2023): The proof of concept. 1.3B parameters, trained primarily on synthetic code data.' },
+    { title: '3. Synthetic Data Generation Pipeline', desc: 'The synthetic data pipeline evolved across Phi generations. Early versions used straightforward prompting of GPT-3.5 to generate textbook passages.' },
+    { title: '4. Licensing and Accessibility', desc: 'A critical decision was releasing the Phi series under the MIT License, one of the most permissive open-source licenses available. This meant anyone -- startups, researchers, hobbyists -- could use, modify, and deploy Phi models commercially with no restrictions.' },
 ];
 
 export default function WalkthroughLLE01PhiSeries() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE01PhiSeries() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Phi Series — Step by Step
+          Phi Series \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how phi series works, one stage at a time.

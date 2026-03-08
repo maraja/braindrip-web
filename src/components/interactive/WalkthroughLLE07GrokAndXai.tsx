@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Grok-1: The Open-Source Foundation', desc: 'The foundation of grok and xai begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Grok-2 and Competitive Scaling', desc: 'At this stage, the key transformation occurs — the core mechanism that makes grok and xai work.' },
-    { title: '3. Grok-3 and the Colossus Advantage', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Colossus Infrastructure', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Grok-1: The Open-Source Foundation', desc: 'Grok-1, released as open-weights in March 2024, was a 314 billion parameter Mixture of Experts model. It used 8 experts with a top-2 routing mechanism, meaning roughly 25% of total parameters (approximately 86B) were active for any given token.' },
+    { title: '2. Grok-2 and Competitive Scaling', desc: 'Grok-2, released in August 2024, represented xAI\'s first genuinely frontier-competitive model. While architectural details were not fully disclosed, it showed significant improvements across benchmarks, performing competitively with GPT-4o and Claude 3.5 Sonnet on several evaluations.' },
+    { title: '3. Grok-3 and the Colossus Advantage', desc: 'Grok-3, announced in February 2025, was trained on the full Colossus cluster — reportedly 100,000 H100 GPUs, later expanded with additional H200 GPUs. This was among the largest training runs ever conducted.' },
+    { title: '4. The Colossus Infrastructure', desc: 'The infrastructure story was as remarkable as the model story. Colossus was assembled in approximately four to five months — a timeline that typically takes years for datacenter construction.' },
 ];
 
 export default function WalkthroughLLE07GrokAndXai() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE07GrokAndXai() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Grok and xAI — Step by Step
+          Grok and xAI \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how grok and xai works, one stage at a time.

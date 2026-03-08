@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The SARSA Update Rule', desc: 'The foundation of sarsa begins with understanding its core input requirements and initial setup.' },
-    { title: '2. SARSA Algorithm', desc: 'At this stage, the key transformation occurs — the core mechanism that makes sarsa work.' },
-    { title: '3. On-Policy Nature', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Cliff-Walking Comparison', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Expected SARSA', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The SARSA Update Rule', desc: 'After taking action A_t in state S_t, observing reward R_&#123;t+1&#125; and next state S_&#123;t+1&#125;, the agent selects its next action A_&#123;t+1&#125; according to the current policy, then updates:  [equation]  The key difference from Q-learning: the target uses Q(S_&#123;t+1&#125;, A_&#123;t+1&#125;) -- the Q-value of the action actually.' },
+    { title: '2. SARSA Algorithm', desc: 'Notice that the next action A\' is chosen before the update and then actually executed on the next step. This is what makes SARSA on-policy: the same policy generates the data and is being evaluated.' },
+    { title: '3. On-Policy Nature', desc: 'SARSA evaluates and improves the policy it is currently following. With an -greedy behavior policy, SARSA converges to the optimal -soft policy -- the best policy that still explores with probability .' },
+    { title: '4. The Cliff-Walking Comparison', desc: 'The cliff-walking gridworld crystallizes the Q-learning vs SARSA difference:  Q-learning learns Q-values for the greedy policy and discovers the shortest path along the cliff edge. But during training with -greedy exploration, the agent frequently falls off the cliff, incurring -100 penalties.' },
+    { title: '5. Expected SARSA', desc: 'Expected SARSA replaces the sampled next action with the expectation over all next actions under the current policy:  [equation]  This eliminates the variance introduced by sampling A_&#123;t+1&#125;, producing more stable updates.' },
 ];
 
 export default function WalkthroughRLSarsa() {
@@ -17,10 +17,10 @@ export default function WalkthroughRLSarsa() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          SARSA — Step by Step
+          SARSA \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how sarsa works, one stage at a time.

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Self-Attention: The Core Mechanism', desc: 'The foundation of attention is all you need begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Multi-Head Attention', desc: 'At this stage, the key transformation occurs — the core mechanism that makes attention is all you need work.' },
-    { title: '3. The Encoder-Decoder Architecture', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Positional Encoding', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Training and Results', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Self-Attention: The Core Mechanism', desc: 'The Transformer\'s fundamental operation is scaled dot-product attention: Attention(Q, K, V) = softmax(QK^T / sqrt(d_k)) * V. Each position in the sequence produces three vectors — Query (what am I looking for?), Key (what do I contain?), and Value (what do I provide?' },
+    { title: '2. Multi-Head Attention', desc: 'Rather than computing a single attention function, the Transformer uses multi-head attention: it runs h parallel attention operations (h=8 in the base model), each with its own learned Q, K, V projections of dimension d_k = d_model/h = 64. The outputs are concatenated and linearly projected.' },
+    { title: '3. The Encoder-Decoder Architecture', desc: 'The Transformer retained the encoder-decoder structure from 03-sequence-to-sequence-models.md but rebuilt it entirely with attention:  Encoder (6 identical layers): Each layer has two sub-layers: (1) multi-head self-attention, where every position attends to every other position in the input, and.' },
+    { title: '4. Positional Encoding', desc: 'Without recurrence, the model has no inherent notion of position — it processes all tokens as a set, not a sequence. The solution was to add positional encodings to the input embeddings using sinusoidal functions: PE(pos, 2i) = sin(pos / 10000^(2i/d_model)), PE(pos, 2i+1) = cos(pos /.' },
+    { title: '5. Training and Results', desc: 'The base model (65M parameters, d_model=512) was trained on the WMT 2014 English-German dataset (4.5M sentence pairs). The big model (213M parameters, d_model=1024) achieved 28.4 BLEU on EN-DE and 41.8 BLEU on EN-FR — surpassing all previous models including ensembles.' },
 ];
 
 export default function WalkthroughLLE01AttentionIsAllYouNeed() {
@@ -17,10 +17,10 @@ export default function WalkthroughLLE01AttentionIsAllYouNeed() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Attention Is All You Need — Step by Step
+          Attention Is All You Need \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how attention is all you need works, one stage at a time.

@@ -6,7 +6,7 @@ const DETAILS = [
     { label: 'Retrieval quality explains 60-80% of answer quality variance', detail: 'in RAG systems, making context selection the dominant quality lever.' },
     { label: 'Filling context to maximum capacity degrades performance', detail: '— models perform best with relevant, well-organized context that leaves some buffer.' },
     { label: 'Context assembly latency', detail: '(retrieval, formatting, compression) often exceeds model inference latency in production systems.' },
-    { label: 'Karpathy\'s framing', detail: '— \"the art of filling the context window with the right information\" — captures the core insight: it is about what goes in, not just how you ask.' },
+    { label: 'Karpathy\'s framing', detail: '— "the art of filling the context window with the right information" — captures the core insight: it is about what goes in, not just how you ask.' },
 ];
 
 export default function ExplorerPEWhatIsContextEngineering() {
@@ -20,10 +20,10 @@ export default function ExplorerPEWhatIsContextEngineering() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Context Engineering — Key Details Explorer
+          What Is Context Engineering \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of context engineering.
+          Click each card to explore the technical details.
         </p>
       </div>
 

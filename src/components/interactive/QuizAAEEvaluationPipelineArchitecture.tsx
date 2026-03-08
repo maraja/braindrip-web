@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEEvaluationPipelineArchitecture() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Evaluation pipeline architecture is the end-to-end engineering of systems that orchestrate task loading, environment provisioning, agent execution, output collection, scoring, and result aggregation into a reliable, scalable evaluation infrastructure.', isTrue: true, explanation: 'This captures the core purpose of Evaluation Pipeline Architecture.' },
-    { text: 'Evaluation Pipeline Architecture is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluation Pipeline Architecture is important for building on more advanced topics.' },
-    { text: 'Evaluation Pipeline Architecture is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluation Pipeline Architecture is important for building on more advanced topics.' },
+    { text: 'A script that loops over tasks and prints scores is a sufficient pipeline.', isTrue: false, explanation: 'It works for prototyping but fails at scale. No parallelism, no failure recovery, no cost tracking, no reproducibility guarantees.' },
+    { text: 'The evaluation framework handles everything.', isTrue: false, explanation: 'Frameworks like Inspect AI and LangSmith provide building blocks, but teams still need to configure environments, write custom scorers, manage infrastructure, and build reporting tailored to their needs.' },
+    { text: 'More parallelism is always better.', isTrue: false, explanation: 'Parallelism is bounded by API rate limits, compute availability, and cost. Hitting LLM API rate limits with 100 parallel workers causes cascading failures and wasted retries.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

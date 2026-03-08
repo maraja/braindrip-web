@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACTaskCompletionMetrics() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Test-as-oracle for coding: For coding tasks, automated test suites serve as evaluation oracles.', isTrue: true, explanation: 'This is a key technical detail of Task Completion Metrics.' },
-    { text: 'But tests can be incomplete (missing edge cases), overfitted (only testing the specific solution approach), or wrong (tests that pass for incorrect code).', isTrue: true, explanation: 'This is a key technical detail of Task Completion Metrics.' },
-    { text: 'High-quality evaluation requires well-crafted test suites that cover diverse solution approaches.', isTrue: true, explanation: 'This is a key technical detail of Task Completion Metrics.' },
+    { text: 'Binary metrics are always inferior to graded metrics.', isTrue: false, explanation: 'Binary metrics are appropriate when the task has truly binary success criteria (the file was uploaded or it was not, the email was sent or it was not). Forcing graded metrics onto binary tasks creates artificial distinctions.' },
+    { text: 'For coding tasks, automated test suites serve as evaluation oracles.', isTrue: true, explanation: 'But tests can be incomplete (missing edge cases), overfitted (only testing the specific solution approach), or wrong (tests that pass for incorrect code). High-quality evaluation requires well-crafted test suites that cover diverse solution approaches.' },
+    { text: 'Higher scores always mean better performance.', isTrue: false, explanation: 'Metric scores are only as good as the metric design. A high score on a poorly designed metric is meaningless.' },
+    { text: 'For graded metrics using human evaluators, measure inter-annotator agreement (Cohen\'s kappa or Krippendorff\'s alpha).', isTrue: true, explanation: 'Agreement below 0.7 suggests the rubric needs refinement. Low agreement means the metric is measuring evaluator variance, not agent quality.' },
+    { text: 'One metric is sufficient.', isTrue: false, explanation: 'No single metric captures all quality dimensions. A coding agent with 100% test pass rate but terrible code readability is not truly high-quality.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

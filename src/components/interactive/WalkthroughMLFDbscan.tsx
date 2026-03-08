@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Core Definitions', desc: 'The foundation of dbscan begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Density Connectivity', desc: 'At this stage, the key transformation occurs — the core mechanism that makes dbscan work.' },
-    { title: '3. The Algorithm', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Parameter Selection', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. HDBSCAN: The Hierarchical Extension', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Core Definitions', desc: 'DBSCAN operates with two parameters:  (epsilon, the neighborhood radius) and MinPts (the minimum number of points required to form a dense region). -neighborhood: For a point p, the set N_(p) = \\&#123;q  D : dist(p, q)  \\&#125;.' },
+    { title: '2. Density Connectivity', desc: 'Two core points are directly density-reachable if they are within  of each other. Density-reachability extends this transitively: p is density-reachable from q if there exists a chain of core points connecting them.' },
+    { title: '3. The Algorithm', desc: 'Label all points as unvisited. For each unvisited point p:    - Mark p as visited.' },
+    { title: '4. Parameter Selection', desc: 'Choosing  and MinPts is crucial:  MinPts heuristic: A common rule of thumb is MinPts  d + 1 where d is the dimensionality. For noisy data, MinPts = 2d is safer.' },
+    { title: '5. HDBSCAN: The Hierarchical Extension', desc: 'HDBSCAN (Campello et al., 2013) eliminates the need to choose  by:  Computing a mutual reachability distance that smooths density estimates. Building a minimum spanning tree over these distances.' },
+    { title: '6. Practical Example', desc: 'Consider clustering GPS coordinates of taxi drop-offs in a city. The clusters have irregular shapes -- they follow roads, wrap around parks, and vary in density between downtown and suburbs.' },
 ];
 
 export default function WalkthroughMLFDbscan() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFDbscan() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          DBSCAN — Step by Step
+          DBSCAN \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how dbscan works, one stage at a time.

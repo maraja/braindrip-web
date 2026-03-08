@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFVariationalInference() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'VI maximizes the ELBO, which is equivalent to minimizing $\\text&#123;KL&#125;(q \\| p(\\theta \\mid D))$.', isTrue: true, explanation: 'This is a key technical detail of Variational Inference.' },
-    { text: 'The ELBO is a lower bound on the log-evidence $\\log p(D)$; the gap is the KL divergence.', isTrue: true, explanation: 'This is a key technical detail of Variational Inference.' },
-    { text: 'Mean-field VI assumes a fully factorized posterior, ignoring parameter correlations.', isTrue: true, explanation: 'This is a key technical detail of Variational Inference.' },
+    { text: 'VI always underestimates posterior uncertainty.', isTrue: false, explanation: 'Mean-field VI with reverse KL tends to underestimate variance, but richer variational families (normalizing flows, mixture posteriors) can capture complex posterior structure, including multimodality.' },
+    { text: 'VI is just a faster version of MCMC.', isTrue: false, explanation: 'VI solves a different problem -- it finds the best approximation within a family, while MCMC generates asymptotically exact samples. They have different error characteristics: VI has approximation bias that does not vanish with more computation; MCMC has sampling noise that does.' },
+    { text: 'A higher ELBO always means a better model.', isTrue: false, explanation: 'The ELBO depends on both the model and the variational family. A higher ELBO could reflect a better model or a more expressive variational approximation.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

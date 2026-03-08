@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Scratchpads (Working Memory)', desc: 'The foundation of state and memory in context begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Pinned Facts (Persistent Reference)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes state and memory in context work.' },
-    { title: '3. Running Tallies (Accumulated State)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Working Memory Patterns', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Scratchpads (Working Memory)', desc: 'A scratchpad is a designated section of the context where the model can write intermediate reasoning, partial results, and work-in-progress computations. Unlike chain-of-thought (which happens within a single response), a scratchpad persists across turns, allowing multi-turn reasoning processes.' },
+    { title: '2. Pinned Facts (Persistent Reference)', desc: 'Pinned facts are key-value pairs or structured data that persist across the entire conversation, representing stable information that should always be accessible:  Pinned facts are populated from user profiles, CRM data, onboarding conversations, or explicit user statements.' },
+    { title: '3. Running Tallies (Accumulated State)', desc: 'Running tallies maintain numerical or categorical state that updates incrementally:  Running tallies prevent a common failure mode: the model losing track of accumulated state across many turns. Without explicit tallies, asking "how much budget is left?' },
+    { title: '4. Working Memory Patterns', desc: 'Working memory is an explicit state tracking block that captures the model\'s current understanding, goals, and plan. It is more structured than a scratchpad and more dynamic than pinned facts:  Working memory differs from scratchpads in that it has a defined structure (goal, phase, evaluated.' },
 ];
 
 export default function WalkthroughPEStateAndMemoryInContext() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEStateAndMemoryInContext() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          State and Memory in Context — Step by Step
+          State and Memory in Context \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how state and memory in context works, one stage at a time.

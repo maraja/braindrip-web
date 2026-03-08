@@ -2,8 +2,8 @@ import { useState } from 'react';
 export default function QuizRLOfflineReinforcementLearning() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Offline RL learns policies entirely from a fixed dataset of previously collected interactions, without any further environment access -- bringing RL into the data-driven regime where healthcare, robotics, and dialogue systems actually operate.', isTrue: true, explanation: 'This captures the core purpose of Offline Reinforcement Learning.' },
-    { text: 'Offline Reinforcement Learning is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Offline Reinforcement Learning is important for building on more advanced topics.' },
+    { text: 'Offline RL can learn any policy from any dataset', isTrue: false, explanation: ': Offline RL cannot reliably discover strategies entirely absent from the data. It excels at stitching together good sub-trajectories from mediocre data, not at inventing novel strategies.' },
+    { text: 'Offline RL learns policies entirely from a fixed dataset of previously collected interactions, without any further environment access -- bringing RL into the data-driven regime where healthcare, robotics, and dialogue systems actually operate.', isTrue: true, explanation: 'This captures the core definition of Offline Reinforcement Learning.' },
     { text: 'Offline Reinforcement Learning is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Offline Reinforcement Learning is important for building on more advanced topics.' },
   ];
   return (

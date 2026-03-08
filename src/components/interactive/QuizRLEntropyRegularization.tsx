@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLEntropyRegularization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Default entropy coefficient: $\\alpha = 0.01$ for A2C/A3C/PPO with discrete actions.', isTrue: true, explanation: 'This is a key technical detail of Entropy Regularization.' },
-    { text: 'For continuous control, $\\alpha$ varies more ($0.001$ to $0.2$) and is often auto-tuned.', isTrue: true, explanation: 'This is a key technical detail of Entropy Regularization.' },
-    { text: 'Entropy computation: For categorical policies with $K$ actions, maximum entropy is $\\log K$.', isTrue: true, explanation: 'This is a key technical detail of Entropy Regularization.' },
+    { text: 'Entropy regularization makes the agent random.', isTrue: false, explanation: 'With appropriate , the policy is stochastic but still concentrated on good actions. The entropy bonus prevents collapsing to a single action, not from preferring good actions.' },
+    { text: '= 0.01 for A2C/A3C/PPO with discrete actions.', isTrue: true, explanation: 'For continuous control,  varies more (0.001 to 0.2) and is often auto-tuned.' },
+    { text: 'For categorical policies with K actions, maximum entropy is  K.', isTrue: true, explanation: 'For Gaussian policies, entropy depends on  and is unbounded above.' },
+    { text: 'For a categorical policy, _ H = -_ _a _(as) + 1].', isTrue: true, explanation: 'Most deep learning frameworks compute this automatically.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

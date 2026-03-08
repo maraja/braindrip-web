@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE02TheOSeriesEvolution() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'OpenAI\'s o-series evolved from o1\'s proof-of-concept in reasoning through o3 and o4-mini, achieving dramatic improvements in capability and cost efficiency across five models in eight months, before its reasoning advances were fully absorbed into the GPT-5 line.', isTrue: true, explanation: 'This captures the core purpose of The o-Series Evolution: o1 to o4-mini (and Beyond).' },
-    { text: 'The o-Series Evolution: o1 to o4-mini (and Beyond) is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding The o-Series Evolution: o1 to o4-mini (and Beyond) is important for building on more advanced topics.' },
-    { text: 'The o-Series Evolution: o1 to o4-mini (and Beyond) is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding The o-Series Evolution: o1 to o4-mini (and Beyond) is important for building on more advanced topics.' },
+    { text: 'Each o-series model is just a bigger version of the previous one.', isTrue: false, explanation: 'The models vary significantly in architecture and size. o3-mini and o4-mini are deliberately smaller and cheaper while often matching or exceeding their larger counterparts.' },
+    { text: 'The o-series made GPT-4o obsolete.', isTrue: false, explanation: 'GPT-4o remains better suited for tasks that need fast, low-cost responses without deep reasoning. The o-series adds latency (seconds to minutes) and cost for its reasoning capabilities.' },
+    { text: 'o3 skipped o2 for technical reasons.', isTrue: false, explanation: 'OpenAI skipped the "o2" name reportedly to avoid trademark conflict with the British telecom company O2. It was a naming decision, not a technical one.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

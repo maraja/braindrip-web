@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFHierarchicalClustering() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Early mistakes propagate through the entire hierarchy Distance matrix storage: The $n \\times n$ distance matrix requires $O(n^2)$ memory.', isTrue: true, explanation: 'This is a key technical detail of Hierarchical Clustering.' },
-    { text: 'Building a tree of nested clusters via agglomerative merging or divisive splitting -- revealing multi-scale data structure.', isTrue: true, explanation: 'This captures the core purpose of Hierarchical Clustering.' },
-    { text: 'Hierarchical Clustering is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Hierarchical Clustering is important for building on more advanced topics.' },
+    { text: 'Hierarchical clustering always gives better results than K-means.', isTrue: false, explanation: 'Not necessarily. Ward\'s linkage on spherical clusters gives similar results to K-means.' },
+    { text: 'O(n^3) time and O(n^2) space for the distance matrix', isTrue: true, explanation: 'O(n^3) time and O(n^2) space for the distance matrix' },
+    { text: 'With priority queues and nearest-neighbor chains, single linkage achieves O(n^2), and average/complete linkage achieve O(n^2  n)', isTrue: true, explanation: 'With priority queues and nearest-neighbor chains, single linkage achieves O(n^2), and average/complete linkage achieve O(n^2  n)' },
+    { text: 'For single, complete, average, and Ward\'s linkage, merge distances increase monotonically -- ensuring the dendrogram has no inversions', isTrue: true, explanation: 'For single, complete, average, and Ward\'s linkage, merge distances increase monotonically -- ensuring the dendrogram has no inversions' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

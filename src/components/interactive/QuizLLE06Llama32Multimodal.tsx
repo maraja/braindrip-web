@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE06Llama32Multimodal() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'hundreds of GB for 405B) License: Meta LLaMA Community License (similar terms to LLaMA 3.1)', isTrue: true, explanation: 'This is a key technical detail of LLaMA 3.2: Multimodal and Edge Models.' },
-    { text: 'Meta\'s LLaMA 3.2 (September 2024) brought vision capabilities to the open-weight LLaMA family for the first time with 11B and 90B multimodal models, while also releasing tiny 1B and 3B text models for on-device deployment — and LLaMA 3.3 later showed a 70B model could match the 405B.', isTrue: true, explanation: 'This captures the core purpose of LLaMA 3.2: Multimodal and Edge Models.' },
-    { text: 'LLaMA 3.2: Multimodal and Edge Models is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding LLaMA 3.2: Multimodal and Edge Models is important for building on more advanced topics.' },
+    { text: 'The 11B and 90B vision models are natively multimodal like GPT-4o.', isTrue: false, explanation: 'They use an adapter architecture — a vision encoder plus cross-attention layers grafted onto the text model. GPT-4o (see 03-gpt-4o.md) was trained end-to-end across modalities, which enables different (and generally more fluid) cross-modal reasoning.' },
+    { text: 'September 25, 2024 (LLaMA 3.2); December 2024 (LLaMA 3.3)', isTrue: true, explanation: 'September 25, 2024 (LLaMA 3.2); December 2024 (LLaMA 3.3)' },
+    { text: 'The 1B model is too small to be useful.', isTrue: false, explanation: 'For basic tasks like text classification, simple Q&A, keyword extraction, and summarization of short texts, the 1B model is surprisingly capable. Its value lies not in matching larger models but in running instantly on resource-constrained hardware.' },
+    { text: '11B (8B text + vision adapter) and 90B (70B text + vision adapter)', isTrue: true, explanation: '11B (8B text + vision adapter) and 90B (70B text + vision adapter)' },
+    { text: 'LLaMA 3.3 70B made the 405B obsolete.', isTrue: false, explanation: 'The 405B still offered advantages on the most demanding tasks, particularly long-context reasoning and complex multi-step problems. The 70B matched it on common benchmarks, but benchmark averages can obscure capability differences at the tails.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

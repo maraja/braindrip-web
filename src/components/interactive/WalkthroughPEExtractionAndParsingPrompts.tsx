@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Schema Specification', desc: 'The foundation of extraction and parsing prompts begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Handling Missing Fields', desc: 'At this stage, the key transformation occurs — the core mechanism that makes extraction and parsing prompts work.' },
-    { title: '3. Few-Shot Extraction Examples', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Validation Strategies', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Schema Specification', desc: 'Every extraction task begins with defining what to extract. The schema specifies field names, types, descriptions, and whether each field is required or optional.' },
+    { title: '2. Handling Missing Fields', desc: 'How the model reports absent information is a key design decision. Three approaches exist:  Null values: Return the field with a null/None value.' },
+    { title: '3. Few-Shot Extraction Examples', desc: 'Few-shot examples are especially powerful for extraction because they demonstrate both what to extract and how to handle edge cases. Include 2-3 examples that cover:  A straightforward case with all fields present.' },
+    { title: '4. Validation Strategies', desc: 'Extraction output should be validated at multiple levels:  Structural validation: Does the output conform to the schema? Are required fields present?' },
 ];
 
 export default function WalkthroughPEExtractionAndParsingPrompts() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEExtractionAndParsingPrompts() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Extraction and Parsing Prompts — Step by Step
+          Extraction and Parsing Prompts \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how extraction and parsing prompts works, one stage at a time.

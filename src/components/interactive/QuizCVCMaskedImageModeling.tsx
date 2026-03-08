@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCMaskedImageModeling() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: '75% masking ratio is optimal for MAE.', isTrue: true, explanation: 'This is a key technical detail of Masked Image Modeling.' },
-    { text: 'At this ratio, only 49 of 196 patches are visible for a $224 \\times 224$ image with $16 \\times 16$ patches.', isTrue: true, explanation: 'This is a key technical detail of Masked Image Modeling.' },
-    { text: 'MAE\'s encoder processes 49 tokens instead of 196, reducing self-attention cost by approximately $16\\times$ ($196^2 / 49^2$).', isTrue: true, explanation: 'This is a key technical detail of Masked Image Modeling.' },
+    { text: '75% masking would destroy all useful information.', isTrue: false, explanation: 'Natural images are highly redundant -- spatial correlation means that 25% of patches carry enough information to reconstruct the rest. The high masking ratio forces the model to learn semantic features rather than exploiting local texture copying.' },
+    { text: 'Masked Image Modeling (MIM) pre-trains vision Transformers by masking a large portion of image patches and training the model to reconstruct the missing content -- either as discrete visual tokens (BEiT) or raw pixels (MAE).', isTrue: true, explanation: 'This captures the core definition of Masked Image Modeling.' },
+    { text: 'Masked Image Modeling is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Masked Image Modeling is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

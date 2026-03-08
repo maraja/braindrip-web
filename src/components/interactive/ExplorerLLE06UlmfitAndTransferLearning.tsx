@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Paper', detail: 'Howard & Ruder, \"Universal Language Model Fine-tuning for Text Classification\" (Jan 2018, arXiv:1801.06146, ACL 2018)' },
+    { label: 'Paper', detail: 'Howard & Ruder, "Universal Language Model Fine-tuning for Text Classification" (Jan 2018, arXiv:1801.06146, ACL 2018)' },
     { label: 'Architecture', detail: '3-layer AWD-LSTM (Merity et al., 2017); 1150 hidden units, 400-dimensional embeddings' },
     { label: 'Pre-training data', detail: 'Wikitext-103 (~103M tokens from 28,595 Wikipedia articles)' },
-    { label: 'Classification results', detail: '4.6% error on IMDb (previous SOTA: 5.0%), 5.01% on AG News' },
+    { label: 'Classification results', detail: '6% error on IMDb (previous SOTA: 5.0%), 5.01% on AG News' },
     { label: 'Low-data regime', detail: '100 labeled examples matched full-data training from scratch on IMDb' },
     { label: 'Discriminative LR factor', detail: 'Each layer\'s learning rate was the previous layer\'s rate divided by 2.6' },
 ];
@@ -20,10 +20,10 @@ export default function ExplorerLLE06UlmfitAndTransferLearning() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          ULMFiT and Transfer Learning for NLP — Key Details Explorer
+          ULMFiT and Transfer Learning for NLP \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of ulmfit and transfer learning for nlp.
+          Click each card to explore the technical details.
         </p>
       </div>
 

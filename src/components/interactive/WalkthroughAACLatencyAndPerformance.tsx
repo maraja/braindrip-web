@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Time Decomposition', desc: 'The foundation of latency and performance begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Time-to-First-Token and Time-to-First-Action', desc: 'At this stage, the key transformation occurs — the core mechanism that makes latency and performance work.' },
-    { title: '3. Parallelization Strategies', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Latency-Quality Tradeoff', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Time Decomposition', desc: 'Agent execution time breaks down into several components: thinking time (LLM inference for reasoning and planning), action time (tool execution, API calls, code runs), retrieval time (embedding, searching, fetching documents), waiting time (queuing for rate-limited APIs, waiting for external.' },
+    { title: '2. Time-to-First-Token and Time-to-First-Action', desc: 'Users perceive responsiveness not by total completion time but by how quickly they see the system responding. Time-to-first-token (TTFT) measures how long until the first output token appears -- typically 0.5-3 seconds.' },
+    { title: '3. Parallelization Strategies', desc: 'Not all agent operations are sequential. Multiple retrieval queries can run in parallel.' },
+    { title: '4. The Latency-Quality Tradeoff', desc: 'More reasoning steps generally improve output quality. A coding agent that plans, implements, tests, reviews, and revises produces better code than one that generates in a single pass.' },
 ];
 
 export default function WalkthroughAACLatencyAndPerformance() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACLatencyAndPerformance() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Latency and Performance — Step by Step
+          Latency and Performance \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how latency and performance works, one stage at a time.

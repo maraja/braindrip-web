@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEUserFeedbackAsEvaluationSignal() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'User feedback -- both explicit ratings and implicit behavioral signals like task abandonment and retry patterns -- provides irreplaceable evaluation data, but requires careful bias correction because feedback providers are not representative of all users.', isTrue: true, explanation: 'This captures the core purpose of User Feedback as Evaluation Signal.' },
-    { text: 'User Feedback as Evaluation Signal is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding User Feedback as Evaluation Signal is important for building on more advanced topics.' },
-    { text: 'User Feedback as Evaluation Signal is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding User Feedback as Evaluation Signal is important for building on more advanced topics.' },
+    { text: 'Low feedback volume means users are satisfied.', isTrue: false, explanation: 'Low feedback volume means most users did not bother to provide feedback. Satisfied users are actually less likely to rate their experience than dissatisfied ones.' },
+    { text: 'Thumbs up/down gives us the quality metric we need.', isTrue: false, explanation: 'Binary feedback captures user sentiment but not diagnostic information. A thumbs-down does not distinguish between a wrong answer, a slow answer, an unsafe answer, or a technically correct answer that missed the user\'s actual intent.' },
+    { text: 'Implicit feedback is too noisy to be useful.', isTrue: false, explanation: 'Individual implicit signals are noisy, but aggregated patterns are remarkably stable and informative. A single user retrying a query might reflect ambiguous intent.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

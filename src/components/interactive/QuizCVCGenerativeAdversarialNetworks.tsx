@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCGenerativeAdversarialNetworks() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'DCGAN (2015): 64x64 resolution, batch size 128, learning rate 0.0002 for Adam with $\\beta_1 = 0.5$.', isTrue: true, explanation: 'This is a key technical detail of Generative Adversarial Networks.' },
-    { text: 'BigGAN (Brock et al., 2018): Class-conditional ImageNet 128x128 at FID 6.9 using large batch sizes (2048), orthogonal regularization, and truncation trick.', isTrue: true, explanation: 'This is a key technical detail of Generative Adversarial Networks.' },
-    { text: 'The truncation trick trades diversity for quality: sampling $z$ from a truncated normal (e.g., $|z_i| &lt; 1.0$) improves FID but reduces variety.', isTrue: true, explanation: 'This is a key technical detail of Generative Adversarial Networks.' },
+    { text: 'GANs can generate anything once trained.', isTrue: false, explanation: 'GANs are limited to the distribution of their training data. A GAN trained on faces cannot generate cars.' },
+    { text: 'GANs pit a generator network against a discriminator network in a minimax game, producing remarkably realistic synthetic images when the two reach equilibrium.', isTrue: true, explanation: 'This captures the core definition of Generative Adversarial Networks.' },
+    { text: 'Generative Adversarial Networks is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Generative Adversarial Networks is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

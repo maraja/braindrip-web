@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFCrossValidation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Variance of the CV estimate: The standard error of K-fold CV is difficult to compute exactly because fold-level errors are not independent (they share training data).', isTrue: true, explanation: 'This is a key technical detail of Cross-Validation.' },
-    { text: 'Naive $\\text&#123;SE&#125; = \\text&#123;SD&#125;(L_1, \\ldots, L_K) / \\sqrt&#123;K&#125;$ underestimates the true uncertainty.', isTrue: true, explanation: 'This is a key technical detail of Cross-Validation.' },
-    { text: 'Computational cost: K-fold requires $K$ model fits.', isTrue: true, explanation: 'This is a key technical detail of Cross-Validation.' },
+    { text: 'Cross-validation prevents overfitting.', isTrue: false, explanation: 'CV detects overfitting by estimating generalization performance, but it does not prevent it. The model can still overfit the training folds.' },
+    { text: 'The standard error of K-fold CV is difficult to compute exactly because fold-level errors are not independent (they share training data).', isTrue: true, explanation: 'Naive SE = SD(L_1, , L_K) / &#123;K&#125; underestimates the true uncertainty.' },
+    { text: 'K-fold requires K model fits.', isTrue: true, explanation: 'For expensive models (deep networks), K = 3 or K = 5 may be the practical limit.' },
+    { text: 'Always use stratified K-fold for classification.', isTrue: true, explanation: 'There is no downside and it reduces variance.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

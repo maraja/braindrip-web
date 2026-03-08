@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFOptimizers() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'SGD + momentum: Fewer hyperparameters, often better generalization, but requires careful learning rate scheduling.', isTrue: true, explanation: 'This is a key technical detail of Optimizers.' },
-    { text: 'Adam: Faster convergence, less sensitive to learning rate, but can generalize slightly worse without weight decay.', isTrue: true, explanation: 'This is a key technical detail of Optimizers.' },
-    { text: 'AdamW: The standard for transformers.', isTrue: true, explanation: 'This is a key technical detail of Optimizers.' },
+    { text: 'Adam always converges faster than SGD.', isTrue: false, explanation: 'Adam converges faster initially but SGD with momentum and proper scheduling often reaches better final performance in computer vision. The choice is task-dependent.' },
+    { text: 'Fewer hyperparameters, often better generalization, but requires careful learning rate scheduling.', isTrue: true, explanation: 'Fewer hyperparameters, often better generalization, but requires careful learning rate scheduling.' },
+    { text: 'Adam/AdamW store two additional tensors per parameter (first and second moments), tripling memory versus SGD.', isTrue: true, explanation: 'Adam/AdamW store two additional tensors per parameter (first and second moments), tripling memory versus SGD.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

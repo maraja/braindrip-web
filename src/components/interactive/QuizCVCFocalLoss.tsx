@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizCVCFocalLoss() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'RetinaNet (ResNet-50-FPN): 35.7% AP on COCO at ~8 FPS.', isTrue: true, explanation: 'This is a key technical detail of Focal Loss.' },
-    { text: '(ResNet-101-FPN): 39.1% AP at ~5 FPS.', isTrue: true, explanation: 'This is a key technical detail of Focal Loss.' },
-    { text: '$\\gamma$ sensitivity: AP varies from 31.1% ($\\gamma = 0$, standard CE) to 36.0% ($\\gamma = 2$) on ResNet-50, a +4.9% AP gain from focal loss alone.', isTrue: true, explanation: 'This is a key technical detail of Focal Loss.' },
+    { text: 'Focal loss only works for object detection.', isTrue: false, explanation: 'It is widely applicable to any classification task with class imbalance. It has been used in semantic segmentation (medical imaging), text classification, and anomaly detection.' },
+    { text: '35.7% AP on COCO at ~8 FPS.', isTrue: true, explanation: '(ResNet-101-FPN): 39.1% AP at ~5 FPS.' },
+    { text: 'AP varies from 31.1% ( = 0, standard CE) to 36.0% ( = 2) on ResNet-50, a +4.9% AP gain from focal loss alone.', isTrue: true, explanation: 'AP varies from 31.1% ( = 0, standard CE) to 36.0% ( = 2) on ResNet-50, a +4.9% AP gain from focal loss alone.' },
+    { text: 'The optimal  decreases as  increases (from  = 0.75 at  = 0 to  = 0.25 at  = 2) because focal loss already down-weights easy negatives.', isTrue: true, explanation: 'The optimal  decreases as  increases (from  = 0.75 at  = 0 to  = 0.25 at  = 2) because focal loss already down-weights easy negatives.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

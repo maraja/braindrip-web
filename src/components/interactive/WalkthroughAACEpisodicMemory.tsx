@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Episode Structure', desc: 'The foundation of episodic memory begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Storage and Indexing', desc: 'At this stage, the key transformation occurs — the core mechanism that makes episodic memory work.' },
-    { title: '3. Experience Replay', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Episode Consolidation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Episode Structure', desc: 'Each episode stored in memory has a consistent structure:' },
+    { title: '2. Storage and Indexing', desc: 'Episodes are stored in long-term memory (typically a vector database) with multiple indexing strategies:  Semantic embedding: The episode summary is embedded as a vector, enabling retrieval by semantic similarity. "I need to add social login" would match the OAuth2 episode above.' },
+    { title: '3. Experience Replay', desc: 'Borrowed from reinforcement learning, experience replay is the process of retrieving and "replaying" past episodes to inform current decisions:  Situation assessment: The agent characterizes the current task (topic, difficulty, tools needed) Episode retrieval: The agent queries episodic memory for.' },
+    { title: '4. Episode Consolidation', desc: 'Over time, multiple similar episodes can be consolidated into generalized lessons:  Episodes #247, #312, #389 all involve adding new authentication providers Consolidated insight: "When adding a new auth provider, always: (1) run existing auth tests first, (2) add alongside existing providers.' },
 ];
 
 export default function WalkthroughAACEpisodicMemory() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACEpisodicMemory() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Episodic Memory — Step by Step
+          Episodic Memory \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how episodic memory works, one stage at a time.

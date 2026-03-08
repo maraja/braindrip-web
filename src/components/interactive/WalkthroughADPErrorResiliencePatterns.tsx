@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Defensive Output Design', desc: 'The foundation of error resilience patterns begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Fallback Chain Architecture', desc: 'At this stage, the key transformation occurs — the core mechanism that makes error resilience patterns work.' },
-    { title: '3. Idempotency in Agent Actions', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Checkpoint and Recovery Design', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Blast Radius Containment', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Defensive Output Design', desc: 'The first line of defense is ensuring the agent\'s outputs are parseable and actionable even when the LLM deviates from instructions. Structured output enforcement constrains the LLM to produce valid JSON, function calls, or other machine-readable formats.' },
+    { title: '2. Fallback Chain Architecture', desc: 'Design tool invocations as chains with primary, secondary, and tertiary paths. The agent should not be aware of the fallback mechanism -- it should be handled at the infrastructure layer.' },
+    { title: '3. Idempotency in Agent Actions', desc: 'An idempotent action produces the same result whether executed once or multiple times. This is critical because agent loops frequently retry failed steps, and without idempotency, retries can cause duplicate side effects (double-sending emails, creating duplicate records, charging a credit card.' },
+    { title: '4. Checkpoint and Recovery Design', desc: 'Checkpoints save agent state at strategic points so that a failed run can resume rather than restart from scratch. This is especially important for long-running agents (&gt;10 steps) where restarting from zero wastes significant compute and time.' },
+    { title: '5. Blast Radius Containment', desc: 'When a failure occurs, how much of the system does it affect? Blast radius containment means architecting boundaries so that a failure in one component does not cascade.' },
+    { title: '6. Graceful Degradation', desc: 'Design your agent to provide progressively less capable but still useful responses as components fail. Degradation levels:  The key design principle: the agent should always be able to tell the user what happened and what it could not do.' },
 ];
 
 export default function WalkthroughADPErrorResiliencePatterns() {
@@ -17,10 +18,10 @@ export default function WalkthroughADPErrorResiliencePatterns() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Error Resilience Patterns — Step by Step
+          Error Resilience Patterns \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how error resilience patterns works, one stage at a time.

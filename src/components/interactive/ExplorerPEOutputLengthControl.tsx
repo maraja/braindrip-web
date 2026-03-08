@@ -3,7 +3,7 @@ import { useState } from 'react';
 const DETAILS = [
     { label: 'RLHF creates a systematic verbosity bias', detail: 'models are trained to associate longer responses with higher human ratings, making conciseness an active override.' },
     { label: 'Sentence-count instructions achieve 85-95% compliance', detail: ', while word-count instructions achieve only 70-85% due to imprecise token-to-word mapping during generation.' },
-    { label: 'Word count variance is typically +-20%', detail: 'of the target — a \"100 word\" instruction produces 80-120 word responses.' },
+    { label: 'Word count variance is typically +-20%', detail: 'of the target — a "100 word" instruction produces 80-120 word responses.' },
     { label: 'The `max_tokens` parameter truncates mid-generation', detail: 'and should be set to 2-3x expected length as a safety net, not as a formatting tool.' },
     { label: 'Output tokens cost 2-4x more than input tokens', detail: 'on most API pricing tiers, making output length the primary cost lever.' },
     { label: 'The first 20% of tokens carry ~80% of information value', detail: 'in typical verbose responses, meaning aggressive compression preserves most utility.' },
@@ -20,10 +20,10 @@ export default function ExplorerPEOutputLengthControl() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Output Length Control — Key Details Explorer
+          Output Length Control \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of output length control.
+          Click each card to explore the technical details.
         </p>
       </div>
 

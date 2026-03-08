@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPPragmaticsAndDiscourse() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The RST Discourse Treebank (Carlson et al., 2001) annotates 385 Wall Street Journal articles with discourse structure.', isTrue: true, explanation: 'This is a key technical detail of Pragmatics and Discourse.' },
-    { text: 'Inter-annotator agreement for relation labeling is approximately 78% (kappa approximately 0.66).', isTrue: true, explanation: 'This is a key technical detail of Pragmatics and Discourse.' },
-    { text: 'State-of-the-art RST discourse parsers achieve approximately 63% F1 on relation classification, significantly below syntactic parsing performance (approximately 96% for dependencies).', isTrue: true, explanation: 'This is a key technical detail of Pragmatics and Discourse.' },
+    { text: 'Pragmatics is too subjective to be computationally modeled.', isTrue: false, explanation: 'While pragmatic interpretation involves uncertainty, it is far from arbitrary. Speech act recognition, implicature computation, and presupposition projection follow systematic patterns that can be formalized and learned.' },
+    { text: 'Large language models understand pragmatics because they generate contextually appropriate responses.', isTrue: false, explanation: 'LLMs produce text that often appears pragmatically competent, but probing studies show they frequently fail on scalar implicature, irony detection, and presupposition handling. Apparent pragmatic competence may reflect surface pattern matching rather than genuine reasoning about speaker intentions.' },
+    { text: 'Discourse structure is only relevant for long documents.', isTrue: false, explanation: 'Even a two-sentence text has discourse structure: "I was hungry. I made a sandwich." implies a causal relation.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

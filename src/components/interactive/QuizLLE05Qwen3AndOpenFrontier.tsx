@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE05Qwen3AndOpenFrontier() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Qwen 3 brought hybrid thinking, MoE scaling, and 119-language support to the open-weight ecosystem, challenging the notion that frontier reasoning required closed, proprietary models.', isTrue: true, explanation: 'This captures the core purpose of Qwen 3: The Open Frontier Challenger.' },
-    { text: 'Qwen 3: The Open Frontier Challenger is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Qwen 3: The Open Frontier Challenger is important for building on more advanced topics.' },
-    { text: 'Qwen 3: The Open Frontier Challenger is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Qwen 3: The Open Frontier Challenger is important for building on more advanced topics.' },
+    { text: 'Qwen 3 is just Qwen 2.5 with reasoning bolted on.', isTrue: false, explanation: 'The model was retrained from scratch with a substantially larger dataset (36T vs 18T tokens), a fundamentally different training pipeline that included two stages of RL training, and a new MoE architecture variant. The base model capabilities improved significantly independent of the reasoning features, with notable gains in multilingual quality, code generation, and instruction following.' },
+    { text: '119 languages means strong performance in all 119.', isTrue: false, explanation: 'Language support quality varies significantly with training data availability. High-resource languages (English, Chinese, Japanese, Spanish, French, Korean) see near-frontier performance.' },
+    { text: 'The MoE model is always better than the dense models.', isTrue: false, explanation: 'For tasks that fit within a dense model\'s capacity, Qwen3-32B can be more practical than Qwen3-235B: simpler to deploy (no expert routing overhead), lower total memory requirements, more predictable latency, and comparable quality on many tasks. The MoE model excels primarily on tasks that require the broader knowledge encoded in its full parameter set or that benefit from specialist expert knowledge.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

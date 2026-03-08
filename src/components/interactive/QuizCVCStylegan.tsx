@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCStylegan() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Mapping network: 8 FC layers, 512 units each, LeakyReLU activation, learning rate 0.01 (100x lower than synthesis network).', isTrue: true, explanation: 'This is a key technical detail of StyleGAN.' },
-    { text: 'Training: FFHQ dataset (70,000 images), batch size 32, ~25M images shown, training time ~7 days on 8 V100 GPUs (StyleGAN2).', isTrue: true, explanation: 'This is a key technical detail of StyleGAN.' },
-    { text: 'FID scores (FFHQ 1024x1024): StyleGAN = 4.40, StyleGAN2 = 2.84, StyleGAN3 = 4.40 (tradeoff for equivariance).', isTrue: true, explanation: 'This is a key technical detail of StyleGAN.' },
+    { text: 'StyleGAN only works for faces.', isTrue: false, explanation: 'While faces are the showcase application, StyleGAN has been successfully trained on cars (LSUN Cars), churches (LSUN Church), bedrooms, landscapes, and even medical images. "The mapping network is just an implementation detail." The mapping network is architecturally critical.' },
+    { text: 'StyleGAN introduces a style-based generator architecture that injects learned styles at each resolution through adaptive instance normalization, enabling unprecedented control over face synthesis at 1024x1024 resolution.', isTrue: true, explanation: 'This captures the core definition of StyleGAN.' },
+    { text: 'StyleGAN is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding StyleGAN is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFWeightInitialization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Xavier: $\\text&#123;Var&#125;(w) = \\frac&#123;2&#125;&#123;n_&#123;in&#125; + n_&#123;out&#125;&#125;$.', isTrue: true, explanation: 'This is a key technical detail of Weight Initialization.' },
-    { text: 'Best for sigmoid, tanh, or linear activations.', isTrue: true, explanation: 'This is a key technical detail of Weight Initialization.' },
-    { text: 'He: $\\text&#123;Var&#125;(w) = \\frac&#123;2&#125;&#123;n_&#123;in&#125;&#125;$.', isTrue: true, explanation: 'This is a key technical detail of Weight Initialization.' },
+    { text: 'Initialization only matters for the first few steps.', isTrue: false, explanation: 'Poor initialization can create loss landscape regions from which the optimizer never escapes. Neurons that start dead (in ReLU networks) may never activate.' },
+    { text: 'Xavier, He, and orthogonal initialization -- breaking symmetry and controlling signal magnitude at the start of training.', isTrue: true, explanation: 'This captures the core definition of Weight Initialization.' },
+    { text: 'Weight Initialization is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Weight Initialization is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

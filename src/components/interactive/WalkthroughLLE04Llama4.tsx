@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Mixture of Experts Architecture', desc: 'The foundation of llama 4 begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Early Fusion Multimodality', desc: 'At this stage, the key transformation occurs — the core mechanism that makes llama 4 work.' },
-    { title: '3. The 10M Context Window', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. MetaP: Hyperparameter Prediction', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Training Data and Scale', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Mixture of Experts Architecture', desc: 'Llama 4 marked Meta\'s first adoption of MoE for the Llama family, a significant architectural departure from the dense transformers used in Llama 1 through 3.1.' },
+    { title: '2. Early Fusion Multimodality', desc: 'Unlike models that process images through separate encoders and then fuse representations with text at a later stage, Llama 4 used early fusion — interleaving image and text tokens from the earliest layers of the model.' },
+    { title: '3. The 10M Context Window', desc: 'Scout\'s 10 million-token context window was the longest of any open model at release. This was enabled by iRoPE (interleaved Rotary Position Embeddings), an innovation that alternates between layers using standard RoPE positional encodings and layers with no positional encoding at all.' },
+    { title: '4. MetaP: Hyperparameter Prediction', desc: 'Training models at Llama 4\'s scale requires setting thousands of hyperparameters — learning rates, weight initialization scales, dropout rates — that traditionally require expensive grid searches or manual tuning.' },
+    { title: '5. Training Data and Scale', desc: 'Llama 4 models were trained on approximately 40 trillion tokens of multilingual data, a substantial increase from Llama 3.1\'s 15 trillion tokens. The dataset included text in dozens of languages as well as image-text pairs for multimodal training.' },
+    { title: '6. Post-Training and Alignment', desc: 'Llama 4 underwent extensive post-training, including supervised fine-tuning on instruction-following demonstrations and reinforcement learning from human feedback.' },
 ];
 
 export default function WalkthroughLLE04Llama4() {
@@ -17,10 +18,10 @@ export default function WalkthroughLLE04Llama4() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Llama 4 — Step by Step
+          Llama 4 \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how llama 4 works, one stage at a time.

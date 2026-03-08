@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Decision Tree', desc: 'The foundation of dynamic retrieval decisions begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Confidence-Based Triggers', desc: 'At this stage, the key transformation occurs — the core mechanism that makes dynamic retrieval decisions work.' },
-    { title: '3. Retrieval Budgets', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Adaptive Thresholds', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Decision Tree', desc: 'The agent evaluates incoming queries through a series of gates. First: is this a factual question or an opinion/creative task?' },
+    { title: '2. Confidence-Based Triggers', desc: 'The agent can assess its own certainty through several mechanisms. Token-level probabilities provide a direct measure -- if the model\'s top predicted tokens have low probability, it is uncertain.' },
+    { title: '3. Retrieval Budgets', desc: 'Not all queries deserve the same retrieval investment. A retrieval budget framework assigns different resource limits based on query importance and complexity.' },
+    { title: '4. Adaptive Thresholds', desc: 'Static confidence thresholds work poorly because different domains have different baseline difficulty levels. Adaptive thresholds adjust based on the query domain, user feedback, and historical accuracy.' },
 ];
 
 export default function WalkthroughAACDynamicRetrievalDecisions() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACDynamicRetrievalDecisions() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Dynamic Retrieval Decisions — Step by Step
+          Dynamic Retrieval Decisions \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how dynamic retrieval decisions works, one stage at a time.

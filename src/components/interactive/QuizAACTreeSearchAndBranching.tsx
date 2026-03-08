@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACTreeSearchAndBranching() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Tree search explores multiple solution paths simultaneously, allowing agents to consider alternative actions like a chess player evaluating candidate moves, backtracking from dead ends, and selecting the most promising path forward.', isTrue: true, explanation: 'This captures the core purpose of Tree Search and Branching.' },
-    { text: 'Tree Search and Branching is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Tree Search and Branching is important for building on more advanced topics.' },
-    { text: 'Tree Search and Branching is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Tree Search and Branching is important for building on more advanced topics.' },
+    { text: 'Tree search is always better than linear reasoning.', isTrue: false, explanation: 'The computational cost of tree search is multiplicative. For straightforward tasks where the greedy path usually works, tree search wastes resources exploring unnecessary alternatives.' },
+    { text: 'Typically 3-5 candidates per node; higher k increases coverage but multiplies computational cost', isTrue: true, explanation: 'Typically 3-5 candidates per node; higher k increases coverage but multiplies computational cost' },
+    { text: 'The LLM evaluator is reliable.', isTrue: false, explanation: 'LLM self-evaluation is noisy and biased. The same model that generated a flawed solution may rate it highly.' },
+    { text: 'Typically 2-5 parallel paths; b=1 degenerates to greedy search, b&gt;5 rarely provides additional benefit', isTrue: true, explanation: 'Typically 2-5 parallel paths; b=1 degenerates to greedy search, b&gt;5 rarely provides additional benefit' },
+    { text: 'More branching always helps.', isTrue: false, explanation: 'Beyond a certain branching factor, candidates become redundant (minor variations of the same idea) and evaluation noise dominates. Diminishing returns typically set in around k=5.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

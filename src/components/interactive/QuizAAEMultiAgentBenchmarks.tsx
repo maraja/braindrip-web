@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEMultiAgentBenchmarks() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'natural language) impact coordination quality by 10-20% Multi-agent evaluation runs cost 3-10x more than equivalent single-agent evaluations due to inter-agent communication overhead', isTrue: true, explanation: 'This is a key technical detail of Multi-Agent Benchmarks.' },
-    { text: 'Multi-agent benchmarks evaluate systems of cooperating (or competing) AI agents, measuring coordination quality, communication efficiency, and emergent group behavior that single-agent benchmarks cannot capture.', isTrue: true, explanation: 'This captures the core purpose of Multi-Agent Benchmarks.' },
-    { text: 'Multi-Agent Benchmarks is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Multi-Agent Benchmarks is important for building on more advanced topics.' },
+    { text: 'Multi-agent systems are always better than single-agent systems.', isTrue: false, explanation: 'For many tasks, a single capable agent outperforms a team of specialized agents because coordination overhead exceeds the benefit of specialization. Multi-agent architectures become advantageous primarily when tasks genuinely require diverse capabilities or parallel execution.' },
+    { text: 'You can evaluate multi-agent systems by evaluating each agent individually.', isTrue: false, explanation: 'Individual agent quality is necessary but not sufficient. A team of strong agents with poor coordination protocols will underperform a team of adequate agents with excellent coordination.' },
+    { text: 'More agents means better performance.', isTrue: false, explanation: 'Adding agents increases communication complexity quadratically (in fully connected topologies). Beyond 4-5 agents, most current systems show diminishing or negative returns unless the coordination architecture is carefully designed.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

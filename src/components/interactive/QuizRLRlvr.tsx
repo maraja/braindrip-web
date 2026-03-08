@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLRlvr() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'graded rewards: Binary (correct/incorrect) rewards work well with GRPO because group normalization handles the sparse signal.', isTrue: true, explanation: 'This is a key technical detail of RLVR.' },
-    { text: 'Within a group of 16--64 samples, some will be correct and others incorrect, creating a natural advantage signal.', isTrue: true, explanation: 'This is a key technical detail of RLVR.' },
-    { text: 'Answer extraction: Robust regex-based extraction is critical.', isTrue: true, explanation: 'This is a key technical detail of RLVR.' },
+    { text: 'RLVR only works for math and code.', isTrue: false, explanation: 'While math and code are the most natural domains, RLVR applies to any task with programmatically checkable outputs: formal proofs, constraint satisfaction problems, puzzle solving, factual question answering with known answers, and structured data extraction against ground truth. "Binary rewards are too sparse for RL." Group-based methods like GRPO handle binary rewards well.' },
+    { text: 'Binary (correct/incorrect) rewards work well with GRPO because group normalization handles the sparse signal.', isTrue: true, explanation: 'Within a group of 16--64 samples, some will be correct and others incorrect, creating a natural advantage signal.' },
+    { text: 'Robust regex-based extraction is critical.', isTrue: true, explanation: 'Common patterns include "The answer is X", "\\&#123;X&#125;", and structured output formats. Extraction failures should receive reward 0, not a default value.' },
+    { text: 'Math verification must handle equivalent expressions: &#123;2&#125;&#123;4&#125; = &#123;1&#125;&#123;2&#125; = 0.5.', isTrue: true, explanation: 'Libraries like SymPy provide symbolic comparison.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

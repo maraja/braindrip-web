@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE01TheBenchmarkAndEvaluationLandscape() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'MMLU (2020): 15,908 questions, 57 subjects.', isTrue: true, explanation: 'This is a key technical detail of The Benchmark and Evaluation Landscape.' },
-    { text: 'GPT-3: ~43%, GPT-4: ~86.4%, 2025 frontier: &gt;90% (saturated) GPQA Diamond (2023): PhD-level science.', isTrue: true, explanation: 'This is a key technical detail of The Benchmark and Evaluation Landscape.' },
-    { text: 'Expert human accuracy ~65%.', isTrue: true, explanation: 'This is a key technical detail of The Benchmark and Evaluation Landscape.' },
+    { text: 'Higher benchmark scores always mean a better model.', isTrue: false, explanation: 'Benchmark scores measure specific capabilities under specific conditions. A model with 2% higher MMLU but worse instruction following, worse tone, and worse reliability may be a worse product.' },
+    { text: 'LMArena (Arena) is perfectly reliable.', isTrue: false, explanation: 'Arena has its own biases: user prompts skew toward certain demographics and use cases, verbose responses often win over concise ones, and the platform\'s user base is not representative of all LLM users. It is the best available measure of human preference, not a perfect one.' },
+    { text: 'Benchmark saturation means models have learned everything.', isTrue: false, explanation: 'Saturation means models have reached the ceiling of what that specific test measures. It does not mean they have mastered the underlying domain.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

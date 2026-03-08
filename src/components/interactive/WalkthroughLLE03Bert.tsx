@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture: Encoder-Only Transformer', desc: 'The foundation of bert: bidirectional encoder representations from transformers begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Masked Language Modeling (MLM)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes bert: bidirectional encoder representations from transformers work.' },
-    { title: '3. Next Sentence Prediction (NSP)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Pre-training Details', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Fine-tuning: Elegant Simplicity', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Architecture: Encoder-Only Transformer', desc: 'BERT uses only the encoder portion of the original Transformer, discarding the decoder and cross-attention entirely. It came in two sizes:  BERT-Base: 12 layers, 12 attention heads, d_model=768, 110M parameters BERT-Large: 24 layers, 16 attention heads, d_model=1024, 340M parameters  The.' },
+    { title: '2. Masked Language Modeling (MLM)', desc: 'The primary pre-training objective randomly selects 15% of input tokens for prediction. Of those selected tokens: 80% are replaced with [MASK], 10% are replaced with a random token, and 10% are left unchanged.' },
+    { title: '3. Next Sentence Prediction (NSP)', desc: 'The secondary pre-training objective was Next Sentence Prediction: given two sentences A and B, predict whether B actually follows A in the original text (50% positive, 50% random negatives). The input format was: [CLS] sentence A [SEP] sentence B [SEP].' },
+    { title: '4. Pre-training Details', desc: 'BERT was pre-trained on BooksCorpus (800M words) + English Wikipedia (2,500M words) — about 3.3 billion words total (16GB of text). Training used 256 sequences of 512 tokens per batch (effectively 128K tokens per batch).' },
+    { title: '5. Fine-tuning: Elegant Simplicity', desc: 'BERT\'s fine-tuning approach was remarkably simple: add a single task-specific output layer and fine-tune the entire model end-to-end. For classification, use the [CLS] token\'s representation.' },
 ];
 
 export default function WalkthroughLLE03Bert() {
@@ -17,10 +17,10 @@ export default function WalkthroughLLE03Bert() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          BERT: Bidirectional Encoder Representations from Transformers — Step by Step
+          BERT: Bidirectional Encoder Representations from Transformers \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how bert: bidirectional encoder representations from transformers works, one stage at a time.

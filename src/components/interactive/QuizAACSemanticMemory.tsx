@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACSemanticMemory() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Knowledge graph size: Most agent semantic memory stores contain hundreds to thousands of entities and relationships.', isTrue: true, explanation: 'This is a key technical detail of Semantic Memory.' },
-    { text: 'Complex multi-hop queries are rare in practice Hybrid retrieval: Combining structured queries (exact fact lookup) with vector search (semantic similarity) provides the best coverage.', isTrue: true, explanation: 'This is a key technical detail of Semantic Memory.' },
-    { text: 'Well within the capacity of any database Consistency checking: Periodically run consistency checks on the knowledge graph: identify contradictions, orphaned entities, and stale facts.', isTrue: true, explanation: 'This is a key technical detail of Semantic Memory.' },
+    { text: 'The LLM\'s weights are sufficient semantic memory.', isTrue: false, explanation: 'LLM parametric knowledge is frozen, sometimes incorrect, and generic. It does not know about your specific project, your user\'s preferences, or facts that emerged after training.' },
+    { text: 'Most agent semantic memory stores contain hundreds to thousands of entities and relationships.', isTrue: true, explanation: 'This is manageable in-memory (NetworkX) for small stores or in a dedicated graph database for larger stores' },
+    { text: 'Semantic memory and episodic memory are the same thing.', isTrue: false, explanation: 'They store fundamentally different types of information. Episodic memory stores experiences (task traces, interaction histories).' },
+    { text: 'Extracting entities and relationships from natural language text costs one LLM call per passage (~200-500 tokens).', isTrue: true, explanation: 'Automated extraction is 70-85% accurate; critical facts should be user-confirmed' },
+    { text: 'Knowledge graphs are too complex for agent memory.', isTrue: false, explanation: 'While full-scale knowledge graph engineering is complex, lightweight entity-relationship stores (implemented as JSON files or simple key-value databases) provide most of the benefit with minimal complexity. Scale the implementation to the need.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

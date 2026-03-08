@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCMaskRcnn() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Mask R-CNN with ResNet-50-FPN: 37.1 mask AP on COCO test-dev (original 2017 paper).', isTrue: true, explanation: 'This is a key technical detail of Mask R-CNN.' },
-    { text: 'Mask R-CNN with ResNet-101-FPN: 38.2 mask AP.', isTrue: true, explanation: 'This is a key technical detail of Mask R-CNN.' },
-    { text: 'With ResNeXt-101-FPN: 39.8 mask AP.', isTrue: true, explanation: 'This is a key technical detail of Mask R-CNN.' },
+    { text: 'Mask R-CNN is slow because it processes each region independently.', isTrue: false, explanation: 'While it is not single-shot, the shared backbone computes features once, and the per-RoI heads are lightweight. The overhead of the mask branch over Faster R-CNN is ~20%, not 2x.' },
+    { text: 'Mask R-CNN extends Faster R-CNN with a parallel mask prediction branch and introduces RoIAlign for pixel-accurate feature extraction, establishing the dominant framework for instance segmentation.', isTrue: true, explanation: 'This captures the core definition of Mask R-CNN.' },
+    { text: 'Mask R-CNN is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Mask R-CNN is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACAgenticRag() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Retrieval-as-tool pattern: Retrieval is exposed as one or more tools (e.g., search_docs, query_database, web_search) that the agent invokes through the standard tool-calling interface.', isTrue: true, explanation: 'This is a key technical detail of Agentic RAG.' },
-    { text: 'Adaptive retrieval budgets: The agent has a configurable maximum number of retrieval rounds (typically 1-5) to prevent infinite retrieval loops while allowing iterative refinement.', isTrue: true, explanation: 'This is a key technical detail of Agentic RAG.' },
-    { text: 'Relevance scoring: After each retrieval, the agent (or a dedicated re-ranker) scores results for relevance, filtering out noise before including results in the generation context.', isTrue: true, explanation: 'This is a key technical detail of Agentic RAG.' },
+    { text: 'Agentic RAG is just RAG with more steps.', isTrue: false, explanation: 'The fundamental difference is agency: the system makes dynamic decisions about whether, when, and how to retrieve, rather than following a fixed pipeline. The decision-making intelligence is the core innovation, not just iteration.' },
+    { text: 'Retrieval is exposed as one or more tools (e.g., search_docs, query_database, web_search) that the agent invokes through the standard tool-calling interface.', isTrue: true, explanation: 'Retrieval is exposed as one or more tools (e.g., search_docs, query_database, web_search) that the agent invokes through the standard tool-calling interface.' },
+    { text: 'You always need retrieval for factual questions.', isTrue: false, explanation: 'Large language models have extensive parametric knowledge. Retrieving for well-known facts wastes resources and can introduce noise.' },
+    { text: 'The agent has a configurable maximum number of retrieval rounds (typically 1-5) to prevent infinite retrieval loops while allowing iterative refinement.', isTrue: true, explanation: 'The agent has a configurable maximum number of retrieval rounds (typically 1-5) to prevent infinite retrieval loops while allowing iterative refinement.' },
+    { text: 'More retrieval rounds always improve quality.', isTrue: false, explanation: 'Beyond 2-3 rounds, retrieval often returns diminishing or redundant information. Over-retrieval can flood the context window with noise, actually degrading response quality.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

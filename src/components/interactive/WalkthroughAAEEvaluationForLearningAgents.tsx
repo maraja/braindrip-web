@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Moving Target Problem', desc: 'The foundation of evaluation for learning agents begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Learning Curves', desc: 'At this stage, the key transformation occurs — the core mechanism that makes evaluation for learning agents work.' },
-    { title: '3. Skill Acquisition Evaluation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Knowledge Retention (Catastrophic Forgetting)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Evaluating the Learning Process', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Moving Target Problem', desc: 'Static evaluation measures P(success  agent(t), task), where agent(t) denotes the agent at time t. The agent\'s capability is a function, not a constant.' },
+    { title: '2. Learning Curves', desc: 'The learning curve -- performance as a function of experience -- is the primary evaluation tool for learning agents. Key metrics extracted from learning curves include:  Learning rate.' },
+    { title: '3. Skill Acquisition Evaluation', desc: 'Beyond overall performance improvement, learning agents can be evaluated on their ability to acquire specific new skills:  Novel tool use. Given a new tool with documentation, can the agent learn to use it effectively?' },
+    { title: '4. Knowledge Retention (Catastrophic Forgetting)', desc: 'A critical failure mode for learning agents: acquiring new capabilities at the expense of existing ones. This catastrophic forgetting is well-documented in neural networks and appears in agent systems as well.' },
+    { title: '5. Evaluating the Learning Process', desc: 'Beyond measuring learned outcomes, evaluation can target the learning process itself:  Feedback integration. When given explicit feedback (error messages, human corrections, reward signals), how quickly and accurately does the agent update its behavior?' },
 ];
 
 export default function WalkthroughAAEEvaluationForLearningAgents() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAEEvaluationForLearningAgents() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Evaluation for Learning Agents — Step by Step
+          Evaluation for Learning Agents \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how evaluation for learning agents works, one stage at a time.

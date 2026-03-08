@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPGlove() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Analogy task performance: GloVe 300d trained on 6B tokens achieves ~75% accuracy on the word analogy task, compared to ~65% for Word2Vec on comparable data.', isTrue: true, explanation: 'This is a key technical detail of GloVe.' },
-    { text: 'On 42B tokens, GloVe reaches ~82%.', isTrue: true, explanation: 'This is a key technical detail of GloVe.' },
-    { text: 'Word similarity correlations: On the WordSim-353 dataset, GloVe 300d achieves a Spearman correlation of 0.75-0.80 with human similarity judgments.', isTrue: true, explanation: 'This is a key technical detail of GloVe.' },
+    { text: 'GloVe is fundamentally different from Word2Vec.', isTrue: false, explanation: 'Levy and Goldberg (2014) showed that Word2Vec\'s Skip-gram with negative sampling implicitly factorizes a shifted PMI matrix. GloVe explicitly factorizes a log co-occurrence matrix.' },
+    { text: 'GloVe 300d trained on 6B tokens achieves ~75% accuracy on the word analogy task, compared to ~65% for Word2Vec on comparable data.', isTrue: true, explanation: 'On 42B tokens, GloVe reaches ~82%.' },
+    { text: 'GloVe always outperforms Word2Vec.', isTrue: false, explanation: 'Performance depends on the specific task, training data, and hyperparameters. On intrinsic evaluation (analogies, similarity), GloVe often has a slight edge with large corpora.' },
+    { text: 'On the WordSim-353 dataset, GloVe 300d achieves a Spearman correlation of 0.75-0.80 with human similarity judgments.', isTrue: true, explanation: 'On the WordSim-353 dataset, GloVe 300d achieves a Spearman correlation of 0.75-0.80 with human similarity judgments.' },
+    { text: 'GloVe embeddings are context-aware.', isTrue: false, explanation: 'Like Word2Vec, GloVe produces a single static vector per word type. The word "bank" gets the same vector whether it appears in "river bank" or "bank account." Contextual embeddings (see contextual-embeddings.md) were developed to address this limitation.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizRLRoboticsAndControl() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Action spaces: Typically continuous joint torques or velocities, $\\mathcal&#123;A&#125; \\subset \\mathbb&#123;R&#125;^d$ with $d = 6\\text&#123;--&#125;30$ for manipulators and quadrupeds.', isTrue: true, explanation: 'This is a key technical detail of Robotics and Control.' },
-    { text: 'Observation spaces: Joint positions/velocities (proprioception), force/torque sensors, cameras (RGB or depth), and sometimes privileged simulation state during training.', isTrue: true, explanation: 'This is a key technical detail of Robotics and Control.' },
-    { text: 'Control frequency: Policies typically run at 20--100 Hz for manipulation, 50--200 Hz for locomotion.', isTrue: true, explanation: 'This is a key technical detail of Robotics and Control.' },
+    { text: 'Sim-to-real is solved.', isTrue: false, explanation: 'Domain randomization works well for locomotion and some manipulation tasks, but deformable object manipulation (folding clothes, tying knots), tasks requiring precise force control (inserting a USB cable), and long-horizon contact-rich tasks remain extremely challenging to transfer.' },
+    { text: 'Typically continuous joint torques or velocities, &#123;A&#125;  &#123;R&#125;^d with d = 6--30 for manipulators and quadrupeds.', isTrue: true, explanation: 'Typically continuous joint torques or velocities, &#123;A&#125;  &#123;R&#125;^d with d = 6--30 for manipulators and quadrupeds.' },
+    { text: 'More realistic simulation always helps.', isTrue: false, explanation: 'Paradoxically, highly realistic but slightly wrong simulation can be worse than coarser but more varied simulation. Domain randomization succeeds partly because it avoids overfitting to any single physics model, no matter how detailed.' },
+    { text: 'Joint positions/velocities (proprioception), force/torque sensors, cameras (RGB or depth), and sometimes privileged simulation state during training.', isTrue: true, explanation: 'Joint positions/velocities (proprioception), force/torque sensors, cameras (RGB or depth), and sometimes privileged simulation state during training.' },
+    { text: 'RL will replace classical control.', isTrue: false, explanation: 'For well-characterized systems (industrial arms performing repetitive tasks), classical control (PID, model predictive control) remains more reliable, interpretable, and certifiable. RL excels when the task is complex, the environment is unstructured, or the dynamics are hard to model analytically.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

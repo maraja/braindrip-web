@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Patch Embedding', desc: 'The foundation of vision transformer (vit) begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Class Token and Positional Embeddings', desc: 'At this stage, the key transformation occurs — the core mechanism that makes vision transformer (vit) work.' },
-    { title: '3. Transformer Encoder', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Classification Head', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Model Variants', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Patch Embedding', desc: 'Given a 224 x 224 x 3 image and patch size P = 16:  [equation]  Each patch is flattened to a vector of length 16 x 16 x 3 = 768 and projected through a linear layer E  &#123;R&#125;^&#123;768 x D&#125; to produce the patch embedding.' },
+    { title: '2. Class Token and Positional Embeddings', desc: 'A learnable [&#123;CLS&#125;] token embedding z_0^0  &#123;R&#125;^D is prepended, yielding a sequence of length N + 1 = 197. Learnable 1D positional embeddings E_&#123;pos&#125;  &#123;R&#125;^&#123;(N+1) x D&#125; are added element-wise.' },
+    { title: '3. Transformer Encoder', desc: 'The sequence passes through L identical blocks, each consisting of:  Layer normalization Multi-head self-attention (MSA) Residual connection Layer normalization MLP (two linear layers with GELU activation) Residual connection  [equation] [equation]' },
+    { title: '4. Classification Head', desc: 'The final representation of the [&#123;CLS&#125;] token z_L^0 is fed to a linear classification head during pre-training and a smaller MLP head during fine-tuning.' },
+    { title: '5. Model Variants', desc: 'The notation ViT-B/16 means Base model with 16 x 16 patches. ViT-B/32 uses 32 x 32 patches, yielding only 49 tokens for a 224-pixel image and running roughly 4x faster.' },
 ];
 
 export default function WalkthroughCVCVisionTransformer() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCVisionTransformer() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Vision Transformer (ViT) — Step by Step
+          Vision Transformer (ViT) \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how vision transformer (vit) works, one stage at a time.

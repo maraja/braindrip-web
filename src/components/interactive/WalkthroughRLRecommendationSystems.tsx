@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Recommendation MDP', desc: 'The foundation of recommendation systems begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Slate Recommendation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes recommendation systems work.' },
-    { title: '3. Session-Based RL', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Exploration for Recommendations', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Off-Policy Evaluation and Offline RL', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Recommendation MDP', desc: 'The recommendation problem maps naturally to an MDP:  State: User\'s interaction history, profile, context (time, device, session features) Actions: Items to recommend (or a ranked list/slate of items) Reward: User engagement signals (clicks, dwell time, purchases, ratings, return.' },
+    { title: '2. Slate Recommendation', desc: 'Real recommenders present slates (ordered lists) of items, not single items. This creates a combinatorial action space: for N items and slate size k, there are &#123;N&#125;&#123;k&#125;  k!' },
+    { title: '3. Session-Based RL', desc: 'Within a single user session, the recommender adapts based on real-time feedback:  User arrives (initial state from history) System recommends an item User clicks (or skips) -- reward signal System updates its belief about user intent Next recommendation incorporates updated belief Session ends.' },
+    { title: '4. Exploration for Recommendations', desc: 'Exploration is critical but risky in recommender systems:  Exploitation: Recommend items the system is confident the user will like (safe, but creates filter bubbles) Exploration: Recommend uncertain items to learn user preferences (risky, may drive users away)  The cost of exploration is.' },
+    { title: '5. Off-Policy Evaluation and Offline RL', desc: 'Deploying a new RL-based recommender is risky -- you can\'t test it on real users without potentially degrading their experience. Off-policy evaluation (OPE) estimates how a new policy would perform using data collected by the old policy:  [equation]  This importance-sampling estimator is unbiased.' },
+    { title: '6. Production Architectures', desc: 'Real-world RL recommenders typically use a two-stage architecture:  Candidate generation: Retrieve a manageable set (100-1000) from millions of items using embedding similarity or collaborative filtering RL ranking: Apply the RL policy to rank/select from the candidate set  This keeps the RL action.' },
 ];
 
 export default function WalkthroughRLRecommendationSystems() {
@@ -17,10 +18,10 @@ export default function WalkthroughRLRecommendationSystems() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Recommendation Systems — Step by Step
+          Recommendation Systems \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how recommendation systems works, one stage at a time.

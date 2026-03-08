@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCUNet() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Original parameter count: approximately 31 million parameters for the 2D version.', isTrue: true, explanation: 'This is a key technical detail of U-Net.' },
-    { text: 'The original paper used valid convolutions (no padding), so the output is smaller than the input (572x572 in, 388x388 out).', isTrue: true, explanation: 'This is a key technical detail of U-Net.' },
-    { text: 'Modern implementations typically use same-padding to match input/output sizes.', isTrue: true, explanation: 'This is a key technical detail of U-Net.' },
+    { text: 'U-Net is only for medical images.', isTrue: false, explanation: 'While designed for biomedical data, U-Net is used in satellite imaging, materials science, autonomous driving, and as the denoising backbone in diffusion models. The architecture is domain-agnostic.' },
+    { text: 'U-Net is a symmetric encoder-decoder architecture with skip connections that concatenate encoder features to decoder layers, enabling precise localization from very few training images -- particularly dominant in medical image segmentation.', isTrue: true, explanation: 'This captures the core definition of U-Net.' },
+    { text: 'U-Net is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding U-Net is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

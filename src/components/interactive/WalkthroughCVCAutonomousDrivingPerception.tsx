@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Sensor Modalities', desc: 'The foundation of autonomous driving perception begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Multi-Sensor Fusion', desc: 'At this stage, the key transformation occurs — the core mechanism that makes autonomous driving perception work.' },
-    { title: '3. Bird\'s-Eye View (BEV) Representation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. 3D Object Detection', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. End-to-End Perception', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Sensor Modalities', desc: 'No single sensor is sufficient. Cameras provide rich semantic information but lack direct depth.' },
+    { title: '2. Multi-Sensor Fusion', desc: 'Early Fusion: Project LiDAR points onto camera images (or vice versa) before feature extraction. Preserves raw data but requires precise calibration.' },
+    { title: '3. Bird\'s-Eye View (BEV) Representation', desc: 'BEV has become the unified representation for autonomous driving. Instead of reasoning in each sensor\'s native coordinate frame, all information is projected into a top-down 2D grid (typically covering 100m x 100m around the ego vehicle at 0.5m resolution).' },
+    { title: '4. 3D Object Detection', desc: 'LiDAR-based: PointPillars (Lang et al., 2019): Encodes LiDAR points into vertical pillars, applies PointNet per pillar, then 2D detection on the resulting pseudo-image. Fast (~60 FPS) but less accurate.' },
+    { title: '5. End-to-End Perception', desc: 'The trend is toward unified models that take raw sensors and directly output planning trajectories, bypassing modular perception-prediction-planning pipelines. UniAD (Hu et al.' },
+    { title: '6. Tesla vs. Waymo Approaches', desc: 'Tesla (Vision-only): Removed radar and LiDAR from its production stack. Uses 8 cameras with a BEV Transformer (Occupancy Network).' },
 ];
 
 export default function WalkthroughCVCAutonomousDrivingPerception() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCAutonomousDrivingPerception() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Autonomous Driving Perception — Step by Step
+          Autonomous Driving Perception \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how autonomous driving perception works, one stage at a time.

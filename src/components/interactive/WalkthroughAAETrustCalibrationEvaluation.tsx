@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Calibration Measurement', desc: 'The foundation of trust calibration evaluation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Overconfidence Detection', desc: 'At this stage, the key transformation occurs — the core mechanism that makes trust calibration evaluation work.' },
-    { title: '3. Underconfidence Detection', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Measuring Uncertainty Expression', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The Hallucination Confidence Problem', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Calibration Measurement', desc: 'Calibration measures the correspondence between expressed confidence and actual accuracy. The core methodology borrows from probability calibration in forecasting and extends it to agent behavior.' },
+    { title: '2. Overconfidence Detection', desc: 'Overconfidence -- asserting incorrect information with high certainty -- is the most dangerous calibration failure for agents because it suppresses the user\'s natural impulse to verify. Factual overconfidence occurs when the agent states incorrect facts with certainty.' },
+    { title: '3. Underconfidence Detection', desc: 'Underconfidence -- excessive hedging on correct output -- is less dangerous but reduces user trust and efficiency. Capability underconfidence occurs when the agent unnecessarily hedges on tasks within its demonstrated competence.' },
+    { title: '4. Measuring Uncertainty Expression', desc: 'Beyond binary confident/uncertain, evaluation should assess the quality and granularity of the agent\'s uncertainty communication. Appropriate qualifier usage measures whether the agent uses linguistically appropriate hedging.' },
+    { title: '5. The Hallucination Confidence Problem', desc: 'The most pernicious calibration failure is confident hallucination: the agent fabricates information and presents it with high confidence. This is qualitatively different from ordinary overconfidence because the agent is not merely wrong about a judgment call -- it has generated false information.' },
+    { title: '6. User Trust Dynamics', desc: 'Trust calibration extends beyond the agent\'s expressed confidence to how users respond to those signals. Trust transfer measurement assesses whether users appropriately adjust their trust based on the agent\'s confidence signals.' },
 ];
 
 export default function WalkthroughAAETrustCalibrationEvaluation() {
@@ -17,10 +18,10 @@ export default function WalkthroughAAETrustCalibrationEvaluation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Trust Calibration Evaluation — Step by Step
+          Trust Calibration Evaluation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how trust calibration evaluation works, one stage at a time.

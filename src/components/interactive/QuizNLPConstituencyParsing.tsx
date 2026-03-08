@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPConstituencyParsing() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Penn Treebank (WSJ section 23): Standard English benchmark; SOTA ~96.3% labeled bracketing F1.', isTrue: true, explanation: 'This is a key technical detail of Constituency Parsing.' },
-    { text: 'PCFG baseline: ~73% F1; lexicalized PCFGs ~89%; neural chart parsers ~95.5--96.3%.', isTrue: true, explanation: 'This is a key technical detail of Constituency Parsing.' },
-    { text: 'Kitaev & Klein (2018): Self-attentive encoder achieving ~95.1% F1 without pre-training; ~95.8% with BERT.', isTrue: true, explanation: 'This is a key technical detail of Constituency Parsing.' },
+    { text: 'PCFGs capture all syntactic phenomena.', isTrue: false, explanation: 'PCFGs assume context-free independence -- the expansion of a node does not depend on its location in the tree. This misses lexical preferences, coordination constraints, and many other context-sensitive patterns.' },
+    { text: 'Standard English benchmark; SOTA ~96.3% labeled bracketing F1.', isTrue: true, explanation: 'Standard English benchmark; SOTA ~96.3% labeled bracketing F1.' },
+    { text: 'Constituency parsing is obsolete in the neural era.', isTrue: false, explanation: 'While some end-to-end systems bypass explicit parsing, constituency trees remain valuable for interpretability, linguistic analysis, and tasks where hierarchical structure matters (e.g., discourse parsing, code generation). Neural parsers have actually revived interest by making high-quality parsing fast and accurate.' },
+    { text: '~73% F1; lexicalized PCFGs ~89%; neural chart parsers ~95.5--96.3%.', isTrue: true, explanation: '~73% F1; lexicalized PCFGs ~89%; neural chart parsers ~95.5--96.3%.' },
+    { text: 'Higher F1 means better linguistic quality.', isTrue: false, explanation: 'Bracketing F1 measures structural overlap between predicted and gold trees, but it overweights long spans and may not penalize linguistically significant errors (e.g., PP-attachment) proportionally. Some linguistically important distinctions have minimal impact on F1.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

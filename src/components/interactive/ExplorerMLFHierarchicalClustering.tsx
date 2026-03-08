@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Naive complexity', detail: '$O(n^3)$ time and $O(n^2)$ space for the distance matrix' },
-    { label: 'Optimized', detail: 'With priority queues and nearest-neighbor chains, single linkage achieves $O(n^2)$, and average/complete linkage achieve $O(n^2 \\log n)$' },
+    { label: 'Naive complexity', detail: 'O(n^3) time and O(n^2) space for the distance matrix' },
+    { label: 'Optimized', detail: 'With priority queues and nearest-neighbor chains, single linkage achieves O(n^2), and average/complete linkage achieve O(n^2  n)' },
     { label: 'Monotonicity', detail: 'For single, complete, average, and Ward\'s linkage, merge distances increase monotonically -- ensuring the dendrogram has no inversions' },
     { label: 'Cophenetic correlation', detail: 'Measures how faithfully the dendrogram preserves pairwise distances; higher values indicate better representation' },
     { label: 'Irreversibility', detail: 'Once two clusters are merged (agglomerative) or split (divisive), the decision is permanent. Early mistakes propagate through the entire hierarchy' },
-    { label: 'Distance matrix storage', detail: 'The $n \\times n$ distance matrix requires $O(n^2)$ memory. For $n = 50{,}000$, this is approximately 10 GB with 64-bit floats, setting a practical upper bound on dataset size' },
+    { label: 'Distance matrix storage', detail: 'The n x n distance matrix requires O(n^2) memory. For n = 50&#123;,&#125;000, this is approximately 10 GB with 64-bit floats, setting a practical upper bound on dataset size' },
 ];
 
 export default function ExplorerMLFHierarchicalClustering() {
@@ -20,10 +20,10 @@ export default function ExplorerMLFHierarchicalClustering() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Hierarchical Clustering — Key Details Explorer
+          Hierarchical Clustering \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of hierarchical clustering.
+          Click each card to explore the technical details.
         </p>
       </div>
 

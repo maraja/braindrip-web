@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAAEMetaEvaluation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Minimum agents for discrimination analysis: Kendall\'s $\\tau$ requires $K \\geq 5$ agents for a meaningful estimate.', isTrue: true, explanation: 'This is a key technical detail of Meta-Evaluation.' },
-    { text: 'With fewer, use pairwise accuracy instead.', isTrue: true, explanation: 'This is a key technical detail of Meta-Evaluation.' },
-    { text: 'Items with $a_j &lt; 0.5$ are poor discriminators.', isTrue: true, explanation: 'This is a key technical detail of Meta-Evaluation.' },
+    { text: 'A widely-used benchmark is automatically a good benchmark.', isTrue: false, explanation: 'Popularity is not validity. MNIST remained a standard benchmark long after it ceased to discriminate between modern architectures.' },
+    { text: 'Kendall\'s  requires K  5 agents for a meaningful estimate.', isTrue: true, explanation: 'With fewer, use pairwise accuracy instead.' },
+    { text: 'For sophisticated item analysis, fit a 2-parameter IRT model: P(success_&#123;ij&#125;) = &#123;1&#125;&#123;1+e^&#123;-a_j(_i - b_j)&#125;&#125; where a_j is discrimination, b_j is difficulty, and _i is agent ability.', isTrue: true, explanation: 'Items with a_j &lt; 0.5 are poor discriminators.' },
+    { text: 'Run the same evaluation twice on the same agent.', isTrue: true, explanation: 'Compute Pearson\'s r between the two score vectors. Target: r  0.90.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

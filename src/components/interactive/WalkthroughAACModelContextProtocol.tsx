@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture: Hosts, Clients, and Servers', desc: 'The foundation of model context protocol (mcp) begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Three Primitives', desc: 'At this stage, the key transformation occurs — the core mechanism that makes model context protocol (mcp) work.' },
-    { title: '3. Discovery and Capability Negotiation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Lifecycle Management', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Architecture: Hosts, Clients, and Servers', desc: 'MCP uses a three-layer architecture:  Host: The AI application the user interacts with (e.g., Claude Desktop, an IDE with AI integration). The host manages one or more MCP clients.' },
+    { title: '2. The Three Primitives', desc: 'Tools: Functions that the AI model can invoke, equivalent to function calling. Each tool has a name, description, and input schema.' },
+    { title: '3. Discovery and Capability Negotiation', desc: 'When a client connects to a server, they exchange capability messages. The server declares which primitives it supports (tools, resources, prompts) and their specifications.' },
+    { title: '4. Lifecycle Management', desc: 'MCP servers can be local processes (started and stopped by the host application) or remote services (always running). The protocol includes initialization handshakes, keepalive mechanisms, and graceful shutdown procedures.' },
 ];
 
 export default function WalkthroughAACModelContextProtocol() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACModelContextProtocol() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Model Context Protocol (MCP) — Step by Step
+          Model Context Protocol (MCP) \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how model context protocol (mcp) works, one stage at a time.

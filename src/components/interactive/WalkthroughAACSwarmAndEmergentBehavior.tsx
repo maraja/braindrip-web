@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Simple Rules, Complex Behavior', desc: 'The foundation of swarm and emergent behavior begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Stigmergy: Communication Through the Environment', desc: 'At this stage, the key transformation occurs — the core mechanism that makes swarm and emergent behavior work.' },
-    { title: '3. Handoff Mechanics (OpenAI Swarm)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Self-Organization', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Simple Rules, Complex Behavior', desc: 'Each agent in a swarm follows locally-scoped rules defined by its system prompt and tool set:  Competence rule: "Handle requests about billing. If the request is about technical issues, hand off to the technical support agent.' },
+    { title: '2. Stigmergy: Communication Through the Environment', desc: 'In biological swarms, agents often communicate indirectly through the environment — a concept called stigmergy. Ants leave pheromone trails; termites build structures based on what existing structures look like.' },
+    { title: '3. Handoff Mechanics (OpenAI Swarm)', desc: 'OpenAI\'s Swarm implements handoffs as tool calls:  Each agent has a handoff_to_X function in its tool set for each agent it can transfer to. When the agent decides (based on its instructions) that another agent should handle the conversation, it calls the handoff function.' },
+    { title: '4. Self-Organization', desc: 'Swarm systems can self-organize to handle novel situations:  Load balancing: If one agent type is overwhelmed, agents can route to alternatives. Failure recovery: If an agent fails, other agents detect the lack of progress and route around the failure.' },
 ];
 
 export default function WalkthroughAACSwarmAndEmergentBehavior() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACSwarmAndEmergentBehavior() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Swarm and Emergent Behavior — Step by Step
+          Swarm and Emergent Behavior \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how swarm and emergent behavior works, one stage at a time.

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCSegmentationMetrics() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ADE20K benchmark (150 classes): state-of-the-art mIoU ~62--64% (Mask2Former, SegGPT).', isTrue: true, explanation: 'This is a key technical detail of Segmentation Metrics.' },
-    { text: 'Human agreement mIoU: ~82%.', isTrue: true, explanation: 'This is a key technical detail of Segmentation Metrics.' },
-    { text: 'Cityscapes (19 classes): state-of-the-art mIoU ~86% (InternImage, 2023).', isTrue: true, explanation: 'This is a key technical detail of Segmentation Metrics.' },
+    { text: 'Pixel accuracy is a good segmentation metric.', isTrue: false, explanation: 'Pixel accuracy is dominated by majority classes and can be &gt;95% even when small objects are completely missed. Always use mIoU or Dice as the primary metric.' },
+    { text: 'Segmentation is evaluated using mean Intersection over Union (mIoU) for semantic tasks, Dice/F1 for medical imaging, pixel accuracy for basic assessment, and Panoptic Quality (PQ = SQ x RQ) for unified panoptic evaluation.', isTrue: true, explanation: 'This captures the core definition of Segmentation Metrics.' },
+    { text: 'Segmentation Metrics is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Segmentation Metrics is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

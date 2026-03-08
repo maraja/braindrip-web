@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Side Effect Categories', desc: 'The foundation of side effect evaluation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Evaluation Methodology: Comprehensive State Diffing', desc: 'At this stage, the key transformation occurs — the core mechanism that makes side effect evaluation work.' },
-    { title: '3. The Minimal Footprint Principle', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Defining Expected vs Unexpected Changes', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Connection to AI Safety Impact Measures', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Side Effect Categories', desc: 'Environmental side effects are unintended modifications to the agent\'s operating environment. For a coding agent: files created, modified, or deleted that were not part of the task.' },
+    { title: '2. Evaluation Methodology: Comprehensive State Diffing', desc: 'The gold standard for side effect evaluation is comprehensive state diffing: capturing the complete environment state before and after agent execution, then analyzing the differences. Pre-execution snapshot captures the relevant environment state.' },
+    { title: '3. The Minimal Footprint Principle', desc: 'The minimal footprint principle states that an agent should achieve its goals with the smallest possible set of environmental changes. This is the agent equivalent of the least privilege principle applied to actions rather than permissions.' },
+    { title: '4. Defining Expected vs Unexpected Changes', desc: 'The fundamental challenge in side effect evaluation is distinguishing expected from unexpected changes. This requires a specification of intended behavior, which is often incomplete or implicit.' },
+    { title: '5. Connection to AI Safety Impact Measures', desc: 'Side effect evaluation connects directly to the AI safety research on impact measures -- formal methods for quantifying how much an agent changes the world relative to some baseline.' },
 ];
 
 export default function WalkthroughAAESideEffectEvaluation() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAESideEffectEvaluation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Side Effect Evaluation — Step by Step
+          Side Effect Evaluation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how side effect evaluation works, one stage at a time.

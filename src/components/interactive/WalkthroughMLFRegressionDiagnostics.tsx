@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Residual Plots', desc: 'The foundation of regression diagnostics begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Heteroscedasticity', desc: 'At this stage, the key transformation occurs — the core mechanism that makes regression diagnostics work.' },
-    { title: '3. Multicollinearity', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Influential Points and Outliers', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Autocorrelation', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Residual Plots', desc: 'Residuals e_i = y_i - &#123;y&#125;_i are the primary diagnostic tool. Under correct model specification, residuals should appear as random noise with no discernible pattern.' },
+    { title: '2. Heteroscedasticity', desc: 'When Var(_i | x_i) is not constant, OLS estimates remain unbiased but are no longer efficient, and standard errors are incorrect. Breusch-Pagan Test: Regress the squared residuals e_i^2 on the predictors.' },
+    { title: '3. Multicollinearity', desc: 'When predictors are highly correlated, individual coefficient estimates become unstable -- small changes in the data produce large changes in &#123;&#125;_j. Variance Inflation Factor (VIF): For predictor x_j, regress x_j on all other predictors and compute R^2_j.' },
+    { title: '4. Influential Points and Outliers', desc: 'Not all observations contribute equally to the fit. Some may disproportionately determine the regression surface.' },
+    { title: '5. Autocorrelation', desc: 'When observations have a natural ordering (e.g., time series), errors may be correlated. Durbin-Watson Test: Tests for first-order autocorrelation in the residuals.' },
 ];
 
 export default function WalkthroughMLFRegressionDiagnostics() {
@@ -17,10 +17,10 @@ export default function WalkthroughMLFRegressionDiagnostics() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Regression Diagnostics — Step by Step
+          Regression Diagnostics \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how regression diagnostics works, one stage at a time.

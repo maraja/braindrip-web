@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCTransferLearning() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Fine-tuning learning rates are typically 10-100x smaller than training from scratch (e.g., 1e-4 vs.', isTrue: true, explanation: 'This is a key technical detail of Transfer Learning.' },
-    { text: 'The new classification head should use a higher learning rate (10x) than the pretrained backbone.', isTrue: true, explanation: 'This is a key technical detail of Transfer Learning.' },
-    { text: 'Input preprocessing must match the pretrained model\'s expectations (e.g., ImageNet mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]).', isTrue: true, explanation: 'This is a key technical detail of Transfer Learning.' },
+    { text: 'You should always freeze early layers.', isTrue: false, explanation: 'For domains very different from ImageNet (e.g., medical CT scans, satellite SAR imagery), even early features may need adaptation. Freezing can be suboptimal.' },
+    { text: 'Transfer learning reuses features learned on a large source dataset (typically ImageNet) to solve a different target task, eliminating the need to train from scratch and dramatically reducing data and compute requirements.', isTrue: true, explanation: 'This captures the core definition of Transfer Learning.' },
+    { text: 'Transfer Learning is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Transfer Learning is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

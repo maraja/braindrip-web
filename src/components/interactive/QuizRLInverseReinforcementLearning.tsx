@@ -2,8 +2,8 @@ import { useState } from 'react';
 export default function QuizRLInverseReinforcementLearning() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Inverse reinforcement learning recovers the reward function that an expert is implicitly optimizing, answering "what are they trying to do?" rather than "how are they doing it?"', isTrue: true, explanation: 'This captures the core purpose of Inverse Reinforcement Learning.' },
-    { text: 'Inverse Reinforcement Learning is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Inverse Reinforcement Learning is important for building on more advanced topics.' },
+    { text: 'IRL recovers the true reward function', isTrue: false, explanation: ': Due to reward ambiguity, IRL can only recover a reward function that is consistent with observed behavior. Infinitely many reward functions produce the same optimal policy.' },
+    { text: 'Inverse reinforcement learning recovers the reward function that an expert is implicitly optimizing, answering "what are they trying to do?" rather than "how are they doing it?"', isTrue: true, explanation: 'This captures the core definition of Inverse Reinforcement Learning.' },
     { text: 'Inverse Reinforcement Learning is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Inverse Reinforcement Learning is important for building on more advanced topics.' },
   ];
   return (

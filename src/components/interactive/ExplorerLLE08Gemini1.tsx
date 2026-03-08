@@ -4,8 +4,8 @@ const DETAILS = [
     { label: 'Announced', detail: 'December 6, 2023' },
     { label: 'Three tiers', detail: 'Ultra (largest), Pro (balanced), Nano (on-device: 1.8B and 3.25B parameters)' },
     { label: 'Architecture', detail: 'Transformer-based, reportedly MoE; trained natively on multimodal data' },
-    { label: 'Gemini Ultra MMLU', detail: '90.04% (CoT@32 protocol, first to exceed human expert ~89.8%)' },
-    { label: 'Gemini Ultra MMLU (5-shot)', detail: '83.7% under standard protocol' },
+    { label: 'Gemini Ultra MMLU', detail: '04% (CoT@32 protocol, first to exceed human expert ~89.8%)' },
+    { label: 'Gemini Ultra MMLU (5-shot)', detail: '7% under standard protocol' },
     { label: 'Multimodal benchmarks', detail: 'SOTA on 30 of 32 benchmarks tested' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerLLE08Gemini1() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Gemini 1 — Key Details Explorer
+          Gemini 1 \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of gemini 1.
+          Click each card to explore the technical details.
         </p>
       </div>
 

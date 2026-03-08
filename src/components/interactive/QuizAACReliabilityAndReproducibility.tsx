@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACReliabilityAndReproducibility() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Confidence intervals: Always report confidence intervals with success rates.', isTrue: true, explanation: 'This is a key technical detail of Reliability and Reproducibility.' },
-    { text: 'For n trials with k successes, use the Wilson score interval or Clopper-Pearson interval for small samples.', isTrue: true, explanation: 'This is a key technical detail of Reliability and Reproducibility.' },
-    { text: 'Report 95% CIs as standard practice.', isTrue: true, explanation: 'This is a key technical detail of Reliability and Reproducibility.' },
+    { text: '90% success rate is good enough.', isTrue: false, explanation: 'Whether 90% is acceptable depends entirely on the application, volume, and consequences of failure. For a coding assistant used 10 times a day, 90% means roughly one failure per day -- tolerable.' },
+    { text: 'Always report confidence intervals with success rates.', isTrue: true, explanation: 'For n trials with k successes, use the Wilson score interval or Clopper-Pearson interval for small samples. Report 95% CIs as standard practice.' },
+    { text: 'Non-determinism is always bad.', isTrue: false, explanation: 'Some non-determinism is actually beneficial. An agent that takes slightly different paths on different runs may find solutions that a fully deterministic agent would miss.' },
+    { text: 'To distinguish between 80% and 90% success rates with 95% confidence, you need approximately 200 runs.', isTrue: true, explanation: 'To distinguish 95% from 99%, you need approximately 1,000 runs. Plan evaluation budgets accordingly.' },
+    { text: 'A single successful test means the agent works.', isTrue: false, explanation: 'A single success on a non-deterministic system provides almost no reliability information. The agent might succeed 99% of the time or 10% of the time -- you cannot tell from one run.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

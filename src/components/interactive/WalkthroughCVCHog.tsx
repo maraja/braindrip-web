@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Gradient Computation', desc: 'The foundation of hog (histogram of oriented gradients) begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Cell Histograms', desc: 'At this stage, the key transformation occurs — the core mechanism that makes hog (histogram of oriented gradients) work.' },
-    { title: '3. Block Normalization', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Descriptor Assembly', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Classification', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Step 1: Gradient Computation', desc: 'Apply simple centered difference filters [-1, 0, 1] horizontally and vertically to compute gradient magnitude M and orientation  at every pixel:  [equation]  Use unsigned gradients (0--180^) for most applications, since the sign of the contrast is less informative for shape.' },
+    { title: '2. Step 2: Cell Histograms', desc: 'Divide the detection window (typically 64 x 128 pixels for pedestrians) into small spatial cells, usually 8 x 8 pixels. Within each cell, accumulate a histogram of B = 9 orientation bins (each covering 20^), weighted by gradient magnitude.' },
+    { title: '3. Step 3: Block Normalization', desc: 'Group cells into overlapping blocks (typically 2 x 2 cells = 16 x 16 pixels) with a stride of 8 pixels (50% overlap). Normalize each block\'s concatenated histogram to counteract local illumination and contrast variations.' },
+    { title: '4. Step 4: Descriptor Assembly', desc: 'Concatenate all block histograms across the detection window. For a 64 x 128 window with 8 x 8 cells, 2 x 2 blocks, and 8-pixel stride:  Cells: 8 x 16 = 128 Blocks: 7 x 15 = 105 Descriptor dimension: 105 x (2 x 2 x 9) = 3780' },
+    { title: '5. Step 5: Classification', desc: 'Feed the HOG descriptor into a linear SVM. Dalal and Triggs trained on the INRIA Person dataset (2,416 positives, 12,180 negative windows) and achieved a miss rate of approximately 10% at 10^&#123;-4&#125; false positives per window.' },
 ];
 
 export default function WalkthroughCVCHog() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCHog() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          HOG (Histogram of Oriented Gradients) — Step by Step
+          HOG (Histogram of Oriented Gradients) \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how hog (histogram of oriented gradients) works, one stage at a time.

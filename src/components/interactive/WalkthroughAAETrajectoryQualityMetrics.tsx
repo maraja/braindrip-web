@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Step Efficiency Ratio (SER)', desc: 'The foundation of trajectory quality metrics begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Action Relevance Score (ARS)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes trajectory quality metrics work.' },
-    { title: '3. Reasoning Coherence (RC)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Tool Selection Accuracy (TSA)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Backtrack Rate (BR)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Step Efficiency Ratio (SER)', desc: 'Step Efficiency Ratio measures how many steps the agent actually took compared to the minimum necessary steps for the task:  A perfect SER of 1.0 means the agent took the optimal number of steps. An SER of 0.25 means the agent took 4x more steps than necessary.' },
+    { title: '2. Action Relevance Score (ARS)', desc: 'Action Relevance Score quantifies what fraction of the agent\'s actions directly contributed to achieving the goal:  An action is "relevant" if removing it from the trajectory would either prevent goal achievement or require additional compensating actions.' },
+    { title: '3. Reasoning Coherence (RC)', desc: 'Reasoning Coherence measures the consistency and logical flow of the agent\'s stated reasoning across steps. This is evaluated by examining whether:  Later reasoning steps logically follow from earlier ones The agent maintains consistent beliefs about the task state Stated plans align with.' },
+    { title: '4. Tool Selection Accuracy (TSA)', desc: 'Tool Selection Accuracy tracks whether the agent chose the correct tool for each situation:  A tool selection is "correct" if it is the most appropriate available tool for the agent\'s current subgoal.' },
+    { title: '5. Backtrack Rate (BR)', desc: 'Backtrack Rate measures how often the agent undoes or reverses previous actions:  Backtrack actions include explicit undos, re-running previous steps with different parameters, deleting and recreating files, and reverting state changes. A BR of 0.' },
+    { title: '6. Composite Trajectory Quality Score', desc: 'Individual metrics combine into a composite score using a weighted aggregation:  where BR_inv = 1 - BR converts backtrack rate into a positive metric. Default equal weighting (w=0.2 each) provides a reasonable baseline, but domain-specific tuning is recommended.' },
 ];
 
 export default function WalkthroughAAETrajectoryQualityMetrics() {
@@ -17,10 +18,10 @@ export default function WalkthroughAAETrajectoryQualityMetrics() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Trajectory Quality Metrics — Step by Step
+          Trajectory Quality Metrics \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how trajectory quality metrics works, one stage at a time.

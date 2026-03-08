@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Speech Act Theory', desc: 'The foundation of pragmatics and discourse begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Gricean Maxims and Implicature', desc: 'At this stage, the key transformation occurs — the core mechanism that makes pragmatics and discourse work.' },
-    { title: '3. Presupposition', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Discourse Structure', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Coherence Relations', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Speech Act Theory', desc: 'Speech act theory (Austin, 1962; Searle, 1969) recognizes that utterances are not just statements of fact -- they are actions. Every utterance has three aspects:  Locutionary act: The literal content ("Can you pass the salt?' },
+    { title: '2. Gricean Maxims and Implicature', desc: 'Paul Grice (1975) proposed that conversation is governed by a Cooperative Principle: speakers are expected to contribute appropriately to the exchange. This principle is operationalized through four maxims:  Maxim of Quantity: Say enough but not too much.' },
+    { title: '3. Presupposition', desc: 'A presupposition is background information that a sentence takes for granted. "Have you stopped smoking?" presupposes that the addressee was previously smoking.' },
+    { title: '4. Discourse Structure', desc: 'Moving beyond individual utterances, discourse analysis studies how multi-sentence text is organized. Rhetorical Structure Theory (RST) (Mann and Thompson, 1988) represents text as a tree of discourse units connected by rhetorical relations.' },
+    { title: '5. Coherence Relations', desc: 'Beyond RST, several theories model how sentences cohere into meaningful text:  Centering Theory (Grosz, Joshi, and Weinstein, 1995) tracks the focus of attention across sentences. The backward-looking center (Cb) is the entity most prominently continued from the previous sentence.' },
+    { title: '6. Anaphora Resolution', desc: 'Anaphora occurs when an expression refers back to a previously mentioned entity. The most common type is pronominal anaphora:  "Marie Curie was born in Warsaw.' },
 ];
 
 export default function WalkthroughNLPPragmaticsAndDiscourse() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPPragmaticsAndDiscourse() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Pragmatics and Discourse — Step by Step
+          Pragmatics and Discourse \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how pragmatics and discourse works, one stage at a time.

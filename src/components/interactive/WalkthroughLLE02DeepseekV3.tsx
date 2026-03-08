@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. FP8 Mixed Precision Training', desc: 'The foundation of deepseek v3: frontier quality at startup cost begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Multi-Token Prediction (MTP)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes deepseek v3: frontier quality at startup cost work.' },
-    { title: '3. Auxiliary-Loss-Free Load Balancing (Refined)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. DualPipe: Near-Zero Bubble Pipeline Parallelism', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. FP8 Mixed Precision Training', desc: 'V3 was the first large-scale model trained primarily in FP8 (8-bit floating point) rather than the industry standard BF16 (16-bit brain floating point).' },
+    { title: '2. Multi-Token Prediction (MTP)', desc: 'Standard language models predict one token at a time: given the preceding context, they output a probability distribution over the next token. V3 introduced Multi-Token Prediction, where the model simultaneously predicts the next two tokens using additional lightweight prediction heads.' },
+    { title: '3. Auxiliary-Loss-Free Load Balancing (Refined)', desc: 'Building on V2\'s approach, V3 refined the auxiliary-loss-free load balancing for its MoE routing. The model used 128 routed experts plus 1 shared expert, with the top 8 routed experts activated per token.' },
+    { title: '4. DualPipe: Near-Zero Bubble Pipeline Parallelism', desc: 'Training on 2,048 H800 GPUs required sophisticated parallelism. Standard pipeline parallelism splits the model into stages across GPUs and processes micro-batches sequentially.' },
 ];
 
 export default function WalkthroughLLE02DeepseekV3() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE02DeepseekV3() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          DeepSeek V3: Frontier Quality at Startup Cost — Step by Step
+          DeepSeek V3: Frontier Quality at Startup Cost \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how deepseek v3: frontier quality at startup cost works, one stage at a time.

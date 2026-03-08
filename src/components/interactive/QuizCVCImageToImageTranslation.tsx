@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCImageToImageTranslation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Pix2Pix: 256x256 resolution, Adam optimizer ($\\beta_1 = 0.5$, $\\beta_2 = 0.999$), learning rate 0.0002, batch size 1 with instance normalization.', isTrue: true, explanation: 'This is a key technical detail of Image-to-Image Translation.' },
-    { text: 'CycleGAN: ResNet-based generator with 9 residual blocks for 256x256, 6 blocks for 128x128.', isTrue: true, explanation: 'This is a key technical detail of Image-to-Image Translation.' },
-    { text: 'Training: 200 epochs with linear LR decay over the last 100.', isTrue: true, explanation: 'This is a key technical detail of Image-to-Image Translation.' },
+    { text: 'CycleGAN produces the same quality as Pix2Pix.', isTrue: false, explanation: 'When paired data exists, Pix2Pix consistently outperforms CycleGAN because direct supervision is stronger than cycle consistency. "Unpaired translation can handle arbitrary domain gaps." CycleGAN works best for appearance changes (texture, color, style) with preserved structure.' },
+    { text: 'Image-to-image translation learns mappings between visual domains -- from sketches to photos, day to night, horses to zebras -- using paired supervision (Pix2Pix) or unpaired cycle-consistency constraints (CycleGAN).', isTrue: true, explanation: 'This captures the core definition of Image-to-Image Translation.' },
+    { text: 'Image-to-Image Translation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Image-to-Image Translation is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

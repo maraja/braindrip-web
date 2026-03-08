@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEPrefillingAndOutputPriming() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Anthropic\'s Claude API natively supports assistant prefill through partial assistant messages; OpenAI\'s API does not have direct equivalent but offers JSON mode and structured outputs.', isTrue: true, explanation: 'This is a key technical detail of Prefilling and Output Priming.' },
-    { text: 'Prefilling &#123; for JSON output improves format compliance from ~70-85% (instructions only) to ~95-99%.', isTrue: true, explanation: 'This is a key technical detail of Prefilling and Output Priming.' },
-    { text: 'Prefilling eliminates model preamble, saving 20-50 tokens per response in typical conversational contexts.', isTrue: true, explanation: 'This is a key technical detail of Prefilling and Output Priming.' },
+    { text: 'Prefilling is just a formatting trick.', isTrue: false, explanation: 'Prefilling affects content quality, not just format. Starting with reasoning scaffolds ("Step 1:") activates different generation trajectories than starting with "The answer is:".' },
+    { text: 'All APIs support prefilling equally.', isTrue: false, explanation: 'Anthropic\'s Claude has first-class prefilling support. OpenAI requires workarounds (JSON mode, fake assistant turns, logit bias).' },
+    { text: 'Prefilling guarantees valid output.', isTrue: false, explanation: 'Prefilling with &#123; makes JSON output much more likely but does not guarantee structural validity. The model can still produce malformed JSON (missing closing brackets, invalid escaping).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

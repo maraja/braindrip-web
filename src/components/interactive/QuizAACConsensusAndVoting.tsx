@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACConsensusAndVoting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Majority vote always gives the right answer', isTrue: false, explanation: '"Majority vote always gives the right answer": If the majority of agents are wrong (e.g., due to a shared systematic bias), voting amplifies the error. Voting works when errors are random, not when th' },
-    { text: 'Optimal N (number of voters): 3-7 voters provide the best cost-accuracy trade-off for most tasks.', isTrue: true, explanation: 'This is a key technical detail of Consensus and Voting.' },
-    { text: 'Beyond 7, marginal accuracy gains diminish while cost scales linearly.', isTrue: true, explanation: 'This is a key technical detail of Consensus and Voting.' },
+    { text: 'Majority vote always gives the right answer', isTrue: false, explanation: ': If the majority of agents are wrong (e.g., due to a shared systematic bias), voting amplifies the error. Voting works when errors are random, not when they are systematic.' },
+    { text: '3-7 voters provide the best cost-accuracy trade-off for most tasks.', isTrue: true, explanation: 'Beyond 7, marginal accuracy gains diminish while cost scales linearly. Use odd numbers to avoid ties.' },
+    { text: 'Higher temperature (0.7-1.0) produces more diverse samples, improving the voting effect.', isTrue: true, explanation: 'Temperature 0 (greedy) produces identical samples, making voting pointless. The optimal temperature depends on the task and model.' },
+    { text: 'The voting advantage degrades as error correlation increases.', isTrue: true, explanation: 'If all agents make the same mistake (due to shared training data or similar prompts), voting cannot correct it. Maximizing diversity — different prompts, different models, different reasoning approaches — improves error independence.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

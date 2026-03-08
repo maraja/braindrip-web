@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAToolNode() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ToolNode accepts the same list of tools you pass to bind_tools().', isTrue: true, explanation: 'This is a key technical detail of ToolNode.' },
-    { text: 'It matches tool calls by function name, so names must be consistent between binding and the node.', isTrue: true, explanation: 'This is a key technical detail of ToolNode.' },
-    { text: 'Each executed tool returns a ToolMessage with content (the result) and tool_call_id (correlation ID).', isTrue: true, explanation: 'This is a key technical detail of ToolNode.' },
+    { text: 'ToolNode calls the LLM to decide which tool to use.', isTrue: false, explanation: 'It does not involve the LLM at all. It simply reads the tool_calls from the last AIMessage and executes the named functions.' },
+    { text: 'ToolNode is a prebuilt LangGraph node that extracts tool calls from the last AI message, executes the corresponding tool functions (in parallel when possible), and returns ToolMessage results to the graph state.', isTrue: true, explanation: 'This captures the core definition of ToolNode.' },
+    { text: 'ToolNode is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding ToolNode is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

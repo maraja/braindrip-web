@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPGatedRecurrentUnits() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Parameter savings: For a single layer with d_h = 512, d_x = 300, a GRU has approximately 1.25M parameters versus 1.66M for an LSTM -- a 25% reduction.', isTrue: true, explanation: 'This is a key technical detail of Gated Recurrent Units.' },
-    { text: 'Over 4 stacked layers, this saves roughly 1.6M total parameters.', isTrue: true, explanation: 'This is a key technical detail of Gated Recurrent Units.' },
-    { text: 'Training speed: GRUs are approximately 10-20% faster per training step than LSTMs of the same hidden size due to fewer gate computations, though actual speedup depends on hardware and batch size.', isTrue: true, explanation: 'This is a key technical detail of Gated Recurrent Units.' },
+    { text: 'GRUs are strictly worse than LSTMs.', isTrue: false, explanation: 'Multiple large-scale empirical studies (Chung et al., 2014; Jozefowicz et al., 2015; Greff et al., 2017) have found no consistent performance difference. The choice is task-dependent, and GRUs sometimes outperform LSTMs, particularly on smaller datasets where the reduced parameter count acts as implicit regularization.' },
+    { text: 'For a single layer with d_h = 512, d_x = 300, a GRU has approximately 1.25M parameters versus 1.66M for an LSTM -- a 25% reduction.', isTrue: true, explanation: 'Over 4 stacked layers, this saves roughly 1.6M total parameters.' },
+    { text: 'The update gate is just the forget gate renamed.', isTrue: false, explanation: 'The update gate simultaneously controls both forgetting and input. In an LSTM, the forget and input gates can operate independently (f_t and i_t can both be high or both be low).' },
+    { text: 'GRUs are approximately 10-20% faster per training step than LSTMs of the same hidden size due to fewer gate computations, though actual speedup depends on hardware and batch size.', isTrue: true, explanation: 'GRUs are approximately 10-20% faster per training step than LSTMs of the same hidden size due to fewer gate computations, though actual speedup depends on hardware and batch size.' },
+    { text: 'GRUs cannot learn long-range dependencies as well as LSTMs.', isTrue: false, explanation: 'There is no theoretical reason why GRUs should be worse at long-range dependencies. Both architectures provide linear gradient shortcuts.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

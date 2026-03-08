@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Multi-Run Evaluation', desc: 'The foundation of reliability and reproducibility begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Variance Decomposition', desc: 'At this stage, the key transformation occurs — the core mechanism that makes reliability and reproducibility work.' },
-    { title: '3. Deterministic Testing Strategies', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Failure Mode Analysis', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Multi-Run Evaluation', desc: 'The foundation of reliability measurement is running each evaluation task multiple times -- typically 5-100 runs depending on the desired statistical confidence. The results are analyzed as a distribution: what percentage succeeded?' },
+    { title: '2. Variance Decomposition', desc: 'Not all variance is equal. Variance can be decomposed into several sources: model sampling variance (different token choices on different runs), prompt sensitivity (small phrasing changes causing different behaviors), environmental variance (tool response times, API availability), and task-inherent.' },
+    { title: '3. Deterministic Testing Strategies', desc: 'While production agents are non-deterministic, testing can be made more deterministic through several techniques: setting temperature to 0 (reduces but does not eliminate non-determinism), seeding random number generators, mocking external tool calls with fixed responses, and caching LLM responses.' },
+    { title: '4. Failure Mode Analysis', desc: 'Reliability measurement is not just about the success rate but about understanding how and why failures occur. Failure mode analysis categorizes failures: wrong tool selection, incorrect parameter generation, reasoning errors, retrieval failures, timeout/resource exhaustion, and external service.' },
 ];
 
 export default function WalkthroughAACReliabilityAndReproducibility() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACReliabilityAndReproducibility() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Reliability and Reproducibility — Step by Step
+          Reliability and Reproducibility \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how reliability and reproducibility works, one stage at a time.

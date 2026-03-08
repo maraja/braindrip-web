@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACBrowserAutomation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'headed browsers: Headless browsers (no visible window) are faster and server-friendly.', isTrue: true, explanation: 'This is a key technical detail of Browser Automation.' },
-    { text: 'Headed browsers are needed for debugging and for sites that detect headless mode.', isTrue: true, explanation: 'This is a key technical detail of Browser Automation.' },
-    { text: 'Playwright supports both with a single flag.', isTrue: true, explanation: 'This is a key technical detail of Browser Automation.' },
+    { text: 'Browser automation is just web scraping', isTrue: false, explanation: ': Web scraping extracts data from pages. Browser automation includes full interaction — clicking, typing, navigating, submitting forms.' },
+    { text: 'Headless browsers (no visible window) are faster and server-friendly.', isTrue: true, explanation: 'Headed browsers are needed for debugging and for sites that detect headless mode. Playwright supports both with a single flag.' },
+    { text: 'Playwright supports Chromium, Firefox, and WebKit; Puppeteer supports only Chromium.', isTrue: true, explanation: 'Playwright has built-in auto-wait for elements, better TypeScript support, and is the current community preference for agent use.' },
+    { text: 'Higher resolution screenshots give the LLM more detail but cost more tokens.', isTrue: true, explanation: 'Common resolutions are 1280x720 or 1920x1080. Some systems downscale or crop to regions of interest.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

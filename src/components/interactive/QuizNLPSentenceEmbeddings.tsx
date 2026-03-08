@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPSentenceEmbeddings() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Dimensionality: Common dimensions are 384 (MiniLM), 512 (USE), 768 (SBERT-base), 1024 (SBERT-large).', isTrue: true, explanation: 'This is a key technical detail of Sentence Embeddings.' },
-    { text: 'Matryoshka representation learning allows truncating vectors to smaller dimensions with graceful degradation.', isTrue: true, explanation: 'This is a key technical detail of Sentence Embeddings.' },
-    { text: 'accuracy trade-off: all-MiniLM-L6-v2 encodes ~14,000 sentences/sec on GPU vs.', isTrue: true, explanation: 'This is a key technical detail of Sentence Embeddings.' },
+    { text: 'BERT\'s [CLS] token is a good sentence embedding.', isTrue: false, explanation: 'Raw BERT [CLS] tokens produce poor sentence representations (29% Spearman on STS). BERT was trained with masked language modeling and next sentence prediction, not semantic similarity.' },
+    { text: 'Common dimensions are 384 (MiniLM), 512 (USE), 768 (SBERT-base), 1024 (SBERT-large).', isTrue: true, explanation: 'Matryoshka representation learning allows truncating vectors to smaller dimensions with graceful degradation.' },
+    { text: 'Averaging word vectors is always outperformed by neural encoders.', isTrue: false, explanation: 'Weighted averaging (SIF) with good word vectors is competitive with many neural approaches and is orders of magnitude faster. For low-resource scenarios or when labeled data is unavailable, SIF averaging remains a strong baseline.' },
+    { text: 'all-MiniLM-L6-v2 encodes ~14,000 sentences/sec on GPU vs.', isTrue: true, explanation: '~2,000/sec for SBERT-base, with only ~3% lower STS correlation.' },
+    { text: 'Sentence embeddings capture everything about a sentence.', isTrue: false, explanation: 'Fixed-length vectors inevitably lose information. Negation ("I love this" vs.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

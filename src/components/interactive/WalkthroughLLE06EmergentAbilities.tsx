@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Defining Emergence', desc: 'The foundation of emergent abilities of large language models begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Evidence', desc: 'At this stage, the key transformation occurs — the core mechanism that makes emergent abilities of large language models work.' },
-    { title: '3. The Metric Artifact Critique', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Ongoing Debate', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Defining Emergence', desc: 'defined an emergent ability as "an ability that is not present in smaller models but is present in larger models." Critically, this is measured at the task level, not at the level of training loss.' },
+    { title: '2. The Evidence', desc: 'The paper catalogued emergence across multiple model families and dozens of tasks:  Few-shot arithmetic: Three-digit addition showed near-random performance below ~13B parameters, then jumped in PaLM-540B and GPT-3 175B.' },
+    { title: '3. The Metric Artifact Critique', desc: 'In 2023, Rylan Schaeffer, Brando Miranda, and Sanmi Koyejo published a provocative rebuttal: "Are Emergent Abilities of Large Language Models a Mirage?" They argued that emergence was an artifact of using nonlinear or discontinuous metrics (like exact-match accuracy) to measure performance.' },
+    { title: '4. The Ongoing Debate', desc: 'The debate remains unresolved. Defenders of emergence argue that some abilities genuinely require compositional reasoning that is not possible below certain scales — that a model needs enough parameters to represent certain algorithmic procedures.' },
 ];
 
 export default function WalkthroughLLE06EmergentAbilities() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE06EmergentAbilities() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Emergent Abilities of Large Language Models — Step by Step
+          Emergent Abilities of Large Language Models \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how emergent abilities of large language models works, one stage at a time.

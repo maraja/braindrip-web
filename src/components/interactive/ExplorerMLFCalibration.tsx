@@ -4,7 +4,7 @@ const DETAILS = [
     { label: 'Calibration set', detail: 'Platt scaling and isotonic regression require a held-out calibration set. Never calibrate on training data. Cross-validation can be used when data is limited.' },
     { label: 'Binning schemes', detail: 'ECE is sensitive to the number and type of bins (equal-width vs. equal-frequency). Equal-frequency bins are more robust.' },
     { label: 'Calibration does not change ranking', detail: 'Platt scaling and temperature scaling are monotonic transformations. AUC-ROC and accuracy at a fixed threshold are preserved.' },
-    { label: 'Brier score', detail: 'An alternative to log loss that decomposes into calibration, refinement, and uncertainty: $\\text{Brier} = \\frac{1}{N} \\sum (y_i - \\hat{p}_i)^2$. The calibration component directly measures calibration error.' },
+    { label: 'Brier score', detail: 'An alternative to log loss that decomposes into calibration, refinement, and uncertainty: Brier = &#123;1&#125;&#123;N&#125;  (y_i - &#123;p&#125;_i)^2. The calibration component directly measures calibration error.' },
 ];
 
 export default function ExplorerMLFCalibration() {
@@ -18,10 +18,10 @@ export default function ExplorerMLFCalibration() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Calibration — Key Details Explorer
+          Calibration \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of calibration.
+          Click each card to explore the technical details.
         </p>
       </div>
 

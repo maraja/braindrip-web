@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEMathematicalAndLogicalPrompting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Self-verification instructions ("check your answer by substituting back") improve mathematical accuracy by 10-20% on GSM8K and MATH benchmarks.', isTrue: true, explanation: 'This is a key technical detail of Mathematical and Logical Prompting.' },
-    { text: 'Tool-augmented mathematical prompting (using Python/sympy for computation) improves accuracy by 20-30 percentage points over pure reasoning on computation-heavy problems.', isTrue: true, explanation: 'This is a key technical detail of Mathematical and Logical Prompting.' },
-    { text: 'LLMs achieve 80-90% accuracy on single-step arithmetic but drop to 40-60% accuracy on 4-5 step computation chains due to error accumulation.', isTrue: true, explanation: 'This is a key technical detail of Mathematical and Logical Prompting.' },
+    { text: 'LLMs are good at math because they can explain math well.', isTrue: false, explanation: 'Explaining mathematical concepts and performing mathematical computation are different capabilities. Models excel at explanation (drawing on training data) but struggle with novel computation.' },
+    { text: 'Chain-of-thought fixes mathematical errors.', isTrue: false, explanation: 'Chain-of-thought improves problem decomposition but does not eliminate computation errors within individual steps. An error in step 3 of a 7-step solution propagates through all subsequent steps.' },
+    { text: 'More reasoning steps always mean better math.', isTrue: false, explanation: 'Excessively decomposed problems (breaking simple operations into trivial sub-steps) can actually increase error rates because each step introduces an opportunity for error. The optimal decomposition granularity matches the complexity of each sub-problem.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

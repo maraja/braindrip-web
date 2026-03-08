@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Classical Variational Methods', desc: 'The foundation of optical flow estimation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. FlowNet: Learning to Estimate Flow', desc: 'At this stage, the key transformation occurs — the core mechanism that makes optical flow estimation work.' },
-    { title: '3. FlowNet2.0: Stacking and Scheduling', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. PWC-Net: Pyramidal Processing', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. RAFT: Recurrent All-Pairs Field Transforms', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Classical Variational Methods', desc: 'Horn-Schunck (1981) minimized a global energy combining the brightness constancy and smoothness:  [equation]  TV-L1 (Zach et al., 2007) replaced the quadratic data term with an L_1 norm for robustness to outliers and the smoothness term with total variation.' },
+    { title: '2. FlowNet: Learning to Estimate Flow', desc: 'Dosovitskiy et al. (2015) proposed FlowNet, the first end-to-end CNN for optical flow:  FlowNetS (Simple): Encoder-decoder with skip connections.' },
+    { title: '3. FlowNet2.0: Stacking and Scheduling', desc: '(2017) improved FlowNet through:  Stacking: Cascading multiple FlowNets where each refines the previous estimate. FlowNet2 stacks FlowNetC -&gt; FlowNetS -&gt; FlowNetS with warping between stages.' },
+    { title: '4. PWC-Net: Pyramidal Processing', desc: '(2018) introduced PWC-Net (Pyramid, Warping, Cost volume), achieving better accuracy with a fraction of FlowNet2\'s parameters:  Feature pyramid: Extract features at multiple scales using a learnable pyramid (not fixed Gaussian).' },
+    { title: '5. RAFT: Recurrent All-Pairs Field Transforms', desc: 'Teed and Deng (2020) introduced RAFT, which fundamentally changed the approach:  Feature extraction: A shared encoder extracts features from both frames at 1/8 resolution.' },
+    { title: '6. Post-RAFT Developments', desc: 'GMA (Jiang et al., 2021): Added global motion aggregation via self-attention to handle occlusions; 1.39 EPE on Sintel Clean FlowFormer (Huang et al., 2022): Transformer-based cost volume processing; 1.16 EPE on Sintel Clean VideoFlow (Shi et al.' },
 ];
 
 export default function WalkthroughCVCOpticalFlowEstimation() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCOpticalFlowEstimation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Optical Flow Estimation — Step by Step
+          Optical Flow Estimation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how optical flow estimation works, one stage at a time.

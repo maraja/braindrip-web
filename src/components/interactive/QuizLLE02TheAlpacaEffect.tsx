@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE02TheAlpacaEffect() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Stanford\'s $600 fine-tuning of LLaMA triggered a Cambrian explosion of open-source instruction-tuned models, proving that capable AI assistants could be built on a graduate student budget.', isTrue: true, explanation: 'This captures the core purpose of The Alpaca Effect.' },
-    { text: 'The Alpaca Effect is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding The Alpaca Effect is important for building on more advanced topics.' },
-    { text: 'The Alpaca Effect is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding The Alpaca Effect is important for building on more advanced topics.' },
+    { text: 'Alpaca was as good as ChatGPT.', isTrue: false, explanation: 'Alpaca mimicked ChatGPT\'s style on simple tasks but lacked its reasoning depth, factual accuracy, and robustness. Qualitative demos were impressive; rigorous benchmarks showed large gaps.' },
+    { text: 'LLaMA-7B fine-tuned on 52K synthetic instructions from GPT-3.5, ~$600 total cost', isTrue: true, explanation: 'LLaMA-7B fine-tuned on 52K synthetic instructions from GPT-3.5, ~$600 total cost' },
+    { text: 'Distillation transfers all capabilities.', isTrue: false, explanation: 'Distilling from a larger model\'s outputs captures surface-level patterns but cannot transfer the knowledge embedded in the teacher\'s 175B+ parameters. The student model learns to imitate outputs, not to replicate the underlying competence.' },
+    { text: '175 seed tasks expanded by text-davinci-003, 3 epochs of supervised fine-tuning', isTrue: true, explanation: '175 seed tasks expanded by text-davinci-003, 3 epochs of supervised fine-tuning' },
+    { text: 'Open fine-tuned models eliminated the need for commercial APIs.', isTrue: false, explanation: 'For production applications requiring reliability, factual accuracy, and consistent quality, commercial models remained significantly ahead. The open models were transformative for experimentation, education, and niche applications, but not yet for enterprise deployment.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

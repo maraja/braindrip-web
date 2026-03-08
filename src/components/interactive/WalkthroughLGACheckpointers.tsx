@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Choosing a Checkpointer Backend', desc: 'The foundation of checkpointers begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Compiling with a Checkpointer', desc: 'At this stage, the key transformation occurs — the core mechanism that makes checkpointers work.' },
-    { title: '3. Thread-Based Invocation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Inspecting Saved State', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Choosing a Checkpointer Backend', desc: 'LangGraph provides three checkpointer backends for different stages of development:' },
+    { title: '2. Compiling with a Checkpointer', desc: 'Attach the checkpointer when you compile the graph. This is the only integration point -- nodes and edges remain unchanged:' },
+    { title: '3. Thread-Based Invocation', desc: 'Every invocation requires a thread_id in the config. The checkpointer uses this to organize state per conversation:' },
+    { title: '4. Inspecting Saved State', desc: 'Retrieve the current state or full history for any thread:' },
 ];
 
 export default function WalkthroughLGACheckpointers() {
@@ -16,10 +16,10 @@ export default function WalkthroughLGACheckpointers() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Checkpointers — Step by Step
+          Checkpointers \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how checkpointers works, one stage at a time.

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCNeuralStyleTransfer() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'VGG-19 layers used: Content from conv4_2.', isTrue: true, explanation: 'This is a key technical detail of Neural Style Transfer.' },
-    { text: 'Style from conv1_1, conv2_1, conv3_1, conv4_1, conv5_1 with equal weights.', isTrue: true, explanation: 'This is a key technical detail of Neural Style Transfer.' },
-    { text: 'Optimization-based: ~300 L-BFGS iterations for 512x512, ~60 seconds on an NVIDIA V100.', isTrue: true, explanation: 'This is a key technical detail of Neural Style Transfer.' },
+    { text: 'Style transfer understands artistic style.', isTrue: false, explanation: 'It captures low-level texture statistics (color correlations, stroke patterns), not high-level artistic concepts like composition, emotion, or art-historical context. "Gram matrices are the only way to represent style." Alternative representations include mean/variance (AdaIN), histogram matching, optimal transport, and attention-based approaches.' },
+    { text: 'Neural style transfer separates the content and style of images using CNN feature representations -- content captured by activation patterns, style captured by Gram matrices -- enabling artistic rendering of photographs in the style of any painting.', isTrue: true, explanation: 'This captures the core definition of Neural Style Transfer.' },
+    { text: 'Neural Style Transfer is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Neural Style Transfer is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

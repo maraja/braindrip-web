@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPHumanEvaluationForNlp() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'WMT human evaluation: Annually evaluates ~150 MT systems across 15+ language pairs using Direct Assessment with ~1,000 annotators and ~500,000 individual judgments.', isTrue: true, explanation: 'This is a key technical detail of Human Evaluation for NLP.' },
-    { text: 'Cost estimates: Professional human evaluation for a single MT system on one language pair costs $2,000--$5,000.', isTrue: true, explanation: 'This is a key technical detail of Human Evaluation for NLP.' },
-    { text: 'Crowdsourced evaluation via Amazon Mechanical Turk costs $500--$1,500 for the same scope.', isTrue: true, explanation: 'This is a key technical detail of Human Evaluation for NLP.' },
+    { text: 'Human evaluation is objective and unbiased.', isTrue: false, explanation: 'Human judges bring substantial subjectivity, cultural assumptions, and cognitive biases. Agreement rates of 0.30--0.50 kappa on generation quality show that even trained annotators frequently disagree.' },
+    { text: 'Annually evaluates ~150 MT systems across 15+ language pairs using Direct Assessment with ~1,000 annotators and ~500,000 individual judgments.', isTrue: true, explanation: 'Annually evaluates ~150 MT systems across 15+ language pairs using Direct Assessment with ~1,000 annotators and ~500,000 individual judgments.' },
+    { text: 'Crowdsourced evaluation is as reliable as expert evaluation.', isTrue: false, explanation: 'For straightforward tasks (fluency, grammaticality), crowdworkers perform comparably to experts. But for tasks requiring domain knowledge (medical text quality, legal accuracy) or nuanced judgment (pragmatic appropriateness, cultural sensitivity), expert annotators are necessary and produce significantly higher agreement.' },
+    { text: 'Professional human evaluation for a single MT system on one language pair costs 2,000--5,000.', isTrue: true, explanation: 'Crowdsourced evaluation via Amazon Mechanical Turk costs 500--1,500 for the same scope.' },
+    { text: 'Human evaluation gives a single \'correct\' score.', isTrue: false, explanation: 'The same output can be rated differently depending on the evaluator\'s background, the evaluation criteria, and even the time of day. Human evaluation produces a distribution of judgments, not a point estimate.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

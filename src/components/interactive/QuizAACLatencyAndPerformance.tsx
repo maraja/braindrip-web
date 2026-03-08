@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACLatencyAndPerformance() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'LLM inference optimization: The largest latency contributor.', isTrue: true, explanation: 'This is a key technical detail of Latency and Performance.' },
-    { text: 'Streaming architecture: Implement server-sent events (SSE) or WebSocket connections that stream agent output progressively.', isTrue: true, explanation: 'This is a key technical detail of Latency and Performance.' },
-    { text: 'Show reasoning traces as they happen, tool call results as they return, and final responses token by token.', isTrue: true, explanation: 'This is a key technical detail of Latency and Performance.' },
+    { text: 'Faster is always better.', isTrue: false, explanation: 'For many agent tasks, spending more time produces genuinely better results. A research agent that takes 3 minutes to produce a thorough, well-sourced analysis is more valuable than one that produces a superficial answer in 10 seconds.' },
+    { text: 'The largest latency contributor.', isTrue: true, explanation: 'Optimizations include: prompt caching (reuse common prefixes, saving 50-80% of input processing time), model selection (smaller models for simpler sub-tasks), speculative decoding (use a small model to draft tokens, large model to verify), and batching (process multiple requests simultaneously for higher throughput).' },
+    { text: 'Streaming solves the latency problem.', isTrue: false, explanation: 'Streaming improves perceived latency but does not reduce actual completion time. Users still wait the same total time for the final answer.' },
+    { text: 'Implement server-sent events (SSE) or WebSocket connections that stream agent output progressively.', isTrue: true, explanation: 'Show reasoning traces as they happen, tool call results as they return, and final responses token by token. This transforms a 60-second wait into a 60-second engagement.' },
+    { text: 'Single LLM call latency is the bottleneck.', isTrue: false, explanation: 'For multi-step agents, total latency is the sum of all LLM calls, tool calls, and retrieval operations. Optimizing a single call from 3 seconds to 2 seconds saves little when there are 10 calls.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

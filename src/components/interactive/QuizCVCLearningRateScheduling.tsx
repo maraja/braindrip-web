@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCLearningRateScheduling() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The linear scaling rule (Goyal et al., 2017): when multiplying batch size by $k$, multiply learning rate by $k$.', isTrue: true, explanation: 'This is a key technical detail of Learning Rate Scheduling.' },
-    { text: 'Valid up to ~8k batch size for SGD with warmup.', isTrue: true, explanation: 'This is a key technical detail of Learning Rate Scheduling.' },
-    { text: 'Cosine annealing with $\\eta_&#123;\\min&#125; = 0$ outperforms $\\eta_&#123;\\min&#125; = 10^&#123;-6&#125;$ in practice for standard-length training.', isTrue: true, explanation: 'This is a key technical detail of Learning Rate Scheduling.' },
+    { text: 'A constant learning rate with Adam is good enough.', isTrue: false, explanation: 'Adam adapts per-parameter, but a global schedule still matters. Adam with cosine decay consistently outperforms Adam with a fixed LR.' },
+    { text: 'Learning rate scheduling systematically varies the learning rate during training -- typically warming up, then decaying -- to achieve faster convergence and better final accuracy than any fixed rate.', isTrue: true, explanation: 'This captures the core definition of Learning Rate Scheduling.' },
+    { text: 'Learning Rate Scheduling is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Learning Rate Scheduling is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

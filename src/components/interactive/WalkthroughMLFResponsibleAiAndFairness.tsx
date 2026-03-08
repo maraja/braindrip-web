@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Sources of Bias', desc: 'The foundation of responsible ai and fairness begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Fairness Metrics', desc: 'At this stage, the key transformation occurs — the core mechanism that makes responsible ai and fairness work.' },
-    { title: '3. The Impossibility Theorem', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Bias Mitigation Strategies', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Explainability', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Sources of Bias', desc: 'Bias enters ML systems at every stage:  Historical Bias: The training data reflects past societal inequities. A criminal recidivism model trained on arrest data inherits policing biases, since arrest rates correlate with enforcement patterns, not just criminal behavior.' },
+    { title: '2. Fairness Metrics', desc: 'There is no single definition of fairness. Several mathematically precise definitions exist, and they are often mutually incompatible.' },
+    { title: '3. The Impossibility Theorem', desc: 'Chouldechova (2017) and Kleinberg et al. (2016) proved that except in degenerate cases, demographic parity, equalized odds, and calibration cannot all hold simultaneously when base rates differ between groups:  [equation]  This means fairness is not a checkbox -- it requires deliberate choices.' },
+    { title: '4. Bias Mitigation Strategies', desc: 'Pre-processing: Modify the training data to remove bias before training. Resampling to balance representation across groups.' },
+    { title: '5. Explainability', desc: 'Fairness requires transparency -- stakeholders must understand why a model makes its decisions. SHAP (SHapley Additive exPlanations): Based on cooperative game theory, SHAP assigns each feature an importance value for each prediction:  [equation]  SHAP values have desirable theoretical properties.' },
+    { title: '6. Model Cards', desc: 'A model card is a standardized documentation format for ML models, proposed by Mitchell et al. It includes:  Model details (architecture, training data, intended use).' },
 ];
 
 export default function WalkthroughMLFResponsibleAiAndFairness() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFResponsibleAiAndFairness() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Responsible AI and Fairness — Step by Step
+          Responsible AI and Fairness \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how responsible ai and fairness works, one stage at a time.

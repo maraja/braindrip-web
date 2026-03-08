@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAAEEffectSizeAndPracticalSignificance() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Always report both: p-values and effect sizes serve complementary functions.', isTrue: true, explanation: 'This is a key technical detail of Effect Size and Practical Significance.' },
-    { text: 'A significant result with a tiny effect size is noteworthy for different reasons than a significant result with a large effect size.', isTrue: true, explanation: 'This is a key technical detail of Effect Size and Practical Significance.' },
-    { text: 'Effect size CI: Report confidence intervals for effect sizes, not just point estimates.', isTrue: true, explanation: 'This is a key technical detail of Effect Size and Practical Significance.' },
+    { text: 'If it\'s statistically significant, it\'s important.', isTrue: false, explanation: 'Statistical significance is a function of sample size. With enough data, any non-zero difference becomes significant.' },
+    { text: 'p-values and effect sizes serve complementary functions.', isTrue: true, explanation: 'A significant result with a tiny effect size is noteworthy for different reasons than a significant result with a large effect size.' },
+    { text: 'Report confidence intervals for effect sizes, not just point estimates.', isTrue: true, explanation: 'For Cohen\'s h: SE(h)  &#123;1/n_1 + 1/n_2&#125;.' },
+    { text: 'To actively demonstrate that two agents are equivalent (not just that you failed to detect a difference), use two one-sided tests.', isTrue: true, explanation: 'Reject H_0:    if both one-sided tests are significant.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

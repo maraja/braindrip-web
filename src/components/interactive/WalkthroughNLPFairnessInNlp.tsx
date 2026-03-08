@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Formal Fairness Definitions', desc: 'The foundation of fairness in nlp begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Impossibility Theorem', desc: 'At this stage, the key transformation occurs — the core mechanism that makes fairness in nlp work.' },
-    { title: '3. Fairness Metrics for NLP', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Mitigation Strategies', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Fairness Benchmarks', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Formal Fairness Definitions', desc: 'Demographic Parity (Statistical Parity): A system satisfies demographic parity if its positive prediction rate is equal across protected groups. Formally: P(Y_hat = 1  A = b) for all groups a, b.' },
+    { title: '2. The Impossibility Theorem', desc: 'Chouldechova (2017) and Kleinberg et al. (2017) independently proved that when base rates differ between groups (P(Y = 1  A = b)), a system cannot simultaneously satisfy demographic parity, equalized odds, and predictive parity -- except in the trivial case of a perfect or random classifier.' },
+    { title: '3. Fairness Metrics for NLP', desc: 'Performance Disparity: The difference in a task metric (accuracy, F1, BLEU) across demographic groups. For example, a sentiment classifier with 93% accuracy on Standard American English but 81% on AAVE has a 12-point performance disparity.' },
+    { title: '4. Mitigation Strategies', desc: 'Pre-Processing: Modify the training data before training. Counterfactual data augmentation (Zhao et al., 2018) creates balanced examples by swapping identity terms.' },
+    { title: '5. Fairness Benchmarks', desc: 'CrowS-Pairs (Nangia et al., 2020): 1,508 sentence pairs testing stereotypical vs. anti-stereotypical associations across 9 bias categories (gender, race, religion, age, etc.).' },
 ];
 
 export default function WalkthroughNLPFairnessInNlp() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPFairnessInNlp() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Fairness in NLP — Step by Step
+          Fairness in NLP \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how fairness in nlp works, one stage at a time.

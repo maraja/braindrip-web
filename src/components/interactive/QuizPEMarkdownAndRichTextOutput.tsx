@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEMarkdownAndRichTextOutput() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'LLMs produce markdown with ~95% structural compliance when given explicit section templates in the prompt.', isTrue: true, explanation: 'This is a key technical detail of Markdown and Rich Text Output.' },
-    { text: 'Table formatting reliability drops significantly beyond 6 columns — consider JSON for complex tabular data rendered client-side.', isTrue: true, explanation: 'This is a key technical detail of Markdown and Rich Text Output.' },
-    { text: 'Markdown overhead is minimal: approximately 5-10% more tokens than plain text, compared to 30% for JSON.', isTrue: true, explanation: 'This is a key technical detail of Markdown and Rich Text Output.' },
+    { text: 'Models naturally produce well-formatted markdown.', isTrue: false, explanation: 'Models produce markdown, but not necessarily consistent or optimal markdown. Without explicit formatting instructions, output structure varies significantly between responses and tends toward verbose prose.' },
+    { text: 'approximately 5-10% more tokens than plain text, compared to 30% for JSON.', isTrue: true, explanation: 'approximately 5-10% more tokens than plain text, compared to 30% for JSON.' },
+    { text: 'Markdown output prompting controls how LLMs format responses with headers, tables, lists, and code blocks, enabling consistent, readable, and structured human-facing content.', isTrue: true, explanation: 'This captures the core definition of Markdown and Rich Text Output.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

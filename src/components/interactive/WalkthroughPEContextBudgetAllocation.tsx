@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Zone Definitions', desc: 'The foundation of context budget allocation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Budget Tables by Window Size', desc: 'At this stage, the key transformation occurs — the core mechanism that makes context budget allocation work.' },
-    { title: '3. Dynamic Reallocation Strategies', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Implementation Patterns', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Zone Definitions', desc: 'A typical context budget divides the window into five zones:  System Prompt Zone (10-20% of window): Contains persistent instructions, persona definitions, tool descriptions, output format specifications, and safety guidelines.' },
+    { title: '2. Budget Tables by Window Size', desc: 'These are starting points, not fixed rules. A RAG-heavy application might allocate 40% to retrieved knowledge and only 20% to conversation history.' },
+    { title: '3. Dynamic Reallocation Strategies', desc: 'Static budgets break down when real usage patterns do not match initial assumptions. Dynamic reallocation adjusts zone sizes based on runtime conditions:  Demand-based reallocation: If the current query retrieves highly relevant documents that exceed the knowledge zone budget, temporarily borrow.' },
+    { title: '4. Implementation Patterns', desc: 'Implement context budgets as explicit configuration objects in your application code:  Token counting functions (using tiktoken or model-specific tokenizers) verify that each zone stays within budget.' },
 ];
 
 export default function WalkthroughPEContextBudgetAllocation() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEContextBudgetAllocation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Context Budget Allocation — Step by Step
+          Context Budget Allocation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how context budget allocation works, one stage at a time.

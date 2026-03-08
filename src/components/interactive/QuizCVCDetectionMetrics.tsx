@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCDetectionMetrics() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'COCO 2017 detection: 118K training images, 5K validation images, 80 object categories, ~7.3 objects per image on average.', isTrue: true, explanation: 'This is a key technical detail of Detection Metrics.' },
-    { text: 'State-of-the-art COCO AP: ~64--66% (Co-DETR, 2023).', isTrue: true, explanation: 'This is a key technical detail of Detection Metrics.' },
-    { text: 'AP50 for the same models: ~83--85%.', isTrue: true, explanation: 'This is a key technical detail of Detection Metrics.' },
+    { text: 'mAP and AP mean the same thing.', isTrue: false, explanation: 'In COCO, "AP" already means averaged over categories (i.e., it is mAP). In Pascal VOC, per-class AP is reported separately.' },
+    { text: 'Object detection evaluation uses mean Average Precision (mAP), computed over precision-recall curves at various IoU thresholds, with the COCO protocol (AP@[.50:.05:.95]) as the standard benchmark.', isTrue: true, explanation: 'This captures the core definition of Detection Metrics.' },
+    { text: 'Detection Metrics is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Detection Metrics is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

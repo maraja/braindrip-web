@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLRlaifAndConstitutionalAi() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'AI evaluator quality: The evaluator model should be at least as capable as the policy being trained.', isTrue: true, explanation: 'This is a key technical detail of RLAIF and Constitutional AI.' },
-    { text: 'Using a stronger model (e.g., a larger model) as evaluator improves label quality.', isTrue: true, explanation: 'This is a key technical detail of RLAIF and Constitutional AI.' },
-    { text: 'Position bias: AI evaluators exhibit position bias (preferring the first or second response).', isTrue: true, explanation: 'This is a key technical detail of RLAIF and Constitutional AI.' },
+    { text: 'AI feedback is circular -- the model is training on its own preferences.', isTrue: false, explanation: 'The evaluator and the policy being trained are typically different models, or the same base model used at different stages. More importantly, the constitution provides external grounding -- the principles encode human values even if the evaluation is performed by AI.' },
+    { text: 'The evaluator model should be at least as capable as the policy being trained.', isTrue: true, explanation: 'Using a stronger model (e.g., a larger model) as evaluator improves label quality.' },
+    { text: 'AI evaluators exhibit position bias (preferring the first or second response).', isTrue: true, explanation: 'Mitigate by evaluating each pair twice with swapped positions and averaging.' },
+    { text: 'Different principles can be applied to different categories of prompts.', isTrue: true, explanation: 'Safety principles for potentially harmful queries, helpfulness principles for benign queries.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCOcrAndDocumentUnderstanding() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'CRNN with CTC decoding remains a strong baseline; runs at ~1 ms per text crop on a GPU.', isTrue: true, explanation: 'This is a key technical detail of OCR and Document Understanding.' },
-    { text: 'TrOCR-Large achieves 94.1% word accuracy on IAM handwriting, outperforming CRNN-based approaches by ~4 points.', isTrue: true, explanation: 'This is a key technical detail of OCR and Document Understanding.' },
-    { text: 'DBNet processes 720p images at 22 FPS on a V100, making it suitable for real-time applications.', isTrue: true, explanation: 'This is a key technical detail of OCR and Document Understanding.' },
+    { text: 'OCR is a solved problem.', isTrue: false, explanation: 'OCR on clean, printed English text is near-perfect (&gt;99% character accuracy). But scene text in the wild, degraded historical documents, handwritten text, and multilingual content remain challenging.' },
+    { text: 'Optical Character Recognition (OCR) detects and recognizes text in images, while document understanding extends this to parsing layouts, tables, and semantic structure for automated information extraction.', isTrue: true, explanation: 'This captures the core definition of OCR and Document Understanding.' },
+    { text: 'OCR and Document Understanding is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding OCR and Document Understanding is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

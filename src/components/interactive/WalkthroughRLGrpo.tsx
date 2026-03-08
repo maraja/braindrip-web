@@ -1,9 +1,8 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The GRPO Algorithm', desc: 'The foundation of grpo begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Why Group Normalization Works', desc: 'At this stage, the key transformation occurs — the core mechanism that makes grpo work.' },
-    { title: '3. Comparison with PPO', desc: 'The intermediate results are processed and refined through the main pipeline.' },
+    { title: '1. The GRPO Algorithm', desc: 'For each prompt x_i in a training batch:  Step 1: Group Sampling. Sample a group of G complete responses from the current policy:  [equation]  Typical group sizes are G = 8--64.' },
+    { title: '2. Why Group Normalization Works', desc: 'The group-relative advantage serves the same purpose as the value function baseline in PPO: variance reduction. In standard PPO, &#123;A&#125;_t = R_t - V_(s_t) subtracts the expected return as a baseline.' },
 ];
 
 export default function WalkthroughRLGrpo() {
@@ -15,10 +14,10 @@ export default function WalkthroughRLGrpo() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          GRPO — Step by Step
+          GRPO \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how grpo works, one stage at a time.

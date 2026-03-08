@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Types of Commonsense Knowledge', desc: 'The foundation of commonsense reasoning begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Knowledge Bases for Commonsense', desc: 'At this stage, the key transformation occurs — the core mechanism that makes commonsense reasoning work.' },
-    { title: '3. Benchmarks', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Why LLMs Struggle with Commonsense', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Current Approaches', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Types of Commonsense Knowledge', desc: 'Physical/Naive Physics Commonsense: Understanding of the physical world -- gravity, object permanence, material properties, spatial relationships. "You cannot fit an elephant in a car." "Ice cream melts in the sun." "A glass dropped on concrete will break.' },
+    { title: '2. Knowledge Bases for Commonsense', desc: 'ConceptNet (Speer et al., 2017): A multilingual knowledge graph containing over 21 million edges connecting concepts via 34 relations types (IsA, HasA, UsedFor, CapableOf, Causes, MotivatedByGoal, etc.).' },
+    { title: '3. Benchmarks', desc: 'Winograd Schema Challenge (WSC) (Levesque et al., 2012): Pairs of sentences differing by one or two words that change a pronoun\'s referent, requiring world knowledge to resolve. Example: "The city council refused the demonstrators a permit because they feared/advocated violence.' },
+    { title: '4. Why LLMs Struggle with Commonsense', desc: 'Despite achieving impressive performance on many benchmarks, LLMs face several systematic challenges with commonsense:  Reporting bias: Text corpora under-represent obvious facts.' },
+    { title: '5. Current Approaches', desc: 'Knowledge-augmented models: Injecting structured commonsense knowledge into neural models. KagNet (Lin et al., 2019) grounds QA in ConceptNet subgraphs.' },
 ];
 
 export default function WalkthroughNLPCommonsenseReasoning() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPCommonsenseReasoning() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Commonsense Reasoning — Step by Step
+          Commonsense Reasoning \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how commonsense reasoning works, one stage at a time.

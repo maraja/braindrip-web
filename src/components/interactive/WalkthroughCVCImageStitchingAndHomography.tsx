@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Feature Detection and Matching', desc: 'The foundation of image stitching and homography begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Homography Estimation with RANSAC', desc: 'At this stage, the key transformation occurs — the core mechanism that makes image stitching and homography work.' },
-    { title: '3. Image Warping', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Blending', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Code Example', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Step 1: Feature Detection and Matching', desc: 'Extract keypoints and descriptors from both images using SIFT, ORB, or similar. Match descriptors using brute-force or FLANN-based nearest-neighbor search, then apply Lowe\'s ratio test (threshold 0.7--0.8) to filter ambiguous matches.' },
+    { title: '2. Step 2: Homography Estimation with RANSAC', desc: 'A homography H maps a point (x, y, 1)^T in image 1 to (x\', y\', 1)^T in image 2 via:  [equation]  where  denotes equality up to scale (H has 8 degrees of freedom).' },
+    { title: '3. Step 3: Image Warping', desc: 'Apply the estimated homography to warp one image into the coordinate frame of the other using inverse warping with bilinear interpolation:  [equation]' },
+    { title: '4. Step 4: Blending', desc: 'Simple overlay produces visible seams due to exposure and vignetting differences. Common blending strategies:  Feathering (alpha blending): Linear weight ramp based on distance from image edges.' },
+    { title: '5. OpenCV\'s High-Level Stitcher', desc: 'This wraps feature detection, matching, homography estimation, bundle adjustment, multi-band blending, and exposure compensation into a single call.' },
 ];
 
 export default function WalkthroughCVCImageStitchingAndHomography() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCImageStitchingAndHomography() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Image Stitching and Homography — Step by Step
+          Image Stitching and Homography \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how image stitching and homography works, one stage at a time.

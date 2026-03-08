@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Sources of Bias', desc: 'The foundation of bias in nlp begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Types of Bias', desc: 'At this stage, the key transformation occurs — the core mechanism that makes bias in nlp work.' },
-    { title: '3. Measurement Methods', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Debiasing Techniques', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Sources of Bias', desc: 'Training Data Bias: Language models learn from web text, books, and news articles that reflect historical and ongoing societal biases. Common Crawl, a frequent pre-training source, over-represents English, Western perspectives, and majority viewpoints.' },
+    { title: '2. Types of Bias', desc: 'Gender Bias: The most extensively studied form. Bolukbasi et al.' },
+    { title: '3. Measurement Methods', desc: 'Word Embedding Association Test (WEAT): Caliskan et al. (2017) adapted the Implicit Association Test from psychology to word embeddings.' },
+    { title: '4. Debiasing Techniques', desc: 'Embedding Debiasing: Bolukbasi et al. (2016) proposed identifying a "gender subspace" in embedding space via PCA and projecting gender-neutral words (e.g., "doctor," "nurse") away from this subspace.' },
 ];
 
 export default function WalkthroughNLPBiasInNlp() {
@@ -16,10 +16,10 @@ export default function WalkthroughNLPBiasInNlp() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Bias in NLP — Step by Step
+          Bias in NLP \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how bias in nlp works, one stage at a time.

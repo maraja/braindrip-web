@@ -5,7 +5,7 @@ const DETAILS = [
     { label: 'Ordering principle', detail: 'Critical rules should be placed at the top (primacy effect) and bottom (recency effect) of the system prompt. Context and reference material should be placed in the middle.' },
     { label: 'Numbered lists vs. prose', detail: 'Behavioral constraints formatted as numbered lists show 15-20% better compliance than the same rules written in prose paragraphs.' },
     { label: 'Example count', detail: '1-3 embedded examples are optimal. More than 3 examples consume excessive tokens with diminishing returns on behavior shaping.' },
-    { label: 'Role definition impact', detail: 'Specific role definitions improve domain accuracy by 5-15% compared to generic \"You are a helpful assistant\" prompts.' },
+    { label: 'Role definition impact', detail: 'Specific role definitions improve domain accuracy by 5-15% compared to generic "You are a helpful assistant" prompts.' },
     { label: 'Format compliance', detail: 'Explicit output format instructions (with examples) achieve 85-95% compliance with modern instruction-tuned models.' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerPESystemPromptAnatomy() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          System Prompt Anatomy — Key Details Explorer
+          System Prompt Anatomy \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of system prompt anatomy.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Input Guards', desc: 'The foundation of agent guardrails begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Output Guards', desc: 'At this stage, the key transformation occurs — the core mechanism that makes agent guardrails work.' },
-    { title: '3. Action Guards', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Guardrail Frameworks', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Input Guards', desc: 'Input guards process every message before it reaches the agent\'s reasoning. They perform several checks: prompt injection detection (identifying attempts to override system instructions), content policy enforcement (blocking requests for illegal, harmful, or unethical actions), scope enforcement.' },
+    { title: '2. Output Guards', desc: 'Output guards evaluate the agent\'s generated response before it is delivered. They check for harmful content (violence, hate speech, explicit material), information leakage (system prompts, internal data, credentials appearing in the response), factual safety (medical, legal, or financial advice.' },
+    { title: '3. Action Guards', desc: 'Action guards intercept proposed tool calls and evaluate them before execution. They check: is this tool call syntactically valid?' },
+    { title: '4. Guardrail Frameworks', desc: 'Dedicated frameworks simplify guardrail implementation. NVIDIA NeMo Guardrails provides a configuration language (Colang) for defining conversation flows and safety rules, integrating with any LLM.' },
 ];
 
 export default function WalkthroughAACAgentGuardrails() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACAgentGuardrails() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agent Guardrails — Step by Step
+          Agent Guardrails \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how agent guardrails works, one stage at a time.

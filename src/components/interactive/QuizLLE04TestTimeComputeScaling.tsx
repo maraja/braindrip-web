@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE04TestTimeComputeScaling() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Test-time compute scaling is the paradigm that allocating more computation during inference (letting a model think longer) can be more cost-effective than training a larger model, opening a second axis for improving AI capabilities.', isTrue: true, explanation: 'This captures the core purpose of Test-Time Compute Scaling: Thinking Longer Beats Training Bigger.' },
-    { text: 'Test-Time Compute Scaling: Thinking Longer Beats Training Bigger is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Test-Time Compute Scaling: Thinking Longer Beats Training Bigger is important for building on more advanced topics.' },
-    { text: 'Test-Time Compute Scaling: Thinking Longer Beats Training Bigger is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Test-Time Compute Scaling: Thinking Longer Beats Training Bigger is important for building on more advanced topics.' },
+    { text: 'More thinking always means better answers.', isTrue: false, explanation: 'There are diminishing returns, and for some problems, additional reasoning can actually hurt through overthinking or introducing errors in an otherwise correct initial response. The key insight is compute-optimal allocation: matching thinking depth to problem difficulty, not maximizing thinking on every query.' },
+    { text: 'Test-time compute scaling replaces training-time scaling.', isTrue: false, explanation: 'The two are complementary, not substitutive. A poorly trained model will not reason well no matter how much inference compute it receives.' },
+    { text: 'This is just chain-of-thought prompting with extra steps.', isTrue: false, explanation: 'Chain-of-thought prompting asks an untrained model to show its work. Test-time compute scaling involves models specifically trained to reason effectively through RL, combined with verification systems (PRMs, ORMs) and search strategies (beam search, best-of-N) that no prompting technique can replicate.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

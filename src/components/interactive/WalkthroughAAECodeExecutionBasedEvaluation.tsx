@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Test-as-Oracle: The Core Pattern', desc: 'The foundation of code execution-based evaluation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Strengths of Test-Based Evaluation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes code execution-based evaluation work.' },
-    { title: '3. Limitations of Test-Based Evaluation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Agent-Generated Tests vs. Human-Written Tests', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Beyond Pass/Fail: Measuring Solution Quality', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Test-as-Oracle: The Core Pattern', desc: 'The evaluation loop is straightforward:  Present the coding task to the agent Collect the agent\'s code output Execute the code in a sandboxed environment Run the test suite against the executed code Record pass/fail results for each test case Compute aggregate metrics (pass rate, pass@k)  The test.' },
+    { title: '2. Strengths of Test-Based Evaluation', desc: 'Objectivity: No prompt engineering, no rubric ambiguity, no judge bias. A test passes or it does not.' },
+    { title: '3. Limitations of Test-Based Evaluation', desc: 'Test incompleteness: Tests only verify the behaviors they cover. Code that passes all tests may still contain bugs in untested paths.' },
+    { title: '4. Agent-Generated Tests vs. Human-Written Tests', desc: 'Human-written tests are the traditional oracle: created by developers who understand the specification, edge cases, and expected behavior. They are generally higher quality but expensive to create and may not cover all evaluation scenarios.' },
+    { title: '5. Beyond Pass/Fail: Measuring Solution Quality', desc: '"Tests pass" is a necessary but insufficient measure of code quality. Comprehensive evaluation also considers:  Code quality: Does the code follow project conventions, use meaningful variable names, include appropriate comments, and handle errors gracefully?' },
+    { title: '6. SWE-bench\'s Methodology', desc: 'SWE-bench evaluates coding agents on real-world GitHub issue resolution:  Each task is a real issue from a popular open-source repository (Django, scikit-learn, sympy, etc.' },
 ];
 
 export default function WalkthroughAAECodeExecutionBasedEvaluation() {
@@ -17,10 +18,10 @@ export default function WalkthroughAAECodeExecutionBasedEvaluation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Code Execution-Based Evaluation — Step by Step
+          Code Execution-Based Evaluation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how code execution-based evaluation works, one stage at a time.

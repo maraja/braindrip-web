@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCDropoutAndRegularization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Standard dropout rate: $p=0.5$ for FC layers, $p=0.1$-$0.3$ elsewhere.', isTrue: true, explanation: 'This is a key technical detail of Dropout and Regularization.' },
-    { text: 'Higher rates for larger models.', isTrue: true, explanation: 'This is a key technical detail of Dropout and Regularization.' },
-    { text: 'Weight decay defaults: 1e-4 for SGD with momentum, 0.01-0.1 for AdamW.', isTrue: true, explanation: 'This is a key technical detail of Dropout and Regularization.' },
+    { text: 'Dropout is essential for every network.', isTrue: false, explanation: 'Modern convolutional architectures often omit dropout entirely, relying on BN, data augmentation, and weight decay. Dropout remains common in FC layers and Transformers but is not universal.' },
+    { text: 'Dropout randomly zeroes neuron activations during training to prevent co-adaptation, while L2 regularization and its variants penalize large weights -- together they are the primary tools for controlling overfitting in deep networks.', isTrue: true, explanation: 'This captures the core definition of Dropout and Regularization.' },
+    { text: 'Dropout and Regularization is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Dropout and Regularization is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

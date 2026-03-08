@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPMultilingualNlp() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'mBERT covers 104 languages; XLM-R covers 100 languages.', isTrue: true, explanation: 'This is a key technical detail of Multilingual NLP.' },
-    { text: 'Neither reaches even 2% of the world\'s languages.', isTrue: true, explanation: 'This is a key technical detail of Multilingual NLP.' },
-    { text: 'Zero-shot cross-lingual transfer with XLM-R achieves 60--80% of supervised performance on NER and classification tasks for many languages (Conneau et al., 2020).', isTrue: true, explanation: 'This is a key technical detail of Multilingual NLP.' },
+    { text: 'A multilingual model understands all languages equally.', isTrue: false, explanation: 'Multilingual models allocate capacity proportional to training data volume. English and other high-resource languages get substantially better representations than low-resource languages.' },
+    { text: 'Machine translation can solve the multilingual problem.', isTrue: false, explanation: 'Translation introduces errors, loses pragmatic nuance, and requires MT systems that themselves need substantial parallel data. For 90%+ of language pairs, no high-quality MT system exists.' },
+    { text: 'All languages can be handled with the same tokenizer.', isTrue: false, explanation: 'A BPE tokenizer trained primarily on Latin-script languages fragments CJK characters, Arabic morphology, and agglutinative languages into excessively long token sequences, directly harming model performance and increasing inference cost.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

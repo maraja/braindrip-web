@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Greedy Splitting (The CART Algorithm)', desc: 'The foundation of decision trees begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Splitting Criteria', desc: 'At this stage, the key transformation occurs — the core mechanism that makes decision trees work.' },
-    { title: '3. Stopping Criteria', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Pruning', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Feature Importance', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Greedy Splitting (The CART Algorithm)', desc: 'The Classification and Regression Trees (CART) algorithm builds the tree top-down via greedy recursive splitting:  For each feature j and each possible threshold t, split the current node\'s data into two groups: \\&#123;x : x_j  t\\&#125; and \\&#123;x : x_j &gt; t\\&#125;.' },
+    { title: '2. Splitting Criteria', desc: 'The impurity measure determines which splits the algorithm prefers. Let p_c be the fraction of samples in a node belonging to class c.' },
+    { title: '3. Stopping Criteria', desc: 'Without constraints, a tree will keep splitting until every leaf is pure, which perfectly memorizes the training data (overfitting). Common stopping criteria include:  Maximum depth: Limit the number of levels in the tree.' },
+    { title: '4. Pruning', desc: 'Stopping criteria (pre-pruning) can be too aggressive or too conservative. Post-pruning grows a full tree and then removes branches that do not improve generalization:  Cost-Complexity Pruning (Minimal Cost-Complexity Pruning): Define the cost-complexity criterion for subtree T:  [equation]  where.' },
+    { title: '5. Feature Importance', desc: 'Decision trees provide a natural measure of feature importance. The importance of feature j is the total reduction in impurity across all nodes that split on feature j:  [equation]  normalized to sum to 1 across all features.' },
+    { title: '6. Handling Missing Values', desc: 'CART handles missing values via surrogate splits: at each node, the algorithm identifies alternative features that produce splits most similar to the chosen split. When a test-time example has a missing value for the primary split feature, the surrogate split is used instead.' },
 ];
 
 export default function WalkthroughMLFDecisionTrees() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFDecisionTrees() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Decision Trees — Step by Step
+          Decision Trees \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how decision trees works, one stage at a time.

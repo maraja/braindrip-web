@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPECitationAndAttributionPrompting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Numbered inline citations [1] are followed most consistently by language models, with 85-90% compliance rates compared to 60-70% for named source citations.', isTrue: true, explanation: 'This is a key technical detail of Citation and Attribution Prompting.' },
-    { text: 'Few-shot citation examples (2-3 examples in the prompt) improve citation consistency by 25-35% over zero-shot citation instructions.', isTrue: true, explanation: 'This is a key technical detail of Citation and Attribution Prompting.' },
-    { text: 'Automated citation verification using NLI models catches 70-80% of citation errors; adding a secondary LLM verification pass achieves 90-95% accuracy.', isTrue: true, explanation: 'This is a key technical detail of Citation and Attribution Prompting.' },
+    { text: 'Asking the model to \'cite sources\' is sufficient.', isTrue: false, explanation: 'Generic citation instructions produce wildly inconsistent results. Models may cite randomly, cite once at the end, or invent citation formats.' },
+    { text: 'If the model includes a citation, it must be accurate.', isTrue: false, explanation: 'Models frequently produce decorative citations — references that look correct but do not actually support the adjacent claim. Without automated verification, 30-40% of citations may be inaccurate.' },
+    { text: 'Citations slow down the response too much.', isTrue: false, explanation: 'Citation tokens add 5-15% to output length for inline citations. The verification and trust benefits far outweigh this marginal cost increase, especially in applications where users would otherwise need to independently verify claims.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

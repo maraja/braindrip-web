@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLResourceOptimization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Data center cooling: The system operates with a 5-minute control loop, making ~288 decisions per day.', isTrue: true, explanation: 'This is a key technical detail of Resource Optimization.' },
-    { text: 'Safety constraints ensure the RL agent cannot push parameters outside physical safety limits.', isTrue: true, explanation: 'This is a key technical detail of Resource Optimization.' },
-    { text: 'Chip placement: The RL agent places ~100-1000 macros sequentially.', isTrue: true, explanation: 'This is a key technical detail of Resource Optimization.' },
+    { text: 'RL replaces existing optimization methods.', isTrue: false, explanation: 'In practice, RL often augments rather than replaces traditional methods. Hybrid approaches (RL for high-level strategy, conventional optimization for low-level execution) are common.' },
+    { text: 'The system operates with a 5-minute control loop, making ~288 decisions per day.', isTrue: true, explanation: 'Safety constraints ensure the RL agent cannot push parameters outside physical safety limits.' },
+    { text: 'The RL agent places ~100-1000 macros sequentially.', isTrue: true, explanation: 'Training takes ~48 hours on 100 TPUs for a single chip design. Transfer learning across chip families significantly reduces training time for new designs.' },
+    { text: 'Multi-agent RL coordinates dozens to hundreds of intersections.', isTrue: true, explanation: 'Communication between intersection agents (centralized training, decentralized execution) significantly outperforms independent learning.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

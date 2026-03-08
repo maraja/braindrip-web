@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Training time', detail: '$O(1)$ (just store the data). **Prediction time**: $O(nd)$ brute-force, $O(d \\log n)$ with KD-trees in low dimensions.' },
-    { label: 'Memory', detail: '$O(nd)$ -- the entire training set must be stored.' },
+    { label: 'Training time', detail: 'O(1) (just store the data). Prediction time: O(nd) brute-force, O(d  n) with KD-trees in low dimensions.' },
+    { label: 'Memory', detail: 'O(nd) -- the entire training set must be stored.' },
     { label: 'No feature importance', detail: 'KNN provides no insight into which features drive predictions.' },
     { label: 'Sensitive to irrelevant features', detail: 'Every feature contributes to the distance equally (unless weighted). Feature selection is critical.' },
     { label: 'Non-parametric', detail: 'The model complexity grows with the data, which is both a strength and a liability.' },
-    { label: 'Boundary shape', detail: 'Decision boundaries are piecewise linear (Voronoi-like), becoming smoother as $K$ increases.' },
+    { label: 'Boundary shape', detail: 'Decision boundaries are piecewise linear (Voronoi-like), becoming smoother as K increases.' },
 ];
 
 export default function ExplorerMLFKNearestNeighbors() {
@@ -20,10 +20,10 @@ export default function ExplorerMLFKNearestNeighbors() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          K-Nearest Neighbors — Key Details Explorer
+          K-Nearest Neighbors \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of k-nearest neighbors.
+          Click each card to explore the technical details.
         </p>
       </div>
 

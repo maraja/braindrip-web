@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Temperature 0', detail: 'provides 85-95% reproducibility across runs. The remaining 5-15% variance comes from API-level non-determinism (batching, quantization).' },
-    { label: 'Minimum evaluation suite size', detail: 'is 50 tasks for statistically meaningful results. With 50 binary tasks, you can detect a 15-percentage-point quality change at p<0.05.' },
+    { label: 'Minimum evaluation suite size', detail: 'is 50 tasks for statistically meaningful results. With 50 binary tasks, you can detect a 15-percentage-point quality change at p&lt;0.05.' },
     { label: 'LLM-as-judge', detail: 'agreement with human raters is typically 80-90% when using a frontier model with a well-designed rubric. Calibrate your rubric against 50+ human-rated examples before trusting it.' },
     { label: 'Evaluation cost', detail: 'for a 200-task suite using a frontier model is approximately $10-50 per run, depending on task complexity and token usage.' },
     { label: 'CI/CD test budgets', detail: 'for an active development team: $500-2000/month for evaluation runs. This is a small fraction of the production LLM cost.' },
@@ -20,10 +20,10 @@ export default function ExplorerADPAgentTestingStrategy() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agent Testing Strategy — Key Details Explorer
+          Agent Testing Strategy \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of agent testing strategy.
+          Click each card to explore the technical details.
         </p>
       </div>
 

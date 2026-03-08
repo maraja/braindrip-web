@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPTextToSpeech() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'State-of-the-art TTS achieves MOS scores of 4.5--4.6 out of 5.0, compared to human recordings at ~4.6.', isTrue: true, explanation: 'This is a key technical detail of Text-to-Speech.' },
-    { text: 'The gap is essentially closed for single-speaker, clean-domain synthesis.', isTrue: true, explanation: 'This is a key technical detail of Text-to-Speech.' },
-    { text: 'Standard audio: 16 kHz or 22.05 kHz sampling rate, 80-channel Mel-spectrogram with 12.5 ms hop size.', isTrue: true, explanation: 'This is a key technical detail of Text-to-Speech.' },
+    { text: 'TTS just looks up words in a pronunciation dictionary.', isTrue: false, explanation: 'Text analysis is far more complex than dictionary lookup. Handling homographs ("lead" the metal vs.' },
+    { text: 'Neural TTS always sounds better than concatenative TTS.', isTrue: false, explanation: 'For narrow domains (e.g., weather reports, transit announcements) with ample recorded data, well-built concatenative systems can still sound more natural because they use actual human speech segments. Neural TTS excels at generalization across diverse text inputs.' },
+    { text: 'Voice cloning requires hours of target speaker data.', isTrue: false, explanation: 'Modern zero-shot TTS (VALL-E, YourTTS) can produce recognizable voice clones from just 3--10 seconds of audio. However, longer reference audio still significantly improves naturalness and speaker similarity.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

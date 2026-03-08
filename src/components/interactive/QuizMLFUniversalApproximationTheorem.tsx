@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFUniversalApproximationTheorem() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The theorem applies to continuous functions on compact (closed and bounded) subsets of $\\mathbb&#123;R&#125;^n$.', isTrue: true, explanation: 'This is a key technical detail of Universal Approximation Theorem.' },
-    { text: 'Extensions exist for $L^p$ approximation (not just uniform), discontinuous targets, and unbounded domains with appropriate growth conditions.', isTrue: true, explanation: 'This is a key technical detail of Universal Approximation Theorem.' },
-    { text: 'For ReLU networks specifically, the number of linear regions (a measure of expressivity) grows exponentially with depth but only polynomially with width.', isTrue: true, explanation: 'This is a key technical detail of Universal Approximation Theorem.' },
+    { text: 'The theorem means one hidden layer is all you ever need.', isTrue: false, explanation: 'In theory, yes. In practice, the required width may be exponentially large, training may be intractable, and generalization may be poor.' },
+    { text: 'A single hidden layer with enough neurons can approximate any continuous function -- but finding those weights is the hard part.', isTrue: true, explanation: 'This captures the core definition of Universal Approximation Theorem.' },
+    { text: 'Universal Approximation Theorem is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Universal Approximation Theorem is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

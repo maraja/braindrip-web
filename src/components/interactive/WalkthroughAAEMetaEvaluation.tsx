@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Sensitivity Analysis', desc: 'The foundation of meta-evaluation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Specificity Analysis', desc: 'At this stage, the key transformation occurs — the core mechanism that makes meta-evaluation work.' },
-    { title: '3. Discriminative Power', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Detecting Goodhart\'s Law Degradation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Evaluation Suite Refresh Strategies', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Sensitivity Analysis', desc: 'Sensitivity measures whether the evaluation can detect known performance changes. The procedure:  Create synthetic regressions: Take a known-good agent and deliberately degrade it -- drop tool calls randomly, inject errors into reasoning, reduce context window.' },
+    { title: '2. Specificity Analysis', desc: 'Specificity measures the false alarm rate: how often does the evaluation flag a regression when nothing has changed? [equation]  Estimate this by running the same agent twice under identical conditions (different random seeds) and measuring how often the comparison test rejects the.' },
+    { title: '3. Discriminative Power', desc: 'Beyond binary detection, measure how well the evaluation rank-orders agents. Given K agents with known capability ordering (established via extensive human evaluation), compute:  Kendall\'s : Correlation between evaluation ranking and ground-truth ranking:  [equation]  Values range from -1 (perfect.' },
+    { title: '4. Detecting Goodhart\'s Law Degradation', desc: 'Signs that your evaluation has become a Goodharted target:  Score-capability divergence: Benchmark scores improve while production metrics (user satisfaction, task completion in the wild) stagnate or decline. Formally, track (benchmark, production) over time.' },
+    { title: '5. Evaluation Suite Refresh Strategies', desc: 'When meta-evaluation reveals degradation, apply targeted refreshes:  Task rotation: Replace 10-20% of tasks per evaluation cycle with fresh items from the same distribution. Maintain a held-out pool never exposed to developers.' },
 ];
 
 export default function WalkthroughAAEMetaEvaluation() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAEMetaEvaluation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Meta-Evaluation — Step by Step
+          Meta-Evaluation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how meta-evaluation works, one stage at a time.

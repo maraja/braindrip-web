@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLEligibilityTraces() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Computational cost: TD($\\lambda$) requires storing and updating a trace for every state (or state-action pair) at each step, making it $O(|\\mathcal&#123;S&#125;|)$ per step instead of $O(1)$ for TD(0).', isTrue: true, explanation: 'This is a key technical detail of Eligibility Traces.' },
-    { text: 'This motivated truncated traces and sparse implementations.', isTrue: true, explanation: 'This is a key technical detail of Eligibility Traces.' },
-    { text: 'Common $\\lambda$ values: 0.8-0.95 typically works best.', isTrue: true, explanation: 'This is a key technical detail of Eligibility Traces.' },
+    { text: 'Eligibility traces are just a historical curiosity.', isTrue: false, explanation: 'While less prominent in modern deep RL, the -return idea lives on as GAE, which is central to PPO and modern policy gradient methods. Understanding traces is essential for understanding GAE.' },
+    { text: 'TD() requires storing and updating a trace for every state (or state-action pair) at each step, making it O() per step instead of O(1) for TD(0).', isTrue: true, explanation: 'This motivated truncated traces and sparse implementations.' },
+    { text: '0.8-0.95 typically works best.', isTrue: true, explanation: '= 0.9 is a common default.' },
+    { text: 'Replacing traces often work better in practice, especially in environments with loops or repeated state visits.', isTrue: true, explanation: 'Singh & Sutton (1996) showed replacing traces can be significantly faster.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPSemanticRoleLabeling() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'CoNLL-2005 (WSJ test, span-based): SOTA ~87% F1; He et al.', isTrue: true, explanation: 'This is a key technical detail of Semantic Role Labeling.' },
-    { text: '(2017) without syntax achieved 83.1 F1; BERT-based models ~86--87%.', isTrue: true, explanation: 'This is a key technical detail of Semantic Role Labeling.' },
-    { text: 'CoNLL-2012 (OntoNotes, span-based): SOTA ~86% F1; more diverse genres than CoNLL-2005.', isTrue: true, explanation: 'This is a key technical detail of Semantic Role Labeling.' },
+    { text: 'SRL is the same as dependency parsing.', isTrue: false, explanation: 'Dependency parsing captures syntactic relations (subject, object); SRL captures semantic roles (agent, patient). The passive sentence "The window was broken by the ball" has different syntactic subjects but the same ARG0 (ball) and ARG1 (window) in SRL.' },
+    { text: 'SOTA ~87% F1; He et al.', isTrue: true, explanation: '(2017) without syntax achieved 83.1 F1; BERT-based models ~86--87%.' },
+    { text: 'ARG0 always means agent.', isTrue: false, explanation: 'In PropBank, numbered arguments are verb-specific. For most verbs, ARG0 is proto-agent and ARG1 is proto-patient, but for verbs like "receive," ARG0 is the recipient, not a prototypical agent.' },
+    { text: 'SOTA ~86% F1; more diverse genres than CoNLL-2005.', isTrue: true, explanation: 'SOTA ~86% F1; more diverse genres than CoNLL-2005.' },
+    { text: 'SRL requires syntactic parsing as preprocessing.', isTrue: false, explanation: 'He et al. (2017) showed that deep BiLSTMs can perform SRL competitively without any syntactic input.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCSegmentAnything() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'SAM ViT-H has 632M parameters (image encoder) + ~4M (mask decoder).', isTrue: true, explanation: 'This is a key technical detail of Segment Anything.' },
-    { text: 'Image encoder throughput: ~6.7 images/second on a single A100 GPU.', isTrue: true, explanation: 'This is a key technical detail of Segment Anything.' },
-    { text: 'Mask decoder throughput: after encoding, each prompt produces masks in ~50ms on a V100 GPU.', isTrue: true, explanation: 'This is a key technical detail of Segment Anything.' },
+    { text: 'SAM is a complete segmentation solution.', isTrue: false, explanation: 'SAM produces class-agnostic masks. It does not classify objects -- it does not know that a mask is a "cat" vs.' },
+    { text: 'The Segment Anything Model (SAM) is a foundation model for image segmentation trained on over 1 billion masks, capable of zero-shot, promptable segmentation of any object in any image without task-specific fine-tuning.', isTrue: true, explanation: 'This captures the core definition of Segment Anything.' },
+    { text: 'Segment Anything is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Segment Anything is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Action Classification', desc: 'The foundation of human-in-the-loop begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Approval Workflows', desc: 'At this stage, the key transformation occurs — the core mechanism that makes human-in-the-loop work.' },
-    { title: '3. Escalation Triggers', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Progressive Autonomy', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Action Classification', desc: 'The agent classifies every proposed action on a risk spectrum before deciding whether approval is needed. Read-only actions (searching, reading files, querying databases) are typically auto-approved.' },
+    { title: '2. Approval Workflows', desc: 'When approval is needed, the agent constructs an approval request that explains what action it wants to take, why it wants to take it, what the expected outcome is, and what the risks are.' },
+    { title: '3. Escalation Triggers', desc: 'Some situations demand escalation beyond the normal approval flow. These include: actions that affect multiple systems simultaneously, actions with estimated costs above a threshold, actions outside the agent\'s normal operating domain, situations where the agent expresses low confidence, and.' },
+    { title: '4. Progressive Autonomy', desc: 'Trust is built over time. An agent that has successfully completed 100 email drafts with zero rejection might be granted autonomous sending for routine emails.' },
 ];
 
 export default function WalkthroughAACHumanInTheLoop() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACHumanInTheLoop() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Human-in-the-Loop — Step by Step
+          Human-in-the-Loop \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how human-in-the-loop works, one stage at a time.

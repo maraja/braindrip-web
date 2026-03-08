@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Problem Formulation', desc: 'The foundation of semantic segmentation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Loss Function', desc: 'At this stage, the key transformation occurs — the core mechanism that makes semantic segmentation work.' },
-    { title: '3. Evaluation Metrics', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Encoder-Decoder Architecture Pattern', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Key Datasets', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Problem Formulation', desc: 'Each pixel (i, j) is treated as an independent classification problem, though spatial context from the surrounding region heavily influences the prediction. The network typically outputs a tensor of shape H x W x C, where each spatial location holds a probability distribution over classes.' },
+    { title: '2. Loss Function', desc: 'The standard training objective is per-pixel cross-entropy, averaged over all spatial locations:  [equation]  Because class frequencies are often severely imbalanced (e.g.' },
+    { title: '3. Evaluation Metrics', desc: 'Pixel Accuracy: fraction of correctly labeled pixels. Simple but misleading when classes are imbalanced.' },
+    { title: '4. Encoder-Decoder Architecture Pattern', desc: 'Most modern approaches follow an encoder-decoder structure:  Encoder: a backbone CNN (ResNet, EfficientNet) that progressively downsamples the spatial resolution while increasing channel depth, extracting rich features.' },
 ];
 
 export default function WalkthroughCVCSemanticSegmentation() {
@@ -17,10 +16,10 @@ export default function WalkthroughCVCSemanticSegmentation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Semantic Segmentation — Step by Step
+          Semantic Segmentation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how semantic segmentation works, one stage at a time.

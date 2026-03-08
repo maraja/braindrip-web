@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACAgentDebateAndVerification() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Same model, different prompts: Debate is effective even when all agents use the same underlying model.', isTrue: true, explanation: 'This is a key technical detail of Agent Debate and Verification.' },
-    { text: 'The different system prompts (proposer vs.', isTrue: true, explanation: 'This is a key technical detail of Agent Debate and Verification.' },
-    { text: 'against) create sufficiently different reasoning contexts.', isTrue: true, explanation: 'This is a key technical detail of Agent Debate and Verification.' },
+    { text: 'Debate catches all errors', isTrue: false, explanation: ': When both agents share the same training data and biases, they may agree on incorrect information. Debate is effective for logical errors and inconsistencies but less effective for shared knowledge gaps (e.g., both agents might confidently state an incorrect "fact" from their training data).' },
+    { text: 'Debate is effective even when all agents use the same underlying model.', isTrue: true, explanation: 'The different system prompts (proposer vs. critic, for vs.' },
+    { text: 'Vague critiques ("this could be better") are unhelpful.', isTrue: true, explanation: 'The critic prompt should request specific, actionable feedback: "Identify factual errors with corrections. Point out unsupported claims.' },
+    { text: 'Without explicit stopping conditions, debate can loop indefinitely.', isTrue: true, explanation: 'Common criteria: maximum rounds (2-3), critic finds no issues rated above a severity threshold, or diminishing changes between revisions.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

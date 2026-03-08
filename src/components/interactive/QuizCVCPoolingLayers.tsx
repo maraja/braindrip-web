@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCPoolingLayers() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Standard max pooling uses $2 \\times 2$ windows with stride 2, reducing each spatial dimension by half.', isTrue: true, explanation: 'This is a key technical detail of Pooling Layers.' },
-    { text: 'Overlapping pooling ($3 \\times 3$ window, stride 2) was used in AlexNet and showed slight improvements in reducing overfitting (top-1 error reduced by ~0.4%).', isTrue: true, explanation: 'This is a key technical detail of Pooling Layers.' },
-    { text: 'Global average pooling before the classifier is now the de facto standard; GoogLeNet used it to reduce parameters from 138M (VGG-16) to 6.8M while achieving better accuracy.', isTrue: true, explanation: 'This is a key technical detail of Pooling Layers.' },
+    { text: 'Pooling is essential for CNNs to work.', isTrue: false, explanation: 'All-convolutional networks (Springenberg et al., 2015) demonstrated that replacing pooling with strided convolutions can match or exceed performance. Pooling is a design choice, not a requirement.' },
+    { text: 'Pooling layers reduce the spatial dimensions of feature maps by summarizing local regions, providing translation invariance and computational savings.', isTrue: true, explanation: 'This captures the core definition of Pooling Layers.' },
+    { text: 'Pooling Layers is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Pooling Layers is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

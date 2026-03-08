@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE04AttentionMechanismOrigins() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Bahdanau attention (2014) let decoders dynamically focus on different parts of the input sequence, solving the fixed-length bottleneck of Seq2Seq and laying the conceptual foundation for the Transformer\'s self-attention.', isTrue: true, explanation: 'This captures the core purpose of Attention Mechanism Origins.' },
-    { text: 'Attention Mechanism Origins is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Attention Mechanism Origins is important for building on more advanced topics.' },
-    { text: 'Attention Mechanism Origins is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Attention Mechanism Origins is important for building on more advanced topics.' },
+    { text: 'Attention tells you what the model is \'thinking about.\'', isTrue: false, explanation: 'Attention weights show where the model focuses, but they are not faithful explanations of the model\'s reasoning. Multiple attention heads can contribute differently, and downstream layers can override attention patterns.' },
+    { text: 'September 2014 (arXiv:1409.0473), published at ICLR 2015; over 30,000 citations', isTrue: true, explanation: 'September 2014 (arXiv:1409.0473), published at ICLR 2015; over 30,000 citations' },
+    { text: 'Bahdanau attention is self-attention.', isTrue: false, explanation: 'Bahdanau attention is cross-attention — the decoder attends to the encoder. Self-attention, where a sequence attends to itself, was introduced in the Transformer.' },
+    { text: 'August 2015 (arXiv:1508.04025), published at EMNLP 2015', isTrue: true, explanation: 'August 2015 (arXiv:1508.04025), published at EMNLP 2015' },
+    { text: 'Attention eliminated the need for RNNs.', isTrue: false, explanation: 'Not in 2014-2016 — attention was added on top of RNN-based encoders and decoders. The RNN still did the sequential processing; attention just improved how information flowed between encoder and decoder.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

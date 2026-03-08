@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPIntrinsicVsExtrinsicEvaluation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Perplexity-task correlation: Chen et al.', isTrue: true, explanation: 'This is a key technical detail of Intrinsic vs. Extrinsic Evaluation.' },
-    { text: '(2019) found a logarithmic relationship between LM perplexity and downstream task performance -- gains from reducing perplexity show diminishing returns on tasks.', isTrue: true, explanation: 'This is a key technical detail of Intrinsic vs. Extrinsic Evaluation.' },
-    { text: 'Embedding dimension trade-off: Yin and Shen (2018) found intrinsic benchmarks favor higher dimensions (300--500), while downstream tasks often plateau at 100--300 dimensions.', isTrue: true, explanation: 'This is a key technical detail of Intrinsic vs. Extrinsic Evaluation.' },
+    { text: 'Intrinsic evaluation is useless.', isTrue: false, explanation: 'Intrinsic metrics remain valuable for rapid development iteration, debugging, and understanding what a model has learned. Probing tasks reveal interpretable properties of representations that downstream accuracy alone cannot expose.' },
+    { text: 'Yin and Shen (2018) found intrinsic benchmarks favor higher dimensions (300--500), while downstream tasks often plateau at 100--300 dimensions.', isTrue: true, explanation: 'Yin and Shen (2018) found intrinsic benchmarks favor higher dimensions (300--500), while downstream tasks often plateau at 100--300 dimensions.' },
+    { text: 'Better perplexity always means better downstream performance.', isTrue: false, explanation: 'This holds roughly at large scale differences (perplexity 140 vs. 20 matters enormously), but not for small differences (perplexity 20 vs.' },
+    { text: 'A random baseline scores ~45 on GLUE; BERT-base scores ~79; human performance is ~87.', isTrue: true, explanation: 'On SuperGLUE, BERT-large scores ~69 while human performance is ~90.' },
+    { text: 'Extrinsic evaluation is always the right choice.', isTrue: false, explanation: 'Extrinsic evaluation requires choosing a downstream task, and results may not generalize across tasks. A component that helps sentiment classification may not help NER.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

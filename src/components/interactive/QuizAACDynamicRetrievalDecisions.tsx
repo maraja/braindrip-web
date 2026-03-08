@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACDynamicRetrievalDecisions() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Confidence calibration: Raw LLM confidence scores are often poorly calibrated (overconfident on wrong answers).', isTrue: true, explanation: 'This is a key technical detail of Dynamic Retrieval Decisions.' },
-    { text: 'Techniques like temperature scaling and Platt scaling improve calibration, making confidence-based triggers more reliable.', isTrue: true, explanation: 'This is a key technical detail of Dynamic Retrieval Decisions.' },
-    { text: 'Query classification: A lightweight classifier (or prompt-based classification) categorizes queries into retrieval-needed vs retrieval-unnecessary before the main generation, adding minimal overhead.', isTrue: true, explanation: 'This is a key technical detail of Dynamic Retrieval Decisions.' },
+    { text: 'The model knows when it\'s wrong.', isTrue: false, explanation: 'LLMs are notoriously poorly calibrated, especially for questions just outside their training distribution. They often express high confidence in incorrect answers.' },
+    { text: 'Raw LLM confidence scores are often poorly calibrated (overconfident on wrong answers).', isTrue: true, explanation: 'Techniques like temperature scaling and Platt scaling improve calibration, making confidence-based triggers more reliable.' },
+    { text: 'Retrieval never hurts.', isTrue: false, explanation: 'Retrieval absolutely can degrade quality. Irrelevant documents confuse the model, and even relevant documents can override correct parametric knowledge with subtly wrong or outdated retrieved text.' },
+    { text: 'A lightweight classifier (or prompt-based classification) categorizes queries into retrieval-needed vs retrieval-unnecessary before the main generation, adding minimal overhead.', isTrue: true, explanation: 'A lightweight classifier (or prompt-based classification) categorizes queries into retrieval-needed vs retrieval-unnecessary before the main generation, adding minimal overhead.' },
+    { text: 'A simple threshold on confidence is enough.', isTrue: false, explanation: 'Single-threshold approaches are brittle. Different question types, domains, and stakes require different thresholds.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

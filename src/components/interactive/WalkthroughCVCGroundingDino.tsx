@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture Overview', desc: 'The foundation of grounding dino begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Feature Enhancer: Deep Fusion', desc: 'At this stage, the key transformation occurs — the core mechanism that makes grounding dino work.' },
-    { title: '3. Language-Guided Query Selection', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Training Pipeline', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Inference', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Architecture Overview', desc: 'Grounding DINO has four main components:  Dual-encoder backbone: A Swin Transformer (Swin-T or Swin-L) processes the image; a BERT model processes the text prompt. Both produce feature sequences.' },
+    { title: '2. Feature Enhancer: Deep Fusion', desc: 'The feature enhancer consists of stacked blocks, each containing:  Image self-attention: Standard deformable self-attention over image tokens Text self-attention: Standard self-attention over text tokens Image-to-text cross-attention: Image tokens attend to text tokens  [equation]  Text-to-image.' },
+    { title: '3. Language-Guided Query Selection', desc: 'Standard DINO uses 900 learnable queries. Grounding DINO replaces this with a selection mechanism:  Compute similarity between each position in the image feature map and the text features Select the top-N positions (typically N = 900) with highest text-image similarity as initial query.' },
+    { title: '4. Training Pipeline', desc: 'Grounding DINO is trained on a mixture of three data types:  Detection data: Objects365 (365 categories, 1.7M images) and COCO (80 categories, 118K images) -- box annotations with category labels Grounding data: GoldG (grounded noun phrases from Flickr30K entities), RefCOCO/RefCOCO+/RefCOCOg.' },
+    { title: '5. Inference', desc: 'At inference, the user provides: An image A text prompt: either category names separated by periods ("cat . person .") or a free-form phrase ("the red car on the left")  The model outputs bounding boxes with associated text-similarity scores.' },
 ];
 
 export default function WalkthroughCVCGroundingDino() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCGroundingDino() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Grounding DINO — Step by Step
+          Grounding DINO \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how grounding dino works, one stage at a time.

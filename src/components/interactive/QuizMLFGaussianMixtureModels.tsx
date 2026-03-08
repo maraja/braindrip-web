@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFGaussianMixtureModels() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Time complexity: $O(nKd^2)$ per EM iteration for full covariance; $O(nKd)$ for diagonal Initialization: Highly sensitive to starting parameters.', isTrue: true, explanation: 'This is a key technical detail of Gaussian Mixture Models.' },
-    { text: 'Regularization (adding a small value $\\epsilon$ to the diagonal of $\\Sigma_k$) prevents this Convergence: EM converges to a local maximum; global maximum is not guaranteed.', isTrue: true, explanation: 'This is a key technical detail of Gaussian Mixture Models.' },
-    { text: 'The log-sum-exp trick avoids overflow by subtracting the maximum exponent before exponentiating', isTrue: true, explanation: 'This is a key technical detail of Gaussian Mixture Models.' },
+    { text: 'GMMs always outperform K-means.', isTrue: false, explanation: 'With limited data or high dimensionality, the extra parameters in GMMs lead to overfitting. K-means can be more robust in such settings.' },
+    { text: 'O(nKd^2) per EM iteration for full covariance; O(nKd) for diagonal', isTrue: true, explanation: 'O(nKd^2) per EM iteration for full covariance; O(nKd) for diagonal' },
+    { text: 'Highly sensitive to starting parameters.', isTrue: true, explanation: 'Common strategies include running K-means first, random restarts, or K-means++ followed by a few EM iterations' },
+    { text: 'If a component collapses onto a single point, its covariance becomes singular and the likelihood diverges.', isTrue: true, explanation: 'Regularization (adding a small value  to the diagonal of _k) prevents this' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

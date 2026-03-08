@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Single-Agent Ceiling Test', desc: 'The foundation of multi-agent decision framework begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Agent Boundary Design', desc: 'At this stage, the key transformation occurs — the core mechanism that makes multi-agent decision framework work.' },
-    { title: '3. Communication Protocol Selection', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Coordination Overhead Analysis', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Common Anti-Patterns', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Single-Agent Ceiling Test', desc: 'Before designing a multi-agent system, prove that a single agent cannot meet your requirements. This is the most important step and the one most often skipped.' },
+    { title: '2. Agent Boundary Design', desc: 'When multi-agent is justified, the next decision is where to draw the boundaries between agents. Separation of concerns: Each agent should own a coherent domain of responsibility.' },
+    { title: '3. Communication Protocol Selection', desc: 'How agents exchange information determines the system\'s coupling, latency, and debuggability. Protocol selection criteria:  If agents work on subtasks independently and report results to a coordinator: Use direct message passing or orchestrator-mediated.' },
+    { title: '4. Coordination Overhead Analysis', desc: 'Multi-agent systems pay a coordination tax. Quantify it before committing to the architecture.' },
+    { title: '5. Common Anti-Patterns', desc: 'Premature decomposition. Splitting a task into multiple agents before proving a single agent cannot handle it.' },
 ];
 
 export default function WalkthroughADPMultiAgentDecisionFramework() {
@@ -17,10 +17,10 @@ export default function WalkthroughADPMultiAgentDecisionFramework() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Multi-Agent Decision Framework — Step by Step
+          Multi-Agent Decision Framework \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how multi-agent decision framework works, one stage at a time.

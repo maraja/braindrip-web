@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Chi-Squared Test for Success Rate Comparison', desc: 'The foundation of regression detection statistics begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Sequential Probability Ratio Test (SPRT)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes regression detection statistics work.' },
-    { title: '3. CUSUM (Cumulative Sum) for Monitoring', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Multiple Comparison Correction', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Choosing Significance Thresholds', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Chi-Squared Test for Success Rate Comparison', desc: 'The most basic approach compares success rates between agent versions using a chi-squared test. Given n_1 trials of the old agent with x_1 successes and n_2 trials of the new agent with x_2 successes:  [equation]  Reject the null hypothesis of equal rates if ^2 &gt; ^2_&#123;1, &#125;.' },
+    { title: '2. Sequential Probability Ratio Test (SPRT)', desc: 'SPRT evaluates evidence continuously as each data point arrives. For binary outcomes, define the log-likelihood ratio after n observations:  [equation]  where p_0 is the baseline success rate and p_1 = p_0 -  is the regression threshold.' },
+    { title: '3. CUSUM (Cumulative Sum) for Monitoring', desc: 'For ongoing monitoring of deployed agents, CUSUM detects shifts in the mean performance over time. Define the cumulative sum:  [equation]  where _0 is the target performance level and  is the minimum shift to detect.' },
+    { title: '4. Multiple Comparison Correction', desc: 'When monitoring m metrics simultaneously (success rate, cost, latency, safety violations), the family-wise error rate inflates. Corrections include:  Bonferroni: Test each metric at \' = /m.' },
+    { title: '5. Choosing Significance Thresholds', desc: 'The conventional  = 0.05 is not universally appropriate:' },
 ];
 
 export default function WalkthroughAAERegressionDetectionStatistics() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAERegressionDetectionStatistics() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Regression Detection Statistics — Step by Step
+          Regression Detection Statistics \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how regression detection statistics works, one stage at a time.

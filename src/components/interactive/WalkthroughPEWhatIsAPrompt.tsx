@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The System Message', desc: 'The foundation of prompt begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The User Message', desc: 'At this stage, the key transformation occurs — the core mechanism that makes prompt work.' },
-    { title: '3. The Assistant Prefill', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Tool Results and Multi-Turn Context', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. How Segments Interact in Practice', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The System Message', desc: 'The system message is the first segment in most API calls. It sets the model\'s persona, behavioral constraints, and global instructions.' },
+    { title: '2. The User Message', desc: 'The user message contains the actual request, input data, and any examples or context the user provides. In API terms, this is the role: "user" segment.' },
+    { title: '3. The Assistant Prefill', desc: 'Some APIs (notably Anthropic\'s) allow you to start the assistant\'s response with predetermined text. If you set the assistant prefill to &#123;"result":, the model will continue generating valid JSON from that point.' },
+    { title: '4. Tool Results and Multi-Turn Context', desc: 'Modern LLM APIs support tool use (function calling), where the model requests external data and receives results injected back into the conversation. These tool results become part of the prompt for subsequent generation.' },
+    { title: '5. How Segments Interact in Practice', desc: 'The segments of a prompt are not independent — they interact in ways that can amplify or undermine each other. A system message that says "Always respond in JSON format" can be overridden if the user message includes a few-shot example showing natural language responses.' },
 ];
 
 export default function WalkthroughPEWhatIsAPrompt() {
@@ -17,13 +17,13 @@ export default function WalkthroughPEWhatIsAPrompt() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Prompt — Step by Step
+          What Is a Prompt \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Walk through how prompt works, one stage at a time.
+          Walk through how what is a prompt works, one stage at a time.
         </p>
       </div>
 

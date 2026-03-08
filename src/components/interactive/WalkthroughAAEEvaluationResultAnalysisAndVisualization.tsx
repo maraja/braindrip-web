@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Dashboards and Score Tracking', desc: 'The foundation of evaluation result analysis and visualization begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Comparative Analysis', desc: 'At this stage, the key transformation occurs — the core mechanism that makes evaluation result analysis and visualization work.' },
-    { title: '3. Failure Analysis', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Visualization Techniques', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Communicating to Different Audiences', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Dashboards and Score Tracking', desc: 'Effective evaluation dashboards track multiple dimensions:  Score trends over time: Plot evaluation scores across agent versions, model updates, and dataset revisions. Time-series visualization reveals gradual degradation that point-in-time comparisons miss.' },
+    { title: '2. Comparative Analysis', desc: 'Version-over-version comparison: For each new agent version, generate a comparison report against the previous version. Show per-category score deltas with statistical significance indicators.' },
+    { title: '3. Failure Analysis', desc: 'Failure mode clustering: Group failed evaluation tasks by similarity -- shared topics, similar error types, or common intermediate steps before failure. Manual inspection of 5-10 examples per cluster often reveals a single root cause.' },
+    { title: '4. Visualization Techniques', desc: 'Confusion matrices for task categories: When tasks fall into discrete categories, a confusion matrix shows where the agent succeeds and fails across categories. This is particularly useful for classification-style evaluations, revealing systematic biases (e.g.' },
+    { title: '5. Communicating to Different Audiences', desc: 'Developers need detailed, task-level breakdowns: which specific tasks failed, what the agent\'s trajectory looked like, where in the reasoning chain things went wrong. They benefit from links directly to trace logs and diff views showing how agent behavior changed between versions.' },
+    { title: '6. Automated Alerting on Regressions', desc: 'Proactive alerting prevents regressions from reaching production:  Threshold alerts: Trigger when any category score drops below an absolute threshold (e.g., safety score below 0.95). Regression alerts: Trigger when any category score drops significantly relative to the rolling baseline (e.g.' },
 ];
 
 export default function WalkthroughAAEEvaluationResultAnalysisAndVisualization() {
@@ -17,10 +18,10 @@ export default function WalkthroughAAEEvaluationResultAnalysisAndVisualization()
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Evaluation Result Analysis and Visualization — Step by Step
+          Evaluation Result Analysis and Visualization \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how evaluation result analysis and visualization works, one stage at a time.

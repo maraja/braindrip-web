@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Image Token Costs and Resolution Strategies', desc: 'The foundation of multi-modal context design begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Placement Strategies', desc: 'At this stage, the key transformation occurs — the core mechanism that makes multi-modal context design work.' },
-    { title: '3. Interleaving Modalities', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Text Descriptions as Fallback', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Provider Differences', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Image Token Costs and Resolution Strategies', desc: 'Images are converted to tokens using provider-specific methods. The cost varies dramatically with resolution:  OpenAI (GPT-4 Vision): Low resolution (512x512 fixed): 85 tokens regardless of original size.' },
+    { title: '2. Placement Strategies', desc: 'Where images appear relative to text in the context affects how the model interprets them:  Image-then-question: Place the image first, followed by the text question. This mirrors how humans look at a picture and then read a question about it.' },
+    { title: '3. Interleaving Modalities', desc: 'When a task involves multiple modalities, the interleaving strategy matters:  Sequential grouping: All text first, then all images, then all audio. Simple but loses the natural relationship between content.' },
+    { title: '4. Text Descriptions as Fallback', desc: 'When image processing is too expensive, unavailable, or unreliable for specific details, text descriptions serve as a cost-effective fallback:  When to use text instead of images: The image primarily contains text (use OCR + text instead).' },
+    { title: '5. Provider Differences', desc: 'Multi-modal capabilities differ significantly across providers:  These capabilities evolve rapidly — verify current provider documentation before designing your system.' },
 ];
 
 export default function WalkthroughPEMultiModalContextDesign() {
@@ -17,10 +17,10 @@ export default function WalkthroughPEMultiModalContextDesign() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Multi-Modal Context Design — Step by Step
+          Multi-Modal Context Design \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how multi-modal context design works, one stage at a time.

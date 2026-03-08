@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Linguistic Frameworks', desc: 'The foundation of semantic role labeling begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Predicate-Argument Structure', desc: 'At this stage, the key transformation occurs — the core mechanism that makes semantic role labeling work.' },
-    { title: '3. Span-Based vs. Dependency-Based SRL', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Neural SRL', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Linguistic Frameworks', desc: 'PropBank (Palmer et al., 2005) defines roles relative to each verb\'s specific usage (its "roleset"). Numbered arguments (ARG0 through ARG5) have verb-specific meanings: for "break," ARG0 is the breaker and ARG1 is the thing broken.' },
+    { title: '2. Predicate-Argument Structure', desc: 'A typical SRL output for "Mary sold the car to John for 5,000":  The key insight is that semantic roles are preserved across syntactic alternations: "John bought the car from Mary for 5,000" maps to the same event structure with different syntactic realization.' },
+    { title: '3. Span-Based vs. Dependency-Based SRL', desc: 'Span-based SRL (CoNLL-2005 style) identifies argument spans in the surface string and labels them. This aligns with constituency-based annotation.' },
+    { title: '4. Neural SRL', desc: '(2017) demonstrated that a deep BiLSTM with highway connections could perform SRL without any syntactic input, achieving SOTA on CoNLL-2005 and CoNLL-2012. The model treats SRL as sequence labeling: given a sentence and a designated predicate, tag each token with its role using BIO notation.' },
 ];
 
 export default function WalkthroughNLPSemanticRoleLabeling() {
@@ -16,10 +16,10 @@ export default function WalkthroughNLPSemanticRoleLabeling() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Semantic Role Labeling — Step by Step
+          Semantic Role Labeling \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how semantic role labeling works, one stage at a time.

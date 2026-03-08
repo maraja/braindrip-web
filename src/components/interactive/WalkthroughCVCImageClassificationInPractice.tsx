@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Handling Class Imbalance', desc: 'The foundation of image classification in practice begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Fine-Grained Recognition', desc: 'At this stage, the key transformation occurs — the core mechanism that makes image classification in practice work.' },
-    { title: '3. Model Calibration', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Serving at Scale', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Monitoring and Drift Detection', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Handling Class Imbalance', desc: 'Real-world datasets are almost never balanced. A 1:100 imbalance between minority and majority classes causes naive models to predict only the majority class.' },
+    { title: '2. Fine-Grained Recognition', desc: 'Distinguishing 200 bird species or 196 car models requires learning subtle differences -- beak shape, wing pattern, headlight curvature. Standard CNNs struggle because discriminative features occupy small regions.' },
+    { title: '3. Model Calibration', desc: 'A model that outputs 0.9 confidence should be correct 90% of the time. Uncalibrated models (most modern deep networks) are overconfident.' },
+    { title: '4. Serving at Scale', desc: 'Production systems serve classification at 1,000--100,000 queries per second (QPS). Key techniques:  Batched inference: GPU utilization jumps from ~30% to ~90% when batch size increases from 1 to 32.' },
+    { title: '5. Monitoring and Drift Detection', desc: 'Data distribution shifts silently degrade accuracy. Monitor:  Prediction distribution: Alert if the fraction of a class changes significantly (e.g., KL divergence &gt; threshold).' },
+    { title: '6. Label Quality and Active Learning', desc: 'Production labeling pipelines are noisy. Techniques for improving label quality:  Consensus labeling: Multiple annotators per image; majority vote or Dawid-Skene model to estimate true labels.' },
 ];
 
 export default function WalkthroughCVCImageClassificationInPractice() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCImageClassificationInPractice() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Image Classification in Practice — Step by Step
+          Image Classification in Practice \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how image classification in practice works, one stage at a time.

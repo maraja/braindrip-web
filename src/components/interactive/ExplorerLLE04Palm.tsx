@@ -4,9 +4,9 @@ const DETAILS = [
     { label: 'Parameters', detail: '540 billion (118 layers, 48 heads, d_model=18,432)' },
     { label: 'Training data', detail: '~780 billion tokens across web, books, code, Wikipedia, conversations' },
     { label: 'Hardware', detail: '6,144 TPU v4 chips' },
-    { label: 'MFU', detail: '57.8% hardware utilization (state-of-the-art)' },
     { label: 'BIG-Bench', detail: 'Outperformed average human on 58% of tasks' },
-    { label: 'GSM8K (with CoT)', detail: '58.1% accuracy' },
+    { label: 'Code data', detail: 'Only 5% of training mix, yet strong code generation' },
+    { label: 'Published', detail: 'April 2022 by Chowdhery et al. at Google' },
 ];
 
 export default function ExplorerLLE04Palm() {
@@ -20,10 +20,10 @@ export default function ExplorerLLE04Palm() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          PaLM — Key Details Explorer
+          PaLM \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of palm.
+          Click each card to explore the technical details.
         </p>
       </div>
 

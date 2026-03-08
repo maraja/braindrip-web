@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Vanilla RNN Architecture', desc: 'The foundation of recurrent neural networks and lstms begins with understanding its core input requirements and initial setup.' },
-    { title: '2. LSTMs: Gated Memory (Hochreiter & Schmidhuber, 1997)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes recurrent neural networks and lstms work.' },
-    { title: '3. GRUs: A Simpler Alternative (Cho et al., 2014)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Bidirectional and Deep RNNs', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Vanilla RNN Architecture', desc: 'At each timestep t, the RNN computes: h_t = tanh(W_hh  h_&#123;t-1&#125; + W_xh  x_t + b), where h_t is the hidden state, x_t is the input (usually a word embedding from 01-word-embeddings-word2vec-and-glove.md), and W_hh and W_xh are learned weight matrices.' },
+    { title: '2. LSTMs: Gated Memory (Hochreiter & Schmidhuber, 1997)', desc: 'The Long Short-Term Memory network, proposed by Sepp Hochreiter and Jurgen Schmidhuber in 1997 but not widely adopted until the deep learning renaissance of 2014+, introduced a separate memory cell and three gates to control information flow:  Forget gate: f_t = sigmoid(W_f * [h_&#123;t-1&#125;, x_t] + b_f).' },
+    { title: '3. GRUs: A Simpler Alternative (Cho et al., 2014)', desc: 'Kyunghyun Cho and colleagues introduced the Gated Recurrent Unit, which merged the forget and input gates into a single "update gate" and combined the cell state and hidden state. GRUs had two gates instead of three, fewer parameters, and trained faster.' },
+    { title: '4. Bidirectional and Deep RNNs', desc: 'Unidirectional RNNs only see past context. Bidirectional RNNs (Schuster & Paliwal, 1997) run two separate RNNs — one forward, one backward — and concatenate their hidden states, giving each position access to both past and future context.' },
 ];
 
 export default function WalkthroughLLE02RecurrentNeuralNetworksAndLstms() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE02RecurrentNeuralNetworksAndLstms() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Recurrent Neural Networks and LSTMs — Step by Step
+          Recurrent Neural Networks and LSTMs \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how recurrent neural networks and lstms works, one stage at a time.

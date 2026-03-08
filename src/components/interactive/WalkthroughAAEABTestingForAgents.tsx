@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Traffic Splitting', desc: 'The foundation of a/b testing for agents begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Metric Selection', desc: 'At this stage, the key transformation occurs — the core mechanism that makes a/b testing for agents work.' },
-    { title: '3. Duration Calculation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Sequential Testing', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Statistical Challenges Unique to Agents', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Traffic Splitting', desc: 'The foundation of any A/B test is random assignment. Users (or sessions, for anonymous systems) are assigned to agent variants through a hashing function applied to a stable identifier.' },
+    { title: '2. Metric Selection', desc: 'Choosing the right metrics is often harder than running the experiment itself. A well-designed agent A/B test tracks three categories of metrics.' },
+    { title: '3. Duration Calculation', desc: 'How long must an experiment run? The answer depends on four factors: the minimum detectable effect (MDE) you care about, the variance of your primary metric, the traffic volume, and your desired statistical significance and power.' },
+    { title: '4. Sequential Testing', desc: 'Waiting weeks for results is painful. Sequential testing methods allow you to monitor accumulating data and stop early if results are conclusive, without inflating false positive rates.' },
+    { title: '5. Statistical Challenges Unique to Agents', desc: 'High variance: Agent outputs vary dramatically across the spectrum of user intents. A coding agent might achieve 90% success on simple tasks and 20% on complex ones.' },
 ];
 
 export default function WalkthroughAAEABTestingForAgents() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAEABTestingForAgents() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          A/B Testing for Agents — Step by Step
+          A/B Testing for Agents \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how a/b testing for agents works, one stage at a time.

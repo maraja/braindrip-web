@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Task Definition', desc: 'The foundation of panoptic segmentation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Panoptic Quality (PQ) Metric', desc: 'At this stage, the key transformation occurs — the core mechanism that makes panoptic segmentation work.' },
-    { title: '3. Architectural Approaches', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. COCO Panoptic Benchmark', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Task Definition', desc: 'Given C_&#123;th&#125; thing classes and C_&#123;st&#125; stuff classes: Every pixel must receive exactly one label (no overlapping masks, no unlabeled pixels). Thing pixels: assigned a (class, instance\\_id) pair.' },
+    { title: '2. Panoptic Quality (PQ) Metric', desc: 'PQ is the standard evaluation metric, decomposed into recognition and segmentation quality:  [equation]  TP: predicted segments matched to ground truth (IoU &gt; 0.5). FP: predicted segments with no match.' },
+    { title: '3. Architectural Approaches', desc: 'Separate branches, merge with heuristics (early methods)  Run Mask R-CNN for things and a semantic segmentation network (e.g., DeepLab) for stuff. Merge outputs with conflict-resolution rules: thing masks take priority over stuff; overlapping thing masks resolved by confidence score.' },
 ];
 
 export default function WalkthroughCVCPanopticSegmentation() {
@@ -16,10 +15,10 @@ export default function WalkthroughCVCPanopticSegmentation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Panoptic Segmentation — Step by Step
+          Panoptic Segmentation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how panoptic segmentation works, one stage at a time.

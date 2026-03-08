@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE02Gemini15() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Google DeepMind\'s Gemini 1.5, released in February 2024, introduced a Mixture of Experts architecture with an unprecedented 1 million token context window — later extended to 2 million — fundamentally redefining what it means to give a model "enough context."', isTrue: true, explanation: 'This captures the core purpose of Gemini 1.5.' },
-    { text: 'Gemini 1.5 is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Gemini 1.5 is important for building on more advanced topics.' },
-    { text: 'Gemini 1.5 is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Gemini 1.5 is important for building on more advanced topics.' },
+    { text: 'A million tokens means the model reads everything equally well.', isTrue: false, explanation: 'While retrieval accuracy was extremely high (99.7%), there can still be subtle degradation in reasoning quality over very long contexts compared to shorter ones. The model retrieves facts well but complex multi-hop reasoning across distant context sections remains harder.' },
+    { text: 'February 15, 2024; broadly available mid-2024', isTrue: true, explanation: 'February 15, 2024; broadly available mid-2024' },
+    { text: 'Gemini 1.5 made RAG obsolete.', isTrue: false, explanation: 'For many use cases, yes, you can skip RAG and just put everything in context. But for truly massive knowledge bases (millions of documents), context windows are still insufficient, and RAG remains necessary.' },
+    { text: 'Mixture of Experts (MoE) Transformer', isTrue: true, explanation: 'Mixture of Experts (MoE) Transformer' },
+    { text: 'MoE models are strictly better than dense models.', isTrue: false, explanation: 'MoE introduces complexity in training stability, expert load balancing, and inference infrastructure. Meta deliberately chose dense architecture for LLaMA 3 (see 05-llama-3-and-3-1.md) precisely because of these challenges.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

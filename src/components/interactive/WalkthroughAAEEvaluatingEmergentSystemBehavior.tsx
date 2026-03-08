@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Why Component-Level Testing Fails', desc: 'The foundation of evaluating emergent system behavior begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Detection Methods', desc: 'At this stage, the key transformation occurs — the core mechanism that makes evaluating emergent system behavior work.' },
-    { title: '3. Connection to Complex Systems Theory', desc: 'The intermediate results are processed and refined through the main pipeline.' },
+    { title: '1. Why Component-Level Testing Fails', desc: 'Traditional software testing follows a pyramid: unit tests at the base, integration tests in the middle, end-to-end tests at the top. For deterministic software, unit test coverage provides strong guarantees.' },
+    { title: '2. Detection Methods', desc: 'Integration testing with behavioral monitoring. Run the full agent system against diverse scenarios while monitoring for behavioral signatures that indicate emergence.' },
+    { title: '3. Connection to Complex Systems Theory', desc: 'Agent systems are complex adaptive systems in the formal sense: they contain many interacting components, exhibit nonlinear dynamics, and can self-organize.' },
 ];
 
 export default function WalkthroughAAEEvaluatingEmergentSystemBehavior() {
@@ -15,10 +15,10 @@ export default function WalkthroughAAEEvaluatingEmergentSystemBehavior() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Evaluating Emergent System Behavior — Step by Step
+          Evaluating Emergent System Behavior \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how evaluating emergent system behavior works, one stage at a time.

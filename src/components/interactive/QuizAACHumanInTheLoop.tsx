@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACHumanInTheLoop() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Approval latency: Synchronous approval (the agent waits for the human) is simplest but blocks the agent.', isTrue: true, explanation: 'This is a key technical detail of Human-in-the-Loop.' },
-    { text: 'For long-running tasks, asynchronous approval (the agent queues the action and continues other work) prevents idle time.', isTrue: true, explanation: 'This is a key technical detail of Human-in-the-Loop.' },
-    { text: 'Timeout policies define what happens if the human does not respond (typically: the action is not taken).', isTrue: true, explanation: 'This is a key technical detail of Human-in-the-Loop.' },
+    { text: 'HITL means the agent is not autonomous.', isTrue: false, explanation: 'HITL provides selective oversight, not constant supervision. A well-calibrated HITL system might auto-approve 90% of actions and only require approval for the 10% that are high-risk.' },
+    { text: 'Synchronous approval (the agent waits for the human) is simplest but blocks the agent.', isTrue: true, explanation: 'For long-running tasks, asynchronous approval (the agent queues the action and continues other work) prevents idle time. Timeout policies define what happens if the human does not respond (typically: the action is not taken).' },
+    { text: 'Approving every action is the safest approach.', isTrue: false, explanation: 'Approval fatigue is a well-documented phenomenon. When humans are asked to approve too many actions, they start rubber-stamping without careful review.' },
+    { text: 'When an agent needs to perform many similar actions (e.g., sending 50 personalized emails), individual approval for each is impractical.', isTrue: true, explanation: 'Batch approval shows a summary ("Send 50 emails to customers in segment X with template Y") and a few representative examples for spot-checking.' },
+    { text: 'Users always want control.', isTrue: false, explanation: 'Research on automation trust shows that users prefer appropriate autonomy. They want control over high-stakes decisions but find constant interruptions for low-stakes actions annoying and counterproductive.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

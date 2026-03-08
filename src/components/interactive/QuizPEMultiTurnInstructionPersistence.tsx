@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizPEMultiTurnInstructionPersistence() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Decay onset: Significant instruction decay typically begins at 20-30 conversational turns, though stylistic instructions may decay as early as turn 10-15.', isTrue: true, explanation: 'This is a key technical detail of Multi-Turn Instruction Persistence.' },
-    { text: 'Re-injection frequency: Re-injecting key instructions every 10-15 turns maintains compliance above 85% for most applications.', isTrue: true, explanation: 'This is a key technical detail of Multi-Turn Instruction Persistence.' },
-    { text: 'Re-injection cost: A 3-5 rule reminder consumes approximately 50-150 tokens per injection, a minimal cost relative to the conversation context.', isTrue: true, explanation: 'This is a key technical detail of Multi-Turn Instruction Persistence.' },
+    { text: 'The system prompt is always in context, so the model always follows it.', isTrue: false, explanation: 'Being in context is necessary but not sufficient. The model\'s attention to distant tokens decreases with distance, and system prompt instructions compete with an increasing volume of conversation content for the model\'s effective attention budget.' },
+    { text: 'Significant instruction decay typically begins at 20-30 conversational turns, though stylistic instructions may decay as early as turn 10-15.', isTrue: true, explanation: 'Significant instruction decay typically begins at 20-30 conversational turns, though stylistic instructions may decay as early as turn 10-15.' },
+    { text: 'Instruction decay only happens with weak models.', isTrue: false, explanation: 'All transformer-based models exhibit attention decay with distance. Frontier models resist decay better due to stronger instruction tuning, but they are not immune.' },
+    { text: 'Stylistic and tone instructions decay first, followed by output format rules, then behavioral constraints, then hard safety rules (which are reinforced by model training and resist longer).', isTrue: true, explanation: 'Stylistic and tone instructions decay first, followed by output format rules, then behavioral constraints, then hard safety rules (which are reinforced by model training and resist longer).' },
+    { text: 'You can solve persistence by making the system prompt longer.', isTrue: false, explanation: 'A longer system prompt provides more initial instruction coverage but does not prevent decay. In fact, a very long system prompt may exacerbate the problem by spreading instructions across more tokens, reducing the salience of any individual rule.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

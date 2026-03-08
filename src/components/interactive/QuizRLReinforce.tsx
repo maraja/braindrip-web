@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizRLReinforce() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'REINFORCE is on-policy: each trajectory is used for exactly one gradient update, then discarded.', isTrue: true, explanation: 'This is a key technical detail of REINFORCE.' },
-    { text: 'This is highly sample-inefficient.', isTrue: true, explanation: 'This is a key technical detail of REINFORCE.' },
-    { text: 'The $\\gamma^t$ factor in front of $G_t$ is often omitted in practice (using undiscounted weighting of the gradient), which changes the objective but can improve empirical performance.', isTrue: true, explanation: 'This is a key technical detail of REINFORCE.' },
+    { text: 'REINFORCE with a baseline becomes actor-critic.', isTrue: false, explanation: 'Not quite. REINFORCE with a baseline still uses Monte Carlo returns G_t.' },
+    { text: 'The simplest policy gradient algorithm -- sample a complete trajectory, weight each action\'s log-probability by the return that followed it, and update the policy in the direction that reinforces successful behavior.', isTrue: true, explanation: 'This captures the core definition of REINFORCE.' },
+    { text: 'REINFORCE is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding REINFORCE is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

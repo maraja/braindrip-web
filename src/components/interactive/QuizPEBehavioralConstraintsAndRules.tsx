@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizPEBehavioralConstraintsAndRules() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'prose: Constraints formatted as numbered lists show 15-20% better compliance than equivalent constraints written in paragraph form, based on evaluation across multiple models and tasks.', isTrue: true, explanation: 'This is a key technical detail of Behavioral Constraints and Rules.' },
-    { text: 'Optimal constraint count: 5-15 constraints is the practical range.', isTrue: true, explanation: 'This is a key technical detail of Behavioral Constraints and Rules.' },
-    { text: 'Fewer than 5 usually means important rules are missing.', isTrue: true, explanation: 'This is a key technical detail of Behavioral Constraints and Rules.' },
+    { text: 'More rules means more control.', isTrue: false, explanation: 'Beyond approximately 15 constraints, adding more rules causes instruction competition -- the model cannot attend to all rules simultaneously, and adding new rules reduces adherence to existing ones. Prioritize and consolidate rather than accumulating.' },
+    { text: 'Constraints formatted as numbered lists show 15-20% better compliance than equivalent constraints written in paragraph form, based on evaluation across multiple models and tasks.', isTrue: true, explanation: 'Constraints formatted as numbered lists show 15-20% better compliance than equivalent constraints written in paragraph form, based on evaluation across multiple models and tasks.' },
+    { text: 'Negative framing is fine for prohibitions.', isTrue: false, explanation: 'While sometimes necessary, negative framing can prime the model with the concept you are trying to suppress. "Don\'t talk about competitor X" puts "competitor X" into the model\'s attention.' },
+    { text: '5-15 constraints is the practical range.', isTrue: true, explanation: 'Fewer than 5 usually means important rules are missing. More than 15 causes instruction competition and declining marginal compliance.' },
+    { text: 'The model understands the intent behind vague rules.', isTrue: false, explanation: 'LLMs do not infer the spirit of a rule. They follow the letter of the instruction as they interpret it through their training.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

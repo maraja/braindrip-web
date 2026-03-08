@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Impute after splitting, never before.', detail: 'Compute imputation parameters (means, medians, KNN distances) on the training set and apply them to validation and test sets. Otherwise, test-set information leaks into training (see **Data Splitting and Sampling**).' },
-    { label: 'Multiple imputation', detail: 'Create $m$ imputed datasets (each with different plausible values), fit the model on each, and pool the results. This propagates imputation uncertainty into downstream estimates -- critical for statistical inference, less common in pure prediction tasks.' },
-    { label: 'Sentinel values are not missing data.', detail: 'A value of -999 or \"N/A\" is a data cleaning problem (see **Data Cleaning and Preprocessing**), not a missingness problem. Convert sentinels to proper `NaN` before imputing.' },
+    { label: 'Impute after splitting, never before.', detail: 'Compute imputation parameters (means, medians, KNN distances) on the training set and apply them to validation and test sets. Otherwise, test-set information leaks into training (see Data Splitting and Sampling).' },
+    { label: 'Multiple imputation', detail: 'Create m imputed datasets (each with different plausible values), fit the model on each, and pool the results. This propagates imputation uncertainty into downstream estimates -- critical for statistical inference, less common in pure prediction tasks.' },
+    { label: 'Sentinel values are not missing data.', detail: 'A value of -999 or "N/A" is a data cleaning problem (see Data Cleaning and Preprocessing), not a missingness problem. Convert sentinels to proper NaN before imputing.' },
     { label: 'Tree-based models can handle missingness natively.', detail: 'XGBoost and LightGBM learn optimal split directions for missing values during training, often outperforming explicit imputation.' },
 ];
 
@@ -18,10 +18,10 @@ export default function ExplorerMLFHandlingMissingData() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Handling Missing Data — Key Details Explorer
+          Handling Missing Data \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of handling missing data.
+          Click each card to explore the technical details.
         </p>
       </div>
 

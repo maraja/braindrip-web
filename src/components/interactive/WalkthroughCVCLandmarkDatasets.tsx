@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. ImageNet (ILSVRC)', desc: 'The foundation of landmark datasets begins with understanding its core input requirements and initial setup.' },
-    { title: '2. COCO (Common Objects in Context)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes landmark datasets work.' },
-    { title: '3. Pascal VOC', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. ADE20K', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Cityscapes', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. ImageNet (ILSVRC)', desc: 'Scale: 1,281,167 training images, 50,000 validation images, 1,000 object categories drawn from WordNet. Task: Image classification (single-label, one dominant object per image).' },
+    { title: '2. COCO (Common Objects in Context)', desc: 'Scale: 330K images (118K train, 5K val, 20K test-dev, 40K test-challenge), 80 object categories, 91 stuff categories. Tasks: Object detection, instance segmentation, panoptic segmentation, keypoint detection, image captioning.' },
+    { title: '3. Pascal VOC', desc: 'Scale: ~11,500 images (train+val), 20 object categories. Tasks: Classification, detection, segmentation, action recognition, person layout.' },
+    { title: '4. ADE20K', desc: 'Scale: 25,574 images (20,210 train, 2,000 val, 3,352 test), 150 semantic categories. Tasks: Semantic segmentation, instance segmentation, scene parsing.' },
+    { title: '5. Cityscapes', desc: 'Scale: 5,000 finely annotated images + 20,000 coarsely annotated images, 30 categories (19 used for evaluation). Tasks: Semantic segmentation, instance segmentation, panoptic segmentation.' },
+    { title: '6. Open Images', desc: 'Scale: 9.2M images, 600 object categories (detection), 350 categories (segmentation), ~16M bounding boxes. Tasks: Detection, segmentation, visual relationship detection, image classification.' },
 ];
 
 export default function WalkthroughCVCLandmarkDatasets() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCLandmarkDatasets() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Landmark Datasets — Step by Step
+          Landmark Datasets \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how landmark datasets works, one stage at a time.

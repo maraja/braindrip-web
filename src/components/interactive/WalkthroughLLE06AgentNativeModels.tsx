@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Tool-Use Training Pipeline', desc: 'The foundation of agent-native models: built for autonomy begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Claude Computer Use (October 2024)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes agent-native models: built for autonomy work.' },
-    { title: '3. Claude Code (February 2025)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. OpenAI\'s Agent Ecosystem', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Google\'s Agent Projects', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Tool-Use Training Pipeline', desc: 'Traditional LLMs are trained on text sequences — predict the next token. Agent-native models are trained on action-observation sequences: the model generates an action (call a function, click a button, execute a command), observes the result, and generates the next action based on that feedback.' },
+    { title: '2. Claude Computer Use (October 2024)', desc: 'Anthropic\'s Claude 3.5 Sonnet was the first major model to demonstrate real-time computer use: viewing screenshots, moving the cursor, clicking buttons, typing text, and navigating desktop applications. At launch, it achieved 14.9% on OSWorld, a benchmark for computer-based task completion.' },
+    { title: '3. Claude Code (February 2025)', desc: 'Claude Code launched as a terminal-based agentic coding assistant. Unlike autocomplete-style coding tools, Claude Code operates as an autonomous agent in the developer\'s terminal: reading files, understanding project structure, writing code across multiple files, running tests, interpreting errors,.' },
+    { title: '4. OpenAI\'s Agent Ecosystem', desc: 'OpenAI pursued agency through multiple products. The Assistants API provided a framework for building agent applications with persistent state, file access, and code execution.' },
+    { title: '5. Google\'s Agent Projects', desc: 'Google\'s agent strategy leveraged its ecosystem advantage. Project Astra envisioned a continuous multimodal assistant that could see and hear through a device\'s sensors.' },
+    { title: '6. Model Context Protocol (MCP)', desc: 'Anthropic introduced MCP in November 2024 as an open standard for connecting language models to external tools and data sources. Rather than each model implementing custom integrations for every tool, MCP provides a universal protocol — analogous to USB for hardware or HTTP for web communication.' },
 ];
 
 export default function WalkthroughLLE06AgentNativeModels() {
@@ -17,10 +18,10 @@ export default function WalkthroughLLE06AgentNativeModels() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agent-Native Models: Built for Autonomy — Step by Step
+          Agent-Native Models: Built for Autonomy \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how agent-native models: built for autonomy works, one stage at a time.

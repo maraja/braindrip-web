@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE03FlashAttentionAndHardwareAwareComputing() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Standard attention memory: O(N^2) for the attention matrix.', isTrue: true, explanation: 'This is a key technical detail of Flash Attention and Hardware-Aware Computing.' },
-    { text: 'FlashAttention: O(N) — only the output and running statistics.', isTrue: true, explanation: 'This is a key technical detail of Flash Attention and Hardware-Aware Computing.' },
-    { text: 'FlashAttention v1 (2022): 2-4x speedup over PyTorch attention.', isTrue: true, explanation: 'This is a key technical detail of Flash Attention and Hardware-Aware Computing.' },
+    { text: 'FlashAttention is an approximate attention method.', isTrue: false, explanation: 'It computes mathematically exact standard attention. The output is bit-for-bit identical (up to floating-point reordering) to naive attention.' },
+    { text: 'FlashAttention only matters for training.', isTrue: false, explanation: 'FlashDecoding and FlashAttention\'s inference mode provide significant speedups for serving as well. The memory savings are especially critical during inference with long contexts.' },
+    { text: 'FlashAttention makes sparse attention unnecessary.', isTrue: false, explanation: 'FlashAttention optimizes dense attention — it still computes all N^2 interactions, just more efficiently. Sparse attention methods reduce the number of interactions computed.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

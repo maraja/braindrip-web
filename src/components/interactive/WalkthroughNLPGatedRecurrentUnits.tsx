@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Gate Equations', desc: 'The foundation of gated recurrent units begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Comparison to LSTM Architecture', desc: 'At this stage, the key transformation occurs — the core mechanism that makes gated recurrent units work.' },
-    { title: '3. How GRUs Preserve Long-Range Gradients', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Reset Gate\'s Role', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Gate Equations', desc: 'At each time step t, given input x_t and previous hidden state h_&#123;t-1&#125;:  Update gate -- controls how much of the previous state to carry forward:  Reset gate -- controls how much of the previous state to expose when computing the candidate:  Candidate hidden state -- new information.' },
+    { title: '2. Comparison to LSTM Architecture', desc: 'For d_h = 512 and d_x = 300, an LSTM has approximately 1.66M parameters per layer versus approximately 1.25M for a GRU -- a 25% reduction.' },
+    { title: '3. How GRUs Preserve Long-Range Gradients', desc: 'The gradient path through the GRU\'s hidden state update is:  The (1 - z_t) term provides a direct linear gradient path, similar to the forget gate in the LSTM. When z_t is near 0 for many time steps, gradients flow almost undiminished backward through time.' },
+    { title: '4. The Reset Gate\'s Role', desc: 'The reset gate r_t is unique to the GRU and has no direct LSTM counterpart. When r_t approaches 0, the candidate computation ignores the previous hidden state entirely, effectively making the unit behave like a standard feedforward layer reading only x_t.' },
 ];
 
 export default function WalkthroughNLPGatedRecurrentUnits() {
@@ -16,10 +16,10 @@ export default function WalkthroughNLPGatedRecurrentUnits() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Gated Recurrent Units — Step by Step
+          Gated Recurrent Units \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how gated recurrent units works, one stage at a time.

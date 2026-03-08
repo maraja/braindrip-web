@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEPromptOptimizationTechniques() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A full ablation study on an 8-10 component prompt requires 10-12 eval runs (baseline + one per component removal + 1-2 interaction tests).', isTrue: true, explanation: 'This is a key technical detail of Prompt Optimization Techniques.' },
-    { text: 'DSPy\'s BootstrapFewShot optimizer typically requires 50-200 labeled training examples and 30-60 minutes of optimization time.', isTrue: true, explanation: 'This is a key technical detail of Prompt Optimization Techniques.' },
-    { text: 'Automated optimization improves performance by 10-30% over hand-crafted prompts on tasks with clear metrics and sufficient training data.', isTrue: true, explanation: 'This is a key technical detail of Prompt Optimization Techniques.' },
+    { text: 'Longer prompts are always better.', isTrue: false, explanation: 'Ablation studies frequently show that removing instructions improves performance. Redundant or contradictory instructions confuse the model.' },
+    { text: 'Prompt optimization uses systematic methods — ablation studies, component analysis, and automated tuning — to improve prompt performance, analogous to tuning a recipe by changing one ingredient at a time.', isTrue: true, explanation: 'This captures the core definition of Prompt Optimization Techniques.' },
+    { text: 'Prompt Optimization Techniques is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Prompt Optimization Techniques is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Word-Level Similarity', desc: 'The foundation of semantic similarity begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Sentence-Level Similarity', desc: 'At this stage, the key transformation occurs — the core mechanism that makes semantic similarity work.' },
-    { title: '3. Evaluation Metrics', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Role of Sentence Embeddings', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Word-Level Similarity', desc: 'WordNet Path Similarity  WordNet organizes words into a taxonomy where hypernymy ("is-a") links connect specific concepts to general ones. Path similarity measures semantic closeness as the inverse of the shortest path between two synsets in this taxonomy:  For example, "dog" and "cat" are both.' },
+    { title: '2. Sentence-Level Similarity', desc: 'The STS Benchmark  The Semantic Textual Similarity (STS) Benchmark (Cer et al., 2017) is the standard evaluation for sentence-level similarity. It contains 8,628 sentence pairs drawn from image captions, news headlines, and forum posts, each annotated with a human similarity score from 0.' },
+    { title: '3. Evaluation Metrics', desc: 'Pearson Correlation (r): Measures linear association between predicted and gold similarity scores. Sensitive to the actual scale of predictions.' },
+    { title: '4. The Role of Sentence Embeddings', desc: 'The evolution of sentence similarity is closely tied to the evolution of sentence embeddings (see sentence-embeddings.md). The key insight from SBERT and subsequent work is that pre-trained models like BERT are excellent at computing similarity when given a pair, but producing standalone sentence.' },
 ];
 
 export default function WalkthroughNLPSemanticSimilarity() {
@@ -16,10 +16,10 @@ export default function WalkthroughNLPSemanticSimilarity() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Semantic Similarity — Step by Step
+          Semantic Similarity \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how semantic similarity works, one stage at a time.

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAStateAndStateSchema() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The default reducer is replacement — no Annotated wrapper means last-write-wins.', isTrue: true, explanation: 'This is a key technical detail of State and State Schema.' },
-    { text: 'operator.add works on lists (concatenation) and numbers (addition).', isTrue: true, explanation: 'This is a key technical detail of State and State Schema.' },
-    { text: 'add_messages is imported from langgraph.graph.message and handles ID-based deduplication.', isTrue: true, explanation: 'This is a key technical detail of State and State Schema.' },
+    { text: 'Nodes modify state in place.', isTrue: false, explanation: 'Nodes never mutate the state object directly. They return a partial dict, and LangGraph applies the update using the appropriate reducer.' },
+    { text: 'State is a typed, shared data structure that flows through every node in a LangGraph graph, with reducers controlling how concurrent or sequential updates are merged.', isTrue: true, explanation: 'This captures the core definition of State and State Schema.' },
+    { text: 'State and State Schema is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding State and State Schema is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

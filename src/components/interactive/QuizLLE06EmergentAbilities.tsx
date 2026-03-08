@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE06EmergentAbilities() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Introduced by: Wei et al.', isTrue: true, explanation: 'This is a key technical detail of Emergent Abilities of Large Language Models.' },
-    { text: 'Certain capabilities — like few-shot arithmetic, chain-of-thought reasoning, and word unscrambling — appear to emerge unpredictably at specific model scales, sparking a fierce debate about whether these phase transitions are real or artifacts of how we measure.', isTrue: true, explanation: 'This captures the core purpose of Emergent Abilities of Large Language Models.' },
-    { text: 'Emergent Abilities of Large Language Models is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Emergent Abilities of Large Language Models is important for building on more advanced topics.' },
+    { text: 'Emergence means the model suddenly gains consciousness or understanding.', isTrue: false, explanation: 'Emergence in this context refers to measurable task performance crossing a threshold. It says nothing about whether the model "understands" anything in a deeper sense.' },
+    { text: '100+ tasks catalogued across multiple model families', isTrue: true, explanation: '100+ tasks catalogued across multiple model families' },
+    { text: 'Emergent abilities appear at random.', isTrue: false, explanation: 'They appear at specific scales and are reproducible across model families. The "unpredictability" is that you cannot predict them from smaller-scale experiments, not that they are random.' },
+    { text: 'Most emergent abilities appeared between 10B and 100B+ parameters', isTrue: true, explanation: 'Most emergent abilities appeared between 10B and 100B+ parameters' },
+    { text: 'Schaeffer et al. debunked emergence entirely.', isTrue: false, explanation: 'They showed that metric choice explains many cases of apparent emergence, but did not conclusively prove that all emergence is artifactual. The debate continues.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

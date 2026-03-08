@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE06Xlnet() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'XLNet (Yang et al., 2019) introduced permutation language modeling to capture bidirectional context without BERT\'s [MASK] token corruption, combining the strengths of autoregressive and autoencoding approaches while integrating Transformer-XL\'s recurrence mechanism for longer-range dependencies — outperforming BERT on 20 benchmarks before being eclipsed by simpler alternatives.', isTrue: true, explanation: 'This captures the core purpose of XLNet: Permutation Language Modeling.' },
-    { text: 'XLNet: Permutation Language Modeling is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding XLNet: Permutation Language Modeling is important for building on more advanced topics.' },
-    { text: 'XLNet: Permutation Language Modeling is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding XLNet: Permutation Language Modeling is important for building on more advanced topics.' },
+    { text: 'XLNet shuffles the input tokens.', isTrue: false, explanation: 'The input sequence is never reordered. XLNet only permutes the factorization order by modifying attention masks.' },
+    { text: '12 layers, 12 heads, 768 hidden, 110M parameters', isTrue: true, explanation: '12 layers, 12 heads, 768 hidden, 110M parameters' },
+    { text: 'Permutation LM is just another form of masking.', isTrue: false, explanation: 'While both approaches enable bidirectional context, the mechanisms are fundamentally different. MLM replaces tokens with [MASK] and predicts independently.' },
+    { text: '24 layers, 16 heads, 1024 hidden, 340M parameters', isTrue: true, explanation: '24 layers, 16 heads, 1024 hidden, 340M parameters' },
+    { text: 'XLNet proved BERT\'s approach was flawed.', isTrue: false, explanation: 'XLNet identified real theoretical limitations of MLM, but 01-roberta.md showed these limitations mattered less in practice than BERT being undertrained. The pretrain-finetune discrepancy was real but its practical impact was smaller than the impact of insufficient training.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

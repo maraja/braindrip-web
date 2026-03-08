@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizCVCNonMaximumSuppression() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Standard threshold: $\\tau = 0.5$ for most benchmarks; some competitions use $\\tau = 0.3$.', isTrue: true, explanation: 'This is a key technical detail of Non-Maximum Suppression.' },
-    { text: 'Per-class application: NMS is typically run independently for each class, which means a person box and a car box at the same location are both kept.', isTrue: true, explanation: 'This is a key technical detail of Non-Maximum Suppression.' },
-    { text: 'Score pre-filtering: Before NMS, detections with confidence below a threshold (e.g., 0.05) are removed to reduce computation.', isTrue: true, explanation: 'This is a key technical detail of Non-Maximum Suppression.' },
+    { text: 'NMS is a simple, solved problem.', isTrue: false, explanation: 'NMS introduces a hard threshold that inevitably trades off between removing duplicates and preserving detections of nearby objects. This is an active research area, with learned NMS methods (e.g., Relation Networks for NMS) exploring end-to-end alternatives.' },
+    { text: '= 0.5 for most benchmarks; some competitions use  = 0.3.', isTrue: true, explanation: '= 0.5 for most benchmarks; some competitions use  = 0.3.' },
+    { text: 'NMS is typically run independently for each class, which means a person box and a car box at the same location are both kept.', isTrue: true, explanation: 'NMS is typically run independently for each class, which means a person box and a car box at the same location are both kept.' },
+    { text: 'Before NMS, detections with confidence below a threshold (e.g., 0.05) are removed to reduce computation.', isTrue: true, explanation: 'Before NMS, detections with confidence below a threshold (e.g., 0.05) are removed to reduce computation.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

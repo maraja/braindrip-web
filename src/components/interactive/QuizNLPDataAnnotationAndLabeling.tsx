@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPDataAnnotationAndLabeling() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: '(2008) found that aggregating labels from 4 non-expert MTurk annotators matches a single expert on 5 out of 6 NLP tasks.', isTrue: true, explanation: 'This is a key technical detail of Data Annotation and Labeling.' },
-    { text: 'MACE (Multi-Annotator Competence Estimation) reduces label noise by 30-50% compared to majority vote on datasets with varying annotator quality.', isTrue: true, explanation: 'This is a key technical detail of Data Annotation and Labeling.' },
-    { text: 'The Universal Dependencies project (v2.14) contains treebanks for 148 languages, with over 35 million tokens annotated for morphology, POS, and dependency relations.', isTrue: true, explanation: 'This is a key technical detail of Data Annotation and Labeling.' },
+    { text: 'More data always beats better labels.', isTrue: false, explanation: 'Retraining BERT with 50% cleaner labels can outperform training with 100% noisier labels. Northcutt et al.' },
+    { text: 'Inter-annotator agreement below 1.0 means the guidelines are bad.', isTrue: false, explanation: 'Some tasks are genuinely subjective. Sentiment annotation on sarcastic text has inherently low agreement.' },
+    { text: 'Crowdsourcing always produces low-quality labels.', isTrue: false, explanation: 'With proper qualification tests, gold standards, and aggregation, crowdsourced annotations match expert quality on many tasks. The key is quality control infrastructure, not the source of labor.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

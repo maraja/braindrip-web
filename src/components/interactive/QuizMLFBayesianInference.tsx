@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFBayesianInference() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The posterior is proportional to the product of likelihood and prior: $P(\\theta \\mid D) \\propto P(D \\mid \\theta) P(\\theta)$.', isTrue: true, explanation: 'This is a key technical detail of Bayesian Inference.' },
-    { text: 'Conjugate priors enable closed-form posterior updates; non-conjugate priors require approximate inference.', isTrue: true, explanation: 'This is a key technical detail of Bayesian Inference.' },
-    { text: 'MAP estimation is equivalent to penalized maximum likelihood (Gaussian prior gives L2, Laplace prior gives L1).', isTrue: true, explanation: 'This is a key technical detail of Bayesian Inference.' },
+    { text: 'Bayesian inference always requires subjective priors.', isTrue: false, explanation: 'Objective or reference priors (e.g., Jeffreys prior) exist and are designed to be minimally informative. Moreover, with enough data, reasonable priors converge to the same posterior.' },
+    { text: 'Bayesian methods are always computationally expensive.', isTrue: false, explanation: 'For conjugate models, updates are trivial. Modern approximate methods (variational inference, stochastic gradient MCMC) scale to large datasets and complex models.' },
+    { text: 'MAP and full Bayesian are essentially the same.', isTrue: false, explanation: 'MAP discards uncertainty information. Full Bayesian predictions integrate over the posterior, capturing multi-modal distributions and providing calibrated uncertainty -- MAP cannot do this.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

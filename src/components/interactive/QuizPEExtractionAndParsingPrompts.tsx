@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEExtractionAndParsingPrompts() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Few-shot examples improve extraction accuracy by 15-25% compared to zero-shot, with the largest gains on domain-specific fields.', isTrue: true, explanation: 'This is a key technical detail of Extraction and Parsing Prompts.' },
-    { text: 'Hallucination in extraction manifests as values that do not appear in the source text — source grounding validation catches 80-90% of these.', isTrue: true, explanation: 'This is a key technical detail of Extraction and Parsing Prompts.' },
-    { text: 'Schema field descriptions improve accuracy by 10-15% compared to bare field names, especially for ambiguous or domain-specific fields.', isTrue: true, explanation: 'This is a key technical detail of Extraction and Parsing Prompts.' },
+    { text: 'Extraction is just a simple prompt task.', isTrue: false, explanation: 'Reliable extraction at scale requires schema design, validation pipelines, error handling for missing fields, and systematic evaluation. The prompt is just the starting point.' },
+    { text: 'split the document into chunks, extract per chunk, then deduplicate and merge results.', isTrue: true, explanation: 'split the document into chunks, extract per chunk, then deduplicate and merge results.' },
+    { text: 'extraction output should be verifiable against the source, generation output cannot be.', isTrue: true, explanation: 'extraction output should be verifiable against the source, generation output cannot be.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

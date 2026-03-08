@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Strangler Pattern', desc: 'The foundation of incremental migration patterns begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Tool Wrapping Existing APIs', desc: 'At this stage, the key transformation occurs — the core mechanism that makes incremental migration patterns work.' },
-    { title: '3. Shadow Mode Deployment', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Progressive Autonomy Rollout', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Rollback Strategies', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Strangler Pattern', desc: 'Borrowed from Martin Fowler\'s Strangler Fig Application pattern, this approach replaces individual steps in an existing workflow with agent-driven decisions, one at a time. Process:  Map the existing workflow.' },
+    { title: '2. Tool Wrapping Existing APIs', desc: 'The fastest way to give an agent capabilities is to wrap your existing backend APIs as agent tools. This avoids building new backend functionality and leverages tested, production-hardened code.' },
+    { title: '3. Shadow Mode Deployment', desc: 'Shadow mode runs the agent in parallel with the existing system. The existing system handles production traffic.' },
+    { title: '4. Progressive Autonomy Rollout', desc: 'Even after an agent is validated, increase its autonomy gradually rather than flipping from "human does everything" to "agent does everything."  Autonomy stages:  Escalation design is critical.' },
+    { title: '5. Rollback Strategies', desc: 'Every migration stage must have a tested rollback plan. Rollback mechanisms:  Rollback triggers (automate these): Agent error rate exceeds 5% over a 15-minute window, agent latency P95 exceeds 3x legacy P95, safety filter flags exceed 3 per hour, or any critical incident (data loss, unauthorized.' },
+    { title: '6. Measuring Migration Success', desc: 'Define success metrics before starting migration, not after. Migration-specific metrics:  The migration is successful when: The agent-driven workflow meets or exceeds the legacy system on quality, throughput, and user satisfaction, the rollback count has reached zero for 4+ consecutive weeks, and.' },
 ];
 
 export default function WalkthroughADPIncrementalMigrationPatterns() {
@@ -17,10 +18,10 @@ export default function WalkthroughADPIncrementalMigrationPatterns() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Incremental Migration Patterns — Step by Step
+          Incremental Migration Patterns \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how incremental migration patterns works, one stage at a time.

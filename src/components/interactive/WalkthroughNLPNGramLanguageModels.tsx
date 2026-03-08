@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Maximum Likelihood Estimation', desc: 'The foundation of n-gram language models begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Data Sparsity Problem', desc: 'At this stage, the key transformation occurs — the core mechanism that makes n-gram language models work.' },
-    { title: '3. Smoothing Techniques', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Perplexity', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Maximum Likelihood Estimation', desc: 'The probability of a word given its context is estimated by counting:  For example, if "New York" appears 5,000 times in a corpus and "New York City" appears 2,000 times, then P("City" | "New York") = 2000/5000 = 0.4.' },
+    { title: '2. The Data Sparsity Problem', desc: 'As n increases, the number of possible n-grams grows as ^n. With a vocabulary of 50,000 words, there are 2.5 billion possible bigrams and 125 trillion possible trigrams.' },
+    { title: '3. Smoothing Techniques', desc: 'Laplace (Add-1) Smoothing: Add 1 to every n-gram count:  Simple but crude -- it steals too much probability mass from observed events and distributes it evenly to unobserved ones. Add-k Smoothing: A refinement using a fractional k (typically 0.01-0.5) instead of 1.' },
+    { title: '4. Perplexity', desc: 'The standard evaluation metric for language models. Perplexity is the inverse probability of the test set, normalized by the number of words:  Lower perplexity means the model assigns higher probability to the test data.' },
 ];
 
 export default function WalkthroughNLPNGramLanguageModels() {
@@ -16,10 +16,10 @@ export default function WalkthroughNLPNGramLanguageModels() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          N-Gram Language Models — Step by Step
+          N-Gram Language Models \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how n-gram language models works, one stage at a time.

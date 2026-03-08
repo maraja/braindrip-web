@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Conflict Detection Prompting', desc: 'The foundation of knowledge conflicts and resolution begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Recency-Based Resolution', desc: 'At this stage, the key transformation occurs — the core mechanism that makes knowledge conflicts and resolution work.' },
-    { title: '3. Source Authority Hierarchies', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Explicit Uncertainty Flagging', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Context-Parametric Conflict Handling', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Conflict Detection Prompting', desc: 'The first step is instructing the model to detect and surface conflicts rather than silently resolving them:  Explicit detection instruction: "Before answering, check whether the provided sources agree on the relevant facts.' },
+    { title: '2. Recency-Based Resolution', desc: 'For factual claims that change over time (statistics, regulations, scientific findings, pricing), recency is a strong resolution signal:  Implementation: Include timestamps or dates in source metadata.' },
+    { title: '3. Source Authority Hierarchies', desc: 'Define explicit trust hierarchies for different source types:  Example hierarchy for a medical RAG system: Peer-reviewed clinical guidelines (highest authority) Systematic reviews and meta-analyses Individual clinical trials Expert opinion articles General health information websites (lowest.' },
+    { title: '4. Explicit Uncertainty Flagging', desc: 'When conflicts cannot be cleanly resolved, the model should communicate uncertainty rather than presenting a false consensus:  Calibrated uncertainty: "When sources disagree and you cannot determine which is more reliable, present both positions with citations and explicitly state that there is.' },
+    { title: '5. Context-Parametric Conflict Handling', desc: 'When retrieved documents conflict with the model\'s training knowledge:  Context-priority instruction: "If the provided documents contain information that differs from your general knowledge, always defer to the provided documents.' },
 ];
 
 export default function WalkthroughPEKnowledgeConflictsAndResolution() {
@@ -17,10 +17,10 @@ export default function WalkthroughPEKnowledgeConflictsAndResolution() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Knowledge Conflicts and Resolution — Step by Step
+          Knowledge Conflicts and Resolution \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how knowledge conflicts and resolution works, one stage at a time.

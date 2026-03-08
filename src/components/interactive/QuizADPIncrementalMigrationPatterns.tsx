@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizADPIncrementalMigrationPatterns() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Shadow mode requires at least 500-1000 comparison data points before cutover.', isTrue: true, explanation: 'This is a key technical detail of Incremental Migration Patterns.' },
-    { text: 'At 100 tasks per day, this takes 5-10 days of shadow running.', isTrue: true, explanation: 'This is a key technical detail of Incremental Migration Patterns.' },
-    { text: 'Feature flag rollback takes seconds when properly implemented.', isTrue: true, explanation: 'This is a key technical detail of Incremental Migration Patterns.' },
+    { text: 'You should migrate the entire workflow at once to avoid running two systems.', isTrue: false, explanation: 'Running two systems is the point. The parallel operation period is what gives you safety and confidence.' },
+    { text: 'A typical 5-step workflow migration from legacy to fully autonomous agent takes 3-6 months with proper shadow mode, progressive autonomy, and validation at each stage.', isTrue: true, explanation: 'A typical 5-step workflow migration from legacy to fully autonomous agent takes 3-6 months with proper shadow mode, progressive autonomy, and validation at each stage.' },
+    { text: 'Shadow mode is unnecessary if you have good evals.', isTrue: false, explanation: 'Evals test the agent against a curated task suite. Shadow mode tests the agent against real production traffic, which includes edge cases, unexpected inputs, and usage patterns that no eval suite fully captures.' },
+    { text: 'Progressive autonomy is too slow -- just let the agent run.', isTrue: false, explanation: 'For low-stakes tasks, faster progression is reasonable. For tasks with financial, legal, or safety implications, the progressive approach prevents costly incidents during the learning period.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Frechet Inception Distance (FID)', desc: 'The foundation of generative model metrics begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Inception Score (IS)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes generative model metrics work.' },
-    { title: '3. CLIP Score', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Learned Perceptual Image Patch Similarity (LPIPS)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Kernel Inception Distance (KID)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Frechet Inception Distance (FID)', desc: 'FID (Heusel et al., 2017) is the most widely used metric for unconditional and class-conditional image generation. Procedure: Extract 2048-dimensional features from the penultimate layer of InceptionV3 for both real and generated images.' },
+    { title: '2. Inception Score (IS)', desc: 'IS (Salimans et al., 2016) uses the InceptionV3 classifier to evaluate generated images. [equation]  where p(yx)] is the marginal class distribution.' },
+    { title: '3. CLIP Score', desc: 'CLIP Score (Hessel et al., 2021) measures text-image alignment for text-to-image generation. [equation]  where E_&#123;img&#125; and E_&#123;txt&#125; are CLIP\'s image and text encoders, and t is the conditioning text prompt.' },
+    { title: '4. Learned Perceptual Image Patch Similarity (LPIPS)', desc: 'LPIPS (Zhang et al., 2018) measures perceptual distance between two specific images (not distributions). Procedure: Extract features from multiple layers of a pretrained network (AlexNet, VGG, or SqueezeNet), compute weighted L2 distance per layer, and average:  [equation]  where &#123;f&#125;^l are.' },
+    { title: '5. Kernel Inception Distance (KID)', desc: 'KID (Binkowski et al., 2018) is an alternative to FID that uses the squared Maximum Mean Discrepancy (MMD) with a polynomial kernel:  [equation]  where k is a polynomial kernel and f_r, f_g are InceptionV3 features.' },
+    { title: '6. Human Evaluation', desc: 'All automated metrics are proxies. Human evaluation remains the gold standard: Side-by-side comparison: Show two generated images; ask which is more realistic or better matches the prompt.' },
 ];
 
 export default function WalkthroughCVCGenerativeModelMetrics() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCGenerativeModelMetrics() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Generative Model Metrics — Step by Step
+          Generative Model Metrics \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how generative model metrics works, one stage at a time.

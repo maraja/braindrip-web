@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Schema complexity limits', detail: 'Constrained decoding slows down as schema complexity increases. Deeply nested schemas (4+ levels), large enums (100+ values), or complex `oneOf`/`anyOf` patterns can degrade generation speed by 2-5x.' },
+    { label: 'Schema complexity limits', detail: 'Constrained decoding slows down as schema complexity increases. Deeply nested schemas (4+ levels), large enums (100+ values), or complex oneOf/anyOf patterns can degrade generation speed by 2-5x.' },
     { label: 'Pydantic v2 performance', detail: 'Pydantic v2 (Rust-based core) validates JSON 5-50x faster than Pydantic v1. For high-throughput agent systems, this difference matters. Always use v2 for new projects.' },
     { label: 'Recursive schemas', detail: 'Some providers do not support recursive JSON schemas (where a type references itself). This limits the ability to represent tree structures or recursive plans in constrained output.' },
     { label: 'Streaming compatibility', detail: 'Structured output can be streamed token-by-token, but the consumer cannot parse until the JSON is complete (or uses a streaming JSON parser that handles partial documents). OpenAI supports partial JSON streaming for structured outputs.' },
@@ -20,10 +20,10 @@ export default function ExplorerAACStructuredOutputForActions() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Structured Output for Actions — Key Details Explorer
+          Structured Output for Actions \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of structured output for actions.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Tile coding', detail: 'is a popular linear method using overlapping grids; typically 8--16 tilings with learning rate $\\alpha = 0.1 / \\text{num\\_tilings}$.' },
+    { label: 'Tile coding', detail: 'is a popular linear method using overlapping grids; typically 8--16 tilings with learning rate  = 0.1 / num\\_tilings.' },
     { label: 'Radial basis functions (RBFs)', detail: 'provide smooth generalization with Gaussian features centered at prototype states.' },
-    { label: 'Batch methods', detail: 'like least-squares TD (LSTD) solve for the fixed point directly in $O(d^2)$ per step and $O(d^2)$ memory but converge faster with fewer samples.' },
+    { label: 'Batch methods', detail: 'like least-squares TD (LSTD) solve for the fixed point directly in O(d^2) per step and O(d^2) memory but converge faster with fewer samples.' },
 ];
 
 export default function ExplorerRLFunctionApproximation() {
@@ -17,10 +17,10 @@ export default function ExplorerRLFunctionApproximation() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Function Approximation — Key Details Explorer
+          Function Approximation \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of function approximation.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Context Window as a Resource', desc: 'The foundation of context engineering begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Three Dimensions of Context Design', desc: 'At this stage, the key transformation occurs — the core mechanism that makes context engineering work.' },
-    { title: '3. Context Engineering vs Prompt Engineering', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Why Context Engineering Is Growing in Importance', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Context Window as a Resource', desc: 'The context window is a fixed-size resource measured in tokens. Every piece of information — system prompt, conversation history, retrieved documents, tool results, examples — competes for space in this resource.' },
+    { title: '2. The Three Dimensions of Context Design', desc: 'Context engineering operates along three dimensions:  Selection: What information to include. This involves relevance scoring, recency filtering, importance ranking, and strategic inclusion of supporting vs critical information.' },
+    { title: '3. Context Engineering vs Prompt Engineering', desc: 'Prompt engineering is a subset of context engineering. A prompt is the instruction layer — the "what do you want the model to do" part.' },
+    { title: '4. Why Context Engineering Is Growing in Importance', desc: 'Three trends drive the increasing importance of context engineering:  Expanding context windows: Larger windows create more design space and more opportunities for both effective and ineffective context construction.' },
 ];
 
 export default function WalkthroughPEWhatIsContextEngineering() {
@@ -16,13 +16,13 @@ export default function WalkthroughPEWhatIsContextEngineering() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Context Engineering — Step by Step
+          What Is Context Engineering \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Walk through how context engineering works, one stage at a time.
+          Walk through how what is context engineering works, one stage at a time.
         </p>
       </div>
 

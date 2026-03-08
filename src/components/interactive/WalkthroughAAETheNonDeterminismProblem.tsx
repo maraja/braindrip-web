@@ -1,11 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Sources of Non-Determinism', desc: 'The foundation of the non-determinism problem begins with understanding its core input requirements and initial setup.' },
-    { title: '2. LLM Sampling Temperature', desc: 'At this stage, the key transformation occurs — the core mechanism that makes the non-determinism problem work.' },
-    { title: '3. Stochastic Tool Responses', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Environment Variability', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Cascading Divergence', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Sources of Non-Determinism', desc: 'LLM Sampling Temperature  The most direct source. At temperature T &gt; 0, the LLM samples from its output distribution rather than always selecting the highest-probability token.' },
+    { title: '2. Statistical Implications', desc: '#### Multi-Run Evaluation Is Mandatory  The tau-bench benchmark (Yao et al., 2024) demonstrated this dramatically. They measured agent performance across multiple runs and found:  A single run suggested Agent A was significantly better.' },
+    { title: '3. How Many Runs to Perform', desc: 'The required number of runs depends on desired precision:  Practical guidance: For development iteration, 3-5 runs per task provide enough signal to detect large improvements. For benchmark publication, 10-30 runs is the emerging standard.' },
 ];
 
 export default function WalkthroughAAETheNonDeterminismProblem() {
@@ -17,10 +15,10 @@ export default function WalkthroughAAETheNonDeterminismProblem() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The Non-Determinism Problem — Step by Step
+          The Non-Determinism Problem \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how the non-determinism problem works, one stage at a time.

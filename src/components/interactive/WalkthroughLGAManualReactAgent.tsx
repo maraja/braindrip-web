@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Step 1 -- Define the Agent State', desc: 'The foundation of manual react agent begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Step 2 -- Create the Model Node', desc: 'At this stage, the key transformation occurs — the core mechanism that makes manual react agent work.' },
-    { title: '3. Step 3 -- Set Up Tool Execution', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Step 4 -- Wire the Graph', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Step 5 -- Run the Agent', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Step 1 -- Define the Agent State', desc: 'The add_messages reducer ensures new messages are appended to the list rather than replacing it. This is what accumulates the conversation history across loop iterations.' },
+    { title: '2. Step 2 -- Create the Model Node', desc: 'The node receives the current state, calls the LLM with all accumulated messages, and returns the response. The add_messages reducer appends it to the history.' },
+    { title: '3. Step 3 -- Set Up Tool Execution', desc: 'ToolNode automatically extracts tool_calls from the last AI message, executes the corresponding functions, and returns the results as ToolMessage objects.' },
+    { title: '4. Step 4 -- Wire the Graph', desc: 'The tools_condition function inspects the last message: if it contains tool_calls, it routes to "tools"; otherwise, it routes to END. The edge from "tools" back to "agent" closes the loop.' },
 ];
 
 export default function WalkthroughLGAManualReactAgent() {
@@ -17,10 +16,10 @@ export default function WalkthroughLGAManualReactAgent() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Manual ReAct Agent — Step by Step
+          Manual ReAct Agent \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how manual react agent works, one stage at a time.

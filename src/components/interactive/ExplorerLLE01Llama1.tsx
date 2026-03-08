@@ -2,11 +2,11 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Parameters', detail: '7B, 13B, 33B, 65B (four-model family)' },
-    { label: 'Training tokens', detail: '1.0T (7B/13B) to 1.4T (33B/65B)' },
+    { label: 'Training tokens', detail: '0T (7B/13B) to 1.4T (33B/65B)' },
     { label: 'Training data', detail: 'Publicly available only (CommonCrawl, C4, GitHub, Wikipedia, Books, ArXiv, StackExchange)' },
     { label: 'Architecture', detail: 'Decoder-only Transformer with RMSNorm, SwiGLU, RoPE' },
-    { label: 'Context window', detail: '2,048 tokens' },
-    { label: 'LLaMA-13B MMLU', detail: '56.9% (5-shot) vs. GPT-3 175B at 43.9%' },
+    { label: 'LLaMA-13B MMLU', detail: '9% (5-shot) vs. GPT-3 175B at 43.9%' },
+    { label: 'LLaMA-65B MMLU', detail: '4% (5-shot), competitive with Chinchilla-70B (67.5%)' },
 ];
 
 export default function ExplorerLLE01Llama1() {
@@ -20,10 +20,10 @@ export default function ExplorerLLE01Llama1() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          LLaMA 1 — Key Details Explorer
+          LLaMA 1 \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of llama 1.
+          Click each card to explore the technical details.
         </p>
       </div>
 

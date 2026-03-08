@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Core Cycle', desc: 'The foundation of the agent loop begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Termination Conditions', desc: 'At this stage, the key transformation occurs — the core mechanism that makes the agent loop work.' },
-    { title: '3. Context Accumulation and Management', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Error Recovery Within the Loop', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Core Cycle', desc: 'The agent loop can be expressed in pseudocode:  Each iteration involves: (1) sending the accumulated message history to the LLM, (2) parsing the response for tool calls, (3) executing any requested tools, (4) appending results to the history, and (5) repeating.' },
+    { title: '2. Termination Conditions', desc: 'Knowing when to stop is as important as knowing what to do. Agent loops use multiple termination conditions:  Goal achieved: The LLM generates a final response without tool calls, indicating it believes the task is complete.' },
+    { title: '3. Context Accumulation and Management', desc: 'With each loop iteration, the message history grows. A tool call adds the LLM\'s reasoning, the tool call itself, and the tool\'s result — often 500-3,000 tokens per iteration.' },
+    { title: '4. Error Recovery Within the Loop', desc: 'Agents encounter errors frequently — a file does not exist, a command returns an error, a search yields no results. The loop structure naturally supports recovery: the error becomes an observation, the LLM reasons about it, and it tries a different approach.' },
 ];
 
 export default function WalkthroughAACAgentLoop() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACAgentLoop() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          The Agent Loop — Step by Step
+          The Agent Loop \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how the agent loop works, one stage at a time.

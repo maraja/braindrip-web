@@ -2,8 +2,8 @@ import { useState } from 'react';
 export default function QuizRLImitationLearning() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Imitation learning trains policies directly from expert demonstrations, bypassing reward function design entirely -- but the seemingly simple approach of copying an expert hides a subtle and dangerous distribution shift problem.', isTrue: true, explanation: 'This captures the core purpose of Imitation Learning.' },
-    { text: 'Imitation Learning is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Imitation Learning is important for building on more advanced topics.' },
+    { text: 'Behavioral cloning is always bad', isTrue: false, explanation: ': BC works well when the task is short-horizon, the state space is well-covered, and actions are unimodal. It remains the simplest and most practical starting point.' },
+    { text: 'Imitation learning trains policies directly from expert demonstrations, bypassing reward function design entirely -- but the seemingly simple approach of copying an expert hides a subtle and dangerous distribution shift problem.', isTrue: true, explanation: 'This captures the core definition of Imitation Learning.' },
     { text: 'Imitation Learning is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Imitation Learning is important for building on more advanced topics.' },
   ];
   return (

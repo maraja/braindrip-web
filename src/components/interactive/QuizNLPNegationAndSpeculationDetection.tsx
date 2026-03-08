@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPNegationAndSpeculationDetection() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'NegEx achieves approximately 84% PPV and approximately 78% sensitivity on clinical negation detection using simple lexical patterns.', isTrue: true, explanation: 'This is a key technical detail of Negation and Speculation Detection.' },
-    { text: 'BioScope contains approximately 16,495 sentences annotated for negation and speculation cues and scopes across clinical and biomedical text.', isTrue: true, explanation: 'This is a key technical detail of Negation and Speculation Detection.' },
-    { text: 'In clinical reports, approximately 60% of medical conditions are mentioned in negated contexts (Chapman et al., 2001).', isTrue: true, explanation: 'This is a key technical detail of Negation and Speculation Detection.' },
+    { text: 'Negation detection is just looking for the word \'not.\'', isTrue: false, explanation: 'Negation in natural language is expressed through dozens of mechanisms: prefixes (un-, in-, dis-), verbs (deny, lack, rule out), determiners (no, neither), prepositions (without), and idiomatic expressions (far from, anything but). Clinical text uses domain-specific cues (unremarkable, negative for, free of).' },
+    { text: 'Negation always reverses the meaning of the next word.', isTrue: false, explanation: 'Negation scope can extend over complex syntactic spans. In "There is no evidence of metastasis or recurrence," the negation scopes over both "metastasis" and "recurrence." Determining scope boundaries requires syntactic analysis, not simple proximity heuristics.' },
+    { text: 'Speculation is just weak negation.', isTrue: false, explanation: 'Speculation and negation are fundamentally different. "The patient does not have cancer" (negation) means the absence of cancer.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

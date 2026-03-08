@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Types of Observations', desc: 'The foundation of environment and observations begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Observation Processing Pipeline', desc: 'At this stage, the key transformation occurs — the core mechanism that makes environment and observations work.' },
-    { title: '3. Context Building', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Information Gathering Strategies', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Types of Observations', desc: 'Agents encounter several distinct observation types, each requiring different processing:  Tool output (structured): JSON responses from APIs, database query results, structured search results. These are machine-readable and typically compact.' },
+    { title: '2. Observation Processing Pipeline', desc: 'Raw observations from tools often need processing before reaching the LLM:  Size management: A read_file tool might return a 10,000-line file. Injecting all 10,000 lines into the context wastes tokens and dilutes attention.' },
+    { title: '3. Context Building', desc: 'The accumulated observations form the agent\'s working context — its understanding of the current state of the world. Context building involves deciding:  What to include: Recent tool results, the current goal, relevant prior results.' },
+    { title: '4. Information Gathering Strategies', desc: 'Agents must decide which observations to gather — they cannot observe everything at once. Common strategies include:  Directed search: The agent has a specific question ("What does this function do?") and uses targeted tools (read specific file, search for specific pattern) to answer it.' },
 ];
 
 export default function WalkthroughAACEnvironmentAndObservations() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACEnvironmentAndObservations() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Environment and Observations — Step by Step
+          Environment and Observations \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how environment and observations works, one stage at a time.

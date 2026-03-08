@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE02NativeMultimodalTraining() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Gemini 1.0 Ultra (Dec 2023): Native multimodal.', isTrue: true, explanation: 'This is a key technical detail of Native Multimodal Training.' },
-    { text: 'Text + image + audio + video.', isTrue: true, explanation: 'This is a key technical detail of Native Multimodal Training.' },
-    { text: 'First major native model.', isTrue: true, explanation: 'This is a key technical detail of Native Multimodal Training.' },
+    { text: 'Adapter-based models are just as good as native multimodal models.', isTrue: false, explanation: 'For simple visual QA, adapters are competitive. But for complex cross-modal reasoning — tasks requiring deep integration of visual, textual, and auditory information — native models have a structural advantage that adapters cannot overcome through more data or better adapters alone.' },
+    { text: 'Unified text + vision + audio.', isTrue: true, explanation: 'Sub-300ms voice latency. Single forward pass.' },
+    { text: 'Native multimodal training is prohibitively expensive.', isTrue: false, explanation: 'While more expensive than training a text-only model of the same size, the total cost can be lower than training and maintaining separate specialized models for each modality. The engineering simplicity of a single model also reduces deployment and maintenance costs.' },
+    { text: 'ViT-based, 14x14 or 16x16 patches.', isTrue: true, explanation: '336x336 image = 576 tokens.' },
+    { text: 'Native multimodal means the model processes all modalities equally well.', isTrue: false, explanation: 'Even natively trained models tend to be strongest on text (the modality with the most training data) and weakest on video (the scarcest). Modality imbalance in training data creates corresponding capability imbalance.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

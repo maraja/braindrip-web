@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Paper', detail: 'Clark et al., \"ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators\" (Mar 2020, arXiv:2003.10555, ICLR 2020)' },
+    { label: 'Paper', detail: 'Clark et al., "ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators" (Mar 2020, arXiv:2003.10555, ICLR 2020)' },
     { label: 'ELECTRA-Small', detail: '14M discriminator params; matched GPT-1 performance at 1/35 the compute' },
     { label: 'ELECTRA-Base', detail: '110M discriminator params; matched BERT-Large on GLUE (85.1 vs 84.9)' },
     { label: 'ELECTRA-Large', detail: '335M discriminator params; matched RoBERTa-Large on GLUE (88.5 vs 88.5) at ~1/4 compute' },
@@ -20,10 +20,10 @@ export default function ExplorerLLE05Electra() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          ELECTRA: Efficiently Learning an Encoder That Classifies Token Replacements Accurately — Key Details Explorer
+          ELECTRA: Efficiently Learning an Encoder That Classifies Token Replacements Accurately \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of electra: efficiently learning an encoder that classifies token replacements accurately.
+          Click each card to explore the technical details.
         </p>
       </div>
 

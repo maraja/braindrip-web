@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEDynamicContextAugmentation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Iterative retrieval (2-4 rounds) improves answer completeness by 20-40% on complex questions compared to single-round retrieval (measured on HotpotQA, MuSiQue).', isTrue: true, explanation: 'This is a key technical detail of Dynamic Context Augmentation.' },
-    { text: 'Each retrieval round adds 1-3 seconds of latency; 3-round iterative retrieval typically completes within 5-8 seconds total.', isTrue: true, explanation: 'This is a key technical detail of Dynamic Context Augmentation.' },
-    { text: 'Confidence-based triggers with thresholds of 0.6-0.7 successfully identify 70-80% of cases where additional retrieval would improve the answer.', isTrue: true, explanation: 'This is a key technical detail of Dynamic Context Augmentation.' },
+    { text: 'Single-round retrieval is always sufficient if the retrieval quality is high enough.', isTrue: false, explanation: 'Even perfect single-round retrieval cannot anticipate all the context needs for complex questions. The model discovers what it needs as it reasons, and some information needs only emerge during generation.' },
+    { text: 'Dynamic retrieval is too slow for interactive use.', isTrue: false, explanation: 'With parallelized retrieval and efficient query generation, 2-3 round iterative retrieval adds 2-5 seconds total. For complex questions where the alternative is a poor answer, users accept this latency willingly.' },
+    { text: 'The model should always decide whether to retrieve more.', isTrue: false, explanation: 'Giving the model unconstrained retrieval decisions can lead to infinite loops, unnecessary retrievals, or failure to recognize when it has enough information. Budget constraints and maximum round limits are essential.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

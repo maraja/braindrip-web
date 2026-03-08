@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPDocumentEmbeddings() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'LSA dimensions: Typical choices are 100-500 components.', isTrue: true, explanation: 'This is a key technical detail of Document Embeddings.' },
-    { text: 'On the 20 Newsgroups dataset, 300 SVD components retain roughly 35% of variance but improve classification accuracy by 1-3% over raw TF-IDF due to noise reduction.', isTrue: true, explanation: 'This is a key technical detail of Document Embeddings.' },
-    { text: 'Doc2Vec training: Requires 10-20 epochs over the corpus.', isTrue: true, explanation: 'This is a key technical detail of Document Embeddings.' },
+    { text: 'A single vector can fully represent a long document.', isTrue: false, explanation: 'Long documents contain multiple topics, arguments, and nuances that a single 768-dimensional vector cannot fully capture. This is why multi-vector approaches (ColBERT) and hierarchical methods often outperform single-vector representations for fine-grained retrieval.' },
+    { text: 'Typical choices are 100-500 components.', isTrue: true, explanation: 'On the 20 Newsgroups dataset, 300 SVD components retain roughly 35% of variance but improve classification accuracy by 1-3% over raw TF-IDF due to noise reduction.' },
+    { text: 'Longer input always produces better document embeddings.', isTrue: false, explanation: 'Feeding more text into a fixed-context model does not guarantee better representations. If the model\'s attention mechanism cannot effectively attend to all tokens (due to context length limitations or attention dilution), the embedding quality may plateau or degrade.' },
+    { text: 'Requires 10-20 epochs over the corpus.', isTrue: true, explanation: 'The gensim library provides a standard implementation. PV-DBOW with 300 dimensions is the most common configuration.' },
+    { text: 'Document embeddings have replaced TF-IDF for retrieval.', isTrue: false, explanation: 'In production systems, BM25/TF-IDF often remains the first-stage retriever with dense embeddings used for re-ranking. Hybrid systems combining both consistently outperform either alone.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,8 +2,8 @@ import { useState } from 'react';
 export default function QuizCVCVideoRepresentation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Video representation converts raw video into structured tensors suitable for neural networks through frame stacking, temporal differencing, and clip sampling strategies.', isTrue: true, explanation: 'This captures the core purpose of Video Representation.' },
-    { text: 'Video Representation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Video Representation is important for building on more advanced topics.' },
+    { text: 'More frames always means better accuracy.', isTrue: false, explanation: 'Beyond a saturation point (often around T=32 for action recognition), additional frames yield diminishing returns while linearly increasing compute. The temporal stride matters as much as the frame count.' },
+    { text: 'Video representation converts raw video into structured tensors suitable for neural networks through frame stacking, temporal differencing, and clip sampling strategies.', isTrue: true, explanation: 'This captures the core definition of Video Representation.' },
     { text: 'Video Representation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Video Representation is important for building on more advanced topics.' },
   ];
   return (

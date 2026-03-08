@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Size Landscape (2024-2025)', desc: 'The foundation of context window mechanics begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Input-Output Budget Constraint', desc: 'At this stage, the key transformation occurs — the core mechanism that makes context window mechanics work.' },
-    { title: '3. Nominal vs. Effective Context Length', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Cost Scaling', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Size Landscape (2024-2025)', desc: 'The context window sizes available across major models:  8K tokens: GPT-3.5 Turbo (original), many open-source 7B models 32K tokens: GPT-4 (32K variant), Mistral Large 128K tokens: GPT-4 Turbo, GPT-4o, Claude 3.5 Sonnet, Llama 3.1 405B 200K tokens: Claude 3.' },
+    { title: '2. The Input-Output Budget Constraint', desc: 'The context window is a shared pool. If a model has a 128K context window and a maximum output length of 4K tokens, then your input can be at most 124K tokens.' },
+    { title: '3. Nominal vs. Effective Context Length', desc: 'A model advertising 128K context can technically process 128K tokens, but its ability to use information at all positions is not uniform. Research consistently shows:  Strong performance zone: The first ~10% and last ~10% of the context window receive the most attention.' },
+    { title: '4. Cost Scaling', desc: 'API pricing is per-token, so longer contexts cost more linearly. But computational cost scales super-linearly due to attention\'s quadratic nature (though providers absorb this into per-token pricing).' },
 ];
 
 export default function WalkthroughPEContextWindowMechanics() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEContextWindowMechanics() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Context Window Mechanics — Step by Step
+          Context Window Mechanics \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how context window mechanics works, one stage at a time.

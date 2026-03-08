@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCDepthEstimation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'MiDaS v3.1 DPT-Large runs at ~11 FPS on an A100 at 384x384 resolution; smaller variants (MiDaS-small, EfficientNet backbone) reach 30+ FPS on mobile GPUs.', isTrue: true, explanation: 'This is a key technical detail of Depth Estimation.' },
-    { text: 'Depth Anything V2 (ViT-L) achieves 0.056 AbsRel on NYUv2 (indoor) and 0.064 on KITTI (outdoor), competitive with supervised methods trained on those specific datasets.', isTrue: true, explanation: 'This is a key technical detail of Depth Estimation.' },
-    { text: 'Self-supervised methods typically trail supervised methods by 5--15% on standard metrics (AbsRel, RMSE) but require no ground-truth depth labels.', isTrue: true, explanation: 'This is a key technical detail of Depth Estimation.' },
+    { text: 'Monocular depth gives you actual distances.', isTrue: false, explanation: 'Most monocular models (MiDaS, Depth Anything v1) predict relative depth -- ordering is correct but scale is arbitrary. Metric depth requires additional calibration or specialized training heads.' },
+    { text: 'Depth estimation recovers per-pixel distance from the camera to the scene, either from a single image (monocular) or from stereo image pairs, enabling 3D understanding from 2D observations.', isTrue: true, explanation: 'This captures the core definition of Depth Estimation.' },
+    { text: 'Depth Estimation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Depth Estimation is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

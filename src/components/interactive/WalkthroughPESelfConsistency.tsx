@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Sampling Multiple Reasoning Paths', desc: 'The foundation of self-consistency begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Majority Voting (Marginalizing Over Reasoning Paths)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes self-consistency work.' },
-    { title: '3. Cost-Accuracy Trade-off', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Answer Extraction and Aggregation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Sampling Multiple Reasoning Paths', desc: 'The process begins with a standard chain-of-thought prompt (either few-shot or zero-shot). Instead of generating a single response at temperature 0 (greedy decoding), the prompt is sent N times with temperature &gt; 0 (typically 0.5-0.7).' },
+    { title: '2. Majority Voting (Marginalizing Over Reasoning Paths)', desc: 'After collecting N responses, the final answer is extracted from each response and a simple majority vote is taken. The most frequently occurring answer is selected as the output.' },
+    { title: '3. Cost-Accuracy Trade-off', desc: 'The central engineering decision is how many samples (N) to use. Empirical results show diminishing returns: 1 sample: baseline CoT performance.' },
+    { title: '4. Answer Extraction and Aggregation', desc: 'Reliable self-consistency requires robust answer extraction. Each response must be parsed to extract a clean final answer.' },
 ];
 
 export default function WalkthroughPESelfConsistency() {
@@ -16,10 +16,10 @@ export default function WalkthroughPESelfConsistency() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Self-Consistency — Step by Step
+          Self-Consistency \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how self-consistency works, one stage at a time.

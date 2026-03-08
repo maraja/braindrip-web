@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Polynomial Features and Interaction Terms', desc: 'The foundation of feature extraction and transformation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Logarithmic, Square Root, and Power Transforms', desc: 'At this stage, the key transformation occurs — the core mechanism that makes feature extraction and transformation work.' },
-    { title: '3. Box-Cox and Yeo-Johnson Transforms', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Binning and Discretization', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Feature Crosses', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Polynomial Features and Interaction Terms', desc: 'For features x_1, x_2, degree-2 polynomial expansion generates:  [equation]  The interaction term x_1 x_2 captures combined effects that neither feature alone reveals.' },
+    { title: '2. Logarithmic, Square Root, and Power Transforms', desc: 'Many real-world quantities (income, prices, populations) follow right-skewed distributions. Applying (x), &#123;x&#125;, or x^&#123;1/3&#125; compresses the right tail and can:  Make distributions more symmetric (closer to Gaussian) Stabilize variance across the range of values Linearize multiplicative relationships.' },
+    { title: '3. Box-Cox and Yeo-Johnson Transforms', desc: 'The Box-Cox transform provides a parametric family of power transforms that finds the optimal transformation automatically:  [equation]  The parameter  is chosen (typically via maximum likelihood) to make the transformed data as close to Gaussian as possible. Box-Cox requires strictly positive data.' },
+    { title: '4. Binning and Discretization', desc: 'Binning converts continuous features into categorical ones by dividing the range into intervals:  Equal-width binning: Splits the range [, ] into k bins of equal width. Equal-frequency (quantile) binning: Each bin contains approximately n/k observations.' },
+    { title: '5. Feature Crosses', desc: 'A feature cross is the Cartesian product of two or more categorical features. If "city" has 50 values and "property_type" has 5 values, their cross creates up to 250 new binary features representing specific combinations like "Manhattan_apartment" or "Austin_house.' },
+    { title: '6. Domain-Specific Feature Engineering', desc: 'Date and Time Features. A raw timestamp can be decomposed into: year, month, day of month, day of week, hour, minute, is_weekend, is_holiday, quarter, days_since_event, time_since_midnight.' },
 ];
 
 export default function WalkthroughMLFFeatureExtractionAndTransformation() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFFeatureExtractionAndTransformation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Feature Extraction and Transformation — Step by Step
+          Feature Extraction and Transformation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how feature extraction and transformation works, one stage at a time.

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPDialogueSystems() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'ATIS (Airline Travel Information Systems): Classic benchmark with 5,871 utterances, 26 intents, and 129 slot labels.', isTrue: true, explanation: 'This is a key technical detail of Dialogue Systems.' },
-    { text: 'Small but historically important.', isTrue: true, explanation: 'This is a key technical detail of Dialogue Systems.' },
-    { text: 'MultiWOZ (Budzianowski et al., 2018): 10K multi-domain dialogues across 7 domains (restaurant, hotel, train, taxi, attraction, hospital, police) with 35 slot types.', isTrue: true, explanation: 'This is a key technical detail of Dialogue Systems.' },
+    { text: 'Open-domain dialogue is harder than task-oriented dialogue.', isTrue: false, explanation: 'They are hard in different ways. Task-oriented systems need reliable understanding of specific domains, robust state tracking, and integration with databases.' },
+    { text: 'Classic benchmark with 5,871 utterances, 26 intents, and 129 slot labels.', isTrue: true, explanation: 'Small but historically important.' },
+    { text: 'Passing the Turing test means solving dialogue.', isTrue: false, explanation: 'The Turing test measures whether a human can distinguish machine from human conversation, but this is a poor proxy for useful dialogue. A system can "pass" by being evasive or humorous without actually being helpful, knowledgeable, or consistent.' },
+    { text: '10K multi-domain dialogues across 7 domains (restaurant, hotel, train, taxi, attraction, hospital, police) with 35 slot types.', isTrue: true, explanation: 'The standard benchmark for task-oriented dialogue, now in version 2.4 with cleaned annotations.' },
+    { text: 'More training data always improves dialogue quality.', isTrue: false, explanation: 'Training on large amounts of noisy dialogue data (e.g., Reddit) can teach models toxic, contradictory, or unhelpful patterns. Carefully curated data, human feedback, and alignment techniques matter more than raw scale for practical dialogue quality.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

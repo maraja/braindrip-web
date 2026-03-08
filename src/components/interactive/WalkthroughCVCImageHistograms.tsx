@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Computing a Histogram', desc: 'The foundation of image histograms begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Histogram Equalization', desc: 'At this stage, the key transformation occurs — the core mechanism that makes image histograms work.' },
-    { title: '3. Contrast Limited Adaptive Histogram Equalization (CLAHE)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Histogram-Based Thresholding (Otsu\'s Method)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Histogram Comparison', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Computing a Histogram', desc: 'For an 8-bit image (L = 256), histogram computation is a single pass through all pixels, incrementing a 256-element counter array. The time complexity is O(M x N), and it requires only O(L) additional memory.' },
+    { title: '2. Histogram Equalization', desc: 'Histogram equalization remaps intensity values so the output histogram is approximately uniform, maximizing contrast. The transformation uses the cumulative distribution function (CDF):  [equation]  Each input pixel with value k is mapped to T(k).' },
+    { title: '3. Contrast Limited Adaptive Histogram Equalization (CLAHE)', desc: 'CLAHE (Zuiderveld, 1994) addresses global equalization\'s problems by:  Dividing the image into small tiles (default 8x8 grid). Computing and equalizing the histogram of each tile independently.' },
+    { title: '4. Histogram-Based Thresholding (Otsu\'s Method)', desc: 'Otsu\'s method (1979) automatically selects a binarization threshold by maximizing the between-class variance _B^2(t):  [equation]  where _0(t) and _1(t) are the class probabilities (pixels below and above threshold t), and _0(t), _1(t) are the corresponding class means.' },
+    { title: '5. Histogram Comparison', desc: 'Histograms can be compared for image retrieval or change detection.' },
 ];
 
 export default function WalkthroughCVCImageHistograms() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCImageHistograms() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Image Histograms — Step by Step
+          Image Histograms \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how image histograms works, one stage at a time.

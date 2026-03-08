@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCAutonomousDrivingPerception() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'nuScenes benchmark: 1,000 driving scenes, 1.4M 3D bounding boxes, 23 object classes.', isTrue: true, explanation: 'This is a key technical detail of Autonomous Driving Perception.' },
-    { text: 'Primary metrics: NDS (nuScenes Detection Score) and mAP.', isTrue: true, explanation: 'This is a key technical detail of Autonomous Driving Perception.' },
-    { text: 'BEVFusion achieves 72.9% NDS with LiDAR+camera fusion on nuScenes; camera-only BEVFormer reaches 56.9% NDS -- a 16-point gap that motivates multi-sensor fusion.', isTrue: true, explanation: 'This is a key technical detail of Autonomous Driving Perception.' },
+    { text: 'Cameras alone are sufficient for safe autonomous driving.', isTrue: false, explanation: 'While camera-only systems are improving rapidly, LiDAR provides direct depth measurement that is critical for safety margins in edge cases (e.g., dark objects at night, low-contrast scenarios). "More sensors always mean better perception." Sensor fusion introduces calibration complexity, synchronization challenges, and failure modes (e.g., a miscalibrated LiDAR-camera pair is worse than either alone).' },
+    { text: 'Autonomous driving perception fuses cameras, LiDAR, and radar to build a real-time 3D understanding of the driving environment, using Bird\'s-Eye View representations and increasingly end-to-end architectures.', isTrue: true, explanation: 'This captures the core definition of Autonomous Driving Perception.' },
+    { text: 'Autonomous Driving Perception is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Autonomous Driving Perception is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

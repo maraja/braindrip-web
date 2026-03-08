@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACEventDrivenArchitectures() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Event-driven architectures enable reactive agents that respond to external triggers -- webhooks, file changes, schedules, user messages -- rather than running continuous polling loops.', isTrue: true, explanation: 'This captures the core purpose of Event-Driven Architectures.' },
-    { text: 'Event-Driven Architectures is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Event-Driven Architectures is important for building on more advanced topics.' },
-    { text: 'Event-Driven Architectures is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Event-Driven Architectures is important for building on more advanced topics.' },
+    { text: 'Event-driven means the agent has no memory between events.', isTrue: false, explanation: 'State is persisted externally (database, Redis, checkpoint store). The agent reconstructs its state when activated and persists updates before deactivating.' },
+    { text: 'events may be delivered more than once (at-least-once delivery), so the agent must handle duplicate events gracefully using deduplication keys', isTrue: true, explanation: 'events may be delivered more than once (at-least-once delivery), so the agent must handle duplicate events gracefully using deduplication keys' },
+    { text: '"pr.opened.v2") to enable backward-compatible evolution of event payloads', isTrue: true, explanation: '"pr.opened.v2") to enable backward-compatible evolution of event payloads' },
+    { text: 'rate limiting, queue depth monitoring, and circuit breakers that temporarily stop consuming events', isTrue: true, explanation: 'rate limiting, queue depth monitoring, and circuit breakers that temporarily stop consuming events' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The IE Pipeline', desc: 'The foundation of information extraction begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Template Filling and Slot Filling', desc: 'At this stage, the key transformation occurs — the core mechanism that makes information extraction work.' },
-    { title: '3. Rule-Based vs. ML-Based IE', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Modern End-to-End Neural IE', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. The ACE and TAC-KBP Evaluation Programs', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The IE Pipeline', desc: 'Classical IE follows a cascade of increasingly complex subtasks:  Named Entity Recognition (NER): Identify entity mentions and classify them into types (PERSON, ORGANIZATION, LOCATION, DATE, etc.). See 05-core-nlp-tasks-analysis/named-entity-recognition.md for details.' },
+    { title: '2. Template Filling and Slot Filling', desc: 'Template filling is one of the oldest IE formulations, dating to the MUC (Message Understanding Conference) evaluations in the late 1980s. Given a predefined template (e.g.' },
+    { title: '3. Rule-Based vs. ML-Based IE', desc: 'Rule-based IE uses hand-crafted patterns -- often lexico-syntactic rules or regular expressions over dependency parse trees. For example, a pattern like [ORG] acquired [ORG] for [MONEY] captures acquisition events.' },
+    { title: '4. Modern End-to-End Neural IE', desc: 'Modern systems replace the cascade with joint or end-to-end neural architectures:  Joint entity and relation extraction: Models like SpERT (Eberts and Ulges, 2020) and PFN (Yan et al., 2021) extract entities and relations simultaneously, avoiding pipeline error propagation.' },
+    { title: '5. The ACE and TAC-KBP Evaluation Programs', desc: 'ACE (Automatic Content Extraction): Running from 1999 to 2008, ACE defined standard entity types (7 types), relation types (6 major types, 18 subtypes), and event types (8 types, 33 subtypes).' },
 ];
 
 export default function WalkthroughNLPInformationExtraction() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPInformationExtraction() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Information Extraction — Step by Step
+          Information Extraction \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how information extraction works, one stage at a time.

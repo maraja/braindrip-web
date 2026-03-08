@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE05CodexAndCodeGeneration() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'at OpenAI Product: Powered GitHub Copilot (launched June 2021 preview) Copilot users: 1M+ paying subscribers by early 2023 Languages: Primarily Python, but functional across many languages', isTrue: true, explanation: 'This is a key technical detail of Codex and Code Generation.' },
-    { text: 'OpenAI\'s Codex, a GPT-3 model fine-tuned on 54 million GitHub repositories, proved that language models could write functional code and launched the AI-assisted programming revolution through GitHub Copilot.', isTrue: true, explanation: 'This captures the core purpose of Codex and Code Generation.' },
-    { text: 'Codex and Code Generation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Codex and Code Generation is important for building on more advanced topics.' },
+    { text: 'Codex understands code.', isTrue: false, explanation: 'Codex predicts the next token in a code sequence. It has no model of program execution, no understanding of memory allocation or runtime behavior.' },
+    { text: 'GPT-3 (12B variant for main results)', isTrue: true, explanation: 'GPT-3 (12B variant for main results)' },
+    { text: 'Codex was trained only on code.', isTrue: false, explanation: 'It started from a pre-trained GPT-3 checkpoint, which was trained on natural language. The natural language capability was essential — it allowed Codex to understand docstrings, comments, and variable names, connecting natural language intent to code patterns.' },
+    { text: '159 GB of Python code from 54M GitHub repositories', isTrue: true, explanation: '159 GB of Python code from 54M GitHub repositories' },
+    { text: 'Copilot copies code from GitHub.', isTrue: false, explanation: 'While Copilot\'s training data came from GitHub, its outputs are generated token by token from the model\'s learned distribution. It can produce outputs similar to training examples (raising legitimate copyright concerns), but it is not a search engine that retrieves and pastes code snippets.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

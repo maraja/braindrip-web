@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Text-as-Classifier Paradigm', desc: 'The foundation of zero-shot classification begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Prompt Engineering', desc: 'At this stage, the key transformation occurs — the core mechanism that makes zero-shot classification work.' },
-    { title: '3. Generalized Zero-Shot Learning (GZSL)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Hierarchy of Zero-Shot Approaches', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. SigLIP: Improving the Contrastive Objective', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Text-as-Classifier Paradigm', desc: 'Traditional classifiers learn a weight vector w_c for each class from labeled data. In zero-shot classification, the text encoder generates t_c from a natural language description of class c, effectively replacing w_c with a semantically meaningful prototype.' },
+    { title: '2. Prompt Engineering', desc: 'The text input for each class significantly affects accuracy. Common strategies include:  Simple templates:  Context-enriched templates:  Prompt ensembling: CLIP uses 80 handcrafted templates per dataset and averages the resulting text embeddings:  [equation]  This ensembling improved ImageNet.' },
+    { title: '3. Generalized Zero-Shot Learning (GZSL)', desc: 'In the generalized setting, the test set contains both seen and unseen categories. This is harder because models are biased toward seen classes.' },
+    { title: '4. Hierarchy of Zero-Shot Approaches', desc: 'Attribute-based (classic): Map images and classes to a shared attribute space (e.g., "has stripes," "is furry"). Limited by predefined attributes.' },
+    { title: '5. SigLIP: Improving the Contrastive Objective', desc: 'SigLIP (Google, 2023) replaces CLIP\'s softmax-based contrastive loss with a sigmoid loss applied to each image-text pair independently:  [equation]  This removes the need for all-to-all communication within a batch, enabling larger effective batch sizes. SigLIP ViT-B/16 achieves 78.' },
 ];
 
 export default function WalkthroughCVCZeroShotClassification() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCZeroShotClassification() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Zero-Shot Classification — Step by Step
+          Zero-Shot Classification \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how zero-shot classification works, one stage at a time.

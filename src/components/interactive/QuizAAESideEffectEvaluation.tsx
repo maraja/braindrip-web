@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAESideEffectEvaluation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Measuring the unintended consequences of agent actions -- environmental modifications, resource consumption, information leakage, and collateral changes beyond the scope of the requested task.', isTrue: true, explanation: 'This captures the core purpose of Side Effect Evaluation.' },
-    { text: 'Side Effect Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Side Effect Evaluation is important for building on more advanced topics.' },
-    { text: 'Side Effect Evaluation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Side Effect Evaluation is important for building on more advanced topics.' },
+    { text: 'If the task succeeds, side effects do not matter.', isTrue: false, explanation: 'Task success is necessary but not sufficient for a good agent execution. An agent that fixes a bug but also introduces a security vulnerability in an unrelated file has succeeded at the task while causing potentially greater harm through side effects.' },
+    { text: 'Side effects are always negative.', isTrue: false, explanation: 'Some unintended changes are beneficial -- an agent might fix a typo it noticed while working on the main task, or clean up an import it encountered. The evaluation framework should distinguish between harmful, neutral, and beneficial side effects rather than treating all unintended changes as negative.' },
+    { text: 'Comprehensive state diffing is too expensive for routine evaluation.', isTrue: false, explanation: 'Full state diffing is expensive, but targeted diffing focused on the highest-risk dimensions (filesystem changes, network activity, resource consumption) captures the majority of significant side effects at a fraction of the cost. The diffing strategy should be proportional to the risk level of the deployment.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCConditionalRandomFields() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Dense CRF inference on a 500x375 image takes ~0.5 seconds on CPU (2011 implementation).', isTrue: true, explanation: 'This is a key technical detail of Conditional Random Fields.' },
-    { text: 'GPU implementations reduce this to ~50ms.', isTrue: true, explanation: 'This is a key technical detail of Conditional Random Fields.' },
-    { text: 'Typical improvement from CRF: +1--3% mIoU on PASCAL VOC, +1--2% on Cityscapes when applied to DeepLab v1/v2 outputs.', isTrue: true, explanation: 'This is a key technical detail of Conditional Random Fields.' },
+    { text: 'CRFs are trainable segmentation models.', isTrue: false, explanation: 'In the segmentation context, CRFs are almost always used as a refinement step on top of a trained CNN. They do not learn visual features -- they enforce spatial consistency using hand-crafted or lightly learned potentials.' },
+    { text: 'Conditional Random Fields (CRFs) are probabilistic graphical models used as post-processing for segmentation networks, enforcing spatial consistency and refining noisy pixel-level predictions into sharp, boundary-respecting outputs.', isTrue: true, explanation: 'This captures the core definition of Conditional Random Fields.' },
+    { text: 'Conditional Random Fields is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Conditional Random Fields is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

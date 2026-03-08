@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Standardization does not make data Gaussian.', detail: 'It shifts the mean to zero and scales variance to one, but the shape of the distribution is unchanged. If normality is required, use Box-Cox or Yeo-Johnson.' },
-    { label: 'One-hot encoded features', detail: 'Do not scale binary (0/1) columns. They are already on a natural scale, and standardization shifts them off the $\\{0, 1\\}$ support.' },
+    { label: 'One-hot encoded features', detail: 'Do not scale binary (0/1) columns. They are already on a natural scale, and standardization shifts them off the \\&#123;0, 1\\&#125; support.' },
     { label: 'Target variable scaling', detail: 'For regression, scaling the target can improve training stability. Predictions must be inverse-transformed before evaluation.' },
-    { label: 'Scaling in pipelines', detail: 'Use `sklearn.pipeline.Pipeline` to bundle scaling with the model. This ensures correct fit/transform behavior during cross-validation.' },
+    { label: 'Scaling in pipelines', detail: 'Use sklearn.pipeline.Pipeline to bundle scaling with the model. This ensures correct fit/transform behavior during cross-validation.' },
 ];
 
 export default function ExplorerMLFFeatureScalingAndNormalization() {
@@ -18,10 +18,10 @@ export default function ExplorerMLFFeatureScalingAndNormalization() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Feature Scaling and Normalization — Key Details Explorer
+          Feature Scaling and Normalization \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of feature scaling and normalization.
+          Click each card to explore the technical details.
         </p>
       </div>
 

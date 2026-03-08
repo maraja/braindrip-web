@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPECostAndLatencyOptimization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'LLMLingua achieves 2-10x prompt compression with less than 5% quality degradation on information extraction and QA tasks.', isTrue: true, explanation: 'This is a key technical detail of Cost and Latency Optimization.' },
-    { text: 'Prefix caching reduces time-to-first-token by 30-70% for prompts with shared prefixes longer than 1,024 tokens.', isTrue: true, explanation: 'This is a key technical detail of Cost and Latency Optimization.' },
-    { text: 'Semantic caching with 0.95+ cosine similarity threshold achieves cache hit rates of 20-40% for customer support applications, with less than 2% false positive (incorrect cache match) rates.', isTrue: true, explanation: 'This is a key technical detail of Cost and Latency Optimization.' },
+    { text: 'Optimization always sacrifices quality.', isTrue: false, explanation: 'Many optimizations — removing redundant instructions, caching identical queries, routing truly simple tasks to small models — reduce cost without any quality loss. The first 30-40% of cost reduction often comes "for free." "You should optimize from the start." Premature optimization is as wasteful in LLM applications as in software engineering.' },
+    { text: 'Cost and latency optimization for LLM applications involves systematic techniques — prompt compression, caching, model routing, and batching — to find the best trade-off on the cost-quality Pareto frontier.', isTrue: true, explanation: 'This captures the core definition of Cost and Latency Optimization.' },
+    { text: 'Cost and Latency Optimization is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Cost and Latency Optimization is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

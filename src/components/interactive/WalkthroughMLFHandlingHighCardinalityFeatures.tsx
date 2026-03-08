@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Problems with One-Hot Encoding at Scale', desc: 'The foundation of handling high-cardinality features begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Target Encoding (Mean Encoding)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes handling high-cardinality features work.' },
-    { title: '3. Frequency Encoding', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Feature Hashing (The Hashing Trick)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Embedding Layers (Learned Representations)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Problems with One-Hot Encoding at Scale', desc: 'One-hot encoding maps a categorical feature with $. This creates several problems when cardinality is high:  Dimensionality explosion: p features with average cardinality c produce p  c$ columns after encoding.' },
+    { title: '2. Target Encoding (Mean Encoding)', desc: 'Target encoding replaces each category with the mean (or other statistic) of the target variable for that category:  [equation]  where D_c is the set of training examples with category c. For classification, this becomes the empirical probability of the positive class.' },
+    { title: '3. Frequency Encoding', desc: 'Replace each category with its frequency (count or proportion) in the training set:  [equation]  Frequency encoding is simple, fast, and carries no risk of target leakage since it uses no label information. It works well when the frequency of a category is itself predictive (e.g.' },
+    { title: '4. Feature Hashing (The Hashing Trick)', desc: 'Feature hashing maps each category through a hash function to one of k predetermined buckets:  [equation]  This produces a fixed-size binary (or count) vector of dimension k, regardless of the original cardinality.' },
+    { title: '5. Embedding Layers (Learned Representations)', desc: 'Neural networks can learn dense, low-dimensional representations for categories through embedding layers. Each category c is mapped to a trainable vector e_c  &#123;R&#125;^d where d   (typically 10-100):  [equation]  where W  &#123;R&#125;^&#123; x d&#125; is the embedding matrix, learned end-to-end via backpropagation.' },
+    { title: '6. Grouping Rare Categories', desc: 'A straightforward preprocessing step: categories appearing fewer than a threshold t times are collapsed into a single "OTHER" or "RARE" bucket. This reduces effective cardinality and ensures every remaining category has sufficient statistics.' },
 ];
 
 export default function WalkthroughMLFHandlingHighCardinalityFeatures() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFHandlingHighCardinalityFeatures() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Handling High-Cardinality Features — Step by Step
+          Handling High-Cardinality Features \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how handling high-cardinality features works, one stage at a time.

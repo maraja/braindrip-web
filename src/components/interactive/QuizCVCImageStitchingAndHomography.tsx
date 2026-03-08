@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCImageStitchingAndHomography() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Homography estimation is valid when the scene is approximately planar or when the camera undergoes pure rotation (no translation).', isTrue: true, explanation: 'This is a key technical detail of Image Stitching and Homography.' },
-    { text: 'For general 3D scenes with camera translation, parallax causes homography misalignment.', isTrue: true, explanation: 'This is a key technical detail of Image Stitching and Homography.' },
-    { text: 'RANSAC with 500--1,000 iterations and a 3-pixel threshold is standard.', isTrue: true, explanation: 'This is a key technical detail of Image Stitching and Homography.' },
+    { text: 'A homography can align any two images of the same scene.', isTrue: false, explanation: 'Homography is exact only for planar scenes or pure camera rotation. With translating cameras and 3D scenes, you need fundamental/essential matrices or per-pixel depth-based warping.' },
+    { text: 'Image stitching combines overlapping photographs into seamless panoramas by matching features, estimating projective homographies with RANSAC, and blending warped images together.', isTrue: true, explanation: 'This captures the core definition of Image Stitching and Homography.' },
+    { text: 'Image Stitching and Homography is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Image Stitching and Homography is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

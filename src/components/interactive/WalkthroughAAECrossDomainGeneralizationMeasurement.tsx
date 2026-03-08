@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Measuring Transfer', desc: 'The foundation of cross-domain generalization measurement begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Generalization Gap', desc: 'At this stage, the key transformation occurs — the core mechanism that makes cross-domain generalization measurement work.' },
-    { title: '3. Benchmark Design for Generalization', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Specialization-Generalization Tradeoff', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Measuring Transfer', desc: 'The standard protocol for measuring cross-domain transfer follows a train-evaluate-test paradigm:  Domain performance matrix. Evaluate the agent across multiple domains to construct a performance matrix.' },
+    { title: '2. The Generalization Gap', desc: 'Empirical studies reveal consistent patterns in generalization gaps:  Capability-specific transfer. Some capabilities transfer well across domains (logical reasoning, instruction following, information retrieval), while others do not (domain-specific terminology, specialized tool use, format.' },
+    { title: '3. Benchmark Design for Generalization', desc: 'Traditional benchmarks test depth in a single domain. Generalization-focused benchmarks must test breadth:  Multi-domain evaluation suites.' },
+    { title: '4. The Specialization-Generalization Tradeoff', desc: 'Agent development faces a fundamental tension: optimizing for a specific domain (via fine-tuning, prompt engineering, or tool specialization) improves in-domain performance but often degrades out-of-domain performance.' },
 ];
 
 export default function WalkthroughAAECrossDomainGeneralizationMeasurement() {
@@ -16,10 +16,10 @@ export default function WalkthroughAAECrossDomainGeneralizationMeasurement() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Cross-Domain Generalization Measurement — Step by Step
+          Cross-Domain Generalization Measurement \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how cross-domain generalization measurement works, one stage at a time.

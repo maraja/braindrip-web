@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEGuardrailsAndOutputFiltering() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A typical multi-guard pipeline adds 50-200ms of latency per request, depending on the number and complexity of guards.', isTrue: true, explanation: 'This is a key technical detail of Guardrails and Output Filtering.' },
-    { text: 'Content classifiers achieve 92-98% precision on policy violations when calibrated with domain-specific training data.', isTrue: true, explanation: 'This is a key technical detail of Guardrails and Output Filtering.' },
-    { text: 'Schema validators with automatic retry loops achieve 95-99% format compliance, with most failures resolved in 1-2 retries.', isTrue: true, explanation: 'This is a key technical detail of Guardrails and Output Filtering.' },
+    { text: 'Guardrails replace good prompt engineering.', isTrue: false, explanation: 'Guardrails are a safety net, not a substitute. A well-engineered prompt produces correct outputs 95-99% of the time; guardrails catch the remaining 1-5%.' },
+    { text: 'Guardrails are programmable safety layers that inspect, validate, and filter LLM outputs before they reach the user, functioning as quality control inspectors at the end of a production line.', isTrue: true, explanation: 'This captures the core definition of Guardrails and Output Filtering.' },
+    { text: 'Guardrails and Output Filtering is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Guardrails and Output Filtering is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

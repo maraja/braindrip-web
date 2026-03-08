@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Static Templates', desc: 'The foundation of context assembly patterns begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Conditional Assembly', desc: 'At this stage, the key transformation occurs — the core mechanism that makes context assembly patterns work.' },
-    { title: '3. Relevance-Scored Assembly', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Step-Aware Assembly', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Static Templates', desc: 'The simplest context assembly pattern uses fixed templates with variable slots. The template defines the structure; variables are filled at runtime:  Static templates work well for applications with predictable context structures.' },
+    { title: '2. Conditional Assembly', desc: 'More sophisticated applications assemble different contexts based on runtime conditions:  Role-based conditioning: Include admin instructions only for admin users, include content moderation rules only for public-facing interactions, include developer documentation only for technical users.' },
+    { title: '3. Relevance-Scored Assembly', desc: 'For applications with large candidate pools of context material — many possible documents, many possible examples, many possible tool definitions — relevance scoring dynamically ranks candidates and fills the budget with the highest-scoring entries.' },
+    { title: '4. Step-Aware Assembly', desc: 'In agentic applications, the context should change at each step of a multi-step process. The context for "planning which tools to use" is different from the context for "executing a specific tool" and different again from "synthesizing results into a final answer.' },
 ];
 
 export default function WalkthroughPEContextAssemblyPatterns() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEContextAssemblyPatterns() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Context Assembly Patterns — Step by Step
+          Context Assembly Patterns \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how context assembly patterns works, one stage at a time.

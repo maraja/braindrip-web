@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Ablation Studies', desc: 'The foundation of prompt optimization techniques begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Component Contribution Analysis', desc: 'At this stage, the key transformation occurs — the core mechanism that makes prompt optimization techniques work.' },
-    { title: '3. Automated Prompt Optimization', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. When Manual Beats Automation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Ablation Studies', desc: 'An ablation study measures the contribution of each prompt component by removing it and observing the impact on eval scores. Start with the full prompt and establish a baseline score.' },
+    { title: '2. Component Contribution Analysis', desc: 'Beyond binary ablation (component present vs. absent), contribution analysis explores how different formulations of the same component affect performance.' },
+    { title: '3. Automated Prompt Optimization', desc: 'Manual optimization becomes impractical when the prompt has many interdependent components or when the task requires exploring a large space of possible instructions.' },
+    { title: '4. When Manual Beats Automation', desc: 'Automated optimization excels at tasks with clear metrics, sufficient training data, and well-defined output formats. Manual optimization is superior when: (1) the task requires nuanced judgment that is hard to capture in a metric, (2) the prompt needs to be interpretable and maintainable by a.' },
 ];
 
 export default function WalkthroughPEPromptOptimizationTechniques() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEPromptOptimizationTechniques() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Prompt Optimization Techniques — Step by Step
+          Prompt Optimization Techniques \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how prompt optimization techniques works, one stage at a time.

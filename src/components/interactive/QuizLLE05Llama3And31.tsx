@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE05Llama3And31() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Meta\'s LLaMA 3 (April 2024) and LLaMA 3.1 (July 2024) proved that open-weight models could compete at the absolute frontier, with the 405B parameter model rivaling GPT-4o and Claude 3.5 Sonnet while being freely available for download.', isTrue: true, explanation: 'This captures the core purpose of LLaMA 3 and LLaMA 3.1.' },
-    { text: 'LLaMA 3 and LLaMA 3.1 is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding LLaMA 3 and LLaMA 3.1 is important for building on more advanced topics.' },
-    { text: 'LLaMA 3 and LLaMA 3.1 is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding LLaMA 3 and LLaMA 3.1 is important for building on more advanced topics.' },
+    { text: 'LLaMA 3 is fully open-source.', isTrue: false, explanation: 'It is open-weight, not open-source. The model weights and inference code are released, but the training data, training code, and full data pipeline details are not.' },
+    { text: 'April 18, 2024 (8B and 70B)', isTrue: true, explanation: 'April 18, 2024 (8B and 70B)' },
+    { text: 'The 405B model requires a supercomputer to run.', isTrue: false, explanation: 'While training required 16,000 H100s, inference can run on much more modest hardware. Quantized versions (4-bit, 8-bit) can run on a single high-end server with multiple consumer GPUs, and the 8B model runs on a single GPU.' },
+    { text: 'July 23, 2024 (8B, 70B, 405B)', isTrue: true, explanation: 'July 23, 2024 (8B, 70B, 405B)' },
+    { text: 'Dense architecture means LLaMA 3 is less efficient than MoE models.', isTrue: false, explanation: 'Per-token, dense models activate all parameters while MoE models only activate a subset. But dense models are simpler to deploy, require less memory for routing infrastructure, and have more predictable performance.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

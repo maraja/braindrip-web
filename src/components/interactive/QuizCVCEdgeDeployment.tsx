@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCEdgeDeployment() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'NVIDIA Jetson Orin delivers 275 TOPS (INT8) at 60W; Jetson Orin Nano delivers 40 TOPS at 15W.', isTrue: true, explanation: 'This is a key technical detail of Edge Deployment.' },
-    { text: 'Google Edge TPU: 4 TOPS at 2W.', isTrue: true, explanation: 'This is a key technical detail of Edge Deployment.' },
-    { text: 'Runs MobileNetV2 at 400 FPS for classification.', isTrue: true, explanation: 'This is a key technical detail of Edge Deployment.' },
+    { text: 'Quantization always causes significant accuracy loss.', isTrue: false, explanation: 'INT8 PTQ loses only 0.5--1.0% on most classification and detection models. With QAT, the loss is often negligible (&lt;0.3%).' },
+    { text: 'Edge deployment runs computer vision models on mobile phones, embedded devices, and microcontrollers by applying quantization, pruning, and compiler optimizations to meet strict latency and power budgets.', isTrue: true, explanation: 'This captures the core definition of Edge Deployment.' },
+    { text: 'Edge Deployment is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Edge Deployment is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

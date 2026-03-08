@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFLossFunctions() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Cross-entropy is always non-negative, and equals zero only when predicted probabilities match the true labels exactly.', isTrue: true, explanation: 'This is a key technical detail of Loss Functions.' },
-    { text: 'The gradient of cross-entropy with respect to the logits (pre-softmax values) has the elegant form $\\hat&#123;p&#125;_k - y_k$, which is computationally efficient and numerically stable.', isTrue: true, explanation: 'This is a key technical detail of Loss Functions.' },
-    { text: 'Log-sum-exp trick: Computing $\\log \\sum_k \\exp(z_k)$ naively causes overflow.', isTrue: true, explanation: 'This is a key technical detail of Loss Functions.' },
+    { text: 'MSE and cross-entropy are interchangeable for classification.', isTrue: false, explanation: 'MSE can technically be used for classification, but cross-entropy produces better-calibrated probabilities and has more favorable gradient properties with sigmoid/softmax outputs. "Lower loss always means a better model." On the training set, yes.' },
+    { text: 'Computing  _k (z_k) naively causes overflow.', isTrue: true, explanation: 'Subtracting (z_k) before exponentiating resolves this.' },
+    { text: 'The objective being optimized -- MSE, cross-entropy, hinge loss, and how the choice shapes what the model learns.', isTrue: true, explanation: 'This captures the core definition of Loss Functions.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

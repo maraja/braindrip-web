@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE03DeepseekR1() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'DeepSeek-R1 demonstrated that sophisticated reasoning capabilities could emerge from pure reinforcement learning without supervised fine-tuning, matching OpenAI o1 at a fraction of the cost and releasing everything under an open license.', isTrue: true, explanation: 'This captures the core purpose of DeepSeek-R1: Open Reasoning from Pure RL.' },
-    { text: 'DeepSeek-R1: Open Reasoning from Pure RL is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding DeepSeek-R1: Open Reasoning from Pure RL is important for building on more advanced topics.' },
-    { text: 'DeepSeek-R1: Open Reasoning from Pure RL is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding DeepSeek-R1: Open Reasoning from Pure RL is important for building on more advanced topics.' },
+    { text: 'R1 is just a copy of o1.', isTrue: false, explanation: 'While inspired by the same paradigm, R1\'s approach was fundamentally different. The use of pure RL (in R1-Zero) and GRPO, the emergent reasoning without SFT, and the open release all represented distinct technical contributions.' },
+    { text: 'R1 only works because DeepSeek copied Western research.', isTrue: false, explanation: 'DeepSeek\'s innovations, including Multi-head Latent Attention, auxiliary-loss-free load balancing, GRPO, and the pure-RL reasoning discovery, were original contributions that Western labs subsequently studied and adopted. Innovation in AI is global and bidirectional.' },
+    { text: 'The $5.9M training cost means anyone can train R1.', isTrue: false, explanation: 'That figure covers only the final RL training phase. The underlying DeepSeek-V3 base model required its own substantial training investment.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

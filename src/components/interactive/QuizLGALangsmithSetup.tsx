@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGALangsmithSetup() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'LangSmith tracing is opt-in via environment variables and adds negligible overhead (traces are sent asynchronously).', isTrue: true, explanation: 'This is a key technical detail of LangSmith Setup.' },
-    { text: 'The LANGSMITH_PROJECT variable groups traces logically; you can use different projects for dev, staging, and production.', isTrue: true, explanation: 'This is a key technical detail of LangSmith Setup.' },
-    { text: 'Traces are stored in the LangSmith cloud at smith.langchain.com, with a free tier available for development.', isTrue: true, explanation: 'This is a key technical detail of LangSmith Setup.' },
+    { text: 'LangSmith requires adding decorators or wrappers to every function.', isTrue: false, explanation: 'All LangChain and LangGraph components are auto-instrumented. Decorators are only needed for custom non-LangChain functions.' },
+    { text: 'LangSmith provides automatic observability for LangChain and LangGraph applications through simple environment variable configuration.', isTrue: true, explanation: 'This captures the core definition of LangSmith Setup.' },
+    { text: 'LangSmith Setup is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding LangSmith Setup is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

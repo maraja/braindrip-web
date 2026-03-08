@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACEnvironmentAndObservations() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Observation size budgets: A practical rule is to allocate no more than 30-40% of the context window to the current observation.', isTrue: true, explanation: 'This is a key technical detail of Environment and Observations.' },
-    { text: 'For a 128K-token window, this means individual observations should be capped at roughly 40K-50K tokens.', isTrue: true, explanation: 'This is a key technical detail of Environment and Observations.' },
-    { text: 'Most observations should be far smaller (500-5,000 tokens).', isTrue: true, explanation: 'This is a key technical detail of Environment and Observations.' },
+    { text: 'The agent sees everything in its environment.', isTrue: false, explanation: 'An agent only sees what it explicitly observes through tool calls. A coding agent does not "see" the file system — it must actively read files, list directories, and search content.' },
+    { text: 'A practical rule is to allocate no more than 30-40% of the context window to the current observation.', isTrue: true, explanation: 'For a 128K-token window, this means individual observations should be capped at roughly 40K-50K tokens. Most observations should be far smaller (500-5,000 tokens).' },
+    { text: 'More observation data is always better.', isTrue: false, explanation: 'Flooding the LLM with large observations degrades reasoning quality. Long terminal outputs, full file contents, and verbose API responses dilute the LLM\'s attention.' },
+    { text: 'Claude Code truncates command outputs at 30,000 characters.', isTrue: true, explanation: 'LangChain defaults vary by tool but typically cap at 10,000 characters. Custom agents should enforce similar limits.' },
+    { text: 'Observations are objective and complete.', isTrue: false, explanation: 'Tool outputs are filtered through the tool\'s implementation. A search tool might miss relevant results due to its query algorithm.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

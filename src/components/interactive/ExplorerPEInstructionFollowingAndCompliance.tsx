@@ -5,7 +5,7 @@ const DETAILS = [
     { label: 'Position effect', detail: 'Instructions at the top and bottom of a prompt are followed 10-15% more reliably than instructions in the middle (primacy/recency effect documented in Liu et al., 2024).' },
     { label: 'Instruction count sweet spot', detail: '5-15 instructions per prompt maximizes total compliance. Beyond 15, marginal compliance per instruction drops significantly due to attention competition.' },
     { label: 'Formatting impact', detail: 'Using section headers (###), emphasis markers (IMPORTANT:, NOTE:), and visual separation (blank lines, dividers) improves compliance by 5-15% per instruction.' },
-    { label: 'Specificity premium', detail: 'Specific instructions (\"Respond in exactly 3 bullet points\") are followed 20-30% more reliably than vague equivalents (\"Keep your response brief and structured\").' },
+    { label: 'Specificity premium', detail: 'Specific instructions ("Respond in exactly 3 bullet points") are followed 20-30% more reliably than vague equivalents ("Keep your response brief and structured").' },
     { label: 'Repetition effect', detail: 'Stating a critical instruction twice (e.g., at the top and bottom of the system prompt) improves compliance by 5-10% relative to stating it once.' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerPEInstructionFollowingAndCompliance() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Instruction Following and Compliance — Key Details Explorer
+          Instruction Following and Compliance \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of instruction following and compliance.
+          Click each card to explore the technical details.
         </p>
       </div>
 

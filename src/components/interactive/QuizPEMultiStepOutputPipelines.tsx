@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizPEMultiStepOutputPipelines() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Focused single-task prompts achieve 90-95% per-step reliability, compared to 60-80% for complex multi-task prompts.', isTrue: true, explanation: 'This is a key technical detail of Multi-Step Output Pipelines.' },
-    { text: 'Retry with validation feedback resolves 80-90% of structural failures in a single retry attempt.', isTrue: true, explanation: 'This is a key technical detail of Multi-Step Output Pipelines.' },
-    { text: 'JSON is the default intermediate format for code-consumed outputs due to universal parser availability and schema enforcement support.', isTrue: true, explanation: 'This is a key technical detail of Multi-Step Output Pipelines.' },
+    { text: 'A single sophisticated prompt is always better than a pipeline.', isTrue: false, explanation: 'For simple tasks, yes — a single prompt avoids overhead. For complex, multi-part tasks, pipelines are more reliable, debuggable, and maintainable.' },
+    { text: 'a 5-step pipeline with 2-second steps takes 10 seconds.', isTrue: true, explanation: 'Parallel steps (fan-out) can mitigate this.' },
+    { text: 'each step is a separate API call.', isTrue: true, explanation: 'Offset by using smaller/cheaper models for simpler steps and frontier models only where needed.' },
+    { text: 'step 1\'s output becomes part of step 2\'s input.', isTrue: true, explanation: 'Design concise intermediates to avoid context window exhaustion in later steps.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

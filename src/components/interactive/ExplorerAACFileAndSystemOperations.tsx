@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Working directory management', detail: 'Agents need a consistent working directory concept. Stateless shell environments (where each command starts fresh) require using absolute paths or explicit `cd` commands. Stateful environments maintain the working directory across commands.' },
+    { label: 'Working directory management', detail: 'Agents need a consistent working directory concept. Stateless shell environments (where each command starts fresh) require using absolute paths or explicit cd commands. Stateful environments maintain the working directory across commands.' },
     { label: 'File size limits', detail: 'Reading files larger than 10,000 lines into the LLM context is impractical. Tools should implement pagination (read N lines starting at line M) and summary modes for large files.' },
     { label: 'Encoding handling', detail: 'Files are not always UTF-8. Binary files, images, and files with different encodings need special handling. Attempting to read a binary file as text produces garbage output that wastes context.' },
     { label: 'Atomic writes', detail: 'Writing should be atomic (write to temp file, then rename) to prevent data loss if the process is interrupted mid-write.' },
-    { label: 'Permission boundaries', detail: 'Production agents restrict file access to specific directory trees. An agent working on project A should not be able to read project B\'s files or access system-level files like `/etc/passwd`.' },
-    { label: 'Command timeouts', detail: 'Shell commands must have timeouts. A `find /` command or a hung build process can block indefinitely without timeout enforcement.' },
+    { label: 'Permission boundaries', detail: 'Production agents restrict file access to specific directory trees. An agent working on project A should not be able to read project B\'s files or access system-level files like /etc/passwd.' },
+    { label: 'Command timeouts', detail: 'Shell commands must have timeouts. A find / command or a hung build process can block indefinitely without timeout enforcement.' },
 ];
 
 export default function ExplorerAACFileAndSystemOperations() {
@@ -20,10 +20,10 @@ export default function ExplorerAACFileAndSystemOperations() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          File and System Operations — Key Details Explorer
+          File and System Operations \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of file and system operations.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. RLHF: The Three-Stage Pipeline (2022)', desc: 'The foundation of alignment method evolution begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Constitutional AI: Replacing Humans with Principles (2022)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes alignment method evolution work.' },
-    { title: '3. DPO: The Mathematical Simplification (2023)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Beyond DPO: Further Simplifications (2024)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Pure RL for Reasoning (2025)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. RLHF: The Three-Stage Pipeline (2022)', desc: 'InstructGPT (Ouyang et al., January 2022) established the RLHF paradigm in three stages. Stage 1: Supervised Fine-Tuning (SFT) on human-written demonstrations of ideal assistant behavior.' },
+    { title: '2. Constitutional AI: Replacing Humans with Principles (2022)', desc: 'Anthropic\'s Constitutional AI (Bai et al., December 2022) introduced RLAIF — Reinforcement Learning from AI Feedback. Instead of human annotators judging response quality, the model itself critiques and revises responses based on a written constitution of principles.' },
+    { title: '3. DPO: The Mathematical Simplification (2023)', desc: 'Direct Preference Optimization (Rafailov et al., May 2023) was a theoretical breakthrough. The authors proved that the reward model in RLHF is mathematically equivalent to a simple closed-form expression involving the policy itself.' },
+    { title: '4. Beyond DPO: Further Simplifications (2024)', desc: 'The simplification continued rapidly. KTO (Ethayarajh et al., January 2024) removed the need for paired preferences entirely — it works with simple thumbs-up/thumbs-down binary feedback on individual responses.' },
+    { title: '5. Pure RL for Reasoning (2025)', desc: 'DeepSeek R1 (January 2025) introduced a paradigm shift: Group Relative Policy Optimization (GRPO) using verifiable rewards. For math problems, the reward is binary — did the model get the correct answer?' },
+    { title: '6. Process vs. Outcome Supervision', desc: 'An important distinction runs through alignment research: should you reward each reasoning step (process supervision) or only the final answer (outcome supervision)? Process reward models (PRMs) provide feedback at every step of a reasoning chain, catching errors early.' },
 ];
 
 export default function WalkthroughLLE03AlignmentMethodEvolution() {
@@ -17,10 +18,10 @@ export default function WalkthroughLLE03AlignmentMethodEvolution() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Alignment Method Evolution — Step by Step
+          Alignment Method Evolution \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how alignment method evolution works, one stage at a time.

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizPEStepBackPrompting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Physics (MMLU): Step-back prompting improved PaLM 2L accuracy by 7% over chain-of-thought baseline.', isTrue: true, explanation: 'This is a key technical detail of Step-Back Prompting.' },
-    { text: 'Chemistry (MMLU): Improvement of approximately 5% over standard CoT on chemistry reasoning questions.', isTrue: true, explanation: 'This is a key technical detail of Step-Back Prompting.' },
-    { text: 'TimeQA: 11% accuracy improvement on temporal knowledge questions, where identifying the relevant time period is the key abstraction.', isTrue: true, explanation: 'This is a key technical detail of Step-Back Prompting.' },
+    { text: 'Step-back is just asking \'what kind of problem is this?\'', isTrue: false, explanation: 'While problem categorization is one form of step-back, the technique is broader. It can ask about relevant principles, applicable methods, key constraints, or necessary background knowledge.' },
+    { text: 'Step-back prompting improved PaLM 2L accuracy by 7% over chain-of-thought baseline.', isTrue: true, explanation: 'Step-back prompting improved PaLM 2L accuracy by 7% over chain-of-thought baseline.' },
+    { text: 'Step-back replaces chain-of-thought.', isTrue: false, explanation: 'Step-back is a preprocessing step that improves the starting point for CoT, not a substitute. The actual problem-solving still benefits from step-by-step reasoning.' },
+    { text: 'Improvement of approximately 5% over standard CoT on chemistry reasoning questions.', isTrue: true, explanation: 'Improvement of approximately 5% over standard CoT on chemistry reasoning questions.' },
+    { text: 'Step-back always helps.', isTrue: false, explanation: 'On simple problems where the relevant principle is obvious from the question itself, step-back adds latency and cost without benefit. It is most valuable when the correct conceptual framework is non-obvious.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

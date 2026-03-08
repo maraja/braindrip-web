@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPDataToTextGeneration() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'WebNLG (Gardent et al., 2017): 25K data-text pairs mapping RDF triples from DBpedia to English descriptions.', isTrue: true, explanation: 'This is a key technical detail of Data-to-Text Generation.' },
-    { text: 'Covers 15 categories with varying complexity (1--7 triples per input).', isTrue: true, explanation: 'This is a key technical detail of Data-to-Text Generation.' },
-    { text: 'Includes a "seen" and "unseen" split to test generalization to new domains.', isTrue: true, explanation: 'This is a key technical detail of Data-to-Text Generation.' },
+    { text: 'Templates are outdated technology.', isTrue: false, explanation: 'Templates remain the most reliable method for high-stakes D2T applications. In finance and healthcare, factual accuracy is non-negotiable, and the predictability of templates is a feature, not a limitation.' },
+    { text: '25K data-text pairs mapping RDF triples from DBpedia to English descriptions.', isTrue: true, explanation: 'Covers 15 categories with varying complexity (1--7 triples per input). Includes a "seen" and "unseen" split to test generalization to new domains.' },
+    { text: 'Neural D2T models only generate what the data contains.', isTrue: false, explanation: 'Neural models hallucinate frequently, inserting plausible-sounding but unsupported facts. A model trained on basketball data might generate "in a season-best performance" even when season statistics are not in the input.' },
+    { text: '50K restaurant descriptions from meaning representations with 8 slot types (name, food type, price range, etc.).', isTrue: true, explanation: 'Designed to evaluate neural NLG quality and diversity.' },
+    { text: 'D2T is just a simpler version of general text generation.', isTrue: false, explanation: 'D2T has unique challenges: faithfully representing numerical data (models often make arithmetic errors), selecting which data to include from potentially large tables, and maintaining consistency across a multi-paragraph report that references the same data multiple times.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEGaiaAndGeneralAssistantBenchmarks() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'GAIA evaluates AI assistants on real-world questions that require combining tool use, multi-step reasoning, and web browsing -- capabilities that pure language models cannot achieve alone.', isTrue: true, explanation: 'This captures the core purpose of GAIA and General Assistant Benchmarks.' },
-    { text: 'GAIA and General Assistant Benchmarks is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding GAIA and General Assistant Benchmarks is important for building on more advanced topics.' },
-    { text: 'GAIA and General Assistant Benchmarks is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding GAIA and General Assistant Benchmarks is important for building on more advanced topics.' },
+    { text: 'GAIA tests general intelligence.', isTrue: false, explanation: 'GAIA tests a specific and narrow capability profile: tool-augmented factual research. It does not evaluate creativity, social reasoning, long-term planning, or many other aspects of general intelligence.' },
+    { text: 'A 75% GAIA score means the agent handles 75% of real assistant tasks.', isTrue: false, explanation: 'GAIA questions are well-defined with unambiguous answers. Real assistant requests are often vague, require clarification, or have no single correct response.' },
+    { text: 'Level 3 questions are just harder versions of Level 1.', isTrue: false, explanation: 'Level 3 questions are qualitatively different: they require the agent to formulate a multi-step plan, manage intermediate state across many tool calls, and recover from dead ends. The cognitive demands are categorically distinct from simple lookup.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

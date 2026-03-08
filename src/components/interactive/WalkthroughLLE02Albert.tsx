@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Factorized Embedding Parameterization', desc: 'The foundation of albert: a lite bert begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Cross-Layer Parameter Sharing', desc: 'At this stage, the key transformation occurs — the core mechanism that makes albert: a lite bert work.' },
-    { title: '3. Sentence Order Prediction (SOP)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Model Configurations', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Factorized Embedding Parameterization', desc: 'In standard BERT, the word embedding matrix directly maps vocabulary tokens to hidden-dimension vectors. With a vocabulary of V=30,000 tokens and hidden dimension H=1024 (BERT-Large), this embedding matrix has V x H = 30.7 million parameters.' },
+    { title: '2. Cross-Layer Parameter Sharing', desc: 'The more radical innovation was sharing all parameters across Transformer layers. In BERT-Large, each of the 24 layers has its own attention weights and feed-forward weights.' },
+    { title: '3. Sentence Order Prediction (SOP)', desc: 'ALBERT replaced BERT\'s Next Sentence Prediction (NSP) with Sentence Order Prediction (SOP). Where NSP uses random sentences as negatives (trivially distinguishable by topic), SOP uses the same two consecutive sentences but swapped in order.' },
+    { title: '4. Model Configurations', desc: 'Note the dramatic parameter reduction: ALBERT-base has 12M parameters versus BERT-base\'s 110M — a 9x reduction. ALBERT-xxlarge surpassed BERT-Large performance with 31% fewer parameters and a much wider hidden dimension.' },
 ];
 
 export default function WalkthroughLLE02Albert() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE02Albert() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          ALBERT: A Lite BERT — Step by Step
+          ALBERT: A Lite BERT \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how albert: a lite bert works, one stage at a time.

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The General Framework', desc: 'The foundation of attention mechanism begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Bahdanau Attention (Additive, 2014)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes attention mechanism work.' },
-    { title: '3. Luong Attention (Multiplicative, 2015)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Attention Weights as Soft Alignment', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Scaled Dot-Product Attention', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The General Framework', desc: 'Given encoder hidden states (h_1, h_2, ..., h_S) and the current decoder state s_t, attention computes:  Alignment scores: e_&#123;t,j&#125; = score(s_t, h_j) for each source position j. Attention weights: alpha_&#123;t,j&#125; = softmax(e_&#123;t,j&#125;) = exp(e_&#123;t,j&#125;) / sum_k exp(e_&#123;t,k&#125;).' },
+    { title: '2. Bahdanau Attention (Additive, 2014)', desc: 'where W_a (d_a x d_s), U_a (d_a x d_h), and v_a (d_a x 1) are learned parameters. The alignment dimension d_a is a hyperparameter, typically set equal to the decoder hidden size.' },
+    { title: '3. Luong Attention (Multiplicative, 2015)', desc: '(2015) proposed three simpler scoring functions:  Dot product (no additional parameters):  General (bilinear form with learned weight matrix):  Concat (similar to Bahdanau):  The dot product is the simplest and most efficient, requiring no additional parameters, but it requires that s_t and h_j.' },
+    { title: '4. Attention Weights as Soft Alignment', desc: 'The attention weight vector alpha_t at decoder step t can be visualized as a heatmap over source positions. These heatmaps reveal interpretable alignment patterns:  For machine translation, attention weights often follow a roughly monotonic diagonal pattern (source word 1 aligns with target word 1,.' },
+    { title: '5. Scaled Dot-Product Attention', desc: '(2017) identified a practical issue with dot-product attention: as the dimensionality d_k grows, the dot products grow in magnitude, pushing softmax into regions with extremely small gradients.' },
 ];
 
 export default function WalkthroughNLPAttentionMechanism() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPAttentionMechanism() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Attention Mechanism — Step by Step
+          Attention Mechanism \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how attention mechanism works, one stage at a time.

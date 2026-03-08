@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Step-Level Quality Assessment', desc: 'The foundation of trajectory evaluation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Trajectory-Level Metrics', desc: 'At this stage, the key transformation occurs — the core mechanism that makes trajectory evaluation work.' },
-    { title: '3. Process vs Outcome Correlation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Comparative Trajectory Analysis', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Step-Level Quality Assessment', desc: 'Each step in the trajectory is evaluated independently. For tool calls: was the right tool selected, were the parameters correct, was the call necessary?' },
+    { title: '2. Trajectory-Level Metrics', desc: 'Beyond individual steps, the trajectory as a whole has measurable properties. Efficiency measures the ratio of productive steps to total steps -- an efficient trajectory has few wasted actions.' },
+    { title: '3. Process vs Outcome Correlation', desc: 'The most revealing analysis compares process quality to outcome quality across many evaluations. Four quadrants emerge: good process + good outcome (reliable competence), good process + bad outcome (honest failure, often due to task difficulty), bad process + good outcome (lucky success,.' },
+    { title: '4. Comparative Trajectory Analysis', desc: 'When comparing two agent versions, trajectory analysis reveals why one performs better. Perhaps the newer version uses tools more efficiently, recovers from errors faster, or avoids the unnecessary retrieval steps that slowed the older version.' },
 ];
 
 export default function WalkthroughAACTrajectoryEvaluation() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACTrajectoryEvaluation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Trajectory Evaluation — Step by Step
+          Trajectory Evaluation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how trajectory evaluation works, one stage at a time.

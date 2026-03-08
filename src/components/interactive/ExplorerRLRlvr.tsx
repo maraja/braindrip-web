@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Binary vs. graded rewards', detail: 'Binary (correct/incorrect) rewards work well with GRPO because group normalization handles the sparse signal. Within a group of 16--64 samples, some will be correct and others incorrect, creating a natural advantage signal.' },
-    { label: 'Answer extraction', detail: 'Robust regex-based extraction is critical. Common patterns include \"The answer is X\", \"\\\\boxed{X}\", and structured output formats. Extraction failures should receive reward 0, not a default value.' },
-    { label: 'Symbolic equivalence', detail: 'Math verification must handle equivalent expressions: $\\frac{2}{4} = \\frac{1}{2} = 0.5$. Libraries like SymPy provide symbolic comparison.' },
+    { label: 'Answer extraction', detail: 'Robust regex-based extraction is critical. Common patterns include "The answer is X", "\\&#123;X&#125;", and structured output formats. Extraction failures should receive reward 0, not a default value.' },
+    { label: 'Symbolic equivalence', detail: 'Math verification must handle equivalent expressions: &#123;2&#125;&#123;4&#125; = &#123;1&#125;&#123;2&#125; = 0.5. Libraries like SymPy provide symbolic comparison.' },
     { label: 'Sandbox execution', detail: 'Code execution must be sandboxed with time limits (typically 10--30 seconds per test case), memory limits, and no network access.' },
     { label: 'Reward for format', detail: 'DeepSeek-R1 added a small format reward to encourage structured output (reasoning in tags, answer in specified format), preventing format degeneration during RL.' },
     { label: 'Difficulty curriculum', detail: 'Starting with easier problems and gradually increasing difficulty improves training stability. If early problems are too hard, the reward signal is too sparse for learning.' },
@@ -20,10 +20,10 @@ export default function ExplorerRLRlvr() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          RLVR — Key Details Explorer
+          RLVR \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of rlvr.
+          Click each card to explore the technical details.
         </p>
       </div>
 

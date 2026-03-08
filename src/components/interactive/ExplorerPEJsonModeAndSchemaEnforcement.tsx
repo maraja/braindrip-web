@@ -3,7 +3,7 @@ import { useState } from 'react';
 const DETAILS = [
     { label: 'Prompt-only JSON generation fails 5-15% of the time', detail: 'depending on schema complexity and model capability.' },
     { label: 'JSON output uses roughly 30% more tokens', detail: 'than equivalent natural language due to structural overhead.' },
-    { label: 'OpenAI structured outputs support a subset of JSON Schema', detail: '`type`, `properties`, `required`, `enum`, `anyOf`, `$ref`, and recursive schemas. Not all JSON Schema features are supported.' },
+    { label: 'OpenAI structured outputs support a subset of JSON Schema', detail: 'type, properties, required, enum, anyOf, $ref, and recursive schemas. Not all JSON Schema features are supported.' },
     { label: 'Anthropic\'s tool use', detail: 'effectively provides schema enforcement by defining tool input schemas — the model must call the tool with valid arguments matching the schema.' },
     { label: 'Pydantic validation with retry loops', detail: 'typically succeeds within 1-2 attempts, adding 2-5 seconds of latency per retry.' },
     { label: 'Nested schemas increase failure rates', detail: 'each level of nesting roughly doubles the prompt-only failure rate.' },
@@ -20,10 +20,10 @@ export default function ExplorerPEJsonModeAndSchemaEnforcement() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          JSON Mode and Schema Enforcement — Key Details Explorer
+          JSON Mode and Schema Enforcement \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of json mode and schema enforcement.
+          Click each card to explore the technical details.
         </p>
       </div>
 

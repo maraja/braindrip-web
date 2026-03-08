@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Wald (Normal Approximation) Interval', desc: 'The foundation of confidence intervals for agent metrics begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Wilson Score Interval', desc: 'At this stage, the key transformation occurs — the core mechanism that makes confidence intervals for agent metrics work.' },
-    { title: '3. The Clopper-Pearson Exact Interval', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Bootstrap Confidence Intervals for Complex Metrics', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Wald (Normal Approximation) Interval', desc: 'The simplest approach uses the Central Limit Theorem:  [equation]  where &#123;p&#125; is the observed success rate and n is the number of trials. For &#123;p&#125; = 0.72 and n = 200:  [equation]  This gives a 95% CI of [0.658, 0.782].' },
+    { title: '2. The Wilson Score Interval', desc: 'The Wilson interval inverts the score test and performs substantially better:  [equation]  For the same example (&#123;p&#125; = 0.72, n = 200, z = 1.96):  [equation]  The Wilson interval is always contained in [0, 1], has better coverage properties for small samples, and handles extreme proportions.' },
+    { title: '3. The Clopper-Pearson Exact Interval', desc: 'For conservative guarantees, the Clopper-Pearson interval uses the exact binomial distribution:  [equation]  where B() is the beta distribution quantile function and x is the number of successes.' },
+    { title: '4. Bootstrap Confidence Intervals for Complex Metrics', desc: 'Many agent metrics are not simple proportions. Trajectory quality scores, cost efficiency, latency distributions, and composite metrics require more flexible methods.' },
 ];
 
 export default function WalkthroughAAEConfidenceIntervalsForAgentMetrics() {
@@ -16,10 +16,10 @@ export default function WalkthroughAAEConfidenceIntervalsForAgentMetrics() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Confidence Intervals for Agent Metrics — Step by Step
+          Confidence Intervals for Agent Metrics \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how confidence intervals for agent metrics works, one stage at a time.

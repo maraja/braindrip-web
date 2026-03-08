@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Model 1: The Completion Engine', desc: 'The foundation of mental models for prompting begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Model 2: The Instruction Follower', desc: 'At this stage, the key transformation occurs — the core mechanism that makes mental models for prompting work.' },
-    { title: '3. Model 3: The Role Player', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Model 4: The Pattern Matcher', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Model 1: The Completion Engine', desc: 'The most mechanistically accurate model. An LLM is fundamentally a next-token predictor trained on massive text corpora.' },
+    { title: '2. Model 2: The Instruction Follower', desc: 'Instruction-tuned models (ChatGPT, Claude, Gemini) have been fine-tuned via RLHF/RLAIF to follow instructions. This model explains:  Why explicit instructions work: "Summarize in 3 bullet points" is followed more reliably than implicit patterns suggesting a 3-bullet format.' },
+    { title: '3. Model 3: The Role Player', desc: 'When given a persona ("You are a senior tax attorney with 20 years of experience in corporate tax law"), models produce output that measurably differs from unpersonated output.' },
+    { title: '4. Model 4: The Pattern Matcher', desc: 'In-context learning (ICL) reveals the model\'s ability to identify and replicate patterns from examples. This model explains:  Why few-shot examples work: The model identifies the input-output pattern and applies it to new inputs.' },
 ];
 
 export default function WalkthroughPEMentalModelsForPrompting() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEMentalModelsForPrompting() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Mental Models for Prompting — Step by Step
+          Mental Models for Prompting \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how mental models for prompting works, one stage at a time.

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPQuestionAnswering() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'SQuAD 1.1 (Rajpurkar et al., 2016): 107K extractive QA pairs over Wikipedia paragraphs.', isTrue: true, explanation: 'This is a key technical detail of Question Answering.' },
-    { text: 'SQuAD 2.0 adds 53K unanswerable questions, requiring models to know when they do not know.', isTrue: true, explanation: 'This is a key technical detail of Question Answering.' },
-    { text: 'Natural Questions (Kwiatkowski et al., 2019): 307K questions from real Google search queries with long and short answer annotations from full Wikipedia articles.', isTrue: true, explanation: 'This is a key technical detail of Question Answering.' },
+    { text: 'Extractive QA is just string matching.', isTrue: false, explanation: 'Modern extractive QA requires deep semantic understanding. The answer span may be expressed very differently from the question ("Who founded Microsoft?" -- answer: "Bill Gates and Paul Allen started the company in 1975").' },
+    { text: '107K extractive QA pairs over Wikipedia paragraphs.', isTrue: true, explanation: 'SQuAD 2.0 adds 53K unanswerable questions, requiring models to know when they do not know.' },
+    { text: 'If a model scores 93 F1 on SQuAD, it truly understands language.', isTrue: false, explanation: 'SQuAD and similar benchmarks test a narrow form of comprehension. Models exploit lexical overlap shortcuts, struggle with adversarial questions, and fail on questions requiring common sense or multi-step reasoning (Jia and Liang, 2017).' },
+    { text: '307K questions from real Google search queries with long and short answer annotations from full Wikipedia articles.', isTrue: true, explanation: '307K questions from real Google search queries with long and short answer annotations from full Wikipedia articles.' },
+    { text: 'LLMs eliminate the need for retrieval.', isTrue: false, explanation: 'LLMs hallucinate facts confidently and have knowledge cutoff dates. Retrieval-augmented generation provides grounded, up-to-date answers and allows attribution to sources, which is essential for trust and verifiability.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFMatrixDecompositions() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Eigendecomposition applies only to square matrices; SVD applies to any matrix.', isTrue: true, explanation: 'This is a key technical detail of Matrix Decompositions.' },
-    { text: 'Not all matrices are diagonalizable.', isTrue: true, explanation: 'This is a key technical detail of Matrix Decompositions.' },
-    { text: 'Defective matrices require the Jordan normal form, but this rarely arises in ML where matrices of interest (covariance, kernel) are symmetric.', isTrue: true, explanation: 'This is a key technical detail of Matrix Decompositions.' },
+    { text: 'SVD and eigendecomposition are the same thing.', isTrue: false, explanation: 'Eigendecomposition requires a square matrix and may not exist. SVD exists for every matrix and decomposes it into orthogonal bases for both the domain and codomain.' },
+    { text: 'Eigendecomposition, SVD, and Cholesky -- factoring matrices to reveal structure, compress data, and solve systems efficiently.', isTrue: true, explanation: 'This captures the core definition of Matrix Decompositions.' },
+    { text: 'Matrix Decompositions is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Matrix Decompositions is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

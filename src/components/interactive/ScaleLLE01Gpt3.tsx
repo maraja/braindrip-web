@@ -1,18 +1,26 @@
 import { useState } from 'react';
-const baseStyle = { background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: 14, padding: '1.25rem', margin: '1.5rem 0', fontFamily: 'system-ui, sans-serif' };
+const baseStyle = { background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: 14, padding: '1.25rem', margin: '1.5rem 0', fontFamily: "system-ui, sans-serif" };
 export default function ScaleLLE01Gpt3() {
   const [revealed, setRevealed] = useState(false);
   return (
     <div style={baseStyle}>
       <p style={{ fontSize: '0.8rem', fontWeight: 700, color: '#2C3E2D', marginBottom: 10, letterSpacing: '0.05em' }}>\u26A1 REAL-WORLD IMPACT</p>
-      <p style={{ fontSize: '0.9rem', color: '#3D4F3E', lineHeight: 1.5, marginBottom: 12 }}>Understanding GPT-3 has real implications for how AI systems are built and deployed. What makes this concept especially important in practice?</p>
+      <p style={{ fontSize: '0.9rem', color: '#3D4F3E', lineHeight: 1.5, marginBottom: 12 }}>How does GPT-3 matter in practice?</p>
       {!revealed ? (
         <button onClick={() => setRevealed(true)} style={{ padding: '6px 16px', borderRadius: 20, border: '1px solid #C76B4A', background: 'transparent', color: '#C76B4A', fontSize: '0.8rem', cursor: 'pointer', fontWeight: 600 }}>
           Reveal Impact \u2192
         </button>
       ) : (
-        <div style={{ padding: '0.75rem 1rem', background: '#C76B4A' + '0C', borderRadius: 10, borderLeft: '3px solid #C76B4A' }}>
-          <p style={{ fontSize: '0.9rem', color: '#2C3E2D', lineHeight: 1.5, margin: 0, fontWeight: 500 }}>### The Birth of the Foundation Model Era  GPT-3 was the proof of concept for the "foundation model" paradigm — the idea that a single large pre-trained model could serve as the base for countless downstream applications. Rather than training task-specific models, you could build on top of one gener</p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          <div style={{ padding: '0.75rem 1rem', background: '#C76B4A0C', borderRadius: 10, borderLeft: '3px solid #C76B4A' }}>
+            <p style={{ fontSize: '0.82rem', color: '#2C3E2D', lineHeight: 1.5, margin: 0 }}><strong>The Birth of the Foundation Model Era:</strong> GPT-3 was the proof of concept for the "foundation model" paradigm — the idea that a single large pre-trained model could serve as the base for countless downstream applications. Rather than training task-specific models, you could build on top of one general-purpose system.</p>
+          </div>
+          <div style={{ padding: '0.75rem 1rem', background: '#C76B4A0C', borderRadius: 10, borderLeft: '3px solid #C76B4A' }}>
+            <p style={{ fontSize: '0.82rem', color: '#2C3E2D', lineHeight: 1.5, margin: 0 }}><strong>The API Business Model:</strong> In June 2020, OpenAI launched the GPT-3 API, making the model available as a commercial service. This was transformative: for the first time, developers without ML expertise or massive compute budgets could build AI-powered applications.</p>
+          </div>
+          <div style={{ padding: '0.75rem 1rem', background: '#C76B4A0C', borderRadius: 10, borderLeft: '3px solid #C76B4A' }}>
+            <p style={{ fontSize: '0.82rem', color: '#2C3E2D', lineHeight: 1.5, margin: 0 }}><strong>Shifting the Overton Window:</strong> GPT-3\'s fluent text generation and in-context learning stunned the broader tech community. Demos went viral on Twitter.</p>
+          </div>
         </div>
       )}
     </div>

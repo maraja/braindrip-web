@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEPromptEngineeringVsContextEngineering() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'In production RAG systems, retrieval quality (CE) typically accounts for 60-70% of output quality variance, while prompt quality (PE) accounts for 20-30%.', isTrue: true, explanation: 'This is a key technical detail of Prompt Engineering vs. Context Engineering.' },
-    { text: 'The typical token budget split in production: 5-15% system instructions (PE), 50-70% retrieved context (CE), 10-20% conversation history (CE), 5-15% reserved for output.', isTrue: true, explanation: 'This is a key technical detail of Prompt Engineering vs. Context Engineering.' },
-    { text: 'Context engineering decisions include: chunk size (256-1024 tokens typical), retrieval count (3-10 documents typical), reranking strategy, and context ordering.', isTrue: true, explanation: 'This is a key technical detail of Prompt Engineering vs. Context Engineering.' },
+    { text: 'Prompt engineering is all you need for production LLM systems.', isTrue: false, explanation: 'For simple, single-turn applications, PE alone may suffice. For RAG, agentic, or multi-turn systems, CE — designing what information enters the context — is typically the larger engineering challenge and the primary driver of quality.' },
+    { text: 'Context engineering replaces prompt engineering.', isTrue: false, explanation: 'CE and PE are complementary, not competing. You need well-designed instructions (PE) AND well-curated context (CE).' },
+    { text: 'Context engineering is just RAG.', isTrue: false, explanation: 'RAG is one form of CE, but CE also includes conversation memory management, state injection, tool result integration, information ordering, and context budget allocation. An agentic system that manages tool call results and conversation state is doing CE without necessarily doing retrieval.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

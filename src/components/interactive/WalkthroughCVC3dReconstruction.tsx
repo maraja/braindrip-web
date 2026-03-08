@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Multi-View Stereo (MVS)', desc: 'The foundation of 3d reconstruction begins with understanding its core input requirements and initial setup.' },
-    { title: '2. TSDF (Truncated Signed Distance Function) Fusion', desc: 'At this stage, the key transformation occurs — the core mechanism that makes 3d reconstruction work.' },
-    { title: '3. Neural Implicit Surfaces', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Mesh Extraction', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Multi-View Stereo (MVS)', desc: 'MVS estimates dense 3D geometry from multiple calibrated images (camera poses from SfM):  Depth map estimation: For each reference image, compute a depth map by matching against neighboring views.' },
+    { title: '2. TSDF (Truncated Signed Distance Function) Fusion', desc: 'TSDF fusion (Curless & Levoy, 1996) integrates depth maps from known poses into a voxel grid:  For each voxel at position v, the TSDF value is the (truncated) signed distance to the nearest surface. Positive values are in front of the surface, negative behind.' },
+    { title: '3. Neural Implicit Surfaces', desc: 'Neural implicit representations encode geometry as the zero-level set of a learned function, enabling continuous, resolution-independent surface representation. DeepSDF (Park et al., 2019): An MLP f_(z, x)  s takes a shape code z and 3D coordinate x and outputs the signed distance s to the surface.' },
+    { title: '4. Mesh Extraction', desc: 'From neural implicit functions, meshes are extracted by evaluating the function on a grid and running Marching Cubes. Grid resolution determines mesh quality:  128^3: Coarse, fast (~10 seconds).' },
 ];
 
 export default function WalkthroughCVC3dReconstruction() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVC3dReconstruction() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          3D Reconstruction — Step by Step
+          3D Reconstruction \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how 3d reconstruction works, one stage at a time.

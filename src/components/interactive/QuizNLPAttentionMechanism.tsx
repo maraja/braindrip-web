@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizNLPAttentionMechanism() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: '(2015) results: On WMT\'15 En-De, the best attention variant (global, general scoring) achieved 25.9 BLEU, establishing multiplicative attention as the more efficient standard.', isTrue: true, explanation: 'This is a key technical detail of Attention Mechanism.' },
-    { text: 'Computational cost: Attention adds O(S  d) computation per decoder step (S = source length, d = hidden dimension).', isTrue: true, explanation: 'This is a key technical detail of Attention Mechanism.' },
-    { text: 'For the full output sequence of length T, total attention cost is O(T  S * d).', isTrue: true, explanation: 'This is a key technical detail of Attention Mechanism.' },
+    { text: 'Attention replaces the encoder-decoder architecture.', isTrue: false, explanation: 'In the original formulation, attention augments the encoder-decoder -- it does not replace it. The encoder still produces hidden states, and the decoder still generates tokens sequentially.' },
+    { text: 'On WMT\'14 En-Fr, attention improved BLEU from 26.75 to 28.45 (basic RNNsearch) and to 36.15 with larger vocabulary and longer training, surpassing the previous best phrase-based system (33.30).', isTrue: true, explanation: 'On WMT\'14 En-Fr, attention improved BLEU from 26.75 to 28.45 (basic RNNsearch) and to 36.15 with larger vocabulary and longer training, surpassing the previous best phrase-based system (33.30).' },
+    { text: 'Attention weights are a faithful explanation of model decisions.', isTrue: false, explanation: 'Jain and Wallace (2019) demonstrated that attention weights often do not correlate with gradient-based feature importance measures, and that alternative attention distributions can produce identical predictions. Attention weights are a useful diagnostic tool but should not be over-interpreted as causal explanations.' },
+    { text: 'On WMT\'15 En-De, the best attention variant (global, general scoring) achieved 25.9 BLEU, establishing multiplicative attention as the more efficient standard.', isTrue: true, explanation: 'On WMT\'15 En-De, the best attention variant (global, general scoring) achieved 25.9 BLEU, establishing multiplicative attention as the more efficient standard.' },
+    { text: 'Bahdanau and Luong attention are fundamentally different mechanisms.', isTrue: false, explanation: 'They are variations of the same idea -- computing a weighted sum of encoder states based on learned alignment scores. The difference is purely in the score function (additive vs.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

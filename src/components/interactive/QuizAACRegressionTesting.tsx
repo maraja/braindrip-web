@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACRegressionTesting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Test suite size: A practical regression suite contains 50-200 tasks.', isTrue: true, explanation: 'This is a key technical detail of Regression Testing.' },
-    { text: 'Fewer tasks miss important capabilities; more tasks increase CI run time and cost.', isTrue: true, explanation: 'This is a key technical detail of Regression Testing.' },
-    { text: 'Prioritize breadth of coverage over depth in any single capability.', isTrue: true, explanation: 'This is a key technical detail of Regression Testing.' },
+    { text: 'Unit tests are sufficient for agent testing.', isTrue: false, explanation: 'Unit tests verify individual components (tool implementations, prompt formatting) but miss integration issues (does the agent use the tool correctly in context?). Agent regression testing is integration testing by nature -- it tests the full agent pipeline end-to-end.' },
+    { text: 'A practical regression suite contains 50-200 tasks.', isTrue: true, explanation: 'Fewer tasks miss important capabilities; more tasks increase CI run time and cost. Prioritize breadth of coverage over depth in any single capability.' },
+    { text: 'You can pin the model version to prevent regressions.', isTrue: false, explanation: 'Model pinning prevents provider-induced regressions but freezes improvements and may not be available for all providers. Some providers update models in-place without version changes.' },
+    { text: 'Each regression run costs money (LLM API calls).', isTrue: true, explanation: 'Budget approximately: (number of tasks) x (runs per task) x (cost per run). A 100-task suite with 3 runs each at 0.10/run costs 30 per CI run.' },
+    { text: 'Regression testing is too expensive for AI agents.', isTrue: false, explanation: 'A well-designed suite of 100 tasks with 3 runs each costs $20-50 per CI run. This is far less than the cost of shipping a regression to production and debugging it after user complaints.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

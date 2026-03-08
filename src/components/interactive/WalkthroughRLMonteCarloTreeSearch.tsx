@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Four Phases', desc: 'The foundation of monte carlo tree search begins with understanding its core input requirements and initial setup.' },
-    { title: '2. UCT: The Exploration-Exploitation Balance', desc: 'At this stage, the key transformation occurs — the core mechanism that makes monte carlo tree search work.' },
-    { title: '3. PUCT: The AlphaGo Variant', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Computational Scaling', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Four Phases', desc: 'Each iteration of MCTS consists of four phases:  Phase 1 -- Selection: Starting from the root node (current game state), traverse the tree by selecting child nodes according to a tree policy.' },
+    { title: '2. UCT: The Exploration-Exploitation Balance', desc: 'The UCT formula elegantly solves the multi-armed bandit problem at each tree node. The first term &#123;Q&#125;(s, a) exploits actions with high estimated value.' },
+    { title: '3. PUCT: The AlphaGo Variant', desc: 'AlphaGo and AlphaZero replaced UCT with Predictor + UCT (PUCT), incorporating a neural network policy prior P(a|s):  [equation]  This is transformative: instead of exploring uniformly, the search is biased toward moves that the neural network considers promising.' },
+    { title: '4. Computational Scaling', desc: 'MCTS has a remarkable scaling property: performance improves smoothly with more computation. In AlphaGo\'s match against Lee Sedol, each move involved approximately 100,000 simulations computed across 48 TPUs and 1,202 CPUs over 30-60 seconds of thinking time.' },
 ];
 
 export default function WalkthroughRLMonteCarloTreeSearch() {
@@ -16,10 +16,10 @@ export default function WalkthroughRLMonteCarloTreeSearch() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Monte Carlo Tree Search — Step by Step
+          Monte Carlo Tree Search \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how monte carlo tree search works, one stage at a time.

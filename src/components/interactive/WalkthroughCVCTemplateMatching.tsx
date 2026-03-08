@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Sliding Window Comparison', desc: 'The foundation of template matching begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Common Metrics', desc: 'At this stage, the key transformation occurs — the core mechanism that makes template matching work.' },
-    { title: '3. OpenCV Implementation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Multi-Scale Template Matching', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Frequency-Domain Acceleration', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Sliding Window Comparison', desc: 'Given a grayscale image I of size W x H and a template T of size w x h, compute a response map R of size (W - w + 1) x (H - h + 1):  [equation]  where f is a similarity or distance function evaluated over the overlapping region.' },
+    { title: '2. Common Metrics', desc: 'Sum of Squared Differences (SSD):  [equation]  The minimum of R_&#123;SSD&#125; indicates the best match. Sensitive to brightness changes.' },
+    { title: '3. OpenCV Implementation', desc: 'OpenCV provides six template matching methods via matchTemplate:' },
+    { title: '4. Multi-Scale Template Matching', desc: 'Because basic template matching is not scale-invariant, a common extension scans the template at multiple scales:  Build an image pyramid or resize the template to s  \\&#123;0.5, 0.6, , 1.5\\&#125; of original size. Run matchTemplate at each scale.' },
+    { title: '5. Frequency-Domain Acceleration', desc: 'The cross-correlation in SSD and NCC can be computed via the FFT:  [equation]  For large templates, this reduces complexity from O(WHwh) to O(WH (WH)), providing speedups of 10--100x when w  h &gt; 1000.' },
 ];
 
 export default function WalkthroughCVCTemplateMatching() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCTemplateMatching() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Template Matching — Step by Step
+          Template Matching \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how template matching works, one stage at a time.

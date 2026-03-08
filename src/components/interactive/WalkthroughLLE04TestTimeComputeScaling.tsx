@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Two Approaches to Inference Scaling', desc: 'The foundation of test-time compute scaling: thinking longer beats training bigger begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Process Reward Models vs Outcome Reward Models', desc: 'At this stage, the key transformation occurs — the core mechanism that makes test-time compute scaling: thinking longer beats training bigger work.' },
-    { title: '3. Compute-Optimal Inference', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Beam Search Over Reasoning Steps', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Two Approaches to Inference Scaling', desc: 'Research has identified two primary strategies for using additional compute at inference time. The first is sequential refinement: the model generates a long chain-of-thought, reasoning step by step, catching and correcting errors along the way.' },
+    { title: '2. Process Reward Models vs Outcome Reward Models', desc: 'A crucial question is how to evaluate and guide reasoning. Outcome Reward Models (ORMs) evaluate only the final answer: was the math solution correct?' },
+    { title: '3. Compute-Optimal Inference', desc: '(2024) formalized the key insight in "Scaling LLM Test-Time Compute Optimally Can be More Effective than Scaling Model Parameters." Their central finding: a model 4x smaller than a baseline, when given optimal test-time compute allocation, could match the larger model\'s performance.' },
+    { title: '4. Beam Search Over Reasoning Steps', desc: 'Beyond simple best-of-N, more sophisticated search strategies apply beam search over intermediate reasoning steps. At each step, the model generates multiple candidate continuations (typically 4-16).' },
 ];
 
 export default function WalkthroughLLE04TestTimeComputeScaling() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE04TestTimeComputeScaling() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Test-Time Compute Scaling: Thinking Longer Beats Training Bigger — Step by Step
+          Test-Time Compute Scaling: Thinking Longer Beats Training Bigger \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how test-time compute scaling: thinking longer beats training bigger works, one stage at a time.

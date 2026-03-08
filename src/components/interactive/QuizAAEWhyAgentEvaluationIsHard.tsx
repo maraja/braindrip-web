@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEWhyAgentEvaluationIsHard() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Evaluating AI agents is fundamentally harder than evaluating language models or traditional software because agents operate in open-ended environments with non-deterministic behavior, multi-step compounding errors, and multiple valid solution paths.', isTrue: true, explanation: 'This captures the core purpose of Why Agent Evaluation Is Hard.' },
-    { text: 'Why Agent Evaluation Is Hard is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Why Agent Evaluation Is Hard is important for building on more advanced topics.' },
-    { text: 'Why Agent Evaluation Is Hard is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Why Agent Evaluation Is Hard is important for building on more advanced topics.' },
+    { text: 'Agent evaluation is just LLM evaluation with extra steps.', isTrue: false, explanation: 'LLM evaluation checks input-output mappings. Agent evaluation must assess sequential decision-making, tool use, error recovery, and environment interaction over extended trajectories.' },
+    { text: 'Higher benchmark scores mean better real-world performance.', isTrue: false, explanation: 'Benchmark scores measure performance on a specific task distribution under specific conditions. Agents that optimize for SWE-bench may learn patterns specific to GitHub issue resolution that do not transfer to internal codebases, legacy systems, or novel problem types.' },
+    { text: 'You can evaluate agents by evaluating their components.', isTrue: false, explanation: 'An agent with a state-of-the-art LLM backbone, best-in-class retrieval, and excellent tools can still fail as a system if the orchestration logic is poor, the prompt engineering is misaligned, or the components interact badly. System-level evaluation is irreducible.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

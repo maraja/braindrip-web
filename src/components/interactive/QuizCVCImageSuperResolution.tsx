@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCImageSuperResolution() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'PSNR benchmarks on Set5 (4x): Bicubic = 28.42 dB, SRCNN = 30.48 dB, EDSR = 32.46 dB, RCAN = 32.63 dB.', isTrue: true, explanation: 'This is a key technical detail of Image Super-Resolution.' },
-    { text: 'Higher PSNR does not always mean better perceptual quality.', isTrue: true, explanation: 'This is a key technical detail of Image Super-Resolution.' },
-    { text: 'SRGAN vs EDSR on perceptual metrics: SRGAN achieves LPIPS ~0.07 vs.', isTrue: true, explanation: 'This is a key technical detail of Image Super-Resolution.' },
+    { text: 'Super-resolution recovers true details.', isTrue: false, explanation: 'SR hallucinates plausible details based on learned priors. The generated textures look realistic but are not ground truth -- this matters critically for forensic and medical applications.' },
+    { text: 'Image super-resolution recovers high-resolution detail from low-resolution inputs, evolving from simple CNN upscaling (SRCNN) through GAN-based perceptual methods (SRGAN) to robust real-world models (Real-ESRGAN).', isTrue: true, explanation: 'This captures the core definition of Image Super-Resolution.' },
+    { text: 'Image Super-Resolution is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Image Super-Resolution is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

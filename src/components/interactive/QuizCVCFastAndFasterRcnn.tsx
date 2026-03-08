@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizCVCFastAndFasterRcnn() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Fast R-CNN with VGG-16: 66.9% mAP on VOC 2007, 19.7% mAP on COCO (no bells and whistles).', isTrue: true, explanation: 'This is a key technical detail of Fast R-CNN and Faster R-CNN.' },
-    { text: 'Training takes ~9.5 hours on a single GPU.', isTrue: true, explanation: 'This is a key technical detail of Fast R-CNN and Faster R-CNN.' },
-    { text: 'Faster R-CNN with VGG-16: 73.2% mAP on VOC 2007, 21.9% mAP on COCO.', isTrue: true, explanation: 'This is a key technical detail of Fast R-CNN and Faster R-CNN.' },
+    { text: 'Fast R-CNN eliminated all bottlenecks.', isTrue: false, explanation: 'Selective Search still takes ~2 seconds per image, dominating total inference time. Faster R-CNN solved this.' },
+    { text: '66.9% mAP on VOC 2007, 19.7% mAP on COCO (no bells and whistles).', isTrue: true, explanation: 'Training takes ~9.5 hours on a single GPU.' },
+    { text: '73.2% mAP on VOC 2007, 21.9% mAP on COCO.', isTrue: true, explanation: 'Proposal generation takes ~10ms on GPU.' },
+    { text: '~98% at IoU 0.5 with 300 proposals, rivaling Selective Search with 2,000 proposals.', isTrue: true, explanation: '~98% at IoU 0.5 with 300 proposals, rivaling Selective Search with 2,000 proposals.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

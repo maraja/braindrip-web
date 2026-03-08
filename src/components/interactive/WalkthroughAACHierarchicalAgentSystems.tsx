@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Level Design', desc: 'The foundation of hierarchical agent systems begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Recursive Decomposition', desc: 'At this stage, the key transformation occurs — the core mechanism that makes hierarchical agent systems work.' },
-    { title: '3. Supervision and Quality Control', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Escalation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Level Design', desc: 'A typical three-level hierarchy:  Level 0 — Orchestrator/CEO: Receives the original task from the user. Responsibilities: understand the goal, create a high-level plan, assign major workstreams to Level 1 agents, monitor progress, synthesize final output.' },
+    { title: '2. Recursive Decomposition', desc: 'The power of hierarchy is recursive decomposition. The CEO says "Build a web application for project management." Level 1 decomposes this into: backend API, frontend UI, database design, authentication, deployment.' },
+    { title: '3. Supervision and Quality Control', desc: 'Each manager agent reviews the work of its subordinates before passing results upward:  Output validation: Does the worker\'s output meet the task specification? Integration checking: Does this output work with outputs from other workers under the same manager?' },
+    { title: '4. Escalation', desc: 'Not all problems can be resolved at the level where they occur:  A worker encounters an ambiguity in the task specification — escalates to its manager for clarification. A manager discovers that two workstreams conflict — escalates to the orchestrator for a priority decision.' },
 ];
 
 export default function WalkthroughAACHierarchicalAgentSystems() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACHierarchicalAgentSystems() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Hierarchical Agent Systems — Step by Step
+          Hierarchical Agent Systems \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how hierarchical agent systems works, one stage at a time.

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Naive Pre-Allocation -- Contiguous Memory', desc: 'The foundation of kv cache and serving optimization begins with understanding its core input requirements and initial setup.' },
-    { title: '2. PagedAttention and vLLM — Virtual Memory for KV Cache (June 2023)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes kv cache and serving optimization work.' },
-    { title: '3. Continuous Batching — Maximizing GPU Utilization', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. vAttention — Hardware-Assisted Demand Paging (2024)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Architectural Solutions — Compressing the Cache Itself', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Naive Pre-Allocation -- Contiguous Memory', desc: 'Early serving systems (and many simple implementations today) pre-allocate a contiguous block of GPU memory for each request\'s KV cache, sized for the maximum possible sequence length.' },
+    { title: '2. PagedAttention and vLLM — Virtual Memory for KV Cache (June 2023)', desc: 'from UC Berkeley introduced PagedAttention, implemented in the vLLM serving system. The key insight was directly borrowed from operating system virtual memory: instead of contiguous allocation, divide KV cache into fixed-size "pages" (blocks of, say, 16 tokens).' },
+    { title: '3. Continuous Batching — Maximizing GPU Utilization', desc: '2022) introduced continuous batching (also called iteration-level scheduling): instead of waiting for an entire batch of requests to finish before starting the next batch, new requests are inserted into the batch as soon as a slot opens.' },
+    { title: '4. vAttention — Hardware-Assisted Demand Paging (2024)', desc: 'introduced vAttention, which pushed the OS analogy further by using the GPU\'s own hardware virtual memory system. Instead of software-managed page tables (as in vLLM), vAttention allocates KV cache in contiguous virtual address spaces and relies on hardware page fault handling to map physical.' },
+    { title: '5. Architectural Solutions — Compressing the Cache Itself', desc: 'While serving systems optimize how KV caches are managed in memory, architectural innovations reduce the size of the cache itself. Multi-Query Attention reduces KV cache by the number of heads (up to 96x).' },
 ];
 
 export default function WalkthroughLLE06KvCacheAndServingOptimization() {
@@ -17,10 +17,10 @@ export default function WalkthroughLLE06KvCacheAndServingOptimization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          KV Cache and Serving Optimization — Step by Step
+          KV Cache and Serving Optimization \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how kv cache and serving optimization works, one stage at a time.

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizMLFXgboostLightgbmCatboost() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'XGBoost key hyperparameters: max_depth (3--10), learning_rate (0.01--0.3), n_estimators (100--10000), reg_alpha (L1), reg_lambda (L2), subsample, colsample_bytree.', isTrue: true, explanation: 'This is a key technical detail of XGBoost, LightGBM, and CatBoost.' },
-    { text: 'LightGBM key hyperparameters: num_leaves (31--255, controls leaf-wise complexity), learning_rate, n_estimators, min_child_samples, feature_fraction, bagging_fraction.', isTrue: true, explanation: 'This is a key technical detail of XGBoost, LightGBM, and CatBoost.' },
-    { text: 'CatBoost key hyperparameters: depth (6--10), learning_rate, iterations, l2_leaf_reg, random_strength, bagging_temperature.', isTrue: true, explanation: 'This is a key technical detail of XGBoost, LightGBM, and CatBoost.' },
+    { text: 'XGBoost is always the best choice.', isTrue: false, explanation: 'Each library has strengths. LightGBM is faster on large datasets, CatBoost handles categoricals better, and XGBoost has the broadest ecosystem support.' },
+    { text: 'max_depth (3--10), learning_rate (0.01--0.3), n_estimators (100--10000), reg_alpha (L1), reg_lambda (L2), subsample, colsample_bytree.', isTrue: true, explanation: 'max_depth (3--10), learning_rate (0.01--0.3), n_estimators (100--10000), reg_alpha (L1), reg_lambda (L2), subsample, colsample_bytree.' },
+    { text: 'Histogram binning loses important information.', isTrue: false, explanation: 'With 255 bins, the information loss is negligible for most practical purposes. The massive speedup far outweighs the tiny accuracy cost.' },
+    { text: 'num_leaves (31--255, controls leaf-wise complexity), learning_rate, n_estimators, min_child_samples, feature_fraction, bagging_fraction.', isTrue: true, explanation: 'num_leaves (31--255, controls leaf-wise complexity), learning_rate, n_estimators, min_child_samples, feature_fraction, bagging_fraction.' },
+    { text: 'Leaf-wise growth always overfits.', isTrue: false, explanation: 'LightGBM\'s leaf-wise growth can overfit on small datasets, but with proper max_depth and min_child_samples constraints, it generalizes well. On large datasets, it often outperforms level-wise growth.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

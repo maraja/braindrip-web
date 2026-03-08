@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Sliding Window Detection', desc: 'The foundation of sliding window and region proposals begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Selective Search (2012)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes sliding window and region proposals work.' },
-    { title: '3. EdgeBoxes (2014)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Deep Proposal Methods', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Sliding Window Detection', desc: 'Construct an image pyramid by resizing the input to multiple scales (e.g., 10-20 levels with a factor of ~1.2 between adjacent scales). At each scale, slide a fixed-size window (e.g., 64 x 128 pixels for pedestrians) across the image with a stride s (commonly 4-8 pixels).' },
+    { title: '2. Selective Search (2012)', desc: 'proposed Selective Search, the most widely used region proposal method before deep learning took over:  Over-segment the image using Felzenszwalb\'s graph-based method (~1,000-2,000 initial segments). Iteratively merge adjacent segments based on similarity in color, texture, size, and fill.' },
+    { title: '3. EdgeBoxes (2014)', desc: 'Zitnick and Dollar proposed using edge density within candidate boxes:  Compute structured edge responses across the image. Score candidate boxes by the number of contour groups wholly enclosed.' },
+    { title: '4. Deep Proposal Methods', desc: 'Region Proposal Network (RPN): Introduced in Faster R-CNN, generates proposals directly from convolutional feature maps using anchor boxes (see fast-and-faster-rcnn). DeepMask / SharpMask (Pinheiro et al., 2015-2016): Predict segmentation masks and objectness scores simultaneously.' },
 ];
 
 export default function WalkthroughCVCSlidingWindowAndRegionProposals() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCSlidingWindowAndRegionProposals() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Sliding Window and Region Proposals — Step by Step
+          Sliding Window and Region Proposals \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how sliding window and region proposals works, one stage at a time.

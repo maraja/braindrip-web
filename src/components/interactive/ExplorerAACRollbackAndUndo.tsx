@@ -3,7 +3,7 @@ import { useState } from 'react';
 const DETAILS = [
     { label: 'Atomic action boundaries', detail: 'Each agent action should be an atomic unit that can be independently rolled back. If an action involves multiple sub-steps (create file, write content, set permissions), they should be wrapped together so rollback reverts all sub-steps or none.' },
     { label: 'Rollback time window', detail: 'Rollback becomes harder over time as dependent actions accumulate. A file change that happened 5 minutes ago is easy to revert; one from 3 weeks ago may have downstream dependencies. Systems should define a rollback window (typically 1-24 hours) within which rollback is guaranteed to be safe.' },
-    { label: 'Irreversibility classification', detail: 'Each tool should be tagged with its reversibility: fully reversible (file write with version control), partially reversible (email with recall capability), or irreversible (financial transaction, social media post). This classification drives the safety policy: irreversible actions get the strictest HITL and guardrail requirements.' },
+    { label: 'Irreversibility classification', detail: 'Each tool should be tagged with its reversibility: fully reversible (file write with version control), partially reversible (email with recall capability), or irreversible (financial transaction, social media post).' },
     { label: 'Compensating action registry', detail: 'For each forward action type, the system maintains a registered compensating action. This registry is checked at deployment time to ensure all agent actions have defined rollback paths. Actions without compensating actions are flagged as irreversible.' },
     { label: 'State consistency verification', detail: 'After rollback, the system verifies that the state is actually consistent. A rollback might succeed technically but leave related systems out of sync. Post-rollback verification checks cross-system consistency.' },
     { label: 'Rollback testing', detail: 'Rollback mechanisms must be tested regularly. A rollback path that has never been executed may not work when needed. Include rollback scenarios in integration tests.' },
@@ -20,10 +20,10 @@ export default function ExplorerAACRollbackAndUndo() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Rollback and Undo — Key Details Explorer
+          Rollback and Undo \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of rollback and undo.
+          Click each card to explore the technical details.
         </p>
       </div>
 

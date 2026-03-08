@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Types of Morphemes', desc: 'The foundation of morphology begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Inflectional vs. Derivational Morphology', desc: 'At this stage, the key transformation occurs — the core mechanism that makes morphology work.' },
-    { title: '3. Compounding', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Morphological Typology', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Morphological Analysis in NLP', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Types of Morphemes', desc: 'A free morpheme can stand alone as a word ("book," "run," "happy"). A bound morpheme must attach to another morpheme ("-s," "-ing," "un-," "-ness").' },
+    { title: '2. Inflectional vs. Derivational Morphology', desc: 'Inflectional morphology modifies a word to express grammatical features (tense, number, case, gender, person) without changing the word\'s core meaning or part of speech. English "walk" inflects to "walks," "walked," "walking" -- all are still verbs meaning the act of walking.' },
+    { title: '3. Compounding', desc: 'Compounding joins two or more free morphemes into a new word: "blackbird," "toothbrush," "mother-in-law." German is famous for productive compounding: "Donaudampfschifffahrtsgesellschaftskapitan" (Danube steamship company captain) is a single word. Finnish and Dutch also compound aggressively.' },
+    { title: '4. Morphological Typology', desc: 'Languages fall along a spectrum of morphological complexity:  Isolating (analytic) languages like Mandarin Chinese and Vietnamese use little to no morphology. Each word is typically a single morpheme.' },
+    { title: '5. Morphological Analysis in NLP', desc: 'Computational morphological analysis involves:  Morphological segmentation: Splitting a word into its constituent morphemes. Morfessor (Creutz and Lagus, 2007) uses unsupervised statistical methods to learn segmentations.' },
+    { title: '6. Implications for Tokenization', desc: 'A tokenizer that splits text on whitespace works reasonably well for isolating languages like Chinese (once word segmentation is handled) and moderately well for English. It fails catastrophically for agglutinative languages where a single whitespace-delimited token may encode a full clause.' },
 ];
 
 export default function WalkthroughNLPMorphology() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPMorphology() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Morphology — Step by Step
+          Morphology \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how morphology works, one stage at a time.

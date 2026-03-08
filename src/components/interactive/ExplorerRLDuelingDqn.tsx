@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Performance gains', detail: 'On Atari, dueling DQN improves median human-normalized score from ~117% (Double DQN baseline) to ~140%, with large gains on games with many \"irrelevant-action\" states.' },
-    { label: 'Parameter overhead', detail: 'Minimal. Replacing one 512-to-$|\\mathcal{A}|$ output layer with two streams (512-to-1 and 512-to-$|\\mathcal{A}|$) adds roughly 512 parameters.' },
-    { label: 'Mean vs. max subtraction', detail: 'Mean subtraction ($\\frac{1}{|\\mathcal{A}|}\\sum A$) is preferred over max subtraction ($\\max A$) because it provides smoother gradients and does not change the optimal action ranking.' },
+    { label: 'Performance gains', detail: 'On Atari, dueling DQN improves median human-normalized score from ~117% (Double DQN baseline) to ~140%, with large gains on games with many "irrelevant-action" states.' },
+    { label: 'Parameter overhead', detail: 'Minimal. Replacing one 512-to-$$) adds roughly 512 parameters.' },
+    { label: 'Mean vs. max subtraction', detail: 'Mean subtraction (&#123;1&#125;&#123;&#125; A) is preferred over max subtraction ( A) because it provides smoother gradients and does not change the optimal action ranking.' },
     { label: 'Gradient flow to V', detail: 'The value stream receives gradient updates for every action in the minibatch. In standard DQN, the value is implicitly encoded across all action outputs, so learning that a state is universally bad requires experiencing every action in that state.' },
     { label: 'Compatibility', detail: 'The dueling architecture is a drop-in replacement. It works with all DQN training algorithms (Double DQN, PER, etc.) without modification.' },
     { label: 'Gradient clipping', detail: 'The original paper clips gradients entering the aggregation layer to have norm at most 10, preventing large advantage updates from destabilizing the value stream.' },
@@ -20,10 +20,10 @@ export default function ExplorerRLDuelingDqn() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Dueling DQN — Key Details Explorer
+          Dueling DQN \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of dueling dqn.
+          Click each card to explore the technical details.
         </p>
       </div>
 

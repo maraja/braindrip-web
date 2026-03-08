@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Gemma 1: The Foundation (February 2024)', desc: 'The foundation of gemma begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Gemma 2: Architectural Refinement (June 2024)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes gemma work.' },
-    { title: '3. Gemma 3: The Multimodal Leap (March 2025)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Gemma 3n: The Matformer Innovation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Gemma 1: The Foundation (February 2024)', desc: 'The initial release included two sizes: 2B and 7B parameters. These were dense Transformer models (no Mixture of Experts) trained on 2 trillion tokens for Gemma-2B and 6 trillion tokens for Gemma-7B.' },
+    { title: '2. Gemma 2: Architectural Refinement (June 2024)', desc: 'The second generation introduced meaningful architectural changes. Available in 2B, 9B, and 27B sizes, Gemma 2 incorporated knowledge distillation from larger models during training -- a technique that transferred capabilities from Gemini-scale models into the compact Gemma architecture.' },
+    { title: '3. Gemma 3: The Multimodal Leap (March 2025)', desc: 'Gemma 3 represented a qualitative transformation. Five sizes -- 1B, 4B, 12B, 27B, and a tiny 270M "Gemma Nano" -- covered the full spectrum from mobile deployment to workstation use.' },
+    { title: '4. Gemma 3n: The Matformer Innovation', desc: 'Perhaps the most architecturally novel addition was Gemma 3n, which used the Matformer (Matryoshka Transformer) architecture. Named after Russian nesting dolls, Matformer trains a single set of weights that contains multiple models of different sizes nested within each other.' },
 ];
 
 export default function WalkthroughLLE02Gemma() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE02Gemma() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Gemma — Step by Step
+          Gemma \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how gemma works, one stage at a time.

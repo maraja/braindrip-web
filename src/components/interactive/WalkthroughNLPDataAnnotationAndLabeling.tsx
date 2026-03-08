@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Annotation Schemes', desc: 'The foundation of data annotation and labeling begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Sequence Labeling: BIO and IOB2', desc: 'At this stage, the key transformation occurs — the core mechanism that makes data annotation and labeling work.' },
-    { title: '3. Dependency Annotation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Other Annotation Types', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Inter-Annotator Agreement (IAA)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Annotation Schemes', desc: '#### Sequence Labeling: BIO and IOB2  For tasks like NER (see named-entity-recognition.md) and chunking, the BIO (Beginning-Inside-Outside) scheme encodes entity boundaries at the token level:  B-X: Beginning of an entity of type X I-X: Inside (continuation) of entity X O: Outside any entity  The.' },
+    { title: '2. Inter-Annotator Agreement (IAA)', desc: 'Agreement metrics quantify how consistently multiple annotators label the same data. High agreement suggests the task is well-defined; low agreement indicates ambiguous guidelines or a genuinely subjective task.' },
+    { title: '3. Crowdsourcing', desc: '#### Amazon Mechanical Turk (MTurk)  MTurk is the most widely used platform for NLP annotation. Key design decisions:  HIT design: Each Human Intelligence Task should take 30-60 seconds for classification, 2-5 minutes for span annotation.' },
+    { title: '4. Quality Control', desc: '#### Gold Standard Items  Embed pre-labeled items (5-10% of the batch) among unlabeled items. Workers who fail gold standards are flagged for retraining or removal.' },
+    { title: '5. Active Learning for Annotation', desc: 'Active learning selects the most informative unlabeled examples for annotation, reducing labeling cost by 30-70% (Settles, 2012). Strategies:  Uncertainty sampling: Select examples where the current model is least confident.' },
+    { title: '6. The Cost of Annotation', desc: 'Annotation costs vary dramatically by task complexity:  The Penn Treebank cost approximately 1 million (in 1990s dollars) to annotate. Modern large-scale datasets like SQuAD 2.0 cost an estimated 50,000-100,000 in crowdsourcing fees.' },
 ];
 
 export default function WalkthroughNLPDataAnnotationAndLabeling() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPDataAnnotationAndLabeling() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Data Annotation and Labeling — Step by Step
+          Data Annotation and Labeling \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how data annotation and labeling works, one stage at a time.

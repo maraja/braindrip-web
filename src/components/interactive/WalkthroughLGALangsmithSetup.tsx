@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Environment Variable Configuration', desc: 'The foundation of langsmith setup begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Automatic Tracing in Action', desc: 'At this stage, the key transformation occurs — the core mechanism that makes langsmith setup work.' },
-    { title: '3. What Gets Captured', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Installing the SDK', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Environment Variable Configuration', desc: 'The entire setup requires three environment variables:  Alternatively, set them in your shell or .env file:' },
+    { title: '2. Automatic Tracing in Action', desc: 'Once the environment variables are set, all LangChain and LangGraph calls are traced automatically:' },
+    { title: '3. What Gets Captured', desc: 'Every trace automatically records the following for each step: the input and output payloads, the model name and parameters, prompt and completion token counts, estimated cost in USD, wall-clock latency, tool call arguments and results, and any exceptions or error messages.' },
 ];
 
 export default function WalkthroughLGALangsmithSetup() {
@@ -16,10 +15,10 @@ export default function WalkthroughLGALangsmithSetup() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          LangSmith Setup — Step by Step
+          LangSmith Setup \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how langsmith setup works, one stage at a time.

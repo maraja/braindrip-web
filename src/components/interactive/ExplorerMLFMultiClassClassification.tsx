@@ -4,7 +4,7 @@ const DETAILS = [
     { label: 'Probability calibration', detail: 'OvR and OvO do not naturally produce calibrated probabilities. Platt scaling or isotonic regression can be applied post-hoc.' },
     { label: 'Class imbalance', detail: 'Imbalance is amplified in OvR (one class vs. all others). Class weights, SMOTE, or stratified sampling can help.' },
     { label: 'Hierarchical classification', detail: 'When classes have a natural hierarchy (e.g., animal taxonomy), hierarchical approaches that classify at each level can be more accurate and efficient than flat multi-class methods.' },
-    { label: 'Scalability', detail: 'For very large $K$ (thousands of classes), approximate methods like hierarchical softmax or sampled softmax are necessary.' },
+    { label: 'Scalability', detail: 'For very large K (thousands of classes), approximate methods like hierarchical softmax or sampled softmax are necessary.' },
 ];
 
 export default function ExplorerMLFMultiClassClassification() {
@@ -18,10 +18,10 @@ export default function ExplorerMLFMultiClassClassification() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Multi-Class Classification — Key Details Explorer
+          Multi-Class Classification \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of multi-class classification.
+          Click each card to explore the technical details.
         </p>
       </div>
 

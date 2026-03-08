@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE01DeepseekV2AndMla() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'DeepSeek V2 introduced Multi-head Latent Attention (MLA), a novel attention mechanism that compressed the KV cache by 93.3%, making frontier-quality inference dramatically cheaper and signaling that architectural innovation could substitute for brute-force compute.', isTrue: true, explanation: 'This captures the core purpose of DeepSeek V2: Multi-head Latent Attention.' },
-    { text: 'DeepSeek V2: Multi-head Latent Attention is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding DeepSeek V2: Multi-head Latent Attention is important for building on more advanced topics.' },
-    { text: 'DeepSeek V2: Multi-head Latent Attention is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding DeepSeek V2: Multi-head Latent Attention is important for building on more advanced topics.' },
+    { text: 'MLA is just a more aggressive version of GQA.', isTrue: false, explanation: 'GQA shares K and V heads across groups, reducing the number of separate caches. MLA projects into a learned latent space and reconstructs during computation, a fundamentally different mathematical approach.' },
+    { text: 'The 93.3% cache reduction must significantly hurt quality.', isTrue: false, explanation: 'The low-rank latent space captures the essential information needed for attention through learned compression. Because the compression is trained end-to-end with the rest of the model, it optimizes the latent representation to preserve information most critical for prediction quality.' },
+    { text: 'DeepSeek V2 was only competitive because it was cheaper, not because it was good.', isTrue: false, explanation: 'V2 matched or exceeded LLaMA 3 70B and Mixtral 8x22B on most benchmarks despite having fewer active parameters. The cost advantage came on top of competitive quality, not at its expense.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

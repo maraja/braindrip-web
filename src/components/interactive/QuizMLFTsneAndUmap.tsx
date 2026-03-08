@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFTsneAndUmap() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Perplexity (t-SNE): Controls the effective neighborhood size.', isTrue: true, explanation: 'This is a key technical detail of t-SNE and UMAP.' },
-    { text: 'Low perplexity (5-10) emphasizes very local structure; high perplexity (30-50) incorporates more global context.', isTrue: true, explanation: 'This is a key technical detail of t-SNE and UMAP.' },
-    { text: 'Results can change qualitatively with different perplexity values.', isTrue: true, explanation: 'This is a key technical detail of t-SNE and UMAP.' },
+    { text: 'Distances between clusters are meaningful.', isTrue: false, explanation: 'Neither t-SNE nor UMAP reliably preserves inter-cluster distances. Two clusters far apart in the plot may or may not be far apart in the original space.' },
+    { text: 'Controls the effective neighborhood size.', isTrue: true, explanation: 'Low perplexity (5-10) emphasizes very local structure; high perplexity (30-50) incorporates more global context. Results can change qualitatively with different perplexity values.' },
+    { text: 'Analogous to perplexity.', isTrue: true, explanation: 'Larger values yield more global structure at the cost of local detail. Default is typically 15.' },
+    { text: 'Controls how tightly points can pack in the embedding.', isTrue: true, explanation: 'Smaller values create denser clusters; larger values spread them out. Default is 0.1.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

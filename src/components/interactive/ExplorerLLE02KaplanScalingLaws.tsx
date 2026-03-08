@@ -5,8 +5,8 @@ const DETAILS = [
     { label: 'Models trained', detail: 'Hundreds, ranging from 768 to ~1.5B non-embedding parameters' },
     { label: 'Data range', detail: '22M to 23B tokens' },
     { label: 'Compute range', detail: 'Over 7 orders of magnitude' },
-    { label: 'Loss scaling with params (alpha_N)', detail: '~0.076' },
-    { label: 'Loss scaling with data (alpha_D)', detail: '~0.095' },
+    { label: 'Key prescription', detail: 'Under fixed compute, prioritize model size over training duration' },
+    { label: 'Larger models are ~10x more sample-efficient', detail: 'per parameter decade' },
 ];
 
 export default function ExplorerLLE02KaplanScalingLaws() {
@@ -20,10 +20,10 @@ export default function ExplorerLLE02KaplanScalingLaws() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Kaplan Scaling Laws — Key Details Explorer
+          Kaplan Scaling Laws \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of kaplan scaling laws.
+          Click each card to explore the technical details.
         </p>
       </div>
 

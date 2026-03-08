@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACAgentEvaluationMethods() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Statistical significance: With non-deterministic agents, report confidence intervals, not just point estimates.', isTrue: true, explanation: 'This is a key technical detail of Agent Evaluation Methods.' },
-    { text: 'A success rate of 80% with n=10 has a 95% CI of [44%, 97%].', isTrue: true, explanation: 'This is a key technical detail of Agent Evaluation Methods.' },
-    { text: 'Meaningful comparisons between agent versions require sufficient sample sizes (typically 50-100 tasks minimum).', isTrue: true, explanation: 'This is a key technical detail of Agent Evaluation Methods.' },
+    { text: 'Pass/fail on a test set is sufficient evaluation.', isTrue: false, explanation: 'Binary pass/fail ignores partial success, quality of the solution, efficiency, and reliability. A 70% pass rate tells you nothing about why the 30% failed or whether the 70% that passed produced high-quality solutions.' },
+    { text: 'With non-deterministic agents, report confidence intervals, not just point estimates.', isTrue: true, explanation: 'A success rate of 80% with n=10 has a 95% CI of [44%, 97%]. Meaningful comparisons between agent versions require sufficient sample sizes (typically 50-100 tasks minimum).' },
+    { text: 'LLM-as-judge is objective.', isTrue: false, explanation: 'LLM judges have systematic biases: they prefer longer responses (verbosity bias), prefer responses that appear first in the prompt (position bias), and may prefer responses from their own model family (self-preference bias). Careful prompt design and calibration mitigate but do not eliminate these biases.' },
+    { text: 'Curate evaluation datasets with diverse task types, difficulty levels, and edge cases.', isTrue: true, explanation: 'Include tasks where the agent should refuse (safety evaluation), tasks with ambiguous instructions (alignment evaluation), and multi-step tasks with failure recovery opportunities (robustness evaluation).' },
+    { text: 'More evaluation tasks are always better.', isTrue: false, explanation: 'A well-designed evaluation set of 100 diverse, representative tasks is more informative than 1000 similar tasks that test the same capability. Coverage of different task types, difficulty levels, and edge cases matters more than raw count.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

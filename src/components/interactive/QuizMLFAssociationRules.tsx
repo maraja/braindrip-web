@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFAssociationRules() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Apriori complexity: In the worst case, exponential in the number of items ($2^m$ possible subsets).', isTrue: true, explanation: 'This is a key technical detail of Association Rules.' },
-    { text: 'In practice, the minimum support threshold keeps the number of frequent itemsets manageable.', isTrue: true, explanation: 'This is a key technical detail of Association Rules.' },
-    { text: 'FP-Growth complexity: $O(n \\cdot m)$ for tree construction, where $n$ is the number of transactions and $m$ is the average transaction length.', isTrue: true, explanation: 'This is a key technical detail of Association Rules.' },
+    { text: 'High confidence means a rule is useful.', isTrue: false, explanation: 'A rule A  B can have 95% confidence yet be useless if B already has 96% support (lift &lt; 1). Always check lift to distinguish genuine associations from base-rate effects.' },
+    { text: 'In the worst case, exponential in the number of items (2^m possible subsets).', isTrue: true, explanation: 'In practice, the minimum support threshold keeps the number of frequent itemsets manageable.' },
+    { text: 'O(n  m) for tree construction, where n is the number of transactions and m is the average transaction length.', isTrue: true, explanation: 'Mining complexity depends on tree structure.' },
+    { text: 'Too high and you miss interesting rare patterns.', isTrue: true, explanation: 'Too low and you drown in spurious associations and combinatorial explosion.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

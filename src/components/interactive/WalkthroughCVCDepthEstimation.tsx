@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Stereo Depth Estimation', desc: 'The foundation of depth estimation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Monocular Depth Estimation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes depth estimation work.' },
-    { title: '3. Self-Supervised Approaches', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Metric vs. Relative Depth', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Stereo Depth Estimation', desc: 'Stereo methods exploit the horizontal disparity between left and right images captured from cameras with a known baseline b. Depth Z relates to disparity d and focal length f by:  [equation]  Classical approaches (SGM, Semi-Global Matching) compute matching costs over a disparity range.' },
+    { title: '2. Monocular Depth Estimation', desc: 'Monocular methods predict depth from a single RGB image using an encoder-decoder architecture. The encoder (often a pretrained backbone like DPT with a Vision Transformer) extracts multi-scale features, and the decoder upsamples to produce a dense depth map.' },
+    { title: '3. Self-Supervised Approaches', desc: 'Self-supervised monocular depth (Monodepth2, Godard et al., 2019) trains using stereo pairs or video sequences without ground-truth depth. The key idea: predict depth from a target image, then use the predicted depth plus known/estimated camera pose to warp a source image onto the target.' },
+    { title: '4. Metric vs. Relative Depth', desc: 'Relative depth: Predicts up-to-scale ordering (MiDaS). Robust across domains but cannot give absolute distances.' },
 ];
 
 export default function WalkthroughCVCDepthEstimation() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCDepthEstimation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Depth Estimation — Step by Step
+          Depth Estimation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how depth estimation works, one stage at a time.

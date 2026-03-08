@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLRainbowDqn() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Atari results: Rainbow achieved a median human-normalized score of 223% after 200M frames, compared to 108% for DQN and ~150% for the best individual improvement (distributional).', isTrue: true, explanation: 'This is a key technical detail of Rainbow DQN.' },
-    { text: 'Sample efficiency: Rainbow at 7M frames matched DQN\'s performance at 200M frames -- a 28x improvement in sample efficiency.', isTrue: true, explanation: 'This is a key technical detail of Rainbow DQN.' },
-    { text: 'Compute: Rainbow trains on a single GPU (comparable to DQN), as the individual improvements add minimal overhead.', isTrue: true, explanation: 'This is a key technical detail of Rainbow DQN.' },
+    { text: 'Rainbow is obsolete because policy gradient methods dominate.', isTrue: false, explanation: 'Rainbow remains competitive with policy gradient methods on discrete-action benchmarks like Atari. Value-based methods excel when actions are discrete and sample efficiency matters.' },
+    { text: 'Rainbow achieved a median human-normalized score of 223% after 200M frames, compared to 108% for DQN and ~150% for the best individual improvement (distributional).', isTrue: true, explanation: 'Rainbow achieved a median human-normalized score of 223% after 200M frames, compared to 108% for DQN and ~150% for the best individual improvement (distributional).' },
+    { text: 'Rainbow at 7M frames matched DQN\'s performance at 200M frames -- a 28x improvement in sample efficiency.', isTrue: true, explanation: 'Rainbow at 7M frames matched DQN\'s performance at 200M frames -- a 28x improvement in sample efficiency.' },
+    { text: 'Adam optimizer with learning rate 6.25 x 10^&#123;-5&#125;, n = 3 multi-step, 51 atoms for C51 with V_&#123;&#125; = -10, V_&#123;&#125; = 10, replay buffer of 10^6, prioritization  = 0.5,  annealed from 0.4 to 1.0.', isTrue: true, explanation: 'Adam optimizer with learning rate 6.25 x 10^&#123;-5&#125;, n = 3 multi-step, 51 atoms for C51 with V_&#123;&#125; = -10, V_&#123;&#125; = 10, replay buffer of 10^6, prioritization  = 0.5,  annealed from 0.4 to 1.0.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

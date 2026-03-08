@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Stage 1: General-Domain Pre-training', desc: 'The foundation of ulmfit and transfer learning for nlp begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Stage 2: Target Task Language Model Fine-tuning', desc: 'At this stage, the key transformation occurs — the core mechanism that makes ulmfit and transfer learning for nlp work.' },
-    { title: '3. Stage 3: Target Task Classifier Fine-tuning', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Low-Data Regime Results', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Stage 1: General-Domain Pre-training', desc: 'A 3-layer AWD-LSTM (ASGD Weight-Dropped LSTM, from Merity et al., 2017) was pre-trained on Wikitext-103 — approximately 28,595 Wikipedia articles totaling 103 million tokens. The model learned to predict the next word, developing general English language understanding.' },
+    { title: '2. Stage 2: Target Task Language Model Fine-tuning', desc: 'The pre-trained LM was fine-tuned on the unlabeled text of the target domain (e.g., IMDb movie reviews, AG News articles). This allowed the model to adapt to the vocabulary, style, and patterns of the target domain without needing any labeled data.' },
+    { title: '3. Stage 3: Target Task Classifier Fine-tuning', desc: 'Two linear layers were added on top of the LM, taking the final hidden state as input for classification. The key innovation here was gradual unfreezing: rather than fine-tuning all layers simultaneously (which risks catastrophic forgetting), ULMFiT unfroze layers one at a time, starting from the.' },
+    { title: '4. The Low-Data Regime Results', desc: 'ULMFiT\'s most striking result was in low-data settings. On IMDb sentiment classification, ULMFiT with only 100 labeled examples matched the performance of training from scratch on the full 25,000-example training set.' },
 ];
 
 export default function WalkthroughLLE06UlmfitAndTransferLearning() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE06UlmfitAndTransferLearning() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          ULMFiT and Transfer Learning for NLP — Step by Step
+          ULMFiT and Transfer Learning for NLP \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how ulmfit and transfer learning for nlp works, one stage at a time.

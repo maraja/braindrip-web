@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCSelfSupervisedPretraining() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Linear probing protocol: freeze the pretrained backbone, train only a linear classifier on ImageNet labels.', isTrue: true, explanation: 'This is a key technical detail of Self-Supervised Pretraining.' },
-    { text: 'This measures the quality of the learned representation in isolation.', isTrue: true, explanation: 'This is a key technical detail of Self-Supervised Pretraining.' },
-    { text: 'SimCLR with ResNet-50: 69.3% top-1 linear probing (batch size 4096, 800 epochs).', isTrue: true, explanation: 'This is a key technical detail of Self-Supervised Pretraining.' },
+    { text: 'Self-supervised learning always beats supervised pretraining.', isTrue: false, explanation: 'For tasks closely aligned with ImageNet (natural image classification), supervised pretraining can still be competitive, especially with smaller models. The advantage of self-supervised methods grows with model size and data diversity.' },
+    { text: 'Self-supervised pretraining learns visual representations from unlabeled images by solving pretext tasks -- such as predicting masked patches or matching augmented views -- producing features that rival or exceed supervised ImageNet pretraining.', isTrue: true, explanation: 'This captures the core definition of Self-Supervised Pretraining.' },
+    { text: 'Self-Supervised Pretraining is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Self-Supervised Pretraining is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

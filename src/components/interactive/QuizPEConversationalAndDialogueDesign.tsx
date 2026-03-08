@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEConversationalAndDialogueDesign() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Persona consistency degrades measurably after 10-15 turns without reinforcement mechanisms; behavioral anchors and periodic persona reminders maintain consistency for 30-50+ turns.', isTrue: true, explanation: 'This is a key technical detail of Conversational and Dialogue Design.' },
-    { text: 'Explicit topic management instructions reduce off-topic drift by 40-50% compared to persona-only prompts.', isTrue: true, explanation: 'This is a key technical detail of Conversational and Dialogue Design.' },
-    { text: 'Running conversation summaries (injected as system context) maintain factual consistency over conversations exceeding the raw context window by 2-3x.', isTrue: true, explanation: 'This is a key technical detail of Conversational and Dialogue Design.' },
+    { text: 'A good system prompt is sufficient for multi-turn conversations.', isTrue: false, explanation: 'System prompts set the initial conditions but do not prevent degradation over time. Multi-turn conversations need active state management, consistency enforcement, and flow control beyond what static system prompts provide.' },
+    { text: 'Persona consistency means repeating the same phrases.', isTrue: false, explanation: 'Consistency is about behavioral patterns, knowledge boundaries, and emotional tone — not verbatim repetition. A consistent persona can use different words while maintaining the same character.' },
+    { text: 'Off-topic handling means refusing to engage.', isTrue: false, explanation: 'Blunt refusals break the conversational flow and frustrate users. Effective off-topic handling acknowledges the user\'s input, then redirects naturally.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

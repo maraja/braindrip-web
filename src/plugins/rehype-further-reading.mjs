@@ -1,8 +1,8 @@
 /**
- * Rehype plugin that enhances the "Further Reading" section:
+ * Rehype plugin that enhances the "Further Reading" and "Connections to Other Concepts" sections:
  * 1. Auto-links arXiv IDs (e.g., arXiv:2309.17453) to arxiv.org
  * 2. Auto-links paper titles in quotes to Google Scholar search
- * 3. Wraps the section in a styled container
+ * 3. Wraps both sections in styled containers
  */
 import { visit } from 'unist-util-visit';
 
@@ -12,50 +12,60 @@ function getTextContent(node) {
   return '';
 }
 
+function findAndWrapSection(children, matchFn, className) {
+  for (let i = 0; i < children.length; i++) {
+    const node = children[i];
+    if (node.type === 'element' && node.tagName === 'h2') {
+      const text = getTextContent(node).trim().toLowerCase();
+      if (matchFn(text)) {
+        let sectionEnd = children.length;
+        for (let j = i + 1; j < children.length; j++) {
+          if (children[j].type === 'element' && children[j].tagName === 'h2') {
+            sectionEnd = j;
+            break;
+          }
+        }
+
+        // Wrap section content in a styled div
+        const sectionNodes = children.splice(i + 1, sectionEnd - i - 1);
+        const wrapper = {
+          type: 'element',
+          tagName: 'div',
+          properties: { className: [className] },
+          children: sectionNodes,
+        };
+        children.splice(i + 1, 0, wrapper);
+        return { start: i, wrapper };
+      }
+    }
+  }
+  return null;
+}
+
 export function rehypeFurtherReading() {
   return function (tree) {
     const children = tree.children;
-    let sectionStart = -1;
-    let sectionEnd = children.length;
 
-    // Find the "Further Reading" h2 and its section bounds
-    for (let i = 0; i < children.length; i++) {
-      const node = children[i];
-      if (node.type === 'element' && node.tagName === 'h2') {
-        const text = getTextContent(node).trim().toLowerCase();
-        if (text.includes('further reading') || text.includes('references')) {
-          sectionStart = i;
-          // Find the end (next h2 or end of doc)
-          for (let j = i + 1; j < children.length; j++) {
-            if (children[j].type === 'element' && children[j].tagName === 'h2') {
-              sectionEnd = j;
-              break;
-            }
-          }
-          break;
+    // Wrap "Connections to Other Concepts" section
+    findAndWrapSection(children,
+      t => t.includes('connections to other'),
+      'connections-section'
+    );
+
+    // Find and wrap "Further Reading" section
+    const fr = findAndWrapSection(children,
+      t => t.includes('further reading') || t === 'references',
+      'further-reading-section'
+    );
+
+    // Process list items in Further Reading section to add paper links
+    if (fr) {
+      visit(fr.wrapper, 'element', (node) => {
+        if (node.tagName === 'ul' || node.tagName === 'ol') {
+          processListItems(node);
         }
-      }
+      });
     }
-
-    if (sectionStart === -1) return;
-
-    // Process list items in this section to add links
-    for (let i = sectionStart + 1; i < sectionEnd; i++) {
-      const node = children[i];
-      if (node.type === 'element' && (node.tagName === 'ul' || node.tagName === 'ol')) {
-        processListItems(node);
-      }
-    }
-
-    // Wrap the section content (after the h2) in a styled div
-    const sectionNodes = children.splice(sectionStart + 1, sectionEnd - sectionStart - 1);
-    const wrapper = {
-      type: 'element',
-      tagName: 'div',
-      properties: { className: ['further-reading-section'] },
-      children: sectionNodes,
-    };
-    children.splice(sectionStart + 1, 0, wrapper);
   };
 }
 

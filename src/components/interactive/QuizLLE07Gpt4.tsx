@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE07Gpt4() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'GPT-3.5\'s ~70%) Bar exam: 90th percentile (vs.', isTrue: true, explanation: 'This is a key technical detail of GPT-4.' },
-    { text: 'GPT-3.5\'s ~10th percentile) HumanEval (zero-shot): ~67% (vs.', isTrue: true, explanation: 'This is a key technical detail of GPT-4.' },
-    { text: 'GPT-3.5\'s ~48%) Context window: 8K tokens (standard), 32K tokens (extended version) Safety improvement: 82% less likely to produce disallowed content vs.', isTrue: true, explanation: 'This is a key technical detail of GPT-4.' },
+    { text: 'GPT-4 is 10x bigger than GPT-3.', isTrue: false, explanation: 'If the MoE reports are accurate, GPT-4\'s total parameter count (~1.7T) is roughly 10x GPT-3 (175B), but its active parameters per token (~220B) are only about 1.3x. The MoE architecture means most parameters are dormant for any given token.' },
+    { text: 'March 14, 2023 (API and ChatGPT Plus)', isTrue: true, explanation: 'March 14, 2023 (API and ChatGPT Plus)' },
+    { text: 'GPT-4 can see and generate images.', isTrue: false, explanation: 'GPT-4 can process image inputs and produce text about them. It cannot generate images.' },
+    { text: 'Not officially disclosed; widely reported as MoE with ~1.7T total params, 16 experts, ~111B each, 2 active per token', isTrue: true, explanation: 'Not officially disclosed; widely reported as MoE with ~1.7T total params, 16 experts, ~111B each, 2 active per token' },
+    { text: 'GPT-4\'s technical report is a research paper.', isTrue: false, explanation: 'It is explicitly not. It discloses results but not methodology, making it essentially a product announcement dressed in academic formatting.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'DETR (ResNet-50)', detail: '42.0% AP on COCO, ~28 FPS on a V100 GPU. Training requires 500 epochs (~3 days on 16 GPUs), roughly 10-20x longer than Faster R-CNN.' },
-    { label: 'DETR (ResNet-101)', detail: '43.5% AP on COCO.' },
+    { label: 'DETR (ResNet-50)', detail: '0% AP on COCO, ~28 FPS on a V100 GPU. Training requires 500 epochs (~3 days on 16 GPUs), roughly 10-20x longer than Faster R-CNN.' },
     { label: 'Small object performance', detail: 'DETR achieves 20.5% AP_S, significantly below Faster R-CNN\'s 24.1% AP_S. The coarse single-scale feature map (stride 32) limits small object detection.' },
-    { label: 'Number of queries', detail: '$N = 100$ is sufficient for COCO (max ~60 objects per image in practice). For denser datasets, $N$ must be increased.' },
+    { label: 'Number of queries', detail: 'N = 100 is sufficient for COCO (max ~60 objects per image in practice). For denser datasets, N must be increased.' },
     { label: 'Convergence', detail: 'The attention mechanism requires many epochs to learn spatial priors that anchor-based methods encode by design. Deformable DETR reduces training to 50 epochs.' },
     { label: 'Self-attention in the decoder', detail: 'is critical for preventing duplicate detections -- removing it causes a 3.9% AP drop.' },
 ];
@@ -20,10 +19,10 @@ export default function ExplorerCVCDetr() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          DETR (Detection Transformer) — Key Details Explorer
+          DETR (Detection Transformer) \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of detr (detection transformer).
+          Click each card to explore the technical details.
         </p>
       </div>
 

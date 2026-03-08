@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAPrebuiltReactAgent() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Returns a compiled CompiledStateGraph, not a special agent class -- all standard LangGraph APIs (.invoke(), .stream(), .astream()) work on it.', isTrue: true, explanation: 'This is a key technical detail of Prebuilt ReAct Agent.' },
-    { text: 'The prompt parameter accepts a string (converted to a system message) or a list of messages prepended to every invocation.', isTrue: true, explanation: 'This is a key technical detail of Prebuilt ReAct Agent.' },
-    { text: 'The tools parameter accepts any mix of LangChain BaseTool instances and plain Python functions decorated with @tool.', isTrue: true, explanation: 'This is a key technical detail of Prebuilt ReAct Agent.' },
+    { text: 'The prebuilt agent is a toy that cannot be used in production.', isTrue: false, explanation: 'It produces the same compiled graph you would build manually. Many production systems start and stay with it.' },
+    { text: 'create_react_agent from langgraph.prebuilt is the highest-level abstraction for building a fully functional tool-calling agent in under 10 lines of code.', isTrue: true, explanation: 'This captures the core definition of Prebuilt ReAct Agent.' },
+    { text: 'Prebuilt ReAct Agent is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Prebuilt ReAct Agent is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Modern Architecture Components', desc: 'The foundation of modernbert and the encoder revival begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Training at Modern Scale', desc: 'At this stage, the key transformation occurs — the core mechanism that makes modernbert and the encoder revival work.' },
-    { title: '3. Model Configurations', desc: 'The intermediate results are processed and refined through the main pipeline.' },
+    { title: '1. Modern Architecture Components', desc: 'ModernBERT took the basic encoder-only Transformer and upgraded every component to 2024 standards:  Rotary Position Embeddings (RoPE): BERT used learned absolute position embeddings limited to 512 tokens. ModernBERT adopted RoPE from 02-positional-encoding-evolution.' },
+    { title: '2. Training at Modern Scale', desc: 'The most dramatic change was the training data. BERT was trained on approximately 3.3 billion tokens.' },
+    { title: '3. Model Configurations', desc: 'Note the slightly different layer counts compared to BERT (12/24). The configurations were optimized through ablation studies, balancing parameter count against compute efficiency.' },
 ];
 
 export default function WalkthroughLLE06ModernbertAndTheEncoderRevival() {
@@ -15,10 +15,10 @@ export default function WalkthroughLLE06ModernbertAndTheEncoderRevival() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          ModernBERT and the Encoder Revival — Step by Step
+          ModernBERT and the Encoder Revival \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how modernbert and the encoder revival works, one stage at a time.

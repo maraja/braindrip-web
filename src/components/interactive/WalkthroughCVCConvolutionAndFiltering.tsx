@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Gaussian Blur', desc: 'The foundation of convolution and filtering begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Edge Detection Kernels', desc: 'At this stage, the key transformation occurs — the core mechanism that makes convolution and filtering work.' },
-    { title: '3. Sharpening', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Boundary Handling', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Separable Kernels', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Gaussian Blur', desc: 'The Gaussian kernel approximates a 2D bell curve:  [equation]  It is the only kernel that is both rotationally symmetric and separable: a 2D Gaussian convolution can be decomposed into two 1D passes (horizontal then vertical), reducing complexity from O(N  k^2) to O(N  2k) where k is the kernel.' },
+    { title: '2. Edge Detection Kernels', desc: 'Edges are rapid intensity changes, detectable via first or second derivatives. Sobel operator -- Approximates first derivatives with smoothing:  [equation]  Gradient magnitude: G = &#123;(I  S_x)^2 + (I  S_y)^2&#125;  Laplacian -- Second derivative, detects edges as zero-crossings:  [equation]  Laplacian of.' },
+    { title: '3. Sharpening', desc: 'Sharpening enhances edges by adding a scaled Laplacian back to the original:  [equation]  Equivalently, unsharp masking subtracts a blurred version:  [equation]  A common sharpening kernel:  [equation]' },
+    { title: '4. Boundary Handling', desc: 'When the kernel overlaps the image boundary, a strategy is needed for the missing pixels:' },
+    { title: '5. Separable Kernels', desc: 'A kernel K is separable if it can be expressed as K = c  r^T (outer product of a column and row vector). This reduces a k x k convolution from k^2 multiplications per pixel to 2k.' },
+    { title: '6. Convolution in CNNs', desc: 'In convolutional neural networks, the kernel weights are learned rather than hand-designed. A typical Conv2D layer applies C_&#123;out&#125; kernels, each of size C_&#123;in&#125; x k x k, with a stride s and padding p.' },
 ];
 
 export default function WalkthroughCVCConvolutionAndFiltering() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCConvolutionAndFiltering() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Convolution and Filtering — Step by Step
+          Convolution and Filtering \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how convolution and filtering works, one stage at a time.

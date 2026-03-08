@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Trajectory Alignment', desc: 'The foundation of comparative trajectory analysis begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Divergence Analysis', desc: 'At this stage, the key transformation occurs — the core mechanism that makes comparative trajectory analysis work.' },
-    { title: '3. Regression Point Identification', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Diagnostic Categories', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Visualization Techniques', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Trajectory Alignment', desc: 'Before comparing trajectories, corresponding steps must be aligned. Two trajectories for the same task will rarely have identical step counts or exact step correspondence.' },
+    { title: '2. Divergence Analysis', desc: 'Once trajectories are aligned, divergence analysis identifies where they differ:  Action divergence: At aligned positions, do the agents take different actions?' },
+    { title: '3. Regression Point Identification', desc: 'The most valuable application of comparative trajectory analysis is identifying regression points: the specific step where a new agent version starts underperforming. First divergence method: Identify the earliest aligned step where the trajectories diverge.' },
+    { title: '4. Diagnostic Categories', desc: 'Trajectory comparison naturally categorizes performance differences into actionable diagnostic buckets:  Planning regression: Divergences concentrated in early planning phases. Symptoms: different task decomposition, missing subgoals, different prioritization.' },
+    { title: '5. Visualization Techniques', desc: 'Effective trajectory comparison relies on visualization:  Parallel timeline view: Two trajectories displayed as parallel vertical timelines with alignment links between corresponding steps.' },
 ];
 
 export default function WalkthroughAAEComparativeTrajectoryAnalysis() {
@@ -17,10 +17,10 @@ export default function WalkthroughAAEComparativeTrajectoryAnalysis() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Comparative Trajectory Analysis — Step by Step
+          Comparative Trajectory Analysis \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how comparative trajectory analysis works, one stage at a time.

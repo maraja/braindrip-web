@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEDataAnalysisAndSummarization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Explicit word/sentence count targets are followed with 80-90% compliance; vague length instructions ("be brief") produce output lengths varying by 3-5x.', isTrue: true, explanation: 'This is a key technical detail of Data Analysis and Summarization.' },
-    { text: 'Structured comparison prompts (specifying dimensions and format) produce 2-3x more actionable output than unstructured "compare these" prompts.', isTrue: true, explanation: 'This is a key technical detail of Data Analysis and Summarization.' },
-    { text: 'Extractive summarization maintains higher faithfulness to source material (95%+ claim accuracy) compared to abstractive (85-90%), at the cost of readability.', isTrue: true, explanation: 'This is a key technical detail of Data Analysis and Summarization.' },
+    { text: 'Summarization is a simple task that doesn\'t need complex prompts.', isTrue: false, explanation: 'Generic summarization prompts produce generic summaries. The difference between "summarize this" and a well-structured analytical prompt with framework, audience, length, and focus specifications is the difference between a mediocre and excellent output.' },
+    { text: 'Longer documents need longer summaries.', isTrue: false, explanation: 'Summary length should be determined by the reader\'s needs, not the source length. A 100-page report might need a 3-sentence executive summary or a 5-page analysis — the source length is irrelevant to the output length decision.' },
+    { text: 'The model will naturally focus on the most important points.', isTrue: false, explanation: 'Models default to covering content roughly proportional to how much space the source document devotes to each topic. A topic that gets one paragraph in a 50-page document may be the most important insight, but the model will underweight it without explicit instructions to focus on importance over coverage.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

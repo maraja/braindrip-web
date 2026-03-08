@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEEvaluationDatasetManagement() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Effective evaluation requires disciplined dataset management -- building representative tasks, curating for quality, versioning for reproducibility, and preventing contamination to ensure results remain meaningful.', isTrue: true, explanation: 'This captures the core purpose of Evaluation Dataset Management.' },
-    { text: 'Evaluation Dataset Management is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluation Dataset Management is important for building on more advanced topics.' },
-    { text: 'Evaluation Dataset Management is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Evaluation Dataset Management is important for building on more advanced topics.' },
+    { text: 'More data is always better.', isTrue: false, explanation: 'Beyond a threshold determined by the evaluation\'s statistical requirements, additional tasks add cost without improving signal. A well-curated dataset of 300 tasks often outperforms a sloppy dataset of 3,000 that includes ambiguous, redundant, or stale content.' },
+    { text: 'Datasets only need to be created once.', isTrue: false, explanation: 'Datasets are living artifacts. Models improve, deployment contexts shift, and contamination risk grows over time.' },
+    { text: 'Synthetic data solves the contamination problem.', isTrue: false, explanation: 'Synthetic generation reduces contamination risk but introduces its own biases -- generated tasks may cluster around patterns the generating model finds natural, missing the unusual cases that are most important to evaluate. Synthetic and human-created tasks should be blended.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

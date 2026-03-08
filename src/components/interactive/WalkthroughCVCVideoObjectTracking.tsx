@@ -1,11 +1,8 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Single Object Tracking (SOT)', desc: 'The foundation of video object tracking begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Correlation Filter Trackers', desc: 'At this stage, the key transformation occurs — the core mechanism that makes video object tracking work.' },
-    { title: '3. Siamese Trackers', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Transformer Trackers', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Multi-Object Tracking (MOT)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Single Object Tracking (SOT)', desc: '#### Correlation Filter Trackers  Before deep learning dominated, correlation filter (CF) trackers were the standard. The target template is learned as a filter in the Fourier domain, enabling efficient tracking:  [equation]  where &#123;X&#125; is the Fourier transform of the training sample, &#123;Y&#125; is the.' },
+    { title: '2. Multi-Object Tracking (MOT)', desc: 'The dominant paradigm is tracking-by-detection: run an object detector per frame, then associate detections across frames. #### Association Strategies  Hungarian algorithm: Formulates frame-to-frame association as a bipartite matching problem.' },
 ];
 
 export default function WalkthroughCVCVideoObjectTracking() {
@@ -17,10 +14,10 @@ export default function WalkthroughCVCVideoObjectTracking() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Video Object Tracking — Step by Step
+          Video Object Tracking \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how video object tracking works, one stage at a time.

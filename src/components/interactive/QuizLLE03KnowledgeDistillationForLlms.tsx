@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE03KnowledgeDistillationForLlms() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Knowledge distillation evolved from compressing BERT-era models by mimicking output probabilities to a modern paradigm where large "teacher" models generate entire synthetic training datasets -- including reasoning traces -- that transfer intelligence through data rather than architecture mimicry.', isTrue: true, explanation: 'This captures the core purpose of Knowledge Distillation for LLMs.' },
-    { text: 'Knowledge Distillation for LLMs is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Knowledge Distillation for LLMs is important for building on more advanced topics.' },
-    { text: 'Knowledge Distillation for LLMs is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Knowledge Distillation for LLMs is important for building on more advanced topics.' },
+    { text: 'Distillation just copies the teacher model.', isTrue: false, explanation: 'Modern distillation doesn\'t transfer weights or architecture -- it transfers knowledge through data. The student model develops its own internal representations, often quite different from the teacher\'s.' },
+    { text: 'Distilled models are always worse than their teachers.', isTrue: false, explanation: 'On specific tasks, distilled models can match or exceed teachers. DeepSeek-R1-Distill-Qwen-32B outperformed o1-mini on math despite being far smaller than the R1 teacher.' },
+    { text: 'You need access to the teacher\'s weights to distill.', isTrue: false, explanation: 'The modern paradigm only requires API access to generate training data. This is precisely why distillation became so democratizing.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

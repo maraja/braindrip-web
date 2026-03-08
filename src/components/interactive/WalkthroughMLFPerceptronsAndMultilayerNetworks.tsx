@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Perceptron Learning Rule', desc: 'The foundation of perceptrons and multilayer networks begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The XOR Problem', desc: 'At this stage, the key transformation occurs — the core mechanism that makes perceptrons and multilayer networks work.' },
-    { title: '3. Multilayer Perceptrons (MLPs)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Representational Power', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Perceptron Learning Rule', desc: 'The perceptron learning algorithm updates weights only when a misclassification occurs. For a training example (x, y^) where y^ is the true label and &#123;y&#125; is the prediction:  [equation] [equation]  where  is the learning rate.' },
+    { title: '2. The XOR Problem', desc: 'The XOR function outputs 1 when exactly one of two binary inputs is 1. No single hyperplane can separate the positive from negative examples in this case.' },
+    { title: '3. Multilayer Perceptrons (MLPs)', desc: 'The solution to XOR -- and to the broader limitation of single perceptrons -- is to stack multiple layers. A multilayer perceptron consists of:  Input layer: Receives raw features x  &#123;R&#125;^&#123;d_0&#125;.' },
+    { title: '4. Representational Power', desc: 'Each hidden layer learns a new representation of the data. The first layer might learn simple features (edges, thresholds), the second layer combines those into more abstract features, and so on.' },
 ];
 
 export default function WalkthroughMLFPerceptronsAndMultilayerNetworks() {
@@ -16,10 +16,10 @@ export default function WalkthroughMLFPerceptronsAndMultilayerNetworks() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Perceptrons and Multilayer Networks — Step by Step
+          Perceptrons and Multilayer Networks \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how perceptrons and multilayer networks works, one stage at a time.

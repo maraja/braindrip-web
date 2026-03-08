@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture', desc: 'The foundation of bidirectional rnns begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Why Two Directions Matter', desc: 'At this stage, the key transformation occurs — the core mechanism that makes bidirectional rnns work.' },
-    { title: '3. Stacking Bidirectional Layers', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Combining Forward and Backward States', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Architecture', desc: 'Given an input sequence (x_1, x_2, ..., x_T):  Forward pass (left to right):  Backward pass (right to left):  Combined representation at each position:  The forward and backward RNNs have completely separate parameters.' },
+    { title: '2. Why Two Directions Matter', desc: 'Consider the sentence: "The bank by the river was eroding." To determine that "bank" refers to a riverbank (not a financial institution), the word "river" appearing after "bank" is critical. A left-to-right RNN processing "bank" has not yet seen "river.' },
+    { title: '3. Stacking Bidirectional Layers', desc: 'Deep bidirectional models stack multiple BiRNN layers. The output of layer l (dimension 2 * d_h after concatenation) becomes the input to layer l + 1:  ELMo (contextual-embeddings.' },
+    { title: '4. Combining Forward and Backward States', desc: 'Concatenation is the most common strategy, but alternatives include:  Summation: h_t = h_t_forward + h_t_backward (preserves dimensionality at d_h). Averaging: h_t = (h_t_forward + h_t_backward) / 2.' },
 ];
 
 export default function WalkthroughNLPBidirectionalRnns() {
@@ -16,10 +16,10 @@ export default function WalkthroughNLPBidirectionalRnns() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Bidirectional RNNs — Step by Step
+          Bidirectional RNNs \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how bidirectional rnns works, one stage at a time.

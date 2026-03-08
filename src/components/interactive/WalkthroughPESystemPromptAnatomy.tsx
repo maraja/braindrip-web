@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Component 1: Role Definition', desc: 'The foundation of system prompt anatomy begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Component 2: Context', desc: 'At this stage, the key transformation occurs — the core mechanism that makes system prompt anatomy work.' },
-    { title: '3. Component 3: Behavioral Constraints', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Component 4: Tool Instructions', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Component 5: Output Format', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Component 1: Role Definition', desc: 'The role definition establishes the model\'s identity, expertise, and perspective. It answers the question: "Who are you in this conversation?"  A strong role definition includes the persona ("You are a senior tax accountant"), the domain expertise ("with 15 years of experience in corporate tax.' },
+    { title: '2. Component 2: Context', desc: 'The context section provides the situational information the model needs to generate appropriate responses. This includes: the application\'s purpose, the target audience, the current date/time if relevant, organization-specific knowledge, and any dynamic information injected at runtime.' },
+    { title: '3. Component 3: Behavioral Constraints', desc: 'Behavioral constraints define the model\'s rules of engagement: what it must do, what it must not do, and how it should handle specific situations. These are the most critical instructions and should be positioned at the top and bottom of the system prompt (see ordering principles below).' },
+    { title: '4. Component 4: Tool Instructions', desc: 'When the model has access to tools (search, code execution, APIs), the system prompt must specify when and how to use them. This includes: which tools are available, when each tool should be used, the expected input/output format, error handling behavior, and any tool-use constraints.' },
+    { title: '5. Component 5: Output Format', desc: 'The output format section specifies the structure, style, and formatting of responses. This includes: response length guidelines, formatting requirements (markdown, JSON, plain text), tone and register, whether to use headers and bullet points, and any domain-specific formatting conventions.' },
+    { title: '6. Component 6: Examples', desc: 'Embedding 1-3 examples of ideal interactions in the system prompt dramatically improves output quality and consistency. Examples serve as concrete demonstrations of how all other components work together.' },
 ];
 
 export default function WalkthroughPESystemPromptAnatomy() {
@@ -17,10 +18,10 @@ export default function WalkthroughPESystemPromptAnatomy() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          System Prompt Anatomy — Step by Step
+          System Prompt Anatomy \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how system prompt anatomy works, one stage at a time.

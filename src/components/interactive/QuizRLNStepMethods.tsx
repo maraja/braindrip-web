@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLNStepMethods() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Optimal $n$: Problem-dependent, but $n \\in [4, 16]$ frequently outperforms TD(0) and MC in tabular benchmarks.', isTrue: true, explanation: 'This is a key technical detail of N-Step Methods.' },
-    { text: 'Memory requirement: Must store the last $n$ states, actions, and rewards, requiring $O(n)$ additional memory per episode.', isTrue: true, explanation: 'This is a key technical detail of N-Step Methods.' },
-    { text: 'Update delay: Values for $S_t$ cannot be updated until time $t + n$, delaying credit assignment.', isTrue: true, explanation: 'This is a key technical detail of N-Step Methods.' },
+    { text: 'Larger n is always better because it reduces bias.', isTrue: false, explanation: 'While larger n reduces bias from bootstrapping, it increases variance from reward stochasticity. The optimal n balances these effects and is almost never n =  (full MC).' },
+    { text: 'Problem-dependent, but n  [4, 16] frequently outperforms TD(0) and MC in tabular benchmarks.', isTrue: true, explanation: 'Problem-dependent, but n  [4, 16] frequently outperforms TD(0) and MC in tabular benchmarks.' },
+    { text: 'Must store the last n states, actions, and rewards, requiring O(n) additional memory per episode.', isTrue: true, explanation: 'Must store the last n states, actions, and rewards, requiring O(n) additional memory per episode.' },
+    { text: 'Values for S_t cannot be updated until time t + n, delaying credit assignment.', isTrue: true, explanation: 'This means the first n - 1 transitions of each episode produce no updates.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

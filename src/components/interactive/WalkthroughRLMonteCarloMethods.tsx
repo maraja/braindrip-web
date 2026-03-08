@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. MC Prediction (Estimating $V^\\pi$)', desc: 'The foundation of monte carlo methods begins with understanding its core input requirements and initial setup.' },
-    { title: '2. MC Control (Finding $\\pi^*$)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes monte carlo methods work.' },
-    { title: '3. On-Policy MC Control ($\\varepsilon$-Greedy)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Off-Policy MC with Importance Sampling', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. MC Prediction (Estimating $V^\\pi$)', desc: 'The core idea: V^(s) = &#123;E&#125;_[G_t  S_t = s], so we estimate this expectation by averaging observed returns from state s. First-Visit MC: For each episode, only the first time state s is visited contributes a return sample.' },
+    { title: '2. MC Control (Finding $\\pi^*$)', desc: 'To improve the policy, we estimate action-value functions Q(s, a) rather than V(s), since Q allows policy improvement without a model:  [equation]  MC with Exploring Starts: Guarantees coverage by starting each episode from a random state-action pair.' },
+    { title: '3. On-Policy MC Control ($\\varepsilon$-Greedy)', desc: 'Instead of exploring starts, maintain an -greedy policy:  [equation]  This guarantees all state-action pairs are visited infinitely often (given infinite episodes), enabling convergence to the best policy within the class of -soft policies.' },
+    { title: '4. Off-Policy MC with Importance Sampling', desc: 'Off-policy methods learn about a target policy  while following a different behavior policy b. This requires correcting for the distribution mismatch via importance sampling ratios:  [equation]  Ordinary importance sampling: [equation]  Weighted importance sampling: [equation]  Ordinary IS is.' },
 ];
 
 export default function WalkthroughRLMonteCarloMethods() {
@@ -16,10 +16,10 @@ export default function WalkthroughRLMonteCarloMethods() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Monte Carlo Methods — Step by Step
+          Monte Carlo Methods \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how monte carlo methods works, one stage at a time.

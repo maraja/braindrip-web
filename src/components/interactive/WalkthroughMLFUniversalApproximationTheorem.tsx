@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Cybenko\'s Theorem (1989)', desc: 'The foundation of universal approximation theorem begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Hornik\'s Extension (1991)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes universal approximation theorem work.' },
-    { title: '3. What the Theorem Does Guarantee', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. What the Theorem Does NOT Guarantee', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Width vs. Depth: Why Deep Networks Win', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Cybenko\'s Theorem (1989)', desc: 'George Cybenko proved the first version of the UAT for sigmoid activation functions. The precise statement:  Let  be any continuous sigmoidal function (i.e., (z)  1 as z  + and (z)  0 as z  -).' },
+    { title: '2. Hornik\'s Extension (1991)', desc: 'Kurt Hornik generalized the result, showing that universal approximation is not a property of any specific activation function but rather a property of the multilayer feedforward architecture itself.' },
+    { title: '3. What the Theorem Does Guarantee', desc: 'Existence: For any continuous target function and any error tolerance, there exists a one-hidden-layer network that achieves that tolerance. Finite width: The required network has a finite (though potentially very large) number of neurons.' },
+    { title: '4. What the Theorem Does NOT Guarantee', desc: 'Learnability: The theorem says nothing about whether gradient-based training can find the approximating weights. The existence of a good configuration does not mean SGD will discover it.' },
+    { title: '5. Width vs. Depth: Why Deep Networks Win', desc: 'The UAT proves that width alone is sufficient in theory. But depth provides exponential efficiency.' },
+    { title: '6. Practical Implications for Architecture Design', desc: 'The UAT tells us that expressivity is not the bottleneck -- with enough parameters, any architecture can represent the target function. The real challenges are:  Parameter efficiency: Deep networks represent complex functions with far fewer parameters than shallow ones.' },
 ];
 
 export default function WalkthroughMLFUniversalApproximationTheorem() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFUniversalApproximationTheorem() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Universal Approximation Theorem — Step by Step
+          Universal Approximation Theorem \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how universal approximation theorem works, one stage at a time.

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCDataAugmentation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Standard ImageNet augmentation (random resized crop + horizontal flip) contributes roughly 1-2% top-1 accuracy improvement over center-crop-only training.', isTrue: true, explanation: 'This is a key technical detail of Data Augmentation.' },
-    { text: 'RandAugment with $N=2, M=9$ adds ~0.5% top-1 on ImageNet for ResNet-50 over baseline augmentation.', isTrue: true, explanation: 'This is a key technical detail of Data Augmentation.' },
-    { text: 'Augmentation is applied on-the-fly during data loading (not stored), so it has zero storage overhead.', isTrue: true, explanation: 'This is a key technical detail of Data Augmentation.' },
+    { text: 'More augmentation is always better.', isTrue: false, explanation: 'Overly aggressive augmentation can destroy the signal. For example, heavy color jitter on a task where color is discriminative (e.g., flower species classification) will hurt performance.' },
+    { text: 'Data augmentation artificially expands the training set by applying random transformations to images, acting as the cheapest and most effective regularizer available.', isTrue: true, explanation: 'This captures the core definition of Data Augmentation.' },
+    { text: 'Data Augmentation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Data Augmentation is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Whitespace Tokenization', desc: 'The foundation of tokenization in nlp begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Rule-Based Tokenization', desc: 'At this stage, the key transformation occurs — the core mechanism that makes tokenization in nlp work.' },
-    { title: '3. Penn Treebank Style', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. spaCy\'s Tokenizer', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Statistical and Neural Tokenizers', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Whitespace Tokenization', desc: 'The simplest approach: split on spaces and tabs. "The cat sat".split() yields ["The", "cat", "sat"].' },
+    { title: '2. Rule-Based Tokenization', desc: '#### Penn Treebank Style  The Penn Treebank tokenizer (Marcus et al., 1993) applies ordered regular expression rules: separate punctuation from words, expand contractions ("don\'t" to "do" + "n\'t"), and split possessives ("John\'s" to "John" + "\'s").' },
+    { title: '3. Statistical and Neural Tokenizers', desc: 'For languages without clear word boundaries, supervised models learn to segment text. The conditional random field (CRF) approach treats word segmentation as a sequence labeling problem: each character is tagged as "beginning of word" (B) or "continuation" (I).' },
+    { title: '4. Language-Specific Challenges', desc: '#### Chinese Word Segmentation  Chinese text has no spaces between words. The string "4ed67684786e5b9e8bb04f4f4e86" requires a model to decide: is "786e5b9e" one word or two?' },
+    { title: '5. Sentence Tokenization', desc: 'Sentence tokenization (see sentence-segmentation.md for full coverage) splits text into sentences. The challenge is that periods serve triple duty as sentence terminators, abbreviation markers ("Dr."), and decimal points ("3.14").' },
 ];
 
 export default function WalkthroughNLPTokenizationInNlp() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPTokenizationInNlp() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Tokenization in NLP — Step by Step
+          Tokenization in NLP \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how tokenization in nlp works, one stage at a time.

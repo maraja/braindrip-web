@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Comparison of Approaches', desc: 'The foundation of feature selection methods begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Filter Methods', desc: 'At this stage, the key transformation occurs — the core mechanism that makes feature selection methods work.' },
-    { title: '3. Wrapper Methods', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Embedded Methods', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Stability Selection', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Comparison of Approaches', desc: 'A practical pipeline often chains approaches: use filters to reduce from thousands of features to hundreds, then apply embedded or wrapper methods for the final selection.' },
+    { title: '2. Filter Methods', desc: 'Filter methods evaluate each feature independently of any learning algorithm using statistical tests or information-theoretic measures. They are fast, scalable, and model-agnostic.' },
+    { title: '3. Wrapper Methods', desc: 'Wrapper methods use a specific learning algorithm as a black box and evaluate feature subsets by model performance (e.g., cross-validated accuracy). They are more expensive but capture feature interactions.' },
+    { title: '4. Embedded Methods', desc: 'Embedded methods perform feature selection as part of the model training process, combining the advantages of filters (efficiency) and wrappers (interaction awareness). L1 Regularization (Lasso).' },
+    { title: '5. Stability Selection', desc: 'Stability selection (Meinshausen and Buhlmann, 2010) addresses the instability of feature selection by running a base selection method (e.g., Lasso) on many random subsamples of the data and retaining features that are selected in a high proportion of runs.' },
 ];
 
 export default function WalkthroughMLFFeatureSelectionMethods() {
@@ -17,10 +17,10 @@ export default function WalkthroughMLFFeatureSelectionMethods() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Feature Selection Methods — Step by Step
+          Feature Selection Methods \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how feature selection methods works, one stage at a time.

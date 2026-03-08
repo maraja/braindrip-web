@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPEJsonModeAndSchemaEnforcement() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Prompt-only JSON generation fails 5-15% of the time depending on schema complexity and model capability.', isTrue: true, explanation: 'This is a key technical detail of JSON Mode and Schema Enforcement.' },
-    { text: 'JSON output uses roughly 30% more tokens than equivalent natural language due to structural overhead.', isTrue: true, explanation: 'This is a key technical detail of JSON Mode and Schema Enforcement.' },
-    { text: 'OpenAI structured outputs support a subset of JSON Schema: type, properties, required, enum, anyOf, $ref, and recursive schemas.', isTrue: true, explanation: 'This is a key technical detail of JSON Mode and Schema Enforcement.' },
+    { text: 'JSON mode guarantees the schema I want.', isTrue: false, explanation: 'JSON mode only guarantees syntactically valid JSON — it does not enforce specific fields, types, or structure. You still need schema enforcement or validation for structural guarantees.' },
+    { text: 'type, properties, required, enum, anyOf, $ref, and recursive schemas.', isTrue: true, explanation: 'Not all JSON Schema features are supported.' },
+    { text: 'each level of nesting roughly doubles the prompt-only failure rate.', isTrue: true, explanation: 'each level of nesting roughly doubles the prompt-only failure rate.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

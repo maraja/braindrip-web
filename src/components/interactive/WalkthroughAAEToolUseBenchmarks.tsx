@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. tau-bench', desc: 'The foundation of tool use benchmarks begins with understanding its core input requirements and initial setup.' },
-    { title: '2. MCP-Bench', desc: 'At this stage, the key transformation occurs — the core mechanism that makes tool use benchmarks work.' },
-    { title: '3. AppWorld', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. What These Benchmarks Reveal', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. tau-bench', desc: 'tau-bench (Yao et al., 2024) evaluates tool-augmented agents in dynamic, conversational settings across three domains:  Retail: Order management, returns processing, product lookup, inventory checking Airline: Flight booking, seat selection, itinerary changes, loyalty program management Telecom:.' },
+    { title: '2. MCP-Bench', desc: 'MCP-Bench (2025) evaluates agents on multi-step workflows executed through Model Context Protocol (MCP) servers. MCP has emerged as a standard for tool integration, and MCP-Bench tests three critical capabilities:  Tool discovery: Can the agent identify which MCP tools are available and understand.' },
+    { title: '3. AppWorld', desc: 'AppWorld (Trivedi et al., 2024) provides the most comprehensive tool use evaluation environment, featuring:  9 interconnected applications: Email, calendar, messaging, notes, file storage, contacts, maps, weather, reminders 457 distinct APIs across these applications 750 tasks at three difficulty.' },
+    { title: '4. What These Benchmarks Reveal', desc: 'Across tau-bench, MCP-Bench, and AppWorld, consistent patterns emerge:  Parameter errors dominate: 40-50% of tool-use failures come from incorrect parameter values, not wrong tool selection Error handling is weak: Agents retry failed calls with the same parameters rather than diagnosing the.' },
 ];
 
 export default function WalkthroughAAEToolUseBenchmarks() {
@@ -16,10 +16,10 @@ export default function WalkthroughAAEToolUseBenchmarks() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Tool Use Benchmarks — Step by Step
+          Tool Use Benchmarks \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how tool use benchmarks works, one stage at a time.

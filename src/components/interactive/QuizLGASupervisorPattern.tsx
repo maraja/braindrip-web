@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGASupervisorPattern() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The supervisor node typically uses structured output or tool calling to produce the next_agent value reliably.', isTrue: true, explanation: 'This is a key technical detail of Supervisor Pattern.' },
-    { text: 'Conditional edges read from state, so the routing field must be set before the edge evaluates.', isTrue: true, explanation: 'This is a key technical detail of Supervisor Pattern.' },
-    { text: 'Specialists should not set next_agent; only the supervisor should control routing.', isTrue: true, explanation: 'This is a key technical detail of Supervisor Pattern.' },
+    { text: 'Specialists can route to each other directly.', isTrue: false, explanation: 'In the supervisor pattern, all routing goes through the supervisor. Direct specialist-to-specialist communication is the handoff pattern, not the supervisor pattern.' },
+    { text: 'A central supervisor agent receives every user request, decides which specialist sub-agent should handle it, routes work via conditional edges, and aggregates results before deciding the next step.', isTrue: true, explanation: 'This captures the core definition of Supervisor Pattern.' },
+    { text: 'Supervisor Pattern is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Supervisor Pattern is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

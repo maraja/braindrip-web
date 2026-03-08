@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Health checks', detail: 'for agent services must go beyond HTTP 200: verify that the LLM provider is reachable, tool services are healthy, and the state store is accessible. A \"deep health check\" runs a simple agent task end-to-end.' },
+    { label: 'Health checks', detail: 'for agent services must go beyond HTTP 200: verify that the LLM provider is reachable, tool services are healthy, and the state store is accessible. A "deep health check" runs a simple agent task end-to-end.' },
     { label: 'Graceful shutdown', detail: 'must wait for in-progress agent tasks to complete (or checkpoint) before terminating the container, preventing partial execution and data loss' },
     { label: 'Resource limits', detail: 'are critical: set CPU, memory, and timeout limits per agent task to prevent runaway executions from consuming cluster resources' },
     { label: 'Prompt management platforms', detail: '(Humanloop, PromptLayer, LangSmith Hub) provide versioning, A/B testing, and rollback for prompts independently of code deployments' },
@@ -20,10 +20,10 @@ export default function ExplorerAACAgentDeployment() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agent Deployment — Key Details Explorer
+          Agent Deployment \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of agent deployment.
+          Click each card to explore the technical details.
         </p>
       </div>
 

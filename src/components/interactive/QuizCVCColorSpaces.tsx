@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCColorSpaces() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'sRGB covers approximately 35% of the visible gamut defined by CIE 1931.', isTrue: true, explanation: 'This is a key technical detail of Color Spaces.' },
-    { text: 'Display-P3 (used by Apple devices since 2016) covers ~26% more than sRGB.', isTrue: true, explanation: 'This is a key technical detail of Color Spaces.' },
-    { text: 'OpenCV uses H in [0, 180], S in [0, 255], V in [0, 255] for 8-bit HSV -- not the conventional [0, 360], [0, 100], [0, 100] range.', isTrue: true, explanation: 'This is a key technical detail of Color Spaces.' },
+    { text: 'RGB values directly represent physical light intensity.', isTrue: false, explanation: 'sRGB values are gamma-encoded. A pixel value of 128 does not represent half the light intensity of 255; it represents roughly (128/255)^&#123;2.2&#125;  21.6\\% of maximum luminance.' },
+    { text: 'HSV is perceptually uniform.', isTrue: false, explanation: 'HSV is a geometric rearrangement of RGB, not a perceptual model. Two colors 30 degrees apart in hue can look very different or nearly identical depending on their saturation and value.' },
+    { text: 'You can freely average RGB values for smooth blending.', isTrue: false, explanation: 'Averaging gamma-encoded sRGB values without linearizing first produces results that are systematically too dark. Correct alpha blending requires converting to linear light, blending, then re-encoding.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

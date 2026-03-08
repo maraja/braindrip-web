@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Stacking Architecture', desc: 'The foundation of stacking and blending begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Cross-Validated Stacking (Preventing Leakage)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes stacking and blending work.' },
-    { title: '3. Blending (Holdout-Based Stacking)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Multi-Level Stacking', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Choosing Diverse Base Learners', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Stacking Architecture', desc: 'The stacking framework consists of two levels:  Level 0 (Base Learners): A set of K diverse models \\&#123;h_1, h_2, , h_K\\&#125; trained on the original features X.' },
+    { title: '2. Cross-Validated Stacking (Preventing Leakage)', desc: 'The critical challenge in stacking is generating unbiased meta-features. If base learners are trained on the full training set and their predictions on the same training set are used to train the meta-learner, the meta-features will be overfit (base models predict their own training data too well),.' },
+    { title: '3. Blending (Holdout-Based Stacking)', desc: 'Blending is a simplified variant of stacking that avoids the complexity of cross-validated meta-feature generation:  Split training data into a training portion (e.g., 70%) and a blending holdout (e.g., 30%). Train all base learners on the training portion.' },
+    { title: '4. Multi-Level Stacking', desc: 'Stacking can be extended to multiple levels:  Level 0: Diverse base learners (Random Forest, XGBoost, LightGBM, neural network, SVM, etc.) Level 1: Meta-learners trained on level-0 predictions (possibly multiple meta-learners) Level 2: A final meta-meta-learner combining level-1 outputs  In.' },
+    { title: '5. Choosing Diverse Base Learners', desc: 'The effectiveness of stacking depends critically on diversity among base learners. If all base models make the same errors, the meta-learner has nothing to exploit.' },
+    { title: '6. The Meta-Learner', desc: 'The meta-learner should typically be simple and regularized:  Linear/logistic regression with regularization (ridge, lasso): Most common choice. Lasso can perform implicit model selection by zeroing out weights for unhelpful base learners.' },
 ];
 
 export default function WalkthroughMLFStackingAndBlending() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFStackingAndBlending() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Stacking and Blending — Step by Step
+          Stacking and Blending \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how stacking and blending works, one stage at a time.

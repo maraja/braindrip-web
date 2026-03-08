@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Shannon Entropy', desc: 'The foundation of information theory begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Cross-Entropy', desc: 'At this stage, the key transformation occurs — the core mechanism that makes information theory work.' },
-    { title: '3. KL Divergence', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Mutual Information', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Information Gain and Decision Trees', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Shannon Entropy', desc: 'The entropy of a discrete random variable X with PMF p(x) is:  [equation]  By convention, 0  0 = 0 (justified by continuity). When using _2, entropy is measured in bits; with , in nats.' },
+    { title: '2. Cross-Entropy', desc: 'The cross-entropy between a true distribution p and a model distribution q is:  [equation]  Cross-entropy measures the average number of bits needed to encode data from p using a code optimized for q.' },
+    { title: '3. KL Divergence', desc: 'The Kullback-Leibler divergence from q to p is:  [equation]  Key properties:  D_&#123;KL&#125;(p \\| q)  0 (Gibbs\' inequality), with equality iff p = q. Not symmetric: D_&#123;KL&#125;(p \\ p) in general.' },
+    { title: '4. Mutual Information', desc: 'The mutual information between X and Y measures how much knowing one reduces uncertainty about the other:  [equation]  where H(Xy) is the conditional entropy. Properties:  I(X; Y)  0, with equality iff X and Y are independent.' },
+    { title: '5. Information Gain and Decision Trees', desc: 'Information gain is the reduction in entropy achieved by splitting on a feature:  [equation]  This is exactly mutual information. Decision tree algorithms like ID3 and C4.5 greedily select the feature with maximum information gain at each split.' },
+    { title: '6. Connection to ML Loss Functions', desc: 'The deep connection between information theory and ML loss functions:' },
 ];
 
 export default function WalkthroughMLFInformationTheory() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFInformationTheory() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Information Theory — Step by Step
+          Information Theory \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how information theory works, one stage at a time.

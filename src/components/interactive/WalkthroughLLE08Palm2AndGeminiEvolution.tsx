@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. PaLM (April 2022)', desc: 'The foundation of palm 2 and the gemini evolution begins with understanding its core input requirements and initial setup.' },
-    { title: '2. PaLM 2 (May 2023)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes palm 2 and the gemini evolution work.' },
-    { title: '3. Gemini 1.0 (December 2023)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Gemini 1.5 (February 2024)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. PaLM (April 2022)', desc: 'PaLM was a 540B parameter dense decoder-only Transformer, trained on 780 billion tokens across 6,144 TPU v4 chips using Google\'s Pathways system. The Pathways infrastructure was itself a major innovation: it allowed a single model to be trained across multiple TPU pods, enabling scales that were.' },
+    { title: '2. PaLM 2 (May 2023)', desc: 'PaLM 2 was Google\'s reset. While the exact parameter count was not officially disclosed, it is estimated at approximately 340 billion parameters — significantly smaller than PaLM\'s 540B.' },
+    { title: '3. Gemini 1.0 (December 2023)', desc: 'Gemini 1.0 represented Google\'s pivot to natively multimodal training. Released in three sizes — Ultra, Pro, and Nano — it was trained from the ground up on interleaved text, images, audio, and video data.' },
+    { title: '4. Gemini 1.5 (February 2024)', desc: 'Gemini 1.5 was the architectural turning point. By adopting Mixture of Experts, Google achieved Pro-level quality that matched the previous generation\'s Ultra — at significantly lower inference cost.' },
 ];
 
 export default function WalkthroughLLE08Palm2AndGeminiEvolution() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE08Palm2AndGeminiEvolution() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          PaLM 2 and the Gemini Evolution — Step by Step
+          PaLM 2 and the Gemini Evolution \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how palm 2 and the gemini evolution works, one stage at a time.

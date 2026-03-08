@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Basic Protocol', desc: 'The foundation of progressive resizing begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Implementation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes progressive resizing work.' },
-    { title: '3. Resolution Changes and BN Statistics', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Connection to EfficientNet Compound Scaling', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. FixRes: Addressing the Train-Test Resolution Discrepancy', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Basic Protocol', desc: 'A typical progressive resizing schedule for ImageNet:  Since computational cost scales roughly as O(resolution^2), a 128x128 image requires ~3.1x fewer FLOPs per sample than 224x224.' },
+    { title: '2. Resolution Changes and BN Statistics', desc: 'When resolution changes, the activation statistics shift. There are two strategies:  Reset BN running statistics: Run a few forward passes on the new resolution to re-estimate running mean and variance before resuming training.' },
+    { title: '3. Connection to EfficientNet Compound Scaling', desc: 'EfficientNet (Tan & Le, 2019) showed that resolution, width, and depth should scale together. Progressive resizing can be seen as a temporal version of this -- starting at a lower point in the scaling curve and climbing up during training.' },
+    { title: '4. FixRes: Addressing the Train-Test Resolution Discrepancy', desc: '(2019) demonstrated that models trained at one resolution and tested at another suffer from a distribution shift in the crop statistics. Training at 224x224 with random resized crop means the model typically sees objects at a certain scale.' },
 ];
 
 export default function WalkthroughCVCProgressiveResizing() {
@@ -17,10 +16,10 @@ export default function WalkthroughCVCProgressiveResizing() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Progressive Resizing — Step by Step
+          Progressive Resizing \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how progressive resizing works, one stage at a time.

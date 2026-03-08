@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Classical State Space Models — S4 (2021)', desc: 'The foundation of state space models and mamba begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Selectivity Problem — Why S4 Was Not Enough', desc: 'At this stage, the key transformation occurs — the core mechanism that makes state space models and mamba work.' },
-    { title: '3. Mamba — Selective State Spaces (December 2023)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Mamba-2 — Unifying Transformers and SSMs (2024)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Hybrid Architectures — The Pragmatic Path (2024-2025)', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Classical State Space Models — S4 (2021)', desc: 'Albert Gu et al. introduced the Structured State Space Sequence Model (S4) in late 2021.' },
+    { title: '2. The Selectivity Problem — Why S4 Was Not Enough', desc: 'Despite its strengths on long-range tasks, S4 had a fundamental limitation: the state transition matrices A and B were input-independent. Every token was processed through the same dynamics, regardless of content.' },
+    { title: '3. Mamba — Selective State Spaces (December 2023)', desc: 'Gu and Dao (now together) introduced Mamba, which solved the selectivity problem elegantly. In Mamba, the B, C, and delta (discretization step) parameters are functions of the input — they change at every time step based on what the model is processing.' },
+    { title: '4. Mamba-2 — Unifying Transformers and SSMs (2024)', desc: 'Dao and Gu published Mamba-2, which revealed a deep mathematical connection: the selective state space mechanism can be expressed as a structured form of attention with specific masking and decomposition properties.' },
+    { title: '5. Hybrid Architectures — The Pragmatic Path (2024-2025)', desc: 'Rather than replacing Transformers entirely, hybrids emerged as the practical direction. AI21\'s Jamba (March 2024) interleaved Transformer attention layers with Mamba layers in a 52B-parameter MoE model.' },
 ];
 
 export default function WalkthroughLLE05StateSpaceModelsAndMamba() {
@@ -17,10 +17,10 @@ export default function WalkthroughLLE05StateSpaceModelsAndMamba() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          State Space Models and Mamba — Step by Step
+          State Space Models and Mamba \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how state space models and mamba works, one stage at a time.

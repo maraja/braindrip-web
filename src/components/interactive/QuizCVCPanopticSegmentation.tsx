@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCPanopticSegmentation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'COCO Panoptic has 80 thing classes and 53 stuff classes (133 total).', isTrue: true, explanation: 'This is a key technical detail of Panoptic Segmentation.' },
-    { text: 'Cityscapes Panoptic has 8 thing classes and 11 stuff classes (19 total).', isTrue: true, explanation: 'This is a key technical detail of Panoptic Segmentation.' },
-    { text: 'Top models exceed 67 PQ.', isTrue: true, explanation: 'This is a key technical detail of Panoptic Segmentation.' },
+    { text: 'Panoptic segmentation is just running instance and semantic segmentation together.', isTrue: false, explanation: 'While early approaches did this, modern methods (Mask2Former, kMaX-DeepLab) use architectures where the unified nature is fundamental, not a post-hoc merge. The constraints (no overlaps, no unlabeled pixels) also require explicit resolution strategies.' },
+    { text: 'Panoptic segmentation unifies semantic segmentation and instance segmentation into a single coherent output, assigning every pixel both a class label and an instance ID -- covering both "stuff" (amorphous regions) and "things" (countable objects).', isTrue: true, explanation: 'This captures the core definition of Panoptic Segmentation.' },
+    { text: 'Panoptic Segmentation is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Panoptic Segmentation is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

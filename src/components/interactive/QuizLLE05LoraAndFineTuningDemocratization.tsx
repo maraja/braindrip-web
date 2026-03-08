@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE05LoraAndFineTuningDemocratization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Low-Rank Adaptation (LoRA) transformed LLM fine-tuning from a privilege of well-funded labs into something any developer with a single GPU could do, by training only 0.1-1% of a model\'s parameters through injected low-rank matrices.', isTrue: true, explanation: 'This captures the core purpose of LoRA and Fine-Tuning Democratization.' },
-    { text: 'LoRA and Fine-Tuning Democratization is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding LoRA and Fine-Tuning Democratization is important for building on more advanced topics.' },
-    { text: 'LoRA and Fine-Tuning Democratization is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding LoRA and Fine-Tuning Democratization is important for building on more advanced topics.' },
+    { text: 'LoRA is just a cheaper version of full fine-tuning with worse results.', isTrue: false, explanation: 'On many tasks, LoRA matches full fine-tuning performance. For instruction-following and domain adaptation, the gap is typically negligible.' },
+    { text: 'You need LoRA adapters for every task.', isTrue: false, explanation: 'A well-trained general LoRA adapter (like those in Alpaca or Vicuna) covers a broad range of tasks. Task-specific adapters are only needed for specialized domains or when maximizing performance on a narrow benchmark.' },
+    { text: 'Lower rank is always worse.', isTrue: false, explanation: 'For many adaptation tasks, rank 4-8 is sufficient. Higher rank adds capacity for more complex adaptations but also risks overfitting on small datasets.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -4,7 +4,7 @@ const DETAILS = [
     { label: 'Label cost', detail: 'drives paradigm choice: supervised requires full labels, semi-supervised requires few, self-supervised requires none.' },
     { label: 'Data volume', detail: 'Self-supervised methods thrive on massive unlabeled corpora; supervised methods need proportionally more labels as complexity grows.' },
     { label: 'Multi-task learning', detail: 'trains on multiple related tasks simultaneously, sharing representations across them.' },
-    { label: 'Few-shot', detail: 'and **zero-shot** learning aim to generalize from very few (or zero) labeled examples, often by leveraging transfer from pre-trained models.' },
+    { label: 'Few-shot', detail: 'and zero-shot learning aim to generalize from very few (or zero) labeled examples, often by leveraging transfer from pre-trained models.' },
 ];
 
 export default function ExplorerMLFTypesOfMachineLearning() {
@@ -18,10 +18,10 @@ export default function ExplorerMLFTypesOfMachineLearning() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Types of Machine Learning — Key Details Explorer
+          Types of Machine Learning \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of types of machine learning.
+          Click each card to explore the technical details.
         </p>
       </div>
 

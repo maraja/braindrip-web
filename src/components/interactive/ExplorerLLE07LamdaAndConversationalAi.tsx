@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Parameters', detail: '137 billion (decoder-only Transformer)' },
-    { label: 'Pre-training data', detail: '1.56 trillion words from Infiniset (dialogue-heavy mix)' },
+    { label: 'Pre-training data', detail: '56 trillion words from Infiniset (dialogue-heavy mix)' },
     { label: 'Tokenizer', detail: 'BPE with 32K vocabulary' },
     { label: 'Fine-tuning dimensions', detail: 'Quality (SSI), Safety, Groundedness' },
     { label: 'Published', detail: 'January 2022 by Thoppilan et al. at Google' },
@@ -20,10 +20,10 @@ export default function ExplorerLLE07LamdaAndConversationalAi() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          LaMDA and Conversational AI — Key Details Explorer
+          LaMDA and Conversational AI \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of lamda and conversational ai.
+          Click each card to explore the technical details.
         </p>
       </div>
 

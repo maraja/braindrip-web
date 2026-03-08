@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Event Types and Triggers', desc: 'The foundation of event extraction begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The ACE Event Ontology', desc: 'At this stage, the key transformation occurs — the core mechanism that makes event extraction work.' },
-    { title: '3. Argument Role Identification', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Classical Approaches', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Neural Event Extraction', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Event Types and Triggers', desc: 'An event trigger is the word or phrase that most clearly indicates the event\'s occurrence -- typically a verb ("attacked," "married," "resigned") or a nominalization ("explosion," "acquisition," "election").' },
+    { title: '2. The ACE Event Ontology', desc: 'ACE 2005 defines: 8 event types: Life, Movement, Transaction, Business, Conflict, Contact, Personnel, Justice 33 event subtypes: e.g., Life:Be-Born, Life:Die, Conflict:Attack, Conflict:Demonstrate, Transaction:Transfer-Ownership, Personnel:Start-Position, Justice:Arrest-Jail 35 argument roles: e.g.' },
+    { title: '3. Argument Role Identification', desc: 'Once a trigger is detected, the system must identify which entities in the sentence fill which argument roles. This is typically modeled as:  Candidate identification: All entity mentions in the sentence (from NER) are considered as candidate arguments.' },
+    { title: '4. Classical Approaches', desc: 'Pipeline models: Separate classifiers for trigger detection and argument extraction, often using feature-rich SVMs or MaxEnt models. Features include lexical features, entity types, dependency paths between triggers and argument candidates, and positional features.' },
+    { title: '5. Neural Event Extraction', desc: 'Modern systems use transformer-based architectures:  BERT-based classification: Encode the sentence with BERT, classify each token for trigger type, then for each detected trigger, classify each entity mention for argument role.' },
+    { title: '6. Document-Level Event Extraction', desc: 'Sentence-level extraction misses arguments scattered across multiple sentences. Document-level event extraction addresses this:  Cross-sentence argument extraction: An event trigger in sentence 3 may have its Place argument mentioned only in sentence 1.' },
 ];
 
 export default function WalkthroughNLPEventExtraction() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPEventExtraction() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Event Extraction — Step by Step
+          Event Extraction \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how event extraction works, one stage at a time.

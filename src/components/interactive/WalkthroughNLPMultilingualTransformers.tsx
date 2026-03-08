@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. mBERT: Multilingual BERT (Devlin et al., 2019)', desc: 'The foundation of multilingual transformers begins with understanding its core input requirements and initial setup.' },
-    { title: '2. XLM: Cross-Lingual Language Model (Conneau & Lample, 2019)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes multilingual transformers work.' },
-    { title: '3. XLM-R: XLM-RoBERTa (Conneau et al., 2020)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Curse of Multilinguality', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Language-Specific Adapters', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. mBERT: Multilingual BERT (Devlin et al., 2019)', desc: 'The original multilingual BERT was trained on Wikipedia text from the 104 languages with the largest Wikipedias. Key design choices:  Shared WordPiece vocabulary: A single 110K-token vocabulary covering all 104 languages.' },
+    { title: '2. XLM: Cross-Lingual Language Model (Conneau & Lample, 2019)', desc: 'XLM introduced explicit cross-lingual pre-training objectives:  Causal Language Modeling (CLM): Standard left-to-right language modeling, monolingually. Masked Language Modeling (MLM): Same as BERT, applied to monolingual text from each language.' },
+    { title: '3. XLM-R: XLM-RoBERTa (Conneau et al., 2020)', desc: 'XLM-R scaled up multilingual pre-training to demonstrate that massive monolingual data alone, without parallel corpora, can achieve state-of-the-art cross-lingual transfer:  Training data: CC-100 corpus, 2.5TB of CommonCrawl data filtered for 100 languages.' },
+    { title: '4. The Curse of Multilinguality', desc: '(2020) identified a critical trade-off: for a fixed model capacity, adding more languages initially improves transfer to low-resource languages (positive transfer) but eventually degrades performance on all languages (negative transfer). They found:  Going from 7 to 15 languages: +1.' },
+    { title: '5. Language-Specific Adapters', desc: 'Adapter modules (Houlsby et al., 2019; Pfeiffer et al., 2020) address the curse of multilinguality by inserting small trainable bottleneck layers into the frozen multilingual backbone:  where W_down projects from dimension d to bottleneck dimension m (typically m = 64 or 128), and W_up projects.' },
 ];
 
 export default function WalkthroughNLPMultilingualTransformers() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPMultilingualTransformers() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Multilingual Transformers — Step by Step
+          Multilingual Transformers \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how multilingual transformers works, one stage at a time.

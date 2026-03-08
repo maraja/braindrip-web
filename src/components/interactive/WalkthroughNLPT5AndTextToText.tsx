@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Text-to-Text Framework', desc: 'The foundation of t5 and text-to-text begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Architecture: Encoder-Decoder Transformer', desc: 'At this stage, the key transformation occurs — the core mechanism that makes t5 and text-to-text work.' },
-    { title: '3. Pre-Training: Span Corruption', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The C4 Dataset', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. T5 Model Sizes', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Text-to-Text Framework', desc: 'Every task is formatted with a task-specific text prefix followed by the input, and the model generates the output as text:  Even regression tasks (like semantic similarity scores) are formatted as text: the model generates the string "4.2" rather than outputting a floating-point number.' },
+    { title: '2. Architecture: Encoder-Decoder Transformer', desc: 'T5 uses the original encoder-decoder transformer architecture (Vaswani et al., 2017), with some modifications:  Encoder: Bidirectional self-attention (like BERT) processes the input text.' },
+    { title: '3. Pre-Training: Span Corruption', desc: 'T5\'s pre-training objective is span corruption -- a denoising task where contiguous spans of tokens are replaced with sentinel tokens, and the model must generate the missing spans:  Approximately 15% of tokens are masked, with an average span length of 3 tokens.' },
+    { title: '4. The C4 Dataset', desc: 'T5 was pre-trained on the Colossal Clean Crawled Corpus (C4) -- approximately 750GB of English text extracted from Common Crawl with aggressive quality filtering: Removed pages with fewer than 5 sentences. Removed pages with profanity or placeholder text ("lorem ipsum").' },
+    { title: '5. T5 Model Sizes', desc: 'The 11B model achieved SOTA on GLUE (90.3), SuperGLUE (88.9), SQuAD (96.2 F1), and CNN/DailyMail summarization (43.5 ROUGE-1) at the time of publication.' },
+    { title: '6. Flan-T5: Instruction Tuning', desc: '(2022) applied instruction tuning to T5, creating Flan-T5. The model was fine-tuned on 1,836 tasks phrased as natural language instructions (from the Flan collection).' },
 ];
 
 export default function WalkthroughNLPT5AndTextToText() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPT5AndTextToText() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          T5 and Text-to-Text — Step by Step
+          T5 and Text-to-Text \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how t5 and text-to-text works, one stage at a time.

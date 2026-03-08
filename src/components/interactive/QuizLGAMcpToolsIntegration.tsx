@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAMcpToolsIntegration() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Install with pip install langchain-mcp-adapters.', isTrue: true, explanation: 'This is a key technical detail of MCP Tools Integration.' },
-    { text: 'MultiServerMCPClient manages connections to one or more MCP servers, each specified with a command and args to start the server process.', isTrue: true, explanation: 'This is a key technical detail of MCP Tools Integration.' },
-    { text: 'MCP tools are converted to BaseTool instances, making them compatible with bind_tools(), ToolNode, and all LangGraph agent patterns.', isTrue: true, explanation: 'This is a key technical detail of MCP Tools Integration.' },
+    { text: 'MCP tools require a different integration pattern than LangChain tools.', isTrue: false, explanation: 'After conversion by the adapter, MCP tools implement BaseTool and are used identically to custom or community tools. "MCP servers can access LangGraph state directly." They cannot -- they run as separate processes.' },
+    { text: 'The Model Context Protocol (MCP) lets LangGraph agents use tools hosted on external servers -- connecting to databases, APIs, and services through a standardized protocol without writing custom tool implementations.', isTrue: true, explanation: 'This captures the core definition of MCP Tools Integration.' },
+    { text: 'MCP Tools Integration is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding MCP Tools Integration is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

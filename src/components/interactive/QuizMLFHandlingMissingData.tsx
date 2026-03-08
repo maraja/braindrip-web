@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFHandlingMissingData() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Impute after splitting, never before.', isTrue: true, explanation: 'This is a key technical detail of Handling Missing Data.' },
-    { text: 'Compute imputation parameters (means, medians, KNN distances) on the training set and apply them to validation and test sets.', isTrue: true, explanation: 'This is a key technical detail of Handling Missing Data.' },
-    { text: 'Otherwise, test-set information leaks into training (see Data Splitting and Sampling).', isTrue: true, explanation: 'This is a key technical detail of Handling Missing Data.' },
+    { text: 'Just drop rows with missing values.', isTrue: false, explanation: 'Listwise deletion is only unbiased under MCAR, which is rarely verified and even more rarely true. Under MAR or MNAR, it introduces systematic bias.' },
+    { text: 'Create m imputed datasets (each with different plausible values), fit the model on each, and pool the results.', isTrue: true, explanation: 'This propagates imputation uncertainty into downstream estimates -- critical for statistical inference, less common in pure prediction tasks.' },
+    { text: 'Deletion, imputation, and model-based approaches -- the strategy depends on why data is missing, not just how much.', isTrue: true, explanation: 'This captures the core definition of Handling Missing Data.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

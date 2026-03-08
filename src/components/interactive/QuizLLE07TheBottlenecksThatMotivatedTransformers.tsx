@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE07TheBottlenecksThatMotivatedTransformers() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Three fundamental limitations of RNN-based NLP — sequential computation preventing parallelism, vanishing gradients limiting memory, and fixed-length bottleneck vectors losing information — created an urgent need for a fully parallel architecture, setting the stage for the Transformer.', isTrue: true, explanation: 'This captures the core purpose of The Bottlenecks That Motivated Transformers.' },
-    { text: 'The Bottlenecks That Motivated Transformers is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding The Bottlenecks That Motivated Transformers is important for building on more advanced topics.' },
-    { text: 'The Bottlenecks That Motivated Transformers is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding The Bottlenecks That Motivated Transformers is important for building on more advanced topics.' },
+    { text: 'The Transformer was invented to solve a single bottleneck.', isTrue: false, explanation: 'It addressed all three simultaneously. Replacing recurrence with self-attention solved the parallelization problem; direct attention between all positions solved the gradient flow problem; context-dependent representations at every position solved the compression problem.' },
+    { text: 'RNNs require O(n) sequential operations for sequence length n; Transformers require O(1) (all positions processed in parallel)', isTrue: true, explanation: 'RNNs require O(n) sequential operations for sequence length n; Transformers require O(1) (all positions processed in parallel)' },
+    { text: 'Attention already solved these bottlenecks.', isTrue: false, explanation: 'Attention (Bahdanau, Luong) addressed the fixed-length bottleneck between encoder and decoder but did not address sequential processing within the encoder or decoder. The key Transformer insight was applying attention everywhere — self-attention within each layer, not just cross-attention between encoder and decoder.' },
+    { text: 'Empirically ~200 tokens (Khandelwal et al., 2018); Transformers scale to the full context window', isTrue: true, explanation: 'Empirically ~200 tokens (Khandelwal et al., 2018); Transformers scale to the full context window' },
+    { text: 'LSTMs are fundamentally inferior to Transformers.', isTrue: false, explanation: 'LSTMs have O(n) computational complexity per sequence, while Transformer self-attention is O(n^2). For very long sequences, LSTMs are actually more computationally efficient — they just can\'t parallelize.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

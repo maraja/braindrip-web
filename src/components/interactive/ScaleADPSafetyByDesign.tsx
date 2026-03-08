@@ -1,18 +1,26 @@
 import { useState } from 'react';
-const baseStyle = { background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: 14, padding: '1.25rem', margin: '1.5rem 0', fontFamily: 'system-ui, sans-serif' };
+const baseStyle = { background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: 14, padding: '1.25rem', margin: '1.5rem 0', fontFamily: "system-ui, sans-serif" };
 export default function ScaleADPSafetyByDesign() {
   const [revealed, setRevealed] = useState(false);
   return (
     <div style={baseStyle}>
       <p style={{ fontSize: '0.8rem', fontWeight: 700, color: '#2C3E2D', marginBottom: 10, letterSpacing: '0.05em' }}>\u26A1 REAL-WORLD IMPACT</p>
-      <p style={{ fontSize: '0.9rem', color: '#3D4F3E', lineHeight: 1.5, marginBottom: 12 }}>Understanding Safety by Design has real implications for how AI systems are built and deployed. What makes this concept especially important in practice?</p>
+      <p style={{ fontSize: '0.9rem', color: '#3D4F3E', lineHeight: 1.5, marginBottom: 12 }}>How does Safety by Design matter in practice?</p>
       {!revealed ? (
         <button onClick={() => setRevealed(true)} style={{ padding: '6px 16px', borderRadius: 20, border: '1px solid #C76B4A', background: 'transparent', color: '#C76B4A', fontSize: '0.8rem', cursor: 'pointer', fontWeight: 600 }}>
           Reveal Impact \u2192
         </button>
       ) : (
-        <div style={{ padding: '0.75rem 1rem', background: '#C76B4A' + '0C', borderRadius: 10, borderLeft: '3px solid #C76B4A' }}>
-          <p style={{ fontSize: '0.9rem', color: '#2C3E2D', lineHeight: 1.5, margin: 0, fontWeight: 500 }}>### Agents Have Real-World Side Effects  Unlike a chatbot that only generates text, agents take actions: sending emails, modifying databases, executing code, making purchases. A safety failure in a chatbot produces an embarrassing response.</p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          <div style={{ padding: '0.75rem 1rem', background: '#C76B4A0C', borderRadius: 10, borderLeft: '3px solid #C76B4A' }}>
+            <p style={{ fontSize: '0.82rem', color: '#2C3E2D', lineHeight: 1.5, margin: 0 }}><strong>Agents Have Real-World Side Effects:</strong> Unlike a chatbot that only generates text, agents take actions: sending emails, modifying databases, executing code, making purchases. A safety failure in a chatbot produces an embarrassing response.</p>
+          </div>
+          <div style={{ padding: '0.75rem 1rem', background: '#C76B4A0C', borderRadius: 10, borderLeft: '3px solid #C76B4A' }}>
+            <p style={{ fontSize: '0.82rem', color: '#2C3E2D', lineHeight: 1.5, margin: 0 }}><strong>Regulatory and Compliance Requirements:</strong> As agent systems handle sensitive data and make consequential decisions, they fall under existing regulatory frameworks (GDPR, HIPAA, SOC2, financial regulations). These frameworks require documented access controls, audit trails, and data protection measures -- exactly the mechanisms that safety by design provides.</p>
+          </div>
+          <div style={{ padding: '0.75rem 1rem', background: '#C76B4A0C', borderRadius: 10, borderLeft: '3px solid #C76B4A' }}>
+            <p style={{ fontSize: '0.82rem', color: '#2C3E2D', lineHeight: 1.5, margin: 0 }}><strong>The Cost of Retrofitting Safety:</strong> Organizations that build agents without safety architecture and then try to add safety later find it 3-5x more expensive than designing it in from the start. This is because safety constraints affect fundamental architectural decisions: how tools are invoked, how state is managed, how outputs are delivered.</p>
+          </div>
         </div>
       )}
     </div>

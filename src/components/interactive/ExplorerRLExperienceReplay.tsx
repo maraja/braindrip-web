@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Buffer size', detail: 'DQN uses $N = 1{,}000{,}000$ transitions. Larger buffers retain more diverse data but consume more memory and may retain very stale transitions.' },
-    { label: 'Minibatch size', detail: 'Typically $B = 32$ for DQN. Larger batches (64--256) can improve stability but increase computation per update.' },
+    { label: 'Buffer size', detail: 'DQN uses N = 1&#123;,&#125;000&#123;,&#125;000 transitions. Larger buffers retain more diverse data but consume more memory and may retain very stale transitions.' },
+    { label: 'Minibatch size', detail: 'Typically B = 32 for DQN. Larger batches (64--256) can improve stability but increase computation per update.' },
     { label: 'Memory cost', detail: 'Storing 1M Atari transitions naively requires ~7 GB (84x84 uint8 frames). Optimization: store frames once and reconstruct stacks by index, reducing memory to ~1.5 GB.' },
-    { label: 'PER hyperparameters', detail: '$\\alpha = 0.6$, $\\beta_0 = 0.4$ (annealed to 1.0), $\\epsilon = 10^{-6}$ are standard values from the PER paper.' },
+    { label: 'PER hyperparameters', detail: '= 0.6, _0 = 0.4 (annealed to 1.0),  = 10^&#123;-6&#125; are standard values from the PER paper.' },
     { label: 'Replay ratio', detail: 'The number of gradient updates per environment step. DQN uses a replay ratio of 1 (one gradient step per 4 environment frames). Higher replay ratios improve sample efficiency but risk overfitting to the buffer.' },
     { label: 'Warm-up', detail: 'DQN fills the buffer with 50,000 random transitions before training begins, ensuring initial batches have sufficient diversity.' },
 ];
@@ -20,10 +20,10 @@ export default function ExplorerRLExperienceReplay() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Experience Replay — Key Details Explorer
+          Experience Replay \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of experience replay.
+          Click each card to explore the technical details.
         </p>
       </div>
 

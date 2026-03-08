@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Core Components', desc: 'The foundation of ai agent begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Runtime Layer', desc: 'At this stage, the key transformation occurs — the core mechanism that makes ai agent work.' },
-    { title: '3. Tool Integration', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. System Prompt and Identity', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Core Components', desc: 'Every AI agent architecture includes three fundamental components:  Perception — The agent\'s ability to receive and interpret information from its environment.' },
+    { title: '2. The Runtime Layer', desc: 'The agent does not run inside the LLM. The LLM is a stateless function that takes text in and produces text out.' },
+    { title: '3. Tool Integration', desc: 'Tools are the agent\'s hands. A typical agent might have access to 5-30 tools, each defined by a JSON schema.' },
+    { title: '4. System Prompt and Identity', desc: 'The system prompt defines the agent\'s role, capabilities, constraints, and behavioral guidelines. It is the equivalent of the written instructions you hand your human assistant.' },
 ];
 
 export default function WalkthroughAACWhatIsAnAiAgent() {
@@ -16,13 +16,13 @@ export default function WalkthroughAACWhatIsAnAiAgent() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          AI Agent — Step by Step
+          What Is an AI Agent? \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Walk through how ai agent works, one stage at a time.
+          Walk through how what is an ai agent? works, one stage at a time.
         </p>
       </div>
 

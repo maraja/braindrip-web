@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Policy gradient theorem', detail: '(Sutton et al., 2000): $\\nabla_\\theta J(\\theta) = \\mathbb{E}_\\pi \\left[ \\nabla_\\theta \\log \\pi_\\theta(a \\mid s) \\cdot Q^\\pi(s, a) \\right]$. This enables gradient-based optimization of stochastic policies.' },
-    { label: 'Policy entropy', detail: '$H(\\pi(\\cdot \\mid s)) = -\\sum_a \\pi(a \\mid s) \\log \\pi(a \\mid s)$ measures exploration. Maximum entropy RL (e.g., SAC) adds an entropy bonus to the objective.' },
+    { label: 'Policy gradient theorem', detail: '(Sutton et al., 2000): _ J() = &#123;E&#125;_ [ _  _(a  s)  Q^(s, a) ]. This enables gradient-based optimization of stochastic policies.' },
+    { label: 'Policy entropy', detail: 'H((  s)) = -_a (a  s)  (a  s) measures exploration. Maximum entropy RL (e.g., SAC) adds an entropy bonus to the objective.' },
 ];
 
 export default function ExplorerRLPolicies() {
@@ -16,10 +16,10 @@ export default function ExplorerRLPolicies() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Policies — Key Details Explorer
+          Policies \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of policies.
+          Click each card to explore the technical details.
         </p>
       </div>
 

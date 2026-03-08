@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFAbTestingForMl() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Novelty and primacy effects: Users may initially engage more (or less) with a new experience simply because it is different.', isTrue: true, explanation: 'This is a key technical detail of A/B Testing for ML.' },
-    { text: 'Run tests long enough for these effects to wash out.', isTrue: true, explanation: 'This is a key technical detail of A/B Testing for ML.' },
-    { text: 'Network effects and interference: If users interact with each other (social platforms), treating one user may affect control users, violating the stable unit treatment value assumption (SUTVA).', isTrue: true, explanation: 'This is a key technical detail of A/B Testing for ML.' },
+    { text: 'Statistical significance means practical significance.', isTrue: false, explanation: 'A statistically significant +0.01% improvement in click-through rate may not justify the engineering cost of deploying a new model. Always evaluate effect size, not just p-values.' },
+    { text: 'Users may initially engage more (or less) with a new experience simply because it is different.', isTrue: true, explanation: 'Run tests long enough for these effects to wash out.' },
+    { text: 'If users interact with each other (social platforms), treating one user may affect control users, violating the stable unit treatment value assumption (SUTVA).', isTrue: true, explanation: 'Solutions include cluster randomization.' },
+    { text: 'Define metrics that must not degrade (e.g., page load time, crash rate).', isTrue: true, explanation: 'A model that improves revenue but increases crashes is not a win.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

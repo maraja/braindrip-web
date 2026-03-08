@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Curse of dimensionality', detail: 'In high dimensions, the ratio of the distance to the nearest and farthest neighbor approaches 1, making distance-based methods (KNN, kernel methods) less discriminative. L1 distance degrades more gracefully than L2.' },
-    { label: 'Matrix norms', detail: 'The Frobenius norm $\\|A\\|_F = \\sqrt{\\sum_{ij} A_{ij}^2}$ is the L2 norm of the vectorized matrix. The spectral norm $\\|A\\|_2 = \\sigma_{\\max}(A)$ is the largest singular value.' },
-    { label: 'Dual norms', detail: 'The dual of $L^p$ is $L^q$ where $\\frac{1}{p} + \\frac{1}{q} = 1$. This duality appears in optimization (Lagrangian duality of regularized problems).' },
-    { label: 'Kernel trick', detail: 'Many kernel functions (RBF, polynomial) are defined in terms of norms: $k(\\mathbf{x}, \\mathbf{y}) = \\exp(-\\gamma\\|\\mathbf{x} - \\mathbf{y}\\|^2)$.' },
+    { label: 'Matrix norms', detail: 'The Frobenius norm \\_2 = _&#123;&#125;(A) is the largest singular value.' },
+    { label: 'Dual norms', detail: 'The dual of L^p is L^q where &#123;1&#125;&#123;p&#125; + &#123;1&#125;&#123;q&#125; = 1. This duality appears in optimization (Lagrangian duality of regularized problems).' },
+    { label: 'Kernel trick', detail: 'Many kernel functions (RBF, polynomial) are defined in terms of norms: k(x, y) = (-\\^2).' },
 ];
 
 export default function ExplorerMLFNormsAndDistanceMetrics() {
@@ -18,10 +18,10 @@ export default function ExplorerMLFNormsAndDistanceMetrics() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Norms and Distance Metrics — Key Details Explorer
+          Norms and Distance Metrics \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of norms and distance metrics.
+          Click each card to explore the technical details.
         </p>
       </div>
 

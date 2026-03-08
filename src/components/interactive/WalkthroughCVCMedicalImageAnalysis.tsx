@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Imaging Modalities', desc: 'The foundation of medical image analysis begins with understanding its core input requirements and initial setup.' },
-    { title: '2. U-Net and Its Dominance', desc: 'At this stage, the key transformation occurs — the core mechanism that makes medical image analysis work.' },
-    { title: '3. Handling Limited Data', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. 3D Volumetric Processing', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Regulatory Pathway', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Imaging Modalities', desc: 'Radiology: CT (3D volumes, ~512x512xN voxels, Hounsfield units), MRI (multiple sequences -- T1, T2, FLAIR), X-ray (2D projection). Pathology: Whole-slide images (WSIs) at 40x magnification, often 100,000 x 100,000 pixels.' },
+    { title: '2. U-Net and Its Dominance', desc: 'U-Net (Ronneberger et al., 2015) remains the backbone of medical image segmentation. Its encoder-decoder architecture with skip connections preserves spatial detail critical for precise boundary delineation.' },
+    { title: '3. Handling Limited Data', desc: 'Medical datasets are small (often 100--1,000 cases) due to annotation cost (expert radiologist time) and privacy constraints (HIPAA, GDPR). Transfer learning: Pretrain on ImageNet (even though natural images differ from medical ones) then fine-tune.' },
+    { title: '4. 3D Volumetric Processing', desc: 'CT and MRI scans are 3D. Two approaches:  2D slice-by-slice: Process each axial slice independently.' },
+    { title: '5. Regulatory Pathway', desc: 'In the United States, medical AI software is regulated as a Software as a Medical Device (SaMD) by the FDA:  510(k): Substantial equivalence to a predicate device. Most AI-based tools use this pathway.' },
 ];
 
 export default function WalkthroughCVCMedicalImageAnalysis() {
@@ -17,10 +17,10 @@ export default function WalkthroughCVCMedicalImageAnalysis() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Medical Image Analysis — Step by Step
+          Medical Image Analysis \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how medical image analysis works, one stage at a time.

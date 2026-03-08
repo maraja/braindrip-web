@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Frame Sampling Approach', desc: 'The foundation of video understanding begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Gemini 1.5 Pro: The Long-Video Breakthrough (2024)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes video understanding work.' },
-    { title: '3. Temporal Reasoning: The Hard Problem', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Extending Image Models to Video (2024)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Applications and Use Cases', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Frame Sampling Approach', desc: 'The simplest approach to video understanding is to sample keyframes at regular intervals and process them as a set of independent images. A 60-second video sampled at 1 frame per second yields 60 images; a vision-language model processes each frame with a visual encoder and feeds the resulting.' },
+    { title: '2. Gemini 1.5 Pro: The Long-Video Breakthrough (2024)', desc: 'Gemini 1.5 Pro (February 2024) transformed video understanding through sheer context length. With a 1 million token context window, it could process up to 1 hour of video by sampling frames and encoding them as visual tokens alongside any audio track.' },
+    { title: '3. Temporal Reasoning: The Hard Problem', desc: 'Temporal reasoning — understanding the order, timing, and causal relationships between events — remains the core challenge in video understanding. Models can typically answer "what" questions about video content (object recognition, scene description) but struggle with "when" and "why" questions.' },
+    { title: '4. Extending Image Models to Video (2024)', desc: 'LLaVA-NeXT-Video (2024) demonstrated that strong image-language models could be extended to video with a straightforward approach: sample N frames uniformly from the video, encode each as image tokens, concatenate them in temporal order, and feed the entire sequence to the LLM.' },
+    { title: '5. Applications and Use Cases', desc: 'Video understanding enables a wide range of practical applications:  Content moderation: Detecting policy violations in user-uploaded video at platform scale Security and surveillance: Identifying events of interest in continuous video feeds Education: Making video lectures searchable, interactive,.' },
 ];
 
 export default function WalkthroughLLE04VideoUnderstanding() {
@@ -17,10 +17,10 @@ export default function WalkthroughLLE04VideoUnderstanding() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Video Understanding — Step by Step
+          Video Understanding \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how video understanding works, one stage at a time.

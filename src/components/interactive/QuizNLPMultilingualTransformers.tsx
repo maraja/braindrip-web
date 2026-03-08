@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPMultilingualTransformers() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'mBERT: 104 languages, 110M parameters, 110K WordPiece vocabulary, trained on Wikipedia only.', isTrue: true, explanation: 'This is a key technical detail of Multilingual Transformers.' },
-    { text: 'XLM: 15--100 languages (depending on configuration), TLM objective requires parallel data from OPUS or similar sources.', isTrue: true, explanation: 'This is a key technical detail of Multilingual Transformers.' },
-    { text: 'XLM-R Base: 100 languages, 270M parameters, 250K SentencePiece vocabulary, trained on 2.5TB CC-100.', isTrue: true, explanation: 'This is a key technical detail of Multilingual Transformers.' },
+    { text: 'mBERT was intentionally designed for cross-lingual transfer.', isTrue: false, explanation: 'mBERT was simply BERT trained on multilingual Wikipedia. Its cross-lingual ability was an emergent, unintended property discovered after release.' },
+    { text: 'More languages always make a better multilingual model.', isTrue: false, explanation: 'The curse of multilinguality shows that for fixed model capacity, adding languages beyond a saturation point (around 30 for a 270M-parameter model) degrades per-language performance. Scaling model size or using adapters is necessary.' },
+    { text: 'Multilingual transformers work well for all 100 covered languages.', isTrue: false, explanation: 'Performance is highly correlated with pre-training data size. Languages with less than 10MB of training data in CC-100 show substantially degraded zero-shot transfer, sometimes performing only marginally above random baselines.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

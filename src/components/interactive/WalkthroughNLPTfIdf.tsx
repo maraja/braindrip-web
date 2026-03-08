@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Term Frequency (TF) Variants', desc: 'The foundation of tf-idf begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Inverse Document Frequency (IDF)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes tf-idf work.' },
-    { title: '3. TF-IDF Weighting', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. L2 Normalization', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Implementation with scikit-learn', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Term Frequency (TF) Variants', desc: 'Given a term t in document d:  Raw count: tf(t, d) = f(t, d), the number of times t appears in d. Log-normalized: tf(t, d) = 1 + log(f(t, d)) if f(t, d) &gt; 0, else 0.' },
+    { title: '2. Inverse Document Frequency (IDF)', desc: 'Given a corpus of N documents and a term t appearing in df(t) documents:  Variants include adding 1 to the denominator to avoid division by zero (smooth IDF):  A word appearing in all N documents gets idf = log(1) = 0 (or near-zero with smoothing).' },
+    { title: '3. TF-IDF Weighting', desc: 'The combined weight is simply:' },
+    { title: '4. L2 Normalization', desc: 'After computing TF-IDF weights, each document vector is typically L2-normalized so that all vectors have unit length:  This allows cosine similarity between documents to be computed as a simple dot product, and prevents longer documents from having inherently larger magnitudes.' },
+    { title: '5. Implementation with scikit-learn', desc: 'The resulting tfidf_matrix is a sparse CSR matrix of shape (n_documents, n_features).' },
 ];
 
 export default function WalkthroughNLPTfIdf() {
@@ -17,10 +17,10 @@ export default function WalkthroughNLPTfIdf() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          TF-IDF — Step by Step
+          TF-IDF \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how tf-idf works, one stage at a time.

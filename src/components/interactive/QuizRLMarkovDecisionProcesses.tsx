@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizRLMarkovDecisionProcesses() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A finite MDP with $|\\mathcal&#123;S&#125;|$ states and $|\\mathcal&#123;A&#125;|$ actions requires $|\\mathcal&#123;S&#125;|^2 \\times |\\mathcal&#123;A&#125;|$ parameters to specify the transition function.', isTrue: true, explanation: 'This is a key technical detail of Markov Decision Processes.' },
-    { text: 'The Markov property is about the state representation, not the environment.', isTrue: true, explanation: 'This is a key technical detail of Markov Decision Processes.' },
-    { text: 'History-dependent environments can still be Markovian if the state is augmented (e.g., using frame stacking in Atari, where DQN concatenates the last 4 frames).', isTrue: true, explanation: 'This is a key technical detail of Markov Decision Processes.' },
+    { text: 'The Markov property means the environment has no memory.', isTrue: false, explanation: 'The environment can have arbitrarily complex dynamics. The Markov property states that the state representation captures all information needed for prediction.' },
+    { text: 'Real-world problems are never truly Markov.', isTrue: false, explanation: 'True in theory, but in practice, a sufficiently rich state representation makes the Markov assumption a reasonable approximation. Deep RL uses neural networks to learn representations that are approximately Markov.' },
+    { text: 'MDPs require discrete states and actions.', isTrue: false, explanation: 'MDPs generalize naturally to continuous spaces. Continuous-state MDPs are standard in control theory and robotics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

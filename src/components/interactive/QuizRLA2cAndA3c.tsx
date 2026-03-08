@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLA2cAndA3c() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Number of workers: 16-32 is standard.', isTrue: true, explanation: 'This is a key technical detail of A2C and A3C.' },
-    { text: 'More workers provide better decorrelation but with diminishing returns and increased communication overhead.', isTrue: true, explanation: 'This is a key technical detail of A2C and A3C.' },
-    { text: 'N-step returns: $n = 5$ is the canonical choice from the original A3C paper.', isTrue: true, explanation: 'This is a key technical detail of A2C and A3C.' },
+    { text: 'A3C is better than A2C because it is asynchronous.', isTrue: false, explanation: 'Empirical evidence (OpenAI baselines, DeepMind experiments) shows A2C matches or exceeds A3C performance on most benchmarks. The asynchronous updates in A3C introduce gradient staleness that can hurt performance.' },
+    { text: 'n = 5 is the canonical choice from the original A3C paper.', isTrue: true, explanation: 'Larger n reduces bias but increases variance.' },
+    { text: 'The original A3C paper uses a shared convolutional network with separate policy and value heads.', isTrue: true, explanation: 'This is computationally efficient but can cause gradient interference.' },
+    { text: 'A3C originally used RMSProp with shared running statistics across workers.', isTrue: true, explanation: 'A2C commonly uses Adam with a learning rate of 2.5 x 10^&#123;-4&#125; to 7 x 10^&#123;-4&#125;.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizRLTargetNetworks() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Hard update frequency: DQN uses $C = 10&#123;,&#125;000$ gradient steps.', isTrue: true, explanation: 'This is a key technical detail of Target Networks.' },
-    { text: 'Values too small (e.g., $C = 100$) provide insufficient stability; values too large (e.g., $C = 100&#123;,&#125;000$) cause the target to lag excessively behind the learned value.', isTrue: true, explanation: 'This is a key technical detail of Target Networks.' },
-    { text: 'Soft update rate: $\\tau = 0.005$ is standard for continuous-control algorithms (DDPG, TD3, SAC).', isTrue: true, explanation: 'This is a key technical detail of Target Networks.' },
+    { text: 'Target networks eliminate instability entirely.', isTrue: false, explanation: 'They reduce it substantially but do not guarantee convergence. The combination of function approximation, bootstrapping, and off-policy data (the deadly triad from function-approximation.md) remains a fundamental challenge.' },
+    { text: 'DQN uses C = 10&#123;,&#125;000 gradient steps.', isTrue: true, explanation: 'Values too small (e.g., C = 100) provide insufficient stability; values too large (e.g., C = 100&#123;,&#125;000) cause the target to lag excessively behind the learned value.' },
+    { text: 'Soft updates are always better than hard updates.', isTrue: false, explanation: 'This depends on the domain. Hard updates with appropriate C work well for discrete-action problems (Atari).' },
+    { text: '= 0.005 is standard for continuous-control algorithms (DDPG, TD3, SAC).', isTrue: true, explanation: 'Larger  values track faster but provide less stability.' },
+    { text: 'The target network learns slower on purpose.', isTrue: false, explanation: 'The target network does not learn at all -- it is passively updated (copied or blended) from the online network. Only the online network receives gradient updates.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

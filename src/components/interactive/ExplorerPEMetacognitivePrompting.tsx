@@ -5,7 +5,7 @@ const DETAILS = [
     { label: 'Confidence scale', detail: '1-10 numerical scales produce more granular signals than binary (certain/uncertain); 1-5 scales are a reasonable compromise between granularity and consistency.' },
     { label: 'Pre-answer reflection', detail: 'Asking the model to identify potential error modes before answering reduces hallucination rates by an estimated 10-20% on knowledge-intensive tasks.' },
     { label: 'Verbalized uncertainty', detail: 'Models that include hedging language in responses are rated as more trustworthy by users in human evaluation studies.' },
-    { label: 'Overconfidence bias', detail: 'LLMs tend to be overconfident -- self-reported confidence is typically 10-20% higher than actual accuracy, meaning calibration corrections (e.g., treating a self-reported \"8\" as a \"6.5\") improve reliability.' },
+    { label: 'Overconfidence bias', detail: 'LLMs tend to be overconfident -- self-reported confidence is typically 10-20% higher than actual accuracy, meaning calibration corrections (e.g., treating a self-reported "8" as a "6.5") improve reliability.' },
     { label: 'Task dependency', detail: 'Metacognitive prompting is most useful for knowledge-intensive tasks (factual QA, analysis) and least useful for well-defined tasks (math, code) where the model either gets it right or clearly wrong.' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerPEMetacognitivePrompting() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Metacognitive Prompting — Key Details Explorer
+          Metacognitive Prompting \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of metacognitive prompting.
+          Click each card to explore the technical details.
         </p>
       </div>
 

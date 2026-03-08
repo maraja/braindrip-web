@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACReactPattern() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Original paper: "ReAct: Synergizing Reasoning and Acting in Language Models" by Yao et al.', isTrue: true, explanation: 'This is a key technical detail of ReAct Pattern.' },
-    { text: 'ReAct interleaves chain-of-thought reasoning with concrete actions, enabling agents to think about what to do, do it, observe the result, and adjust their reasoning accordingly.', isTrue: true, explanation: 'This captures the core purpose of ReAct Pattern.' },
-    { text: 'ReAct Pattern is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding ReAct Pattern is important for building on more advanced topics.' },
+    { text: 'ReAct is just chain-of-thought with tools.', isTrue: false, explanation: 'While related, the key difference is the interleaving. In CoT+tools, reasoning happens first and then a single tool call is made.' },
+    { text: '"ReAct: Synergizing Reasoning and Acting in Language Models" by Yao et al.', isTrue: true, explanation: '(2022), published at ICLR 2023' },
+    { text: 'The Thought step must be visible to the user.', isTrue: false, explanation: 'The Thought is an internal reasoning trace. Many production systems hide it from the end user and only expose the final answer.' },
+    { text: 'Most tasks resolve in 3-7 iterations; a hard cap of 10-15 is common to prevent infinite loops', isTrue: true, explanation: 'Most tasks resolve in 3-7 iterations; a hard cap of 10-15 is common to prevent infinite loops' },
+    { text: 'ReAct always outperforms pure reasoning.', isTrue: false, explanation: 'On tasks that require no external information (e.g., mathematical proofs, logical puzzles), pure chain-of-thought can match or exceed ReAct because the action-observation overhead adds noise and token cost.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

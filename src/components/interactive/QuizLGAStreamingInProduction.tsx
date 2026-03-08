@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAStreamingInProduction() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'SSE format requires each message to be data: &lt;payload&gt;\\n\\n with a double newline terminator.', isTrue: true, explanation: 'This is a key technical detail of Streaming in Production.' },
-    { text: 'Set media_type="text/event-stream" on FastAPI StreamingResponse for proper SSE behavior.', isTrue: true, explanation: 'This is a key technical detail of Streaming in Production.' },
-    { text: 'Thread IDs are passed via the config["configurable"]["thread_id"] pattern to enable checkpointed state.', isTrue: true, explanation: 'This is a key technical detail of Streaming in Production.' },
+    { text: 'SSE requires WebSocket infrastructure.', isTrue: false, explanation: 'SSE runs over standard HTTP/1.1 or HTTP/2. No special server configuration is needed beyond supporting long-lived connections.' },
+    { text: 'Production streaming requires Server-Sent Events or WebSocket transport, stateful thread management, interrupt handling, and resilience against timeouts, disconnections, and backpressure.', isTrue: true, explanation: 'This captures the core definition of Streaming in Production.' },
+    { text: 'Streaming in Production is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Streaming in Production is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

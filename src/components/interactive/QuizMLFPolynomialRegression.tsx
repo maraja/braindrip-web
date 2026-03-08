@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFPolynomialRegression() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The design matrix $\\Phi$ can become ill-conditioned for high degrees because $x^d$ spans many orders of magnitude.', isTrue: true, explanation: 'This is a key technical detail of Polynomial Regression.' },
-    { text: 'Centering and scaling features (e.g., $z = (x - \\bar&#123;x&#125;)/s_x$) before expansion mitigates this.', isTrue: true, explanation: 'This is a key technical detail of Polynomial Regression.' },
-    { text: 'Orthogonal polynomials (Legendre, Chebyshev) provide numerically stable alternatives to raw powers.', isTrue: true, explanation: 'This is a key technical detail of Polynomial Regression.' },
+    { text: 'Polynomial regression is a nonlinear model.', isTrue: false, explanation: 'It is nonlinear in the features but linear in the parameters. This distinction matters because OLS and all its theory still apply.' },
+    { text: 'Capturing nonlinear relationships within the linear regression framework by adding polynomial feature terms.', isTrue: true, explanation: 'This captures the core definition of Polynomial Regression.' },
+    { text: 'Polynomial Regression is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Polynomial Regression is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

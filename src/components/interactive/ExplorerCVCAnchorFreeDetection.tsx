@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'FCOS (ResNet-101-FPN)', detail: '44.7% AP on COCO, ~18 FPS on a V100 GPU.' },
-    { label: 'CenterNet (Hourglass-104)', detail: '45.1% AP on COCO, ~7.8 FPS. With DLA-34 backbone: 37.4% AP at ~52 FPS.' },
-    { label: 'CenterNet (ResNet-18)', detail: '28.1% AP on COCO at ~142 FPS -- suitable for real-time edge deployment.' },
+    { label: 'FCOS (ResNet-101-FPN)', detail: '7% AP on COCO, ~18 FPS on a V100 GPU.' },
+    { label: 'CenterNet (Hourglass-104)', detail: '1% AP on COCO, ~7.8 FPS. With DLA-34 backbone: 37.4% AP at ~52 FPS.' },
+    { label: 'CenterNet (ResNet-18)', detail: '1% AP on COCO at ~142 FPS -- suitable for real-time edge deployment.' },
     { label: 'Centerness branch in FCOS', detail: 'Adds ~2-3% AP over the base model by suppressing low-quality detections from peripheral locations.' },
-    { label: 'FCOS positive sample definition', detail: 'A location is positive if it falls within a ground-truth box AND the regression targets $(l, t, r, b)$ are within the allowed range for that FPN level.' },
+    { label: 'FCOS positive sample definition', detail: 'A location is positive if it falls within a ground-truth box AND the regression targets (l, t, r, b) are within the allowed range for that FPN level.' },
     { label: 'CenterNet uses no anchors and no NMS', detail: ', relying solely on heatmap peak extraction, making it architecturally the simplest modern detector.' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerCVCAnchorFreeDetection() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Anchor-Free Detection — Key Details Explorer
+          Anchor-Free Detection \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of anchor-free detection.
+          Click each card to explore the technical details.
         </p>
       </div>
 

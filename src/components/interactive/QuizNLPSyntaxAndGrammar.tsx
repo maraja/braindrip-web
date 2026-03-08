@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPSyntaxAndGrammar() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The Penn Treebank (Marcus et al., 1993) contains approximately 40,000 parsed sentences from Wall Street Journal articles and remains the primary English benchmark for parsing.', isTrue: true, explanation: 'This is a key technical detail of Syntax and Grammar.' },
-    { text: 'Universal Dependencies v2.13 (2023) covers 150+ languages with over 300 treebanks totaling approximately 37 million words -- the largest cross-linguistic syntactic resource.', isTrue: true, explanation: 'This is a key technical detail of Syntax and Grammar.' },
-    { text: 'State-of-the-art English dependency parsing achieves approximately 97% Unlabeled Attachment Score (UAS) and approximately 95.5% Labeled Attachment Score (LAS) on Penn Treebank test data.', isTrue: true, explanation: 'This is a key technical detail of Syntax and Grammar.' },
+    { text: 'Grammar means \'prescriptive grammar\' -- rules about what is correct English.', isTrue: false, explanation: 'In NLP and linguistics, "grammar" refers to descriptive grammar: the patterns that native speakers actually use, including colloquial and informal constructions. NLP systems must handle "Who did you talk to?" (descriptively correct, prescriptively questionable) just as well as "To whom did you speak?"' },
+    { text: 'Dependency and constituency parsing are competing approaches.', isTrue: false, explanation: 'They are complementary representations of the same underlying structure. Many modern systems produce both, and the Universal Dependencies framework is converging toward a cross-linguistic standard that incorporates insights from both traditions.' },
+    { text: 'Neural parsers do not use grammar.', isTrue: false, explanation: 'Neural parsers do not use explicit grammar rules, but they implicitly learn grammatical patterns from annotated treebanks. The training data encodes grammar; the neural network learns to reproduce it.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

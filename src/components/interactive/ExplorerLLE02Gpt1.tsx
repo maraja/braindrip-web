@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Paper', detail: 'Radford et al., \"Improving Language Understanding by Generative Pre-Training\" (Jun 2018, OpenAI technical report)' },
+    { label: 'Paper', detail: 'Radford et al., "Improving Language Understanding by Generative Pre-Training" (Jun 2018, OpenAI technical report)' },
     { label: 'Architecture', detail: '12-layer decoder-only Transformer, 12 heads, d_model=768, ~117M parameters' },
     { label: 'Pre-training data', detail: 'BookCorpus (~7,000 books, ~800M words, ~5GB)' },
     { label: 'Tokenization', detail: 'BPE with ~40,000 vocabulary' },
-    { label: 'Context window', detail: '512 tokens' },
     { label: 'Pre-training objective', detail: 'Causal language modeling (next-token prediction)' },
+    { label: 'Fine-tuning', detail: 'Task-specific linear head + auxiliary LM loss (weight 0.5)' },
 ];
 
 export default function ExplorerLLE02Gpt1() {
@@ -20,10 +20,10 @@ export default function ExplorerLLE02Gpt1() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          GPT-1: Generative Pre-Training — Key Details Explorer
+          GPT-1: Generative Pre-Training \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of gpt-1: generative pre-training.
+          Click each card to explore the technical details.
         </p>
       </div>
 

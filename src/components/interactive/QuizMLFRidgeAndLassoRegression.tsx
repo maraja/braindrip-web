@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFRidgeAndLassoRegression() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Always standardize features before applying Ridge or Lasso so the penalty treats all coefficients equally.', isTrue: true, explanation: 'This is a key technical detail of Ridge and Lasso Regression.' },
-    { text: 'The intercept is typically not penalized.', isTrue: true, explanation: 'This is a key technical detail of Ridge and Lasso Regression.' },
-    { text: 'Ridge has a Bayesian interpretation: it corresponds to a Gaussian prior $\\beta_j \\sim \\mathcal&#123;N&#125;(0, \\tau^2)$ on the coefficients.', isTrue: true, explanation: 'This is a key technical detail of Ridge and Lasso Regression.' },
+    { text: 'Ridge and Lasso are fundamentally different methods.', isTrue: false, explanation: 'Both are penalized least squares; they differ only in the norm used for the penalty. This single geometric difference (sphere vs.' },
+    { text: 'L2 and L1 penalties that shrink coefficients toward zero -- Ridge for stability, Lasso for sparsity and feature selection.', isTrue: true, explanation: 'This captures the core definition of Ridge and Lasso Regression.' },
+    { text: 'Ridge and Lasso Regression is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Ridge and Lasso Regression is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

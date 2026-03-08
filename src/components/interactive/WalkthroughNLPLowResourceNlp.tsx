@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Zero-Shot Cross-Lingual Transfer', desc: 'The foundation of low-resource nlp begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Few-Shot Learning', desc: 'At this stage, the key transformation occurs — the core mechanism that makes low-resource nlp work.' },
-    { title: '3. Active Learning', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Self-Training', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Label Propagation and Semi-Supervised Learning', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Zero-Shot Cross-Lingual Transfer', desc: 'The most impactful approach for low-resource languages: train a model on labeled data in a high-resource language (typically English) and apply it directly to a target language using a multilingual model as the bridge.' },
+    { title: '2. Few-Shot Learning', desc: 'Train models from very small labeled datasets, typically 8--256 examples per class. Pattern-exploiting training (PET): Schick and Schutze (2021) reformulate classification as cloze tasks.' },
+    { title: '3. Active Learning', desc: 'Strategically select which examples to annotate to maximize model improvement per labeled example. Uncertainty sampling: Label examples where the model is least confident.' },
+    { title: '4. Self-Training', desc: 'Use a model\'s own predictions on unlabeled data as pseudo-labels to expand the training set. Train an initial model on the small labeled set.' },
+    { title: '5. Label Propagation and Semi-Supervised Learning', desc: 'Spread labels from a few labeled examples to unlabeled examples through a graph structure (label propagation) or consistency-based regularization. Label propagation: Build a k-NN graph over all examples (labeled and unlabeled).' },
+    { title: '6. Annotation Projection Across Languages', desc: 'Transfer annotations from a high-resource language to a low-resource language using parallel corpora and word alignment. Annotate English text with NER tags (e.g., using an English NER model).' },
 ];
 
 export default function WalkthroughNLPLowResourceNlp() {
@@ -17,10 +18,10 @@ export default function WalkthroughNLPLowResourceNlp() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Low-Resource NLP — Step by Step
+          Low-Resource NLP \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how low-resource nlp works, one stage at a time.

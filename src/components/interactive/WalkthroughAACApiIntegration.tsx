@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Endpoint Discovery and Schema Generation', desc: 'The foundation of api integration begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Authentication Patterns', desc: 'At this stage, the key transformation occurs — the core mechanism that makes api integration work.' },
-    { title: '3. Rate Limiting and Throttling', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Error Handling and Retry Logic', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Endpoint Discovery and Schema Generation', desc: 'Before an agent can use an API, the available endpoints must be described as tool schemas the LLM can understand. This can be done manually (writing function definitions) or automatically by parsing OpenAPI/Swagger specifications.' },
+    { title: '2. Authentication Patterns', desc: 'APIs use various authentication mechanisms that agents must handle:  API keys: Simplest — a static token passed in a header (Authorization: Bearer &lt;key&gt;) or query parameter. The key is stored securely and injected into requests by the agent runtime, never exposed to the LLM.' },
+    { title: '3. Rate Limiting and Throttling', desc: 'Production APIs enforce rate limits (e.g., 100 requests/minute). Agents must implement: exponential backoff on 429 (Too Many Requests) responses, request queuing to stay under limits, and caching of repeated identical requests.' },
+    { title: '4. Error Handling and Retry Logic', desc: 'API calls fail for many reasons: network timeouts, server errors (500), invalid parameters (400), authentication expiry (401), and rate limiting (429). Robust agent systems classify errors as retryable (500, 429, timeout) vs.' },
 ];
 
 export default function WalkthroughAACApiIntegration() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACApiIntegration() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          API Integration — Step by Step
+          API Integration \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how api integration works, one stage at a time.

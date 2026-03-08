@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Knowledge Graphs', desc: 'The foundation of semantic memory begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Entity-Relationship Stores', desc: 'At this stage, the key transformation occurs — the core mechanism that makes semantic memory work.' },
-    { title: '3. Structured Databases as Semantic Memory', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Knowledge Extraction and Updates', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Knowledge Graphs', desc: 'The most structured form of semantic memory is a knowledge graph: a network of entities connected by typed relationships. Knowledge graphs enable structured queries ("What databases does Oracle own?"), traversal ("What is related to PostgreSQL?' },
+    { title: '2. Entity-Relationship Stores', desc: 'A lighter-weight alternative to full knowledge graphs, entity-relationship stores maintain a flat or semi-structured collection of facts:  These stores are queried by key lookup rather than graph traversal.' },
+    { title: '3. Structured Databases as Semantic Memory', desc: 'For agents that work within specific domains, relational databases serve as semantic memory:  The agent issues SQL queries to retrieve factual knowledge relevant to the current task.' },
+    { title: '4. Knowledge Extraction and Updates', desc: 'Semantic memory requires mechanisms for adding, updating, and correcting facts:  Extraction from conversations: When a user says "We use PostgreSQL 15 for our production database," the agent should extract and store: project.database = "PostgreSQL 15".' },
 ];
 
 export default function WalkthroughAACSemanticMemory() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACSemanticMemory() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Semantic Memory — Step by Step
+          Semantic Memory \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how semantic memory works, one stage at a time.

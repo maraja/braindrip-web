@@ -3,9 +3,9 @@ import { useState } from 'react';
 const DETAILS = [
     { label: 'Inference time', detail: '~47 seconds per image on a GPU (VGG-16 backbone), dominated by ~2,000 independent CNN forward passes.' },
     { label: 'Feature storage', detail: 'Extracting features for PASCAL VOC 2007 requires ~200 GB of disk space for caching.' },
-    { label: 'PASCAL VOC 2012 result', detail: '53.3% mAP (with bounding box regression).' },
-    { label: 'ILSVRC 2013 result', detail: '31.4% mAP on the 200-class detection task.' },
-    { label: 'AlexNet backbone', detail: '58.5% mAP on VOC 2007; VGG-16 backbone: 66.0% mAP on VOC 2007.' },
+    { label: 'PASCAL VOC 2012 result', detail: '3% mAP (with bounding box regression).' },
+    { label: 'ILSVRC 2013 result', detail: '4% mAP on the 200-class detection task.' },
+    { label: 'AlexNet backbone', detail: '5% mAP on VOC 2007; VGG-16 backbone: 66.0% mAP on VOC 2007.' },
     { label: 'Fine-tuning boost', detail: '+8 mAP points compared to using ImageNet features without fine-tuning.' },
 ];
 
@@ -20,10 +20,10 @@ export default function ExplorerCVCRCnn() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          R-CNN — Key Details Explorer
+          R-CNN \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of r-cnn.
+          Click each card to explore the technical details.
         </p>
       </div>
 

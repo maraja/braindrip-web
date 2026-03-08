@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture', desc: 'The foundation of ssd (single shot multibox detector) begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Prediction Heads', desc: 'At this stage, the key transformation occurs — the core mechanism that makes ssd (single shot multibox detector) work.' },
-    { title: '3. Default Box Design', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Training', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Architecture', desc: 'SSD extends VGG-16 (truncated before classification layers) with extra convolutional layers that progressively reduce spatial resolution:  Total: 8,732 default boxes per image (for SSD-300).' },
+    { title: '2. Prediction Heads', desc: 'At each feature map location with k default boxes and C classes: Classification: k x (C + 1) outputs (including background). Localization: k x 4 outputs (offsets  cx,  cy,  w,  h).' },
+    { title: '3. Default Box Design', desc: 'Default boxes are defined by: Scale: Linearly spaced from s_&#123;&#125; = 0.2 to s_&#123;&#125; = 0.9 across feature maps: [equation] Aspect ratios: \\&#123;1, 2, 3, 1/2, 1/3\\&#125;, plus an extra box with scale s\'_k = &#123;s_k  s_&#123;k+1&#125;&#125; at ratio 1.' },
+    { title: '4. Training', desc: 'Matching: Each ground-truth box is matched to the default box with highest IoU, plus all default boxes with IoU &gt; 0.5. Loss function: [equation]  where L_&#123;conf&#125; is cross-entropy over all classes and L_&#123;loc&#125; is smooth L_1 loss over matched boxes.' },
 ];
 
 export default function WalkthroughCVCSsd() {
@@ -16,10 +16,10 @@ export default function WalkthroughCVCSsd() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          SSD (Single Shot MultiBox Detector) — Step by Step
+          SSD (Single Shot MultiBox Detector) \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how ssd (single shot multibox detector) works, one stage at a time.

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Reasoning Process', desc: 'The foundation of llm as reasoning engine begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Strengths That Enable Agency', desc: 'At this stage, the key transformation occurs — the core mechanism that makes llm as reasoning engine work.' },
-    { title: '3. Limitations That Shape Agent Design', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Why This Architecture Works Despite Limitations', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Reasoning Process', desc: 'When an LLM receives a context and generates a response, it is performing several interleaved cognitive operations:  Situation assessment: Understanding the current state — what has been tried, what succeeded, what failed, what the goal is.' },
+    { title: '2. Strengths That Enable Agency', desc: 'Language understanding and instruction following: LLMs can parse complex, nuanced instructions expressed in natural language. "Refactor this module to use dependency injection, but keep the public API backward compatible" is a perfectly valid instruction that an LLM can decompose and execute.' },
+    { title: '3. Limitations That Shape Agent Design', desc: 'Hallucination: LLMs generate plausible-sounding but incorrect information. In agent contexts, this manifests as: fabricating file paths that do not exist, inventing API parameters, misremembering function signatures, or asserting that a change was made when it was not.' },
+    { title: '4. Why This Architecture Works Despite Limitations', desc: 'The key insight is that the agent runtime compensates for every LLM limitation:  The LLM provides the reasoning; the runtime provides the reliability. Neither alone is sufficient, but together they form a capable system.' },
 ];
 
 export default function WalkthroughAACLlmAsReasoningEngine() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACLlmAsReasoningEngine() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          LLM as Reasoning Engine — Step by Step
+          LLM as Reasoning Engine \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how llm as reasoning engine works, one stage at a time.

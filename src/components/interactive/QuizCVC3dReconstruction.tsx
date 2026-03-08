@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizCVC3dReconstruction() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'COLMAP MVS: Produces point clouds with ~1 mm accuracy for small objects; ~1 cm for rooms.', isTrue: true, explanation: 'This is a key technical detail of 3D Reconstruction.' },
-    { text: 'Processing 100 images at 12 MP takes 1--4 hours on a modern GPU.', isTrue: true, explanation: 'This is a key technical detail of 3D Reconstruction.' },
-    { text: 'TSDF resolution: KinectFusion uses $512^3$ voxels for a $3 \\times 3 \\times 3$ m volume (5.9 mm voxel size).', isTrue: true, explanation: 'This is a key technical detail of 3D Reconstruction.' },
+    { text: 'NeRF and 3D reconstruction are the same thing.', isTrue: false, explanation: 'NeRF optimizes for view synthesis (rendering quality); extracting geometry from NeRF yields noisy surfaces. Methods like NeuS and VolSDF are specifically designed for reconstruction quality.' },
+    { text: 'Produces point clouds with ~1 mm accuracy for small objects; ~1 cm for rooms.', isTrue: true, explanation: 'Processing 100 images at 12 MP takes 1--4 hours on a modern GPU.' },
+    { text: 'KinectFusion uses 512^3 voxels for a 3 x 3 x 3 m volume (5.9 mm voxel size).', isTrue: true, explanation: 'Voxel hashing scales to 50+ m rooms.' },
+    { text: '256-dim shape code, 8-layer MLP with 512 hidden units.', isTrue: true, explanation: 'Reconstructs shapes at sub-millimeter accuracy on ShapeNet.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

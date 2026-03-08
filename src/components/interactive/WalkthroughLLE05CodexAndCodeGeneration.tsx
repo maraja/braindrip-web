@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Training Pipeline', desc: 'The foundation of codex and code generation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. HumanEval Benchmark', desc: 'At this stage, the key transformation occurs — the core mechanism that makes codex and code generation work.' },
-    { title: '3. From Research to Product: GitHub Copilot', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Supervised Fine-Tuning on Standalone Functions', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Training Pipeline', desc: 'Codex started from a pre-trained GPT-3 checkpoint (specifically the GPT-3 12B variant for the main results) and underwent continued pre-training on code. The training corpus consisted of 159 GB of unique Python files collected from 54 million public GitHub repositories.' },
+    { title: '2. HumanEval Benchmark', desc: 'The paper introduced HumanEval, a benchmark of 164 hand-crafted Python programming problems with associated test cases. Each problem includes a function signature and docstring, and the model must generate a correct implementation.' },
+    { title: '3. From Research to Product: GitHub Copilot', desc: 'In June 2021, GitHub launched Copilot as a technical preview, powered by a Codex model customized for IDE integration. Copilot provided real-time code suggestions as developers typed, completing functions, generating boilerplate, and even translating comments into code.' },
+    { title: '4. Supervised Fine-Tuning on Standalone Functions', desc: 'The paper also explored Codex-S, a variant fine-tuned on standalone, correctly-implemented functions. This docstring-to-function training format — where the input is a docstring and the output is a function body — boosted pass@1 from 28.8% to 37.7%.' },
 ];
 
 export default function WalkthroughLLE05CodexAndCodeGeneration() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE05CodexAndCodeGeneration() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Codex and Code Generation — Step by Step
+          Codex and Code Generation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how codex and code generation works, one stage at a time.

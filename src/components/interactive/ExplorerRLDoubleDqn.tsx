@@ -4,9 +4,9 @@ const DETAILS = [
     { label: 'Implementation cost', detail: 'Changing one line of code -- the target computation. No new networks, no new hyperparameters, no additional memory.' },
     { label: 'Atari results', detail: 'Double DQN improves median human-normalized score from ~93% (DQN) to ~117% across 49 games. Several games improve dramatically (e.g., Asterix: 6,012 to 28,188).' },
     { label: 'Overestimation reduction', detail: 'On some games, DQN\'s Q-value estimates exceed true values by 2--10x. Double DQN reduces this gap to near zero.' },
-    { label: 'Compatible with other improvements', detail: 'Double DQN is orthogonal to experience replay variants, dueling architectures, and other DQN extensions. It is included as a standard component in Rainbow (`rainbow-dqn.md`).' },
-    { label: 'Does not eliminate underestimation', detail: 'Double DQN can slightly *underestimate* Q-values in some cases, but moderate underestimation is far less harmful than overestimation because it does not create runaway positive feedback.' },
-    { label: 'The two networks are not independent', detail: 'Unlike the original Double Q-learning proposal, the target network $\\mathbf{w}^-$ is a delayed copy of $\\mathbf{w}$, so they are correlated. Empirically, this correlation is weak enough that the bias reduction is substantial.' },
+    { label: 'Compatible with other improvements', detail: 'Double DQN is orthogonal to experience replay variants, dueling architectures, and other DQN extensions. It is included as a standard component in Rainbow (rainbow-dqn.md).' },
+    { label: 'Does not eliminate underestimation', detail: 'Double DQN can slightly underestimate Q-values in some cases, but moderate underestimation is far less harmful than overestimation because it does not create runaway positive feedback.' },
+    { label: 'The two networks are not independent', detail: 'Unlike the original Double Q-learning proposal, the target network w^- is a delayed copy of w, so they are correlated. Empirically, this correlation is weak enough that the bias reduction is substantial.' },
 ];
 
 export default function ExplorerRLDoubleDqn() {
@@ -20,10 +20,10 @@ export default function ExplorerRLDoubleDqn() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Double DQN — Key Details Explorer
+          Double DQN \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of double dqn.
+          Click each card to explore the technical details.
         </p>
       </div>
 

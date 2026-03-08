@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Three Components of a GLM', desc: 'The foundation of generalized linear models begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Exponential Family Distributions', desc: 'At this stage, the key transformation occurs — the core mechanism that makes generalized linear models work.' },
-    { title: '3. Logistic Regression as a GLM', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Poisson Regression as a GLM', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Estimation via IRLS', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Three Components of a GLM', desc: 'Every GLM is specified by three components:  Random Component: The response y_i follows a distribution from the exponential family:  [equation]  where _i is the natural (canonical) parameter,  is a dispersion parameter, and b(), a(), c() are known functions defining the specific distribution.' },
+    { title: '2. Exponential Family Distributions', desc: 'The exponential family includes many common distributions:  The canonical link function sets g() = , linking the linear predictor directly to the natural parameter. Using the canonical link simplifies estimation and yields desirable statistical properties, but non-canonical links can also be used.' },
+    { title: '3. Logistic Regression as a GLM', desc: 'Binary classification via logistic regression is a GLM with: Random component: y_i  Bernoulli(_i) Link function: logit, g(_i) = &#123;_i&#125;&#123;1 - _i&#125; Model: &#123;P(y_i = 1  x_i)&#125; = x_i^T &#123;&#125;  The inverse link gives the predicted probability:  [equation]  Coefficients are interpreted on the log-odds scale: a unit.' },
+    { title: '4. Poisson Regression as a GLM', desc: 'For count data (e.g., number of insurance claims): Random component: y_i  Poisson(_i) Link function: log, g(_i) =  _i Model:  &#123;E&#125;[y_i | x_i] = x_i^T &#123;&#125;  The inverse link ensures predictions are non-negative: &#123;&#125;_i = e^&#123;x_i^T &#123;&#125;&#125;.' },
+    { title: '5. Estimation via IRLS', desc: 'GLMs are fit by maximum likelihood. The log-likelihood for the exponential family is:  [equation]  There is generally no closed-form solution (except for the normal distribution, which recovers OLS).' },
+    { title: '6. Overdispersion', desc: 'The Poisson distribution assumes Var(y) =  (mean equals variance). In practice, count data often exhibits overdispersion: Var(y) &gt; .' },
 ];
 
 export default function WalkthroughMLFGeneralizedLinearModels() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFGeneralizedLinearModels() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Generalized Linear Models — Step by Step
+          Generalized Linear Models \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how generalized linear models works, one stage at a time.

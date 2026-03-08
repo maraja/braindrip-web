@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLRlhfPipeline() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Scale of human data: InstructGPT used ~13K demonstrations for SFT and ~33K comparisons for reward modeling -- tiny relative to pretraining data (hundreds of billions of tokens).', isTrue: true, explanation: 'This is a key technical detail of RLHF Pipeline.' },
-    { text: 'KL coefficient: Typical $\\beta$ values range from 0.01 to 0.2.', isTrue: true, explanation: 'This is a key technical detail of RLHF Pipeline.' },
-    { text: 'Too low leads to reward hacking; too high prevents meaningful optimization.', isTrue: true, explanation: 'This is a key technical detail of RLHF Pipeline.' },
+    { text: 'RLHF requires millions of human labels.', isTrue: false, explanation: 'InstructGPT used fewer than 50K total human annotations across both stages. The leverage comes from the pretrained model already knowing language -- RLHF just steers it.' },
+    { text: 'InstructGPT used ~13K demonstrations for SFT and ~33K comparisons for reward modeling -- tiny relative to pretraining data (hundreds of billions of tokens).', isTrue: true, explanation: 'InstructGPT used ~13K demonstrations for SFT and ~33K comparisons for reward modeling -- tiny relative to pretraining data (hundreds of billions of tokens).' },
+    { text: 'Typical  values range from 0.01 to 0.2.', isTrue: true, explanation: 'Too low leads to reward hacking; too high prevents meaningful optimization.' },
+    { text: 'During PPO, four models must be loaded simultaneously: the active policy _, the reference policy _&#123;SFT&#125; (for KL computation), the reward model r_, and the value function V_.', isTrue: true, explanation: 'During PPO, four models must be loaded simultaneously: the active policy _, the reference policy _&#123;SFT&#125; (for KL computation), the reward model r_, and the value function V_.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -3,10 +3,10 @@ import { useState } from 'react';
 const DETAILS = [
     { label: 'OntoNotes 5.0 benchmark', detail: 'English coreference with ~3,500 documents across 7 genres; SOTA ~80--83 CoNLL F1.' },
     { label: 'CoNLL F1', detail: 'Average of MUC, B-CUBED, and CEAF_e F1 scores (see evaluation metrics below).' },
-    { label: 'Evaluation metrics', detail: '- **MUC** (Vilain et al., 1995): Counts minimum links needed to align predicted and gold clusters. Favors large clusters.' },
     { label: 'B-CUBED', detail: '(Bagga & Baldwin, 1998): Computes precision/recall per mention, then averages. Handles singletons well.' },
     { label: 'CEAF', detail: '(Luo, 2005): Finds optimal alignment between predicted and gold entities, then computes entity-level or mention-level scores.' },
     { label: 'CoNLL F1', detail: 'Average of MUC, B-CUBED, and CEAF_e; the standard composite metric since CoNLL-2012.' },
+    { label: 'Lee et al. (2017) end-to-end model', detail: '2 CoNLL F1 (initial); with SpanBERT (2020): ~79.6 F1.' },
 ];
 
 export default function ExplorerNLPCoreferenceResolution() {
@@ -20,10 +20,10 @@ export default function ExplorerNLPCoreferenceResolution() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Coreference Resolution — Key Details Explorer
+          Coreference Resolution \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of coreference resolution.
+          Click each card to explore the technical details.
         </p>
       </div>
 

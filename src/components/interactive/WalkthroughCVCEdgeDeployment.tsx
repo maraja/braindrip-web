@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Quantization', desc: 'The foundation of edge deployment begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Pruning', desc: 'At this stage, the key transformation occurs — the core mechanism that makes edge deployment work.' },
-    { title: '3. Knowledge Distillation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Hardware-Aware Architecture Design', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Inference Runtimes and Compilers', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Quantization', desc: 'Quantization reduces the precision of weights and activations from 32-bit floating point (FP32) to lower bit-widths. INT8 Quantization: The most common production format.' },
+    { title: '2. Pruning', desc: 'Pruning removes redundant weights or entire structures (channels, layers) from a model. Unstructured Pruning: Zero out individual weights based on magnitude.' },
+    { title: '3. Knowledge Distillation', desc: 'Train a small "student" model to mimic a large "teacher" model\'s outputs:  [equation]  where T is the temperature (typically 3--20), z_s and z_t are student and teacher logits, and  balances hard labels with soft targets.' },
+    { title: '4. Hardware-Aware Architecture Design', desc: 'MobileNetV3 (Howard et al., 2019): Combines depthwise separable convolutions, squeeze-and-excite blocks, and NAS-searched architecture. MobileNetV3-Large achieves 75.2% ImageNet top-1 at 219M MAdds and 5.4 ms latency on a Pixel 4.' },
+    { title: '5. Inference Runtimes and Compilers', desc: 'TensorRT (NVIDIA): Optimizes models for NVIDIA GPUs. Applies layer fusion, kernel auto-tuning, and precision calibration.' },
+    { title: '6. Latency Budgets', desc: 'Real-time applications impose strict latency constraints: Smartphone AR: &lt;33 ms per frame (30 FPS) Autonomous driving: &lt;50 ms (20 Hz perception loop) Industrial inspection: &lt;16 ms (60 FPS conveyor belt) Security camera: &lt;100 ms (acceptable for alert systems)' },
 ];
 
 export default function WalkthroughCVCEdgeDeployment() {
@@ -17,10 +18,10 @@ export default function WalkthroughCVCEdgeDeployment() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Edge Deployment — Step by Step
+          Edge Deployment \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how edge deployment works, one stage at a time.

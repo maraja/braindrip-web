@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Holdout Method and Its Limitations', desc: 'The foundation of cross-validation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. K-Fold Cross-Validation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes cross-validation work.' },
-    { title: '3. Stratified K-Fold', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Leave-One-Out Cross-Validation (LOOCV)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Repeated Cross-Validation', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Holdout Method and Its Limitations', desc: 'The simplest approach is a single train/test split (e.g., 80/20). Problems:  High variance: The estimate depends heavily on which points end up in test.' },
+    { title: '2. K-Fold Cross-Validation', desc: 'The data is partitioned into K equally sized folds. For each fold k = 1, , K:  Train on all folds except fold k.' },
+    { title: '3. Stratified K-Fold', desc: 'Standard K-fold can produce folds where a minority class is absent or over-represented, especially with imbalanced data. Stratified K-fold ensures each fold preserves the class distribution of the full dataset.' },
+    { title: '4. Leave-One-Out Cross-Validation (LOOCV)', desc: 'LOOCV is K-fold with K = N (one fold per data point). Each iteration trains on N - 1 examples and tests on the single held-out point.' },
+    { title: '5. Repeated Cross-Validation', desc: 'Run K-fold CV multiple times with different random partitions and average the results. This reduces the variance of the CV estimate.' },
+    { title: '6. Nested Cross-Validation', desc: 'When you use CV to select hyperparameters and evaluate performance, you risk an optimistic bias: the same data that chose the best model also estimates its performance. Nested CV addresses this with two loops:  Outer loop: K_&#123;outer&#125; folds for performance estimation.' },
 ];
 
 export default function WalkthroughMLFCrossValidation() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFCrossValidation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Cross-Validation — Step by Step
+          Cross-Validation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how cross-validation works, one stage at a time.

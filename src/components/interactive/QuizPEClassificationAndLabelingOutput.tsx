@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizPEClassificationAndLabelingOutput() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Chain-of-thought before classification improves accuracy by 5-10% on ambiguous tasks, with the largest gains on inputs near decision boundaries.', isTrue: true, explanation: 'This is a key technical detail of Classification and Labeling Output.' },
-    { text: 'Label space size impacts accuracy: models handle 5-10 categories well, 10-20 with slight degradation, and 20+ with noticeable accuracy drops requiring hierarchical approaches.', isTrue: true, explanation: 'This is a key technical detail of Classification and Labeling Output.' },
-    { text: 'Label ordering in the prompt creates position bias: models slightly favor labels listed first.', isTrue: true, explanation: 'This is a key technical detail of Classification and Labeling Output.' },
+    { text: 'LLMs are just worse versions of fine-tuned classifiers.', isTrue: false, explanation: 'For tasks with clear, well-separated categories and ample training data, fine-tuned classifiers often outperform. But LLMs excel at nuanced, context-dependent classification where traditional classifiers struggle — and they require no training data.' },
+    { text: 'models handle 5-10 categories well, 10-20 with slight degradation, and 20+ with noticeable accuracy drops requiring hierarchical approaches.', isTrue: true, explanation: 'models handle 5-10 categories well, 10-20 with slight degradation, and 20+ with noticeable accuracy drops requiring hierarchical approaches.' },
+    { text: 'models slightly favor labels listed first.', isTrue: true, explanation: 'Randomize or alphabetize label order to mitigate.' },
+    { text: 'asking the model to rate confidence (1-10 or percentage) correlates weakly with actual accuracy.', isTrue: true, explanation: 'Log-probabilities of the label token are a better calibration signal where available.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

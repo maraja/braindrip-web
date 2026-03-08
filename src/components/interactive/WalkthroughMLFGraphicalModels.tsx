@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Directed Graphical Models (Bayesian Networks)', desc: 'The foundation of graphical models begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Conditional Independence and D-Separation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes graphical models work.' },
-    { title: '3. Undirected Graphical Models (Markov Random Fields)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Factorization Theorem', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Plate Notation', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Directed Graphical Models (Bayesian Networks)', desc: 'A Bayesian network is a directed acyclic graph (DAG) where each node X_i has a conditional probability distribution given its parents Pa(X_i). The joint distribution factorizes as:  [equation]  This factorization can dramatically reduce the number of parameters.' },
+    { title: '2. Conditional Independence and D-Separation', desc: 'The graph structure implies conditional independence relations via d-separation. Three canonical structures govern information flow in DAGs:  Chain: A  B  C.' },
+    { title: '3. Undirected Graphical Models (Markov Random Fields)', desc: 'A Markov Random Field (MRF) uses an undirected graph. The joint distribution factorizes over cliques (fully connected subgraphs):  [equation]  where _c are non-negative potential functions and Z = _X _c _c(X_c) is the partition function ensuring normalization.' },
+    { title: '4. The Factorization Theorem', desc: 'A fundamental result connects graph structure to probability: the set of conditional independencies implied by d-separation (for DAGs) or the Markov property (for MRFs) is equivalent to the set of distributions that factorize according to the graph.' },
+    { title: '5. Plate Notation', desc: 'When a graphical model contains repeated structure (e.g., n i.i.d. observations), plate notation compactly represents this by drawing a rectangle (plate) around the repeated variables with a count N in the corner.' },
+    { title: '6. Inference', desc: 'Variable Elimination: Systematically sum out (marginalize) variables one at a time to compute a target marginal or conditional distribution. The computational cost depends on the elimination ordering, which determines the size of intermediate factors.' },
 ];
 
 export default function WalkthroughMLFGraphicalModels() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFGraphicalModels() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Graphical Models — Step by Step
+          Graphical Models \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how graphical models works, one stage at a time.

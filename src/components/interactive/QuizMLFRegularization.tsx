@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFRegularization() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Batch normalization acts as an implicit regularizer by adding noise through mini-batch statistics.', isTrue: true, explanation: 'This is a key technical detail of Regularization.' },
-    { text: 'Label smoothing regularizes by replacing hard targets (0 or 1) with soft targets ($\\epsilon/K$ and $1 - \\epsilon + \\epsilon/K$), preventing the model from becoming overconfident.', isTrue: true, explanation: 'This is a key technical detail of Regularization.' },
-    { text: 'Spectral norm regularization constrains the Lipschitz constant of neural network layers.', isTrue: true, explanation: 'This is a key technical detail of Regularization.' },
+    { text: 'Regularization always hurts training performance.', isTrue: false, explanation: 'True, but that is the point. The goal is not to minimize training loss -- it is to minimize test loss.' },
+    { text: 'Constraining model complexity to improve generalization -- L1, L2, dropout, early stopping, and the bias-variance connection.', isTrue: true, explanation: 'This captures the core definition of Regularization.' },
+    { text: 'Regularization is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Regularization is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

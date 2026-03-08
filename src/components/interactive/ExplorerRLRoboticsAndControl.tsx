@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Action spaces', detail: 'Typically continuous joint torques or velocities, $\\mathcal{A} \\subset \\mathbb{R}^d$ with $d = 6\\text{--}30$ for manipulators and quadrupeds.' },
+    { label: 'Action spaces', detail: 'Typically continuous joint torques or velocities, &#123;A&#125;  &#123;R&#125;^d with d = 6--30 for manipulators and quadrupeds.' },
     { label: 'Observation spaces', detail: 'Joint positions/velocities (proprioception), force/torque sensors, cameras (RGB or depth), and sometimes privileged simulation state during training.' },
     { label: 'Control frequency', detail: 'Policies typically run at 20--100 Hz for manipulation, 50--200 Hz for locomotion. Latency above ~50 ms degrades performance significantly.' },
-    { label: 'Sample efficiency', detail: 'PPO with domain randomization typically requires $10^8$--$10^{10}$ simulation steps. Real-world fine-tuning (when used) requires only $10^3$--$10^5$ steps.' },
-    { label: 'Reward design', detail: 'A persistent challenge. Locomotion rewards often combine forward velocity, energy penalty, smoothness, and stability terms. Even small reward imbalances produce pathological gaits (see `reward-shaping.md`).' },
-    { label: 'Safety constraints', detail: 'Constrained optimization (CPO, LAMBDA) or reward penalties enforce joint limits, contact force bounds, and self-collision avoidance. See `rl-in-production.md` for deployment safety.' },
+    { label: 'Sample efficiency', detail: 'PPO with domain randomization typically requires 10^8--10^&#123;10&#125; simulation steps. Real-world fine-tuning (when used) requires only 10^3--10^5 steps.' },
+    { label: 'Reward design', detail: 'A persistent challenge. Locomotion rewards often combine forward velocity, energy penalty, smoothness, and stability terms. Even small reward imbalances produce pathological gaits (see reward-shaping.md).' },
+    { label: 'Safety constraints', detail: 'Constrained optimization (CPO, LAMBDA) or reward penalties enforce joint limits, contact force bounds, and self-collision avoidance. See rl-in-production.md for deployment safety.' },
 ];
 
 export default function ExplorerRLRoboticsAndControl() {
@@ -20,10 +20,10 @@ export default function ExplorerRLRoboticsAndControl() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Robotics and Control — Key Details Explorer
+          Robotics and Control \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of robotics and control.
+          Click each card to explore the technical details.
         </p>
       </div>
 

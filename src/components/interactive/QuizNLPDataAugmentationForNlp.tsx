@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPDataAugmentationForNlp() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Back-translation using MarianMT models (HuggingFace) is the simplest production-ready augmentation pipeline, requiring only pip-installable models.', isTrue: true, explanation: 'This is a key technical detail of Data Augmentation for NLP.' },
-    { text: 'EDA with p = 0.1 and n_aug = 4--9 is the recommended default configuration (Wei and Zou, 2019).', isTrue: true, explanation: 'This is a key technical detail of Data Augmentation for NLP.' },
-    { text: 'BERT-based contextual augmentation masks 15% of tokens per example and generates 4--8 augmented copies.', isTrue: true, explanation: 'This is a key technical detail of Data Augmentation for NLP.' },
+    { text: 'Data augmentation is a solved problem in NLP.', isTrue: false, explanation: 'Unlike computer vision where geometric transforms are label-preserving by construction, NLP augmentation risks changing meaning with every word swap. No technique guarantees label preservation, and validation is essential.' },
+    { text: 'More augmentation is always better.', isTrue: false, explanation: 'Augmenting beyond 8--16x the original data size often degrades performance. The augmented distribution diverges from the true data distribution, and the model overfits to synthetic artifacts rather than learning genuine patterns.' },
+    { text: 'Back-translation produces perfect paraphrases.', isTrue: false, explanation: 'MT errors propagate through back-translation, sometimes producing ungrammatical or meaning-altered text. Filtering augmented examples by a quality scorer (e.g., perplexity under a language model) improves downstream results by 1--2%.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

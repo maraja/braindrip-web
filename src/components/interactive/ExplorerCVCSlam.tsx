@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'ORB-SLAM3 accuracy', detail: '0.35% translational error on KITTI (stereo), 0.04 m ATE on TUM RGB-D.' },
-    { label: 'VINS-Mono accuracy', detail: '0.08 m ATE on EuRoC MAV dataset (11 sequences).' },
+    { label: 'ORB-SLAM3 accuracy', detail: '35% translational error on KITTI (stereo), 0.04 m ATE on TUM RGB-D.' },
+    { label: 'VINS-Mono accuracy', detail: '08 m ATE on EuRoC MAV dataset (11 sequences).' },
     { label: 'Real-time requirements', detail: 'Tracking must run at camera frame rate (30 Hz). Mapping and loop closure run in parallel threads at lower rates.' },
     { label: 'Keyframe density', detail: 'Typically 1 keyframe per 10--20 frames, yielding manageable optimization problems.' },
     { label: 'Feature count', detail: 'ORB-SLAM extracts 1000--2000 ORB features per frame. Map sizes range from 10K to 1M+ landmarks.' },
@@ -20,10 +20,10 @@ export default function ExplorerCVCSlam() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          SLAM (Simultaneous Localization and Mapping) — Key Details Explorer
+          SLAM (Simultaneous Localization and Mapping) \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of slam (simultaneous localization and mapping).
+          Click each card to explore the technical details.
         </p>
       </div>
 

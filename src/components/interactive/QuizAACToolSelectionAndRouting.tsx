@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACToolSelectionAndRouting() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Description length sweet spot: Tool descriptions between 50-150 words perform best.', isTrue: true, explanation: 'This is a key technical detail of Tool Selection and Routing.' },
-    { text: 'Shorter descriptions lack disambiguation cues; longer ones waste tokens and can confuse the model.', isTrue: true, explanation: 'This is a key technical detail of Tool Selection and Routing.' },
-    { text: 'Negative examples in descriptions: Adding "Do NOT use this tool for X" is surprisingly effective at reducing misrouting, especially for tools with overlapping functionality.', isTrue: true, explanation: 'This is a key technical detail of Tool Selection and Routing.' },
+    { text: 'Just add all tools to the prompt', isTrue: false, explanation: ': This fails at scale. Beyond 15-20 tools, accuracy drops, tokens costs balloon, and latency increases.' },
+    { text: 'Tool descriptions between 50-150 words perform best.', isTrue: true, explanation: 'Shorter descriptions lack disambiguation cues; longer ones waste tokens and can confuse the model.' },
+    { text: 'Adding "Do NOT use this tool for X" is surprisingly effective at reducing misrouting, especially for tools with overlapping functionality.', isTrue: true, explanation: 'Adding "Do NOT use this tool for X" is surprisingly effective at reducing misrouting, especially for tools with overlapping functionality.' },
+    { text: 'Convert tool descriptions to embeddings, compute cosine similarity with the user query embedding, and include only tools above a threshold (typically top 5-10).', isTrue: true, explanation: 'OpenAI embeddings or sentence-transformers work well for this.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

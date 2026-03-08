@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The U-Shaped Attention Curve', desc: 'The foundation of attention and position effects begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Primacy Bias: Why First Position Wins', desc: 'At this stage, the key transformation occurs — the core mechanism that makes attention and position effects work.' },
-    { title: '3. Recency Bias: The Power of Last Position', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The \"Lost in the Middle\" Phenomenon', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The U-Shaped Attention Curve', desc: 'The attention mechanism in transformers assigns variable weight to different positions in the input sequence. Empirical measurements show a consistent pattern:  First ~10% of tokens (primacy zone): High attention weight.' },
+    { title: '2. Primacy Bias: Why First Position Wins', desc: 'The beginning of the context window has structural advantages. Positional encodings (RoPE, ALiBi) are most precise at early positions.' },
+    { title: '3. Recency Bias: The Power of Last Position', desc: 'The most recent tokens before generation begins have outsized influence because autoregressive generation conditions directly on them. The user\'s current query, placed at the end of the context, naturally benefits from recency.' },
+    { title: '4. The "Lost in the Middle" Phenomenon', desc: '(2023) tested this rigorously using a multi-document question answering task. They placed a relevant document among 19 irrelevant documents and varied its position.' },
 ];
 
 export default function WalkthroughPEAttentionAndPositionEffects() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEAttentionAndPositionEffects() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Attention and Position Effects — Step by Step
+          Attention and Position Effects \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how attention and position effects works, one stage at a time.

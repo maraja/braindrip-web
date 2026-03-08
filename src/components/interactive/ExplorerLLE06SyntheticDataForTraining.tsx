@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Self-Instruct (Wang et al., Dec 2022)', detail: '175 seed tasks -> 52K generated examples, 33% improvement on GPT-3' },
-    { label: 'Stanford Alpaca (Mar 2023)', detail: '$600 of GPT-3.5 API calls -> 52K examples -> fine-tuned LLaMA 7B' },
+    { label: 'Self-Instruct (Wang et al., Dec 2022)', detail: '175 seed tasks -&gt; 52K generated examples, 33% improvement on GPT-3' },
+    { label: 'Stanford Alpaca (Mar 2023)', detail: '$600 of GPT-3.5 API calls -&gt; 52K examples -&gt; fine-tuned LLaMA 7B' },
     { label: 'Vicuna (Mar 2023)', detail: 'Trained on ~70K ShareGPT conversations (user-generated, model-output data)' },
     { label: 'Orca (Microsoft, 2023)', detail: 'GPT-4-generated reasoning traces for 13B model training' },
     { label: 'GLAN (2024)', detail: 'Taxonomy-guided systematic instruction generation' },
@@ -20,10 +20,10 @@ export default function ExplorerLLE06SyntheticDataForTraining() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Synthetic Data for Training — Key Details Explorer
+          Synthetic Data for Training \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of synthetic data for training.
+          Click each card to explore the technical details.
         </p>
       </div>
 

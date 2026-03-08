@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'State aliasing', detail: 'occurs when different true states map to the same observation, confusing the agent. This is the core issue in POMDPs.' },
-    { label: 'Intrinsic motivation', detail: 'augments external rewards with curiosity-driven bonuses: $R_{\\text{total}} = R_{\\text{extrinsic}} + \\beta \\cdot R_{\\text{intrinsic}}$, where $R_{\\text{intrinsic}}$ might measure prediction error or state novelty (Pathak et al., 2017).' },
+    { label: 'Intrinsic motivation', detail: 'augments external rewards with curiosity-driven bonuses: R_&#123;total&#125; = R_&#123;extrinsic&#125; +   R_&#123;intrinsic&#125;, where R_&#123;intrinsic&#125; might measure prediction error or state novelty (Pathak et al., 2017).' },
 ];
 
 export default function ExplorerRLStatesActionsRewards() {
@@ -16,10 +16,10 @@ export default function ExplorerRLStatesActionsRewards() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          States, Actions, and Rewards — Key Details Explorer
+          States, Actions, and Rewards \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of states, actions, and rewards.
+          Click each card to explore the technical details.
         </p>
       </div>
 

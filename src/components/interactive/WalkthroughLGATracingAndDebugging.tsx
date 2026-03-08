@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Reading a Trace', desc: 'The foundation of tracing and debugging begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The @traceable Decorator', desc: 'At this stage, the key transformation occurs — the core mechanism that makes tracing and debugging work.' },
-    { title: '3. Adding Context to Traces', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Debugging a Failed Agent Run', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Comparing Runs Side by Side', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Reading a Trace', desc: 'A LangSmith trace is a tree of spans. For a LangGraph agent, the hierarchy typically looks like this: the top-level graph run contains child spans for each node execution, and each node span contains child spans for LLM calls, tool invocations, or retriever queries.' },
+    { title: '2. The @traceable Decorator', desc: 'The @traceable decorator from the langsmith package adds any custom function to the trace tree:  When these functions are called within a traced LangGraph execution, they appear as named spans in the trace tree with their inputs, outputs, and timing captured automatically.' },
+    { title: '3. Adding Context to Traces', desc: 'You can enrich traces with custom metadata and tags for easier filtering:' },
+    { title: '4. Debugging a Failed Agent Run', desc: 'A typical debugging workflow using traces follows these steps:' },
+    { title: '5. Comparing Runs Side by Side', desc: 'When an agent produces inconsistent results, pull two runs and compare their execution paths:' },
 ];
 
 export default function WalkthroughLGATracingAndDebugging() {
@@ -17,10 +17,10 @@ export default function WalkthroughLGATracingAndDebugging() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Tracing and Debugging — Step by Step
+          Tracing and Debugging \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how tracing and debugging works, one stage at a time.

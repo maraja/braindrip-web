@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACEmbodiedAgents() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'PaLM-E (562B parameters) processes interleaved text and sensor data (images, robot state vectors) and outputs text including robotic action plans.', isTrue: true, explanation: 'This is a key technical detail of Embodied Agents.' },
-    { text: 'LLMs generate at 10-100 tokens/second.', isTrue: true, explanation: 'This is a key technical detail of Embodied Agents.' },
-    { text: 'The LLM inference bottleneck makes real-time reactive behavior challenging', isTrue: true, explanation: 'This is a key technical detail of Embodied Agents.' },
+    { text: 'LLMs can directly control robots.', isTrue: false, explanation: 'LLMs generate plans and high-level actions. Low-level motor control (joint torques, PID loops, trajectory interpolation) requires specialized controllers.' },
+    { text: 'training on diverse visual-language tasks improves robotic task performance', isTrue: true, explanation: 'training on diverse visual-language tasks improves robotic task performance' },
+    { text: '3 translation, 3 rotation, 1 gripper) as text tokens, treating robotic control as a language generation problem', isTrue: true, explanation: '3 translation, 3 rotation, 1 gripper) as text tokens, treating robotic control as a language generation problem' },
+    { text: 'robot control requires 10-50 Hz update rates for smooth motion.', isTrue: true, explanation: 'LLMs generate at 10-100 tokens/second. This mismatch requires a hierarchical approach: the LLM generates high-level plans (1-5 Hz), and a low-level controller executes them at high frequency' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

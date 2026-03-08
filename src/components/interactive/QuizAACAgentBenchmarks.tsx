@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACAgentBenchmarks() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Environment reproducibility: Agent benchmarks require reproducible environments.', isTrue: true, explanation: 'This is a key technical detail of Agent Benchmarks.' },
-    { text: 'SWE-bench uses specific repository commits and test suites.', isTrue: true, explanation: 'This is a key technical detail of Agent Benchmarks.' },
-    { text: 'WebArena uses self-hosted web applications with deterministic state reset.', isTrue: true, explanation: 'This is a key technical detail of Agent Benchmarks.' },
+    { text: 'High benchmark scores mean the agent works well in production.', isTrue: false, explanation: 'Benchmarks test specific, well-defined tasks. Production tasks are diverse, messy, and often underspecified.' },
+    { text: 'Agent benchmarks require reproducible environments.', isTrue: true, explanation: 'SWE-bench uses specific repository commits and test suites. WebArena uses self-hosted web applications with deterministic state reset.' },
+    { text: 'Benchmarks measure all important capabilities.', isTrue: false, explanation: 'Current benchmarks focus on task completion in well-defined environments. They do not measure important real-world qualities like handling ambiguous instructions, maintaining context over long sessions, or recovering gracefully from unexpected errors.' },
+    { text: 'A full SWE-bench Lite evaluation (300 tasks, multiple runs) costs $500-5,000 in API fees depending on the agent.', isTrue: true, explanation: 'WebArena requires hosting the web environments. Benchmark evaluation is a significant cost, limiting how frequently it can be run.' },
+    { text: 'The best agent on one benchmark is the best overall.', isTrue: false, explanation: 'Different benchmarks measure different capabilities. An agent optimized for coding (SWE-bench) may perform poorly on web interaction (WebArena) and vice versa.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE03Gpt4o() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'OpenAI\'s GPT-4o ("Omni"), released in May 2024, was the first truly unified multimodal model — trained end-to-end to accept and generate text, audio, images, and video through a single neural network, at 2x the speed and half the cost of GPT-4 Turbo.', isTrue: true, explanation: 'This captures the core purpose of GPT-4o.' },
-    { text: 'GPT-4o is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding GPT-4o is important for building on more advanced topics.' },
-    { text: 'GPT-4o is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding GPT-4o is important for building on more advanced topics.' },
+    { text: 'GPT-4o is just GPT-4 with voice added.', isTrue: false, explanation: 'GPT-4o is a fundamentally different model trained end-to-end across modalities. It is not GPT-4 with a speech wrapper.' },
+    { text: 'Text, images, audio, video', isTrue: true, explanation: 'Text, images, audio, video' },
+    { text: 'GPT-4o is the most capable model OpenAI has made.', isTrue: false, explanation: 'On pure text reasoning, GPT-4o was roughly equivalent to GPT-4 Turbo, not a significant leap. Its innovation was in multimodal integration and efficiency.' },
+    { text: 'Average 320 milliseconds (human-like)', isTrue: true, explanation: 'Average 320 milliseconds (human-like)' },
+    { text: 'The live demo represented immediately available capabilities.', isTrue: false, explanation: 'Several of the most impressive features demonstrated — particularly the Advanced Voice Mode with full emotional range — rolled out gradually over months. At launch, only text and vision capabilities were fully available to most users.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

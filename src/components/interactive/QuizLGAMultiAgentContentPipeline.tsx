@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGAMultiAgentContentPipeline() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The supervisor uses with_structured_output(RoutingDecision) to guarantee valid routing values.', isTrue: true, explanation: 'This is a key technical detail of Multi-Agent Content Pipeline.' },
-    { text: 'All specialist nodes route back to the supervisor via fixed edges; only the supervisor has conditional outbound edges.', isTrue: true, explanation: 'This is a key technical detail of Multi-Agent Content Pipeline.' },
-    { text: 'The revision_count field acts as a circuit breaker, capping the edit loop at 3 iterations.', isTrue: true, explanation: 'This is a key technical detail of Multi-Agent Content Pipeline.' },
+    { text: 'The supervisor needs to be a more powerful model than the specialists.', isTrue: false, explanation: 'The supervisor only routes; it never produces content. A smaller model with structured output often suffices.' },
+    { text: 'A supervisor-orchestrated pipeline where a researcher, writer, and editor agent collaborate with an evaluator-optimizer loop for iterative content improvement.', isTrue: true, explanation: 'This captures the core definition of Multi-Agent Content Pipeline.' },
+    { text: 'Multi-Agent Content Pipeline is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Multi-Agent Content Pipeline is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

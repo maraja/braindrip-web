@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE08NormalizationAndActivationEvolution() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The quiet evolution of normalization (LayerNorm to RMSNorm) and activation functions (ReLU to SwiGLU) in transformers represents the kind of incremental architectural refinement that individually yields small gains but collectively defines the "modern LLM recipe."', isTrue: true, explanation: 'This captures the core purpose of Normalization and Activation Evolution.' },
-    { text: 'Normalization and Activation Evolution is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Normalization and Activation Evolution is important for building on more advanced topics.' },
-    { text: 'Normalization and Activation Evolution is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Normalization and Activation Evolution is important for building on more advanced topics.' },
+    { text: 'These are just implementation details that don\'t matter.', isTrue: false, explanation: 'At scale, 1-3% quality improvements translate to hundreds of millions of dollars in equivalent compute savings. The choice of normalization and activation is among the most consequential architectural decisions.' },
+    { text: 'RMSNorm is just a faster LayerNorm.', isTrue: false, explanation: 'RMSNorm is also a different normalization — it does not center activations around zero. The empirical finding that centering is unnecessary tells us something about what normalization actually does in transformers: it is primarily about scale control, not centering.' },
+    { text: 'SwiGLU adds parameters for free.', isTrue: false, explanation: 'SwiGLU requires a third weight matrix in the FFN, increasing parameter count by ~50% in the FFN block if hidden dimensions are unchanged. In practice, the hidden dimension is reduced to keep total parameters constant, trading width for gating capability.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

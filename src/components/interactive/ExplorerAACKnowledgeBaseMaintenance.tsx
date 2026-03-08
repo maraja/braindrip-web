@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Source freshness tracking', detail: 'Each chunk stores its source URL, last-checked timestamp, expected update frequency, and content hash. A background process periodically fetches sources and compares hashes to detect changes.' },
-    { label: 'Embedding model migration', detail: 'When upgrading to a better embedding model, all existing embeddings become incompatible with new query embeddings. Migration requires re-embedding the entire corpus -- a potentially expensive operation for large knowledge bases. Blue-green deployment (maintaining two indexes during migration) avoids downtime.' },
+    { label: 'Embedding model migration', detail: 'When upgrading to a better embedding model, all existing embeddings become incompatible with new query embeddings. Migration requires re-embedding the entire corpus -- a potentially expensive operation for large knowledge bases.' },
     { label: 'Contradiction resolution strategies', detail: 'When new content contradicts old content on the same topic, the system can (a) always prefer the newer version, (b) flag contradictions for human review, (c) keep both versions with temporal metadata, or (d) apply domain-specific rules (e.g., peer-reviewed sources override blog posts).' },
-    { label: 'Chunk-level metadata', detail: 'Every chunk carries metadata including: source document, chunk position, creation date, last verified date, source authority score, and content hash. This metadata enables targeted maintenance operations (e.g., \"refresh all chunks from source X\").' },
+    { label: 'Chunk-level metadata', detail: 'Every chunk carries metadata including: source document, chunk position, creation date, last verified date, source authority score, and content hash. This metadata enables targeted maintenance operations (e.g., "refresh all chunks from source X").' },
     { label: 'Quality monitoring', detail: 'Track retrieval quality metrics over time: average relevance score of top-k results, percentage of queries with no relevant results, user feedback on answer quality. Degradation in these metrics signals maintenance needs.' },
     { label: 'Automated testing', detail: 'A test suite of known question-answer pairs validates that the knowledge base produces correct retrievals. Run these tests after every maintenance operation (content update, deduplication, re-indexing) to catch regressions.' },
 ];
@@ -20,10 +20,10 @@ export default function ExplorerAACKnowledgeBaseMaintenance() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Knowledge Base Maintenance — Key Details Explorer
+          Knowledge Base Maintenance \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of knowledge base maintenance.
+          Click each card to explore the technical details.
         </p>
       </div>
 

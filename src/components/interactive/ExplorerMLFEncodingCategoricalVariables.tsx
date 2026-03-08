@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Encode after splitting.', detail: 'Target encoding statistics must be computed on training data only. Even one-hot encoding should learn its category vocabulary from training data; unseen categories in the test set should map to a catch-all \"unknown\" column (see **Data Splitting and Sampling**).' },
-    { label: 'Handle unseen categories.', detail: 'Production data will contain categories not seen during training. Strategies: map to \"unknown,\" use hashing (which handles novel values by design), or use a fallback value in target encoding (the global mean).' },
-    { label: 'Interaction with missing data.', detail: 'A missing category can be treated as its own level (\"missing\") or imputed before encoding. See **Handling Missing Data**.' },
-    { label: 'Cardinality vs. frequency.', detail: 'A feature with 1,000 categories where 990 appear fewer than 5 times is effectively a 10-category feature with noise. Group rare categories into an \"other\" bucket before encoding.' },
+    { label: 'Encode after splitting.', detail: 'Target encoding statistics must be computed on training data only. Even one-hot encoding should learn its category vocabulary from training data; unseen categories in the test set should map to a catch-all "unknown" column (see Data Splitting and Sampling).' },
+    { label: 'Handle unseen categories.', detail: 'Production data will contain categories not seen during training. Strategies: map to "unknown," use hashing (which handles novel values by design), or use a fallback value in target encoding (the global mean).' },
+    { label: 'Interaction with missing data.', detail: 'A missing category can be treated as its own level ("missing") or imputed before encoding. See Handling Missing Data.' },
+    { label: 'Cardinality vs. frequency.', detail: 'A feature with 1,000 categories where 990 appear fewer than 5 times is effectively a 10-category feature with noise. Group rare categories into an "other" bucket before encoding.' },
 ];
 
 export default function ExplorerMLFEncodingCategoricalVariables() {
@@ -18,10 +18,10 @@ export default function ExplorerMLFEncodingCategoricalVariables() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Encoding Categorical Variables — Key Details Explorer
+          Encoding Categorical Variables \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of encoding categorical variables.
+          Click each card to explore the technical details.
         </p>
       </div>
 

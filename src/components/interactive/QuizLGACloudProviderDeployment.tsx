@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLGACloudProviderDeployment() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'All providers use the same Docker image built from the Dockerfile in containerization.md.', isTrue: true, explanation: 'This is a key technical detail of Cloud Provider Deployment.' },
-    { text: 'Increase request timeouts beyond the default (60s) -- agent runs with tool calls and reasoning can take 30-120 seconds.', isTrue: true, explanation: 'This is a key technical detail of Cloud Provider Deployment.' },
-    { text: 'Use managed secrets services (AWS Secrets Manager, GCP Secret Manager, Azure Key Vault) instead of environment variables for API keys.', isTrue: true, explanation: 'This is a key technical detail of Cloud Provider Deployment.' },
+    { text: 'Cloud Run cannot handle long-running agent requests.', isTrue: false, explanation: 'Cloud Run supports request timeouts up to 60 minutes. Set --timeout appropriately for your use case.' },
+    { text: 'Deploying LangGraph agents to AWS, GCP, or Azure involves packaging the agent as a Docker container and running it on a managed container service -- with each provider offering trade-offs in complexity, cost, and scaling behavior.', isTrue: true, explanation: 'This captures the core definition of Cloud Provider Deployment.' },
+    { text: 'Cloud Provider Deployment is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Cloud Provider Deployment is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

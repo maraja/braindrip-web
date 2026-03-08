@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCImageNoiseAndDenoising() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A 5x5 median filter processes a 1-megapixel image in approximately 2 ms on a modern CPU; bilateral filtering at the same size takes approximately 50 ms due to its range kernel.', isTrue: true, explanation: 'This is a key technical detail of Image Noise and Denoising.' },
-    { text: 'OpenCV\'s fastNlMeansDenoisingColored is optimized with block-matching acceleration but still takes ~500 ms for a 1-megapixel image.', isTrue: true, explanation: 'This is a key technical detail of Image Noise and Denoising.' },
-    { text: 'For Poisson noise, the Anscombe transform ($f(x) = 2\\sqrt&#123;x + 3/8&#125;$) stabilizes variance to approximately 1, allowing Gaussian denoising methods to be applied.', isTrue: true, explanation: 'This is a key technical detail of Image Noise and Denoising.' },
+    { text: 'More blur always means less noise.', isTrue: false, explanation: 'Increasing the Gaussian kernel size reduces noise variance but also destroys signal detail. The optimal kernel size balances noise reduction with edge/texture preservation.' },
+    { text: 'Noise is always additive and Gaussian.', isTrue: false, explanation: 'Poisson noise (dominant in low-light), speckle noise (in ultrasound/radar), and impulse noise (dead pixels) all have fundamentally different statistical properties requiring different denoising approaches.' },
+    { text: 'Deep learning denoisers always beat classical methods.', isTrue: false, explanation: 'On Gaussian noise benchmarks, deep methods have a clear edge. But BM3D remains competitive, especially on structured noise or out-of-distribution noise types where trained networks can produce artifacts.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

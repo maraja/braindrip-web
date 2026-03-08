@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture and Efficiency', desc: 'The foundation of claude 3.5 sonnet begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Benchmark Dominance', desc: 'At this stage, the key transformation occurs — the core mechanism that makes claude 3.5 sonnet work.' },
-    { title: '3. Pricing and Positioning', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The October Update and Computer Use', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Architecture and Efficiency', desc: 'Anthropic did not disclose the exact architecture or parameter count of Claude 3.5 Sonnet. What is known is that it maintained the same 200K context window as the Claude 3 family, used similar safety training approaches (Constitutional AI), and was optimized for a dramatically better.' },
+    { title: '2. Benchmark Dominance', desc: 'The numbers told an extraordinary story. On GPQA (graduate-level expert reasoning), Claude 3.5 Sonnet achieved 59.4% — surpassing every model including GPT-4o and Claude 3 Opus.' },
+    { title: '3. Pricing and Positioning', desc: 'Claude 3.5 Sonnet was priced at 3 per million input tokens and 15 per million output tokens. This was significantly cheaper than the 15/75 pricing of Claude 3 Opus.' },
+    { title: '4. The October Update and Computer Use', desc: 'The October 22, 2024 updated version introduced further benchmark improvements and the computer use capability in public beta. The model could interpret screenshots, identify UI elements, plan sequences of actions, and execute them by controlling mouse movements and keyboard inputs.' },
 ];
 
 export default function WalkthroughLLE04Claude35Sonnet() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE04Claude35Sonnet() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Claude 3.5 Sonnet — Step by Step
+          Claude 3.5 Sonnet \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how claude 3.5 sonnet works, one stage at a time.

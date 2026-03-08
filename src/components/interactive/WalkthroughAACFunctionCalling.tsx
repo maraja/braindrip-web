@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Schema Definition', desc: 'The foundation of function calling begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Model Decision and Generation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes function calling work.' },
-    { title: '3. Execution Loop', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Validation and Error Handling', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Schema Definition', desc: 'Every function is described to the LLM via a JSON schema that includes the function name, a natural language description, and parameter definitions with types, descriptions, and constraints.' },
+    { title: '2. Model Decision and Generation', desc: 'When the LLM receives a user message along with available function schemas, it makes two decisions: (1) whether to call a function at all or respond with plain text, and (2) if calling a function, which one and with what arguments.' },
+    { title: '3. Execution Loop', desc: 'The host application receives the function call, validates the arguments against the schema, executes the actual function, and returns the result to the model in a subsequent message.' },
+    { title: '4. Validation and Error Handling', desc: 'Robust implementations validate the generated JSON against the schema before execution. Common failure modes include: the model hallucinating function names that do not exist, providing wrong parameter types (string instead of integer), omitting required parameters, or producing malformed JSON.' },
 ];
 
 export default function WalkthroughAACFunctionCalling() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACFunctionCalling() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Function Calling — Step by Step
+          Function Calling \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how function calling works, one stage at a time.

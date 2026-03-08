@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizRLQLearning() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Table size: $|S| \\times |A|$ entries, making tabular Q-learning feasible only for small discrete state-action spaces (typically $&lt; 10^6$ entries).', isTrue: true, explanation: 'This is a key technical detail of Q-Learning.' },
-    { text: 'Learning rate: Common practice is $\\alpha \\in [0.01, 0.5]$, often decayed over time.', isTrue: true, explanation: 'This is a key technical detail of Q-Learning.' },
-    { text: 'Higher $\\alpha$ speeds initial learning but increases asymptotic noise.', isTrue: true, explanation: 'This is a key technical detail of Q-Learning.' },
+    { text: 'Q-learning learns from off-policy data without any conditions.', isTrue: false, explanation: 'Q-learning can update from any data, but convergence requires that the behavior policy visits all state-action pairs infinitely often. A policy that never visits state s_7 will never learn Q^*(s_7, ).' },
+    { text: '$ entries, making tabular Q-learning feasible only for small discrete state-action spaces (typically &lt; 10^6$ entries).', isTrue: true, explanation: '$ entries, making tabular Q-learning feasible only for small discrete state-action spaces (typically &lt; 10^6$ entries).' },
+    { text: 'Common practice is   [0.01, 0.5], often decayed over time.', isTrue: true, explanation: 'Higher  speeds initial learning but increases asymptotic noise.' },
+    { text: '-greedy with  decayed from ~0.1 to ~0.01 is standard.', isTrue: true, explanation: 'Too little exploration causes premature convergence; too much slows learning.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

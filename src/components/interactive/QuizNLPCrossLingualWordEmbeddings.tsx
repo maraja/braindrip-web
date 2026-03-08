@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPCrossLingualWordEmbeddings() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Monolingual embeddings of dimension 300 (fastText or word2vec) are standard inputs; the mapping W is therefore a 300 x 300 matrix with only 90,000 parameters.', isTrue: true, explanation: 'This is a key technical detail of Cross-Lingual Word Embeddings.' },
-    { text: 'Supervised methods need as few as 1,000--5,000 seed translation pairs to achieve competitive results; performance saturates around 20,000 pairs.', isTrue: true, explanation: 'This is a key technical detail of Cross-Lingual Word Embeddings.' },
-    { text: 'Unsupervised MUSE achieves within 3--5 points of supervised methods for closely related language pairs (e.g., English-Spanish) but degrades sharply for distant pairs.', isTrue: true, explanation: 'This is a key technical detail of Cross-Lingual Word Embeddings.' },
+    { text: 'Cross-lingual embeddings require parallel corpora.', isTrue: false, explanation: 'Unsupervised methods like MUSE and VecMap require only monolingual corpora from each language. Even supervised methods need only a small bilingual dictionary (1K--5K pairs), not sentence-aligned parallel text.' },
+    { text: 'A linear mapping is too simple to capture cross-lingual structure.', isTrue: false, explanation: 'The linearity is actually well-motivated: Mikolov et al. showed that the geometric structure of embedding spaces is remarkably consistent across languages, and the Procrustes constraint (orthogonal W) leverages this insight.' },
+    { text: 'Unsupervised alignment works for any language pair.', isTrue: false, explanation: 'Unsupervised methods rely on the isomorphism assumption, which fails for distant language pairs. Vulovic et al.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

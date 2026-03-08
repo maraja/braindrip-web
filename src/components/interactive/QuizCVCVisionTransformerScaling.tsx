@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCVisionTransformerScaling() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Compute-optimal ViT training follows an approximate rule: model parameters and training tokens should scale roughly proportionally.', isTrue: true, explanation: 'This is a key technical detail of Vision Transformer Scaling.' },
-    { text: 'Under-training a large model wastes parameters; over-training a small model wastes compute.', isTrue: true, explanation: 'This is a key technical detail of Vision Transformer Scaling.' },
-    { text: 'ViT-22B uses QK normalization ($\\ell_2$ normalization of queries and keys before the dot product) to prevent attention logit explosion at large hidden dimensions.', isTrue: true, explanation: 'This is a key technical detail of Vision Transformer Scaling.' },
+    { text: 'ViTs always need more data than CNNs.', isTrue: false, explanation: 'This is true at initialization, but with modern training recipes (DeiT augmentations, MAE pre-training), ViT-B is competitive with ResNets on ImageNet-1K. The data gap is a function of training strategy, not just architecture.' },
+    { text: 'model parameters and training tokens should scale roughly proportionally.', isTrue: true, explanation: 'Under-training a large model wastes parameters; over-training a small model wastes compute.' },
+    { text: 'Vision Transformers follow predictable scaling laws where performance improves log-linearly with compute and data, but they require substantially more training data than CNNs to reach their potential -- a threshold that, once crossed, allows ViTs to decisively overtake convolutional models.', isTrue: true, explanation: 'This captures the core definition of Vision Transformer Scaling.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

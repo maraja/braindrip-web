@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Major Players', desc: 'The foundation of chinese ai labs: the global competition landscape begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Impact of Chip Export Restrictions', desc: 'At this stage, the key transformation occurs — the core mechanism that makes chinese ai labs: the global competition landscape work.' },
+    { title: '1. The Major Players', desc: 'DeepSeek (High-Flyer Capital, Hangzhou, founded 2023): Perhaps the most globally consequential Chinese AI lab by early 2025. Backed by the quantitative hedge fund High-Flyer, which contributed both financial resources and a culture of mathematical rigor, DeepSeek combined research ambition with.' },
+    { title: '2. The Impact of Chip Export Restrictions', desc: 'US export restrictions, beginning with the Bureau of Industry and Security rules in October 2022 and significantly expanded in October 2023 and further tightened through 2024, progressively cut Chinese labs off from NVIDIA\'s top-tier GPUs. The A100 was banned first.' },
 ];
 
 export default function WalkthroughLLE06ChineseAiLabs() {
@@ -14,10 +14,10 @@ export default function WalkthroughLLE06ChineseAiLabs() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Chinese AI Labs: The Global Competition Landscape — Step by Step
+          Chinese AI Labs: The Global Competition Landscape \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how chinese ai labs: the global competition landscape works, one stage at a time.

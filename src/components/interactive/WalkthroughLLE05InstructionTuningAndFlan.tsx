@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Original FLAN (2021)', desc: 'The foundation of instruction tuning and flan begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Scaling to Flan-PaLM (2022)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes instruction tuning and flan work.' },
-    { title: '3. Stanford Alpaca: The Budget Version (2023)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The Instruction Data Taxonomy', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Original FLAN (2021)', desc: 'FLAN was built on top of a 137B parameter LaMDA-PT model (a pre-trained version of the model that became LaMDA). The training data consisted of 62 NLP datasets grouped into 12 task clusters: natural language inference, reading comprehension, closed-book QA, translation, commonsense reasoning,.' },
+    { title: '2. Scaling to Flan-PaLM (2022)', desc: 'In 2022, Hyung Won Chung and colleagues at Google scaled instruction tuning dramatically with the Flan-PaLM collection. They increased the number of tasks from 62 to 1,836, added chain-of-thought reasoning examples, and applied instruction tuning to PaLM (540B parameters).' },
+    { title: '3. Stanford Alpaca: The Budget Version (2023)', desc: 'In March 2023, Stanford researchers demonstrated that instruction tuning could be done cheaply. They used the OpenAI API to generate 52,000 instruction-following examples from GPT-3.5 for approximately $600.' },
+    { title: '4. The Instruction Data Taxonomy', desc: 'Instruction tuning data can be categorized along several dimensions:  Source: Human-written (FLAN, Super-Natural Instructions) vs. synthetic (Alpaca, Self-Instruct) Format: Input-output only vs.' },
 ];
 
 export default function WalkthroughLLE05InstructionTuningAndFlan() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE05InstructionTuningAndFlan() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Instruction Tuning and FLAN — Step by Step
+          Instruction Tuning and FLAN \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how instruction tuning and flan works, one stage at a time.

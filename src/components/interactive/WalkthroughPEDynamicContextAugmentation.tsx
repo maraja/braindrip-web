@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Confidence-Based Triggers', desc: 'The foundation of dynamic context augmentation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Iterative Retrieval (Search-Read-Search)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes dynamic context augmentation work.' },
-    { title: '3. Just-in-Time Context Injection', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Retrieval Budgets', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Confidence-Based Triggers', desc: 'The model evaluates its confidence in answering based on available context and triggers additional retrieval when confidence is low:  Explicit confidence assessment: The prompt instructs the model to assess whether it has sufficient information before generating a final answer.' },
+    { title: '2. Iterative Retrieval (Search-Read-Search)', desc: 'The iterative retrieval loop follows a pattern:  Initial retrieval: Execute the first query, retrieve top-K documents Read and assess: The model reads the retrieved context, identifies the question aspects covered and gaps remaining Refined retrieval: Generate new queries targeting the identified.' },
+    { title: '3. Just-in-Time Context Injection', desc: 'In multi-step reasoning or long-form generation, context can be injected at the point of need rather than all at the beginning:  Section-by-section retrieval: For a long report, retrieve context relevant to each section as the model reaches it, rather than pre-loading all context.' },
+    { title: '4. Retrieval Budgets', desc: 'Unconstrained dynamic retrieval can become expensive and slow. Retrieval budgets impose limits:  Maximum retrieval rounds: Typically 2-4 rounds for interactive use cases, up to 8-10 for batch processing Total token budget: Cap the total tokens retrieved across all rounds (e.g.' },
 ];
 
 export default function WalkthroughPEDynamicContextAugmentation() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEDynamicContextAugmentation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Dynamic Context Augmentation — Step by Step
+          Dynamic Context Augmentation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how dynamic context augmentation works, one stage at a time.

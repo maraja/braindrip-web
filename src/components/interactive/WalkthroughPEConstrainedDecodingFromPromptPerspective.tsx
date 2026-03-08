@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Grammar-Based Filtering', desc: 'The foundation of constrained decoding from the prompt perspective begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Regex Constraints', desc: 'At this stage, the key transformation occurs — the core mechanism that makes constrained decoding from the prompt perspective work.' },
-    { title: '3. Schema Enforcement at the Token Level', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Tools and Frameworks', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. What Constraints Can and Cannot Guarantee', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Grammar-Based Filtering', desc: 'The most general form of constrained decoding uses context-free grammars (CFGs) to define valid output. A JSON grammar specifies that output must start with &#123; or [, keys must be quoted strings, values must be valid JSON types, and so on.' },
+    { title: '2. Regex Constraints', desc: 'For simpler structural requirements, regular expression constraints are more practical than full grammars. Want the output to be a date in ISO format?' },
+    { title: '3. Schema Enforcement at the Token Level', desc: 'Schema enforcement combines grammar-based filtering with semantic constraints. A JSON Schema defines not just valid JSON syntax, but valid structure: required fields, allowed types, enum values, minimum/maximum values, and pattern constraints.' },
+    { title: '4. Tools and Frameworks', desc: 'Outlines (Python): Open-source library that converts JSON schemas and regex patterns into token-level constraints for any HuggingFace model. The standard for self-hosted constrained decoding.' },
+    { title: '5. What Constraints Can and Cannot Guarantee', desc: 'This is the critical distinction for practitioners:  Constraints guarantee: Valid syntax (parseable JSON, XML, etc.), correct structure (required fields present, correct types), valid enum values, format compliance (dates, emails, patterns), and output length bounds.' },
 ];
 
 export default function WalkthroughPEConstrainedDecodingFromPromptPerspective() {
@@ -17,10 +17,10 @@ export default function WalkthroughPEConstrainedDecodingFromPromptPerspective() 
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Constrained Decoding from the Prompt Perspective — Step by Step
+          Constrained Decoding from the Prompt Perspective \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how constrained decoding from the prompt perspective works, one stage at a time.

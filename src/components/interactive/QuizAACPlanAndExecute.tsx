@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizAACPlanAndExecute() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Plan-and-Execute separates strategic planning (deciding what steps to take) from tactical execution (carrying out each step), enabling agents to handle complex multi-step tasks with structured oversight and adaptive replanning.', isTrue: true, explanation: 'This captures the core purpose of Plan-and-Execute.' },
-    { text: 'Plan-and-Execute is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Plan-and-Execute is important for building on more advanced topics.' },
-    { text: 'Plan-and-Execute is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Plan-and-Execute is important for building on more advanced topics.' },
+    { text: 'Plan-and-Execute is always better than ReAct.', isTrue: false, explanation: 'For short, exploratory tasks where the path is unclear, ReAct\'s flexibility outperforms Plan-and-Execute. The planning overhead is wasted if the task only requires 2-3 steps or if the plan needs to change after every step.' },
+    { text: 'The PlanAndExecute agent in LangChain uses a Planner (LLM that generates plans) and an Executor (ReAct agent that handles individual steps)', isTrue: true, explanation: 'The PlanAndExecute agent in LangChain uses a Planner (LLM that generates plans) and an Executor (ReAct agent that handles individual steps)' },
+    { text: 'The plan must be followed exactly.', isTrue: false, explanation: 'Good Plan-and-Execute implementations treat the plan as a living document. The plan provides direction, but the agent should deviate or replan when execution reveals that the plan is suboptimal.' },
+    { text: 'Plans are typically ordered lists of natural language instructions, but can also be structured as JSON with dependencies, expected outputs, and success criteria', isTrue: true, explanation: 'Plans are typically ordered lists of natural language instructions, but can also be structured as JSON with dependencies, expected outputs, and success criteria' },
+    { text: 'Planning and execution use the same model.', isTrue: false, explanation: 'In many implementations, the planner is a more capable (and expensive) model that runs once, while the executor is a faster, cheaper model that runs many times. This asymmetry optimizes cost.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

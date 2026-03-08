@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizAAEInspectAiAndOpenSourceFrameworks() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Inspect AI is the leading open-source agent evaluation framework, built by the UK AI Safety Institute, providing a composable architecture of Tasks, Solvers, Scorers, and Datasets for rigorous and reproducible agent assessment.', isTrue: true, explanation: 'This captures the core purpose of Inspect AI and Open-Source Evaluation Frameworks.' },
-    { text: 'Inspect AI and Open-Source Evaluation Frameworks is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Inspect AI and Open-Source Evaluation Frameworks is important for building on more advanced topics.' },
-    { text: 'Inspect AI and Open-Source Evaluation Frameworks is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Inspect AI and Open-Source Evaluation Frameworks is important for building on more advanced topics.' },
+    { text: 'Inspect AI is only for safety evaluation.', isTrue: false, explanation: 'While developed by a safety institute, Inspect AI is a general-purpose evaluation framework. It is equally effective for evaluating coding agents, customer service bots, or research assistants.' },
+    { text: 'Open-source frameworks lack the polish of commercial platforms.', isTrue: false, explanation: 'Inspect AI, in particular, is production-grade software with extensive documentation, active development, and adoption by well-resourced organizations. The trade-off is not quality but support model: community-driven rather than vendor-supported.' },
+    { text: 'You should pick one framework and standardize on it.', isTrue: false, explanation: 'Different frameworks serve different purposes. Inspect AI excels at structured, repeatable evaluations.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

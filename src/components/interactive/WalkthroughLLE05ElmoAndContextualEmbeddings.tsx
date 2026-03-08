@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture: Deep Bidirectional Language Model', desc: 'The foundation of elmo and contextual embeddings begins with understanding its core input requirements and initial setup.' },
-    { title: '2. The Linear Combination Trick', desc: 'At this stage, the key transformation occurs — the core mechanism that makes elmo and contextual embeddings work.' },
-    { title: '3. Pre-training Details', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Integration with Downstream Tasks', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Architecture: Deep Bidirectional Language Model', desc: 'ELMo uses a two-layer bidirectional LSTM trained as a language model. The forward LSTM predicts the next token given the left context; the backward LSTM predicts the previous token given the right context.' },
+    { title: '2. The Linear Combination Trick', desc: 'ELMo\'s representation for each token is a task-specific learned linear combination of all three layers: ELMo_k = gamma  sum(s_j  h_j), where s_j are softmax-normalized layer weights learned during fine-tuning, and gamma is a task-specific scaling factor.' },
+    { title: '3. Pre-training Details', desc: 'The model was pre-trained on the 1 Billion Word Benchmark (approximately 800M tokens of news text). Each LSTM layer had 4096 hidden units projected down to 512 dimensions.' },
+    { title: '4. Integration with Downstream Tasks', desc: 'Using ELMo was straightforward: compute ELMo vectors for each token in the input, concatenate them with existing task-specific embeddings (usually GloVe), and feed the combined representation into the task-specific model.' },
 ];
 
 export default function WalkthroughLLE05ElmoAndContextualEmbeddings() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE05ElmoAndContextualEmbeddings() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          ELMo and Contextual Embeddings — Step by Step
+          ELMo and Contextual Embeddings \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how elmo and contextual embeddings works, one stage at a time.

@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizMLFKMeansClustering() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Consider robust alternatives like K-medoids or preprocessing to remove outliers before clustering', isTrue: true, explanation: 'This is a key technical detail of K-Means Clustering.' },
-    { text: 'Partitioning data into K groups by iteratively assigning points to nearest centroids -- simple, fast, and surprisingly effective.', isTrue: true, explanation: 'This captures the core purpose of K-Means Clustering.' },
-    { text: 'K-Means Clustering is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding K-Means Clustering is important for building on more advanced topics.' },
+    { text: 'K-means always finds the best clustering.', isTrue: false, explanation: 'It converges to a local minimum. Run multiple times with different initializations and keep the best result (lowest J).' },
+    { text: 'O(nKdT) where T is the number of iterations, d is dimensionality', isTrue: true, explanation: 'O(nKdT) where T is the number of iterations, d is dimensionality' },
+    { text: 'O(nK + Kd) for assignments and centroids -- very memory efficient', isTrue: true, explanation: 'O(nK + Kd) for assignments and centroids -- very memory efficient' },
+    { text: 'Guaranteed to a local minimum; global optimum is NP-hard in general even for K = 2', isTrue: true, explanation: 'Guaranteed to a local minimum; global optimum is NP-hard in general even for K = 2' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

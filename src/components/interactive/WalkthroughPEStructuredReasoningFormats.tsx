@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. OTA: Observation-Thought-Action', desc: 'The foundation of structured reasoning formats begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Given-Find-Solution', desc: 'At this stage, the key transformation occurs — the core mechanism that makes structured reasoning formats work.' },
-    { title: '3. Claim-Evidence-Reasoning (CER)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. STAR: Situation-Task-Action-Result', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. OTA: Observation-Thought-Action', desc: 'The OTA (also called ReAct) format structures reasoning as a cycle of three phases. The model first states its Observation (what it sees, what information is available), then articulates a Thought (interpretation, analysis, planning), and finally declares an Action (what to do next, what to output,.' },
+    { title: '2. Given-Find-Solution', desc: 'This format, drawn from physics and engineering education, structures reasoning into three explicit phases: Given (list all known information and constraints), Find (state what needs to be determined), and Solution (work through the steps to get from given to find).' },
+    { title: '3. Claim-Evidence-Reasoning (CER)', desc: 'CER structures analytical output into three components: Claim (the assertion or conclusion), Evidence (specific data, quotes, or facts supporting the claim), and Reasoning (the logical connection between evidence and claim).' },
+    { title: '4. STAR: Situation-Task-Action-Result', desc: 'STAR organizes retrospective analysis into four phases: Situation (context and background), Task (specific challenge or objective), Action (what was done), and Result (outcome and impact).' },
 ];
 
 export default function WalkthroughPEStructuredReasoningFormats() {
@@ -16,10 +16,10 @@ export default function WalkthroughPEStructuredReasoningFormats() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Structured Reasoning Formats — Step by Step
+          Structured Reasoning Formats \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how structured reasoning formats works, one stage at a time.

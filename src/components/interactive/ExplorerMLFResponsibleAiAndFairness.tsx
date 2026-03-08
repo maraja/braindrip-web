@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const DETAILS = [
     { label: 'Intersectionality', detail: 'Fairness metrics computed on single protected attributes miss compounded disadvantages. A model may be fair for women and fair for minorities but unfair for minority women specifically.' },
-    { label: 'Proxy features', detail: 'Removing the protected attribute from features does not eliminate bias. Correlated features (zip code, name, education) can proxy for protected attributes. This is called \"fairness through unawareness\" and it does not work.' },
+    { label: 'Proxy features', detail: 'Removing the protected attribute from features does not eliminate bias. Correlated features (zip code, name, education) can proxy for protected attributes. This is called "fairness through unawareness" and it does not work.' },
     { label: 'Tradeoff quantification', detail: 'Measure the accuracy cost of each fairness constraint. Often the tradeoff is small (1-2% accuracy) for significant fairness improvement.' },
     { label: 'Dynamic fairness', detail: 'Fairness must be monitored continuously, not just at training time. Data drift can introduce new biases post-deployment.' },
 ];
@@ -18,10 +18,10 @@ export default function ExplorerMLFResponsibleAiAndFairness() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Responsible AI and Fairness — Key Details Explorer
+          Responsible AI and Fairness \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of responsible ai and fairness.
+          Click each card to explore the technical details.
         </p>
       </div>
 

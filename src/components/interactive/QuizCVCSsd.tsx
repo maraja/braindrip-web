@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizCVCSsd() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'SSD-300 (VGG-16): 74.3% mAP on VOC 2007, 59 FPS on Titan X GPU.', isTrue: true, explanation: 'This is a key technical detail of SSD (Single Shot MultiBox Detector).' },
-    { text: 'SSD-512 (VGG-16): 76.8% mAP on VOC 2007, 22 FPS.', isTrue: true, explanation: 'This is a key technical detail of SSD (Single Shot MultiBox Detector).' },
-    { text: 'Small object weakness: SSD-300 achieves only ~6% AP_S on COCO, because the lowest feature map ($38 \\times 38$) has already lost fine spatial detail.', isTrue: true, explanation: 'This is a key technical detail of SSD (Single Shot MultiBox Detector).' },
+    { text: 'SSD is just YOLO with more feature maps.', isTrue: false, explanation: 'While both are single-stage, SSD uses anchor boxes at multiple feature map scales (like an RPN at each level), whereas YOLOv1 used no anchors and predicted from a single 7 x 7 grid. The multi-scale anchor approach is SSD\'s key contribution.' },
+    { text: '74.3% mAP on VOC 2007, 59 FPS on Titan X GPU.', isTrue: true, explanation: '74.3% mAP on VOC 2007, 59 FPS on Titan X GPU.' },
+    { text: '76.8% mAP on VOC 2007, 22 FPS.', isTrue: true, explanation: '76.8% mAP on VOC 2007, 22 FPS.' },
+    { text: 'SSD-300 achieves only ~6% AP_S on COCO, because the lowest feature map (38 x 38) has already lost fine spatial detail.', isTrue: true, explanation: 'SSD-512 partially mitigates this with higher resolution.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

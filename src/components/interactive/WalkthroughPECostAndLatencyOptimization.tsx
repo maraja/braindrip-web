@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Prompt Compression and Shortening', desc: 'The foundation of cost and latency optimization begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Caching Strategies', desc: 'At this stage, the key transformation occurs — the core mechanism that makes cost and latency optimization work.' },
-    { title: '3. Model Routing', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Batching and Parallelization', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Prompt Compression and Shortening', desc: 'The simplest optimization is reducing prompt length. Ablation studies (see prompt-optimization-techniques.md) often reveal that 20-30% of prompt tokens contribute negligibly to output quality.' },
+    { title: '2. Caching Strategies', desc: 'Prefix caching (also called KV-cache reuse) stores the key-value attention states for the static portion of the prompt (system prompt, few-shot examples) and reuses them across requests.' },
+    { title: '3. Model Routing', desc: 'Model routing directs requests to different models based on task complexity, reducing cost without sacrificing quality for hard tasks. The architecture uses a lightweight classifier (or a small LLM) to assess each request\'s complexity and route accordingly:  Simple queries (factual lookups, simple.' },
+    { title: '4. Batching and Parallelization', desc: 'Request batching groups multiple independent requests into a single API call, reducing per-request overhead and sometimes qualifying for bulk pricing. Batching is most effective for offline processing tasks (document analysis, bulk classification, data enrichment) where real-time latency is not.' },
 ];
 
 export default function WalkthroughPECostAndLatencyOptimization() {
@@ -16,10 +16,10 @@ export default function WalkthroughPECostAndLatencyOptimization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Cost and Latency Optimization — Step by Step
+          Cost and Latency Optimization \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how cost and latency optimization works, one stage at a time.

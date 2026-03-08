@@ -1,23 +1,23 @@
 import { useState } from 'react';
-const baseStyle = { background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: 14, padding: '1.25rem', margin: '1.5rem 0', fontFamily: 'system-ui, sans-serif' };
+const baseStyle = { background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: 14, padding: '1.25rem', margin: '1.5rem 0', fontFamily: "system-ui, sans-serif" };
 export default function AnalogyNLPResponsibleNlpDevelopment() {
   const [idx, setIdx] = useState(0);
-  const analogies = [
-    { emoji: '🏗', label: 'Building', text: 'Think of Responsible NLP Development like constructing a building. Imagine building a bridge. Engineers do not simply calculate load-bearing capacity and pour concrete. They file environmental impact assessments, f... Just as a builder follows blueprints to create a structure, this concept provides the foundational framework that everything else builds upon.' },
-    { emoji: '🎭', label: 'Theater', text: 'Responsible NLP Development is like directing a theater production. Imagine building a bridge. Engineers do not simply calculate load-bearing capacity and pour concrete. They file environmental impact assessments, f... Each element plays a specific role, and the overall performance depends on how well they work together.' },
-    { emoji: '🗺', label: 'Navigation', text: 'Think of Responsible NLP Development like navigating with a map. Imagine building a bridge. Engineers do not simply calculate load-bearing capacity and pour concrete. They file environmental impact assessments, f... You need to understand where you are, where you want to go, and the best route to get there.' },
+  const perspectives = [
+    { emoji: '💡', label: 'Core Idea', text: 'Imagine building a bridge. Engineers do not simply calculate load-bearing capacity and pour concrete. They file environmental impact assessments, follow safety codes, plan for maintenance, document material specifications, and consider how the bridge affects surrounding communities.' },
+    { emoji: '⚙️', label: 'How It Works', text: '(2019) introduced model cards as standardized documentation for trained models. A model card accompanies a released model and includes:  Model details: Architecture, training procedure, parameters, intended use cases. Training data: Description of the dataset, collection methodology, and known limitations.' },
+    { emoji: '🔍', label: 'In Detail', text: 'Responsible NLP development is a set of practices that span the entire lifecycle of an NLP system -- from data collection and annotation through model training, evaluation, documentation, deployment, and monitoring. It operationalizes the ethical concerns identified in bias-in-nlp.md, fairness-in-nlp.md, and privacy-in-nlp.' },
   ];
   return (
     <div style={baseStyle}>
-      <p style={{ fontSize: '0.8rem', fontWeight: 700, color: '#2C3E2D', marginBottom: 10, letterSpacing: '0.05em' }}>\u2726 THINK OF IT AS...</p>
-      <div style={{ display: 'flex', gap: 6, marginBottom: 12, flexWrap: 'wrap' }}>
-        {analogies.map((a, i) => (
-          <button key={i} onClick={() => setIdx(i)} style={{ padding: '4px 12px', borderRadius: 20, border: idx === i ? '2px solid #8BA888' : '1px solid #E5DFD3', background: idx === i ? '#8BA888' + '18' : 'transparent', fontSize: '0.8rem', cursor: 'pointer', color: '#2C3E2D', fontWeight: idx === i ? 600 : 400 }}>
-            {a.emoji} {a.label}
+      <p style={{ fontSize: '0.8rem', fontWeight: 700, color: '#2C3E2D', marginBottom: 10, letterSpacing: '0.05em' }}>\u2726 KEY PERSPECTIVES</p>
+      <div style={{ display: 'flex', gap: 6, marginBottom: 12, flexWrap: 'wrap' as const }}>
+        {perspectives.map((p, i) => (
+          <button key={i} onClick={() => setIdx(i)} style={{ padding: '4px 12px', borderRadius: 20, border: idx === i ? '2px solid #8BA888' : '1px solid #E5DFD3', background: idx === i ? '#8BA88818' : 'transparent', fontSize: '0.8rem', cursor: 'pointer', color: '#2C3E2D', fontWeight: idx === i ? 600 : 400 }}>
+            {p.emoji} {p.label}
           </button>
         ))}
       </div>
-      <p style={{ fontSize: '0.9rem', color: '#3D4F3E', lineHeight: 1.6, margin: 0 }}>{analogies[idx].text}</p>
+      <p style={{ fontSize: '0.9rem', color: '#3D4F3E', lineHeight: 1.6, margin: 0 }}>{perspectives[idx].text}</p>
     </div>
   );
 }

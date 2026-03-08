@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Plan Completeness (PC)', desc: 'The foundation of planning quality assessment begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Plan Feasibility (PF)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes planning quality assessment work.' },
-    { title: '3. Plan Efficiency (PE)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Plan Robustness (PR)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Plan-Execution Correlation', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Plan Completeness (PC)', desc: 'Plan Completeness measures whether the plan covers all necessary steps to achieve the goal:  A complete plan addresses every required subgoal. An incomplete plan omits steps that will eventually need to happen.' },
+    { title: '2. Plan Feasibility (PF)', desc: 'Plan Feasibility assesses whether the planned actions are actually possible given the agent\'s tools, permissions, and environmental constraints:  A plan step is infeasible if it requires a tool the agent doesn\'t have, assumes permissions that aren\'t granted, depends on information that isn\'t.' },
+    { title: '3. Plan Efficiency (PE)', desc: 'Plan Efficiency measures whether the plan takes a reasonably direct path to the goal:  An efficient plan avoids unnecessary steps, redundant operations, and circuitous approaches. Unlike Step Efficiency Ratio (which measures execution), Plan Efficiency evaluates the intended path.' },
+    { title: '4. Plan Robustness (PR)', desc: 'Plan Robustness evaluates whether the plan accounts for potential failures, edge cases, and uncertainty:  Robustness is scored on a structured rubric:  Contingency coverage: Does the plan include fallback actions for likely failure points?' },
+    { title: '5. Plan-Execution Correlation', desc: 'A critical meta-analysis is measuring how well plan quality predicts execution quality:  Across published benchmarks, this correlation ranges from r=0.45 to r=0.72 depending on the domain. Higher correlations indicate that planning is a genuine bottleneck and improving plans will improve outcomes.' },
+    { title: '6. When Planning Overhead Helps vs. Hurts', desc: 'Not all tasks benefit from explicit planning. The planning value threshold depends on:  Task complexity: Tasks with 5+ steps benefit significantly from planning; tasks with 1-2 steps see negligible benefit Task reversibility: Irreversible actions (sending emails, deploying code) benefit more from.' },
 ];
 
 export default function WalkthroughAAEPlanningQualityAssessment() {
@@ -17,10 +18,10 @@ export default function WalkthroughAAEPlanningQualityAssessment() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Planning Quality Assessment — Step by Step
+          Planning Quality Assessment \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how planning quality assessment works, one stage at a time.

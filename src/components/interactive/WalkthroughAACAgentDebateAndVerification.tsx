@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Proposer-Critic Architecture', desc: 'The foundation of agent debate and verification begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Red Team / Blue Team', desc: 'At this stage, the key transformation occurs — the core mechanism that makes agent debate and verification work.' },
-    { title: '3. Multi-Agent Panel', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Structured Debate', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Proposer-Critic Architecture', desc: 'The simplest debate pattern:  Proposer agent generates an initial answer, plan, or code solution. Critic agent receives the proposer\'s output (and optionally the original task) and generates a detailed critique — identifying errors, weaknesses, missing elements, and potential improvements.' },
+    { title: '2. Red Team / Blue Team', desc: 'Adapted from cybersecurity and military strategy:  Blue team agent: Produces the output (code, plan, analysis) representing the best solution. Red team agent: Actively tries to break, exploit, or disprove the blue team\'s output.' },
+    { title: '3. Multi-Agent Panel', desc: 'Multiple agents independently evaluate the same question or output, then their responses are compared:  N agents (typically 3-5) each produce an answer independently. A judge agent (or automated comparison) identifies areas of agreement and disagreement.' },
+    { title: '4. Structured Debate', desc: 'Two agents explicitly argue opposing positions (for and against) before a judge:  Agent A argues for a conclusion; Agent B argues against. Each gets 2-3 rounds to present evidence, rebut the other, and refine their position.' },
 ];
 
 export default function WalkthroughAACAgentDebateAndVerification() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACAgentDebateAndVerification() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agent Debate and Verification — Step by Step
+          Agent Debate and Verification \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how agent debate and verification works, one stage at a time.

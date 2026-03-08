@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCDiffusionModels() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'DDPM architecture: U-Net with ResNet blocks, self-attention at 16x16 resolution, sinusoidal timestep embeddings.', isTrue: true, explanation: 'This is a key technical detail of Diffusion Models.' },
-    { text: '~114M parameters for 256x256.', isTrue: true, explanation: 'This is a key technical detail of Diffusion Models.' },
-    { text: 'Training: Adam optimizer, learning rate 2e-4, batch size 256, EMA decay 0.9999.', isTrue: true, explanation: 'This is a key technical detail of Diffusion Models.' },
+    { text: 'Diffusion models are just denoising autoencoders.', isTrue: false, explanation: 'While the training loss resembles denoising, diffusion models are a principled probabilistic framework with a specific forward process, variational bound, and iterative sampling -- not a single-shot denoiser. "More diffusion steps always means better quality." Beyond ~1000 steps for DDPM (or ~50 for DDIM), additional steps provide diminishing returns.' },
+    { text: 'Diffusion models generate images by learning to reverse a gradual noising process, iteratively denoising random Gaussian noise into coherent images, and have dethroned GANs as the dominant paradigm for image synthesis.', isTrue: true, explanation: 'This captures the core definition of Diffusion Models.' },
+    { text: 'Diffusion Models is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Diffusion Models is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

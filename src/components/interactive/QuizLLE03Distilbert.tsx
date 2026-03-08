@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE03Distilbert() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'DistilBERT (Sanh et al., 2019) applied knowledge distillation to compress BERT into a model 40% smaller and 60% faster while retaining 97% of its language understanding capabilities — the first major "deployment-ready" BERT variant and Hugging Face\'s foundational research contribution that helped establish them as the central platform of the NLP ecosystem.', isTrue: true, explanation: 'This captures the core purpose of DistilBERT: Knowledge Distillation Applied to BERT.' },
-    { text: 'DistilBERT: Knowledge Distillation Applied to BERT is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding DistilBERT: Knowledge Distillation Applied to BERT is important for building on more advanced topics.' },
-    { text: 'DistilBERT: Knowledge Distillation Applied to BERT is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding DistilBERT: Knowledge Distillation Applied to BERT is important for building on more advanced topics.' },
+    { text: 'DistilBERT just removes layers from BERT.', isTrue: false, explanation: 'Layer removal is the architectural starting point, but the key is the distillation training process. Simply removing 6 layers from BERT and using the remaining 6 directly would yield much worse performance.' },
+    { text: '6 layers, 12 heads, 768 hidden, 66M parameters (vs BERT-Base: 12 layers, 110M)', isTrue: true, explanation: '6 layers, 12 heads, 768 hidden, 66M parameters (vs BERT-Base: 12 layers, 110M)' },
+    { text: '97% of BERT means it\'s basically the same.', isTrue: false, explanation: 'The 3% gap matters in competitive settings and for difficult tasks. On easy classification tasks, DistilBERT is often indistinguishable from BERT.' },
+    { text: '40% fewer parameters (66M vs 110M)', isTrue: true, explanation: '40% fewer parameters (66M vs 110M)' },
+    { text: 'Knowledge distillation is just training on the teacher\'s outputs.', isTrue: false, explanation: 'Distillation is more sophisticated. The temperature-scaled soft targets expose inter-class relationships invisible in hard labels.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

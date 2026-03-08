@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCFrequencyDomainAndFourierTransform() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'A 1024x1024 FFT takes approximately 2-5 ms on a modern CPU (using FFTW or NumPy\'s FFT); padding to a power of 2 can speed up computation by 2-3x for non-power-of-2 sizes.', isTrue: true, explanation: 'This is a key technical detail of Frequency Domain and Fourier Transform.' },
-    { text: 'The frequency resolution of the DFT is $\\Delta f = 1/N$ cycles per pixel for an $N$-pixel dimension; longer signals yield finer frequency resolution.', isTrue: true, explanation: 'This is a key technical detail of Frequency Domain and Fourier Transform.' },
-    { text: 'The DFT is periodic with period $M \\times N$, which is why the output wraps around and fftshift is needed for centered visualization.', isTrue: true, explanation: 'This is a key technical detail of Frequency Domain and Fourier Transform.' },
+    { text: 'The Fourier transform only applies to 1D signals.', isTrue: false, explanation: 'The 2D DFT decomposes images into planar sinusoids characterized by both frequency and orientation. The concept extends naturally to 3D (video volumes) and higher dimensions.' },
+    { text: 'High-frequency content is always noise.', isTrue: false, explanation: 'Edges, textures, and fine details are all high-frequency content. Aggressive low-pass filtering removes legitimate detail along with noise.' },
+    { text: 'The magnitude spectrum alone characterizes an image.', isTrue: false, explanation: 'As demonstrated by Oppenheim and Lim (1981), two images with swapped magnitudes but preserved phases look like the phase-donor images, not the magnitude-donor images. Phase dominates structural appearance.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPAspectBasedSentimentAnalysis() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'SemEval-2014 restaurant dataset: 3,041 training sentences with 3,693 aspect terms and 12 aspect categories.', isTrue: true, explanation: 'This is a key technical detail of Aspect-Based Sentiment Analysis.' },
-    { text: 'SemEval-2014 laptop dataset: 3,045 training sentences with 2,358 aspect terms and approximately 80 fine-grained categories.', isTrue: true, explanation: 'This is a key technical detail of Aspect-Based Sentiment Analysis.' },
-    { text: 'BERT-based ASC: approximately 85-88% accuracy on SemEval-2014 restaurant, approximately 78-82% on laptop.', isTrue: true, explanation: 'This is a key technical detail of Aspect-Based Sentiment Analysis.' },
+    { text: 'ABSA is just sentiment analysis applied to smaller text units.', isTrue: false, explanation: 'ABSA requires fundamentally different modeling than document or sentence-level sentiment. The same sentence contains multiple, potentially conflicting sentiments.' },
+    { text: 'Aspect extraction and sentiment classification can be done independently without loss.', isTrue: false, explanation: 'Pipeline approaches that extract aspects first and then classify sentiment suffer from error propagation and miss the interactions between the two tasks. Joint models that simultaneously extract aspects and their sentiment consistently outperform pipeline approaches by 2-5% F1.' },
+    { text: 'Dependency parsing is always needed for ABSA.', isTrue: false, explanation: 'While graph neural networks over dependency trees show improvements, attention-based models without explicit syntactic structure perform competitively. BERT\'s self-attention implicitly captures syntactic patterns, reducing the need for explicit parsing.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

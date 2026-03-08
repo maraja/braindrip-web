@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizRLAtariAndArcadeGames() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Results: DQN achieved superhuman performance on 29 of 49 tested Atari games, measured against professional human game testers.', isTrue: true, explanation: 'This is a key technical detail of Atari and Arcade Games.' },
-    { text: 'Star performers: Breakout (score: 401 vs.', isTrue: true, explanation: 'This is a key technical detail of Atari and Arcade Games.' },
-    { text: 'human 31), Pong (21 vs.', isTrue: true, explanation: 'This is a key technical detail of Atari and Arcade Games.' },
+    { text: 'DQN solved Atari.', isTrue: false, explanation: 'DQN failed catastrophically on games requiring exploration (Montezuma\'s Revenge), long-term planning (Skiing), or complex 3D reasoning (Pitfall). Subsequent algorithms like Rainbow DQN (rainbow-dqn.md), Go-Explore, and Agent57 were needed to approach human-level performance across all 57 Atari games.' },
+    { text: 'DQN achieved superhuman performance on 29 of 49 tested Atari games, measured against professional human game testers.', isTrue: true, explanation: 'DQN achieved superhuman performance on 29 of 49 tested Atari games, measured against professional human game testers.' },
+    { text: 'DQN was the first use of neural networks in RL.', isTrue: false, explanation: 'Tesauro\'s TD-Gammon (1992) used a neural network with TD learning to play backgammon at world-class level. What was new was the combination of deep convolutional networks, experience replay, and target networks to achieve stability across many diverse tasks from raw pixels.' },
+    { text: 'Breakout (score: 401 vs.', isTrue: true, explanation: 'human 31), Pong (21 vs. human 9.3), Video Pinball (42,684 vs.' },
+    { text: 'The same DQN agent played all games simultaneously.', isTrue: false, explanation: 'Each game was trained independently from scratch. The generality was in the algorithm and architecture, not in a single model learning all games at once.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

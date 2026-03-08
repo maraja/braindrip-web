@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Architecture of Toggled Reasoning', desc: 'The foundation of hybrid thinking models: on-demand reasoning begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Thinking Budgets', desc: 'At this stage, the key transformation occurs — the core mechanism that makes hybrid thinking models: on-demand reasoning work.' },
-    { title: '3. The Key Models', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Training Hybrid Capabilities', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. The Architecture of Toggled Reasoning', desc: 'Hybrid models are trained to produce two types of outputs. In "non-thinking" mode, they respond directly, like a standard language model.' },
+    { title: '2. Thinking Budgets', desc: 'Rather than a binary on/off switch, the most useful hybrid implementations allow granular thinking budgets. A developer can specify a maximum number of thinking tokens: 1,024 for quick tasks, 10,000 for moderate reasoning, or 128,000 for deep analysis.' },
+    { title: '3. The Key Models', desc: 'Claude 3.7 Sonnet (February 2025): Anthropic\'s first hybrid model introduced extended thinking with configurable budgets up to 128K tokens. On SWE-bench Verified, it scored 70.' },
+    { title: '4. Training Hybrid Capabilities', desc: 'Training a hybrid model requires teaching it to be effective in both modes. The typical approach is multi-stage training.' },
 ];
 
 export default function WalkthroughLLE06HybridThinkingModels() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE06HybridThinkingModels() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Hybrid Thinking Models: On-Demand Reasoning — Step by Step
+          Hybrid Thinking Models: On-Demand Reasoning \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how hybrid thinking models: on-demand reasoning works, one stage at a time.

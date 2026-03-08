@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizLLE07TheSlmRevolution() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'The Small Language Model revolution proved that for the majority of real-world tasks, right-sized models -- optimized for quality data, efficient architecture, and targeted deployment -- outperform the brute-force scaling approach on every practical metric.', isTrue: true, explanation: 'This captures the core purpose of The SLM Revolution.' },
-    { text: 'The SLM Revolution is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding The SLM Revolution is important for building on more advanced topics.' },
-    { text: 'The SLM Revolution is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding The SLM Revolution is important for building on more advanced topics.' },
+    { text: 'Small models are just worse versions of large models.', isTrue: false, explanation: 'They are optimized for different tradeoffs. A well-trained 7B model can outperform a poorly trained 70B model, and for most practical tasks, the quality difference between a good SLM and a frontier model is marginal.' },
+    { text: 'The SLM revolution means large models are obsolete.', isTrue: false, explanation: 'Large models remain essential for the most complex reasoning tasks, novel problem-solving, and pushing the boundaries of what AI can do. SLMs handle the long tail of simpler tasks that constitute the majority of real-world usage.' },
+    { text: 'On-device models can\'t be useful at 1-3B parameters.', isTrue: false, explanation: 'Apple Intelligence, Google Gemma Nano, and Samsung Galaxy AI all use models in this range for production features used by hundreds of millions of people. Utility depends on the task, not just the parameter count.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

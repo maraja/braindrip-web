@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizMLFRegressionDiagnostics() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Multicollinearity makes the model wrong.', isTrue: false, explanation: '"Multicollinearity makes the model wrong." It does not bias predictions; it inflates the variance of individual coefficients. If prediction (not interpretation) is the goal, multicollinearity is less ' },
-    { text: 'Standardized residuals, studentized residuals, and externally studentized residuals differ in how they estimate the error variance.', isTrue: true, explanation: 'This is a key technical detail of Regression Diagnostics.' },
-    { text: 'Externally studentized residuals (leaving out observation $i$) follow a $t_&#123;n-p-2&#125;$ distribution under normality, making them useful for formal outlier tests.', isTrue: true, explanation: 'This is a key technical detail of Regression Diagnostics.' },
+    { text: 'If R-squared is high, the model is fine.', isTrue: false, explanation: 'A high R^2 says nothing about whether assumptions hold. A model with severe heteroscedasticity or influential outliers can have R^2 &gt; 0.95 and still produce misleading inference.' },
+    { text: 'Residual analysis, heteroscedasticity, multicollinearity, and influence points -- verifying assumptions before trusting results.', isTrue: true, explanation: 'This captures the core definition of Regression Diagnostics.' },
+    { text: 'Regression Diagnostics is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Regression Diagnostics is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Error Detection Rate (EDR)', desc: 'The foundation of error recovery evaluation begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Diagnosis Quality (DQ)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes error recovery evaluation work.' },
-    { title: '3. Recovery Strategy Appropriateness (RSA)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Recovery Time (RT)', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Deliberate Error Injection', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Error Detection Rate (EDR)', desc: 'Error Detection Rate measures how often the agent recognizes that something has gone wrong:  Not all errors are obvious. An API might return a 200 status code with an empty body instead of a proper error code.' },
+    { title: '2. Diagnosis Quality (DQ)', desc: 'Once an error is detected, Diagnosis Quality evaluates whether the agent correctly identifies the root cause. This is scored on a rubric:  Score 3 (Correct): Agent identifies the actual root cause.' },
+    { title: '3. Recovery Strategy Appropriateness (RSA)', desc: 'Recovery Strategy Appropriateness measures whether the agent\'s chosen recovery action matches the diagnosed problem:  Appropriate: The strategy directly addresses the root cause (refreshing an expired token for a 403 error) Partially appropriate: The strategy may work but is suboptimal (retrying.' },
+    { title: '4. Recovery Time (RT)', desc: 'Recovery Time measures the additional steps required to return to productive progress after an error:  "Resumed progress" means the agent is again making forward advancement toward the goal, not merely past the error. Lower RT is better.' },
+    { title: '5. Deliberate Error Injection', desc: 'The most rigorous approach to error recovery evaluation is deliberate error injection, where the evaluator programmatically introduces failures at controlled points:  Environmental injection: Modify the task environment to trigger errors.' },
+    { title: '6. Failure Spirals vs. Graceful Degradation', desc: 'A critical qualitative distinction is between agents that fail gracefully and those that spiral:  Graceful failure: Agent detects error, attempts reasonable recovery, and if recovery fails, clearly communicates what went wrong and what partial progress was achieved Failure spiral: Agent\'s recovery.' },
 ];
 
 export default function WalkthroughAAEErrorRecoveryEvaluation() {
@@ -17,10 +18,10 @@ export default function WalkthroughAAEErrorRecoveryEvaluation() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Error Recovery Evaluation — Step by Step
+          Error Recovery Evaluation \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how error recovery evaluation works, one stage at a time.

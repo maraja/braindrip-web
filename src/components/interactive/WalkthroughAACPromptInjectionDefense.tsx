@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Input Sanitization', desc: 'The foundation of prompt injection defense begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Instruction Hierarchy', desc: 'At this stage, the key transformation occurs — the core mechanism that makes prompt injection defense work.' },
-    { title: '3. Data Isolation', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Output Monitoring', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Input Sanitization', desc: 'The first defense layer screens user input for known injection patterns before it reaches the LLM. This includes detecting explicit instruction overrides ("ignore previous instructions," "you are now," "new system prompt"), role-switching attempts ("SYSTEM: you are an admin"), encoded attacks.' },
+    { title: '2. Instruction Hierarchy', desc: 'Modern LLMs support instruction hierarchy -- a tiered system where system instructions take precedence over user instructions. The system prompt establishes immutable constraints (the agent\'s identity, permissions, safety rules), and user input is treated as lower-priority.' },
+    { title: '3. Data Isolation', desc: 'For indirect injection, the key defense is treating retrieved data as untrusted. When an agent retrieves a document, browses a web page, or receives tool output, that content should be clearly delimited from instructions.' },
+    { title: '4. Output Monitoring', desc: 'Even with input defenses, some injections may slip through. Output monitoring detects compromised agent behavior after the fact.' },
 ];
 
 export default function WalkthroughAACPromptInjectionDefense() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACPromptInjectionDefense() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Prompt Injection Defense — Step by Step
+          Prompt Injection Defense \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how prompt injection defense works, one stage at a time.

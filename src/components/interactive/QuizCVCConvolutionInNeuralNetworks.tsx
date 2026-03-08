@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCConvolutionInNeuralNetworks() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: '$25$) and an extra nonlinearity.', isTrue: true, explanation: 'This is a key technical detail of Convolution in Neural Networks.' },
-    { text: 'A conv layer with $C_&#123;in&#125;$ input channels, $C_&#123;out&#125;$ output channels, and kernel size $k$ requires $k^2 \\times C_&#123;in&#125; \\times C_&#123;out&#125;$ multiply-accumulate (MAC) operations per spatial output position.', isTrue: true, explanation: 'This is a key technical detail of Convolution in Neural Networks.' },
-    { text: 'Total FLOPs for one convolutional layer: $2 \\times k^2 \\times C_&#123;in&#125; \\times C_&#123;out&#125; \\times H_&#123;out&#125; \\times W_&#123;out&#125;$ (the factor of 2 accounts for multiply and add).', isTrue: true, explanation: 'This is a key technical detail of Convolution in Neural Networks.' },
+    { text: 'Convolution in CNNs is the same as mathematical convolution.', isTrue: false, explanation: 'Technically, most deep learning frameworks implement cross-correlation (no kernel flip). The distinction is irrelevant for learned kernels since the network can learn the flipped version, but it matters when comparing to signal processing literature.' },
+    { text: 'The most common implementation strategy rearranges input patches into columns of a matrix, converting convolution into a dense matrix multiplication.', isTrue: true, explanation: 'This trades memory (the unrolled matrix can be 9x larger for 3 x 3 kernels) for computational speed on GPUs.' },
+    { text: 'a 3 x 3 convolution on 4 x 4 tiles requires only 4 x 4 = 16 multiplications instead of 4 x 4 x 3 x 3 = 144, a theoretical 2.25x speedup.', isTrue: true, explanation: 'a 3 x 3 convolution on 4 x 4 tiles requires only 4 x 4 = 16 multiplications instead of 4 x 4 x 3 x 3 = 144, a theoretical 2.25x speedup.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

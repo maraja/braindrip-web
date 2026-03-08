@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizPERerankingAndContextSelection() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Cross-encoder reranking improves top-5 precision by 15-30% over bi-encoder retrieval alone, at a cost of 200-500ms additional latency for 20-50 candidates.', isTrue: true, explanation: 'This is a key technical detail of Reranking and Context Selection.' },
-    { text: 'Reciprocal rank fusion with k=60 consistently outperforms individual retrieval methods by 5-15% on BEIR benchmarks.', isTrue: true, explanation: 'This is a key technical detail of Reranking and Context Selection.' },
-    { text: 'Maximal Marginal Relevance (MMR) with lambda=0.5-0.7 provides a good default relevance-diversity trade-off for most RAG use cases.', isTrue: true, explanation: 'This is a key technical detail of Reranking and Context Selection.' },
+    { text: 'The retrieval model\'s ranking is good enough.', isTrue: false, explanation: 'Bi-encoder retrieval optimizes for speed over precision. The top result from a bi-encoder is wrong 30-40% of the time when the correct answer exists in the top-20 candidates.' },
+    { text: 'Reranking is too slow for production.', isTrue: false, explanation: 'Cross-encoder reranking over 20-50 candidates adds 200-500ms — well within acceptable latency for most applications. Batch processing and GPU acceleration can reduce this to under 100ms.' },
+    { text: 'Just select the top-K by relevance score.', isTrue: false, explanation: 'Pure relevance ranking often selects redundant chunks covering the same aspect. Diversity-aware selection produces more complete answers by covering multiple aspects of the question, even if individual chunks are slightly less relevant.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

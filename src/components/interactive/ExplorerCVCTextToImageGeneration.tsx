@@ -5,8 +5,8 @@ const DETAILS = [
     { label: 'Inference cost', detail: '~4 seconds for 50-step DDPM on an A100 (Stable Diffusion 1.5); ~2 seconds with DDIM 20-step; ~8 seconds for SDXL' },
     { label: 'Training data', detail: 'Stable Diffusion v1.5 trained on ~2B image-text pairs from LAION-5B; DALL-E 3 on proprietary data with synthetic captions' },
     { label: 'FID scores', detail: 'Stable Diffusion achieves ~8-12 FID on COCO-30K (lower is better); human preference now dominates as the primary metric' },
-    { label: 'Guidance scale trade-off', detail: 'Higher guidance (w > 10) improves text alignment but causes saturation artifacts and reduced diversity; w = 7-8 is typical' },
-    { label: 'Negative prompts', detail: 'Specifying what to avoid (\"blurry, low quality, deformed\") substantially improves output quality in practice' },
+    { label: 'Guidance scale trade-off', detail: 'Higher guidance (w &gt; 10) improves text alignment but causes saturation artifacts and reduced diversity; w = 7-8 is typical' },
+    { label: 'Negative prompts', detail: 'Specifying what to avoid ("blurry, low quality, deformed") substantially improves output quality in practice' },
 ];
 
 export default function ExplorerCVCTextToImageGeneration() {
@@ -20,10 +20,10 @@ export default function ExplorerCVCTextToImageGeneration() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Text-to-Image Generation — Key Details Explorer
+          Text-to-Image Generation \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of text-to-image generation.
+          Click each card to explore the technical details.
         </p>
       </div>
 

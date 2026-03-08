@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizCVCSwinTransformer() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Default window size is $M = 7$, yielding $7 \\times 7 = 49$ tokens per window -- small enough for efficient attention.', isTrue: true, explanation: 'This is a key technical detail of Swin Transformer.' },
-    { text: 'The cyclic shift implementation avoids padding by rolling the feature map and using attention masks, adding negligible overhead.', isTrue: true, explanation: 'This is a key technical detail of Swin Transformer.' },
-    { text: 'Swin uses pre-norm (LayerNorm before attention) rather than post-norm.', isTrue: true, explanation: 'This is a key technical detail of Swin Transformer.' },
+    { text: 'Shifted windows are just a different form of dilated convolution.', isTrue: false, explanation: 'Dilated convolutions sample sparse pixels at fixed offsets. Shifted window attention computes full pairwise attention among all tokens within the shifted window -- it captures arbitrary relationships, not just fixed spatial patterns.' },
+    { text: 'The Swin Transformer computes self-attention within local windows and shifts those windows between layers to achieve hierarchical feature maps and linear computational complexity with respect to image size.', isTrue: true, explanation: 'This captures the core definition of Swin Transformer.' },
+    { text: 'Swin Transformer is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Swin Transformer is important for building on more advanced topics.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

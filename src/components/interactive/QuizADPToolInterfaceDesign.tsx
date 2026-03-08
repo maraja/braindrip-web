@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizADPToolInterfaceDesign() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Models call tools with 3-5 parameters most reliably.', isTrue: true, explanation: 'This is a key technical detail of Tool Interface Design.' },
-    { text: 'Error rates increase roughly 8% per additional parameter beyond 5.', isTrue: true, explanation: 'This is a key technical detail of Tool Interface Design.' },
-    { text: 'Tool descriptions between 30-80 tokens hit the sweet spot.', isTrue: true, explanation: 'This is a key technical detail of Tool Interface Design.' },
+    { text: 'The model will read external documentation if I provide a URL.', isTrue: false, explanation: 'Models cannot browse URLs from tool descriptions. The description itself must contain all the information the model needs.' },
+    { text: 'More tools give the agent more capabilities.', isTrue: false, explanation: 'More tools increase the tool selection search space. Beyond 8-10 tools, models increasingly select the wrong tool or fail to use tools at all.' },
+    { text: 'Parameter validation should happen in the tool, not the schema.', isTrue: false, explanation: 'Both. The schema prevents the model from generating invalid calls in the first place (by specifying types, enums, and patterns).' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

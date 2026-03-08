@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Native Multimodal Architecture', desc: 'The foundation of gemini 1 begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Three-Tier Design', desc: 'At this stage, the key transformation occurs — the core mechanism that makes gemini 1 work.' },
-    { title: '3. Multimodal Reasoning', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Training Infrastructure', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Native Multimodal Architecture', desc: 'Unlike GPT-4, which was reported to use separate vision and language encoders fused through adapters, Gemini was described as natively multimodal: a single model trained from the start on interleaved text, images, audio, and video data.' },
+    { title: '2. Three-Tier Design', desc: 'The three-tier approach was designed to cover the full deployment spectrum:  Gemini Ultra: Google\'s GPT-4 competitor — the flagship model for the most demanding tasks, available through API and Google\'s premium AI products Gemini Pro: The workhorse — capable enough for most applications, fast.' },
+    { title: '3. Multimodal Reasoning', desc: 'Gemini\'s multimodal capabilities went beyond simple image captioning. The model could reason across modalities: interpreting handwritten math problems from photographs, extracting data from charts and graphs, understanding spatial relationships in images, following action sequences in video, and.' },
+    { title: '4. Training Infrastructure', desc: 'Gemini was trained on Google\'s TPU v4 and TPU v5e accelerator pods using the Pathways distributed training framework. The specific compute requirements were not disclosed, but training a model of Gemini Ultra\'s scale on multimodal data likely required tens of thousands of TPUs over several months —.' },
 ];
 
 export default function WalkthroughLLE08Gemini1() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE08Gemini1() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Gemini 1 — Step by Step
+          Gemini 1 \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how gemini 1 works, one stage at a time.

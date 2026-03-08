@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Architecture Decisions', desc: 'The foundation of llama 3 and llama 3.1 begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Massive Training Scale', desc: 'At this stage, the key transformation occurs — the core mechanism that makes llama 3 and llama 3.1 work.' },
-    { title: '3. Post-Training Pipeline', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The 405B Milestone', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Architecture Decisions', desc: 'LLaMA 3 used a dense decoder-only Transformer — no Mixture of Experts. This was a deliberate choice.' },
+    { title: '2. Massive Training Scale', desc: 'The training data for LLaMA 3 was approximately 15 trillion tokens — an enormous corpus that represented one of the most aggressive data curation efforts in the field. Sources included multilingual web data, code, and curated high-quality text.' },
+    { title: '3. Post-Training Pipeline', desc: 'The post-training process for LLaMA 3.1 was as important as pre-training and represented one of the most detailed publicly documented alignment pipelines at the time.' },
+    { title: '4. The 405B Milestone', desc: 'The 405B model was the crown jewel. On MMLU, it scored 88.6% — matching GPT-4o (88.7%) and Claude 3.5 Sonnet (88.7%).' },
 ];
 
 export default function WalkthroughLLE05Llama3And31() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE05Llama3And31() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          LLaMA 3 and LLaMA 3.1 — Step by Step
+          LLaMA 3 and LLaMA 3.1 \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how llama 3 and llama 3.1 works, one stage at a time.

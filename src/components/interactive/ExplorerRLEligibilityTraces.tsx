@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Computational cost', detail: 'TD($\\lambda$) requires storing and updating a trace for every state (or state-action pair) at each step, making it $O(|\\mathcal{S}|)$ per step instead of $O(1)$ for TD(0). This motivated truncated traces and sparse implementations.' },
-    { label: 'Common $\\lambda$ values', detail: '0.8-0.95 typically works best. $\\lambda = 0.9$ is a common default.' },
+    { label: 'Computational cost', detail: 'TD() requires storing and updating a trace for every state (or state-action pair) at each step, making it O() per step instead of O(1) for TD(0). This motivated truncated traces and sparse implementations.' },
+    { label: 'Common $\\lambda$ values', detail: '8-0.95 typically works best.  = 0.9 is a common default.' },
     { label: 'Replacing vs accumulating traces', detail: 'Replacing traces often work better in practice, especially in environments with loops or repeated state visits. Singh & Sutton (1996) showed replacing traces can be significantly faster.' },
-    { label: 'In deep RL', detail: ', eligibility traces are less commonly used because experience replay (which randomly samples transitions) breaks the temporal structure that traces rely on. GAE (Generalized Advantage Estimation) is the modern equivalent, computing $\\lambda$-weighted advantages for policy gradient methods.' },
-    { label: 'GAE connection', detail: 'The Generalized Advantage Estimation used in PPO and A2C is mathematically equivalent to using a $\\lambda$-return for advantage estimation: $\\hat{A}_t^{\\text{GAE}(\\gamma, \\lambda)} = \\sum_{l=0}^{\\infty} (\\gamma\\lambda)^l \\delta_{t+l}$' },
+    { label: 'In deep RL', detail: ', eligibility traces are less commonly used because experience replay (which randomly samples transitions) breaks the temporal structure that traces rely on. GAE (Generalized Advantage Estimation) is the modern equivalent, computing -weighted advantages for policy gradient methods.' },
+    { label: 'GAE connection', detail: 'The Generalized Advantage Estimation used in PPO and A2C is mathematically equivalent to using a -return for advantage estimation: &#123;A&#125;_t^&#123;GAE(, )&#125; = _&#123;l=0&#125;^&#123;&#125; ()^l _&#123;t+l&#125;' },
 ];
 
 export default function ExplorerRLEligibilityTraces() {
@@ -19,10 +19,10 @@ export default function ExplorerRLEligibilityTraces() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Eligibility Traces — Key Details Explorer
+          Eligibility Traces \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of eligibility traces.
+          Click each card to explore the technical details.
         </p>
       </div>
 

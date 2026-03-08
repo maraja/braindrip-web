@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. The Prior', desc: 'The foundation of bayesian inference begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Conjugate Priors', desc: 'At this stage, the key transformation occurs — the core mechanism that makes bayesian inference work.' },
-    { title: '3. MAP Estimation vs Full Bayesian', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Credible Intervals vs Confidence Intervals', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Bayesian Model Comparison', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. The Prior', desc: 'The prior encodes domain knowledge or regularization assumptions. A vague prior (e.g., a very wide Gaussian) expresses minimal prior knowledge, while an informative prior (e.g., a narrow Gaussian centered on a physically meaningful value) encodes strong domain expertise.' },
+    { title: '2. Conjugate Priors', desc: 'A prior is conjugate to a likelihood if the resulting posterior belongs to the same distribution family as the prior. This yields closed-form updates, avoiding expensive integration.' },
+    { title: '3. MAP Estimation vs Full Bayesian', desc: 'Maximum A Posteriori (MAP) estimation finds the single most probable parameter value:  [equation]  MAP is a point estimate. It is equivalent to maximum likelihood with a regularization penalty -- a Gaussian prior on  yields L2 regularization, and a Laplace prior yields L1.' },
+    { title: '4. Credible Intervals vs Confidence Intervals', desc: 'A 95% Bayesian credible interval [a, b] satisfies P(a    b  D) = 0.95. It directly states: "Given the data, there is a 95% probability that  lies in this interval.' },
+    { title: '5. Bayesian Model Comparison', desc: 'Given competing models M_1 and M_2, the Bayes factor compares how well each explains the data:  [equation]  The marginal likelihood P(D  M) embodies an automatic Occam\'s razor: complex models spread their prior probability over a larger parameter space, so they are penalized unless the data.' },
+    { title: '6. Comparison with the Frequentist Approach', desc: 'The fundamental philosophical difference: frequentists treat  as a fixed (but unknown) constant and reason about the long-run behavior of estimators across repeated experiments. Bayesians treat  as a random variable and condition on the actually observed data.' },
 ];
 
 export default function WalkthroughMLFBayesianInference() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFBayesianInference() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Bayesian Inference — Step by Step
+          Bayesian Inference \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how bayesian inference works, one stage at a time.

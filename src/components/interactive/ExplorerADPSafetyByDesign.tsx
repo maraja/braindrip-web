@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'Prompt injection classifiers', detail: 'achieve 95-99% detection rates with <1% false positive rates when fine-tuned on domain-specific data. Off-the-shelf classifiers typically achieve 85-92%.' },
-    { label: 'Tool permission enforcement', detail: 'adds negligible latency (<1ms per check) when implemented as an allowlist lookup at the tool gateway.' },
+    { label: 'Prompt injection classifiers', detail: 'achieve 95-99% detection rates with &lt;1% false positive rates when fine-tuned on domain-specific data. Off-the-shelf classifiers typically achieve 85-92%.' },
+    { label: 'Tool permission enforcement', detail: 'adds negligible latency (&lt;1ms per check) when implemented as an allowlist lookup at the tool gateway.' },
     { label: 'PII detection', detail: 'adds 10-30ms per output scan. Use regex for structured PII (SSN, credit card) and a small NER model for unstructured PII (names, addresses).' },
     { label: 'Trajectory logging', detail: 'requires approximately 2-5KB per agent step. At 10 steps per task and 100K tasks per day, budget 2-5GB per day of log storage.' },
     { label: 'Red team testing', detail: 'should cover at minimum: direct prompt injection, indirect prompt injection (in retrieved documents), tool parameter manipulation, scope escalation, and resource exhaustion.' },
@@ -20,10 +20,10 @@ export default function ExplorerADPSafetyByDesign() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Safety by Design — Key Details Explorer
+          Safety by Design \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of safety by design.
+          Click each card to explore the technical details.
         </p>
       </div>
 

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Stage 1: Supervised Fine-Tuning (SFT)', desc: 'The foundation of instructgpt and rlhf begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Stage 2: Reward Model Training', desc: 'At this stage, the key transformation occurs — the core mechanism that makes instructgpt and rlhf work.' },
-    { title: '3. Stage 3: PPO Reinforcement Learning', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. The PPO-ptx Variant', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. Stage 1: Supervised Fine-Tuning (SFT)', desc: 'The process began with human labelers (a team of approximately 40 contractors) writing demonstrations of desired model behavior. Given prompts submitted to the OpenAI API, labelers wrote ideal responses — helpful, honest, and harmless completions.' },
+    { title: '2. Stage 2: Reward Model Training', desc: 'Human labelers were shown multiple outputs from the SFT model for each prompt and asked to rank them from best to worst. These rankings were used to train a reward model (RM) — a separate neural network that takes a prompt and response as input and outputs a scalar score predicting how much a human.' },
+    { title: '3. Stage 3: PPO Reinforcement Learning', desc: 'The SFT model was then further trained using Proximal Policy Optimization (PPO), a reinforcement learning algorithm. The reward model served as the "environment": the model generated responses, the reward model scored them, and PPO updated the model\'s weights to maximize the expected reward.' },
+    { title: '4. The PPO-ptx Variant', desc: 'OpenAI found that pure RL training caused the model to lose some of its general capabilities — a phenomenon called "alignment tax." To mitigate this, they introduced PPO-ptx, which mixed the RL objective with a small proportion of the original pre-training objective (next-token prediction on web.' },
 ];
 
 export default function WalkthroughLLE01InstructgptAndRlhf() {
@@ -16,10 +16,10 @@ export default function WalkthroughLLE01InstructgptAndRlhf() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          InstructGPT and RLHF — Step by Step
+          InstructGPT and RLHF \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how instructgpt and rlhf works, one stage at a time.

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizLLE08Gemini1() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Google DeepMind\'s Gemini was the first natively multimodal large model — trained from the ground up on text, images, audio, and video — and represented Google\'s consolidated answer to GPT-4 after a year of playing catch-up.', isTrue: true, explanation: 'This captures the core purpose of Gemini 1.' },
-    { text: 'Gemini 1 is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Gemini 1 is important for building on more advanced topics.' },
-    { text: 'Gemini 1 is a fundamental concept in this domain.', isTrue: true, explanation: 'Understanding Gemini 1 is important for building on more advanced topics.' },
+    { text: 'Gemini clearly beat GPT-4.', isTrue: false, explanation: 'The MMLU result (90.04% vs. GPT-4\'s 86.4%) was achieved using a specific evaluation protocol (CoT@32, choosing the best of 32 chain-of-thought samples).' },
+    { text: 'Ultra (largest), Pro (balanced), Nano (on-device: 1.8B and 3.25B parameters)', isTrue: true, explanation: 'Ultra (largest), Pro (balanced), Nano (on-device: 1.8B and 3.25B parameters)' },
+    { text: 'Gemini was a single model.', isTrue: false, explanation: 'Gemini was a family of three distinct models (Ultra, Pro, Nano) with very different sizes and capabilities. Comparing "Gemini" to "GPT-4" without specifying the tier was misleading — most users interacted with Gemini Pro, not Ultra.' },
+    { text: 'Transformer-based, reportedly MoE; trained natively on multimodal data', isTrue: true, explanation: 'Transformer-based, reportedly MoE; trained natively on multimodal data' },
+    { text: 'The demo video showed real capabilities.', isTrue: false, explanation: 'The Gemini launch video depicted idealized interactions that did not reflect the actual user experience. The model could process images and video, but not with the speed and fluidity the demo implied.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -2,9 +2,11 @@ import { useState } from 'react';
 export default function QuizPEPromptVersioningAndManagement() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'Version identifier format: Use semantic versioning (e.g., v2.3.1) or date-based versioning (e.g., 2024-01-15-a) to clearly identify prompt versions.', isTrue: true, explanation: 'This is a key technical detail of Prompt Versioning and Management.' },
-    { text: 'Include a hash for exact match verification.', isTrue: true, explanation: 'This is a key technical detail of Prompt Versioning and Management.' },
-    { text: 'Regression test suite size: 20-50 test cases per prompt is a practical starting point; critical applications may require 100-200+.', isTrue: true, explanation: 'This is a key technical detail of Prompt Versioning and Management.' },
+    { text: 'Prompts are too simple to need version control.', isTrue: false, explanation: 'Production prompts are often 500-5,000 tokens long, contain complex logic, and directly determine application behavior. They are as complex as many source code files and have the same (or greater) impact on user experience.' },
+    { text: 'Use semantic versioning (e.g., v2.3.1) or date-based versioning (e.g., 2024-01-15-a) to clearly identify prompt versions.', isTrue: true, explanation: 'Include a hash for exact match verification.' },
+    { text: 'Git is sufficient for prompt management.', isTrue: false, explanation: 'Git provides version control but lacks prompt-specific features: A/B testing, deployment management, metric association, and registry functionality. Git is a necessary foundation but not a complete solution.' },
+    { text: '20-50 test cases per prompt is a practical starting point; critical applications may require 100-200+.', isTrue: true, explanation: 'Tests should cover both positive cases (correct behavior) and negative cases (constraint adherence).' },
+    { text: 'You can evaluate prompt changes by reading the prompt.', isTrue: false, explanation: 'Reading a prompt change can identify obvious problems but cannot predict subtle behavioral impacts. Automated regression testing and A/B testing are necessary for reliable evaluation because prompts interact with model behavior in non-obvious ways.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 const DETAILS = [
-    { label: 'MSE is decomposable', detail: '$\\text{MSE} = \\text{Bias}^2 + \\text{Variance} + \\text{Irreducible Noise}$, linking it directly to the bias-variance trade-off.' },
-    { label: 'Robustness hierarchy', detail: 'MedAE > MAE > RMSE > MSE (from most to least robust to outliers).' },
-    { label: '$R^2$ on test data', detail: 'When computed on held-out data, $R^2$ is not bounded below by zero. Negative values signal the model generalizes poorly.' },
-    { label: 'RMSE vs. MAE ratio', detail: 'If $\\text{RMSE} / \\text{MAE}$ is close to 1, errors are uniform in magnitude. A large ratio signals the presence of large outlier errors.' },
-    { label: 'Heteroscedasticity', detail: 'When error variance depends on $y$, percentage-based metrics (MAPE) or log-transformed targets may be more appropriate.' },
+    { label: 'MSE is decomposable', detail: 'MSE = Bias^2 + Variance + Irreducible Noise, linking it directly to the bias-variance trade-off.' },
+    { label: 'Robustness hierarchy', detail: 'MedAE &gt; MAE &gt; RMSE &gt; MSE (from most to least robust to outliers).' },
+    { label: '$R^2$ on test data', detail: 'When computed on held-out data, R^2 is not bounded below by zero. Negative values signal the model generalizes poorly.' },
+    { label: 'RMSE vs. MAE ratio', detail: 'If RMSE / MAE is close to 1, errors are uniform in magnitude. A large ratio signals the presence of large outlier errors.' },
+    { label: 'Heteroscedasticity', detail: 'When error variance depends on y, percentage-based metrics (MAPE) or log-transformed targets may be more appropriate.' },
 ];
 
 export default function ExplorerMLFRegressionMetrics() {
@@ -19,10 +19,10 @@ export default function ExplorerMLFRegressionMetrics() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Regression Metrics — Key Details Explorer
+          Regression Metrics \u2014 Key Details Explorer
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
-          Click each card to explore the technical details of regression metrics.
+          Click each card to explore the technical details.
         </p>
       </div>
 

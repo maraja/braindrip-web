@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. SWE-bench (Software Engineering)', desc: 'The foundation of agent benchmarks begins with understanding its core input requirements and initial setup.' },
-    { title: '2. WebArena (Web Interaction)', desc: 'At this stage, the key transformation occurs — the core mechanism that makes agent benchmarks work.' },
-    { title: '3. GAIA (General AI Assistants)', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Additional Benchmarks', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. SWE-bench (Software Engineering)', desc: 'SWE-bench evaluates coding agents on their ability to resolve real GitHub issues from popular Python repositories. Each task provides an issue description and a codebase, and the agent must produce a patch that resolves the issue and passes the repository\'s test suite.' },
+    { title: '2. WebArena (Web Interaction)', desc: 'WebArena evaluates agents on web-based tasks in realistic self-hosted web environments. Tasks span e-commerce sites, forums, content management systems, and maps.' },
+    { title: '3. GAIA (General AI Assistants)', desc: 'GAIA evaluates general-purpose assistant capabilities with questions that require multi-step reasoning and tool use. Questions are specifically designed so that an LLM alone cannot answer them -- they require web search, calculation, file processing, or multi-step reasoning.' },
+    { title: '4. Additional Benchmarks', desc: 'AgentBench evaluates across diverse environments: operating systems, databases, knowledge graphs, card games, lateral thinking, and web browsing. OSWorld tests agents in full desktop operating system environments (Ubuntu, macOS, Windows), requiring GUI interaction to complete tasks like creating.' },
 ];
 
 export default function WalkthroughAACAgentBenchmarks() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACAgentBenchmarks() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agent Benchmarks — Step by Step
+          Agent Benchmarks \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how agent benchmarks works, one stage at a time.

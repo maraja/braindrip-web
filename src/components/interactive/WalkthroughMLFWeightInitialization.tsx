@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. Why Not Initialize to Zero?', desc: 'The foundation of weight initialization begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Variance Analysis Through Layers', desc: 'At this stage, the key transformation occurs — the core mechanism that makes weight initialization work.' },
-    { title: '3. Xavier / Glorot Initialization', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. He Initialization', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
-    { title: '5. Orthogonal Initialization', desc: 'The complete result is validated and made available for downstream use.' },
+    { title: '1. Why Not Initialize to Zero?', desc: 'If all weights are zero (or any identical value), every neuron in a layer computes the same function of the input. During backpropagation, all neurons receive identical gradients and update identically.' },
+    { title: '2. Variance Analysis Through Layers', desc: 'Consider a fully connected layer z_j = _&#123;i=1&#125;^&#123;n_&#123;in&#125;&#125; w_&#123;ij&#125; x_i where weights w_&#123;ij&#125; and inputs x_i are independent with zero mean. The variance of the output is:  [equation]  To keep Var(z_j) = Var(x_i) (signal preservation), we need Var(w) = 1/n_&#123;in&#125;.' },
+    { title: '3. Xavier / Glorot Initialization', desc: 'Glorot and Bengio (2010) analyzed both the forward and backward passes. Preserving variance in the forward pass requires Var(w) = 1/n_&#123;in&#125;; preserving it in the backward pass requires Var(w) = 1/n_&#123;out&#125;.' },
+    { title: '4. He Initialization', desc: '(2015) extended the variance analysis to ReLU activations. Since ReLU sets negative pre-activations to zero, the effective fan-in is halved.' },
+    { title: '5. Orthogonal Initialization', desc: 'Orthogonal initialization sets W to a random orthogonal matrix (or a submatrix of one if the layer is not square). An orthogonal matrix preserves norms exactly: \\_2.' },
+    { title: '6. LSUV (Layer-Sequential Unit-Variance)', desc: 'LSUV (Mishkin and Matas, 2015) is a data-driven initialization that works for any architecture:  Initialize all layers with orthogonal matrices. For each layer sequentially, forward a mini-batch of data through the network.' },
 ];
 
 export default function WalkthroughMLFWeightInitialization() {
@@ -17,10 +18,10 @@ export default function WalkthroughMLFWeightInitialization() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Weight Initialization — Step by Step
+          Weight Initialization \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how weight initialization works, one stage at a time.

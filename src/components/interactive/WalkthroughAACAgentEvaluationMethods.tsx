@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. End-to-End Evaluation', desc: 'The foundation of agent evaluation methods begins with understanding its core input requirements and initial setup.' },
-    { title: '2. Step-by-Step Trajectory Evaluation', desc: 'At this stage, the key transformation occurs — the core mechanism that makes agent evaluation methods work.' },
-    { title: '3. LLM-as-Judge', desc: 'The intermediate results are processed and refined through the main pipeline.' },
-    { title: '4. Human Evaluation', desc: 'The final output is produced, incorporating all previous processing stages into the result.' },
+    { title: '1. End-to-End Evaluation', desc: 'End-to-end evaluation measures whether the agent completed the task successfully, ignoring the process. For a coding agent: did the code compile and pass tests?' },
+    { title: '2. Step-by-Step Trajectory Evaluation', desc: 'Trajectory evaluation examines each action the agent took. Was each tool call appropriate and well-parameterized?' },
+    { title: '3. LLM-as-Judge', desc: 'Using a powerful LLM (often GPT-4 or Claude) to evaluate agent outputs has become the most practical automated evaluation approach. The judge LLM receives the original task, the agent\'s output (and optionally the trajectory), and evaluation criteria, then produces a score and explanation.' },
+    { title: '4. Human Evaluation', desc: 'Human evaluation remains the gold standard for subjective quality dimensions: is the response helpful, is the tone appropriate, would you trust this agent?' },
 ];
 
 export default function WalkthroughAACAgentEvaluationMethods() {
@@ -16,10 +16,10 @@ export default function WalkthroughAACAgentEvaluationMethods() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          Agent Evaluation Methods — Step by Step
+          Agent Evaluation Methods \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how agent evaluation methods works, one stage at a time.

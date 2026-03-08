@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const STEPS = [
-    { title: '1. MobileNetV1', desc: 'The foundation of mobilenet begins with understanding its core input requirements and initial setup.' },
-    { title: '2. MobileNetV2: Inverted Residuals', desc: 'At this stage, the key transformation occurs — the core mechanism that makes mobilenet work.' },
-    { title: '3. MobileNetV3: NAS + Handcrafted', desc: 'The intermediate results are processed and refined through the main pipeline.' },
+    { title: '1. MobileNetV1', desc: 'MobileNetV1 replaces every standard convolution (except the first layer) with a depthwise separable convolution:  The architecture is a stack of 13 such depthwise separable blocks:  Width multiplier   (0, 1] scales the number of channels in every layer by factor . At  = 1.0: 4.' },
+    { title: '2. MobileNetV2: Inverted Residuals', desc: 'V2 introduced two key changes:  Inverted residual block: Unlike ResNet\'s bottleneck (wide -&gt; narrow -&gt; wide), V2 uses narrow -&gt; wide -&gt; narrow:  The expansion factor t = 6 means the intermediate representation is 6x wider than the input/output.' },
+    { title: '3. MobileNetV3: NAS + Handcrafted', desc: 'V3 combined neural architecture search (NAS) with manual refinements:  Architecture search: Platform-aware NAS (similar to MnasNet) optimized for latency on mobile hardware, not just FLOPs.' },
 ];
 
 export default function WalkthroughCVCMobilenet() {
@@ -15,10 +15,10 @@ export default function WalkthroughCVCMobilenet() {
       <div style={{ marginBottom: '1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
           <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', borderRadius: '6px', background: 'rgba(139, 168, 136, 0.15)', fontSize: '12px' }}>&#9654;</span>
-          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive</span>
+          <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.12em', color: '#6E8B6B' }}>Interactive Walkthrough</span>
         </div>
         <h3 style={{ fontFamily: "'Source Serif 4', Georgia, serif", fontSize: '1.3rem', fontWeight: 600, color: '#2C3E2D', margin: 0 }}>
-          MobileNet — Step by Step
+          MobileNet \u2014 Step by Step
         </h3>
         <p style={{ fontSize: '0.88rem', color: '#5A6B5C', margin: '0.4rem 0 0 0', lineHeight: 1.6 }}>
           Walk through how mobilenet works, one stage at a time.

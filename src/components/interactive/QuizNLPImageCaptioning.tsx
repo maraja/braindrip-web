@@ -2,9 +2,9 @@ import { useState } from 'react';
 export default function QuizNLPImageCaptioning() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'MS COCO Captions (the standard benchmark) contains ~330K images with 5 human-annotated captions each.', isTrue: true, explanation: 'This is a key technical detail of Image Captioning.' },
-    { text: 'The Karpathy split uses 113K/5K/5K for train/val/test.', isTrue: true, explanation: 'This is a key technical detail of Image Captioning.' },
-    { text: 'Current SOTA on COCO Karpathy test: CIDEr ~150+ for specialized models; GPT-4V and Gemini produce richer descriptions but are harder to evaluate with automated metrics.', isTrue: true, explanation: 'This is a key technical detail of Image Captioning.' },
+    { text: 'High CIDEr score means the captions are good.', isTrue: false, explanation: 'CIDEr measures consensus overlap with reference captions. A model scoring CIDEr 150 produces captions that match human references well on average, but individual captions may be generic, factually incorrect, or miss salient details.' },
+    { text: 'Captioning is a solved problem.', isTrue: false, explanation: 'While models generate grammatically correct, often accurate captions for simple scenes, they struggle with complex compositions, unusual viewpoints, abstract concepts, cultural references, humor, and fine-grained attributes. The gap between machine-generated alt-text and a thoughtful human description remains substantial.' },
+    { text: 'More detailed captions are always better.', isTrue: false, explanation: 'For accessibility (screen readers), concise, accurate captions are often more useful than verbose descriptions. The appropriate level of detail depends on the application, user needs, and context.' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>

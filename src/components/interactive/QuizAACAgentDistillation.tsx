@@ -2,9 +2,10 @@ import { useState } from 'react';
 export default function QuizAACAgentDistillation() {
   const [answers, setAnswers] = useState<Record<number, boolean>>({});
   const questions = [
-    { text: 'More diverse tasks require more data Base model selection: the student should be capable enough to learn the task.', isTrue: true, explanation: 'This is a key technical detail of Agent Distillation.' },
-    { text: 'Format errors that the teacher never makes can be a significant source of student failures Cost-quality Pareto frontier: plot cost vs quality for teacher, student-v1, student-v2, etc.', isTrue: true, explanation: 'This is a key technical detail of Agent Distillation.' },
-    { text: 'to find the optimal operating point.', isTrue: true, explanation: 'This is a key technical detail of Agent Distillation.' },
+    { text: 'Distillation preserves 100% of the teacher\'s capability.', isTrue: false, explanation: 'There is always a quality gap. Typical distillation achieves 70-90% of the teacher\'s benchmark performance.' },
+    { text: 'only include trajectories that solve the task in fewer than the median number of steps; this teaches the student efficient behavior rather than wandering exploration', isTrue: true, explanation: 'only include trajectories that solve the task in fewer than the median number of steps; this teaches the student efficient behavior rather than wandering exploration' },
+    { text: 'effective distillation typically requires 1,000-10,000 successful trajectories, depending on task diversity and model size.', isTrue: true, explanation: 'More diverse tasks require more data' },
+    { text: 'the student should be capable enough to learn the task.', isTrue: true, explanation: 'Distilling complex coding agent behavior into a 1B parameter model usually fails; 7B-13B models are the practical minimum for complex tasks' },
   ];
   return (
     <div style={{ fontFamily: "'Source Sans 3', system-ui, sans-serif", background: '#FDFBF7', border: '1px solid #E5DFD3', borderRadius: '14px', padding: '1.5rem', margin: '2rem 0' }}>
