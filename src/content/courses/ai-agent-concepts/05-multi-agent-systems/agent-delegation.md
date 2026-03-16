@@ -12,7 +12,14 @@ In AI agent systems, delegation occurs when a manager agent (sometimes called an
 
 Delegation is the primary mechanism by which agent systems scale to handle complex, multi-domain tasks. A single agent trying to research a topic, write code, design a UI, and test the result will perform worse than four specialists each handling one domain — provided the delegation is well-specified. The quality of delegation — how clearly the manager defines sub-tasks, how well it scopes each agent's authority, and how effectively it synthesizes results — is often the bottleneck in multi-agent system performance.
 
-*Recommended visual: A diagram showing the orchestrator-workers pattern: a manager agent at the center decomposing a task into subtasks, delegating each to specialist sub-agents (researcher, coder, reviewer), and synthesizing their outputs — see [Anthropic, "Building Effective Agents" (2024)](https://www.anthropic.com/research/building-effective-agents)*
+```mermaid
+flowchart LR
+    S1["researcher"]
+    S2["coder"]
+    S3["reviewer"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ## How It Works
 

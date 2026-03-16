@@ -8,7 +8,15 @@
 
 Imagine you have two chefs: one specializes in French cuisine, the other in Japanese. Model merging is like mathematically combining their skills into a single chef who can cook both -- without that chef ever setting foot in a kitchen. It sounds like it should not work, but it does, and remarkably well.
 
-*Recommended visual: Model merging methods comparison: linear interpolation, SLERP, TIES, DARE showing weight combination strategies — see [Hugging Face Model Merging Guide](https://huggingface.co/blog/mlabonne/merge-models)*
+```mermaid
+flowchart LR
+    subgraph L1["Model merging methods comparison: linear i"]
+        LI3["TIES"]
+    end
+    subgraph R2["SLERP"]
+        RI4["Feature 1"]
+    end
+```
 
 
 Model merging takes the learned parameters (weights) from multiple models and combines them using mathematical operations -- averaging, interpolation, or more sophisticated methods -- to produce a new model that inherits capabilities from all parents. No training data is needed. No gradient computation. Just arithmetic on weight tensors.
@@ -18,7 +26,12 @@ This works because fine-tuned models that share a common pre-trained base occupy
 ## How It Works
 
 
-*Recommended visual: Task vector arithmetic showing how task capabilities can be added and subtracted in weight space — see [Ilharco et al. Task Arithmetic Paper (arXiv:2212.04089)](https://arxiv.org/abs/2212.04089)*
+```mermaid
+flowchart LR
+    S1["how task capabilities can be added"]
+    S2["subtracted in weight space"]
+    S1 --> S2
+```
 
 ### Linear Interpolation (LERP) and Model Soups
 

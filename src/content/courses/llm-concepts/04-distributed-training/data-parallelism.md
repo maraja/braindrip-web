@@ -8,7 +8,14 @@
 
 Imagine you have a massive textbook to summarize and four friends willing to help. Rather than giving each friend a different chapter (which would require coordination about narrative flow), you photocopy the entire textbook for each friend and assign each person a different quarter of the pages to summarize. At the end, everyone shares their notes and you merge them into a single, complete summary.
 
-*Recommended visual: Data parallelism overview showing model replicas processing different data shards with gradient synchronization — see [Jay Alammar - The Illustrated Model Parallelism](https://jalammar.github.io/model-parallelism/)*
+```mermaid
+flowchart TD
+    L1["Data parallelism overview"]
+    L2["model replicas processing different data s"]
+    L3["gradient synchronization"]
+    L1 --> L2
+    L2 --> L3
+```
 
 
 Data parallelism works exactly this way. Every GPU gets a complete copy of the model. The training dataset is split into chunks, and each GPU processes its own chunk independently. After computing gradients on their local data, all GPUs communicate to average those gradients. Then every GPU applies the same averaged gradient update, keeping all model copies perfectly synchronized.
@@ -18,7 +25,12 @@ This is the simplest and most widely-used form of distributed training. If your 
 ## How It Works
 
 
-*Recommended visual: Ring all-reduce algorithm showing how gradient chunks are passed around a ring of GPUs in 2(N-1) steps -- see [Lilian Weng - How to Train Really Large Models on Many GPUs](https://lilianweng.github.io/posts/2021-09-25-train-large/)*
+```mermaid
+flowchart LR
+    S1["Ring all-reduce algorithm"]
+    S2["how gradient chunks are passed around a ri"]
+    S1 --> S2
+```
 
 ### Step-by-Step Breakdown
 
@@ -63,7 +75,12 @@ This overlap can hide a significant fraction of communication latency, making DD
 
 In the ideal case, training throughput scales linearly with the number of GPUs:
 
-*Recommended visual: DDP bucketed gradient all-reduce overlapping with backward pass computation -- see [PyTorch DDP documentation](https://pytorch.org/docs/stable/notes/ddp.html)*
+```mermaid
+flowchart TD
+    L1["DDP bucketed gradient all-reduce overlappi"]
+    L2["backward pass computation"]
+    L1 --> L2
+```
 
 
 ```

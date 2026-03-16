@@ -10,7 +10,14 @@ Imagine giving an AI assistant a body. Instead of operating in the clean, discre
 
 Embodied agents represent the convergence of two previously separate fields: large language models (which understand natural language instructions and can reason about tasks) and robotics (which has developed the hardware and low-level control systems for physical manipulation). The insight driving this convergence is that LLMs can serve as the "brain" of a robot, translating high-level instructions ("clean up the kitchen") into plans ("pick up the dishes, put them in the dishwasher, wipe the counter"), which are then executed by low-level motor controllers. The LLM handles the reasoning; the robot body handles the physics.
 
-*Recommended visual: Architecture diagram showing sensor inputs (camera, LIDAR, touch) feeding into a multimodal LLM alongside natural language instructions, which outputs high-level task plans executed by low-level motor controllers — see [Driess et al., 2023 — PaLM-E](https://arxiv.org/abs/2303.03378)*
+```mermaid
+flowchart TD
+    C1["camera"]
+    C2["LIDAR"]
+    C3["touch"]
+    C1 --> C2
+    C2 --> C3
+```
 
 PaLM-E (Driess et al., 2023) demonstrated that a single model could process both text and sensor data (images, robot state) to generate robotic control plans. RT-2 (Brohan et al., 2023) showed that vision-language models trained on web data could be adapted to directly output robot actions. These systems represent a paradigm shift from traditional robotics, where every behavior was manually programmed, to a world where robots can follow natural language instructions for tasks they have never encountered before.
 
@@ -25,7 +32,14 @@ The pipeline from instruction to physical action has multiple stages. **Instruct
 ### Continuous vs Discrete Action Spaces
 Digital agents operate in discrete action spaces: click button A, type text B, call API C. Embodied agents operate in continuous spaces: move the arm to (x=0.45, y=0.32, z=0.78) with gripper openness 0.6. This continuity introduces challenges that digital agents never face: small errors compound across action sequences, actions are slow (moving a physical arm takes seconds, not milliseconds), and actions are partially irreversible (you cannot un-knock over a vase). Planning must account for physical constraints: the robot's reach, the weight of objects, the friction of surfaces, the risk of collision.
 
-*Recommended visual: Pipeline showing natural language instruction → LLM task planner → motion planner → low-level robot controller, with sensor feedback loops at each level — see [Ahn et al., 2022 — SayCan](https://arxiv.org/abs/2204.01691)*
+```mermaid
+flowchart LR
+    S1["natural language instruction"]
+    S2["LLM task planner"]
+    S3["motion planner"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ### Sim-to-Real Transfer
 Training robots in the real world is slow (one trial per attempt), expensive (robot hardware costs), and dangerous (the robot might break things or itself). Sim-to-real transfer trains agents in physics simulators (MuJoCo, Isaac Sim, PyBullet) and transfers the learned policies to real hardware. The challenge: simulators imperfectly model real physics. A grasp that works in simulation might fail on a real object because the simulator did not accurately model the object's weight, surface friction, or deformability. Techniques to bridge this "reality gap" include: **Domain randomization** (randomly varying simulation parameters so the policy becomes robust to variations), **System identification** (calibrating the simulator to match real-world physics), and **Fine-tuning on real data** (small amounts of real-world experience to adapt the simulated policy).

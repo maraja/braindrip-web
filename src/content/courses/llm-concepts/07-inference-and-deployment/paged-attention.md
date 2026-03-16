@@ -19,7 +19,12 @@ PagedAttention, introduced by the vLLM team (Kwon et al., 2023), solves this by 
 ## How It Works
 
 
-*Recommended visual: Memory waste comparison between contiguous pre-allocation and paged allocation showing 60-80% savings — see [vLLM Paper (arXiv:2309.06180)](https://arxiv.org/abs/2309.06180)*
+```mermaid
+flowchart LR
+    S1["Memory waste comparison between contiguous"]
+    S2["60-80% savings"]
+    S1 --> S2
+```
 
 ### Block Tables and Dynamic Allocation
 

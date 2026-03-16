@@ -10,7 +10,15 @@ Imagine a vending machine. It has a fixed set of states: idle, accepting coins, 
 
 A directed graph generalizes this idea. Nodes represent states or actions (call the LLM, invoke a tool, check a condition), and edges represent transitions that may be conditional. Unlike a pure finite state machine, a graph-based agent can have dynamic routing where the LLM decides which edge to follow. This gives you the reliability of structured control flow with the flexibility of model-driven decisions.
 
-*Recommended visual: LangGraph-style state graph showing nodes (plan, execute, evaluate) connected by conditional edges, with a cycle from evaluate back to execute when tests fail, and an END terminal — see [LangGraph Documentation](https://langchain-ai.github.io/langgraph/)*
+```mermaid
+flowchart TD
+    L1["plan"]
+    L2["execute"]
+    L3["evaluate"]
+    L1 --> L2
+    L2 --> L3
+    L3 -.->|"repeat"| L1
+```
 
 The key insight is that most agent tasks have a natural graph structure. A customer support agent moves through: understand_issue -> classify_issue -> (billing | technical | general) -> resolve -> confirm. Encoding this as a graph means the agent cannot accidentally skip classification or resolve before understanding. LangGraph was built on exactly this principle: agents are compiled state graphs where the structure constrains behavior while the LLM handles reasoning within each node.
 
@@ -22,7 +30,15 @@ A finite state machine (FSM) consists of states, transitions, and an initial sta
 ### Directed Graphs with Conditional Edges
 A directed graph extends the FSM by allowing edges with complex conditions and multiple paths from a single node. In LangGraph, you define a `StateGraph` with typed state, add nodes (Python functions that transform the state), and add edges that can be conditional. A conditional edge inspects the current state and returns the name of the next node. For example, after a "classify" node, a conditional edge might route to "billing_handler" if the classification is "billing" or "tech_handler" if it is "technical." The graph is compiled into an executable that manages state flow automatically.
 
-*Recommended visual: Comparison of a finite state machine (fixed transitions, deterministic) vs a directed graph with conditional edges and cycles (LLM-driven routing, dynamic), showing how graphs extend FSMs for agent use — see [Harel, 1987 — Statecharts](https://www.sciencedirect.com/science/article/pii/0167642387900359)*
+```mermaid
+flowchart LR
+    subgraph L1["chine (fixed transitions, deterministic)"]
+        LI3["Comparison of a finite state machine"]
+    end
+    subgraph R2["a directed graph with conditional edges"]
+        RI4["Feature 1"]
+    end
+```
 
 ### Cycles and Iterative Refinement
 Unlike simple DAGs (directed acyclic graphs), agent graphs often need cycles. A code-writing agent might loop: write_code -> run_tests -> (if tests fail) -> analyze_errors -> write_code. LangGraph supports cycles explicitly. You define a conditional edge from the test node back to the writing node, with a termination condition (tests pass, or max iterations reached). Without an explicit cycle structure, agents implement loops via the LLM deciding to "try again," which is less reliable and harder to debug.

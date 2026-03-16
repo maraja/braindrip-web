@@ -12,10 +12,32 @@ Prefilling (also called output priming or assistant prefill) works the same way 
 
 This technique exploits the most fundamental property of LLMs: each token is generated conditional on all previous tokens. By controlling the first few output tokens, you control the trajectory of the entire generation. It is arguably the highest-ROI prompt engineering technique relative to its simplicity — a few tokens of prefill can improve format compliance from ~70% to 95%+ for structured outputs.
 
-*Recommended visual: A before-and-after diagram showing model output without prefilling (preamble text like "Sure, here's the JSON..." followed by the actual JSON) versus with prefilling (response starts directly with "{" and produces clean JSON), with format compliance percentages annotated: ~70-85% without prefill vs. ~95-99% with prefill.*
+```mermaid
+flowchart LR
+    subgraph L1["he JSON... followed by the actual JSON)"]
+        LI3["model output without prefilling (preamble "]
+        LI4["produces clean JSON)"]
+    end
+    subgraph R2["with prefilling (response starts"]
+        RI5["with format compliance percentages annotat"]
+    end
+```
 *Source: Adapted from Anthropic's "Prefill Claude's Response" documentation, 2024.*
 
-*Recommended visual: A catalog of common prefill patterns showing 5-6 examples in a grid: JSON prefill ({"result":), Code prefill (```python\ndef), Reasoning prefill (Step 1:), Classification prefill (Category:), XML prefill (<response>), with each annotated with the output behavior it triggers.*
+```mermaid
+flowchart TD
+    D1{"catalog of common prefill patterns"}
+    B2["JSON prefill (result:)"]
+    D1 --> B2
+    B3["Code prefill (```pythonndef)"]
+    D1 --> B3
+    B4["Reasoning prefill (Step 1:)"]
+    D1 --> B4
+    B5["Classification prefill (Category:)"]
+    D1 --> B5
+    B6["XML prefill (response)"]
+    D1 --> B6
+```
 *Source: Adapted from Willison, "Prompt Engineering Techniques: Prefilling," 2024.*
 
 ## How It Works

@@ -8,7 +8,14 @@
 
 RL algorithms like PPO and GRPO update model weights to produce better outputs. But there is a much simpler way to improve outputs: generate many candidates and pick the best one.
 
-*Recommended visual: Best-of-N sampling pipeline showing N responses generated, scored by reward model, and best selected — see [Llama 2 Paper Figure (arXiv:2307.09288)](https://arxiv.org/abs/2307.09288)*
+```mermaid
+flowchart LR
+    S1["N responses generated"]
+    S2["scored by reward model"]
+    S3["best selected"]
+    S1 --> S2
+    S2 --> S3
+```
 
 
 This is rejection sampling, also called Best-of-N. Generate $N$ complete responses, score each with a reward model, return the highest-scoring one.
@@ -20,7 +27,12 @@ What makes this powerful is its theoretical properties. Selecting the best of $N
 ## How It Works
 
 
-*Recommended visual: Rejection sampling performance curves showing diminishing returns as N increases — see [Llama 2 Technical Report](https://arxiv.org/abs/2307.09288)*
+```mermaid
+flowchart LR
+    S1["Rejection sampling performance curves"]
+    S2["diminishing returns as N increases"]
+    S1 --> S2
+```
 
 ### Best-of-N at Inference Time
 

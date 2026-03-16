@@ -12,7 +12,12 @@ When an agent retrieves information from external sources -- documents, database
 
 Source verification is a systematic process of evaluating retrieved information before incorporating it into an answer. This includes checking whether multiple independent sources agree (corroboration), whether the information contradicts known facts or other retrieved data (contradiction detection), whether the source is authoritative for the claim being made (source authority), and assigning an overall confidence score to each fact. The agent can then present verified information with citations, flag uncertain claims, and refuse to assert things it cannot verify.
 
-*Recommended visual: Pipeline diagram showing retrieved claims being decomposed into atomic facts, each fact cross-referenced against multiple sources, with corroboration/contradiction signals feeding into a confidence score — see [Min et al., 2023 — FActScore](https://arxiv.org/abs/2305.14251)*
+```mermaid
+flowchart LR
+    S1["retrieved claims being decomposed into ato"]
+    S2["each fact cross-referenced against multipl"]
+    S1 --> S2
+```
 
 ## How It Works
 
@@ -24,7 +29,14 @@ The agent retrieves information from multiple independent sources for the same c
 
 Contradictions can exist between retrieved documents, between retrieved data and the model's parametric knowledge, or between different parts of the same document. The agent systematically compares facts across sources, looking for numerical discrepancies, conflicting dates, incompatible claims, or logical inconsistencies. When contradictions are found, the agent must decide how to handle them: prefer the more recent source, prefer the more authoritative source, present both views to the user, or flag the uncertainty explicitly.
 
-*Recommended visual: Diagram showing the RARR (Researching and Revising) pipeline — LLM generates a claim, search retrieves evidence, evidence is compared against the claim, claim is revised if unsupported — see [Gao et al., 2023 — RARR](https://arxiv.org/abs/2210.08726)*
+```mermaid
+flowchart LR
+    S1["search retrieves evidence"]
+    S2["evidence is compared against the claim"]
+    S3["claim is revised if unsupported"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ### Confidence Scoring
 

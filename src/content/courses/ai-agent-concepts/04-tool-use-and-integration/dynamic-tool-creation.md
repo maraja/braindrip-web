@@ -12,7 +12,14 @@ This capability represents a qualitative shift in agent design. Most agents oper
 
 The concept connects to a deeper idea in AI: self-improvement. An agent that can create its own tools is, in a limited sense, improving its own capabilities. This is bounded — the agent does not modify its core reasoning model — but it meaningfully expands the action space available to it. The practical implication is fewer hardcoded integrations and more adaptable agents that handle long-tail use cases.
 
-*Recommended visual: A pipeline diagram showing the LATM (LLM as Tool Maker) process: Task Analysis to Tool Creation (by a powerful model) to Tool Verification to Tool Registration to Tool Use (by a lighter model) — see [Cai et al., "LATM: Large Language Models as Tool Makers" (2023)](https://arxiv.org/abs/2305.17126)*
+```mermaid
+flowchart LR
+    S1["A pipeline diagram showing the LATM (LLM a"]
+    S2["Task Analysis to Tool Creation (by a power"]
+    S3["ion to Tool Registration to Tool Use (by a"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ## How It Works
 

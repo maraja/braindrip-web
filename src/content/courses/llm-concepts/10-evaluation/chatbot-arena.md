@@ -8,7 +8,15 @@
 
 Imagine you want to determine which restaurant in a city serves the best food. You could measure objective metrics: ingredient quality, cooking temperatures, presentation standards. Or you could do what Michelin does -- send real diners to eat at the restaurants and record which ones they prefer. Both approaches have value, but only the human preference approach captures the holistic experience of "is this actually good?"
 
-*Recommended visual: Chatbot Arena interface showing side-by-side anonymous model comparison with user voting — see [LMSYS Chatbot Arena](https://chat.lmsys.org/)*
+```mermaid
+flowchart LR
+    subgraph L1["Chatbot Arena interface"]
+        LI3["user voting"]
+    end
+    subgraph R2["side-by-side anonymous model comparison"]
+        RI4["Feature 1"]
+    end
+```
 
 
 Chatbot Arena takes the Michelin approach to LLM evaluation. Real users visit the platform, type any prompt they want, and receive two responses from randomly selected anonymous models. They vote for which response is better (or declare a tie). Over millions of such comparisons, statistically robust rankings emerge.
@@ -20,7 +28,14 @@ As of early 2025, Chatbot Arena has collected **over 2 million human votes** acr
 ## How It Works
 
 
-*Recommended visual: Arena ELO/Bradley-Terry leaderboard showing model rankings with confidence intervals — see [LMSYS Leaderboard](https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard)*
+```mermaid
+flowchart LR
+    S1["Arena ELO/Bradley-Terry leaderboard"]
+    S2["model rankings"]
+    S3["confidence intervals"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ### The User Experience
 

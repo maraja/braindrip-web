@@ -12,10 +12,32 @@ LLMs exhibit a strikingly similar pattern. When you write "Do not hallucinate fa
 
 This is not a flaw unique to any specific model — it is a structural property of how transformer attention processes negation. Understanding this pattern transforms how you write constraints, moving from instinctive "don't do X" formulations to deliberate "always do Y" positive reframing that the model follows more reliably.
 
-*Recommended visual: A bar chart comparing constraint adherence rates for negative instructions ("Do not hallucinate" at ~60-80%) versus their positive reframings ("Only cite provided sources" at ~85-95%), with a third bar showing the combined "positive first, negative second" stacking pattern at ~90-95%.*
+```mermaid
+flowchart LR
+    subgraph L1["ctions (Do not hallucinate at ~60-80%)"]
+        LI3["Do not hallucinate"]
+        LI4["Only cite provided sources"]
+    end
+    subgraph R2["their positive reframings (Only cite"]
+        RI5["positive first, negative second"]
+    end
+```
 *Source: Adapted from Jang et al., "Can Large Language Models Truly Understand Prompts? A Case Study with Negated Prompts," 2023.*
 
-*Recommended visual: A two-column transformation table showing 5-6 common negative prompts on the left ("Do not hallucinate," "Do not be verbose," "Do not use jargon") with arrows pointing to their positive reframings on the right ("Only state facts from provided documents," "Respond in 3 sentences or fewer," "Use language a 12-year-old would understand"), visually illustrating the reframing pattern.*
+```mermaid
+flowchart LR
+    S1["Do not hallucinate,"]
+    S2["Do not be verbose,"]
+    S3["Do not use jargon"]
+    S4["Only state facts from provided documents,"]
+    S5["Respond in 3 sentences or fewer,"]
+    S6["Use language a 12-year-old would understan"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+    S5 --> S6
+```
 *Source: Adapted from Anthropic's "Prompt Engineering Guide: Be Direct and Clear," 2024.*
 
 ## How It Works

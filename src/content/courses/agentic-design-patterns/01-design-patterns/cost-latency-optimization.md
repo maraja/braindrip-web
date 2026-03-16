@@ -10,7 +10,16 @@ Imagine a restaurant kitchen. The head chef manages three competing pressures: i
 
 Agent systems face the same three-way tension. Every LLM call has a token cost, a latency cost, and a quality contribution. A 10-step agent workflow using a frontier model might cost $0.50 and take 45 seconds but achieve 92% task success. The same workflow with a smaller model might cost $0.02 and take 8 seconds but achieve only 71% success. The design question is not "how do I make it cheaper?" but "where in the architecture can I reduce cost or latency without crossing below my quality threshold?"
 
-*Recommended visual: A triangle diagram with Cost, Quality, and Latency at the three vertices. Arrows along each edge show that optimizing any two dimensions forces the third to degrade. Plot specific agent architectures within the triangle: DAG workflows near the Cost-Latency edge (cheap, fast, but limited quality on complex tasks), single agents near the Quality vertex (high quality, but expensive and slow), and cached pipelines at the center (balanced). For empirical data on cost-quality tradeoffs across model tiers, see Chen et al.'s [FrugalGPT paper (2023)](https://arxiv.org/abs/2305.05176).*
+```mermaid
+flowchart LR
+    S1["workflows near the Cost-Latency edge"]
+    S2["ingle agents near the Quality vertex"]
+    S3["and cached pipelines at the center (balanc"]
+    S4["FrugalGPT paper (2023)"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
 
 Cost-latency optimization is not a one-time tuning exercise. It is a set of architectural patterns -- model routing, caching layers, budget enforcement -- that are designed into the system from the start and calibrated with production data.
 

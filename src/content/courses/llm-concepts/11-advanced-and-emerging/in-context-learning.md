@@ -8,7 +8,12 @@
 
 Imagine you hire a new employee and, instead of sending them through a week-long training program, you simply show them three completed examples of the work you need done and say, "Now do this one." Remarkably, they produce the correct output. That is in-context learning: a model that was trained once on a massive corpus can pick up entirely new tasks on the fly, just from a handful of demonstrations placed in its input.
 
-*Recommended visual: Few-shot in-context learning example showing demonstrations in the prompt enabling task performance without gradient updates — see [Lilian Weng – Prompt Engineering](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/)*
+```mermaid
+flowchart LR
+    S1["Few-shot in-context learning example"]
+    S2["demonstrations in the prompt enabling task"]
+    S1 --> S2
+```
 
 
 In-context learning is one of the most surprising emergent capabilities of large language models. A single pretrained model -- with completely frozen parameters -- can perform translation, sentiment classification, code generation, mathematical reasoning, data reformatting, and thousands of other tasks simply by varying the prompt. No separate fine-tuning run, no task-specific head, no additional training cost. You literally describe or demonstrate what you want, and the model does it.
@@ -20,7 +25,12 @@ What makes ICL particularly fascinating to researchers is that it was not explic
 ## How It Works
 
 
-*Recommended visual: In-context learning performance scaling with number of demonstrations and model size — see [GPT-3 Paper (arXiv:2005.14165)](https://arxiv.org/abs/2005.14165)*
+```mermaid
+flowchart LR
+    S1["In-context learning performance scaling"]
+    S2["number of demonstrations and model size"]
+    S1 --> S2
+```
 
 ### The Mechanics of Prompting
 

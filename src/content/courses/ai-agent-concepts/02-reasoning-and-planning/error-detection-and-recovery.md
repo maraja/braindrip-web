@@ -10,7 +10,14 @@ Think of a pilot flying a commercial aircraft. They do not assume every system w
 
 For AI agents, error detection and recovery is the capability to identify when something has gone wrong during task execution, diagnose the nature of the failure, and take corrective action. This is not optional: in any sufficiently complex task, things will go wrong. APIs return errors, search results are irrelevant, code has bugs, files are not where expected, and the agent's own reasoning produces incorrect conclusions. An agent without error handling will blindly continue executing a broken plan, compounding errors until the output is useless.
 
-*Recommended visual: A flowchart showing error detection (explicit signals, semantic detection, logical detection) branching into recovery strategies (retry, rephrase, replan, fallback, escalate, skip) — see [Shinn et al., "Reflexion" (2023)](https://arxiv.org/abs/2303.11366)*
+```mermaid
+flowchart TD
+    D1{"flowchart"}
+    B2["A flowchart showing error detection"]
+    D1 --> B2
+    B3["branching into recovery strategies"]
+    D1 --> B3
+```
 
 Robust agents treat errors as expected events, not exceptional ones. They have explicit detection mechanisms, typed error taxonomies, and a repertoire of recovery strategies that they select based on error type, severity, and context. The difference between a fragile demo agent and a production-grade agent is largely the quality of its error handling.
 

@@ -8,7 +8,12 @@
 
 Standard self-attention lets every token attend to every other token in the sequence. This is powerful but expensive: for a sequence of length $n$, attention requires $O(n^2)$ memory and compute. Double the sequence length, and you quadruple the cost.
 
-*Recommended visual: Sliding window attention pattern showing the local window of W tokens per layer, with the effective receptive field growing across layers — see [Mistral 7B Paper (arXiv:2310.06825)](https://arxiv.org/abs/2310.06825)*
+```mermaid
+flowchart TD
+    L1["the local window of W tokens per layer"]
+    L2["with the effective receptive field growing"]
+    L1 --> L2
+```
 
 
 Sliding window attention takes a pragmatic approach borrowed from convolutional neural networks: each token only attends to its $W$ nearest neighbors. Think of it like reading a book through a magnifying glass that shows exactly $W$ words at a time.
@@ -20,7 +25,14 @@ Mistral 7B used $W = 4096$ with 32 layers, creating an effective receptive field
 ## How It Works
 
 
-*Recommended visual: Rolling buffer KV cache diagram showing fixed-size cache with position modulo addressing — see [Mistral AI Documentation](https://docs.mistral.ai/)*
+```mermaid
+flowchart LR
+    S1["Rolling buffer KV cache diagram"]
+    S2["fixed-size cache"]
+    S3["position modulo addressing"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ### The Attention Mask
 

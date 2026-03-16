@@ -8,7 +8,16 @@
 
 Imagine a teacher grading a stack of essays. Some essays are clearly excellent or clearly failing -- a quick skim is enough. Others are borderline and need careful, line-by-line reading. A smart teacher spends the most time on the essays that need it, skimming the rest. A rigid teacher spends exactly 10 minutes on every essay regardless, wasting time on the easy ones.
 
-*Recommended visual: MoD architecture diagram showing the router selecting top-k tokens for full computation vs skip connection — see [Mixture of Depths Paper (arXiv:2404.02258)](https://arxiv.org/abs/2404.02258)*
+```mermaid
+flowchart LR
+    subgraph L1["ecting top-k tokens for full computation"]
+        LI3["MoD architecture diagram"]
+        LI4["the router selecting top-k tokens for full"]
+    end
+    subgraph R2["skip connection"]
+        RI5["skip connection"]
+    end
+```
 
 
 Standard transformers are the rigid teacher. Every token passes through every layer, receiving the same amount of computation regardless of whether it is a semantically rich content word ("photosynthesis") or a trivial function word ("the"). Mixture of Depths introduces a per-token, per-layer decision: does this token need the full transformer block at this layer, or can it skip ahead through the residual connection with no computation?
@@ -20,7 +29,15 @@ Mixture of Depths is orthogonal to Mixture of Experts (MoE), which varies the *w
 ## How It Works
 
 
-*Recommended visual: Comparison of compute allocation across tokens showing how MoD dynamically skips easy tokens — see [Raphaël Millière's MoD Explainer](https://arxiv.org/abs/2404.02258)*
+```mermaid
+flowchart LR
+    subgraph L1["Comparison of compute allocation across to"]
+        LI3["Feature 1"]
+    end
+    subgraph R2["how MoD dynamically skips easy tokens"]
+        RI4["Feature 1"]
+    end
+```
 
 ### The Router Mechanism
 

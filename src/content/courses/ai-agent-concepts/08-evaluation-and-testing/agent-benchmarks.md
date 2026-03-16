@@ -10,7 +10,15 @@ Imagine trying to compare athletes without standardized events. One sprinter run
 
 Agent benchmarks emerged because the field needed a way to measure progress objectively. When every research paper evaluates on its own private dataset with its own metrics, it is impossible to determine which approaches actually work better. Benchmarks solve this by providing a shared evaluation framework: everyone runs the same tasks, in the same environment, with the same metrics, making results directly comparable.
 
-*Recommended visual: Comparison table or diagram showing major agent benchmarks (SWE-bench, WebArena, GAIA, OSWorld) with their task domains, environment types, metrics, and current state-of-the-art scores — see [Kapoor et al., 2024 — AI Agents That Matter](https://arxiv.org/abs/2407.01502)*
+```mermaid
+flowchart LR
+    subgraph L1["SWE-bench"]
+        LI3["GAIA"]
+    end
+    subgraph R2["WebArena"]
+        RI4["Feature 1"]
+    end
+```
 
 Modern agent benchmarks go beyond simple question-answering. They place agents in realistic environments (real codebases, real websites, real operating systems) and require multi-step interaction to complete tasks. This makes them much more representative of real-world agent performance than traditional NLP benchmarks, but also much more expensive and complex to run. A single evaluation on SWE-bench requires resolving hundreds of real GitHub issues, each potentially taking minutes of agent computation.
 
@@ -24,7 +32,12 @@ SWE-bench evaluates coding agents on their ability to resolve real GitHub issues
 
 WebArena evaluates agents on web-based tasks in realistic self-hosted web environments. Tasks span e-commerce sites, forums, content management systems, and maps. Each task specifies a goal (e.g., "find the cheapest red jacket under $50 and add it to cart") and the agent must navigate websites, interact with forms, and complete multi-step workflows. The environment includes 812 tasks across multiple websites. The metric is task success rate based on environment state checking (did the cart contain the right item?). Current top performance is around 35-40%.
 
-*Recommended visual: SWE-bench leaderboard progression chart showing resolve rate improvements over time from baseline (1.3%) to current state of the art (55%+), illustrating the pace of coding agent progress — see [SWE-bench Leaderboard](https://www.swebench.com/)*
+```mermaid
+flowchart LR
+    S1["improvements over time from baseline (1.3%"]
+    S2["to current state of the art (55%+)"]
+    S1 --> S2
+```
 
 ### GAIA (General AI Assistants)
 

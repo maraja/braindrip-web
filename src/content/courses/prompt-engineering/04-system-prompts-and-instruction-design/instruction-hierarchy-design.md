@@ -14,7 +14,18 @@ The practical importance of instruction hierarchy grows with application complex
 ![Agent system overview showing hierarchical instruction flow and component interactions](https://lilianweng.github.io/posts/2023-06-23-agent/agent-overview.png)
 *Source: Lilian Weng, "LLM Powered Autonomous Agents," lilianweng.github.io (2023)*
 
-*Recommended visual: A four-tier pyramid diagram with "System/Platform" at the top (highest priority), "Developer" below, "User" below that, and "Tool/Data" at the base (lowest priority), with arrows showing override direction and a red "prompt injection" arrow attempting to bypass from User to System level.*
+```mermaid
+flowchart TD
+    L1["System/Platform"]
+    L2["Developer"]
+    L3["User"]
+    L4["Tool/Data"]
+    L5["prompt injection"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 --> L5
+```
 *Source: Adapted from Wallace et al., "The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions" (2024)*
 
 ## How It Works

@@ -8,7 +8,12 @@
 
 Imagine asking someone to fill out a tax form. You do not want them to write a free-form essay about their finances -- you need specific numbers in specific boxes in a specific format. Structured output is the equivalent for LLMs: instead of letting the model produce arbitrary text, you constrain it to produce output that conforms to a predefined structure.
 
-*Recommended visual: Constrained decoding process showing token masking against a JSON schema at each generation step — see [Outlines GitHub Repository](https://github.com/dottxt-ai/outlines)*
+```mermaid
+flowchart LR
+    S1["Constrained decoding process"]
+    S2["token masking against a JSON schema at eac"]
+    S1 --> S2
+```
 
 
 LLMs naturally produce free-form text. But software systems need structured data -- JSON objects, XML documents, database entries, API payloads. Structured output bridges this gap by ensuring the model's output is not just semantically correct but *syntactically valid* and *schema-compliant*. This means downstream code can parse the output with confidence, without fragile regex extraction or error-prone string manipulation.
@@ -16,7 +21,15 @@ LLMs naturally produce free-form text. But software systems need structured data
 ## How It Works
 
 
-*Recommended visual: Comparison of structured output approaches: prompt-based, fine-tuned, and grammar-constrained — see [Guidance GitHub Repository](https://github.com/guidance-ai/guidance)*
+```mermaid
+flowchart LR
+    subgraph L1["Comparison of structured output approaches"]
+        LI3["and grammar-constrained"]
+    end
+    subgraph R2["fine-tuned"]
+        RI4["Feature 1"]
+    end
+```
 
 ### Approach 1: Prompt-Based Instruction
 

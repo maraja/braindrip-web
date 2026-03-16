@@ -11,10 +11,24 @@ Context caching works the same way for LLM inference. When you send a prompt to 
 
 Major providers now offer this optimization. Anthropic's prompt caching, OpenAI's cached responses, and Google's context caching all store KV computations for prompt prefixes. When a new request shares the same prefix as a previous one, the cached computation is reused, and only the new suffix (the user's query, latest conversation turns) needs fresh processing.
 
-*Recommended visual: A side-by-side diagram showing two request flows: "Without caching" (full prompt processed through all transformer layers, high latency, full cost) versus "With caching" (stable prefix loaded from KV cache in milliseconds, only the variable suffix processed through transformer layers), with latency and cost annotations showing 30-50% latency reduction and up to 90% cost reduction on cached tokens.*
+```mermaid
+flowchart LR
+    subgraph L1["sformer layers, high latency, full cost)"]
+        LI3["full prompt processed through all transfor"]
+        LI4["high latency"]
+    end
+    subgraph R2["With caching (stable prefix loaded"]
+        RI5["full cost"]
+    end
+```
 *Source: Adapted from Anthropic, "Prompt Caching" documentation (2024) and Pope et al., "Efficiently Scaling Transformer Inference" (2023)*
 
-*Recommended visual: A prompt structure diagram showing the cache boundary line: everything above the line (system prompt, tool definitions, static examples) is labeled "Cached prefix -- stable across requests, 90% cost discount" in green, and everything below the line (recent conversation turns, current user query) is labeled "Variable suffix -- processed fresh each request, full cost" in orange, with an anti-pattern callout showing "Timestamp in system prompt = cache invalidated every request."*
+```mermaid
+flowchart LR
+    S1["everything above the line"]
+    S2["and everything below the line"]
+    S1 --> S2
+```
 *Source: Adapted from OpenAI, "Prompt Caching" (2024) and Google, "Context Caching" (2024)*
 
 ## How It Works

@@ -12,7 +12,12 @@ Tool selection is the decision-making layer between understanding intent and exe
 
 The quality of tool selection directly determines agent reliability. A perfectly implemented tool is useless if the agent never selects it, and a well-formed request fails catastrophically if routed to the wrong tool. This makes tool selection one of the most practically important problems in agent engineering — and one where the details of tool descriptions, organization, and routing strategies matter enormously.
 
-*Recommended visual: A diagram showing embedding-based tool selection: user query is embedded, compared against tool description embeddings via cosine similarity, and top-k tools are selected for inclusion in the prompt — see [Patil et al., "Gorilla: Large Language Model Connected with Massive APIs" (2023)](https://arxiv.org/abs/2305.15334)*
+```mermaid
+flowchart LR
+    S1["embedding-based tool selection: user query"]
+    S2["top-k tools are selected for inclusion in "]
+    S1 --> S2
+```
 
 ## How It Works
 

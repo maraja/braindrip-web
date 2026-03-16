@@ -8,7 +8,14 @@
 
 Running an LLM is not as simple as loading weights and calling a forward pass. A production serving system must handle dozens of concurrent users with different prompt lengths and generation requirements, keep GPUs maximally utilized, manage gigabytes of dynamically growing KV caches, and deliver tokens back to users as they are generated.
 
-*Recommended visual: vLLM architecture diagram showing PagedAttention, continuous batching, and request scheduling — see [vLLM Documentation](https://docs.vllm.ai/en/latest/)*
+```mermaid
+flowchart TD
+    C1["PagedAttention"]
+    C2["continuous batching"]
+    C3["request scheduling"]
+    C1 --> C2
+    C2 --> C3
+```
 
 
 Think of a restaurant kitchen. The chef (GPU) can cook any dish (process any request), but the restaurant needs a system for taking orders, managing the kitchen queue, ensuring ingredients (memory) are allocated efficiently, and delivering plates as they are ready -- not waiting until every table's order is complete. Model serving frameworks are this restaurant management system.
@@ -16,7 +23,15 @@ Think of a restaurant kitchen. The chef (GPU) can cook any dish (process any req
 ## How It Works
 
 
-*Recommended visual: Comparison of LLM serving frameworks (vLLM, TensorRT-LLM, SGLang) throughput benchmarks — see [vLLM Paper (arXiv:2309.06180)](https://arxiv.org/abs/2309.06180)*
+```mermaid
+flowchart LR
+    subgraph L1["vLLM"]
+        LI3["SGLang"]
+    end
+    subgraph R2["TensorRT-LLM"]
+        RI4["Feature 1"]
+    end
+```
 
 ### The Fundamental Challenge: Continuous Batching
 

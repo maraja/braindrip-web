@@ -12,7 +12,14 @@ When an AI agent connects to external systems -- databases, APIs, file systems, 
 
 Authorization and permissions define the boundaries of what an agent can do in connected systems. This includes which resources the agent can access (read user profiles but not billing data), what operations it can perform (read but not write, create but not delete), which credentials it uses and how those credentials are managed (never exposed in the prompt, rotated regularly), and how access is scoped to the minimum needed for the current task.
 
-*Recommended visual: Diagram showing an agent with scoped OAuth tokens — separate read/write/delete permission scopes for different resources (files, database, API), with credentials injected at the tool layer below the LLM — see [RFC 6749 — OAuth 2.0 Framework](https://datatracker.ietf.org/doc/html/rfc6749)*
+```mermaid
+flowchart TD
+    L1["files"]
+    L2["database"]
+    L3["API"]
+    L1 --> L2
+    L2 --> L3
+```
 
 ## How It Works
 
@@ -28,7 +35,14 @@ Agents need credentials (API keys, tokens, database passwords) to access externa
 
 Some permissions should vary based on context. An agent handling a routine query might have read-only database access, but the same agent handling an approved data correction might temporarily receive write access. Dynamic access control adjusts permissions based on the current task, the user's authorization level, the trust level of the input, and whether human approval has been granted. Permissions are elevated only when needed and revoked immediately after the specific operation.
 
-*Recommended visual: Architecture diagram showing credential isolation — LLM sees only tool names and parameters, while a credential broker injects secrets from a vault at the tool execution layer — see [He et al., 2024 — LLM Agent Security Survey](https://arxiv.org/abs/2403.04247)*
+```mermaid
+flowchart TD
+    L1["credential isolation — LLM sees only tool "]
+    L2["parameters,"]
+    L3["a credential broker injects secrets from a"]
+    L1 --> L2
+    L2 --> L3
+```
 
 ### Per-Task Permission Scoping
 

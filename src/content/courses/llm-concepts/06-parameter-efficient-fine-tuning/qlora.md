@@ -8,7 +8,14 @@
 
 Consider an art restorer working on a massive painting. The painting itself is stored as a highly compressed photograph (saving space), but whenever the restorer needs to make a precise touch-up, they work at full resolution on just that small patch. The compressed photograph preserves the painting's overall quality, while the high-resolution patches ensure the adjustments are precise.
 
-*Recommended visual: QLoRA architecture showing 4-bit NormalFloat quantized base model with FP16 LoRA adapters and double quantization — see [QLoRA Paper (arXiv:2305.14314)](https://arxiv.org/abs/2305.14314)*
+```mermaid
+flowchart TD
+    C1["QLoRA architecture"]
+    C2["4-bit NormalFloat quantized base model"]
+    C3["FP16 LoRA adapters and double quantization"]
+    C1 --> C2
+    C2 --> C3
+```
 
 
 QLoRA applies this same philosophy to model fine-tuning. The pretrained base model is compressed down to 4-bit precision (the "compressed photograph"), dramatically shrinking its memory footprint. Meanwhile, the LoRA adapter matrices -- the parts being actively trained -- remain in 16-bit precision (the "high-resolution patches"). During the forward and backward passes, the 4-bit weights are temporarily dequantized to 16-bit for computation, and the LoRA gradients flow through at full precision.
@@ -19,7 +26,15 @@ Introduced by Dettmers et al. (2023) at the University of Washington, QLoRA made
 
 QLoRA introduces three key technical innovations on top of standard LoRA:
 
-*Recommended visual: Memory comparison between full fine-tuning, LoRA, and QLoRA for 65B parameter models — see [QLoRA Paper Figure 1](https://arxiv.org/abs/2305.14314)*
+```mermaid
+flowchart LR
+    subgraph L1["full fine-tuning"]
+        LI3["QLoRA for 65B parameter models"]
+    end
+    subgraph R2["LoRA"]
+        RI4["Feature 1"]
+    end
+```
 
 
 ### 1. NormalFloat4 (NF4) Data Type

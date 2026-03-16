@@ -12,7 +12,15 @@ A **workflow** is a deterministic sequence of steps where the logic is coded exp
 
 This distinction matters because agents and workflows have sharply different tradeoffs in predictability, cost, latency, debuggability, and capability. Using an agent where a workflow would suffice wastes money and introduces unnecessary variability. Using a workflow where an agent is needed produces brittle systems that break on edge cases. The decision framework presented here helps make this choice systematically.
 
-*Recommended visual: A side-by-side comparison — Left: a workflow as a DAG with fixed nodes and edges. Right: an agent as a loop with the LLM deciding the next step dynamically — see [Anthropic, "Building Effective Agents" (2024)](https://www.anthropic.com/research/building-effective-agents)*
+```mermaid
+flowchart LR
+    subgraph L1["A side-by-side comparison — Left: a workfl"]
+        LI3["the LLM deciding the next step dynamically"]
+    end
+    subgraph R2["fixed nodes and edges. Right: an agent as "]
+        RI4["Feature 1"]
+    end
+```
 
 ![Agent overview showing how the LLM dynamically orchestrates planning, memory, and tool use in a flexible loop](https://lilianweng.github.io/posts/2023-06-23-agent/agent-overview.png)
 *Source: [Lilian Weng, "LLM Powered Autonomous Agents" (2023)](https://lilianweng.github.io/posts/2023-06-23-agent/) — This agent architecture contrasts with fixed workflow DAGs by having the LLM dynamically decide each step.*

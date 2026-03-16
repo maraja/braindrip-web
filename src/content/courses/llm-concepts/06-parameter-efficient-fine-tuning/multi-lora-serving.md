@@ -8,7 +8,14 @@
 
 Imagine a hotel with one large kitchen (the base model) that can prepare any cuisine by swapping in different recipe cards (LoRA adapters) for each guest's order. Rather than building a separate kitchen for every cuisine, the hotel uses one set of equipment and dynamically loads the right recipes as orders come in. Multi-LoRA serving works the same way: a single base model serves many fine-tuned variants by dynamically loading and swapping lightweight LoRA adapter weights.
 
-*Recommended visual: S-LoRA unified paging architecture showing shared base model with dynamically loaded LoRA adapters — see [S-LoRA Paper (arXiv:2311.03285)](https://arxiv.org/abs/2311.03285)*
+```mermaid
+flowchart TD
+    C1["S-LoRA unified paging architecture"]
+    C2["shared base model"]
+    C3["dynamically loaded LoRA adapters"]
+    C1 --> C2
+    C2 --> C3
+```
 
 
 This matters because organizations increasingly fine-tune separate LoRA adapters for different tasks, customers, or domains. A company might have hundreds of adapters -- one per enterprise client, one per language, one per use case. The naive approach of loading each adapter as a separate model instance is wildly inefficient: a 7B model takes ~14GB in FP16, so serving 100 adapters would naively require 1.4TB of GPU memory. Since each LoRA adapter is only 10-50MB (0.1-0.5% of the base model), the shared-base approach reduces this to ~14GB base + ~5GB for all 100 adapters.
@@ -18,7 +25,12 @@ The challenge is engineering: how do you efficiently batch requests that target 
 ## How It Works
 
 
-*Recommended visual: Multi-LoRA batching diagram showing heterogeneous requests each using different adapters served from a single GPU — see [S-LoRA Paper Figure 1](https://arxiv.org/abs/2311.03285)*
+```mermaid
+flowchart LR
+    S1["Multi-LoRA batching diagram"]
+    S2["heterogeneous requests each using differen"]
+    S1 --> S2
+```
 
 ### Unified Paging for LoRA Weights (S-LoRA)
 

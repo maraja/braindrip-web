@@ -15,7 +15,16 @@ Context engineering (CE), a framing popularized by Andrej Karpathy and others in
 ![Agent overview showing the interplay between planning, memory, tools, and LLM context](https://lilianweng.github.io/posts/2023-06-23-agent/agent-overview.png)
 *Source: Lilian Weng, "LLM Powered Autonomous Agents," lilianweng.github.io, 2023. The distinction between crafting instructions (PE) and designing the information environment (CE) maps onto how agents assemble their context.*
 
-*Recommended visual: A split diagram with two columns -- left column labeled "Prompt Engineering" showing instruction crafting elements (system message, few-shot examples, output format, reasoning directives) and right column labeled "Context Engineering" showing information environment elements (retrieval pipeline, memory management, state injection, tool results) -- with a shared row at the bottom showing the assembled prompt that combines both.*
+```mermaid
+flowchart LR
+    S1["system message"]
+    S2["few-shot examples"]
+    S3["output format"]
+    S4["reasoning directives"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
 *Source: Adapted from Karpathy's context engineering framing, 2025, and Anthropic's "Building Effective Agents," 2024.*
 
 ## How It Works

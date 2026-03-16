@@ -10,7 +10,20 @@ Imagine operating a nuclear power plant with no instrument panel -- no temperatu
 
 When an agent runs in production, it makes dozens of decisions, executes multiple tool calls, processes retrieved documents, and generates responses -- all within seconds. Without observability, operators have no visibility into this process. They see only the final output and whether the user was satisfied. When something goes wrong (and it will), they have no ability to diagnose what happened, what step failed, or why.
 
-*Recommended visual: Dashboard mockup showing key agent metrics — request volume, success rate, latency distribution, cost per request, guardrail trigger rate, and error breakdown by type — see [Langfuse Documentation](https://langfuse.com/docs)*
+```mermaid
+flowchart LR
+    S1["key agent metrics — request volume"]
+    S2["success rate"]
+    S3["latency distribution"]
+    S4["cost per request"]
+    S5["guardrail trigger rate"]
+    S6["error breakdown by type"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+    S5 --> S6
+```
 
 Observability for agents goes beyond traditional application monitoring. Agents are non-deterministic, multi-step systems that interact with external tools and services. A single agent request might involve 5-15 LLM calls, 3-8 tool invocations, and multiple retrieval operations. Each step can fail, produce unexpected results, or behave anomalously. Full observability means being able to reconstruct and understand the complete trajectory of any agent execution -- every reasoning step, every tool call, every decision, with timing, cost, and outcome data.
 
@@ -24,7 +37,16 @@ Each agent request generates a trace -- a hierarchical record of every operation
 
 Metrics aggregate behavior across many requests into quantitative measurements. Key agent metrics include: success rate (percentage of tasks completed successfully), latency (end-to-end time, time per step, time waiting for LLM vs tools), cost (tokens consumed, API calls made, dollar cost per request), tool usage (which tools are used most, which fail most), error rate (by error type, by step, by tool), and retrieval quality (relevance scores, number of retrieval rounds needed). Metrics are collected in time-series databases (Prometheus, Datadog, CloudWatch) and visualized on dashboards.
 
-*Recommended visual: Trace waterfall diagram showing a single agent request decomposed into nested spans — LLM call, tool invocations, retrieval operations — with timing, token counts, and status for each span — see [LangSmith Documentation](https://docs.smith.langchain.com/)*
+```mermaid
+flowchart LR
+    S1["tool invocations"]
+    S2["retrieval operations — with timing"]
+    S3["token counts"]
+    S4["status for each span"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
 
 ### Anomaly Detection
 

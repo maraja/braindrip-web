@@ -11,10 +11,27 @@ LLMs are fundamentally stateless — each inference call starts fresh with no me
 
 State and memory patterns formalize this illusion into reliable engineering patterns. Instead of relying on conversation history to implicitly carry state (fragile, token-expensive, easily lost), these patterns explicitly represent state as structured data within the context. A user preference is not just mentioned in turn 3 and hoped to survive — it is captured in a pinned facts section that is included in every subsequent context assembly.
 
-*Recommended visual: A four-panel diagram showing the four state patterns side by side: "Scratchpad" (a notepad icon with evolving work-in-progress notes across turns), "Pinned Facts" (a pushpin icon with stable key-value pairs that persist unchanged), "Running Tallies" (a calculator icon with incrementally updated numerical state), and "Working Memory" (a structured form with goal, phase, evaluated items, next step), each with a sample content snippet and token cost annotation.*
+```mermaid
+flowchart LR
+    subgraph L1["Scratchpad"]
+        LI3["Running Tallies"]
+    end
+    subgraph R2["Pinned Facts"]
+        RI4["Feature 1"]
+    end
+```
 *Source: Adapted from Park et al., "Generative Agents" (2023) and Shinn et al., "Reflexion" (2023)*
 
-*Recommended visual: A timeline diagram showing a 15-turn conversation with two parallel tracks: "Implicit state (conversation history only)" showing gradual information loss and contradiction errors at turns 8 and 12, versus "Explicit state (pinned facts + running tally)" showing consistent, accurate state maintained throughout, with an annotation noting "40-60% reduction in contradictions" for the explicit state approach.*
+```mermaid
+flowchart LR
+    subgraph L1["contradiction errors at turns 8 and 12,"]
+        LI3["Implicit state (conversation history only)"]
+        LI4["Explicit state (pinned facts + running tal"]
+    end
+    subgraph R2["Explicit state (pinned facts + running"]
+        RI5["40-60% reduction in contradictions"]
+    end
+```
 *Source: Adapted from Anthropic, "Building Effective Agents" (2024) and Weng, "LLM Powered Autonomous Agents" (2023)*
 
 ## How It Works

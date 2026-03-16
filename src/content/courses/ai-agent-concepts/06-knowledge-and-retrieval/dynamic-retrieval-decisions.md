@@ -12,7 +12,16 @@ Dynamic retrieval decisions apply this same judgment to AI agents. Instead of re
 
 The core insight is that retrieval is not free. Every retrieval operation costs latency, compute, tokens, and money. It also introduces noise -- irrelevant retrieved documents can actually confuse the model and degrade output quality. A well-calibrated retrieval decision system saves resources on easy questions while ensuring the agent seeks help on hard ones.
 
-*Recommended visual: Decision tree diagram showing query classification gates — factual vs creative, time-sensitive vs stable, domain-specific vs general, high-confidence vs low-confidence — with retrieval/no-retrieval outcomes — see [Jiang et al., 2023 — FLARE](https://arxiv.org/abs/2305.06983)*
+```mermaid
+flowchart LR
+    subgraph L1["ing query classification gates — factual"]
+        LI3["query classification gates — factual vs cr"]
+        LI4["time-sensitive vs stable"]
+    end
+    subgraph R2["creative, time-sensitive vs stable,"]
+        RI5["domain-specific vs general"]
+    end
+```
 
 ## How It Works
 
@@ -28,7 +37,12 @@ The agent can assess its own certainty through several mechanisms. Token-level p
 
 Not all queries deserve the same retrieval investment. A retrieval budget framework assigns different resource limits based on query importance and complexity. Simple factual lookups get a single retrieval call with a small document limit. Complex analytical questions get multiple retrieval rounds with larger budgets. Trivial or conversational queries get zero retrieval. The budget can be expressed in terms of maximum retrieval calls, maximum tokens allocated to retrieved context, or maximum latency added.
 
-*Recommended visual: Diagram illustrating FLARE's active retrieval mechanism — model generates tokens, monitors confidence, triggers retrieval when confidence drops below threshold mid-generation — see [Jiang et al., 2023 — FLARE](https://arxiv.org/abs/2305.06983)*
+```mermaid
+flowchart LR
+    S1["Diagram"]
+    S2["FLARE's active retrieval mechanism — model"]
+    S1 --> S2
+```
 
 ### Adaptive Thresholds
 

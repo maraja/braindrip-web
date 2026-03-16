@@ -8,7 +8,12 @@
 
 First-stage retrieval is designed for speed. Whether using BM25 (keyword matching) or bi-encoders (dense embedding similarity), the goal is to quickly narrow millions of candidate documents down to a manageable set (typically 50-1000 candidates). Speed is prioritized over precision because every document in the corpus must be considered.
 
-*Recommended visual: Two-stage retrieve-then-rerank architecture: fast bi-encoder retrieves candidates, cross-encoder reranks top-k — see [Hugging Face Cross-Encoders Documentation](https://www.sbert.net/docs/cross_encoder/usage/usage.html)*
+```mermaid
+flowchart LR
+    S1["Two-stage retrieve-then-rerank architectur"]
+    S2["bi-encoder retrieves candidates, cross-enc"]
+    S1 --> S2
+```
 
 
 But this speed comes at a cost. Bi-encoders compress entire documents into single vectors, losing fine-grained information. BM25 matches keywords without understanding semantics. Both produce noisy rankings where the top-10 results often include irrelevant documents and miss relevant ones that are ranked lower.
@@ -20,7 +25,17 @@ The dominant reranking architecture is the **cross-encoder**, which processes th
 ## How It Works
 
 
-*Recommended visual: Bi-encoder vs cross-encoder architecture showing independent vs joint query-document processing — see [Sentence-BERT Paper (arXiv:1908.10084)](https://arxiv.org/abs/1908.10084)*
+```mermaid
+flowchart LR
+    subgraph L1["Bi-encoder"]
+        LI3["Bi-encoder"]
+        LI4["cross-encoder architecture"]
+    end
+    subgraph R2["cross-encoder architecture showing"]
+        RI5["independent"]
+        RI6["joint query-document processing"]
+    end
+```
 
 ### Bi-Encoder vs. Cross-Encoder Architecture
 

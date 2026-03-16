@@ -8,7 +8,14 @@
 
 In standard data parallelism, every GPU holds a complete copy of everything: the model parameters, the gradients, and the optimizer states. This is enormously wasteful. If you have 64 GPUs, you are storing 64 identical copies of the optimizer states, 64 identical copies of the gradients, and 64 identical copies of the model parameters. The only thing that differs across GPUs is the data.
 
-*Recommended visual: ZeRO Stages 1, 2, and 3 showing progressive sharding of optimizer states, gradients, and parameters — see [Jay Alammar - The Illustrated Model Parallelism](https://jalammar.github.io/model-parallelism/)*
+```mermaid
+flowchart TD
+    L1["progressive sharding of optimizer states"]
+    L2["gradients"]
+    L3["parameters"]
+    L1 --> L2
+    L2 --> L3
+```
 
 
 Imagine a library with 64 branches, each keeping a full copy of every book, every catalog card, and every librarian's reading notes. ZeRO's insight is: why not distribute the collection? Each branch keeps only 1/64th of the books, notes, and catalogs. When a patron needs a book held by another branch, it is quickly delivered, used, and returned. The total storage across the system is the same as a single branch, not 64 times that.
@@ -18,7 +25,15 @@ Imagine a library with 64 branches, each keeping a full copy of every book, ever
 ## How It Works
 
 
-*Recommended visual: Memory consumption comparison across ZeRO stages showing the reduction from 16x redundancy to zero redundancy -- see [Rajbhandari et al., "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models" (2020)](https://arxiv.org/abs/1910.02054), Figure 1*
+```mermaid
+flowchart LR
+    subgraph L1["Memory consumption comparison across ZeRO "]
+        LI3["Feature 1"]
+    end
+    subgraph R2["the reduction from 16x redundancy to zero "]
+        RI4["Feature 1"]
+    end
+```
 
 ### The Memory Problem
 
@@ -81,7 +96,14 @@ PyTorch's FSDP implements the ZeRO Stage 3 concept as a native PyTorch module wr
 
 ZeRO Stage 3 / FSDP requires more communication than standard DDP:
 
-*Recommended visual: FSDP all-gather and reduce-scatter communication pattern during forward and backward passes -- see [Lilian Weng - How to Train Really Large Models on Many GPUs](https://lilianweng.github.io/posts/2021-09-25-train-large/)*
+```mermaid
+flowchart LR
+    S1["FSDP all-gather"]
+    S2["reduce-scatter communication pattern durin"]
+    S3["backward passes"]
+    S1 --> S2
+    S2 --> S3
+```
 
 
 - **DDP**: One all-reduce per step = `2P` bytes transmitted per GPU

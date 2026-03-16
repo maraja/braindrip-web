@@ -91,7 +91,14 @@ When you must reduce the size of context content, choose the right compression m
 | User preferences / facts | Pin (never compress) | Small, always relevant |
 | Agent scratchpad notes | Summarize or drop | Intermediate reasoning is often disposable |
 
-*Recommended visual: For a practical implementation of virtual context management (treating the context window like OS virtual memory with paging), see the [MemGPT paper](https://arxiv.org/abs/2310.08560) by Packer et al. (2023), which includes architecture diagrams showing how data is paged between the main context and external storage.*
+```mermaid
+flowchart TD
+    C1["treating the context window like OS virtua"]
+    C2["https://arxiv.org/abs/2310.08560"]
+    C3["2023"]
+    C1 --> C2
+    C2 --> C3
+```
 
 ### Persistent Memory Design
 

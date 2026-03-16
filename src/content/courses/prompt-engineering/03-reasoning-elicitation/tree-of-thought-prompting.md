@@ -16,7 +16,15 @@ The distinction between exploration and execution is central: CoT excels at exec
 ![Tree of Thoughts reasoning structure with branching search paths](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/tree-of-thoughts.png)
 *Source: Lilian Weng, "Prompt Engineering," lilianweng.github.io, 2023. Shows how ToT explores multiple reasoning branches with evaluation and backtracking.*
 
-*Recommended visual: A performance comparison chart showing three bars for the Game of 24 benchmark -- Standard prompting (4%), Chain-of-thought (4%), and Tree-of-thought (74%) -- dramatically illustrating that some tasks fundamentally require exploration rather than linear reasoning.*
+```mermaid
+flowchart LR
+    subgraph L1["f 24 benchmark -- Standard prompting (4%)"]
+        LI3["and Tree-of-thought (74%)"]
+    end
+    subgraph R2["Chain-of-thought (4%)"]
+        RI4["Feature 1"]
+    end
+```
 *Source: Adapted from Yao et al., "Tree of Thoughts: Deliberate Problem Solving with Large Language Models," NeurIPS 2023.*
 
 ## How It Works

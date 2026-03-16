@@ -8,7 +8,14 @@
 
 In computer vision, adversarial robustness is well-studied: imperceptible pixel perturbations can cause a classifier to misidentify a stop sign as a speed limit sign. The analogous problem for LLMs is: can carefully crafted input text cause a safety-trained model to produce harmful outputs it was trained to refuse?
 
-*Recommended visual: GCG adversarial suffix optimization showing gradient-based token search on source model with transfer to target — see [Zou et al. GCG Paper (arXiv:2307.15043)](https://arxiv.org/abs/2307.15043)*
+```mermaid
+flowchart TD
+    L1["GCG adversarial suffix optimization"]
+    L2["gradient-based token search on source mode"]
+    L3["transfer to target"]
+    L1 --> L2
+    L2 --> L3
+```
 
 
 The answer, demonstrated convincingly since 2023, is a resounding yes. But the LLM setting introduces unique challenges that make it both harder to attack and harder to defend than image classifiers:
@@ -22,7 +29,16 @@ The field has evolved rapidly from manual jailbreak discovery (2022-2023) to ful
 ## How It Works
 
 
-*Recommended visual: Taxonomy of LLM attacks: gradient-based (GCG), semantic (AutoDAN), black-box (PAIR), many-shot — see [HarmBench Paper (arXiv:2402.04249)](https://arxiv.org/abs/2402.04249)*
+```mermaid
+flowchart TD
+    R1["Taxonomy of LLM attacks: gradient-based (G"]
+    C2["gradient-based (GCG)"]
+    R1 --> C2
+    C3["semantic (AutoDAN)"]
+    R1 --> C3
+    C4["black-box (PAIR)"]
+    R1 --> C4
+```
 
 ### Attack Methods
 

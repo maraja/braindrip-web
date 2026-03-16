@@ -8,7 +8,22 @@
 
 Imagine you are preparing ingredients for a world-class restaurant. You could buy everything from the cheapest wholesale market -- huge quantities for low cost -- but your dishes would taste mediocre because the ingredients are inconsistent, sometimes spoiled, and occasionally contaminated. Alternatively, you could carefully source from trusted suppliers, inspect every delivery, remove anything subpar, and thoughtfully combine ingredients in precise proportions. The second approach costs more effort but produces dramatically better results.
 
-*Recommended visual: The data curation pipeline showing the stages: raw web crawl, text extraction, language filtering, quality filtering, deduplication, toxic content removal, and final data mixing — see [Hugging Face -- FineWeb Dataset Documentation](https://huggingface.co/datasets/HuggingFaceFW/fineweb)*
+```mermaid
+flowchart LR
+    S1["the stages: raw web crawl"]
+    S2["text extraction"]
+    S3["language filtering"]
+    S4["quality filtering"]
+    S5["deduplication"]
+    S6["toxic content removal"]
+    S7["final data mixing"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+    S5 --> S6
+    S6 --> S7
+```
 
 
 Training data curation is this sourcing and preparation process for LLMs. The raw internet contains trillions of tokens of text, but most of it is low quality: duplicated content, spam, machine-generated filler, toxic material, personally identifiable information, and text in formats that teach the model little of value. Curating training data means transforming this raw material into a carefully constructed dataset that maximizes what the model learns per token processed.

@@ -11,7 +11,16 @@ Long-context LLM design faces the same paradox. Models now support 128K, 200K, a
 
 The core insight of long-context design is that effective context length is shorter than nominal context length. A model with a 128K token window might only reliably use 80-100K tokens worth of information. Beyond that, performance degrades — not through hard failure, but through subtle quality erosion: answers become less precise, instructions are followed less consistently, and retrieval within the context becomes less reliable.
 
-*Recommended visual: A horizontal bar representing a 128K token context window, divided into zones with documents placed strategically: the most relevant documents (dark green) at positions 0-10% and 90-100%, moderately relevant documents (yellow) at 10-20% and 80-90%, and least relevant documents (light gray) packed in the 20-80% middle zone. Section markers (===== SECTION N =====) are shown at document boundaries, with a table of contents block at the very beginning.*
+```mermaid
+flowchart LR
+    S1["the most relevant documents (dark green)"]
+    S2["moderately relevant documents (yellow)"]
+    S3["and least relevant documents (light gray)"]
+    S4["Section markers (===== SECTION N =====)"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
 *Source: Adapted from Liu et al., "Lost in the Middle" (2023) and Kamradt, "Needle In A Haystack" (2023)*
 
 ![Agent architecture showing complex information flow and multi-component context management](https://lilianweng.github.io/posts/2023-06-23-agent/agent-overview.png)

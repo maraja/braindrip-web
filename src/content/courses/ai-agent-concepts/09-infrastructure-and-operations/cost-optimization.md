@@ -10,7 +10,14 @@ Running an agent is like running a taxi service where the meter ticks for every 
 
 The fundamental tension in agent cost optimization is quality versus cost. The most capable models (Claude Opus, GPT-4o) produce the best results but cost 10-30x more per token than smaller models (Claude Haiku, GPT-4o-mini). Longer, more detailed prompts improve output quality but consume more tokens. More tool calls provide better information but each call costs money and time. The art is finding the minimum viable intelligence for each step -- using expensive models only when the task demands it, compressing prompts without losing critical information, and caching results to avoid redundant work.
 
-*Recommended visual: Cost breakdown pie chart showing typical agent cost composition — LLM inference (60-90%), tool/API calls, retrieval/embedding, infrastructure — with optimization levers annotated at each segment — see [Chen et al., 2023 — FrugalGPT](https://arxiv.org/abs/2305.05176)*
+```mermaid
+flowchart LR
+    S1["typical agent cost composition — LLM infer"]
+    S2["tool/API calls"]
+    S3["retrieval/embedding"]
+    S1 --> S2
+    S2 --> S3
+```
 
 Cost optimization is not a one-time exercise. It requires ongoing measurement, experimentation, and adjustment. What seems like a minor change (adding a few sentences to a system prompt) can increase costs by 20% when multiplied across millions of calls. Conversely, a simple caching strategy can cut costs in half overnight. The teams that succeed at cost optimization instrument everything, measure continuously, and treat cost as a first-class metric alongside quality and latency.
 
@@ -22,7 +29,14 @@ Model routing assigns each agent step to the cheapest model capable of handling 
 ### Caching
 Agents frequently perform redundant work. If 100 users ask about the same product, the agent should not search the product database 100 times. Caching operates at multiple levels: **API response caching** stores tool outputs keyed by tool name and arguments (TTL: 5-60 minutes depending on data freshness requirements). **Prompt caching** (offered by Claude and GPT APIs) caches the processed representation of prompt prefixes, reducing cost by 90% for repeated prompts with shared prefixes. **Semantic caching** stores LLM responses keyed by embedding similarity of the input -- if a new query is semantically similar to a cached one, return the cached response. **Memoization** caches pure function results (e.g., text extraction from a PDF that never changes).
 
-*Recommended visual: Model routing diagram showing a classifier directing queries to Haiku ($0.25/M), Sonnet ($3/M), or Opus ($15/M) based on task complexity, with cost savings at each tier — see [Anthropic Pricing Documentation](https://docs.anthropic.com/en/docs/about-claude/models)*
+```mermaid
+flowchart TD
+    L1["lassifier directing queries to Haiku ($0.2"]
+    L2["Sonnet ($3/M)"]
+    L3["or Opus ($15/M)"]
+    L1 --> L2
+    L2 --> L3
+```
 
 ### Prompt Compression
 Every token in the prompt costs money. Prompt compression reduces token count without sacrificing the information the model needs. Techniques: **Remove redundant instructions** that the model already follows from training. **Use structured formats** (JSON, key-value pairs) instead of verbose natural language for factual context. **Summarize tool outputs** before including them in context -- a 5,000-token API response might contain only 200 tokens of relevant information. **Abbreviate system prompts** after establishing that shorter versions maintain output quality. **LLMLingua and similar tools** use a small model to score token importance and remove low-importance tokens, achieving 2-5x compression with minimal quality loss.

@@ -8,7 +8,12 @@
 
 Imagine a person who can only read -- they are incredibly literate but blind and deaf. Now imagine giving them eyes and ears, but with a twist: everything they see and hear must first be translated into written descriptions before they can think about it. That is essentially how most multimodal LLMs work. The language model is the "brain" that reasons in text, and specialized encoders act as sensory organs that convert images, audio, and video into token-like representations the language model can process.
 
-*Recommended visual: Multimodal model architecture showing vision encoder connected to language model via projection layer — see [LLaVA Paper (arXiv:2304.08485)](https://arxiv.org/abs/2304.08485)*
+```mermaid
+flowchart LR
+    S1["Multimodal model architecture"]
+    S2["vision encoder connected to language model"]
+    S1 --> S2
+```
 
 
 Multimodal models are AI systems that can process and reason about multiple types of input -- text, images, audio, video, and potentially more. The central challenge is **alignment**: ensuring that visual features, audio features, and text features all live in a shared representational space where the language model can reason about them coherently.
@@ -16,7 +21,12 @@ Multimodal models are AI systems that can process and reason about multiple type
 ## How It Works
 
 
-*Recommended visual: Flamingo architecture showing cross-attention between visual features and language model — see [Alayrac et al. Flamingo Paper (arXiv:2204.14198)](https://arxiv.org/abs/2204.14198)*
+```mermaid
+flowchart TD
+    C1["Flamingo architecture"]
+    C2["cross-attention between visual features an"]
+    C1 --> C2
+```
 
 ### Vision Encoders: Teaching Models to See
 

@@ -12,7 +12,20 @@ LLMs are complex systems that exhibit all four behaviors depending on how you in
 
 These are not competing theories of how LLMs work — they are complementary perspectives that each highlight different aspects of model behavior. Understanding all four gives you a richer toolkit for prompt design and a better diagnostic framework when prompts fail.
 
-*Recommended visual: A 2x2 grid diagram showing the four mental models -- Completion Engine (top-left, with a text continuation icon), Instruction Follower (top-right, with a checklist icon), Role Player (bottom-left, with a persona mask icon), and Pattern Matcher (bottom-right, with a repeating pattern icon) -- each with a one-line description and the primary technique it maps to.*
+```mermaid
+flowchart TD
+    T1["2x2 grid diagram"]
+    subgraph ROW2[" "]
+        Q4["r mental models -- Completion Engine"]
+        Q5["Instruction Follower"]
+    end
+    subgraph ROW3[" "]
+        Q6["Role Player"]
+        Q7["and Pattern Matcher"]
+    end
+    T1 --- ROW2
+    T1 --- ROW3
+```
 *Source: Adapted from the four mental models framework described in this document.*
 
 ![Prompt engineering overview showing different prompting approaches](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/prompt-design.png)

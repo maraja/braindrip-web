@@ -8,7 +8,16 @@
 
 Standard RAG has two fundamental rigidities. First, it *always* retrieves -- even for questions the model can answer from parametric knowledge ("What is the capital of France?"), retrieval adds latency and may introduce noise. Second, it *never* evaluates -- the system has no mechanism to assess whether the retrieved passages are relevant to the query or whether the generated answer is actually supported by the retrieved evidence.
 
-*Recommended visual: Self-RAG architecture showing reflection tokens (Retrieve, IsRel, IsSup, IsUse) controlling retrieval and generation — see [Asai et al. Self-RAG Paper (arXiv:2310.11511)](https://arxiv.org/abs/2310.11511)*
+```mermaid
+flowchart TD
+    C1["Retrieve"]
+    C2["IsRel"]
+    C3["IsSup"]
+    C4["IsUse"]
+    C1 --> C2
+    C2 --> C3
+    C3 --> C4
+```
 
 
 Self-RAG, introduced by Asai, Wu, Wang, Sil, and Hajishirzi (2024, ICLR 2024), addresses both problems by training a single LLM to generate special **reflection tokens** that control and evaluate the retrieval-generation process. The model learns to:

@@ -11,10 +11,24 @@ Chunking is the process of splitting source documents into smaller segments for 
 
 The impact is measurable: switching from naive fixed-size chunking to semantic chunking can improve end-to-end RAG answer quality by 15-25% on benchmarks like Natural Questions and HotpotQA, even without changing the retrieval model or the prompt template.
 
-*Recommended visual: A side-by-side comparison diagram showing the same document split into chunks using five strategies (fixed-size, sentence-level, paragraph-level, semantic, and recursive), with color-coded boundaries highlighting how each strategy preserves or breaks topical coherence differently.*
+```mermaid
+flowchart LR
+    subgraph L1["fixed-size"]
+        LI3["paragraph-level"]
+        LI4["semantic"]
+    end
+    subgraph R2["sentence-level"]
+        RI5["recursive"]
+    end
+```
 *Source: Adapted from Kamradt, "Chunking Strategies for LLM Applications," 2023, and Anthropic, "Contextual Retrieval," 2024.*
 
-*Recommended visual: A scatter plot showing the trade-off between chunk size (x-axis, from 128 to 2048 tokens) and end-to-end RAG answer quality (y-axis), with separate curves for Q&A, summarization, and conversational tasks -- illustrating the optimal size ranges per use case.*
+```mermaid
+flowchart LR
+    S1["ing the trade-off between chunk size"]
+    S2["and end-to-end RAG answer quality (y-axis)"]
+    S1 --> S2
+```
 *Source: Adapted from Chen et al., "Benchmarking Large Language Models in Retrieval-Augmented Generation," 2024.*
 
 ## How It Works

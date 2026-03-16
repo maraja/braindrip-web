@@ -10,7 +10,18 @@ Deploying a traditional API is like opening a restaurant with a fixed menu: you 
 
 An agent in production is not a single service -- it is a system of components: the LLM provider (OpenAI, Anthropic, Google), the orchestration runtime (your agent code), the tool services (APIs, databases, file systems the agent accesses), the state store (checkpoints, memory), and the observability stack (tracing, logging, monitoring). Each component must be deployed, versioned, scaled, and monitored independently. A change to any component can alter agent behavior in unexpected ways.
 
-*Recommended visual: Architecture diagram showing the agent deployment stack — LLM provider, orchestration runtime, tool services, state store, and observability stack — with version tags on each component — see [Kreuzberger et al., 2023 — MLOps Survey](https://arxiv.org/abs/2205.02302)*
+```mermaid
+flowchart TD
+    L1["the agent deployment stack — LLM provider"]
+    L2["orchestration runtime"]
+    L3["tool services"]
+    L4["state store"]
+    L5["observability stack — with version tags on"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 --> L5
+```
 
 The deployment challenge is compounded by the fact that agent behavior is hard to test comprehensively. A traditional API can be tested with fixed input-output pairs. An agent's behavior depends on the model's stochastic output, which means the same input can produce different execution paths. You cannot write a deterministic test that covers all possible behaviors. This requires a fundamentally different approach to deployment: canary releases, shadow deployments, real-time evaluation, and rapid rollback capabilities.
 
@@ -25,7 +36,16 @@ Agents present unique scaling challenges. **Horizontal scaling** for concurrent 
 ### Versioning
 Agent behavior depends on at least three versioned components: **Prompt versions** (system prompts, tool descriptions, few-shot examples), **Tool versions** (API schemas, tool implementations, external service versions), and **Model versions** (GPT-4-turbo-2024-04-09 vs GPT-4o-2024-08-06). A deployment artifact must pin all three. Prompt changes are the most frequent and highest-impact: a single word change in the system prompt can dramatically alter behavior. Best practice: store prompts in version control alongside code, tag deployments with a composite version (prompt-v3.2 + tools-v1.5 + model-gpt4o-20240806), and maintain the ability to roll back any component independently.
 
-*Recommended visual: Blue-green deployment diagram showing two identical environments with a traffic router switching between them, plus a canary deployment variant with 10/90 traffic split — see [Kubernetes Documentation — Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)*
+```mermaid
+flowchart TD
+    D1{"Blue-green deployment diagram"}
+    B2["Blue-green deployment diagram"]
+    D1 --> B2
+    B3["two identical environments"]
+    D1 --> B3
+    B4["10/90 traffic split"]
+    D1 --> B4
+```
 
 ### A/B Testing and Canary Releases
 Given the stochastic nature of agents, A/B testing is essential for evaluating changes. Route 10% of traffic to the new agent configuration and 90% to the current production version. Compare metrics: task completion rate, user satisfaction (thumbs up/down), average latency, cost per task, and error rate. Canary releases are a more conservative variant: deploy the new version to a single replica, monitor for anomalies, and gradually increase traffic if metrics are healthy. Blue-green deployments maintain two complete environments: "blue" runs the current version, "green" runs the new version. Traffic switches atomically from blue to green, with instant rollback by switching back.

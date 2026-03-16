@@ -8,7 +8,12 @@
 
 Standard embedding models produce fixed-size vectors. If a model outputs 1536-dimensional embeddings, you always store and search over all 1536 dimensions. If you need smaller embeddings for efficiency, you must train a separate model or apply dimensionality reduction techniques like PCA -- which require extra computation and often degrade quality significantly.
 
-*Recommended visual: Matryoshka embedding showing nested representations at different dimensionalities, each being a valid embedding — see [Kusupati et al. MRL Paper (arXiv:2205.13147)](https://arxiv.org/abs/2205.13147)*
+```mermaid
+flowchart LR
+    S1["nested representations at different dimens"]
+    S2["each being a valid embedding"]
+    S1 --> S2
+```
 
 
 Matryoshka Representation Learning, introduced by Kusupati et al. (2022), solves this by training a single model whose embeddings have a special property: the first d dimensions of the full D-dimensional embedding form a valid d-dimensional embedding for any d in a chosen set of granularities. The name comes from Matryoshka dolls (Russian nesting dolls) -- each successive layer contains a complete, smaller representation inside it.
@@ -18,7 +23,16 @@ Concretely, if a model produces 2048-dimensional embeddings, you can truncate to
 ## How It Works
 
 
-*Recommended visual: Quality vs dimensionality trade-off showing graceful degradation as embedding dimensions are truncated — see [Nomic Matryoshka Embeddings Blog](https://blog.nomic.ai/posts/nomic-embed-matryoshka)*
+```mermaid
+flowchart LR
+    subgraph L1["Quality"]
+        LI3["Quality"]
+        LI4["dimensionality trade-off"]
+    end
+    subgraph R2["dimensionality trade-off showing"]
+        RI5["graceful degradation as embedding dimensio"]
+    end
+```
 
 ### The Training Objective
 

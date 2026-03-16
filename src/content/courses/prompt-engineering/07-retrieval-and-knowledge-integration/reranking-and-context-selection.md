@@ -11,10 +11,26 @@ In RAG systems, the initial retrieval step (whether dense, sparse, or hybrid) re
 
 The gap between initial retrieval ranking and optimal ranking is substantial. Bi-encoder retrieval (the standard approach) scores each document independently against the query, while cross-encoder reranking scores the query-document pair jointly, capturing fine-grained relevance signals. This joint scoring improves ranking precision by 15-30% at the top positions.
 
-*Recommended visual: A funnel diagram showing the reranking pipeline -- initial retrieval returning 50 candidates at the top, cross-encoder reranking narrowing to 10-20, diversity selection (MMR) reducing to 5-7, and context window packing producing the final ordered set of chunks fed to the LLM.*
+```mermaid
+flowchart LR
+    S1["initial retrieval returning 50 candidates "]
+    S2["cross-encoder reranking narrowing to 10-20"]
+    S3["diversity selection (MMR) reducing to 5-7"]
+    S1 --> S2
+    S2 --> S3
+```
 *Source: Adapted from Nogueira & Cho, "Passage Re-ranking with BERT," 2020, and Khattab & Zaharia, "ColBERT," 2020.*
 
-*Recommended visual: A comparison diagram showing bi-encoder vs. cross-encoder architectures -- bi-encoder with separate query and document encoders producing independent embeddings compared via cosine similarity, vs. cross-encoder with concatenated query-document input through a single transformer with full cross-attention, along with latency and accuracy trade-off annotations.*
+```mermaid
+flowchart LR
+    subgraph L1["bi-encoder"]
+        LI3["bi-encoder with separate query"]
+        LI4["along with latency"]
+    end
+    subgraph R2["cross-encoder architectures --"]
+        RI5["accuracy trade-off annotations."]
+    end
+```
 *Source: Adapted from Nogueira & Cho, "Passage Re-ranking with BERT," 2020.*
 
 ## How It Works

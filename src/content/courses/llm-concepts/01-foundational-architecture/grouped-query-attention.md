@@ -21,7 +21,12 @@ In LLM terms, GQA shares key-value (KV) heads among groups of query heads, reduc
 ## How It Works
 
 
-*Recommended visual: GQA interpolation between MHA and MQA with benchmark results — see [GQA Paper Figure 1 (arXiv:2305.13245)](https://arxiv.org/abs/2305.13245)*
+```mermaid
+flowchart LR
+    S1["GQA interpolation between MHA and MQA"]
+    S2["benchmark results"]
+    S1 --> S2
+```
 
 ### The Attention Variants
 

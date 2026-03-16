@@ -8,7 +8,12 @@
 
 Imagine you are gradually heating water. From 0 to 99 degrees Celsius, nothing dramatic happens -- the water gets warmer, but it remains liquid. Then at 100 degrees, it suddenly boils, undergoing a phase transition to steam. The ability to become steam was not present at 50 degrees, not present at 90 degrees, and then seemingly appeared from nowhere at 100 degrees.
 
-*Recommended visual: BIG-Bench task performance curves showing the sharp phase transitions in accuracy as model scale increases, with some tasks jumping from near-random to high accuracy at specific parameter thresholds — see [Google BIG-Bench Repository](https://github.com/google/BIG-bench)*
+```mermaid
+flowchart TD
+    L1["the sharp phase transitions in accuracy as"]
+    L2["some tasks jumping from near-random to hig"]
+    L1 --> L2
+```
 
 
 Emergent abilities in LLMs are often described through a similar lens. As models scale from millions to billions to hundreds of billions of parameters, certain capabilities appear to be absent in smaller models and then suddenly present in larger ones. A 1B parameter model cannot do multi-step arithmetic. A 10B parameter model still cannot. Then a 100B+ parameter model seemingly "unlocks" this ability -- not through any architectural change or special training, but purely through increased scale.

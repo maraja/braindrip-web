@@ -8,7 +8,18 @@
 
 Standard vector RAG excels at finding specific passages that are semantically similar to a query. Ask "What is the company's parental leave policy?" and vector search will find the relevant policy chunk. But ask "What are the main themes discussed across all board meeting transcripts this year?" and vector RAG fails completely. No single chunk contains the answer because the question requires synthesizing information scattered across the entire corpus. The query is *global* -- it asks about the dataset as a whole, not about a specific fact.
 
-*Recommended visual: GraphRAG pipeline: document → entities/relationships → knowledge graph → community detection → community summaries — see [Microsoft GraphRAG Paper (arXiv:2404.16130)](https://arxiv.org/abs/2404.16130)*
+```mermaid
+flowchart LR
+    S1["document"]
+    S2["entities/relationships"]
+    S3["knowledge graph"]
+    S4["community detection"]
+    S5["community summaries"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+```
 
 
 GraphRAG, introduced by Edge, Trinh, Cheng, et al. at Microsoft Research (2024), solves this by building a structured knowledge graph from the document corpus and then using that graph's hierarchical community structure to answer both local (specific) and global (thematic) queries.
@@ -20,7 +31,16 @@ The paper's title captures the aspiration precisely: "From Local to Global: A Gr
 ## How It Works
 
 
-*Recommended visual: Local vs global search in GraphRAG showing entity-level retrieval vs community-summary-level retrieval — see [Microsoft GraphRAG GitHub](https://github.com/microsoft/graphrag)*
+```mermaid
+flowchart LR
+    subgraph L1["Local"]
+        LI3["global search in GraphRAG"]
+        LI4["entity-level retrieval"]
+    end
+    subgraph R2["global search in GraphRAG showing"]
+        RI5["community-summary-level retrieval"]
+    end
+```
 
 ### The GraphRAG Indexing Pipeline (Offline)
 

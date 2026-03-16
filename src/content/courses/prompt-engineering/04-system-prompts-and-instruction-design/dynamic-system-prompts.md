@@ -11,10 +11,28 @@ Static system prompts treat every user and situation identically. This works for
 
 The transition from static to dynamic system prompts is a maturity milestone for LLM applications. It enables personalization, access control, gradual feature rollouts, and A/B testing -- capabilities that are standard in traditional software engineering but surprisingly rare in LLM applications.
 
-*Recommended visual: An architecture diagram showing a central "Template Engine" box with multiple input streams (User Role DB, Feature Flag Service, Time/Context Service, Personalization Store) feeding into modular prompt blocks (ROLE_BLOCK, CONTEXT_BLOCK, PERMISSIONS_BLOCK, FEATURE_FLAGS_BLOCK) that are assembled into a final system prompt output.*
+```mermaid
+flowchart TD
+    C1["User Role DB"]
+    C2["Feature Flag Service"]
+    C3["Time/Context Service"]
+    C4["Personalization Store"]
+    C1 --> C2
+    C2 --> C3
+    C3 --> C4
+```
 *Source: Adapted from Khattab et al., "DSPy" (2023) and Shanahan et al., "Role Play with Large Language Models" (2023)*
 
-*Recommended visual: A side-by-side comparison showing a static system prompt (identical for all users, single block of text) versus a dynamic system prompt (color-coded modular blocks selected per user type: admin vs. regular user vs. free-tier), with arrows showing which blocks are included or excluded based on runtime conditions.*
+```mermaid
+flowchart LR
+    subgraph L1["cal for all users, single block of text)"]
+        LI3["identical for all users"]
+        LI4["single block of text"]
+    end
+    subgraph R2["a dynamic system prompt (color-coded"]
+        RI5["color-coded modular blocks selected per us"]
+    end
+```
 *Source: Adapted from Anthropic, "Prompt Caching with Claude" (2024)*
 
 ## How It Works

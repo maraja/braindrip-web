@@ -8,7 +8,12 @@
 
 Imagine you trained a reader to process single pages. Now you hand them an entire novel and ask them to understand it all at once. The reader has never seen that much text -- their "sense of position" breaks down. They do not know where they are in the document, and the sheer volume of cross-referencing overwhelms their capacity. Context window extension is the collection of techniques that teach this reader to handle the novel without starting their education from scratch.
 
-*Recommended visual: Timeline of context window lengths from 512 (original Transformer) to 1M+ (Gemini) — see [Lilian Weng – The Transformer Family](https://lilianweng.github.io/posts/2023-01-27-the-transformer-family-v2/)*
+```mermaid
+flowchart LR
+    S1["original Transformer"]
+    S2["Gemini"]
+    S1 --> S2
+```
 
 
 Every Transformer-based LLM is trained with a fixed maximum sequence length. GPT-2 was trained on 1,024 tokens. Early LLaMA used 2,048. But applications demand much more: analyzing legal contracts, processing codebases, or maintaining long conversations. Extending context is hard for two reasons: (1) attention's compute and memory cost scales quadratically with sequence length, and (2) positional encodings learned at one length do not generalize to longer sequences without modification.

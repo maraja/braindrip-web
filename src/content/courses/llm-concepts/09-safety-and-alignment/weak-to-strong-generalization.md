@@ -8,7 +8,12 @@
 
 Imagine a high school math teacher grading a PhD-level mathematics thesis. The teacher understands basic calculus and linear algebra, but the thesis involves algebraic topology and category theory far beyond their expertise. Surprisingly, the teacher might still provide useful supervision: they can check logical consistency, flag notation errors, verify that claimed results match stated assumptions, and assess clarity of exposition. But they cannot verify the core mathematical insights. The critical question is: how much of the thesis quality can the teacher actually ensure?
 
-*Recommended visual: Weak-to-strong generalization setup: small model supervises large model, measuring performance gap recovery — see [Burns et al. Weak-to-Strong Paper (arXiv:2312.09390)](https://arxiv.org/abs/2312.09390)*
+```mermaid
+flowchart LR
+    S1["Weak-to-strong generalization setup: small"]
+    S2["upervises large model, measuring performan"]
+    S1 --> S2
+```
 
 
 This is the fundamental dilemma of superalignment. As AI systems become more capable than their human supervisors, humans face the same challenge as that math teacher -- providing oversight for systems whose capabilities exceed their own. Burns et al. (OpenAI, 2023) formalized this as the **weak-to-strong generalization** problem and conducted the first systematic empirical study using model hierarchies as a controlled analogy.
@@ -18,7 +23,12 @@ The experimental setup is elegant: use a small, less capable model (the "weak su
 ## How It Works
 
 
-*Recommended visual: Performance gap recovery (PGR) metric showing how much of the strong model's capability is elicited by weak supervision — see [OpenAI Superalignment Blog](https://openai.com/index/weak-to-strong-generalization/)*
+```mermaid
+flowchart LR
+    S1["Performance gap recovery (PGR) metric"]
+    S2["how much of the strong model's capability "]
+    S1 --> S2
+```
 
 ### The Experimental Framework
 The core experiment uses a three-level hierarchy of models:

@@ -8,7 +8,12 @@
 
 Imagine learning to play chess by only ever thinking one move ahead. You might learn local tactics -- forks, pins, skewers -- but you would struggle with strategy that requires envisioning positions three or four moves into the future. Now imagine training yourself to always visualize the next four moves as a sequence. You would develop a qualitatively different kind of understanding: one that incorporates planning, anticipation, and longer-range coherence. That is the intuition behind multi-token prediction.
 
-*Recommended visual: Multi-token prediction architecture showing multiple prediction heads predicting n future tokens simultaneously — see [Gloeckle et al. Multi-Token Prediction Paper (arXiv:2404.19737)](https://arxiv.org/abs/2404.19737)*
+```mermaid
+flowchart LR
+    S1["Multi-token prediction architecture"]
+    S2["multiple prediction heads predicting n fut"]
+    S1 --> S2
+```
 
 
 Standard language model training uses a next-token prediction (NTP) objective: at each position in the sequence, the model predicts only the immediately following token. Multi-token prediction (MTP) extends this by requiring the model to simultaneously predict tokens at positions t+1, t+2, t+3, and t+4 (or more) from the same hidden representation at position t. Each future position gets its own lightweight prediction head, but all heads share the same transformer backbone.
@@ -18,7 +23,12 @@ This deceptively simple change has profound implications. By forcing the model t
 ## How It Works
 
 
-*Recommended visual: Self-speculative decoding using multi-token heads as draft predictions for verification — see [Meta AI Multi-Token Prediction Blog](https://arxiv.org/abs/2404.19737)*
+```mermaid
+flowchart LR
+    S1["Self-speculative decoding using multi-toke"]
+    S2["as draft predictions for verification"]
+    S1 --> S2
+```
 
 ### Architecture and Training
 

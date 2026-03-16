@@ -11,10 +11,31 @@ Introduced by Wang et al. (2023), self-consistency addresses a fundamental limit
 
 Self-consistency is notable because it is one of the few techniques that trades compute for accuracy with a clear, predictable return. It requires no prompt engineering beyond the original CoT prompt, no fine-tuning, and no architectural changes. It is purely an inference-time strategy.
 
-*Recommended visual: A fan-out/fan-in diagram showing a single CoT prompt at the top fanning out into N parallel reasoning paths (each with different intermediate steps but converging on answers), then fanning into a majority vote aggregation step at the bottom. Three of five paths converge on "Answer: 42" while two reach different answers, with the majority vote selecting 42.*
+```mermaid
+flowchart LR
+    S1["single CoT prompt at the top fanning out"]
+    S2["fanning"]
+    S3["a majority vote aggregation step at the bo"]
+    S4["Three of five paths converge on Answer: 42"]
+    S5["two reach different answers"]
+    S6["with the majority vote selecting 42."]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+    S5 --> S6
+```
 *Source: Adapted from Wang et al., "Self-Consistency Improves Chain of Thought Reasoning in Language Models," ICLR 2023.*
 
-*Recommended visual: A diminishing returns curve showing accuracy improvement (y-axis) vs. number of samples N (x-axis: 1 to 40), with a steep rise from 1 to 5 samples, moderate gains from 5 to 10, and a near-plateau from 10 to 40. The GSM8K benchmark results should be annotated: 58% at N=1, ~68% at N=5, ~72% at N=10, 74.4% at N=40.*
+```mermaid
+flowchart LR
+    subgraph L1["accuracy improvement (y-axis)"]
+        LI3["s curve showing accuracy improvement (y-ax"]
+    end
+    subgraph R2["number of samples N (x-axis: 1 to 40),"]
+        RI4["Feature 1"]
+    end
+```
 *Source: Adapted from Wang et al., 2023.*
 
 ## How It Works

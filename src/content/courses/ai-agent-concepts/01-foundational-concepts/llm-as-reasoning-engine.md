@@ -12,7 +12,14 @@ In agent architecture, the LLM is the component that takes in a context (system 
 
 This architecture works because modern LLMs possess an extraordinary combination of capabilities: they understand natural language instructions, they possess broad world knowledge from training, they can decompose complex problems into steps, they can interpret error messages and adjust strategies, and they can generate structured outputs (tool calls, code, JSON) with high reliability. No other single technology provides this combination, which is why LLMs have become the default reasoning engine for agent systems.
 
-*Recommended visual: A block diagram showing the LLM as a central processing unit with inputs flowing in and outputs flowing out, surrounded by the runtime handling tool execution and state — see [Anthropic, "Building Effective Agents" (2024)](https://www.anthropic.com/research/building-effective-agents)*
+```mermaid
+flowchart LR
+    S1["outputs flowing out"]
+    S2["surrounded by the runtime handling tool ex"]
+    S3["state"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ![Agent overview diagram showing the LLM at the center of Planning, with Memory and Tools as supporting components](https://lilianweng.github.io/posts/2023-06-23-agent/agent-overview.png)
 *Source: [Lilian Weng, "LLM Powered Autonomous Agents" (2023)](https://lilianweng.github.io/posts/2023-06-23-agent/) — The LLM is the central reasoning engine; memory, tools, and planning are external scaffolding.*

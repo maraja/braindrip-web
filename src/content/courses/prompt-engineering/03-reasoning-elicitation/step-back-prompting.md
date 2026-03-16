@@ -11,10 +11,29 @@ Introduced by Zheng et al. (2023) at Google DeepMind, step-back prompting is a t
 
 The technique is grounded in the cognitive science observation that experts solve problems differently from novices. Experts first categorize a problem by its deep structure (what type of problem is this?) while novices focus on surface features. Step-back prompting teaches the model to reason like an expert by forcing categorization before solution.
 
-*Recommended visual: A two-step flow diagram showing Step 1 (original question -> "What is the relevant principle?" -> model identifies abstract principle, e.g., "Ideal gas law: PV = nRT") flowing into Step 2 (original question + identified principle -> "Solve using this principle step by step" -> final answer), with accuracy gains annotated: +7% on Physics MMLU, +11% on TimeQA.*
+```mermaid
+flowchart LR
+    S1["What is the relevant principle?"]
+    S2["Ideal gas law: PV = nRT"]
+    S3["Solve using this principle step by step"]
+    S1 --> S2
+    S2 --> S3
+```
 *Source: Adapted from Zheng et al., "Take a Step Back: Evoking Reasoning via Abstraction in Large Language Models," Google DeepMind, 2023.*
 
-*Recommended visual: A cognitive comparison diagram showing "Novice problem-solving" (focuses on surface features: "inclined plane," "pulley") versus "Expert problem-solving" (focuses on deep structure: "conservation of energy," "Newton's second law"), with step-back prompting labeled as the technique that shifts LLMs from novice-like to expert-like categorization.*
+```mermaid
+flowchart LR
+    subgraph L1["ce features: inclined plane, pulley)"]
+        LI3["Novice problem-solving"]
+        LI4["inclined plane,"]
+        LI5["pulley"]
+    end
+    subgraph R2["Expert problem-solving (focuses on"]
+        RI6["Expert problem-solving"]
+        RI7["conservation of energy,"]
+        RI8["Newton's second law"]
+    end
+```
 *Source: Adapted from Chi, Feltovich, and Glaser, "Categorization and Representation of Physics Problems by Experts and Novices," Cognitive Science, 1981.*
 
 ## How It Works

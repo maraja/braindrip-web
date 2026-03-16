@@ -397,6 +397,21 @@ html {
   margin: 0 auto;
 }
 
+/* Mermaid diagrams */
+.concept-body .mermaid {
+  margin: 2rem 0;
+  padding: 1.5rem 1rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  text-align: center;
+  overflow-x: auto;
+}
+.concept-body .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Connections to Other Concepts section */
 .connections-section {
   background: var(--color-bg-card);

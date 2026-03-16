@@ -8,7 +8,16 @@
 
 Think of a multi-agent system like a well-run software engineering team. You have a project manager who breaks down tasks, a developer who writes code, a reviewer who checks quality, and a tester who validates results. No single person does everything -- each brings specialized expertise and they communicate through structured processes. Multi-agent LLM systems work the same way: instead of prompting one model to do everything, you instantiate multiple agents with distinct roles, tools, and instructions, then orchestrate their collaboration.
 
-*Recommended visual: Multi-agent collaboration patterns showing debate, delegation, pipeline, and voting architectures — see [AutoGen Paper (arXiv:2308.08155)](https://arxiv.org/abs/2308.08155)*
+```mermaid
+flowchart LR
+    S1["debate"]
+    S2["delegation"]
+    S3["pipeline"]
+    S4["voting architectures"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
 
 
 The key insight is that specialization improves performance. A single monolithic prompt trying to handle research, coding, testing, and documentation simultaneously tends to lose focus and produce mediocre results across all dimensions. By decomposing that into agents with narrow mandates, each agent can maintain a tighter context window focused on its specialty, use role-specific tools without distraction, and be evaluated independently against clear success criteria. The orchestration layer handles routing messages between agents, sequencing their execution, and resolving conflicts when agents disagree.
@@ -20,7 +29,12 @@ The practical question is not whether multi-agent systems can work -- they clear
 ## How It Works
 
 
-*Recommended visual: CrewAI agent-role-task framework diagram — see [CrewAI Documentation](https://docs.crewai.com/)*
+```mermaid
+flowchart LR
+    S1["CrewAI agent-role-task framework diagram"]
+    S2["..."]
+    S1 --> S2
+```
 
 ### Major Frameworks
 

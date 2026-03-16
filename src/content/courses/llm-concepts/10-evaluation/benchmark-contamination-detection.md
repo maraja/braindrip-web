@@ -8,7 +8,16 @@
 
 Consider a standardized test like the SAT. The test's validity depends on students not having seen the specific questions beforehand. If a student memorizes the answer key, their high score tells you nothing about their actual aptitude -- it only tells you they had access to the answers. Now imagine that the answer key was accidentally posted on a website that was included in a study materials collection. Some students might have encountered it without even realizing it; others might have studied it deliberately. Detecting who had prior access, and whether it affected their scores, is exactly the contamination detection problem.
 
-*Recommended visual: Contamination detection methods: n-gram overlap, Min-K% Prob membership inference, canary strings, perplexity analysis — see [Shi et al. Min-K% Prob Paper (arXiv:2310.16789)](https://arxiv.org/abs/2310.16789)*
+```mermaid
+flowchart LR
+    S1["Contamination detection methods: n-gram ov"]
+    S2["Min-K% Prob membership inference"]
+    S3["canary strings"]
+    S4["perplexity analysis"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
 
 
 For LLMs, the situation is systemic and pervasive. Pre-training corpora are assembled from massive web crawls (Common Crawl, C4, The Pile, etc.) containing trillions of tokens. Benchmark datasets -- MMLU, GSM8K, HumanEval, HellaSwag, ARC, TruthfulQA, and many others -- are published on GitHub, Hugging Face, arXiv, and academic websites. These websites are included in web crawls. The result: benchmark test questions and answers are almost certainly present in the training data of most large language models.
@@ -18,7 +27,16 @@ The field of contamination detection has grown from informal concerns (anecdotal
 ## How It Works
 
 
-*Recommended visual: Performance inflation from benchmark contamination showing score differences on contaminated vs clean splits — see [Oren et al. Contamination Paper (arXiv:2311.04850)](https://arxiv.org/abs/2311.04850)*
+```mermaid
+flowchart LR
+    subgraph L1["howing score differences on contaminated"]
+        LI3["Performance inflation from benchmark conta"]
+        LI4["score differences on contaminated"]
+    end
+    subgraph R2["clean splits"]
+        RI5["clean splits"]
+    end
+```
 
 ### Detection Methods
 

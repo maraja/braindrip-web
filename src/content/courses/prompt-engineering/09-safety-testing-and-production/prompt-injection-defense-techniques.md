@@ -11,10 +11,28 @@ There are two major categories. **Direct injection** occurs when a user delibera
 
 Prompt injection remains the most critical security vulnerability in LLM applications. Research from 2023-2024 shows that naive deployments without any defenses are vulnerable to injection attacks roughly 30-40% of the time across standard attack benchmarks. With layered defenses, this rate can be driven down to 2-5%, but no known technique achieves 0% — making defense-in-depth the only viable strategy.
 
-*Recommended visual: A building security analogy diagram showing the LLM application as a secured building -- system prompt as the security policy, user input as the front door (direct injection), external data sources (RAG documents, tool outputs, emails) as side doors (indirect injection), with defense layers mapped to building security: input sanitization as the front desk, delimiter isolation as badge readers, dual-LLM architecture as a security guard, and canary tokens as alarm sensors.*
+```mermaid
+flowchart TD
+    L1["user input as the front door (direct injec"]
+    L2["external data sources"]
+    L3["as side doors (indirect injection)"]
+    L1 --> L2
+    L2 --> L3
+```
 *Source: Adapted from Greshake et al., "Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection," 2023.*
 
-*Recommended visual: A stacked bar chart comparing injection defense effectiveness -- showing attack success rates for undefended systems (30-40%), delimiter isolation only (15-25%), delimiter + instruction hierarchy (5-15%), dual-LLM architecture (3-8%), and full layered defense (2-5%) -- with separate color-coded segments for direct vs. indirect injection attacks.*
+```mermaid
+flowchart LR
+    subgraph L1["separate color-coded segments for direct"]
+        LI3["success rates for undefended systems (30-4"]
+        LI4["delimiter isolation only (15-25%)"]
+        LI5["instruction hierarchy (5-15%)"]
+    end
+    subgraph R2["indirect injection attacks."]
+        RI6["dual-LLM architecture (3-8%)"]
+        RI7["and full layered defense (2-5%)"]
+    end
+```
 *Source: Adapted from Wallace et al., "The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions," 2024 (OpenAI), and Yi et al., "Benchmarking and Defending Against Indirect Prompt Injection Attacks," 2024.*
 
 ## How It Works

@@ -8,7 +8,12 @@
 
 Imagine a large orchestra performing a symphony. Full fine-tuning would be rewriting the entire score for every instrument. LoRA would be adding subtle harmony annotations to each musician's sheet music. But there are other approaches: you could insert a small chamber ensemble between movements (adapters), have a conductor signal new interpretive cues at the start of every passage (prefix tuning), whisper a brief instruction to the orchestra before they begin playing (prompt tuning), or adjust the volume knob on each instrument section (multiplicative rescaling).
 
-*Recommended visual: Adapter bottleneck architecture showing small trainable modules inserted between frozen transformer layers — see [Houlsby et al. Adapter Paper (arXiv:1902.00751)](https://arxiv.org/abs/1902.00751)*
+```mermaid
+flowchart LR
+    S1["Adapter bottleneck architecture"]
+    S2["small trainable modules inserted between f"]
+    S1 --> S2
+```
 
 
 Each of these PEFT methods represents a different philosophy about where to inject new learnable information into a frozen model. They share the goal of training only a tiny fraction of parameters while preserving most of the pretrained model's capability, but they differ significantly in mechanism, overhead, and quality.
@@ -16,7 +21,15 @@ Each of these PEFT methods represents a different philosophy about where to inje
 ## How It Works
 
 
-*Recommended visual: Comparison of adapter, prefix tuning, prompt tuning, and LoRA showing where each injects trainable parameters — see [Hugging Face PEFT Documentation](https://huggingface.co/docs/peft/index)*
+```mermaid
+flowchart LR
+    subgraph L1["Comparison of adapter"]
+        LI3["prompt tuning"]
+    end
+    subgraph R2["prefix tuning"]
+        RI4["Feature 1"]
+    end
+```
 
 ### Bottleneck Adapters
 

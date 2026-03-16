@@ -12,10 +12,26 @@ Delimiters in prompts serve the same function. When a prompt contains multiple t
 
 Research and production experience consistently show that structured prompts with clear delimiters outperform unstructured prompts by 15-20% on section adherence and overall task accuracy. This is one of the highest-ROI techniques in prompt engineering: minimal token overhead for significant quality improvement.
 
-*Recommended visual: A side-by-side comparison of an undelimited prompt (plain wall of text with instructions, context, and user input mixed together) versus a delimited prompt (the same content organized with XML tags and markdown headers), with a quality score annotation showing 15-20% improvement for the delimited version.*
+```mermaid
+flowchart LR
+    subgraph L1["context, and user input mixed together)"]
+        LI3["plain wall of text with instructions"]
+        LI4["context"]
+    end
+    subgraph R2["a delimited prompt (the same content"]
+        RI5["user input mixed together"]
+    end
+```
 *Source: Adapted from Peng et al., "Does Prompt Formatting Have Any Impact on LLM Performance?" 2024.*
 
-*Recommended visual: A provider preference matrix showing delimiter types (XML tags, Markdown headers, Triple quotes, Custom markers) on rows and providers (Claude, GPT-4, Gemini, Open-source) on columns, with green checkmarks for "strongly recommended," yellow for "works well," and gray for "variable support."*
+```mermaid
+flowchart LR
+    S1["strongly recommended,"]
+    S2["works well,"]
+    S3["variable support."]
+    S1 --> S2
+    S2 --> S3
+```
 *Source: Adapted from Anthropic's "Use XML Tags" guide, 2024, and OpenAI's "Prompt Engineering Best Practices," 2024.*
 
 ## How It Works

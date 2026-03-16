@@ -8,7 +8,14 @@
 
 Imagine you are in a conversation with someone. Naturally, the words they just said are most relevant to understanding what they are saying now. Words from a minute ago are somewhat relevant. Words from an hour ago are barely relevant. You do not need an explicit memory of "this was word number 47 and this was word number 1,203" -- you just know that more recent things matter more, with a smooth decay.
 
-*Recommended visual: ALiBi attention bias matrix showing linear distance penalties added to attention scores, with different slopes per attention head — see [Ofir Press – ALiBi GitHub Repository](https://github.com/ofirpress/attention_with_linear_biases)*
+```mermaid
+flowchart LR
+    S1["linear distance penalties added"]
+    S2["attention scores"]
+    S3["with different slopes per attention head"]
+    S1 --> S2
+    S2 --> S3
+```
 
 
 ALiBi encodes exactly this intuition. Instead of giving the model an explicit representation of each token's position (like adding a "position 47" tag to the 47th token), ALiBi simply makes it harder for tokens to attend to distant tokens. It adds a penalty to the attention score that grows linearly with distance. Close tokens get a small penalty (easy to attend to). Distant tokens get a large penalty (harder to attend to). That is the entire mechanism.
@@ -18,7 +25,16 @@ The elegance of ALiBi is in what it does not do: it does not add positional embe
 ## How It Works
 
 
-*Recommended visual: Comparison of positional encoding methods: sinusoidal, rotary (RoPE), T5 bias, and ALiBi showing extrapolation performance on perplexity vs. sequence length — see [Press et al., "Train Short, Test Long" – ALiBi Paper Repository](https://github.com/ofirpress/attention_with_linear_biases)*
+```mermaid
+flowchart LR
+    subgraph L1["extrapolation performance on perplexity"]
+        LI3["Comparison of positional encoding methods:"]
+        LI4["rotary"]
+    end
+    subgraph R2["sequence length"]
+        RI5["T5 bias"]
+    end
+```
 
 ### The Mechanism
 

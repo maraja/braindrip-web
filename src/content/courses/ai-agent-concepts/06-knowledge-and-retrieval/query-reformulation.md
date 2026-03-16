@@ -12,7 +12,19 @@ When a user asks a question, their phrasing is optimized for human communication
 
 The process is iterative. The agent issues an initial query, evaluates the relevance of returned results, and if they are insufficient, reformulates and tries again. This might involve expanding the query with synonyms, breaking a complex question into sub-queries, or generating a hypothetical answer and using it as the search query. Each reformulation round aims to get closer to the information the user actually needs.
 
-*Recommended visual: Flowchart showing the query reformulation loop — original query → initial retrieval → relevance evaluation → reformulate (expand/decompose/HyDE) → re-retrieve → evaluate again — see [Ma et al., 2023 — Query Rewriting for RAG](https://arxiv.org/abs/2305.14283)*
+```mermaid
+flowchart TD
+    L1["initial retrieval"]
+    L2["relevance evaluation"]
+    L3["reformulate (expand/decompose/HyDE)"]
+    L4["re-retrieve"]
+    L5["evaluate again"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 --> L5
+    L5 -.->|"repeat"| L1
+```
 
 ## How It Works
 
@@ -24,7 +36,15 @@ Query expansion enriches the original query with related terms, synonyms, and co
 
 Complex questions often contain multiple information needs bundled together. "Compare the pricing, features, and customer reviews of Slack and Microsoft Teams" is really three sub-queries. Decomposition breaks the original query into independent sub-queries, each targeting a specific information need. The agent retrieves for each sub-query separately and then synthesizes the results. This is particularly important for multi-hop questions where the answer to one sub-query is needed to formulate the next (e.g., "Who is the CEO of the company that acquired Twitter?" requires first finding the acquiring company, then finding its CEO).
 
-*Recommended visual: Side-by-side comparison showing query expansion (adding synonyms), query decomposition (splitting into sub-queries), and HyDE (generating hypothetical answer then embedding it) — see [Gao et al., 2023 — HyDE](https://arxiv.org/abs/2212.10496)*
+```mermaid
+flowchart LR
+    subgraph L1["e comparison showing query expansion (addi"]
+        LI3["and HyDE"]
+    end
+    subgraph R2["query decomposition (splitting into sub-qu"]
+        RI4["Feature 1"]
+    end
+```
 
 ### Hypothetical Document Embeddings (HyDE)
 

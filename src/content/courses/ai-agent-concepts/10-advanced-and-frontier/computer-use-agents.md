@@ -10,7 +10,20 @@ Imagine hiring a remote assistant who can only see your screen through a webcam 
 
 The vision is transformative: every piece of software becomes automatable without requiring an API. Enterprise applications that were built decades ago with no API layer -- legacy CRMs, internal admin panels, government portals, desktop applications -- become accessible to AI agents. Instead of spending months building custom integrations, you point a computer use agent at the application and describe the task. The agent navigates the UI just as a human would.
 
-*Recommended visual: The perception-action loop showing screenshot capture → visual understanding by the model → action decision (click/type/scroll) → action execution → UI response → next screenshot, repeating until task completion — see [Anthropic Computer Use Documentation](https://docs.anthropic.com/en/docs/agents-and-tools/computer-use)*
+```mermaid
+flowchart TD
+    D1{"The perception-action loop"}
+    B2["visual understanding by the model"]
+    D1 --> B2
+    B3["action decision (click/type/scroll)"]
+    D1 --> B3
+    B4["action execution"]
+    D1 --> B4
+    B5["UI response"]
+    D1 --> B5
+    B6["next screenshot, repeating until task comp"]
+    D1 --> B6
+```
 
 Anthropic's computer use feature (launched October 2024) was the first major commercial implementation, enabling Claude to take screenshots, move the mouse, click, type, and scroll. OpenAI's Operator followed, focusing on web-based computer use. Google's Project Mariner explores browser automation with Gemini. These systems demonstrate the feasibility of the approach while also revealing the significant challenges: visual grounding errors, high latency from screenshot-action loops, and difficulty recovering from misclicks.
 
@@ -25,7 +38,14 @@ The agent controls the computer through a defined action space: **mouse_move(x, 
 ### The Perception-Action Loop
 Computer use follows a tight loop: (1) Take a screenshot. (2) Analyze the screenshot to understand the current state. (3) Decide the next action based on the goal and current state. (4) Execute the action. (5) Wait for the UI to respond (page load, animation, dialog). (6) Take another screenshot to observe the result. Each iteration of this loop requires an LLM call with a high-resolution image, making it latency-intensive (2-5 seconds per action). A task requiring 30 clicks takes 60-150 seconds.
 
-*Recommended visual: Screenshot example showing a desktop GUI with annotated interactive elements (buttons, text fields, menus) and coordinate-based action targets, illustrating what the model "sees" and where it decides to click — see [Xie et al., 2024 — OSWorld](https://arxiv.org/abs/2404.07972)*
+```mermaid
+flowchart LR
+    S1["buttons"]
+    S2["text fields"]
+    S3["menus"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ### Error Recovery
 Misclicks are inevitable. The agent clicks where it thinks a button is, but hits the wrong element due to imprecise coordinate prediction, a pop-up that appeared between screenshot and click, or a UI element that shifted during page loading. Recovery strategies include: **Visual verification** -- after each action, check the screenshot to verify the expected result occurred. **Undo actions** -- press Ctrl+Z or navigate back if an unintended action was detected. **State re-assessment** -- if the UI is in an unexpected state, re-analyze from scratch rather than continuing the planned sequence. **Retry with adjusted coordinates** -- if a click missed by a few pixels, adjust and retry.

@@ -11,10 +11,28 @@ The challenge is that LLM failures are often subtle and non-obvious. A program e
 
 Effective debugging requires both a systematic process (to avoid chasing symptoms instead of root causes) and a strong mental model of how LLMs process prompts (to form accurate hypotheses about failure mechanisms). This concept brings together everything in this section — testing reveals the failures, debugging diagnoses them, and optimization and guardrails fix them.
 
-*Recommended visual: A fishbone (Ishikawa) diagram showing the five major LLM failure categories -- hallucination, instruction non-compliance, format violations, reasoning errors, and context confusion -- each with 3-4 contributing causes branching off (e.g., hallucination caused by insufficient grounding, topic novelty, context-parametric conflict, low-quality retrieval).*
+```mermaid
+flowchart TD
+    D1{"fishbone (Ishikawa) diagram"}
+    B2["e.g."]
+    D1 --> B2
+    B3["hallucination caused by insufficient groun"]
+    D1 --> B3
+    B4["topic novelty"]
+    D1 --> B4
+    B5["context-parametric conflict"]
+    D1 --> B5
+    B6["low-quality retrieval"]
+    D1 --> B6
+```
 *Source: Adapted from Ji et al., "Survey of Hallucination in Natural Language Generation," 2023.*
 
-*Recommended visual: A four-step circular workflow diagram showing the Reproduce-Isolate-Fix-Verify debugging cycle -- Reproduce (capture exact input, run 5-10 times, log failure rate), Isolate (ablation debugging, minimal reproduction, context attribution), Fix (targeted correction based on root cause), Verify (test against original failure, full eval suite, related inputs) -- with arrows forming a continuous loop and the eval suite shown as a growing artifact at the center.*
+```mermaid
+flowchart LR
+    S1["Verify debugging cycle -- Reproduce"]
+    S2["Fix"]
+    S1 --> S2
+```
 *Source: Adapted from Ribeiro et al., "Adaptive Testing and Debugging of NLP Models," 2022 (Microsoft Research).*
 
 ## How It Works

@@ -14,7 +14,18 @@ The key insight is that reasoning format is a design choice, not a one-size-fits
 ![ReAct framework showing the Observation-Thought-Action reasoning pattern](https://lilianweng.github.io/posts/2023-06-23-agent/react.png)
 *Source: Lilian Weng, "LLM Powered Autonomous Agents," lilianweng.github.io, 2023. The OTA/ReAct format is the dominant structured reasoning pattern for agent systems.*
 
-*Recommended visual: A format selection decision tree with task type at the root branching into: "Interactive/tool use?" -> OTA (ReAct), "Well-defined problem with clear inputs?" -> Given-Find-Solution, "Analytical argument or evaluation?" -> Claim-Evidence-Reasoning (CER), "Retrospective analysis or case study?" -> STAR (Situation-Task-Action-Result), each leaf annotated with an example use case.*
+```mermaid
+flowchart TD
+    R1["format selection decision tree"]
+    C2["Interactive/tool use?"]
+    R1 --> C2
+    C3["Well-defined problem with clear inputs?"]
+    R1 --> C3
+    C4["Analytical argument or evaluation?"]
+    R1 --> C4
+    C5["Retrospective analysis or case study?"]
+    R1 --> C5
+```
 *Source: Adapted from Yao et al., "ReAct: Synergizing Reasoning and Acting in Language Models," ICLR 2023, and Madaan et al., "Self-Refine," NeurIPS 2023.*
 
 ## How It Works

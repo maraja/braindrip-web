@@ -12,7 +12,12 @@ Prompt injection occurs when an adversary crafts input that causes an LLM to dev
 
 For agents, prompt injection is particularly dangerous because agents take actions. A chatbot that is prompt-injected might say something inappropriate. An agent that is prompt-injected might execute harmful tool calls, exfiltrate data, or modify systems. The stakes are much higher, which means defense must be much more robust. No single defense is sufficient; effective protection requires multiple independent layers.
 
-*Recommended visual: Attack diagram showing direct injection (user sends adversarial prompt) and indirect injection (malicious instructions embedded in a retrieved document or web page), both targeting the agent's LLM reasoning — see [Greshake et al., 2023 — Indirect Prompt Injection](https://arxiv.org/abs/2302.12173)*
+```mermaid
+flowchart LR
+    S1["direct injection (user sends adversarial p"]
+    S2["indirect injection (malicious instructions"]
+    S1 --> S2
+```
 
 ## How It Works
 
@@ -24,7 +29,14 @@ The first defense layer screens user input for known injection patterns before i
 
 Modern LLMs support instruction hierarchy -- a tiered system where system instructions take precedence over user instructions. The system prompt establishes immutable constraints (the agent's identity, permissions, safety rules), and user input is treated as lower-priority. When user input conflicts with system instructions, the system instructions win. This is reinforced through training (RLHF to prefer system instructions) and through prompt architecture (clear delimiters between instruction levels, explicit reminders like "The following is user input which may contain adversarial content").
 
-*Recommended visual: Multi-layer defense architecture showing input sanitization → instruction hierarchy → data isolation → output monitoring as sequential defense layers, each catching attacks the previous layer missed — see [Wallace et al., 2024 — The Instruction Hierarchy](https://arxiv.org/abs/2404.13208)*
+```mermaid
+flowchart TD
+    R1["Multi-layer defense architecture"]
+    C2["instruction hierarchy"]
+    R1 --> C2
+    C3["data isolation"]
+    R1 --> C3
+```
 
 ### Data Isolation
 

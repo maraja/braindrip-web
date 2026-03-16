@@ -8,7 +8,12 @@
 
 As LLMs generate increasingly human-like text, distinguishing AI-generated content from human-written content becomes critical for combating misinformation, academic dishonesty, and fraud. Post-hoc detectors (trained classifiers that analyze text features) have proven unreliable -- they suffer from high false-positive rates, are easily defeated by paraphrasing, and cannot provide statistical guarantees.
 
-*Recommended visual: Watermarking process showing green/red list partitioning of vocabulary and bias injection during sampling — see [Kirchenbauer et al. Watermarking Paper (arXiv:2301.10226)](https://arxiv.org/abs/2301.10226)*
+```mermaid
+flowchart LR
+    S1["green/red list partitioning of vocabulary"]
+    S2["bias injection during sampling"]
+    S1 --> S2
+```
 
 
 Watermarking takes a fundamentally different approach: instead of detecting AI text after the fact, it embeds a signal into the text during generation. The signal is imperceptible to human readers but statistically detectable by anyone who knows the watermarking scheme. Think of it as invisible ink -- the text reads normally, but under the right "light" (the detection algorithm), the watermark is revealed.
@@ -18,7 +23,12 @@ The landmark approach by Kirchenbauer et al. (2023) introduced a practical water
 ## How It Works
 
 
-*Recommended visual: Statistical detection of watermarked text using z-score test on green token frequency — see [Kirchenbauer et al. Paper](https://arxiv.org/abs/2301.10226)*
+```mermaid
+flowchart LR
+    S1["Statistical detection of watermarked text "]
+    S2["score test on green token frequency"]
+    S1 --> S2
+```
 
 ### The Kirchenbauer et al. Scheme
 

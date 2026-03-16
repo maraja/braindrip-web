@@ -12,7 +12,12 @@ A knowledge graph is a structured representation of knowledge as entities (nodes
 
 For AI agents, knowledge graphs provide a complementary retrieval mechanism to vector search. When a question requires connecting multiple facts that live in different documents, vector search may retrieve each fact independently but fail to connect them. Graph traversal follows the connections explicitly, making multi-hop reasoning reliable rather than hoping the LLM can infer connections from retrieved text chunks.
 
-*Recommended visual: A knowledge graph showing entities as nodes (e.g., Company, Person, Product) connected by labeled relationship edges (CEO_of, developed_by, acquired), with a multi-hop query path highlighted — see [Pan et al., 2024 — Unifying LLMs and Knowledge Graphs](https://arxiv.org/abs/2306.08302)*
+```mermaid
+flowchart LR
+    S1["edge graph showing entities as nodes"]
+    S2["nected by labeled relationship edges"]
+    S1 --> S2
+```
 
 ## How It Works
 
@@ -28,7 +33,12 @@ The simplest graph queries resolve direct relationships: "Who is the CEO of Open
 
 Multi-hop questions require traversing multiple edges. "What university did the founder of SpaceX attend?" requires: SpaceX -> founded_by -> Elon Musk -> attended -> University of Pennsylvania. The agent plans the traversal path, executes each hop, and carries intermediate results forward. For complex queries, the agent may explore multiple paths simultaneously and prune dead ends. The key challenge is determining the correct path when multiple relationships exist at each node.
 
-*Recommended visual: GraphRAG indexing pipeline — documents are processed by LLMs to extract entities and relationships, which form a graph, then communities are detected and summarized — see [Microsoft GraphRAG GitHub](https://github.com/microsoft/graphrag)*
+```mermaid
+flowchart LR
+    S1["form a graph"]
+    S2["communities are detected and summarized"]
+    S1 --> S2
+```
 
 ### GraphRAG: Graphs from Documents
 

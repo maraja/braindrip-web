@@ -11,10 +11,30 @@ Code generation prompting is the discipline of structuring instructions to produ
 
 The quality gap between naive and well-crafted code generation prompts is substantial. Studies show that adding environment specifications, type signatures, and test cases to prompts improves code correctness rates from 40-50% to 70-85% on HumanEval-style benchmarks. The difference is not the model's capability — it is the information the model has to work with.
 
-*Recommended visual: A layered prompt anatomy diagram showing the five specification layers for code generation prompts -- environment specification (language, version, runtime), interface specification (type signatures, function contracts), behavioral specification (tests, examples, edge cases), context (existing code, imports, schemas), and non-functional requirements (error handling, logging, style) -- stacked to show how each layer constrains the output space.*
+```mermaid
+flowchart TD
+    L1["prompts -- environment specification (lang"]
+    L2["interface specification"]
+    L3["behavioral specification (tests, examples,"]
+    L4["context"]
+    L5["and non-functional requirements"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 --> L5
+```
 *Source: Adapted from Chen et al., "Evaluating Large Language Models Trained on Code" (Codex/HumanEval), 2021.*
 
-*Recommended visual: A bar chart comparing code correctness rates (pass@1 on HumanEval) across four prompting strategies -- description-only (40-50%), description with environment spec (55-65%), description with test cases (65-75%), and full specification with tests, types, and context (75-85%) -- illustrating the cumulative benefit of prompt precision.*
+```mermaid
+flowchart LR
+    subgraph L1["art comparing code correctness rates (pass"]
+        LI3["description with environment spec (55-65%)"]
+        LI4["description with test cases (65-75%)"]
+    end
+    subgraph R2["pting strategies -- description-only (40-5"]
+        RI5["and context (75-85%)"]
+    end
+```
 *Source: Adapted from Ni et al., "L2CEval: Evaluating Language-to-Code Generation Capabilities of Large Language Models," 2024.*
 
 ## How It Works

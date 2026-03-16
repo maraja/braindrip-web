@@ -14,7 +14,22 @@ This is distinct from prompt engineering, though the two are deeply related. Pro
 ![Agent overview showing how context flows through an LLM system with planning, memory, and tool use](https://lilianweng.github.io/posts/2023-06-23-agent/agent-overview.png)
 *Source: Lilian Weng, "LLM Powered Autonomous Agents," lilianweng.github.io (2023) -- illustrates how context engineering encompasses the entire information architecture surrounding the LLM, including memory, tools, and planning components*
 
-*Recommended visual: A diagram showing the context window as a container divided into labeled zones -- "System Prompt (5-15%)" at the top, "Retrieved Knowledge (20-30%)" and "Conversation History (30-40%)" in the middle, "Tool Results (10-20%)" and "Safety Buffer (5-10%)" at the bottom -- with the user query at the very end. An outer label reads "Prompt Engineering" pointing to just the system prompt, while "Context Engineering" brackets the entire container.*
+```mermaid
+flowchart LR
+    S1["System Prompt (5-15%)"]
+    S2["Retrieved Knowledge (20-30%)"]
+    S3["Conversation History (30-40%)"]
+    S4["Tool Results (10-20%)"]
+    S5["Safety Buffer (5-10%)"]
+    S6["Prompt Engineering"]
+    S7["Context Engineering"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+    S5 --> S6
+    S6 --> S7
+```
 *Source: Adapted from Andrej Karpathy's context engineering framing (2025) and Anthropic Prompt Engineering Guide (2024)*
 
 ## How It Works

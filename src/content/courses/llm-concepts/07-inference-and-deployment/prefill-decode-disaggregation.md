@@ -8,7 +8,12 @@
 
 Imagine a restaurant with two fundamentally different types of work: prep cooking (chopping vegetables, making sauces, marinating proteins -- labor-intensive, parallelizable) and plating (carefully placing one element at a time on the dish -- precision-oriented, sequential). In a traditional kitchen, every chef does both tasks, switching between them. But prep cooking uses heavy equipment and physical strength, while plating needs steady hands and artistic precision. When a chef interrupts plating to do a burst of prep work, the plates in progress go cold. When a chef designed for heavy prep sits idle doing delicate plating, their strength is wasted.
 
-*Recommended visual: Disaggregated prefill and decode phases running on separate GPU pools with KV cache transfer — see [Splitwise Paper (arXiv:2311.18677)](https://arxiv.org/abs/2311.18677)*
+```mermaid
+flowchart LR
+    S1["Disaggregated prefill and decode phases ru"]
+    S2["separate GPU pools with KV cache transfer"]
+    S1 --> S2
+```
 
 
 A smart restaurant separates these into two stations: a prep kitchen with powerful equipment and many hands, and a plating line optimized for precision and speed. Raw prepped ingredients are transferred between them. This is prefill-decode disaggregation.
@@ -18,7 +23,12 @@ In LLM inference, the prefill phase processes all input tokens in parallel throu
 ## How It Works
 
 
-*Recommended visual: Interference between compute-bound prefill and memory-bound decode when colocated on the same GPU — see [DistServe Paper (arXiv:2401.09670)](https://arxiv.org/abs/2401.09670)*
+```mermaid
+flowchart LR
+    S1["Interference between compute-bound prefill"]
+    S2["ory-bound decode when colocated on the sam"]
+    S1 --> S2
+```
 
 ### The Interference Problem
 

@@ -8,7 +8,12 @@
 
 Chain-of-thought (CoT) prompting showed that adding "Let's think step by step" to a prompt dramatically improves reasoning performance. But this was purely an inference-time trick -- the model wasn't *trained* to reason, it was merely *prompted* to.
 
-*Recommended visual: Chain-of-thought prompting example showing how intermediate reasoning steps lead to correct answers — see [Lilian Weng – Prompt Engineering](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/)*
+```mermaid
+flowchart LR
+    S1["Chain-of-thought prompting example"]
+    S2["how intermediate reasoning steps lead to c"]
+    S1 --> S2
+```
 
 
 Chain-of-thought training takes the next step: what if we train models to *always* produce extended reasoning before answering? What if the reasoning itself becomes a first-class training objective?
@@ -20,7 +25,12 @@ This shift is often described using Daniel Kahneman's framework: traditional LLM
 ## How It Works
 
 
-*Recommended visual: Evolution from chain-of-thought prompting to training with reasoning traces (o1/R1 paradigm) — see [OpenAI Learning to Reason](https://openai.com/index/learning-to-reason-with-llms/)*
+```mermaid
+flowchart LR
+    S1["Evolution from chain-of-thought prompting "]
+    S2["reasoning traces (o1/R1 paradigm)"]
+    S1 --> S2
+```
 
 ### The Evolution from Prompting to Training
 

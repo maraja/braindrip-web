@@ -10,7 +10,12 @@ Consider how a historian writes about a decade of events. They do not reproduce 
 
 Memory compression for agents is the same principle applied to information stored in and retrieved from memory systems. As agents operate over long conversations or many sessions, the accumulated information far exceeds what fits in the context window. Compression reduces this information to its essential content: key facts, decisions, outcomes, and lessons, while discarding redundant details, routine exchanges, and transient observations. The goal is to preserve the maximum decision-relevant information in the minimum number of tokens.
 
-*Recommended visual: A tiered compression diagram showing Level 0 (full detail, current turn) through Level 3 (maximum compression, older sessions), with compression ratios at each level — see [Packer et al., "MemGPT" (2023)](https://arxiv.org/abs/2310.08560)*
+```mermaid
+flowchart TD
+    L1["Level 0: full detail"]
+    L2["Level 3: maximum compression"]
+    L1 --> L2
+```
 
 Compression is not just about saving space; it is about improving signal-to-noise ratio. A context window filled with 50,000 tokens of raw conversation history contains significant noise: greetings, repeated explanations, verbose tool outputs, dead-end reasoning. Compressing this to 5,000 tokens of distilled information can actually improve agent performance because the model's attention is focused on signal rather than diluted across noise.
 

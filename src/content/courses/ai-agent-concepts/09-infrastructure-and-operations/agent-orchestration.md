@@ -12,7 +12,18 @@ Orchestration sits between the high-level goal ("book me a flight") and the low-
 
 Modern orchestration frameworks formalize this control plane. LangGraph represents agent flow as a directed graph with typed state. CrewAI orchestrates multiple specialized agents with role-based task assignment. AutoGen uses a conversation-based protocol where agents message each other. The choice of orchestration pattern determines what your agent can and cannot do reliably.
 
-*Recommended visual: Directed graph diagram showing an agent orchestration flow — plan node → conditional routing → parallel tool execution → merge → evaluate → conditional loop back or output — with typed state flowing along edges — see [LangGraph Documentation](https://langchain-ai.github.io/langgraph/)*
+```mermaid
+flowchart TD
+    D1{"Directed graph diagram"}
+    B2["conditional routing"]
+    D1 --> B2
+    B3["parallel tool execution"]
+    D1 --> B3
+    B4["merge"]
+    D1 --> B4
+    B5["evaluate"]
+    D1 --> B5
+```
 
 ## How It Works
 
@@ -25,7 +36,15 @@ Sequential execution is safe and simple: each step sees the complete output of t
 ### State Management Between Steps
 The orchestrator maintains a state object that flows through the execution graph. This state includes the conversation history, intermediate results, accumulated tool outputs, and any metadata needed for decision-making. In LangGraph, state is a typed dictionary (using TypedDict or Pydantic models) that each node reads from and writes to. State management is critical because LLMs are stateless -- every piece of context the model needs must be explicitly passed through the state object.
 
-*Recommended visual: Comparison diagram of orchestration patterns — sequential (ReAct loop), fan-out/fan-in (parallel tool calls), and hierarchical (subgraphs within graphs) — see [Anthropic, 2024 — Building Effective Agents](https://www.anthropic.com/research/building-effective-agents)*
+```mermaid
+flowchart LR
+    subgraph L1["sequential (ReAct loop)"]
+        LI3["and hierarchical (subgraphs within graphs)"]
+    end
+    subgraph R2["fan-out/fan-in (parallel tool calls)"]
+        RI4["Feature 1"]
+    end
+```
 
 ### Framework Approaches
 LangGraph defines agents as compiled state graphs where nodes are Python functions and edges are conditional routing logic. CrewAI takes a higher-level approach: you define agents with roles, goals, and backstories, then assign them tasks with dependencies. AutoGen models orchestration as multi-agent conversation, where agents take turns sending messages. Each framework trades off between flexibility and ease of use. LangGraph gives you maximum control but requires you to define every edge. CrewAI abstracts away the graph but limits your control over execution flow.

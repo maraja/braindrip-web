@@ -8,7 +8,14 @@
 
 Natural language training data traditionally comes from human-written text: books, websites, forums, and curated annotations. But as models have grown more capable, a powerful new approach has emerged: using LLMs themselves to generate training data.
 
-*Recommended visual: Self-instruct pipeline showing LLM generating instructions, inputs, and outputs for training data — see [Self-Instruct Paper (arXiv:2212.10560)](https://arxiv.org/abs/2212.10560)*
+```mermaid
+flowchart LR
+    S1["LLM generating instructions"]
+    S2["inputs"]
+    S3["outputs for training data"]
+    S1 --> S2
+    S2 --> S3
+```
 
 
 This might sound circular -- how can a model train another model? The answer lies in asymmetry. A large, capable model (the "teacher") can generate high-quality examples that a smaller, cheaper model (the "student") learns from. The teacher has already absorbed knowledge from human data; synthetic generation is a form of *knowledge distillation* through data.
@@ -18,7 +25,12 @@ Think of it like an expert professor writing a textbook. The professor's knowled
 ## How It Works
 
 
-*Recommended visual: Alpaca data generation pipeline using GPT-4 to create instruction-following data — see [Stanford Alpaca GitHub](https://github.com/tatsu-lab/stanford_alpaca)*
+```mermaid
+flowchart LR
+    S1["Alpaca data generation pipeline using GPT-"]
+    S2["ate instruction-following data"]
+    S1 --> S2
+```
 
 ### Self-Instruct: The Foundational Framework
 

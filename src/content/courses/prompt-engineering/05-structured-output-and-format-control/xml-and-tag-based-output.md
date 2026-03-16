@@ -11,7 +11,15 @@ Unlike JSON, which forces all content into key-value pairs and requires escaping
 
 Anthropic's Claude models show a strong affinity for XML-based formatting, likely due to training data distribution and instruction tuning. When you prompt Claude with XML tags in the input, it naturally mirrors that structure in the output. This makes XML a first-class citizen in the Anthropic ecosystem, though it works well across all major models.
 
-*Recommended visual: A side-by-side comparison of the same LLM output in three formats -- JSON (with escaped characters and rigid key-value nesting), XML (with readable tagged sections containing mixed prose and structured data), and plain text (unstructured) -- highlighting XML's advantage for mixed content with inline annotations.*
+```mermaid
+flowchart LR
+    subgraph L1["LLM output in three formats -- JSON"]
+        LI3["Feature 1"]
+    end
+    subgraph R2["and plain text (unstructured)"]
+        RI4["Feature 1"]
+    end
+```
 *Source: Adapted from Anthropic, "Prompt Engineering Guide: Use XML Tags" (2024)*
 
 ![Structured prompt engineering approaches showing hierarchical organization of reasoning](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/tree-of-thoughts.png)

@@ -10,7 +10,16 @@ Imagine a car that starts 90% of the time. On paper, 90% sounds acceptable -- it
 
 Reproducibility is the related concept of getting the same result when you run the same task multiple times. Traditional software is deterministic: the same input always produces the same output. LLM-based agents are inherently non-deterministic due to sampling (temperature > 0), hardware floating-point variations, and the chaotic sensitivity of autoregressive generation where a tiny probability difference in one token cascades through the entire output. Run the same task 10 times and you might get 8 successes and 2 failures, with different trajectories each time.
 
-*Recommended visual: Distribution histogram showing success rates across 100 runs of the same task, illustrating the variance in agent outcomes and the difference between a single-run result and the true success distribution — see [Brown et al., 2024 — Large Language Monkeys](https://arxiv.org/abs/2407.21787)*
+```mermaid
+flowchart LR
+    S1["success rates across 100 runs of the same "]
+    S2["illustrating the variance in agent outcome"]
+    S3["the difference between a single-run result"]
+    S4["the true success distribution"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
 
 This non-determinism fundamentally changes how agents must be evaluated, tested, and deployed. A single test run proving the agent can complete a task is almost meaningless. What matters is the distribution of outcomes across many runs: the success rate, the variance, the failure modes, and the conditions under which reliability degrades. Building reliable agents requires treating non-determinism as a first-class engineering challenge, not an inconvenience to ignore.
 
@@ -28,7 +37,14 @@ Not all variance is equal. Variance can be decomposed into several sources: mode
 
 While production agents are non-deterministic, testing can be made more deterministic through several techniques: setting temperature to 0 (reduces but does not eliminate non-determinism), seeding random number generators, mocking external tool calls with fixed responses, and caching LLM responses for regression testing. Deterministic tests are useful for catching clear regressions but do not replace multi-run evaluation for measuring true reliability.
 
-*Recommended visual: Compound reliability chart showing how per-step success rate (e.g., 95%) degrades exponentially with number of steps — 0.95^10 = 60%, 0.95^20 = 36% — illustrating the critical importance of per-step reliability — see [Kapoor et al., 2024 — AI Agents That Matter](https://arxiv.org/abs/2407.01502)*
+```mermaid
+flowchart LR
+    S1["Compound reliability chart"]
+    S2["number of steps — 0.95^10 = 60%, 0.95^20 ="]
+    S3["the critical importance of per-step reliab"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ### Failure Mode Analysis
 

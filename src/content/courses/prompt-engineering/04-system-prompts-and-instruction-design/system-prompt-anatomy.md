@@ -14,7 +14,20 @@ Despite their importance, system prompts are often written ad hoc -- a paragraph
 ![Prompt engineering techniques overview showing structured approaches to LLM instruction](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/tree-of-thoughts.png)
 *Source: Lilian Weng, "Prompt Engineering," lilianweng.github.io (2023)*
 
-*Recommended visual: A layered diagram showing the six system prompt components (role definition, context, behavioral constraints, tool instructions, output format, examples) stacked in order of placement within the prompt, with token budget percentages annotated on each layer.*
+```mermaid
+flowchart TD
+    L1["role definition"]
+    L2["context"]
+    L3["behavioral constraints"]
+    L4["tool instructions"]
+    L5["output format"]
+    L6["examples"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 --> L5
+    L5 --> L6
+```
 *Source: Adapted from Anthropic and OpenAI system prompt best practices documentation (2024)*
 
 ## How It Works

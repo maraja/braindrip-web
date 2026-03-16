@@ -14,7 +14,18 @@ The design decisions here are surprisingly consequential. The order of context a
 ![LLM-powered autonomous agent system overview showing the interaction between planning, memory, and tool use components](https://lilianweng.github.io/posts/2023-06-23-agent/agent-overview.png)
 *Source: Lilian Weng, "LLM Powered Autonomous Agents," 2023. This agent architecture diagram illustrates how retrieved context, instructions, and memory integrate in systems that rely on RAG prompt design.*
 
-*Recommended visual: A flowchart showing the RAG prompt template assembly pipeline -- user query, retrieved documents, faithfulness instructions, and citation directives merging into a single structured prompt that feeds the LLM, with labeled sections for context-before-query and query-before-context patterns.*
+```mermaid
+flowchart LR
+    S1["user query"]
+    S2["retrieved documents"]
+    S3["faithfulness instructions"]
+    S4["with labeled sections for context-before-q"]
+    S5["query-before-context patterns."]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+```
 *Source: Adapted from Lewis et al., "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks," 2020.*
 
 ## How It Works

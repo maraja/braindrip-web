@@ -8,7 +8,12 @@
 
 Imagine an expert violinist who decides to intensively study the piano for six months. Normal human learning would result in a competent pianist who is still an excellent violinist -- perhaps slightly rusty, but fundamentally skilled. Now imagine that studying the piano somehow erased their violin ability entirely. After six months of piano study, they cannot play a single violin piece. That is catastrophic forgetting: not gradual skill decay, but wholesale destruction of prior knowledge when learning something new.
 
-*Recommended visual: Diagram of Elastic Weight Consolidation (EWC) showing how Fisher information identifies important parameters for Task A and constrains them during Task B training — see [Lilian Weng -- Learning with Not Forgetting](https://lilianweng.github.io/posts/2020-01-29-curriculum-cl/)*
+```mermaid
+flowchart LR
+    S1["how Fisher information identifies importan"]
+    S2["constrains them during Task B training"]
+    S1 --> S2
+```
 
 
 In neural networks, catastrophic forgetting occurs because all tasks share the same set of parameters. When you fine-tune a model on Task B, the gradients from Task B push parameters in directions that optimize for Task B -- but those same parameters were carefully tuned for Task A during prior training. There is no mechanism in standard gradient descent to "protect" important parameters, so Task A knowledge is simply overwritten. The forgetting is catastrophic rather than graceful: a model that was 95% accurate on Task A can drop to 20% accuracy after fine-tuning on Task B.

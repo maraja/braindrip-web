@@ -10,7 +10,12 @@ Consider an experienced doctor facing a patient with unusual symptoms. A less ex
 
 For AI agents, metacognition is the capacity to monitor and regulate their own cognitive processes. This includes: assessing whether they have sufficient knowledge to answer a question, estimating the likelihood that their planned approach will succeed, recognizing when they are stuck or going in circles, deciding whether to attempt a task or defer to a human, and evaluating the quality of their own outputs before presenting them. Metacognition is what turns an agent from a blindly confident executor into a thoughtful collaborator that knows its own limits.
 
-*Recommended visual: A layered diagram showing metacognition as a monitoring layer above task-level reasoning — the metacognitive layer assesses confidence, detects stuckness, and decides when to ask for help — see [Kadavath et al., "Language Models (Mostly) Know What They Know" (2022)](https://arxiv.org/abs/2207.05221)*
+```mermaid
+flowchart TD
+    L1["detects stuckness"]
+    L2["decides when to ask for help"]
+    L1 --> L2
+```
 
 The absence of metacognition is one of the most common failure modes in deployed agents. An agent without metacognition will confidently produce incorrect answers, attempt tasks beyond its capability, fail to ask clarifying questions when instructions are ambiguous, and never acknowledge uncertainty. Adding metacognitive capabilities fundamentally changes the agent's relationship with the user from "unreliable oracle" to "capable assistant that communicates honestly about its confidence."
 

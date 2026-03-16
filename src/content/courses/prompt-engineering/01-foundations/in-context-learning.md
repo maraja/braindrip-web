@@ -15,7 +15,16 @@ ICL is the mechanism that makes few-shot prompting work. Understanding its prope
 ![Prompt engineering approaches including zero-shot, few-shot, and chain-of-thought](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/gpt3-language-model.png)
 *Source: Lilian Weng, "Prompt Engineering," lilianweng.github.io, 2023.*
 
-*Recommended visual: A scaling curve showing in-context learning performance (y-axis: task accuracy) vs. number of few-shot examples (x-axis: 0 to 20+) across different model sizes (1B, 10B, 100B+), demonstrating that ICL is emergent at scale and that returns diminish after 3-8 examples.*
+```mermaid
+flowchart LR
+    subgraph L1["ning performance (y-axis: task accuracy)"]
+        LI3["wing in-context learning performance (y-ax"]
+        LI4["number of few-shot examples (x-axis: 0 to "]
+    end
+    subgraph R2["number of few-shot examples (x-axis: 0"]
+        RI5["across different model sizes (1B, 10B, 100"]
+    end
+```
 *Source: Adapted from Brown et al., "Language Models are Few-Shot Learners," NeurIPS 2020.*
 
 ## How It Works

@@ -10,7 +10,14 @@ Think of a master chef training an apprentice. The master spends years developin
 
 The economics are compelling. A frontier model like Claude Opus or GPT-4o might cost $15 per million input tokens and require 50K tokens per task, costing $0.75 per task. A distilled model based on Claude Haiku or a fine-tuned open-source model might cost $0.25 per million tokens and require only 5K tokens (because it has internalized the reasoning patterns), costing $0.00125 per task -- a 600x cost reduction. At scale (100K tasks/day), this is the difference between $75,000 and $125 daily.
 
-*Recommended visual: Pipeline diagram showing teacher model (frontier LLM) generating successful trajectories, which are filtered and preprocessed, then used to fine-tune a smaller student model that reproduces the behavior at lower cost — see [Hinton et al., 2015 — Distilling the Knowledge in a Neural Network](https://arxiv.org/abs/1503.02531)*
+```mermaid
+flowchart LR
+    S1["which are filtered"]
+    S2["preprocessed"]
+    S3["then used"]
+    S1 --> S2
+    S2 --> S3
+```
 
 The key insight is that inference-time compute and training-time compute are substitutable. The frontier model "thinks hard" at inference time, spending many tokens on chain-of-thought reasoning, exploration, and self-correction. The distilled model has internalized these reasoning patterns during training, so it can produce the correct action sequence in fewer steps with less deliberation. You pay the compute cost once (during training) instead of on every inference.
 
@@ -25,7 +32,14 @@ Raw trajectories from frontier models are often noisy. The model may have taken 
 ### Fine-Tuning the Student Model
 The preprocessed trajectories become supervised training data. The student model is fine-tuned to predict the correct action given the current state. Training approaches include: **Behavioral cloning** -- train the student to exactly replicate the teacher's action at each step (supervised learning on (state, action) pairs). **Trajectory-level training** -- train on complete trajectories as multi-turn conversations, teaching the model the full task completion pattern. **Filtered behavioral cloning** -- weight training examples by trajectory quality (shorter, more efficient trajectories get higher weight). The base model is typically a smaller variant from the same family (Haiku instead of Opus) or an open-source model (Llama, Mistral).
 
-*Recommended visual: Cost-quality Pareto frontier chart showing teacher model (high quality, high cost), student v1 (moderate quality, low cost), and student v2 (improved quality, low cost) after iterative distillation rounds — see [Hsieh et al., 2023 — Distilling Step-by-Step](https://arxiv.org/abs/2305.02301)*
+```mermaid
+flowchart TD
+    L1["frontier chart showing teacher model (high"]
+    L2["student v1 (moderate quality, low cost)"]
+    L3["and student v2 (improved quality, low cost"]
+    L1 --> L2
+    L2 --> L3
+```
 
 ### Iterative Distillation
 A single round of distillation rarely achieves optimal results. Iterative distillation improves the student across multiple rounds: (1) Collect trajectories from the teacher. (2) Train the student. (3) Run the student on new tasks. (4) The student succeeds on some tasks but fails on others. (5) Run the teacher on the tasks the student failed. (6) Add these new trajectories to the training set. (7) Retrain the student. Each round focuses the training data on the student's weaknesses, progressively closing the performance gap with the teacher.

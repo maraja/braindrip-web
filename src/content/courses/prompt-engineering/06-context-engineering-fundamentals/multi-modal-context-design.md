@@ -11,10 +11,29 @@ Multi-modal context design applies this coordination principle to LLM inputs. Mo
 
 Each modality has different token economics, different information density, and different strengths. An image can convey layout, color, spatial relationships, and visual patterns that would take hundreds of words to describe in text. But that image also costs 85-1,600 tokens depending on resolution, and the model might miss fine details that text would capture precisely. Multi-modal context design makes these trade-offs explicit and systematic.
 
-*Recommended visual: A token cost comparison infographic showing different modalities and their token costs: a text block icon ("1 page of text = ~500 tokens"), an image icon at low resolution ("512x512 = 85 tokens"), an image icon at high resolution ("2048x2048 = 2,805 tokens"), a PDF icon ("1 page = 200-400 tokens"), and an audio waveform icon ("60 seconds = ~1,920 tokens"), enabling practitioners to compare costs across modalities at a glance.*
+```mermaid
+flowchart LR
+    subgraph L1["1 page of text = ~500 tokens"]
+        LI3["2048x2048 = 2,805 tokens"]
+        LI4["1 page = 200-400 tokens"]
+    end
+    subgraph R2["512x512 = 85 tokens"]
+        RI5["60 seconds = ~1,920 tokens"]
+    end
+```
 *Source: Adapted from OpenAI Vision documentation (2024), Anthropic Vision documentation (2024), and Google Gemini documentation (2024)*
 
-*Recommended visual: A 2x2 placement strategy matrix with "Task type" on one axis (directed/analytical vs. open-ended/descriptive) and "Placement" on the other (image-first vs. question-first), with each quadrant showing the recommended approach and accuracy impact: "Question-then-image for directed tasks (+5-10% accuracy)" and "Image-then-question for open analysis," plus a "Reference-style" variant for multi-image tasks shown alongside.*
+```mermaid
+flowchart LR
+    subgraph L1["k type on one axis (directed/analytical"]
+        LI3["Task type"]
+        LI4["Placement"]
+    end
+    subgraph R2["open-ended/descriptive) and Placement"]
+        RI5["and"]
+        RI6["plus a"]
+    end
+```
 *Source: Adapted from Yang et al., "The Dawn of LMMs: Preliminary Explorations with GPT-4V(ision)" (2023)*
 
 ## How It Works

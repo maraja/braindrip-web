@@ -11,10 +11,25 @@ Code review and debugging prompts provide the model with existing code and ask i
 
 The challenge is that bugs are often subtle — an off-by-one error in a loop boundary, a missing null check in a rarely-executed path, a race condition in concurrent code. Surface-level code review catches the easy issues; deep review requires the model to reason about execution paths, state changes, and edge cases. Well-structured prompts guide the model toward the level of analysis needed.
 
-*Recommended visual: A diagnostic workflow diagram showing the "Reproduce-Isolate-Fix-Verify" debugging loop -- starting with the diagnostic triad (code + error + expected behavior), branching into isolation techniques (ablation, minimal reproduction, context attribution), then converging on a targeted fix, followed by verification against the original failure and regression suite.*
+```mermaid
+flowchart LR
+    S1["starting with the diagnostic triad"]
+    S2["branching into isolation techniques"]
+    S1 --> S2
+```
 *Source: Adapted from Jesse et al., "Large Language Models and Simple, Stupid Bugs," 2023.*
 
-*Recommended visual: A radar chart comparing review effectiveness across four focus areas (security, performance, readability, architecture) for generic "review this code" prompts vs. focused review prompts with explicit checklists -- showing the 2-3x improvement in actionable findings when review focus is specified.*
+```mermaid
+flowchart LR
+    subgraph L1[") for generic review this code prompts"]
+        LI3["security"]
+        LI4["performance"]
+    end
+    subgraph R2["focused review prompts with explicit"]
+        RI5["readability"]
+        RI6["architecture"]
+    end
+```
 *Source: Adapted from Fan et al., "Large Language Models for Software Engineering: A Systematic Literature Review," 2023.*
 
 ## How It Works

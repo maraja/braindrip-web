@@ -17,7 +17,14 @@ More precisely, an embedding model is a neural network that takes a piece of tex
 ## How It Works
 
 
-*Recommended visual: Vector database architecture showing embedding, indexing (HNSW/IVF), and similarity search pipeline — see [Pinecone – What is a Vector Database](https://www.pinecone.io/learn/vector-database/)*
+```mermaid
+flowchart LR
+    S1["embedding"]
+    S2["indexing (HNSW/IVF)"]
+    S3["similarity search pipeline"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ### Text to Vectors: Embedding Models
 

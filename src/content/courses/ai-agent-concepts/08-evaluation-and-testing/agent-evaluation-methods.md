@@ -10,7 +10,16 @@ Imagine evaluating a chef. You could evaluate only the final dish: does it taste
 
 Agent evaluation is fundamentally harder than LLM evaluation. A standard LLM evaluation compares a single output to a reference answer. An agent evaluation must assess a trajectory -- a sequence of reasoning steps, tool calls, and intermediate results that together produce a final outcome. The trajectory might span 5-30 steps, involve multiple tools and data sources, and take minutes to complete. Each step can be evaluated independently (was this a reasonable action?) and the whole trajectory evaluated holistically (was this an efficient path to the goal?).
 
-*Recommended visual: Quadrant diagram showing four evaluation approaches — end-to-end (outcome only) vs trajectory (process), and automated (LLM-as-judge) vs human evaluation — with tradeoffs of cost, speed, and depth — see [Zhuge et al., 2024 — Agent-as-a-Judge](https://arxiv.org/abs/2410.10934)*
+```mermaid
+flowchart LR
+    subgraph L1["n approaches — end-to-end (outcome only)"]
+        LI3["end-to-end (outcome only)"]
+        LI4["vs trajectory (process)"]
+    end
+    subgraph R2["trajectory (process), and automated"]
+        RI5["and automated (LLM-as-judge)"]
+    end
+```
 
 Adding to the difficulty, agents are non-deterministic. Run the same task twice and the agent may take different paths, use different tools, and produce different outputs -- potentially with one succeeding and one failing. This means single-run evaluation is unreliable. Robust evaluation requires multiple runs, statistical aggregation, and careful experimental design. The field is still developing standard practices, but several evaluation paradigms have emerged as practical and informative.
 
@@ -24,7 +33,16 @@ End-to-end evaluation measures whether the agent completed the task successfully
 
 Trajectory evaluation examines each action the agent took. Was each tool call appropriate and well-parameterized? Did the agent recover gracefully from errors? Were there unnecessary or redundant steps? Did the agent take a reasonable path even if the final outcome was poor (or an unreasonable path that happened to succeed)? Trajectory evaluation requires either human annotators reviewing action logs or automated evaluators (often LLMs) scoring each step against criteria like relevance, efficiency, and correctness.
 
-*Recommended visual: Pipeline diagram showing the LLM-as-Judge evaluation flow — task input → agent execution → trajectory + output → judge LLM with rubric → structured score and explanation — see [Zheng et al., 2024 — Judging LLM-as-a-Judge](https://arxiv.org/abs/2306.05685)*
+```mermaid
+flowchart LR
+    S1["agent execution"]
+    S2["trajectory + output"]
+    S3["judge LLM with rubric"]
+    S4["structured score and explanation"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
 
 ### LLM-as-Judge
 

@@ -11,10 +11,30 @@ Knowledge conflicts in RAG systems arise in three forms. First, inter-context co
 
 Without explicit conflict resolution instructions, language models handle conflicts unpredictably. Studies show that models default to their parametric knowledge 40-60% of the time when context conflicts with training data, and they silently select one version without acknowledging the disagreement when retrieved documents conflict with each other. This silent resolution is dangerous because users have no way to know a conflict existed or how it was resolved.
 
-*Recommended visual: A taxonomy diagram showing three types of knowledge conflicts -- inter-context (Document A vs. Document B), context-parametric (retrieved context vs. model training data), and intra-context (contradictions within a single document) -- with arrows showing the model's default resolution behavior (silent selection) vs. the desired behavior (explicit surfacing with citations).*
+```mermaid
+flowchart LR
+    subgraph L1["e conflicts -- inter-context (Document A"]
+        LI3["knowledge conflicts -- inter-context (Docu"]
+        LI4["context-parametric"]
+        LI5["and intra-context"]
+    end
+    subgraph R2["Document B), context-parametric"]
+        RI6["s default resolution behavior (silent sele"]
+        RI7["the desired behavior"]
+    end
+```
 *Source: Adapted from Xie et al., "Adaptive Chameleon or Stubborn Sloth: Revealing the Behavior of Large Language Models in Knowledge Conflicts," 2024.*
 
-*Recommended visual: A decision flowchart for conflict resolution -- detect conflict, then branch based on resolution strategy: recency-based (compare timestamps), authority-based (check source hierarchy), or uncertainty-flagging (present both positions with confidence indicators) -- with each path showing the output format template.*
+```mermaid
+flowchart TD
+    R1["decision flowchart for conflict resolution"]
+    C2["recency-based (compare timestamps)"]
+    R1 --> C2
+    C3["authority-based (check source hierarchy)"]
+    R1 --> C3
+    C4["or uncertainty-flagging"]
+    R1 --> C4
+```
 *Source: Adapted from Chen et al., "Benchmarking Large Language Models in Retrieval-Augmented Generation," 2024.*
 
 ## How It Works

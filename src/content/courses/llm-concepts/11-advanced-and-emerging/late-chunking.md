@@ -8,7 +8,12 @@
 
 In standard RAG pipelines, documents are chunked first and each chunk is embedded independently. This means the embedding model never sees the full document -- it processes each chunk in isolation. If a chunk says "He signed the contract on March 15th," the embedding model has no idea who "He" refers to because the antecedent appeared in a previous chunk. The coreference is lost, the embedding captures incomplete semantics, and retrieval quality suffers.
 
-*Recommended visual: Late chunking pipeline: full document through transformer → contextualized token embeddings → chunk and pool — see [Jina AI Late Chunking Blog](https://jina.ai/news/late-chunking-in-long-context-embedding-models/)*
+```mermaid
+flowchart LR
+    S1["contextualized token embeddings"]
+    S2["chunk and pool"]
+    S1 --> S2
+```
 
 
 Late chunking, introduced by Gunther et al. (2024) at Jina AI, flips this pipeline. Instead of chunking first, you pass the entire document (or as much as fits in the model's context window) through the transformer encoder first. This produces a sequence of contextualized token embeddings where every token's representation is informed by every other token through self-attention. Then you apply chunk boundaries to these contextualized representations, mean-pooling the tokens within each chunk boundary to produce chunk-level embeddings.
@@ -18,7 +23,15 @@ The critical difference: in late chunking, each token embedding already encodes 
 ## How It Works
 
 
-*Recommended visual: Comparison of traditional chunking (chunk then embed) vs late chunking (embed then chunk) showing context preservation — see [Günther et al. Late Chunking Paper (arXiv:2409.04701)](https://arxiv.org/abs/2409.04701)*
+```mermaid
+flowchart LR
+    subgraph L1["traditional chunking (chunk then embed)"]
+        LI3["Comparison of traditional chunking (chunk "]
+    end
+    subgraph R2["late chunking (embed then chunk) showing"]
+        RI4["Feature 1"]
+    end
+```
 
 ### The Standard Pipeline (Early Chunking)
 

@@ -8,7 +8,14 @@
 
 Imagine a restaurant kitchen where a single dish requires chopping an enormous pile of vegetables. Instead of one chef doing all the chopping (which would take too long), you divide the pile among four chefs, each working on their quarter simultaneously at the same counter. They are all working on the same dish at the same time, just handling different portions of the ingredients. Occasionally they need to pass partially prepared ingredients to each other (a quick handoff since they are shoulder-to-shoulder), and then continue.
 
-*Recommended visual: Tensor parallelism splitting the MLP and self-attention layers across GPUs with column-wise and row-wise partitioning — see [Jay Alammar - The Illustrated Model Parallelism](https://jalammar.github.io/model-parallelism/)*
+```mermaid
+flowchart TD
+    L1["Tensor parallelism splitting the MLP"]
+    L2["self-attention layers across GPUs with col"]
+    L3["row-wise partitioning"]
+    L1 --> L2
+    L2 --> L3
+```
 
 
 Tensor parallelism applies this idea to neural network layers. Instead of one GPU computing the full output of a matrix multiplication, the weight matrix is partitioned across multiple GPUs. Each GPU multiplies the input by its slice of the weight matrix, producing a partial result. A quick communication step combines these partial results, and training proceeds to the next operation.
@@ -18,13 +25,27 @@ This is fundamentally different from data parallelism (where each GPU processes 
 ## How It Works
 
 
-*Recommended visual: Megatron-LM column-parallel and row-parallel linear layer decomposition showing how f and g operators handle all-reduce communication -- see [Shoeybi et al., "Megatron-LM" (2019)](https://arxiv.org/abs/1909.08053), Figure 3*
+```mermaid
+flowchart TD
+    L1["Megatron-LM column-parallel"]
+    L2["row-parallel linear layer decomposition sh"]
+    L3["g operators handle all-reduce communicatio"]
+    L1 --> L2
+    L2 --> L3
+```
 
 ### Partitioning Strategies for Linear Layers
 
 Consider a linear layer `Y = XW + b`, where `X` is the input of shape `[batch, d_in]` and `W` is the weight matrix of shape `[d_in, d_out]`.
 
-*Recommended visual: Attention head partitioning across GPUs, showing independent per-head computation with a single all-reduce for the output projection -- see [Lilian Weng - How to Train Really Large Models on Many GPUs](https://lilianweng.github.io/posts/2021-09-25-train-large/)*
+```mermaid
+flowchart LR
+    S1["Attention head partitioning across GPUs,"]
+    S2["independent per-head computation"]
+    S3["a single all-reduce for the output project"]
+    S1 --> S2
+    S2 --> S3
+```
 
 
 **Column-wise (output) partitioning**: Split `W` along columns into `N` chunks:

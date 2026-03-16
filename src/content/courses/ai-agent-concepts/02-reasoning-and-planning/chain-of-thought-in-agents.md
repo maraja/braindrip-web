@@ -10,7 +10,16 @@ Think of an experienced surgeon who narrates their thought process during a comp
 
 Chain-of-thought (CoT) in agents is the practice of having the agent generate explicit intermediate reasoning steps before deciding on its next action. While CoT was originally introduced by Wei et al. (2022) for single-turn question answering, its application within agent loops is distinct and more nuanced. In an agent context, CoT serves as a scratchpad where the agent can: analyze the current state, recall relevant information, consider alternative actions, predict consequences, and justify the chosen action, all before committing to executing anything.
 
-*Recommended visual: A comparison showing standard prompting (question -> answer) versus chain-of-thought prompting (question -> step-by-step reasoning -> answer) with higher accuracy — see [Wei et al., "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models" (2022)](https://arxiv.org/abs/2201.11903)*
+```mermaid
+flowchart LR
+    subgraph L1["standard prompting (question - answer)"]
+        LI3["standard prompting (question"]
+        LI4["step-by-step reasoning"]
+    end
+    subgraph R2["chain-of-thought prompting (question -"]
+        RI5["answer) with higher accuracy"]
+    end
+```
 
 This differs from standalone CoT prompting in a critical way: within an agent loop, the reasoning must be practical and action-oriented. The agent is not just solving a puzzle in isolation; it is deciding what to do next in a dynamic environment where actions have real consequences. The CoT in an agent loop must bridge the gap between the current observation and the next concrete action.
 

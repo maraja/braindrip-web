@@ -12,7 +12,17 @@ Building a RAG knowledge base is a well-understood one-time activity: collect do
 
 Knowledge base maintenance encompasses all the processes needed to keep a retrieval system healthy in production: detecting and replacing stale content, resolving contradictions between old and new information, deduplicating near-identical entries, re-indexing when embedding models change, monitoring retrieval quality over time, and handling the inevitable drift between the knowledge base and the real world it represents.
 
-*Recommended visual: Lifecycle diagram showing the knowledge base maintenance cycle — ingest → index → monitor → detect staleness → refresh/deduplicate/re-index → validate — with feedback arrows showing continuous operation — see [Izacard et al., 2022 — Atlas](https://arxiv.org/abs/2208.03299)*
+```mermaid
+flowchart TD
+    L1["index"]
+    L2["monitor"]
+    L3["detect staleness"]
+    L4["refresh/deduplicate/re-index"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 -.->|"repeat"| L1
+```
 
 ## How It Works
 
@@ -24,7 +34,16 @@ Content goes stale at different rates. API documentation may change with every r
 
 Over time, the same information enters the knowledge base through multiple paths: a policy document is indexed from the wiki and also from an email attachment; the same FAQ appears in three different help center pages. Deduplication identifies and consolidates these duplicates. Near-duplicate detection uses techniques like MinHash, SimHash, or embedding similarity to find content pairs above a similarity threshold (typically 0.90-0.95). When duplicates are found, the system keeps the most authoritative or recent version and removes or merges the others.
 
-*Recommended visual: Before/after comparison showing a knowledge base with duplicate and stale entries being cleaned through deduplication and refresh processes, with retrieval quality metrics improving — see [Petroni et al., 2021 — KILT Benchmark](https://arxiv.org/abs/2009.02252)*
+```mermaid
+flowchart LR
+    subgraph L1["a knowledge base with duplicate"]
+        LI3["deduplication"]
+        LI4["refresh processes"]
+    end
+    subgraph R2["stale entries being cleaned"]
+        RI5["with retrieval quality metrics improving"]
+    end
+```
 
 ### Versioning and Temporal Management
 

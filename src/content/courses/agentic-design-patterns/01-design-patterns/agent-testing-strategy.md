@@ -10,7 +10,22 @@ Think about testing a self-driving car. You do not just put it on the road and s
 
 Agent testing follows the same pyramid structure, but with a twist that traditional software does not have: non-determinism. The same agent, given the same input, may take a different path and produce a different output on every run. This means you cannot simply assert that output equals expected value. You need statistical pass criteria, semantic assertions, and evaluation rubrics that measure whether the agent achieved the goal, not whether it took the exact expected path.
 
-*Recommended visual: A testing pyramid with four layers from bottom (widest) to top (narrowest): Unit Tests for tools and prompts (fast, cheap, deterministic), Integration Tests for agent loops (seconds, no LLM calls), End-to-End Evaluations with real LLM calls (minutes, $2-50 per run), and Production Monitoring on live traffic (continuous). Width represents volume; cost increases upward. For a foundational framework applicable to agent testing, see Breck et al.'s [ML Test Score (NeurIPS 2017)](https://research.google/pubs/the-ml-test-score-a-rubric-for-ml-production-readiness-and-technical-debt-reduction/) and Ribeiro et al.'s [CheckList (ACL 2020)](https://arxiv.org/abs/2005.04118).*
+```mermaid
+flowchart TD
+    L1["pyramid with four layers from bottom (wide"]
+    L2["to top (narrowest)"]
+    L3["Unit Tests for tools and prompts (fast, ch"]
+    L4["Integration Tests for agent loops (seconds"]
+    L5["End Evaluations with real LLM calls (minut"]
+    L6["roduction Monitoring on live traffic (cont"]
+    L7["ML Test Score (NeurIPS 2017)"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 --> L5
+    L5 --> L6
+    L6 --> L7
+```
 
 A well-designed testing strategy gives you confidence that the agent works, the ability to detect when it stops working, and the data to diagnose why it stopped working.
 

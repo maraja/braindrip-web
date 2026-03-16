@@ -12,7 +12,14 @@ The action space is the complete set of operations an agent can perform. In LLM-
 
 Action space design determines the agent's fundamental capabilities and limitations. An agent with access to `read_file`, `write_file`, and `run_command` can accomplish most coding tasks. An agent with only `read_file` can observe but not change anything. An agent with `run_command` but no guardrails can delete the entire file system. The action space is simultaneously the source of the agent's power and the boundary of its safety.
 
-*Recommended visual: A Venn diagram showing three overlapping circles: "Expressiveness," "Safety," and "Tractability" with the optimal action space at the intersection — see [Anthropic, "Tool Use Documentation" (2024)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use)*
+```mermaid
+flowchart LR
+    S1["Expressiveness,"]
+    S2["Safety,"]
+    S3["Tractability"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ## How It Works
 
@@ -58,7 +65,14 @@ Most production agents use a mix: a discrete set of tools, each with parameteriz
 
 ### The Tool Count Problem
 
-*Recommended visual: A chart showing tool selection accuracy declining as tool count increases, with thresholds at 5, 15, and 30+ tools — see [Patil et al., "Gorilla: Large Language Model Connected with Massive APIs" (2023)](https://arxiv.org/abs/2305.15334)*
+```mermaid
+flowchart LR
+    S1["tool selection accuracy declining as tool "]
+    S2["with thresholds at 5"]
+    S3["30+ tools"]
+    S1 --> S2
+    S2 --> S3
+```
 
 Empirical evidence shows a clear relationship between tool count and selection accuracy:
 

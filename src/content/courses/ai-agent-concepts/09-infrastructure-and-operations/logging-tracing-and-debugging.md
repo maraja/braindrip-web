@@ -10,7 +10,16 @@ Imagine debugging a car that drove itself across the country and arrived at the 
 
 Traditional software logging captures discrete events: "request received," "database query executed," "response sent." Agent tracing captures a richer structure: the chain of thought (what the model was thinking), the action (what tool it decided to call), the observation (what the tool returned), and the decision (what the model concluded from the observation). This thought-action-observation trace is the fundamental unit of agent observability, and it must be captured for every step of every agent execution.
 
-*Recommended visual: Trace waterfall visualization showing a hierarchical tree of spans — root agent invocation containing nested LLM call spans, tool invocation spans, and retrieval spans, each with timing bars and token counts — see [LangSmith Documentation](https://docs.smith.langchain.com/)*
+```mermaid
+flowchart TD
+    R1["Trace waterfall visualization"]
+    C2["tool invocation spans"]
+    R1 --> C2
+    C3["retrieval spans"]
+    R1 --> C3
+    C4["each with timing bars and token counts"]
+    R1 --> C4
+```
 
 The tooling ecosystem for agent observability is maturing rapidly. LangSmith (from LangChain) provides trace visualization, evaluation, and dataset management. Braintrust offers logging with built-in evaluation scoring. Arize Phoenix provides open-source tracing with LLM-as-judge evaluation. These tools share a common model: capture structured traces, visualize execution flows, enable filtering and search across runs, and support automated evaluation of agent quality.
 
@@ -22,7 +31,12 @@ An agent trace is a tree of spans. The root span represents the entire agent inv
 ### Step-by-Step Execution Logs
 Beyond structured traces, human-readable logs capture the agent's progression. A typical log format shows: `[Step 1] Thought: I need to find the user's account details. Action: search_database(user_id="123"). [Step 2] Observation: {name: "Alice", plan: "Pro", ...}. Thought: Alice is on the Pro plan, I can proceed with...`. These logs make the agent's reasoning chain legible to developers. Best practice: log at INFO level for the thought-action-observation chain, DEBUG level for full prompt/response payloads, and ERROR level for failures with stack traces.
 
-*Recommended visual: Step-by-step debug view showing Thought → Action → Observation for each agent step, with the ability to click into any step and see the full prompt, response, and state — see [Arize Phoenix Documentation](https://docs.arize.com/phoenix)*
+```mermaid
+flowchart LR
+    S1["Thought"]
+    S2["Action"]
+    S1 --> S2
+```
 
 ### Replay Debugging
 Replay debugging re-executes an agent from a specific state in its execution history. If an agent failed at step 15, you can reconstruct the state at step 14 (from checkpoints) and re-run step 15 with different parameters, a modified prompt, or additional context. LangGraph's checkpointing enables this natively: each step's state is persisted, and any checkpoint can be loaded and resumed. This is dramatically more efficient than re-running the entire agent from scratch, especially for long-running tasks where the first 14 steps took minutes and significant API costs.

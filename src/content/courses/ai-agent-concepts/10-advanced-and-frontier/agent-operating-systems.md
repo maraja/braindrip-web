@@ -10,7 +10,16 @@ Think about why traditional operating systems exist. Before operating systems, e
 
 AI agents face an analogous problem. As systems run multiple agents simultaneously -- a coding agent, a research agent, a monitoring agent, a scheduling agent -- they need coordination. Which agent gets LLM inference capacity when demand exceeds supply? How do agents share knowledge (one agent's research findings might be useful to another)? How do agents access tools without conflicting (two agents trying to write the same file)? How are agents scheduled, prioritized, and terminated? These are operating system problems, and the emerging field of agent operating systems applies OS concepts to the agent domain.
 
-*Recommended visual: Layered architecture diagram showing the AIOS stack — agents at the top, LLM kernel in the middle (with scheduler, context manager, memory manager, tool manager), and hardware/LLM providers at the bottom — see [Ge et al., 2024 — AIOS](https://arxiv.org/abs/2403.16971)*
+```mermaid
+flowchart TD
+    L1["with scheduler"]
+    L2["context manager"]
+    L3["memory manager"]
+    L4["tool manager"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+```
 
 AIOS (Ge et al., 2024) proposed the first explicit agent OS architecture, with an LLM kernel that manages agent scheduling, context management, memory management, storage management, and tool management. OS-Copilot (Wu et al., 2024) takes a complementary approach, building an agent that operates within an existing OS, using the OS's own abstractions to manage files, applications, and system settings. The vision is converging: agents are not just applications running on computers -- they are a new category of computing entity that needs its own resource management layer.
 
@@ -19,7 +28,12 @@ AIOS (Ge et al., 2024) proposed the first explicit agent OS architecture, with a
 ### Process Management
 In a traditional OS, process management handles creating, scheduling, suspending, and terminating processes. In an agent OS, "processes" are agent instances. Each agent has a lifecycle: **Created** (configuration loaded, initial state set), **Ready** (waiting for resources to begin execution), **Running** (actively making LLM calls and using tools), **Waiting** (blocked on external input -- human approval, API response, another agent's output), **Terminated** (task complete or manually stopped). The process manager tracks all active agents, enforces concurrency limits (maximum number of simultaneously running agents), and handles priority-based scheduling when agents compete for limited resources.
 
-*Recommended visual: Memory hierarchy diagram paralleling OS and agent concepts — CPU registers/L1 cache = context window, RAM = short-term memory, disk = long-term memory — with data flowing between levels via summarization and retrieval — see [Tanenbaum, 2014 — Modern Operating Systems](https://www.pearson.com/en-us/subject-catalog/p/modern-operating-systems/P200000003295)*
+```mermaid
+flowchart LR
+    S1["Memory hierarchy diagram paralleling OS an"]
+    S2["concepts — CPU registers/L1 cache = contex"]
+    S1 --> S2
+```
 
 ### Memory Management
 Agents have multiple memory needs that parallel OS memory hierarchy. **Working memory** (context window): the immediate information available to the agent, analogous to CPU registers and L1 cache. **Short-term memory** (conversation history, recent tool outputs): information from the current session, analogous to RAM. **Long-term memory** (persistent knowledge store, learned facts): information that persists across sessions, analogous to disk storage. The agent OS manages this hierarchy: deciding what stays in working memory (context window management), what gets swapped to short-term storage (summarization), and what gets committed to long-term storage (memory consolidation). Shared memory allows agents to access common knowledge stores, with access control preventing unauthorized reads/writes.

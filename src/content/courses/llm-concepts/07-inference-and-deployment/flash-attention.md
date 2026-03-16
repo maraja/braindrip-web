@@ -8,7 +8,12 @@
 
 Standard attention has a dirty secret: it is not slow because of the *computation* -- modern GPUs have more than enough arithmetic power. It is slow because of *memory traffic*. The naive implementation writes a massive N x N attention matrix to GPU main memory (HBM), then reads it back to apply softmax, then writes the result again. For long sequences, this memory shuffling dominates the runtime.
 
-*Recommended visual: Flash Attention tiling diagram showing how Q, K, V blocks are loaded into SRAM to avoid materializing the full N x N attention matrix in HBM — see [Flash Attention GitHub Repository](https://github.com/Dao-AILab/flash-attention)*
+```mermaid
+flowchart LR
+    S1["Flash Attention tiling diagram"]
+    S2["how Q, K, V blocks are loaded into SRAM to"]
+    S1 --> S2
+```
 
 
 Flash Attention is like reorganizing a kitchen so everything the chef needs is within arm's reach on the counter (SRAM), rather than walking to the pantry (HBM) for every ingredient. The chef cooks the same dish -- the result is identical -- but finishes much faster because the time spent walking is eliminated.
@@ -18,7 +23,14 @@ Introduced by Tri Dao et al. in 2022, Flash Attention has become so foundational
 ## How It Works
 
 
-*Recommended visual: GPU memory hierarchy showing the bandwidth gap between SRAM and HBM that Flash Attention exploits — see [gordicaleksa.medium.com](https://gordicaleksa.medium.com/eli5-flash-attention-5c44017022ad)*
+```mermaid
+flowchart TD
+    R1["GPU memory hierarchy"]
+    C2["bandwidth gap between SRAM and HBM"]
+    R1 --> C2
+    C3["Flash Attention exploits"]
+    R1 --> C3
+```
 *See detailed GPU memory hierarchy and tiling diagrams at: [Aleksa Gordic - ELI5 Flash Attention](https://gordicaleksa.medium.com/eli5-flash-attention-5c44017022ad)*
 
 ### GPU Memory Hierarchy

@@ -8,7 +8,15 @@
 
 Imagine you have a high-resolution photograph stored at 24 bits per pixel. Converting it to 8 bits per pixel reduces the file size by 3x, and for most purposes the image still looks fine -- you lose some subtle gradients, but the content is preserved. Quantization does the same thing to neural network weights: it reduces the precision of each number, trading a small amount of accuracy for dramatic savings in memory and computation.
 
-*Recommended visual: Comparison of FP32, FP16, INT8, and INT4 precision formats showing bit layout and representable ranges — see [Hugging Face Quantization Guide](https://huggingface.co/docs/optimum/concept_guides/quantization)*
+```mermaid
+flowchart LR
+    subgraph L1["Comparison of FP32"]
+        LI3["INT8"]
+    end
+    subgraph R2["FP16"]
+        RI4["Feature 1"]
+    end
+```
 
 
 A 70B parameter model in FP16 requires about 140 GB of memory -- too large for a single GPU. Quantized to 4-bit integers, that same model fits in about 35 GB, comfortably fitting on a single 48 GB GPU. This is not just a convenience; it is often the difference between a model being deployable or not.
@@ -16,7 +24,12 @@ A 70B parameter model in FP16 requires about 140 GB of memory -- too large for a
 ## How It Works
 
 
-*Recommended visual: GPTQ vs AWQ vs GGUF quantization quality comparison across model sizes — see [Hugging Face Blog – Overview of Quantization](https://huggingface.co/blog/overview-quantization-transformers)*
+```mermaid
+flowchart LR
+    S1["GPTQ vs AWQ vs GGUF quantization quality c"]
+    S2["n across model sizes"]
+    S1 --> S2
+```
 
 ### The Basics of Number Representation
 

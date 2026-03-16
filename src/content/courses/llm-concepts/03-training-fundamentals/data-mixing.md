@@ -8,7 +8,15 @@
 
 Imagine you are designing the curriculum for a medical school. You would not simply hand students a random sample of all books ever written and hope they learn medicine. You would carefully balance textbooks, clinical case studies, research papers, and some general knowledge -- and the ratio matters enormously. Too much anatomy and too little pharmacology produces a lopsided doctor. Too much general reading and not enough medical content produces a well-read person who cannot practice medicine.
 
-*Recommended visual: Data mixing ratios comparison across major LLMs showing domain proportions — see [Longpre et al. "A Pretrainer's Guide to Training Data" (arXiv:2305.13169)](https://arxiv.org/abs/2305.13169)*
+```mermaid
+flowchart LR
+    subgraph L1["Data mixing ratios comparison across major"]
+        LI3["Feature 1"]
+    end
+    subgraph R2["domain proportions"]
+        RI4["Feature 1"]
+    end
+```
 
 
 Data mixing is the process of deciding what proportion of each data domain (web text, code, books, academic papers, Wikipedia, conversational data, math, etc.) to include in the pre-training dataset. This seemingly mundane decision turns out to be one of the most consequential choices in LLM development -- small changes in mixing ratios can produce large differences in downstream capability, often exceeding the impact of architectural modifications.
@@ -16,7 +24,14 @@ Data mixing is the process of deciding what proportion of each data domain (web 
 ## How It Works
 
 
-*Recommended visual: DoReMi algorithm illustration showing proxy model training, domain weights optimization, and final model training — see [Xie et al. DoReMi Paper (arXiv:2305.10429)](https://arxiv.org/abs/2305.10429)*
+```mermaid
+flowchart LR
+    S1["proxy model training"]
+    S2["domain weights optimization"]
+    S3["final model training"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ### The Core Challenge
 

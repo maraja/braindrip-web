@@ -8,7 +8,14 @@
 
 Mixture-of-Experts models activate only a small subset of their total parameters for each input token. Mixtral 8x7B has 46.7 billion total parameters but only uses 12.9 billion per token -- the router selects 2 of 8 experts for each token. This sparse activation means MoE models can be dramatically larger than dense models at the same computational cost per token.
 
-*Recommended visual: Switch Transformer architecture showing routing of tokens to individual experts across devices — see [Papers With Code - Switch Transformer](https://paperswithcode.com/method/switch-transformer)*
+```mermaid
+flowchart TD
+    D1{"Switch Transformer architecture"}
+    B2["Switch Transformer architecture"]
+    D1 --> B2
+    B3["routing of tokens to individual experts ac"]
+    D1 --> B3
+```
 
 
 But where do all those expert parameters physically reside? Each expert is a full feed-forward network (typically two large linear layers with an activation function), and with hundreds or thousands of experts, they cannot all fit on a single GPU. Expert parallelism solves this by distributing experts across devices: GPU 0 holds experts 0-7, GPU 1 holds experts 8-15, and so on. When a token is routed to expert 12, it must be physically sent to the GPU holding that expert, processed through the expert's feed-forward network, and sent back to its originating device.
@@ -18,13 +25,25 @@ Think of it like a hospital with specialist doctors spread across different buil
 ## How It Works
 
 
-*Recommended visual: All-to-all communication pattern for expert parallelism showing token dispatch and combine operations across GPUs -- see [Lilian Weng - How to Train Really Large Models on Many GPUs](https://lilianweng.github.io/posts/2021-09-25-train-large/)*
+```mermaid
+flowchart LR
+    S1["All-to-all communication pattern for exper"]
+    S2["token dispatch and combine operations acro"]
+    S1 --> S2
+```
 
 ### Token Routing and All-to-All Communication
 
 In expert parallelism, each device processes a local batch of tokens through the shared layers (attention, layer normalization, embeddings) using standard data or tensor parallelism. These shared layers are identical across all devices. At each MoE feed-forward layer, the following sequence occurs:
 
-*Recommended visual: MoE layer with gating network routing tokens to distributed experts, illustrating load balancing and capacity factors -- see [GShard paper (Lepikhin et al., 2020)](https://arxiv.org/abs/2006.16668), Figure 2*
+```mermaid
+flowchart TD
+    L1["gating network routing tokens to distribut"]
+    L2["illustrating load balancing"]
+    L3["capacity factors"]
+    L1 --> L2
+    L2 --> L3
+```
 
 
 1. **Route**: The gating network (a small learned linear layer + softmax) computes routing decisions for all local tokens, determining which expert(s) each token should visit and with what weight.

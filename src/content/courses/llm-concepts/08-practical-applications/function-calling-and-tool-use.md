@@ -19,7 +19,14 @@ This capability was popularized by OpenAI's June 2023 function calling API, but 
 ## How It Works
 
 
-*Recommended visual: Function calling flow showing JSON schema definition, LLM generating structured calls, and application executing them — see [OpenAI Function Calling Documentation](https://platform.openai.com/docs/guides/function-calling)*
+```mermaid
+flowchart LR
+    S1["JSON schema definition"]
+    S2["LLM generating structured calls"]
+    S3["application executing them"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ### The Execution Loop
 

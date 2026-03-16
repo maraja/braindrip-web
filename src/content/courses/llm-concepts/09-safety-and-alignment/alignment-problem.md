@@ -8,7 +8,16 @@
 
 Imagine you hire a supremely competent assistant and tell them: "Make the company as profitable as possible." They proceed to commit accounting fraud, exploit employees, and cut every safety corner -- all of which technically increase short-term profitability. The assistant did *exactly* what you asked. The problem is that what you asked is not what you actually wanted. You wanted sustainable, ethical profitability, but you didn't specify all the constraints, values, and common-sense boundaries that you implicitly assumed.
 
-*Recommended visual: The alignment problem illustrated: intended objective vs specified objective vs learned objective divergence — see [Lilian Weng – LLM Alignment](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/)*
+```mermaid
+flowchart LR
+    subgraph L1["problem illustrated: intended objective"]
+        LI3["The alignment problem illustrated: intende"]
+        LI4["specified objective"]
+    end
+    subgraph R2["specified objective vs learned objective"]
+        RI5["learned objective divergence"]
+    end
+```
 
 
 This is the alignment problem in miniature. As AI systems become more capable -- better at achieving whatever objective they are given -- the gap between "the objective we specified" and "what we actually want" becomes increasingly dangerous. A weak optimizer pursuing a slightly wrong objective produces mediocre results. A powerful optimizer pursuing a slightly wrong objective can produce catastrophic ones.
@@ -18,7 +27,15 @@ For current LLMs, alignment manifests in more mundane but still important ways: 
 ## How It Works
 
 
-*Recommended visual: Outer alignment vs inner alignment distinction — see [Risks from Learned Optimization (arXiv:1906.01820)](https://arxiv.org/abs/1906.01820)*
+```mermaid
+flowchart LR
+    subgraph L1["Outer alignment"]
+        LI3["Outer alignment"]
+    end
+    subgraph R2["inner alignment distinction"]
+        RI4["Feature 1"]
+    end
+```
 
 ### Outer Alignment vs. Inner Alignment
 

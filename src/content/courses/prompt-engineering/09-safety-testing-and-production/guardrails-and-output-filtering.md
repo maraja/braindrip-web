@@ -13,10 +13,24 @@ The need for guardrails arises from a fundamental property of LLMs: they are pro
 
 Just as a factory would never ship products without quality control — even with the best manufacturing processes — a production LLM system should never deliver outputs to users or downstream systems without guardrail validation. The question is not whether you need guardrails, but which guardrails match your application's specific risk profile and quality requirements.
 
-*Recommended visual: A defense-in-depth pipeline diagram showing the three-layer guardrail architecture -- input guard (sanitization, injection detection), LLM generation (with prompt engineering), and output guard (content classifier, schema validator, PII detector, topic restriction) -- with arrows showing the flow and a retry loop from output guard back to LLM when validation fails, annotated with latency per layer.*
+```mermaid
+flowchart LR
+    S1["uardrail architecture -- input guard"]
+    S2["LLM generation (with prompt engineering)"]
+    S1 --> S2
+```
 *Source: Adapted from Rebedea et al., "NeMo Guardrails," 2023 (NVIDIA), and Dong et al., "Building Guardrails for Large Language Models," 2024.*
 
-*Recommended visual: A reliability multiplication diagram showing how layered defenses compound -- if prompt engineering catches 95% of issues, content classifiers catch 90% of the remaining 5%, and schema validators catch 80% of what slips through, the combined system achieves 99.9% reliability -- illustrated as a cascading filter funnel with failure rates shrinking at each layer.*
+```mermaid
+flowchart TD
+    L1["if prompt engineering catches 95% of issue"]
+    L2["content classifiers catch 90% of the remai"]
+    L3["schema validators catch 80% of what slips "]
+    L4["the combined system achieves 99.9% reliabi"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+```
 *Source: Adapted from Inan et al., "Llama Guard," 2023 (Meta), and OWASP, "LLM AI Security and Governance Checklist," 2024.*
 
 ## How It Works

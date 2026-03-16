@@ -10,7 +10,12 @@ Think of a project manager who creates a detailed project plan before any work b
 
 Plan-and-Execute applies this same separation to AI agents. Instead of interleaving reasoning and acting step-by-step (as in ReAct), the agent first generates a complete multi-step plan for achieving the goal, then executes each step sequentially. After each step completes, the agent can optionally revise the remaining plan based on what it learned. This two-phase approach is particularly effective for tasks where the overall strategy can be determined upfront and individual steps are relatively well-defined.
 
-*Recommended visual: A two-phase diagram showing Phase 1 (Planner generates numbered steps) feeding into Phase 2 (Executor carries out each step with optional replanning loops) — see [LangChain, "Plan-and-Execute Agents" (2023)](https://blog.langchain.dev/plan-and-execute-agents/)*
+```mermaid
+flowchart TD
+    L1["Level 1: Planner generates numbered steps"]
+    L2["Level 2: Executor carries out each step wi"]
+    L1 --> L2
+```
 
 The advantage over pure ReAct is strategic coherence. When an agent interleaves planning and acting at each step, it can lose sight of the big picture, especially over long task horizons. By committing to a plan first, the agent maintains a global perspective on the task structure. The trade-off is reduced flexibility: if the plan is wrong, the agent may waste effort executing flawed steps before replanning.
 

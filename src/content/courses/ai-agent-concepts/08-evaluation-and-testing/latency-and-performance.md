@@ -10,7 +10,12 @@ Imagine two consultants. Consultant A listens to your question, thinks for 30 se
 
 Latency in agent systems is fundamentally different from latency in traditional software. A web server's latency is dominated by network and database operations, typically 50-500ms. An agent's latency is dominated by LLM inference (1-30 seconds per call) and may involve multiple LLM calls (5-15 per task), tool executions (each adding its own latency), and retrieval operations. Total agent response times of 30 seconds to several minutes are common for complex tasks, orders of magnitude slower than traditional software.
 
-*Recommended visual: Time decomposition bar chart showing a typical agent request broken into thinking time (LLM inference), action time (tool execution), retrieval time, waiting time, and overhead, illustrating where latency is spent — see [Agrawal et al., 2024 — Sarathi-Serve](https://arxiv.org/abs/2403.02310)*
+```mermaid
+flowchart LR
+    S1["nt request broken into thinking time (LLM "]
+    S2["action time (tool execution)"]
+    S1 --> S2
+```
 
 Performance optimization for agents is about understanding where time is spent, which components can be parallelized, where caching can help, and where the quality-latency tradeoff can be navigated. The goal is not always to minimize latency -- sometimes longer processing produces genuinely better results -- but to ensure that every second of processing time adds proportional value and that users perceive the system as responsive even during longer operations.
 
@@ -24,7 +29,15 @@ Agent execution time breaks down into several components: thinking time (LLM inf
 
 Users perceive responsiveness not by total completion time but by how quickly they see the system responding. Time-to-first-token (TTFT) measures how long until the first output token appears -- typically 0.5-3 seconds. Time-to-first-action (TTFA) measures how long until the agent takes its first meaningful action. Both can be improved through streaming (showing tokens as they are generated) and progressive disclosure (showing the agent's plan before executing it). A system that streams its thinking feels responsive even if total completion takes minutes.
 
-*Recommended visual: Sequence diagram comparing sequential agent execution (each step waits for the previous) vs parallelized execution (independent retrievals and tool calls run simultaneously), showing latency savings — see [Kwon et al., 2023 — vLLM](https://arxiv.org/abs/2309.06180)*
+```mermaid
+flowchart LR
+    subgraph L1["ution (each step waits for the previous)"]
+        LI3["comparing sequential agent execution"]
+    end
+    subgraph R2["parallelized execution (independent"]
+        RI4["Feature 1"]
+    end
+```
 
 ### Parallelization Strategies
 

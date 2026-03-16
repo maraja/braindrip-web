@@ -10,7 +10,21 @@ Imagine a research assistant who, given a question like "What are the economic i
 
 The fundamental difference between a deep research agent and a simple RAG system is iteration. RAG performs one retrieval pass: query the knowledge base, get relevant chunks, generate a response. A deep research agent performs many passes: the initial search reveals that Study A claims UBI reduces poverty by 30%, but Study B shows no effect. This gap triggers a new search for methodological differences. The agent discovers that Study A measured absolute poverty while Study B measured relative poverty. This nuance gets incorporated into the synthesis. Each search-read-synthesize cycle deepens understanding.
 
-*Recommended visual: The iterative research loop — decompose question → search multiple sources → read and extract facts → synthesize → identify gaps → search again to fill gaps → write final report with citations — see [Shao et al., 2024 — STORM](https://arxiv.org/abs/2402.14207)*
+```mermaid
+flowchart TD
+    L1["The iterative research loop — decompose qu"]
+    L2["search multiple sources"]
+    L3["read and extract facts"]
+    L4["synthesize"]
+    L5["identify gaps"]
+    L6["search again to fill gaps"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 --> L5
+    L5 --> L6
+    L6 -.->|"repeat"| L1
+```
 
 OpenAI launched Deep Research in early 2025, demonstrating o3-based agents that spend 5-30 minutes researching complex questions and produce detailed reports. Google followed with Gemini Deep Research. Perplexity's Pro Search performs lighter-weight research with real-time web access. These products have demonstrated strong user demand: people want answers that are researched, not just generated. The challenge is ensuring the research is thorough, the sources are reliable, and the synthesis is faithful to the evidence.
 
@@ -22,7 +36,18 @@ The core algorithm: (1) **Decompose** the question into sub-questions ("What are
 ### Multi-Source Search
 Effective research queries multiple source types: **Web search** (Google, Bing) for general information and recent developments. **Academic search** (Semantic Scholar, Google Scholar, PubMed) for peer-reviewed research. **News search** for current events and real-world examples. **Domain-specific databases** (financial data, patent databases, government statistics) for specialized information. Each source type has different strengths: academic sources are authoritative but lag current events; news sources are timely but may lack rigor; web sources are comprehensive but vary in quality. The agent must assess source reliability and weight findings accordingly.
 
-*Recommended visual: Multi-source search diagram showing parallel queries to web search, academic databases, news archives, and domain-specific sources, with results feeding into a fact store organized by sub-question — see [Nakano et al., 2022 — WebGPT](https://arxiv.org/abs/2112.09332)*
+```mermaid
+flowchart LR
+    S1["parallel queries"]
+    S2["web search"]
+    S3["academic databases"]
+    S4["news archives"]
+    S5["domain-specific sources"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+```
 
 ### Extraction and Fact Management
 Raw documents are too long to include in full. The agent must extract the relevant information: key findings, methodology details, data points, author conclusions, and limitations. This extraction step transforms a 20-page paper into 200-500 tokens of structured facts. The agent maintains a "fact store" -- a growing collection of extracted facts tagged with source, confidence level, and relevance to each sub-question. This fact store is the agent's working memory for the research task.

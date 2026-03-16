@@ -8,7 +8,12 @@
 
 Imagine a military chain of command. A general issues standing orders, a colonel provides mission-specific directives, and a sergeant relays immediate instructions to soldiers on the ground. If a captured enemy combatant tells a soldier to stand down, the soldier does not comply -- because the instruction violates the chain of command, regardless of how convincingly it is phrased. The soldier is trained to recognize the source authority of each instruction and act accordingly.
 
-*Recommended visual: Instruction hierarchy showing priority levels: system prompt > developer instructions > user input — see [OpenAI Instruction Hierarchy Paper (arXiv:2404.13208)](https://arxiv.org/abs/2404.13208)*
+```mermaid
+flowchart LR
+    S1["Instruction hierarchy"]
+    S2["priority levels: system prompt developer i"]
+    S1 --> S2
+```
 
 
 The instruction hierarchy applies this same principle to language models. It establishes a strict priority ordering: **system-level instructions** (set by the model provider) take highest precedence, **developer-level instructions** (the system prompt from the application builder) come next, and **user-level instructions** (the end user's messages) have the lowest priority. When a user instruction conflicts with a developer or system instruction, the model is trained to refuse the user's request gracefully rather than comply.

@@ -10,7 +10,14 @@ Consider a librarian helping a researcher. The researcher asks about "recent adv
 
 Memory retrieval for agents is this same challenge: given a vast store of memories (past conversations, facts, experiences, documents), how does the agent find the specific items that will be most useful for the current task? The store might contain thousands to millions of entries. Retrieving too many floods the context window. Retrieving too few misses critical information. Retrieving the wrong ones wastes token budget on irrelevant context. The retrieval strategy is often the difference between a helpful and a useless memory system.
 
-*Recommended visual: A scoring diagram showing three signals (recency, relevance, importance) being weighted and combined into a final hybrid retrieval score, as described in the Generative Agents paper — see [Park et al., "Generative Agents" (2023)](https://arxiv.org/abs/2304.03442)*
+```mermaid
+flowchart LR
+    S1["recency"]
+    S2["relevance"]
+    S3["importance"]
+    S1 --> S2
+    S2 --> S3
+```
 
 The key insight is that no single retrieval signal is sufficient. Recency alone misses important old memories. Relevance alone surfaces semantically similar but contextually inappropriate items. Importance alone ignores the current task context. Effective retrieval combines these signals into a hybrid score that balances all three dimensions, often with additional signals like source trustworthiness and user preferences.
 

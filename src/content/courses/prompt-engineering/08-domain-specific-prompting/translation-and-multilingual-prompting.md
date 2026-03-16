@@ -11,10 +11,27 @@ Translation and multilingual prompting encompasses three related tasks: translat
 
 The quality landscape is uneven. English-centric training means that most models perform best in English, followed by major European languages, with significant quality degradation for lower-resource languages. Understanding these disparities — and designing prompts that compensate for them — is essential for production multilingual systems.
 
-*Recommended visual: A world map heat diagram showing LLM quality tiers across languages -- Tier 1 (90-95% of English quality) for major European languages in green, Tier 2 (75-85%) for CJK, Russian, Arabic, Hindi in yellow, and Tier 3 (50-70%) for lower-resource languages in red -- illustrating the uneven quality landscape of multilingual model performance.*
+```mermaid
+flowchart TD
+    L1["Level 1: 90-95% of English quality"]
+    L2["Level 2: 75-85%"]
+    L3["Level 3: 50-70%"]
+    L1 --> L2
+    L2 --> L3
+```
 *Source: Adapted from Ahuja et al., "MEGA: Multilingual Evaluation of Generative AI," 2023.*
 
-*Recommended visual: A token cost comparison bar chart showing the number of tokens required to encode the same 500-word semantic content across six languages -- English (~500 tokens), Spanish (~550), Chinese (~1200), Japanese (~1300), Arabic (~1100), and Hindi (~1000) -- illustrating the 2-3x tokenization cost disparity for non-Latin scripts.*
+```mermaid
+flowchart LR
+    subgraph L1["tent across six languages -- English (~500"]
+        LI3["Chinese (~1200)"]
+        LI4["Japanese (~1300)"]
+    end
+    subgraph R2["Spanish (~550)"]
+        RI5["Arabic (~1100)"]
+        RI6["and Hindi (~1000)"]
+    end
+```
 *Source: Adapted from Lai et al., "ChatGPT Beyond English," 2023, and Shi et al., "Language Models are Multilingual Chain-of-Thought Reasoners," 2023.*
 
 ## How It Works

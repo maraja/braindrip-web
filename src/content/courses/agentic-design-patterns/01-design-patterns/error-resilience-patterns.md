@@ -10,7 +10,14 @@ Think of designing a building in an earthquake zone. You do not wait for the ear
 
 Agent systems face a uniquely hostile error landscape. Every LLM call can produce malformed output. Every tool invocation can timeout, return unexpected data, or fail silently. Every multi-step plan can go off the rails at step three of twelve. Traditional software handles errors with try-catch blocks and retries. Agent systems need something deeper: structural patterns that make the entire architecture tolerant of the unpredictable failures that emerge from combining non-deterministic reasoning with real-world side effects.
 
-*Recommended visual: A concentric-ring diagram showing the six resilience patterns as layers around the core agent loop -- from innermost (Structured Output Enforcement) through Validation Schemas, Fallback Chains, Idempotency, Checkpoint/Recovery, to outermost (Blast Radius Containment). For established patterns in this space, see Michael Nygard's [Release It!](https://pragprog.com/titles/mnee2/release-it-second-edition/) stability patterns (circuit breakers, bulkheads, timeouts).*
+```mermaid
+flowchart TD
+    L1["he core agent loop -- from innermost (Stru"]
+    L2["to outermost (Blast Radius Containment)"]
+    L3["stability patterns"]
+    L1 --> L2
+    L2 --> L3
+```
 
 Error resilience is not about eliminating errors -- that is impossible with stochastic systems. It is about ensuring that when errors occur, the system degrades predictably, recovers automatically where possible, and limits damage where recovery is not possible.
 

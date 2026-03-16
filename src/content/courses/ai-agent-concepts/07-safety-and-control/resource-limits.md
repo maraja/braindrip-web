@@ -12,7 +12,17 @@ An AI agent without resource limits is genuinely dangerous. Consider a coding ag
 
 Resource limits establish hard boundaries on what an agent can consume: maximum tokens (input + output across all LLM calls), maximum wall-clock time, maximum number of tool calls or iterations, maximum dollar cost, and maximum concurrent operations. When any limit is hit, the agent stops executing, reports what it has accomplished so far, and returns control. These limits transform potentially catastrophic failures (a $10,000 API bill from an infinite loop) into bounded, manageable incidents.
 
-*Recommended visual: Circuit breaker diagram showing an agent loop with token budget, time limit, iteration cap, and cost cap as independent trip wires — when any limit is hit, the circuit breaks and the agent returns partial results — see [Nygard, 2018 — Release It!](https://pragprog.com/titles/mnee2/release-it-second-edition/)*
+```mermaid
+flowchart TD
+    L1["an agent loop with token budget"]
+    L2["time limit"]
+    L3["iteration cap"]
+    L4["cost cap as independent trip wires"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 -.->|"repeat"| L1
+```
 
 ## How It Works
 
@@ -28,7 +38,14 @@ Time limits cap the wall-clock duration of agent execution. A simple query shoul
 
 Iteration limits cap the number of agent loop cycles -- the number of times the agent can think and act before being forced to stop. A step limit of 25 means the agent gets 25 reasoning-action pairs. This prevents infinite loops where the agent repeats the same action, multi-step tasks from expanding unboundedly, and verbose agents that take many small steps instead of efficient large ones. Iteration limits should be calibrated per task type: a simple Q&A might need 1-3 steps, a coding task might need 10-20, and a complex research task might need 20-40.
 
-*Recommended visual: Hierarchical limit diagram showing per-step limits nested within per-task limits nested within per-user daily limits, with budget consumption tracked at each level — see [Chen et al., 2023 — FrugalGPT](https://arxiv.org/abs/2305.05176)*
+```mermaid
+flowchart TD
+    R1["Hierarchical limit diagram"]
+    C2["Hierarchical limit diagram"]
+    R1 --> C2
+    C3["budget consumption tracked at each level"]
+    R1 --> C3
+```
 
 ### Cost Caps
 

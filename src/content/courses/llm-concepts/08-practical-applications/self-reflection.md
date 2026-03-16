@@ -19,7 +19,15 @@ The broader family of self-improvement techniques includes Self-Refine (Madaan e
 ## How It Works
 
 
-*Recommended visual: Self-Refine iterative loop showing Generate → Feedback → Refine cycle — see [Self-Refine Paper (arXiv:2303.17651)](https://arxiv.org/abs/2303.17651)*
+```mermaid
+flowchart TD
+    L1["Generate"]
+    L2["Feedback"]
+    L3["Refine cycle"]
+    L1 --> L2
+    L2 --> L3
+    L3 -.->|"repeat"| L1
+```
 
 ### The Reflexion Architecture
 

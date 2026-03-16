@@ -12,7 +12,14 @@ Hierarchical agent systems replicate this organizational structure with AI agent
 
 This pattern is the most natural fit for complex, multi-domain tasks that require both high-level coordination and detailed execution. Software development, research projects, business analysis, and content production all benefit from hierarchical decomposition. The challenge is managing the communication overhead, preventing goal drift across levels, and handling failures that require cross-level coordination.
 
-*Recommended visual: A three-level hierarchy diagram showing Level 0 (Orchestrator/CEO) delegating to Level 1 (Managers for backend, frontend, testing) which in turn delegate to Level 2 (Worker agents for specific implementation tasks), with arrows showing task flow down and results/escalations flowing up — see [Qian et al., "ChatDev: Communicative Agents for Software Development" (2023)](https://arxiv.org/abs/2307.07924)*
+```mermaid
+flowchart TD
+    L1["Level 0: Orchestrator/CEO"]
+    L2["Level 1: Managers for backend"]
+    L3["Level 2: Worker agents for specific implem"]
+    L1 --> L2
+    L2 --> L3
+```
 
 ## How It Works
 

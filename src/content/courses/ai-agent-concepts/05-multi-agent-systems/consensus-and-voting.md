@@ -12,7 +12,14 @@ Consensus mechanisms in AI agent systems range from simple (majority vote across
 
 The core theoretical insight is error independence. If five agents each have an 80% chance of being correct and their errors are independent, majority vote produces a correct answer ~94% of the time (binomial probability of 3+ out of 5 being correct). In practice, errors are not fully independent (agents share training data and biases), but partial independence still yields significant reliability gains.
 
-*Recommended visual: A diagram showing the self-consistency mechanism: a single prompt branches into N reasoning paths (with temperature > 0), each producing a final answer, and the most frequent answer is selected via majority vote — see [Wang et al., "Self-Consistency Improves Chain of Thought Reasoning in Language Models" (2023)](https://arxiv.org/abs/2203.11171)*
+```mermaid
+flowchart TD
+    D1{"diagram"}
+    B2["each producing a final answer"]
+    D1 --> B2
+    B3["the most frequent answer is selected via m"]
+    D1 --> B3
+```
 
 ## How It Works
 

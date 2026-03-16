@@ -11,10 +11,26 @@ Context budget allocation applies this same thinking to the LLM context window. 
 
 A context budget is a design artifact that specifies how many tokens each component category is allowed to consume. It prevents any single component from dominating, ensures critical information always has space, and provides clear guidelines for compression or truncation when content exceeds its allocated budget.
 
-*Recommended visual: A stacked bar chart showing context budget allocation across four window sizes (8K, 32K, 128K, 200K), with each bar divided into color-coded zones (System Prompt in blue, Conversation History in green, Retrieved Knowledge in orange, Tool Results in purple, Safety Buffer in gray), with token counts labeled on each segment.*
+```mermaid
+flowchart TD
+    L1["8K"]
+    L2["32K"]
+    L3["128K"]
+    L4["200K"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+```
 *Source: Adapted from LangChain, "Context Window Management" (2024) and Anthropic system prompt sizing guidelines*
 
-*Recommended visual: A dynamic reallocation flow diagram showing three states of a conversation: "Early conversation" (large knowledge zone, small history zone), "Mid conversation" (balanced zones), and "Late conversation" (compressed history zone, summarized knowledge zone, growing tool results), with arrows showing how budget flows between zones as the conversation progresses.*
+```mermaid
+flowchart LR
+    S1["Early conversation"]
+    S2["Mid conversation"]
+    S3["Late conversation"]
+    S1 --> S2
+    S2 --> S3
+```
 *Source: Adapted from Liu et al., "Lost in the Middle" (2023) and Xu et al., "Retrieval Meets Long Context" (2024)*
 
 ## How It Works

@@ -12,7 +12,21 @@ API integration is the practice of connecting AI agents to external services —
 
 The challenge is not making a single API call — that is trivial. The challenge is doing it reliably at scale: handling authentication flows, respecting rate limits, paginating through large result sets, recovering from errors, and transforming between the data formats the API expects and the structured outputs the LLM produces. Production API integration requires treating every external call as potentially slow, flaky, or adversarial.
 
-*Recommended visual: A flow diagram showing the API integration lifecycle: OpenAPI spec parsing to tool schema generation to LLM function call to HTTP request construction to execution with auth/retry/rate-limiting to response parsing to LLM context — see [Qin et al., "ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs" (2023)](https://arxiv.org/abs/2307.16789)*
+```mermaid
+flowchart TD
+    L1["the API integration lifecycle: OpenAPI spe"]
+    L2["tool schema generation"]
+    L3["LLM function call"]
+    L4["HTTP request construction"]
+    L5["execution with auth/retry/rate-limiting"]
+    L6["response parsing"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 --> L5
+    L5 --> L6
+    L6 -.->|"repeat"| L1
+```
 
 ## How It Works
 

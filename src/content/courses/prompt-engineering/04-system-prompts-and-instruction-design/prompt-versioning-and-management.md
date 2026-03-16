@@ -11,10 +11,36 @@ In practice, most teams manage prompts far less carefully than their code. Promp
 
 Prompt management is an emerging discipline that sits at the intersection of software engineering, machine learning operations (MLOps), and content management. As LLM applications mature from prototypes to production systems serving millions of users, the need for systematic prompt management becomes non-negotiable.
 
-*Recommended visual: A Git-style version control diagram showing a prompt evolving through versions (v1.0 -> v1.1 -> v2.0), with branch points for A/B testing variants, merge arrows for winning variants, and rollback arrows for failed deployments, annotated with changelogs at each version node.*
+```mermaid
+flowchart TD
+    D1{"Git-style version control diagram"}
+    B2["a prompt evolving"]
+    D1 --> B2
+    B3["versions (v1.0 - v1.1 - v2.0)"]
+    D1 --> B3
+    B4["with branch points for A/B testing variant"]
+    D1 --> B4
+    B5["merge arrows for winning variants"]
+    D1 --> B5
+    B6["rollback arrows for failed deployments"]
+    D1 --> B6
+    B7["annotated with changelogs at each version "]
+    D1 --> B7
+```
 *Source: Adapted from Arawjo et al., "ChainForge" (2024) and DSPy prompt management patterns*
 
-*Recommended visual: A CI/CD pipeline diagram for prompts showing the stages: "Prompt Edit" -> "Regression Test Suite (50 test cases)" -> "Staging Deployment" -> "A/B Test (500+ conversations per variant)" -> "Production Rollout or Rollback," with pass/fail gates between each stage.*
+```mermaid
+flowchart LR
+    S1["Prompt Edit"]
+    S2["Regression Test Suite (50 test cases)"]
+    S3["Staging Deployment"]
+    S4["A/B Test (500+ conversations per variant)"]
+    S5["Production Rollout or Rollback,"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+```
 *Source: Adapted from Shankar et al., "Who Validates the Validators?" (2024)*
 
 ## How It Works

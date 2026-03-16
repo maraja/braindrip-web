@@ -12,7 +12,14 @@ When an AI agent takes actions in the real world -- modifying files, updating da
 
 Designing for reversibility means building agent systems where every action either has a natural undo operation, creates a checkpoint that can be restored, or is explicitly flagged as irreversible (requiring additional safety checks). This shifts the safety model from "prevent all mistakes" (impossible) to "ensure mistakes are recoverable" (achievable), while reserving the strongest preventive measures for the truly irreversible actions.
 
-*Recommended visual: Diagram showing three rollback strategies — version control revert for file operations, database transaction rollback for data operations, and compensating actions for API/external operations — with arrows showing forward action and reverse action paths — see [Garcia-Molina & Salem, 1987 — Sagas](https://dl.acm.org/doi/10.1145/38713.38742)*
+```mermaid
+flowchart LR
+    S1["Diagram"]
+    S2["arrows"]
+    S3["forward action and reverse action paths"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ## How It Works
 
@@ -28,7 +35,14 @@ For database operations, transactions provide atomicity: a group of changes eith
 
 Some operations cannot be directly undone but can be compensated. If an agent creates a cloud resource (a VM, a database, a queue), the compensating action is to delete it. If an agent posts a message, the compensating action might be to post a correction or delete the message. The agent (or its orchestrator) maintains a compensating action log -- for every forward action, it records the corresponding reverse action. If rollback is needed, the compensating actions are executed in reverse order, similar to the saga pattern in distributed systems.
 
-*Recommended visual: Saga pattern timeline showing a sequence of agent actions (T1, T2, T3) with corresponding compensating actions (C1, C2, C3), and a failure at T3 triggering compensations in reverse order (C2, C1) — see [Kleppmann, 2017 — Designing Data-Intensive Applications](https://dataintensive.net/)*
+```mermaid
+flowchart LR
+    S1["showing a sequence of agent actions (T1, T"]
+    S2["h corresponding compensating actions (C1, "]
+    S3["ering compensations in reverse order (C2, "]
+    S1 --> S2
+    S2 --> S3
+```
 
 ### Checkpoint Strategies
 

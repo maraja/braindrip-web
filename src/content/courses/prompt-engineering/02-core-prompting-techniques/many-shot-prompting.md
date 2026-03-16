@@ -12,10 +12,28 @@ Many-shot prompting extends the few-shot paradigm from 3-8 examples to 20-500+ e
 
 This technique sits in a strategic middle ground between few-shot prompting (cheap, fast, moderate quality) and fine-tuning (expensive, slow, high quality). It offers fine-tuning-like quality with ICL's flexibility: you can change the task, add new categories, or update the examples instantly, without retraining.
 
-*Recommended visual: A line graph showing task accuracy (y-axis: 60-97%) vs. number of in-context examples (x-axis: 0 to 500, log scale) with three curves -- zero-shot baseline (flat), few-shot (steep rise then plateau at 5-8 examples), and many-shot (continued gradual rise reaching saturation around 50-100 examples) -- with a horizontal dashed line showing fine-tuned model performance for comparison.*
+```mermaid
+flowchart LR
+    subgraph L1["task accuracy (y-axis: 60-97%)"]
+        LI3["A line graph showing task accuracy (y-axis"]
+        LI4["number of in-context examples (x-axis: 0 t"]
+    end
+    subgraph R2["number of in-context examples (x-axis: 0"]
+        RI5["h three curves -- zero-shot baseline (flat"]
+        RI6["few-shot"]
+    end
+```
 *Source: Adapted from Agarwal et al., "Many-Shot In-Context Learning," Google DeepMind, 2024.*
 
-*Recommended visual: A cost-vs-quality scatter plot comparing four approaches -- zero-shot (low cost, moderate quality), few-shot (low cost, good quality), many-shot (moderate cost, high quality), and fine-tuning (high upfront cost, high quality) -- with annotations showing the monthly cost at 1M requests/month for each approach.*
+```mermaid
+flowchart LR
+    subgraph L1["mparing four approaches -- zero-shot (low "]
+        LI3["many-shot (moderate cost, high quality)"]
+    end
+    subgraph R2["few-shot (low cost, good quality)"]
+        RI4["Feature 1"]
+    end
+```
 *Source: Adapted from Agarwal et al., 2024, and OpenAI/Anthropic pricing data.*
 
 ## How It Works

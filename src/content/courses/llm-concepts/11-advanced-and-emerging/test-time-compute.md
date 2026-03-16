@@ -8,7 +8,14 @@
 
 Consider the difference between a student who writes the first answer that comes to mind versus one who drafts multiple solutions, checks each for errors, and selects the best one. Both students have the same knowledge (same model weights), but the second student spends more time **thinking** (more compute at test time) and consistently gets better results.
 
-*Recommended visual: Test-time compute scaling showing performance improving with repeated sampling, verification, and search — see [Snell et al. Paper (arXiv:2408.03314)](https://arxiv.org/abs/2408.03314)*
+```mermaid
+flowchart LR
+    S1["performance improving with repeated sampli"]
+    S2["verification"]
+    S3["search"]
+    S1 --> S2
+    S2 --> S3
+```
 
 
 Test-time compute -- also called inference-time scaling or inference-time compute -- refers to techniques that improve model outputs by spending more computation when generating each response, rather than during training. This is the new scaling frontier: instead of only asking "how big should the model be?" we now also ask "how much should the model think about this particular problem?"
@@ -18,7 +25,12 @@ The traditional scaling paradigm (Kaplan et al., 2020; Hoffmann et al., 2022) sh
 ## How It Works
 
 
-*Recommended visual: Compute-optimal frontier showing trade-off between model size and inference-time compute — see [OpenAI Learning to Reason](https://openai.com/index/learning-to-reason-with-llms/)*
+```mermaid
+flowchart TD
+    L1["Compute-optimal frontier"]
+    L2["trade-off between model size and inference"]
+    L1 --> L2
+```
 
 ### Self-Consistency (Wang et al., 2023)
 

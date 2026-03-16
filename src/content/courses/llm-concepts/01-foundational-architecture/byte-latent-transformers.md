@@ -8,7 +8,14 @@
 
 Imagine reading a book where every page has been pre-cut into fixed jigsaw puzzle pieces before you see it. Some pieces split words in half, others merge unrelated fragments, and words in different languages get sliced into wildly different numbers of pieces. This is what tokenization does to text. Now imagine instead reading the raw letters directly, but having an intelligent assistant who groups letters into natural, variable-sized chunks based on how surprising or complex each region is -- spending more time on dense technical passages and breezing through predictable boilerplate. That is the Byte Latent Transformer.
 
-*Recommended visual: Architecture diagram showing the encoder-decoder BLT pipeline with dynamic byte patching — see [Meta AI BLT Paper (arXiv:2412.09871)](https://arxiv.org/abs/2412.09871)*
+```mermaid
+flowchart LR
+    S1["Architecture diagram"]
+    S2["the encoder-decoder BLT pipeline"]
+    S3["dynamic byte patching"]
+    S1 --> S2
+    S2 --> S3
+```
 
 
 BLT, introduced by Meta FAIR (Pagnoni et al., 2024), is a radical departure from the tokenizer-dependent paradigm that has dominated language modeling since the introduction of BPE. Instead of converting text to a fixed vocabulary of subword tokens, BLT operates directly on raw UTF-8 bytes (256 possible values plus special tokens). But it does not naively process every byte through a massive transformer -- that would be computationally prohibitive. Instead, it uses a three-component architecture with dynamic patching to achieve efficiency comparable to token-based models.
@@ -18,7 +25,15 @@ The result is a model free from all tokenization artifacts: no more whitespace s
 ## How It Works
 
 
-*Recommended visual: Byte-level vs token-level processing comparison showing how BLT dynamically groups bytes into patches — see [Meta BLT GitHub Repository](https://github.com/facebookresearch/blt)*
+```mermaid
+flowchart LR
+    subgraph L1["Byte-level"]
+        LI3["how BLT dynamically groups bytes"]
+    end
+    subgraph R2["token-level processing comparison"]
+        RI4["Feature 1"]
+    end
+```
 
 ### The Three-Component Architecture
 

@@ -12,7 +12,16 @@ MCP (Model Context Protocol) was released by Anthropic in November 2024 as an op
 
 The practical impact is an ecosystem effect. A single MCP server for Slack means every MCP-compatible AI application gets Slack integration. A server for PostgreSQL means every client can query databases. This composability and reusability is what distinguishes MCP from ad-hoc function calling — it is not just about invoking tools, but about discovering, connecting, and managing tools through a standardized layer.
 
-*Recommended visual: An architecture diagram showing the MCP client-server model: Host Application containing MCP Clients, each connected via JSON-RPC (stdio or SSE) to MCP Servers that expose Tools, Resources, and Prompts — see [Model Context Protocol Specification (2024)](https://modelcontextprotocol.io)*
+```mermaid
+flowchart TD
+    C1["each connected via JSON-RPC (stdio or SSE)"]
+    C2["MCP Servers that expose Tools"]
+    C3["Resources"]
+    C4["Prompts"]
+    C1 --> C2
+    C2 --> C3
+    C3 --> C4
+```
 
 ## How It Works
 

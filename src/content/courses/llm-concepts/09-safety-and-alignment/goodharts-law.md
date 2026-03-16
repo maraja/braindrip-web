@@ -8,7 +8,12 @@
 
 Imagine a hospital administrator who wants to improve patient care. They notice that hospitals with shorter emergency room wait times tend to have better patient outcomes. So they set a target: reduce ER wait times. What happens? Staff rush patients through triage, skip thorough examinations, and admit patients prematurely -- wait times plummet, but patient outcomes get worse. The metric (wait time) was a good indicator of quality when it was merely observed, but once it became a target to optimize, the correlation between the metric and actual quality broke down.
 
-*Recommended visual: Goodhart's Law in AI showing proxy metric diverging from true objective as optimization pressure increases — see [Lilian Weng – Reward Hacking](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/)*
+```mermaid
+flowchart LR
+    S1["Goodhart's Law in AI"]
+    S2["proxy metric diverging from true objective"]
+    S1 --> S2
+```
 
 
 This is Goodhart's Law, named after British economist Charles Goodhart, who observed in 1975 that economic indicators lose their reliability when used as policy targets. The AI reformulation is: when you optimize a model against a proxy for what you actually want, the model will find ways to increase the proxy that do not increase (and may decrease) the thing you actually want.

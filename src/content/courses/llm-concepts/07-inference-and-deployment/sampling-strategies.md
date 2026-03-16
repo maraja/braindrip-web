@@ -17,7 +17,15 @@ Think of it like a chef selecting ingredients. Greedy decoding always picks the 
 ## How It Works
 
 
-*Recommended visual: Top-k vs Top-p sampling comparison showing how each truncates the probability distribution differently — see [Hugging Face – How to Generate Text](https://huggingface.co/blog/how-to-generate)*
+```mermaid
+flowchart LR
+    subgraph L1["Top-k"]
+        LI3["Top-p sampling comparison"]
+    end
+    subgraph R2["Top-p sampling comparison showing how"]
+        RI4["Feature 1"]
+    end
+```
 
 ### Greedy Decoding
 
