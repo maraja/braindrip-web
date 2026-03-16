@@ -20,7 +20,17 @@ Think of it like training a chef. SFT is like giving them a cookbook (follow the
 
 RLHF proceeds in three distinct stages:
 
-*Recommended visual: Detailed RLHF training loop diagram showing policy, reward model, reference model, and KL penalty — see [Lilian Weng – RLHF Post](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/)*
+```mermaid
+flowchart TD
+    L1["policy"]
+    L2["reward model"]
+    L3["reference model"]
+    L4["KL penalty"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 -.->|"repeat"| L1
+```
 
 
 ### Stage 1: Collect Human Preference Data

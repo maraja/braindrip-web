@@ -8,7 +8,16 @@
 
 Imagine you are searching for the lowest point in a vast, foggy valley. If you take enormous strides, you will quickly reach the general area of the valley floor but then keep overshooting it, bouncing back and forth across the bottom. If you take tiny steps from the start, you will make precise progress but it will take an eternity to get anywhere.
 
-*Recommended visual: Comparison of learning rate schedules: constant, step decay, exponential decay, cosine annealing, and warmup + cosine decay, showing how each schedule modulates the learning rate over training steps — see [ResearchGate -- Different Learning Rate Schedules](https://www.researchgate.net/)*
+```mermaid
+flowchart LR
+    subgraph L1["Comparison of learning rate schedules: con"]
+        LI3["exponential decay"]
+        LI4["cosine annealing"]
+    end
+    subgraph R2["step decay"]
+        RI5["warmup + cosine decay"]
+    end
+```
 
 
 The optimal strategy is to start with medium strides to get your bearings, build up to large strides once you know the general direction, and then gradually shrink your steps as you approach the minimum so you can settle precisely into it. This is exactly what learning rate scheduling does.

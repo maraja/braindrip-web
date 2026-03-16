@@ -19,7 +19,17 @@ The key distinction is *autonomy*. A chatbot responds to individual prompts. An 
 ## How It Works
 
 
-*Recommended visual: Agent loop diagram showing Observe → Think → Act → Observe cycle — see [Lilian Weng – LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/)*
+```mermaid
+flowchart TD
+    L1["Observe"]
+    L2["Think"]
+    L3["Act"]
+    L4["Observe cycle"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 -.->|"repeat"| L1
+```
 
 ### The Agent Loop
 

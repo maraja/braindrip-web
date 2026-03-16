@@ -8,7 +8,12 @@
 
 RLHF's biggest bottleneck is not algorithmic -- it is the human annotators. Collecting high-quality preference data requires hiring and training annotators, managing quality control, handling disagreements, and paying per comparison. For a single alignment iteration, teams may need 50,000-100,000 comparisons, costing hundreds of thousands of dollars.
 
-*Recommended visual: RLAIF pipeline showing AI model generating preference labels instead of human annotators — see [RLAIF Paper (arXiv:2309.00267)](https://arxiv.org/abs/2309.00267)*
+```mermaid
+flowchart LR
+    S1["RLAIF pipeline"]
+    S2["AI model generating preference labels inst"]
+    S1 --> S2
+```
 
 
 RLAIF asks: can an AI model itself serve as the preference annotator?
@@ -20,7 +25,12 @@ Two major research threads established RLAIF's viability. Google showed that LLM
 ## How It Works
 
 
-*Recommended visual: Position debiasing and self-consistency voting techniques used in RLAIF for higher-quality AI labels — see [Google RLAIF Paper](https://arxiv.org/abs/2309.00267)*
+```mermaid
+flowchart LR
+    S1["Position debiasing and self-consistency vo"]
+    S2["hniques used in RLAIF for higher-quality A"]
+    S1 --> S2
+```
 
 ### Standard RLAIF Pipeline (Google)
 

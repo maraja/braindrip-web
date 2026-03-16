@@ -16,7 +16,14 @@ When the task varies significantly across inputs (each customer query needs a sl
 ![Agent overview showing multi-layer LLM architecture with planning and execution components](https://lilianweng.github.io/posts/2023-06-23-agent/agent-overview.png)
 *Source: Lilian Weng, "LLM Powered Autonomous Agents," lilianweng.github.io (2023) -- illustrates the multi-layer architecture concept where one component plans and another executes, analogous to meta-prompting's two-layer pattern*
 
-*Recommended visual: A loop diagram showing the iterative meta-prompting optimization cycle: "Meta-Layer generates prompt" -> "Execution layer runs prompt on test cases" -> "Evaluator scores results" -> "Meta-layer receives feedback and generates improved prompt" -> repeat, with a convergence graph inset showing quality improvement over 5-15 iterations.*
+```mermaid
+flowchart TD
+    L1["Meta-Layer generates prompt"]
+    L2["Execution layer runs prompt on test cases"]
+    L3["Evaluator scores results"]
+    L1 --> L2
+    L2 --> L3
+```
 *Source: Adapted from Yang et al., "Large Language Models as Optimizers (OPRO)" (2023) and Zhou et al., "Large Language Models Are Human-Level Prompt Engineers (APE)" (2023)*
 
 ## How It Works

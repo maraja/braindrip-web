@@ -12,10 +12,22 @@ After the LLM processes your prompt through its transformer layers, it outputs a
 
 These parameters interact with prompt design in important ways. A carefully crafted prompt can be undermined by inappropriate sampling settings, and a simple prompt can produce excellent results with the right temperature. Understanding this interaction is essential for consistent production quality.
 
-*Recommended visual: A set of three probability distribution bar charts showing the same vocabulary distribution at T=0 (single spike at the top token), T=0.7 (smoothed distribution with a few dominant tokens), and T=1.5 (nearly flat distribution), illustrating how temperature reshapes the softmax output.*
+```mermaid
+flowchart LR
+    S1["single spike at the top token"]
+    S2["smoothed distribution with a few dominant "]
+    S3["nearly flat distribution"]
+    S1 --> S2
+    S2 --> S3
+```
 *Source: Adapted from Holtzman et al., "The Curious Case of Neural Text Degeneration," 2019.*
 
-*Recommended visual: A decision matrix mapping task types (classification, code generation, analytical writing, creative writing, brainstorming) to recommended temperature ranges, with a color gradient from blue (T=0, deterministic) to red (T=1.5, high variance).*
+```mermaid
+flowchart TD
+    L1["with a color gradient from blue (T=0, dete"]
+    L2["to red (T=1.5, high variance)"]
+    L1 --> L2
+```
 *Source: Adapted from Renze and Guven, "The Effect of Sampling Temperature on Problem Solving in Large Language Models," 2024.*
 
 ## How It Works

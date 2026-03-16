@@ -8,7 +8,18 @@
 
 Imagine you are an architect designing a building. For your final blueprints, you need precise measurements down to the millimeter (FP32 -- full precision). But when doing rough sketches and quick calculations to explore designs, you only need measurements to the nearest centimeter (FP16/BF16 -- half precision). You save enormous time and paper doing the bulk of your work at lower precision, while keeping a precise master copy for the critical details.
 
-*Recommended visual: Diagram of the mixed precision training workflow: FP32 master weights are cast to FP16/BF16 for forward and backward passes, then gradients are cast back to FP32 for the optimizer update — see [NVIDIA Developer Blog -- Mixed Precision Training](https://developer.nvidia.com/blog/mixed-precision-training-deep-neural-networks/)*
+```mermaid
+flowchart LR
+    S1["FP32 master weights are cast"]
+    S2["FP16/BF16 for forward"]
+    S3["backward passes"]
+    S4["then gradients are cast back"]
+    S5["FP32 for the optimizer update"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+```
 
 
 Mixed precision training applies this same principle to neural network training. The "mixed" refers to using multiple numerical precisions simultaneously: lower precision for the bulk of computation (forward pass, backward pass, gradient computation) and higher precision where it matters most (optimizer state, parameter master copy).
@@ -16,7 +27,15 @@ Mixed precision training applies this same principle to neural network training.
 ## How It Works
 
 
-*Recommended visual: Comparison of FP32, FP16, and BF16 floating-point formats showing bit allocation for sign, exponent, and mantissa, highlighting BF16's FP32-matching range with reduced precision — see [NVIDIA Developer Blog -- BFloat16 Training](https://developer.nvidia.com/blog/accelerating-ai-training-with-tf32-tensor-cores/)*
+```mermaid
+flowchart LR
+    subgraph L1["bit allocation for sign"]
+        LI3["mantissa"]
+    end
+    subgraph R2["exponent"]
+        RI4["Feature 1"]
+    end
+```
 
 ### Floating-Point Formats Explained
 

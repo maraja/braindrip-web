@@ -8,7 +8,16 @@
 
 Training-time scaling laws tell us that bigger models trained on more data perform better. Inference-time scaling laws reveal a parallel truth: you can also improve performance by spending more compute when generating answers, not just when training the model. Think of it as the difference between hiring a smarter employee versus giving an existing employee more time to think. Both approaches improve output quality, and sometimes the latter is more cost-effective.
 
-*Recommended visual: Inference-time compute scaling curves showing performance improving with more samples, longer chains, and tree search — see [Snell et al. Scaling LLM Test-Time Compute (arXiv:2408.03314)](https://arxiv.org/abs/2408.03314)*
+```mermaid
+flowchart TD
+    R1["Inference-time compute scaling curves"]
+    C2["performance improving with more samples"]
+    R1 --> C2
+    C3["longer chains"]
+    R1 --> C3
+    C4["tree search"]
+    R1 --> C4
+```
 
 
 The core insight, demonstrated by Snell et al. (2024), is that a compute-optimal strategy exists at inference time just as at training time. A 7B model equipped with a process reward model (PRM) and best-of-N sampling can match the performance of a 34B model running standard greedy decoding on math reasoning benchmarks -- at comparable total FLOPs. This means the traditional assumption that "bigger model = better performance" breaks down when you account for inference-time compute allocation.
@@ -18,7 +27,17 @@ This paradigm shift became dramatically visible with OpenAI's o1 model family, w
 ## How It Works
 
 
-*Recommended visual: Compute-optimal inference showing when to use a smaller model with more inference compute vs a larger model — see [OpenAI Learning to Reason](https://openai.com/index/learning-to-reason-with-llms/)*
+```mermaid
+flowchart LR
+    subgraph L1["maller model with more inference compute"]
+        LI3["Compute-optimal inference"]
+        LI4["when to use a smaller model"]
+    end
+    subgraph R2["a larger model"]
+        RI5["more inference compute"]
+        RI6["a larger model"]
+    end
+```
 
 ### Repeated Sampling and Self-Consistency
 

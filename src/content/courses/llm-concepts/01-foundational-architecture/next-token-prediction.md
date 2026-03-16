@@ -25,7 +25,12 @@ All of these capabilities emerge implicitly from a single, simple objective.
 ## How It Works
 
 
-*Recommended visual: Autoregressive language model training showing how the model learns to predict each token from its left context — see [Jay Alammar – XLNet Illustrated](https://jalammar.github.io/illustrated-gpt2/)*
+```mermaid
+flowchart LR
+    S1["Autoregressive language model training"]
+    S2["how the model learns to predict each token"]
+    S1 --> S2
+```
 
 ### The Training Objective
 

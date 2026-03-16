@@ -8,7 +8,15 @@
 
 Without activation functions, a neural network is just a stack of linear transformations -- and a stack of linear transformations collapses into a single linear transformation. No matter how many layers you add, the network can only learn linear relationships: $y = Wx + b$.
 
-*Recommended visual: Plot comparing common activation functions -- ReLU, GELU, SiLU/Swish -- showing their shapes: ReLU with a hard zero cutoff, GELU and SiLU with smooth curves that dip slightly below zero for negative inputs — see [GELU Activation Function -- Papers With Code](https://paperswithcode.com/method/gelu)*
+```mermaid
+flowchart LR
+    subgraph L1["ReLU"]
+        LI3["SiLU/Swish"]
+    end
+    subgraph R2["GELU"]
+        RI4["Feature 1"]
+    end
+```
 
 
 An activation function $\sigma$ is applied after each linear transformation to introduce **non-linearity**:
@@ -22,7 +30,15 @@ Think of it this way: a linear function can draw a straight line through data. A
 ## How It Works
 
 
-*Recommended visual: Comparison of ReLU and Swish (SiLU) activation functions showing the non-monotonic property of Swish where it allows small negative values to pass through before returning to zero — see [Swish Activation Function -- Papers With Code](https://paperswithcode.com/method/swish)*
+```mermaid
+flowchart LR
+    subgraph L1["pass"]
+        LI3["zero"]
+    end
+    subgraph R2["before returning"]
+        RI4["Feature 1"]
+    end
+```
 
 ### ReLU (Rectified Linear Unit)
 

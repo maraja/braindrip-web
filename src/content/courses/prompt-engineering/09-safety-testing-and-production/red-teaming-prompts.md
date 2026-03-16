@@ -11,7 +11,22 @@ Red-teaming differs from standard testing (see `prompt-testing-and-evaluation.md
 
 The practice has been adopted as an industry standard by leading AI organizations. Anthropic, OpenAI, Google DeepMind, and Meta all conduct extensive red-teaming before model releases. The Biden administration's 2023 Executive Order on AI Safety explicitly references red-teaming as a required practice for frontier AI systems. For application developers, red-teaming the full system (prompt + model + tools + guardrails) is equally important, as system-level vulnerabilities often arise from interactions between components rather than individual weaknesses.
 
-*Recommended visual: A hierarchical attack taxonomy tree diagram showing the six major red-teaming categories -- jailbreaking, data extraction, instruction override, harmful content generation, functionality abuse, and bias probing -- each branching into 3-4 specific attack techniques with severity ratings (Critical/High/Medium/Low) at the leaf nodes.*
+```mermaid
+flowchart TD
+    R1["hierarchical attack taxonomy tree diagram"]
+    C2["jailbreaking"]
+    R1 --> C2
+    C3["data extraction"]
+    R1 --> C3
+    C4["instruction override"]
+    R1 --> C4
+    C5["harmful content generation"]
+    R1 --> C5
+    C6["functionality abuse"]
+    R1 --> C6
+    C7["bias probing"]
+    R1 --> C7
+```
 *Source: Adapted from Ganguli et al., "Red Teaming Language Models to Reduce Harms," 2022 (Anthropic), and Mazeika et al., "HarmBench," 2024.*
 
 ![LLM-powered autonomous agent system overview showing the interaction between planning, memory, and tool use components](https://lilianweng.github.io/posts/2023-06-23-agent/agent-overview.png)

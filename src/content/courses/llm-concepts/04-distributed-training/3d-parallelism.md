@@ -8,7 +8,14 @@
 
 Imagine building a skyscraper. You need three kinds of organization simultaneously: (1) within each floor, specialized teams handle different sections of the same floor plan in parallel (this is tensor parallelism -- splitting work within a single layer); (2) different floors are assigned to different construction crews who pass materials up the building sequentially (this is pipeline parallelism -- splitting consecutive layers); (3) you build multiple identical buildings at once to house more people (this is data parallelism -- processing different data through identical model replicas).
 
-*Recommended visual: 3D parallelism topology mapping data, tensor, and pipeline parallelism to hardware hierarchy — see [Jay Alammar - The Illustrated Model Parallelism](https://jalammar.github.io/model-parallelism/)*
+```mermaid
+flowchart LR
+    S1["3D parallelism topology mapping data"]
+    S2["tensor"]
+    S3["pipeline parallelism to hardware hierarchy"]
+    S1 --> S2
+    S2 --> S3
+```
 
 
 No single strategy alone can handle the scale of training frontier language models. A model with 175 billion to over a trillion parameters, trained on trillions of tokens across thousands of GPUs for months, requires the orchestrated combination of all three parallelism dimensions. 3D parallelism is the engineering framework that makes this possible.
@@ -16,7 +23,12 @@ No single strategy alone can handle the scale of training frontier language mode
 ## How It Works
 
 
-*Recommended visual: Diagram showing how D x T x P GPUs are organized with tensor parallelism within nodes, pipeline parallelism across nodes, and data parallelism across replicas -- see [Megatron-LM paper (Narayanan et al., 2021)](https://arxiv.org/abs/2104.04473), Figure 3*
+```mermaid
+flowchart LR
+    S1["pipeline parallelism across nodes"]
+    S2["data parallelism across replicas"]
+    S1 --> S2
+```
 
 ### The Three Dimensions
 
@@ -97,7 +109,14 @@ With 3D+ parallelism, the training loop becomes a carefully orchestrated dance:
 
 Training frontier models demands extraordinary infrastructure:
 
-*Recommended visual: PTD-P (Pipeline, Tensor, Data Parallelism) schedule showing micro-batch interleaving across pipeline stages with tensor-parallel groups -- see [Lilian Weng's blog post on Large Transformer Model Training](https://lilianweng.github.io/posts/2021-09-25-train-large/)*
+```mermaid
+flowchart LR
+    S1["Pipeline"]
+    S2["Tensor"]
+    S3["Data Parallelism"]
+    S1 --> S2
+    S2 --> S3
+```
 
 
 - **GPU count**: 2,000-16,000+ GPUs (H100 or newer)

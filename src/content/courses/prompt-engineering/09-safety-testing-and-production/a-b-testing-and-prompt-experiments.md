@@ -11,10 +11,25 @@ Offline evaluation (see `prompt-testing-and-evaluation.md`) tells you how a prom
 
 A/B testing is particularly valuable for prompts because small wording changes can have large, unpredictable effects on user experience. A prompt that scores identically on an eval suite might produce noticeably different user satisfaction scores — perhaps because it changes the tone, length, or formatting of responses in ways the eval rubric does not capture. Only real user data reveals these effects.
 
-*Recommended visual: A split-funnel experiment design diagram showing incoming user traffic randomly divided into Control (current prompt) and Treatment (new prompt variant) groups, with each group's responses flowing through the same metrics collection pipeline (task success, satisfaction, cost, latency, safety), converging at a statistical comparison dashboard that outputs a significance verdict.*
+```mermaid
+flowchart LR
+    subgraph L1["raffic randomly divided into Control (curr"]
+        LI3["the same metrics collection pipeline"]
+    end
+    subgraph R2["and Treatment (new prompt variant)"]
+        RI4["Feature 1"]
+    end
+```
 *Source: Adapted from Kohavi, Tang, & Xu, "Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing," 2020.*
 
-*Recommended visual: A power analysis nomogram showing the relationship between sample size per variant (x-axis), minimum detectable effect size (y-axis, 1-10 percentage points), and statistical power curves (0.80 and 0.90), with an annotated example point at 3,000 users / 3 percentage-point MDE / 80% power for a binary metric with 70% baseline.*
+```mermaid
+flowchart LR
+    S1["ship between sample size per variant (x-ax"]
+    S2["minimum detectable effect size"]
+    S3["and statistical power curves (0.80 and 0.9"]
+    S1 --> S2
+    S2 --> S3
+```
 *Source: Adapted from Larsen et al., "Statistical Challenges in Online Controlled Experiments," 2024.*
 
 ## How It Works

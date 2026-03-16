@@ -12,10 +12,24 @@ Role and persona prompting works similarly. When you tell a model "You are a sen
 
 This technique works because LLMs are trained on text written by people in many different roles and domains. The persona prompt acts as a retrieval key, biasing the model toward the subset of its training data most relevant to the specified role. It is one of the simplest techniques to implement and one of the most consistently effective for domain-specific tasks.
 
-*Recommended visual: A spectrum diagram showing three levels of persona detail -- "Light framing" (5-20 tokens, broad activation), "Domain-specific role" (20-50 tokens, moderate activation), and "Detailed character sheet" (100-300 tokens, strong activation) -- with example text and an arrow indicating increasing domain-specificity and output quality from left to right.*
+```mermaid
+flowchart TD
+    L1["Light framing"]
+    L2["Domain-specific role"]
+    L3["Detailed character sheet"]
+    L1 --> L2
+    L2 --> L3
+```
 *Source: Adapted from Salewski et al., "In-Context Impersonation Reveals Large Language Models' Strengths and Biases," NeurIPS 2023.*
 
-*Recommended visual: A Venn diagram showing the overlap between persona prompting, instruction prompting, and few-shot prompting, with the intersection labeled "Optimal production prompt" where domain expertise (persona), task clarity (instructions), and format consistency (examples) combine for maximum quality.*
+```mermaid
+flowchart LR
+    S1["where domain expertise (persona)"]
+    S2["task clarity (instructions)"]
+    S3["and format consistency (examples)"]
+    S1 --> S2
+    S2 --> S3
+```
 *Source: Adapted from Kong et al., "Better Zero-Shot Reasoning with Role-Play Prompting," 2024.*
 
 ## How It Works

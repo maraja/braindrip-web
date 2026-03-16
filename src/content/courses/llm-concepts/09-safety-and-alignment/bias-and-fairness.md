@@ -8,7 +8,16 @@
 
 Imagine training a model on the entire internet. The internet reflects human society, and human society is not equitable. Historical texts describe women as nurses and men as doctors. News articles disproportionately associate certain ethnic groups with crime. English-language content vastly outnumbers content in most other languages. Cultural perspectives from wealthy Western countries dominate.
 
-*Recommended visual: Sources of bias in the LLM pipeline: training data, annotation, model architecture, and deployment — see [Hugging Face Ethics Documentation](https://huggingface.co/docs/hub/model-cards)*
+```mermaid
+flowchart LR
+    S1["Sources of bias in the LLM pipeline: train"]
+    S2["annotation"]
+    S3["model architecture"]
+    S4["deployment"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
 
 
 An LLM trained on this data does not merely reflect these patterns -- it **absorbs them as statistical regularities** and reproduces them in its outputs. When asked to complete "The nurse walked into the room. She..." the model assigns "she" a higher probability than "he" not because it believes nurses must be women, but because that pattern appeared more frequently in its training data.
@@ -18,7 +27,12 @@ This is bias in LLMs: systematic skew in model outputs that reflects and can rei
 ## How It Works
 
 
-*Recommended visual: Gender bias in word embeddings showing stereotypical associations (he:doctor :: she:nurse) — see [Bolukbasi et al. Debiasing Paper (arXiv:1607.06520)](https://arxiv.org/abs/1607.06520)*
+```mermaid
+flowchart LR
+    S1["Gender bias in word embeddings"]
+    S2["stereotypical associations (he:doctor :: s"]
+    S1 --> S2
+```
 
 ### Sources of Bias
 

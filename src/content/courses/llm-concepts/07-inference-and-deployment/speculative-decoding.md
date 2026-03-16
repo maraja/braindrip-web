@@ -8,7 +8,12 @@
 
 Standard autoregressive generation has an uncomfortable truth: generating each token requires a full forward pass through the model, but during the decode phase, most of the GPU's computational power sits idle. The bottleneck is memory bandwidth -- reading billions of parameters from GPU memory -- not arithmetic. The GPU can multiply matrices far faster than it can load them.
 
-*Recommended visual: Speculative decoding pipeline showing draft model generating candidate tokens and target model verifying in a single forward pass — see [Leviathan et al. Paper (arXiv:2211.17192)](https://arxiv.org/abs/2211.17192)*
+```mermaid
+flowchart LR
+    S1["draft model generating candidate tokens"]
+    S2["target model verifying in a single forward"]
+    S1 --> S2
+```
 
 
 Speculative decoding exploits this gap. Think of it like a junior associate drafting a document and a senior partner reviewing it. The junior works fast and produces a rough draft of several paragraphs. The senior reads the whole draft at once and approves most of it, only redlining a few sections. This is far faster than the senior dictating every word one at a time, because reading and approving in bulk is cheap compared to composing from scratch.
@@ -18,7 +23,12 @@ The "junior" is a small draft model (e.g., a 1B parameter model). The "senior" i
 ## How It Works
 
 
-*Recommended visual: Acceptance/rejection verification step showing how rejected tokens are resampled to maintain exact output distribution — see [Chen et al. Paper (arXiv:2302.01318)](https://arxiv.org/abs/2302.01318)*
+```mermaid
+flowchart LR
+    S1["Acceptance/rejection verification step"]
+    S2["how rejected tokens are resampled to maint"]
+    S1 --> S2
+```
 
 ### Step-by-Step Process
 

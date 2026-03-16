@@ -8,7 +8,15 @@
 
 Human evaluation is exactly what it sounds like: real people assess the quality of language model outputs. While this may seem unsophisticated compared to automated metrics, it captures something no automated method fully can -- the holistic judgment of whether a response is actually good, useful, and trustworthy.
 
-*Recommended visual: Pairwise human evaluation setup showing annotators comparing two model outputs for quality — see [LMSYS Chatbot Arena Methodology](https://arxiv.org/abs/2403.04132)*
+```mermaid
+flowchart LR
+    subgraph L1["Pairwise human evaluation setup"]
+        LI3["Feature 1"]
+    end
+    subgraph R2["annotators comparing two model outputs for"]
+        RI4["Feature 1"]
+    end
+```
 
 
 Think of it like restaurant reviews. You could measure a restaurant with objective metrics: cook times, ingredient costs, calorie counts. But none of these tell you whether the food tastes good. For that, you need a human to eat it and give their opinion. LLM evaluation faces the same fundamental challenge: the quality dimensions that matter most to users (helpfulness, clarity, trustworthiness, naturalness) are inherently subjective and resist full automation.
@@ -20,7 +28,12 @@ These two topics are deeply linked: contamination undermines automated benchmark
 ## How It Works
 
 
-*Recommended visual: Inter-annotator agreement metrics and their impact on evaluation reliability — see [Hugging Face Evaluate Documentation](https://huggingface.co/docs/evaluate/index)*
+```mermaid
+flowchart LR
+    S1["Inter-annotator agreement metrics and thei"]
+    S2["on evaluation reliability"]
+    S1 --> S2
+```
 
 ### Human Evaluation Methods
 

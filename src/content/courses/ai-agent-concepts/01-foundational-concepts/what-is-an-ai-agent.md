@@ -33,7 +33,17 @@ The agent does not run inside the LLM. The LLM is a stateless function that take
 
 ### Tool Integration
 
-*Recommended visual: A diagram showing the agent runtime loop — LLM call produces tool calls, runtime dispatches them, results append to conversation, LLM called again — see [Anthropic, "Building Effective Agents" (2024)](https://www.anthropic.com/research/building-effective-agents)*
+```mermaid
+flowchart TD
+    L1["the agent runtime loop — LLM call produces"]
+    L2["runtime dispatches them"]
+    L3["results append to conversation"]
+    L4["LLM called again"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 -.->|"repeat"| L1
+```
 
 Tools are the agent's hands. A typical agent might have access to 5-30 tools, each defined by a JSON schema. For example, a coding agent might have tools like `read_file`, `write_file`, `run_command`, `search_codebase`, and `web_search`. The LLM selects which tool to call and with what arguments based on the current context and goal. Tool design is critical — poorly designed tools lead to poor agent performance regardless of the LLM's capability.
 

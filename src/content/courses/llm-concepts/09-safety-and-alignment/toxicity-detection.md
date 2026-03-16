@@ -8,7 +8,14 @@
 
 Imagine you are moderating a large online forum. Most posts are fine. Some are obviously toxic -- slurs, threats, harassment. But many exist in a gray zone. A medical discussion about self-harm: informative or dangerous? A historical analysis of extremist rhetoric: educational or amplifying? A dark comedy routine: creative expression or harmful? Context determines everything, and automated systems struggle with context.
 
-*Recommended visual: Toxicity detection pipeline showing input classification, content moderation, and output filtering — see [Perspective API Documentation](https://perspectiveapi.com/)*
+```mermaid
+flowchart LR
+    S1["input classification"]
+    S2["content moderation"]
+    S3["output filtering"]
+    S1 --> S2
+    S2 --> S3
+```
 
 
 Toxicity detection in the LLM context is the challenge of identifying when model outputs cross the line from acceptable to harmful. This is harder than it sounds because toxicity is not a binary property of text -- it depends on context, audience, intent, and cultural norms. The same sentence can be helpful medical advice in one context and dangerous content in another.
@@ -18,7 +25,12 @@ For LLMs specifically, toxicity detection serves two purposes: (1) evaluating mo
 ## How It Works
 
 
-*Recommended visual: RealToxicityPrompts evaluation framework — see [Gehman et al. Paper (arXiv:2009.11462)](https://arxiv.org/abs/2009.11462)*
+```mermaid
+flowchart LR
+    S1["RealToxicityPrompts evaluation framework"]
+    S2["..."]
+    S1 --> S2
+```
 
 ### Detection Approaches
 

@@ -12,7 +12,15 @@ Inter-agent communication is the mechanism by which agents in a multi-agent syst
 
 Unlike human communication, which naturally handles ambiguity and context-switching, inter-agent communication must be explicitly designed. Agents do not share an implicit understanding of context — every piece of information an agent needs must be explicitly communicated. The protocol design (what format messages take, what information they contain, how conversations are structured) is as important as the agents themselves, because poor communication design is the most common cause of multi-agent system failures.
 
-*Recommended visual: A comparison diagram showing three communication patterns side by side: Direct Message Passing (agents connected by arrows), Shared Memory/Blackboard (agents surrounding a central data store), and Event-Based/Pub-Sub (agents connected to topic channels) — see [Wu et al., "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation" (2023)](https://arxiv.org/abs/2308.08155)*
+```mermaid
+flowchart LR
+    subgraph L1["Direct Message Passing (agents connected b"]
+        LI3["and Event-Based/Pub-Sub"]
+    end
+    subgraph R2["Shared Memory/Blackboard"]
+        RI4["Feature 1"]
+    end
+```
 
 ## How It Works
 

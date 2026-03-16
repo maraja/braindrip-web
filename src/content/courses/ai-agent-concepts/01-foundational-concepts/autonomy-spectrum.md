@@ -12,7 +12,16 @@ The autonomy spectrum describes the continuum of how much independent decision-m
 
 Understanding this spectrum is essential because it determines the entire architecture: how the loop is structured, what approvals are required, how errors are handled, and what the user experience looks like. An agent designed for full autonomy needs robust error recovery, safety guardrails, and extensive testing. A copilot-level system can rely on the human to catch errors and correct course.
 
-*Recommended visual: A horizontal spectrum bar with four labeled positions (Copilot, Assistant, Semi-Autonomous, Fully Autonomous) showing increasing AI control from left to right and decreasing human involvement, with example products at each level — see [Anthropic, "Building Effective Agents" (2024)](https://www.anthropic.com/research/building-effective-agents)*
+```mermaid
+flowchart TD
+    L1["Copilot"]
+    L2["Assistant"]
+    L3["Semi-Autonomous"]
+    L4["Fully Autonomous"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+```
 
 ## How It Works
 

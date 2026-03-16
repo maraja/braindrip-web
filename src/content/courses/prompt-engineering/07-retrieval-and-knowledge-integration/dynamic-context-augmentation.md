@@ -14,7 +14,14 @@ This approach is essential for complex questions that cannot be anticipated by a
 ![LLM-powered autonomous agent system overview showing the interaction between planning, memory, and tool use components](https://lilianweng.github.io/posts/2023-06-23-agent/agent-overview.png)
 *Source: Lilian Weng, "LLM Powered Autonomous Agents," 2023. This agent architecture diagram illustrates the iterative planning-action loop that underpins dynamic context augmentation, where the agent decides when and what additional context to retrieve at runtime.*
 
-*Recommended visual: A sequence diagram showing the iterative retrieval loop -- Initial Query leads to Retrieval Round 1, then Read & Assess (identifying gaps), then Refined Query for Retrieval Round 2, then Merge & Deduplicate, with a decision diamond "Confidence >= threshold?" branching to either "Generate Final Answer" or another retrieval round, annotated with latency per round (1-3s) and the diminishing returns curve after 3-4 rounds.*
+```mermaid
+flowchart TD
+    D1{"sequence diagram"}
+    B2["Assess (identifying gaps)"]
+    D1 --> B2
+    B3["annotated with latency per round (1-3s)"]
+    D1 --> B3
+```
 *Source: Adapted from Asai et al., "Self-RAG," 2024, and Jiang et al., "Active Retrieval Augmented Generation (FLARE)," 2023.*
 
 ## How It Works

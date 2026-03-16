@@ -10,7 +10,14 @@ Imagine a highway with guardrails. Drivers (agents) have freedom to drive wherev
 
 Agent guardrails are automated safety checks that run at multiple points in the agent's execution pipeline. Input guards screen incoming messages for prompt injection, harmful requests, or out-of-scope queries before they reach the agent. Output guards check the agent's generated responses for harmful content, leaked sensitive information, or policy violations before they reach the user. Action guards evaluate proposed tool calls for dangerous operations, unauthorized access, or policy-violating actions before they are executed.
 
-*Recommended visual: Layered defense diagram showing input guards, output guards, and action guards as three concentric rings around the agent core, each intercepting different types of violations — see [Rebedea et al., 2023 — NeMo Guardrails](https://arxiv.org/abs/2310.10501)*
+```mermaid
+flowchart TD
+    L1["input guards"]
+    L2["output guards"]
+    L3["each intercepting different types of viola"]
+    L1 --> L2
+    L2 --> L3
+```
 
 The key principle is defense in depth. No single guard catches everything, but layered guards create a comprehensive safety net. An attack might slip past the input guard but be caught by the action guard. A hallucinated harmful response might not trigger the input guard (the input was benign) but will be caught by the output guard. Multiple independent safety layers dramatically reduce the probability that a harmful action or response reaches production.
 
@@ -28,7 +35,18 @@ Output guards evaluate the agent's generated response before it is delivered. Th
 
 Action guards intercept proposed tool calls and evaluate them before execution. They check: is this tool call syntactically valid? Does it target an authorized resource? Is the operation within policy (e.g., no bulk deletes, no external communications without approval)? Does it match the pattern of the original request (preventing the agent from taking actions unrelated to the user's query)? Action guards can enforce rate limits, validate parameters, and require additional confirmation for high-risk operations. A blocked action returns an error to the agent, which can then adjust its approach.
 
-*Recommended visual: Sequence diagram showing an agent request flowing through input guard → LLM reasoning → action guard → tool execution → output guard → user response, with block/pass decisions at each gate — see [Inan et al., 2023 — Llama Guard](https://arxiv.org/abs/2312.06674)*
+```mermaid
+flowchart TD
+    D1{"Sequence diagram"}
+    B2["LLM reasoning"]
+    D1 --> B2
+    B3["action guard"]
+    D1 --> B3
+    B4["tool execution"]
+    D1 --> B4
+    B5["output guard"]
+    D1 --> B5
+```
 
 ### Guardrail Frameworks
 

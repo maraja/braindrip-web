@@ -12,7 +12,14 @@ Structured output for actions specifically addresses the problem of getting reli
 
 This is not merely a formatting concern. Unreliable output structure is the single most common source of agent failures in production. A missing comma in JSON, an unexpected field name, a string where an integer was expected — any of these breaks the execution pipeline. Structured output techniques range from prompting strategies (asking the model to output JSON) to hard guarantees (constrained decoding that makes invalid output impossible at the token level).
 
-*Recommended visual: A diagram showing the spectrum of structured output guarantees: Prompt-based (no guarantee) to JSON Mode (syntactic guarantee) to Schema-Constrained Decoding (semantic guarantee), with reliability increasing left to right — see [Willard and Louf, "Efficient Guided Generation for Large Language Models" (2023)](https://arxiv.org/abs/2307.09702)*
+```mermaid
+flowchart TD
+    L1["Prompt-based (no guarantee)"]
+    L2["to JSON Mode (syntactic guarantee)"]
+    L3["to Schema-Constrained Decoding (semantic g"]
+    L1 --> L2
+    L2 --> L3
+```
 
 ## How It Works
 

@@ -10,7 +10,18 @@ Consider a postal service delivering a package. If the recipient is not home, th
 
 Agents are unusually error-prone because they chain multiple unreliable components. An LLM might hallucinate a malformed tool call. A web API might return a 429 rate limit error. A web scraping step might encounter an unexpected page layout. A file system operation might hit a permission error. In a 20-step agent task, if each step has a 95% success rate, the probability of completing all steps without error is 0.95^20 = 36%. Without error handling, most non-trivial agent tasks would fail.
 
-*Recommended visual: Error classification decision tree — error occurs → is it transient (429, 503, timeout)? → retry with backoff. Is it permanent (400, 401, 404)? → fail gracefully. Is it indeterminate (500)? → retry limited times, then fail — see [AWS Architecture Blog — Exponential Backoff and Jitter](https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/)*
+```mermaid
+flowchart TD
+    R1["Error classification decision tree — error"]
+    C2["Error classification decision tree — error"]
+    R1 --> C2
+    C3["is it transient (429, 503, timeout)?"]
+    R1 --> C3
+    C4["fail gracefully. Is it indeterminate (500)"]
+    R1 --> C4
+    C5["retry limited times, then fail"]
+    R1 --> C5
+```
 
 The distinction between transient and permanent errors is fundamental. Transient errors (rate limits, network timeouts, temporary service outages) are worth retrying because the underlying condition is likely to resolve. Permanent errors (invalid API key, file not found, malformed request) will never succeed no matter how many times you retry. Misclassifying errors -- retrying permanent failures or giving up on transient ones -- is one of the most common bugs in production agent systems.
 
@@ -22,7 +33,14 @@ The first step in handling an error is classifying it. The primary taxonomy: **T
 ### Retry Policies
 Once you have decided to retry, the retry policy determines when and how. **Fixed delay**: wait N seconds between retries. Simple but suboptimal -- all retrying clients synchronize their retries, creating thundering herd effects. **Exponential backoff**: wait 1s, 2s, 4s, 8s, 16s between retries. Spreads out retry load over time. **Exponential backoff with jitter**: add a random component (e.g., wait `2^attempt * (0.5 + random(0, 0.5))` seconds). The jitter desynchronizes retrying clients, preventing correlated retry storms. This is the recommended default for production systems. **Maximum retries**: cap at 3-5 attempts for most operations. **Maximum elapsed time**: cap total retry duration at 30-60 seconds to prevent indefinite waiting.
 
-*Recommended visual: Circuit breaker state diagram showing three states — Closed (normal), Open (failing, requests blocked), Half-Open (testing recovery) — with transitions based on failure thresholds and cooldown timers — see [Nygard, 2018 — Release It!](https://pragprog.com/titles/mnee2/release-it-second-edition/)*
+```mermaid
+flowchart LR
+    S1["Closed (normal)"]
+    S2["Open (failing, requests blocked)"]
+    S3["Half-Open (testing recovery)"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ### Circuit Breakers
 A circuit breaker prevents an agent from repeatedly calling a service that is clearly down. It works in three states: **Closed** (normal operation -- requests flow through), **Open** (service is failing -- requests are immediately rejected without calling the service), and **Half-open** (after a cooldown period, allow one test request through to check if the service has recovered). The circuit opens when the failure rate exceeds a threshold (e.g., 5 failures in 60 seconds). This protects both the agent (from wasting time and tokens on doomed requests) and the failing service (from being overwhelmed by retry traffic).

@@ -11,10 +11,22 @@ Data analysis and summarization prompting is the practice of structuring instruc
 
 The key challenge is controlling both what gets included (relevance) and how it is presented (format and depth). Without explicit guidance, models default to generic summaries that bury the most important insights in a sea of obvious observations. Effective analytical prompts specify the analytical lens, the audience, the output structure, and the level of detail expected.
 
-*Recommended visual: A spectrum diagram showing summarization approaches from extractive (left, high faithfulness, lower readability) to abstractive (right, higher readability, lower faithfulness), with hybrid approaches in the middle, annotated with use-case labels (legal/compliance on the extractive end, executive communication on the abstractive end).*
+```mermaid
+flowchart TD
+    L1["arization approaches from extractive"]
+    L2["to abstractive"]
+    L1 --> L2
+```
 *Source: Adapted from Adams et al., "From Sparse to Dense: GPT-4 Summarization with Chain of Density Prompting," 2023.*
 
-*Recommended visual: A progressive detail pyramid showing three summary levels for the same document -- a one-sentence headline at the top, a three-bullet executive summary in the middle, and a one-page detailed analysis at the base -- illustrating how the same source material maps to different depth levels for different audiences.*
+```mermaid
+flowchart LR
+    S1["a one-sentence headline at the top"]
+    S2["a three-bullet executive summary in the mi"]
+    S3["a one-page detailed analysis at the base"]
+    S1 --> S2
+    S2 --> S3
+```
 *Source: Adapted from Goyal et al., "News Summarization and Evaluation in the Era of GPT-3," 2023.*
 
 ## How It Works

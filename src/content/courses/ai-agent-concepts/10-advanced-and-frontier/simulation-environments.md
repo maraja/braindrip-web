@@ -10,7 +10,16 @@ Think of a flight simulator. Before a pilot flies a real aircraft carrying 200 p
 
 The need for simulation is acute because agents take actions. A traditional LLM generates text -- if it hallucinates, you read a wrong answer. An agent that hallucinates might delete files, send incorrect emails, make unauthorized purchases, or corrupt databases. Testing agents against real systems during development is dangerous and expensive. Simulation environments provide sandboxed replicas where agents can fail safely: the deleted files do not exist, the emails are not sent, the purchases are not charged.
 
-*Recommended visual: Overview diagram showing major simulation environments — SWE-bench (code repositories in Docker), WebArena (self-hosted websites), OSWorld (full desktop VMs), GAIA (multi-tool tasks) — each with their task types and evaluation methods — see [Liu et al., 2023 — AgentBench](https://arxiv.org/abs/2308.03688)*
+```mermaid
+flowchart LR
+    S1["SWE-bench (code repositories in Docker)"]
+    S2["WebArena (self-hosted websites)"]
+    S3["OSWorld (full desktop VMs)"]
+    S4["GAIA (multi-tool tasks)"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
 
 The ecosystem of agent simulation environments has grown rapidly. SWE-bench provides sandboxed GitHub repositories for testing coding agents. WebArena provides self-hosted website replicas for testing web navigation. OSWorld provides sandboxed operating systems for testing computer use agents. GAIA provides complex real-world tasks requiring multi-tool interaction. Each benchmark pairs a simulation environment with a task suite and evaluation metrics, creating a standardized way to measure and compare agent capabilities.
 
@@ -25,7 +34,14 @@ Simulation environments enable reproducible evaluation: run the same agent on th
 ### Task Suites and Benchmarks
 A simulation environment becomes useful when paired with a curated set of tasks. SWE-bench provides 2,294 GitHub issues with test patches: the environment is a repository snapshot, the task is to fix the issue, and evaluation checks whether the test patch passes. WebArena provides 812 web tasks: the environment is a set of self-hosted websites, the task is a natural language instruction, and evaluation checks page state or information extraction correctness. Task suites should cover diverse difficulty levels, tool requirements, and failure modes to provide comprehensive evaluation.
 
-*Recommended visual: Docker-based evaluation pipeline — fresh container spun up with deterministic initial state → agent executes task inside container → evaluation script checks success criteria → container destroyed, results logged — see [Jimenez et al., 2024 — SWE-bench](https://arxiv.org/abs/2310.06770)*
+```mermaid
+flowchart LR
+    S1["agent executes task inside container"]
+    S2["evaluation script checks success criteria"]
+    S3["container destroyed, results logged"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ### Custom Environment Construction
 Beyond standard benchmarks, teams build custom simulation environments for their specific use cases. A company deploying a customer support agent simulates their support platform: a mock ticket system, a mock knowledge base, mock customer profiles. The simulation uses sanitized versions of real data and real workflows. Custom environments are more work to build but more representative of actual deployment conditions. Key design decisions: how realistic the mock services need to be, what failure modes to simulate, and how to generate diverse test scenarios.

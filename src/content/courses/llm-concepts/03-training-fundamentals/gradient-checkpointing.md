@@ -8,7 +8,12 @@
 
 Imagine you are driving from New York to Los Angeles, and you need to remember every turn you made in order to describe the route to someone later. One approach is to record every single turn as you drive (expensive in storage but effortless to replay). Another approach is to save only a few major waypoints -- "I passed through Pittsburgh, then St. Louis, then Denver" -- and when asked for details, you re-drive each segment to reconstruct the turns between waypoints. You spend more time driving but need far less storage. Gradient checkpointing applies this same trade-off to neural network training: save only some intermediate results, re-derive the rest when needed.
 
-*Recommended visual: Diagram comparing standard backpropagation (storing all activations) vs. gradient checkpointing (storing only selected checkpoints and recomputing intermediate activations during backward pass) — see [Wikimedia Commons -- Gradient Checkpointing Tradeoff](https://commons.wikimedia.org/wiki/File:Gradient_checkpointing_tradeoff.svg)*
+```mermaid
+flowchart LR
+    S1["Diagram"]
+    S2["g all activations) vs. gradient checkpoint"]
+    S1 --> S2
+```
 
 
 During the forward pass of neural network training, the model computes activations at every layer. During the backward pass (backpropagation), these activations are needed to compute gradients. Standard training stores every activation in memory, which is fast but extremely memory-hungry. For a 70B parameter model, activation memory alone can exceed 120GB -- far more than the memory available on a single GPU. Gradient checkpointing solves this by storing activations at only a subset of layers (the "checkpoints") and recomputing the others from the nearest checkpoint during the backward pass.

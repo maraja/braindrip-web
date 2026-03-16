@@ -12,7 +12,14 @@ Goal specification encompasses all the ways an agent receives, interprets, and r
 
 The fundamental challenge is the intent-specification gap: humans know what they want but often cannot articulate it precisely, while agents require precise instructions to act correctly. Natural language is inherently ambiguous — "fix the bug" could mean fix the root cause, apply a workaround, or simply suppress the error message. Effective goal specification systems bridge this gap through a combination of structured prompting, clarification mechanisms, and progressive refinement.
 
-*Recommended visual: A funnel diagram showing layers of goal specification from broad to specific: System Prompt -> User Instruction -> Clarification -> Inferred Sub-goals -> Success Criteria, with an "intent-specification gap" arrow — see [Anthropic, "Prompt Engineering Guide" (2024)](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering)*
+```mermaid
+flowchart TD
+    L1["User Instruction"]
+    L2["Clarification"]
+    L3["Inferred Sub-goals"]
+    L1 --> L2
+    L2 --> L3
+```
 
 ## How It Works
 

@@ -11,7 +11,16 @@ Context compression is not about removing information — it is about representi
 
 The need for compression arises whenever context demand exceeds context supply. A RAG system that retrieves 10 relevant documents at 1,000 tokens each needs 10,000 tokens for knowledge alone — potentially half the context window. Compression techniques let you include the information from all 10 documents in a fraction of the space, or include the same number of documents while leaving more room for instructions, history, and tool results.
 
-*Recommended visual: A compression technique comparison table rendered as an infographic, with five rows (LLM Summarization, Truncation, Structured Extraction, Deduplication, Perplexity Pruning) and columns for compression ratio, information preservation percentage, latency cost, and best-use-case icon, making it easy to select the right technique for each content type.*
+```mermaid
+flowchart LR
+    subgraph L1["LLM Summarization"]
+        LI3["Structured Extraction"]
+        LI4["Deduplication"]
+    end
+    subgraph R2["Truncation"]
+        RI5["Perplexity Pruning"]
+    end
+```
 *Source: Adapted from Jiang et al., "LLMLingua" (2023) and Xu et al., "RECOMP" (2023)*
 
 ![Structured approaches to information processing and compression within prompt engineering](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/tree-of-thoughts.png)

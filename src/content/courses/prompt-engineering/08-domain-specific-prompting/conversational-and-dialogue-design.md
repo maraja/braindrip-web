@@ -11,10 +11,26 @@ Conversational and dialogue design is the practice of prompting language models 
 
 The multi-turn nature introduces challenges absent from single-turn prompting: persona drift (the character changes subtly over many turns), topic sprawl (the conversation wanders away from its purpose), context staleness (early turns get pushed out of the context window), and contradiction (the model says something that conflicts with an earlier statement). Effective dialogue design addresses these challenges through structured system prompts, state management, and flow control mechanisms.
 
-*Recommended visual: A multi-turn conversation timeline diagram showing persona consistency degradation over 20+ turns -- with a "consistency score" line that drops at turns 10-15 without reinforcement mechanisms, compared to a stable line when behavioral anchors and periodic persona reminders are used, annotated with the specific reinforcement techniques applied at each checkpoint.*
+```mermaid
+flowchart LR
+    S1["A multi-turn conversation timeline diagram"]
+    S2["persona consistency degradation over 20+ t"]
+    S1 --> S2
+```
 *Source: Adapted from Zheng et al., "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena," 2023.*
 
-*Recommended visual: A conversation flow state machine diagram showing the milestone-based conversation design -- states for "Assess User Level," "Identify Goal," "Provide Guidance," and "Confirm Resolution," with transitions labeled by user intents and system actions, plus off-topic and adversarial handling as side branches that redirect back to the main flow.*
+```mermaid
+flowchart TD
+    D1{"conversation flow state machine diagram"}
+    B2["Assess User Level,"]
+    D1 --> B2
+    B3["Identify Goal,"]
+    D1 --> B3
+    B4["Provide Guidance,"]
+    D1 --> B4
+    B5["Confirm Resolution,"]
+    D1 --> B5
+```
 *Source: Adapted from Bai et al., "Training a Helpful and Harmless Assistant with RLHF," 2022.*
 
 ## How It Works

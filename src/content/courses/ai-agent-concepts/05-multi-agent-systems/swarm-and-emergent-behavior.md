@@ -12,7 +12,18 @@ Swarm architecture in AI agent systems applies this principle. Instead of a mana
 
 OpenAI's Swarm framework (released October 2024) is the most prominent implementation of this pattern for LLM agents. In Swarm, each agent has instructions (a system prompt) and tools (including the ability to hand off to other agents). When Agent A determines that Agent B is better suited for the current task, it performs a handoff — transferring the conversation context to Agent B. The system behavior emerges from these handoff decisions, not from a central orchestrator's plan.
 
-*Recommended visual: A network diagram showing swarm agent handoffs: multiple specialized agents (Triage, Billing, Technical, Escalation) connected by directional handoff arrows, with no central coordinator — illustrating how routing emerges from local handoff decisions — see [OpenAI, "Swarm: An Educational Framework for Lightweight Multi-Agent Orchestration" (2024)](https://github.com/openai/swarm)*
+```mermaid
+flowchart TD
+    D1{"network diagram"}
+    B2["Triage"]
+    D1 --> B2
+    B3["Billing"]
+    D1 --> B3
+    B4["Technical"]
+    D1 --> B4
+    B5["Escalation"]
+    D1 --> B5
+```
 
 ## How It Works
 

@@ -10,7 +10,12 @@ Consider a skilled executive assistant who has been in a long meeting. They do n
 
 Conversation management for agents is this same skill applied to multi-turn dialogue. Every conversation generates a growing stream of messages: user requests, agent responses, tool calls, tool outputs, system instructions, and internal reasoning. Managing this stream involves decisions about what to keep, what to summarize, what to discard, and how to structure what remains. Poor conversation management leads to agents that forget what was discussed, contradict earlier statements, lose track of the user's original request, or run out of context window space on verbose tool outputs.
 
-*Recommended visual: A diagram of the anchored sliding window strategy showing: system prompt (always present), first user message (anchored), summarized middle exchanges, and full-detail recent turns — see [LangChain, "Memory Documentation" (2024)](https://python.langchain.com/docs/modules/memory/)*
+```mermaid
+flowchart LR
+    S1["system prompt (always present)"]
+    S2["first user message (anchored)"]
+    S1 --> S2
+```
 
 The challenge is particularly acute for agents (as opposed to simple chatbots) because agent conversations include not just dialogue but also tool interactions. A single agent turn might involve multiple tool calls, each returning substantial output. A 10-turn agent conversation can easily consume 50,000-100,000 tokens if tool outputs are retained in full. Without active management, the conversation quickly exceeds context limits.
 

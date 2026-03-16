@@ -21,7 +21,12 @@ The layer $f$ only needs to learn the **residual** -- the difference between the
 ## How It Works
 
 
-*Recommended visual: Residual stream concept showing how information flows through the entire model via skip connections — see [Chris Olah's Transformer Circuits Thread](https://transformer-circuits.pub/2021/framework/index.html)*
+```mermaid
+flowchart LR
+    S1["Residual stream concept"]
+    S2["how information flows through the entire m"]
+    S1 --> S2
+```
 
 ### In a Transformer Block
 

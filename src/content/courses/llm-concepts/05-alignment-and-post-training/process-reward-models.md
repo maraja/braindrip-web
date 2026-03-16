@@ -8,7 +8,17 @@
 
 Imagine two math teachers grading student work. Teacher A (the outcome reward model) only looks at the final answer: correct gets full marks, incorrect gets zero. Teacher B (the process reward model) reads every line of work, giving credit for each correct step and flagging where the reasoning goes wrong.
 
-*Recommended visual: Process Reward Model vs Outcome Reward Model showing step-level vs final-answer evaluation — see [Let's Verify Step by Step Paper (arXiv:2305.20050)](https://arxiv.org/abs/2305.20050)*
+```mermaid
+flowchart LR
+    subgraph L1["Process Reward Model"]
+        LI3["Process Reward Model"]
+        LI4["Outcome Reward Model"]
+    end
+    subgraph R2["Outcome Reward Model showing step-level"]
+        RI5["step-level"]
+        RI6["final-answer evaluation"]
+    end
+```
 
 
 Teacher A's students quickly learn that getting the right answer is all that matters -- some develop tricks and shortcuts that happen to work but reflect no understanding, and others get the right answer by coincidence (two errors canceling out). Teacher B's students learn that the reasoning process matters. They develop robust problem-solving skills because every step must be justified, and they cannot get credit for right answers arrived at through wrong reasoning.
@@ -21,7 +31,12 @@ This analogy captures the core distinction:
 ## How It Works
 
 
-*Recommended visual: PRM scoring each reasoning step in a math problem with step-level correctness labels — see [OpenAI Process Reward Models Blog](https://openai.com/index/improving-mathematical-reasoning-with-process-reward-models/)*
+```mermaid
+flowchart LR
+    S1["PRM scoring each reasoning step in a math "]
+    S2["step-level correctness labels"]
+    S1 --> S2
+```
 
 ### Outcome Reward Models (ORMs)
 

@@ -8,7 +8,14 @@
 
 Standard AI safety training (RLHF, Constitutional AI) works by teaching models behavioral patterns: when the model detects a harmful request, it should produce a refusal response. This is fundamentally a pattern-matching approach -- the model learns "if input looks harmful, output a refusal." The problem is that this behavioral veneer can be bypassed by adversarial inputs that look different enough from the patterns the model was trained to refuse but still elicit harmful outputs. The knowledge remains in the model; only the refusal behavior is trained.
 
-*Recommended visual: Circuit breaker representation rerouting showing harmful activations redirected to orthogonal directions — see [Zou et al. Circuit Breakers Paper (arXiv:2406.04313)](https://arxiv.org/abs/2406.04313)*
+```mermaid
+flowchart TD
+    D1{"Circuit breaker representation rerouting"}
+    B2["Circuit breaker representation rerouting"]
+    D1 --> B2
+    B3["harmful activations redirected to orthogon"]
+    D1 --> B3
+```
 
 
 Circuit breakers take a fundamentally different approach. Instead of training output-level behaviors, they operate on the model's **internal representations**. The key insight: before a model produces harmful text, its internal activations must pass through "harmful" regions of representation space. If you can train the model to detect when its own internal states are entering these harmful regions and redirect those states toward safe regions, you get a defense that is much harder to bypass because it operates below the level that adversarial prompts directly manipulate.
@@ -20,7 +27,15 @@ This work was developed primarily by **Andy Zou** and collaborators at the **Cen
 ## How It Works
 
 
-*Recommended visual: Attack success rate comparison: RLHF (80-95% jailbroken) vs Circuit Breakers (<5%) — see [Gray Swan AI Blog](https://www.gray-swan.com/)*
+```mermaid
+flowchart LR
+    subgraph L1["ate comparison: RLHF (80-95% jailbroken)"]
+        LI3["RLHF (80-95% jailbroken)"]
+    end
+    subgraph R2["Circuit Breakers (5%)"]
+        RI4["Feature 1"]
+    end
+```
 
 ### The Core Mechanism: Representation Rerouting (RR)
 

@@ -10,7 +10,18 @@ Think of a security guard who patrols the building on a fixed schedule versus on
 
 Traditional agent architectures are request-response: a user sends a message, the agent processes it, returns a result. Event-driven agents invert this model. The agent subscribes to event sources and reacts when events arrive. A code review agent activates when a pull request is opened. A monitoring agent activates when an error rate exceeds a threshold. A data pipeline agent activates when a new file appears in an S3 bucket. The agent does not need to continuously poll -- it is awakened by the event.
 
-*Recommended visual: Architecture diagram showing event sources (webhooks, message queues, cron, file watchers) feeding into an event router that dispatches to agent handlers, with state persistence between activations — see [Kleppmann, 2017 — Designing Data-Intensive Applications](https://dataintensive.net/)*
+```mermaid
+flowchart TD
+    D1{"Architecture diagram"}
+    B2["webhooks"]
+    D1 --> B2
+    B3["message queues"]
+    D1 --> B3
+    B4["cron"]
+    D1 --> B4
+    B5["file watchers"]
+    D1 --> B5
+```
 
 This architecture is essential for long-running, production agent systems. A customer support agent must be available 24/7 but might process only 50 requests per day. Running a continuous loop wastes compute. An event-driven architecture spins up the agent only when a customer message arrives, processes it, and shuts down. This maps naturally to serverless computing platforms (AWS Lambda, Google Cloud Functions) where you pay only for execution time.
 
@@ -25,7 +36,18 @@ The event loop is the core runtime. It listens for incoming events, deserializes
 ### Async Processing and Concurrency
 Event-driven agents are inherently asynchronous. When an event arrives, the agent starts processing it but does not block waiting for results. If the agent needs to call an API, it issues the request and continues processing other events while waiting for the response. This is critical for agents handling multiple concurrent events -- a Slack bot agent might be processing five conversations simultaneously. Python's `asyncio`, JavaScript's event loop, or Go's goroutines provide the concurrency primitives.
 
-*Recommended visual: Serverless agent pattern showing event trigger → Lambda function → load state from DynamoDB → process event → save state → return, with fan-out pattern for multiple concurrent events — see [AWS Lambda Documentation](https://docs.aws.amazon.com/lambda/)*
+```mermaid
+flowchart LR
+    S1["event trigger"]
+    S2["Lambda function"]
+    S3["load state from DynamoDB"]
+    S4["process event"]
+    S5["save state"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+```
 
 ### Serverless Agent Patterns
 Serverless platforms are a natural fit for event-driven agents. The pattern: an event source (API Gateway, S3, CloudWatch) triggers a Lambda function. The function loads the agent's configuration, reconstructs state from a persistent store (DynamoDB, Redis), processes the event, saves updated state, and terminates. Cold start latency (1-5 seconds for Python Lambdas with dependencies) is the main challenge. Mitigation strategies include provisioned concurrency, keeping agent dependencies minimal, and using warm-start-friendly runtimes.

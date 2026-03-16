@@ -11,10 +11,26 @@ In standard LLM generation, the model samples from its full vocabulary at each t
 
 From a prompt engineer's perspective, constrained decoding is a complementary tool to prompt-based control. Prompts influence what the model wants to say; constraints control what it is allowed to say. Together, they produce output that is both semantically relevant (from the prompt) and structurally valid (from the constraint).
 
-*Recommended visual: A token-level generation diagram showing two parallel paths: "Unconstrained generation" (full vocabulary available at each step, can produce invalid tokens, resulting in malformed JSON) versus "Constrained generation" (grammar mask applied at each step, invalid tokens grayed out, only valid continuations selectable), with the grammar tree for a simple JSON schema shown alongside.*
+```mermaid
+flowchart LR
+    subgraph L1["lid tokens, resulting in malformed JSON)"]
+        LI3["full vocabulary available at each step"]
+        LI4["can produce invalid tokens"]
+    end
+    subgraph R2["Constrained generation (grammar mask"]
+        RI5["resulting in malformed JSON"]
+    end
+```
 *Source: Adapted from Willard & Louf, "Efficient Guided Generation for Large Language Models" (2023)*
 
-*Recommended visual: A Venn diagram showing two overlapping circles: "What the prompt controls" (semantic correctness, factual accuracy, relevance, completeness) and "What constraints control" (valid syntax, correct structure, valid enum values, format compliance), with the overlap region labeled "Both needed for reliable output" -- emphasizing that constraints and prompts are complementary, not substitutes.*
+```mermaid
+flowchart LR
+    S1["What the prompt controls"]
+    S2["What constraints control"]
+    S3["Both needed for reliable output"]
+    S1 --> S2
+    S2 --> S3
+```
 *Source: Adapted from Beurer-Kellner et al., "Prompting Is Programming (LMQL)" (2023) and Zheng et al., "SGLang" (2024)*
 
 ## How It Works

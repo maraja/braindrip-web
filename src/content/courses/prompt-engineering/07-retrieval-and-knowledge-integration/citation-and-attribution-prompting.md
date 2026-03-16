@@ -11,10 +11,32 @@ Attribution prompting is the practice of designing instructions that cause langu
 
 The distinction between verifiable and decorative citations is critical. Verifiable citations point to specific passages that actually support the claim. Decorative citations are source references that the model adds to appear authoritative but that do not accurately correspond to the claim they accompany. Well-designed citation instructions reduce decorative citations from 30-40% to under 10%.
 
-*Recommended visual: A side-by-side example showing four citation format styles applied to the same RAG output -- numbered inline [1], named source [Annual Report], quote-and-cite with direct quotations, and footnote-style with superscript markers and a reference list -- with compliance rate percentages annotated for each format.*
+```mermaid
+flowchart LR
+    subgraph L1["numbered inline 1"]
+        LI3["quote-and-cite with direct quotations"]
+        LI4["footnote-style with superscript markers"]
+    end
+    subgraph R2["named source Annual Report"]
+        RI5["a reference list"]
+    end
+```
 *Source: Adapted from Gao et al., "Enabling Large Language Models to Generate Text with Citations," 2023.*
 
-*Recommended visual: A pipeline diagram showing the automated citation verification workflow -- LLM generates cited output, citation parser extracts claim-citation pairs, NLI model verifies each pair against source documents, and a report flags unsupported claims, decorative citations, and missing attributions.*
+```mermaid
+flowchart LR
+    S1["LLM generates cited output"]
+    S2["citation parser extracts claim-citation pa"]
+    S3["NLI model verifies each pair against sourc"]
+    S4["a report flags unsupported claims"]
+    S5["decorative citations"]
+    S6["missing attributions."]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+    S5 --> S6
+```
 *Source: Adapted from Rashkin et al., "Measuring Attribution in Natural Language Generation Models," 2023.*
 
 ## How It Works

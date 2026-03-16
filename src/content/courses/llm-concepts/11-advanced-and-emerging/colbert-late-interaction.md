@@ -8,7 +8,14 @@
 
 There is a fundamental trade-off in neural retrieval between speed and accuracy:
 
-*Recommended visual: ColBERT late interaction architecture showing per-token embeddings and MaxSim operation between query and document tokens — see [ColBERT Paper (arXiv:2004.12832)](https://arxiv.org/abs/2004.12832)*
+```mermaid
+flowchart TD
+    C1["per-token embeddings"]
+    C2["MaxSim operation between query"]
+    C3["document tokens"]
+    C1 --> C2
+    C2 --> C3
+```
 
 
 **Bi-encoders** (standard embedding models) encode queries and documents independently into single vectors. Retrieval is a fast nearest-neighbor search. But compressing an entire document into one vector loses information -- the model must decide at encoding time what to emphasize, without knowing what the query will ask.
@@ -20,7 +27,15 @@ ColBERT, introduced by Khattab and Zaharia (2020), finds a middle ground with **
 ## How It Works
 
 
-*Recommended visual: Comparison of bi-encoder (single vector), cross-encoder (joint), and ColBERT (late interaction) architectures — see [ColBERTv2 Paper (arXiv:2112.01488)](https://arxiv.org/abs/2112.01488)*
+```mermaid
+flowchart LR
+    subgraph L1["Comparison of bi-encoder (single vector)"]
+        LI3["and ColBERT (late interaction)"]
+    end
+    subgraph R2["cross-encoder (joint)"]
+        RI4["Feature 1"]
+    end
+```
 
 ### Architecture
 

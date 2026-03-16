@@ -12,10 +12,24 @@ Prompt templates work the same way. A template is a prompt with fixed instructio
 
 In production LLM applications, prompts are almost never hardcoded strings. They are templates managed as code, versioned in repositories, tested against evaluation suites, and rendered at runtime by template engines. Understanding template design is understanding how prompt engineering scales from experimentation to production.
 
-*Recommended visual: A template anatomy diagram showing a prompt template with colored regions -- blue for static instruction text, orange for {variable} slots, green for delimiter markers -- with arrows connecting each variable to its runtime source (user input, RAG pipeline, database, chain output), illustrating the separation of prompt engineering (static) from context engineering (dynamic).*
+```mermaid
+flowchart LR
+    S1["each variable to its runtime source"]
+    S2["the separation of prompt engineering (stat"]
+    S3["from context engineering (dynamic)"]
+    S1 --> S2
+    S2 --> S3
+```
 *Source: Adapted from LangChain and DSPy template documentation, 2023-2024.*
 
-*Recommended visual: A version lifecycle diagram showing the template management workflow: Author -> Test (eval suite) -> Deploy -> Monitor -> Iterate, with a branching path for A/B testing and rollback, resembling a CI/CD pipeline adapted for prompt templates.*
+```mermaid
+flowchart LR
+    S1["Test (eval suite)"]
+    S2["Deploy"]
+    S3["Monitor"]
+    S1 --> S2
+    S2 --> S3
+```
 *Source: Adapted from Khattab et al., "DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines," 2023.*
 
 ## How It Works

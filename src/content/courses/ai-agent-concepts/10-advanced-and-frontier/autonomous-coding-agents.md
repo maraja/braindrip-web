@@ -10,7 +10,15 @@ Imagine a junior developer who never sleeps, never gets frustrated, reads docume
 
 Coding is an ideal domain for agents because it has a tight feedback loop with objective evaluation. When an agent writes code, it can run the tests immediately and get unambiguous feedback: the tests pass or they do not. This is fundamentally different from, say, a writing agent where quality is subjective. The ability to self-evaluate by executing code turns the coding task into a search problem: try approaches, evaluate results, refine until the tests pass. This is why coding agents have advanced faster than agents in most other domains.
 
-*Recommended visual: The edit-test-debug loop diagram showing understand → plan → edit → test → debug (if tests fail, loop back to edit), with the agent interacting with the codebase and test suite at each step — see [Yang et al., 2024 — SWE-agent](https://arxiv.org/abs/2405.15793)*
+```mermaid
+flowchart TD
+    L1["plan"]
+    L2["edit"]
+    L3["test"]
+    L1 --> L2
+    L2 --> L3
+    L3 -.->|"repeat"| L1
+```
 
 The landscape of coding agents evolved rapidly from 2023 to 2025. GitHub Copilot pioneered inline code completion. Cursor extended this to multi-file editing with AI. Devin (Cognition Labs, 2024) demonstrated end-to-end autonomous coding. Claude Code (Anthropic, 2025) brought terminal-based autonomous coding with direct file system and shell access. SWE-bench became the standard benchmark, with verified scores climbing from under 5% in early 2024 to over 50% by late 2024. The field is converging on a common architecture: a capable LLM with file system access, terminal access, and a structured edit-test-debug loop.
 
@@ -25,7 +33,14 @@ Before writing code, the agent must understand the existing codebase. This invol
 ### Tool Arsenal
 Coding agents typically have access to: **File operations** (read, write, edit, create, delete files). **Terminal access** (run arbitrary shell commands: tests, builds, linters, git operations). **Search tools** (grep for content search, find/glob for file search, sometimes AST-based semantic search). **Browser access** (for reading documentation, understanding API references). These tools give the agent the same capabilities as a developer working in a terminal. More advanced setups include LSP (Language Server Protocol) integration for go-to-definition, find-references, and type-checking.
 
-*Recommended visual: SWE-bench evaluation flow — GitHub issue description + repository snapshot → agent explores and edits code → test patch is applied → pass/fail result — see [Jimenez et al., 2024 — SWE-bench](https://arxiv.org/abs/2310.06770)*
+```mermaid
+flowchart LR
+    S1["agent explores and edits code"]
+    S2["test patch is applied"]
+    S3["pass/fail result"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ### Benchmarking with SWE-bench
 SWE-bench (Software Engineering Benchmark) is the standard evaluation for coding agents. It consists of real GitHub issues from popular Python repositories (Django, scikit-learn, Flask, etc.) with corresponding test patches. The agent receives the issue description and repository state, makes code changes, and is evaluated against the test patch. SWE-bench Lite contains 300 curated instances; SWE-bench Verified contains 500 instances verified by human software engineers. Top systems achieve 40-55% on SWE-bench Verified as of early 2025, meaning they solve roughly half of real-world GitHub issues autonomously.

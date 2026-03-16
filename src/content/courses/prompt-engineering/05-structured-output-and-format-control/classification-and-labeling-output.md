@@ -11,10 +11,32 @@ Classification is one of the most common and commercially valuable LLM tasks. Se
 
 What makes LLM classification powerful compared to traditional ML classifiers is its flexibility. A traditional classifier requires training data, feature engineering, and retraining for any label change. An LLM classifier can be reconfigured with a prompt edit — add a new category, redefine boundaries, adjust for edge cases — all without retraining. This flexibility comes at the cost of precision and cost per classification, creating a design space where prompt engineering directly determines quality.
 
-*Recommended visual: A decision tree diagram showing the classification prompt design process: "Define label space" (with checks for exhaustiveness and mutual exclusivity) -> "Choose single-label vs. multi-label" -> "Add CoT reasoning?" (if ambiguous task, yes; if simple task, no) -> "Select output format" (JSON with enum constraint vs. constrained decoding) -> "Add few-shot examples (2-3 per category)," with accuracy improvement percentages annotated at each decision.*
+```mermaid
+flowchart LR
+    subgraph L1["ual exclusivity) - Choose single-label"]
+        LI3["Define label space"]
+        LI4["Choose single-label vs. multi-label"]
+        LI5["Add CoT reasoning?"]
+    end
+    subgraph R2["multi-label - Add CoT reasoning? (if"]
+        RI6["Select output format"]
+        RI7["Add few-shot examples (2-3 per category),"]
+    end
+```
 *Source: Adapted from Sun et al., "Text Classification via Large Language Models" (2023)*
 
-*Recommended visual: A confusion-matrix-style heatmap showing classification accuracy as a function of label count (x-axis: 5, 10, 15, 20, 30 labels) and technique (y-axis: zero-shot, few-shot, CoT + few-shot, hierarchical), with cells colored from green (high accuracy) to red (low accuracy), illustrating that accuracy degrades beyond 20 labels without hierarchical approaches.*
+```mermaid
+flowchart TD
+    R1["confusion-matrix-style heatmap"]
+    C2["ccuracy as a function of label count"]
+    R1 --> C2
+    C3["and technique"]
+    R1 --> C3
+    C4["with cells colored from green (high accura"]
+    R1 --> C4
+    C5["to red (low accuracy)"]
+    R1 --> C5
+```
 *Source: Adapted from Zhao et al., "Calibrate Before Use" (2021) and Wei et al., "Chain-of-Thought Prompting" (2022)*
 
 ## How It Works

@@ -69,7 +69,15 @@ For common scenarios, skip the matrix:
 - **Research assistant** (search, evaluate, synthesize, iterate): Plan-and-execute or ReAct depending on depth.
 - **Complex multi-domain task** (e.g., plan a project, write code, run tests, write docs): Hierarchical.
 
-*Recommended visual: For a detailed comparison of how different architectures (state machine, DAG, hierarchical) are implemented in practice, see the [LangGraph documentation](https://langchain-ai.github.io/langgraph/) which provides visual diagrams of each pattern.*
+```mermaid
+flowchart LR
+    subgraph L1["state machine"]
+        LI3["hierarchical"]
+    end
+    subgraph R2["DAG"]
+        RI4["Feature 1"]
+    end
+```
 
 ### Hybrid Patterns
 

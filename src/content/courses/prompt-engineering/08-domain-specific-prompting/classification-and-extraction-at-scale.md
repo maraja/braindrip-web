@@ -11,10 +11,29 @@ Classification and extraction at scale is the practice of applying consistent, r
 
 The core challenges at scale are distinct from single-input prompting: maintaining consistency across inputs that vary in format, length, and complexity; detecting when prompt performance degrades as data distributions shift; calibrating confidence thresholds so that "high confidence" means the same thing for the 1st input and the 100,000th; and monitoring quality without manually reviewing every output.
 
-*Recommended visual: An assembly line quality control diagram showing the classification-at-scale pipeline -- inputs flowing through a consistent prompt template, LLM processing, structured output parsing, confidence-based routing (high confidence to auto-accept, low confidence to human review queue), with drift detection monitors sampling outputs at regular intervals.*
+```mermaid
+flowchart LR
+    S1["inputs flowing through a consistent prompt"]
+    S2["LLM processing"]
+    S3["structured output parsing"]
+    S4["low confidence to human review queue)"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
 *Source: Adapted from Sun et al., "Text Classification via Large Language Models," 2023.*
 
-*Recommended visual: A calibration curve (reliability diagram) showing predicted confidence (x-axis, 0.0-1.0) vs. actual accuracy (y-axis, 0.0-1.0), with a perfectly calibrated diagonal line and a typical LLM curve showing overconfidence at high predicted probabilities -- annotated with the optimal confidence threshold zone (0.85-0.95) for human review routing.*
+```mermaid
+flowchart LR
+    subgraph L1["g predicted confidence (x-axis, 0.0-1.0)"]
+        LI3["A calibration curve (reliability diagram)"]
+        LI4["showing predicted confidence (x-axis, 0.0-"]
+    end
+    subgraph R2["actual accuracy (y-axis, 0.0-1.0), with"]
+        RI5["actual accuracy (y-axis, 0.0-1.0)"]
+        RI6["he optimal confidence threshold zone (0.85"]
+    end
+```
 *Source: Adapted from Ding et al., "Is GPT-3 a Good Data Annotator?" 2023.*
 
 ## How It Works

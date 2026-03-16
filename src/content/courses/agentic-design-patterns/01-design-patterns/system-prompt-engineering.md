@@ -10,7 +10,16 @@ Writing a system prompt for an agent is like writing a job description combined 
 
 Unlike prompting a one-shot LLM call, agent system prompts must govern behavior across multiple turns, tool calls, and unpredictable user inputs. The prompt must be precise enough to constrain harmful behavior, flexible enough to handle varied inputs, and concise enough to fit within your token budget alongside the conversation history and tool results. These constraints are in tension, and resolving that tension is the core skill.
 
-*Recommended visual: A layered instruction hierarchy diagram showing System Prompt at the top (highest priority), User Messages in the middle, and Tool Results at the bottom, with downward arrows indicating priority. For a reference implementation of this hierarchy concept, see [OpenAI's GPT Best Practices](https://platform.openai.com/docs/guides/prompt-engineering) and [Anthropic's Prompt Engineering Guide](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering).*
+```mermaid
+flowchart TD
+    R1["layered instruction hierarchy diagram"]
+    C2["System Prompt at the top (highest priority"]
+    R1 --> C2
+    C3["User Messages in the middle"]
+    R1 --> C3
+    C4["Tool Results at the bottom"]
+    R1 --> C4
+```
 
 ## How It Works
 

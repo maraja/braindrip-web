@@ -8,7 +8,14 @@
 
 Imagine a historian who records every word of every conversation they have ever witnessed, in full detail, in massive leather-bound ledgers. Their library is bursting. KV cache compression is the set of strategies this historian can employ to reduce their storage: writing in shorthand instead of full script (quantization), discarding notes from forgettable conversations while keeping the important ones (eviction), or merging notes from similar conversations into consolidated summaries (token merging).
 
-*Recommended visual: H2O Heavy-Hitter Oracle diagram showing attention sink tokens, heavy hitters, and recent window retention strategy — see [FMInference](https://github.com/FMInference/H2O)*
+```mermaid
+flowchart LR
+    S1["attention sink tokens"]
+    S2["heavy hitters"]
+    S3["recent window retention strategy"]
+    S1 --> S2
+    S2 --> S3
+```
 *See KV cache eviction strategy diagrams at: [H2O GitHub Repository](https://github.com/FMInference/H2O)*
 
 
@@ -19,7 +26,12 @@ Grouped-Query Attention (GQA) was the first major architectural change to addres
 ## How It Works
 
 
-*Recommended visual: StreamingLLM attention sink diagram showing how initial tokens act as attention sinks enabling infinite-length streaming — see [StreamingLLM GitHub Repository (MIT-HAN-Lab)](https://github.com/mit-han-lab/streaming-llm)*
+```mermaid
+flowchart LR
+    S1["StreamingLLM attention sink diagram"]
+    S2["how initial tokens act as attention sinks "]
+    S1 --> S2
+```
 
 ### KV Cache Quantization
 

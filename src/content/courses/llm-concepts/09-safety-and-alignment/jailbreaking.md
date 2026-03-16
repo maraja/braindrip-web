@@ -8,7 +8,18 @@
 
 Imagine a building with multiple security systems: locked doors, badge readers, security cameras, and guards. Each system was designed to prevent unauthorized access. But a sufficiently creative intruder can find gaps: a propped-open fire exit, a cloned badge, a camera blind spot, a guard distracted during shift change. No individual system is perfect, and the attacker only needs to find one weakness.
 
-*Recommended visual: Taxonomy of jailbreak techniques: role-playing, encoding tricks, multi-turn, adversarial suffixes — see [Liu et al. Jailbreak Survey (arXiv:2308.03825)](https://arxiv.org/abs/2308.03825)*
+```mermaid
+flowchart TD
+    R1["Taxonomy of jailbreak techniques: role-pla"]
+    C2["Taxonomy of jailbreak techniques: role-pla"]
+    R1 --> C2
+    C3["encoding tricks"]
+    R1 --> C3
+    C4["multi-turn"]
+    R1 --> C4
+    C5["adversarial suffixes"]
+    R1 --> C5
+```
 
 
 Jailbreaking works the same way. LLMs have been trained -- through RLHF, Constitutional AI, and fine-tuning -- to refuse harmful requests. These safety behaviors are learned patterns, not hard logical constraints. They are statistical tendencies that can be overridden by inputs that push the model into regions where its safety training breaks down. The attacker's goal is to find inputs that make the model "forget" or override its safety training while still producing coherent, capable outputs.
@@ -18,7 +29,12 @@ The term "jailbreaking" comes from the iOS jailbreaking community, where users c
 ## How It Works
 
 
-*Recommended visual: DAN (Do Anything Now) jailbreak example showing role-play prompt structure — see [Shen et al. Jailbreak Analysis (arXiv:2308.03825)](https://arxiv.org/abs/2308.03825)*
+```mermaid
+flowchart LR
+    S1["DAN (Do Anything Now) jailbreak example"]
+    S2["role-play prompt structure"]
+    S1 --> S2
+```
 
 ### Categories of Jailbreak Techniques
 

@@ -15,7 +15,18 @@ This is not academic trivia. When you understand that the model literally cannot
 ![The Illustrated Transformer architecture showing attention mechanism](https://jalammar.github.io/images/t/transformer_resideual_layer_norm_3.png)
 *Source: Jay Alammar, "The Illustrated Transformer," jalammar.github.io, 2018.*
 
-*Recommended visual: A four-stage pipeline diagram showing the sequential flow from raw text through tokenization, embedding, multi-head attention, and autoregressive generation, with arrows indicating how each token at the generation stage conditions on all prior tokens.*
+```mermaid
+flowchart LR
+    S1["the sequential flow from raw text"]
+    S2["tokenization"]
+    S3["embedding"]
+    S4["multi-head attention"]
+    S5["autoregressive generation"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+```
 *Source: Adapted from Vaswani et al., "Attention Is All You Need," 2017.*
 
 ## How It Works

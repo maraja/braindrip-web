@@ -11,10 +11,28 @@ The core challenge is that LLM outputs are non-deterministic and open-ended. Unl
 
 Prompt evaluation is the foundation of every other optimization technique in this section. You cannot A/B test (see `a-b-testing-and-prompt-experiments.md`), optimize (see `prompt-optimization-techniques.md`), or debug (see `prompt-debugging-and-failure-analysis.md`) without a reliable way to measure whether one prompt version is better than another. Building a good eval suite is the single highest-leverage investment in any LLM application.
 
-*Recommended visual: A software testing analogy diagram showing the eval-driven development workflow as a CI/CD pipeline -- prompt change triggers eval suite run, scores compared against baseline, regression check gates deployment, and A/B testing validates with real users -- mirroring a standard code build-test-deploy pipeline with prompt-specific stages.*
+```mermaid
+flowchart LR
+    S1["prompt change triggers eval suite run"]
+    S2["scores compared against baseline"]
+    S3["regression check gates deployment"]
+    S4["A/B testing validates with real users"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
 *Source: Adapted from Zheng et al., "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena," 2023.*
 
-*Recommended visual: A scoring method selection decision tree -- starting with "What is the output type?", branching to exact match (classification, extraction), fuzzy matching/ROUGE (text generation with reference), LLM-as-judge (open-ended quality), and custom metrics (domain-specific verification like SQL execution or code test suites) -- with agreement-with-human-raters percentages annotated at each leaf.*
+```mermaid
+flowchart TD
+    R1["scoring method selection decision tree -- "]
+    C2["branching to exact match (classification, "]
+    R1 --> C2
+    C3["fuzzy matching/ROUGE"]
+    R1 --> C3
+    C4["LLM-as-judge (open-ended quality)"]
+    R1 --> C4
+```
 *Source: Adapted from Liang et al., "HELM: Holistic Evaluation of Language Models," 2023 (Stanford), and Shankar et al., "Who Validates the Validators?" 2024.*
 
 ## How It Works

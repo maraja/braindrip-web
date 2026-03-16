@@ -8,7 +8,14 @@
 
 Standard PPO in the RLHF pipeline requires four models in memory simultaneously: the policy, the reference model, the reward model, and a critic (value) model that estimates how good each state is. The critic is essential for computing "advantages" -- how much better an action was compared to what was expected. But training this critic is itself unstable, memory-intensive, and adds another source of error.
 
-*Recommended visual: GRPO algorithm diagram showing group sampling, z-score advantage estimation, and clipped policy update — see [DeepSeekMath Paper (arXiv:2402.03300)](https://arxiv.org/abs/2402.03300)*
+```mermaid
+flowchart LR
+    S1["group sampling"]
+    S2["z-score advantage estimation"]
+    S3["clipped policy update"]
+    S1 --> S2
+    S2 --> S3
+```
 
 
 GRPO asks: what if we could estimate advantages without a critic at all?
@@ -20,7 +27,15 @@ This approach draws from a long lineage in RL -- REINFORCE with baselines, self-
 ## How It Works
 
 
-*Recommended visual: Comparison of PPO (with critic) vs GRPO (critic-free group-based advantage) — see [DeepSeek-R1 Paper (arXiv:2501.12948)](https://arxiv.org/abs/2501.12948)*
+```mermaid
+flowchart LR
+    subgraph L1["Comparison of PPO (with critic)"]
+        LI3["Comparison of PPO (with critic)"]
+    end
+    subgraph R2["GRPO (critic-free group-based advantage)"]
+        RI4["Feature 1"]
+    end
+```
 
 ### Group-Based Advantage Estimation
 

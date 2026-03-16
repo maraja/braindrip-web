@@ -10,7 +10,15 @@ Imagine two students taking a math exam. Both get the right answer: 42. But Stud
 
 An agent's trajectory is the complete sequence of reasoning steps, tool calls, observations, and decisions from the start of a task to its completion. A typical trajectory might include: analyze the task, search for relevant information, read search results, identify a promising approach, execute the approach, encounter an error, diagnose the error, try a different approach, and produce the final output. Each of these steps can be evaluated for quality, relevance, and efficiency.
 
-*Recommended visual: Side-by-side comparison of two agent trajectories for the same task — one with clean, efficient steps and one with redundant steps and error loops — both achieving the same outcome, illustrating why process quality matters — see [Lightman et al., 2023 — Let's Verify Step by Step](https://arxiv.org/abs/2305.20050)*
+```mermaid
+flowchart LR
+    subgraph L1["clean"]
+        LI3["one with redundant steps"]
+    end
+    subgraph R2["efficient steps"]
+        RI4["Feature 1"]
+    end
+```
 
 Trajectory evaluation matters because outcome-only evaluation is dangerously incomplete for non-deterministic systems. An agent that takes 25 random steps and happens to stumble on the right answer will score identically to an agent that takes 5 deliberate, well-reasoned steps to the same answer. But the first agent is unreliable -- it succeeded by luck and will likely fail next time. Trajectory evaluation distinguishes reliable competence from lucky outcomes, providing the information needed to build trustworthy agents.
 
@@ -24,7 +32,20 @@ Each step in the trajectory is evaluated independently. For tool calls: was the 
 
 Beyond individual steps, the trajectory as a whole has measurable properties. Efficiency measures the ratio of productive steps to total steps -- an efficient trajectory has few wasted actions. Directness measures how closely the trajectory follows the shortest reasonable path to the solution. Recoverability measures how well the agent handles errors and dead ends -- does it detect failures quickly and pivot, or does it persist on failed approaches? Completeness measures whether the agent addressed all aspects of the task or left parts unfinished.
 
-*Recommended visual: 2x2 quadrant diagram with process quality on one axis and outcome quality on the other — showing "reliable competence" (good/good), "honest failure" (good/bad), "lucky success" (bad/good), and "clear failure" (bad/bad) — see [Uesato et al., 2022 — Process- and Outcome-Based Feedback](https://arxiv.org/abs/2211.14275)*
+```mermaid
+flowchart TD
+    T1["2x2 quadrant diagram"]
+    subgraph ROW2[" "]
+        Q4["reliable competence"]
+        Q5["honest failure"]
+    end
+    subgraph ROW3[" "]
+        Q6["lucky success"]
+        Q7["clear failure"]
+    end
+    T1 --- ROW2
+    T1 --- ROW3
+```
 
 ### Process vs Outcome Correlation
 

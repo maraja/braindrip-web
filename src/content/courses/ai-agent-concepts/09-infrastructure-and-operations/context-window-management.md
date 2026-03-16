@@ -10,7 +10,20 @@ Imagine packing for a trip with a strict carry-on limit. You have clothes, toile
 
 The challenge is acute for agents because they accumulate context over time. A simple chatbot processes one user message and one response. An agent running a 30-step task accumulates 30 rounds of thought-action-observation, each potentially thousands of tokens. By step 20, the raw accumulated context might exceed 100K tokens. Even models with 200K context windows degrade in quality when processing very long inputs -- the "lost in the middle" phenomenon means information in the center of a long context is attended to less than information at the start or end.
 
-*Recommended visual: Diagram showing a context window divided into priority tiers — system prompt (always), current task (always), recent turns (essential), active tool outputs (current step), memories (relevant), older history (compressed/dropped) — with token budget allocations — see [Liu et al., 2023 — Lost in the Middle](https://arxiv.org/abs/2307.03172)*
+```mermaid
+flowchart TD
+    L1["system prompt (always)"]
+    L2["current task (always)"]
+    L3["recent turns (essential)"]
+    L4["active tool outputs (current step)"]
+    L5["memories (relevant)"]
+    L6["older history (compressed/dropped)"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 --> L5
+    L5 --> L6
+```
 
 Context window management is therefore not just about fitting within the limit. It is about maximizing the signal-to-noise ratio of what the model sees. A well-managed context gives the model exactly the information it needs for the current step, organized for easy retrieval: critical instructions first, relevant recent history, pertinent tool outputs, and supporting memories. An poorly managed context buries the relevant information in a sea of irrelevant prior steps.
 
@@ -25,7 +38,15 @@ When raw context exceeds the window, compression reduces token count while prese
 ### Sliding Window and Summarization
 The sliding window approach keeps the N most recent messages verbatim and summarizes everything older. A variation: maintain a "running summary" that is updated after every K turns. The running summary captures key decisions, facts, and intermediate results from older turns. This gives the model temporal context (what happened earlier) without consuming tokens proportional to the full conversation length. The trade-off: summarization loses nuance and detail, so if the model needs to reference a specific earlier detail, it may not be available.
 
-*Recommended visual: Before/after comparison showing a bloated 100K-token context (with redundant tool outputs and stale history) vs a managed 15K-token context (summarized history, only relevant outputs) — see [Xu et al., 2023 — Retrieval Meets Long Context LLMs](https://arxiv.org/abs/2310.03025)*
+```mermaid
+flowchart LR
+    subgraph L1["edundant tool outputs and stale history)"]
+        LI3["showing a bloated 100K-token context"]
+    end
+    subgraph R2["a managed 15K-token context (summarized"]
+        RI4["Feature 1"]
+    end
+```
 
 ### Dynamic Context Assembly
 Advanced agents assemble context dynamically based on the current step. A coding agent about to write a function retrieves only the relevant source files, not the entire repository. A research agent about to synthesize findings retrieves only the extracted facts, not the raw articles. This step-aware context assembly is more effective than static approaches because the information needed changes dramatically across steps. Implementation requires a context assembly function that runs before each LLM call, selecting and organizing context based on the current state and upcoming action.

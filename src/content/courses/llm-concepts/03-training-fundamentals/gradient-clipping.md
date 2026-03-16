@@ -8,7 +8,12 @@
 
 Training a large language model is an exercise in managing instability, memory constraints, and computational budgets. Three techniques -- often confused because they all have "gradient" in their names -- address distinct but equally critical challenges:
 
-*Recommended visual: Illustration of gradient clipping showing the gradient vector being rescaled to fit within the clipping norm sphere while preserving direction — see [Neptune.ai -- Gradient Clipping in Practice](https://neptune.ai/blog/understanding-gradient-clipping-and-how-it-can-fix-exploding-gradients-problem)*
+```mermaid
+flowchart TD
+    L1["Illustration of gradient clipping"]
+    L2["preserving direction"]
+    L1 --> L2
+```
 
 
 Think of training a massive model as driving a high-performance race car:
@@ -26,7 +31,14 @@ Each addresses a different problem, but all three are nearly universal in large-
 
 During backpropagation, gradients can occasionally become extremely large -- a phenomenon called **exploding gradients**. This happens when multiple large gradient values multiply together through the chain rule, producing gradient magnitudes that are orders of magnitude larger than normal. If these enormous gradients are passed directly to the optimizer, the resulting parameter update can be so large that it destroys what the model has learned, often causing the loss to spike or become NaN.
 
-*Recommended visual: Visualization of exploding gradients in deep networks showing how gradient magnitudes grow exponentially through layers without clipping, and how clipping bounds the maximum update magnitude — see [ResearchGate -- Exploding and Vanishing Gradient Problem](https://www.researchgate.net/)*
+```mermaid
+flowchart TD
+    L1["how gradient magnitudes grow exponentially"]
+    L2["layers without clipping"]
+    L3["how clipping bounds the maximum update mag"]
+    L1 --> L2
+    L2 --> L3
+```
 
 
 Gradient clipping caps the magnitude of gradients before they reach the optimizer, ensuring that no single step can cause catastrophic damage.

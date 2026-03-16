@@ -15,7 +15,16 @@ Understanding the anatomy of a prompt is the first step toward engineering relia
 ![Prompt engineering taxonomy and techniques overview](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/prompt-design.png)
 *Source: Lilian Weng, "Prompt Engineering," lilianweng.github.io, 2023.*
 
-*Recommended visual: A diagram showing the anatomy of an API prompt with labeled segments -- system message, user message, assistant prefill, and tool results -- arranged in their typical order within a context window, with token counts annotated for each segment.*
+```mermaid
+flowchart LR
+    S1["system message"]
+    S2["user message"]
+    S3["assistant prefill"]
+    S4["tool results"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
 *Source: Adapted from Anthropic and OpenAI API documentation, 2024.*
 
 ## How It Works

@@ -11,10 +11,30 @@ Conversation history management does the same for multi-turn LLM interactions. E
 
 The goal is not to preserve every token of history, but to preserve conversational coherence — the model's ability to reference previous turns, maintain topic continuity, and honor commitments made earlier. Different management strategies make different trade-offs between token cost and coherence preservation.
 
-*Recommended visual: A four-panel comparison showing the same 20-turn conversation managed by four strategies: "Sliding Window" (turns 1-10 gone, turns 11-20 kept verbatim), "Summarization" (turns 1-15 compressed into a 500-token summary, turns 16-20 verbatim), "Selective Retention" (important turns 3, 7, 12 kept plus turns 16-20, gaps marked), "Running Summary" (200-token living summary + turns 18-20 verbatim), with token counts annotated for each.*
+```mermaid
+flowchart LR
+    subgraph L1["Sliding Window"]
+        LI3["Selective Retention"]
+    end
+    subgraph R2["Summarization"]
+        RI4["Feature 1"]
+    end
+```
 *Source: Adapted from Park et al., "Generative Agents" (2023) and LangChain Memory documentation (2023)*
 
-*Recommended visual: A line graph showing "Conversational coherence" (y-axis) versus "Token cost" (x-axis) for each history management strategy, with "Full history" in the top-right corner (high coherence, high cost), "Running summary + recent turns" near the top-left (high coherence, low cost), "Sliding window" in the middle, and "Aggressive truncation" in the bottom-left (low coherence, low cost), illustrating the coherence-cost trade-off frontier.*
+```mermaid
+flowchart LR
+    subgraph L1["wing Conversational coherence (y-axis)"]
+        LI3["Conversational coherence"]
+        LI4["Token cost"]
+        LI5["Full history"]
+    end
+    subgraph R2["Token cost (x-axis) for each history"]
+        RI6["Running summary + recent turns"]
+        RI7["Sliding window"]
+        RI8["Aggressive truncation"]
+    end
+```
 *Source: Adapted from Xu et al., "Beyond Goldfish Memory" (2022)*
 
 ## How It Works

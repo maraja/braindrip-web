@@ -11,10 +11,27 @@ Faithfulness in the RAG context means that the generated answer accurately repre
 
 Without explicit grounding instructions, language models blend retrieved context with parametric knowledge (information absorbed during training). This blending is invisible to users and produces answers that look authoritative but contain unverifiable claims. Research from multiple labs (2023-2024) consistently shows that RAG systems without grounding prompts hallucinate at rates of 20-30%, meaning one in four to one in three claims lacks support in the provided context.
 
-*Recommended visual: A decision tree diagram showing how grounding instructions route the model's generation process -- at each claim, the model checks "Is this supported by context?" branching to "Generate with citation" (yes) or "Flag as ungrounded / refuse" (no), with hard grounding and soft grounding paths illustrated separately.*
+```mermaid
+flowchart TD
+    R1["decision tree diagram"]
+    C2["Is this supported by context?"]
+    R1 --> C2
+    C3["Generate with citation"]
+    R1 --> C3
+    C4["Flag as ungrounded / refuse"]
+    R1 --> C4
+```
 *Source: Adapted from Es et al., "RAGAS: Automated Evaluation of Retrieval Augmented Generation," 2024, and Asai et al., "Self-RAG," 2024.*
 
-*Recommended visual: A bar chart comparing hallucination rates across four configurations -- no grounding instructions (25-30%), hard grounding only (8-12%), quote-then-answer pattern (5-8%), and chain-of-thought grounding with citations (3-6%) -- illustrating the cumulative benefit of layered faithfulness techniques.*
+```mermaid
+flowchart LR
+    subgraph L1["rations -- no grounding instructions (25-3"]
+        LI3["quote-then-answer pattern (5-8%)"]
+    end
+    subgraph R2["hard grounding only (8-12%)"]
+        RI4["Feature 1"]
+    end
+```
 *Source: Adapted from Min et al., "FActScore," 2023, and Maynez et al., "On Faithfulness and Factuality in Abstractive Summarization," 2020.*
 
 ## How It Works

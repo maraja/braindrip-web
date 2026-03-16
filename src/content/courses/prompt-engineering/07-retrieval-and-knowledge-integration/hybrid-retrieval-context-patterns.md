@@ -11,10 +11,24 @@ Hybrid retrieval combines multiple retrieval methods — typically dense (embedd
 
 The empirical evidence is clear: hybrid retrieval consistently outperforms any individual method by 5-15% on standard benchmarks. The improvement is particularly pronounced on queries that mix semantic concepts with specific terminology, such as "What is the GDPR penalty for data breaches affecting more than 1000 users?" — where semantic search captures the legal concept while keyword search anchors on "GDPR" and "1000 users."
 
-*Recommended visual: A Venn diagram showing the complementary strengths of three retrieval methods -- dense retrieval (semantic understanding, paraphrase matching), sparse retrieval (exact terms, rare words, codes), and structured retrieval (filters, date ranges, numerical constraints) -- with the overlap region labeled "hybrid retrieval" and annotated with the 5-15% improvement over single methods.*
+```mermaid
+flowchart LR
+    S1["retrieval methods -- dense retrieval"]
+    S2["sparse retrieval"]
+    S3["and structured retrieval"]
+    S1 --> S2
+    S2 --> S3
+```
 *Source: Adapted from Chen et al., "BGE M3-Embedding," 2024, and Formal et al., "SPLADE v2," 2022.*
 
-*Recommended visual: A system architecture diagram showing the hybrid retrieval pipeline -- user query fanning out to three parallel retrieval paths (dense via vector DB, sparse via BM25/Elasticsearch, structured via SQL/graph), results converging through reciprocal rank fusion (RRF), then feeding into a cross-encoder reranker before final context assembly.*
+```mermaid
+flowchart LR
+    S1["dense via vector DB"]
+    S2["sparse via BM25/Elasticsearch"]
+    S3["structured via SQL/graph"]
+    S1 --> S2
+    S2 --> S3
+```
 *Source: Adapted from Bruch, "Foundations of Vector Retrieval," 2023.*
 
 ## How It Works

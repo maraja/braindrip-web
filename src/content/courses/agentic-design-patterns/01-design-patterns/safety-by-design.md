@@ -10,7 +10,18 @@ Consider how building security works. You do not install a single lock on the fr
 
 Agent safety follows the same layered principle. An agent that can read files, call APIs, execute code, and send messages has a large attack surface. A single guardrail -- say, an output filter -- is insufficient. Adversarial inputs can bypass prompt-level defenses. Tool misuse can occur without any adversarial intent (the agent simply reasons incorrectly about which tool to call). Scope creep happens when the agent pursues a subtask beyond its intended boundaries. Safety by design means composing multiple independent defense mechanisms so that no single failure compromises the system.
 
-*Recommended visual: A layered defense diagram showing five concentric rings from outermost to innermost: Input Validation > Tool Permissions > Output Filtering > Monitoring > Human Oversight. Map each threat type to the layer that catches it (e.g., prompt injection caught at Input Validation, tool misuse caught at Tool Permissions, data exfiltration caught at Output Filtering). For the industry-standard threat taxonomy, see the [OWASP Top 10 for LLM Applications (2025)](https://owasp.org/www-project-top-10-for-large-language-model-applications/) and Microsoft's [Lessons from Red Teaming 100 Generative AI Products](https://www.microsoft.com/en-us/security/blog/2024/06/18/red-teaming-generative-ai/).*
+```mermaid
+flowchart TD
+    R1["layered defense diagram"]
+    C2["e.g."]
+    R1 --> C2
+    C3["prompt injection caught at Input Validatio"]
+    R1 --> C3
+    C4["tool misuse caught at Tool Permissions"]
+    R1 --> C4
+    C5["data exfiltration caught at Output Filteri"]
+    R1 --> C5
+```
 
 The critical insight: safety is not a feature you bolt on after the agent works. It is a set of architectural constraints that shape every design decision from the start. Retrofitting safety into a working agent is 3-5x more expensive than designing it in from the beginning.
 

@@ -12,7 +12,18 @@ Role-based specialization in multi-agent systems works identically. Each agent i
 
 This approach exploits a well-documented property of LLMs: they perform better when given a specific persona and domain context than when asked to be generalists. A model prompted as "an expert security researcher looking for vulnerabilities" finds more security issues than the same model prompted generically. Specialization through prompting is not as deep as training a separate model, but it is surprisingly effective and requires zero additional training — only prompt engineering.
 
-*Recommended visual: A diagram showing MetaGPT's role-specialized agents (Product Manager, Architect, Project Manager, Engineer, QA) in a software development pipeline, each with distinct responsibilities and handoff interfaces — see [Hong et al., "MetaGPT: Meta Programming for a Multi-Agent Collaborative Framework" (2023)](https://arxiv.org/abs/2308.00352)*
+```mermaid
+flowchart LR
+    S1["Product Manager"]
+    S2["Architect"]
+    S3["Project Manager"]
+    S4["Engineer"]
+    S5["QA"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+```
 
 ## How It Works
 

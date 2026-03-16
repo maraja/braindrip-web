@@ -44,7 +44,21 @@ When the LLM receives a user message along with available function schemas, it m
 
 ### Execution Loop
 
-*Recommended visual: A sequence diagram showing the function calling loop: User message to Model to Tool Call to Execution to Result to Model to Final Response — see [Anthropic, "Tool Use Documentation" (2024)](https://docs.anthropic.com/en/docs/build-with-claude/tool-use/overview)*
+```mermaid
+flowchart TD
+    L1["the function calling loop: User message"]
+    L2["Model"]
+    L3["Tool Call"]
+    L4["Execution"]
+    L5["Result"]
+    L6["Model"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 --> L5
+    L5 --> L6
+    L6 -.->|"repeat"| L1
+```
 
 The host application receives the function call, validates the arguments against the schema, executes the actual function, and returns the result to the model in a subsequent message. This creates a conversation loop: User message -> Model function call -> System executes function -> Result returned to model -> Model generates final response. This loop can repeat multiple times for complex tasks requiring several function calls.
 

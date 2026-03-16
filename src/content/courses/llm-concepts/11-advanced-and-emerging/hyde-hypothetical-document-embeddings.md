@@ -8,7 +8,16 @@
 
 Dense retrieval works by embedding both queries and documents into the same vector space, then finding documents whose embeddings are closest to the query embedding. But there is a fundamental asymmetry: a question and its answer are semantically related but structurally very different. The query "What are the health effects of microplastics?" is a short question. The relevant documents are long passages full of specific facts, chemical names, and study results. The question and the answer occupy different regions of embedding space, and the gap between them is the primary failure mode of naive dense retrieval.
 
-*Recommended visual: HyDE pipeline: query → LLM generates hypothetical answer → embed hypothetical document → retrieve real documents — see [Gao et al. HyDE Paper (arXiv:2212.10496)](https://arxiv.org/abs/2212.10496)*
+```mermaid
+flowchart LR
+    S1["query"]
+    S2["LLM generates hypothetical answer"]
+    S3["embed hypothetical document"]
+    S4["retrieve real documents"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
 
 
 HyDE, introduced by Gao et al. (2022), addresses this with an elegantly simple idea: before retrieval, ask an LLM to generate a hypothetical document that answers the query. This hypothetical answer is probably imprecise, possibly wrong, and certainly not grounded in your actual knowledge base. But it does not need to be correct. It just needs to look like the kind of document that would answer the query. Then, embed this hypothetical document and use that embedding for retrieval instead of the query embedding.

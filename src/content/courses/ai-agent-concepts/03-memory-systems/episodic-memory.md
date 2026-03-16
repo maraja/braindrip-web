@@ -10,7 +10,18 @@ Imagine an experienced emergency room doctor. When a patient presents with a par
 
 Episodic memory for AI agents works the same way. It stores records of specific past interactions: what task was attempted, what approach was taken, what happened at each step, what the outcome was, and what was learned. When the agent faces a new task, it retrieves episodes that are similar to the current situation and uses them to inform its approach. This is fundamentally different from semantic memory (general facts) or procedural memory (skills): episodic memory is about specific, situated experiences with their full context.
 
-*Recommended visual: A diagram showing episode storage with structured fields (timestamp, task, approach, outcome, lessons) indexed by semantic embedding, tags, and recency — see [Park et al., "Generative Agents: Interactive Simulacra of Human Behavior" (2023)](https://arxiv.org/abs/2304.03442)*
+```mermaid
+flowchart LR
+    S1["timestamp"]
+    S2["task"]
+    S3["approach"]
+    S4["outcome"]
+    S5["lessons"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+```
 
 The power of episodic memory lies in its specificity. A general rule like "API calls sometimes fail" is less useful than a specific episode: "When I called the GitHub API at 2pm EST on a weekday, it rate-limited me after 30 requests in a minute. I recovered by implementing exponential backoff starting at 2 seconds." The episode contains the context (when, where), the action (what was tried), the outcome (what happened), and the lesson (what to do next time).
 

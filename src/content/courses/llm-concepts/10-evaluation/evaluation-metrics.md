@@ -8,7 +8,12 @@
 
 Imagine you ask three different people to summarize a news article. Each summary will be different -- different word choices, different sentence structures, maybe different aspects emphasized -- but they could all be equally good. Now imagine you need an automated system to score a fourth summary. How do you decide if it is good?
 
-*Recommended visual: BLEU n-gram matching example showing precision calculation between generated and reference text — see [Hugging Face Evaluate Documentation](https://huggingface.co/docs/evaluate/index)*
+```mermaid
+flowchart LR
+    S1["BLEU n-gram matching example"]
+    S2["precision calculation between generated an"]
+    S1 --> S2
+```
 
 
 The fundamental challenge of text evaluation is that there are many valid ways to express the same meaning. Traditional metrics address this by comparing generated text against one or more "reference" texts (human-written gold standards) and measuring how much they overlap.
@@ -20,7 +25,12 @@ Think of it like comparing two recipes for chocolate cake. BLEU checks whether t
 ## How It Works
 
 
-*Recommended visual: BERTScore computation showing cosine similarity between contextual embeddings of generated and reference tokens — see [BERTScore Paper (arXiv:1904.09675)](https://arxiv.org/abs/1904.09675)*
+```mermaid
+flowchart LR
+    S1["cosine similarity between contextual embed"]
+    S2["reference tokens"]
+    S1 --> S2
+```
 
 ### BLEU (Bilingual Evaluation Understudy)
 

@@ -8,7 +8,16 @@
 
 Imagine every appliance in your kitchen required a unique, proprietary power outlet. Your toaster needs a hexagonal plug, your microwave needs a triangular one, and every new gadget requires you to rewire your kitchen. That is the state of LLM integrations today: every tool, every data source, every service requires a custom connector. MCP is the universal power outlet -- a single standard interface that any tool can plug into and any LLM application can consume.
 
-*Recommended visual: MCP architecture showing host application, MCP client, and multiple MCP servers providing tools and resources — see [Anthropic MCP Documentation](https://modelcontextprotocol.io)*
+```mermaid
+flowchart TD
+    C1["host application"]
+    C2["MCP client"]
+    C3["multiple MCP servers providing tools"]
+    C4["resources"]
+    C1 --> C2
+    C2 --> C3
+    C3 --> C4
+```
 
 
 The Model Context Protocol, introduced by Anthropic in November 2024, is an open protocol that standardizes how LLM applications communicate with external systems. Rather than building bespoke integrations for each data source (a Slack connector, a GitHub connector, a database connector, each with its own API surface), MCP defines a common protocol layer. Any MCP-compatible server can provide tools and data to any MCP-compatible client, creating a composable ecosystem of AI capabilities.
@@ -16,7 +25,14 @@ The Model Context Protocol, introduced by Anthropic in November 2024, is an open
 ## How It Works
 
 
-*Recommended visual: MCP client-server communication flow showing capability negotiation, tool discovery, and invocation — see [MCP Specification](https://spec.modelcontextprotocol.io)*
+```mermaid
+flowchart LR
+    S1["capability negotiation"]
+    S2["tool discovery"]
+    S3["invocation"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ### Architecture
 

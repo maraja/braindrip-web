@@ -8,7 +8,16 @@
 
 Think of guardrails on a highway. The road itself (the model) is designed to keep cars moving in the right direction, but guardrails exist as an additional safety layer for when things go wrong -- when a driver swerves, when conditions are poor, when the unexpected happens. The guardrails don't make the road safe by themselves, but they prevent the worst outcomes.
 
-*Recommended visual: Multi-layered guardrails architecture: input filters, system prompt, model-level constraints, output filters — see [NeMo Guardrails Documentation](https://docs.nvidia.com/nemo/guardrails/)*
+```mermaid
+flowchart TD
+    L1["Multi-layered guardrails architecture: inp"]
+    L2["system prompt"]
+    L3["model-level constraints"]
+    L4["output filters"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+```
 
 
 In LLM applications, guardrails serve the same function. Despite safety training (RLHF, Constitutional AI), models can still produce harmful, inaccurate, or policy-violating content. Guardrails are the **engineering systems built around the model** that intercept, filter, modify, or block inputs and outputs that violate defined policies. They operate on the principle of **defense in depth**: no single layer is sufficient, but multiple overlapping layers provide robust protection.
@@ -18,7 +27,12 @@ A production LLM system without guardrails is like deploying a web application w
 ## How It Works
 
 
-*Recommended visual: NVIDIA NeMo Guardrails pipeline showing programmable safety rails — see [NeMo Guardrails GitHub](https://github.com/NVIDIA/NeMo-Guardrails)*
+```mermaid
+flowchart LR
+    S1["NVIDIA NeMo Guardrails pipeline"]
+    S2["programmable safety rails"]
+    S1 --> S2
+```
 
 ### The Multi-Layered Architecture
 

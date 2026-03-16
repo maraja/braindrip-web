@@ -10,7 +10,12 @@ Think of an encyclopedia versus a diary. A diary records specific experiences (e
 
 For AI agents, semantic memory is the store of factual knowledge that the agent can access, query, and update during task execution. While LLMs encode vast amounts of factual knowledge in their weights, this knowledge has critical limitations: it is frozen at the training cutoff, it cannot be easily updated, it may contain errors, and it cannot store private or domain-specific facts. Semantic memory provides an external, mutable knowledge store that complements the LLM's parametric knowledge.
 
-*Recommended visual: A knowledge graph diagram showing entities (PostgreSQL, MySQL, Oracle) connected by typed relationships (owned_by, supports, licensed_under) — see [Ji et al., "A Survey on Knowledge Graphs" (2022)](https://arxiv.org/abs/2002.00388)*
+```mermaid
+flowchart LR
+    S1["ledge graph diagram showing entities (Post"]
+    S2["connected by typed relationships"]
+    S1 --> S2
+```
 
 The distinction from episodic memory is important. Episodic memory stores "I searched for X and found Y on Tuesday" (a specific experience). Semantic memory stores "X is Y" (a factual claim, decoupled from any specific experience). In practice, semantic memories often originate from episodic experiences (the agent learns a fact during a task) but are stored in a form that strips away the experiential context and retains only the factual content.
 

@@ -10,7 +10,16 @@ Think of a whiteboard in a meeting room. Everything currently relevant to the di
 
 For LLM-based agents, the context window IS the working memory. Every token in the context window is "on the whiteboard": directly accessible to the model's attention mechanism during generation. This includes the system prompt, the conversation history, recent tool outputs, intermediate reasoning traces, and any retrieved memories. The model attends to all of this simultaneously when deciding what to do or say next. Unlike human working memory (which holds approximately 7 items), LLM context windows can hold thousands to hundreds of thousands of tokens, but the fundamental constraint is the same: capacity is finite, and managing it is critical.
 
-*Recommended visual: A diagram showing the context window as a fixed-size buffer with competing components: system prompt, conversation history, tool outputs, retrieved memories, and reserved response space — see [Packer et al., "MemGPT: Towards LLMs as Operating Systems" (2023)](https://arxiv.org/abs/2310.08560)*
+```mermaid
+flowchart TD
+    C1["conversation history"]
+    C2["tool outputs"]
+    C3["retrieved memories"]
+    C4["reserved response space"]
+    C1 --> C2
+    C2 --> C3
+    C3 --> C4
+```
 
 The practical challenge is that everything competes for space in the context window. A long system prompt reduces space for conversation history. Verbose tool outputs crowd out past reasoning. Retrieving memories from long-term storage adds tokens. Every design decision about what to include in the context window is a decision about what the agent can effectively reason about, because information outside the context window is effectively invisible to the model.
 

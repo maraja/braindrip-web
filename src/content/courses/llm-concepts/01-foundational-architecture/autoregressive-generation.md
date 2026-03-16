@@ -28,7 +28,12 @@ At each step, the model computes a probability distribution over the entire voca
 
 Modern LLM inference has two distinct computational phases:
 
-*Recommended visual: GPT-2 autoregressive generation showing each new token being fed back as input for predicting the next token — see [Jay Alammar – The Illustrated GPT-2](https://jalammar.github.io/illustrated-gpt2/)*
+```mermaid
+flowchart LR
+    S1["GPT-2 autoregressive generation"]
+    S2["each new token being fed back as input for"]
+    S1 --> S2
+```
 
 
 #### Phase 1: Prefill (Processing the Prompt)

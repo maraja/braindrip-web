@@ -10,7 +10,12 @@ Think about renovating a house while living in it. You do not demolish the entir
 
 Incremental migration applies the same principle to adding agent capabilities to existing software systems. Most organizations do not have the luxury of building an agent system from scratch on a blank canvas. They have existing workflows, existing APIs, existing user expectations, and existing reliability standards. Ripping out a working system and replacing it with an agent is high risk: if the agent fails, the business process fails. Incremental migration patterns let you introduce agent capabilities one step at a time, validate each step, and maintain the ability to revert to the existing system at any point.
 
-*Recommended visual: A three-stage timeline diagram of the Strangler Pattern applied to agent migration. Stage 1: a 5-step workflow where Step 3 is replaced with an agent-driven decision (shaded differently), while Steps 1-2 and 4-5 remain legacy. Stage 2: Steps 3-4 are both agent-driven. Stage 3: the entire workflow is agent-driven. A "rollback" arrow at each stage points back to the previous stage. For the original pattern description, see Martin Fowler's [StranglerFigApplication (2004)](https://martinfowler.com/bliki/StranglerFigApplication.html) and for ML-specific deployment patterns, see Sato et al.'s [Continuous Delivery for ML (2019)](https://martinfowler.com/articles/cd4ml.html).*
+```mermaid
+flowchart TD
+    L1["Level 1: a 5-step workflow where Step 3 is"]
+    L2["Level 2: Steps 3-4 are both agent-driven. "]
+    L1 --> L2
+```
 
 The core principle: at every stage of migration, the system must be fully functional. There is no "big bang" cutover. There is no period where the system is half-agent, half-broken. Every intermediate state is a valid production system.
 

@@ -11,10 +11,26 @@ Creative writing prompting is the practice of instructing language models to pro
 
 This domain is unique because quality is subjective and multidimensional. A piece of creative writing can be technically competent but emotionally flat, or stylistically bold but structurally incoherent. Effective prompts specify the dimensions that matter (tone, audience, purpose, emotional impact) while leaving room for the model to make creative decisions about the dimensions that do not.
 
-*Recommended visual: A multi-dimensional style control panel showing four independent sliders -- tone (melancholic to exuberant), voice (formal narrator to casual observer), register (academic to colloquial), and pacing (fast-paced to contemplative) -- illustrating how each dimension can be set independently to define the creative output space.*
+```mermaid
+flowchart LR
+    S1["ing four independent sliders -- tone (mela"]
+    S2["voice"]
+    S3["register (academic to colloquial)"]
+    S4["and pacing (fast-paced to contemplative)"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
 *Source: Adapted from Ippolito et al., "Creative Writing with an AI-Powered Writing Assistant: Perspectives from Professional Writers," 2022.*
 
-*Recommended visual: A temperature-quality trade-off chart with temperature (x-axis, 0.0 to 1.5) plotted against two overlapping curves -- lexical diversity (increasing) and coherence (decreasing after 0.7-0.8) -- with an annotated "sweet spot" zone at 0.5-0.7 for most creative writing tasks.*
+```mermaid
+flowchart LR
+    S1["ity trade-off chart with temperature (x-ax"]
+    S2["rlapping curves -- lexical diversity (incr"]
+    S3["and coherence (decreasing after 0.7-0.8)"]
+    S1 --> S2
+    S2 --> S3
+```
 *Source: Adapted from Chakrabarty et al., "Art or Artifice? Large Language Models and the False Promise of Creativity," 2024.*
 
 ## How It Works

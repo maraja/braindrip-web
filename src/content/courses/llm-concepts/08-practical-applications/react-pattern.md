@@ -19,7 +19,17 @@ ReAct unifies both: the model's reasoning explicitly plans tool use, and the obs
 ## How It Works
 
 
-*Recommended visual: ReAct vs Chain-of-Thought vs Act-Only comparison showing how interleaving reasoning with actions improves performance — see [ReAct Paper (arXiv:2210.03629)](https://arxiv.org/abs/2210.03629)*
+```mermaid
+flowchart LR
+    subgraph L1["ReAct"]
+        LI3["Chain-of-Thought"]
+        LI4["Act-Only comparison"]
+    end
+    subgraph R2["Chain-of-Thought vs Act-Only comparison"]
+        RI5["how interleaving reasoning"]
+        RI6["actions improves performance"]
+    end
+```
 
 ### The Thought-Action-Observation Loop
 

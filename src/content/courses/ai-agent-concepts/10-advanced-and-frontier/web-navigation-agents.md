@@ -10,7 +10,15 @@ Picture someone who has never used the internet sitting down at a browser. You t
 
 The web is the largest and most diverse application environment in existence. Every website has a different layout, different interaction patterns, different form structures, and different navigation flows. An agent that navigates Amazon must learn a completely different interface when navigating a government benefits portal or a banking website. This diversity makes web navigation one of the hardest agent tasks: unlike a controlled API with documented endpoints, the web is a visual, dynamic, inconsistent environment that changes constantly.
 
-*Recommended visual: Dual observation mode diagram — screenshot of a web page on one side, linearized accessibility tree representation on the other, showing how the same page is perceived by vision-based vs DOM-based agents — see [He et al., 2024 — WebVoyager](https://arxiv.org/abs/2401.13919)*
+```mermaid
+flowchart LR
+    subgraph L1["e same page is perceived by vision-based"]
+        LI3["how the same page is perceived by vision-b"]
+    end
+    subgraph R2["DOM-based agents"]
+        RI4["Feature 1"]
+    end
+```
 
 WebArena (Zhou et al., 2024) established the benchmark for evaluating web navigation agents. It provides self-hosted replicas of real websites (Reddit, GitLab, shopping sites, maps, content management systems) with 812 diverse tasks. Current state-of-the-art performance on WebArena sits around 30-40%, meaning agents successfully complete about a third of tasks that a human could complete easily. This gap highlights the difficulty of robust web interaction.
 
@@ -22,7 +30,12 @@ Web agents perceive web pages through two primary modalities. **Screenshot-based
 ### Action Space
 The agent's available actions mirror human browser interactions: **click(element_id)** or **click(x, y)** to click elements, **type(element_id, text)** to enter text in form fields, **scroll(direction)** to scroll the page, **navigate(url)** to go to a specific URL, **go_back()** to return to the previous page, **select_option(element_id, value)** to choose from dropdowns, and **hover(element_id)** to trigger hover-dependent menus. Some implementations add **wait(seconds)** for dynamic content loading and **press_key(key)** for keyboard shortcuts. The action space is simpler than full computer use because it is constrained to browser interactions.
 
-*Recommended visual: Set-of-Marks (SoM) prompting example — a screenshot with numbered labels overlaid on interactive elements (buttons, links, inputs), showing how the agent references elements by number rather than coordinates — see [Zheng et al., 2024 — SeeAct](https://arxiv.org/abs/2401.01614)*
+```mermaid
+flowchart LR
+    S1["Set-of-Marks (SoM)"]
+    S2["els overlaid on interactive elements (butt"]
+    S1 --> S2
+```
 
 ### Multi-Page Workflows
 Real web tasks span multiple pages. Booking a flight requires: search page (enter origin, destination, dates) -> results page (compare options, select a flight) -> passenger details page (enter name, passport info) -> payment page (enter card details) -> confirmation page (verify booking). The agent must maintain task context across page transitions, remember information from previous pages (the selected flight's price, departure time), and handle unexpected states (session timeouts, pop-up modals, cookie consent banners). This sequential, multi-page reasoning is where agents most commonly fail.

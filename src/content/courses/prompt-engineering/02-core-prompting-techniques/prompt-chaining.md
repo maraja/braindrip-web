@@ -15,7 +15,12 @@ This technique is powerful because it converts a single hard problem into multip
 ![Agent overview showing sequential planning and tool use patterns](https://lilianweng.github.io/posts/2023-06-23-agent/agent-overview.png)
 *Source: Lilian Weng, "LLM Powered Autonomous Agents," lilianweng.github.io, 2023. Prompt chaining follows the same sequential decomposition pattern used in agentic systems.*
 
-*Recommended visual: A pipeline flow diagram showing 4 sequential steps (Extract -> Analyze -> Recommend -> Format) with arrows between them, each step annotated with its prompt focus and output format. Between each step, a diamond-shaped "validation gate" node shows programmatic and LLM-based checks, with pass/retry/fallback paths.*
+```mermaid
+flowchart LR
+    S1["Analyze"]
+    S2["Recommend"]
+    S1 --> S2
+```
 *Source: Adapted from Wu et al., "AI Chains," CHI 2022, and Khattab et al., "DSPy," 2023.*
 
 ## How It Works

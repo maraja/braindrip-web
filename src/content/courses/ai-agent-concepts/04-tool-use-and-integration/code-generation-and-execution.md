@@ -12,7 +12,19 @@ Code generation and execution means the agent produces source code (typically Py
 
 This capability transforms the agent from a tool user into a tool maker. When the agent encounters a task that no existing tool handles, it can write code to accomplish it. This is why code execution is often called a "universal tool" — any computable task can theoretically be addressed by generating the right program. In practice, LLMs like GPT-4, Claude, and Gemini are remarkably effective code generators, making this a highly practical approach.
 
-*Recommended visual: A diagram showing the REPL loop for code execution agents: Generate Code to Execute in Sandbox to Observe Output/Error to Revise Code, with the loop repeating until success — see [Yang et al., "InterCode: Standardizing and Benchmarking Interactive Coding with Execution Feedback" (2023)](https://arxiv.org/abs/2306.14898)*
+```mermaid
+flowchart TD
+    L1["the REPL loop for code execution agents: G"]
+    L2["Execute in Sandbox"]
+    L3["Observe Output/Error"]
+    L4["Revise Code"]
+    L5["with the loop repeating until success"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 --> L5
+    L5 -.->|"repeat"| L1
+```
 
 ## How It Works
 

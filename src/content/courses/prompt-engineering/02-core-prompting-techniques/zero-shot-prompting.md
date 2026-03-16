@@ -15,7 +15,15 @@ Zero-shot works surprisingly well on instruction-tuned models (GPT-4, Claude 3.5
 ![Prompt engineering techniques overview including zero-shot and few-shot approaches](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/prompt-design.png)
 *Source: Lilian Weng, "Prompt Engineering," lilianweng.github.io, 2023. Zero-shot prompting is the simplest approach, relying on instructions alone without demonstrations.*
 
-*Recommended visual: A side-by-side comparison showing a zero-shot prompt (instruction only, no examples) versus a few-shot prompt (instruction plus 3 examples) for the same classification task, with output quality scores annotated below each, illustrating the trade-off between simplicity and accuracy.*
+```mermaid
+flowchart LR
+    subgraph L1["t prompt (instruction only, no examples)"]
+        LI3["omparison showing a zero-shot prompt (inst"]
+    end
+    subgraph R2["a few-shot prompt (instruction plus 3"]
+        RI4["Feature 1"]
+    end
+```
 *Source: Adapted from Brown et al., "Language Models are Few-Shot Learners," 2020, and Kojima et al., "Large Language Models are Zero-Shot Reasoners," 2022.*
 
 ## How It Works

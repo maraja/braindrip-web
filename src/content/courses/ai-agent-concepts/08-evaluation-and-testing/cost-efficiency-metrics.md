@@ -10,7 +10,15 @@ Imagine two moving companies. Company A uses a single large truck and completes 
 
 In the AI agent world, the "moving companies" are different agent configurations: models, prompting strategies, tool setups, and retry policies. A GPT-4-based agent might solve a task in one attempt for $0.50. A GPT-3.5-based agent might fail on the first attempt but succeed on the third for $0.15 total. A Claude-based agent might solve it reliably for $0.30. Without cost-efficiency metrics, you only see success rates. With them, you see the full picture: how much does each successful completion actually cost?
 
-*Recommended visual: Pareto frontier chart plotting agent configurations on cost (x-axis) vs quality/success rate (y-axis), showing the efficient frontier where no configuration is both cheaper and better — see [Kapoor et al., 2024 — AI Agents That Matter](https://arxiv.org/abs/2407.01502)*
+```mermaid
+flowchart LR
+    subgraph L1["ng agent configurations on cost (x-axis)"]
+        LI3["lotting agent configurations on cost (x-ax"]
+    end
+    subgraph R2["quality/success rate (y-axis), showing"]
+        RI4["Feature 1"]
+    end
+```
 
 Cost-efficiency metrics are essential for production agent systems where scale matters. An agent that costs $1 per task is fine for 100 daily tasks ($100/day) but devastating at 100,000 daily tasks ($100,000/day). At scale, small cost differences compound into large dollar amounts, making cost efficiency not just a nice-to-have but a primary design constraint that shapes every architectural decision.
 
@@ -28,7 +36,20 @@ Tokens are the primary cost driver for LLM-based agents. Token analysis breaks d
 
 Plot each agent configuration as a point on a graph where the x-axis is cost and the y-axis is quality (success rate, output quality score). The Pareto frontier is the set of configurations where no other configuration is both cheaper and better. Configurations below the frontier are dominated -- there exists a better option that costs the same or less. The frontier reveals the tradeoff: how much quality improvement does each additional dollar buy? Practitioners choose a point on the frontier based on their quality requirements and budget constraints.
 
-*Recommended visual: Model cascading diagram showing a difficulty classifier routing queries to small/cheap, medium, or large/expensive models, with cost and quality shown at each tier — see [Chen et al., 2023 — FrugalGPT](https://arxiv.org/abs/2305.05176)*
+```mermaid
+flowchart TD
+    L1["a difficulty classifier routing queries"]
+    L2["small/cheap"]
+    L3["medium"]
+    L4["or large/expensive models"]
+    L5["with cost"]
+    L6["quality shown at each tier"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 --> L5
+    L5 --> L6
+```
 
 ### Model Cascading and Routing
 

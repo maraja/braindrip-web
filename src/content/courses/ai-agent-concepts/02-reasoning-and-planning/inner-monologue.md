@@ -10,7 +10,12 @@ Consider a diplomat negotiating a treaty. Outwardly, they present composed, meas
 
 Inner monologue in AI agents is the architectural pattern of providing the model with a private reasoning space that is not visible in the user-facing output. The agent "thinks" before it "speaks" or "acts," and these thoughts are logged for debugging but hidden from the end user. This separation allows the agent to reason more freely: it can consider sensitive edge cases, evaluate whether it should refuse a request, work through uncertainty, and organize complex plans without cluttering the user experience with internal deliberation.
 
-*Recommended visual: A diagram showing the architectural separation between the private thinking block (hidden from user) and the visible response, with the thinking block feeding into the response generation — see [Anthropic, "Extended Thinking in Claude" (2024)](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking)*
+```mermaid
+flowchart LR
+    S1["with the thinking block feeding"]
+    S2["the response generation"]
+    S1 --> S2
+```
 
 The concept has been implemented independently by multiple AI labs. Anthropic's extended thinking gives Claude a dedicated thinking block before each response. OpenAI's o1 and o3 models use hidden chain-of-thought that the user never sees. Google's Gemini uses internal reasoning tokens. The specific implementation varies, but the core idea is the same: private reasoning improves output quality and enables safety-relevant deliberation that should not be exposed.
 

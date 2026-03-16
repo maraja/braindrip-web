@@ -12,7 +12,15 @@ Browser automation for AI agents comes in two fundamental approaches. The **DOM-
 
 The significance of browser automation is that it makes the entire web accessible as a tool surface. When no API exists for a service, the agent can use it through its web interface — the same way a human would. This is why browser automation is sometimes called the "universal tool user": if a human can do it in a browser, an agent with browser automation can attempt it too.
 
-*Recommended visual: A side-by-side comparison of DOM-based (Playwright/Puppeteer extracting HTML elements) vs. screenshot-based (Computer Use analyzing rendered pixels) browser automation approaches — see [Anthropic, "Developing a Computer Use Model" (2024)](https://www.anthropic.com/research/developing-computer-use)*
+```mermaid
+flowchart LR
+    subgraph L1["ight/Puppeteer extracting HTML elements)"]
+        LI3["side-by-side comparison of DOM-based"]
+    end
+    subgraph R2["screenshot-based (Computer Use analyzing"]
+        RI4["Feature 1"]
+    end
+```
 
 ## How It Works
 

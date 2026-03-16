@@ -58,7 +58,14 @@ Through next-token prediction at scale, the model implicitly learns:
 
 The training corpus is never just one kind of text. Teams carefully curate a **data mix** that typically includes:
 
-*Recommended visual: Pre-training pipeline showing massive text corpus being processed through the transformer to predict next tokens — see [Jay Alammar – The Illustrated GPT-2](https://jalammar.github.io/illustrated-gpt2/)*
+```mermaid
+flowchart LR
+    S1["massive text corpus being processed"]
+    S2["the transformer"]
+    S3["predict next tokens"]
+    S1 --> S2
+    S2 --> S3
+```
 
 
 | Source | Typical Proportion | Purpose |

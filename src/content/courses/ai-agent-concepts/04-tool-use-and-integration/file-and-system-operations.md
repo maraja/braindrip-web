@@ -12,7 +12,12 @@ This category of tools is foundational to coding agents (like Claude Code, Curso
 
 The key design challenge is balancing power with safety. An agent with unrestricted file system access could delete critical files, overwrite important data, or execute destructive commands. Production systems implement careful permission boundaries: read access to specific directories, write access to designated workspaces, and curated command execution with explicit allowlists.
 
-*Recommended visual: A diagram showing the agent-computer interface (ACI) with file operation tools (Read, Write, Edit, Search, Bash) arranged around a central workspace, with permission boundaries indicated — see [Jimenez et al., "SWE-agent: Agent-Computer Interfaces Are All You Need" (2024)](https://arxiv.org/abs/2405.15793)*
+```mermaid
+flowchart LR
+    S1["showing the agent-computer interface (ACI)"]
+    S2["with file operation tools"]
+    S1 --> S2
+```
 
 ## How It Works
 

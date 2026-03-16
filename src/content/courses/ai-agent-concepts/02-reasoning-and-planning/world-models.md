@@ -10,7 +10,15 @@ Think of an experienced chess player who can "see" the board several moves ahead
 
 For AI agents, a world model is an internal representation of the environment's current state and the rules governing how actions change that state. When a coding agent operates on a repository, its world model includes knowledge of which files exist, what they contain, what has been modified during the session, what tests are expected to pass, and what side effects each edit might have. When a research agent navigates the web, its world model tracks what information has been gathered, what sources have been consulted, what questions remain unanswered, and what the user's expectations are.
 
-*Recommended visual: A diagram showing the world model as an internal state representation with "predict" and "update" cycles — the agent predicts the next state before acting, then updates after observing — see [Ha and Schmidhuber, "World Models" (2018)](https://arxiv.org/abs/1803.10122)*
+```mermaid
+flowchart TD
+    L1["acting"]
+    L2["updates"]
+    L3["observing"]
+    L1 --> L2
+    L2 --> L3
+    L3 -.->|"repeat"| L1
+```
 
 The critical value of a world model is that it enables prediction: the agent can mentally simulate "if I take action X, the state will change to Y, which means Z will happen next." This prediction capability supports planning (choosing actions whose predicted consequences are desirable), safety checking (avoiding actions whose predicted consequences are harmful), and efficiency (avoiding actions whose predicted consequences are useless).
 

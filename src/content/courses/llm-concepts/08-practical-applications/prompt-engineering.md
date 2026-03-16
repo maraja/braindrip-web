@@ -8,7 +8,20 @@
 
 Imagine you are giving instructions to an extraordinarily well-read but extremely literal colleague. They have read nearly everything ever written, they can mimic any style, and they are eager to help -- but they will do *exactly* what you ask, not what you *meant* to ask. Prompt engineering is the skill of learning to say precisely what you mean.
 
-*Recommended visual: Prompt engineering techniques taxonomy: zero-shot, few-shot, chain-of-thought, self-consistency, and more — see [Lilian Weng – Prompt Engineering](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/)*
+```mermaid
+flowchart TD
+    R1["Prompt engineering techniques taxonomy: ze"]
+    C2["Prompt engineering techniques taxonomy: ze"]
+    R1 --> C2
+    C3["few-shot"]
+    R1 --> C3
+    C4["chain-of-thought"]
+    R1 --> C4
+    C5["self-consistency"]
+    R1 --> C5
+    C6["more"]
+    R1 --> C6
+```
 
 
 At its core, a prompt is the text you send to an LLM before it begins generating. This includes everything: the system message that sets behavioral ground rules, any examples you provide, the user's question, and even the formatting hints you include. Every token in that prompt shapes the probability distribution over the model's next-token predictions. Prompt engineering is about deliberately shaping that distribution so the model lands in the region of outputs you actually want.
@@ -18,7 +31,17 @@ The term "engineering" is deliberate. While early prompt work felt more like art
 ## How It Works
 
 
-*Recommended visual: Chain-of-thought prompting comparison showing standard vs CoT prompting with intermediate reasoning steps — see [Wei et al. CoT Paper (arXiv:2201.11903)](https://arxiv.org/abs/2201.11903)*
+```mermaid
+flowchart LR
+    subgraph L1["standard"]
+        LI3["Chain-of-thought prompting comparison"]
+        LI4["standard"]
+    end
+    subgraph R2["CoT prompting with intermediate"]
+        RI5["CoT prompting"]
+        RI6["intermediate reasoning steps"]
+    end
+```
 
 ### The Prompting Spectrum: Zero-Shot to Many-Shot
 

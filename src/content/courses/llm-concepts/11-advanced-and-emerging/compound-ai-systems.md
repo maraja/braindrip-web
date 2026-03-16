@@ -8,7 +8,16 @@
 
 Consider the difference between a brilliant individual and a well-organized team. A single brilliant person has limits: they cannot look up every fact from memory, perform perfect calculations in their head, or be an expert in every domain simultaneously. But that same person, given access to a library, a calculator, specialized colleagues, and a quality-checking process, becomes far more capable. Compound AI systems apply this same principle to LLMs.
 
-*Recommended visual: Compound AI system architecture combining LLM, retriever, code executor, and verifier components — see [Berkeley AI Research Blog – The Shift from Models to Compound AI Systems](https://bair.berkeley.edu/blog/2024/02/18/compound-ai-systems/)*
+```mermaid
+flowchart TD
+    C1["Compound AI system architecture combining "]
+    C2["retriever"]
+    C3["code executor"]
+    C4["verifier components"]
+    C1 --> C2
+    C2 --> C3
+    C3 --> C4
+```
 
 
 A compound AI system is an architecture that combines multiple interacting components -- at least one of which is typically an LLM -- to accomplish tasks that no single component could handle reliably alone. The term was popularized by the Berkeley AI Research (BAIR) group in 2024, capturing a shift already underway across the industry: the realization that improving the **system around the model** often yields more practical gains than improving the model itself.
@@ -18,7 +27,12 @@ ChatGPT with Code Interpreter, Claude with tool use and computer use, and Perple
 ## How It Works
 
 
-*Recommended visual: DSPy programming framework for optimizing compound AI systems — see [DSPy Paper (arXiv:2310.03714)](https://arxiv.org/abs/2310.03714)*
+```mermaid
+flowchart LR
+    S1["DSPy programming framework for optimizing "]
+    S2["AI systems"]
+    S1 --> S2
+```
 
 ### Core Design Patterns
 

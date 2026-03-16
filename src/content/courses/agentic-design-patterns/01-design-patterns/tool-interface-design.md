@@ -10,7 +10,15 @@ Think about designing a TV remote control. A good remote has clearly labeled but
 
 LLMs interact with tools the same way. The model reads the tool name, description, and parameter schema, then decides whether and how to invoke the tool. It does not have supplementary documentation, cannot ask clarifying questions about the API, and will make assumptions about anything ambiguous. The tool's name, description, and schema ARE the documentation. If they are unclear, the model will call the tool incorrectly, pass wrong parameters, or avoid using the tool entirely. Tool interface design is the practice of making your tools as self-explanatory as a well-designed remote.
 
-*Recommended visual: A side-by-side comparison of a well-designed tool schema (clear verb_noun name, concise description, typed and constrained parameters with enums) vs. a poorly-designed tool schema (vague name, missing description, untyped parameters). For practical examples, see [Anthropic's Tool Use Documentation](https://docs.anthropic.com/en/docs/build-with-claude/tool-use) and the [Berkeley Function Calling Leaderboard (BFCL)](https://gorilla.cs.berkeley.edu/leaderboard.html) for benchmarking tool design quality.*
+```mermaid
+flowchart LR
+    subgraph L1["d and constrained parameters with enums)"]
+        LI3["a poorly-designed tool schema"]
+    end
+    subgraph R2["a poorly-designed tool schema (vague"]
+        RI4["Feature 1"]
+    end
+```
 
 ## How It Works
 

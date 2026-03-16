@@ -8,7 +8,12 @@
 
 Imagine you have a working computer but no documentation -- no source code, no circuit diagrams, no manuals. You can see what goes in and what comes out, but you want to understand **how** it works internally. You start probing individual components, tracing signals, mapping circuits. That is mechanistic interpretability applied to neural networks.
 
-*Recommended visual: Sparse autoencoder decomposing model activations into interpretable features — see [Anthropic Scaling Monosemanticity](https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html)*
+```mermaid
+flowchart LR
+    S1["Sparse autoencoder decomposing model activ"]
+    S2["nto interpretable features"]
+    S1 --> S2
+```
 
 
 Unlike behavioral evaluation (testing what a model does) or probing (asking if information exists somewhere inside), mechanistic interpretability seeks to understand the **causal computational structure**: what does each component compute, how do components connect to form circuits, and how do these circuits produce the model's observed behavior? The goal is not just correlation but mechanism.
@@ -18,7 +23,12 @@ This matters enormously for AI safety. If we cannot understand what a model is c
 ## How It Works
 
 
-*Recommended visual: Induction head circuit showing how two attention heads compose to implement in-context pattern matching — see [Olsson et al. In-context Learning and Induction Heads](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html)*
+```mermaid
+flowchart LR
+    S1["Induction head circuit"]
+    S2["how two attention heads compose to impleme"]
+    S1 --> S2
+```
 
 ### Features: The Atoms of Representation
 

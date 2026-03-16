@@ -11,10 +11,32 @@ This concept has been implemented differently by different providers. Anthropic'
 
 Extended thinking represents a paradigm shift from prompt-level reasoning elicitation (like chain-of-thought) to model-level reasoning allocation. Instead of hoping the model will "show its work" based on prompt instructions, extended thinking guarantees that the model spends a specified amount of computation on reasoning before responding.
 
-*Recommended visual: A stacked bar diagram showing token budget allocation for a single API call with extended thinking -- the bottom section (blue) represents input tokens (prompt/context), the middle section (orange) represents thinking tokens (internal reasoning), and the top section (green) represents output tokens (visible response) -- with the total bounded by the context window. Annotations show that thinking tokens are billed at output token rates.*
+```mermaid
+flowchart TD
+    L1["ended thinking -- the bottom section (blue"]
+    L2["represents input tokens (prompt/context)"]
+    L3["the middle section (orange)"]
+    L4["represents thinking tokens (internal reaso"]
+    L5["and the top section (green)"]
+    L6["represents output tokens (visible response"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 --> L5
+    L5 --> L6
+```
 *Source: Adapted from Anthropic's "Extended Thinking in Claude" documentation, 2025, and OpenAI's "Learning to Reason with LLMs" blog, 2024.*
 
-*Recommended visual: A benchmark comparison table showing performance of standard prompting vs. extended thinking models on AIME (competition math), SWE-bench (coding), and MMLU (knowledge), with percentage improvements of 10-30% annotated, illustrating that harder tasks benefit more from additional thinking budget.*
+```mermaid
+flowchart LR
+    subgraph L1["howing performance of standard prompting"]
+        LI3["extended thinking models on AIME (competit"]
+        LI4["SWE-bench (coding)"]
+    end
+    subgraph R2["extended thinking models on AIME"]
+        RI5["and MMLU (knowledge)"]
+    end
+```
 *Source: Adapted from Snell et al., "Scaling LLM Test-Time Compute Optimally," 2024, and Muennighoff et al., "s1: Simple Test-Time Scaling," 2025.*
 
 ## How It Works

@@ -60,7 +60,14 @@ When multi-agent is justified, the next decision is where to draw the boundaries
 
 **Context isolation:** Each agent has its own context window. This is both a benefit (prevents context overflow) and a cost (agents cannot see each other's reasoning). Design the information that crosses agent boundaries carefully -- send structured summaries, not raw conversation histories.
 
-*Recommended visual: For visual architecture diagrams of multi-agent coordination patterns (hierarchical supervisors, flat debate, and shared-blackboard systems), see Hong et al.'s [MetaGPT paper (2023)](https://arxiv.org/abs/2308.00352) and Wu et al.'s [AutoGen paper (2023)](https://arxiv.org/abs/2308.08155), both of which include system-level architecture diagrams showing inter-agent message flows.*
+```mermaid
+flowchart TD
+    R1["For visual architecture diagrams of multi-"]
+    C2["MetaGPT paper (2023)"]
+    R1 --> C2
+    C3["AutoGen paper (2023)"]
+    R1 --> C3
+```
 
 ### Communication Protocol Selection
 

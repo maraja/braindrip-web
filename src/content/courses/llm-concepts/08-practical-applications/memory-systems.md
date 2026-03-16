@@ -19,7 +19,16 @@ Memory systems solve this by creating external stores -- vector databases, knowl
 ## How It Works
 
 
-*Recommended visual: MemGPT architecture showing hierarchical memory management with main context and external storage — see [MemGPT Paper (arXiv:2310.08560)](https://arxiv.org/abs/2310.08560)*
+```mermaid
+flowchart TD
+    R1["MemGPT architecture"]
+    C2["MemGPT architecture"]
+    R1 --> C2
+    C3["hierarchical memory management"]
+    R1 --> C3
+    C4["main context and external storage"]
+    R1 --> C4
+```
 
 ### Memory Types Mapped to LLM Architectures
 

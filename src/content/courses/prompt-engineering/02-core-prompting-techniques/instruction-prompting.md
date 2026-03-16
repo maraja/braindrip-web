@@ -12,7 +12,12 @@ Instruction prompting is the practice of crafting explicit, unambiguous directiv
 
 Instruction prompting is the backbone of zero-shot prompting and a complement to few-shot prompting. Even when examples are provided, clear instructions frame how the model interprets those examples. In production systems, instruction quality often matters more than any other single factor in prompt design.
 
-*Recommended visual: A vertical "specificity gradient" diagram showing four levels of instruction specificity stacked from bottom (Level 1: "Summarize this" -- vague, high variance) to top (Level 4: fully constrained with format, length, focus, and tone specified -- precise, low variance), with an arrow on the side indicating that output consistency increases from ~20% to ~80% as specificity increases.*
+```mermaid
+flowchart TD
+    L1["Level 1: Summarize this -- vague"]
+    L2["Level 4: fully constrained with format"]
+    L1 --> L2
+```
 *Source: Adapted from production evaluation data on instruction specificity and output variance.*
 
 ![Prompt engineering design overview showing structured prompt components](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/prompt-design.png)

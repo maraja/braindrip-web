@@ -11,10 +11,25 @@ Instruction following is the foundational capability that makes LLM applications
 
 The science of instruction following reveals that compliance is not binary (follow or ignore) but probabilistic: each instruction has a compliance probability that is influenced by multiple factors. Understanding these factors transforms instruction design from guesswork into engineering, where you can predict which instructions will be followed and adjust the ones that will not be.
 
-*Recommended visual: A heatmap-style diagram of a system prompt where each instruction line is color-coded by compliance probability (green = high compliance at top and bottom, yellow = moderate in mid-sections, red = low compliance buried in the middle), illustrating the primacy/recency effect and the attention budget concept.*
+```mermaid
+flowchart LR
+    S1["green = high compliance at top and bottom"]
+    S2["yellow = moderate in mid-sections"]
+    S3["red = low compliance buried in the middle"]
+    S1 --> S2
+    S2 --> S3
+```
 *Source: Adapted from Liu et al., "Lost in the Middle" (2024) and Ouyang et al., "Training Language Models to Follow Instructions with Human Feedback" (2022)*
 
-*Recommended visual: A bar chart comparing instruction compliance rates across formatting strategies: "Prose paragraphs" (~70%), "Bullet points" (~78%), "Numbered lists" (~88%), "Numbered lists with emphasis markers" (~93%), showing the progressive improvement from formatting optimization.*
+```mermaid
+flowchart LR
+    subgraph L1["Prose paragraphs"]
+        LI3["Numbered lists"]
+    end
+    subgraph R2["Bullet points"]
+        RI4["Feature 1"]
+    end
+```
 *Source: Derived from findings in Mu et al., "Can LLMs Follow Simple Rules?" (2023) and Zhou et al., "LIMA: Less Is More for Alignment" (2023)*
 
 ## How It Works

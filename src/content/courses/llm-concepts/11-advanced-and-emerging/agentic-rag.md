@@ -8,7 +8,16 @@
 
 Standard RAG follows a fixed three-step pipeline: embed query, retrieve top-k documents, generate answer. This works well for simple factual questions where a single retrieval step returns sufficient context. But it breaks down on complex queries that require:
 
-*Recommended visual: Agentic RAG loop showing dynamic retrieval decisions, query reformulation, and iterative refinement — see [LangChain Agentic RAG Documentation](https://python.langchain.com/docs/tutorials/qa_chat_history/)*
+```mermaid
+flowchart TD
+    D1{"Agentic RAG loop"}
+    B2["dynamic retrieval decisions"]
+    D1 --> B2
+    B3["query reformulation"]
+    D1 --> B3
+    B4["iterative refinement"]
+    D1 --> B4
+```
 
 
 - **Multiple retrieval steps**: "Compare the environmental policies of the EU and China" requires at least two separate retrievals.
@@ -22,7 +31,16 @@ Agentic RAG addresses all of these by wrapping the retrieval process in an agent
 ## How It Works
 
 
-*Recommended visual: Comparison of naive RAG pipeline vs agentic RAG with decision points — see [LlamaIndex Agentic RAG](https://docs.llamaindex.ai/en/stable/)*
+```mermaid
+flowchart LR
+    subgraph L1["Comparison of naive RAG pipeline"]
+        LI3["Comparison of naive RAG pipeline"]
+        LI4["agentic RAG"]
+    end
+    subgraph R2["agentic RAG with decision points"]
+        RI5["decision points"]
+    end
+```
 
 ### Core Architecture
 

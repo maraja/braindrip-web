@@ -11,10 +11,23 @@ Introduced by Kojima et al. (2022), zero-shot-CoT was a surprising finding. The 
 
 The discovery has profound practical implications: it means that any practitioner, without domain expertise or time to craft examples, can improve reasoning performance on complex tasks by appending a short trigger phrase. It is the lowest-effort, highest-impact reasoning elicitation technique available.
 
-*Recommended visual: A two-stage flow diagram showing Stage 1 (original question + "Let's think step by step" trigger phrase -> model generates reasoning trace) and Stage 2 (reasoning trace + "Therefore, the answer is:" extraction prompt -> final answer), with the MultiArith accuracy improvement annotated: 17.7% direct answering to 78.7% with zero-shot-CoT.*
+```mermaid
+flowchart LR
+    S1["Let's think step by step"]
+    S2["Therefore, the answer is:"]
+    S1 --> S2
+```
 *Source: Adapted from Kojima et al., "Large Language Models are Zero-Shot Reasoners," NeurIPS 2022.*
 
-*Recommended visual: A comparison bar chart showing trigger phrase effectiveness across benchmarks, with "Let's think step by step" (highest bar), "Let's solve this problem by splitting it into steps" (comparable), "Let's think about this logically" (slightly lower), and "Think carefully before answering" (notably lower), illustrating that phrase selection matters significantly.*
+```mermaid
+flowchart LR
+    subgraph L1["Let's think step by step"]
+        LI3["(slightly lower), and"]
+    end
+    subgraph R2["(comparable),"]
+        RI4["Feature 1"]
+    end
+```
 *Source: Adapted from Kojima et al., 2022.*
 
 ## How It Works

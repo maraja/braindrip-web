@@ -21,7 +21,15 @@ This transforms the reasoning problem from "generate one good chain" (which requ
 ## How It Works
 
 
-*Recommended visual: Comparison of Chain-of-Thought (linear), Self-Consistency (parallel), and Tree-of-Thought (branching) — see [Yao et al. ToT Paper (arXiv:2305.10601)](https://arxiv.org/abs/2305.10601)*
+```mermaid
+flowchart LR
+    subgraph L1["Comparison of Chain-of-Thought (linear)"]
+        LI3["and Tree-of-Thought (branching)"]
+    end
+    subgraph R2["Self-Consistency (parallel)"]
+        RI4["Feature 1"]
+    end
+```
 
 ### The Framework
 

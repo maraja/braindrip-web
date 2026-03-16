@@ -10,7 +10,14 @@ Imagine a new employee at a company. On their first day, they can read documents
 
 Human-in-the-loop (HITL) is a design pattern where an AI agent pauses before executing certain actions and presents the proposed action to a human for approval. The human can approve, reject, or modify the action before it proceeds. This creates a safety net for actions that are dangerous, expensive, irreversible, or have external consequences that the agent cannot fully anticipate.
 
-*Recommended visual: Risk-based approval matrix showing action types (read-only, reversible write, irreversible action) on one axis and trust level on the other, with cells indicating auto-approve, light review, or strict approval — see [Amershi et al., 2019 — Guidelines for Human-AI Interaction](https://dl.acm.org/doi/10.1145/3290605.3300233)*
+```mermaid
+flowchart LR
+    S1["read-only"]
+    S2["reversible write"]
+    S3["irreversible action"]
+    S1 --> S2
+    S2 --> S3
+```
 
 The fundamental challenge of HITL design is calibration. If every action requires approval, the agent becomes an expensive autocomplete system -- the human is doing all the real work. If no actions require approval, the agent is fully autonomous and any mistake goes unchecked. The art is finding the right threshold: approving enough to catch real problems while allowing enough autonomy to provide genuine value. This threshold depends on the action's reversibility, cost, blast radius, and the current trust level established through the agent's track record.
 
@@ -28,7 +35,18 @@ When approval is needed, the agent constructs an approval request that explains 
 
 Some situations demand escalation beyond the normal approval flow. These include: actions that affect multiple systems simultaneously, actions with estimated costs above a threshold, actions outside the agent's normal operating domain, situations where the agent expresses low confidence, and actions that contradict previous instructions. Escalation may route to a more senior approver, trigger a group review, or halt the agent entirely pending human investigation.
 
-*Recommended visual: Sequence diagram showing an agent proposing a high-risk action, presenting it to a human with context and reasoning, and the human approving/rejecting/modifying — see [Horvitz, 1999 — Principles of Mixed-Initiative User Interfaces](https://dl.acm.org/doi/10.1145/302979.303030)*
+```mermaid
+flowchart LR
+    S1["an agent proposing a high-risk action"]
+    S2["presenting it"]
+    S3["a human with context"]
+    S4["reasoning"]
+    S5["the human approving/rejecting/modifying"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+```
 
 ### Progressive Autonomy
 

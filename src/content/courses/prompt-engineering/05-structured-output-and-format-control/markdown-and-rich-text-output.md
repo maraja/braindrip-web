@@ -11,10 +11,25 @@ LLMs naturally produce markdown because their training data is saturated with it
 
 Controlling markdown output matters because the format directly affects usability. A well-structured response with clear headers, concise tables, and organized lists communicates information faster than a wall of text. For applications rendering LLM output in web interfaces, consistent markdown ensures predictable rendering and a polished user experience.
 
-*Recommended visual: A before-and-after screenshot showing the same LLM response -- "Before" as a wall of unstructured prose text, and "After" with explicit markdown formatting (headers, bullet points, a table, code block) -- with annotations showing that the formatted version achieves 25-40% faster comprehension.*
+```mermaid
+flowchart LR
+    subgraph L1["headers"]
+        LI3["a table"]
+    end
+    subgraph R2["bullet points"]
+        RI4["Feature 1"]
+    end
+```
 *Source: Adapted from Nielsen, "How Users Read on the Web" (1997) and OpenAI formatting best practices (2024)*
 
-*Recommended visual: A reliability matrix showing markdown element types (headers, bullet lists, numbered lists, tables, code blocks, nested lists) across the y-axis and reliability percentage across the x-axis, with color coding from green (>95% reliable: headers, bullet lists) to yellow (80-90%: tables with 3-4 columns) to red (<80%: tables with 6+ columns, nested lists beyond 3 levels).*
+```mermaid
+flowchart LR
+    S1["with color coding from green"]
+    S2["to yellow"]
+    S3["to red"]
+    S1 --> S2
+    S2 --> S3
+```
 *Source: Derived from empirical observations across GPT-4, Claude 3.5, and Gemini model families*
 
 ## How It Works

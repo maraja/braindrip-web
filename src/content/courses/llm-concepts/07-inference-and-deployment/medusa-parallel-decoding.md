@@ -8,7 +8,12 @@
 
 Imagine an octopus writing with multiple arms simultaneously, each arm drafting the next few words in parallel rather than one word at a time. That is essentially what Medusa does to autoregressive language model inference. Standard LLM decoding generates one token per forward pass, leaving most of the GPU's compute capacity underutilized during the memory-bound decode phase. Medusa breaks this bottleneck by predicting several future tokens at once.
 
-*Recommended visual: Medusa architecture diagram showing multiple prediction heads attached to the base model's final hidden state for parallel token generation — see [FasterDecoding](https://github.com/FasterDecoding/Medusa)*
+```mermaid
+flowchart LR
+    S1["Medusa architecture diagram"]
+    S2["multiple prediction heads attached to the "]
+    S1 --> S2
+```
 *See detailed architecture and tree verification diagrams at: [Medusa GitHub Repository](https://github.com/FasterDecoding/Medusa)*
 
 
@@ -19,7 +24,12 @@ This approach sits in the broader family of parallel decoding methods alongside 
 ## How It Works
 
 
-*Recommended visual: Tree-structured verification diagram showing how candidate tokens from Medusa heads form a tree verified in a single forward pass — see [Medusa Project Page](https://sites.google.com/view/medusa-llm)*
+```mermaid
+flowchart LR
+    S1["Tree-structured verification diagram"]
+    S2["how candidate tokens from Medusa heads for"]
+    S1 --> S2
+```
 
 ### Multi-Head Architecture
 

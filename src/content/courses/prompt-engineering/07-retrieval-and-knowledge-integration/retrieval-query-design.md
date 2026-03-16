@@ -11,7 +11,16 @@ In a RAG system, the user's natural language question is converted into a vector
 
 Retrieval query design bridges this gap through techniques like query rewriting, query decomposition, and hypothetical document embeddings. These transformations can improve retrieval recall by 20-40% and end-to-end answer quality by 15-25% compared to using the raw user query directly.
 
-*Recommended visual: A flowchart showing the query transformation pipeline -- raw user query branching into four parallel paths (rewriting, decomposition, HyDE, multi-query), each producing refined queries that feed into retrieval, with results merging through reciprocal rank fusion before reaching the LLM.*
+```mermaid
+flowchart LR
+    S1["rewriting"]
+    S2["decomposition"]
+    S3["HyDE"]
+    S4["multi-query"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
 *Source: Adapted from Gao et al., "Precise Zero-Shot Dense Retrieval without Relevance Labels," 2023, and Ma et al., "Query Rewriting for Retrieval-Augmented Large Language Models," 2023.*
 
 ![Memory mechanisms in LLM-based agent systems showing how different types of memory support retrieval and reasoning](https://lilianweng.github.io/posts/2023-06-23-agent/memory.png)

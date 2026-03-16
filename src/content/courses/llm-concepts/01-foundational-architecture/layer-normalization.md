@@ -8,7 +8,15 @@
 
 Imagine an orchestra where each musician plays at a wildly different volume -- some whisper, others blast. Before a conductor can give useful feedback ("play louder," "play softer"), they need everyone at a comparable baseline. Layer normalization does this for neural network activations: it normalizes them to a consistent scale so that each layer receives well-behaved inputs, regardless of what happened in previous layers.
 
-*Recommended visual: Comparison of Pre-Layer Normalization vs Post-Layer Normalization in Transformer blocks — see [Papers With Code – Pre-Layer Normalization](https://paperswithcode.com/method/pre-layer-normalization)*
+```mermaid
+flowchart LR
+    subgraph L1["Comparison of Pre-Layer Normalization"]
+        LI3["Comparison of Pre-Layer Normalization"]
+    end
+    subgraph R2["Post-Layer Normalization in Transformer"]
+        RI4["Feature 1"]
+    end
+```
 
 
 In deep networks, the distribution of activations at each layer can shift dramatically during training (a phenomenon sometimes called "internal covariate shift," though this terminology is debated). Without normalization, these shifts force the model to constantly readjust, making training slow and unstable. Layer normalization ensures that each layer receives inputs with a stable distribution, allowing the model to train effectively even with dozens or hundreds of layers.
@@ -16,7 +24,16 @@ In deep networks, the distribution of activations at each layer can shift dramat
 ## How It Works
 
 
-*Recommended visual: Layer Norm vs Batch Norm comparison showing normalization axes — see [Lei Mao's Layer Normalization Post](https://leimao.github.io/blog/Layer-Normalization/)*
+```mermaid
+flowchart LR
+    subgraph L1["Layer Norm"]
+        LI3["Layer Norm"]
+        LI4["Batch Norm comparison"]
+    end
+    subgraph R2["Batch Norm comparison showing"]
+        RI5["normalization axes"]
+    end
+```
 
 ### The LayerNorm Formula
 

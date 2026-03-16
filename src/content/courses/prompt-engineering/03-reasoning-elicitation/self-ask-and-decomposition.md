@@ -11,7 +11,20 @@ Introduced by Press et al. (2022), self-ask was designed to improve performance 
 
 The technique is particularly powerful because it produces an auditable reasoning trace. Each sub-question and sub-answer is visible, making it easy to identify where reasoning went wrong. This transparency is valuable for debugging, for building trust in production systems, and for combining with external tools (such as search engines that can answer factual sub-questions).
 
-*Recommended visual: A decomposition flow diagram showing a multi-hop question at the top ("What country is the birthplace of the director of Jaws?") breaking into three sequential sub-question boxes -- "Follow-up: Who directed Jaws?" -> "Intermediate answer: Steven Spielberg" -> "Follow-up: Where was Spielberg born?" -> "Intermediate answer: Cincinnati, Ohio" -> "Follow-up: What country is Cincinnati in?" -> "Final answer: United States" -- illustrating the explicit decomposition-and-synthesis pattern.*
+```mermaid
+flowchart LR
+    S1["Follow-up: Who directed Jaws?"]
+    S2["Intermediate answer: Steven Spielberg"]
+    S3["Follow-up: Where was Spielberg born?"]
+    S4["Intermediate answer: Cincinnati, Ohio"]
+    S5["Follow-up: What country is Cincinnati in?"]
+    S6["Final answer: United States"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+    S5 --> S6
+```
 *Source: Adapted from Press et al., "Measuring and Narrowing the Compositionality Gap in Language Models," EMNLP Findings 2023.*
 
 ![ReAct pattern showing interleaved reasoning and acting steps](https://lilianweng.github.io/posts/2023-06-23-agent/react.png)

@@ -8,7 +8,12 @@
 
 Imagine a law firm where every legal brief begins with the same 20-page boilerplate: firm name, jurisdiction, standard disclaimers, and regulatory citations. Without prefix caching, every attorney drafting a brief retyping those 20 pages from scratch before adding their unique case arguments. With prefix caching, the firm keeps a master copy of the boilerplate already formatted and typeset. Each new brief starts from page 21, and the attorney only writes the novel content. The time and cost savings are enormous when thousands of briefs are produced daily.
 
-*Recommended visual: Prefix caching showing shared system prompt KV cache reused across multiple requests — see [SGLang RadixAttention Paper (arXiv:2312.07104)](https://arxiv.org/abs/2312.07104)*
+```mermaid
+flowchart LR
+    S1["Prefix caching"]
+    S2["shared system prompt KV cache reused acros"]
+    S1 --> S2
+```
 
 
 In LLM serving, the "boilerplate" is the system prompt, few-shot examples, or RAG-retrieved documents that appear identically at the beginning of many requests. During the prefill phase, the model processes these input tokens to compute key-value vectors for every attention layer. For a 4,000-token system prompt on a 70B model, this prefill computation is substantial -- potentially hundreds of milliseconds of GPU time. When thousands of requests per minute share the same system prompt, the system recomputes identical KV states over and over again.
@@ -18,7 +23,12 @@ Prefix caching eliminates this redundancy. The first request computes the KV cac
 ## How It Works
 
 
-*Recommended visual: Radix tree data structure indexing KV cache blocks by token content for automatic prefix matching — see [SGLang Documentation](https://sgl-project.github.io/)*
+```mermaid
+flowchart LR
+    S1["Radix tree data structure indexing KV cach"]
+    S2["by token content for automatic prefix matc"]
+    S1 --> S2
+```
 
 ### Exact Token Matching
 

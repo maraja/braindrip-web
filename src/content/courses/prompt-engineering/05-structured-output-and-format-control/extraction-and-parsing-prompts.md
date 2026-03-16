@@ -11,7 +11,22 @@ Extraction is fundamentally different from generation. In generation, the model 
 
 Named Entity Recognition (NER), field extraction from forms and documents, data parsing from emails, and information extraction from scientific papers are all extraction tasks. The common thread is: input is unstructured text, output is structured data with defined fields, and every output value should come from the input (or be marked as absent).
 
-*Recommended visual: A pipeline diagram showing the extraction workflow: "Unstructured document" -> "LLM with schema prompt" -> "Raw JSON output" -> "Structural validation (Pydantic)" -> "Source grounding check (fuzzy match against input)" -> "Cross-field consistency check" -> "Validated structured data" or "Low-confidence: human review queue," with pass/fail gates at each validation step.*
+```mermaid
+flowchart LR
+    S1["Unstructured document"]
+    S2["LLM with schema prompt"]
+    S3["Raw JSON output"]
+    S4["Structural validation (Pydantic)"]
+    S5["-"]
+    S6["-"]
+    S7["or"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+    S5 --> S6
+    S6 --> S7
+```
 *Source: Adapted from Jason Liu, "Instructor" (2023) and Li et al., "Evaluating ChatGPT's Information Extraction Capabilities" (2023)*
 
 ![Structured approaches to prompt engineering showing systematic decomposition of complex tasks](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/tree-of-thoughts.png)

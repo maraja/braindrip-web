@@ -12,7 +12,14 @@ Hybrid search applies this multi-strategy approach to AI agent retrieval. Semant
 
 By combining these methods and intelligently fusing their results, hybrid search provides robust retrieval that handles the full spectrum of query types. The agent either routes queries to the most appropriate strategy or runs multiple strategies in parallel and merges the results, achieving higher recall and precision than any single method alone.
 
-*Recommended visual: Three-lane diagram showing a query going through semantic search (embeddings), keyword search (BM25), and structured query (SQL) in parallel, with results merging via Reciprocal Rank Fusion into a unified ranked list — see [Luan et al., 2021 — Sparse, Dense, and Attentional Representations for Text Retrieval](https://arxiv.org/abs/2005.00181)*
+```mermaid
+flowchart LR
+    S1["query going through semantic search (embed"]
+    S2["keyword search (BM25)"]
+    S3["and structured query (SQL)"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ## How It Works
 
@@ -28,7 +35,15 @@ BM25 is the gold standard for keyword-based retrieval. It scores documents based
 
 For data with known schemas -- relational databases, knowledge graphs, metadata stores -- structured queries (SQL, Cypher, SPARQL) provide precise, deterministic retrieval. "Show me all orders from customer X in the last 30 days with total > $1000" is trivially expressed in SQL but nearly impossible to handle well with either semantic or keyword search. Agents translate natural language into structured queries when the target data lives in a database.
 
-*Recommended visual: Venn diagram comparing what semantic search finds vs keyword search finds vs structured queries, highlighting the complementary coverage each provides — see [Thakur et al., 2021 — BEIR Benchmark](https://arxiv.org/abs/2104.08663)*
+```mermaid
+flowchart LR
+    subgraph L1["what semantic search finds"]
+        LI3["Venn diagram comparing what semantic searc"]
+    end
+    subgraph R2["keyword search finds vs structured"]
+        RI4["Feature 1"]
+    end
+```
 
 ### Fusion and Ranking
 

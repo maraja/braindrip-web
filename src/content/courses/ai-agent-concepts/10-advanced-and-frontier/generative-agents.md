@@ -10,7 +10,16 @@ Imagine populating a small town with 25 characters, each with a name, a job, rel
 
 Generative agents differ from task-oriented agents in a fundamental way. A task agent receives an instruction ("book a flight"), executes it, and terminates. A generative agent has no specific task -- it exists continuously, making decisions about what to do based on its personality, current situation, memories, and goals. It is more like a simulation of a person than a tool executing commands. The agent does not optimize for task completion; it optimizes for behaving consistently with its defined character.
 
-*Recommended visual: Architecture diagram of a generative agent showing the memory stream (timestamped observations), retrieval system (recency + importance + relevance), reflection module (generating high-level insights), and planning module (daily schedule with reactive replanning) — see [Park et al., 2023 — Generative Agents](https://arxiv.org/abs/2304.03442)*
+```mermaid
+flowchart TD
+    C1["tive agent showing the memory stream (time"]
+    C2["retrieval system"]
+    C3["reflection module"]
+    C4["and planning module"]
+    C1 --> C2
+    C2 --> C3
+    C3 --> C4
+```
 
 The applications span entertainment (believable NPCs in games), social science (simulating population-level behavior), product research (how would users react to a new feature?), education (interactive historical figures for students to converse with), and therapy training (simulated patients for counselors to practice with). Anywhere you need believable, consistent, autonomous human-like behavior, generative agents provide a foundation.
 
@@ -22,7 +31,16 @@ The memory stream is the generative agent's autobiography. Every experience -- o
 ### Memory Retrieval
 When the agent needs to make a decision or respond in a conversation, it retrieves relevant memories from the stream. Retrieval uses three factors: **Recency** (recent memories are weighted higher using an exponential decay function), **Importance** (high-importance memories are weighted higher regardless of age), and **Relevance** (memories semantically similar to the current context, measured by embedding similarity). The weighted combination of these three factors produces a ranked list of memories. The top-K memories are included in the agent's prompt, providing contextual information for the current decision.
 
-*Recommended visual: The Smallville simulation map showing 25 agents moving through a virtual town with locations (homes, shops, park), with speech bubbles showing emergent conversations and daily routines — see [Park et al., 2023 — Generative Agents](https://arxiv.org/abs/2304.03442)*
+```mermaid
+flowchart TD
+    D1{"The Smallville simulation map"}
+    B2["homes"]
+    D1 --> B2
+    B3["shops"]
+    D1 --> B3
+    B4["park"]
+    D1 --> B4
+```
 
 ### Reflection
 Periodically (triggered when the sum of recent memory importance scores exceeds a threshold), the agent reflects on its experiences. Reflection generates higher-level abstractions from specific memories. The agent asks itself: "Given my recent experiences, what are the 3 most salient high-level questions I can answer?" Then it retrieves relevant memories and generates insight statements. For example, from memories of multiple conversations about art, an agent might reflect: "I am increasingly interested in digital art and should explore classes at the community center." These reflection insights are stored back in the memory stream and can be retrieved like any other memory, creating a hierarchy of abstraction.

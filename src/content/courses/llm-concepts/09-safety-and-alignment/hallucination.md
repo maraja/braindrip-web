@@ -8,7 +8,15 @@
 
 Imagine a student who has read thousands of textbooks but never checked a single fact against the real world. When asked a question, they don't retrieve an answer from a database of verified truths -- they construct a response that *sounds like* what the right answer would sound like, based on the patterns they absorbed during study. Most of the time this works remarkably well. But sometimes the student confidently fabricates a citation that doesn't exist, invents a historical event that never happened, or subtly distorts a real fact into something slightly wrong.
 
-*Recommended visual: Types of hallucination: intrinsic (contradicts source) vs extrinsic (unverifiable) — see [Survey of Hallucination in NLG (arXiv:2202.03629)](https://arxiv.org/abs/2202.03629)*
+```mermaid
+flowchart LR
+    subgraph L1["cination: intrinsic (contradicts source)"]
+        LI3["intrinsic (contradicts source)"]
+    end
+    subgraph R2["extrinsic (unverifiable)"]
+        RI4["Feature 1"]
+    end
+```
 
 
 This is hallucination in large language models. The term refers to any generated output that is not grounded in the model's training data or provided context -- content that is fluent, confident, and entirely fabricated. It is not a bug in the traditional software sense; it is an emergent consequence of how these models fundamentally work.
@@ -18,7 +26,14 @@ The complementary concept is **grounding**: techniques that anchor a model's out
 ## How It Works
 
 
-*Recommended visual: Hallucination mitigation strategies: retrieval augmentation, self-consistency, citation generation — see [Hugging Face Blog](https://huggingface.co/blog)*
+```mermaid
+flowchart LR
+    S1["Hallucination mitigation strategies: retri"]
+    S2["self-consistency"]
+    S3["citation generation"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ### Why Hallucination Happens
 

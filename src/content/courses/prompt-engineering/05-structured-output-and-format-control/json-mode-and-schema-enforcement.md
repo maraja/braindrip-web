@@ -11,10 +11,32 @@ When you ask an LLM to "return JSON," you are making a request that the model ma
 
 This distinction matters enormously in production systems. A downstream parser does not care about helpful commentary — it needs predictable, machine-readable data. Without enforcement, prompt-only approaches to JSON generation fail 5-15% of the time depending on output complexity, model, and temperature. That failure rate is unacceptable for any system processing thousands of requests daily.
 
-*Recommended visual: A three-lane flow diagram comparing three approaches to JSON output -- "Prompt-Only" (LLM -> raw text -> parser -> 5-15% failure), "JSON Mode" (LLM with token masking -> valid JSON syntax -> parser -> ~0% syntax failure), and "Schema Enforcement" (LLM with grammar constraint -> valid JSON matching schema -> typed object -> 0% structural failure) -- with failure rate annotations on each path.*
+```mermaid
+flowchart LR
+    subgraph L1["Prompt-Only"]
+        LI3["Schema Enforcement"]
+    end
+    subgraph R2["JSON Mode"]
+        RI4["Feature 1"]
+    end
+```
 *Source: Adapted from Willard & Louf, "Efficient Guided Generation for Large Language Models" (2023)*
 
-*Recommended visual: A diagram showing the Pydantic validation retry loop: "LLM generates JSON" -> "Pydantic validates" -> if valid, "Return typed object"; if invalid, "Error message fed back to LLM" -> "LLM corrects output" -> "Pydantic validates again," with annotations showing 1-2 retries typically needed and 2-5 second latency per retry.*
+```mermaid
+flowchart TD
+    L1["LLM generates JSON"]
+    L2["Pydantic validates"]
+    L3["Return typed object"]
+    L4["Error message fed back to LLM"]
+    L5["LLM corrects output"]
+    L6["Pydantic validates again,"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 --> L5
+    L5 --> L6
+    L6 -.->|"repeat"| L1
+```
 *Source: Adapted from Jason Liu, "Instructor: Structured LLM Outputs" (2023)*
 
 ## How It Works

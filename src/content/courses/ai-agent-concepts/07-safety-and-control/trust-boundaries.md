@@ -12,7 +12,12 @@ In an AI agent system, information flows in from many sources: system instructio
 
 Trust boundaries formalize these different trust levels and enforce policies based on them. High-trust sources (system instructions) can define the agent's behavior, goals, and constraints. Medium-trust sources (authenticated user input) can provide task specifications within those constraints. Low-trust sources (retrieved documents, web content) can provide information but should not influence the agent's behavior or override higher-trust instructions. This hierarchy prevents the most common attack patterns and ensures the agent's behavior is governed by its most trustworthy inputs.
 
-*Recommended visual: Concentric trust rings diagram — system instructions at the core (highest trust), then operator config, authenticated user input, tool outputs, retrieved documents, and external content at the outermost ring (lowest trust) — with policies becoming stricter as you move outward — see [Wallace et al., 2024 — The Instruction Hierarchy](https://arxiv.org/abs/2404.13208)*
+```mermaid
+flowchart LR
+    S1["system instructions at the core (highest t"]
+    S2["ternal content at the outermost ring (lowe"]
+    S1 --> S2
+```
 
 ## How It Works
 
@@ -27,7 +32,12 @@ Every data source entering the agent system is assigned a trust level. The stand
 5. **Retrieved documents**: Content from the knowledge base. Generally reliable but may be outdated, incorrect, or compromised.
 6. **External content** (lowest): Web pages, emails, user-uploaded files, and any content from uncontrolled sources. Assumed to potentially contain adversarial content.
 
-*Recommended visual: Data flow diagram showing information from different trust levels entering the agent's context with different processing — high-trust included directly, medium-trust delimited, low-trust sanitized/summarized before inclusion — see [Greshake et al., 2023 — Indirect Prompt Injection](https://arxiv.org/abs/2302.12173)*
+```mermaid
+flowchart LR
+    S1["medium-trust delimited"]
+    S2["low-trust sanitized/summarized before incl"]
+    S1 --> S2
+```
 
 ### Trust-Aware Processing
 

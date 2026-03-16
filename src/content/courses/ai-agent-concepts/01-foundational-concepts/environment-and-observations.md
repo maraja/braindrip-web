@@ -12,7 +12,16 @@ An agent's environment is the sum of all information sources it can access and a
 
 Observations are the data the agent receives from its environment at each step of the agent loop. Every tool call produces an observation — a file's contents, a command's output, an API's response, an error message. These observations are appended to the conversation history and fed back to the LLM, forming the basis for the next reasoning step. How observations are processed and presented to the LLM is a critical and often underappreciated aspect of agent design.
 
-*Recommended visual: A diagram showing the agent at the center with arrows pointing inward from various environment sources (file system, APIs, user messages, web content), each labeled with the observation type it produces — see [Yang et al., "SWE-agent" (2024)](https://arxiv.org/abs/2405.15793)*
+```mermaid
+flowchart LR
+    S1["file system"]
+    S2["APIs"]
+    S3["user messages"]
+    S4["web content"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
 
 ## How It Works
 
@@ -34,7 +43,18 @@ Agents encounter several distinct observation types, each requiring different pr
 
 ### Observation Processing Pipeline
 
-*Recommended visual: A pipeline diagram showing raw tool output being processed through size management, format normalization, error enrichment, and relevance filtering before entering the LLM context — see [Sumers et al., "Cognitive Architectures for Language Agents" (2023)](https://arxiv.org/abs/2309.02427)*
+```mermaid
+flowchart LR
+    S1["raw tool output being processed"]
+    S2["size management"]
+    S3["format normalization"]
+    S4["error enrichment"]
+    S5["relevance filtering before entering the LL"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+```
 
 Raw observations from tools often need processing before reaching the LLM:
 

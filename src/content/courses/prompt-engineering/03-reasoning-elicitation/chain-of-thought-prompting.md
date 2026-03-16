@@ -11,10 +11,27 @@ The technique was introduced by Wei et al. (2022) at Google Brain and demonstrat
 
 Chain-of-thought prompting is one of the most important discoveries in prompt engineering because it revealed that LLMs already possess latent reasoning capabilities that are simply not activated by direct question-answer prompting. The reasoning was always there; CoT gives the model the token budget and structural pattern to express it.
 
-*Recommended visual: A side-by-side comparison showing standard prompting (Question -> Answer) versus chain-of-thought prompting (Question -> Step 1 -> Step 2 -> Step 3 -> Answer), with accuracy scores annotated: 17.7% for standard few-shot vs. 58% for CoT on GSM8K with PaLM 540B.*
+```mermaid
+flowchart LR
+    subgraph L1["standard prompting (Question - Answer)"]
+        LI3["Step 1"]
+        LI4["Step 2"]
+    end
+    subgraph R2["chain-of-thought prompting (Question -"]
+        RI5["Step 3"]
+    end
+```
 *Source: Adapted from Wei et al., "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models," NeurIPS 2022.*
 
-*Recommended visual: A scaling curve showing CoT improvement (y-axis: accuracy gain from CoT vs. standard prompting) versus model size (x-axis: 1B to 540B parameters, log scale), with a threshold line around 60B parameters below which CoT provides negligible or negative benefit, and an arrow indicating the region where CoT gains become substantial.*
+```mermaid
+flowchart LR
+    subgraph L1["rovement (y-axis: accuracy gain from CoT"]
+        LI3["caling curve showing CoT improvement"]
+    end
+    subgraph R2["standard prompting) versus model size"]
+        RI4["Feature 1"]
+    end
+```
 *Source: Adapted from Wei et al., 2022, and Suzgun et al., "Challenging BIG-Bench Tasks and Whether Chain-of-Thought Can Solve Them," 2022.*
 
 ## How It Works

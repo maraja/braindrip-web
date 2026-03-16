@@ -10,7 +10,15 @@ Imagine grading a student's essay. A math teacher might use binary grading (corr
 
 Defining "done" for an agent task is surprisingly difficult. When is a coding task complete -- when the code compiles, when it passes tests, when it follows style guidelines, or when it solves the problem optimally? When is a research task complete -- when it finds one relevant source, when it synthesizes multiple sources, or when it provides a nuanced analysis? When is a customer service interaction complete -- when the customer's question is answered, when the underlying issue is resolved, or when the customer is satisfied?
 
-*Recommended visual: Three-panel comparison showing binary metrics (pass/fail bar chart), graded metrics (radar chart with multiple quality dimensions), and comparative metrics (ELO-style ranking), illustrating what each paradigm reveals — see [Jimenez et al., 2024 — SWE-bench](https://arxiv.org/abs/2310.06770)*
+```mermaid
+flowchart LR
+    subgraph L1["el comparison showing binary metrics (pass"]
+        LI3["and comparative metrics (ELO-style ranking"]
+    end
+    subgraph R2["graded metrics"]
+        RI4["Feature 1"]
+    end
+```
 
 Task completion metrics formalize these judgments into measurable, reproducible scores. The three primary paradigms -- binary, graded, and comparative -- each trade off simplicity against informativeness. The choice of metric shapes what gets optimized: binary metrics push for completion at any quality; graded metrics push for quality across dimensions; comparative metrics push for improvement relative to alternatives.
 
@@ -28,7 +36,14 @@ Graded metrics assign scores on a continuous or multi-level scale. A research ta
 
 Comparative metrics evaluate the agent against a reference: another agent, a human, or a previous version. Instead of "how good is this output?", the question is "is this better than the baseline?" ELO ratings, win rates, and preference scores are comparative metrics. They are particularly useful for tasks where absolute quality is hard to define (creative writing, open-ended research) but relative quality is assessable. The main disadvantage is that scores are relative -- a win rate against a weak baseline is not informative.
 
-*Recommended visual: Table showing domain-specific metrics — coding (test pass rate, code quality), research (factual accuracy, source quality), customer service (resolution rate, satisfaction) — with example scoring rubrics — see [Zhou et al., 2024 — WebArena](https://arxiv.org/abs/2307.13854)*
+```mermaid
+flowchart LR
+    S1["coding (test pass rate, code quality)"]
+    S2["research"]
+    S3["customer service (resolution rate, satisfa"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ### Domain-Specific Metrics
 

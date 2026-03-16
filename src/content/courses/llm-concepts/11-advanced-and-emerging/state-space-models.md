@@ -8,7 +8,12 @@
 
 Imagine reading a book. A Transformer re-reads every previous page each time it encounters a new word -- that is what quadratic attention does. A State Space Model, by contrast, reads like a human: it maintains a running mental summary (the "state") and updates it with each new word, never needing to look back at the raw text.
 
-*Recommended visual: State space model (S4) diagram showing continuous-time state evolution discretized for sequence modeling — see [Gu et al. S4 Paper (arXiv:2111.00396)](https://arxiv.org/abs/2111.00396)*
+```mermaid
+flowchart LR
+    S1["State space model (S4) diagram"]
+    S2["continuous-time state evolution discretize"]
+    S1 --> S2
+```
 
 
 State Space Models (SSMs) are a class of sequence models rooted in control theory. They model a system's behavior through a hidden state that evolves over time according to learned dynamics. The key insight is that a continuous-time linear system -- defined by matrices A, B, C, and D -- can be discretized and applied to sequential data like text, producing outputs in linear time relative to sequence length.
@@ -18,7 +23,12 @@ Mamba, introduced by Albert Gu and Tri Dao in late 2023, is the breakthrough SSM
 ## How It Works
 
 
-*Recommended visual: Mamba selective state space showing input-dependent selection mechanism replacing fixed dynamics — see [Gu and Dao Mamba Paper (arXiv:2312.00752)](https://arxiv.org/abs/2312.00752)*
+```mermaid
+flowchart LR
+    S1["Mamba selective state space"]
+    S2["input-dependent selection mechanism replac"]
+    S1 --> S2
+```
 
 ### The Classical SSM Framework
 

@@ -15,7 +15,22 @@ The art of few-shot prompting lies not in the technique itself — it is straigh
 ![GPT-3 few-shot learning performance across model scales](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/gpt3-language-model.png)
 *Source: Lilian Weng, "Prompt Engineering," lilianweng.github.io, 2023. Demonstrates how few-shot performance scales with model size.*
 
-*Recommended visual: A flowchart for few-shot example selection showing decision nodes: "Cover all output categories?" -> "Include boundary cases?" -> "Diverse input types?" -> "Consistent formatting?" with "Yes" paths leading to a green "Ready to deploy" node and "No" paths looping back to "Add/revise examples."*
+```mermaid
+flowchart TD
+    D1{"flowchart for few-shot example selection"}
+    B2["Cover all output categories?"]
+    D1 --> B2
+    B3["Include boundary cases?"]
+    D1 --> B3
+    B4["Diverse input types?"]
+    D1 --> B4
+    B5["Consistent formatting?"]
+    D1 --> B5
+    B6["Yes"]
+    D1 --> B6
+    B7["Ready to deploy"]
+    D1 --> B7
+```
 *Source: Adapted from Liu et al., "What Makes Good In-Context Examples for GPT-3?" 2022, and Min et al., "Rethinking the Role of Demonstrations," 2022.*
 
 ## How It Works

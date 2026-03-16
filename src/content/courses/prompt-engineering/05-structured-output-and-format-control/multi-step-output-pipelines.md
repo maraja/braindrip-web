@@ -14,7 +14,15 @@ This decomposition is powerful because LLMs are significantly more reliable on f
 ![Agent system overview showing multi-step pipeline architecture with planning, execution, and tool use](https://lilianweng.github.io/posts/2023-06-23-agent/agent-overview.png)
 *Source: Lilian Weng, "LLM Powered Autonomous Agents," lilianweng.github.io (2023) -- illustrates the multi-step pipeline concept where tasks are decomposed into discrete stages with structured handoffs between components*
 
-*Recommended visual: A four-pattern comparison showing the four pipeline architecture types side by side: "Linear" (Step 1 -> Step 2 -> Step 3), "Branching" (Step 1 -> classification -> diverging paths), "Fan-out/Fan-in" (Step 1 -> parallel branches -> aggregation), and "Iterative Refinement" (Step -> evaluate -> loop back or proceed), each with typical use cases annotated below.*
+```mermaid
+flowchart LR
+    subgraph L1["Linear"]
+        LI3["Fan-out/Fan-in"]
+    end
+    subgraph R2["Branching"]
+        RI4["Feature 1"]
+    end
+```
 *Source: Adapted from Khattab et al., "DSPy" (2023) and Wu et al., "AutoGen" (2023)*
 
 ## How It Works

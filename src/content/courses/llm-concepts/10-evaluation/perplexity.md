@@ -8,7 +8,12 @@
 
 Imagine you are trying to guess the next word in a sentence. If someone says "The cat sat on the ___," you would probably guess "mat" or "floor" with high confidence. You would not be very surprised when the answer is revealed. But if the next word turned out to be "cryptocurrency," you would be extremely surprised.
 
-*Recommended visual: Perplexity as average branching factor — a perplexity of 30 means the model is as uncertain as choosing uniformly among 30 options — see [Hugging Face Perplexity Documentation](https://huggingface.co/docs/transformers/perplexity)*
+```mermaid
+flowchart LR
+    S1["Perplexity as average branching factor"]
+    S2["ity of 30 means the model is as uncertain "]
+    S1 --> S2
+```
 
 
 Perplexity quantifies exactly this notion of surprise, averaged over an entire text. A language model with low perplexity is one that is rarely caught off guard -- it assigns high probability to the words that actually appear. A model with high perplexity is frequently surprised, meaning it has not learned the patterns of language very well.
@@ -19,7 +24,14 @@ Think of it like a weather forecaster. A good forecaster who says "90% chance of
 
 Perplexity is defined as the exponentiated average cross-entropy of a model over a sequence of tokens. Given a sequence of N tokens (t_1, t_2, ..., t_N), the perplexity is:
 
-*Recommended visual: Perplexity curves during training showing how model quality improves with more training tokens — see [Chinchilla Paper (arXiv:2203.15556)](https://arxiv.org/abs/2203.15556)*
+```mermaid
+flowchart LR
+    S1["Perplexity curves during training"]
+    S2["how model quality improves"]
+    S3["more training tokens"]
+    S1 --> S2
+    S2 --> S3
+```
 
 
 ```

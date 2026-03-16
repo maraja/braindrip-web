@@ -8,7 +8,16 @@
 
 Imagine you are planning to build the world's tallest skyscraper. Before committing billions of dollars, you build a series of smaller buildings -- 5 stories, 10 stories, 50 stories -- and carefully measure how construction cost, stability, and usable space scale with height. You discover that these relationships follow clean, predictable mathematical curves. Using these curves, you can forecast the cost and characteristics of a 200-story building without building it first.
 
-*Recommended visual: Log-log plot of language model loss vs. compute (FLOPs) showing the smooth power-law relationship, where performance improves as a straight line on the log-log scale across many orders of magnitude — see [Wikimedia Commons -- Scaling Laws for Neural Language Models](https://commons.wikimedia.org/wiki/File:Scaling_laws_-_loss_vs_compute.svg)*
+```mermaid
+flowchart LR
+    subgraph L1["Log-log plot of language model loss"]
+        LI3["Log-log plot of language model loss"]
+        LI4["compute (FLOPs)"]
+    end
+    subgraph R2["compute (FLOPs) showing the smooth"]
+        RI5["the smooth power-law relationship,"]
+    end
+```
 
 
 Scaling laws for LLMs work the same way. By training a series of small, medium, and large models and plotting their performance, researchers discovered that **loss decreases as a smooth power law** with respect to three variables: the number of model parameters ($N$), the amount of training data ($D$), and the total training compute ($C$). These relationships are remarkably consistent across orders of magnitude, allowing teams to make informed decisions about how to allocate billion-dollar compute budgets.
@@ -75,7 +84,14 @@ The implication was explosive: **most existing models were significantly undertr
 
 The total training compute (in FLOPs) is approximately:
 
-*Recommended visual: Power law scaling curves showing test loss decreasing predictably with compute, data, and parameters — see [Kaplan et al. Scaling Laws Paper (arXiv:2001.08361)](https://arxiv.org/abs/2001.08361)*
+```mermaid
+flowchart LR
+    S1["test loss decreasing predictably with comp"]
+    S2["data"]
+    S3["parameters"]
+    S1 --> S2
+    S2 --> S3
+```
 
 
 $$C \approx 6 \times N \times D$$

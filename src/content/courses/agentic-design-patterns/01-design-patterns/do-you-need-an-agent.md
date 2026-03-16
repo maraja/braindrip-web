@@ -55,7 +55,15 @@ Score your problem on these four dimensions (1-5 each):
 - **9-13 total**: Use a routed workflow or coded workflow with tools.
 - **14-20 total**: An agent is justified.
 
-*Recommended visual: For a detailed visual of the ReAct agent loop that drives most agent behavior, see Yao et al.'s [ReAct paper (ICLR 2023)](https://arxiv.org/abs/2210.03629) -- understanding this loop helps clarify when it adds value vs. overhead.*
+```mermaid
+flowchart LR
+    subgraph L1["is loop helps clarify when it adds value"]
+        LI3["ICLR 2023"]
+    end
+    subgraph R2["overhead."]
+        RI4["Feature 1"]
+    end
+```
 
 ### Cost Reality Check
 

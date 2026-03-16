@@ -8,7 +8,14 @@
 
 Imagine you are a teacher who needs to grade 10,000 essays. You cannot read them all yourself, so you train a senior teaching assistant -- someone who is very good but not infallible -- to grade them on your behalf. You give the TA a detailed rubric, calibrate their grading on a sample you scored yourself, and then let them handle the volume. This is essentially what LLM-as-a-Judge does: it uses a strong, capable model (the "judge") to evaluate the outputs of other models (the "examinees").
 
-*Recommended visual: LLM-as-Judge pipeline showing strong model evaluating outputs of other models with rubric-based scoring — see [Zheng et al. MT-Bench Paper (arXiv:2306.05685)](https://arxiv.org/abs/2306.05685)*
+```mermaid
+flowchart LR
+    S1["LLM-as-Judge pipeline"]
+    S2["strong model evaluating outputs of other m"]
+    S3["rubric-based scoring"]
+    S1 --> S2
+    S2 --> S3
+```
 
 
 The approach emerged from a practical reality. Human evaluation is the gold standard for assessing language model quality, but it is painfully slow and expensive. Evaluating a single model on a reasonably sized benchmark might cost $10,000-$50,000 in human annotator time and take weeks. An LLM judge can do the same evaluation in hours for $20-$100. This 500x to 5,000x cost reduction has made LLM-as-a-Judge the default evaluation method for rapid iteration during model development.
@@ -16,7 +23,14 @@ The approach emerged from a practical reality. Human evaluation is the gold stan
 ## How It Works
 
 
-*Recommended visual: Known biases in LLM judges: position bias, verbosity bias, self-enhancement bias — see [MT-Bench Paper](https://arxiv.org/abs/2306.05685)*
+```mermaid
+flowchart LR
+    S1["Known biases in LLM judges: position bias"]
+    S2["verbosity bias"]
+    S3["self-enhancement bias"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ### Evaluation Paradigms
 

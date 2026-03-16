@@ -19,7 +19,12 @@ Instruction tuning is a specific and hugely influential form of SFT where the tr
 ## How It Works
 
 
-*Recommended visual: SFT training on instruction-response pairs showing how a base model becomes an instruction-following assistant — see [InstructGPT Paper (arXiv:2203.02155)](https://arxiv.org/abs/2203.02155)*
+```mermaid
+flowchart LR
+    S1["SFT training on instruction-response pairs"]
+    S2["how a base model becomes an instruction-fo"]
+    S1 --> S2
+```
 
 ### The Basic Pipeline
 

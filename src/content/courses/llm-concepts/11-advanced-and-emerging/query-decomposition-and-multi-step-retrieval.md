@@ -8,7 +8,14 @@
 
 Most real-world questions are not simple. "Compare the environmental policies of the EU and China in terms of carbon pricing, renewable energy targets, and enforcement mechanisms" requires at least six separate pieces of information (EU carbon pricing, China carbon pricing, EU renewable targets, China renewable targets, EU enforcement, China enforcement). No single text chunk contains all of this. Standard RAG, which embeds the full query and retrieves the top-k most similar chunks, will likely return a mishmash of partially relevant documents that cover some aspects but not others.
 
-*Recommended visual: Query decomposition pipeline breaking a complex question into sub-queries, retrieving for each, and synthesizing — see [LangChain Query Decomposition Documentation](https://python.langchain.com/docs/how_to/query_decomposition/)*
+```mermaid
+flowchart LR
+    S1["sub-queries"]
+    S2["retrieving for each"]
+    S3["synthesizing"]
+    S1 --> S2
+    S2 --> S3
+```
 
 
 Query decomposition explicitly breaks complex queries into atomic sub-queries, each simple enough to be answered by a focused retrieval step. The results are then synthesized into a comprehensive answer. This is the retrieval equivalent of chain-of-thought reasoning: instead of trying to solve a complex problem in one step, break it into manageable pieces.
@@ -18,7 +25,14 @@ Multi-step retrieval extends this further: the answer to one sub-query informs t
 ## How It Works
 
 
-*Recommended visual: IRCoT (Interleaving Retrieval with Chain of Thought) showing alternating reasoning and retrieval steps — see [Trivedi et al. IRCoT Paper (arXiv:2212.10509)](https://arxiv.org/abs/2212.10509)*
+```mermaid
+flowchart LR
+    S1["IRCoT (Interleaving Retrieval"]
+    S2["Chain of Thought)"]
+    S3["alternating reasoning and retrieval steps"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ### Technique 1: Query Decomposition (Parallel Sub-Queries)
 

@@ -8,7 +8,14 @@
 
 Standard attention has a fundamental problem: softmax must distribute probability mass across all tokens, even when only a few are truly relevant. If you attend to 4,096 tokens but only 10 matter, the remaining 4,086 still receive some non-zero weight. This "attention noise" dilutes the signal, contributes to hallucination, and degrades in-context learning.
 
-*Recommended visual: Differential attention mechanism diagram showing dual softmax maps and their subtraction to cancel noise — see [Differential Transformer Paper (arXiv:2410.05258)](https://arxiv.org/abs/2410.05258)*
+```mermaid
+flowchart LR
+    S1["dual softmax maps"]
+    S2["their subtraction"]
+    S3["cancel noise"]
+    S1 --> S2
+    S2 --> S3
+```
 
 
 The Differential Transformer borrows an idea from electrical engineering. A differential amplifier takes two input signals and outputs their *difference*, canceling noise common to both inputs. Similarly, the Differential Transformer computes two attention patterns and subtracts one from the other.

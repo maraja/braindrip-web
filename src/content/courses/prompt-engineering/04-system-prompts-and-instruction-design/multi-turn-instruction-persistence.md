@@ -11,7 +11,16 @@ This phenomenon is a direct consequence of how transformer attention mechanisms 
 
 Instruction persistence is one of the most underappreciated challenges in production LLM applications. Developers who test their system prompts with 2-3 turn conversations may be satisfied with compliance, only to discover that the same prompt produces dramatically different behavior at turn 30 or 50. Understanding and mitigating instruction decay is essential for any application with extended conversations.
 
-*Recommended visual: A line graph showing instruction compliance (y-axis, 0-100%) over conversation turns (x-axis, 0-50), with separate decay curves for stylistic instructions (fastest decay), output format rules, behavioral constraints, and hard safety rules (slowest decay), illustrating the characteristic decay pattern described in the text.*
+```mermaid
+flowchart LR
+    S1["graph showing instruction compliance (y-ax"]
+    S2["over conversation turns (x-axis, 0-50)"]
+    S3["ay curves for stylistic instructions (fast"]
+    S4["and hard safety rules (slowest decay)"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
 *Source: Adapted from findings in Xu et al., "Stress Testing LLM Instruction Following over Conversation Turns" (2024) and Liu et al., "Lost in the Middle" (2024)*
 
 ![Prompt engineering techniques including structured reasoning approaches](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/tree-of-thoughts.png)

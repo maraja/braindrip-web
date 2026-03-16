@@ -8,7 +8,12 @@
 
 Imagine a panel of experts writing a report. In the first round, each expert drafts their own version independently. In the second round, each expert reads everyone else's drafts and writes an improved version that synthesizes the best ideas. In the third round, a senior editor reads all the refined drafts and produces the final document. The result is consistently better than any single expert could produce alone, because each round filters out individual weaknesses and amplifies collective strengths.
 
-*Recommended visual: MoA layered architecture showing multiple LLMs in layer 1 generating proposals, layer 2 agents refining with access to layer 1 outputs, and a final aggregator — see [Wang et al. MoA Paper (arXiv:2406.04692)](https://arxiv.org/abs/2406.04692)*
+```mermaid
+flowchart TD
+    L1["Level 1: generating proposals"]
+    L2["Level 2: agents refining with access to la"]
+    L1 --> L2
+```
 
 
 Mixture of Agents (MoA), introduced by Together AI in 2024, is an inference-time technique that leverages the **collaborative synergy** between multiple LLMs. Rather than relying on a single model's output, MoA arranges multiple models in layers where each layer's models can see and refine the outputs from the previous layer. The final layer produces a synthesized response that consistently outperforms any individual model in the ensemble.
@@ -16,7 +21,15 @@ Mixture of Agents (MoA), introduced by Together AI in 2024, is an inference-time
 ## How It Works
 
 
-*Recommended visual: MoA performance comparison showing MoA with open-weight models outperforming GPT-4o on AlpacaEval 2.0 — see [Together AI Blog](https://www.together.ai/blog/together-moa)*
+```mermaid
+flowchart LR
+    subgraph L1["MoA performance comparison"]
+        LI3["Feature 1"]
+    end
+    subgraph R2["open-weight models outperforming GPT-4o on"]
+        RI4["Feature 1"]
+    end
+```
 
 ### The Collaborativeness Phenomenon
 

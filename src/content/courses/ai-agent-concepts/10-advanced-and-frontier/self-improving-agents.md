@@ -10,7 +10,13 @@ Consider how a new employee improves. On day one, they follow procedures mechani
 
 The challenge is that most AI agents today are static. Deploy an agent on Monday, and it operates identically on Friday, regardless of what it encountered during the week. Every mistake is repeated. Every inefficiency persists. Every user correction is forgotten after the conversation ends. Self-improving agents break this pattern by creating feedback loops that convert experience into capability. A user corrects the agent's output -> the correction is stored -> future similar tasks benefit from the correction. A tool call fails in a specific way -> the failure pattern is learned -> the agent avoids that pattern in the future.
 
-*Recommended visual: Feedback loop diagram showing agent execution → evaluation → learning mechanism (memory storage, prompt optimization, skill acquisition) → improved agent execution, with the loop tightening over iterations — see [Shinn et al., 2023 — Reflexion](https://arxiv.org/abs/2303.11366)*
+```mermaid
+flowchart TD
+    L1["agent execution"]
+    L2["evaluation"]
+    L1 --> L2
+    L2 -.->|"repeat"| L1
+```
 
 Self-improvement spans a spectrum from simple (storing user preferences in a memory bank) to profound (rewriting one's own system prompt based on performance data). DSPy (Khattab et al., 2023) automates prompt optimization using training examples. Voyager (Wang et al., 2023) demonstrated a Minecraft agent that acquires new skills by writing and verifying code functions, building a skill library that grows with experience. The bootstrapping problem is central: how does an agent improve without large amounts of human-labeled training data?
 
@@ -22,7 +28,14 @@ The most accessible form of self-improvement: the user tells the agent what it d
 ### Prompt Optimization with DSPy
 DSPy treats prompt engineering as an optimization problem. Instead of manually crafting prompts, you define: **Signatures** (input/output specifications for each LLM call), **Modules** (composable prompt components), and **Metrics** (how to score outputs). DSPy's optimizers (BootstrapFewShot, MIPRO, BayesianSignatureOptimizer) then search the space of possible prompts (instructions, few-shot examples, prompt structures) to maximize the metric. For agents, this means each step's prompt can be automatically tuned based on performance data. The bootstrapping technique generates training examples from the model itself, reducing dependence on human labels.
 
-*Recommended visual: Voyager's skill library architecture — agent encounters challenge → writes code function to solve it → verifies in environment → stores in skill library with description embedding → retrieves relevant skills for future challenges — see [Wang et al., 2023 — Voyager](https://arxiv.org/abs/2305.16291)*
+```mermaid
+flowchart TD
+    C1["writes code function to solve it"]
+    C2["verifies in environment"]
+    C3["retrieves relevant skills for future chall"]
+    C1 --> C2
+    C2 --> C3
+```
 
 ### Skill Acquisition
 Voyager introduced the concept of agents learning new "skills" -- reusable capabilities stored as verified code functions. When the Minecraft agent encounters a novel challenge (build a shelter before nightfall), it writes a function to solve it, verifies the function works in the game, and stores it in a skill library. On future encounters, it retrieves the relevant skill rather than reasoning from scratch. This pattern generalizes beyond Minecraft: a coding agent could store verified solutions to common patterns (setting up a test framework, configuring a CI pipeline), retrieving them when similar tasks arise.

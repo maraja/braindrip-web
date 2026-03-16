@@ -8,7 +8,18 @@
 
 Imagine an open-book exam. Instead of relying purely on memory (which may be outdated or contain gaps), you get to look up relevant passages in a textbook before answering each question. RAG gives LLMs the same advantage.
 
-*Recommended visual: RAG pipeline showing document chunking, embedding, vector storage, retrieval, and augmented generation — see [Pinecone RAG Guide](https://www.pinecone.io/learn/retrieval-augmented-generation/)*
+```mermaid
+flowchart LR
+    S1["document chunking"]
+    S2["embedding"]
+    S3["vector storage"]
+    S4["retrieval"]
+    S5["augmented generation"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+```
 
 
 LLMs are trained on static datasets with knowledge cutoff dates. They cannot know about events after training, proprietary company documents, or rapidly changing information. RAG solves this by adding a retrieval step: before generating a response, the system searches a knowledge base for relevant information, then feeds that information into the prompt alongside the user's question. The model generates its answer grounded in the retrieved evidence.
@@ -19,14 +30,35 @@ The term was coined by Lewis et al. (2020), but the pattern -- retrieve then gen
 
 The RAG pipeline has three major phases: **indexing**, **retrieval**, and **generation**.
 
-*Recommended visual: Comparison of parametric knowledge (in model weights) vs non-parametric knowledge (retrieved documents) — see [RAG Paper (arXiv:2005.11401)](https://arxiv.org/abs/2005.11401)*
+```mermaid
+flowchart LR
+    subgraph L1["parametric knowledge (in model weights)"]
+        LI3["Comparison of parametric knowledge (in mod"]
+    end
+    subgraph R2["non-parametric knowledge (retrieved"]
+        RI4["Feature 1"]
+    end
+```
 
 
 ### Phase 1: Indexing (Offline)
 
 Before any queries arrive, you prepare your knowledge base.
 
-*Recommended visual: Complete RAG pipeline: document ingestion → chunking → embedding → vector store → retrieval → augmented generation — see [Pinecone RAG Guide](https://www.pinecone.io/learn/retrieval-augmented-generation/)*
+```mermaid
+flowchart LR
+    S1["document ingestion"]
+    S2["chunking"]
+    S3["embedding"]
+    S4["vector store"]
+    S5["retrieval"]
+    S6["augmented generation"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+    S5 --> S6
+```
 
 
 **Chunking**: Raw documents (PDFs, web pages, databases) are split into smaller pieces called chunks. This is necessary because embedding models have limited context windows and because smaller chunks enable more precise retrieval. Strategies range from fixed-size splitting (every 512 tokens) to semantic chunking (splitting at topic boundaries).

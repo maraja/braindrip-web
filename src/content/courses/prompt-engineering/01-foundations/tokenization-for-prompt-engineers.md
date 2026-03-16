@@ -15,7 +15,15 @@ For prompt engineers, tokenization is the invisible tax system. You cannot optim
 ![Byte Pair Encoding tokenization process](https://jalammar.github.io/images/gpt2/bpe-subword-tokenization.png)
 *Source: Jay Alammar, "The Illustrated GPT-2," jalammar.github.io, 2019.*
 
-*Recommended visual: A comparison table showing the same sentence tokenized across different languages (English, Chinese, Japanese, Arabic) with token counts and per-token cost annotations, illustrating the multilingual tokenization disparity.*
+```mermaid
+flowchart LR
+    subgraph L1["English"]
+        LI3["Japanese"]
+    end
+    subgraph R2["Chinese"]
+        RI4["Feature 1"]
+    end
+```
 *Source: Adapted from Petrov et al., "Language Model Tokenizers Introduce Unfairness Between Languages," 2023.*
 
 ## How It Works

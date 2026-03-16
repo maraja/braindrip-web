@@ -11,10 +11,27 @@ Behavioral constraints are the rules and boundaries embedded in a system prompt 
 
 The challenge of constraint design is that LLMs are not rule-following engines -- they are pattern-completion systems that have been fine-tuned to follow instructions. This means that constraint adherence depends heavily on how constraints are framed, formatted, positioned, and reinforced. Understanding the principles of effective constraint design is essential for any production LLM application.
 
-*Recommended visual: A comparison chart showing two columns -- "Weak Constraints" (vague, negatively framed, prose-formatted rules) versus "Strong Constraints" (specific, positively framed, numbered-list rules) -- with compliance percentage bars illustrating the 15-20% improvement from proper constraint design.*
+```mermaid
+flowchart LR
+    subgraph L1["egatively framed, prose-formatted rules)"]
+        LI3["vague"]
+        LI4["negatively framed"]
+    end
+    subgraph R2["Strong Constraints (specific,"]
+        RI5["prose-formatted rules"]
+    end
+```
 *Source: Derived from findings in Schulhoff et al., "The Prompt Report" (2024) and Mu et al., "Can LLMs Follow Simple Rules?" (2023)*
 
-*Recommended visual: A flowchart depicting the constraint evaluation decision tree: input arrives, conditional rules are checked (if-then branches), boundary statements are evaluated (in-scope vs. out-of-scope), and the response is shaped by positive-framing directives and hard prohibitions.*
+```mermaid
+flowchart LR
+    subgraph L1["ndary statements are evaluated (in-scope"]
+        LI3["conditional rules are checked (if-then bra"]
+    end
+    subgraph R2["out-of-scope), and the response is"]
+        RI4["Feature 1"]
+    end
+```
 *Source: Adapted from Wallace et al., "The Instruction Hierarchy" (2024)*
 
 ## How It Works

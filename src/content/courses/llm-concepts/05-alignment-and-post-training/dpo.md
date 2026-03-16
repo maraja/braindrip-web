@@ -8,7 +8,15 @@
 
 RLHF works, but it's a complex, fragile machine with many moving parts: you need to train a separate reward model, run an RL loop with PPO (which is notoriously unstable), keep four models in memory simultaneously, and carefully tune hyperparameters to prevent reward hacking. DPO asks: what if we could skip all of that?
 
-*Recommended visual: Side-by-side comparison of RLHF pipeline (reward model + PPO) vs DPO (direct optimization from preferences) — see [DPO Paper Figure 1 (arXiv:2305.18290)](https://arxiv.org/abs/2305.18290)*
+```mermaid
+flowchart LR
+    subgraph L1["on of RLHF pipeline (reward model + PPO)"]
+        LI3["by-side comparison of RLHF pipeline (rewar"]
+    end
+    subgraph R2["DPO (direct optimization from"]
+        RI4["Feature 1"]
+    end
+```
 
 
 Here's the analogy. RLHF is like teaching someone to cook by first training a food critic (reward model), then having the cook repeatedly prepare dishes, getting scores from the critic, and adjusting (RL loop). DPO is like giving the cook direct access to the preference data -- "dish A was preferred over dish B for this request" -- and letting them learn directly from those comparisons, no middleman needed.
@@ -18,7 +26,12 @@ The mathematical insight behind DPO is elegant: under the standard RLHF framewor
 ## How It Works
 
 
-*Recommended visual: DPO loss landscape showing how the implicit reward is derived from the policy ratio — see [Lilian Weng – LLM Alignment Post](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/)*
+```mermaid
+flowchart LR
+    S1["DPO loss landscape"]
+    S2["how the implicit reward is derived from th"]
+    S1 --> S2
+```
 
 ### The Mathematical Reparameterization
 

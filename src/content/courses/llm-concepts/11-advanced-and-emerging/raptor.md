@@ -8,7 +8,14 @@
 
 Standard RAG systems split documents into fixed-size chunks and embed each chunk independently. This flat structure works well for questions that can be answered by a single chunk, but it fails for questions that require understanding across multiple chunks or at a higher level of abstraction.
 
-*Recommended visual: RAPTOR tree structure showing leaf chunks clustered and summarized into hierarchical nodes — see [Sarthi et al. RAPTOR Paper (arXiv:2401.18059)](https://arxiv.org/abs/2401.18059)*
+```mermaid
+flowchart TD
+    R1["RAPTOR tree structure"]
+    C2["leaf chunks clustered and summarized"]
+    R1 --> C2
+    C3["hierarchical nodes"]
+    R1 --> C3
+```
 
 
 Consider a 50-page research paper. Standard RAG chunks it into ~100 pieces of 512 tokens each. If you ask "What specific results did the authors report in Table 3?", vector search will likely find the right chunk. But if you ask "What is the overall contribution of this paper?", no single chunk contains a complete answer. The abstract might help, but it does not capture the nuanced synthesis that comes from understanding the full paper.
@@ -20,7 +27,12 @@ At retrieval time, the system searches across all levels of the tree simultaneou
 ## How It Works
 
 
-*Recommended visual: Multi-level retrieval in RAPTOR showing queries matching at different abstraction levels in the tree — see [RAPTOR Paper Figure 1](https://arxiv.org/abs/2401.18059)*
+```mermaid
+flowchart LR
+    S1["Multi-level retrieval in RAPTOR"]
+    S2["queries matching at different abstraction "]
+    S1 --> S2
+```
 
 ### Building the RAPTOR Tree (Indexing)
 

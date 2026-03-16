@@ -8,7 +8,12 @@
 
 Traditional RLHF relies on thousands of human annotators to compare model outputs and express preferences. This is expensive, slow, hard to scale, and -- critically -- opaque. When a human rater says "Response A is better than Response B," you don't always know *why*. Different raters may have different values, creating inconsistent training signals.
 
-*Recommended visual: Constitutional AI pipeline showing the critique-revision loop guided by explicit principles — see [Anthropic Constitutional AI Paper (arXiv:2212.08073)](https://arxiv.org/abs/2212.08073)*
+```mermaid
+flowchart LR
+    S1["Constitutional AI pipeline"]
+    S2["the critique-revision loop guided by expli"]
+    S1 --> S2
+```
 
 
 Constitutional AI, developed by Anthropic, takes a radically different approach. Instead of relying on human raters for each individual comparison, you write down your values explicitly as a set of principles -- a "constitution" -- and then use AI to apply those principles consistently across all training data.
@@ -19,7 +24,16 @@ Think of the analogy of a legal system. RLHF is like having a jury decide every 
 
 Constitutional AI operates in two main phases:
 
-*Recommended visual: Comparison of RLHF with human feedback vs CAI with AI feedback — see [Anthropic Blog – Constitutional AI](https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback)*
+```mermaid
+flowchart LR
+    subgraph L1["Comparison of RLHF with human feedback"]
+        LI3["Comparison of RLHF"]
+        LI4["human feedback"]
+    end
+    subgraph R2["CAI with AI feedback"]
+        RI5["AI feedback"]
+    end
+```
 
 
 ### Phase 1: Supervised Learning from AI Feedback (SL-CAI)

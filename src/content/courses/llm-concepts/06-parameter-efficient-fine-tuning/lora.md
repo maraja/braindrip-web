@@ -19,7 +19,12 @@ The method was introduced by Hu et al. (2021) at Microsoft Research and has sinc
 ## How It Works
 
 
-*Recommended visual: LoRA low-rank decomposition showing how a d×d weight update is factored into d×r and r×d matrices — see [LoRA Paper Figure 1 (arXiv:2106.09685)](https://arxiv.org/abs/2106.09685)*
+```mermaid
+flowchart LR
+    S1["how a d×d weight update is factored"]
+    S2["d×r and r×d matrices"]
+    S1 --> S2
+```
 
 ### The Core Decomposition
 

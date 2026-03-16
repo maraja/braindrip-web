@@ -15,7 +15,15 @@ Context windows have grown dramatically — from 2K tokens in GPT-2 (2019) to 2M
 ![Overview of LLM agent architecture including memory and context](https://lilianweng.github.io/posts/2023-06-23-agent/agent-overview.png)
 *Source: Lilian Weng, "LLM Powered Autonomous Agents," lilianweng.github.io, 2023. The context window is the central constraint connecting all components.*
 
-*Recommended visual: A horizontal bar chart comparing context window sizes across major models (GPT-3.5 8K, GPT-4 128K, Claude 3.5 200K, Gemini 1.5 Pro 1M) with a shaded "effective context" region showing the 30-50% zone where recall accuracy exceeds 90%.*
+```mermaid
+flowchart LR
+    subgraph L1["GPT-3.5 8K"]
+        LI3["Claude 3.5 200K"]
+    end
+    subgraph R2["GPT-4 128K"]
+        RI4["Feature 1"]
+    end
+```
 *Source: Adapted from Hsieh et al., "RULER: What's the Real Context Size of Your Long-Context Language Models?" 2024.*
 
 ## How It Works

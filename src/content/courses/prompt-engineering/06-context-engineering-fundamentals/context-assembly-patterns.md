@@ -11,7 +11,20 @@ Context assembly works the same way. Your application has access to system promp
 
 This is fundamentally a software engineering problem, not a prompt engineering problem. Context assembly involves conditional logic, data retrieval, formatting pipelines, token counting, and budget enforcement. In production applications, the context assembly layer is often more complex than the prompt itself.
 
-*Recommended visual: A four-quadrant diagram showing the four context assembly patterns: top-left "Static Templates" (fixed slots filled at runtime, simplest), top-right "Conditional Assembly" (if/else logic selecting blocks by user role or state), bottom-left "Relevance-Scored Assembly" (embedding + scoring pipeline ranking candidates to fill budget), bottom-right "Step-Aware Assembly" (state machine changing context at each agent step), with complexity increasing from top-left to bottom-right.*
+```mermaid
+flowchart TD
+    T1["four-quadrant diagram"]
+    subgraph ROW2[" "]
+        Q4["Static Templates"]
+        Q5["Conditional Assembly"]
+    end
+    subgraph ROW3[" "]
+        Q6["Relevance-Scored Assembly"]
+        Q7["Step-Aware Assembly"]
+    end
+    T1 --- ROW2
+    T1 --- ROW3
+```
 *Source: Adapted from Khattab et al., "DSPy" (2023) and Chase, "LangChain" (2022)*
 
 ![Agent system architecture showing dynamic context assembly across planning, tool use, and memory components](https://lilianweng.github.io/posts/2023-06-23-agent/agent-overview.png)

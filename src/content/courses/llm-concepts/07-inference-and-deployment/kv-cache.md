@@ -17,7 +17,14 @@ KV cache is the simple but powerful optimization of saving -- caching -- the key
 ## How It Works
 
 
-*Recommended visual: Diagram showing how KV cache grows during autoregressive generation, with new K and V appended at each step — see [Jay Alammar - The Illustrated GPT-2](https://jalammar.github.io/illustrated-gpt2/)*
+```mermaid
+flowchart LR
+    S1["how KV cache grows during autoregressive g"]
+    S2["with new K"]
+    S3["V appended at each step"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ### The Problem: Redundant Computation
 
@@ -65,7 +72,12 @@ That is a staggering amount of memory for a *single request*. For a batch of 32 
 
 KV cache grows **linearly** with sequence length per request and **linearly** with batch size across requests. This makes it the dominant memory consumer during inference, often exceeding the model weights themselves for long-context scenarios. A 128K context window multiplies the figures above by 32x.
 
-*Recommended visual: KV cache growth during autoregressive generation showing previously computed keys and values being reused — see [Lilian Weng – Large Transformer Model Inference Optimization](https://lilianweng.github.io/posts/2023-01-10-inference-optimization/)*
+```mermaid
+flowchart LR
+    S1["KV cache growth during autoregressive gene"]
+    S2["previously computed keys and values being "]
+    S1 --> S2
+```
 
 
 ### PagedAttention: An OS-Inspired Solution

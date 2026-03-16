@@ -8,7 +8,18 @@
 
 Think of LLM benchmarks like standardized tests for humans -- the SAT, GRE, or bar exam. Each test measures a different slice of ability. No single test captures everything a person can do, but taken together they paint a useful (if incomplete) picture. LLM benchmarks work the same way: each one probes a specific capability, and researchers combine scores across many benchmarks to form an overall assessment.
 
-*Recommended visual: LLM benchmark taxonomy: knowledge (MMLU), reasoning (GSM8K, MATH), coding (HumanEval), safety (TruthfulQA) — see [Hugging Face Open LLM Leaderboard](https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard)*
+```mermaid
+flowchart TD
+    R1["LLM benchmark taxonomy: knowledge (MMLU)"]
+    C2["knowledge (MMLU)"]
+    R1 --> C2
+    C3["reasoning (GSM8K, MATH)"]
+    R1 --> C3
+    C4["coding (HumanEval)"]
+    R1 --> C4
+    C5["safety (TruthfulQA)"]
+    R1 --> C5
+```
 
 
 Just as with human standardized tests, there are serious problems. Students can study to the test. Test designers can make questions too easy or too hard. Cultural biases creep in. And eventually, top performers all score near-perfectly, making the test useless for distinguishing among the best. Every one of these problems has an exact analogue in the LLM benchmark world.
@@ -16,7 +27,12 @@ Just as with human standardized tests, there are serious problems. Students can 
 ## How It Works
 
 
-*Recommended visual: Benchmark saturation chart showing how models have approached ceiling on older benchmarks — see [Stanford HELM](https://crfm.stanford.edu/helm/latest/)*
+```mermaid
+flowchart LR
+    S1["Benchmark saturation chart"]
+    S2["how models have approached ceiling on olde"]
+    S1 --> S2
+```
 
 ### The Major Benchmarks
 

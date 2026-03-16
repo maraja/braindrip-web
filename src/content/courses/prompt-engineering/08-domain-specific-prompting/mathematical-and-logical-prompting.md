@@ -11,10 +11,26 @@ Mathematical and logical prompting is the practice of structuring instructions f
 
 Effective mathematical prompting works with these limitations rather than against them. It leverages the model's strength in problem decomposition and conceptual reasoning while delegating computation to tools (Python/sympy, calculators, Wolfram Alpha) and building in verification steps that catch the errors the model will inevitably make.
 
-*Recommended visual: A decision boundary diagram showing when to use LLM reasoning vs. tool delegation -- a 2x2 matrix with axes "conceptual complexity" (low/high) and "computational complexity" (low/high), mapping tasks to the optimal approach: LLM-only for high-conceptual/low-computational, tool-only for low-conceptual/high-computational, and hybrid for both-high quadrant.*
+```mermaid
+flowchart LR
+    subgraph L1["when to use LLM reasoning"]
+        LI3["low/high"]
+    end
+    subgraph R2["tool delegation -- a 2x2 matrix with"]
+        RI4["Feature 1"]
+    end
+```
 *Source: Adapted from Gao et al., "PAL: Program-Aided Language Models," 2023.*
 
-*Recommended visual: A step-by-step accuracy degradation chart showing LLM arithmetic accuracy (y-axis, 0-100%) vs. number of sequential computation steps (x-axis, 1-6), with a steep drop from 85-90% at step 1 to 40-60% at step 5, annotated with a dotted line showing the stable accuracy when intermediate steps are delegated to a code interpreter.*
+```mermaid
+flowchart LR
+    subgraph L1["LLM arithmetic accuracy (y-axis, 0-100%)"]
+        LI3["hart showing LLM arithmetic accuracy (y-ax"]
+    end
+    subgraph R2["number of sequential computation steps"]
+        RI4["Feature 1"]
+    end
+```
 *Source: Adapted from Lightman et al., "Let's Verify Step by Step," 2023.*
 
 ## How It Works

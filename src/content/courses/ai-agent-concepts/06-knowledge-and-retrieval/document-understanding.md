@@ -12,7 +12,16 @@ Most RAG systems treat documents as flat text. They run a PDF through a text ext
 
 Document understanding is the discipline of processing complex documents while preserving their structure and semantics. It encompasses OCR for scanned documents, layout analysis for identifying headers, paragraphs, tables, and figures, table extraction for converting visual tables into structured data, chart and diagram interpretation, and multi-modal processing that understands images and text together. The output is not just text but structured data that agents can reason over effectively.
 
-*Recommended visual: Diagram showing a complex document page being segmented into regions (title, paragraph, table, figure) with arrows leading to different extraction pipelines — see [Huang et al., 2022 — LayoutLMv3](https://arxiv.org/abs/2204.08387)*
+```mermaid
+flowchart LR
+    S1["title"]
+    S2["paragraph"]
+    S3["table"]
+    S4["figure"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
 
 ## How It Works
 
@@ -24,7 +33,14 @@ Before extracting content, the system must understand the document's visual stru
 
 For born-digital PDFs, text can be extracted directly from the PDF structure. For scanned documents, images, or photographed pages, OCR converts visual text to machine-readable characters. Modern OCR engines (Tesseract, Google Cloud Vision, AWS Textract, Azure Document Intelligence) achieve 95-99% character accuracy on clean documents but degrade on poor-quality scans, unusual fonts, or handwriting. Post-OCR correction using LLMs can fix common OCR errors by leveraging linguistic context.
 
-*Recommended visual: Pipeline diagram showing OCR → layout analysis → table extraction → structured output, with example document at each stage — see [Kim et al., 2022 — Donut: OCR-free Document Understanding Transformer](https://arxiv.org/abs/2111.15664)*
+```mermaid
+flowchart LR
+    S1["OCR"]
+    S2["layout analysis"]
+    S3["table extraction"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ### Table Extraction
 

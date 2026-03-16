@@ -8,7 +8,18 @@
 
 The term "red teaming" originates from military strategy, where a designated "red team" plays the role of the enemy to stress-test defenses. In cybersecurity, red teams attempt to breach systems to find vulnerabilities before malicious actors do. Applied to LLMs, red teaming means systematically attempting to make the model produce outputs that are harmful, inaccurate, biased, privacy-violating, or otherwise undesirable.
 
-*Recommended visual: Red teaming pipeline: define scope, design attacks, execute probes, document findings, remediate — see [Anthropic Red Teaming Research](https://www.anthropic.com/research)*
+```mermaid
+flowchart LR
+    S1["Red teaming pipeline: define scope"]
+    S2["design attacks"]
+    S3["execute probes"]
+    S4["document findings"]
+    S5["remediate"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+```
 
 
 Think of it as a structured dress rehearsal for everything that could go wrong. Rather than waiting for millions of users to discover that the model can be tricked into generating instructions for dangerous activities, or that it exhibits strong gender bias when discussing certain professions, a red team deliberately seeks out these failure modes under controlled conditions.
@@ -18,7 +29,12 @@ Red teaming is not about proving a model is "safe" -- it is about discovering th
 ## How It Works
 
 
-*Recommended visual: Automated red teaming with attacker LLM generating adversarial prompts — see [Perez et al. Red Teaming Paper (arXiv:2202.03286)](https://arxiv.org/abs/2202.03286)*
+```mermaid
+flowchart LR
+    S1["Automated red teaming"]
+    S2["attacker LLM generating adversarial prompt"]
+    S1 --> S2
+```
 
 ### Manual Red Teaming
 

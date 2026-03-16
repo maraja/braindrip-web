@@ -11,7 +11,18 @@ LLMs exhibit similar attention patterns, but with a twist. Research has revealed
 
 This is not a minor effect. In experiments by Liu et al. (2023), model accuracy on a multi-document question-answering task dropped by 20+ percentage points when the relevant document was placed in the middle of the context versus at the beginning or end. The same information, the same model, the same question — only the position changed. For practitioners, this means information ordering is a first-class design concern, not an afterthought.
 
-*Recommended visual: A U-shaped curve graph with "Position in context window" on the x-axis (Beginning to End) and "Model attention / retrieval accuracy" on the y-axis. The curve should show high attention at the beginning (labeled "Primacy zone: system prompt, critical instructions"), a valley in the middle (labeled "Lost-in-the-middle zone: supporting details, lower-priority documents"), and high attention again at the end (labeled "Recency zone: current query, most relevant docs"). An annotation should note "20+ percentage point accuracy drop" for middle placement.*
+```mermaid
+flowchart LR
+    S1["Position in context window"]
+    S2["Model attention / retrieval accuracy"]
+    S3["Primacy zone: system prompt, critical inst"]
+    S4["), and high attention again at the end (la"]
+    S5["). An annotation should note"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+    S4 --> S5
+```
 *Source: Adapted from Liu et al., "Lost in the Middle: How Language Models Use Long Contexts" (2023)*
 
 ![Prompt engineering structured approaches showing how information organization affects reasoning quality](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/tree-of-thoughts.png)

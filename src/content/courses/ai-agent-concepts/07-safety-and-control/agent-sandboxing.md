@@ -12,7 +12,16 @@ An AI agent with code execution capabilities, file system access, or network acc
 
 Sandboxing wraps the agent's execution environment in layers of isolation. The agent operates inside a container (like Docker or Firecracker) with restricted filesystem access, limited network connectivity, constrained resource usage, and no access to the host system. The sandbox defines the maximum blast radius of any agent error: even a completely compromised agent cannot escape its sandbox to affect the broader system.
 
-*Recommended visual: Nested box diagram showing the host system containing a container/microVM, which contains the agent runtime, which contains the execution environment with restricted filesystem, network, and resource access — see [Firecracker Documentation](https://github.com/firecracker-microvm/firecracker)*
+```mermaid
+flowchart LR
+    S1["the host system containing a container/mic"]
+    S2["which contains the agent runtime"]
+    S3["network"]
+    S4["resource access"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
 
 ## How It Works
 
@@ -24,7 +33,15 @@ The primary sandboxing mechanism is containerization. Docker containers provide 
 
 Within the sandbox, the filesystem is tightly controlled. The agent typically gets a writable workspace directory (for creating and modifying files), read-only access to relevant code repositories or documents, and no access to system files, other users' data, or sensitive configurations. Bind mounts expose specific host directories (read-only) into the container. Temporary filesystems (tmpfs) ensure that agent-created files do not persist beyond the session unless explicitly exported.
 
-*Recommended visual: Comparison diagram showing Docker container isolation (shared kernel) vs Firecracker microVM isolation (separate lightweight VM) with their respective security boundaries — see [Sultan et al., 2019 — Container Security](https://arxiv.org/abs/1904.12535)*
+```mermaid
+flowchart LR
+    subgraph L1["cker container isolation (shared kernel)"]
+        LI3["m showing Docker container isolation (shar"]
+    end
+    subgraph R2["Firecracker microVM isolation (separate"]
+        RI4["Feature 1"]
+    end
+```
 
 ### Network Controls
 

@@ -8,7 +8,16 @@
 
 Imagine renovating a house. Full fine-tuning is a complete gut renovation -- you tear out every wall, rewire the electrical, replace the plumbing, and rebuild from the studs up. You get exactly the house you want, but it costs a fortune, takes months, and requires a large crew. PEFT methods are targeted renovations -- you repaint the walls, update the fixtures, and remodel the kitchen. The house looks and functions remarkably differently, but the foundation, framing, and most infrastructure remain untouched. For most purposes, the targeted renovation achieves 95% of the full renovation's outcome at 5% of the cost.
 
-*Recommended visual: Parameter count comparison across PEFT methods showing trainable vs frozen parameters — see [Hugging Face PEFT Documentation](https://huggingface.co/docs/peft/index)*
+```mermaid
+flowchart LR
+    subgraph L1["trainable"]
+        LI3["Parameter count comparison across PEFT met"]
+        LI4["trainable"]
+    end
+    subgraph R2["frozen parameters"]
+        RI5["frozen parameters"]
+    end
+```
 
 
 This comparison is about understanding when you truly need the gut renovation (full fine-tuning) versus when the targeted approach (PEFT) is not just cheaper but actually preferable.
@@ -16,7 +25,16 @@ This comparison is about understanding when you truly need the gut renovation (f
 ## How It Works
 
 
-*Recommended visual: Performance vs parameter efficiency trade-off curves for full fine-tuning, LoRA, QLoRA, and adapters — see [Scaling Down to Scale Up: A Guide to Parameter-Efficient Fine-Tuning (arXiv:2303.15647)](https://arxiv.org/abs/2303.15647)*
+```mermaid
+flowchart LR
+    subgraph L1["Performance"]
+        LI3["LoRA"]
+        LI4["QLoRA"]
+    end
+    subgraph R2["parameter efficiency trade-off curves"]
+        RI5["adapters"]
+    end
+```
 
 ### Full Fine-Tuning
 

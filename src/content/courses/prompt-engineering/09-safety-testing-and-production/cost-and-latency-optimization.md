@@ -11,10 +11,26 @@ The economics of LLM applications are dominated by token costs. A production app
 
 Latency matters because users have limited patience. Research on conversational AI shows user satisfaction drops significantly when response times exceed 2-3 seconds. Each optimization technique involves trade-offs: caching improves latency but may serve stale results; model routing reduces cost but may reduce quality for misrouted queries; prompt compression saves tokens but may lose context. The goal is to find the Pareto frontier — the set of configurations where you cannot improve cost without worsening quality, or vice versa.
 
-*Recommended visual: A Pareto frontier chart with cost per request (x-axis) plotted against quality score (y-axis), showing data points for unoptimized baseline, prompt compression only, caching only, model routing only, and fully optimized (all techniques combined) -- with the Pareto frontier curve connecting optimal configurations and an arrow showing the path from baseline to frontier.*
+```mermaid
+flowchart TD
+    L1["frontier chart with cost per request (x-ax"]
+    L2["plotted against quality score (y-axis)"]
+    L3["and fully optimized (all techniques combin"]
+    L1 --> L2
+    L2 --> L3
+```
 *Source: Adapted from Chen et al., "FrugalGPT: How to Use Large Language Models While Reducing Cost and Improving Performance," 2023 (Stanford).*
 
-*Recommended visual: A model routing decision tree diagram showing incoming requests classified by complexity -- simple queries (40-60% of traffic) routed to small models at 5-20x cost savings, moderate queries (25-35%) to mid-tier models, and complex queries (15-25%) to frontier models -- with annotated per-request costs and a total cost comparison bar showing 50-70% savings vs. routing everything to the frontier model.*
+```mermaid
+flowchart LR
+    subgraph L1["50-70% savings"]
+        LI3["fied by complexity -- simple queries (40-6"]
+        LI4["moderate queries (25-35%)"]
+    end
+    subgraph R2["routing everything to the frontier"]
+        RI5["and complex queries (15-25%)"]
+    end
+```
 *Source: Adapted from Chen et al., "FrugalGPT," 2023, and Jiang et al., "LLMLingua," 2023 (Microsoft Research).*
 
 ## How It Works

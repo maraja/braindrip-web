@@ -11,10 +11,29 @@ LLMs are inherently biased toward verbosity. This is not a bug — it is a direc
 
 Controlling output length is therefore an active intervention against the model's trained instincts. It requires explicit, specific instructions that override the default verbosity. Vague requests like "be concise" are routinely ignored because the model's training reward for helpfulness (read: length) outweighs weak brevity instructions.
 
-*Recommended visual: A Pareto curve diagram showing information value (y-axis) versus response token count (x-axis), illustrating that the first 20% of tokens carry approximately 80% of information value, with diminishing returns beyond that point. The curve should mark zones: "Core answer" (first 20%), "Useful elaboration" (20-50%), and "Low-value padding" (50-100%).*
+```mermaid
+flowchart LR
+    subgraph L1["information value (y-axis)"]
+        LI3["Core answer"]
+        LI4["Useful elaboration"]
+    end
+    subgraph R2["response token count (x-axis),"]
+        RI5["Low-value padding"]
+    end
+```
 *Source: Adapted from Zheng et al., "Judging LLM-as-a-Judge" (2023) and Anthropic, "Control Output Length" (2024)*
 
-*Recommended visual: A horizontal bar chart comparing compliance rates for different length control strategies: "Be concise" (~40% compliance), "Be brief" (~45%), "Under 100 words" (~78%), "Exactly 2 paragraphs" (~85%), "Answer in 2-3 sentences" (~92%), "Respond with only a 5-item bulleted list" (~94%), showing that format+length constraints outperform length-only constraints.*
+```mermaid
+flowchart LR
+    subgraph L1["Be concise"]
+        LI3["Under 100 words"]
+        LI4["Exactly 2 paragraphs"]
+    end
+    subgraph R2["Be brief"]
+        RI5["Answer in 2-3 sentences"]
+        RI6["Respond with only a 5-item bulleted list"]
+    end
+```
 *Source: Derived from findings in Sanh et al. (2022) and OpenAI/Anthropic prompt engineering documentation*
 
 ## How It Works

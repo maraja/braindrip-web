@@ -12,7 +12,16 @@ LLMs exhibit a strikingly similar pattern. Research by Liu et al. (2023) demonst
 
 Understanding this effect transforms prompt engineering from guesswork to principled design. The placement of instructions, examples, key facts, and retrieved documents within your prompt is not arbitrary — it is a lever that directly controls output quality.
 
-*Recommended visual: A U-shaped curve plot with token position on the x-axis (0% to 100% of context) and retrieval accuracy on the y-axis (40% to 95%), showing high accuracy at the beginning and end (primacy and recency zones) with a valley in the middle (dilution zone). Annotations should mark the ~10% primacy zone, ~60-80% middle zone, and ~10% recency zone.*
+```mermaid
+flowchart LR
+    S1["ot with token position on the x-axis (0% t"]
+    S2["and retrieval accuracy on the y-axis (40% "]
+    S3["gh accuracy at the beginning and end (prim"]
+    S4["with a valley in the middle (dilution zone"]
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+```
 *Source: Adapted from Liu et al., "Lost in the Middle: How Language Models Use Long Contexts," 2023.*
 
 ![Memory types in LLM agent systems showing short-term and long-term context](https://lilianweng.github.io/posts/2023-06-23-agent/memory.png)

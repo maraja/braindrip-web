@@ -11,10 +11,25 @@ Most prompts start as a rough draft and improve through iteration. But unstructu
 
 The field spans a spectrum from manual techniques (ablation studies, component analysis) that give the engineer full control and interpretability, to automated techniques (DSPy, OPRO) that use algorithms to search the prompt space. The right approach depends on the task complexity, the available eval suite, and the need for interpretability.
 
-*Recommended visual: An ablation study results table rendered as a waterfall chart -- baseline score at the top, then each component's removal shown as a bar extending left (score drop, indicating essential component) or right (score increase, indicating counterproductive component), with the token savings annotated next to each bar, clearly identifying candidates for removal vs. components to keep.*
+```mermaid
+flowchart LR
+    subgraph L1["early identifying candidates for removal"]
+        LI3["emoval shown as a bar extending left"]
+    end
+    subgraph R2["components to keep."]
+        RI4["Feature 1"]
+    end
+```
 *Source: Adapted from Khattab et al., "DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines," 2024 (Stanford).*
 
-*Recommended visual: A spectrum diagram showing the manual-to-automated optimization continuum -- manual ablation studies (full interpretability, low throughput) on the left, component contribution analysis in the middle, and automated tools (DSPy, OPRO, hill-climbing) on the right (low interpretability, high throughput) -- with annotations showing when each approach is most appropriate based on eval dataset size and task complexity.*
+```mermaid
+flowchart TD
+    L1["continuum -- manual ablation studies"]
+    L2["and automated tools (DSPy, OPRO, hill-clim"]
+    L3["on the right"]
+    L1 --> L2
+    L2 --> L3
+```
 *Source: Adapted from Yang et al., "Large Language Models as Optimizers (OPRO)," 2023 (Google DeepMind).*
 
 ## How It Works

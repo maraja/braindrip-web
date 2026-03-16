@@ -12,7 +12,15 @@ In traditional software, regression testing is well-established: you maintain a 
 
 Effective agent regression testing maintains a curated suite of tasks with known-good outcomes, runs this suite automatically after every change (or periodically for external changes like model updates), uses statistical methods to distinguish real regressions from noise, and provides actionable diagnostics when regressions are detected.
 
-*Recommended visual: CI/CD pipeline diagram showing code change → regression test suite execution → statistical comparison against baseline → pass/fail decision with diagnostic report — see [Breck et al., 2017 — ML Test Score](https://research.google/pubs/the-ml-test-score-a-rubric-for-ml-production-readiness-and-technical-debt/)* Without regression testing, agent quality silently degrades as changes accumulate, and the cause of degradation is nearly impossible to identify after the fact.
+```mermaid
+flowchart LR
+    subgraph L1["code change"]
+        LI3["statistical comparison against baseline"]
+    end
+    subgraph R2["regression test suite execution"]
+        RI4["Feature 1"]
+    end
+```
 
 ## How It Works
 
@@ -28,7 +36,12 @@ The regression suite runs automatically in CI/CD pipelines triggered by: prompt 
 
 Because agents are non-deterministic, a single failure does not necessarily indicate regression. Statistical regression detection compares the current run's success distribution against the historical baseline. If a task previously succeeded 90% of the time (over many runs) and now succeeds 60% of the time, that is statistically significant and likely a real regression. If it went from 90% to 85%, the difference might be noise. Statistical tests (chi-squared, Fisher's exact test, or binomial tests) determine whether the change is significant at a given confidence level.
 
-*Recommended visual: Chart showing success rate over time for multiple test tasks, with a regression event visible as a drop in some tasks after a specific change, while other tasks remain stable — see [Kim et al., 2024 — Evaluating LLM Agent Group Performance with Regression](https://arxiv.org/abs/2404.02385)*
+```mermaid
+flowchart LR
+    S1["success rate over time for multiple test t"]
+    S2["while other tasks remain stable"]
+    S1 --> S2
+```
 
 ### Root Cause Diagnosis
 

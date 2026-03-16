@@ -12,7 +12,19 @@ In traditional (naive) RAG, every user query triggers the same pipeline: embed t
 
 Agentic RAG wraps retrieval inside an agent loop. The agent treats retrieval as a tool it can invoke selectively. It decides whether retrieval is needed at all, formulates appropriate queries (possibly multiple), evaluates the quality of returned results, and iterates if the results are insufficient. The agent maintains state across retrieval rounds, building up context progressively rather than relying on a single retrieval pass.
 
-*Recommended visual: Architecture diagram showing the agentic RAG loop — agent receives query, decides whether to retrieve, selects retrieval tools, evaluates results, and iterates — see [Gao et al., 2024 — RAG Survey](https://arxiv.org/abs/2312.10997)*
+```mermaid
+flowchart TD
+    L1["the agentic RAG loop — agent receives quer"]
+    L2["decides whether to retrieve"]
+    L3["selects retrieval tools"]
+    L4["evaluates results"]
+    L5["iterates"]
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    L4 --> L5
+    L5 -.->|"repeat"| L1
+```
 
 ## How It Works
 
@@ -24,7 +36,16 @@ Before any retrieval happens, the agent evaluates whether retrieval is necessary
 
 When retrieval is warranted, agentic RAG does not stop at one round. The agent retrieves initial results, evaluates their relevance and completeness, and decides whether to continue. If the first retrieval returns tangential results, the agent reformulates its query. If partial information is found, the agent identifies what is missing and issues targeted follow-up queries. This loop typically runs 1-4 iterations, with diminishing returns beyond that.
 
-*Recommended visual: Flowchart comparing naive RAG (single linear pipeline) vs agentic RAG (iterative loop with decision points and multiple retrieval rounds) — see [Asai et al., 2024 — Self-RAG](https://arxiv.org/abs/2310.11511)*
+```mermaid
+flowchart LR
+    subgraph L1["aring naive RAG (single linear pipeline)"]
+        LI3["Flowchart comparing naive RAG (single line"]
+        LI4["agentic RAG (iterative loop"]
+    end
+    subgraph R2["agentic RAG (iterative loop with"]
+        RI5["decision points and multiple retrieval rou"]
+    end
+```
 
 ### Multi-Source Orchestration
 

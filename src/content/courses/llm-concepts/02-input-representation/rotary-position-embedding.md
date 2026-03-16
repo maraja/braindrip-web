@@ -19,7 +19,14 @@ This is the core insight of RoPE. By encoding position as rotation, the relative
 ## How It Works
 
 
-*Recommended visual: Visualization of RoPE's multi-frequency rotation scheme across embedding dimension pairs, showing low-frequency components for long-range and high-frequency for local position encoding — see [lucidrains – Rotary Embedding PyTorch Implementation](https://github.com/lucidrains/rotary-embedding-torch)*
+```mermaid
+flowchart TD
+    C1["embedding dimension pairs"]
+    C2["showing low-frequency components for long-"]
+    C3["high-frequency for local position encoding"]
+    C1 --> C2
+    C2 --> C3
+```
 
 ### The Mathematical Foundation
 

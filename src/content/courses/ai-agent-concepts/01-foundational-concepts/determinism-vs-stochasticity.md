@@ -12,7 +12,14 @@ Stochasticity in AI agents means that running the same task with the same input 
 
 This non-determinism arises from multiple sources: the temperature parameter in LLM sampling, floating-point non-determinism in GPU computation, batching effects in inference infrastructure, and variability in external tool outputs. The agent loop amplifies these sources because small variations in one turn compound across subsequent turns — a different tool choice on turn 3 leads to different observations on turn 4, which leads to a different plan on turn 5, and so on. Understanding and managing this stochasticity is essential for building reliable agent systems.
 
-*Recommended visual: A branching tree diagram showing how a single starting point diverges into multiple execution paths across turns, labeled with divergence sources (temperature sampling, tool output variation) — see [Wang et al., "Self-Consistency Improves Chain of Thought Reasoning" (2023)](https://arxiv.org/abs/2203.11171)*
+```mermaid
+flowchart TD
+    R1["branching tree diagram"]
+    C2["labeled with divergence sources (temperatu"]
+    R1 --> C2
+    C3["tool output variation)"]
+    R1 --> C3
+```
 
 ## How It Works
 
@@ -41,7 +48,14 @@ External tools introduce their own non-determinism:
 - **Command execution** may produce different output due to system state (CPU load, available memory, process ordering).
 - **Time-dependent operations** inherently vary (timestamps, relative dates, "last modified" information).
 
-*Recommended visual: A probability tree showing how per-step reliability (e.g., 95% per step) compounds across 20 steps to produce much lower end-to-end reliability (36%) — see [Chen et al., "Evaluating Large Language Models Trained on Code" (2021)](https://arxiv.org/abs/2107.03374)*
+```mermaid
+flowchart TD
+    R1["probability tree"]
+    C2["ree showing how per-step reliability (e.g."]
+    R1 --> C2
+    C3["ce much lower end-to-end reliability (36%)"]
+    R1 --> C3
+```
 
 **Compound Divergence in the Agent Loop**
 The agent loop amplifies all sources of non-determinism. Consider a 20-step task:

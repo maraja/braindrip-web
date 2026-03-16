@@ -8,7 +8,12 @@
 
 Imagine reading a 500-page book. Full attention would be like cross-referencing every sentence with every other sentence in the entire book -- 250,000 sentences times 250,000 sentences equals 62.5 billion comparisons. Obviously, humans do not do this. You focus primarily on nearby sentences (local context), occasionally reference key passages from earlier chapters (global context), and skip vast amounts of irrelevant text.
 
-*Recommended visual: Comparison of dense, strided, and fixed sparse attention patterns from the Sparse Transformer paper — see [Generating Long Sequences with Sparse Transformers (arXiv:1904.10509)](https://arxiv.org/abs/1904.10509)*
+```mermaid
+flowchart LR
+    S1["Comparison of dense"]
+    S2["ention patterns from the Sparse Transforme"]
+    S1 --> S2
+```
 
 
 Sparse attention applies this same principle to Transformers. Instead of computing attention between every pair of tokens (dense attention), sparse attention restricts which pairs of tokens can attend to each other. Each token attends to a carefully chosen subset of other tokens, dramatically reducing computation while preserving the ability to model both local patterns and long-range dependencies.
@@ -18,7 +23,14 @@ The fundamental insight is that most attention weights in a trained model are ne
 ## How It Works
 
 
-*Recommended visual: BigBird attention pattern combining random, window, and global attention — see [BigBird Paper (arXiv:2007.14062)](https://arxiv.org/abs/2007.14062)*
+```mermaid
+flowchart LR
+    S1["BigBird attention pattern combining random"]
+    S2["window"]
+    S3["global attention"]
+    S1 --> S2
+    S2 --> S3
+```
 
 ### Sparsity Patterns
 

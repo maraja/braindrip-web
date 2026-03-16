@@ -11,7 +11,20 @@ LLMs have a well-documented calibration problem. They generate text with uniform
 
 The practical value is substantial: in production systems, knowing when the model is uncertain is often as valuable as the answer itself. An uncertain answer can be routed to a human reviewer, flagged for additional verification, or supplemented with retrieval. A confidently wrong answer is the most dangerous output; metacognitive prompting reduces its frequency.
 
-*Recommended visual: A "known-unknown matrix" 2x2 grid with "Known" and "Unknown" on both axes, creating four quadrants: Known Knowns (facts the model is confident about), Known Unknowns (gaps the model can identify), Unknown Unknowns (blind spots the model cannot see), and Unknown Knowns (latent knowledge the model does not realize it has). Each quadrant should include an example and the metacognitive prompting technique that addresses it.*
+```mermaid
+flowchart TD
+    T1["known-unknown matrix 2x2 grid"]
+    subgraph ROW2[" "]
+        Q4["known-unknown matrix"]
+        Q5["Known"]
+    end
+    subgraph ROW3[" "]
+        Q6["Unknown"]
+        Q7["..."]
+    end
+    T1 --- ROW2
+    T1 --- ROW3
+```
 *Source: Adapted from the Rumsfeld matrix, applied to LLM epistemic states as described in Kadavath et al., "Language Models (Mostly) Know What They Know," Anthropic, 2022.*
 
 ![Reflexion framework showing self-reflection and memory feedback loops](https://lilianweng.github.io/posts/2023-06-23-agent/reflexion.png)
