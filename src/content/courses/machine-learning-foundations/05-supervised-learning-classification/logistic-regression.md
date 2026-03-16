@@ -105,11 +105,11 @@ Logistic regression is the default first model for any binary classification pro
 
 ## Connections to Other Concepts
 
-- **Support Vector Machines**: SVMs with a linear kernel optimize hinge loss instead of cross-entropy; both find linear decision boundaries but with different loss geometries.
-- **Naive Bayes**: Both are linear classifiers in log-space. Naive Bayes estimates parameters generatively; logistic regression is discriminative.
-- **Decision Trees**: Trees capture nonlinear boundaries natively but sacrifice the smooth probability estimates logistic regression provides.
-- **Multi-Class Classification**: Softmax regression extends logistic regression to K classes directly, while OvR/OvO strategies wrap binary logistic regression.
-- **Neural Networks**: A single-layer neural network with sigmoid activation *is* logistic regression. Deep networks generalize this with additional layers.
+- `support-vector-machines.md`: SVMs with a linear kernel optimize hinge loss instead of cross-entropy; both find linear decision boundaries but with different loss geometries.
+- `naive-bayes.md`: Both are linear classifiers in log-space. Naive Bayes estimates parameters generatively; logistic regression is discriminative.
+- `decision-trees.md`: Trees capture nonlinear boundaries natively but sacrifice the smooth probability estimates logistic regression provides.
+- `multi-class-classification.md`: Softmax regression extends logistic regression to K classes directly, while OvR/OvO strategies wrap binary logistic regression.
+- `convolution-in-neural-networks.md`: A single-layer neural network with sigmoid activation *is* logistic regression. Deep networks generalize this with additional layers.
 
 ## Further Reading
 

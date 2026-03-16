@@ -112,12 +112,12 @@ Gao et al. (2022) showed that HyDE with the unsupervised Contriever model outper
 
 ## Connections to Other Concepts
 
-- **RAG**: HyDE is an advanced RAG retrieval technique that improves the query->retrieval phase without changing the indexing or generation phases.
-- **Embedding models**: HyDE exploits the structure of embedding spaces, making it sensitive to the quality and characteristics of the embedding model used.
-- **Prompt engineering**: The quality of the hypothetical document generation prompt directly impacts HyDE effectiveness.
-- **Query decomposition**: HyDE can be combined with query decomposition for complex multi-faceted queries.
-- **Agentic RAG**: In agentic RAG systems, the agent can decide dynamically whether to use HyDE or direct query embedding based on query characteristics.
-- **Corrective RAG**: If initial HyDE retrieval returns irrelevant documents, CRAG mechanisms can trigger re-retrieval with different strategies.
+- `rag.md`: HyDE is an advanced RAG retrieval technique that improves the query->retrieval phase without changing the indexing or generation phases.
+- `embedding-models-and-vector-databases.md`: HyDE exploits the structure of embedding spaces, making it sensitive to the quality and characteristics of the embedding model used.
+- `prompt-engineering.md`: The quality of the hypothetical document generation prompt directly impacts HyDE effectiveness.
+- `query-decomposition-and-multi-step-retrieval.md`: HyDE can be combined with query decomposition for complex multi-faceted queries.
+- `agentic-rag.md`: In agentic RAG systems, the agent can decide dynamically whether to use HyDE or direct query embedding based on query characteristics.
+- `corrective-rag.md`: If initial HyDE retrieval returns irrelevant documents, CRAG mechanisms can trigger re-retrieval with different strategies.
 
 ## Further Reading
 

@@ -100,10 +100,10 @@ EfficientNetV2-L achieves 85.7% top-1 accuracy, training 6.8x faster than B7.
 
 ## Connections to Other Concepts
 
-- **MobileNet**: EfficientNet uses MobileNetV2's inverted residual blocks (MBConv) as its building block.
-- **Depthwise Separable Convolutions**: The core operation within every MBConv block.
-- **Neural Architecture Search**: NAS discovers the B0 architecture; the compound scaling method then scales it.
-- **ResNet**: EfficientNet demonstrates that scaling more carefully (compound) outperforms scaling only depth (ResNet's approach) for the same computational budget.
+- `mobilenet.md`: EfficientNet uses MobileNetV2's inverted residual blocks (MBConv) as its building block.
+- `depthwise-separable-convolutions.md`: The core operation within every MBConv block.
+- `neural-architecture-search.md`: NAS discovers the B0 architecture; the compound scaling method then scales it.
+- `resnet.md`: EfficientNet demonstrates that scaling more carefully (compound) outperforms scaling only depth (ResNet's approach) for the same computational budget.
 
 ## Further Reading
 

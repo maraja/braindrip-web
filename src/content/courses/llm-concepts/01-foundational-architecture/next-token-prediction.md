@@ -116,11 +116,11 @@ A subtlety: small improvements in cross-entropy loss can correspond to dramatic 
 
 ## Connections to Other Concepts
 
-- **Autoregressive Generation**: The inference-time manifestation of the next-token prediction objective (see `autoregressive-generation.md`).
-- **Causal Attention**: The masking mechanism that enables parallel training of the next-token objective (see `causal-attention.md`).
-- **Logits and Softmax**: The output layer that converts hidden states into next-token probability distributions (see `logits-and-softmax.md`).
-- **Encoder-Decoder Architecture**: Encoder-only models use masked LM instead of next-token prediction; a different training paradigm with different tradeoffs (see `encoder-decoder-architecture.md`).
-- **Feed-Forward Networks**: Where the factual knowledge needed for good next-token prediction is stored (see `feed-forward-networks.md`).
+- `autoregressive-generation.md`: The inference-time manifestation of the next-token prediction objective (see `autoregressive-generation.md`).
+- `causal-attention.md`: The masking mechanism that enables parallel training of the next-token objective (see `causal-attention.md`).
+- `logits-and-softmax.md`: The output layer that converts hidden states into next-token probability distributions (see `logits-and-softmax.md`).
+- `encoder-decoder-architecture.md`: Encoder-only models use masked LM instead of next-token prediction; a different training paradigm with different tradeoffs (see `encoder-decoder-architecture.md`).
+- `feed-forward-networks.md`: Where the factual knowledge needed for good next-token prediction is stored (see `feed-forward-networks.md`).
 
 ## Further Reading
 

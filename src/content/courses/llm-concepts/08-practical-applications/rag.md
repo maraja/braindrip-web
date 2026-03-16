@@ -136,11 +136,11 @@ RAG is arguably the most important architectural pattern in production LLM appli
 
 ## Connections to Other Concepts
 
-- **Embedding models and vector databases** are the infrastructure that makes RAG retrieval possible.
-- **Chunking strategies** directly determine retrieval quality -- bad chunks mean bad retrieval, regardless of how good the embedding model is.
-- **Prompt engineering** governs the generation phase -- how you structure the context-injection prompt affects answer quality.
-- **Function calling** enables agentic RAG, where the model decides when to retrieve, what query to use, and whether to retrieve again.
-- **AI agents** often use RAG as their memory and knowledge retrieval mechanism.
+- `embedding-models-and-vector-databases.md`: are the infrastructure that makes RAG retrieval possible.
+- `chunking-strategies.md`: directly determine retrieval quality -- bad chunks mean bad retrieval, regardless of how good the embedding model is.
+- `prompt-engineering.md`: governs the generation phase -- how you structure the context-injection prompt affects answer quality.
+- `function-calling.md`: enables agentic RAG, where the model decides when to retrieve, what query to use, and whether to retrieve again.
+- `ai-agents.md`: often use RAG as their memory and knowledge retrieval mechanism.
 
 ## Further Reading
 

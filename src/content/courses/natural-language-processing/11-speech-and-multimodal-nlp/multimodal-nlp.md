@@ -89,13 +89,13 @@ How information from different modalities is combined is a fundamental design ch
 
 ## Connections to Other Concepts
 
-- **`visual-question-answering.md`**: VQA is a core multimodal task testing joint vision-language reasoning, serving as a primary evaluation benchmark.
-- **`image-captioning.md`**: Captioning is the prototypical vision-to-language generation task, now subsumed by multimodal LLMs.
-- **`document-understanding.md`**: Document AI requires multimodal fusion of text, layout, and visual features.
-- **`speech-language-models.md`**: The speech-text unification trend parallels vision-language unification -- both point toward universal multimodal models.
-- **`bert.md`**: Many early multimodal models (ViLBERT, VisualBERT, UNITER) extended BERT's masked language modeling to the multimodal setting.
-- **`gpt-for-nlp-tasks.md`**: Multimodal LLMs extend the GPT paradigm to accept and generate across modalities.
-- **`sentence-embeddings.md`**: CLIP's text embeddings serve as powerful sentence-level representations for retrieval and zero-shot classification.
+- `visual-question-answering.md`: VQA is a core multimodal task testing joint vision-language reasoning, serving as a primary evaluation benchmark.
+- `image-captioning.md`: Captioning is the prototypical vision-to-language generation task, now subsumed by multimodal LLMs.
+- `document-understanding.md`: Document AI requires multimodal fusion of text, layout, and visual features.
+- `speech-language-models.md`: The speech-text unification trend parallels vision-language unification -- both point toward universal multimodal models.
+- `bert.md`: Many early multimodal models (ViLBERT, VisualBERT, UNITER) extended BERT's masked language modeling to the multimodal setting.
+- `gpt-for-nlp-tasks.md`: Multimodal LLMs extend the GPT paradigm to accept and generate across modalities.
+- `sentence-embeddings.md`: CLIP's text embeddings serve as powerful sentence-level representations for retrieval and zero-shot classification.
 
 ## Further Reading
 

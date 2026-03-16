@@ -121,12 +121,12 @@ Organizations and governments attempting to forecast AI progress rely heavily on
 
 ## Connections to Other Concepts
 
-- **Scaling Laws**: The smooth power-law improvement in loss contrasts with the apparently discontinuous improvement in task performance.
-- **Pre-Training**: Emergence is observed as a function of pre-training scale (parameters, data, compute).
-- **Chain-of-Thought Prompting**: One of the most prominent examples of an apparently emergent capability.
-- **In-Context Learning**: The ability to learn from examples in the prompt, itself considered emergent, interacts with other emergent capabilities.
-- **AI Safety and Alignment**: Emergence directly impacts the ability to forecast and prepare for potentially dangerous capabilities.
-- **Evaluation and Benchmarks**: The choice of metric fundamentally affects whether emergence is observed.
+- `scaling-laws.md`: The smooth power-law improvement in loss contrasts with the apparently discontinuous improvement in task performance.
+- `pre-training.md`: Emergence is observed as a function of pre-training scale (parameters, data, compute).
+- `chain-of-thought-prompting.md`: One of the most prominent examples of an apparently emergent capability.
+- `in-context-learning.md`: The ability to learn from examples in the prompt, itself considered emergent, interacts with other emergent capabilities.
+- `03-ai-safety-and-governance.md`: Emergence directly impacts the ability to forecast and prepare for potentially dangerous capabilities.
+- `trajectory-evaluation.md`: The choice of metric fundamentally affects whether emergence is observed.
 
 ## Further Reading
 

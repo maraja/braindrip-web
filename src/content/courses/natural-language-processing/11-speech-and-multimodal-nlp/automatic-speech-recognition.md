@@ -87,13 +87,13 @@ Alignment between the hypothesis and reference is found via dynamic programming 
 
 ## Connections to Other Concepts
 
-- **`text-to-speech.md`**: TTS is the inverse problem of ASR -- generating speech from text rather than text from speech. They share acoustic feature representations and increasingly share model architectures.
-- **`speech-language-models.md`**: Unified speech-text models build on ASR capabilities to enable bidirectional speech-text processing.
-- **`sequence-to-sequence-models.md`**: End-to-end ASR (LAS, Whisper) is fundamentally a sequence-to-sequence problem mapping audio frames to token sequences.
-- **`attention-mechanism.md`**: Attention is central to modern ASR, enabling the decoder to focus on relevant audio frames during transcription.
-- **`n-gram-language-models.md`**: N-gram LMs remain widely used in ASR decoding for their efficiency and effectiveness in constraining the search space.
-- **`low-resource-nlp.md`**: Self-supervised speech models and multilingual ASR address the same data scarcity challenges for underserved languages.
-- **`evaluation-metrics-for-nlp.md`**: WER, CER, and other ASR metrics complement the text-based metrics covered there.
+- `text-to-speech.md`: TTS is the inverse problem of ASR -- generating speech from text rather than text from speech. They share acoustic feature representations and increasingly share model architectures.
+- `speech-language-models.md`: Unified speech-text models build on ASR capabilities to enable bidirectional speech-text processing.
+- `sequence-to-sequence-models.md`: End-to-end ASR (LAS, Whisper) is fundamentally a sequence-to-sequence problem mapping audio frames to token sequences.
+- `attention-mechanism.md`: Attention is central to modern ASR, enabling the decoder to focus on relevant audio frames during transcription.
+- `n-gram-language-models.md`: N-gram LMs remain widely used in ASR decoding for their efficiency and effectiveness in constraining the search space.
+- `low-resource-nlp.md`: Self-supervised speech models and multilingual ASR address the same data scarcity challenges for underserved languages.
+- `evaluation-metrics.md`: WER, CER, and other ASR metrics complement the text-based metrics covered there.
 
 ## Further Reading
 

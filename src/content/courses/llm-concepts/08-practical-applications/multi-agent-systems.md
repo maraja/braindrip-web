@@ -120,13 +120,13 @@ They lose on simple single-step tasks where the orchestration overhead (3-10x co
 
 ## Connections to Other Concepts
 
-- **ReAct Pattern**: The foundational reasoning-action loop that most individual agents within a multi-agent system implement internally for their own tool use and reasoning.
-- **Tool Use and Function Calling**: Agents' ability to invoke tools is what makes specialization practical -- different agents get different tool sets matched to their roles.
-- **Memory Systems**: Shared and agent-specific memory enables context persistence across multi-turn agent interactions and long-running workflows spanning multiple sessions.
-- **Self-Reflection**: Critic agents in multi-agent systems apply self-reflection principles to evaluate other agents' outputs, creating external feedback loops.
-- **Reasoning Models**: Using reasoning models (o1, R1) as the backbone for critical agents (reviewers, planners) can improve multi-agent system quality on complex tasks.
-- **RAG (Retrieval-Augmented Generation)**: Research agents in multi-agent systems typically use RAG to ground their outputs in retrieved documents before passing results to other agents.
-- **Prompt Engineering**: The system prompt for each agent is effectively a role specification -- the quality of these prompts directly determines how well agents perform their specialized functions.
+- `react-pattern.md`: The foundational reasoning-action loop that most individual agents within a multi-agent system implement internally for their own tool use and reasoning.
+- `tool-use-benchmarks.md`: Agents' ability to invoke tools is what makes specialization practical -- different agents get different tool sets matched to their roles.
+- `memory-systems.md`: Shared and agent-specific memory enables context persistence across multi-turn agent interactions and long-running workflows spanning multiple sessions.
+- `self-reflection.md`: Critic agents in multi-agent systems apply self-reflection principles to evaluate other agents' outputs, creating external feedback loops.
+- `reasoning-models.md`: Using reasoning models (o1, R1) as the backbone for critical agents (reviewers, planners) can improve multi-agent system quality on complex tasks.
+- `rag.md`: Research agents in multi-agent systems typically use RAG to ground their outputs in retrieved documents before passing results to other agents.
+- `prompt-engineering.md`: The system prompt for each agent is effectively a role specification -- the quality of these prompts directly determines how well agents perform their specialized functions.
 
 ## Further Reading
 

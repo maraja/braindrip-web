@@ -106,11 +106,11 @@ All three losses are computed only on positive (matched) proposals. The mask los
 
 ## Connections to Other Concepts
 
-- **Instance Segmentation**: Mask R-CNN is the canonical top-down approach to this task.
-- **Fully Convolutional Networks**: the mask head is itself a small FCN operating on pooled features.
-- **Panoptic Segmentation**: Panoptic FPN extends Mask R-CNN's FPN with a semantic segmentation branch for stuff classes.
-- **Segment Anything**: SAM can be viewed as a generalized promptable mask prediction system, whereas Mask R-CNN couples detection with mask prediction.
-- **DeepLab and Atrous Convolution**: an alternative paradigm that avoids region proposals entirely, addressing segmentation as a dense prediction problem.
+- `instance-segmentation.md`: Mask R-CNN is the canonical top-down approach to this task.
+- `fully-convolutional-networks.md`: the mask head is itself a small FCN operating on pooled features.
+- `panoptic-segmentation.md`: Panoptic FPN extends Mask R-CNN's FPN with a semantic segmentation branch for stuff classes.
+- `segment-anything.md`: SAM can be viewed as a generalized promptable mask prediction system, whereas Mask R-CNN couples detection with mask prediction.
+- `deeplab-and-atrous-convolution.md`: an alternative paradigm that avoids region proposals entirely, addressing segmentation as a dense prediction problem.
 
 ## Further Reading
 

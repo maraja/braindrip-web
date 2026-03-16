@@ -100,14 +100,14 @@ Typical precision@1 scores:
 
 ## Connections to Other Concepts
 
-- **`word2vec.md`**: Provides the monolingual embeddings that serve as input to cross-lingual alignment methods.
-- **`fasttext.md`**: FastText embeddings are preferred inputs because their subword information handles morphological variation and out-of-vocabulary words.
-- **`multilingual-transformers.md`**: The successor paradigm that learns cross-lingual representations jointly during pre-training rather than through post-hoc alignment.
-- **`multilingual-nlp.md`**: Cross-lingual embeddings are one of the core techniques enabling multilingual NLP systems.
-- **`low-resource-nlp.md`**: Cross-lingual embedding transfer is a key strategy for languages with scarce labeled data.
-- **`machine-translation-approaches.md`**: Bilingual dictionary induction from aligned embeddings bootstraps MT for low-resource language pairs.
-- **`cross-lingual-transfer.md`**: Cross-lingual embeddings provide the representation layer that makes task-level cross-lingual transfer possible.
-- **`sentence-embeddings.md`**: Extensions like LASER (Artetxe and Schwenk, 2019) learn cross-lingual sentence embeddings for retrieval and mining.
+- `word2vec.md`: Provides the monolingual embeddings that serve as input to cross-lingual alignment methods.
+- `fasttext.md`: FastText embeddings are preferred inputs because their subword information handles morphological variation and out-of-vocabulary words.
+- `multilingual-transformers.md`: The successor paradigm that learns cross-lingual representations jointly during pre-training rather than through post-hoc alignment.
+- `multilingual-nlp.md`: Cross-lingual embeddings are one of the core techniques enabling multilingual NLP systems.
+- `low-resource-nlp.md`: Cross-lingual embedding transfer is a key strategy for languages with scarce labeled data.
+- `machine-translation.md`: Bilingual dictionary induction from aligned embeddings bootstraps MT for low-resource language pairs.
+- `cross-lingual-transfer.md`: Cross-lingual embeddings provide the representation layer that makes task-level cross-lingual transfer possible.
+- `sentence-embeddings.md`: Extensions like LASER (Artetxe and Schwenk, 2019) learn cross-lingual sentence embeddings for retrieval and mining.
 
 ## Further Reading
 

@@ -150,10 +150,10 @@ rotated = cv2.warpAffine(img, M, (w, h), flags=cv2.INTER_CUBIC,
 
 ## Connections to Other Concepts
 
-- **Digital Images and Pixels**: Interpolation reconstructs the continuous signal from discrete samples -- the inverse of the sampling process described in image formation.
-- **Convolution and Filtering**: Every interpolation method can be expressed as convolution with an interpolation kernel, connecting resampling theory to filtering theory.
-- **Image Pyramids and Scale Space**: Pyramid construction requires downsampling (with anti-aliasing), and Laplacian pyramid reconstruction requires upsampling -- both are interpolation operations.
-- **Frequency Domain and Fourier Transform**: The ideal interpolation kernel (sinc function) is derived from the sampling theorem in the frequency domain. Practical kernels are finite approximations to the sinc, and their frequency responses determine aliasing behavior.
+- `digital-images-and-pixels.md`: Interpolation reconstructs the continuous signal from discrete samples -- the inverse of the sampling process described in image formation.
+- `convolution-and-filtering.md`: Every interpolation method can be expressed as convolution with an interpolation kernel, connecting resampling theory to filtering theory.
+- `image-pyramids-and-scale-space.md`: Pyramid construction requires downsampling (with anti-aliasing), and Laplacian pyramid reconstruction requires upsampling -- both are interpolation operations.
+- `frequency-domain-and-fourier-transform.md`: The ideal interpolation kernel (sinc function) is derived from the sampling theorem in the frequency domain. Practical kernels are finite approximations to the sinc, and their frequency responses determine aliasing behavior.
 
 ## Further Reading
 

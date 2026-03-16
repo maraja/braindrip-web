@@ -127,11 +127,11 @@ The empirical consensus as of 2025: on-policy approaches close most of the gap b
 
 ## Connections to Other Concepts
 
-- **RLHF** is the direct predecessor that DPO simplifies. Understanding RLHF's full pipeline is essential to appreciating DPO's elegance.
-- **Reward modeling** is implicitly handled within DPO's framework, making the reward model concept still theoretically relevant even if practically eliminated.
-- **Supervised fine-tuning** provides the reference model and initialization for DPO training.
+- `rlhf.md`: is the direct predecessor that DPO simplifies. Understanding RLHF's full pipeline is essential to appreciating DPO's elegance.
+- `reward-modeling.md`: is implicitly handled within DPO's framework, making the reward model concept still theoretically relevant even if practically eliminated.
+- `supervised-fine-tuning.md`: provides the reference model and initialization for DPO training.
 - **KL divergence** is implicitly enforced in DPO through the reference model terms in the loss, achieving the same regularization effect as the explicit KL penalty in RLHF.
-- **Constitutional AI** can provide the preference data that DPO trains on, combining RLAIF with DPO for a fully automated alignment pipeline.
+- `constitutional-ai.md`: can provide the preference data that DPO trains on, combining RLAIF with DPO for a fully automated alignment pipeline.
 
 ## Further Reading
 

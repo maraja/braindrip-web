@@ -91,11 +91,11 @@ Matrix decompositions are the computational backbone of ML. PCA (via eigendecomp
 
 ## Connections to Other Concepts
 
-- **Vectors and Matrices**: Decompositions require fluency with rank, column space, and matrix operations.
-- **Optimization and Gradient Descent**: The condition number from SVD determines how fast gradient descent converges. Preconditioning uses decompositions to accelerate optimization.
-- **Probability Fundamentals**: The covariance matrix is the object being decomposed in PCA; its eigenvalues are variances along principal axes.
-- **Norms and Distance Metrics**: The spectral norm $\|A\|_2 = \sigma_{\max}$ and Frobenius norm $\|A\|_F = \sqrt{\sum \sigma_i^2}$ are defined through singular values.
-- **Statistical Inference**: Decompositions enable efficient computation of likelihoods involving multivariate Gaussians.
+- `vectors-and-matrices.md`: Decompositions require fluency with rank, column space, and matrix operations.
+- `cost-latency-optimization.md`: The condition number from SVD determines how fast gradient descent converges. Preconditioning uses decompositions to accelerate optimization.
+- `probability-fundamentals.md`: The covariance matrix is the object being decomposed in PCA; its eigenvalues are variances along principal axes.
+- `norms-and-distance-metrics.md`: The spectral norm $\|A\|_2 = \sigma_{\max}$ and Frobenius norm $\|A\|_F = \sqrt{\sum \sigma_i^2}$ are defined through singular values.
+- `statistical-inference.md`: Decompositions enable efficient computation of likelihoods involving multivariate Gaussians.
 
 ## Further Reading
 

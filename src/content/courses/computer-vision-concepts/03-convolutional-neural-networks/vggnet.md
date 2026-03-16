@@ -84,12 +84,12 @@ Two stacked $3 \times 3$ conv layers have an effective receptive field of $5 \ti
 
 ## Connections to Other Concepts
 
-- **AlexNet**: VGGNet refined AlexNet's blueprint by replacing large kernels with stacked $3 \times 3$ convolutions and increasing depth from 8 to 19 layers.
-- **Receptive Field**: Demonstrated that stacking small kernels achieves large receptive fields more efficiently than single large kernels.
-- **Inception**: GoogLeNet was VGGNet's contemporary competitor, taking a very different approach with multi-branch parallel convolutions rather than uniform sequential stacking.
-- **ResNet**: Addressed VGGNet's scaling limitation -- that simply stacking more layers eventually degrades performance -- by introducing skip connections.
-- **Depthwise Separable Convolutions**: Later architectures factored VGG-style $3 \times 3$ convolutions into depthwise and pointwise components, reducing VGG's computational cost by an order of magnitude while preserving accuracy.
-- **EfficientNet**: Compound scaling provided a principled alternative to VGG's manual depth-only scaling strategy.
+- `alexnet.md`: VGGNet refined AlexNet's blueprint by replacing large kernels with stacked $3 \times 3$ convolutions and increasing depth from 8 to 19 layers.
+- `receptive-field.md`: Demonstrated that stacking small kernels achieves large receptive fields more efficiently than single large kernels.
+- `inception.md`: GoogLeNet was VGGNet's contemporary competitor, taking a very different approach with multi-branch parallel convolutions rather than uniform sequential stacking.
+- `resnet.md`: Addressed VGGNet's scaling limitation -- that simply stacking more layers eventually degrades performance -- by introducing skip connections.
+- `depthwise-separable-convolutions.md`: Later architectures factored VGG-style $3 \times 3$ convolutions into depthwise and pointwise components, reducing VGG's computational cost by an order of magnitude while preserving accuracy.
+- `efficientnet.md`: Compound scaling provided a principled alternative to VGG's manual depth-only scaling strategy.
 
 ## Further Reading
 

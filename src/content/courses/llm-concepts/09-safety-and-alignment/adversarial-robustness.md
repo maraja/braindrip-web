@@ -238,14 +238,14 @@ Adversarial attacks are the technical toolkit for red teaming. Organizations use
 
 ## Connections to Other Concepts
 
-- **Jailbreaking**: Adversarial robustness provides the formal, technical framework for understanding jailbreaking. Jailbreaking is the practical phenomenon; adversarial robustness is the scientific study of why it works and how to prevent it.
-- **Circuit Breakers**: The most promising defense mechanism against adversarial attacks, operating at the representation level rather than the input/output level where attacks are crafted.
-- **Red Teaming**: Adversarial attack methods are the primary tools used in red teaming exercises. GCG, AutoDAN, and PAIR are standard components of any thorough red teaming evaluation.
-- **RLHF and Safety Training**: Adversarial robustness research reveals the limitations of RLHF-based safety -- that it produces behavioral patterns that can be broken by sufficiently creative inputs.
-- **Representation Engineering**: Understanding the internal representations that adversarial attacks exploit (e.g., the refusal direction) enables both more targeted attacks and more robust defenses.
-- **Guardrails and Content Filtering**: External defense layers that complement model-level robustness. Guardrails catch attacks that bypass model-level defenses; robustness reduces the load on guardrails.
-- **Benchmark Contamination**: Just as contamination undermines benchmark evaluation, adversarial vulnerability undermines safety evaluation. A model that appears safe on standard tests may fail catastrophically on adversarial inputs.
-- **Machine Unlearning**: Where adversarial robustness asks "can we prevent the model from producing harmful output?", unlearning asks "can we remove the harmful knowledge entirely?" They are complementary approaches with different threat models.
+- `jailbreaking.md`: Adversarial robustness provides the formal, technical framework for understanding jailbreaking. Jailbreaking is the practical phenomenon; adversarial robustness is the scientific study of why it works and how to prevent it.
+- `circuit-breakers.md`: The most promising defense mechanism against adversarial attacks, operating at the representation level rather than the input/output level where attacks are crafted.
+- `red-teaming.md`: Adversarial attack methods are the primary tools used in red teaming exercises. GCG, AutoDAN, and PAIR are standard components of any thorough red teaming evaluation.
+- `rlhf.md`: Adversarial robustness research reveals the limitations of RLHF-based safety -- that it produces behavioral patterns that can be broken by sufficiently creative inputs.
+- `representation-engineering.md`: Understanding the internal representations that adversarial attacks exploit (e.g., the refusal direction) enables both more targeted attacks and more robust defenses.
+- `guardrails.md`: External defense layers that complement model-level robustness. Guardrails catch attacks that bypass model-level defenses; robustness reduces the load on guardrails.
+- `benchmark-contamination-detection.md`: Just as contamination undermines benchmark evaluation, adversarial vulnerability undermines safety evaluation. A model that appears safe on standard tests may fail catastrophically on adversarial inputs.
+- `machine-unlearning.md`: Where adversarial robustness asks "can we prevent the model from producing harmful output?", unlearning asks "can we remove the harmful knowledge entirely?" They are complementary approaches with different threat models.
 
 ## Further Reading
 

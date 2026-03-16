@@ -92,8 +92,8 @@ As of 2024, the FDA has authorized over 950 AI/ML-enabled medical devices, with 
 
 - **Image Segmentation**: U-Net and its variants are the primary architectures; Dice loss is the standard training objective.
 - **3D Vision**: Volumetric medical data requires 3D convolutions, point clouds (for surface meshes), or multi-view processing.
-- **Data Augmentation**: Elastic deformations and intensity augmentations are essential for small medical datasets.
-- **Edge Deployment**: Point-of-care devices in rural clinics require efficient models that run without cloud connectivity.
+- `data-augmentation.md`: Elastic deformations and intensity augmentations are essential for small medical datasets.
+- `edge-deployment.md`: Point-of-care devices in rural clinics require efficient models that run without cloud connectivity.
 
 ## Further Reading
 

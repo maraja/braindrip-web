@@ -102,11 +102,11 @@ Replacing LSTMs with Transformer decoders brought significant improvements:
 
 ## Connections to Other Concepts
 
-- **CLIP**: Provides the image encoder for BLIP-2, LLaVA, and many modern captioning models; its embedding space enables contrastive pretraining.
-- **Visual Question Answering**: Captioning and VQA share encoder-decoder architectures; VQA can be seen as conditional captioning where the condition is a question.
-- **Text-to-Image Generation**: The inverse of captioning -- generating images from text rather than text from images. Both require cross-modal understanding.
-- **Vision Transformers**: ViTs serve as the image encoder in all modern captioning architectures.
-- **Vision Foundation Models**: Captioning capability is a key benchmark for evaluating general-purpose vision-language models.
+- `clip.md`: Provides the image encoder for BLIP-2, LLaVA, and many modern captioning models; its embedding space enables contrastive pretraining.
+- `visual-question-answering.md`: Captioning and VQA share encoder-decoder architectures; VQA can be seen as conditional captioning where the condition is a question.
+- `text-to-image-generation.md`: The inverse of captioning -- generating images from text rather than text from images. Both require cross-modal understanding.
+- `vision-transformer.md`: ViTs serve as the image encoder in all modern captioning architectures.
+- `vision-foundation-models.md`: Captioning capability is a key benchmark for evaluating general-purpose vision-language models.
 
 ## Further Reading
 

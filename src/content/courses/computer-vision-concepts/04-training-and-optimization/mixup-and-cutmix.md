@@ -111,10 +111,10 @@ Mixup blends globally, creating ghostly superimposed images that are unnatural. 
 
 ## Connections to Other Concepts
 
-- **Data Augmentation**: Mixup and CutMix extend augmentation beyond single-image transforms to multi-image composition.
-- **Label Smoothing**: Both produce soft targets but through different mechanisms -- label smoothing is target-side, Mixup/CutMix is input-side.
-- **Knowledge Distillation**: Soft targets in distillation share the same intuition as Mixup/CutMix soft labels: richer gradients from non-extreme targets.
-- **Dropout and Regularization**: Mixup/CutMix are data-space regularizers, complementary to parameter-space regularizers like dropout and weight decay.
+- `data-augmentation.md`: Mixup and CutMix extend augmentation beyond single-image transforms to multi-image composition.
+- `label-smoothing.md`: Both produce soft targets but through different mechanisms -- label smoothing is target-side, Mixup/CutMix is input-side.
+- `knowledge-distillation.md`: Soft targets in distillation share the same intuition as Mixup/CutMix soft labels: richer gradients from non-extreme targets.
+- `dropout-and-regularization.md`: Mixup/CutMix are data-space regularizers, complementary to parameter-space regularizers like dropout and weight decay.
 
 ## Further Reading
 

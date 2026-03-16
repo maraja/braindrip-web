@@ -75,11 +75,11 @@ Bagging is one of the most reliable variance-reduction techniques in machine lea
 
 ## Connections to Other Concepts
 
-- **Random Forests**: Extend bagging by adding random feature selection at each split, further decorrelating the ensemble members and pushing $\rho$ closer to zero.
-- **AdaBoost**: Represents the opposite philosophy -- sequential rather than parallel, focusing on bias reduction rather than variance reduction.
-- **Gradient Boosting**: Also sequential, but frames the ensemble as gradient descent in function space. Bagging's subsampling idea appears in stochastic gradient boosting.
-- **Stacking and Blending**: While bagging combines identical model types, stacking combines diverse model families through a learned meta-model.
-- **Bias-Variance Tradeoff**: Bagging is the textbook intervention for the variance side of the tradeoff without increasing bias.
+- `random-forests.md`: Extend bagging by adding random feature selection at each split, further decorrelating the ensemble members and pushing $\rho$ closer to zero.
+- `adaboost.md`: Represents the opposite philosophy -- sequential rather than parallel, focusing on bias reduction rather than variance reduction.
+- `gradient-boosting.md`: Also sequential, but frames the ensemble as gradient descent in function space. Bagging's subsampling idea appears in stochastic gradient boosting.
+- `stacking-and-blending.md`: While bagging combines identical model types, stacking combines diverse model families through a learned meta-model.
+- `bias-variance-tradeoff.md`: Bagging is the textbook intervention for the variance side of the tradeoff without increasing bias.
 
 ## Further Reading
 

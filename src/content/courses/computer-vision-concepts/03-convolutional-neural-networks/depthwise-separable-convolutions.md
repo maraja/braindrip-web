@@ -106,10 +106,10 @@ Some architectures (MobileNetV2) apply a linear bottleneck after the pointwise c
 
 ## Connections to Other Concepts
 
-- **Convolution in Neural Networks**: Depthwise separable convolution is a strict factorization of the standard convolution operation into spatial and channel components.
-- **Inception**: Inception's use of $1 \times 1$ convolutions for dimensionality reduction is conceptually related; depthwise separable convolutions take the factorization further by making every spatial convolution single-channel.
-- **MobileNet**: Built entirely on depthwise separable convolutions, applying them systematically for mobile-efficient architectures.
-- **EfficientNet**: Uses depthwise separable convolutions as the primary operator within its mobile inverted bottleneck blocks.
+- `convolution-in-neural-networks.md`: Depthwise separable convolution is a strict factorization of the standard convolution operation into spatial and channel components.
+- `inception.md`: Inception's use of $1 \times 1$ convolutions for dimensionality reduction is conceptually related; depthwise separable convolutions take the factorization further by making every spatial convolution single-channel.
+- `mobilenet.md`: Built entirely on depthwise separable convolutions, applying them systematically for mobile-efficient architectures.
+- `efficientnet.md`: Uses depthwise separable convolutions as the primary operator within its mobile inverted bottleneck blocks.
 
 ## Further Reading
 

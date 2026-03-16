@@ -103,11 +103,11 @@ Constitutions typically contain 10-20 principles. Each comparison uses 1-2 rando
 
 ## Connections to Other Concepts
 
-- **RLHF**: RLAIF modifies only the annotation stage, keeping reward model training and RL optimization intact.
-- **Reward modeling**: Standard RLAIF still trains a reward model on AI labels. d-RLAIF bypasses this step entirely.
-- **DPO**: AI preferences from RLAIF can feed directly into DPO, combining AI labeling scalability with DPO simplicity.
-- **Synthetic data**: RLAIF is a structured form of synthetic data generation for preference labels.
-- **Constitutional AI**: The most principled RLAIF variant, with explicit, auditable alignment criteria.
+- `rlhf.md`: RLAIF modifies only the annotation stage, keeping reward model training and RL optimization intact.
+- `reward-modeling.md`: Standard RLAIF still trains a reward model on AI labels. d-RLAIF bypasses this step entirely.
+- `dpo.md`: AI preferences from RLAIF can feed directly into DPO, combining AI labeling scalability with DPO simplicity.
+- `synthetic-data.md`: RLAIF is a structured form of synthetic data generation for preference labels.
+- `constitutional-ai.md`: The most principled RLAIF variant, with explicit, auditable alignment criteria.
 
 ## Further Reading
 

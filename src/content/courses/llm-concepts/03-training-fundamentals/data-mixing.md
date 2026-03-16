@@ -105,11 +105,11 @@ Some training pipelines adjust mixing ratios during training:
 
 ## Connections to Other Concepts
 
-- **Training Data Curation**: Data mixing is the macro-level complement to curation's micro-level filtering (see `training-data-curation.md`).
-- **Scaling Laws**: Data mixing laws extend Chinchilla scaling laws by adding domain composition as a dimension of optimization (see `scaling-laws.md`).
-- **Pre-Training**: Data mixing directly shapes the pre-training process and its outcomes (see `pre-training.md`).
-- **Model Collapse**: Poor mixing (especially over-reliance on synthetic data or narrow domains) can accelerate model collapse (see `model-collapse.md`).
-- **Curriculum Learning**: Domain annealing during training is a form of data-level curriculum (see `curriculum-learning.md`).
+- `training-data-curation.md`: Data mixing is the macro-level complement to curation's micro-level filtering (see `training-data-curation.md`).
+- `scaling-laws.md`: Data mixing laws extend Chinchilla scaling laws by adding domain composition as a dimension of optimization (see `scaling-laws.md`).
+- `pre-training.md`: Data mixing directly shapes the pre-training process and its outcomes (see `pre-training.md`).
+- `model-collapse.md`: Poor mixing (especially over-reliance on synthetic data or narrow domains) can accelerate model collapse (see `model-collapse.md`).
+- `curriculum-learning.md`: Domain annealing during training is a form of data-level curriculum (see `curriculum-learning.md`).
 
 ## Further Reading
 

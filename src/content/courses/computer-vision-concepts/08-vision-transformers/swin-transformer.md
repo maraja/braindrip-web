@@ -81,10 +81,10 @@ Rather than absolute positional embeddings, Swin uses a learnable relative posit
 
 ## Connections to Other Concepts
 
-- **Vision Transformer (ViT)**: Swin addresses ViT's quadratic cost and single-scale limitation by introducing local windows and hierarchical structure.
-- **Attention in Vision**: Swin's windowed attention is a key instance of the broader design space for efficient attention in vision.
-- **Hybrid CNN-Transformer**: Swin's hierarchical design mirrors CNN feature pyramids, making it a natural bridge between CNN and Transformer paradigms.
-- **Vision Transformer Scaling**: Swin V2 demonstrates how windowed Transformers scale to billions of parameters and very high resolutions.
+- `vision-transformer.md`: Swin addresses ViT's quadratic cost and single-scale limitation by introducing local windows and hierarchical structure.
+- `attention-in-vision.md`: Swin's windowed attention is a key instance of the broader design space for efficient attention in vision.
+- `hybrid-cnn-transformer.md`: Swin's hierarchical design mirrors CNN feature pyramids, making it a natural bridge between CNN and Transformer paradigms.
+- `vision-transformer-scaling.md`: Swin V2 demonstrates how windowed Transformers scale to billions of parameters and very high resolutions.
 
 ## Further Reading
 

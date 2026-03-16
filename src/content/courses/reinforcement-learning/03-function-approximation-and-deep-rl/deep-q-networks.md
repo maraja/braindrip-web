@@ -81,11 +81,11 @@ DQN was a watershed moment in AI. Before 2013, combining neural networks with RL
 
 ## Connections to Other Concepts
 
-- **Q-learning** (`q-learning.md`) is the tabular foundation; DQN is Q-learning with neural function approximation.
-- **Experience replay** (`experience-replay.md`) and **target networks** (`target-networks.md`) are DQN's two core stabilization innovations.
-- **Double DQN** (`double-dqn.md`), **Dueling DQN** (`dueling-dqn.md`), and **Rainbow** (`rainbow-dqn.md`) are direct improvements built on the DQN framework.
+- `q-learning.md`: (`q-learning.md`) is the tabular foundation; DQN is Q-learning with neural function approximation.
+- `experience-replay.md`: (`experience-replay.md`) and **target networks** (`target-networks.md`) are DQN's two core stabilization innovations.
+- `double-dqn.md`: (`double-dqn.md`), **Dueling DQN** (`dueling-dqn.md`), and **Rainbow** (`rainbow-dqn.md`) are direct improvements built on the DQN framework.
 - The **deadly triad** (`function-approximation.md`) explains *why* DQN's innovations were necessary.
-- **Atari benchmarks** (`atari-and-arcade-games.md`) provide the canonical evaluation environment for DQN and its successors.
+- `benchmarks.md`: (`atari-and-arcade-games.md`) provide the canonical evaluation environment for DQN and its successors.
 
 ## Further Reading
 

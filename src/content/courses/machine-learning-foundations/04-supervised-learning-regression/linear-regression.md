@@ -107,12 +107,12 @@ Beyond prediction, linear regression plays a central role in causal inference. I
 
 ## Connections to Other Concepts
 
-- **Polynomial Regression**: Extends linear regression by adding powers of predictors as features while retaining the OLS framework.
-- **Ridge and Lasso Regression**: Add penalty terms to the OLS objective to combat overfitting and multicollinearity.
-- **Regression Diagnostics**: The toolkit for verifying whether linear regression assumptions actually hold for your data.
-- **Generalized Linear Models**: Extend the linear regression framework to non-normal response distributions via link functions.
-- **Gradient Descent**: The iterative optimization alternative when the closed-form solution is computationally infeasible.
-- **Bias-Variance Tradeoff**: Linear regression is low-bias for truly linear relationships but can have high variance with many correlated predictors.
+- `polynomial-regression.md`: Extends linear regression by adding powers of predictors as features while retaining the OLS framework.
+- `ridge-and-lasso-regression.md`: Add penalty terms to the OLS objective to combat overfitting and multicollinearity.
+- `regression-diagnostics.md`: The toolkit for verifying whether linear regression assumptions actually hold for your data.
+- `generalized-linear-models.md`: Extend the linear regression framework to non-normal response distributions via link functions.
+- `optimization-and-gradient-descent.md`: The iterative optimization alternative when the closed-form solution is computationally infeasible.
+- `bias-variance-tradeoff.md`: Linear regression is low-bias for truly linear relationships but can have high variance with many correlated predictors.
 
 ## Further Reading
 

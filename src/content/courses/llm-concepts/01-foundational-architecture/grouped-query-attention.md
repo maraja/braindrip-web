@@ -134,13 +134,13 @@ GQA has become the standard attention configuration for production LLMs because 
 
 ## Connections to Other Concepts
 
-- **Multi-Head Attention**: GQA is a direct modification of MHA. Understanding MHA is essential for understanding what GQA changes and why.
-- **KV Cache**: GQA's entire motivation is reducing KV cache size. Understanding the KV cache bottleneck is essential for understanding why GQA matters.
-- **Flash Attention**: FlashAttention's memory-efficient attention computation and GQA's reduced KV heads are complementary optimizations that together enable long-context inference.
-- **Quantization**: KV cache quantization and GQA are orthogonal optimizations that can be combined for maximum memory reduction.
-- **Sparse Attention**: Both GQA and sparse attention reduce the effective cost of attention, but through different mechanisms: GQA reduces per-token memory; sparse attention reduces the number of tokens attended to.
-- **Context Window Extension**: Longer contexts require larger KV caches, making GQA increasingly important as context lengths grow.
-- **Model Serving / Throughput vs. Latency**: GQA is primarily a throughput optimization -- it enables serving more concurrent requests or longer contexts within the same memory budget.
+- `multi-head-attention.md`: GQA is a direct modification of MHA. Understanding MHA is essential for understanding what GQA changes and why.
+- `kv-cache.md`: GQA's entire motivation is reducing KV cache size. Understanding the KV cache bottleneck is essential for understanding why GQA matters.
+- `flash-attention.md`: FlashAttention's memory-efficient attention computation and GQA's reduced KV heads are complementary optimizations that together enable long-context inference.
+- `quantization.md`: KV cache quantization and GQA are orthogonal optimizations that can be combined for maximum memory reduction.
+- `sparse-attention.md`: Both GQA and sparse attention reduce the effective cost of attention, but through different mechanisms: GQA reduces per-token memory; sparse attention reduces the number of tokens attended to.
+- `context-window-extension.md`: Longer contexts require larger KV caches, making GQA increasingly important as context lengths grow.
+- `model-serving.md`: GQA is primarily a throughput optimization -- it enables serving more concurrent requests or longer contexts within the same memory budget.
 
 ## Further Reading
 

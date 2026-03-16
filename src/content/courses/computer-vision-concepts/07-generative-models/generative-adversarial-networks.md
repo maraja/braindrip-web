@@ -85,11 +85,11 @@ The original minimax loss has known gradient issues. Several alternatives are wi
 
 ## Connections to Other Concepts
 
-- **GAN Training Dynamics**: Practical challenges including mode collapse, instability, and solutions like Wasserstein loss and spectral normalization.
-- **StyleGAN**: The most influential GAN architecture, extending the generator with a mapping network and style injection.
-- **Image Super-Resolution**: SRGAN and Real-ESRGAN use GAN discriminators to achieve perceptually sharp upscaling.
-- **Image-to-Image Translation**: Pix2Pix and CycleGAN apply conditional GAN frameworks to domain transfer tasks.
-- **Diffusion Models**: Gradually displaced GANs as the dominant generative paradigm starting around 2021.
+- `gan-training-dynamics.md`: Practical challenges including mode collapse, instability, and solutions like Wasserstein loss and spectral normalization.
+- `stylegan.md`: The most influential GAN architecture, extending the generator with a mapping network and style injection.
+- `image-super-resolution.md`: SRGAN and Real-ESRGAN use GAN discriminators to achieve perceptually sharp upscaling.
+- `image-to-image-translation.md`: Pix2Pix and CycleGAN apply conditional GAN frameworks to domain transfer tasks.
+- `diffusion-models.md`: Gradually displaced GANs as the dominant generative paradigm starting around 2021.
 
 ## Further Reading
 

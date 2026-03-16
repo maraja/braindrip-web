@@ -185,12 +185,12 @@ Self-RAG represents a paradigm shift in how we think about RAG systems:
 
 ## Connections to Other Concepts
 
-- **RAG**: Self-RAG is an advanced RAG paradigm that makes retrieval adaptive and self-evaluating, addressing the fixed-pipeline limitations of standard RAG.
-- **Corrective RAG (CRAG)**: Both address retrieval evaluation, but CRAG uses external evaluators while Self-RAG uses internal reflection tokens. They share the insight that retrieval quality must be assessed before generation.
-- **Agentic RAG**: Self-RAG can be seen as a lightweight form of agentic RAG where the agent's decision-making (when to retrieve, what is relevant) is internalized in the model rather than implemented as explicit agent logic.
-- **Hallucination**: Self-RAG directly addresses hallucination through the `[IsSup]` token, providing a native mechanism for detecting unsupported claims during generation.
-- **Constitutional AI**: Both Self-RAG and Constitutional AI train models to self-evaluate and self-correct. Self-RAG applies this principle to retrieval and factual grounding; Constitutional AI applies it to safety and harmlessness.
-- **Reward modeling**: The reflection tokens can be viewed as a form of process reward -- evaluating intermediate steps (retrieval decisions, relevance, support) rather than just the final output.
+- `rag.md`: Self-RAG is an advanced RAG paradigm that makes retrieval adaptive and self-evaluating, addressing the fixed-pipeline limitations of standard RAG.
+- `corrective-rag.md`: Both address retrieval evaluation, but CRAG uses external evaluators while Self-RAG uses internal reflection tokens. They share the insight that retrieval quality must be assessed before generation.
+- `agentic-rag.md`: Self-RAG can be seen as a lightweight form of agentic RAG where the agent's decision-making (when to retrieve, what is relevant) is internalized in the model rather than implemented as explicit agent logic.
+- `hallucination.md`: Self-RAG directly addresses hallucination through the `[IsSup]` token, providing a native mechanism for detecting unsupported claims during generation.
+- `constitutional-ai.md`: Both Self-RAG and Constitutional AI train models to self-evaluate and self-correct. Self-RAG applies this principle to retrieval and factual grounding; Constitutional AI applies it to safety and harmlessness.
+- `reward-modeling.md`: The reflection tokens can be viewed as a form of process reward -- evaluating intermediate steps (retrieval decisions, relevance, support) rather than just the final output.
 
 ## Further Reading
 

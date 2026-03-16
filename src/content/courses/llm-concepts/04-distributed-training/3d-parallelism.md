@@ -149,13 +149,13 @@ The choice of parallelism configuration directly impacts training throughput (an
 
 ## Connections to Other Concepts
 
-- **Data Parallelism (DDP)**: The simplest parallelism dimension, always present in 3D parallelism, responsible for scaling training throughput.
-- **Tensor Parallelism**: The intra-node dimension, critical for splitting large layers that exceed single-GPU memory.
-- **Pipeline Parallelism**: The inter-node model-splitting dimension, enabling models to span across nodes with manageable communication.
-- **ZeRO / FSDP**: Often used as the data-parallel backend, adding memory efficiency to the data-parallel dimension.
-- **Mixed Precision Training**: Universal at scale. FP16/BF16 computation with FP32 master weights reduces both memory and communication volume.
-- **MoE (Mixture of Experts)**: Adds the expert parallelism dimension, enabling models with trillions of parameters while keeping per-token compute manageable.
-- **Flash Attention**: Reduces activation memory for the attention mechanism, complementing parallelism strategies by lowering the per-GPU memory floor.
+- `data-parallelism.md`: The simplest parallelism dimension, always present in 3D parallelism, responsible for scaling training throughput.
+- `tensor-parallelism.md`: The intra-node dimension, critical for splitting large layers that exceed single-GPU memory.
+- `pipeline-parallelism.md`: The inter-node model-splitting dimension, enabling models to span across nodes with manageable communication.
+- `zero-shot-classification.md`: Often used as the data-parallel backend, adding memory efficiency to the data-parallel dimension.
+- `mixed-precision-training.md`: Universal at scale. FP16/BF16 computation with FP32 master weights reduces both memory and communication volume.
+- `mixture-of-experts.md`: Adds the expert parallelism dimension, enabling models with trillions of parameters while keeping per-token compute manageable.
+- `flash-attention.md`: Reduces activation memory for the attention mechanism, complementing parallelism strategies by lowering the per-GPU memory floor.
 
 ## Further Reading
 

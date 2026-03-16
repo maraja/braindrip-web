@@ -104,11 +104,11 @@ LoRA has fundamentally changed the economics of model customization:
 
 ## Connections to Other Concepts
 
-- **QLoRA**: Combines LoRA with 4-bit quantization of the base model, dramatically reducing memory requirements further.
+- `qlora.md`: Combines LoRA with 4-bit quantization of the base model, dramatically reducing memory requirements further.
 - **Full fine-tuning**: LoRA can be understood as full fine-tuning with a structural constraint (low-rank) on the update matrices.
-- **Adapters and Prefix Tuning**: Alternative PEFT methods that add trainable parameters in different locations (between layers or as input prefixes) rather than as parallel low-rank decompositions.
-- **Quantization**: LoRA is complementary to quantization -- the frozen base model can be quantized while the LoRA matrices remain in higher precision.
-- **Model merging**: LoRA adapters can be merged with the base model or with each other, connecting to the broader topic of model merging and task arithmetic.
+- `adapters-and-prompt-tuning.md`: Alternative PEFT methods that add trainable parameters in different locations (between layers or as input prefixes) rather than as parallel low-rank decompositions.
+- `quantization.md`: LoRA is complementary to quantization -- the frozen base model can be quantized while the LoRA matrices remain in higher precision.
+- `model-merging.md`: LoRA adapters can be merged with the base model or with each other, connecting to the broader topic of model merging and task arithmetic.
 - **Serving infrastructure**: LoRA's small adapter size enables architectures like S-LoRA that batch requests across many different adapters efficiently.
 
 ## Further Reading

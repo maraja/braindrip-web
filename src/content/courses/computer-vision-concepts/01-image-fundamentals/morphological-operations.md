@@ -163,9 +163,9 @@ skeleton = skeletonize(binary_img // 255).astype(np.uint8) * 255
 
 ## Connections to Other Concepts
 
-- **Image Histograms**: Otsu's thresholding produces the binary images that morphological operations clean up. The two are almost always used together in practice.
-- **Convolution and Filtering**: Erosion and dilation can be viewed as nonlinear analogues of convolution -- using min/max instead of weighted sum. Gaussian blur followed by thresholding can approximate opening on grayscale images.
-- **Image Noise and Denoising**: Morphological opening removes salt noise (small bright spots); closing removes pepper noise (small dark spots). This provides an alternative to median filtering for binary impulse noise.
+- `image-histograms.md`: Otsu's thresholding produces the binary images that morphological operations clean up. The two are almost always used together in practice.
+- `convolution-and-filtering.md`: Erosion and dilation can be viewed as nonlinear analogues of convolution -- using min/max instead of weighted sum. Gaussian blur followed by thresholding can approximate opening on grayscale images.
+- `image-noise-and-denoising.md`: Morphological opening removes salt noise (small bright spots); closing removes pepper noise (small dark spots). This provides an alternative to median filtering for binary impulse noise.
 
 ## Further Reading
 

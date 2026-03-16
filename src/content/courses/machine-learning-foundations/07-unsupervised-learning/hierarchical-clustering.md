@@ -100,11 +100,11 @@ Hierarchical clustering is indispensable when the data has multi-scale structure
 
 ## Connections to Other Concepts
 
-- **K-Means Clustering**: K-means gives a flat partition and requires specifying $K$; hierarchical clustering gives a full tree. Ward's linkage produces K-means-like clusters. A common hybrid approach uses hierarchical clustering on a small sample to estimate $K$, then runs K-means on the full dataset.
-- **DBSCAN**: Single-linkage hierarchical clustering is closely related to DBSCAN; both are based on connectivity. HDBSCAN (hierarchical DBSCAN) explicitly builds a hierarchy from density-based clusters, combining the strengths of both paradigms.
-- **Gaussian Mixture Models**: GMMs provide soft probabilistic assignments; hierarchical clustering provides hard, nested assignments at multiple scales. Bayesian hierarchical clustering extends the idea with probabilistic merge decisions.
-- **Anomaly Detection**: Outliers appear as singletons or small clusters that merge only at high distances in the dendrogram, providing a natural anomaly signal.
-- **Principal Component Analysis**: For high-dimensional data, applying PCA before hierarchical clustering reduces both computational cost and noise, often improving dendrogram quality.
+- `k-means-clustering.md`: K-means gives a flat partition and requires specifying $K$; hierarchical clustering gives a full tree. Ward's linkage produces K-means-like clusters. A common hybrid approach uses hierarchical clustering on a small sample to estimate $K$, then runs K-means on the full dataset.
+- `dbscan.md`: Single-linkage hierarchical clustering is closely related to DBSCAN; both are based on connectivity. HDBSCAN (hierarchical DBSCAN) explicitly builds a hierarchy from density-based clusters, combining the strengths of both paradigms.
+- `gaussian-mixture-models.md`: GMMs provide soft probabilistic assignments; hierarchical clustering provides hard, nested assignments at multiple scales. Bayesian hierarchical clustering extends the idea with probabilistic merge decisions.
+- `anomaly-detection.md`: Outliers appear as singletons or small clusters that merge only at high distances in the dendrogram, providing a natural anomaly signal.
+- `principal-component-analysis.md`: For high-dimensional data, applying PCA before hierarchical clustering reduces both computational cost and noise, often improving dendrogram quality.
 
 ## Implementation Notes
 

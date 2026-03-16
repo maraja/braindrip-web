@@ -105,11 +105,11 @@ This handles occlusions better by re-identifying targets after they reappear.
 
 ## Connections to Other Concepts
 
-- **Object Detection**: Provides the per-frame detections that MOT trackers associate across time.
-- **Optical Flow Estimation**: Flow provides motion cues that can improve tracking through occlusions.
-- **Video Transformers**: Transformer architectures (STARK, MixFormer, OSTrack) now dominate SOT.
-- **Action Recognition**: Tracking provides actor-centric trajectories that can improve activity understanding.
-- **Video Representation**: Trackers must efficiently represent both the target template and the search region across time.
+- `3d-object-detection.md`: Provides the per-frame detections that MOT trackers associate across time.
+- `optical-flow-estimation.md`: Flow provides motion cues that can improve tracking through occlusions.
+- `video-transformers.md`: Transformer architectures (STARK, MixFormer, OSTrack) now dominate SOT.
+- `action-recognition.md`: Tracking provides actor-centric trajectories that can improve activity understanding.
+- `video-representation.md`: Trackers must efficiently represent both the target template and the search region across time.
 
 ## Further Reading
 

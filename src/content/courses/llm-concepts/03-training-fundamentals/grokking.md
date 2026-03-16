@@ -111,12 +111,12 @@ Several mechanisms have been identified as contributing to grokking:
 
 ## Connections to Other Concepts
 
-- **Regularization (Weight Decay)**: The primary driver of grokking. Without regularization pressure to compress representations, models remain stuck in memorization.
+- `regularization.md`: The primary driver of grokking. Without regularization pressure to compress representations, models remain stuck in memorization.
 - **Early Stopping**: Grokking directly challenges early stopping heuristics, which would terminate training during the memorization plateau.
-- **Mechanistic Interpretability**: Grokked networks provide clean examples of interpretable algorithms emerging in neural networks, making them ideal subjects for circuit-level analysis.
-- **Scaling Laws**: Larger models grok faster, connecting to broader observations about how model capacity affects learning dynamics.
-- **Catastrophic Forgetting**: Both phenomena involve dramatic shifts in learned representations, though in opposite directions -- grokking builds structure, forgetting destroys it.
-- **Curriculum Learning**: Both concern the dynamics of when and how models learn. Curriculum learning manipulates data ordering to control learning dynamics, while grokking reveals that the model's internal curriculum can be dramatically different from the external loss curve.
+- `mechanistic-interpretability.md`: Grokked networks provide clean examples of interpretable algorithms emerging in neural networks, making them ideal subjects for circuit-level analysis.
+- `scaling-laws.md`: Larger models grok faster, connecting to broader observations about how model capacity affects learning dynamics.
+- `catastrophic-forgetting.md`: Both phenomena involve dramatic shifts in learned representations, though in opposite directions -- grokking builds structure, forgetting destroys it.
+- `curriculum-learning.md`: Both concern the dynamics of when and how models learn. Curriculum learning manipulates data ordering to control learning dynamics, while grokking reveals that the model's internal curriculum can be dramatically different from the external loss curve.
 - **Double Descent**: Another counter-intuitive training phenomenon where test loss first decreases, then increases (overfitting), then decreases again. Grokking and double descent may share underlying mechanisms related to phase transitions in representation structure.
 
 ## Further Reading

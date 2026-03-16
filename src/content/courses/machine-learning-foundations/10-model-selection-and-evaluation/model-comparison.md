@@ -124,11 +124,11 @@ In machine learning research and practice, model comparisons are made constantly
 
 ## Connections to Other Concepts
 
-- **Cross-Validation**: Produces the fold-level estimates that feed into paired tests.
-- **Classification Metrics / Regression Metrics**: The metrics being compared (accuracy, RMSE, etc.).
-- **Hyperparameter Tuning**: After tuning, statistical tests verify that the tuned model genuinely outperforms alternatives.
-- **Learning Curves**: Provide visual context for where models differ and whether the gap is narrowing or widening.
-- **Calibration**: Two models may have similar accuracy but very different calibration quality; compare calibration metrics too.
+- `cross-validation.md`: Produces the fold-level estimates that feed into paired tests.
+- `classification-metrics.md`: The metrics being compared (accuracy, RMSE, etc.).
+- `hyperparameter-tuning.md`: After tuning, statistical tests verify that the tuned model genuinely outperforms alternatives.
+- `learning-curves.md`: Provide visual context for where models differ and whether the gap is narrowing or widening.
+- `calibration.md`: Two models may have similar accuracy but very different calibration quality; compare calibration metrics too.
 
 ## Further Reading
 

@@ -93,10 +93,10 @@ Models degrade silently. Unlike traditional software that throws errors when som
 
 ## Connections to Other Concepts
 
-- **ML Pipelines**: Monitoring systems trigger pipeline re-execution when drift is detected. Data validation stages within pipelines are the first line of defense.
-- **A/B Testing for ML**: Drift can confound A/B tests. If the data distribution shifts during a test, measured treatment effects may not be causal.
-- **Experiment Tracking**: Monitoring is experiment tracking for production. The same discipline of logging metrics and comparing results applies, just continuously.
-- **Model Deployment and Serving**: Canary and shadow deployments are deployment strategies that inherently support monitoring by running models in parallel.
+- `ml-pipelines.md`: Monitoring systems trigger pipeline re-execution when drift is detected. Data validation stages within pipelines are the first line of defense.
+- `ab-testing-for-ml.md`: Drift can confound A/B tests. If the data distribution shifts during a test, measured treatment effects may not be causal.
+- `experiment-tracking.md`: Monitoring is experiment tracking for production. The same discipline of logging metrics and comparing results applies, just continuously.
+- `model-deployment-and-serving.md`: Canary and shadow deployments are deployment strategies that inherently support monitoring by running models in parallel.
 
 ## Further Reading
 

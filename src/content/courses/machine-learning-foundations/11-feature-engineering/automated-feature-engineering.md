@@ -109,12 +109,12 @@ The demand for ML models grows faster than the supply of experienced feature eng
 
 ## Connections to Other Concepts
 
-- **Feature Extraction and Transformation**: Automated methods apply the same primitives (aggregations, mathematical transforms, interactions) that manual engineers use, but search algorithmically rather than relying on intuition.
-- **Feature Selection Methods**: Automated generation produces far more candidates than manual engineering, making rigorous feature selection (permutation importance, L1 regularization) essential as a follow-up step.
-- **Handling High-Cardinality Features**: Entity embeddings and hashing are automated solutions to the high-cardinality problem, replacing manual encoding decisions.
-- **Time-Series Feature Engineering**: Libraries like tsfresh automate the generation of lag, rolling, and spectral features for time-series data specifically.
+- `feature-extraction-and-transformation.md`: Automated methods apply the same primitives (aggregations, mathematical transforms, interactions) that manual engineers use, but search algorithmically rather than relying on intuition.
+- `feature-selection-methods.md`: Automated generation produces far more candidates than manual engineering, making rigorous feature selection (permutation importance, L1 regularization) essential as a follow-up step.
+- `handling-high-cardinality-features.md`: Entity embeddings and hashing are automated solutions to the high-cardinality problem, replacing manual encoding decisions.
+- `time-series-feature-engineering.md`: Libraries like tsfresh automate the generation of lag, rolling, and spectral features for time-series data specifically.
 - **Dimensionality Reduction**: Autoencoders perform nonlinear dimensionality reduction; PCA in AutoML pipelines performs linear reduction. Both reduce the feature space to its most informative components.
-- **Regularization**: The large feature spaces produced by automated methods make regularization (L1, L2, early stopping) critical for controlling overfitting.
+- `regularization.md`: The large feature spaces produced by automated methods make regularization (L1, L2, early stopping) critical for controlling overfitting.
 
 ## Further Reading
 

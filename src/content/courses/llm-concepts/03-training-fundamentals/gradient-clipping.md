@@ -208,11 +208,11 @@ Together, these three techniques are what make large-scale LLM training possible
 
 ## Connections to Other Concepts
 
-- **Backpropagation**: All three techniques modify or interact with the backpropagation process.
-- **Adam/AdamW Optimizer**: Receives the clipped, accumulated gradients as input.
-- **Mixed Precision Training**: Reduces activation memory (complementary to checkpointing) and affects gradient precision (relevant to clipping thresholds).
-- **Distributed Training**: Data parallelism interacts with gradient accumulation (effective batch size = micro-batch x GPUs x accumulation steps).
-- **Pre-Training**: All three techniques are standard components of the pre-training infrastructure.
+- `backpropagation.md`: All three techniques modify or interact with the backpropagation process.
+- `adam-optimizer.md`: Receives the clipped, accumulated gradients as input.
+- `mixed-precision-training.md`: Reduces activation memory (complementary to checkpointing) and affects gradient precision (relevant to clipping thresholds).
+- `05-distributed-training-infrastructure.md`: Data parallelism interacts with gradient accumulation (effective batch size = micro-batch x GPUs x accumulation steps).
+- `pre-training.md`: All three techniques are standard components of the pre-training infrastructure.
 
 ## Further Reading
 

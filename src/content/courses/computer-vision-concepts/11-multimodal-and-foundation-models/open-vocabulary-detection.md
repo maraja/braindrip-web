@@ -93,11 +93,11 @@ Brings open-vocabulary capability to real-time detection:
 
 ## Connections to Other Concepts
 
-- **CLIP**: Provides the pretrained vision-language embeddings that most OVD methods build upon.
-- **Grounding DINO**: A leading OVD architecture that deeply fuses language and vision within the detection pipeline.
-- **Object Detection**: OVD extends classical detection by replacing fixed classifiers with language-conditioned scoring.
-- **Zero-Shot Classification**: OVD applies the same principle (text as class prototype) at the region level rather than the image level.
-- **Vision Foundation Models**: OVD models like Grounding DINO are becoming standard perception modules in foundation-model stacks.
+- `clip.md`: Provides the pretrained vision-language embeddings that most OVD methods build upon.
+- `grounding-dino.md`: A leading OVD architecture that deeply fuses language and vision within the detection pipeline.
+- `3d-object-detection.md`: OVD extends classical detection by replacing fixed classifiers with language-conditioned scoring.
+- `zero-shot-classification.md`: OVD applies the same principle (text as class prototype) at the region level rather than the image level.
+- `vision-foundation-models.md`: OVD models like Grounding DINO are becoming standard perception modules in foundation-model stacks.
 
 ## Further Reading
 

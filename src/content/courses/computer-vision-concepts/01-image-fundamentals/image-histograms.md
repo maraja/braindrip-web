@@ -122,10 +122,10 @@ Histograms can be compared for image retrieval or change detection. Common metri
 
 ## Connections to Other Concepts
 
-- **Digital Images and Pixels**: Histograms are computed directly from pixel values; the bit depth determines the number of bins.
-- **Color Spaces**: Equalizing in LAB (on L*) or HSV (on V) preserves color relationships, while per-channel RGB equalization introduces hue shifts.
-- **Image Noise and Denoising**: Noise broadens histograms and can merge distinct peaks, making threshold selection harder; denoising before thresholding is common practice.
-- **Morphological Operations**: Binary images produced via histogram-based thresholding are often refined with morphological opening and closing.
+- `digital-images-and-pixels.md`: Histograms are computed directly from pixel values; the bit depth determines the number of bins.
+- `color-spaces.md`: Equalizing in LAB (on L*) or HSV (on V) preserves color relationships, while per-channel RGB equalization introduces hue shifts.
+- `image-noise-and-denoising.md`: Noise broadens histograms and can merge distinct peaks, making threshold selection harder; denoising before thresholding is common practice.
+- `morphological-operations.md`: Binary images produced via histogram-based thresholding are often refined with morphological opening and closing.
 
 ## Further Reading
 

@@ -122,10 +122,10 @@ Self-reflection is most effective on **verifiable tasks** where the evaluator ca
 
 ## Connections to Other Concepts
 
-- **ReAct Pattern**: Reflexion wraps a ReAct agent in an outer evaluation-reflection loop, adding cross-trial learning to within-trial reasoning and acting.
-- **Memory Systems**: Episodic memory is the mechanism that carries reflections across trials, making accumulated experience accessible to future attempts.
-- **Chain-of-Thought Prompting**: Self-reflection extends CoT from single-pass reasoning to iterative, feedback-driven reasoning across multiple attempts at the same problem.
-- **Multi-Agent Systems**: Critic agents in multi-agent architectures perform a role analogous to the evaluator and self-reflection components in Reflexion, providing external feedback.
+- `react-pattern.md`: Reflexion wraps a ReAct agent in an outer evaluation-reflection loop, adding cross-trial learning to within-trial reasoning and acting.
+- `memory-systems.md`: Episodic memory is the mechanism that carries reflections across trials, making accumulated experience accessible to future attempts.
+- `chain-of-thought-prompting.md`: Self-reflection extends CoT from single-pass reasoning to iterative, feedback-driven reasoning across multiple attempts at the same problem.
+- `multi-agent-systems.md`: Critic agents in multi-agent architectures perform a role analogous to the evaluator and self-reflection components in Reflexion, providing external feedback.
 
 ## Further Reading
 

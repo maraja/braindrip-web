@@ -72,11 +72,11 @@ tokens. With $T=32, H=224, W=224$, and the above patch sizes, $N = 16 \times 14 
 
 ## Connections to Other Concepts
 
-- **Optical Flow Estimation**: Provides the dense motion fields used as an alternative representation channel.
-- **Two-Stream Networks**: Architecture that processes RGB and flow representations in parallel pathways.
-- **3D Convolutions**: Operate directly on the $T \times H \times W \times C$ tensor to extract spatiotemporal features.
-- **Video Transformers**: Tokenize the video tensor into spatiotemporal patches for self-attention.
-- **Action Recognition**: The primary downstream task driving representation design choices.
+- `optical-flow-estimation.md`: Provides the dense motion fields used as an alternative representation channel.
+- `two-stream-networks.md`: Architecture that processes RGB and flow representations in parallel pathways.
+- `3d-convolutions.md`: Operate directly on the $T \times H \times W \times C$ tensor to extract spatiotemporal features.
+- `video-transformers.md`: Tokenize the video tensor into spatiotemporal patches for self-attention.
+- `action-recognition.md`: The primary downstream task driving representation design choices.
 
 ## Further Reading
 

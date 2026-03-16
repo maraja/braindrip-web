@@ -113,15 +113,15 @@ The transition unfolded rapidly:
 
 ## Connections to Other Concepts
 
-- **Word2Vec** (`word2vec.md`) / **GloVe** (`glove.md`) / **FastText** (`fasttext.md`): The static embedding methods that contextual embeddings supersede. Understanding what these methods cannot do (resolve polysemy, capture context) motivates contextual embeddings.
-- **Sentence Embeddings** (`sentence-embeddings.md`): Converting contextual token-level embeddings into sentence-level representations requires pooling strategies or fine-tuning (SBERT).
-- **Document Embeddings** (`document-embeddings.md`): Longformer and BigBird extend contextual embeddings to long documents.
-- **ELMo** (`09-pre-trained-models-for-nlp/elmo.md`): The first major contextual embedding model, using bidirectional LSTMs.
-- **BERT** (`09-pre-trained-models-for-nlp/bert.md`): The transformer-based contextual model that established the pre-train-and-fine-tune paradigm.
-- **Transfer Learning in NLP** (`09-pre-trained-models-for-nlp/transfer-learning-in-nlp.md`): Contextual embeddings are the vehicle through which transfer learning transformed NLP.
-- **Word Sense Disambiguation** (`08-semantic-understanding/word-sense-disambiguation.md`): Contextual embeddings implicitly perform WSD by producing sense-specific vectors.
-- **Attention Mechanism** (`04-sequence-models/attention-mechanism.md`): Self-attention in transformers is the mechanism that allows each token to incorporate information from all other tokens, producing context-dependent representations.
-- **Long Short-Term Memory** (`04-sequence-models/long-short-term-memory.md`): ELMo's architecture relies on bidirectional LSTMs to process context.
+- `word2vec.md` / **GloVe** (`glove.md`) / **FastText** (`fasttext.md`): The static embedding methods that contextual embeddings supersede. Understanding what these methods cannot do (resolve polysemy, capture context) motivates contextual embeddings.
+- `sentence-embeddings.md`: Converting contextual token-level embeddings into sentence-level representations requires pooling strategies or fine-tuning (SBERT).
+- `document-embeddings.md`: Longformer and BigBird extend contextual embeddings to long documents.
+- `09-pre-trained-models-for-nlp/elmo.md`: The first major contextual embedding model, using bidirectional LSTMs.
+- `09-pre-trained-models-for-nlp/bert.md`: The transformer-based contextual model that established the pre-train-and-fine-tune paradigm.
+- `09-pre-trained-models-for-nlp/transfer-learning-in-nlp.md`: Contextual embeddings are the vehicle through which transfer learning transformed NLP.
+- `08-semantic-understanding/word-sense-disambiguation.md`: Contextual embeddings implicitly perform WSD by producing sense-specific vectors.
+- `04-sequence-models/attention-mechanism.md`: Self-attention in transformers is the mechanism that allows each token to incorporate information from all other tokens, producing context-dependent representations.
+- `04-sequence-models/long-short-term-memory.md`: ELMo's architecture relies on bidirectional LSTMs to process context.
 
 ## Further Reading
 

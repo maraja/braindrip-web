@@ -140,11 +140,11 @@ BPE is not just one algorithm among equals -- it is the foundation of tokenizati
 
 ## Connections to Other Concepts
 
-- **Tokenization**: BPE is a specific algorithm within the broader category of tokenization methods.
-- **Vocabulary Design**: BPE training is the mechanism by which vocabulary is constructed; vocabulary size is the stopping criterion for BPE merges.
-- **Token Embeddings**: Each BPE token ID maps to a row in the embedding matrix. The vocabulary BPE produces defines the dimensions of this matrix.
-- **Special Tokens**: BPE vocabularies are augmented with special tokens (BOS, EOS, etc.) that are added separately, not learned through the merge process.
-- **Context Window**: BPE's compression efficiency determines how many words of text fit within a model's fixed token-length context window.
+- `tokenization.md`: BPE is a specific algorithm within the broader category of tokenization methods.
+- `vocabulary-design.md`: BPE training is the mechanism by which vocabulary is constructed; vocabulary size is the stopping criterion for BPE merges.
+- `token-embeddings.md`: Each BPE token ID maps to a row in the embedding matrix. The vocabulary BPE produces defines the dimensions of this matrix.
+- `special-tokens.md`: BPE vocabularies are augmented with special tokens (BOS, EOS, etc.) that are added separately, not learned through the merge process.
+- `context-window.md`: BPE's compression efficiency determines how many words of text fit within a model's fixed token-length context window.
 
 ## Further Reading
 

@@ -114,11 +114,11 @@ The choice of cross-entropy is not arbitrary. It is the theoretically optimal lo
 
 ## Connections to Other Concepts
 
-- **Pre-Training**: Cross-entropy loss is the objective that the entire pre-training process minimizes.
-- **Perplexity**: The direct exponential of cross-entropy; the standard evaluation metric for language models.
-- **Backpropagation**: The mechanism by which gradients of cross-entropy flow backward through the network to update parameters.
+- `pre-training.md`: Cross-entropy loss is the objective that the entire pre-training process minimizes.
+- `perplexity.md`: The direct exponential of cross-entropy; the standard evaluation metric for language models.
+- `backpropagation.md`: The mechanism by which gradients of cross-entropy flow backward through the network to update parameters.
 - **Softmax Temperature**: Scaling logits before softmax changes the "sharpness" of the distribution, directly affecting cross-entropy.
-- **Knowledge Distillation**: Uses cross-entropy between a student model's distribution and a teacher model's distribution (soft targets) rather than one-hot labels.
+- `knowledge-distillation.md`: Uses cross-entropy between a student model's distribution and a teacher model's distribution (soft targets) rather than one-hot labels.
 - **KL Divergence**: Used in RLHF to keep the fine-tuned model close to the pre-trained model; intimately related to cross-entropy.
 
 ## Further Reading

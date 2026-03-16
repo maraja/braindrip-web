@@ -104,11 +104,11 @@ Understanding attention sinks has several practical implications for model desig
 
 ## Connections to Other Concepts
 
-- **Sliding window attention**: StreamingLLM is built directly on top of the rolling buffer KV cache from sliding window attention, adding persistent sink tokens to prevent the catastrophic failure that occurs when initial tokens are evicted.
-- **KV cache management**: Understanding attention sinks is essential for any KV cache eviction or compression strategy. Policies that remove initial tokens will fail catastrophically; policies that preserve them (even just 1-4 entries) succeed.
-- **Softmax and attention normalization**: The sink phenomenon is a direct consequence of softmax's normalization constraint requiring attention weights to sum to 1. Alternative attention normalization schemes (like sigmoid attention or linear attention) handle this differently and may not exhibit sinks.
-- **Vision Transformer registers**: Darcet et al. (2023) independently identified a parallel phenomenon in Vision Transformers, where certain patch tokens accumulate excess attention. Their solution -- adding explicit learned "register" tokens -- is architecturally analogous to designing dedicated attention sinks.
-- **Differential Transformer**: Addresses the same root cause (attention noise from softmax's sum-to-one constraint) through a different mechanism: subtracting two attention maps to cancel common-mode noise rather than absorbing it into designated sink positions.
+- `sliding-window-attention.md`: StreamingLLM is built directly on top of the rolling buffer KV cache from sliding window attention, adding persistent sink tokens to prevent the catastrophic failure that occurs when initial tokens are evicted.
+- `kv-cache.md`: Understanding attention sinks is essential for any KV cache eviction or compression strategy. Policies that remove initial tokens will fail catastrophically; policies that preserve them (even just 1-4 entries) succeed.
+- `logits-and-softmax.md`: The sink phenomenon is a direct consequence of softmax's normalization constraint requiring attention weights to sum to 1. Alternative attention normalization schemes (like sigmoid attention or linear attention) handle this differently and may not exhibit sinks.
+- `vision-transformer.md`: Darcet et al. (2023) independently identified a parallel phenomenon in Vision Transformers, where certain patch tokens accumulate excess attention. Their solution -- adding explicit learned "register" tokens -- is architecturally analogous to designing dedicated attention sinks.
+- `differential-transformer.md`: Addresses the same root cause (attention noise from softmax's sum-to-one constraint) through a different mechanism: subtracting two attention maps to cancel common-mode noise rather than absorbing it into designated sink positions.
 
 ## Further Reading
 

@@ -119,11 +119,11 @@ The economic significance is enormous. If a distilled 8B model can handle 90% of
 
 ## Connections to Other Concepts
 
-- **Quantization**: Distillation reduces parameter count (architectural compression); quantization reduces bits per parameter (precision compression). They stack: distill, then quantize.
-- **Speculative Decoding**: A distilled small model makes an excellent draft model for speculative decoding of its teacher, combining two optimizations.
-- **Sampling Strategies**: The temperature parameter in distillation directly parallels temperature in sampling, though serving a different purpose.
-- **Model Serving**: Distilled models are easier to serve -- they fit on fewer GPUs, have smaller KV caches, and generate tokens faster, simplifying the entire serving infrastructure.
-- **Flash Attention**: Smaller distilled models benefit less from Flash Attention (shorter sequences are already fast), but the attention optimization still helps during prefill.
+- `quantization.md`: Distillation reduces parameter count (architectural compression); quantization reduces bits per parameter (precision compression). They stack: distill, then quantize.
+- `speculative-decoding.md`: A distilled small model makes an excellent draft model for speculative decoding of its teacher, combining two optimizations.
+- `sampling-strategies.md`: The temperature parameter in distillation directly parallels temperature in sampling, though serving a different purpose.
+- `model-serving.md`: Distilled models are easier to serve -- they fit on fewer GPUs, have smaller KV caches, and generate tokens faster, simplifying the entire serving infrastructure.
+- `flash-attention.md`: Smaller distilled models benefit less from Flash Attention (shorter sequences are already fast), but the attention optimization still helps during prefill.
 
 ## Further Reading
 

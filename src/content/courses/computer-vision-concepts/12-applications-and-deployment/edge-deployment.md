@@ -97,10 +97,10 @@ Real-time applications impose strict latency constraints:
 
 ## Connections to Other Concepts
 
-- **Image Classification in Practice**: Efficient models (MobileNet, EfficientNet) are designed for edge classification.
-- **Object Detection**: YOLO and SSD families are optimized for edge deployment with INT8 quantization.
-- **Autonomous Driving Perception**: In-vehicle inference runs on edge hardware (NVIDIA Orin, Tesla FSD chip).
-- **Anomaly Detection**: Factory-floor deployment often runs on embedded devices without cloud access.
+- `image-classification-in-practice.md`: Efficient models (MobileNet, EfficientNet) are designed for edge classification.
+- `3d-object-detection.md`: YOLO and SSD families are optimized for edge deployment with INT8 quantization.
+- `autonomous-driving-perception.md`: In-vehicle inference runs on edge hardware (NVIDIA Orin, Tesla FSD chip).
+- `anomaly-detection.md`: Factory-floor deployment often runs on embedded devices without cloud access.
 
 ## Further Reading
 

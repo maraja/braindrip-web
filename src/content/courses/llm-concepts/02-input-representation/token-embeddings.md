@@ -119,11 +119,11 @@ Embeddings also matter practically:
 
 ## Connections to Other Concepts
 
-- **Tokenization**: Produces the token IDs that index into the embedding matrix. The vocabulary defined by the tokenizer determines the number of rows in $\mathbf{E}$.
-- **Positional Encoding**: Added to token embeddings to inject sequence order information before the transformer layers process the input.
-- **Vocabulary Design**: The size and composition of the vocabulary directly determine the shape and efficiency of the embedding matrix.
-- **Attention Mechanism**: Operates on the embedded (and positionally encoded) vectors. Attention queries, keys, and values are all linear projections of these representations.
-- **Context Window**: Each position in the context window corresponds to one embedding vector; the total input to the transformer is a sequence of these vectors.
+- `tokenization.md`: Produces the token IDs that index into the embedding matrix. The vocabulary defined by the tokenizer determines the number of rows in $\mathbf{E}$.
+- `positional-encoding.md`: Added to token embeddings to inject sequence order information before the transformer layers process the input.
+- `vocabulary-design.md`: The size and composition of the vocabulary directly determine the shape and efficiency of the embedding matrix.
+- `attention-mechanism.md`: Operates on the embedded (and positionally encoded) vectors. Attention queries, keys, and values are all linear projections of these representations.
+- `context-window.md`: Each position in the context window corresponds to one embedding vector; the total input to the transformer is a sequence of these vectors.
 
 ## Further Reading
 

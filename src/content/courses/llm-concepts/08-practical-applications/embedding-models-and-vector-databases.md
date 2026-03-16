@@ -103,11 +103,11 @@ Embeddings and vector databases are the infrastructure layer that enables RAG, s
 
 ## Connections to Other Concepts
 
-- **RAG** depends entirely on embedding models and vector databases for its retrieval phase.
-- **Chunking strategies** determine what text gets embedded -- the quality of chunks directly affects embedding quality.
-- **Tokenization** matters because embedding models have their own tokenizers and context windows, separate from the generative LLM.
-- **Attention mechanisms** are the building blocks inside embedding models themselves.
-- **Fine-tuning** embedding models on domain-specific data (using techniques like contrastive fine-tuning) can dramatically improve retrieval quality for specialized domains.
+- `rag.md`: depends entirely on embedding models and vector databases for its retrieval phase.
+- `chunking-strategies.md`: determine what text gets embedded -- the quality of chunks directly affects embedding quality.
+- `tokenization.md`: matters because embedding models have their own tokenizers and context windows, separate from the generative LLM.
+- `attention-mechanism.md`: are the building blocks inside embedding models themselves.
+- `supervised-fine-tuning.md`: embedding models on domain-specific data (using techniques like contrastive fine-tuning) can dramatically improve retrieval quality for specialized domains.
 
 ## Further Reading
 

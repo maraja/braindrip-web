@@ -99,12 +99,12 @@ Typical perplexities on the Penn Treebank: unigram ~960, bigram ~170, trigram ~1
 
 ## Connections to Other Concepts
 
-- **Bag of Words** (`bag-of-words.md`): BoW is essentially a unigram model that discards order. N-gram models restore local word order through the Markov assumption.
-- **Word2Vec** (`word2vec.md`): Word2Vec's CBOW model can be seen as a neural n-gram model that predicts the center word from a context window, but with shared dense representations instead of discrete counts.
-- **Recurrent Neural Networks** (`04-sequence-models/recurrent-neural-networks.md`): RNNs remove the fixed-context limitation of n-grams, conditioning on the entire history through a hidden state vector.
-- **Text Generation** (`06-core-nlp-tasks-generation/text-generation.md`): N-gram models were the first text generation systems, sampling words sequentially from the conditional distributions.
-- **Automatic Speech Recognition** (`11-speech-and-multimodal-nlp/automatic-speech-recognition.md`): N-gram language models constrain ASR decoder output to fluent word sequences.
-- **Morphology** (`01-foundations-of-language/morphology.md`): Character-level n-grams (used in `fasttext.md`) capture morphological patterns that word-level n-grams miss.
+- `bag-of-words.md`: BoW is essentially a unigram model that discards order. N-gram models restore local word order through the Markov assumption.
+- `word2vec.md`: Word2Vec's CBOW model can be seen as a neural n-gram model that predicts the center word from a context window, but with shared dense representations instead of discrete counts.
+- `04-sequence-models/recurrent-neural-networks.md`: RNNs remove the fixed-context limitation of n-grams, conditioning on the entire history through a hidden state vector.
+- `06-core-nlp-tasks-generation/text-generation.md`: N-gram models were the first text generation systems, sampling words sequentially from the conditional distributions.
+- `11-speech-and-multimodal-nlp/automatic-speech-recognition.md`: N-gram language models constrain ASR decoder output to fluent word sequences.
+- `01-foundations-of-language/morphology.md`: Character-level n-grams (used in `fasttext.md`) capture morphological patterns that word-level n-grams miss.
 
 ## Further Reading
 

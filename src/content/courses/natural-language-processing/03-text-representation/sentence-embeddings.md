@@ -96,13 +96,13 @@ More recent methods use contrastive learning to train sentence encoders without 
 
 ## Connections to Other Concepts
 
-- **Word2Vec** (`word2vec.md`) / **GloVe** (`glove.md`): Averaging these static word vectors is the simplest sentence embedding method and a natural baseline.
-- **Contextual Embeddings** (`contextual-embeddings.md`): SBERT and SimCSE fine-tune contextual models (BERT) to produce sentence-level representations.
-- **Document Embeddings** (`document-embeddings.md`): Extending sentence embedding ideas to longer texts requires handling the sequence length limitation.
-- **Semantic Similarity** (`08-semantic-understanding/semantic-similarity.md`): Sentence embeddings are the primary tool for computing semantic similarity between text pairs.
-- **Information Retrieval** (`07-information-extraction-and-retrieval/information-retrieval.md`): Dense passage retrieval uses sentence/passage embeddings as an alternative to BM25 for first-stage retrieval.
-- **Natural Language Inference** (`08-semantic-understanding/natural-language-inference.md`): NLI data is used to train many sentence embedding models (InferSent, SBERT).
-- **BERT** (`09-pre-trained-models-for-nlp/bert.md`): SBERT is built on BERT, and understanding BERT's architecture is essential for understanding modern sentence embeddings.
+- `word2vec.md` / **GloVe** (`glove.md`): Averaging these static word vectors is the simplest sentence embedding method and a natural baseline.
+- `contextual-embeddings.md`: SBERT and SimCSE fine-tune contextual models (BERT) to produce sentence-level representations.
+- `document-embeddings.md`: Extending sentence embedding ideas to longer texts requires handling the sequence length limitation.
+- `08-semantic-understanding/semantic-similarity.md`: Sentence embeddings are the primary tool for computing semantic similarity between text pairs.
+- `07-information-extraction-and-retrieval/information-retrieval.md`: Dense passage retrieval uses sentence/passage embeddings as an alternative to BM25 for first-stage retrieval.
+- `08-semantic-understanding/natural-language-inference.md`: NLI data is used to train many sentence embedding models (InferSent, SBERT).
+- `09-pre-trained-models-for-nlp/bert.md`: SBERT is built on BERT, and understanding BERT's architecture is essential for understanding modern sentence embeddings.
 
 ## Further Reading
 

@@ -100,14 +100,14 @@ Concatenation is preferred in practice because it preserves all information from
 
 ## Connections to Other Concepts
 
-- **`recurrent-neural-networks.md`**: BiRNNs are constructed from two vanilla RNNs or gated variants running in opposite directions.
-- **`long-short-term-memory.md`**: BiLSTMs are the most common instantiation of bidirectional RNNs, combining LSTM gating with bidirectional processing.
-- **`gated-recurrent-units.md`**: BiGRUs offer a lighter-weight alternative to BiLSTMs with comparable performance on many tasks.
-- **`sequence-to-sequence-models.md`**: Bidirectional encoders are standard in seq2seq models, while decoders remain unidirectional.
-- **`attention-mechanism.md`**: Attention over bidirectional encoder states gives the decoder access to rich, context-aware representations of every input position.
-- **`contextual-embeddings.md`**: ELMo is a deep BiLSTM, and the idea of bidirectional context directly influenced BERT's masked language modeling objective.
-- **`named-entity-recognition.md`**: BiLSTM-CRF was the dominant NER architecture before transformers, leveraging future context for entity boundary detection.
-- **`part-of-speech-tagging.md`**: POS tagging benefits heavily from bidirectional context, since grammatical role depends on surrounding words.
+- `recurrent-neural-networks.md`: BiRNNs are constructed from two vanilla RNNs or gated variants running in opposite directions.
+- `long-short-term-memory.md`: BiLSTMs are the most common instantiation of bidirectional RNNs, combining LSTM gating with bidirectional processing.
+- `gated-recurrent-units.md`: BiGRUs offer a lighter-weight alternative to BiLSTMs with comparable performance on many tasks.
+- `sequence-to-sequence-models.md`: Bidirectional encoders are standard in seq2seq models, while decoders remain unidirectional.
+- `attention-mechanism.md`: Attention over bidirectional encoder states gives the decoder access to rich, context-aware representations of every input position.
+- `contextual-embeddings.md`: ELMo is a deep BiLSTM, and the idea of bidirectional context directly influenced BERT's masked language modeling objective.
+- `named-entity-recognition.md`: BiLSTM-CRF was the dominant NER architecture before transformers, leveraging future context for entity boundary detection.
+- `part-of-speech-tagging.md`: POS tagging benefits heavily from bidirectional context, since grammatical role depends on surrounding words.
 
 ## Further Reading
 

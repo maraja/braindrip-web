@@ -87,11 +87,11 @@ Key improvements:
 
 ## Connections to Other Concepts
 
-- **SSD**: A concurrent single-stage detector using multi-scale feature maps with anchor boxes; SSD and YOLO deeply influenced each other.
-- **Anchor-Free Detection**: YOLOv8 adopted anchor-free prediction heads inspired by FCOS and CenterNet.
-- **Feature Pyramid Network**: YOLOv3+ adopted FPN-style multi-scale feature fusion.
-- **Focal Loss**: Addresses the class imbalance problem in single-stage detectors that also affects YOLO.
-- **Non-Maximum Suppression**: Essential post-processing step for all YOLO versions.
+- `ssd.md`: A concurrent single-stage detector using multi-scale feature maps with anchor boxes; SSD and YOLO deeply influenced each other.
+- `anchor-free-detection.md`: YOLOv8 adopted anchor-free prediction heads inspired by FCOS and CenterNet.
+- `feature-pyramid-network.md`: YOLOv3+ adopted FPN-style multi-scale feature fusion.
+- `focal-loss.md`: Addresses the class imbalance problem in single-stage detectors that also affects YOLO.
+- `non-maximum-suppression.md`: Essential post-processing step for all YOLO versions.
 
 ## Further Reading
 

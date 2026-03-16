@@ -106,10 +106,10 @@ For businesses, good prompt engineering reduces the need for expensive fine-tuni
 
 ## Connections to Other Concepts
 
-- **Chain-of-thought prompting** connects to **reasoning and inference** -- it is effectively a way to induce System 2 (deliberate) thinking in models.
-- **Few-shot prompting** is a form of **in-context learning**, which relates to the broader question of how transformers learn from their context window.
-- **System prompts** interact with **RLHF and alignment** -- the model's instruction-following ability is what makes system prompts work at all.
-- **Prompt templates** are the foundation of **RAG pipelines** and **agent frameworks**, where retrieved context or tool results are injected into structured prompts.
+- `chain-of-thought-prompting.md`: connects to **reasoning and inference** -- it is effectively a way to induce System 2 (deliberate) thinking in models.
+- `few-shot-prompting.md`: is a form of **in-context learning**, which relates to the broader question of how transformers learn from their context window.
+- `dynamic-system-prompts.md`: interact with **RLHF and alignment** -- the model's instruction-following ability is what makes system prompts work at all.
+- `prompt-templates-and-variables.md`: are the foundation of **RAG pipelines** and **agent frameworks**, where retrieved context or tool results are injected into structured prompts.
 - **Output format control** connects directly to **structured output and constrained decoding**.
 
 ## Further Reading

@@ -107,10 +107,10 @@ SVMs were the dominant classification method from the mid-1990s through the late
 
 ## Connections to Other Concepts
 
-- **Kernel Methods**: The dual formulation enables replacing $x_i^T x_j$ with $K(x_i, x_j)$, mapping data to high-dimensional spaces implicitly. This is the foundation of kernel SVMs.
-- **Logistic Regression**: Both learn linear boundaries; the key difference is hinge loss vs. log loss, leading to sparse vs. dense solutions.
-- **Decision Trees**: Trees are nonlinear and interpretable but have no margin concept. SVMs are linear (in feature space) with strong generalization theory.
-- **Naive Bayes**: A generative classifier with different inductive bias. In high-dimensional text classification, both SVMs and Naive Bayes perform well.
+- `kernel-methods.md`: The dual formulation enables replacing $x_i^T x_j$ with $K(x_i, x_j)$, mapping data to high-dimensional spaces implicitly. This is the foundation of kernel SVMs.
+- `logistic-regression.md`: Both learn linear boundaries; the key difference is hinge loss vs. log loss, leading to sparse vs. dense solutions.
+- `decision-trees.md`: Trees are nonlinear and interpretable but have no margin concept. SVMs are linear (in feature space) with strong generalization theory.
+- `naive-bayes.md`: A generative classifier with different inductive bias. In high-dimensional text classification, both SVMs and Naive Bayes perform well.
 
 ## Further Reading
 

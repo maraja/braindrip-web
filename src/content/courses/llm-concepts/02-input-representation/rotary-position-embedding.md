@@ -115,11 +115,11 @@ RoPE has become the de facto standard for position encoding in modern LLMs for s
 
 ## Connections to Other Concepts
 
-- **Positional Encoding**: RoPE is a specific positional encoding method that superseded sinusoidal and learned absolute approaches.
-- **Self-Attention**: RoPE operates directly within the attention computation, modifying how Q and K interact.
-- **Context Window**: RoPE's extensibility properties (NTK, YaRN) are key enablers of long-context models.
-- **Token Embeddings**: RoPE is applied after the initial embedding and Q/K projections, not to the embeddings themselves.
-- **Fine-Tuning**: Context extension via RoPE modification typically requires some fine-tuning to adapt the model to the new positional distribution.
+- `positional-encoding.md`: RoPE is a specific positional encoding method that superseded sinusoidal and learned absolute approaches.
+- `self-attention.md`: RoPE operates directly within the attention computation, modifying how Q and K interact.
+- `context-window.md`: RoPE's extensibility properties (NTK, YaRN) are key enablers of long-context models.
+- `token-embeddings.md`: RoPE is applied after the initial embedding and Q/K projections, not to the embeddings themselves.
+- `supervised-fine-tuning.md`: Context extension via RoPE modification typically requires some fine-tuning to adapt the model to the new positional distribution.
 
 ## Further Reading
 

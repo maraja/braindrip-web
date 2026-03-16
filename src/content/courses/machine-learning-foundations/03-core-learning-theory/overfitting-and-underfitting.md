@@ -112,11 +112,11 @@ $$\hat{\mathcal{L}}_{\text{CV}} = \frac{1}{k}\sum_{j=1}^{k} \mathcal{L}(\hat{f}_
 
 ## Connections to Other Concepts
 
-- **Bias-Variance Tradeoff**: Underfitting corresponds to high bias; overfitting corresponds to high variance. This file describes the practical symptoms; the tradeoff provides the theoretical explanation.
-- **Regularization**: The primary toolkit for combating overfitting, explored in detail in its own concept file.
-- **Loss Functions**: The choice of loss function affects how overfitting manifests -- MAE is more robust to outliers than MSE, for example.
-- **Empirical Risk Minimization**: Overfitting is exactly what happens when minimizing empirical risk does not minimize true risk.
-- **Curse of Dimensionality**: High dimensions make overfitting more likely because the model has more ways to fit noise.
+- `bias-variance-tradeoff.md`: Underfitting corresponds to high bias; overfitting corresponds to high variance. This file describes the practical symptoms; the tradeoff provides the theoretical explanation.
+- `regularization.md`: The primary toolkit for combating overfitting, explored in detail in its own concept file.
+- `loss-functions.md`: The choice of loss function affects how overfitting manifests -- MAE is more robust to outliers than MSE, for example.
+- `empirical-risk-minimization.md`: Overfitting is exactly what happens when minimizing empirical risk does not minimize true risk.
+- `curse-of-dimensionality.md`: High dimensions make overfitting more likely because the model has more ways to fit noise.
 
 ## Further Reading
 

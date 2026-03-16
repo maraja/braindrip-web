@@ -183,15 +183,15 @@ The billion-dollar decisions in AI -- how many GPUs to buy, what size model to t
 
 ## Connections to Other Concepts
 
-- **Pre-Training**: Scaling laws describe how pre-training performance depends on resources.
-- **Training Data Curation**: Data quality and quantity directly affect where a model sits on the scaling curve.
-- **Emergent Abilities**: The tension between smooth scaling of loss and potentially sudden emergence of capabilities.
-- **Mixed Precision Training**: Enables the compute throughput necessary to operate at the scales described by scaling laws.
-- **Distributed Training**: The infrastructure that makes billion-parameter, trillion-token training possible.
-- **Compute-Optimal Training**: The direct practical application of Chinchilla-style scaling analysis.
-- **Test-Time Compute**: The inference-time scaling paradigm that extends the scaling law framework to a second compute axis.
-- **Reasoning Models**: o1/R1 models empirically validate inference-time scaling laws on math, code, and science benchmarks.
-- **Model Collapse**: Recursive training on synthetic data may impose limits on data scaling by degrading the available data distribution.
+- `pre-training.md`: Scaling laws describe how pre-training performance depends on resources.
+- `training-data-curation.md`: Data quality and quantity directly affect where a model sits on the scaling curve.
+- `emergent-abilities.md`: The tension between smooth scaling of loss and potentially sudden emergence of capabilities.
+- `mixed-precision-training.md`: Enables the compute throughput necessary to operate at the scales described by scaling laws.
+- `05-distributed-training-infrastructure.md`: The infrastructure that makes billion-parameter, trillion-token training possible.
+- `03-chinchilla-and-compute-optimal-training.md`: The direct practical application of Chinchilla-style scaling analysis.
+- `test-time-compute.md`: The inference-time scaling paradigm that extends the scaling law framework to a second compute axis.
+- `reasoning-models.md`: o1/R1 models empirically validate inference-time scaling laws on math, code, and science benchmarks.
+- `model-collapse.md`: Recursive training on synthetic data may impose limits on data scaling by degrading the available data distribution.
 
 ## Further Reading
 

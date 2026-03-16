@@ -91,11 +91,11 @@ The standard benchmark is MS COCO, using **mask AP** (average precision over IoU
 
 ## Connections to Other Concepts
 
-- **Semantic Segmentation**: labels every pixel but does not distinguish instances. Instance segmentation adds the instance-separation requirement.
-- **Mask R-CNN**: the most influential top-down instance segmentation architecture.
-- **Panoptic Segmentation**: combines instance segmentation (for things) with semantic segmentation (for stuff) into a unified output.
-- **Segment Anything**: SAM produces class-agnostic instance masks that can serve as proposals for downstream instance segmentation.
-- **Fully Convolutional Networks**: the mask prediction head in top-down approaches is itself a small FCN.
+- `semantic-segmentation.md`: labels every pixel but does not distinguish instances. Instance segmentation adds the instance-separation requirement.
+- `r-cnn.md`: the most influential top-down instance segmentation architecture.
+- `panoptic-segmentation.md`: combines instance segmentation (for things) with semantic segmentation (for stuff) into a unified output.
+- `segment-anything.md`: SAM produces class-agnostic instance masks that can serve as proposals for downstream instance segmentation.
+- `fully-convolutional-networks.md`: the mask prediction head in top-down approaches is itself a small FCN.
 
 ## Further Reading
 

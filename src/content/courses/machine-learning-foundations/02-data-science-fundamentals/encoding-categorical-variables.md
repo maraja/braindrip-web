@@ -112,11 +112,11 @@ Categorical features are everywhere: customer segments, product categories, geog
 
 ## Connections to Other Concepts
 
-- **Data Types and Structures**: Understanding whether a feature is nominal or ordinal is the prerequisite for choosing the correct encoding.
-- **Exploratory Data Analysis**: EDA reveals cardinality, frequency distributions, and the relationship between categories and the target -- all of which inform encoding choice.
-- **Data Cleaning and Preprocessing**: Inconsistent string formatting ("New York" vs. "new york") inflates cardinality. Clean before encoding.
-- **Feature Scaling and Normalization**: One-hot encoded features are already on a $\{0, 1\}$ scale and should not be further standardized. Target-encoded features, however, should be scaled alongside other numerical features.
-- **Data Splitting and Sampling**: Target encoding must be computed per-fold during cross-validation to prevent leakage.
+- `data-types-and-structures.md`: Understanding whether a feature is nominal or ordinal is the prerequisite for choosing the correct encoding.
+- `exploratory-data-analysis.md`: EDA reveals cardinality, frequency distributions, and the relationship between categories and the target -- all of which inform encoding choice.
+- `data-cleaning-and-preprocessing.md`: Inconsistent string formatting ("New York" vs. "new york") inflates cardinality. Clean before encoding.
+- `feature-scaling-and-normalization.md`: One-hot encoded features are already on a $\{0, 1\}$ scale and should not be further standardized. Target-encoded features, however, should be scaled alongside other numerical features.
+- `data-splitting-and-sampling.md`: Target encoding must be computed per-fold during cross-validation to prevent leakage.
 
 ## Further Reading
 

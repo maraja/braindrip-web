@@ -113,11 +113,11 @@ This "online DPO" addresses DPO's off-policy weakness by generating fresh, on-po
 
 ## Connections to Other Concepts
 
-- **RLHF**: Rejection sampling can replace or complement PPO as the policy optimization step.
-- **GRPO**: Both sample multiple outputs per prompt. GRPO uses all for policy gradients; RS uses only the best for SFT.
-- **DPO**: Best and worst samples form on-policy preference pairs for DPO (as in Llama 3).
-- **Reward modeling**: RS quality is entirely dependent on the reward model's ranking ability.
-- **Synthetic data**: RS is a common technique for high-quality synthetic data generation beyond alignment.
+- `rlhf.md`: Rejection sampling can replace or complement PPO as the policy optimization step.
+- `grpo.md`: Both sample multiple outputs per prompt. GRPO uses all for policy gradients; RS uses only the best for SFT.
+- `dpo.md`: Best and worst samples form on-policy preference pairs for DPO (as in Llama 3).
+- `reward-modeling.md`: RS quality is entirely dependent on the reward model's ranking ability.
+- `synthetic-data.md`: RS is a common technique for high-quality synthetic data generation beyond alignment.
 
 ## Further Reading
 

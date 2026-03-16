@@ -90,11 +90,11 @@ These three libraries have made gradient boosting the dominant paradigm for tabu
 
 ## Connections to Other Concepts
 
-- **Gradient Boosting**: All three are optimized implementations of Friedman's gradient boosting framework. Understanding the core algorithm is essential before diving into implementation-specific features.
-- **AdaBoost**: The historical precursor. XGBoost's regularized objective and second-order approximation can be seen as principled improvements over AdaBoost's exponential loss formulation.
-- **Random Forests**: The main competing ensemble paradigm. Random Forests are simpler to tune and more robust to hyperparameters, while these boosting implementations typically achieve lower error with careful tuning.
-- **Bagging and Bootstrap**: Subsampling in all three libraries (subsample/bagging_fraction) borrows directly from the bagging framework to introduce stochasticity.
-- **Stacking and Blending**: These boosting models are the most common base learners in stacking ensembles, often combined with each other and with Random Forests for maximum diversity.
+- `gradient-boosting.md`: All three are optimized implementations of Friedman's gradient boosting framework. Understanding the core algorithm is essential before diving into implementation-specific features.
+- `adaboost.md`: The historical precursor. XGBoost's regularized objective and second-order approximation can be seen as principled improvements over AdaBoost's exponential loss formulation.
+- `random-forests.md`: The main competing ensemble paradigm. Random Forests are simpler to tune and more robust to hyperparameters, while these boosting implementations typically achieve lower error with careful tuning.
+- `bagging-and-bootstrap.md`: Subsampling in all three libraries (subsample/bagging_fraction) borrows directly from the bagging framework to introduce stochasticity.
+- `stacking-and-blending.md`: These boosting models are the most common base learners in stacking ensembles, often combined with each other and with Random Forests for maximum diversity.
 
 ## Further Reading
 

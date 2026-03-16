@@ -118,10 +118,10 @@ High-cardinality features are ubiquitous in industry: e-commerce (product IDs, s
 
 ## Connections to Other Concepts
 
-- **Feature Selection Methods**: After encoding high-cardinality features, feature selection (especially permutation importance) helps identify which encoded representations carry genuine signal.
-- **Feature Extraction and Transformation**: High-cardinality encoding is a specialized form of feature transformation, converting raw categories into numerical representations.
-- **Automated Feature Engineering**: AutoML systems must handle high-cardinality features automatically; most implement some form of target encoding or hashing internally.
-- **Regularization**: Target encoding regularization (smoothing toward the global mean) is a direct application of Bayesian shrinkage concepts.
+- `feature-selection-methods.md`: After encoding high-cardinality features, feature selection (especially permutation importance) helps identify which encoded representations carry genuine signal.
+- `feature-extraction-and-transformation.md`: High-cardinality encoding is a specialized form of feature transformation, converting raw categories into numerical representations.
+- `automated-feature-engineering.md`: AutoML systems must handle high-cardinality features automatically; most implement some form of target encoding or hashing internally.
+- `regularization.md`: Target encoding regularization (smoothing toward the global mean) is a direct application of Bayesian shrinkage concepts.
 - **Neural Network Fundamentals**: Embedding layers are standard neural network components, with the embedding matrix trained via gradient descent like any other weight matrix.
 
 ## Further Reading

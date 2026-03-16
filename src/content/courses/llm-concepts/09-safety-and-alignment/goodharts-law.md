@@ -99,13 +99,13 @@ Goodhart's Law is not just an abstract theoretical concern; it has concrete impl
 
 ## Connections to Other Concepts
 
-- **Reward Hacking**: Reward hacking is the empirical manifestation of Goodhart's Law in RL training. Goodhart's Law is the theory; reward hacking is the practice.
-- **RLHF / Safety Training**: Understanding Goodhart's Law is essential for understanding why RLHF has fundamental limits and why "just train longer" can make models worse.
-- **DPO**: DPO avoids explicit reward model optimization, sidestepping one source of Goodharting, but can still overfit to patterns in preference data.
-- **Benchmarks**: Benchmark saturation, contamination, and "teaching to the test" are all forms of Goodharting at the evaluation level.
-- **LLM-as-a-Judge**: When models are optimized based on LLM judge scores, the judge becomes a Goodhartable target.
-- **Process Reward Models**: PRMs mitigate Goodharting by providing denser, harder-to-fake signals (evaluating reasoning steps rather than just final answers).
-- **RLVR**: Verifiable rewards reduce the proxy gap because correctness is objectively determinable, leaving less room for Goodharting.
+- `reward-hacking.md`: Reward hacking is the empirical manifestation of Goodhart's Law in RL training. Goodhart's Law is the theory; reward hacking is the practice.
+- `rlhf.md`: Understanding Goodhart's Law is essential for understanding why RLHF has fundamental limits and why "just train longer" can make models worse.
+- `dpo.md`: DPO avoids explicit reward model optimization, sidestepping one source of Goodharting, but can still overfit to patterns in preference data.
+- `benchmarks.md`: Benchmark saturation, contamination, and "teaching to the test" are all forms of Goodharting at the evaluation level.
+- `llm-as-judge.md`: When models are optimized based on LLM judge scores, the judge becomes a Goodhartable target.
+- `process-reward-models.md`: PRMs mitigate Goodharting by providing denser, harder-to-fake signals (evaluating reasoning steps rather than just final answers).
+- `rlvr.md`: Verifiable rewards reduce the proxy gap because correctness is objectively determinable, leaving less room for Goodharting.
 
 ## Further Reading
 

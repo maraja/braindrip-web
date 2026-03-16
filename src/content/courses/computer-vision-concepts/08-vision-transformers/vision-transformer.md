@@ -77,11 +77,11 @@ The notation ViT-B/16 means Base model with $16 \times 16$ patches. ViT-B/32 use
 
 ## Connections to Other Concepts
 
-- **DeiT**: Demonstrated that ViT can be trained effectively on ImageNet-1K alone using distillation and strong augmentation.
-- **Swin Transformer**: Introduced hierarchical features and windowed attention to address ViT's quadratic cost and single-resolution limitation.
-- **Attention in Vision**: ViT's core mechanism; understanding 2D positional encoding and patch-size tradeoffs deepens understanding of ViT design choices.
-- **DINO**: Uses ViT as the backbone for self-supervised learning, revealing that attention heads learn semantic segmentation without labels.
-- **Vision Transformer Scaling**: Quantifies how much data ViT needs to overtake CNNs and how performance grows with model size.
+- `deit.md`: Demonstrated that ViT can be trained effectively on ImageNet-1K alone using distillation and strong augmentation.
+- `swin-transformer.md`: Introduced hierarchical features and windowed attention to address ViT's quadratic cost and single-resolution limitation.
+- `attention-in-vision.md`: ViT's core mechanism; understanding 2D positional encoding and patch-size tradeoffs deepens understanding of ViT design choices.
+- `dino.md`: Uses ViT as the backbone for self-supervised learning, revealing that attention heads learn semantic segmentation without labels.
+- `vision-transformer-scaling.md`: Quantifies how much data ViT needs to overtake CNNs and how performance grows with model size.
 
 ## Further Reading
 

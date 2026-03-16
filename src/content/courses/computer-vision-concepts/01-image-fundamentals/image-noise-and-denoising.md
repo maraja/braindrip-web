@@ -135,10 +135,10 @@ Typical PSNR benchmarks on BSD68 with $\sigma = 25$ Gaussian noise:
 
 ## Connections to Other Concepts
 
-- **Convolution and Filtering**: Gaussian blur, bilateral filtering, and the smoothing step of NLM are all filtering operations. Understanding convolution is prerequisite to understanding denoising.
-- **Frequency Domain and Fourier Transform**: Noise is typically broadband (flat power spectrum), while image content is concentrated at lower frequencies. Wiener filtering and spectral subtraction exploit this separation.
-- **Image Histograms**: Noise broadens histogram peaks, merging distinct modes and degrading the performance of threshold-based segmentation (e.g., Otsu's method). Denoising before thresholding is standard practice.
-- **Digital Images and Pixels**: Noise originates in the image formation process (photon shot noise, read noise, quantization noise), directly connected to sensor physics.
+- `convolution-and-filtering.md`: Gaussian blur, bilateral filtering, and the smoothing step of NLM are all filtering operations. Understanding convolution is prerequisite to understanding denoising.
+- `frequency-domain-and-fourier-transform.md`: Noise is typically broadband (flat power spectrum), while image content is concentrated at lower frequencies. Wiener filtering and spectral subtraction exploit this separation.
+- `image-histograms.md`: Noise broadens histogram peaks, merging distinct modes and degrading the performance of threshold-based segmentation (e.g., Otsu's method). Denoising before thresholding is standard practice.
+- `digital-images-and-pixels.md`: Noise originates in the image formation process (photon shot noise, read noise, quantization noise), directly connected to sensor physics.
 
 ## Further Reading
 

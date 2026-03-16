@@ -96,10 +96,10 @@ Every parameter update in supervised, unsupervised, and reinforcement learning r
 
 ## Connections to Other Concepts
 
-- **Optimization and Gradient Descent**: Gradients provide the update direction; the Hessian informs second-order methods and learning rate selection.
-- **Vectors and Matrices**: Gradients are vectors; Jacobians and Hessians are matrices. Matrix calculus is the language of multivariable derivatives.
-- **Maximum Likelihood Estimation**: MLE requires differentiating the log-likelihood with respect to parameters and setting the gradient to zero.
-- **Information Theory**: The gradient of cross-entropy loss is directly related to the KL divergence between predicted and true distributions.
+- `cost-latency-optimization.md`: Gradients provide the update direction; the Hessian informs second-order methods and learning rate selection.
+- `vectors-and-matrices.md`: Gradients are vectors; Jacobians and Hessians are matrices. Matrix calculus is the language of multivariable derivatives.
+- `maximum-likelihood-estimation.md`: MLE requires differentiating the log-likelihood with respect to parameters and setting the gradient to zero.
+- `information-theory.md`: The gradient of cross-entropy loss is directly related to the KL divergence between predicted and true distributions.
 
 ## Further Reading
 

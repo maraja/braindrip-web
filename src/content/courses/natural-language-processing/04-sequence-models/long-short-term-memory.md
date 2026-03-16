@@ -99,13 +99,13 @@ Gers et al. (2000) introduced peephole connections, showing they help with tasks
 
 ## Connections to Other Concepts
 
-- **`recurrent-neural-networks.md`**: LSTMs are a gated variant of vanilla RNNs, inheriting the sequential processing framework while solving the vanishing gradient problem.
-- **`gated-recurrent-units.md`**: A simplified alternative to LSTMs that merges the cell state and hidden state into one vector and uses two gates instead of three.
-- **`bidirectional-rnns.md`**: Bidirectional LSTMs (BiLSTMs) are the most common instantiation of bidirectional processing, standard for tasks like NER and POS tagging.
-- **`sequence-to-sequence-models.md`**: The original seq2seq papers used stacked LSTMs for both encoding and decoding.
-- **`attention-mechanism.md`**: Attention was introduced to augment LSTM-based encoder-decoders, letting the decoder access all encoder hidden states instead of just the final one.
-- **`contextual-embeddings.md`**: ELMo (Peters et al., 2018) generates contextualized word vectors using a two-layer bidirectional LSTM.
-- **`sentence-embeddings.md`**: LSTM-based encoders are a common method for producing fixed-size sentence representations.
+- `recurrent-neural-networks.md`: LSTMs are a gated variant of vanilla RNNs, inheriting the sequential processing framework while solving the vanishing gradient problem.
+- `gated-recurrent-units.md`: A simplified alternative to LSTMs that merges the cell state and hidden state into one vector and uses two gates instead of three.
+- `bidirectional-rnns.md`: Bidirectional LSTMs (BiLSTMs) are the most common instantiation of bidirectional processing, standard for tasks like NER and POS tagging.
+- `sequence-to-sequence-models.md`: The original seq2seq papers used stacked LSTMs for both encoding and decoding.
+- `attention-mechanism.md`: Attention was introduced to augment LSTM-based encoder-decoders, letting the decoder access all encoder hidden states instead of just the final one.
+- `contextual-embeddings.md`: ELMo (Peters et al., 2018) generates contextualized word vectors using a two-layer bidirectional LSTM.
+- `sentence-embeddings.md`: LSTM-based encoders are a common method for producing fixed-size sentence representations.
 
 ## Further Reading
 

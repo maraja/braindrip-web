@@ -103,13 +103,13 @@ The current trajectory is toward vision-language models (see `multimodal-nlp.md`
 
 ## Connections to Other Concepts
 
-- **`multimodal-nlp.md`**: Captioning is a foundational multimodal task, and modern vision-language models subsume it as one of many capabilities.
-- **`visual-question-answering.md`**: VQA and captioning are complementary -- captioning describes freely while VQA answers specific questions. They share visual feature extractors and attention mechanisms.
-- **`text-generation.md`**: Caption decoding uses the same autoregressive generation techniques (beam search, sampling, nucleus sampling) as text generation.
-- **`sequence-to-sequence-models.md`**: Captioning is fundamentally a seq2seq problem mapping visual input to text output.
-- **`attention-mechanism.md`**: Visual attention for captioning ("Show, Attend and Tell") is one of the most cited applications of the attention mechanism.
-- **`evaluation-metrics-for-nlp.md`**: CIDEr, SPICE, METEOR, and BLEU -- all used for captioning evaluation -- are covered in detail there.
-- **`document-understanding.md`**: Dense captioning of document regions (figures, charts, tables) connects captioning to document AI.
+- `multimodal-nlp.md`: Captioning is a foundational multimodal task, and modern vision-language models subsume it as one of many capabilities.
+- `visual-question-answering.md`: VQA and captioning are complementary -- captioning describes freely while VQA answers specific questions. They share visual feature extractors and attention mechanisms.
+- `text-generation.md`: Caption decoding uses the same autoregressive generation techniques (beam search, sampling, nucleus sampling) as text generation.
+- `sequence-to-sequence-models.md`: Captioning is fundamentally a seq2seq problem mapping visual input to text output.
+- `attention-mechanism.md`: Visual attention for captioning ("Show, Attend and Tell") is one of the most cited applications of the attention mechanism.
+- `evaluation-metrics.md`: CIDEr, SPICE, METEOR, and BLEU -- all used for captioning evaluation -- are covered in detail there.
+- `document-understanding.md`: Dense captioning of document regions (figures, charts, tables) connects captioning to document AI.
 
 ## Further Reading
 

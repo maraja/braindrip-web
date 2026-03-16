@@ -126,11 +126,11 @@ while requests_pending or active_sequences:
 
 ## Connections to Other Concepts
 
-- **PagedAttention**: The dynamic memory allocation of PagedAttention is what makes continuous batching practical. Without it, admitting and retiring sequences mid-batch would require expensive memory defragmentation.
-- **Prefill-Decode Disaggregation**: An advanced extension of the insight behind continuous batching -- if prefill and decode have different compute profiles, why not run them on separate hardware entirely?
-- **Throughput vs. Latency**: Continuous batching primarily optimizes throughput (total tokens per second across all requests) while also improving tail latency for short requests. The trade-off between prefill admission and decode smoothness is a key tuning dimension.
-- **Speculative Decoding**: Speculative decoding generates variable numbers of tokens per step (depending on acceptance), requiring the scheduler to handle variable-length advances per sequence -- a natural extension of continuous batching's flexibility.
-- **Model Serving Frameworks**: Continuous batching is the core scheduling innovation that differentiates modern LLM-specific serving systems (vLLM, TGI) from general-purpose model serving (basic Triton, Flask + PyTorch).
+- `paged-attention.md`: The dynamic memory allocation of PagedAttention is what makes continuous batching practical. Without it, admitting and retiring sequences mid-batch would require expensive memory defragmentation.
+- `prefill-decode-disaggregation.md`: An advanced extension of the insight behind continuous batching -- if prefill and decode have different compute profiles, why not run them on separate hardware entirely?
+- `throughput-vs-latency.md`: Continuous batching primarily optimizes throughput (total tokens per second across all requests) while also improving tail latency for short requests. The trade-off between prefill admission and decode smoothness is a key tuning dimension.
+- `speculative-decoding.md`: Speculative decoding generates variable numbers of tokens per step (depending on acceptance), requiring the scheduler to handle variable-length advances per sequence -- a natural extension of continuous batching's flexibility.
+- `model-serving.md`: Continuous batching is the core scheduling innovation that differentiates modern LLM-specific serving systems (vLLM, TGI) from general-purpose model serving (basic Triton, Flask + PyTorch).
 
 ## Further Reading
 

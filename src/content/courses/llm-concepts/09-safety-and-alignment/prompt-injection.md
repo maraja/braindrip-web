@@ -101,11 +101,11 @@ For enterprises building LLM applications, prompt injection represents a fundame
 
 ## Connections to Other Concepts
 
-- **Guardrails & Content Filtering**: Input/output filters are a primary defense layer against injection, though not a complete solution.
-- **Red Teaming**: Prompt injection testing is a core component of any LLM red teaming exercise.
-- **The Alignment Problem**: Prompt injection can be viewed as a microcosm of misalignment -- the model does what the injected instruction says rather than what the system designer intended.
-- **RAG**: Retrieval-augmented generation creates new attack surfaces through indirect injection in retrieved documents.
-- **Tool Use and Agents**: Agentic systems with tool-use capabilities amplify the consequences of prompt injection from information disclosure to unauthorized actions.
+- `guardrails.md`: Input/output filters are a primary defense layer against injection, though not a complete solution.
+- `red-teaming.md`: Prompt injection testing is a core component of any LLM red teaming exercise.
+- `alignment-problem.md`: Prompt injection can be viewed as a microcosm of misalignment -- the model does what the injected instruction says rather than what the system designer intended.
+- `rag.md`: Retrieval-augmented generation creates new attack surfaces through indirect injection in retrieved documents.
+- `tool-use-benchmarks.md`: Agentic systems with tool-use capabilities amplify the consequences of prompt injection from information disclosure to unauthorized actions.
 
 ## Further Reading
 

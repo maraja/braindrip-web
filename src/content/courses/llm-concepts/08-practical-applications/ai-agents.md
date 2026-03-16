@@ -155,11 +155,11 @@ The agent paradigm also changes how we think about AI capability. Individual mod
 
 ## Connections to Other Concepts
 
-- **Function calling and tool use** is the mechanism through which agents interact with their environment.
-- **RAG** provides agents with long-term memory and knowledge retrieval capabilities.
-- **Prompt engineering** (especially chain-of-thought and system prompts) shapes how agents reason and plan.
-- **Structured output** ensures reliable communication between the agent's reasoning and its tool invocations.
-- **Safety and alignment** become paramount when agents act autonomously -- misaligned goals combined with tool access can produce harmful outcomes.
+- `function-calling.md`: is the mechanism through which agents interact with their environment.
+- `rag.md`: provides agents with long-term memory and knowledge retrieval capabilities.
+- `prompt-engineering.md`: (especially chain-of-thought and system prompts) shapes how agents reason and plan.
+- `structured-output.md`: ensures reliable communication between the agent's reasoning and its tool invocations.
+- `safety-by-design.md`: become paramount when agents act autonomously -- misaligned goals combined with tool access can produce harmful outcomes.
 
 ## Further Reading
 

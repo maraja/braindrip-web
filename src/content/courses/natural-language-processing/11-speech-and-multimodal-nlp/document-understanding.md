@@ -107,13 +107,13 @@ Document question answering (DocVQA) answers natural language questions about do
 
 ## Connections to Other Concepts
 
-- **`multimodal-nlp.md`**: Document understanding is a practical application of multimodal NLP, fusing text, vision, and spatial modalities.
-- **`named-entity-recognition.md`**: Key information extraction from documents uses the same BIO tagging formalism as NER, extended with layout features.
-- **`information-extraction.md`**: Document understanding is a specialized form of information extraction tailored to visually structured documents.
-- **`bert.md`**: LayoutLM directly extends BERT's architecture and pre-training objectives with 2D position embeddings.
-- **`visual-question-answering.md`**: DocVQA applies VQA methodology to document images, requiring both reading comprehension and layout understanding.
-- **`text-cleaning-and-noise-removal.md`**: OCR noise in scanned documents requires robust text cleaning pipelines before or during processing.
-- **`image-captioning.md`**: Dense captioning of document elements (figures, charts) connects captioning to document understanding.
+- `multimodal-nlp.md`: Document understanding is a practical application of multimodal NLP, fusing text, vision, and spatial modalities.
+- `named-entity-recognition.md`: Key information extraction from documents uses the same BIO tagging formalism as NER, extended with layout features.
+- `information-extraction.md`: Document understanding is a specialized form of information extraction tailored to visually structured documents.
+- `bert.md`: LayoutLM directly extends BERT's architecture and pre-training objectives with 2D position embeddings.
+- `visual-question-answering.md`: DocVQA applies VQA methodology to document images, requiring both reading comprehension and layout understanding.
+- `text-cleaning-and-noise-removal.md`: OCR noise in scanned documents requires robust text cleaning pipelines before or during processing.
+- `image-captioning.md`: Dense captioning of document elements (figures, charts) connects captioning to document understanding.
 
 ## Further Reading
 

@@ -133,13 +133,13 @@ The compound systems paradigm represents a fundamental reorientation of the AI f
 
 ## Connections to Other Concepts
 
-- **RAG (Retrieval-Augmented Generation)**: The most fundamental compound pattern. Understanding embedding-based retrieval, vector databases, and reranking is essential.
-- **Tool Use and Function Calling**: The interface mechanism that allows LLMs to interact with external systems. Understanding structured output generation and tool selection is crucial.
-- **Test-Time Compute**: Many test-time compute techniques (sampling, verification, search) are compound system patterns. Reasoning models internally implement verified generation loops.
-- **Evaluation**: Compound systems require multi-level evaluation -- component-level, integration-level, and end-to-end -- making evaluation significantly more complex.
-- **AI Safety and Guardrails**: Production compound systems incorporate safety as additional system components (input/output filters, content classifiers, policy enforcement).
-- **Context Window Extension**: Longer contexts enable richer compound interactions -- more retrieved documents, longer tool outputs, more conversation history -- but context management remains essential even with large windows.
-- **Multimodal Models**: Multimodal models are themselves compound (encoder + projector + LLM) and increasingly serve as components in larger multimodal compound systems.
+- `rag.md`: The most fundamental compound pattern. Understanding embedding-based retrieval, vector databases, and reranking is essential.
+- `tool-use-benchmarks.md`: The interface mechanism that allows LLMs to interact with external systems. Understanding structured output generation and tool selection is crucial.
+- `test-time-compute.md`: Many test-time compute techniques (sampling, verification, search) are compound system patterns. Reasoning models internally implement verified generation loops.
+- `trajectory-evaluation.md`: Compound systems require multi-level evaluation -- component-level, integration-level, and end-to-end -- making evaluation significantly more complex.
+- `03-ai-safety-and-governance.md`: Production compound systems incorporate safety as additional system components (input/output filters, content classifiers, policy enforcement).
+- `context-window-extension.md`: Longer contexts enable richer compound interactions -- more retrieved documents, longer tool outputs, more conversation history -- but context management remains essential even with large windows.
+- `multimodal-models.md`: Multimodal models are themselves compound (encoder + projector + LLM) and increasingly serve as components in larger multimodal compound systems.
 
 ## Further Reading
 

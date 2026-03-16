@@ -87,10 +87,10 @@ matches = sorted(matches, key=lambda x: x.distance)
 
 ## Connections to Other Concepts
 
-- **Corner Detection**: ORB relies on FAST corners, which test a 16-pixel Bresenham circle -- a machine-learned acceleration of intensity comparison.
-- **SIFT**: ORB was explicitly designed as a faster, patent-free replacement; understanding SIFT clarifies what invariances ORB preserves and which it trades away.
-- **Image Stitching and Homography**: ORB features feed into RANSAC-based homography estimation for real-time stitching.
-- **Optical Flow**: Sparse tracking with binary features complements dense optical flow in hybrid motion estimation systems.
+- `corner-detection.md`: ORB relies on FAST corners, which test a 16-pixel Bresenham circle -- a machine-learned acceleration of intensity comparison.
+- `sift.md`: ORB was explicitly designed as a faster, patent-free replacement; understanding SIFT clarifies what invariances ORB preserves and which it trades away.
+- `image-stitching-and-homography.md`: ORB features feed into RANSAC-based homography estimation for real-time stitching.
+- `optical-flow.md`: Sparse tracking with binary features complements dense optical flow in hybrid motion estimation systems.
 
 ## Further Reading
 

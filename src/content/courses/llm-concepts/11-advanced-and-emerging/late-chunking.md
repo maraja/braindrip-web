@@ -107,11 +107,11 @@ Late chunking mitigates all of these by ensuring every chunk embedding is inform
 
 ## Connections to Other Concepts
 
-- **Chunking strategies**: Late chunking is orthogonal to the choice of chunking strategy -- you still need to decide where to place chunk boundaries (fixed-size, semantic, structure-aware). Late chunking changes when the boundaries are applied, not how they are determined.
-- **Embedding models and vector databases**: Late chunking produces the same output format (fixed-size vectors per chunk), so the vector database and retrieval pipeline are unchanged.
-- **ColBERT / late interaction**: Both late chunking and ColBERT preserve token-level information that standard bi-encoder embedding discards. Late chunking preserves document context within chunks; ColBERT preserves per-token matching granularity.
+- `chunking-strategies.md`: Late chunking is orthogonal to the choice of chunking strategy -- you still need to decide where to place chunk boundaries (fixed-size, semantic, structure-aware). Late chunking changes when the boundaries are applied, not how they are determined.
+- `embedding-models-and-vector-databases.md`: Late chunking produces the same output format (fixed-size vectors per chunk), so the vector database and retrieval pipeline are unchanged.
+- `colbert-late-interaction.md`: Both late chunking and ColBERT preserve token-level information that standard bi-encoder embedding discards. Late chunking preserves document context within chunks; ColBERT preserves per-token matching granularity.
 - **Long-context models**: The trend toward longer context windows in both embedding models and generative models is synergistic with late chunking, enabling it to work on longer documents.
-- **RAG**: Late chunking is an indexing-time improvement that transparently improves retrieval quality in any RAG pipeline without changing the query or generation phases.
+- `rag.md`: Late chunking is an indexing-time improvement that transparently improves retrieval quality in any RAG pipeline without changing the query or generation phases.
 
 ## Further Reading
 

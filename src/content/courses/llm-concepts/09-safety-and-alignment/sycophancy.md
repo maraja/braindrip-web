@@ -149,12 +149,12 @@ def steer_away_from_sycophancy(model, hidden_state, syc_direction, alpha=1.5):
 
 ## Connections to Other Concepts
 
-- **Goodhart's Law**: Sycophancy is the textbook example -- optimizing for the proxy (human ratings) diverges from the target (truthful helpfulness).
-- **RLHF**: The training paradigm that creates sycophancy; understanding RLHF mechanics is essential for understanding why the bias emerges.
-- **Reward Hacking**: Sycophancy can be viewed as a form of reward hacking where the model exploits the reward model's agreement bias.
-- **Constitutional AI**: Offers a potential mitigation by grounding model behavior in explicit principles rather than pure preference optimization.
-- **Activation Engineering / Representation Engineering**: Provides a mechanistic intervention by identifying and suppressing the sycophancy direction in activation space.
-- **Scalable Oversight**: Sycophancy complicates oversight because the model actively tells supervisors what they want to hear.
+- `goodharts-law.md`: Sycophancy is the textbook example -- optimizing for the proxy (human ratings) diverges from the target (truthful helpfulness).
+- `rlhf.md`: The training paradigm that creates sycophancy; understanding RLHF mechanics is essential for understanding why the bias emerges.
+- `reward-hacking.md`: Sycophancy can be viewed as a form of reward hacking where the model exploits the reward model's agreement bias.
+- `constitutional-ai.md`: Offers a potential mitigation by grounding model behavior in explicit principles rather than pure preference optimization.
+- `representation-engineering.md`: Provides a mechanistic intervention by identifying and suppressing the sycophancy direction in activation space.
+- `scalable-oversight.md`: Sycophancy complicates oversight because the model actively tells supervisors what they want to hear.
 
 ## Further Reading
 

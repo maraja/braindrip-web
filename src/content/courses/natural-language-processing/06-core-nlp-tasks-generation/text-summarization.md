@@ -77,12 +77,12 @@ A major challenge for abstractive summarization: models generate fluent text tha
 
 ## Connections to Other Concepts
 
-- **`machine-translation.md`**: Summarization and MT share the encoder-decoder paradigm, beam search decoding, and copy/attention mechanisms.
-- **`text-generation.md`**: Summarization is a constrained form of text generation where the output must be faithful to the source.
-- **`sentence-embeddings.md`**: Sentence representations drive extractive selection methods like TextRank and neural sentence scoring.
-- **`text-classification.md`**: Extractive summarization can be framed as binary sentence classification (include/exclude).
-- **`natural-language-inference.md`**: NLI models are used to check factual consistency between source documents and generated summaries.
-- **`evaluation-metrics-for-nlp.md`**: ROUGE, BERTScore, and other metrics used for summarization evaluation are covered there.
+- `machine-translation.md`: Summarization and MT share the encoder-decoder paradigm, beam search decoding, and copy/attention mechanisms.
+- `text-generation.md`: Summarization is a constrained form of text generation where the output must be faithful to the source.
+- `sentence-embeddings.md`: Sentence representations drive extractive selection methods like TextRank and neural sentence scoring.
+- `text-classification.md`: Extractive summarization can be framed as binary sentence classification (include/exclude).
+- `natural-language-inference.md`: NLI models are used to check factual consistency between source documents and generated summaries.
+- `evaluation-metrics.md`: ROUGE, BERTScore, and other metrics used for summarization evaluation are covered there.
 
 ## Further Reading
 

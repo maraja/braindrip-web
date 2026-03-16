@@ -78,10 +78,10 @@ PointNet processes each point in isolation before global pooling, missing local 
 
 ## Connections to Other Concepts
 
-- **Point Cloud Processing**: PointNet is the canonical neural network for processing the unordered point sets described in point cloud processing fundamentals.
-- **3D Object Detection**: PointNet serves as the backbone feature extractor in methods like VoteNet and 3DSSD.
-- **3D Reconstruction**: Point-based representations in reconstruction pipelines often use PointNet-style encoders.
-- **Transformers**: Point Transformer (Zhao et al., 2021) replaces shared MLPs with self-attention, achieving stronger local feature aggregation while maintaining permutation invariance.
+- `point-cloud-processing.md`: PointNet is the canonical neural network for processing the unordered point sets described in point cloud processing fundamentals.
+- `3d-object-detection.md`: PointNet serves as the backbone feature extractor in methods like VoteNet and 3DSSD.
+- `3d-reconstruction.md`: Point-based representations in reconstruction pipelines often use PointNet-style encoders.
+- `video-transformers.md`: Point Transformer (Zhao et al., 2021) replaces shared MLPs with self-attention, achieving stronger local feature aggregation while maintaining permutation invariance.
 - **Set Functions**: PointNet's design connects to Deep Sets (Zaheer et al., 2017), which formalized permutation-invariant neural architectures for general sets.
 
 ## Further Reading

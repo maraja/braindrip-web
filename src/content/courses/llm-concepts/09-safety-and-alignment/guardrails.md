@@ -116,11 +116,11 @@ Guardrails also provide **adaptability**. When safety requirements change (new r
 
 ## Connections to Other Concepts
 
-- **Prompt Injection**: Input guardrails are the primary defense against prompt injection in production applications. The effectiveness of these guardrails directly determines the application's vulnerability to injection attacks.
-- **Hallucination & Grounding**: Output-side faithfulness checking is a form of guardrail specifically targeting hallucination. RAG-based systems use guardrails to verify that outputs are grounded in retrieved context.
-- **Red Teaming**: Red teaming exercises directly test guardrail effectiveness, identifying gaps in the filter chain that adversarial inputs can exploit.
-- **Bias & Fairness**: Guardrails can include bias detection classifiers, though subtle biases are often harder to catch with post-hoc filtering than explicit harmful content.
-- **The Alignment Problem**: Guardrails are an external alignment mechanism -- they constrain the model's behavior from outside rather than changing the model's internal optimization. They are a practical, engineering-driven complement to research-driven alignment techniques.
+- `prompt-injection.md`: Input guardrails are the primary defense against prompt injection in production applications. The effectiveness of these guardrails directly determines the application's vulnerability to injection attacks.
+- `hallucination.md`: Output-side faithfulness checking is a form of guardrail specifically targeting hallucination. RAG-based systems use guardrails to verify that outputs are grounded in retrieved context.
+- `red-teaming.md`: Red teaming exercises directly test guardrail effectiveness, identifying gaps in the filter chain that adversarial inputs can exploit.
+- `bias-in-nlp.md`: Guardrails can include bias detection classifiers, though subtle biases are often harder to catch with post-hoc filtering than explicit harmful content.
+- `alignment-problem.md`: Guardrails are an external alignment mechanism -- they constrain the model's behavior from outside rather than changing the model's internal optimization. They are a practical, engineering-driven complement to research-driven alignment techniques.
 
 ## Further Reading
 

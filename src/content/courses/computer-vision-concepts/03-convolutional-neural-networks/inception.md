@@ -105,10 +105,10 @@ Inception v4 combined Inception modules with residual connections. Inception-Res
 
 ## Connections to Other Concepts
 
-- **VGGNet**: The contemporary competitor that took the opposite design philosophy (uniform sequential stacking vs. multi-branch parallelism).
-- **ResNet**: Adopted the $1 \times 1$ bottleneck idea from Inception and later merged with Inception in Inception-ResNet.
-- **Depthwise Separable Convolutions**: Represent an even more aggressive factorization of the convolution operation than Inception's bottleneck approach.
-- **Neural Architecture Search**: NASNet's search space was inspired by Inception-style multi-branch cells.
+- `vggnet.md`: The contemporary competitor that took the opposite design philosophy (uniform sequential stacking vs. multi-branch parallelism).
+- `resnet.md`: Adopted the $1 \times 1$ bottleneck idea from Inception and later merged with Inception in Inception-ResNet.
+- `depthwise-separable-convolutions.md`: Represent an even more aggressive factorization of the convolution operation than Inception's bottleneck approach.
+- `neural-architecture-search.md`: NASNet's search space was inspired by Inception-style multi-branch cells.
 
 ## Further Reading
 

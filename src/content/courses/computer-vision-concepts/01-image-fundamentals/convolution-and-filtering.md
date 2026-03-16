@@ -126,10 +126,10 @@ Modern architectures (ResNet, EfficientNet) typically use 3x3 kernels stacked in
 
 ## Connections to Other Concepts
 
-- **Frequency Domain and Fourier Transform**: Convolution in the spatial domain is equivalent to element-wise multiplication in the frequency domain (convolution theorem), enabling efficient implementation for large kernels.
-- **Image Pyramids and Scale Space**: Gaussian blur (convolution with increasing $\sigma$) is the foundation of scale-space theory and image pyramids.
-- **Image Noise and Denoising**: Gaussian and bilateral filtering are convolution-based denoising methods; median filtering is a nonlinear alternative.
-- **Morphological Operations**: Erosion and dilation can be viewed as nonlinear analogues of convolution using min/max instead of sum.
+- `frequency-domain-and-fourier-transform.md`: Convolution in the spatial domain is equivalent to element-wise multiplication in the frequency domain (convolution theorem), enabling efficient implementation for large kernels.
+- `image-pyramids-and-scale-space.md`: Gaussian blur (convolution with increasing $\sigma$) is the foundation of scale-space theory and image pyramids.
+- `image-noise-and-denoising.md`: Gaussian and bilateral filtering are convolution-based denoising methods; median filtering is a nonlinear alternative.
+- `morphological-operations.md`: Erosion and dilation can be viewed as nonlinear analogues of convolution using min/max instead of sum.
 
 ## Further Reading
 

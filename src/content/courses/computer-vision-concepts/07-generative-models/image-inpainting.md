@@ -111,11 +111,11 @@ $$x_{t-1} = M \odot x_{t-1}^{\text{generated}} + (1 - M) \odot x_{t-1}^{\text{kn
 
 ## Connections to Other Concepts
 
-- **Diffusion Models**: Diffusion provides a natural inpainting framework by conditioning denoising on known pixels.
-- **Latent Diffusion and Stable Diffusion**: SD inpainting operates in latent space, enabling high-resolution completion with text guidance.
-- **Generative Adversarial Networks**: Most CNN-based inpainting methods use adversarial training for realistic texture synthesis.
-- **Image-to-Image Translation**: Inpainting can be viewed as translating a masked image to a complete one.
-- **Image Super-Resolution**: Both tasks hallucinate missing information using learned priors about natural images.
+- `diffusion-models.md`: Diffusion provides a natural inpainting framework by conditioning denoising on known pixels.
+- `latent-diffusion-and-stable-diffusion.md`: SD inpainting operates in latent space, enabling high-resolution completion with text guidance.
+- `generative-adversarial-networks.md`: Most CNN-based inpainting methods use adversarial training for realistic texture synthesis.
+- `image-to-image-translation.md`: Inpainting can be viewed as translating a masked image to a complete one.
+- `image-super-resolution.md`: Both tasks hallucinate missing information using learned priors about natural images.
 
 ## Further Reading
 

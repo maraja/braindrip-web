@@ -95,14 +95,14 @@ The MAD-X framework (Pfeiffer et al., 2020) stacks language adapters (trained on
 
 ## Connections to Other Concepts
 
-- **`bert.md`**: mBERT is literally BERT trained multilingually; understanding BERT's masked language modeling objective is prerequisite.
-- **`cross-lingual-word-embeddings.md`**: The predecessor approach to cross-lingual representation; multilingual transformers can be seen as learning contextual cross-lingual embeddings end-to-end.
-- **`multilingual-nlp.md`**: Multilingual transformers are the dominant tool for modern multilingual NLP systems.
-- **`low-resource-nlp.md`**: Zero-shot transfer via multilingual transformers is the primary strategy for low-resource languages.
-- **`transfer-learning-in-nlp.md`**: Cross-lingual transfer is a specialized form of transfer learning where the distribution shift is across languages.
-- **`cross-lingual-transfer.md`**: Detailed treatment of the mechanisms and limitations of cross-lingual task transfer.
-- **`domain-adaptation.md`**: Adapting multilingual models to specific domains (e.g., legal, biomedical) in specific languages combines domain and language adaptation.
-- **`tokenization-in-nlp.md`**: Shared multilingual tokenizers (WordPiece, SentencePiece) are foundational to how these models handle multiple scripts and morphologies.
+- `bert.md`: mBERT is literally BERT trained multilingually; understanding BERT's masked language modeling objective is prerequisite.
+- `cross-lingual-word-embeddings.md`: The predecessor approach to cross-lingual representation; multilingual transformers can be seen as learning contextual cross-lingual embeddings end-to-end.
+- `multilingual-nlp.md`: Multilingual transformers are the dominant tool for modern multilingual NLP systems.
+- `low-resource-nlp.md`: Zero-shot transfer via multilingual transformers is the primary strategy for low-resource languages.
+- `transfer-learning.md`: Cross-lingual transfer is a specialized form of transfer learning where the distribution shift is across languages.
+- `cross-lingual-transfer.md`: Detailed treatment of the mechanisms and limitations of cross-lingual task transfer.
+- `domain-adaptation.md`: Adapting multilingual models to specific domains (e.g., legal, biomedical) in specific languages combines domain and language adaptation.
+- `tokenization.md`: Shared multilingual tokenizers (WordPiece, SentencePiece) are foundational to how these models handle multiple scripts and morphologies.
 
 ## Further Reading
 

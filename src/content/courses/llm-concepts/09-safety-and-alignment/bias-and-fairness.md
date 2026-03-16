@@ -108,11 +108,11 @@ The scale of LLM deployment means that even small biases, applied billions of ti
 
 ## Connections to Other Concepts
 
-- **RLHF and Alignment**: RLHF is both a tool for reducing bias (by training on less biased human preferences) and a source of bias (annotator preferences encode annotator biases).
-- **The Alignment Problem**: Bias is a specific instance of misalignment -- the model's statistical patterns diverge from what we actually want (equitable treatment).
-- **Red Teaming**: Bias testing is a core component of red teaming exercises, with specialized teams probing for demographic biases across many dimensions.
-- **Guardrails**: Content filters can catch some egregiously biased outputs, but subtle, systemic bias typically passes through output filters undetected.
-- **Hallucination**: The model's tendency to confabulate can interact with bias -- it may hallucinate "facts" that align with stereotypical patterns absorbed from training data.
+- `rlhf.md`: RLHF is both a tool for reducing bias (by training on less biased human preferences) and a source of bias (annotator preferences encode annotator biases).
+- `alignment-problem.md`: Bias is a specific instance of misalignment -- the model's statistical patterns diverge from what we actually want (equitable treatment).
+- `red-teaming.md`: Bias testing is a core component of red teaming exercises, with specialized teams probing for demographic biases across many dimensions.
+- `guardrails.md`: Content filters can catch some egregiously biased outputs, but subtle, systemic bias typically passes through output filters undetected.
+- `hallucination.md`: The model's tendency to confabulate can interact with bias -- it may hallucinate "facts" that align with stereotypical patterns absorbed from training data.
 
 ## Further Reading
 

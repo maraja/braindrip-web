@@ -107,10 +107,10 @@ In practice, KNN serves as an indispensable sanity check: if a sophisticated mod
 
 ## Connections to Other Concepts
 
-- **Decision Trees**: Both are non-parametric and can capture complex boundaries, but trees partition the space recursively while KNN relies on local neighborhoods. Trees are faster at prediction time.
-- **Kernel Methods**: KNN can be viewed as a kernel method with a data-dependent kernel. The RBF kernel SVM is a smoother, more principled version of weighted KNN.
-- **Naive Bayes**: Naive Bayes makes strong distributional assumptions and is very fast; KNN makes no assumptions but is computationally heavy. They represent opposite ends of the parametric/non-parametric spectrum.
-- **Logistic Regression**: Linear boundary vs. arbitrarily complex boundary. Logistic regression is preferred when the true boundary is approximately linear; KNN is preferred for complex, nonlinear boundaries with sufficient data.
+- `decision-trees.md`: Both are non-parametric and can capture complex boundaries, but trees partition the space recursively while KNN relies on local neighborhoods. Trees are faster at prediction time.
+- `kernel-methods.md`: KNN can be viewed as a kernel method with a data-dependent kernel. The RBF kernel SVM is a smoother, more principled version of weighted KNN.
+- `naive-bayes.md`: Naive Bayes makes strong distributional assumptions and is very fast; KNN makes no assumptions but is computationally heavy. They represent opposite ends of the parametric/non-parametric spectrum.
+- `logistic-regression.md`: Linear boundary vs. arbitrarily complex boundary. Logistic regression is preferred when the true boundary is approximately linear; KNN is preferred for complex, nonlinear boundaries with sufficient data.
 
 ## Further Reading
 

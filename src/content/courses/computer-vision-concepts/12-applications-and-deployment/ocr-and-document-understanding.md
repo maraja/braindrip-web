@@ -88,10 +88,10 @@ OCR difficulty varies dramatically across writing systems:
 
 ## Connections to Other Concepts
 
-- **Vision Transformers**: TrOCR and LayoutLMv3 are built on ViT-style encoders.
-- **Object Detection**: Text detection borrows anchor-based and anchor-free detection architectures.
+- `vision-transformer.md`: TrOCR and LayoutLMv3 are built on ViT-style encoders.
+- `3d-object-detection.md`: Text detection borrows anchor-based and anchor-free detection architectures.
 - **Sequence Modeling**: CTC decoding and autoregressive decoders are core recognition components.
-- **Multimodal Models**: Document AI fuses text, layout, and image modalities, aligning with the broader multimodal trend.
+- `multimodal-models.md`: Document AI fuses text, layout, and image modalities, aligning with the broader multimodal trend.
 
 ## Further Reading
 

@@ -85,12 +85,12 @@ Large language models (ChatGPT, Claude, Gemini) have fundamentally changed dialo
 
 ## Connections to Other Concepts
 
-- **`text-classification.md`**: Intent detection in task-oriented dialogue is a text classification problem.
-- **`named-entity-recognition.md`**: Slot filling uses the same BIO sequence labeling approach as NER.
-- **`text-generation.md`**: Response generation uses the decoding strategies (beam search, nucleus sampling) covered there.
-- **`question-answering.md`**: Knowledge-grounded dialogue incorporates QA capabilities to answer user questions within conversation.
-- **`sentiment-analysis.md`**: Detecting user sentiment and emotion is essential for empathetic and adaptive dialogue.
-- **`coreference-resolution.md`**: Tracking references across turns ("I want that one" -- which one?) requires coreference abilities.
+- `text-classification.md`: Intent detection in task-oriented dialogue is a text classification problem.
+- `named-entity-recognition.md`: Slot filling uses the same BIO sequence labeling approach as NER.
+- `text-generation.md`: Response generation uses the decoding strategies (beam search, nucleus sampling) covered there.
+- `question-answering.md`: Knowledge-grounded dialogue incorporates QA capabilities to answer user questions within conversation.
+- `sentiment-analysis.md`: Detecting user sentiment and emotion is essential for empathetic and adaptive dialogue.
+- `coreference-resolution.md`: Tracking references across turns ("I want that one" -- which one?) requires coreference abilities.
 
 ## Further Reading
 

@@ -106,12 +106,12 @@ A credit card company monitors millions of daily transactions. Each transaction 
 
 ## Connections to Other Concepts
 
-- **Gaussian Mixture Models**: Points with low probability $p(x)$ under a fitted GMM are natural anomaly candidates. GMMs provide a density-based anomaly score that accounts for cluster shape and covariance structure.
-- **DBSCAN**: Noise points in DBSCAN are density-based outliers. DBSCAN provides a complementary view of anomalies as points in low-density regions. The noise label is DBSCAN's built-in anomaly detector.
-- **Principal Component Analysis**: PCA reconstruction error (projection residual in discarded components) is a classical anomaly score. High residual implies the point does not conform to the principal subspace. This is computationally efficient and works well when normal data lies on a low-dimensional subspace.
-- **Association Rules**: Unusual transaction patterns (items rarely bought together) can signal anomalous behavior in market basket contexts. A transaction that violates high-confidence rules warrants investigation.
-- **K-Means Clustering**: Points with large distance to their nearest centroid after K-means clustering can serve as a simple anomaly score, though this approach inherits K-means' limitation to spherical cluster shapes.
-- **t-SNE and UMAP**: Visualization via t-SNE or UMAP can reveal anomalies as isolated points, but this is a qualitative tool and should not replace quantitative anomaly scoring.
+- `gaussian-mixture-models.md`: Points with low probability $p(x)$ under a fitted GMM are natural anomaly candidates. GMMs provide a density-based anomaly score that accounts for cluster shape and covariance structure.
+- `dbscan.md`: Noise points in DBSCAN are density-based outliers. DBSCAN provides a complementary view of anomalies as points in low-density regions. The noise label is DBSCAN's built-in anomaly detector.
+- `principal-component-analysis.md`: PCA reconstruction error (projection residual in discarded components) is a classical anomaly score. High residual implies the point does not conform to the principal subspace. This is computationally efficient and works well when normal data lies on a low-dimensional subspace.
+- `association-rules.md`: Unusual transaction patterns (items rarely bought together) can signal anomalous behavior in market basket contexts. A transaction that violates high-confidence rules warrants investigation.
+- `k-means-clustering.md`: Points with large distance to their nearest centroid after K-means clustering can serve as a simple anomaly score, though this approach inherits K-means' limitation to spherical cluster shapes.
+- `tsne-and-umap.md`: Visualization via t-SNE or UMAP can reveal anomalies as isolated points, but this is a qualitative tool and should not replace quantitative anomaly scoring.
 
 ## Further Reading
 

@@ -126,11 +126,11 @@ The fundamental trade-off: **stronger watermarks are more detectable but more di
 
 ## Connections to Other Concepts
 
-- **LLM text generation / sampling**: Watermarking modifies the sampling process, making it directly connected to temperature, top-p, top-k, and other sampling strategies.
-- **AI safety and alignment**: Watermarking is a safety tool that enables accountability and content provenance for AI-generated text.
-- **Guardrails**: Watermarking complements output guardrails -- guardrails filter harmful content, watermarking enables traceability of all content.
-- **Hallucination**: Watermarking does not address hallucination directly, but knowing that text is AI-generated (via watermark detection) may prompt users to verify claims more carefully.
-- **Red teaming**: Robustness testing of watermarking schemes is a form of red teaming -- adversaries try to remove watermarks while preserving text quality.
+- `text-generation.md`: Watermarking modifies the sampling process, making it directly connected to temperature, top-p, top-k, and other sampling strategies.
+- `03-ai-safety-and-governance.md`: Watermarking is a safety tool that enables accountability and content provenance for AI-generated text.
+- `guardrails.md`: Watermarking complements output guardrails -- guardrails filter harmful content, watermarking enables traceability of all content.
+- `hallucination.md`: Watermarking does not address hallucination directly, but knowing that text is AI-generated (via watermark detection) may prompt users to verify claims more carefully.
+- `red-teaming.md`: Robustness testing of watermarking schemes is a form of red teaming -- adversaries try to remove watermarks while preserving text quality.
 
 ## Further Reading
 

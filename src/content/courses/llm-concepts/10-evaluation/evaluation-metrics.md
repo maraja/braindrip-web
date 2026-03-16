@@ -150,12 +150,12 @@ These metrics remain most relevant for narrower, well-defined tasks (translation
 
 ## Connections to Other Concepts
 
-- **Perplexity**: An intrinsic metric (measures model behavior) whereas BLEU, ROUGE, and BERTScore are extrinsic metrics (measure output quality against references). They complement each other.
-- **LLM-as-a-Judge**: Has largely replaced these metrics for evaluating open-ended LLM outputs, but still sometimes uses them as features in a broader evaluation rubric.
-- **Tokenization**: All three metrics are sensitive to tokenization choices. BLEU and ROUGE operate on token sequences; BERTScore uses the underlying model's tokenizer.
-- **Embeddings and Representations**: BERTScore relies on contextual embeddings, connecting it to the broader literature on learned text representations.
-- **Benchmarks**: Many standard benchmarks (WMT for translation, CNN/DailyMail for summarization) report these metrics as their primary evaluation measure.
-- **Human Evaluation**: The ultimate validation for all automated metrics. A metric's value is measured by its correlation with human judgments.
+- `perplexity.md`: An intrinsic metric (measures model behavior) whereas BLEU, ROUGE, and BERTScore are extrinsic metrics (measure output quality against references). They complement each other.
+- `llm-as-judge.md`: Has largely replaced these metrics for evaluating open-ended LLM outputs, but still sometimes uses them as features in a broader evaluation rubric.
+- `tokenization.md`: All three metrics are sensitive to tokenization choices. BLEU and ROUGE operate on token sequences; BERTScore uses the underlying model's tokenizer.
+- `token-embeddings.md`: BERTScore relies on contextual embeddings, connecting it to the broader literature on learned text representations.
+- `benchmarks.md`: Many standard benchmarks (WMT for translation, CNN/DailyMail for summarization) report these metrics as their primary evaluation measure.
+- `human-evaluation.md`: The ultimate validation for all automated metrics. A metric's value is measured by its correlation with human judgments.
 
 ## Further Reading
 

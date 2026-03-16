@@ -102,11 +102,11 @@ A query-based transformer approach that unifies all segmentation tasks:
 
 ## Connections to Other Concepts
 
-- **Semantic Segmentation**: provides the stuff component of panoptic output.
-- **Instance Segmentation**: provides the things component of panoptic output.
-- **Mask R-CNN**: the instance branch in Panoptic FPN is essentially Mask R-CNN.
-- **DeepLab and Atrous Convolution**: Panoptic-DeepLab uses atrous convolutions and ASPP for the semantic branch.
-- **Segment Anything**: SAM produces class-agnostic masks that could serve as panoptic proposals but does not itself perform panoptic labeling.
+- `semantic-segmentation.md`: provides the stuff component of panoptic output.
+- `instance-segmentation.md`: provides the things component of panoptic output.
+- `r-cnn.md`: the instance branch in Panoptic FPN is essentially Mask R-CNN.
+- `deeplab-and-atrous-convolution.md`: Panoptic-DeepLab uses atrous convolutions and ASPP for the semantic branch.
+- `segment-anything.md`: SAM produces class-agnostic masks that could serve as panoptic proposals but does not itself perform panoptic labeling.
 
 ## Further Reading
 

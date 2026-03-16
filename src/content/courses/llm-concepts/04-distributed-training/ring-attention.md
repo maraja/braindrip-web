@@ -113,11 +113,11 @@ flowchart LR
 
 ## Connections to Other Concepts
 
-- **FlashAttention**: Provides the blockwise computation and online softmax that Ring Attention uses for incremental accumulation.
-- **Tensor parallelism**: Distributes model weights across devices. Ring Attention distributes the sequence. They are orthogonal.
+- `flash-attention.md`: Provides the blockwise computation and online softmax that Ring Attention uses for incremental accumulation.
+- `tensor-parallelism.md`: Distributes model weights across devices. Ring Attention distributes the sequence. They are orthogonal.
 - **Sequence parallelism**: Megatron-LM distributes activations across the sequence for non-attention ops. Ring Attention extends this to attention itself.
-- **Sliding window attention**: An alternative for long sequences via locality. Ring Attention preserves full global attention.
-- **Context window extension**: Ring Attention is a key enabler for extending context beyond single-device limits.
+- `sliding-window-attention.md`: An alternative for long sequences via locality. Ring Attention preserves full global attention.
+- `context-window-extension.md`: Ring Attention is a key enabler for extending context beyond single-device limits.
 
 ## Further Reading
 

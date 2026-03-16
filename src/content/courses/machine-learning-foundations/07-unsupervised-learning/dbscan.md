@@ -96,12 +96,12 @@ Because DBSCAN accepts any metric (not just Euclidean), it can be applied to str
 
 ## Connections to Other Concepts
 
-- **K-Means Clustering**: K-means assumes spherical clusters and requires $K$; DBSCAN discovers arbitrary shapes and determines the number of clusters from the data. They are complementary tools for different problem settings.
-- **Hierarchical Clustering**: Single-linkage hierarchical clustering is conceptually related to DBSCAN -- both rely on connectivity. HDBSCAN makes this connection explicit by building a density-based hierarchy.
-- **Anomaly Detection**: DBSCAN's noise classification provides a built-in anomaly detector. Points classified as noise are natural candidates for further investigation using more specialized methods like isolation forests or LOF.
-- **t-SNE and UMAP**: DBSCAN is often applied to low-dimensional embeddings produced by t-SNE or UMAP to identify clusters in visualization space. This pipeline is standard in single-cell genomics.
-- **Gaussian Mixture Models**: GMMs assume parametric Gaussian components; DBSCAN is nonparametric. When cluster shapes are unknown, start with DBSCAN for exploratory analysis, then consider GMMs if clusters appear roughly elliptical.
-- **Principal Component Analysis**: Applying PCA before DBSCAN reduces dimensionality and mitigates the curse of dimensionality that degrades density estimation in high dimensions.
+- `k-means-clustering.md`: K-means assumes spherical clusters and requires $K$; DBSCAN discovers arbitrary shapes and determines the number of clusters from the data. They are complementary tools for different problem settings.
+- `hierarchical-clustering.md`: Single-linkage hierarchical clustering is conceptually related to DBSCAN -- both rely on connectivity. HDBSCAN makes this connection explicit by building a density-based hierarchy.
+- `anomaly-detection.md`: DBSCAN's noise classification provides a built-in anomaly detector. Points classified as noise are natural candidates for further investigation using more specialized methods like isolation forests or LOF.
+- `tsne-and-umap.md`: DBSCAN is often applied to low-dimensional embeddings produced by t-SNE or UMAP to identify clusters in visualization space. This pipeline is standard in single-cell genomics.
+- `gaussian-mixture-models.md`: GMMs assume parametric Gaussian components; DBSCAN is nonparametric. When cluster shapes are unknown, start with DBSCAN for exploratory analysis, then consider GMMs if clusters appear roughly elliptical.
+- `principal-component-analysis.md`: Applying PCA before DBSCAN reduces dimensionality and mitigates the curse of dimensionality that degrades density estimation in high dimensions.
 
 ## Implementation Notes
 

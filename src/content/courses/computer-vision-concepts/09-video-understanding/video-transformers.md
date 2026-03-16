@@ -105,11 +105,11 @@ Memory scales similarly: storing the $N \times N$ attention matrix for $N=3{,}13
 
 ## Connections to Other Concepts
 
-- **3D Convolutions**: Video transformers emerged as alternatives, though hybrid designs combining both remain competitive.
-- **Video Representation**: Tubelet tokenization defines how raw video is converted into the token sequence transformers process.
-- **Action Recognition**: The primary benchmark task driving video transformer development.
-- **Two-Stream Networks**: Some video transformers adopt two-stream designs (RGB + flow or RGB at two resolutions).
-- **Video Object Tracking**: Transformer-based trackers (STARK, MixFormer) adapt video transformer ideas for tracking.
+- `3d-convolutions.md`: Video transformers emerged as alternatives, though hybrid designs combining both remain competitive.
+- `video-representation.md`: Tubelet tokenization defines how raw video is converted into the token sequence transformers process.
+- `action-recognition.md`: The primary benchmark task driving video transformer development.
+- `two-stream-networks.md`: Some video transformers adopt two-stream designs (RGB + flow or RGB at two resolutions).
+- `video-object-tracking.md`: Transformer-based trackers (STARK, MixFormer) adapt video transformer ideas for tracking.
 
 ## Further Reading
 

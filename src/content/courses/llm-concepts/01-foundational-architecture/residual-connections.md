@@ -103,11 +103,11 @@ This robustness is a direct consequence of the additive nature of residual conne
 
 ## Connections to Other Concepts
 
-- **Layer Normalization**: Works alongside residual connections to stabilize the magnitude of activations in the residual stream (see `layer-normalization.md`).
-- **Transformer Architecture**: Residual connections are the structural backbone that ties attention and FFN layers together (see `transformer-architecture.md`).
-- **Self-Attention / FFN**: These are the components that read from and write to the residual stream (see `self-attention.md`, `feed-forward-networks.md`).
-- **Mechanistic Interpretability**: The residual stream framework is central to understanding how Transformer circuits work.
-- **Mixture of Experts**: MoE layers also write additively to the residual stream, just through a selected subset of expert FFNs (see `mixture-of-experts.md`).
+- `layer-normalization.md`: Works alongside residual connections to stabilize the magnitude of activations in the residual stream (see `layer-normalization.md`).
+- `transformer-architecture.md`: Residual connections are the structural backbone that ties attention and FFN layers together (see `transformer-architecture.md`).
+- `self-attention.md`: These are the components that read from and write to the residual stream (see `self-attention.md`, `feed-forward-networks.md`).
+- `mechanistic-interpretability.md`: The residual stream framework is central to understanding how Transformer circuits work.
+- `mixture-of-experts.md`: MoE layers also write additively to the residual stream, just through a selected subset of expert FFNs (see `mixture-of-experts.md`).
 
 ## Further Reading
 

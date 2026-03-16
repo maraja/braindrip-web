@@ -83,10 +83,10 @@ Without experience replay, DQN fails to learn on most Atari games. It is arguabl
 
 ## Connections to Other Concepts
 
-- **DQN** (`deep-q-networks.md`) introduced replay as one of its two core innovations for stable deep RL.
-- **Target networks** (`target-networks.md`) are the complementary stabilization technique used alongside replay.
+- `double-dqn.md`: (`deep-q-networks.md`) introduced replay as one of its two core innovations for stable deep RL.
+- `target-networks.md`: (`target-networks.md`) are the complementary stabilization technique used alongside replay.
 - **Off-policy learning** is enabled by replay; the relationship to `q-learning.md` (inherently off-policy) is fundamental.
-- **Rainbow DQN** (`rainbow-dqn.md`) uses prioritized experience replay as one of its six combined improvements.
+- `rainbow-dqn.md`: (`rainbow-dqn.md`) uses prioritized experience replay as one of its six combined improvements.
 - **Offline RL** (`offline-reinforcement-learning.md`) can be viewed as the extreme case: learning entirely from a fixed replay buffer with no new data collection.
 - The deadly triad (`function-approximation.md`) explains why replay (off-policy data) combined with function approximation and bootstrapping requires stabilization.
 

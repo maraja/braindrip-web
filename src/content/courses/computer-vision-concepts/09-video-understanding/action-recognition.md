@@ -99,12 +99,12 @@ Many Kinetics actions can be recognized from a single frame (e.g., "playing guit
 
 ## Connections to Other Concepts
 
-- **Two-Stream Networks**: Established the paradigm of separate appearance and motion processing for action recognition.
-- **3D Convolutions**: Enabled end-to-end spatiotemporal feature learning, eliminating the need for pre-computed optical flow.
-- **Video Transformers**: Current state-of-the-art approach leveraging self-attention for long-range temporal modeling.
-- **Video Representation**: Input design choices (frame count, sampling strategy, resolution) directly impact recognition accuracy.
-- **Optical Flow Estimation**: Provides motion input for two-stream approaches and augments 3D CNN training.
-- **Video Object Tracking**: Tracking can provide actor-centric features that improve action recognition in complex scenes.
+- `two-stream-networks.md`: Established the paradigm of separate appearance and motion processing for action recognition.
+- `3d-convolutions.md`: Enabled end-to-end spatiotemporal feature learning, eliminating the need for pre-computed optical flow.
+- `video-transformers.md`: Current state-of-the-art approach leveraging self-attention for long-range temporal modeling.
+- `video-representation.md`: Input design choices (frame count, sampling strategy, resolution) directly impact recognition accuracy.
+- `optical-flow-estimation.md`: Provides motion input for two-stream approaches and augments 3D CNN training.
+- `video-object-tracking.md`: Tracking can provide actor-centric features that improve action recognition in complex scenes.
 
 ## Further Reading
 

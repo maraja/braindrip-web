@@ -139,12 +139,12 @@ Chatbot Arena has emerged as perhaps the most trusted single evaluation source p
 
 ## Connections to Other Concepts
 
-- **LLM-as-a-Judge**: The primary alternative to human evaluation for scalable assessment, calibrated against human judgments.
-- **Benchmarks**: The targets of contamination and the primary objects that human evaluation validates or challenges.
-- **Perplexity**: Suspiciously low perplexity on benchmark test sets can be a signal of contamination.
-- **RLHF**: Uses human preference data as its training signal, making the quality of human evaluation directly impact model training.
-- **Data Curation**: Training data filtering and deduplication pipelines are the first line of defense against contamination.
-- **Scaling Laws**: Contamination complicates scaling law analysis because benchmark improvements may reflect memorization rather than genuine capability gains.
+- `llm-as-judge.md`: The primary alternative to human evaluation for scalable assessment, calibrated against human judgments.
+- `benchmarks.md`: The targets of contamination and the primary objects that human evaluation validates or challenges.
+- `perplexity.md`: Suspiciously low perplexity on benchmark test sets can be a signal of contamination.
+- `rlhf.md`: Uses human preference data as its training signal, making the quality of human evaluation directly impact model training.
+- `training-data-curation.md`: Training data filtering and deduplication pipelines are the first line of defense against contamination.
+- `scaling-laws.md`: Contamination complicates scaling law analysis because benchmark improvements may reflect memorization rather than genuine capability gains.
 
 ## Further Reading
 

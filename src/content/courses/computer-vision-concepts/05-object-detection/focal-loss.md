@@ -90,12 +90,12 @@ Both subnets are shared across all FPN levels but have separate parameters.
 
 ## Connections to Other Concepts
 
-- **SSD**: Uses hard negative mining (3:1 ratio) to handle class imbalance; focal loss provides a smoother, more effective alternative.
-- **YOLO**: Also suffers from class imbalance; later YOLO versions incorporate focal-loss-like objectives.
-- **Feature Pyramid Network**: RetinaNet's backbone, enabling multi-scale anchor placement.
-- **Fast and Faster R-CNN**: Two-stage detectors that handle imbalance via proposal filtering and balanced sampling.
-- **Multi-Scale Detection**: RetinaNet detects at multiple FPN scales, assigning anchors of different sizes to each level.
-- **Anchor-Free Detection**: FCOS uses focal loss for its per-pixel classification head.
+- `ssd.md`: Uses hard negative mining (3:1 ratio) to handle class imbalance; focal loss provides a smoother, more effective alternative.
+- `yolo.md`: Also suffers from class imbalance; later YOLO versions incorporate focal-loss-like objectives.
+- `feature-pyramid-network.md`: RetinaNet's backbone, enabling multi-scale anchor placement.
+- `fast-and-faster-rcnn.md`: Two-stage detectors that handle imbalance via proposal filtering and balanced sampling.
+- `multi-scale-detection.md`: RetinaNet detects at multiple FPN scales, assigning anchors of different sizes to each level.
+- `anchor-free-detection.md`: FCOS uses focal loss for its per-pixel classification head.
 
 ## Further Reading
 

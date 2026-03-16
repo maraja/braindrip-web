@@ -129,12 +129,12 @@ GLMs unify an enormous range of statistical models under a single theoretical an
 
 ## Connections to Other Concepts
 
-- **Linear Regression**: Linear regression is a GLM with a normal distribution and identity link function -- the simplest special case.
-- **Ridge and Lasso Regression**: Regularization extends directly to GLMs, producing penalized logistic regression and penalized Poisson regression for high-dimensional problems.
-- **Regression Diagnostics**: GLMs have analogous diagnostic tools (deviance residuals, leverage in the working model, Cook's distance for GLMs) for checking model adequacy.
-- **Polynomial Regression**: Polynomial and interaction terms can be included in the linear predictor $\eta$ of any GLM.
-- **Maximum Likelihood Estimation**: GLM fitting is a direct application of MLE, with IRLS as the optimization algorithm.
-- **Classification**: Logistic regression (a GLM) is the foundational classifier and the bridge between regression and classification in supervised learning.
+- `linear-regression.md`: Linear regression is a GLM with a normal distribution and identity link function -- the simplest special case.
+- `ridge-and-lasso-regression.md`: Regularization extends directly to GLMs, producing penalized logistic regression and penalized Poisson regression for high-dimensional problems.
+- `regression-diagnostics.md`: GLMs have analogous diagnostic tools (deviance residuals, leverage in the working model, Cook's distance for GLMs) for checking model adequacy.
+- `polynomial-regression.md`: Polynomial and interaction terms can be included in the linear predictor $\eta$ of any GLM.
+- `maximum-likelihood-estimation.md`: GLM fitting is a direct application of MLE, with IRLS as the optimization algorithm.
+- `zero-shot-classification.md`: Logistic regression (a GLM) is the foundational classifier and the bridge between regression and classification in supervised learning.
 
 ## Further Reading
 

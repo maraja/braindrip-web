@@ -148,12 +148,12 @@ This avoids sequential forgetting by never training a single model on multiple t
 
 ## Connections to Other Concepts
 
-- **LoRA / PEFT**: The most popular mitigation for catastrophic forgetting in LLMs, working by freezing base model parameters entirely.
-- **Fine-Tuning**: Catastrophic forgetting is the central risk of fine-tuning and the primary factor determining fine-tuning hyperparameter choices.
-- **RLHF / Safety Alignment**: Alignment training can be "forgotten" through subsequent fine-tuning, making forgetting a safety-critical concern.
-- **Grokking**: Both involve dramatic changes in learned representations -- grokking builds new structure (generalization), while forgetting destroys existing structure.
+- `lora.md`: The most popular mitigation for catastrophic forgetting in LLMs, working by freezing base model parameters entirely.
+- `supervised-fine-tuning.md`: Catastrophic forgetting is the central risk of fine-tuning and the primary factor determining fine-tuning hyperparameter choices.
+- `rlhf.md`: Alignment training can be "forgotten" through subsequent fine-tuning, making forgetting a safety-critical concern.
+- `grokking.md`: Both involve dramatic changes in learned representations -- grokking builds new structure (generalization), while forgetting destroys existing structure.
 - **Continual Learning**: The research field dedicated to solving catastrophic forgetting, aiming to build systems that learn sequentially without knowledge loss.
-- **Model Merging**: An alternative paradigm that avoids sequential training entirely, sidestepping the forgetting problem through parallel adaptation.
+- `model-merging.md`: An alternative paradigm that avoids sequential training entirely, sidestepping the forgetting problem through parallel adaptation.
 
 ## Further Reading
 

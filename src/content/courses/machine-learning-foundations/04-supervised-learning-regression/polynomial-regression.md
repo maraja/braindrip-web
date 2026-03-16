@@ -115,12 +115,12 @@ Polynomial regression is the simplest bridge between linear models and nonlinear
 
 ## Connections to Other Concepts
 
-- **Linear Regression**: Polynomial regression is a special case of linear regression applied to an expanded feature space.
-- **Ridge and Lasso Regression**: Regularization is essential when using high-degree polynomial features to prevent overfitting and multicollinearity in the expanded design matrix.
-- **Bias-Variance Tradeoff**: Polynomial degree directly controls model complexity; increasing it reduces bias but increases variance.
-- **Cross-Validation**: The primary tool for selecting the polynomial degree hyperparameter.
-- **Regression Diagnostics**: Residual plots reveal whether polynomial terms of sufficient degree have been included -- structured patterns in residuals suggest remaining nonlinearity.
-- **Feature Engineering**: Polynomial expansion is one of the most common feature engineering techniques.
+- `linear-regression.md`: Polynomial regression is a special case of linear regression applied to an expanded feature space.
+- `ridge-and-lasso-regression.md`: Regularization is essential when using high-degree polynomial features to prevent overfitting and multicollinearity in the expanded design matrix.
+- `bias-variance-tradeoff.md`: Polynomial degree directly controls model complexity; increasing it reduces bias but increases variance.
+- `cross-validation.md`: The primary tool for selecting the polynomial degree hyperparameter.
+- `regression-diagnostics.md`: Residual plots reveal whether polynomial terms of sufficient degree have been included -- structured patterns in residuals suggest remaining nonlinearity.
+- `automated-feature-engineering.md`: Polynomial expansion is one of the most common feature engineering techniques.
 
 ## Further Reading
 

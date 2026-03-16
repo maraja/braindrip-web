@@ -141,11 +141,11 @@ Flash Attention is not just faster -- it fundamentally changes what is practical
 
 ## Connections to Other Concepts
 
-- **KV Cache**: Flash Attention optimizes the attention computation itself; KV cache avoids recomputing K and V. During the decode phase, Flash Attention handles the single-query-against-full-cache operation efficiently.
-- **Quantization**: Flash Attention 3's FP8 support connects directly to the quantization story, enabling reduced-precision attention computation on Hopper GPUs.
-- **Model Serving Frameworks**: Every major serving framework (vLLM, TGI, TensorRT-LLM) integrates Flash Attention as a non-negotiable baseline optimization.
-- **Throughput vs. Latency**: Flash Attention's speedup benefits both throughput (more tokens per second in batch) and latency (faster per-request attention).
-- **Speculative Decoding**: During the verification step, the target model processes multiple tokens at once -- Flash Attention ensures this batched attention is fast.
+- `kv-cache.md`: Flash Attention optimizes the attention computation itself; KV cache avoids recomputing K and V. During the decode phase, Flash Attention handles the single-query-against-full-cache operation efficiently.
+- `quantization.md`: Flash Attention 3's FP8 support connects directly to the quantization story, enabling reduced-precision attention computation on Hopper GPUs.
+- `model-serving.md`: Every major serving framework (vLLM, TGI, TensorRT-LLM) integrates Flash Attention as a non-negotiable baseline optimization.
+- `throughput-vs-latency.md`: Flash Attention's speedup benefits both throughput (more tokens per second in batch) and latency (faster per-request attention).
+- `speculative-decoding.md`: During the verification step, the target model processes multiple tokens at once -- Flash Attention ensures this batched attention is fast.
 
 ## Further Reading
 

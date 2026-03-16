@@ -82,10 +82,10 @@ canny = cv2.Canny(img, threshold1=50, threshold2=150, apertureSize=3)
 
 ## Connections to Other Concepts
 
-- **Convolution and Filtering**: Edge kernels are specific convolution filters; understanding padding, stride, and separability is essential.
-- **Corner Detection**: Corners are points where edges meet at high curvature; Harris detection builds directly on gradient computation.
-- **Hough Transform**: Operates on edge maps to detect parametric shapes like lines and circles.
-- **HOG**: Histograms of gradient orientations aggregate edge information over spatial cells for object recognition.
+- `convolution-and-filtering.md`: Edge kernels are specific convolution filters; understanding padding, stride, and separability is essential.
+- `corner-detection.md`: Corners are points where edges meet at high curvature; Harris detection builds directly on gradient computation.
+- `hough-transform.md`: Operates on edge maps to detect parametric shapes like lines and circles.
+- `hog.md`: Histograms of gradient orientations aggregate edge information over spatial cells for object recognition.
 
 ## Further Reading
 

@@ -100,10 +100,10 @@ where power is typically 0.9.
 
 ## Connections to Other Concepts
 
-- **Batch Normalization**: BN's landscape-smoothing effect enables the use of higher learning rates that schedules exploit.
-- **Transfer Learning**: Fine-tuning uses much smaller initial LRs and shorter schedules than training from scratch.
-- **Progressive Resizing**: Changing resolution mid-training may require adjusting the learning rate schedule.
-- **Label Smoothing**: Combined with cosine scheduling, label smoothing is part of the modern ImageNet training recipe.
+- `batch-normalization.md`: BN's landscape-smoothing effect enables the use of higher learning rates that schedules exploit.
+- `transfer-learning.md`: Fine-tuning uses much smaller initial LRs and shorter schedules than training from scratch.
+- `progressive-resizing.md`: Changing resolution mid-training may require adjusting the learning rate schedule.
+- `label-smoothing.md`: Combined with cosine scheduling, label smoothing is part of the modern ImageNet training recipe.
 
 ## Further Reading
 

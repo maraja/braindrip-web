@@ -156,13 +156,13 @@ Circuit breakers represent a potential paradigm shift in AI safety from **behavi
 
 ## Connections to Other Concepts
 
-- **Representation Engineering**: Circuit breakers are a direct application of RepE principles. RepE provides the theoretical foundation (linear representation of concepts, contrastive activation analysis); circuit breakers provide a specific safety application (rerouting harmful representations).
-- **Adversarial Robustness (GCG, AutoDAN)**: Circuit breakers are specifically designed to defend against the types of attacks covered in adversarial robustness research. The same researcher (Zou) developed both the leading attack (GCG) and this defense.
-- **RLHF and Safety Training**: Circuit breakers address the fundamental weakness of RLHF-based safety -- that it trains behavioral patterns that can be bypassed. They provide a deeper, representation-level defense that complements behavioral training.
-- **Jailbreaking**: Circuit breakers are a direct response to the jailbreaking problem. They shift the safety mechanism from a level that jailbreaks can manipulate (input-output behavior) to a level that is much harder to manipulate (internal representations).
-- **Mechanistic Interpretability**: Understanding the internal representations that circuit breakers operate on requires insights from mechanistic interpretability. As our understanding of model internals improves, circuit breaker mechanisms can be made more targeted and robust.
-- **Machine Unlearning**: While unlearning removes knowledge and circuit breakers disrupt access to knowledge, both aim to prevent models from producing harmful outputs. They are complementary approaches to the same goal.
-- **Guardrails and Content Filtering**: Circuit breakers operate at the representation level (internal to the model), while guardrails operate at the input/output level (external to the model). Together they provide defense in depth.
+- `representation-engineering.md`: Circuit breakers are a direct application of RepE principles. RepE provides the theoretical foundation (linear representation of concepts, contrastive activation analysis); circuit breakers provide a specific safety application (rerouting harmful representations).
+- `adversarial-robustness.md`: Circuit breakers are specifically designed to defend against the types of attacks covered in adversarial robustness research. The same researcher (Zou) developed both the leading attack (GCG) and this defense.
+- `rlhf.md`: Circuit breakers address the fundamental weakness of RLHF-based safety -- that it trains behavioral patterns that can be bypassed. They provide a deeper, representation-level defense that complements behavioral training.
+- `jailbreaking.md`: Circuit breakers are a direct response to the jailbreaking problem. They shift the safety mechanism from a level that jailbreaks can manipulate (input-output behavior) to a level that is much harder to manipulate (internal representations).
+- `mechanistic-interpretability.md`: Understanding the internal representations that circuit breakers operate on requires insights from mechanistic interpretability. As our understanding of model internals improves, circuit breaker mechanisms can be made more targeted and robust.
+- `machine-unlearning.md`: While unlearning removes knowledge and circuit breakers disrupt access to knowledge, both aim to prevent models from producing harmful outputs. They are complementary approaches to the same goal.
+- `guardrails.md`: Circuit breakers operate at the representation level (internal to the model), while guardrails operate at the input/output level (external to the model). Together they provide defense in depth.
 
 ## Further Reading
 

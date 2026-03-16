@@ -128,11 +128,11 @@ For interactive applications (chatbots, coding assistants), the sequential natur
 
 ## Connections to Other Concepts
 
-- **Causal Attention**: The masking mechanism that enables the autoregressive property during training (see `causal-attention.md`).
-- **Next-Token Prediction**: The training objective that the autoregressive factorization supports (see `next-token-prediction.md`).
-- **Logits and Softmax**: The output layer that produces the probability distribution at each generation step (see `logits-and-softmax.md`).
-- **Multi-Head Attention (MQA/GQA)**: Variants designed to reduce KV cache size for more efficient generation (see `multi-head-attention.md`).
-- **Transformer Architecture**: The underlying model that performs each generation step (see `transformer-architecture.md`).
+- `causal-attention.md`: The masking mechanism that enables the autoregressive property during training (see `causal-attention.md`).
+- `next-token-prediction.md`: The training objective that the autoregressive factorization supports (see `next-token-prediction.md`).
+- `logits-and-softmax.md`: The output layer that produces the probability distribution at each generation step (see `logits-and-softmax.md`).
+- `multi-head-attention.md`: Variants designed to reduce KV cache size for more efficient generation (see `multi-head-attention.md`).
+- `transformer-architecture.md`: The underlying model that performs each generation step (see `transformer-architecture.md`).
 
 ## Further Reading
 

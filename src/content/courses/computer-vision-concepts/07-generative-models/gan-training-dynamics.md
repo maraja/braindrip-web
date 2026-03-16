@@ -95,10 +95,10 @@ New layers are blended in smoothly using a learnable fade-in parameter $\alpha$ 
 
 ## Connections to Other Concepts
 
-- **Generative Adversarial Networks**: This concept dives deep into the practical challenges of the GAN framework introduced there.
-- **StyleGAN**: Builds directly on progressive growing and adds style-based architecture. Uses R1 penalty and EMA extensively.
-- **Diffusion Models**: Partly motivated by the desire to avoid adversarial training instabilities entirely.
-- **Image Super-Resolution**: SRGAN and variants inherit GAN training challenges and use spectral normalization and gradient penalties.
+- `generative-adversarial-networks.md`: This concept dives deep into the practical challenges of the GAN framework introduced there.
+- `stylegan.md`: Builds directly on progressive growing and adds style-based architecture. Uses R1 penalty and EMA extensively.
+- `diffusion-models.md`: Partly motivated by the desire to avoid adversarial training instabilities entirely.
+- `image-super-resolution.md`: SRGAN and variants inherit GAN training challenges and use spectral normalization and gradient penalties.
 
 ## Further Reading
 

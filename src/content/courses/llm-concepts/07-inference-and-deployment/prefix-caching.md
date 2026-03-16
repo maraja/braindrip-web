@@ -109,11 +109,11 @@ At the block level, prefix caching maps naturally onto PagedAttention. Cached KV
 
 ## Connections to Other Concepts
 
-- **KV Cache**: Prefix caching is fundamentally about reusing the KV cache. Understanding what the KV cache stores (key and value projections at every layer for every token) and how it grows is essential context.
-- **PagedAttention**: Block-level memory management enables efficient prefix sharing through shared block references and copy-on-write semantics. Without PagedAttention, prefix caching would require large contiguous memory reservations.
-- **Flash Attention**: Flash Attention computes attention efficiently during the prefill phase. Prefix caching eliminates the need for that computation entirely for cached tokens -- a complementary optimization.
-- **Continuous Batching**: New requests admitted via continuous batching benefit immediately from prefix cache hits, making their prefill phase nearly instantaneous and allowing faster batch admission.
-- **Throughput vs. Latency**: Prefix caching primarily reduces latency (TTFT) and cost for individual requests. At the system level, reduced prefill compute frees GPU cycles for more decode throughput.
+- `kv-cache.md`: Prefix caching is fundamentally about reusing the KV cache. Understanding what the KV cache stores (key and value projections at every layer for every token) and how it grows is essential context.
+- `paged-attention.md`: Block-level memory management enables efficient prefix sharing through shared block references and copy-on-write semantics. Without PagedAttention, prefix caching would require large contiguous memory reservations.
+- `flash-attention.md`: Flash Attention computes attention efficiently during the prefill phase. Prefix caching eliminates the need for that computation entirely for cached tokens -- a complementary optimization.
+- `continuous-batching.md`: New requests admitted via continuous batching benefit immediately from prefix cache hits, making their prefill phase nearly instantaneous and allowing faster batch admission.
+- `throughput-vs-latency.md`: Prefix caching primarily reduces latency (TTFT) and cost for individual requests. At the system level, reduced prefill compute frees GPU cycles for more decode throughput.
 
 ## Further Reading
 

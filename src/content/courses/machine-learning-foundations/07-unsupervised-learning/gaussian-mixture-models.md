@@ -99,11 +99,11 @@ GMMs provide a principled probabilistic framework for clustering. The soft assig
 
 ## Connections to Other Concepts
 
-- **K-Means Clustering**: The hard-assignment, isotropic-covariance special case of GMMs. Start with K-means to initialize GMM parameters. Understanding K-means makes EM for GMMs immediately intuitive.
-- **Principal Component Analysis**: PCA can be derived as a limiting case of probabilistic PCA, which itself is a single-component GMM with a specific covariance structure. Factor analysis extends probabilistic PCA with component-specific noise.
-- **Anomaly Detection**: Points with low $p(x)$ under the fitted GMM are natural anomaly candidates. The density estimate provides a principled anomaly score that accounts for cluster shape and orientation.
-- **DBSCAN**: DBSCAN makes no distributional assumptions; GMMs assume Gaussian components. When clusters are truly Gaussian, GMMs are more efficient; when clusters have arbitrary shapes, DBSCAN is more appropriate.
-- **Hierarchical Clustering**: Hierarchical clustering provides a nested, deterministic structure; GMMs provide a flat, probabilistic partition. Both can be used for exploratory analysis, but GMMs additionally estimate the data-generating density.
+- `k-means-clustering.md`: The hard-assignment, isotropic-covariance special case of GMMs. Start with K-means to initialize GMM parameters. Understanding K-means makes EM for GMMs immediately intuitive.
+- `principal-component-analysis.md`: PCA can be derived as a limiting case of probabilistic PCA, which itself is a single-component GMM with a specific covariance structure. Factor analysis extends probabilistic PCA with component-specific noise.
+- `anomaly-detection.md`: Points with low $p(x)$ under the fitted GMM are natural anomaly candidates. The density estimate provides a principled anomaly score that accounts for cluster shape and orientation.
+- `dbscan.md`: DBSCAN makes no distributional assumptions; GMMs assume Gaussian components. When clusters are truly Gaussian, GMMs are more efficient; when clusters have arbitrary shapes, DBSCAN is more appropriate.
+- `hierarchical-clustering.md`: Hierarchical clustering provides a nested, deterministic structure; GMMs provide a flat, probabilistic partition. Both can be used for exploratory analysis, but GMMs additionally estimate the data-generating density.
 
 ## Implementation Notes
 

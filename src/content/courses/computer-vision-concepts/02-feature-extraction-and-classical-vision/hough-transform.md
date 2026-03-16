@@ -95,10 +95,10 @@ Ballard (1981) extended the Hough transform to arbitrary shapes using an R-table
 
 ## Connections to Other Concepts
 
-- **Edge Detection**: Hough transform takes edge maps as input; Canny is the standard preprocessing step. Poor edges lead to poor Hough detections.
-- **SIFT**: Both handle geometric inference from local image evidence, but SIFT works with keypoints while Hough works with edge pixels and parametric models.
-- **Image Stitching and Homography**: Line correspondences detected via Hough can constrain homography estimation, especially in urban scenes with strong rectilinear structure.
-- **Camera Calibration and Geometry**: Vanishing point estimation uses Hough-detected lines to infer 3D scene structure and camera orientation.
+- `edge-detection.md`: Hough transform takes edge maps as input; Canny is the standard preprocessing step. Poor edges lead to poor Hough detections.
+- `sift.md`: Both handle geometric inference from local image evidence, but SIFT works with keypoints while Hough works with edge pixels and parametric models.
+- `image-stitching-and-homography.md`: Line correspondences detected via Hough can constrain homography estimation, especially in urban scenes with strong rectilinear structure.
+- `camera-calibration-and-geometry.md`: Vanishing point estimation uses Hough-detected lines to infer 3D scene structure and camera orientation.
 
 ## Further Reading
 

@@ -94,11 +94,11 @@ Without the FFN (and its activation function), the Transformer would be a stack 
 
 ## Connections to Other Concepts
 
-- **Self-Attention / Multi-Head Attention**: The FFN is the second sub-layer in each Transformer block, applied after attention (see `self-attention.md`, `multi-head-attention.md`).
-- **Activation Functions**: The choice of activation in the FFN significantly impacts training (see `activation-functions.md`).
-- **Residual Connections**: The FFN output is added to the residual stream via a skip connection (see `residual-connections.md`).
-- **Layer Normalization**: Applied before (Pre-LN) or after (Post-LN) the FFN (see `layer-normalization.md`).
-- **Mixture of Experts**: MoE replaces the single FFN with multiple expert FFNs, routing each token to a subset (see `mixture-of-experts.md`).
+- `self-attention.md`: The FFN is the second sub-layer in each Transformer block, applied after attention (see `self-attention.md`, `multi-head-attention.md`).
+- `activation-functions.md`: The choice of activation in the FFN significantly impacts training (see `activation-functions.md`).
+- `residual-connections.md`: The FFN output is added to the residual stream via a skip connection (see `residual-connections.md`).
+- `layer-normalization.md`: Applied before (Pre-LN) or after (Post-LN) the FFN (see `layer-normalization.md`).
+- `mixture-of-experts.md`: MoE replaces the single FFN with multiple expert FFNs, routing each token to a subset (see `mixture-of-experts.md`).
 
 ## Further Reading
 

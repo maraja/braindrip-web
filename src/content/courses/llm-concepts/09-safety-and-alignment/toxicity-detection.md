@@ -120,12 +120,12 @@ Toxicity detection is essential for safe LLM deployment:
 
 ## Connections to Other Concepts
 
-- **Guardrails & Content Filtering**: Toxicity detection is a core component of output-side guardrails. The detectors feed into the filtering pipeline that decides whether to block, modify, or flag model outputs.
-- **Red Teaming**: Red teaming exercises specifically test whether models can be induced to produce toxic outputs, using the same toxicity detection tools to score the results.
-- **Bias & Fairness**: Toxicity detection systems themselves can be biased, disproportionately flagging content related to certain identity groups or dialects. Evaluating detector bias is an active research area.
-- **Safety Training (RLHF)**: Safety training aims to reduce model-level toxicity; detection systems evaluate whether it succeeded and catch residual failures.
-- **Jailbreaking**: Many jailbreaks specifically aim to elicit toxic outputs that the model has been trained to refuse. Toxicity detection measures the success rate of these attacks.
-- **Hallucination**: A model that hallucinates harmful claims about real people is producing a specific kind of toxic output that combines factual inaccuracy with potential harm.
+- `guardrails.md`: Toxicity detection is a core component of output-side guardrails. The detectors feed into the filtering pipeline that decides whether to block, modify, or flag model outputs.
+- `red-teaming.md`: Red teaming exercises specifically test whether models can be induced to produce toxic outputs, using the same toxicity detection tools to score the results.
+- `bias-in-nlp.md`: Toxicity detection systems themselves can be biased, disproportionately flagging content related to certain identity groups or dialects. Evaluating detector bias is an active research area.
+- `rlhf.md`: Safety training aims to reduce model-level toxicity; detection systems evaluate whether it succeeded and catch residual failures.
+- `jailbreaking.md`: Many jailbreaks specifically aim to elicit toxic outputs that the model has been trained to refuse. Toxicity detection measures the success rate of these attacks.
+- `hallucination.md`: A model that hallucinates harmful claims about real people is producing a specific kind of toxic output that combines factual inaccuracy with potential harm.
 
 ## Further Reading
 

@@ -117,11 +117,11 @@ The context window is one of the most practically important properties of an LLM
 
 ## Connections to Other Concepts
 
-- **Positional Encoding / RoPE**: The positional encoding scheme determines the model's native context length and its ability to extend beyond training length.
-- **Tokenization**: Tokenization efficiency directly converts between "words of text" and "tokens consumed," determining how much human-readable content fits in the window.
-- **Token Embeddings**: Each position in the context window is occupied by an embedding vector; the full context is a matrix of these vectors.
-- **Special Tokens**: The BOS token anchors position 0, and the EOS token signals the end of useful context.
-- **Self-Attention**: The quadratic cost of attention with respect to sequence length is the fundamental computational constraint on context window size.
+- `positional-encoding.md`: The positional encoding scheme determines the model's native context length and its ability to extend beyond training length.
+- `tokenization.md`: Tokenization efficiency directly converts between "words of text" and "tokens consumed," determining how much human-readable content fits in the window.
+- `token-embeddings.md`: Each position in the context window is occupied by an embedding vector; the full context is a matrix of these vectors.
+- `special-tokens.md`: The BOS token anchors position 0, and the EOS token signals the end of useful context.
+- `self-attention.md`: The quadratic cost of attention with respect to sequence length is the fundamental computational constraint on context window size.
 
 ## Further Reading
 

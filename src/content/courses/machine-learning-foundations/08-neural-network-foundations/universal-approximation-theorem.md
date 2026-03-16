@@ -87,11 +87,11 @@ The UAT provides the theoretical foundation for using neural networks as general
 
 ## Connections to Other Concepts
 
-- **Perceptrons and Multilayer Networks**: The UAT explains why MLPs are so powerful -- a single hidden layer already has universal approximation capacity.
-- **Activation Functions**: The theorem requires non-polynomial activations; the specific choice affects the constant factors in approximation quality.
-- **Backpropagation**: The theorem says good weights exist but is silent on finding them -- that is the job of gradient-based optimization via backpropagation.
-- **Weight Initialization**: Practical implications of the UAT -- since architecture design is about efficiency, not expressivity, initialization and training dynamics become the binding constraints.
-- **Dropout and Regularization**: The UAT guarantees the network can fit any function, including noise. Regularization constrains the effective capacity to promote generalization.
+- `perceptrons-and-multilayer-networks.md`: The UAT explains why MLPs are so powerful -- a single hidden layer already has universal approximation capacity.
+- `activation-functions.md`: The theorem requires non-polynomial activations; the specific choice affects the constant factors in approximation quality.
+- `backpropagation.md`: The theorem says good weights exist but is silent on finding them -- that is the job of gradient-based optimization via backpropagation.
+- `weight-initialization.md`: Practical implications of the UAT -- since architecture design is about efficiency, not expressivity, initialization and training dynamics become the binding constraints.
+- `dropout-and-regularization.md`: The UAT guarantees the network can fit any function, including noise. Regularization constrains the effective capacity to promote generalization.
 
 ## Further Reading
 

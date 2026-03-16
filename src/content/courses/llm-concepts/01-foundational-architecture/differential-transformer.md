@@ -102,11 +102,11 @@ Total FLOPs match standard attention. The only overhead is the element-wise subt
 
 ## Connections to Other Concepts
 
-- **Standard self-attention**: Differential Transformer modifies the core attention computation. Understanding standard attention is essential context.
-- **Multi-head attention**: The $Q$/$K$ splitting operates within the existing multi-head framework -- a drop-in modification.
-- **Attention sinks**: Both address attention noise. Sinks are a symptom of softmax's constraint; differential attention is an architectural solution.
-- **Vision Transformer registers**: Darcet et al. proposed register tokens to absorb excess attention in ViTs -- a different solution to the same noise problem.
-- **Hallucination**: Noise reduction directly addresses one hallucination mechanism: attending to and incorporating irrelevant context.
+- `self-attention.md`: Differential Transformer modifies the core attention computation. Understanding standard attention is essential context.
+- `multi-head-attention.md`: The $Q$/$K$ splitting operates within the existing multi-head framework -- a drop-in modification.
+- `attention-sinks.md`: Both address attention noise. Sinks are a symptom of softmax's constraint; differential attention is an architectural solution.
+- `vision-transformer.md`: Darcet et al. proposed register tokens to absorb excess attention in ViTs -- a different solution to the same noise problem.
+- `hallucination.md`: Noise reduction directly addresses one hallucination mechanism: attending to and incorporating irrelevant context.
 
 ## Further Reading
 

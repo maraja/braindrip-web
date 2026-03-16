@@ -117,11 +117,11 @@ Constitutional AI addresses several fundamental limitations of standard RLHF:
 
 ## Connections to Other Concepts
 
-- **RLHF** is the foundation that CAI modifies. CAI uses the same reward model and RL optimization steps but changes the source of preference labels from humans to AI.
-- **DPO** can be used in place of PPO in the RL phase of CAI, combining the benefits of both approaches -- AI-generated preferences with simplified optimization.
-- **Reward modeling** still plays a role in Phase 2 of CAI, with AI preferences used to train the reward model.
-- **Synthetic data** generation is at the heart of CAI -- the critiques, revisions, and preference labels are all forms of synthetic training data.
-- **Red teaming** often provides the adversarial prompts used in Phase 1 to elicit responses that need constitutional revision.
+- `rlhf.md`: is the foundation that CAI modifies. CAI uses the same reward model and RL optimization steps but changes the source of preference labels from humans to AI.
+- `dpo.md`: can be used in place of PPO in the RL phase of CAI, combining the benefits of both approaches -- AI-generated preferences with simplified optimization.
+- `reward-modeling.md`: still plays a role in Phase 2 of CAI, with AI preferences used to train the reward model.
+- `synthetic-data.md`: generation is at the heart of CAI -- the critiques, revisions, and preference labels are all forms of synthetic training data.
+- `red-teaming.md`: often provides the adversarial prompts used in Phase 1 to elicit responses that need constitutional revision.
 
 ## Further Reading
 

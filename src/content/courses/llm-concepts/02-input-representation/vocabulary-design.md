@@ -150,11 +150,11 @@ Vocabulary design decisions are among the most permanent choices in LLM developm
 
 ## Connections to Other Concepts
 
-- **Tokenization / BPE**: The tokenization algorithm builds the vocabulary. Vocabulary size is the primary hyperparameter controlling tokenizer training.
-- **Token Embeddings**: Vocabulary size directly determines the shape of the embedding matrix ($|V| \times d$).
-- **Context Window**: Tokenization fertility (determined by vocabulary) controls how much text fits in the fixed-token-length context window.
-- **Special Tokens**: These are manually added to the vocabulary outside the normal BPE process.
-- **Byte-Pair Encoding**: The specific algorithm most commonly used to construct the vocabulary from a training corpus.
+- `tokenization.md`: The tokenization algorithm builds the vocabulary. Vocabulary size is the primary hyperparameter controlling tokenizer training.
+- `token-embeddings.md`: Vocabulary size directly determines the shape of the embedding matrix ($|V| \times d$).
+- `context-window.md`: Tokenization fertility (determined by vocabulary) controls how much text fits in the fixed-token-length context window.
+- `special-tokens.md`: These are manually added to the vocabulary outside the normal BPE process.
+- `byte-pair-encoding.md`: The specific algorithm most commonly used to construct the vocabulary from a training corpus.
 
 ## Further Reading
 

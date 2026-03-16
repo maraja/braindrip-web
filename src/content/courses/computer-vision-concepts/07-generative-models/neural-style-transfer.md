@@ -107,11 +107,11 @@ Typical weight: $10^{-4}$ to $10^{-3}$ relative to style loss.
 
 ## Connections to Other Concepts
 
-- **Image-to-Image Translation**: Style transfer is a constrained form of domain translation where the target domain is defined by a single reference image.
-- **Autoencoders and VAEs**: Feed-forward style transfer networks use an encoder-decoder architecture with skip connections.
-- **StyleGAN**: Named for its style-injection mechanism (AdaIN), which originated in style transfer research.
-- **Image Super-Resolution**: Perceptual loss (VGG feature matching) from style transfer became essential for perceptually sharp super-resolution.
-- **Diffusion Models**: Modern diffusion models can perform style-guided generation via textual or image-based conditioning, offering more flexible artistic control.
+- `image-to-image-translation.md`: Style transfer is a constrained form of domain translation where the target domain is defined by a single reference image.
+- `autoencoders-and-vaes.md`: Feed-forward style transfer networks use an encoder-decoder architecture with skip connections.
+- `stylegan.md`: Named for its style-injection mechanism (AdaIN), which originated in style transfer research.
+- `image-super-resolution.md`: Perceptual loss (VGG feature matching) from style transfer became essential for perceptually sharp super-resolution.
+- `diffusion-models.md`: Modern diffusion models can perform style-guided generation via textual or image-based conditioning, offering more flexible artistic control.
 
 ## Further Reading
 

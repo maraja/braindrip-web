@@ -117,13 +117,13 @@ The choice of persistence strategy depends on the application. A coding assistan
 
 ## Connections to Other Concepts
 
-- **Embeddings and Vector Representations**: The foundation for vector store memory -- text must be embedded into dense vectors for similarity-based retrieval to work.
-- **RAG (Retrieval-Augmented Generation)**: Memory retrieval is a form of RAG where the document store is the agent's own interaction history and accumulated knowledge rather than a static corpus.
-- **Self-Reflection**: Reflexion's episodic memory is a specific application of memory systems, storing verbal reflections across trials to improve future performance.
-- **Transformer Architecture**: The attention mechanism over the context window is the built-in "working memory" that external memory systems extend and augment.
-- **Multi-Agent Systems**: Shared memory stores enable multiple agents to coordinate, share findings, and maintain consistent state across a collaborative workflow.
-- **Attention Mechanisms**: Understanding how attention distributes weight across the context window explains why the "lost in the middle" problem occurs and why external memory is needed.
-- **Prompt Engineering**: Memory retrieval results must be formatted and injected into prompts effectively. The placement, formatting, and quantity of retrieved memories significantly impact generation quality.
+- `token-embeddings.md`: The foundation for vector store memory -- text must be embedded into dense vectors for similarity-based retrieval to work.
+- `rag.md`: Memory retrieval is a form of RAG where the document store is the agent's own interaction history and accumulated knowledge rather than a static corpus.
+- `self-reflection.md`: Reflexion's episodic memory is a specific application of memory systems, storing verbal reflections across trials to improve future performance.
+- `transformer-architecture.md`: The attention mechanism over the context window is the built-in "working memory" that external memory systems extend and augment.
+- `multi-agent-systems.md`: Shared memory stores enable multiple agents to coordinate, share findings, and maintain consistent state across a collaborative workflow.
+- `attention-mechanism.md`: Understanding how attention distributes weight across the context window explains why the "lost in the middle" problem occurs and why external memory is needed.
+- `prompt-engineering.md`: Memory retrieval results must be formatted and injected into prompts effectively. The placement, formatting, and quantity of retrieved memories significantly impact generation quality.
 
 ## Further Reading
 

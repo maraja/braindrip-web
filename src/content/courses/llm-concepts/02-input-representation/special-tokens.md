@@ -123,11 +123,11 @@ Special tokens are the invisible control plane of LLMs. Their correct handling i
 
 ## Connections to Other Concepts
 
-- **Tokenization**: Special tokens are part of the vocabulary but are not created through the BPE/subword process. They are manually added to the tokenizer.
-- **Token Embeddings**: Special tokens have their own learned embedding vectors in the embedding matrix.
-- **Positional Encoding**: The BOS token typically occupies position 0, creating a fixed positional reference point.
-- **Context Window**: Special tokens consume positions in the context window. A complex chat template with many special tokens reduces the space available for actual content.
-- **Vocabulary Design**: Special tokens are a fixed overhead in the vocabulary. Models with many special tokens (e.g., for multilingual or multi-task use) dedicate vocabulary slots to these control signals.
+- `tokenization.md`: Special tokens are part of the vocabulary but are not created through the BPE/subword process. They are manually added to the tokenizer.
+- `token-embeddings.md`: Special tokens have their own learned embedding vectors in the embedding matrix.
+- `positional-encoding.md`: The BOS token typically occupies position 0, creating a fixed positional reference point.
+- `context-window.md`: Special tokens consume positions in the context window. A complex chat template with many special tokens reduces the space available for actual content.
+- `vocabulary-design.md`: Special tokens are a fixed overhead in the vocabulary. Models with many special tokens (e.g., for multilingual or multi-task use) dedicate vocabulary slots to these control signals.
 
 ## Further Reading
 

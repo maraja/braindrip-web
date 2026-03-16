@@ -97,12 +97,12 @@ K-means also serves as a building block for more sophisticated methods. In the b
 
 ## Connections to Other Concepts
 
-- **Gaussian Mixture Models**: K-means is the hard-assignment, isotropic-covariance limit of GMMs. GMMs generalize K-means to soft assignments and arbitrary covariance structures. Understanding K-means first makes GMMs intuitive.
-- **DBSCAN**: An alternative that discovers arbitrary shapes and does not require specifying $K$, at the cost of two other parameters ($\varepsilon$ and MinPts). DBSCAN also naturally labels outliers, which K-means cannot do.
-- **Principal Component Analysis**: Often used before K-means to reduce dimensionality and remove noise, improving both speed and cluster quality. PCA + K-means is one of the most common unsupervised pipelines.
-- **Hierarchical Clustering**: Provides a multi-resolution view of cluster structure, while K-means gives a single flat partition. Ward's linkage in hierarchical clustering minimizes the same variance objective as K-means.
-- **t-SNE and UMAP**: K-means is sometimes applied to low-dimensional embeddings from t-SNE or UMAP, though this is controversial since these embeddings distort distances.
-- **Anomaly Detection**: Points far from all centroids (high distance to nearest centroid) can serve as a simple anomaly score, though dedicated methods are more principled.
+- `gaussian-mixture-models.md`: K-means is the hard-assignment, isotropic-covariance limit of GMMs. GMMs generalize K-means to soft assignments and arbitrary covariance structures. Understanding K-means first makes GMMs intuitive.
+- `dbscan.md`: An alternative that discovers arbitrary shapes and does not require specifying $K$, at the cost of two other parameters ($\varepsilon$ and MinPts). DBSCAN also naturally labels outliers, which K-means cannot do.
+- `principal-component-analysis.md`: Often used before K-means to reduce dimensionality and remove noise, improving both speed and cluster quality. PCA + K-means is one of the most common unsupervised pipelines.
+- `hierarchical-clustering.md`: Provides a multi-resolution view of cluster structure, while K-means gives a single flat partition. Ward's linkage in hierarchical clustering minimizes the same variance objective as K-means.
+- `tsne-and-umap.md`: K-means is sometimes applied to low-dimensional embeddings from t-SNE or UMAP, though this is controversial since these embeddings distort distances.
+- `anomaly-detection.md`: Points far from all centroids (high distance to nearest centroid) can serve as a simple anomaly score, though dedicated methods are more principled.
 
 ## Implementation Notes
 

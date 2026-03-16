@@ -102,11 +102,11 @@ SGLang extends PagedAttention with a radix tree data structure that indexes all 
 
 ## Connections to Other Concepts
 
-- **KV Cache**: PagedAttention is a memory management layer on top of the KV cache. Understanding the KV cache -- what it stores, how it grows, and why it dominates memory -- is essential context.
-- **Continuous Batching**: Dynamic block allocation enables continuous batching by making it trivial to allocate memory for incoming requests and reclaim it from completed ones without defragmenting.
-- **Prefix Caching**: Copy-on-write and block-level sharing are the mechanisms that make prefix caching efficient. RadixAttention builds directly on PagedAttention's block abstraction.
-- **Flash Attention**: Flash Attention optimizes the *computation* of attention (tiling for SRAM locality). PagedAttention optimizes the *memory management* of attention's KV data. They are complementary and used together in production.
-- **Speculative Decoding**: When draft tokens are rejected, their KV cache blocks can be freed immediately, making speculative decoding more memory-efficient under paged management.
+- `kv-cache.md`: PagedAttention is a memory management layer on top of the KV cache. Understanding the KV cache -- what it stores, how it grows, and why it dominates memory -- is essential context.
+- `continuous-batching.md`: Dynamic block allocation enables continuous batching by making it trivial to allocate memory for incoming requests and reclaim it from completed ones without defragmenting.
+- `prefix-caching.md`: Copy-on-write and block-level sharing are the mechanisms that make prefix caching efficient. RadixAttention builds directly on PagedAttention's block abstraction.
+- `flash-attention.md`: Flash Attention optimizes the *computation* of attention (tiling for SRAM locality). PagedAttention optimizes the *memory management* of attention's KV data. They are complementary and used together in production.
+- `speculative-decoding.md`: When draft tokens are rejected, their KV cache blocks can be freed immediately, making speculative decoding more memory-efficient under paged management.
 
 ## Further Reading
 

@@ -89,13 +89,13 @@ Keyword extraction is evaluated against human-annotated gold keyphrases:
 
 ## Connections to Other Concepts
 
-- **TF-IDF** (`03-text-representation/tf-idf.md`): The statistical backbone of frequency-based keyword extraction.
-- **Topic Modeling** (`topic-modeling.md`): Topic models discover corpus-level themes; keywords describe individual documents. The two are complementary.
-- **Information Retrieval** (`information-retrieval.md`): Keywords serve as index terms and query expansions in retrieval systems.
-- **Text Summarization** (`06-core-nlp-tasks-generation/text-summarization.md`): Keywords provide a compressed representation of document content, related to extractive summarization.
-- **Sentence Embeddings** (`03-text-representation/sentence-embeddings.md`): KeyBERT relies on sentence-level embeddings to compute semantic similarity.
-- **Contextual Embeddings** (`03-text-representation/contextual-embeddings.md`): Modern embedding-based keyword extractors use contextual representations for richer semantic matching.
-- **Text Classification** (`05-core-nlp-tasks-analysis/text-classification.md`): Extracted keywords can serve as features for document classification.
+- `03-text-representation/tf-idf.md`: The statistical backbone of frequency-based keyword extraction.
+- `topic-modeling.md`: Topic models discover corpus-level themes; keywords describe individual documents. The two are complementary.
+- `information-retrieval.md`: Keywords serve as index terms and query expansions in retrieval systems.
+- `06-core-nlp-tasks-generation/text-summarization.md`: Keywords provide a compressed representation of document content, related to extractive summarization.
+- `03-text-representation/sentence-embeddings.md`: KeyBERT relies on sentence-level embeddings to compute semantic similarity.
+- `03-text-representation/contextual-embeddings.md`: Modern embedding-based keyword extractors use contextual representations for richer semantic matching.
+- `05-core-nlp-tasks-analysis/text-classification.md`: Extracted keywords can serve as features for document classification.
 
 ## Further Reading
 

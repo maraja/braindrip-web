@@ -110,11 +110,11 @@ Where $c_t \in \{\text{correct}, \text{incorrect}\}$ is the correctness label fo
 
 ## Connections to Other Concepts
 
-- **RLHF** depends entirely on the reward model as its optimization signal. The reward model is the bridge between sparse human feedback and dense RL training.
-- **DPO** implicitly defines a reward model within the policy itself, sidestepping explicit reward modeling but inheriting its theoretical structure.
-- **Chain-of-thought training** benefits from process reward models that can evaluate intermediate reasoning steps, not just final answers.
-- **Constitutional AI** uses AI feedback to generate preference data for reward model training, changing the data source but keeping the same reward modeling framework.
-- **Goodhart's Law** is the theoretical lens through which reward model overoptimization is understood: optimizing a proxy measure causes it to diverge from the true target.
+- `rlhf.md`: depends entirely on the reward model as its optimization signal. The reward model is the bridge between sparse human feedback and dense RL training.
+- `dpo.md`: implicitly defines a reward model within the policy itself, sidestepping explicit reward modeling but inheriting its theoretical structure.
+- `chain-of-thought-training.md`: benefits from process reward models that can evaluate intermediate reasoning steps, not just final answers.
+- `constitutional-ai.md`: uses AI feedback to generate preference data for reward model training, changing the data source but keeping the same reward modeling framework.
+- `goodharts-law.md`: is the theoretical lens through which reward model overoptimization is understood: optimizing a proxy measure causes it to diverge from the true target.
 
 ## Further Reading
 

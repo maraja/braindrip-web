@@ -199,12 +199,12 @@ The knowledge graph also provides a powerful foundation for explainability. Inst
 
 ## Connections to Other Concepts
 
-- **RAG**: GraphRAG extends standard RAG with graph-based retrieval and community summarization for global queries.
-- **Chunking strategies**: GraphRAG still relies on text chunking as the first indexing step; chunk size affects entity extraction quality.
-- **Embedding models and vector databases**: GraphRAG uses embeddings for entity description matching in local search mode, alongside the graph structure.
-- **Agentic RAG**: An agentic system can dynamically choose between standard RAG and GraphRAG based on query complexity, routing simple queries through vector search and complex ones through graph-based retrieval.
-- **Compound AI systems**: GraphRAG is a prime example of a compound AI system -- multiple LLM calls, graph algorithms, and retrieval mechanisms orchestrated into a pipeline.
-- **Neurosymbolic AI**: GraphRAG combines neural capabilities (LLM extraction and generation) with symbolic structures (knowledge graphs), making it a form of neurosymbolic AI applied to retrieval.
+- `rag.md`: GraphRAG extends standard RAG with graph-based retrieval and community summarization for global queries.
+- `chunking-strategies.md`: GraphRAG still relies on text chunking as the first indexing step; chunk size affects entity extraction quality.
+- `embedding-models-and-vector-databases.md`: GraphRAG uses embeddings for entity description matching in local search mode, alongside the graph structure.
+- `agentic-rag.md`: An agentic system can dynamically choose between standard RAG and GraphRAG based on query complexity, routing simple queries through vector search and complex ones through graph-based retrieval.
+- `compound-ai-systems.md`: GraphRAG is a prime example of a compound AI system -- multiple LLM calls, graph algorithms, and retrieval mechanisms orchestrated into a pipeline.
+- `neurosymbolic-ai.md`: GraphRAG combines neural capabilities (LLM extraction and generation) with symbolic structures (knowledge graphs), making it a form of neurosymbolic AI applied to retrieval.
 
 ## Further Reading
 

@@ -113,10 +113,10 @@ Beyond Gaussian/Laplacian pyramids, other multi-scale decompositions exist:
 
 ## Connections to Other Concepts
 
-- **Convolution and Filtering**: Gaussian blur (convolution) is the fundamental building block of both pyramids and scale space.
-- **Frequency Domain and Fourier Transform**: Each Gaussian pyramid level retains a progressively narrower low-frequency band; the Laplacian pyramid isolates specific frequency bands, analogous to a bank of bandpass filters.
-- **Image Interpolation and Resampling**: Upsampling in the Laplacian pyramid reconstruction and in FPN's top-down pathway requires interpolation methods.
-- **Digital Images and Pixels**: Pyramid construction changes the effective spatial resolution, directly relating to the sampling and Nyquist concepts of image formation.
+- `convolution-and-filtering.md`: Gaussian blur (convolution) is the fundamental building block of both pyramids and scale space.
+- `frequency-domain-and-fourier-transform.md`: Each Gaussian pyramid level retains a progressively narrower low-frequency band; the Laplacian pyramid isolates specific frequency bands, analogous to a bank of bandpass filters.
+- `image-interpolation-and-resampling.md`: Upsampling in the Laplacian pyramid reconstruction and in FPN's top-down pathway requires interpolation methods.
+- `digital-images-and-pixels.md`: Pyramid construction changes the effective spatial resolution, directly relating to the sampling and Nyquist concepts of image formation.
 
 ## Further Reading
 

@@ -130,12 +130,12 @@ Given that a single training run can cost tens of millions of dollars, getting t
 
 ## Connections to Other Concepts
 
-- **Adam/AdamW Optimizer**: The learning rate schedule modulates the base rate that Adam adapts per-parameter.
-- **Pre-Training**: Learning rate scheduling is a critical hyperparameter of the pre-training process.
-- **Scaling Laws**: The optimal peak learning rate scales predictably with model size.
-- **Training Stability (Gradient Clipping)**: Learning rate scheduling works alongside gradient clipping to maintain stable training.
-- **Mixed Precision Training**: Some precision formats (FP16 especially) are more sensitive to learning rate choices due to limited dynamic range.
-- **Fine-Tuning**: Fine-tuning uses a much smaller learning rate than pre-training (often 10-100x smaller), sometimes with its own warmup schedule.
+- `adam-optimizer.md`: The learning rate schedule modulates the base rate that Adam adapts per-parameter.
+- `pre-training.md`: Learning rate scheduling is a critical hyperparameter of the pre-training process.
+- `scaling-laws.md`: The optimal peak learning rate scales predictably with model size.
+- `clip.md`: Learning rate scheduling works alongside gradient clipping to maintain stable training.
+- `mixed-precision-training.md`: Some precision formats (FP16 especially) are more sensitive to learning rate choices due to limited dynamic range.
+- `supervised-fine-tuning.md`: Fine-tuning uses a much smaller learning rate than pre-training (often 10-100x smaller), sometimes with its own warmup schedule.
 
 ## Further Reading
 

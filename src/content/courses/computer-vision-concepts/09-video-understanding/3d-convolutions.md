@@ -104,11 +104,11 @@ For a $3 \times 3 \times 3$ kernel, this is $3\times$ the cost of a $3 \times 3$
 
 ## Connections to Other Concepts
 
-- **Two-Stream Networks**: I3D was introduced as a two-stream architecture (RGB + flow), bridging the two-stream and 3D convolution paradigms.
-- **Video Representation**: 3D convolutions operate on the $T \times H \times W \times C$ tensor format.
-- **Video Transformers**: TimeSformer and ViViT emerged as alternatives to 3D CNNs, replacing local spatiotemporal filtering with global self-attention.
-- **Action Recognition**: The primary evaluation benchmark for 3D convolution architectures.
-- **Optical Flow Estimation**: 3D CNNs reduce (but do not eliminate) the reliance on pre-computed flow.
+- `two-stream-networks.md`: I3D was introduced as a two-stream architecture (RGB + flow), bridging the two-stream and 3D convolution paradigms.
+- `video-representation.md`: 3D convolutions operate on the $T \times H \times W \times C$ tensor format.
+- `video-transformers.md`: TimeSformer and ViViT emerged as alternatives to 3D CNNs, replacing local spatiotemporal filtering with global self-attention.
+- `action-recognition.md`: The primary evaluation benchmark for 3D convolution architectures.
+- `optical-flow-estimation.md`: 3D CNNs reduce (but do not eliminate) the reliance on pre-computed flow.
 
 ## Further Reading
 

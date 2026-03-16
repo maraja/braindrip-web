@@ -152,10 +152,10 @@ The existence of multiple approaches also drives theoretical understanding of wh
 
 ## Connections to Other Concepts
 
-- **LoRA and QLoRA**: LoRA is the most popular member of this PEFT family. Many innovations from other methods (like DoRA's magnitude decomposition) are designed as LoRA extensions.
-- **Transfer learning**: All PEFT methods are forms of transfer learning, leveraging pretrained representations and adapting them efficiently.
-- **Attention mechanism**: Prefix tuning directly manipulates the attention computation, offering insights into how attention heads can be steered.
-- **Mixture of Experts (MoE)**: Some recent work treats multiple LoRA or adapter modules as "experts" that are routed to based on input, bridging PEFT with MoE architectures.
+- `lora.md`: LoRA is the most popular member of this PEFT family. Many innovations from other methods (like DoRA's magnitude decomposition) are designed as LoRA extensions.
+- `transfer-learning.md`: All PEFT methods are forms of transfer learning, leveraging pretrained representations and adapting them efficiently.
+- `attention-mechanism.md`: Prefix tuning directly manipulates the attention computation, offering insights into how attention heads can be steered.
+- `mixture-of-experts.md`: Some recent work treats multiple LoRA or adapter modules as "experts" that are routed to based on input, bridging PEFT with MoE architectures.
 - **Continual learning**: PEFT methods are natural tools for continual learning, since the frozen base model prevents catastrophic forgetting of pre-existing knowledge.
 - **Multi-task learning**: Methods like prompt tuning naturally support multi-task setups by learning different soft prompts for different tasks while sharing the same frozen backbone.
 

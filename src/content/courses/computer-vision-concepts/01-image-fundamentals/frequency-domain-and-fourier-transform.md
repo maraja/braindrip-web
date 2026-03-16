@@ -126,10 +126,10 @@ The DCT concentrates most image energy into a few low-frequency coefficients, en
 
 ## Connections to Other Concepts
 
-- **Convolution and Filtering**: The convolution theorem links spatial filtering directly to frequency-domain multiplication. Understanding one domain deepens understanding of the other.
-- **Image Pyramids and Scale Space**: Gaussian pyramid construction can be understood as successive low-pass filtering in the frequency domain, with each level retaining a progressively narrower band of frequencies.
-- **Image Noise and Denoising**: Wiener filtering and spectral subtraction are denoising techniques formulated entirely in the frequency domain.
-- **Digital Images and Pixels**: The Nyquist-Shannon sampling theorem, which governs image acquisition, is a frequency-domain concept.
+- `convolution-and-filtering.md`: The convolution theorem links spatial filtering directly to frequency-domain multiplication. Understanding one domain deepens understanding of the other.
+- `image-pyramids-and-scale-space.md`: Gaussian pyramid construction can be understood as successive low-pass filtering in the frequency domain, with each level retaining a progressively narrower band of frequencies.
+- `image-noise-and-denoising.md`: Wiener filtering and spectral subtraction are denoising techniques formulated entirely in the frequency domain.
+- `digital-images-and-pixels.md`: The Nyquist-Shannon sampling theorem, which governs image acquisition, is a frequency-domain concept.
 
 ## Further Reading
 

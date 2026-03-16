@@ -102,12 +102,12 @@ FlexiCubes (Shen et al., 2023) and DMTet (Shen et al., 2021) provide differentia
 
 ## Connections to Other Concepts
 
-- **Multi-View Geometry**: SfM provides the camera poses required for MVS and neural reconstruction. Triangulation is the fundamental operation underlying sparse reconstruction.
-- **Depth Estimation**: Predicted depth maps serve as input for TSDF fusion when sensor depth is unavailable.
-- **Point Cloud Processing**: Fused point clouds from MVS or TSDF require filtering, normal estimation, and meshing.
-- **Neural Radiance Fields**: NeuS and VolSDF combine NeRF's differentiable rendering with SDF representations for reconstruction with photometric supervision.
-- **3D Gaussian Splatting**: SuGaR extracts meshes from Gaussian splats, bridging novel view synthesis and reconstruction.
-- **SLAM**: SLAM systems build maps online; offline reconstruction produces higher-quality geometry from the same data.
+- `multi-view-geometry.md`: SfM provides the camera poses required for MVS and neural reconstruction. Triangulation is the fundamental operation underlying sparse reconstruction.
+- `depth-estimation.md`: Predicted depth maps serve as input for TSDF fusion when sensor depth is unavailable.
+- `point-cloud-processing.md`: Fused point clouds from MVS or TSDF require filtering, normal estimation, and meshing.
+- `neural-radiance-fields.md`: NeuS and VolSDF combine NeRF's differentiable rendering with SDF representations for reconstruction with photometric supervision.
+- `3d-gaussian-splatting.md`: SuGaR extracts meshes from Gaussian splats, bridging novel view synthesis and reconstruction.
+- `slam.md`: SLAM systems build maps online; offline reconstruction produces higher-quality geometry from the same data.
 
 ## Further Reading
 

@@ -105,11 +105,11 @@ This mirrors the receptive field growth in CNNs and is used in architectures lik
 
 ## Connections to Other Concepts
 
-- **Vision Transformer (ViT)**: Uses global self-attention with 1D positional embeddings -- the simplest attention-in-vision design.
-- **Swin Transformer**: The most influential instance of windowed attention for vision.
-- **Hybrid CNN-Transformer**: CNN early layers avoid the attention cost problem entirely at high resolutions.
-- **Masked Image Modeling**: MAE's 75% masking dramatically reduces the number of tokens the encoder must attend to, sidestepping the quadratic cost during pre-training.
-- **Vision Transformer Scaling**: Efficient attention mechanisms determine how far vision Transformers can scale in resolution and sequence length.
+- `vision-transformer.md`: Uses global self-attention with 1D positional embeddings -- the simplest attention-in-vision design.
+- `swin-transformer.md`: The most influential instance of windowed attention for vision.
+- `hybrid-cnn-transformer.md`: CNN early layers avoid the attention cost problem entirely at high resolutions.
+- `masked-image-modeling.md`: MAE's 75% masking dramatically reduces the number of tokens the encoder must attend to, sidestepping the quadratic cost during pre-training.
+- `vision-transformer-scaling.md`: Efficient attention mechanisms determine how far vision Transformers can scale in resolution and sequence length.
 
 ## Further Reading
 

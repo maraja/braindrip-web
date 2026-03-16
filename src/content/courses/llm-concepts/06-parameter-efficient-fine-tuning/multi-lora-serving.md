@@ -123,12 +123,12 @@ LoRAX supports hot-swapping adapters at runtime, enabling use cases like A/B tes
 
 ## Connections to Other Concepts
 
-- **LoRA**: Multi-LoRA serving is the deployment counterpart to LoRA training. The small adapter sizes that make LoRA parameter-efficient also make multi-tenant serving feasible.
-- **PagedAttention / vLLM**: S-LoRA extends PagedAttention's memory management philosophy from KV caches to adapter weights, using the same non-contiguous paging approach.
-- **Model Routing**: Multi-LoRA serving pairs naturally with routing systems that select the best adapter per query, enabling automatic task-specific specialization.
-- **Quantization**: Base model quantization (GPTQ, AWQ) can be combined with LoRA serving to further reduce the memory footprint, fitting more adapters per GPU.
-- **Continuous Batching**: Multi-LoRA scheduling integrates with continuous batching to handle variable-length requests and adapter heterogeneity simultaneously.
-- **Mixture of Experts**: Conceptually similar to MoE where different experts activate for different inputs, but implemented at the adapter level with explicit routing rather than learned gating.
+- `lora.md`: Multi-LoRA serving is the deployment counterpart to LoRA training. The small adapter sizes that make LoRA parameter-efficient also make multi-tenant serving feasible.
+- `paged-attention.md`: S-LoRA extends PagedAttention's memory management philosophy from KV caches to adapter weights, using the same non-contiguous paging approach.
+- `model-routing.md`: Multi-LoRA serving pairs naturally with routing systems that select the best adapter per query, enabling automatic task-specific specialization.
+- `quantization.md`: Base model quantization (GPTQ, AWQ) can be combined with LoRA serving to further reduce the memory footprint, fitting more adapters per GPU.
+- `continuous-batching.md`: Multi-LoRA scheduling integrates with continuous batching to handle variable-length requests and adapter heterogeneity simultaneously.
+- `mixture-of-experts.md`: Conceptually similar to MoE where different experts activate for different inputs, but implemented at the adapter level with explicit routing rather than learned gating.
 
 ## Further Reading
 

@@ -77,10 +77,10 @@ CLIP was trained on WebImageText (WIT), a proprietary dataset of 400 million ima
 
 ## Connections to Other Concepts
 
-- **Zero-Shot Classification**: CLIP is the canonical method for zero-shot visual classification via language-vision alignment.
-- **Open-Vocabulary Detection**: Models like OWL-ViT and Grounding DINO build on CLIP embeddings to detect arbitrary objects specified by text.
-- **Text-to-Image Generation**: DALL-E 2 and Stable Diffusion use CLIP embeddings to guide image synthesis.
-- **Vision Transformers**: CLIP's best image encoder is a ViT, demonstrating the architecture's strength as a general visual backbone.
+- `zero-shot-classification.md`: CLIP is the canonical method for zero-shot visual classification via language-vision alignment.
+- `open-vocabulary-detection.md`: Models like OWL-ViT and Grounding DINO build on CLIP embeddings to detect arbitrary objects specified by text.
+- `text-to-image-generation.md`: DALL-E 2 and Stable Diffusion use CLIP embeddings to guide image synthesis.
+- `vision-transformer.md`: CLIP's best image encoder is a ViT, demonstrating the architecture's strength as a general visual backbone.
 - **Contrastive Learning**: CLIP extends self-supervised contrastive frameworks (SimCLR, MoCo) by replacing augmentation-based positive pairs with language-based semantic pairs.
 
 ## Further Reading

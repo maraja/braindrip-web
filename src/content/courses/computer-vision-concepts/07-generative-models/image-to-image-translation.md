@@ -87,11 +87,11 @@ $$\mathcal{L}_{\text{PatchNCE}} = -\log \frac{\exp(v \cdot v^+ / \tau)}{\exp(v \
 
 ## Connections to Other Concepts
 
-- **Generative Adversarial Networks**: Pix2Pix and CycleGAN are conditional GAN frameworks with specialized architectures and loss functions.
-- **Neural Style Transfer**: Style transfer can be seen as a special case of image-to-image translation where the target domain is defined by a single style image.
-- **Image Inpainting**: Inpainting fills missing regions, a constrained form of image-to-image translation from masked to complete images.
-- **Diffusion Models**: Modern diffusion-based approaches (InstructPix2Pix, SDEdit) are increasingly replacing GAN-based translation with text-guided editing.
-- **Image Super-Resolution**: Super-resolution is image-to-image translation from low to high resolution.
+- `generative-adversarial-networks.md`: Pix2Pix and CycleGAN are conditional GAN frameworks with specialized architectures and loss functions.
+- `neural-style-transfer.md`: Style transfer can be seen as a special case of image-to-image translation where the target domain is defined by a single style image.
+- `image-inpainting.md`: Inpainting fills missing regions, a constrained form of image-to-image translation from masked to complete images.
+- `diffusion-models.md`: Modern diffusion-based approaches (InstructPix2Pix, SDEdit) are increasingly replacing GAN-based translation with text-guided editing.
+- `image-super-resolution.md`: Super-resolution is image-to-image translation from low to high resolution.
 
 ## Further Reading
 

@@ -109,14 +109,14 @@ Stacking dilated convolutions with exponentially increasing dilation rates (1, 2
 
 ## Connections to Other Concepts
 
-- **`recurrent-neural-networks.md`**: CNNs and RNNs offer complementary approaches to sequence processing -- CNNs are parallel but locally limited, RNNs are sequential but theoretically unlimited in range. Many hybrid architectures combine both.
-- **`long-short-term-memory.md`**: LSTMs were the primary comparison point for text CNNs; ConvS2S outperformed LSTM-based seq2seq models on machine translation while training much faster.
-- **`attention-mechanism.md`**: ConvS2S combined convolutions with multi-step attention. The Transformer later replaced convolutions entirely with self-attention, achieving both parallelism and global range.
-- **`word2vec.md`** and **`glove.md`**: Pre-trained embeddings are the standard input to text CNNs, and Kim (2014) showed that fine-tuning these embeddings on the task further improves performance.
-- **`fasttext.md`**: FastText's character n-gram approach is conceptually similar to character-level CNNs -- both capture subword patterns through local feature detection.
-- **`n-gram-language-models.md`**: CNN filters of width w are essentially learned, continuous n-gram detectors, connecting to the traditional n-gram approach but with distributed representations.
-- **`text-classification.md`**: Text CNNs remain a strong baseline for classification tasks, offering competitive accuracy with minimal hyperparameter tuning.
-- **`sentence-embeddings.md`**: The pooled output of a text CNN is a fixed-size sentence representation that can be used for downstream tasks.
+- `recurrent-neural-networks.md`: CNNs and RNNs offer complementary approaches to sequence processing -- CNNs are parallel but locally limited, RNNs are sequential but theoretically unlimited in range. Many hybrid architectures combine both.
+- `long-short-term-memory.md`: LSTMs were the primary comparison point for text CNNs; ConvS2S outperformed LSTM-based seq2seq models on machine translation while training much faster.
+- `attention-mechanism.md`: ConvS2S combined convolutions with multi-step attention. The Transformer later replaced convolutions entirely with self-attention, achieving both parallelism and global range.
+- `word2vec.md`: and **`glove.md`**: Pre-trained embeddings are the standard input to text CNNs, and Kim (2014) showed that fine-tuning these embeddings on the task further improves performance.
+- `fasttext.md`: FastText's character n-gram approach is conceptually similar to character-level CNNs -- both capture subword patterns through local feature detection.
+- `n-gram-language-models.md`: CNN filters of width w are essentially learned, continuous n-gram detectors, connecting to the traditional n-gram approach but with distributed representations.
+- `text-classification.md`: Text CNNs remain a strong baseline for classification tasks, offering competitive accuracy with minimal hyperparameter tuning.
+- `sentence-embeddings.md`: The pooled output of a text CNN is a fixed-size sentence representation that can be used for downstream tasks.
 
 ## Further Reading
 

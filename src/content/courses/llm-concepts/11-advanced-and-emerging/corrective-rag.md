@@ -135,12 +135,12 @@ In the CRAG paper's experiments, the approach improved RAG performance by 5-10% 
 
 ## Connections to Other Concepts
 
-- **RAG**: CRAG is an enhancement pattern for standard RAG, specifically addressing retrieval quality evaluation and correction.
-- **Agentic RAG**: CRAG is one specific pattern within the broader agentic RAG framework. Agentic RAG encompasses any dynamic retrieval behavior; CRAG specifically focuses on retrieval evaluation and correction.
-- **HyDE**: CRAG's query rewriting step can incorporate HyDE -- generating a hypothetical answer as the rewritten query for re-retrieval.
-- **ColBERT / reranking**: Cross-encoder rerankers can serve as the relevance evaluator in CRAG, providing calibrated relevance scores.
-- **Guardrails and safety**: CRAG shares the philosophy of evaluation-before-action with guardrails systems -- both add a checking layer to prevent poor outputs.
-- **Hallucination**: CRAG specifically targets context-based hallucination (the LLM generating answers from irrelevant context), one of the primary hallucination modes in RAG systems.
+- `rag.md`: CRAG is an enhancement pattern for standard RAG, specifically addressing retrieval quality evaluation and correction.
+- `agentic-rag.md`: CRAG is one specific pattern within the broader agentic RAG framework. Agentic RAG encompasses any dynamic retrieval behavior; CRAG specifically focuses on retrieval evaluation and correction.
+- `hyde-hypothetical-document-embeddings.md`: CRAG's query rewriting step can incorporate HyDE -- generating a hypothetical answer as the rewritten query for re-retrieval.
+- `colbert-late-interaction.md`: Cross-encoder rerankers can serve as the relevance evaluator in CRAG, providing calibrated relevance scores.
+- `guardrails.md`: CRAG shares the philosophy of evaluation-before-action with guardrails systems -- both add a checking layer to prevent poor outputs.
+- `hallucination.md`: CRAG specifically targets context-based hallucination (the LLM generating answers from irrelevant context), one of the primary hallucination modes in RAG systems.
 
 ## Further Reading
 

@@ -96,10 +96,10 @@ flow = cv2.calcOpticalFlowFarneback(
 
 ## Connections to Other Concepts
 
-- **Corner Detection**: Lucas-Kanade requires corners (high eigenvalue points) for well-conditioned estimation; Shi-Tomasi features are the standard initialization.
-- **HOG**: Histograms of optical flow (HOF) extend HOG to the temporal domain for action recognition.
-- **Image Stitching and Homography**: Flow estimation and homography computation both solve for geometric relationships between frames; homography assumes a single planar transformation while flow allows per-pixel variation.
-- **Camera Calibration and Geometry**: Ego-motion decomposition of optical flow into rotation and translation requires known camera intrinsics.
+- `corner-detection.md`: Lucas-Kanade requires corners (high eigenvalue points) for well-conditioned estimation; Shi-Tomasi features are the standard initialization.
+- `hog.md`: Histograms of optical flow (HOF) extend HOG to the temporal domain for action recognition.
+- `image-stitching-and-homography.md`: Flow estimation and homography computation both solve for geometric relationships between frames; homography assumes a single planar transformation while flow allows per-pixel variation.
+- `camera-calibration-and-geometry.md`: Ego-motion decomposition of optical flow into rotation and translation requires known camera intrinsics.
 
 ## Further Reading
 

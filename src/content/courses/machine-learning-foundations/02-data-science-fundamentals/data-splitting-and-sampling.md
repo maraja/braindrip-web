@@ -133,11 +133,11 @@ Every performance number you report -- accuracy, AUC, F1 -- is only as trustwort
 
 ## Connections to Other Concepts
 
-- **Exploratory Data Analysis**: EDA reveals class imbalance, temporal structure, and group structure -- all of which determine the splitting strategy.
-- **Feature Scaling and Normalization**: Scaler parameters must be computed on the training fold only.
-- **Handling Missing Data**: Imputation parameters must be fit on training data only.
-- **Encoding Categorical Variables**: Target encoding must use training-fold targets to avoid leakage.
-- **Data Cleaning and Preprocessing**: Deduplication should occur before splitting to prevent the same record from appearing in both train and test sets.
+- `exploratory-data-analysis.md`: EDA reveals class imbalance, temporal structure, and group structure -- all of which determine the splitting strategy.
+- `feature-scaling-and-normalization.md`: Scaler parameters must be computed on the training fold only.
+- `handling-missing-data.md`: Imputation parameters must be fit on training data only.
+- `encoding-categorical-variables.md`: Target encoding must use training-fold targets to avoid leakage.
+- `data-cleaning-and-preprocessing.md`: Deduplication should occur before splitting to prevent the same record from appearing in both train and test sets.
 
 ## Further Reading
 

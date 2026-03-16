@@ -111,10 +111,10 @@ Kernel methods are one of the most elegant ideas in machine learning. They allow
 
 ## Connections to Other Concepts
 
-- **Support Vector Machines**: SVMs are the most prominent application of kernel methods. The dual formulation of SVMs is what makes kernelization natural.
-- **K-Nearest Neighbors**: KNN with an RBF weighting resembles a kernel method. Both are instance-based, but kernel SVMs produce a sparse solution (support vectors only).
-- **Logistic Regression**: Kernel logistic regression exists but is less common than kernel SVMs because the logistic regression dual is not as clean.
-- **Decision Trees**: Trees are nonlinear without kernels but cannot leverage the geometric structure that kernels exploit. Ensemble methods (random forests) are the tree-based alternative to kernel SVMs.
+- `support-vector-machines.md`: SVMs are the most prominent application of kernel methods. The dual formulation of SVMs is what makes kernelization natural.
+- `k-nearest-neighbors.md`: KNN with an RBF weighting resembles a kernel method. Both are instance-based, but kernel SVMs produce a sparse solution (support vectors only).
+- `logistic-regression.md`: Kernel logistic regression exists but is less common than kernel SVMs because the logistic regression dual is not as clean.
+- `decision-trees.md`: Trees are nonlinear without kernels but cannot leverage the geometric structure that kernels exploit. Ensemble methods (random forests) are the tree-based alternative to kernel SVMs.
 
 ## Further Reading
 

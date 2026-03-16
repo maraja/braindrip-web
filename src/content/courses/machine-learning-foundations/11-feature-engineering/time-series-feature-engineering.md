@@ -111,11 +111,11 @@ Standard ML models (gradient boosting, neural networks) have no inherent concept
 
 ## Connections to Other Concepts
 
-- **Feature Extraction and Transformation**: Time-series feature engineering is a domain-specific application of the general extraction framework, with the added constraint of temporal causality.
-- **Feature Selection Methods**: With many lag and rolling features, selection (e.g., permutation importance) is essential to avoid an unwieldy feature set.
-- **Handling High-Cardinality Features**: Time-series datasets often include high-cardinality identifiers (store IDs, product IDs) that require specialized encoding alongside temporal features.
-- **Automated Feature Engineering**: Tools like tsfresh and Featuretools can automate lag, rolling, and calendar feature generation at scale.
-- **Regularization**: The large number of candidate time-series features makes regularization (L1/L2) critical for preventing overfitting.
+- `feature-extraction-and-transformation.md`: Time-series feature engineering is a domain-specific application of the general extraction framework, with the added constraint of temporal causality.
+- `feature-selection-methods.md`: With many lag and rolling features, selection (e.g., permutation importance) is essential to avoid an unwieldy feature set.
+- `handling-high-cardinality-features.md`: Time-series datasets often include high-cardinality identifiers (store IDs, product IDs) that require specialized encoding alongside temporal features.
+- `automated-feature-engineering.md`: Tools like tsfresh and Featuretools can automate lag, rolling, and calendar feature generation at scale.
+- `regularization.md`: The large number of candidate time-series features makes regularization (L1/L2) critical for preventing overfitting.
 
 ## Further Reading
 

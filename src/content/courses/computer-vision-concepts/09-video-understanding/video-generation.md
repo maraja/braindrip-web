@@ -117,11 +117,11 @@ Video generation is extraordinarily expensive:
 
 ## Connections to Other Concepts
 
-- **3D Convolutions**: Temporal convolution layers in video diffusion models draw directly from C3D/I3D architectural ideas.
-- **Video Transformers**: DiT-based video generators (Sora, CogVideoX) use factorized spatiotemporal attention identical to TimeSformer/ViViT designs.
-- **Optical Flow Estimation**: Flow-based metrics evaluate temporal coherence; flow can also guide video generation by specifying desired motion.
-- **Video Representation**: The $T \times H \times W \times C$ tensor structure and temporal compression strategies from video understanding directly inform generative model design.
-- **Action Recognition**: Generated videos are evaluated partly on whether recognizable actions are depicted correctly.
+- `3d-convolutions.md`: Temporal convolution layers in video diffusion models draw directly from C3D/I3D architectural ideas.
+- `video-transformers.md`: DiT-based video generators (Sora, CogVideoX) use factorized spatiotemporal attention identical to TimeSformer/ViViT designs.
+- `optical-flow-estimation.md`: Flow-based metrics evaluate temporal coherence; flow can also guide video generation by specifying desired motion.
+- `video-representation.md`: The $T \times H \times W \times C$ tensor structure and temporal compression strategies from video understanding directly inform generative model design.
+- `action-recognition.md`: Generated videos are evaluated partly on whether recognizable actions are depicted correctly.
 
 ## Further Reading
 

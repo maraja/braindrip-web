@@ -134,12 +134,12 @@ Backpropagation reduces the cost of computing all gradients to roughly 2-3 times
 
 ## Connections to Other Concepts
 
-- **Cross-Entropy Loss**: The function whose gradients backpropagation computes.
-- **Adam Optimizer**: The algorithm that uses the computed gradients to update parameters.
-- **Gradient Clipping**: Applied to gradients after backpropagation to prevent instability.
-- **Mixed Precision Training**: Affects how gradients are computed and stored.
-- **Gradient Checkpointing**: A memory optimization technique that modifies how backpropagation stores intermediate activations.
-- **Residual Connections (in Transformers)**: Architectural feature that directly improves gradient flow.
+- `cross-entropy-loss.md`: The function whose gradients backpropagation computes.
+- `adam-optimizer.md`: The algorithm that uses the computed gradients to update parameters.
+- `gradient-clipping.md`: Applied to gradients after backpropagation to prevent instability.
+- `mixed-precision-training.md`: Affects how gradients are computed and stored.
+- `gradient-checkpointing.md`: A memory optimization technique that modifies how backpropagation stores intermediate activations.
+- `residual-connections.md`: Architectural feature that directly improves gradient flow.
 
 ## Further Reading
 

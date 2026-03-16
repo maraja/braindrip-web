@@ -104,11 +104,11 @@ The choice of metric encodes your **value system**. In medical diagnosis, missin
 
 ## Connections to Other Concepts
 
-- **Calibration**: Log loss directly rewards well-calibrated probabilities. Good AUC does not imply good calibration.
-- **Cross-Validation**: Metrics must be estimated on held-out data; cross-validation provides robust estimates.
-- **Learning Curves**: Plotting metrics vs. training set size reveals whether more data helps.
-- **Regression Metrics**: Analogous evaluation tools for continuous predictions (MSE, MAE, R-squared).
-- **Model Comparison**: Statistical tests determine whether metric differences between models are significant.
+- `calibration.md`: Log loss directly rewards well-calibrated probabilities. Good AUC does not imply good calibration.
+- `cross-validation.md`: Metrics must be estimated on held-out data; cross-validation provides robust estimates.
+- `learning-curves.md`: Plotting metrics vs. training set size reveals whether more data helps.
+- `regression-metrics.md`: Analogous evaluation tools for continuous predictions (MSE, MAE, R-squared).
+- `model-comparison.md`: Statistical tests determine whether metric differences between models are significant.
 
 ## Further Reading
 

@@ -168,13 +168,13 @@ The importance of neurosymbolic AI is driven by the reliability gap in pure neur
 
 ## Connections to Other Concepts
 
-- **Compound AI Systems**: Neurosymbolic architectures are a specific type of compound AI system where symbolic engines serve as specialized components alongside neural ones.
-- **Test-Time Compute**: Formal verification loops (generate, verify, revise) are a form of test-time compute where the symbolic verifier guides the search for correct solutions.
-- **Mechanistic Interpretability**: Both fields seek to make AI reasoning transparent and understandable -- interpretability from the inside (mechanistic), neurosymbolic from the outside (formal verification of outputs).
-- **AI Safety and Alignment**: Neurosymbolic approaches offer a path to AI systems whose reasoning can be formally audited, a crucial property for high-stakes deployment.
-- **RAG**: Retrieval-augmented generation is the simplest point on the neurosymbolic spectrum -- grounding neural generation in structured external knowledge.
-- **Tool Use**: Using formal tools (calculators, code interpreters, theorem provers) is a lightweight neurosymbolic pattern that most modern LLM systems already employ.
-- **Hallucination Mitigation**: Symbolic verification is one of the most principled approaches to detecting and preventing hallucination.
+- `compound-ai-systems.md`: Neurosymbolic architectures are a specific type of compound AI system where symbolic engines serve as specialized components alongside neural ones.
+- `test-time-compute.md`: Formal verification loops (generate, verify, revise) are a form of test-time compute where the symbolic verifier guides the search for correct solutions.
+- `mechanistic-interpretability.md`: Both fields seek to make AI reasoning transparent and understandable -- interpretability from the inside (mechanistic), neurosymbolic from the outside (formal verification of outputs).
+- `03-ai-safety-and-governance.md`: Neurosymbolic approaches offer a path to AI systems whose reasoning can be formally audited, a crucial property for high-stakes deployment.
+- `rag.md`: Retrieval-augmented generation is the simplest point on the neurosymbolic spectrum -- grounding neural generation in structured external knowledge.
+- `tool-use-benchmarks.md`: Using formal tools (calculators, code interpreters, theorem provers) is a lightweight neurosymbolic pattern that most modern LLM systems already employ.
+- `hallucination.md`: Symbolic verification is one of the most principled approaches to detecting and preventing hallucination.
 
 ## Further Reading
 

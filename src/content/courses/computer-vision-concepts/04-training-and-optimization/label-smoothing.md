@@ -79,10 +79,10 @@ The choice of $\epsilon$ should reflect the expected label noise. For clean data
 
 ## Connections to Other Concepts
 
-- **Knowledge Distillation**: Soft targets from a teacher serve a similar function to label smoothing but carry richer inter-class information. However, using label smoothing in the teacher can degrade distillation quality.
-- **Mixup and CutMix**: These techniques also produce soft labels by blending ground truths, providing a data-driven form of label smoothing.
-- **Dropout and Regularization**: Label smoothing regularizes the output distribution, while dropout regularizes the hidden representations -- they are complementary.
-- **Learning Rate Scheduling**: Label smoothing is typically combined with cosine annealing in modern training recipes.
+- `knowledge-distillation.md`: Soft targets from a teacher serve a similar function to label smoothing but carry richer inter-class information. However, using label smoothing in the teacher can degrade distillation quality.
+- `mixup-and-cutmix.md`: These techniques also produce soft labels by blending ground truths, providing a data-driven form of label smoothing.
+- `dropout-and-regularization.md`: Label smoothing regularizes the output distribution, while dropout regularizes the hidden representations -- they are complementary.
+- `learning-rate-scheduling.md`: Label smoothing is typically combined with cosine annealing in modern training recipes.
 
 ## Further Reading
 

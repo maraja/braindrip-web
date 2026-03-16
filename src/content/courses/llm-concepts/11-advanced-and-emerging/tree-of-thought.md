@@ -145,12 +145,12 @@ ToT represents a paradigm shift in how we think about LLM problem-solving:
 
 ## Connections to Other Concepts
 
-- **Chain-of-Thought (CoT)**: ToT is a direct extension of CoT, adding search and evaluation around the linear reasoning process. Understanding CoT is prerequisite to understanding ToT.
-- **Test-Time Compute**: ToT is one of the primary mechanisms for spending more compute at inference time to improve accuracy. It instantiates the test-time compute paradigm for reasoning tasks.
-- **Process Reward Models**: PRMs evaluate intermediate reasoning steps, which is exactly the evaluation function ToT needs. PRMs can replace or supplement the LLM's self-evaluation for more reliable branch pruning.
-- **Reasoning Models (o1, o3)**: OpenAI's reasoning models likely use ToT-like internal search processes (the details are proprietary). The reasoning traces that o1/o3 produce suggest exploration of multiple paths with evaluation and selection.
-- **Self-Consistency**: A simplified version of ToT that generates multiple independent chains and votes on the final answer, without intermediate evaluation or backtracking.
-- **Compound AI Systems**: ToT is a compound system pattern -- multiple LLM calls coordinated by a search algorithm to achieve better results than a single call.
+- `chain-of-thought-in-agents.md`: ToT is a direct extension of CoT, adding search and evaluation around the linear reasoning process. Understanding CoT is prerequisite to understanding ToT.
+- `test-time-compute.md`: ToT is one of the primary mechanisms for spending more compute at inference time to improve accuracy. It instantiates the test-time compute paradigm for reasoning tasks.
+- `process-reward-models.md`: PRMs evaluate intermediate reasoning steps, which is exactly the evaluation function ToT needs. PRMs can replace or supplement the LLM's self-evaluation for more reliable branch pruning.
+- `reasoning-models.md`: OpenAI's reasoning models likely use ToT-like internal search processes (the details are proprietary). The reasoning traces that o1/o3 produce suggest exploration of multiple paths with evaluation and selection.
+- `self-consistency.md`: A simplified version of ToT that generates multiple independent chains and votes on the final answer, without intermediate evaluation or backtracking.
+- `compound-ai-systems.md`: ToT is a compound system pattern -- multiple LLM calls coordinated by a search algorithm to achieve better results than a single call.
 
 ## Further Reading
 

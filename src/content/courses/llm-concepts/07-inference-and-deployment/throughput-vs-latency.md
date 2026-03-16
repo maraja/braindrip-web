@@ -178,11 +178,11 @@ Getting this wrong means either overpaying for hardware (over-provisioned for la
 
 ## Connections to Other Concepts
 
-- **KV Cache**: KV cache memory consumption is the primary constraint on batch size, which directly controls the throughput-latency trade-off. PagedAttention reduces waste and shifts the curve outward.
-- **Flash Attention**: Speeds up both prefill and decode phases, benefiting both latency and throughput -- a rare win-win that shifts the entire trade-off curve.
-- **Quantization**: Reduces model memory, freeing space for larger KV caches and thus larger batches. Also reduces per-token latency via lower memory bandwidth requirements.
-- **Speculative Decoding**: A pure latency optimization that works best at low batch sizes, explicitly trading potential throughput for lower per-request latency.
-- **Model Serving Frameworks**: The framework's scheduling policy, batching strategy, and memory management directly implement the chosen position on the throughput-latency trade-off curve.
+- `kv-cache.md`: KV cache memory consumption is the primary constraint on batch size, which directly controls the throughput-latency trade-off. PagedAttention reduces waste and shifts the curve outward.
+- `flash-attention.md`: Speeds up both prefill and decode phases, benefiting both latency and throughput -- a rare win-win that shifts the entire trade-off curve.
+- `quantization.md`: Reduces model memory, freeing space for larger KV caches and thus larger batches. Also reduces per-token latency via lower memory bandwidth requirements.
+- `speculative-decoding.md`: A pure latency optimization that works best at low batch sizes, explicitly trading potential throughput for lower per-request latency.
+- `model-serving.md`: The framework's scheduling policy, batching strategy, and memory management directly implement the chosen position on the throughput-latency trade-off curve.
 
 ## Further Reading
 

@@ -108,10 +108,10 @@ The model outputs bounding boxes with associated text-similarity scores. A confi
 
 ## Connections to Other Concepts
 
-- **CLIP**: While Grounding DINO uses BERT (not CLIP) for text encoding, it shares CLIP's philosophy of using language to define visual categories. Grounding DINO operates at the region level where CLIP operates at the image level.
-- **Open-Vocabulary Detection**: Grounding DINO is a leading open-vocabulary detector, distinguished by its deep fusion architecture versus approaches that only fuse at the classification head.
-- **Vision Foundation Models**: Grounding DINO is a core component in foundation model stacks, especially in the Grounded SAM pipeline for text-guided segmentation.
-- **Object Detection (DETR/DINO)**: Grounding DINO directly extends the DINO detector architecture, inheriting its deformable attention, denoising training, and anchor box initialization.
+- `clip.md`: While Grounding DINO uses BERT (not CLIP) for text encoding, it shares CLIP's philosophy of using language to define visual categories. Grounding DINO operates at the region level where CLIP operates at the image level.
+- `open-vocabulary-detection.md`: Grounding DINO is a leading open-vocabulary detector, distinguished by its deep fusion architecture versus approaches that only fuse at the classification head.
+- `vision-foundation-models.md`: Grounding DINO is a core component in foundation model stacks, especially in the Grounded SAM pipeline for text-guided segmentation.
+- `detr.md`: Grounding DINO directly extends the DINO detector architecture, inheriting its deformable attention, denoising training, and anchor box initialization.
 - **Image Segmentation (SAM)**: Grounding DINO provides bounding boxes that serve as prompts for SAM, creating a complete text-to-mask system without any mask-level training data for the target categories.
 
 ## Further Reading

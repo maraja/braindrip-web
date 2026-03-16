@@ -95,10 +95,10 @@ This "pre-activation" arrangement creates a true identity path and improves perf
 
 ## Connections to Other Concepts
 
-- **VGGNet**: ResNet solved the degradation problem that limited VGG-style plain networks to ~19 effective layers.
-- **Inception**: The bottleneck block's $1 \times 1$ convolutions for dimensionality reduction were inspired by Inception's approach. Inception-ResNet later combined both ideas.
-- **DenseNet**: Extended the skip connection idea from single shortcuts to dense all-to-all connections within blocks.
-- **Batch Normalization**: Essential component of ResNet; pre-activation variants reorganized the BN placement for better identity mapping.
+- `vggnet.md`: ResNet solved the degradation problem that limited VGG-style plain networks to ~19 effective layers.
+- `inception.md`: The bottleneck block's $1 \times 1$ convolutions for dimensionality reduction were inspired by Inception's approach. Inception-ResNet later combined both ideas.
+- `densenet.md`: Extended the skip connection idea from single shortcuts to dense all-to-all connections within blocks.
+- `batch-normalization.md`: Essential component of ResNet; pre-activation variants reorganized the BN placement for better identity mapping.
 
 ## Further Reading
 

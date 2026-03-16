@@ -106,11 +106,11 @@ Regularization is the single most important practical technique for improving ge
 
 ## Connections to Other Concepts
 
-- **Bias-Variance Tradeoff**: Regularization explicitly trades increased bias for decreased variance.
-- **Overfitting and Underfitting**: Regularization is the primary remedy for overfitting; excessive regularization is a cause of underfitting.
-- **Loss Functions**: The regularized objective is $\mathcal{L}_{\text{data}} + \lambda \, \Omega(\theta)$ -- the regularization term modifies the loss landscape.
-- **Empirical Risk Minimization**: Regularized ERM is called structural risk minimization, which balances data fit with model complexity.
-- **Curse of Dimensionality**: In high dimensions, regularization becomes essential because the model has more ways to overfit.
+- `bias-variance-tradeoff.md`: Regularization explicitly trades increased bias for decreased variance.
+- `overfitting-and-underfitting.md`: Regularization is the primary remedy for overfitting; excessive regularization is a cause of underfitting.
+- `loss-functions.md`: The regularized objective is $\mathcal{L}_{\text{data}} + \lambda \, \Omega(\theta)$ -- the regularization term modifies the loss landscape.
+- `empirical-risk-minimization.md`: Regularized ERM is called structural risk minimization, which balances data fit with model complexity.
+- `curse-of-dimensionality.md`: In high dimensions, regularization becomes essential because the model has more ways to overfit.
 
 ## Further Reading
 

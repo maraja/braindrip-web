@@ -97,11 +97,11 @@ Choosing the wrong metric can lead to models that are optimal on paper but disas
 
 ## Connections to Other Concepts
 
-- **Classification Metrics**: Analogous evaluation framework for discrete outcomes (accuracy, F1, AUC-ROC).
-- **Cross-Validation**: Regression metrics should be estimated via cross-validation for reliable model comparison.
-- **Learning Curves**: Plotting RMSE or MAE vs. training set size diagnoses bias and variance issues.
-- **Hyperparameter Tuning**: The choice of regression metric as the objective function changes which hyperparameters are selected.
-- **Model Comparison**: Statistical tests applied to regression metric differences (e.g., paired t-test on fold-level RMSE) determine whether improvements are significant.
+- `classification-metrics.md`: Analogous evaluation framework for discrete outcomes (accuracy, F1, AUC-ROC).
+- `cross-validation.md`: Regression metrics should be estimated via cross-validation for reliable model comparison.
+- `learning-curves.md`: Plotting RMSE or MAE vs. training set size diagnoses bias and variance issues.
+- `hyperparameter-tuning.md`: The choice of regression metric as the objective function changes which hyperparameters are selected.
+- `model-comparison.md`: Statistical tests applied to regression metric differences (e.g., paired t-test on fold-level RMSE) determine whether improvements are significant.
 
 ## Further Reading
 

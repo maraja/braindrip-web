@@ -73,11 +73,11 @@ EdgeBoxes runs at ~0.25 seconds per image, compared to ~2 seconds for Selective 
 
 ## Connections to Other Concepts
 
-- **R-CNN**: Directly uses Selective Search proposals as input to a CNN feature extractor and SVM classifier.
-- **Faster R-CNN**: Replaces external proposals with a learned Region Proposal Network.
-- **Non-Maximum Suppression**: Applied after both sliding-window and proposal-based detectors to remove duplicate detections.
-- **Multi-Scale Detection**: Sliding windows require explicit image pyramids; modern methods build feature pyramids instead.
-- **Intersection over Union**: Used to evaluate proposal quality by measuring overlap with ground-truth boxes.
+- `r-cnn.md`: Directly uses Selective Search proposals as input to a CNN feature extractor and SVM classifier.
+- `r-cnn.md`: Replaces external proposals with a learned Region Proposal Network.
+- `non-maximum-suppression.md`: Applied after both sliding-window and proposal-based detectors to remove duplicate detections.
+- `multi-scale-detection.md`: Sliding windows require explicit image pyramids; modern methods build feature pyramids instead.
+- `intersection-over-union.md`: Used to evaluate proposal quality by measuring overlap with ground-truth boxes.
 
 ## Further Reading
 

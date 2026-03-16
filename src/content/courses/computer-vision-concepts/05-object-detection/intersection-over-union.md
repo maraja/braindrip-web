@@ -95,11 +95,11 @@ where $v$ measures aspect ratio consistency and $\alpha$ is a balancing paramete
 
 ## Connections to Other Concepts
 
-- **Non-Maximum Suppression**: Uses IoU to determine which overlapping boxes to suppress.
-- **R-CNN / Faster R-CNN**: IoU thresholds determine positive/negative assignment during training (e.g., IoU $\geq 0.5$ for positives, IoU $< 0.3$ for negatives).
-- **DETR**: Uses Generalized IoU in its matching cost and training loss.
-- **Focal Loss / RetinaNet**: Training sample assignment relies on IoU between anchors and ground-truth boxes.
-- **Sliding Window and Region Proposals**: Proposal recall is evaluated at specific IoU thresholds.
+- `non-maximum-suppression.md`: Uses IoU to determine which overlapping boxes to suppress.
+- `r-cnn.md`: IoU thresholds determine positive/negative assignment during training (e.g., IoU $\geq 0.5$ for positives, IoU $< 0.3$ for negatives).
+- `detr.md`: Uses Generalized IoU in its matching cost and training loss.
+- `focal-loss.md`: Training sample assignment relies on IoU between anchors and ground-truth boxes.
+- `sliding-window-and-region-proposals.md`: Proposal recall is evaluated at specific IoU thresholds.
 
 ## Further Reading
 

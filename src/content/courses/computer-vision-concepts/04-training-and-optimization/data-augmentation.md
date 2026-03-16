@@ -78,10 +78,10 @@ def rand_augment(image, N=2, M=9):
 
 ## Connections to Other Concepts
 
-- **Mixup and CutMix**: Go beyond single-image transforms by blending pairs of images and labels.
-- **Dropout and Regularization**: Augmentation and dropout both reduce overfitting but operate on different parts of the pipeline -- input space vs. hidden representations.
-- **Self-Supervised Pretraining**: Methods like SimCLR use augmentation as the sole source of supervision, making the augmentation policy critical.
-- **Transfer Learning**: Strong augmentation during pretraining produces features that transfer better to downstream tasks.
+- `mixup-and-cutmix.md`: Go beyond single-image transforms by blending pairs of images and labels.
+- `dropout-and-regularization.md`: Augmentation and dropout both reduce overfitting but operate on different parts of the pipeline -- input space vs. hidden representations.
+- `self-supervised-pretraining.md`: Methods like SimCLR use augmentation as the sole source of supervision, making the augmentation policy critical.
+- `transfer-learning.md`: Strong augmentation during pretraining produces features that transfer better to downstream tasks.
 
 ## Further Reading
 

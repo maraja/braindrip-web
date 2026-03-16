@@ -106,11 +106,11 @@ The choice of positional encoding method also determines whether a model can han
 
 ## Connections to Other Concepts
 
-- **Token Embeddings**: Positional encodings are combined with token embeddings to form the input to the first transformer layer.
-- **Rotary Position Embedding (RoPE)**: The dominant modern positional encoding method, deserving its own deep dive.
-- **Context Window**: The maximum effective context length is heavily influenced by the positional encoding scheme and its ability to extrapolate.
-- **Self-Attention**: Positional encoding modifies what the attention mechanism "sees" about token relationships.
-- **Special Tokens**: Tokens like BOS always appear at position 0, creating a consistent positional anchor.
+- `token-embeddings.md`: Positional encodings are combined with token embeddings to form the input to the first transformer layer.
+- `rotary-position-embedding.md`: The dominant modern positional encoding method, deserving its own deep dive.
+- `context-window.md`: The maximum effective context length is heavily influenced by the positional encoding scheme and its ability to extrapolate.
+- `self-attention.md`: Positional encoding modifies what the attention mechanism "sees" about token relationships.
+- `special-tokens.md`: Tokens like BOS always appear at position 0, creating a consistent positional anchor.
 
 ## Further Reading
 

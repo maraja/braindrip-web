@@ -121,10 +121,10 @@ This capability enables LLMs to serve as components in larger software architect
 
 ## Connections to Other Concepts
 
-- **Function calling** is the primary consumer of structured output -- tool call arguments must be valid JSON conforming to tool schemas.
-- **AI agents** depend on structured output to communicate actions, parse observations, and maintain state.
-- **Prompt engineering** includes output format specification as a core technique.
-- **Tokenization** interacts with constrained decoding: the token vocabulary determines what atomic units the grammar must reason about.
+- `function-calling.md`: is the primary consumer of structured output -- tool call arguments must be valid JSON conforming to tool schemas.
+- `ai-agents.md`: depend on structured output to communicate actions, parse observations, and maintain state.
+- `prompt-engineering.md`: includes output format specification as a core technique.
+- `tokenization.md`: interacts with constrained decoding: the token vocabulary determines what atomic units the grammar must reason about.
 - **Inference optimization** intersects with constrained decoding -- speculative decoding and batched generation must be compatible with per-token grammar constraints.
 
 ## Further Reading

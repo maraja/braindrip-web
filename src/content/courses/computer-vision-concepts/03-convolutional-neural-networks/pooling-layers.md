@@ -83,12 +83,12 @@ Zhang (2019) showed that standard max pooling violates shift equivariance becaus
 
 ## Connections to Other Concepts
 
-- **Convolution in Neural Networks**: Pooling typically follows convolutional layers, forming the conv-pool building block of classic architectures.
-- **Receptive Field**: Pooling expands the effective receptive field of subsequent layers by increasing the spatial area each neuron "sees."
-- **AlexNet**: Used overlapping max pooling as a regularization technique.
-- **VGGNet**: Used standard $2 \times 2$ non-overlapping max pooling after each convolutional block, establishing the pattern of doubling channels after each spatial halving.
-- **Inception**: GoogLeNet used global average pooling to replace the expensive fully connected layers, reducing the total parameter count to 6.8M.
-- **ResNet**: Replaced intermediate pooling with strided convolutions, using only a single global average pooling before the classifier.
+- `convolution-in-neural-networks.md`: Pooling typically follows convolutional layers, forming the conv-pool building block of classic architectures.
+- `receptive-field.md`: Pooling expands the effective receptive field of subsequent layers by increasing the spatial area each neuron "sees."
+- `alexnet.md`: Used overlapping max pooling as a regularization technique.
+- `vggnet.md`: Used standard $2 \times 2$ non-overlapping max pooling after each convolutional block, establishing the pattern of doubling channels after each spatial halving.
+- `inception.md`: GoogLeNet used global average pooling to replace the expensive fully connected layers, reducing the total parameter count to 6.8M.
+- `resnet.md`: Replaced intermediate pooling with strided convolutions, using only a single global average pooling before the classifier.
 
 ## Further Reading
 

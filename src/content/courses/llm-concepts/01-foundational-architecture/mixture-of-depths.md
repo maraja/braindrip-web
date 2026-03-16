@@ -128,11 +128,11 @@ Analysis of trained MoD models reveals interesting routing patterns:
 
 ## Connections to Other Concepts
 
-- **Residual Connections**: The skip pathway in MoD *is* the residual connection. Without residuals, skipping a layer would lose the token's representation entirely. Residual connections are what make MoD architecturally viable.
-- **Mixture of Experts**: MoE varies computation width (which parameters are used); MoD varies computation depth (whether parameters are used at all). They compose naturally and address orthogonal efficiency dimensions.
-- **Sparse Attention**: MoD can be viewed as a form of token-level sparse attention, where unselected tokens are dynamically excluded from the attention computation at each layer. This differs from pattern-based sparse attention (local windows, strided patterns).
-- **Self-Attention**: At MoD layers, attention is computed only among the top-k selected tokens. This changes the effective receptive field dynamically, as different tokens "see" different subsets of the sequence at different layers.
-- **Transformer Architecture**: MoD modifies the standard transformer by inserting a routing decision before each enabled layer, representing a significant architectural evolution from the fixed-computation-per-token paradigm.
+- `residual-connections.md`: The skip pathway in MoD *is* the residual connection. Without residuals, skipping a layer would lose the token's representation entirely. Residual connections are what make MoD architecturally viable.
+- `mixture-of-experts.md`: MoE varies computation width (which parameters are used); MoD varies computation depth (whether parameters are used at all). They compose naturally and address orthogonal efficiency dimensions.
+- `sparse-attention.md`: MoD can be viewed as a form of token-level sparse attention, where unselected tokens are dynamically excluded from the attention computation at each layer. This differs from pattern-based sparse attention (local windows, strided patterns).
+- `self-attention.md`: At MoD layers, attention is computed only among the top-k selected tokens. This changes the effective receptive field dynamically, as different tokens "see" different subsets of the sequence at different layers.
+- `transformer-architecture.md`: MoD modifies the standard transformer by inserting a routing decision before each enabled layer, representing a significant architectural evolution from the fixed-computation-per-token paradigm.
 
 ## Further Reading
 

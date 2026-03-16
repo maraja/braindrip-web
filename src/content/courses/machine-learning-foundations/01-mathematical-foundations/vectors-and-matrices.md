@@ -79,11 +79,11 @@ Nearly every ML algorithm begins by organizing data into a matrix. Linear regres
 
 ## Connections to Other Concepts
 
-- **Matrix Decompositions**: Eigendecomposition and SVD factor matrices to expose latent structure, rank, and enable compression.
-- **Derivatives and Gradients**: Gradients are vectors; Jacobians and Hessians are matrices. Backpropagation is a sequence of matrix-vector products.
-- **Norms and Distance Metrics**: The L2 norm $\|\mathbf{x}\|_2 = \sqrt{\mathbf{x} \cdot \mathbf{x}}$ is defined via the dot product; the Mahalanobis distance uses the inverse covariance matrix.
-- **Probability Fundamentals**: Covariance matrices encode the joint variability of random variables.
-- **Optimization and Gradient Descent**: The Hessian matrix determines the curvature of the loss surface and the conditioning of optimization.
+- `matrix-decompositions.md`: Eigendecomposition and SVD factor matrices to expose latent structure, rank, and enable compression.
+- `derivatives-and-gradients.md`: Gradients are vectors; Jacobians and Hessians are matrices. Backpropagation is a sequence of matrix-vector products.
+- `norms-and-distance-metrics.md`: The L2 norm $\|\mathbf{x}\|_2 = \sqrt{\mathbf{x} \cdot \mathbf{x}}$ is defined via the dot product; the Mahalanobis distance uses the inverse covariance matrix.
+- `probability-fundamentals.md`: Covariance matrices encode the joint variability of random variables.
+- `cost-latency-optimization.md`: The Hessian matrix determines the curvature of the loss surface and the conditioning of optimization.
 
 ## Further Reading
 

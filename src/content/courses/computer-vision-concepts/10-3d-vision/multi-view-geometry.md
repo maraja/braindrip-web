@@ -104,11 +104,11 @@ Estimated from 4+ correspondences via DLT. Used in panorama stitching, planar AR
 
 ## Connections to Other Concepts
 
-- **Depth Estimation**: Stereo depth estimation is a direct application of epipolar geometry with rectified images.
-- **SLAM**: Visual SLAM systems use multi-view geometry for tracking (PnP), mapping (triangulation), and optimization (bundle adjustment).
-- **Neural Radiance Fields**: NeRF and 3DGS require accurate camera poses, typically obtained via SfM (COLMAP).
-- **3D Reconstruction**: Multi-view stereo extends pairwise geometry to dense reconstruction from many views.
-- **Feature Extraction**: SIFT, SuperPoint, and other feature detectors provide the correspondences that multi-view geometry algorithms consume.
+- `depth-estimation.md`: Stereo depth estimation is a direct application of epipolar geometry with rectified images.
+- `slam.md`: Visual SLAM systems use multi-view geometry for tracking (PnP), mapping (triangulation), and optimization (bundle adjustment).
+- `neural-radiance-fields.md`: NeRF and 3DGS require accurate camera poses, typically obtained via SfM (COLMAP).
+- `3d-reconstruction.md`: Multi-view stereo extends pairwise geometry to dense reconstruction from many views.
+- `feature-extraction-and-transformation.md`: SIFT, SuperPoint, and other feature detectors provide the correspondences that multi-view geometry algorithms consume.
 
 ## Further Reading
 

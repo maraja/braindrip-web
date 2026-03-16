@@ -107,11 +107,11 @@ Graphical models provide a unifying framework for an enormous range of probabili
 
 ## Connections to Other Concepts
 
-- **Bayesian Inference**: Graphical models provide the structure within which Bayesian inference operates. The graph determines which posterior computations are tractable.
-- **Expectation-Maximization**: EM is the standard algorithm for learning parameters of graphical models with latent variables (e.g., HMMs via Baum-Welch, LDA via variational EM).
-- **Variational Inference**: When exact inference in a graphical model is intractable, variational methods approximate the posterior by exploiting the graph structure (e.g., mean-field approximation respects the graph).
+- `bayesian-inference.md`: Graphical models provide the structure within which Bayesian inference operates. The graph determines which posterior computations are tractable.
+- `expectation-maximization.md`: EM is the standard algorithm for learning parameters of graphical models with latent variables (e.g., HMMs via Baum-Welch, LDA via variational EM).
+- `variational-inference.md`: When exact inference in a graphical model is intractable, variational methods approximate the posterior by exploiting the graph structure (e.g., mean-field approximation respects the graph).
 - **MCMC**: Gibbs sampling exploits the graphical model structure directly -- each variable is sampled from its conditional given its Markov blanket.
-- **Gaussian Processes**: GP-LVMs use graphical model representations where GPs define the conditional distributions.
+- `gaussian-processes.md`: GP-LVMs use graphical model representations where GPs define the conditional distributions.
 
 ## Further Reading
 

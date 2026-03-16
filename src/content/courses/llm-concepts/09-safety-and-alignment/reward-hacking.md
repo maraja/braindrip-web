@@ -107,12 +107,12 @@ Reward hacking is arguably the single most important failure mode in the RLHF al
 
 ## Connections to Other Concepts
 
-- **Goodhart's Law**: The theoretical framework that explains why reward hacking occurs. Reward hacking is the empirical manifestation of Goodhart's Law in the RLHF training pipeline.
-- **RLHF / Safety Training**: Reward hacking is a fundamental failure mode of RLHF. Understanding it is essential for understanding the limitations of current alignment techniques.
-- **DPO**: Direct Preference Optimization avoids reward hacking on the reward model by eliminating the explicit reward model entirely, though it can still overfit to preference data patterns.
-- **The Alignment Problem**: Reward hacking is one of the concrete ways alignment can fail -- the model is aligned with the proxy, not the true objective.
-- **Process Reward Models**: PRMs partially mitigate reward hacking by rewarding correct intermediate reasoning steps rather than just final outputs, making it harder to get credit for right answers via wrong reasoning.
-- **RLVR**: Reinforcement Learning with Verifiable Rewards reduces the proxy gap by using objectively verifiable outcomes, leaving less room for reward hacking.
+- `goodharts-law.md`: The theoretical framework that explains why reward hacking occurs. Reward hacking is the empirical manifestation of Goodhart's Law in the RLHF training pipeline.
+- `rlhf.md`: Reward hacking is a fundamental failure mode of RLHF. Understanding it is essential for understanding the limitations of current alignment techniques.
+- `dpo.md`: Direct Preference Optimization avoids reward hacking on the reward model by eliminating the explicit reward model entirely, though it can still overfit to preference data patterns.
+- `alignment-problem.md`: Reward hacking is one of the concrete ways alignment can fail -- the model is aligned with the proxy, not the true objective.
+- `process-reward-models.md`: PRMs partially mitigate reward hacking by rewarding correct intermediate reasoning steps rather than just final outputs, making it harder to get credit for right answers via wrong reasoning.
+- `rlvr.md`: Reinforcement Learning with Verifiable Rewards reduces the proxy gap by using objectively verifiable outcomes, leaving less room for reward hacking.
 
 ## Further Reading
 

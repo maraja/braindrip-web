@@ -111,10 +111,10 @@ This wraps feature detection, matching, homography estimation, bundle adjustment
 
 ## Connections to Other Concepts
 
-- **SIFT**: SIFT features are the traditional front-end for stitching; their scale and rotation invariance handles the geometric differences between overlapping views.
-- **ORB and Binary Descriptors**: ORB is the fast alternative for real-time stitching on mobile devices and drones.
-- **Camera Calibration and Geometry**: Lens distortion correction (using calibration parameters) before stitching prevents warping artifacts, especially for wide-angle lenses.
-- **Optical Flow**: Dense alignment methods can refine stitching at the pixel level, handling local deformations that a single homography cannot capture.
+- `sift.md`: SIFT features are the traditional front-end for stitching; their scale and rotation invariance handles the geometric differences between overlapping views.
+- `orb-and-binary-descriptors.md`: ORB is the fast alternative for real-time stitching on mobile devices and drones.
+- `camera-calibration-and-geometry.md`: Lens distortion correction (using calibration parameters) before stitching prevents warping artifacts, especially for wide-angle lenses.
+- `optical-flow.md`: Dense alignment methods can refine stitching at the pixel level, handling local deformations that a single homography cannot capture.
 
 ## Further Reading
 

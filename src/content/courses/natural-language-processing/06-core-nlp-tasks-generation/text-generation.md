@@ -80,12 +80,12 @@ Text generation is notoriously hard to evaluate automatically because there is n
 
 ## Connections to Other Concepts
 
-- **`n-gram-language-models.md`**: N-gram models were the first language models used for text generation, and the core next-token prediction paradigm remains unchanged.
-- **`gpt-for-nlp-tasks.md`**: GPT models are autoregressive generators, and the GPT architecture is the basis for most modern text generation systems.
-- **`machine-translation.md`**: MT was an early application of neural text generation and drove many decoding innovations (beam search, length penalty).
-- **`text-summarization.md`**: Abstractive summarization is text generation constrained by a source document.
-- **`dialogue-systems.md`**: Open-domain dialogue is conversational text generation with additional requirements for consistency and turn-taking.
-- **`prompt-based-nlp.md`**: Prompt engineering directly controls text generation behavior in modern LLMs.
+- `n-gram-language-models.md`: N-gram models were the first language models used for text generation, and the core next-token prediction paradigm remains unchanged.
+- `gpt-for-nlp-tasks.md`: GPT models are autoregressive generators, and the GPT architecture is the basis for most modern text generation systems.
+- `machine-translation.md`: MT was an early application of neural text generation and drove many decoding innovations (beam search, length penalty).
+- `text-summarization.md`: Abstractive summarization is text generation constrained by a source document.
+- `dialogue-systems.md`: Open-domain dialogue is conversational text generation with additional requirements for consistency and turn-taking.
+- `prompt-based-nlp.md`: Prompt engineering directly controls text generation behavior in modern LLMs.
 
 ## Further Reading
 

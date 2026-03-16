@@ -81,10 +81,10 @@ where $f$ can be element-wise sum, max, or concatenation followed by a $1 \times
 
 ## Connections to Other Concepts
 
-- **Optical Flow Estimation**: Provides the temporal stream's input; quality of flow affects recognition accuracy.
-- **Video Representation**: Two-stream networks define two distinct video representations (RGB frames and flow stacks).
-- **3D Convolutions**: I3D can be seen as a single-stream architecture that implicitly learns both appearance and motion, effectively internalizing the two-stream idea.
-- **Action Recognition**: The primary evaluation task for two-stream networks.
+- `optical-flow-estimation.md`: Provides the temporal stream's input; quality of flow affects recognition accuracy.
+- `video-representation.md`: Two-stream networks define two distinct video representations (RGB frames and flow stacks).
+- `3d-convolutions.md`: I3D can be seen as a single-stream architecture that implicitly learns both appearance and motion, effectively internalizing the two-stream idea.
+- `action-recognition.md`: The primary evaluation task for two-stream networks.
 - **SlowFast Networks**: Conceptual descendant that replaces the appearance/motion split with a fast/slow frame rate split.
 
 ## Further Reading

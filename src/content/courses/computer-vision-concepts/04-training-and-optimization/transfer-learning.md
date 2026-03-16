@@ -84,10 +84,10 @@ optimizer = torch.optim.SGD([
 
 ## Connections to Other Concepts
 
-- **Self-Supervised Pretraining**: Provides an alternative source of pretrained features that can outperform supervised ImageNet pretraining.
-- **Knowledge Distillation**: Can compress a large fine-tuned model into a smaller one deployable on edge devices.
-- **Batch Normalization**: BN statistics from pretraining may not match the target domain; consider freezing BN layers or using small batch sizes carefully during fine-tuning.
-- **Data Augmentation**: Strong augmentation during fine-tuning helps prevent overfitting to small target datasets.
+- `self-supervised-pretraining.md`: Provides an alternative source of pretrained features that can outperform supervised ImageNet pretraining.
+- `knowledge-distillation.md`: Can compress a large fine-tuned model into a smaller one deployable on edge devices.
+- `batch-normalization.md`: BN statistics from pretraining may not match the target domain; consider freezing BN layers or using small batch sizes carefully during fine-tuning.
+- `data-augmentation.md`: Strong augmentation during fine-tuning helps prevent overfitting to small target datasets.
 
 ## Further Reading
 

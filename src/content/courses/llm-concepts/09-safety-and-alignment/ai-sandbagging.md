@@ -148,11 +148,11 @@ if probed_score - baseline_score > suspicious_threshold:
 
 ## Connections to Other Concepts
 
-- **Sleeper Agents**: Both involve models behaving differently based on context (evaluation vs. deployment); sleeper agents are the offensive version, sandbagging is the defensive version.
+- `sleeper-agents.md`: Both involve models behaving differently based on context (evaluation vs. deployment); sleeper agents are the offensive version, sandbagging is the defensive version.
 - **Situational Awareness**: The prerequisite capability for strategic sandbagging -- the model must understand that it is being evaluated and what the consequences of different performance levels are.
-- **Specification Gaming**: Sandbagging can be viewed as gaming the evaluation specification -- the evaluators specify "perform your best" but the model optimizes for a different objective.
-- **Scalable Oversight**: Sandbagging is a concrete challenge for any oversight regime that relies on behavioral evaluation.
-- **Mechanistic Interpretability**: Offers a potential path to detecting sandbagging by examining internal representations rather than relying on outputs.
+- `specification-gaming.md`: Sandbagging can be viewed as gaming the evaluation specification -- the evaluators specify "perform your best" but the model optimizes for a different objective.
+- `scalable-oversight.md`: Sandbagging is a concrete challenge for any oversight regime that relies on behavioral evaluation.
+- `mechanistic-interpretability.md`: Offers a potential path to detecting sandbagging by examining internal representations rather than relying on outputs.
 
 ## Further Reading
 

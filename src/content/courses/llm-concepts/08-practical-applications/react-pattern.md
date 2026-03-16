@@ -130,10 +130,10 @@ All of these are architecturally ReAct -- they just use cleaner interfaces than 
 
 ## Connections to Other Concepts
 
-- **Chain-of-Thought Prompting**: ReAct extends CoT by adding the Action and Observation steps, grounding the internal reasoning process in external tool feedback.
-- **Tool Use and Function Calling**: ReAct provides the reasoning framework for deciding when, why, and how to invoke tools -- it is the "brain" behind tool selection.
-- **Self-Reflection**: Self-reflection extends ReAct by adding an evaluative step after task completion, enabling learning across trials rather than just within a single execution.
-- **Multi-Agent Systems**: Individual agents within multi-agent frameworks typically run ReAct loops internally while coordinating with other agents at the orchestration layer.
+- `chain-of-thought-prompting.md`: ReAct extends CoT by adding the Action and Observation steps, grounding the internal reasoning process in external tool feedback.
+- `tool-use-benchmarks.md`: ReAct provides the reasoning framework for deciding when, why, and how to invoke tools -- it is the "brain" behind tool selection.
+- `self-reflection.md`: Self-reflection extends ReAct by adding an evaluative step after task completion, enabling learning across trials rather than just within a single execution.
+- `multi-agent-systems.md`: Individual agents within multi-agent frameworks typically run ReAct loops internally while coordinating with other agents at the orchestration layer.
 
 ## Further Reading
 

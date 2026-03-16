@@ -107,14 +107,14 @@ This scaled dot-product attention is the building block of the Transformer's mul
 
 ## Connections to Other Concepts
 
-- **`sequence-to-sequence-models.md`**: Attention was invented to solve the bottleneck problem in the basic encoder-decoder framework.
-- **`recurrent-neural-networks.md`** and **`long-short-term-memory.md`**: The original attention mechanism augmented RNN/LSTM-based encoder-decoders. Attention provides a direct gradient highway that complements the gating mechanisms in LSTMs.
-- **`bidirectional-rnns.md`**: Bahdanau et al. used a bidirectional GRU encoder, so the encoder states attended to were bidirectional representations.
-- **`gated-recurrent-units.md`**: Both the Bahdanau encoder and decoder used GRUs, closely tying GRU and attention history.
-- **`bert.md`**: BERT uses multi-head self-attention (a descendant of the attention mechanism) as its core architectural component.
-- **`gpt-for-nlp-tasks.md`**: GPT uses masked (causal) self-attention, where each position can only attend to previous positions.
-- **`machine-translation.md`**: The primary application that motivated attention and where it was first evaluated.
-- **`contextual-embeddings.md`**: Attention-based representations are inherently contextual -- each position's representation depends on the full sequence.
+- `sequence-to-sequence-models.md`: Attention was invented to solve the bottleneck problem in the basic encoder-decoder framework.
+- `recurrent-neural-networks.md`: and **`long-short-term-memory.md`**: The original attention mechanism augmented RNN/LSTM-based encoder-decoders. Attention provides a direct gradient highway that complements the gating mechanisms in LSTMs.
+- `bidirectional-rnns.md`: Bahdanau et al. used a bidirectional GRU encoder, so the encoder states attended to were bidirectional representations.
+- `gated-recurrent-units.md`: Both the Bahdanau encoder and decoder used GRUs, closely tying GRU and attention history.
+- `bert.md`: BERT uses multi-head self-attention (a descendant of the attention mechanism) as its core architectural component.
+- `gpt-for-nlp-tasks.md`: GPT uses masked (causal) self-attention, where each position can only attend to previous positions.
+- `machine-translation.md`: The primary application that motivated attention and where it was first evaluated.
+- `contextual-embeddings.md`: Attention-based representations are inherently contextual -- each position's representation depends on the full sequence.
 
 ## Further Reading
 

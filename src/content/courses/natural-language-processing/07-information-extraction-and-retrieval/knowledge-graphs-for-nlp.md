@@ -102,14 +102,14 @@ Knowledge graphs enhance a wide range of NLP tasks:
 
 ## Connections to Other Concepts
 
-- **Information Extraction** (`information-extraction.md`): The primary method for constructing KGs from text -- NER, relation extraction, and event extraction feed the graph.
-- **Open Information Extraction** (`open-information-extraction.md`): Open IE triples, after canonicalization, populate KGs at web scale.
-- **Event Extraction** (`event-extraction.md`): Events with argument structures contribute event-centric knowledge to KGs.
-- **Named Entity Recognition** (`05-core-nlp-tasks-analysis/named-entity-recognition.md`): NER identifies the entity mentions that become KG nodes.
-- **Relation Extraction** (`05-core-nlp-tasks-analysis/relation-extraction.md`): RE identifies the typed relationships that become KG edges.
-- **Commonsense Reasoning** (`08-semantic-understanding/commonsense-reasoning.md`): ConceptNet and ATOMIC provide commonsense knowledge as structured graphs.
-- **Word2Vec** (`03-text-representation/word2vec.md`): KG embedding methods (TransE, RotatE) draw conceptual inspiration from word embedding approaches.
-- **Question Answering** (`06-core-nlp-tasks-generation/question-answering.md`): KGQA systems answer questions by traversing knowledge graphs.
+- `information-extraction.md`: The primary method for constructing KGs from text -- NER, relation extraction, and event extraction feed the graph.
+- `open-information-extraction.md`: Open IE triples, after canonicalization, populate KGs at web scale.
+- `event-extraction.md`: Events with argument structures contribute event-centric knowledge to KGs.
+- `05-core-nlp-tasks-analysis/named-entity-recognition.md`: NER identifies the entity mentions that become KG nodes.
+- `05-core-nlp-tasks-analysis/relation-extraction.md`: RE identifies the typed relationships that become KG edges.
+- `08-semantic-understanding/commonsense-reasoning.md`: ConceptNet and ATOMIC provide commonsense knowledge as structured graphs.
+- `03-text-representation/word2vec.md`: KG embedding methods (TransE, RotatE) draw conceptual inspiration from word embedding approaches.
+- `06-core-nlp-tasks-generation/question-answering.md`: KGQA systems answer questions by traversing knowledge graphs.
 
 ## Further Reading
 

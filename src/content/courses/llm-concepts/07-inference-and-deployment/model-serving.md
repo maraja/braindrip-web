@@ -147,11 +147,11 @@ The framework also determines:
 
 ## Connections to Other Concepts
 
-- **KV Cache**: Every serving framework's performance depends critically on how it manages KV cache memory. PagedAttention (vLLM) is the current gold standard.
-- **Quantization**: Each framework supports different quantization formats and methods. Your quantization choice often dictates your framework choice and vice versa.
-- **Flash Attention**: All major serving frameworks integrate Flash Attention as a foundational optimization. It is no longer optional.
-- **Throughput vs. Latency**: Serving frameworks provide the knobs (batch size, scheduling policy, prefill chunking) to navigate this trade-off.
-- **Speculative Decoding**: Framework support for speculative decoding is still maturing, with vLLM and TensorRT-LLM leading.
+- `kv-cache.md`: Every serving framework's performance depends critically on how it manages KV cache memory. PagedAttention (vLLM) is the current gold standard.
+- `quantization.md`: Each framework supports different quantization formats and methods. Your quantization choice often dictates your framework choice and vice versa.
+- `flash-attention.md`: All major serving frameworks integrate Flash Attention as a foundational optimization. It is no longer optional.
+- `throughput-vs-latency.md`: Serving frameworks provide the knobs (batch size, scheduling policy, prefill chunking) to navigate this trade-off.
+- `speculative-decoding.md`: Framework support for speculative decoding is still maturing, with vLLM and TensorRT-LLM leading.
 
 ## Further Reading
 

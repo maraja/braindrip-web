@@ -115,11 +115,11 @@ In the original encoder-decoder Transformer, the encoder uses bidirectional atte
 
 ## Connections to Other Concepts
 
-- **Self-Attention**: Causal attention is self-attention with an additional masking step (see `self-attention.md`).
-- **Autoregressive Generation**: The causal mask is what enables the left-to-right generation process (see `autoregressive-generation.md`).
-- **Next-Token Prediction**: Causal masking is essential for the training objective to work correctly (see `next-token-prediction.md`).
-- **Encoder-Decoder Architecture**: The distinction between causal and bidirectional attention defines the difference between encoder and decoder (see `encoder-decoder-architecture.md`).
-- **KV Cache**: The append-only nature of the KV cache is a direct consequence of the causal mask.
+- `self-attention.md`: Causal attention is self-attention with an additional masking step (see `self-attention.md`).
+- `autoregressive-generation.md`: The causal mask is what enables the left-to-right generation process (see `autoregressive-generation.md`).
+- `next-token-prediction.md`: Causal masking is essential for the training objective to work correctly (see `next-token-prediction.md`).
+- `encoder-decoder-architecture.md`: The distinction between causal and bidirectional attention defines the difference between encoder and decoder (see `encoder-decoder-architecture.md`).
+- `kv-cache.md`: The append-only nature of the KV cache is a direct consequence of the causal mask.
 
 ## Further Reading
 

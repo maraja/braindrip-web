@@ -118,12 +118,12 @@ Attempts to replace AdamW with alternatives have been a persistent research dire
 
 ## Connections to Other Concepts
 
-- **Backpropagation**: Computes the gradients that Adam uses to update parameters.
-- **Learning Rate Scheduling**: Modulates the base learning rate that Adam applies at each step.
-- **Gradient Clipping**: Applied to gradients before they are passed to the optimizer.
-- **Mixed Precision Training**: Affects how optimizer states are stored (master weights in FP32).
-- **Distributed Training**: Optimizer states must be partitioned across GPUs (e.g., via ZeRO).
-- **Scaling Laws**: The optimal learning rate and other hyperparameters shift predictably with model size.
+- `backpropagation.md`: Computes the gradients that Adam uses to update parameters.
+- `learning-rate-scheduling.md`: Modulates the base learning rate that Adam applies at each step.
+- `gradient-clipping.md`: Applied to gradients before they are passed to the optimizer.
+- `mixed-precision-training.md`: Affects how optimizer states are stored (master weights in FP32).
+- `05-distributed-training-infrastructure.md`: Optimizer states must be partitioned across GPUs (e.g., via ZeRO).
+- `scaling-laws.md`: The optimal learning rate and other hyperparameters shift predictably with model size.
 
 ## Further Reading
 

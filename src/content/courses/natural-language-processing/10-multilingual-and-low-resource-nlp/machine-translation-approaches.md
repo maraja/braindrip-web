@@ -99,14 +99,14 @@ Unsupervised NMT achieves 15--25 BLEU on closely related language pairs (English
 
 ## Connections to Other Concepts
 
-- **`sequence-to-sequence-models.md`**: The encoder-decoder architecture was developed for MT and remains its backbone.
-- **`attention-mechanism.md`**: Attention was invented for MT (Bahdanau et al., 2015) and is central to all modern MT systems.
-- **`multilingual-nlp.md`**: MT is both a core multilingual application and a tool for cross-lingual data creation.
-- **`cross-lingual-word-embeddings.md`**: Aligned embeddings enable unsupervised MT and are used for initial word-by-word translation.
-- **`data-augmentation-for-nlp.md`**: Back-translation, the most effective data augmentation for MT, generates synthetic parallel data from monolingual text.
-- **`low-resource-nlp.md`**: Low-resource MT is one of the most challenging and impactful applications of low-resource NLP techniques.
-- **`tokenization-in-nlp.md`**: BPE subword tokenization was developed specifically for NMT to handle open vocabularies.
-- **`evaluation-metrics-for-nlp.md`**: BLEU, METEOR, COMET, and other MT evaluation metrics are detailed there.
+- `sequence-to-sequence-models.md`: The encoder-decoder architecture was developed for MT and remains its backbone.
+- `attention-mechanism.md`: Attention was invented for MT (Bahdanau et al., 2015) and is central to all modern MT systems.
+- `multilingual-nlp.md`: MT is both a core multilingual application and a tool for cross-lingual data creation.
+- `cross-lingual-word-embeddings.md`: Aligned embeddings enable unsupervised MT and are used for initial word-by-word translation.
+- `data-augmentation.md`: Back-translation, the most effective data augmentation for MT, generates synthetic parallel data from monolingual text.
+- `low-resource-nlp.md`: Low-resource MT is one of the most challenging and impactful applications of low-resource NLP techniques.
+- `tokenization.md`: BPE subword tokenization was developed specifically for NMT to handle open vocabularies.
+- `evaluation-metrics.md`: BLEU, METEOR, COMET, and other MT evaluation metrics are detailed there.
 
 ## Further Reading
 

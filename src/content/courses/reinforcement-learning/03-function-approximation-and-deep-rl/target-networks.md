@@ -79,12 +79,12 @@ Target networks are one of the two innovations (alongside experience replay) tha
 
 ## Connections to Other Concepts
 
-- **DQN** (`deep-q-networks.md`) introduced hard target updates as one of its two key innovations.
-- **Experience replay** (`experience-replay.md`) is the complementary stabilization mechanism, addressing data correlation rather than target non-stationarity.
-- **Double DQN** (`double-dqn.md`) uses the target network for value evaluation while the online network selects actions, further leveraging the two-network structure.
-- **Function approximation** (`function-approximation.md`) explains the deadly triad that necessitates target networks.
-- **Actor-critic methods** (`actor-critic-methods.md`) extend the target network concept to both policy and value networks.
-- **Bellman equations** (`bellman-equations.md`) provide the theoretical basis for the TD targets that the target network stabilizes.
+- `double-dqn.md`: (`deep-q-networks.md`) introduced hard target updates as one of its two key innovations.
+- `experience-replay.md`: (`experience-replay.md`) is the complementary stabilization mechanism, addressing data correlation rather than target non-stationarity.
+- `double-dqn.md`: (`double-dqn.md`) uses the target network for value evaluation while the online network selects actions, further leveraging the two-network structure.
+- `function-approximation.md`: (`function-approximation.md`) explains the deadly triad that necessitates target networks.
+- `actor-critic-methods.md`: (`actor-critic-methods.md`) extend the target network concept to both policy and value networks.
+- `bellman-equations.md`: (`bellman-equations.md`) provide the theoretical basis for the TD targets that the target network stabilizes.
 
 ## Further Reading
 

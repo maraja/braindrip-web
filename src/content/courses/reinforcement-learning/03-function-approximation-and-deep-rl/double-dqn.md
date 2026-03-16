@@ -86,11 +86,11 @@ Double DQN was shown to reduce overestimation across all 49 Atari games tested, 
 
 ## Connections to Other Concepts
 
-- **DQN** (`deep-q-networks.md`) is the base algorithm that Double DQN improves with a one-line change.
-- **Target networks** (`target-networks.md`) provide the second network that enables action evaluation to be decoupled from selection.
-- **Q-learning** (`q-learning.md`) inherits maximization bias from the $\max$ operator even in the tabular case, though the effect is less severe without function approximation.
-- **Dueling DQN** (`dueling-dqn.md`) changes the network architecture; Double DQN changes the target computation. The two are orthogonal and combinable.
-- **Rainbow DQN** (`rainbow-dqn.md`) includes Double DQN as one of its six combined improvements.
+- `double-dqn.md`: (`deep-q-networks.md`) is the base algorithm that Double DQN improves with a one-line change.
+- `target-networks.md`: (`target-networks.md`) provide the second network that enables action evaluation to be decoupled from selection.
+- `q-learning.md`: (`q-learning.md`) inherits maximization bias from the $\max$ operator even in the tabular case, though the effect is less severe without function approximation.
+- `dueling-dqn.md`: (`dueling-dqn.md`) changes the network architecture; Double DQN changes the target computation. The two are orthogonal and combinable.
+- `rainbow-dqn.md`: (`rainbow-dqn.md`) includes Double DQN as one of its six combined improvements.
 
 ## Further Reading
 

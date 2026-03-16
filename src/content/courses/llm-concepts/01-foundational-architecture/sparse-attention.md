@@ -149,12 +149,12 @@ Sparse attention addresses the fundamental scalability bottleneck of Transformer
 
 ## Connections to Other Concepts
 
-- **Flash Attention**: Flash Attention optimizes the hardware implementation of attention; sparse attention optimizes the algorithm. Combining both provides maximum efficiency.
-- **Grouped Query Attention (GQA)**: GQA reduces the memory per token in the KV cache; sparse attention reduces the number of tokens in the attention computation. They are orthogonal optimizations.
-- **Context Window Extension**: Sparse attention is one of the primary techniques enabling very long context windows. It complements positional encoding extensions (YaRN, RoPE scaling).
-- **State Space Models (SSMs)**: SSMs achieve O(n) sequence processing without attention at all. Hybrid architectures combining SSM layers and sparse attention layers represent the state of the art for long-context models.
-- **KV Cache**: Sparse attention patterns directly affect which KV cache entries need to be stored and accessed, influencing inference memory requirements.
-- **Mixture of Experts**: Both MoE and sparse attention embody the principle of conditional computation -- not all parameters or computations are needed for every input.
+- `flash-attention.md`: Flash Attention optimizes the hardware implementation of attention; sparse attention optimizes the algorithm. Combining both provides maximum efficiency.
+- `grouped-query-attention.md`: GQA reduces the memory per token in the KV cache; sparse attention reduces the number of tokens in the attention computation. They are orthogonal optimizations.
+- `context-window-extension.md`: Sparse attention is one of the primary techniques enabling very long context windows. It complements positional encoding extensions (YaRN, RoPE scaling).
+- `state-space-models.md`: SSMs achieve O(n) sequence processing without attention at all. Hybrid architectures combining SSM layers and sparse attention layers represent the state of the art for long-context models.
+- `kv-cache.md`: Sparse attention patterns directly affect which KV cache entries need to be stored and accessed, influencing inference memory requirements.
+- `mixture-of-experts.md`: Both MoE and sparse attention embody the principle of conditional computation -- not all parameters or computations are needed for every input.
 
 ## Further Reading
 

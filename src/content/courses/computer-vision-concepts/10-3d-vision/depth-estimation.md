@@ -70,11 +70,11 @@ where $\alpha = 0.85$ is standard. A separate pose network estimates relative ca
 
 ## Connections to Other Concepts
 
-- **Multi-View Geometry**: Stereo depth is a direct application of epipolar constraints and triangulation.
-- **3D Reconstruction**: Depth maps are fused into volumetric representations (TSDF) or point clouds for surface reconstruction.
-- **3D Object Detection**: Predicted depth enables pseudo-LiDAR approaches that lift 2D detections into 3D space.
-- **SLAM**: Depth estimation provides the mapping component in visual SLAM systems.
-- **Vision Transformers**: DPT and Depth Anything leverage ViT and DINOv2 backbones for global context in depth prediction.
+- `multi-view-geometry.md`: Stereo depth is a direct application of epipolar constraints and triangulation.
+- `3d-reconstruction.md`: Depth maps are fused into volumetric representations (TSDF) or point clouds for surface reconstruction.
+- `3d-object-detection.md`: Predicted depth enables pseudo-LiDAR approaches that lift 2D detections into 3D space.
+- `slam.md`: Depth estimation provides the mapping component in visual SLAM systems.
+- `vision-transformer.md`: DPT and Depth Anything leverage ViT and DINOv2 backbones for global context in depth prediction.
 
 ## Further Reading
 

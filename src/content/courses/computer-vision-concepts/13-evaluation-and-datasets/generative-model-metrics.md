@@ -122,9 +122,9 @@ All automated metrics are proxies. Human evaluation remains the gold standard:
 ## Connections to Other Concepts
 
 - **Generative Models**: FID and IS are the primary evaluation metrics for GANs, diffusion models, and VAEs.
-- **Multimodal Models**: CLIP Score evaluates the text-image alignment that CLIP and similar models are trained to optimize.
-- **Feature Extraction**: All metrics (FID, IS, KID, LPIPS) rely on features from pretrained networks as perceptual representations.
-- **Benchmark Leaderboards**: Generative model leaderboards typically rank by FID, with CLIP Score and IS as secondary metrics.
+- `multimodal-models.md`: CLIP Score evaluates the text-image alignment that CLIP and similar models are trained to optimize.
+- `feature-extraction-and-transformation.md`: All metrics (FID, IS, KID, LPIPS) rely on features from pretrained networks as perceptual representations.
+- `benchmark-leaderboards.md`: Generative model leaderboards typically rank by FID, with CLIP Score and IS as secondary metrics.
 
 ## Further Reading
 

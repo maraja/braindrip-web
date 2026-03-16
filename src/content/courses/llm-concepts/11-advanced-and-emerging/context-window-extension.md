@@ -106,12 +106,12 @@ The progression from 512 tokens (BERT) to 10M+ tokens (Gemini 1.5) represents a 
 
 ## Connections to Other Concepts
 
-- **Rotary Position Embeddings (RoPE)**: Almost all modern context extension techniques build on RoPE, making understanding of its frequency-based encoding essential.
-- **FlashAttention**: Hardware-efficient attention is a prerequisite for practical long-context models. Without FlashAttention, even 8K context is memory-prohibitive for large models.
-- **State Space Models**: SSMs bypass the context extension problem entirely with their O(n) complexity and fixed-size state, offering an architectural alternative.
-- **RAG (Retrieval-Augmented Generation)**: Long context and RAG represent complementary solutions to the knowledge access problem -- one extends the input window, the other fetches relevant information.
-- **KV Cache and Inference Optimization**: Context extension directly increases KV cache requirements, making techniques like GQA, MQA, and KV cache quantization critical companions.
-- **Distributed Training**: Ring Attention and context parallelism connect context extension to distributed systems design.
+- `rotary-position-embedding.md`: Almost all modern context extension techniques build on RoPE, making understanding of its frequency-based encoding essential.
+- `flash-attention.md`: Hardware-efficient attention is a prerequisite for practical long-context models. Without FlashAttention, even 8K context is memory-prohibitive for large models.
+- `state-space-models.md`: SSMs bypass the context extension problem entirely with their O(n) complexity and fixed-size state, offering an architectural alternative.
+- `rag.md`: Long context and RAG represent complementary solutions to the knowledge access problem -- one extends the input window, the other fetches relevant information.
+- `kv-cache.md`: Context extension directly increases KV cache requirements, making techniques like GQA, MQA, and KV cache quantization critical companions.
+- `05-distributed-training-infrastructure.md`: Ring Attention and context parallelism connect context extension to distributed systems design.
 
 ## Further Reading
 

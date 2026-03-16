@@ -106,10 +106,10 @@ Without pipelines, ML development devolves into a tangle of notebooks, manual st
 
 ## Connections to Other Concepts
 
-- **Experiment Tracking**: Pipelines generate the runs that experiment trackers log. Each pipeline execution should automatically record parameters, metrics, and artifacts.
-- **Data Drift and Model Monitoring**: The data validation stage in a pipeline is your first line of defense against drift. Monitoring systems trigger pipeline re-execution when drift is detected.
-- **Model Deployment and Serving**: The final pipeline stage hands off to serving infrastructure. CI/CD for ML automates this handoff.
-- **Feature Engineering**: Feature computation logic lives inside pipelines and, ideally, in feature stores that pipelines both populate and consume.
+- `experiment-tracking.md`: Pipelines generate the runs that experiment trackers log. Each pipeline execution should automatically record parameters, metrics, and artifacts.
+- `data-drift-and-model-monitoring.md`: The data validation stage in a pipeline is your first line of defense against drift. Monitoring systems trigger pipeline re-execution when drift is detected.
+- `model-deployment-and-serving.md`: The final pipeline stage hands off to serving infrastructure. CI/CD for ML automates this handoff.
+- `automated-feature-engineering.md`: Feature computation logic lives inside pipelines and, ideally, in feature stores that pipelines both populate and consume.
 
 ## Further Reading
 

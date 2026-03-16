@@ -151,13 +151,13 @@ The PRM vs. ORM distinction addresses some of the deepest challenges in AI reaso
 
 ## Connections to Other Concepts
 
-- **Reward Hacking**: PRMs are more resistant to reward hacking because they evaluate the reasoning process, not just the outcome. It is harder to fake correct reasoning at every step than to produce a correct-looking final answer.
-- **Goodhart's Law**: PRMs partially mitigate Goodhart's Law by providing a denser, more faithful reward signal. The gap between "high PRM score" and "actually correct reasoning" is smaller than the gap between "high ORM score" and "actually correct."
-- **Chain-of-Thought**: CoT produces the reasoning chains that PRMs evaluate. PRMs incentivize models to produce genuinely useful reasoning steps rather than post-hoc rationalizations.
-- **Test-Time Compute**: PRMs are the evaluation engine that powers test-time compute strategies like beam search and Tree-of-Thought.
-- **Tree-of-Thought**: ToT needs a way to evaluate intermediate reasoning states. PRMs provide exactly this capability.
-- **RLVR**: RLVR uses verifiable final outcomes as rewards (like an ORM with perfect accuracy). PRMs complement RLVR by adding step-level signals to the outcome-level verification.
-- **DPO**: DPO can be applied at the step level (StepDPO), preferring correct reasoning steps over incorrect ones, combining the simplicity of DPO with the density of PRM-style supervision.
+- `reward-hacking.md`: PRMs are more resistant to reward hacking because they evaluate the reasoning process, not just the outcome. It is harder to fake correct reasoning at every step than to produce a correct-looking final answer.
+- `goodharts-law.md`: PRMs partially mitigate Goodhart's Law by providing a denser, more faithful reward signal. The gap between "high PRM score" and "actually correct reasoning" is smaller than the gap between "high ORM score" and "actually correct."
+- `chain-of-thought-in-agents.md`: CoT produces the reasoning chains that PRMs evaluate. PRMs incentivize models to produce genuinely useful reasoning steps rather than post-hoc rationalizations.
+- `test-time-compute.md`: PRMs are the evaluation engine that powers test-time compute strategies like beam search and Tree-of-Thought.
+- `tree-of-thought.md`: ToT needs a way to evaluate intermediate reasoning states. PRMs provide exactly this capability.
+- `rlvr.md`: RLVR uses verifiable final outcomes as rewards (like an ORM with perfect accuracy). PRMs complement RLVR by adding step-level signals to the outcome-level verification.
+- `dpo.md`: DPO can be applied at the step level (StepDPO), preferring correct reasoning steps over incorrect ones, combining the simplicity of DPO with the density of PRM-style supervision.
 
 ## Further Reading
 

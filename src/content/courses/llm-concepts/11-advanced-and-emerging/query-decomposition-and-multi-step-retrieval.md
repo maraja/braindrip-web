@@ -222,16 +222,16 @@ In practice, query decomposition is often the first step in building an agentic 
 
 ## Connections to Other Concepts
 
-- **RAG**: Query decomposition and multi-step retrieval are advanced RAG patterns that extend the basic retrieve-and-generate pipeline to handle complex queries.
-- **Agentic RAG**: Query decomposition and multi-step retrieval are the core retrieval patterns within agentic RAG. Agentic RAG adds adaptive decision-making on top of these patterns.
-- **HyDE**: HyDE can be applied to individual sub-queries for improved retrieval within a decomposition pipeline.
-- **Reranking and cross-encoders**: Reranking can be applied after retrieval for each sub-query, improving precision at each step of the multi-step process.
-- **Self-RAG**: Self-RAG's `[Retrieve]` token implements a form of adaptive retrieval decision-making, deciding at each generation step whether additional retrieval (a new step) is needed.
-- **Corrective RAG**: CRAG's evaluation step can be applied after each sub-query retrieval, triggering fallback retrieval for sub-queries where initial results are irrelevant.
-- **RAPTOR**: RAPTOR's hierarchical index is particularly well-suited for decomposed queries. High-level sub-queries ("What is the overall theme?") retrieve summary nodes; specific sub-queries retrieve leaf nodes.
-- **Chain-of-thought**: Query decomposition is the retrieval analog of chain-of-thought reasoning. Both break complex problems into sequential steps. IRCoT explicitly interleaves them.
-- **Prompt engineering**: The decomposition prompt is a critical piece of prompt engineering. Few-shot examples, output format instructions, and domain-specific guidance all affect decomposition quality.
-- **Compound AI systems**: Multi-step retrieval systems with decomposition, routing, reranking, and synthesis are compound AI systems with multiple interacting components.
+- `rag.md`: Query decomposition and multi-step retrieval are advanced RAG patterns that extend the basic retrieve-and-generate pipeline to handle complex queries.
+- `agentic-rag.md`: Query decomposition and multi-step retrieval are the core retrieval patterns within agentic RAG. Agentic RAG adds adaptive decision-making on top of these patterns.
+- `hyde-hypothetical-document-embeddings.md`: HyDE can be applied to individual sub-queries for improved retrieval within a decomposition pipeline.
+- `reranking-and-cross-encoders.md`: Reranking can be applied after retrieval for each sub-query, improving precision at each step of the multi-step process.
+- `self-rag.md`: Self-RAG's `[Retrieve]` token implements a form of adaptive retrieval decision-making, deciding at each generation step whether additional retrieval (a new step) is needed.
+- `corrective-rag.md`: CRAG's evaluation step can be applied after each sub-query retrieval, triggering fallback retrieval for sub-queries where initial results are irrelevant.
+- `raptor.md`: RAPTOR's hierarchical index is particularly well-suited for decomposed queries. High-level sub-queries ("What is the overall theme?") retrieve summary nodes; specific sub-queries retrieve leaf nodes.
+- `chain-of-thought-in-agents.md`: Query decomposition is the retrieval analog of chain-of-thought reasoning. Both break complex problems into sequential steps. IRCoT explicitly interleaves them.
+- `prompt-engineering.md`: The decomposition prompt is a critical piece of prompt engineering. Few-shot examples, output format instructions, and domain-specific guidance all affect decomposition quality.
+- `compound-ai-systems.md`: Multi-step retrieval systems with decomposition, routing, reranking, and synthesis are compound AI systems with multiple interacting components.
 
 ## Further Reading
 

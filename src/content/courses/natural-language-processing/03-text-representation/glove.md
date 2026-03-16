@@ -93,12 +93,12 @@ Training on 6B tokens takes roughly 25 minutes on 8 CPU threads for 50d vectors 
 
 ## Connections to Other Concepts
 
-- **Word2Vec** (`word2vec.md`): The primary comparison point. GloVe uses global statistics while Word2Vec uses local prediction, but both produce comparable word vectors.
-- **TF-IDF** (`tf-idf.md`): GloVe's co-occurrence matrix is related to the term co-occurrence matrices used in distributional semantics, which TF-IDF also builds upon.
-- **Document Embeddings** (`document-embeddings.md`): GloVe vectors can be averaged to create simple document representations, or used as input features for more sophisticated document encoders.
-- **FastText** (`fasttext.md`): Extends the Word2Vec approach (not GloVe) with subword information, addressing OOV words that GloVe cannot handle.
-- **Contextual Embeddings** (`contextual-embeddings.md`): Static embeddings like GloVe motivated the development of contextual models (ELMo, BERT) that produce different representations for each occurrence of a word.
-- **Topic Modeling** (`07-information-extraction-and-retrieval/topic-modeling.md`): Both LSA/SVD (a topic modeling input) and GloVe perform dimensionality reduction on co-occurrence matrices, but GloVe operates on word-word co-occurrence while LSA operates on word-document co-occurrence.
+- `word2vec.md`: The primary comparison point. GloVe uses global statistics while Word2Vec uses local prediction, but both produce comparable word vectors.
+- `tf-idf.md`: GloVe's co-occurrence matrix is related to the term co-occurrence matrices used in distributional semantics, which TF-IDF also builds upon.
+- `document-embeddings.md`: GloVe vectors can be averaged to create simple document representations, or used as input features for more sophisticated document encoders.
+- `fasttext.md`: Extends the Word2Vec approach (not GloVe) with subword information, addressing OOV words that GloVe cannot handle.
+- `contextual-embeddings.md`: Static embeddings like GloVe motivated the development of contextual models (ELMo, BERT) that produce different representations for each occurrence of a word.
+- `07-information-extraction-and-retrieval/topic-modeling.md`: Both LSA/SVD (a topic modeling input) and GloVe perform dimensionality reduction on co-occurrence matrices, but GloVe operates on word-word co-occurrence while LSA operates on word-document co-occurrence.
 
 ## Further Reading
 

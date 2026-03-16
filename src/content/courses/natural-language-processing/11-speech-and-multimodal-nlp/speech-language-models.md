@@ -94,12 +94,12 @@ The trajectory points toward universal language models that natively handle text
 
 ## Connections to Other Concepts
 
-- **`automatic-speech-recognition.md`**: ASR becomes a special case of speech language modeling -- transcription is generating text tokens conditioned on speech tokens.
-- **`text-to-speech.md`**: TTS becomes generating speech tokens conditioned on text tokens, inheriting zero-shot and few-shot capabilities from the LM framework.
-- **`gpt-for-nlp-tasks.md`**: Speech language models extend the autoregressive language modeling paradigm from text to audio, inheriting in-context learning and instruction-following abilities.
-- **`tokenization-in-nlp.md`**: Neural audio codecs are fundamentally a tokenization problem -- finding a discrete vocabulary to represent continuous audio, analogous to BPE for text.
-- **`multimodal-nlp.md`**: Speech language models are part of the broader multimodal trend, which extends to vision, video, and other modalities.
-- **`transfer-learning-in-nlp.md`**: Cross-modal transfer from text to speech mirrors cross-lingual transfer -- pre-trained knowledge in one modality benefits another.
+- `automatic-speech-recognition.md`: ASR becomes a special case of speech language modeling -- transcription is generating text tokens conditioned on speech tokens.
+- `text-to-speech.md`: TTS becomes generating speech tokens conditioned on text tokens, inheriting zero-shot and few-shot capabilities from the LM framework.
+- `gpt-for-nlp-tasks.md`: Speech language models extend the autoregressive language modeling paradigm from text to audio, inheriting in-context learning and instruction-following abilities.
+- `tokenization.md`: Neural audio codecs are fundamentally a tokenization problem -- finding a discrete vocabulary to represent continuous audio, analogous to BPE for text.
+- `multimodal-nlp.md`: Speech language models are part of the broader multimodal trend, which extends to vision, video, and other modalities.
+- `transfer-learning.md`: Cross-modal transfer from text to speech mirrors cross-lingual transfer -- pre-trained knowledge in one modality benefits another.
 
 ## Further Reading
 

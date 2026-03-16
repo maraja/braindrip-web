@@ -136,11 +136,11 @@ Calibration is the bridge between a model's output and actionable decisions. An 
 
 ## Connections to Other Concepts
 
-- **Classification Metrics**: Log loss directly rewards calibration. AUC-ROC does not. MCC and F1 depend on the threshold but not on probability values.
-- **Cross-Validation**: Used to generate calibration sets and to estimate ECE reliably.
-- **Model Comparison**: Two models may rank similarly on AUC but differ substantially in calibration quality. Compare ECE alongside discrimination metrics.
-- **Learning Curves**: Tracking ECE across training iterations reveals when overconfidence emerges.
-- **Hyperparameter Tuning**: When the downstream objective depends on calibrated probabilities, tune hyperparameters with log loss or Brier score rather than accuracy or AUC.
+- `classification-metrics.md`: Log loss directly rewards calibration. AUC-ROC does not. MCC and F1 depend on the threshold but not on probability values.
+- `cross-validation.md`: Used to generate calibration sets and to estimate ECE reliably.
+- `model-comparison.md`: Two models may rank similarly on AUC but differ substantially in calibration quality. Compare ECE alongside discrimination metrics.
+- `learning-curves.md`: Tracking ECE across training iterations reveals when overconfidence emerges.
+- `hyperparameter-tuning.md`: When the downstream objective depends on calibrated probabilities, tune hyperparameters with log loss or Brier score rather than accuracy or AUC.
 
 ## Further Reading
 

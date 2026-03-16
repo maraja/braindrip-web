@@ -92,9 +92,9 @@ LFW is near-saturated (top methods >99.8%); IJB-C with its strict FAR thresholds
 ## Connections to Other Concepts
 
 - **Metric Learning**: ArcFace and triplet loss are metric learning approaches that shape the embedding space.
-- **Object Detection**: Face detection is a specialized detection task; RetinaFace borrows FPN and anchor-based designs.
-- **Image Retrieval**: Face identification is a retrieval problem -- finding the nearest embedding in a gallery.
-- **Edge Deployment**: Face recognition on phones requires quantized, efficient models (e.g., MobileFaceNet at 1M parameters).
+- `3d-object-detection.md`: Face detection is a specialized detection task; RetinaFace borrows FPN and anchor-based designs.
+- `image-retrieval.md`: Face identification is a retrieval problem -- finding the nearest embedding in a gallery.
+- `edge-deployment.md`: Face recognition on phones requires quantized, efficient models (e.g., MobileFaceNet at 1M parameters).
 
 ## Further Reading
 

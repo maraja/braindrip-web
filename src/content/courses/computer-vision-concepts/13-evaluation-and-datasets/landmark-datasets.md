@@ -132,10 +132,10 @@ Technically, each landmark dataset specifies a collection of images, annotation 
 
 ## Connections to Other Concepts
 
-- **Classification Metrics**: ImageNet uses top-1/top-5 accuracy.
-- **Detection Metrics**: COCO evaluation protocol (mAP) is the standard.
-- **Segmentation Metrics**: ADE20K uses mIoU; COCO panoptic uses PQ.
-- **Benchmark Leaderboards**: Papers With Code tracks state-of-the-art on all these datasets.
+- `classification-metrics.md`: ImageNet uses top-1/top-5 accuracy.
+- `detection-metrics.md`: COCO evaluation protocol (mAP) is the standard.
+- `segmentation-metrics.md`: ADE20K uses mIoU; COCO panoptic uses PQ.
+- `benchmark-leaderboards.md`: Papers With Code tracks state-of-the-art on all these datasets.
 
 ## Further Reading
 

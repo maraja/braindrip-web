@@ -94,12 +94,12 @@ However, the benchmark ecosystem faces several serious challenges:
 
 ## Connections to Other Concepts
 
-- **Perplexity**: An intrinsic metric that complements extrinsic benchmark evaluation. Low perplexity is necessary but not sufficient for good benchmark performance.
-- **LLM-as-Judge**: The evaluation method used by MT-Bench, AlpacaEval, and other modern benchmarks that go beyond multiple choice.
-- **Benchmark Contamination**: The central threat to benchmark validity, where test data leaks into training sets.
-- **RLHF/Preference Tuning**: The training technique most directly targeted at improving performance on human-preference benchmarks like Chatbot Arena.
-- **Chain-of-Thought Prompting**: The prompting technique that unlocked dramatic improvements on reasoning benchmarks like GSM8K and MATH.
-- **Scaling Laws**: Predict benchmark performance as a function of model size and training compute.
+- `perplexity.md`: An intrinsic metric that complements extrinsic benchmark evaluation. Low perplexity is necessary but not sufficient for good benchmark performance.
+- `llm-as-judge.md`: The evaluation method used by MT-Bench, AlpacaEval, and other modern benchmarks that go beyond multiple choice.
+- `benchmark-contamination-detection.md`: The central threat to benchmark validity, where test data leaks into training sets.
+- `rlhf.md`: The training technique most directly targeted at improving performance on human-preference benchmarks like Chatbot Arena.
+- `chain-of-thought-prompting.md`: The prompting technique that unlocked dramatic improvements on reasoning benchmarks like GSM8K and MATH.
+- `scaling-laws.md`: Predict benchmark performance as a function of model size and training compute.
 
 ## Further Reading
 

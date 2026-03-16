@@ -133,11 +133,11 @@ The memory bandwidth savings are particularly important: a 4-bit model reads 4x 
 
 ## Connections to Other Concepts
 
-- **KV Cache**: KV cache can also be quantized (KV cache quantization), which is orthogonal to weight quantization and addresses the memory bottleneck during long-context generation.
-- **Knowledge Distillation**: Distillation creates a smaller model with fewer parameters; quantization keeps the same parameters but represents them with fewer bits. They can be combined for maximum compression.
-- **Model Serving Frameworks**: vLLM supports AWQ and GPTQ; TensorRT-LLM supports FP8 and INT4; Ollama uses GGUF. Framework choice often determines quantization method.
-- **Speculative Decoding**: If the target model is already quantized, the speedup from speculative decoding may be smaller (the target is already fast). However, using a tiny quantized draft model can still provide benefits.
-- **Flash Attention**: Flash Attention operates on FP16/BF16 activations regardless of weight quantization, so the two optimizations are fully complementary.
+- `kv-cache.md`: KV cache can also be quantized (KV cache quantization), which is orthogonal to weight quantization and addresses the memory bottleneck during long-context generation.
+- `knowledge-distillation.md`: Distillation creates a smaller model with fewer parameters; quantization keeps the same parameters but represents them with fewer bits. They can be combined for maximum compression.
+- `model-serving.md`: vLLM supports AWQ and GPTQ; TensorRT-LLM supports FP8 and INT4; Ollama uses GGUF. Framework choice often determines quantization method.
+- `speculative-decoding.md`: If the target model is already quantized, the speedup from speculative decoding may be smaller (the target is already fast). However, using a tiny quantized draft model can still provide benefits.
+- `flash-attention.md`: Flash Attention operates on FP16/BF16 activations regardless of weight quantization, so the two optimizations are fully complementary.
 
 ## Further Reading
 

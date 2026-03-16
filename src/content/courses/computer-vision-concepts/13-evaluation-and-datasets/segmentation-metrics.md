@@ -112,9 +112,9 @@ Matching: A predicted segment is a TP if it has IoU > 0.5 with a ground-truth se
 ## Connections to Other Concepts
 
 - **Image Segmentation**: mIoU and Dice are the primary training and evaluation metrics for all segmentation architectures.
-- **Detection Metrics**: Mask AP applies the COCO detection protocol to instance masks. PQ's RQ component is essentially an F1 score.
-- **Classification Metrics**: Pixel-level precision, recall, and F1 are the building blocks of segmentation metrics.
-- **Medical Image Analysis**: Dice coefficient and HD95 are the standard metrics in medical segmentation challenges (BraTS, KiTS, ACDC).
+- `detection-metrics.md`: Mask AP applies the COCO detection protocol to instance masks. PQ's RQ component is essentially an F1 score.
+- `classification-metrics.md`: Pixel-level precision, recall, and F1 are the building blocks of segmentation metrics.
+- `medical-image-analysis.md`: Dice coefficient and HD95 are the standard metrics in medical segmentation challenges (BraTS, KiTS, ACDC).
 
 ## Further Reading
 

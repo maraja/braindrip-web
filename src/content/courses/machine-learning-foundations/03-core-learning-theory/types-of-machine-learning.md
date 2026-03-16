@@ -114,11 +114,11 @@ Choosing the right learning paradigm is arguably the most important design decis
 
 ## Connections to Other Concepts
 
-- **What Is Machine Learning**: Introduces the three core paradigms at a high level; this file provides the detailed taxonomy.
-- **Loss Functions**: Different paradigms use different losses -- cross-entropy for classification, reconstruction loss for autoencoders, contrastive losses for self-supervised learning.
-- **Overfitting and Underfitting**: Semi-supervised and self-supervised methods are partly motivated by the overfitting risk when labeled data is scarce.
-- **Empirical Risk Minimization**: The theoretical framework applies primarily to supervised and semi-supervised settings.
-- **Curse of Dimensionality**: Unsupervised methods like dimensionality reduction directly address this problem.
+- `what-is-machine-learning.md`: Introduces the three core paradigms at a high level; this file provides the detailed taxonomy.
+- `loss-functions.md`: Different paradigms use different losses -- cross-entropy for classification, reconstruction loss for autoencoders, contrastive losses for self-supervised learning.
+- `overfitting-and-underfitting.md`: Semi-supervised and self-supervised methods are partly motivated by the overfitting risk when labeled data is scarce.
+- `empirical-risk-minimization.md`: The theoretical framework applies primarily to supervised and semi-supervised settings.
+- `curse-of-dimensionality.md`: Unsupervised methods like dimensionality reduction directly address this problem.
 
 ## Further Reading
 

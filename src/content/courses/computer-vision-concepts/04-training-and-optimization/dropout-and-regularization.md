@@ -88,11 +88,11 @@ This encourages smaller weights, which smooths the decision boundary. In SGD, th
 
 ## Connections to Other Concepts
 
-- **Batch Normalization**: Provides a regularization effect that often makes dropout unnecessary in conv layers.
-- **Data Augmentation**: Regularizes the input space rather than the parameter space; highly complementary to dropout and weight decay.
-- **Label Smoothing**: Regularizes the target distribution, reducing overconfidence in a way orthogonal to dropout.
-- **Mixup and CutMix**: Provide regularization through data-level interpolation, reducing the need for explicit dropout.
-- **Knowledge Distillation**: Soft targets from a teacher network act as a form of regularization for the student.
+- `batch-normalization.md`: Provides a regularization effect that often makes dropout unnecessary in conv layers.
+- `data-augmentation.md`: Regularizes the input space rather than the parameter space; highly complementary to dropout and weight decay.
+- `label-smoothing.md`: Regularizes the target distribution, reducing overconfidence in a way orthogonal to dropout.
+- `mixup-and-cutmix.md`: Provide regularization through data-level interpolation, reducing the need for explicit dropout.
+- `knowledge-distillation.md`: Soft targets from a teacher network act as a form of regularization for the student.
 
 ## Further Reading
 

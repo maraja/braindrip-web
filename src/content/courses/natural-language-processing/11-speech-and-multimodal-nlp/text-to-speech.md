@@ -85,12 +85,12 @@ The vocoder is the bottleneck for audio quality:
 
 ## Connections to Other Concepts
 
-- **`automatic-speech-recognition.md`**: TTS is the inverse task of ASR. They share acoustic feature representations (Mel-spectrograms, MFCCs) and increasingly share model architectures.
-- **`speech-language-models.md`**: Unified speech-text models like VALL-E reframe TTS as a language modeling problem over discrete speech tokens.
-- **`sequence-to-sequence-models.md`**: Tacotron and its variants are fundamentally seq2seq models mapping text to acoustic features.
-- **`attention-mechanism.md`**: Attention alignment between text and audio is critical for Tacotron-style models and a common source of failure when it misbehaves.
-- **`text-generation.md`**: TTS shares the challenge of producing coherent, natural output autoregressively, with similar issues around exposure bias and repetition.
-- **`evaluation-metrics-for-nlp.md`**: MOS evaluation methodology and its limitations parallel the challenges of evaluating generated text quality.
+- `automatic-speech-recognition.md`: TTS is the inverse task of ASR. They share acoustic feature representations (Mel-spectrograms, MFCCs) and increasingly share model architectures.
+- `speech-language-models.md`: Unified speech-text models like VALL-E reframe TTS as a language modeling problem over discrete speech tokens.
+- `sequence-to-sequence-models.md`: Tacotron and its variants are fundamentally seq2seq models mapping text to acoustic features.
+- `attention-mechanism.md`: Attention alignment between text and audio is critical for Tacotron-style models and a common source of failure when it misbehaves.
+- `text-generation.md`: TTS shares the challenge of producing coherent, natural output autoregressively, with similar issues around exposure bias and repetition.
+- `evaluation-metrics.md`: MOS evaluation methodology and its limitations parallel the challenges of evaluating generated text quality.
 
 ## Further Reading
 

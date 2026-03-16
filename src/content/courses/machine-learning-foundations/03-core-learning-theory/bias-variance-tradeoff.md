@@ -119,11 +119,11 @@ The bias-variance tradeoff is the theoretical lens through which all model selec
 
 ## Connections to Other Concepts
 
-- **Overfitting and Underfitting**: The practical manifestations of high variance and high bias, respectively.
-- **Regularization**: The primary tool for managing the tradeoff by constraining model flexibility.
-- **Empirical Risk Minimization**: The bias-variance tradeoff explains why minimizing training loss alone (ERM without regularization) can fail.
-- **Loss Functions**: The decomposition depends on the loss; MSE gives the cleanest decomposition.
-- **Curse of Dimensionality**: High-dimensional spaces amplify variance because models must estimate more parameters from the same amount of data.
+- `overfitting-and-underfitting.md`: The practical manifestations of high variance and high bias, respectively.
+- `regularization.md`: The primary tool for managing the tradeoff by constraining model flexibility.
+- `empirical-risk-minimization.md`: The bias-variance tradeoff explains why minimizing training loss alone (ERM without regularization) can fail.
+- `loss-functions.md`: The decomposition depends on the loss; MSE gives the cleanest decomposition.
+- `curse-of-dimensionality.md`: High-dimensional spaces amplify variance because models must estimate more parameters from the same amount of data.
 
 ## Further Reading
 

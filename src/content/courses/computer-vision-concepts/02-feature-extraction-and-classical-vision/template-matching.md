@@ -99,10 +99,10 @@ For large templates, this reduces complexity from $O(WHwh)$ to $O(WH \log(WH))$,
 
 ## Connections to Other Concepts
 
-- **Convolution and Filtering**: Template matching via cross-correlation is mathematically identical to convolution with a flipped kernel, connecting it directly to the theory of linear filters.
-- **HOG**: The sliding window + HOG + SVM pipeline replaces the raw pixel template with a gradient-based descriptor, gaining robustness to illumination at the cost of added computation.
-- **SIFT**: Where template matching requires an exact appearance match, SIFT tolerates viewpoint, scale, and rotation changes by abstracting to local descriptors.
-- **Edge Detection**: Edge-based template matching (matching edge maps rather than intensity images) improves robustness to lighting variations in some industrial applications.
+- `convolution-and-filtering.md`: Template matching via cross-correlation is mathematically identical to convolution with a flipped kernel, connecting it directly to the theory of linear filters.
+- `hog.md`: The sliding window + HOG + SVM pipeline replaces the raw pixel template with a gradient-based descriptor, gaining robustness to illumination at the cost of added computation.
+- `sift.md`: Where template matching requires an exact appearance match, SIFT tolerates viewpoint, scale, and rotation changes by abstracting to local descriptors.
+- `edge-detection.md`: Edge-based template matching (matching edge maps rather than intensity images) improves robustness to lighting variations in some industrial applications.
 
 ## Further Reading
 

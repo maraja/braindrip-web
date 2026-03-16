@@ -122,14 +122,14 @@ When deploying Medusa in production, several practical factors affect real-world
 
 ## Connections to Other Concepts
 
-- **Speculative Decoding**: Medusa is a self-speculative variant that eliminates the need for a separate draft model while using the same verify-then-accept paradigm.
+- `speculative-decoding.md`: Medusa is a self-speculative variant that eliminates the need for a separate draft model while using the same verify-then-accept paradigm.
 - **KV Caching**: Medusa benefits from sharing a single KV cache across all heads, unlike two-model speculative decoding which must manage separate caches.
-- **Knowledge Distillation**: Medusa-1 head training can be viewed as distilling the base model's multi-step prediction capability into lightweight heads.
+- `knowledge-distillation.md`: Medusa-1 head training can be viewed as distilling the base model's multi-step prediction capability into lightweight heads.
 - **EAGLE**: A closely related parallel decoding method that operates on hidden state features rather than token-level predictions, often achieving higher acceptance rates.
 - **Batch Inference**: Medusa's tree verification is complementary to batched inference -- the candidate tree adds modest compute to already-batched forward passes.
-- **Quantization**: Medusa heads can be applied on top of quantized base models, combining memory savings from quantization with latency savings from parallel decoding.
+- `quantization.md`: Medusa heads can be applied on top of quantized base models, combining memory savings from quantization with latency savings from parallel decoding.
 - **Lookahead Decoding**: Another parallel decoding method that uses Jacobi iteration to generate and verify multiple tokens, providing a training-free alternative to Medusa's learned heads.
-- **Continuous Batching**: In serving systems with continuous batching, Medusa's per-request speedup translates into higher overall throughput by reducing the time each request occupies a batch slot.
+- `continuous-batching.md`: In serving systems with continuous batching, Medusa's per-request speedup translates into higher overall throughput by reducing the time each request occupies a batch slot.
 
 ## Further Reading
 

@@ -132,11 +132,11 @@ Nearly every production classification system is multi-class. Understanding the 
 
 ## Connections to Other Concepts
 
-- **Logistic Regression**: Softmax regression is the natural multi-class extension. OvR with logistic regression is an alternative that sometimes performs comparably.
-- **Support Vector Machines**: SVMs are binary by design. OvO is the default multi-class strategy in most SVM implementations (e.g., libSVM) because the smaller subproblems exploit SVMs' $O(n^2)$ scaling.
-- **Decision Trees**: Natively multiclass -- each leaf stores a distribution over all classes. No decomposition needed.
-- **Naive Bayes**: Natively multiclass via the posterior over all classes. One of the simplest multi-class classifiers.
-- **K-Nearest Neighbors**: Natively multiclass via majority vote. Ties are more common with many classes; distance weighting helps.
+- `logistic-regression.md`: Softmax regression is the natural multi-class extension. OvR with logistic regression is an alternative that sometimes performs comparably.
+- `support-vector-machines.md`: SVMs are binary by design. OvO is the default multi-class strategy in most SVM implementations (e.g., libSVM) because the smaller subproblems exploit SVMs' $O(n^2)$ scaling.
+- `decision-trees.md`: Natively multiclass -- each leaf stores a distribution over all classes. No decomposition needed.
+- `naive-bayes.md`: Natively multiclass via the posterior over all classes. One of the simplest multi-class classifiers.
+- `k-nearest-neighbors.md`: Natively multiclass via majority vote. Ties are more common with many classes; distance weighting helps.
 
 ## Further Reading
 

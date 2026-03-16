@@ -162,12 +162,12 @@ The result: better model quality and more stable routing compared to auxiliary-l
 
 ## Connections to Other Concepts
 
-- **Feed-Forward Networks**: Each expert is a standard FFN; MoE replaces the single FFN with multiple experts (see `feed-forward-networks.md`).
-- **Activation Functions**: Each expert uses the same activation function (typically SwiGLU) as a dense FFN would (see `activation-functions.md`).
-- **Residual Connections**: The MoE layer's output is added to the residual stream, just like a dense FFN's output (see `residual-connections.md`).
-- **Transformer Architecture**: MoE is a modification of the standard Transformer block, replacing one component (see `transformer-architecture.md`).
-- **Next-Token Prediction**: MoE models are trained with the same next-token prediction objective as dense models (see `next-token-prediction.md`).
-- **Logits and Softmax**: The router uses softmax to produce expert weights, similar in form to the output layer (see `logits-and-softmax.md`).
+- `feed-forward-networks.md`: Each expert is a standard FFN; MoE replaces the single FFN with multiple experts (see `feed-forward-networks.md`).
+- `activation-functions.md`: Each expert uses the same activation function (typically SwiGLU) as a dense FFN would (see `activation-functions.md`).
+- `residual-connections.md`: The MoE layer's output is added to the residual stream, just like a dense FFN's output (see `residual-connections.md`).
+- `transformer-architecture.md`: MoE is a modification of the standard Transformer block, replacing one component (see `transformer-architecture.md`).
+- `next-token-prediction.md`: MoE models are trained with the same next-token prediction objective as dense models (see `next-token-prediction.md`).
+- `logits-and-softmax.md`: The router uses softmax to produce expert weights, similar in form to the output layer (see `logits-and-softmax.md`).
 
 ## Further Reading
 

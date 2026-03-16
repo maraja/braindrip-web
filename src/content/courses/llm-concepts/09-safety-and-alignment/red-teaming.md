@@ -114,11 +114,11 @@ Red teaming also creates organizational knowledge. The process of trying to brea
 
 ## Connections to Other Concepts
 
-- **Prompt Injection & Jailbreaking**: These are specific attack categories within the broader red teaming exercise. Red teaming provides the structured framework for testing these and other vulnerabilities.
-- **Guardrails & Content Filtering**: Red teaming directly evaluates the effectiveness of guardrails and identifies gaps where filtering fails.
-- **Bias & Fairness**: Bias testing is a core component of red teaming, and red team exercises often uncover biases that automated fairness metrics miss.
-- **The Alignment Problem**: Red teaming is a practical, empirical approach to discovering alignment failures -- cases where the model's behavior diverges from what its developers intended.
-- **RLHF**: Red team findings are often used to generate additional training data for RLHF, creating a feedback loop between adversarial testing and model improvement.
+- `prompt-injection.md`: These are specific attack categories within the broader red teaming exercise. Red teaming provides the structured framework for testing these and other vulnerabilities.
+- `guardrails.md`: Red teaming directly evaluates the effectiveness of guardrails and identifies gaps where filtering fails.
+- `bias-in-nlp.md`: Bias testing is a core component of red teaming, and red team exercises often uncover biases that automated fairness metrics miss.
+- `alignment-problem.md`: Red teaming is a practical, empirical approach to discovering alignment failures -- cases where the model's behavior diverges from what its developers intended.
+- `rlhf.md`: Red team findings are often used to generate additional training data for RLHF, creating a feedback loop between adversarial testing and model improvement.
 
 ## Further Reading
 

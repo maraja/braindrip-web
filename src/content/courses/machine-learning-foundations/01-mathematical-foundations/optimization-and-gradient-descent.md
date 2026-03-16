@@ -114,10 +114,10 @@ Optimization is the bridge between a model's mathematical formulation and its pr
 
 ## Connections to Other Concepts
 
-- **Derivatives and Gradients**: The gradient $\nabla \mathcal{L}$ is the input to every optimization step. The Hessian determines curvature and convergence speed.
-- **Matrix Decompositions**: The condition number $\kappa = \lambda_{\max}/\lambda_{\min}$ of the Hessian (obtained via eigendecomposition) determines how elongated the loss contours are and thus how fast GD converges.
-- **Maximum Likelihood Estimation**: MLE is an optimization problem -- find the $\boldsymbol{\theta}$ maximizing the likelihood (or equivalently minimizing negative log-likelihood).
-- **Norms and Distance Metrics**: L1 and L2 norms appear in regularization terms added to the loss, changing the geometry of the optimization landscape.
+- `derivatives-and-gradients.md`: The gradient $\nabla \mathcal{L}$ is the input to every optimization step. The Hessian determines curvature and convergence speed.
+- `matrix-decompositions.md`: The condition number $\kappa = \lambda_{\max}/\lambda_{\min}$ of the Hessian (obtained via eigendecomposition) determines how elongated the loss contours are and thus how fast GD converges.
+- `maximum-likelihood-estimation.md`: MLE is an optimization problem -- find the $\boldsymbol{\theta}$ maximizing the likelihood (or equivalently minimizing negative log-likelihood).
+- `norms-and-distance-metrics.md`: L1 and L2 norms appear in regularization terms added to the loss, changing the geometry of the optimization landscape.
 
 ## Further Reading
 

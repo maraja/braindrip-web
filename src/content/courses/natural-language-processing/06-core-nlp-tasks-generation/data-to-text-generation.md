@@ -92,12 +92,12 @@ Dhingra et al. (2019) found that neural models on RotoWire hallucinates in appro
 
 ## Connections to Other Concepts
 
-- **`text-generation.md`**: D2T uses the same decoding strategies, but with the additional constraint of data fidelity.
-- **`knowledge-graphs-for-nlp.md`**: KG-to-text generation (e.g., WebNLG) converts graph triples into natural language, directly involving knowledge graph concepts.
-- **`machine-translation.md`**: D2T can be framed as "translation" from a structured data language to natural language, sharing architecture and training approaches.
-- **`text-summarization.md`**: Both tasks require content selection -- deciding which input elements to include in the shorter/natural-language output.
-- **`question-answering.md`**: Table QA (answering questions about tables) is closely related, requiring understanding of the same structured inputs.
-- **`named-entity-recognition.md`**: Entity extraction from generated text can verify that all mentioned entities appear in the source data.
+- `text-generation.md`: D2T uses the same decoding strategies, but with the additional constraint of data fidelity.
+- `knowledge-graphs-for-nlp.md`: KG-to-text generation (e.g., WebNLG) converts graph triples into natural language, directly involving knowledge graph concepts.
+- `machine-translation.md`: D2T can be framed as "translation" from a structured data language to natural language, sharing architecture and training approaches.
+- `text-summarization.md`: Both tasks require content selection -- deciding which input elements to include in the shorter/natural-language output.
+- `question-answering.md`: Table QA (answering questions about tables) is closely related, requiring understanding of the same structured inputs.
+- `named-entity-recognition.md`: Entity extraction from generated text can verify that all mentioned entities appear in the source data.
 
 ## Further Reading
 

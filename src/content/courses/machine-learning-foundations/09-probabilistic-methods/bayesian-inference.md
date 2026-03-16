@@ -116,11 +116,11 @@ Bayesian inference provides a principled framework for reasoning under uncertain
 
 ## Connections to Other Concepts
 
-- **Gaussian Processes**: GPs are a fully Bayesian nonparametric model where the posterior over functions is computed in closed form for regression tasks.
-- **Markov Chain Monte Carlo**: MCMC provides samples from the posterior when exact computation of $P(\theta \mid D)$ is intractable.
-- **Variational Inference**: VI approximates the posterior with a simpler distribution, converting inference into an optimization problem.
-- **Expectation-Maximization**: EM can be viewed as a special case of variational inference with a degenerate approximate posterior over latent variables.
-- **Graphical Models**: Bayesian networks are directed graphical models where Bayesian inference is performed over the joint distribution.
+- `gaussian-processes.md`: GPs are a fully Bayesian nonparametric model where the posterior over functions is computed in closed form for regression tasks.
+- `markov-chain-monte-carlo.md`: MCMC provides samples from the posterior when exact computation of $P(\theta \mid D)$ is intractable.
+- `variational-inference.md`: VI approximates the posterior with a simpler distribution, converting inference into an optimization problem.
+- `expectation-maximization.md`: EM can be viewed as a special case of variational inference with a degenerate approximate posterior over latent variables.
+- `graphical-models.md`: Bayesian networks are directed graphical models where Bayesian inference is performed over the joint distribution.
 
 ## Further Reading
 

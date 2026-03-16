@@ -122,12 +122,12 @@ Compression ratio can be dynamically adjusted based on the input length relative
 
 ## Connections to Other Concepts
 
-- **Retrieval-Augmented Generation (RAG)**: Prompt compression is especially valuable in RAG pipelines where multiple retrieved documents are concatenated into the prompt, often containing redundant or irrelevant passages.
-- **KV Cache Compression**: Prompt compression reduces tokens before they enter the model; KV cache compression reduces the memory footprint of tokens already processed. They are complementary techniques.
-- **Context Window Extension**: Compression is an alternative to architectural approaches (RoPE scaling, ALiBi) for fitting more information into limited context windows.
-- **Tokenization**: Compression operates at the token level, so its effectiveness depends on the tokenizer -- subword tokenizers may split semantically important words into multiple tokens with different importance scores.
-- **Knowledge Distillation**: LLMLingua-2's training process distills GPT-4's compression judgment into a small classifier, a form of task-specific knowledge distillation.
-- **Model Routing**: Compression and routing are complementary cost-reduction strategies. Routing selects a cheaper model; compression reduces the input cost for whichever model is selected.
+- `rag.md`: Prompt compression is especially valuable in RAG pipelines where multiple retrieved documents are concatenated into the prompt, often containing redundant or irrelevant passages.
+- `kv-cache-compression.md`: Prompt compression reduces tokens before they enter the model; KV cache compression reduces the memory footprint of tokens already processed. They are complementary techniques.
+- `context-window-extension.md`: Compression is an alternative to architectural approaches (RoPE scaling, ALiBi) for fitting more information into limited context windows.
+- `tokenization.md`: Compression operates at the token level, so its effectiveness depends on the tokenizer -- subword tokenizers may split semantically important words into multiple tokens with different importance scores.
+- `knowledge-distillation.md`: LLMLingua-2's training process distills GPT-4's compression judgment into a small classifier, a form of task-specific knowledge distillation.
+- `model-routing.md`: Compression and routing are complementary cost-reduction strategies. Routing selects a cheaper model; compression reduces the input cost for whichever model is selected.
 
 ## Further Reading
 

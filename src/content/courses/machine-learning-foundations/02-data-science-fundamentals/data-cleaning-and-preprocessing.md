@@ -108,11 +108,11 @@ No model can recover from systematically corrupted inputs. A logistic regression
 
 ## Connections to Other Concepts
 
-- **Exploratory Data Analysis**: EDA reveals the problems -- duplicates, outliers, inconsistent formats -- that cleaning addresses. Always do EDA before and after cleaning.
-- **Data Types and Structures**: Correct type inference is the first step in cleaning. A zip code stored as an integer will lose leading zeros.
-- **Handling Missing Data**: Cleaning and imputation are distinct but intertwined processes. Sentinel values like -999 must be converted to proper `NaN` before imputation.
-- **Feature Scaling and Normalization**: Outlier treatment during cleaning directly affects scaling. Unaddressed extreme values can dominate min-max normalization.
-- **Encoding Categorical Variables**: Inconsistent string formatting (casing, whitespace, abbreviations) inflates cardinality, making encoding harder.
+- `exploratory-data-analysis.md`: EDA reveals the problems -- duplicates, outliers, inconsistent formats -- that cleaning addresses. Always do EDA before and after cleaning.
+- `data-types-and-structures.md`: Correct type inference is the first step in cleaning. A zip code stored as an integer will lose leading zeros.
+- `handling-missing-data.md`: Cleaning and imputation are distinct but intertwined processes. Sentinel values like -999 must be converted to proper `NaN` before imputation.
+- `feature-scaling-and-normalization.md`: Outlier treatment during cleaning directly affects scaling. Unaddressed extreme values can dominate min-max normalization.
+- `encoding-categorical-variables.md`: Inconsistent string formatting (casing, whitespace, abbreviations) inflates cardinality, making encoding harder.
 
 ## Further Reading
 

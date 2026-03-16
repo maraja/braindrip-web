@@ -113,10 +113,10 @@ A well-calibrated model has ECE close to 0. Modern deep networks typically have 
 
 ## Connections to Other Concepts
 
-- **Image Classification in Practice**: Metric selection is part of production deployment; calibration metrics are essential for reliable confidence scores.
-- **Detection Metrics**: mAP extends precision-recall curves to object detection with IoU thresholds.
-- **Segmentation Metrics**: Pixel-level classification uses IoU and Dice, which are related to precision and recall.
-- **Benchmark Leaderboards**: Standardized metrics enable fair comparison across methods and papers.
+- `image-classification-in-practice.md`: Metric selection is part of production deployment; calibration metrics are essential for reliable confidence scores.
+- `detection-metrics.md`: mAP extends precision-recall curves to object detection with IoU thresholds.
+- `segmentation-metrics.md`: Pixel-level classification uses IoU and Dice, which are related to precision and recall.
+- `benchmark-leaderboards.md`: Standardized metrics enable fair comparison across methods and papers.
 
 ## Further Reading
 

@@ -102,11 +102,11 @@ Missing data is ubiquitous. Medical records have incomplete lab results. Sensor 
 
 ## Connections to Other Concepts
 
-- **Exploratory Data Analysis**: EDA quantifies missingness rates per feature, identifies patterns (is missingness correlated across features?), and visualizes missing data matrices (using `missingno` library heatmaps).
-- **Data Cleaning and Preprocessing**: Sentinel values must be converted to `NaN` before imputation. Cleaning and imputation are sequential steps in the same pipeline.
-- **Feature Scaling and Normalization**: KNN imputation requires scaled features for meaningful distance computation. Imputed values should be scaled alongside observed values.
-- **Encoding Categorical Variables**: Categorical features with missing values need special treatment -- a "missing" category is sometimes the most honest encoding.
-- **Data Splitting and Sampling**: Imputation parameters must be fit on training data only to avoid leakage.
+- `exploratory-data-analysis.md`: EDA quantifies missingness rates per feature, identifies patterns (is missingness correlated across features?), and visualizes missing data matrices (using `missingno` library heatmaps).
+- `data-cleaning-and-preprocessing.md`: Sentinel values must be converted to `NaN` before imputation. Cleaning and imputation are sequential steps in the same pipeline.
+- `feature-scaling-and-normalization.md`: KNN imputation requires scaled features for meaningful distance computation. Imputed values should be scaled alongside observed values.
+- `encoding-categorical-variables.md`: Categorical features with missing values need special treatment -- a "missing" category is sometimes the most honest encoding.
+- `data-splitting-and-sampling.md`: Imputation parameters must be fit on training data only to avoid leakage.
 
 ## Further Reading
 

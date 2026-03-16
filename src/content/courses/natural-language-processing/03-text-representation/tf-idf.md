@@ -98,13 +98,13 @@ The resulting `tfidf_matrix` is a sparse CSR matrix of shape (n_documents, n_fea
 
 ## Connections to Other Concepts
 
-- **Bag of Words** (`bag-of-words.md`): TF-IDF starts from BoW counts and adds IDF weighting. Understanding raw BoW is a prerequisite.
-- **Information Retrieval** (`07-information-extraction-and-retrieval/information-retrieval.md`): TF-IDF scoring is central to the vector space model and BM25 that power classical search engines.
-- **Document Similarity** (`07-information-extraction-and-retrieval/document-similarity.md`): Cosine similarity on TF-IDF vectors is the classic approach to measuring document similarity.
-- **Keyword Extraction** (`07-information-extraction-and-retrieval/keyword-extraction.md`): TF-IDF is one of the simplest and most widely used methods for extracting representative keywords.
-- **Topic Modeling** (`07-information-extraction-and-retrieval/topic-modeling.md`): TF-IDF-weighted document-term matrices often serve as input to LSA, NMF, and other topic models.
-- **Document Embeddings** (`document-embeddings.md`): TF-IDF combined with dimensionality reduction (SVD/LSA) is one pathway to dense document representations.
-- **Word2Vec** (`word2vec.md`): Dense embeddings were developed partly to address TF-IDF's inability to capture semantic similarity between words.
+- `bag-of-words.md`: TF-IDF starts from BoW counts and adds IDF weighting. Understanding raw BoW is a prerequisite.
+- `07-information-extraction-and-retrieval/information-retrieval.md`: TF-IDF scoring is central to the vector space model and BM25 that power classical search engines.
+- `07-information-extraction-and-retrieval/document-similarity.md`: Cosine similarity on TF-IDF vectors is the classic approach to measuring document similarity.
+- `07-information-extraction-and-retrieval/keyword-extraction.md`: TF-IDF is one of the simplest and most widely used methods for extracting representative keywords.
+- `07-information-extraction-and-retrieval/topic-modeling.md`: TF-IDF-weighted document-term matrices often serve as input to LSA, NMF, and other topic models.
+- `document-embeddings.md`: TF-IDF combined with dimensionality reduction (SVD/LSA) is one pathway to dense document representations.
+- `word2vec.md`: Dense embeddings were developed partly to address TF-IDF's inability to capture semantic similarity between words.
 
 ## Further Reading
 

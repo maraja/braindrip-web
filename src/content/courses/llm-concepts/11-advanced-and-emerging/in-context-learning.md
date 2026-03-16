@@ -116,14 +116,14 @@ Why does ICL work? Several competing (and possibly complementary) theories have 
 
 ## Connections to Other Concepts
 
-- **Prompt Engineering**: ICL is the mechanism that makes prompt engineering effective -- designing prompts is really designing learning curricula for the model's in-context learner.
-- **Fine-Tuning / LoRA**: The alternative to ICL for task adaptation. Fine-tuning modifies weights permanently and can achieve higher ceiling performance, but at greater cost and with less flexibility.
-- **Chain-of-Thought Prompting**: A specialized form of ICL where the demonstrations include reasoning steps, leveraging ICL to teach the model not just what to output but how to think.
-- **Attention Mechanisms**: The self-attention mechanism is the computational substrate that enables ICL -- particularly multi-head attention's ability to perform flexible pattern matching across the context window.
+- `prompt-engineering.md`: ICL is the mechanism that makes prompt engineering effective -- designing prompts is really designing learning curricula for the model's in-context learner.
+- `supervised-fine-tuning.md`: The alternative to ICL for task adaptation. Fine-tuning modifies weights permanently and can achieve higher ceiling performance, but at greater cost and with less flexibility.
+- `chain-of-thought-prompting.md`: A specialized form of ICL where the demonstrations include reasoning steps, leveraging ICL to teach the model not just what to output but how to think.
+- `attention-mechanism.md`: The self-attention mechanism is the computational substrate that enables ICL -- particularly multi-head attention's ability to perform flexible pattern matching across the context window.
 - **Emergent Capabilities**: ICL is one of the canonical examples of an emergent capability -- an ability that appears qualitatively only above certain model scale thresholds.
-- **Retrieval-Augmented Generation (RAG)**: RAG can be viewed as a form of dynamic ICL, where retrieved documents serve as demonstrations that ground the model's responses in specific evidence.
-- **Context Window Length**: The practical limit of ICL is determined by the model's context window. Longer contexts enable many-shot ICL, which approaches fine-tuning-level performance on some tasks.
-- **Scaling Laws**: ICL performance improves predictably with model scale, and the gap between few-shot and fine-tuned performance narrows as models grow larger, suggesting that sufficiently large models may close this gap entirely.
+- `rag.md`: RAG can be viewed as a form of dynamic ICL, where retrieved documents serve as demonstrations that ground the model's responses in specific evidence.
+- `context-window.md`: The practical limit of ICL is determined by the model's context window. Longer contexts enable many-shot ICL, which approaches fine-tuning-level performance on some tasks.
+- `scaling-laws.md`: ICL performance improves predictably with model scale, and the gap between few-shot and fine-tuned performance narrows as models grow larger, suggesting that sufficiently large models may close this gap entirely.
 
 ## Further Reading
 

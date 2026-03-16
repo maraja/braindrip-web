@@ -85,11 +85,11 @@ C5 --[1x1]--> + --[3x3]--> P5 (stride 32)
 
 ## Connections to Other Concepts
 
-- **Multi-Scale Detection**: FPN is the modern answer to the image pyramid approach, providing multi-scale features without multi-scale input.
-- **Fast and Faster R-CNN**: FPN is most commonly paired with Faster R-CNN's two-stage design.
-- **SSD**: Also performs multi-scale detection but uses different feature maps directly from the backbone without top-down enrichment.
-- **Focal Loss / RetinaNet**: RetinaNet pairs FPN with focal loss for a strong single-stage detector.
-- **YOLO**: YOLOv3 and later adopted FPN-like feature fusion for multi-scale prediction.
+- `multi-scale-detection.md`: FPN is the modern answer to the image pyramid approach, providing multi-scale features without multi-scale input.
+- `fast-and-faster-rcnn.md`: FPN is most commonly paired with Faster R-CNN's two-stage design.
+- `ssd.md`: Also performs multi-scale detection but uses different feature maps directly from the backbone without top-down enrichment.
+- `focal-loss.md`: RetinaNet pairs FPN with focal loss for a strong single-stage detector.
+- `yolo.md`: YOLOv3 and later adopted FPN-like feature fusion for multi-scale prediction.
 
 ## Further Reading
 

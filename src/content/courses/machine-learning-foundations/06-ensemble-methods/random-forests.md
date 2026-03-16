@@ -93,11 +93,11 @@ Random Forests are one of the most successful off-the-shelf algorithms in machin
 
 ## Connections to Other Concepts
 
-- **Bagging and Bootstrap**: Random Forests are a direct extension of bagging, adding feature randomization to achieve lower correlation between ensemble members.
-- **Gradient Boosting**: The main alternative ensemble approach for tabular data. Gradient boosting builds trees sequentially (reducing bias), while Random Forests build them independently (reducing variance).
-- **XGBoost/LightGBM/CatBoost**: Industrial-strength gradient boosting implementations that compete with Random Forests on most benchmarks but require more careful tuning.
-- **AdaBoost**: Another ensemble method that builds trees sequentially, but with a different theoretical foundation (exponential loss minimization).
-- **Stacking and Blending**: Random Forests often serve as strong base learners in stacking ensembles due to their reliability and low correlation with other model families.
+- `bagging-and-bootstrap.md`: Random Forests are a direct extension of bagging, adding feature randomization to achieve lower correlation between ensemble members.
+- `gradient-boosting.md`: The main alternative ensemble approach for tabular data. Gradient boosting builds trees sequentially (reducing bias), while Random Forests build them independently (reducing variance).
+- `xgboost-lightgbm-catboost.md`: Industrial-strength gradient boosting implementations that compete with Random Forests on most benchmarks but require more careful tuning.
+- `adaboost.md`: Another ensemble method that builds trees sequentially, but with a different theoretical foundation (exponential loss minimization).
+- `stacking-and-blending.md`: Random Forests often serve as strong base learners in stacking ensembles due to their reliability and low correlation with other model families.
 
 ## Further Reading
 

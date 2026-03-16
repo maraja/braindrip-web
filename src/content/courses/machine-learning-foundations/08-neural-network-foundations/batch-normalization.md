@@ -91,11 +91,11 @@ BatchNorm was one of the most impactful techniques of the 2015-2020 deep learnin
 
 ## Connections to Other Concepts
 
-- **Activation Functions**: BatchNorm keeps pre-activations in the sensitive (non-saturating) range of activations like sigmoid and tanh.
-- **Weight Initialization**: BatchNorm reduces but does not eliminate the importance of initialization; both work together for stable training.
-- **Backpropagation**: The gradient flows through the normalization statistics, coupling the gradients of all examples in the batch.
-- **Dropout and Regularization**: BatchNorm provides implicit regularization via mini-batch noise; combining it with dropout requires care (they can interact poorly).
-- **Optimizers**: BatchNorm's loss landscape smoothing enables larger learning rates, which interacts with optimizer step size tuning.
+- `activation-functions.md`: BatchNorm keeps pre-activations in the sensitive (non-saturating) range of activations like sigmoid and tanh.
+- `weight-initialization.md`: BatchNorm reduces but does not eliminate the importance of initialization; both work together for stable training.
+- `backpropagation.md`: The gradient flows through the normalization statistics, coupling the gradients of all examples in the batch.
+- `dropout-and-regularization.md`: BatchNorm provides implicit regularization via mini-batch noise; combining it with dropout requires care (they can interact poorly).
+- `optimizers.md`: BatchNorm's loss landscape smoothing enables larger learning rates, which interacts with optimizer step size tuning.
 
 ## Further Reading
 

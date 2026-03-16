@@ -95,12 +95,12 @@ MoA achieved remarkable results by combining relatively modest open-weight model
 
 ## Connections to Other Concepts
 
-- **Multi-Agent Systems**: MoA is a structured form of multi-agent collaboration where agents operate in defined roles and layers (see `multi-agent-systems.md`).
-- **LLM-as-Judge**: The aggregator role in MoA is closely related to LLM-as-judge, where one model evaluates and synthesizes outputs from others (see `llm-as-judge.md` in Evaluation).
-- **Self-Consistency**: MoA generalizes the self-consistency approach (sampling multiple answers and aggregating) by using diverse models and active synthesis rather than passive voting (see `sampling-strategies.md` in Inference & Deployment).
-- **Compound AI Systems**: MoA is a compound system where the "components" are different LLMs arranged in a specific topology (see `compound-ai-systems.md`).
-- **Model Routing**: While model routing selects a single model per query, MoA uses multiple models per query. These approaches can be combined: route easy queries to a single model, use MoA for hard queries (see `model-routing.md` in Inference & Deployment).
-- **Inference-Time Scaling Laws**: MoA is an inference-time scaling strategy -- spending more compute at inference to improve quality (see `inference-time-scaling-laws.md`).
+- `multi-agent-systems.md`: MoA is a structured form of multi-agent collaboration where agents operate in defined roles and layers (see `multi-agent-systems.md`).
+- `llm-as-judge.md`: The aggregator role in MoA is closely related to LLM-as-judge, where one model evaluates and synthesizes outputs from others (see `llm-as-judge.md` in Evaluation).
+- `self-consistency.md`: MoA generalizes the self-consistency approach (sampling multiple answers and aggregating) by using diverse models and active synthesis rather than passive voting (see `sampling-strategies.md` in Inference & Deployment).
+- `compound-ai-systems.md`: MoA is a compound system where the "components" are different LLMs arranged in a specific topology (see `compound-ai-systems.md`).
+- `model-routing.md`: While model routing selects a single model per query, MoA uses multiple models per query. These approaches can be combined: route easy queries to a single model, use MoA for hard queries (see `model-routing.md` in Inference & Deployment).
+- `inference-time-scaling-laws.md`: MoA is an inference-time scaling strategy -- spending more compute at inference to improve quality (see `inference-time-scaling-laws.md`).
 
 ## Further Reading
 

@@ -101,14 +101,14 @@ This bottleneck manifests as degraded performance on long sequences. Cho et al. 
 
 ## Connections to Other Concepts
 
-- **`recurrent-neural-networks.md`**: The encoder and decoder are both RNNs; the seq2seq framework is the primary application of RNNs to transduction tasks.
-- **`long-short-term-memory.md`**: Stacked LSTMs are the standard RNN cell used in seq2seq encoders and decoders.
-- **`gated-recurrent-units.md`**: Cho et al. (2014) used GRUs in their original encoder-decoder paper.
-- **`bidirectional-rnns.md`**: Bidirectional encoders are standard in seq2seq because they capture full source context.
-- **`attention-mechanism.md`**: Introduced to solve the fixed-size context vector bottleneck, attention augments the seq2seq framework by letting the decoder query all encoder states.
-- **`machine-translation.md`**: Seq2seq was the architecture that launched neural machine translation, replacing phrase-based statistical MT.
-- **`text-summarization.md`**: Abstractive summarization is a seq2seq task -- encode the document, decode a summary.
-- **`t5-and-text-to-text.md`**: T5 is a modern seq2seq model using transformers, treating every NLP task as text-to-text.
+- `recurrent-neural-networks.md`: The encoder and decoder are both RNNs; the seq2seq framework is the primary application of RNNs to transduction tasks.
+- `long-short-term-memory.md`: Stacked LSTMs are the standard RNN cell used in seq2seq encoders and decoders.
+- `gated-recurrent-units.md`: Cho et al. (2014) used GRUs in their original encoder-decoder paper.
+- `bidirectional-rnns.md`: Bidirectional encoders are standard in seq2seq because they capture full source context.
+- `attention-mechanism.md`: Introduced to solve the fixed-size context vector bottleneck, attention augments the seq2seq framework by letting the decoder query all encoder states.
+- `machine-translation.md`: Seq2seq was the architecture that launched neural machine translation, replacing phrase-based statistical MT.
+- `text-summarization.md`: Abstractive summarization is a seq2seq task -- encode the document, decode a summary.
+- `t5-and-text-to-text.md`: T5 is a modern seq2seq model using transformers, treating every NLP task as text-to-text.
 
 ## Further Reading
 
