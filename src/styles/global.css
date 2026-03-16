@@ -410,6 +410,8 @@ html {
 .concept-body .mermaid svg {
   max-width: 100%;
   height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Connections to Other Concepts section */
