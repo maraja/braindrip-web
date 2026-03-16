@@ -113,11 +113,11 @@ Stacking is the technique behind virtually every winning ensemble in machine lea
 
 ## Connections to Other Concepts
 
-- **Random Forests**: A natural base learner in stacking ensembles due to its stability and low correlation with boosting methods. Random Forests provide diversity because they reduce variance (bagging), while boosting models reduce bias.
-- **Gradient Boosting**: Typically the strongest individual base learner in a stacking ensemble. XGBoost, LightGBM, and CatBoost are the most common gradient boosting choices.
-- **AdaBoost**: Can serve as a base learner, though modern gradient boosting implementations have largely superseded it in stacking ensembles.
-- **Bagging and Bootstrap**: Bagging combines identical models on different data; stacking combines different models and learns optimal weights. The meta-learner in stacking generalizes the uniform averaging in bagging.
-- **XGBoost/LightGBM/CatBoost**: The workhorses of modern stacking ensembles. Using all three as base learners exploits their different tree-growing strategies and handling of features.
+- `random-forests.md`: A natural base learner in stacking ensembles due to its stability and low correlation with boosting methods. Random Forests provide diversity because they reduce variance (bagging), while boosting models reduce bias.
+- `gradient-boosting.md`: Typically the strongest individual base learner in a stacking ensemble. XGBoost, LightGBM, and CatBoost are the most common gradient boosting choices.
+- `adaboost.md`: Can serve as a base learner, though modern gradient boosting implementations have largely superseded it in stacking ensembles.
+- `bagging-and-bootstrap.md`: Bagging combines identical models on different data; stacking combines different models and learns optimal weights. The meta-learner in stacking generalizes the uniform averaging in bagging.
+- `xgboost-lightgbm-catboost.md`: The workhorses of modern stacking ensembles. Using all three as base learners exploits their different tree-growing strategies and handling of features.
 
 ## Further Reading
 

@@ -112,12 +112,12 @@ Recent systems build dense maps rather than sparse landmark maps:
 
 ## Connections to Other Concepts
 
-- **Multi-View Geometry**: SLAM relies directly on epipolar geometry, PnP, triangulation, and bundle adjustment.
-- **Feature Extraction**: ORB, SIFT, and learned features (SuperPoint) provide the correspondences SLAM needs for tracking and mapping.
-- **Depth Estimation**: Predicted depth can initialize or constrain SLAM maps, especially for monocular systems.
-- **Point Cloud Processing**: LiDAR SLAM uses point cloud registration (ICP variants) and spatial indexing (KD-trees).
-- **3D Reconstruction**: SLAM provides the camera poses needed for dense reconstruction pipelines (MVS, TSDF fusion, NeRF).
-- **3D Gaussian Splatting**: Emerging SLAM systems use Gaussian maps for simultaneous tracking and photorealistic rendering.
+- `multi-view-geometry.md`: SLAM relies directly on epipolar geometry, PnP, triangulation, and bundle adjustment.
+- `feature-extraction-and-transformation.md`: ORB, SIFT, and learned features (SuperPoint) provide the correspondences SLAM needs for tracking and mapping.
+- `depth-estimation.md`: Predicted depth can initialize or constrain SLAM maps, especially for monocular systems.
+- `point-cloud-processing.md`: LiDAR SLAM uses point cloud registration (ICP variants) and spatial indexing (KD-trees).
+- `3d-reconstruction.md`: SLAM provides the camera poses needed for dense reconstruction pipelines (MVS, TSDF fusion, NeRF).
+- `3d-gaussian-splatting.md`: Emerging SLAM systems use Gaussian maps for simultaneous tracking and photorealistic rendering.
 
 ## Further Reading
 

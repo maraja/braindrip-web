@@ -108,15 +108,15 @@ Embedding-based similarity captures semantic relatedness even with zero lexical 
 
 ## Connections to Other Concepts
 
-- **TF-IDF** (`03-text-representation/tf-idf.md`): The term weighting scheme underlying cosine similarity for documents.
-- **Bag of Words** (`03-text-representation/bag-of-words.md`): BoW vectors are the raw input to Jaccard and cosine similarity.
-- **Word2Vec** (`03-text-representation/word2vec.md`): Word embeddings power WMD, Soft Cosine, and averaged embedding similarity.
-- **Sentence Embeddings** (`03-text-representation/sentence-embeddings.md`): Sentence transformers provide dense representations for embedding-based document similarity.
-- **Document Embeddings** (`03-text-representation/document-embeddings.md`): Dedicated document embedding models for dense similarity computation.
-- **Information Retrieval** (`information-retrieval.md`): Document similarity is the core mechanism for ranking documents in response to queries.
-- **Topic Modeling** (`topic-modeling.md`): Topic distributions provide another document similarity measure -- documents with similar topic mixtures are thematically alike.
-- **Semantic Similarity** (`08-semantic-understanding/semantic-similarity.md`): The broader concept of measuring meaning overlap, applied at word, sentence, and document levels.
-- **Text Summarization** (`06-core-nlp-tasks-generation/text-summarization.md`): Similarity is used in multi-document summarization to remove redundancy.
+- `03-text-representation/tf-idf.md`: The term weighting scheme underlying cosine similarity for documents.
+- `03-text-representation/bag-of-words.md`: BoW vectors are the raw input to Jaccard and cosine similarity.
+- `03-text-representation/word2vec.md`: Word embeddings power WMD, Soft Cosine, and averaged embedding similarity.
+- `03-text-representation/sentence-embeddings.md`: Sentence transformers provide dense representations for embedding-based document similarity.
+- `03-text-representation/document-embeddings.md`: Dedicated document embedding models for dense similarity computation.
+- `information-retrieval.md`: Document similarity is the core mechanism for ranking documents in response to queries.
+- `topic-modeling.md`: Topic distributions provide another document similarity measure -- documents with similar topic mixtures are thematically alike.
+- `08-semantic-understanding/semantic-similarity.md`: The broader concept of measuring meaning overlap, applied at word, sentence, and document levels.
+- `06-core-nlp-tasks-generation/text-summarization.md`: Similarity is used in multi-document summarization to remove redundancy.
 
 ## Further Reading
 

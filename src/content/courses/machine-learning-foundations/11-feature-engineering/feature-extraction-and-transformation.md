@@ -100,12 +100,12 @@ In Kaggle competitions and industry applications alike, feature engineering freq
 
 ## Connections to Other Concepts
 
-- **Feature Selection Methods**: Feature extraction creates candidates; feature selection filters them. The two steps form a pipeline.
-- **Handling High-Cardinality Features**: Feature crosses and aggregation features often produce high-cardinality outputs that require specialized encoding.
-- **Time-Series Feature Engineering**: Date decomposition and rolling aggregations are domain-specific instances of the general extraction framework.
-- **Automated Feature Engineering**: Tools like Featuretools automate the generation of aggregation and transformation features.
-- **Regularization**: Polynomial expansion and feature crosses demand regularization to control the enlarged feature space.
-- **Normalization and Scaling**: Transforms like log and Box-Cox interact with scaling -- apply transforms before standardization.
+- `feature-selection-methods.md`: Feature extraction creates candidates; feature selection filters them. The two steps form a pipeline.
+- `handling-high-cardinality-features.md`: Feature crosses and aggregation features often produce high-cardinality outputs that require specialized encoding.
+- `time-series-feature-engineering.md`: Date decomposition and rolling aggregations are domain-specific instances of the general extraction framework.
+- `automated-feature-engineering.md`: Tools like Featuretools automate the generation of aggregation and transformation features.
+- `regularization.md`: Polynomial expansion and feature crosses demand regularization to control the enlarged feature space.
+- `batch-normalization.md`: Transforms like log and Box-Cox interact with scaling -- apply transforms before standardization.
 
 ## Practical Example: Housing Price Prediction
 

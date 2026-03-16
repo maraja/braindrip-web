@@ -78,10 +78,10 @@ Training uses 4096 rays per batch, Adam optimizer ($\text{lr} = 5 \times 10^{-4}
 
 ## Connections to Other Concepts
 
-- **3D Gaussian Splatting**: The primary successor to NeRF, replacing volumetric ray marching with differentiable point rasterization for real-time rendering.
-- **Multi-View Geometry**: NeRF requires accurate camera poses, typically obtained via structure-from-motion (COLMAP).
-- **3D Reconstruction**: NeRF provides an implicit 3D representation; extracting explicit geometry connects to mesh reconstruction and implicit surfaces.
-- **Depth Estimation**: NeRF implicitly learns depth (the expected ray termination distance), and depth supervision improves NeRF quality.
+- `3d-gaussian-splatting.md`: The primary successor to NeRF, replacing volumetric ray marching with differentiable point rasterization for real-time rendering.
+- `multi-view-geometry.md`: NeRF requires accurate camera poses, typically obtained via structure-from-motion (COLMAP).
+- `3d-reconstruction.md`: NeRF provides an implicit 3D representation; extracting explicit geometry connects to mesh reconstruction and implicit surfaces.
+- `depth-estimation.md`: NeRF implicitly learns depth (the expected ray termination distance), and depth supervision improves NeRF quality.
 - **Volume Rendering**: NeRF's rendering equation is classical volume rendering from computer graphics, differentiably implemented.
 
 ## Further Reading

@@ -105,10 +105,10 @@ This is DenseNet-121 (121 = stem conv + 2*(6+12+24+16) layers + 3 transition con
 
 ## Connections to Other Concepts
 
-- **ResNet**: DenseNet generalizes and extends skip connections from pairwise to all-to-all within blocks. Both architectures share the core insight that shortcut paths improve training.
-- **Inception**: Like Inception, DenseNet concatenates features from different processing paths, though DenseNet's paths represent different depths rather than different kernel sizes.
-- **EfficientNet**: Compound scaling principles can be applied to DenseNet architectures as well.
-- **Feature Pyramid Networks**: DenseNet's multi-scale feature availability within a block is conceptually related to FPN's multi-scale feature fusion for detection.
+- `resnet.md`: DenseNet generalizes and extends skip connections from pairwise to all-to-all within blocks. Both architectures share the core insight that shortcut paths improve training.
+- `inception.md`: Like Inception, DenseNet concatenates features from different processing paths, though DenseNet's paths represent different depths rather than different kernel sizes.
+- `efficientnet.md`: Compound scaling principles can be applied to DenseNet architectures as well.
+- `feature-pyramid-network.md`: DenseNet's multi-scale feature availability within a block is conceptually related to FPN's multi-scale feature fusion for detection.
 
 ## Further Reading
 

@@ -134,10 +134,10 @@ ColBERT closes roughly 70-90% of the gap between bi-encoders and cross-encoders 
 ## Connections to Other Concepts
 
 - **Bi-encoder embedding models**: ColBERT extends bi-encoders from single-vector to multi-vector representations. They address the same retrieval problem with different quality/efficiency trade-offs.
-- **RAG**: ColBERT serves as either a first-stage retriever or a reranker in RAG pipelines, improving retrieval quality and consequently generation quality.
+- `rag.md`: ColBERT serves as either a first-stage retriever or a reranker in RAG pipelines, improving retrieval quality and consequently generation quality.
 - **Matryoshka embeddings**: While MRL varies the dimensionality of single-vector embeddings, ColBERT varies the granularity of representation (per-token vs. per-document). Both address retrieval efficiency.
-- **Cross-encoders**: ColBERT approximates cross-encoder quality while maintaining the pre-computation advantages of bi-encoders. ColBERTv2's training uses cross-encoder distillation.
-- **Late chunking**: Both late chunking and ColBERT preserve fine-grained information that single-vector approaches discard. They are complementary and could theoretically be combined.
+- `reranking-and-cross-encoders.md`: ColBERT approximates cross-encoder quality while maintaining the pre-computation advantages of bi-encoders. ColBERTv2's training uses cross-encoder distillation.
+- `late-chunking.md`: Both late chunking and ColBERT preserve fine-grained information that single-vector approaches discard. They are complementary and could theoretically be combined.
 
 ## Further Reading
 

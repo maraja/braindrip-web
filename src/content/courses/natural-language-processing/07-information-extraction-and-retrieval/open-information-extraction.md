@@ -100,13 +100,13 @@ Open IE systems assign confidence scores to extracted triples, enabling downstre
 
 ## Connections to Other Concepts
 
-- **Information Extraction** (`information-extraction.md`): Open IE is the schema-free counterpart to traditional, schema-driven IE.
-- **Relation Extraction** (`05-core-nlp-tasks-analysis/relation-extraction.md`): Schema-based relation extraction predicts from a fixed relation inventory; Open IE uses free-text relation phrases.
-- **Knowledge Graphs for NLP** (`knowledge-graphs-for-nlp.md`): Open IE triples, after canonicalization, feed knowledge graph construction pipelines.
-- **Dependency Parsing** (`05-core-nlp-tasks-analysis/dependency-parsing.md`): Most Open IE systems rely on dependency parses to identify syntactic patterns.
-- **Event Extraction** (`event-extraction.md`): Events can be viewed as a special class of Open IE extractions with additional argument structure.
-- **Named Entity Recognition** (`05-core-nlp-tasks-analysis/named-entity-recognition.md`): NER identifies the entity arguments that Open IE connects via relations.
-- **Semantic Role Labeling** (`05-core-nlp-tasks-analysis/semantic-role-labeling.md`): SRL identifies predicate-argument structure in a manner complementary to Open IE, with predefined role labels.
+- `information-extraction.md`: Open IE is the schema-free counterpart to traditional, schema-driven IE.
+- `05-core-nlp-tasks-analysis/relation-extraction.md`: Schema-based relation extraction predicts from a fixed relation inventory; Open IE uses free-text relation phrases.
+- `knowledge-graphs-for-nlp.md`: Open IE triples, after canonicalization, feed knowledge graph construction pipelines.
+- `05-core-nlp-tasks-analysis/dependency-parsing.md`: Most Open IE systems rely on dependency parses to identify syntactic patterns.
+- `event-extraction.md`: Events can be viewed as a special class of Open IE extractions with additional argument structure.
+- `05-core-nlp-tasks-analysis/named-entity-recognition.md`: NER identifies the entity arguments that Open IE connects via relations.
+- `05-core-nlp-tasks-analysis/semantic-role-labeling.md`: SRL identifies predicate-argument structure in a manner complementary to Open IE, with predefined role labels.
 
 ## Further Reading
 

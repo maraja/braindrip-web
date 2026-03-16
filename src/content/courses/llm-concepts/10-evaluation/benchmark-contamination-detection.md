@@ -270,14 +270,14 @@ Commercially, contaminated benchmark scores create information asymmetry. AI com
 
 ## Connections to Other Concepts
 
-- **Chatbot Arena**: Arena's core value proposition is contamination immunity -- every evaluation uses a fresh user prompt. Contamination concerns for static benchmarks directly drive Arena's adoption and influence.
-- **Human Evaluation**: As automated benchmarks become less trusted due to contamination, human evaluation (especially through Arena-style platforms) becomes more important, despite its higher cost.
-- **LLM-as-a-Judge**: LLM judges must themselves be evaluated for contamination. If the judge model has been trained on benchmark data, its evaluations of other models on that benchmark may be biased.
-- **Perplexity**: Perplexity is both a core LLM metric and the primary tool for contamination detection. Understanding what perplexity measures (surprisal) is essential for understanding why low perplexity on benchmark text signals memorization.
-- **Data Curation**: Training data filtering and deduplication are the first line of defense against contamination. Pipelines that detect and remove benchmark content before training prevent the problem at its source.
-- **Benchmarks**: Contamination detection is fundamentally about preserving the integrity of benchmarks as measurement instruments. Every benchmark is affected; the question is how much and whether it matters for the conclusions drawn.
-- **Scaling Laws**: If benchmark improvements partly reflect contamination rather than genuine capability gains, scaling law estimates (how much does capability improve with compute/data/parameters?) may be biased upward.
-- **Machine Unlearning**: If a model is found to be contaminated on a specific benchmark, machine unlearning could theoretically remove the contamination. In practice, this is difficult because the contaminated benchmark data is entangled with legitimate training.
+- `chatbot-arena.md`: Arena's core value proposition is contamination immunity -- every evaluation uses a fresh user prompt. Contamination concerns for static benchmarks directly drive Arena's adoption and influence.
+- `human-evaluation.md`: As automated benchmarks become less trusted due to contamination, human evaluation (especially through Arena-style platforms) becomes more important, despite its higher cost.
+- `llm-as-judge.md`: LLM judges must themselves be evaluated for contamination. If the judge model has been trained on benchmark data, its evaluations of other models on that benchmark may be biased.
+- `perplexity.md`: Perplexity is both a core LLM metric and the primary tool for contamination detection. Understanding what perplexity measures (surprisal) is essential for understanding why low perplexity on benchmark text signals memorization.
+- `training-data-curation.md`: Training data filtering and deduplication are the first line of defense against contamination. Pipelines that detect and remove benchmark content before training prevent the problem at its source.
+- `benchmarks.md`: Contamination detection is fundamentally about preserving the integrity of benchmarks as measurement instruments. Every benchmark is affected; the question is how much and whether it matters for the conclusions drawn.
+- `scaling-laws.md`: If benchmark improvements partly reflect contamination rather than genuine capability gains, scaling law estimates (how much does capability improve with compute/data/parameters?) may be biased upward.
+- `machine-unlearning.md`: If a model is found to be contaminated on a specific benchmark, machine unlearning could theoretically remove the contamination. In practice, this is difficult because the contaminated benchmark data is entangled with legitimate training.
 - **Memorization vs. Generalization**: Contamination is a specific instance of the broader memorization problem. Detection methods for contamination draw on the same principles used to study memorization in neural networks more generally.
 
 ## Further Reading

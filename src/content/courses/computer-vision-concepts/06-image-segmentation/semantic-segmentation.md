@@ -74,12 +74,12 @@ Most modern approaches follow an encoder-decoder structure:
 
 ## Connections to Other Concepts
 
-- **Fully Convolutional Networks**: the foundational architecture that made end-to-end dense prediction practical.
-- **U-Net**: the dominant encoder-decoder design with skip connections, especially in medical imaging.
-- **DeepLab and Atrous Convolution**: uses dilated convolutions and ASPP to capture multi-scale context without losing resolution.
-- **Instance Segmentation**: extends semantic segmentation by also separating individual object instances.
-- **Panoptic Segmentation**: unifies semantic and instance segmentation into a single coherent output.
-- **Conditional Random Fields**: a classical post-processing step that enforces spatial smoothness on segmentation outputs.
+- `fully-convolutional-networks.md`: the foundational architecture that made end-to-end dense prediction practical.
+- `u-net.md`: the dominant encoder-decoder design with skip connections, especially in medical imaging.
+- `deeplab-and-atrous-convolution.md`: uses dilated convolutions and ASPP to capture multi-scale context without losing resolution.
+- `instance-segmentation.md`: extends semantic segmentation by also separating individual object instances.
+- `panoptic-segmentation.md`: unifies semantic and instance segmentation into a single coherent output.
+- `conditional-random-fields.md`: a classical post-processing step that enforces spatial smoothness on segmentation outputs.
 
 ## Further Reading
 

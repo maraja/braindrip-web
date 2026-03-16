@@ -76,11 +76,11 @@ The standard metric is **3D Average Precision (AP)** at IoU thresholds (0.7 for 
 
 ## Connections to Other Concepts
 
-- **Point Cloud Processing**: LiDAR detectors consume point clouds that require voxelization, downsampling, and spatial indexing.
-- **PointNet**: Serves as the per-voxel or per-pillar feature encoder in VoxelNet and PointPillars.
-- **Depth Estimation**: Camera-based 3D detectors often rely on monocular depth to lift 2D features into 3D.
+- `point-cloud-processing.md`: LiDAR detectors consume point clouds that require voxelization, downsampling, and spatial indexing.
+- `pointnet.md`: Serves as the per-voxel or per-pillar feature encoder in VoxelNet and PointPillars.
+- `depth-estimation.md`: Camera-based 3D detectors often rely on monocular depth to lift 2D features into 3D.
 - **2D Object Detection**: Many 3D detection heads reuse anchor-based or center-based designs from 2D detectors (SSD, CenterNet).
-- **Multi-View Geometry**: Camera-based BEV methods perform implicit multi-view triangulation when fusing images from surrounding cameras.
+- `multi-view-geometry.md`: Camera-based BEV methods perform implicit multi-view triangulation when fusing images from surrounding cameras.
 
 ## Further Reading
 

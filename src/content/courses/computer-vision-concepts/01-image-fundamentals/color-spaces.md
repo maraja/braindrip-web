@@ -107,9 +107,9 @@ JPEG, H.264, and nearly all video codecs operate in YCbCr space.
 
 ## Connections to Other Concepts
 
-- **Digital Images and Pixels**: Each pixel's numerical values only have meaning within the context of a specific color space.
-- **Image Histograms**: Histograms can be computed per-channel in any color space; computing the histogram of the L* channel in CIELAB gives a brightness distribution that better matches human perception.
-- **Convolution and Filtering**: Gaussian blur on gamma-encoded sRGB data versus linearized data produces different results; filtering should ideally be performed in linear light.
+- `digital-images-and-pixels.md`: Each pixel's numerical values only have meaning within the context of a specific color space.
+- `image-histograms.md`: Histograms can be computed per-channel in any color space; computing the histogram of the L* channel in CIELAB gives a brightness distribution that better matches human perception.
+- `convolution-and-filtering.md`: Gaussian blur on gamma-encoded sRGB data versus linearized data produces different results; filtering should ideally be performed in linear light.
 
 ## Further Reading
 

@@ -102,10 +102,10 @@ A/B testing is the only reliable way to measure the *causal* impact of model cha
 
 ## Connections to Other Concepts
 
-- **Data Drift and Model Monitoring**: Drift during an A/B test can confound results. Monitor for drift as a diagnostic alongside the test.
-- **Experiment Tracking**: A/B test results should be logged in the experiment tracking system, linking online outcomes back to offline model runs.
-- **Model Deployment and Serving**: A/B tests require serving infrastructure that supports traffic splitting (canary deployment, feature flags).
-- **ML Pipelines**: Automated pipelines can trigger A/B tests as a deployment gate: train model, evaluate offline, deploy to shadow/canary, then A/B test before full rollout.
+- `data-drift-and-model-monitoring.md`: Drift during an A/B test can confound results. Monitor for drift as a diagnostic alongside the test.
+- `experiment-tracking.md`: A/B test results should be logged in the experiment tracking system, linking online outcomes back to offline model runs.
+- `model-deployment-and-serving.md`: A/B tests require serving infrastructure that supports traffic splitting (canary deployment, feature flags).
+- `ml-pipelines.md`: Automated pipelines can trigger A/B tests as a deployment gate: train model, evaluate offline, deploy to shadow/canary, then A/B test before full rollout.
 
 ## Further Reading
 

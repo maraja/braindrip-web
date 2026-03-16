@@ -102,10 +102,10 @@ V3-Small: 2.9M params, 56M FLOPs, 67.4% top-1.
 
 ## Connections to Other Concepts
 
-- **Depthwise Separable Convolutions**: The fundamental operation underlying all MobileNet variants.
-- **ResNet**: V2's residual connections borrow from ResNet, but with an inverted bottleneck structure.
-- **EfficientNet**: Built on MobileNet-style inverted residual blocks (MBConv), scaling them with compound scaling.
-- **Neural Architecture Search**: V3 used NAS to discover the block configuration and activation choices, bridging hand-designed and automated architecture design.
+- `depthwise-separable-convolutions.md`: The fundamental operation underlying all MobileNet variants.
+- `resnet.md`: V2's residual connections borrow from ResNet, but with an inverted bottleneck structure.
+- `efficientnet.md`: Built on MobileNet-style inverted residual blocks (MBConv), scaling them with compound scaling.
+- `neural-architecture-search.md`: V3 used NAS to discover the block configuration and activation choices, bridging hand-designed and automated architecture design.
 
 ## Further Reading
 

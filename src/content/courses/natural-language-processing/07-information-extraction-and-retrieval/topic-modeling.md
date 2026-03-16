@@ -99,13 +99,13 @@ Choosing K (the number of topics) remains an open challenge:
 
 ## Connections to Other Concepts
 
-- **Bag of Words** (`03-text-representation/bag-of-words.md`): LDA and NMF operate on BoW document representations.
-- **TF-IDF** (`03-text-representation/tf-idf.md`): NMF is often applied to TF-IDF matrices; BERTopic uses class-based TF-IDF for topic representation.
-- **Document Embeddings** (`03-text-representation/document-embeddings.md`): BERTopic and ETM leverage document embeddings for topic discovery.
-- **Keyword Extraction** (`keyword-extraction.md`): Topic top-words are a form of corpus-level keyword discovery; document-level keywords complement topic assignments.
-- **Document Similarity** (`document-similarity.md`): Topic proportions can define a document similarity measure -- documents with similar topic distributions are thematically similar.
-- **Sentence Embeddings** (`03-text-representation/sentence-embeddings.md`): BERTopic clusters sentence embeddings to discover topics.
-- **Text Classification** (`05-core-nlp-tasks-analysis/text-classification.md`): Topic proportions serve as features for classification tasks.
+- `03-text-representation/bag-of-words.md`: LDA and NMF operate on BoW document representations.
+- `03-text-representation/tf-idf.md`: NMF is often applied to TF-IDF matrices; BERTopic uses class-based TF-IDF for topic representation.
+- `03-text-representation/document-embeddings.md`: BERTopic and ETM leverage document embeddings for topic discovery.
+- `keyword-extraction.md`: Topic top-words are a form of corpus-level keyword discovery; document-level keywords complement topic assignments.
+- `document-similarity.md`: Topic proportions can define a document similarity measure -- documents with similar topic distributions are thematically similar.
+- `03-text-representation/sentence-embeddings.md`: BERTopic clusters sentence embeddings to discover topics.
+- `05-core-nlp-tasks-analysis/text-classification.md`: Topic proportions serve as features for classification tasks.
 
 ## Further Reading
 

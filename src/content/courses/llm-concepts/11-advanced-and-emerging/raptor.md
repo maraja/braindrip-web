@@ -153,12 +153,12 @@ RAPTOR addresses a fundamental limitation of flat-chunk RAG: the loss of hierarc
 
 ## Connections to Other Concepts
 
-- **RAG**: RAPTOR is an advanced indexing strategy for RAG that replaces flat chunk storage with a hierarchical tree structure.
-- **Chunking strategies**: RAPTOR depends on quality chunking for its leaf nodes. Semantic chunking at the leaf level can further improve RAPTOR's effectiveness.
-- **GraphRAG**: Both RAPTOR and GraphRAG address the limitation of flat retrieval for global queries. GraphRAG uses entity-relationship graphs and community detection; RAPTOR uses clustering-based trees. They are complementary approaches to the same problem.
-- **Embedding models**: RAPTOR uses embeddings for both clustering (via UMAP) and retrieval (via similarity search). The quality of the embedding model affects both stages.
-- **Agentic RAG**: An agentic system could use RAPTOR's tree structure strategically -- first retrieving high-level summaries to understand the landscape, then drilling into specific leaf nodes for details.
-- **Late chunking**: Both RAPTOR and late chunking aim to preserve broader context that is lost in standard chunking. Late chunking preserves context at the embedding level; RAPTOR preserves it through hierarchical summarization.
+- `rag.md`: RAPTOR is an advanced indexing strategy for RAG that replaces flat chunk storage with a hierarchical tree structure.
+- `chunking-strategies.md`: RAPTOR depends on quality chunking for its leaf nodes. Semantic chunking at the leaf level can further improve RAPTOR's effectiveness.
+- `graphrag.md`: Both RAPTOR and GraphRAG address the limitation of flat retrieval for global queries. GraphRAG uses entity-relationship graphs and community detection; RAPTOR uses clustering-based trees. They are complementary approaches to the same problem.
+- `embedding-models-and-vector-databases.md`: RAPTOR uses embeddings for both clustering (via UMAP) and retrieval (via similarity search). The quality of the embedding model affects both stages.
+- `agentic-rag.md`: An agentic system could use RAPTOR's tree structure strategically -- first retrieving high-level summaries to understand the landscape, then drilling into specific leaf nodes for details.
+- `late-chunking.md`: Both RAPTOR and late chunking aim to preserve broader context that is lost in standard chunking. Late chunking preserves context at the embedding level; RAPTOR preserves it through hierarchical summarization.
 
 ## Further Reading
 

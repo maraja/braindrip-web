@@ -93,11 +93,11 @@ where $\rho$ is the Euclidean distance between box centers and $c$ is the diagon
 
 ## Connections to Other Concepts
 
-- **Intersection over Union**: The core metric used by NMS to measure box overlap.
-- **R-CNN / Fast and Faster R-CNN**: All R-CNN variants rely on NMS for final detection output.
-- **YOLO / SSD**: Single-stage detectors apply NMS per-class as a final post-processing step.
-- **DETR**: The first major detector to eliminate NMS through set-based prediction.
-- **Anchor-Free Detection**: FCOS requires NMS; CenterNet replaces it with heatmap peak extraction.
+- `intersection-over-union.md`: The core metric used by NMS to measure box overlap.
+- `r-cnn.md`: All R-CNN variants rely on NMS for final detection output.
+- `yolo.md`: Single-stage detectors apply NMS per-class as a final post-processing step.
+- `detr.md`: The first major detector to eliminate NMS through set-based prediction.
+- `anchor-free-detection.md`: FCOS requires NMS; CenterNet replaces it with heatmap peak extraction.
 
 ## Further Reading
 

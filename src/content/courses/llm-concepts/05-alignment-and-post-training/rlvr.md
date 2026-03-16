@@ -147,13 +147,13 @@ RLVR represents a significant advance in how we train reasoning models:
 
 ## Connections to Other Concepts
 
-- **RLHF / Safety Training**: RLVR and RLHF are complementary training paradigms. RLHF handles subjective preferences; RLVR handles verifiable correctness. The best systems use both.
-- **Reward Hacking**: RLVR is resistant to reward hacking because the reward cannot be gamed -- correctness is verified, not estimated. This is its primary advantage over RLHF.
-- **Goodhart's Law**: RLVR avoids Goodhart's Law for the domains where it applies because the "measure" (correctness) is identical to the "target" (correctness). There is no proxy gap.
-- **Chain-of-Thought**: RLVR spontaneously produces CoT as an emergent strategy. This provides evidence that CoT is instrumentally useful for reasoning, not just a prompting trick.
-- **Process Reward Models**: PRMs complement RLVR by adding step-level signals. While RLVR only rewards the final outcome, PRMs can evaluate intermediate reasoning, and combining both provides denser, more informative training signal.
-- **Test-Time Compute**: Models trained with RLVR naturally learn to allocate more reasoning steps to harder problems, implementing a form of adaptive test-time compute.
-- **DPO**: DPO is to RLHF as RLVR is to... nothing directly, but DPO can be applied to RLVR-generated preference pairs (correct vs. incorrect chains) for simpler optimization.
+- `rlhf.md`: RLVR and RLHF are complementary training paradigms. RLHF handles subjective preferences; RLVR handles verifiable correctness. The best systems use both.
+- `reward-hacking.md`: RLVR is resistant to reward hacking because the reward cannot be gamed -- correctness is verified, not estimated. This is its primary advantage over RLHF.
+- `goodharts-law.md`: RLVR avoids Goodhart's Law for the domains where it applies because the "measure" (correctness) is identical to the "target" (correctness). There is no proxy gap.
+- `chain-of-thought-in-agents.md`: RLVR spontaneously produces CoT as an emergent strategy. This provides evidence that CoT is instrumentally useful for reasoning, not just a prompting trick.
+- `process-reward-models.md`: PRMs complement RLVR by adding step-level signals. While RLVR only rewards the final outcome, PRMs can evaluate intermediate reasoning, and combining both provides denser, more informative training signal.
+- `test-time-compute.md`: Models trained with RLVR naturally learn to allocate more reasoning steps to harder problems, implementing a form of adaptive test-time compute.
+- `dpo.md`: DPO is to RLHF as RLVR is to... nothing directly, but DPO can be applied to RLVR-generated preference pairs (correct vs. incorrect chains) for simpler optimization.
 
 ## Further Reading
 

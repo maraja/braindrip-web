@@ -155,11 +155,11 @@ Representation engineering matters for several reasons that span safety, control
 
 ## Connections to Other Concepts
 
-- **Mechanistic interpretability**: Representation engineering is closely related to the broader field of mechanistic interpretability. While mechanistic interpretability aims to understand the computational mechanisms within neural networks (circuits, features, superposition), representation engineering focuses specifically on reading and controlling high-level behavioral properties through their geometric representation in activation space.
-- **RLHF and alignment**: Representation engineering provides an alternative/complementary control mechanism to training-time alignment techniques. Understanding how alignment training modifies internal representations is an active research question.
-- **Guardrails**: Steering vectors could serve as a representation-level guardrail -- detecting and intervening on harmful content at the activation level rather than at the input/output level.
-- **AI safety**: The ability to read the model's internal state (e.g., detecting deception by reading the "honesty direction") is directly relevant to scalable oversight and AI safety monitoring.
-- **LoRA and PEFT**: Like LoRA, representation engineering provides a parameter-efficient way to modify model behavior. LoRA adds low-rank weight updates; steering adds activation-level vectors. LoRA requires training; steering does not.
+- `mechanistic-interpretability.md`: Representation engineering is closely related to the broader field of mechanistic interpretability. While mechanistic interpretability aims to understand the computational mechanisms within neural networks (circuits, features, superposition), representation engineering focuses specifically on reading and controlling high-level behavioral properties through their geometric representation in activation space.
+- `rlhf.md`: Representation engineering provides an alternative/complementary control mechanism to training-time alignment techniques. Understanding how alignment training modifies internal representations is an active research question.
+- `guardrails.md`: Steering vectors could serve as a representation-level guardrail -- detecting and intervening on harmful content at the activation level rather than at the input/output level.
+- `03-ai-safety-and-governance.md`: The ability to read the model's internal state (e.g., detecting deception by reading the "honesty direction") is directly relevant to scalable oversight and AI safety monitoring.
+- `lora.md`: Like LoRA, representation engineering provides a parameter-efficient way to modify model behavior. LoRA adds low-rank weight updates; steering adds activation-level vectors. LoRA requires training; steering does not.
 - **Probing classifiers**: Linear probes (training a linear classifier on activations to predict a property) are the precursor to representation engineering. Probes read properties; steering vectors both read and control them.
 
 ## Further Reading

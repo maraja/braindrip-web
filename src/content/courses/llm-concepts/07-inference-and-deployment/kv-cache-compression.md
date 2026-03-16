@@ -136,11 +136,11 @@ This approach is less mature than quantization and eviction but represents a pro
 
 ## Connections to Other Concepts
 
-- **KV Cache**: This entire concept is about compressing the KV cache. A thorough understanding of what the KV cache stores, how it grows, and why it dominates inference memory is the essential prerequisite.
-- **Grouped-Query Attention**: GQA is an architectural (training-time) approach to KV cache size reduction. Compression techniques are inference-time approaches that complement GQA.
-- **PagedAttention**: Paged memory management handles memory *allocation* efficiency; compression handles memory *density*. They combine naturally -- compressed KV entries are stored in paged blocks.
-- **Quantization (Weight)**: KV cache quantization shares mathematical foundations with weight quantization (scale factors, zero points, calibration) but operates on activations rather than parameters, requiring different strategies.
-- **Flash Attention**: Flash Attention reduces the peak memory of attention *computation* (by tiling). KV cache compression reduces the persistent memory of attention *storage*. Both address attention memory costs but at different stages.
+- `kv-cache.md`: This entire concept is about compressing the KV cache. A thorough understanding of what the KV cache stores, how it grows, and why it dominates inference memory is the essential prerequisite.
+- `grouped-query-attention.md`: GQA is an architectural (training-time) approach to KV cache size reduction. Compression techniques are inference-time approaches that complement GQA.
+- `paged-attention.md`: Paged memory management handles memory *allocation* efficiency; compression handles memory *density*. They combine naturally -- compressed KV entries are stored in paged blocks.
+- `quantization.md`: KV cache quantization shares mathematical foundations with weight quantization (scale factors, zero points, calibration) but operates on activations rather than parameters, requiring different strategies.
+- `flash-attention.md`: Flash Attention reduces the peak memory of attention *computation* (by tiling). KV cache compression reduces the persistent memory of attention *storage*. Both address attention memory costs but at different stages.
 
 ## Further Reading
 

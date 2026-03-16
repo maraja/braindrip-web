@@ -126,11 +126,11 @@ However, LLM-as-a-Judge has not replaced human evaluation -- it has stratified i
 
 ## Connections to Other Concepts
 
-- **RLHF and Preference Tuning**: LLM-as-a-Judge is increasingly used to generate preference data for RLHF training, replacing or supplementing human annotators. This is sometimes called RLAIF (Reinforcement Learning from AI Feedback).
-- **Benchmarks**: Modern benchmarks like MT-Bench and AlpacaEval use LLM judges as their core evaluation mechanism.
-- **Human Evaluation**: LLM-as-a-Judge is calibrated against human evaluation and aims to approximate it at lower cost.
-- **Constitutional AI**: Uses LLM self-evaluation as part of the training loop, a closely related application of the same principle.
-- **Prompt Engineering**: The quality of the judge prompt and rubric is essentially a prompt engineering problem, and the same techniques (few-shot examples, chain-of-thought, structured output) apply.
+- `rlhf.md`: LLM-as-a-Judge is increasingly used to generate preference data for RLHF training, replacing or supplementing human annotators. This is sometimes called RLAIF (Reinforcement Learning from AI Feedback).
+- `benchmarks.md`: Modern benchmarks like MT-Bench and AlpacaEval use LLM judges as their core evaluation mechanism.
+- `human-evaluation.md`: LLM-as-a-Judge is calibrated against human evaluation and aims to approximate it at lower cost.
+- `constitutional-ai.md`: Uses LLM self-evaluation as part of the training loop, a closely related application of the same principle.
+- `prompt-engineering.md`: The quality of the judge prompt and rubric is essentially a prompt engineering problem, and the same techniques (few-shot examples, chain-of-thought, structured output) apply.
 
 ## Further Reading
 

@@ -107,10 +107,10 @@ Naive Bayes is the go-to baseline for text classification. It trains in a single
 
 ## Connections to Other Concepts
 
-- **Logistic Regression**: Naive Bayes and logistic regression form a generative-discriminative pair. They share the same linear decision boundary form (in log-space), but Naive Bayes estimates parameters via class-conditional densities while logistic regression optimizes the conditional likelihood directly. With sufficient data, logistic regression generally wins.
-- **K-Nearest Neighbors**: KNN makes no distributional assumptions but is computationally expensive. Naive Bayes makes strong assumptions but is extremely fast. They are complementary baselines.
-- **Multi-Class Classification**: Naive Bayes is natively multiclass -- no need for one-vs-rest or one-vs-one wrappers. The argmax simply extends over all classes.
-- **Support Vector Machines**: SVMs optimize a discriminative margin; Naive Bayes optimizes a generative likelihood. In high dimensions with limited data (e.g., text), both can perform well.
+- `logistic-regression.md`: Naive Bayes and logistic regression form a generative-discriminative pair. They share the same linear decision boundary form (in log-space), but Naive Bayes estimates parameters via class-conditional densities while logistic regression optimizes the conditional likelihood directly. With sufficient data, logistic regression generally wins.
+- `k-nearest-neighbors.md`: KNN makes no distributional assumptions but is computationally expensive. Naive Bayes makes strong assumptions but is extremely fast. They are complementary baselines.
+- `multi-class-classification.md`: Naive Bayes is natively multiclass -- no need for one-vs-rest or one-vs-one wrappers. The argmax simply extends over all classes.
+- `support-vector-machines.md`: SVMs optimize a discriminative margin; Naive Bayes optimizes a generative likelihood. In high dimensions with limited data (e.g., text), both can perform well.
 
 ## Further Reading
 

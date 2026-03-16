@@ -86,10 +86,10 @@ SimMIM matches MAE's downstream accuracy with a simpler pipeline, demonstrating 
 
 ## Connections to Other Concepts
 
-- **Vision Transformer (ViT)**: MIM is designed specifically for ViT architectures; the patch-based structure makes masking natural.
-- **DINO**: An alternative self-supervised paradigm based on self-distillation rather than reconstruction. DINO produces better linear probing features; MIM produces better fine-tuning features. DINOv2 combines both.
-- **Attention in Vision**: The masking strategy directly affects attention patterns -- with 75% masking, the visible patches must attend to distant patches, encouraging long-range dependency learning.
-- **Vision Transformer Scaling**: MIM enables effective pre-training at scales (ViT-H, ViT-g) where supervised pre-training on ImageNet alone underperforms.
+- `vision-transformer.md`: MIM is designed specifically for ViT architectures; the patch-based structure makes masking natural.
+- `dino.md`: An alternative self-supervised paradigm based on self-distillation rather than reconstruction. DINO produces better linear probing features; MIM produces better fine-tuning features. DINOv2 combines both.
+- `attention-in-vision.md`: The masking strategy directly affects attention patterns -- with 75% masking, the visible patches must attend to distant patches, encouraging long-range dependency learning.
+- `vision-transformer-scaling.md`: MIM enables effective pre-training at scales (ViT-H, ViT-g) where supervised pre-training on ImageNet alone underperforms.
 
 ## Further Reading
 

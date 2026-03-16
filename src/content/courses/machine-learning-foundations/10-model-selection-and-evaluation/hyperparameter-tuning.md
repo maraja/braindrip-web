@@ -99,11 +99,11 @@ Default hyperparameters rarely yield optimal performance. The difference between
 
 ## Connections to Other Concepts
 
-- **Cross-Validation**: Provides the objective function for tuning. Nested CV separates tuning from evaluation.
-- **Learning Curves**: Can diagnose whether tuning improved bias, variance, or both.
-- **Model Comparison**: After tuning, statistical tests determine whether one model genuinely outperforms another.
-- **Regularization (L1/L2)**: Regularization strength is one of the most important hyperparameters to tune.
-- **Classification Metrics / Regression Metrics**: The tuning objective must be the metric that matters for the application.
+- `cross-validation.md`: Provides the objective function for tuning. Nested CV separates tuning from evaluation.
+- `learning-curves.md`: Can diagnose whether tuning improved bias, variance, or both.
+- `model-comparison.md`: After tuning, statistical tests determine whether one model genuinely outperforms another.
+- `regularization.md`: Regularization strength is one of the most important hyperparameters to tune.
+- `classification-metrics.md`: The tuning objective must be the metric that matters for the application.
 
 ## Further Reading
 

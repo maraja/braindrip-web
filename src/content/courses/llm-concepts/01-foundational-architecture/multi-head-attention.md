@@ -122,10 +122,10 @@ GQA has become the standard in modern models (LLaMA 2 70B, LLaMA 3, Mistral) bec
 
 ## Connections to Other Concepts
 
-- **Self-Attention**: Multi-head attention applies the self-attention mechanism multiple times in parallel (see `self-attention.md`).
-- **Causal Attention**: Each head in a decoder model applies its own causal mask (see `causal-attention.md`).
-- **KV Cache / Autoregressive Generation**: MQA and GQA were specifically designed to reduce the memory cost of the KV cache during generation (see `autoregressive-generation.md`).
-- **Transformer Architecture**: Multi-head attention is the first sub-layer in each Transformer block (see `transformer-architecture.md`).
+- `self-attention.md`: Multi-head attention applies the self-attention mechanism multiple times in parallel (see `self-attention.md`).
+- `causal-attention.md`: Each head in a decoder model applies its own causal mask (see `causal-attention.md`).
+- `kv-cache.md`: MQA and GQA were specifically designed to reduce the memory cost of the KV cache during generation (see `autoregressive-generation.md`).
+- `transformer-architecture.md`: Multi-head attention is the first sub-layer in each Transformer block (see `transformer-architecture.md`).
 - **Residual Stream**: Each head's output contributes additively to the residual stream (see `residual-connections.md`).
 
 ## Further Reading

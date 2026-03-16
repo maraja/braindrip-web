@@ -222,12 +222,12 @@ On the MTEB (Massive Text Embedding Benchmark) reranking leaderboard, as of earl
 
 ## Connections to Other Concepts
 
-- **RAG**: Reranking is a critical component of production RAG pipelines, improving the precision of retrieved documents before they are passed to the LLM for generation.
-- **Embedding models and vector databases**: Bi-encoders (embedding models) handle first-stage retrieval; cross-encoders (rerankers) handle second-stage refinement. They are complementary, not competing.
-- **ColBERT and late interaction**: ColBERT provides a middle-ground architecture between bi-encoders and cross-encoders, usable as either a retriever or a reranker.
-- **Corrective RAG (CRAG)**: CRAG's relevance evaluation step can use a cross-encoder reranker as the relevance scorer, applying a threshold to determine whether retrieved documents are "correct," "incorrect," or "ambiguous."
-- **Agentic RAG**: Agentic systems can dynamically decide whether to apply reranking based on first-stage retrieval confidence, saving latency when retrieval is already high-quality.
-- **HyDE**: HyDE improves first-stage recall (the relevant documents appear somewhere in the candidate set). Reranking improves precision (the relevant documents are at the top). They are complementary: HyDE + reranking is a powerful combination.
+- `rag.md`: Reranking is a critical component of production RAG pipelines, improving the precision of retrieved documents before they are passed to the LLM for generation.
+- `embedding-models-and-vector-databases.md`: Bi-encoders (embedding models) handle first-stage retrieval; cross-encoders (rerankers) handle second-stage refinement. They are complementary, not competing.
+- `colbert-late-interaction.md`: ColBERT provides a middle-ground architecture between bi-encoders and cross-encoders, usable as either a retriever or a reranker.
+- `corrective-rag.md`: CRAG's relevance evaluation step can use a cross-encoder reranker as the relevance scorer, applying a threshold to determine whether retrieved documents are "correct," "incorrect," or "ambiguous."
+- `agentic-rag.md`: Agentic systems can dynamically decide whether to apply reranking based on first-stage retrieval confidence, saving latency when retrieval is already high-quality.
+- `hyde-hypothetical-document-embeddings.md`: HyDE improves first-stage recall (the relevant documents appear somewhere in the candidate set). Reranking improves precision (the relevant documents are at the top). They are complementary: HyDE + reranking is a powerful combination.
 
 ## Further Reading
 

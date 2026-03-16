@@ -119,11 +119,11 @@ This is the foundation of the agent paradigm. Every AI agent -- from coding assi
 
 ## Connections to Other Concepts
 
-- **AI agents** are built on top of function calling -- the agent loop is essentially repeated function calling with reasoning between calls.
-- **Structured output** is the underlying capability that makes function calling work -- the model must produce valid JSON conforming to a schema.
-- **RAG** often uses function calling as its trigger mechanism: the model calls a `search` tool to retrieve documents.
-- **Prompt engineering** applies to tool descriptions and system prompts that guide tool selection behavior.
-- **Safety and alignment** become critical when tools can take real-world actions. The application layer must implement authorization, rate limiting, and human-in-the-loop approval for sensitive operations.
+- `ai-agents.md`: are built on top of function calling -- the agent loop is essentially repeated function calling with reasoning between calls.
+- `structured-output.md`: is the underlying capability that makes function calling work -- the model must produce valid JSON conforming to a schema.
+- `rag.md`: often uses function calling as its trigger mechanism: the model calls a `search` tool to retrieve documents.
+- `prompt-engineering.md`: applies to tool descriptions and system prompts that guide tool selection behavior.
+- `safety-by-design.md`: become critical when tools can take real-world actions. The application layer must implement authorization, rate limiting, and human-in-the-loop approval for sensitive operations.
 
 ## Further Reading
 

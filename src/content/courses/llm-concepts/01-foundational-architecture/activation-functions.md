@@ -135,11 +135,11 @@ The success of GLU variants highlights a broader principle: **multiplicative int
 
 ## Connections to Other Concepts
 
-- **Feed-Forward Networks**: Activation functions are a core component of the FFN sub-layer (see `feed-forward-networks.md`).
-- **Logits and Softmax**: Softmax is itself an activation function, used at the output layer rather than in hidden layers (see `logits-and-softmax.md`).
-- **Residual Connections**: The output of activated FFN layers is added to the residual stream (see `residual-connections.md`).
-- **Layer Normalization**: Normalization and activation functions interact to determine the distribution of values flowing through the network (see `layer-normalization.md`).
-- **Mixture of Experts**: Each expert in an MoE model contains an FFN with its own activation function (see `mixture-of-experts.md`).
+- `feed-forward-networks.md`: Activation functions are a core component of the FFN sub-layer (see `feed-forward-networks.md`).
+- `logits-and-softmax.md`: Softmax is itself an activation function, used at the output layer rather than in hidden layers (see `logits-and-softmax.md`).
+- `residual-connections.md`: The output of activated FFN layers is added to the residual stream (see `residual-connections.md`).
+- `layer-normalization.md`: Normalization and activation functions interact to determine the distribution of values flowing through the network (see `layer-normalization.md`).
+- `mixture-of-experts.md`: Each expert in an MoE model contains an FFN with its own activation function (see `mixture-of-experts.md`).
 
 ## Further Reading
 

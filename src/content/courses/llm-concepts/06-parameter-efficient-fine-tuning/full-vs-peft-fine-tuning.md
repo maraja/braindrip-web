@@ -169,13 +169,13 @@ The binary choice between full and PEFT is increasingly blurred:
 
 ## Connections to Other Concepts
 
-- **LoRA and QLoRA**: The most practical PEFT methods and the default recommendation for most fine-tuning scenarios.
-- **Distributed training**: Full fine-tuning of large models requires distributed training (FSDP, DeepSpeed). PEFT often eliminates this requirement, simplifying the infrastructure.
-- **Catastrophic forgetting**: Full fine-tuning risks overwriting pretrained knowledge. PEFT structurally mitigates this by keeping pretrained weights frozen.
-- **Overfitting and regularization**: PEFT's low-rank constraint acts as implicit regularization. Full fine-tuning may require explicit regularization (weight decay, dropout, early stopping) to avoid overfitting on small datasets.
+- `lora.md`: The most practical PEFT methods and the default recommendation for most fine-tuning scenarios.
+- `05-distributed-training-infrastructure.md`: Full fine-tuning of large models requires distributed training (FSDP, DeepSpeed). PEFT often eliminates this requirement, simplifying the infrastructure.
+- `catastrophic-forgetting.md`: Full fine-tuning risks overwriting pretrained knowledge. PEFT structurally mitigates this by keeping pretrained weights frozen.
+- `overfitting-and-underfitting.md`: PEFT's low-rank constraint acts as implicit regularization. Full fine-tuning may require explicit regularization (weight decay, dropout, early stopping) to avoid overfitting on small datasets.
 - **Inference optimization**: Merged LoRA adapters have zero inference overhead, making them compatible with all inference optimizations (quantization, KV caching, speculative decoding). Separate adapter architectures may complicate some optimizations.
-- **Model merging and task arithmetic**: PEFT adapters enable model merging techniques (e.g., TIES merging, DARE) that combine capabilities from multiple fine-tuned variants without additional training.
-- **Instruction tuning and RLHF**: Both the supervised fine-tuning (SFT) stage and the reinforcement learning stage of alignment can use either full fine-tuning or PEFT. Many open-source alignment efforts use LoRA for SFT and full fine-tuning (or LoRA) for the reward model.
+- `model-merging.md`: PEFT adapters enable model merging techniques (e.g., TIES merging, DARE) that combine capabilities from multiple fine-tuned variants without additional training.
+- `05-instruction-tuning-and-flan.md`: Both the supervised fine-tuning (SFT) stage and the reinforcement learning stage of alignment can use either full fine-tuning or PEFT. Many open-source alignment efforts use LoRA for SFT and full fine-tuning (or LoRA) for the reward model.
 
 ## Further Reading
 

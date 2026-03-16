@@ -119,10 +119,10 @@ where $C$ is the number of object categories. All categories contribute equally,
 
 ## Connections to Other Concepts
 
-- **Object Detection**: mAP is the standard evaluation metric for all detection architectures (Faster R-CNN, YOLO, DETR).
-- **Classification Metrics**: Precision, recall, and F1 are the building blocks of AP.
-- **Segmentation Metrics**: Instance segmentation uses mask AP (IoU computed on masks rather than boxes).
-- **Benchmark Leaderboards**: COCO leaderboard rankings are determined by AP, driving architectural innovation.
+- `3d-object-detection.md`: mAP is the standard evaluation metric for all detection architectures (Faster R-CNN, YOLO, DETR).
+- `classification-metrics.md`: Precision, recall, and F1 are the building blocks of AP.
+- `segmentation-metrics.md`: Instance segmentation uses mask AP (IoU computed on masks rather than boxes).
+- `benchmark-leaderboards.md`: COCO leaderboard rankings are determined by AP, driving architectural innovation.
 
 ## Further Reading
 

@@ -120,11 +120,11 @@ ERM is not just one algorithm -- it is the meta-algorithm. Linear regression, lo
 
 ## Connections to Other Concepts
 
-- **Loss Functions**: The $\mathcal{L}$ in ERM -- different losses define different risk functionals and lead to different learned models.
-- **Regularization**: Structural risk minimization adds a complexity term to ERM, which is regularization's theoretical justification.
-- **Bias-Variance Tradeoff**: The approximation-estimation decomposition in ERM directly parallels bias vs. variance.
-- **Overfitting and Underfitting**: Overfitting is ERM's primary failure mode; underfitting occurs when $\mathcal{H}$ is too restrictive.
-- **Curse of Dimensionality**: High dimensions increase the VC dimension and estimation error, requiring exponentially more data.
+- `loss-functions.md`: The $\mathcal{L}$ in ERM -- different losses define different risk functionals and lead to different learned models.
+- `regularization.md`: Structural risk minimization adds a complexity term to ERM, which is regularization's theoretical justification.
+- `bias-variance-tradeoff.md`: The approximation-estimation decomposition in ERM directly parallels bias vs. variance.
+- `overfitting-and-underfitting.md`: Overfitting is ERM's primary failure mode; underfitting occurs when $\mathcal{H}$ is too restrictive.
+- `curse-of-dimensionality.md`: High dimensions increase the VC dimension and estimation error, requiring exponentially more data.
 
 ## Further Reading
 

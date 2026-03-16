@@ -117,11 +117,11 @@ Winners typically achieve 1--3% improvement over the previous year's best, often
 
 ## Connections to Other Concepts
 
-- **Classification Metrics**: ImageNet leaderboards use top-1/top-5 accuracy.
-- **Detection Metrics**: COCO leaderboards use AP@[.50:.05:.95].
-- **Segmentation Metrics**: ADE20K uses mIoU; COCO panoptic uses PQ.
-- **Landmark Datasets**: Every major leaderboard is defined by a specific dataset and evaluation protocol.
-- **Generative Model Metrics**: FID leaderboards track generative model progress on CIFAR-10, FFHQ, and COCO.
+- `classification-metrics.md`: ImageNet leaderboards use top-1/top-5 accuracy.
+- `detection-metrics.md`: COCO leaderboards use AP@[.50:.05:.95].
+- `segmentation-metrics.md`: ADE20K uses mIoU; COCO panoptic uses PQ.
+- `landmark-datasets.md`: Every major leaderboard is defined by a specific dataset and evaluation protocol.
+- `generative-model-metrics.md`: FID leaderboards track generative model progress on CIFAR-10, FFHQ, and COCO.
 
 ## Further Reading
 

@@ -90,10 +90,10 @@ DeiT (Touvron et al., 2021) introduced a distillation token alongside the class 
 
 ## Connections to Other Concepts
 
-- **Label Smoothing**: Both produce soft targets, but distillation targets are learned from data (capturing real inter-class structure) while label smoothing targets are uniform. Label smoothing in the teacher can degrade distillation quality.
-- **Transfer Learning**: Distillation transfers knowledge between models of different sizes, while transfer learning transfers knowledge between tasks.
-- **Self-Supervised Pretraining**: DINO and similar methods can be viewed as a form of self-distillation where the teacher is an exponential moving average of the student.
-- **Mixup and CutMix**: Soft labels from mixing and soft labels from distillation serve similar regularization roles and can be combined.
+- `label-smoothing.md`: Both produce soft targets, but distillation targets are learned from data (capturing real inter-class structure) while label smoothing targets are uniform. Label smoothing in the teacher can degrade distillation quality.
+- `transfer-learning.md`: Distillation transfers knowledge between models of different sizes, while transfer learning transfers knowledge between tasks.
+- `self-supervised-pretraining.md`: DINO and similar methods can be viewed as a form of self-distillation where the teacher is an exponential moving average of the student.
+- `mixup-and-cutmix.md`: Soft labels from mixing and soft labels from distillation serve similar regularization roles and can be combined.
 
 ## Further Reading
 

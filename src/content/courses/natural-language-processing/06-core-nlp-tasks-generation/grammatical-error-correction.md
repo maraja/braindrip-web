@@ -98,12 +98,12 @@ Fang et al. (2023) showed that GPT-4 achieves 71.1 F0.5 on the CoNLL-2014 test s
 
 ## Connections to Other Concepts
 
-- **`machine-translation.md`**: GEC as monolingual translation directly borrows MT architectures, training techniques, and evaluation methodology.
-- **`part-of-speech-tagging.md`**: POS tags provide features for classifier-based GEC and help identify error types (wrong verb form, incorrect article).
-- **`text-classification.md`**: Error detection (is this sentence grammatical?) is a binary classification task; error type classification categorizes the specific error.
-- **`text-generation.md`**: Seq2seq GEC uses the same decoding strategies; LLM-based GEC uses prompt-based generation.
-- **`data-augmentation-for-nlp.md`**: Synthetic error generation is a form of data augmentation critical for GEC training data.
-- **`evaluation-metrics-for-nlp.md`**: M2, ERRANT, and GLEU are specialized GEC metrics discussed in the broader evaluation context there.
+- `machine-translation.md`: GEC as monolingual translation directly borrows MT architectures, training techniques, and evaluation methodology.
+- `part-of-speech-tagging.md`: POS tags provide features for classifier-based GEC and help identify error types (wrong verb form, incorrect article).
+- `text-classification.md`: Error detection (is this sentence grammatical?) is a binary classification task; error type classification categorizes the specific error.
+- `text-generation.md`: Seq2seq GEC uses the same decoding strategies; LLM-based GEC uses prompt-based generation.
+- `data-augmentation.md`: Synthetic error generation is a form of data augmentation critical for GEC training data.
+- `evaluation-metrics.md`: M2, ERRANT, and GLEU are specialized GEC metrics discussed in the broader evaluation context there.
 
 ## Further Reading
 

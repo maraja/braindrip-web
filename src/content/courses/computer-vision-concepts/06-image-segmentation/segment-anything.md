@@ -98,11 +98,11 @@ SA-1B statistics: 11M images, 1.1B masks, average 100 masks per image. Images we
 
 ## Connections to Other Concepts
 
-- **Instance Segmentation**: SAM produces instance-level masks but without class labels; it is class-agnostic instance segmentation.
-- **Semantic Segmentation**: SAM does not perform semantic segmentation directly but can provide mask proposals that a semantic classifier labels.
-- **Panoptic Segmentation**: SAM's automatic mask generation produces a set of non-overlapping masks resembling panoptic output, though without semantic labels.
-- **Mask R-CNN**: SAM generalizes the idea of mask prediction but decouples it from class-specific detection.
-- **U-Net**: domain-specific U-Net models still outperform SAM on specialized tasks (e.g., cell segmentation) without fine-tuning, but SAM fine-tuned variants are closing the gap.
+- `instance-segmentation.md`: SAM produces instance-level masks but without class labels; it is class-agnostic instance segmentation.
+- `semantic-segmentation.md`: SAM does not perform semantic segmentation directly but can provide mask proposals that a semantic classifier labels.
+- `panoptic-segmentation.md`: SAM's automatic mask generation produces a set of non-overlapping masks resembling panoptic output, though without semantic labels.
+- `r-cnn.md`: SAM generalizes the idea of mask prediction but decouples it from class-specific detection.
+- `u-net.md`: domain-specific U-Net models still outperform SAM on specialized tasks (e.g., cell segmentation) without fine-tuning, but SAM fine-tuned variants are closing the gap.
 
 ## Further Reading
 

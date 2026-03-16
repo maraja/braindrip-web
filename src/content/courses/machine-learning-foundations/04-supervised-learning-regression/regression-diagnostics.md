@@ -111,12 +111,12 @@ A regression model is only as trustworthy as its assumptions. Publishing coeffic
 
 ## Connections to Other Concepts
 
-- **Linear Regression**: Diagnostics verify the assumptions that justify OLS estimation and inference.
-- **Polynomial Regression**: Residual plots with curved patterns suggest adding polynomial terms to the model.
-- **Ridge and Lasso Regression**: High VIF values are a direct indicator that regularization may improve the model.
-- **Generalized Linear Models**: GLMs have their own diagnostic tools (deviance residuals, Pearson residuals) analogous to those for linear regression.
-- **Bias-Variance Tradeoff**: Influential points can dramatically affect both bias and variance of the estimator.
-- **Cross-Validation**: Complements diagnostics by providing an assumption-free estimate of predictive performance.
+- `linear-regression.md`: Diagnostics verify the assumptions that justify OLS estimation and inference.
+- `polynomial-regression.md`: Residual plots with curved patterns suggest adding polynomial terms to the model.
+- `ridge-and-lasso-regression.md`: High VIF values are a direct indicator that regularization may improve the model.
+- `generalized-linear-models.md`: GLMs have their own diagnostic tools (deviance residuals, Pearson residuals) analogous to those for linear regression.
+- `bias-variance-tradeoff.md`: Influential points can dramatically affect both bias and variance of the estimator.
+- `cross-validation.md`: Complements diagnostics by providing an assumption-free estimate of predictive performance.
 
 ## Further Reading
 

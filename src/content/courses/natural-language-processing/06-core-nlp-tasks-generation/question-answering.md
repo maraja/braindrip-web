@@ -95,12 +95,12 @@ The field has progressed through distinct eras:
 
 ## Connections to Other Concepts
 
-- **`information-retrieval.md`**: The retriever component in open-domain QA uses IR techniques from BM25 to dense retrieval.
-- **`contextual-embeddings.md`**: BERT and similar models provide the representations that power modern extractive QA.
-- **`text-generation.md`**: Generative QA uses the same decoding strategies (beam search, nucleus sampling) covered there.
-- **`knowledge-graphs-for-nlp.md`**: KBQA relies on structured knowledge representations for answering factoid questions.
-- **`text-classification.md`**: Answer type classification and answerability detection (SQuAD 2.0) are classification subtasks.
-- **`machine-translation.md`**: Cross-lingual QA applies MT techniques to answer questions in one language using documents in another.
+- `information-retrieval.md`: The retriever component in open-domain QA uses IR techniques from BM25 to dense retrieval.
+- `contextual-embeddings.md`: BERT and similar models provide the representations that power modern extractive QA.
+- `text-generation.md`: Generative QA uses the same decoding strategies (beam search, nucleus sampling) covered there.
+- `knowledge-graphs-for-nlp.md`: KBQA relies on structured knowledge representations for answering factoid questions.
+- `text-classification.md`: Answer type classification and answerability detection (SQuAD 2.0) are classification subtasks.
+- `machine-translation.md`: Cross-lingual QA applies MT techniques to answer questions in one language using documents in another.
 
 ## Further Reading
 

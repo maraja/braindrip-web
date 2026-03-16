@@ -118,11 +118,11 @@ VI transforms Bayesian inference from an integration problem into an optimizatio
 
 ## Connections to Other Concepts
 
-- **Bayesian Inference**: VI is an approximate method for Bayesian posterior computation. It complements exact methods (conjugate models) and sampling methods (MCMC).
+- `bayesian-inference.md`: VI is an approximate method for Bayesian posterior computation. It complements exact methods (conjugate models) and sampling methods (MCMC).
 - **MCMC**: The main alternative to VI. MCMC is asymptotically exact but slower; VI is fast but approximate. Practitioners often validate VI results against MCMC on smaller problems.
-- **Expectation-Maximization**: EM is a special case of variational inference where the approximate posterior over latent variables is set to the exact conditional (a delta function over point estimates for parameters).
-- **Gaussian Processes**: Sparse variational GPs use inducing points and a variational ELBO to scale GP inference from $O(n^3)$ to $O(nm^2)$.
-- **Graphical Models**: The structure of graphical models informs the design of the variational family -- structured variational inference respects the conditional independence structure of the model.
+- `expectation-maximization.md`: EM is a special case of variational inference where the approximate posterior over latent variables is set to the exact conditional (a delta function over point estimates for parameters).
+- `gaussian-processes.md`: Sparse variational GPs use inducing points and a variational ELBO to scale GP inference from $O(n^3)$ to $O(nm^2)$.
+- `graphical-models.md`: The structure of graphical models informs the design of the variational family -- structured variational inference respects the conditional independence structure of the model.
 
 ## Further Reading
 

@@ -104,14 +104,14 @@ The TimeBank corpus provides 186 documents with 7,935 temporal relation annotati
 
 ## Connections to Other Concepts
 
-- **Information Extraction** (`information-extraction.md`): Event extraction is the most complex stage of the IE pipeline.
-- **Semantic Role Labeling** (`05-core-nlp-tasks-analysis/semantic-role-labeling.md`): SRL identifies predicate-argument structure; event extraction adds event-type classification and event-specific role labels.
-- **Named Entity Recognition** (`05-core-nlp-tasks-analysis/named-entity-recognition.md`): NER provides candidate arguments for event extraction.
-- **Open Information Extraction** (`open-information-extraction.md`): Open IE extracts general triples; event extraction adds typed event structure and argument roles.
-- **Temporal Reasoning** (`08-semantic-understanding/temporal-reasoning.md`): Ordering extracted events into timelines requires temporal relation identification.
-- **Negation and Speculation Detection** (`08-semantic-understanding/negation-and-speculation-detection.md`): Distinguishing actual events from hypothetical, negated, or planned events.
-- **Knowledge Graphs for NLP** (`knowledge-graphs-for-nlp.md`): Extracted events populate event-centric knowledge graphs.
-- **Coreference Resolution** (`05-core-nlp-tasks-analysis/coreference-resolution.md`): Cross-document event coreference links different reports of the same event.
+- `information-extraction.md`: Event extraction is the most complex stage of the IE pipeline.
+- `05-core-nlp-tasks-analysis/semantic-role-labeling.md`: SRL identifies predicate-argument structure; event extraction adds event-type classification and event-specific role labels.
+- `05-core-nlp-tasks-analysis/named-entity-recognition.md`: NER provides candidate arguments for event extraction.
+- `open-information-extraction.md`: Open IE extracts general triples; event extraction adds typed event structure and argument roles.
+- `08-semantic-understanding/temporal-reasoning.md`: Ordering extracted events into timelines requires temporal relation identification.
+- `08-semantic-understanding/negation-and-speculation-detection.md`: Distinguishing actual events from hypothetical, negated, or planned events.
+- `knowledge-graphs-for-nlp.md`: Extracted events populate event-centric knowledge graphs.
+- `05-core-nlp-tasks-analysis/coreference-resolution.md`: Cross-document event coreference links different reports of the same event.
 
 ## Further Reading
 

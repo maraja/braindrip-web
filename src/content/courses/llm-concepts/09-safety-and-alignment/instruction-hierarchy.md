@@ -123,11 +123,11 @@ When instructions conflict, the model follows the higher-priority source. When i
 
 ## Connections to Other Concepts
 
-- **Prompt Injection**: The primary threat the instruction hierarchy defends against; understanding injection attacks is essential context.
-- **RLHF / Preference Learning**: The hierarchy is typically trained using preference-based methods -- the model learns to prefer hierarchy-respecting responses over hierarchy-violating ones.
+- `prompt-injection.md`: The primary threat the instruction hierarchy defends against; understanding injection attacks is essential context.
+- `rlhf.md`: The hierarchy is typically trained using preference-based methods -- the model learns to prefer hierarchy-respecting responses over hierarchy-violating ones.
 - **Agentic AI Systems**: Tool use and multi-agent architectures create indirect injection surfaces that the hierarchy must cover.
-- **Constitutional AI**: Shares the principle of embedding behavioral constraints at training time rather than relying on runtime filtering.
-- **Red-Teaming**: Evaluating the hierarchy's robustness requires systematic adversarial testing across all priority levels.
+- `constitutional-ai.md`: Shares the principle of embedding behavioral constraints at training time rather than relying on runtime filtering.
+- `red-teaming.md`: Evaluating the hierarchy's robustness requires systematic adversarial testing across all priority levels.
 
 ## Further Reading
 

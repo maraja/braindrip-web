@@ -128,12 +128,12 @@ Test-time compute may be the most important development in AI scaling since the 
 
 ## Connections to Other Concepts
 
-- **Chain-of-Thought Prompting**: The precursor to test-time compute. CoT demonstrated that intermediate reasoning steps improve performance; reasoning models formalize and optimize this through RL.
-- **Reinforcement Learning from Human Feedback (RLHF)**: RLVR uses the same RL algorithms (PPO, GRPO) but with automatic verification instead of human preference labels, making it more scalable.
-- **Scaling Laws**: Test-time compute extends the scaling law framework from a single axis (train compute) to two axes (train + inference compute), fundamentally changing how we think about compute allocation.
-- **Compound AI Systems**: Test-time compute techniques (sampling, verification, search) are building blocks for compound systems that combine multiple inference strategies.
+- `chain-of-thought-prompting.md`: The precursor to test-time compute. CoT demonstrated that intermediate reasoning steps improve performance; reasoning models formalize and optimize this through RL.
+- `rlhf.md`: RLVR uses the same RL algorithms (PPO, GRPO) but with automatic verification instead of human preference labels, making it more scalable.
+- `scaling-laws.md`: Test-time compute extends the scaling law framework from a single axis (train compute) to two axes (train + inference compute), fundamentally changing how we think about compute allocation.
+- `compound-ai-systems.md`: Test-time compute techniques (sampling, verification, search) are building blocks for compound systems that combine multiple inference strategies.
 - **Model Distillation**: Knowledge from reasoning models can be distilled into faster models that approximate the reasoning behavior without the full search cost.
-- **Evaluation and Benchmarks**: Reasoning models have saturated many traditional benchmarks, driving demand for harder evaluations (FrontierMath, SWE-bench Verified).
+- `trajectory-evaluation.md`: Reasoning models have saturated many traditional benchmarks, driving demand for harder evaluations (FrontierMath, SWE-bench Verified).
 
 ## Further Reading
 

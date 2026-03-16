@@ -113,11 +113,11 @@ Overparameterized neural networks can easily memorize training data. Without reg
 
 ## Connections to Other Concepts
 
-- **Perceptrons and Multilayer Networks**: Dropout is applied to hidden layers of MLPs to prevent co-adaptation of neurons.
-- **Backpropagation**: Gradients only flow through active (non-dropped) neurons, effectively training a different sub-network each step.
-- **Batch Normalization**: BatchNorm and dropout can interact negatively; careful placement or using LayerNorm can resolve this.
-- **Optimizers**: Weight decay in AdamW is a complementary regularization technique to dropout.
-- **Universal Approximation Theorem**: Regularization constrains the effective capacity of a network that theoretically could approximate any function.
+- `perceptrons-and-multilayer-networks.md`: Dropout is applied to hidden layers of MLPs to prevent co-adaptation of neurons.
+- `backpropagation.md`: Gradients only flow through active (non-dropped) neurons, effectively training a different sub-network each step.
+- `batch-normalization.md`: BatchNorm and dropout can interact negatively; careful placement or using LayerNorm can resolve this.
+- `optimizers.md`: Weight decay in AdamW is a complementary regularization technique to dropout.
+- `universal-approximation-theorem.md`: Regularization constrains the effective capacity of a network that theoretically could approximate any function.
 
 ## Further Reading
 

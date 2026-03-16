@@ -127,10 +127,10 @@ ML systems increasingly make decisions that affect people's lives: who gets a lo
 
 ## Connections to Other Concepts
 
-- **Model Deployment and Serving**: Fairness audits should be a deployment gate. Model cards should accompany every production model.
-- **Data Drift and Model Monitoring**: Monitoring must include fairness metrics broken down by demographic subgroups, not just aggregate performance.
-- **A/B Testing for ML**: A/B tests should measure fairness impact, not just overall business metrics. A model that improves revenue but disproportionately harms a subgroup is not a net positive.
-- **Experiment Tracking**: Log fairness metrics alongside standard metrics for every training run. Make disparities visible from the start.
+- `model-deployment-and-serving.md`: Fairness audits should be a deployment gate. Model cards should accompany every production model.
+- `data-drift-and-model-monitoring.md`: Monitoring must include fairness metrics broken down by demographic subgroups, not just aggregate performance.
+- `ab-testing-for-ml.md`: A/B tests should measure fairness impact, not just overall business metrics. A model that improves revenue but disproportionately harms a subgroup is not a net positive.
+- `experiment-tracking.md`: Log fairness metrics alongside standard metrics for every training run. Make disparities visible from the start.
 
 ## Further Reading
 

@@ -119,13 +119,13 @@ The enormous cost of pre-training also creates a significant barrier to entry. O
 
 ## Connections to Other Concepts
 
-- **Cross-Entropy Loss**: The objective function that drives pre-training.
-- **Tokenization**: Determines the vocabulary and granularity of prediction.
-- **Scaling Laws**: Govern how much compute, data, and parameters are needed.
-- **Training Data Curation**: The quality and composition of the pre-training corpus directly determines what the model can learn.
-- **Mixed Precision Training**: Essential for making pre-training computationally feasible.
-- **Fine-Tuning (SFT) and RLHF**: The stages that follow pre-training to specialize and align the model.
-- **Distributed Training**: Parallelism strategies (data, tensor, pipeline) that make training across thousands of GPUs possible.
+- `cross-entropy-loss.md`: The objective function that drives pre-training.
+- `tokenization.md`: Determines the vocabulary and granularity of prediction.
+- `scaling-laws.md`: Govern how much compute, data, and parameters are needed.
+- `training-data-curation.md`: The quality and composition of the pre-training corpus directly determines what the model can learn.
+- `mixed-precision-training.md`: Essential for making pre-training computationally feasible.
+- `supervised-fine-tuning.md`: The stages that follow pre-training to specialize and align the model.
+- `05-distributed-training-infrastructure.md`: Parallelism strategies (data, tensor, pipeline) that make training across thousands of GPUs possible.
 
 ## Further Reading
 

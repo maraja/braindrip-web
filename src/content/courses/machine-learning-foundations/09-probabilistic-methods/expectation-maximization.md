@@ -112,10 +112,10 @@ EM is one of the most widely used algorithms in statistical machine learning. Wh
 
 ## Connections to Other Concepts
 
-- **Variational Inference**: EM is a special case of variational inference where the E-step sets $q(Z) = p(Z \mid X, \theta)$ exactly. When this exact E-step is intractable, variational EM uses an approximate $q(Z)$.
-- **Bayesian Inference**: EM finds point estimates of parameters; full Bayesian treatment would place a prior on $\theta$ and integrate it out.
-- **Graphical Models**: Many graphical models (HMMs, LDA) use EM or its variants for parameter estimation. The structure of the graphical model determines the form of the E-step.
-- **Gaussian Processes**: Hyperparameter optimization in GPs via marginal likelihood can be seen as a type-II ML procedure related to the M-step of EM.
+- `variational-inference.md`: EM is a special case of variational inference where the E-step sets $q(Z) = p(Z \mid X, \theta)$ exactly. When this exact E-step is intractable, variational EM uses an approximate $q(Z)$.
+- `bayesian-inference.md`: EM finds point estimates of parameters; full Bayesian treatment would place a prior on $\theta$ and integrate it out.
+- `graphical-models.md`: Many graphical models (HMMs, LDA) use EM or its variants for parameter estimation. The structure of the graphical model determines the form of the E-step.
+- `gaussian-processes.md`: Hyperparameter optimization in GPs via marginal likelihood can be seen as a type-II ML procedure related to the M-step of EM.
 - **MCMC**: When the E-step is intractable, Monte Carlo EM replaces the expectation with samples from the posterior over latent variables.
 
 ## Further Reading

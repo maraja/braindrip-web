@@ -118,10 +118,10 @@ At scale, an ML team without experiment tracking is navigating a high-dimensiona
 
 ## Connections to Other Concepts
 
-- **ML Pipelines**: Pipelines are the execution engines that produce tracked runs. Mature systems automatically log every pipeline execution to the tracking system.
-- **A/B Testing for ML**: Experiment tracking captures offline metrics; A/B testing reveals whether those offline gains translate to online improvements. The tracking system links offline runs to online experiment results.
-- **Hyperparameter Tuning**: Tuning algorithms (grid search, Bayesian optimization) generate many runs. Tracking systems store and visualize these runs, enabling analysis of the hyperparameter landscape.
-- **Model Deployment and Serving**: The model registry bridges experiment tracking and deployment. A model transitions from "best tracked run" to "deployed artifact" through the registry.
+- `ml-pipelines.md`: Pipelines are the execution engines that produce tracked runs. Mature systems automatically log every pipeline execution to the tracking system.
+- `ab-testing-for-ml.md`: Experiment tracking captures offline metrics; A/B testing reveals whether those offline gains translate to online improvements. The tracking system links offline runs to online experiment results.
+- `hyperparameter-tuning.md`: Tuning algorithms (grid search, Bayesian optimization) generate many runs. Tracking systems store and visualize these runs, enabling analysis of the hyperparameter landscape.
+- `model-deployment-and-serving.md`: The model registry bridges experiment tracking and deployment. A model transitions from "best tracked run" to "deployed artifact" through the registry.
 
 ## Further Reading
 

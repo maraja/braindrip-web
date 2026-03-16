@@ -114,8 +114,8 @@ For applications like real-time streaming, long-document processing, and edge de
 
 ## Connections to Other Concepts
 
-- **Attention Mechanisms**: SSMs are the primary alternative to attention. Understanding why attention is O(n^2) clarifies why SSMs' O(n) complexity matters.
-- **FlashAttention**: Mamba's hardware-aware kernel design directly borrows principles from FlashAttention's SRAM-optimized approach.
+- `attention-mechanism.md`: SSMs are the primary alternative to attention. Understanding why attention is O(n^2) clarifies why SSMs' O(n) complexity matters.
+- `flash-attention.md`: Mamba's hardware-aware kernel design directly borrows principles from FlashAttention's SRAM-optimized approach.
 - **Hybrid Architectures**: The dominant production trend is now **hybrid SSM-Attention models** that combine SSM efficiency with attention's precise recall:
   - **Jamba** (AI21 Labs, 2024): Interleaves Mamba and Transformer attention layers in a 1:7 ratio (1 attention layer per 7 Mamba layers), combined with MoE. Jamba-1.5 scaled to 398B total parameters with 94B active, achieving competitive quality with 2x the throughput and 256K context.
   - **Zamba** (Zyphra, 2024): A hybrid architecture sharing attention parameters across all attention layers while keeping Mamba blocks separate, achieving strong quality with minimal attention overhead.
@@ -123,8 +123,8 @@ For applications like real-time streaming, long-document processing, and edge de
   - **xLSTM** (Sepp Hochreiter et al., 2024): Extended LSTM with exponential gating and matrix-valued memory, achieving competitive performance with Transformers while maintaining the LSTM's recurrent efficiency.
 
   The hybrid pattern suggests the future may not be "SSMs vs. Transformers" but "SSMs + Transformers," using each where its strengths matter most.
-- **Context Window Extension**: SSMs sidestep the context extension problem entirely -- their recurrent nature means infinite context is theoretically possible, limited only by state capacity rather than memory.
-- **RNNs and LSTMs**: SSMs are the modern evolution of recurrent sequence modeling, solving the parallelization and vanishing gradient problems that limited classical RNNs.
+- `context-window-extension.md`: SSMs sidestep the context extension problem entirely -- their recurrent nature means infinite context is theoretically possible, limited only by state capacity rather than memory.
+- `bidirectional-rnns.md`: SSMs are the modern evolution of recurrent sequence modeling, solving the parallelization and vanishing gradient problems that limited classical RNNs.
 - **Model Efficiency**: SSMs connect to the broader theme of making models faster and cheaper at inference, alongside quantization and distillation.
 
 ## Further Reading

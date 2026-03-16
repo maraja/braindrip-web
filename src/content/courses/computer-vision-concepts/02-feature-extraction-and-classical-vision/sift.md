@@ -81,10 +81,10 @@ good = [m for m, n in matches if m.distance < 0.75 * n.distance]
 
 ## Connections to Other Concepts
 
-- **Edge Detection**: The DoG approximates the Laplacian of Gaussian, connecting SIFT's scale-space analysis to classical edge theory.
-- **Corner Detection**: SIFT keypoints overlap substantially with Harris-Laplace points; both seek locations with strong local structure.
-- **ORB and Binary Descriptors**: ORB was designed as a fast, patent-free alternative to SIFT, replacing floating-point histograms with binary strings.
-- **Image Stitching and Homography**: SIFT matching is the default front-end for panorama stitching pipelines.
+- `edge-detection.md`: The DoG approximates the Laplacian of Gaussian, connecting SIFT's scale-space analysis to classical edge theory.
+- `corner-detection.md`: SIFT keypoints overlap substantially with Harris-Laplace points; both seek locations with strong local structure.
+- `orb-and-binary-descriptors.md`: ORB was designed as a fast, patent-free alternative to SIFT, replacing floating-point histograms with binary strings.
+- `image-stitching-and-homography.md`: SIFT matching is the default front-end for panorama stitching pipelines.
 
 ## Further Reading
 

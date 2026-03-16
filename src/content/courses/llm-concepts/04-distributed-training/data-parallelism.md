@@ -121,10 +121,10 @@ Data parallelism is the foundation of virtually all distributed training. Even w
 
 ## Connections to Other Concepts
 
-- **Tensor Parallelism**: When the model is too large for one GPU, tensor parallelism splits individual layers across GPUs. Data parallelism and tensor parallelism are often combined.
-- **Pipeline Parallelism**: Another approach for large models that splits consecutive layers across GPUs. Combined with data parallelism in 3D parallelism strategies.
-- **ZeRO / FSDP**: These techniques address the memory limitation of data parallelism by sharding optimizer states, gradients, and parameters across GPUs while preserving the data-parallel training paradigm.
-- **Mixed Precision Training**: Often used alongside data parallelism to reduce communication volume (sending fp16 gradients instead of fp32) and speed up computation.
+- `tensor-parallelism.md`: When the model is too large for one GPU, tensor parallelism splits individual layers across GPUs. Data parallelism and tensor parallelism are often combined.
+- `pipeline-parallelism.md`: Another approach for large models that splits consecutive layers across GPUs. Combined with data parallelism in 3D parallelism strategies.
+- `zero-shot-classification.md`: These techniques address the memory limitation of data parallelism by sharding optimizer states, gradients, and parameters across GPUs while preserving the data-parallel training paradigm.
+- `mixed-precision-training.md`: Often used alongside data parallelism to reduce communication volume (sending fp16 gradients instead of fp32) and speed up computation.
 - **Gradient Compression**: Techniques like gradient quantization or sparsification reduce communication volume in data parallelism, improving scaling efficiency at the cost of some approximation.
 
 ## Further Reading

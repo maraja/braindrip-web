@@ -87,14 +87,14 @@ Real-world multilingual text frequently mixes languages within a single sentence
 
 ## Connections to Other Concepts
 
-- **`cross-lingual-word-embeddings.md`**: The precursor approach to multilingual representation, aligning monolingual embedding spaces into a shared vector space.
-- **`multilingual-transformers.md`**: The current dominant paradigm for multilingual NLP, with models like mBERT and XLM-R providing shared representations across 100+ languages.
-- **`low-resource-nlp.md`**: Most of the world's languages are low-resource, making low-resource techniques essential for extending NLP coverage.
-- **`language-diversity-and-typology.md`**: Typological properties directly determine which NLP approaches work for which languages.
-- **`machine-translation-approaches.md`**: MT is both a key multilingual NLP application and a tool for cross-lingual data generation.
-- **`tokenization-in-nlp.md`**: Tokenization choices have outsized impact in multilingual settings due to script and morphological diversity.
-- **`transfer-learning-in-nlp.md`**: Cross-lingual transfer is a special case of transfer learning where the domain shift is across languages.
-- **`cross-lingual-transfer.md`**: Detailed treatment of how task knowledge transfers from high-resource to low-resource languages.
+- `cross-lingual-word-embeddings.md`: The precursor approach to multilingual representation, aligning monolingual embedding spaces into a shared vector space.
+- `multilingual-transformers.md`: The current dominant paradigm for multilingual NLP, with models like mBERT and XLM-R providing shared representations across 100+ languages.
+- `low-resource-nlp.md`: Most of the world's languages are low-resource, making low-resource techniques essential for extending NLP coverage.
+- `language-diversity-and-typology.md`: Typological properties directly determine which NLP approaches work for which languages.
+- `machine-translation.md`: MT is both a key multilingual NLP application and a tool for cross-lingual data generation.
+- `tokenization.md`: Tokenization choices have outsized impact in multilingual settings due to script and morphological diversity.
+- `transfer-learning.md`: Cross-lingual transfer is a special case of transfer learning where the domain shift is across languages.
+- `cross-lingual-transfer.md`: Detailed treatment of how task knowledge transfers from high-resource to low-resource languages.
 
 ## Further Reading
 

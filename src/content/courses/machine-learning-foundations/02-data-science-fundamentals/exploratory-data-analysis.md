@@ -102,11 +102,11 @@ Tukey said it best: "The greatest value of a picture is when it forces us to not
 
 ## Connections to Other Concepts
 
-- **Data Types and Structures**: The type of a variable determines which EDA techniques apply -- histograms for continuous, bar charts for categorical, autocorrelation plots for time series.
-- **Data Cleaning and Preprocessing**: EDA identifies the problems (missing values, outliers, inconsistent formats); cleaning resolves them.
-- **Feature Scaling and Normalization**: EDA reveals whether features need transformation (e.g., heavy skew suggests log transform) before scaling.
-- **Handling Missing Data**: EDA quantifies missingness patterns -- is it random, or correlated with other variables? This determines the imputation strategy.
-- **Data Splitting and Sampling**: EDA on the target variable reveals class imbalance, which dictates the splitting strategy.
+- `data-types-and-structures.md`: The type of a variable determines which EDA techniques apply -- histograms for continuous, bar charts for categorical, autocorrelation plots for time series.
+- `data-cleaning-and-preprocessing.md`: EDA identifies the problems (missing values, outliers, inconsistent formats); cleaning resolves them.
+- `feature-scaling-and-normalization.md`: EDA reveals whether features need transformation (e.g., heavy skew suggests log transform) before scaling.
+- `handling-missing-data.md`: EDA quantifies missingness patterns -- is it random, or correlated with other variables? This determines the imputation strategy.
+- `data-splitting-and-sampling.md`: EDA on the target variable reveals class imbalance, which dictates the splitting strategy.
 
 ## Further Reading
 

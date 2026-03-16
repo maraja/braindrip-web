@@ -74,11 +74,11 @@ Image -> Selective Search (~2,000 proposals)
 
 ## Connections to Other Concepts
 
-- **Sliding Window and Region Proposals**: R-CNN relies entirely on Selective Search for candidate generation.
-- **Fast and Faster R-CNN**: Direct successors that share computation across proposals and eliminate the SVM stage.
-- **Non-Maximum Suppression**: Applied per-class after SVM scoring to produce final detections.
-- **Intersection over Union**: Used to assign proposals to ground-truth boxes during training and to evaluate detection quality.
-- **Transfer Learning (ImageNet pre-training)**: R-CNN demonstrated that features learned on classification transfer effectively to detection.
+- `sliding-window-and-region-proposals.md`: R-CNN relies entirely on Selective Search for candidate generation.
+- `fast-and-faster-rcnn.md`: Direct successors that share computation across proposals and eliminate the SVM stage.
+- `non-maximum-suppression.md`: Applied per-class after SVM scoring to produce final detections.
+- `intersection-over-union.md`: Used to assign proposals to ground-truth boxes during training and to evaluate detection quality.
+- `transfer-learning.md`: R-CNN demonstrated that features learned on classification transfer effectively to detection.
 
 ## Further Reading
 

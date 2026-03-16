@@ -94,11 +94,11 @@ This removes the need for all-to-all communication within a batch, enabling larg
 
 ## Connections to Other Concepts
 
-- **CLIP**: The dominant model for zero-shot classification; provides the shared embedding space and contrastive training framework.
-- **Open-Vocabulary Detection**: Extends zero-shot classification from whole images to localized regions within images.
-- **Image Captioning**: The inverse task -- generating text from images rather than matching images to text categories.
-- **Vision Foundation Models**: Zero-shot capability is a key evaluation metric for foundation models like CLIP, SigLIP, and EVA-CLIP.
-- **Transfer Learning**: Zero-shot classification is an extreme form of transfer where no task-specific adaptation occurs.
+- `clip.md`: The dominant model for zero-shot classification; provides the shared embedding space and contrastive training framework.
+- `open-vocabulary-detection.md`: Extends zero-shot classification from whole images to localized regions within images.
+- `image-captioning.md`: The inverse task -- generating text from images rather than matching images to text categories.
+- `vision-foundation-models.md`: Zero-shot capability is a key evaluation metric for foundation models like CLIP, SigLIP, and EVA-CLIP.
+- `transfer-learning.md`: Zero-shot classification is an extreme form of transfer where no task-specific adaptation occurs.
 
 ## Further Reading
 

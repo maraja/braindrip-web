@@ -77,13 +77,13 @@ Modern systems replace the cascade with joint or end-to-end neural architectures
 
 ## Connections to Other Concepts
 
-- **Named Entity Recognition** (`05-core-nlp-tasks-analysis/named-entity-recognition.md`): The first stage of the IE pipeline -- identifying entity mentions in text.
-- **Relation Extraction** (`05-core-nlp-tasks-analysis/relation-extraction.md`): The second stage -- classifying semantic relationships between identified entities.
-- **Event Extraction** (`event-extraction.md`): The most complex stage -- detecting events and their argument structures.
-- **Open Information Extraction** (`open-information-extraction.md`): Schema-free IE that does not require predefined relation types.
-- **Knowledge Graphs for NLP** (`knowledge-graphs-for-nlp.md`): IE is the primary method for constructing and populating knowledge graphs from text.
-- **Information Retrieval** (`information-retrieval.md`): While IR finds relevant documents, IE extracts structured facts from within them -- the two are often combined in pipeline systems.
-- **Coreference Resolution** (`05-core-nlp-tasks-analysis/coreference-resolution.md`): Essential for linking entity mentions across a document before extraction.
+- `05-core-nlp-tasks-analysis/named-entity-recognition.md`: The first stage of the IE pipeline -- identifying entity mentions in text.
+- `05-core-nlp-tasks-analysis/relation-extraction.md`: The second stage -- classifying semantic relationships between identified entities.
+- `event-extraction.md`: The most complex stage -- detecting events and their argument structures.
+- `open-information-extraction.md`: Schema-free IE that does not require predefined relation types.
+- `knowledge-graphs-for-nlp.md`: IE is the primary method for constructing and populating knowledge graphs from text.
+- `information-retrieval.md`: While IR finds relevant documents, IE extracts structured facts from within them -- the two are often combined in pipeline systems.
+- `05-core-nlp-tasks-analysis/coreference-resolution.md`: Essential for linking entity mentions across a document before extraction.
 
 ## Further Reading
 

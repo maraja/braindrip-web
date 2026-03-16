@@ -133,12 +133,12 @@ Jailbreaking has direct practical implications for AI deployment:
 
 ## Connections to Other Concepts
 
-- **Red Teaming**: Red teaming is the organized practice of attempting to jailbreak models to discover vulnerabilities before deployment. Jailbreaking techniques are the attacker's toolkit; red teaming is the defender's methodology.
-- **Prompt Injection**: Prompt injection and jailbreaking are closely related. Prompt injection focuses on overriding system instructions; jailbreaking focuses on bypassing safety training. In practice, they often use similar techniques.
-- **Constitutional AI**: CAI and Constitutional Classifiers represent Anthropic's approach to building more robust defenses against jailbreaking by grounding safety in explicit, auditable principles.
-- **Safety Training (RLHF/RLAIF)**: Jailbreaking exploits the limitations of safety training. Understanding jailbreaking motivates the development of more robust training approaches.
-- **Guardrails & Content Filtering**: External guardrails provide defense-in-depth against jailbreaks that bypass model-level safety training. A multi-layered approach combining internal safety training with external filtering is the standard.
-- **The Alignment Problem**: Jailbreaking is a concrete demonstration that current alignment techniques produce probabilistic safety, not guaranteed safety. This motivates research into more fundamentally robust alignment approaches.
+- `red-teaming.md`: Red teaming is the organized practice of attempting to jailbreak models to discover vulnerabilities before deployment. Jailbreaking techniques are the attacker's toolkit; red teaming is the defender's methodology.
+- `prompt-injection.md`: Prompt injection and jailbreaking are closely related. Prompt injection focuses on overriding system instructions; jailbreaking focuses on bypassing safety training. In practice, they often use similar techniques.
+- `constitutional-ai.md`: CAI and Constitutional Classifiers represent Anthropic's approach to building more robust defenses against jailbreaking by grounding safety in explicit, auditable principles.
+- `rlhf.md`: Jailbreaking exploits the limitations of safety training. Understanding jailbreaking motivates the development of more robust training approaches.
+- `guardrails.md`: External guardrails provide defense-in-depth against jailbreaks that bypass model-level safety training. A multi-layered approach combining internal safety training with external filtering is the standard.
+- `alignment-problem.md`: Jailbreaking is a concrete demonstration that current alignment techniques produce probabilistic safety, not guaranteed safety. This motivates research into more fundamentally robust alignment approaches.
 
 ## Further Reading
 

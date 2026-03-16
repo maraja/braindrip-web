@@ -84,11 +84,11 @@ The activation function is arguably the most consequential single design choice 
 
 ## Connections to Other Concepts
 
-- **Backpropagation**: The activation derivative $f'(z)$ appears directly in the backward pass and determines gradient flow.
-- **Weight Initialization**: He initialization is specifically derived for ReLU; using it with sigmoid leads to poor results, and vice versa.
-- **Batch Normalization**: Normalizing pre-activations before applying the activation function keeps inputs in the non-saturating regime.
-- **Perceptrons and Multilayer Networks**: Activation functions are what distinguish a multilayer network from a single linear transformation.
-- **Universal Approximation Theorem**: The theorem requires non-constant, bounded, or non-polynomial activation functions.
+- `backpropagation.md`: The activation derivative $f'(z)$ appears directly in the backward pass and determines gradient flow.
+- `weight-initialization.md`: He initialization is specifically derived for ReLU; using it with sigmoid leads to poor results, and vice versa.
+- `batch-normalization.md`: Normalizing pre-activations before applying the activation function keeps inputs in the non-saturating regime.
+- `perceptrons-and-multilayer-networks.md`: Activation functions are what distinguish a multilayer network from a single linear transformation.
+- `universal-approximation-theorem.md`: The theorem requires non-constant, bounded, or non-polynomial activation functions.
 
 ## Further Reading
 

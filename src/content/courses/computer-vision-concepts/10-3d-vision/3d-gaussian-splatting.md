@@ -93,11 +93,11 @@ with $\lambda = 0.2$. Training uses Adam optimizer with separate learning rates:
 
 ## Connections to Other Concepts
 
-- **Neural Radiance Fields**: 3DGS was directly motivated by NeRF's quality but addresses its rendering speed limitation with an explicit, rasterization-based approach.
-- **Multi-View Geometry**: 3DGS depends on accurate camera poses from SfM (COLMAP) and uses the sparse point cloud as initialization.
-- **Point Cloud Processing**: Gaussians are an enriched form of point cloud (each point carries covariance, opacity, and SH color), and standard point cloud operations (downsampling, registration) can be adapted.
-- **3D Reconstruction**: While 3DGS focuses on rendering, extracting surfaces from Gaussians (SuGaR, Guedon et al., 2024) bridges to mesh reconstruction.
-- **Depth Estimation**: Depth can be rendered from Gaussians as the expected depth along each ray, and depth supervision improves geometry.
+- `neural-radiance-fields.md`: 3DGS was directly motivated by NeRF's quality but addresses its rendering speed limitation with an explicit, rasterization-based approach.
+- `multi-view-geometry.md`: 3DGS depends on accurate camera poses from SfM (COLMAP) and uses the sparse point cloud as initialization.
+- `point-cloud-processing.md`: Gaussians are an enriched form of point cloud (each point carries covariance, opacity, and SH color), and standard point cloud operations (downsampling, registration) can be adapted.
+- `3d-reconstruction.md`: While 3DGS focuses on rendering, extracting surfaces from Gaussians (SuGaR, Guedon et al., 2024) bridges to mesh reconstruction.
+- `depth-estimation.md`: Depth can be rendered from Gaussians as the expected depth along each ray, and depth supervision improves geometry.
 
 ## Further Reading
 

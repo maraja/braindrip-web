@@ -92,11 +92,11 @@ SFT is also the bridge to further alignment. RLHF and DPO build on top of an SFT
 
 ## Connections to Other Concepts
 
-- **Pre-training** provides the foundation of knowledge and language understanding that SFT reshapes into useful behavior.
-- **RLHF/DPO** build on SFT to further refine model outputs based on human preferences, handling the subtleties that (instruction, response) pairs alone cannot capture.
-- **LoRA and parameter-efficient fine-tuning** make SFT practical for smaller organizations by reducing the computational cost of fine-tuning.
-- **Synthetic data generation** is increasingly used to create SFT datasets, with stronger models generating training data for weaker ones (distillation).
-- **Evaluation and benchmarks** (like MT-Bench and AlpacaEval) specifically measure the quality of instruction-following that SFT enables.
+- `pre-training.md`: provides the foundation of knowledge and language understanding that SFT reshapes into useful behavior.
+- `rlhf.md`: build on SFT to further refine model outputs based on human preferences, handling the subtleties that (instruction, response) pairs alone cannot capture.
+- `lora.md`: make SFT practical for smaller organizations by reducing the computational cost of fine-tuning.
+- `synthetic-data.md`: is increasingly used to create SFT datasets, with stronger models generating training data for weaker ones (distillation).
+- `trajectory-evaluation.md`: (like MT-Bench and AlpacaEval) specifically measure the quality of instruction-following that SFT enables.
 
 ## Further Reading
 

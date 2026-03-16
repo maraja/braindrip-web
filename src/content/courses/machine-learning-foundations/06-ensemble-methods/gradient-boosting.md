@@ -105,11 +105,11 @@ Gradient Boosting is arguably the most successful algorithm for structured/tabul
 
 ## Connections to Other Concepts
 
-- **AdaBoost**: Gradient boosting with exponential loss recovers AdaBoost. Gradient boosting generalizes AdaBoost to any differentiable loss, making it more robust (e.g., log loss is less sensitive to outliers than exponential loss).
-- **Bagging and Bootstrap**: Stochastic gradient boosting borrows the subsampling idea from bagging. However, bagging reduces variance while boosting reduces bias -- they attack different problems.
-- **Random Forests**: The main alternative for tabular data. Random Forests are easier to tune and parallelize; gradient boosting generally achieves lower error with careful tuning.
-- **XGBoost/LightGBM/CatBoost**: Industrial implementations that add regularization, approximate splitting, and engineering optimizations to the gradient boosting framework.
-- **Stacking and Blending**: Gradient boosting models are frequently used as base learners in stacking ensembles, often paired with Random Forests and linear models for diversity.
+- `adaboost.md`: Gradient boosting with exponential loss recovers AdaBoost. Gradient boosting generalizes AdaBoost to any differentiable loss, making it more robust (e.g., log loss is less sensitive to outliers than exponential loss).
+- `bagging-and-bootstrap.md`: Stochastic gradient boosting borrows the subsampling idea from bagging. However, bagging reduces variance while boosting reduces bias -- they attack different problems.
+- `random-forests.md`: The main alternative for tabular data. Random Forests are easier to tune and parallelize; gradient boosting generally achieves lower error with careful tuning.
+- `xgboost-lightgbm-catboost.md`: Industrial implementations that add regularization, approximate splitting, and engineering optimizations to the gradient boosting framework.
+- `stacking-and-blending.md`: Gradient boosting models are frequently used as base learners in stacking ensembles, often paired with Random Forests and linear models for diversity.
 
 ## Further Reading
 

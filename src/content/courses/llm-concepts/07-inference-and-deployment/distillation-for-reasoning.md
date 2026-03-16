@@ -100,11 +100,11 @@ Several practical details affect the quality of reasoning distillation:
 
 ## Connections to Other Concepts
 
-- **Knowledge distillation**: Reasoning distillation is a specialized form of knowledge distillation focused on transferring reasoning processes rather than output probability distributions. Standard distillation uses soft logits; reasoning distillation uses explicit chain-of-thought text as the transfer medium.
-- **Chain-of-thought training**: The traces used for reasoning distillation are chain-of-thought sequences. Understanding CoT prompting and its role in eliciting reasoning is essential context.
-- **GRPO and RL for reasoning**: DeepSeek-R1 (the teacher) was trained with GRPO using rule-based rewards. The finding that distillation outperforms direct RL at small scales directly informs the choice between these training paradigms at different model sizes.
-- **Supervised fine-tuning**: The actual training procedure for reasoning distillation is standard SFT with cross-entropy loss. The innovation lies in the training data (teacher reasoning traces), not the training algorithm.
-- **Self-play and self-improvement**: Reasoning distillation is teacher-dependent (requires a stronger model), while self-improvement bootstraps from the model's own outputs. The two approaches are complementary -- a distilled model can be further improved through self-play iterations.
+- `knowledge-distillation.md`: Reasoning distillation is a specialized form of knowledge distillation focused on transferring reasoning processes rather than output probability distributions. Standard distillation uses soft logits; reasoning distillation uses explicit chain-of-thought text as the transfer medium.
+- `chain-of-thought-training.md`: The traces used for reasoning distillation are chain-of-thought sequences. Understanding CoT prompting and its role in eliciting reasoning is essential context.
+- `grpo.md`: DeepSeek-R1 (the teacher) was trained with GRPO using rule-based rewards. The finding that distillation outperforms direct RL at small scales directly informs the choice between these training paradigms at different model sizes.
+- `supervised-fine-tuning.md`: The actual training procedure for reasoning distillation is standard SFT with cross-entropy loss. The innovation lies in the training data (teacher reasoning traces), not the training algorithm.
+- `self-play-and-self-improvement.md`: Reasoning distillation is teacher-dependent (requires a stronger model), while self-improvement bootstraps from the model's own outputs. The two approaches are complementary -- a distilled model can be further improved through self-play iterations.
 
 ## Further Reading
 

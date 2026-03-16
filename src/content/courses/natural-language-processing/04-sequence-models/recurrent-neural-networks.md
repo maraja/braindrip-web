@@ -87,14 +87,14 @@ In practice, full BPTT over very long sequences is computationally expensive. Tr
 
 ## Connections to Other Concepts
 
-- **`long-short-term-memory.md`**: LSTMs solve the vanishing gradient problem by introducing gated cell states -- the direct successor to vanilla RNNs.
-- **`gated-recurrent-units.md`**: GRUs offer a simpler gating mechanism than LSTMs, with comparable performance on many tasks.
-- **`bidirectional-rnns.md`**: Processes the sequence in both directions, capturing both past and future context using two RNN passes.
-- **`sequence-to-sequence-models.md`**: Uses RNNs (typically LSTMs) as the encoder and decoder for tasks like machine translation.
-- **`attention-mechanism.md`**: Introduced to overcome the information bottleneck that arises when an RNN encoder must compress an entire sequence into a single vector.
-- **`word2vec.md`**: Provides the dense input embeddings x_t that RNNs consume at each time step.
-- **`contextual-embeddings.md`**: ELMo uses bidirectional LSTMs (a gated RNN variant) to produce context-dependent word representations.
-- **`n-gram-language-models.md`**: The fixed-window predecessors that RNN language models improved upon by conditioning on the entire preceding context.
+- `long-short-term-memory.md`: LSTMs solve the vanishing gradient problem by introducing gated cell states -- the direct successor to vanilla RNNs.
+- `gated-recurrent-units.md`: GRUs offer a simpler gating mechanism than LSTMs, with comparable performance on many tasks.
+- `bidirectional-rnns.md`: Processes the sequence in both directions, capturing both past and future context using two RNN passes.
+- `sequence-to-sequence-models.md`: Uses RNNs (typically LSTMs) as the encoder and decoder for tasks like machine translation.
+- `attention-mechanism.md`: Introduced to overcome the information bottleneck that arises when an RNN encoder must compress an entire sequence into a single vector.
+- `word2vec.md`: Provides the dense input embeddings x_t that RNNs consume at each time step.
+- `contextual-embeddings.md`: ELMo uses bidirectional LSTMs (a gated RNN variant) to produce context-dependent word representations.
+- `n-gram-language-models.md`: The fixed-window predecessors that RNN language models improved upon by conditioning on the entire preceding context.
 
 ## Further Reading
 

@@ -88,11 +88,11 @@ Initialization remains critical even in modern architectures. The scaling factor
 
 ## Connections to Other Concepts
 
-- **Activation Functions**: The initialization scheme must match the activation function -- He for ReLU, Xavier for tanh/sigmoid.
-- **Backpropagation**: Initialization controls the magnitude of gradients flowing backward, directly affecting trainability.
-- **Batch Normalization**: BatchNorm reduces sensitivity to initialization by normalizing activations at each layer, but proper initialization still helps convergence speed.
-- **Perceptrons and Multilayer Networks**: Initialization is what enables training of networks with many stacked layers.
-- **Optimizers**: Adaptive optimizers like Adam are more robust to initialization than vanilla SGD, but still benefit from principled initialization.
+- `activation-functions.md`: The initialization scheme must match the activation function -- He for ReLU, Xavier for tanh/sigmoid.
+- `backpropagation.md`: Initialization controls the magnitude of gradients flowing backward, directly affecting trainability.
+- `batch-normalization.md`: BatchNorm reduces sensitivity to initialization by normalizing activations at each layer, but proper initialization still helps convergence speed.
+- `perceptrons-and-multilayer-networks.md`: Initialization is what enables training of networks with many stacked layers.
+- `optimizers.md`: Adaptive optimizers like Adam are more robust to initialization than vanilla SGD, but still benefit from principled initialization.
 
 ## Further Reading
 

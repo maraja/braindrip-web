@@ -98,11 +98,11 @@ For content creation, hallucination erodes trust. A single fabricated citation i
 
 ## Connections to Other Concepts
 
-- **Retrieval-Augmented Generation (RAG)**: The primary architectural mitigation for hallucination. RAG's effectiveness is measured largely by how much it reduces hallucination.
-- **RLHF and Alignment**: RLHF training can teach models to say "I don't know" rather than hallucinate, trading coverage for accuracy.
-- **Prompt Engineering**: Careful prompt design (e.g., "Answer only based on the provided context. If you cannot answer, say so.") reduces hallucination in practice.
-- **Evaluation and Benchmarks**: Hallucination measurement is a core component of LLM evaluation, with benchmarks like TruthfulQA specifically targeting it.
-- **Guardrails**: Post-generation fact-checking and citation-verification systems serve as a safety net against hallucinated outputs reaching end users.
+- `rag.md`: The primary architectural mitigation for hallucination. RAG's effectiveness is measured largely by how much it reduces hallucination.
+- `rlhf.md`: RLHF training can teach models to say "I don't know" rather than hallucinate, trading coverage for accuracy.
+- `prompt-engineering.md`: Careful prompt design (e.g., "Answer only based on the provided context. If you cannot answer, say so.") reduces hallucination in practice.
+- `trajectory-evaluation.md`: Hallucination measurement is a core component of LLM evaluation, with benchmarks like TruthfulQA specifically targeting it.
+- `guardrails.md`: Post-generation fact-checking and citation-verification systems serve as a safety net against hallucinated outputs reaching end users.
 
 ## Further Reading
 

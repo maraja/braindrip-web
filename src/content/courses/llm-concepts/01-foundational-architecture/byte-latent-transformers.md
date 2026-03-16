@@ -131,11 +131,11 @@ Token-based models give disproportionate representation to English (where common
 
 ## Connections to Other Concepts
 
-- **Tokenization (BPE, WordPiece, SentencePiece)**: BLT is a direct alternative to all subword tokenization methods, aiming to replace rather than complement them.
+- `tokenization.md`: BLT is a direct alternative to all subword tokenization methods, aiming to replace rather than complement them.
 - **Adaptive Computation**: Dynamic patching is a form of adaptive computation where the model allocates variable processing to different input regions based on complexity.
-- **Encoder-Decoder Architecture**: BLT's three-component structure echoes encoder-decoder designs, with the local encoder/decoder serving as compression/decompression layers around the global transformer.
-- **Multi-Token Prediction**: MTP and BLT both aim to improve representations -- MTP through richer training objectives, BLT through more flexible input processing. They could potentially be combined.
-- **Mixture of Experts**: Both MoE and BLT's dynamic patching are forms of conditional computation -- allocating resources where they are most needed rather than uniformly.
+- `encoder-decoder-architecture.md`: BLT's three-component structure echoes encoder-decoder designs, with the local encoder/decoder serving as compression/decompression layers around the global transformer.
+- `multi-token-prediction.md`: MTP and BLT both aim to improve representations -- MTP through richer training objectives, BLT through more flexible input processing. They could potentially be combined.
+- `mixture-of-experts.md`: Both MoE and BLT's dynamic patching are forms of conditional computation -- allocating resources where they are most needed rather than uniformly.
 
 ## Further Reading
 

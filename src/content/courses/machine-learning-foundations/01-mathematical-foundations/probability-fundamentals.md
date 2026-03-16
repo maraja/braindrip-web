@@ -117,11 +117,11 @@ Probability is the language in which ML models express uncertainty. Classificati
 
 ## Connections to Other Concepts
 
-- **Statistical Inference**: Uses probability distributions to draw conclusions about populations from samples.
-- **Maximum Likelihood Estimation**: Finds parameters that maximize the probability of observed data under a model.
-- **Information Theory**: Entropy and KL divergence are defined in terms of probability distributions.
-- **Matrix Decompositions**: Eigendecomposition of the covariance matrix reveals the principal axes of variation.
-- **Norms and Distance Metrics**: The Mahalanobis distance is defined through the inverse covariance matrix.
+- `statistical-inference.md`: Uses probability distributions to draw conclusions about populations from samples.
+- `maximum-likelihood-estimation.md`: Finds parameters that maximize the probability of observed data under a model.
+- `information-theory.md`: Entropy and KL divergence are defined in terms of probability distributions.
+- `matrix-decompositions.md`: Eigendecomposition of the covariance matrix reveals the principal axes of variation.
+- `norms-and-distance-metrics.md`: The Mahalanobis distance is defined through the inverse covariance matrix.
 
 ## Further Reading
 

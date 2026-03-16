@@ -124,12 +124,12 @@ The trajectory is clear: future AI systems will be natively multimodal, processi
 
 ## Connections to Other Concepts
 
-- **Contrastive Learning (CLIP, SigLIP)**: The foundation for most vision encoders used in multimodal models. Understanding contrastive loss is essential.
+- `clip.md`: The foundation for most vision encoders used in multimodal models. Understanding contrastive loss is essential.
 - **Cross-Attention**: The mechanism by which many models inject visual information into the language model, distinct from the self-attention used in standard text processing.
-- **Context Window Extension**: Visual tokens consume context budget aggressively. Long-context techniques directly enable processing of higher-resolution images and longer videos.
-- **RLHF and Alignment**: Multimodal models require specialized alignment -- including reducing visual hallucination -- using adapted RLHF pipelines that include image-based evaluation.
-- **Compound AI Systems**: Multimodal models are themselves compound systems (encoder + projector + LLM), and they often serve as components in larger systems with tools, retrieval, and code execution.
-- **Tokenization**: Understanding how continuous signals (pixels, audio waveforms) are converted into discrete or continuous token representations.
+- `context-window-extension.md`: Visual tokens consume context budget aggressively. Long-context techniques directly enable processing of higher-resolution images and longer videos.
+- `rlhf.md`: Multimodal models require specialized alignment -- including reducing visual hallucination -- using adapted RLHF pipelines that include image-based evaluation.
+- `compound-ai-systems.md`: Multimodal models are themselves compound systems (encoder + projector + LLM), and they often serve as components in larger systems with tools, retrieval, and code execution.
+- `tokenization.md`: Understanding how continuous signals (pixels, audio waveforms) are converted into discrete or continuous token representations.
 
 ## Further Reading
 

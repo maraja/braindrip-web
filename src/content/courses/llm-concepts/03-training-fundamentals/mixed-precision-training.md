@@ -139,12 +139,12 @@ BF16 in particular removed a major source of training instability (FP16 overflow
 
 ## Connections to Other Concepts
 
-- **Pre-Training**: Mixed precision is essential for making pre-training computationally feasible at scale.
-- **Backpropagation**: Gradients are computed in half precision but accumulated and applied in full precision.
-- **Adam/AdamW Optimizer**: Optimizer states (moments) are maintained in FP32 as part of the mixed-precision recipe.
-- **Distributed Training (Model/Data Parallelism)**: Mixed precision halves communication costs for gradient synchronization.
-- **Gradient Clipping**: Applied to gradients after they are cast back to FP32 (or sometimes in half precision before casting).
-- **Quantization (Inference)**: Mixed precision training is distinct from inference-time quantization (INT8, INT4), which further reduces precision for deployment.
+- `pre-training.md`: Mixed precision is essential for making pre-training computationally feasible at scale.
+- `backpropagation.md`: Gradients are computed in half precision but accumulated and applied in full precision.
+- `adam-optimizer.md`: Optimizer states (moments) are maintained in FP32 as part of the mixed-precision recipe.
+- `data-parallelism.md`: Mixed precision halves communication costs for gradient synchronization.
+- `gradient-clipping.md`: Applied to gradients after they are cast back to FP32 (or sometimes in half precision before casting).
+- `quantization.md`: Mixed precision training is distinct from inference-time quantization (INT8, INT4), which further reduces precision for deployment.
 
 ## Further Reading
 

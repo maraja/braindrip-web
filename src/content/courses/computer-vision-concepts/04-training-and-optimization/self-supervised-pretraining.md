@@ -90,10 +90,10 @@ For contrastive methods, the augmentation pipeline is the learning signal. SimCL
 
 ## Connections to Other Concepts
 
-- **Data Augmentation**: The augmentation policy IS the learning signal in contrastive methods. Strong augmentation (random crop + color jitter) is essential.
-- **Transfer Learning**: Self-supervised pretraining provides an alternative to supervised pretraining. The resulting model is fine-tuned identically.
-- **Knowledge Distillation**: DINO is fundamentally a self-distillation method with a momentum teacher. BYOL also uses a teacher-student paradigm.
-- **Batch Normalization**: SimCLR originally used BN, which leaked information across the batch (one image could deduce its pair through shared BN statistics). MoCo resolved this with shuffle BN across GPUs.
+- `data-augmentation.md`: The augmentation policy IS the learning signal in contrastive methods. Strong augmentation (random crop + color jitter) is essential.
+- `transfer-learning.md`: Self-supervised pretraining provides an alternative to supervised pretraining. The resulting model is fine-tuned identically.
+- `knowledge-distillation.md`: DINO is fundamentally a self-distillation method with a momentum teacher. BYOL also uses a teacher-student paradigm.
+- `batch-normalization.md`: SimCLR originally used BN, which leaked information across the batch (one image could deduce its pair through shared BN statistics). MoCo resolved this with shuffle BN across GPUs.
 
 ## Further Reading
 

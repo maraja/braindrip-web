@@ -105,10 +105,10 @@ In production training systems, expert parallelism is implemented with careful a
 
 ## Connections to Other Concepts
 
-- **Mixture-of-Experts**: Expert parallelism is the distributed systems solution that makes large-scale MoE architectures practical. Understanding MoE routing, gating, and sparse activation is an essential prerequisite.
-- **Data parallelism**: Often combined with expert parallelism -- the expert group is replicated across data-parallel groups, with each replica processing different micro-batches independently.
-- **Tensor parallelism**: Can be applied within individual experts if they are large enough to benefit, and is standardly used for the shared (non-MoE) attention layers of the model.
-- **Pipeline parallelism**: In deep MoE models, different layers can be distributed across pipeline stages, with expert parallelism applied within each stage that contains MoE layers.
+- `mixture-of-experts.md`: Expert parallelism is the distributed systems solution that makes large-scale MoE architectures practical. Understanding MoE routing, gating, and sparse activation is an essential prerequisite.
+- `data-parallelism.md`: Often combined with expert parallelism -- the expert group is replicated across data-parallel groups, with each replica processing different micro-batches independently.
+- `tensor-parallelism.md`: Can be applied within individual experts if they are large enough to benefit, and is standardly used for the shared (non-MoE) attention layers of the model.
+- `pipeline-parallelism.md`: In deep MoE models, different layers can be distributed across pipeline stages, with expert parallelism applied within each stage that contains MoE layers.
 - **3D/4D parallelism**: Expert parallelism adds a fourth scaling dimension orthogonal to the standard 3D parallelism (data + tensor + pipeline), enabling the comprehensive distribution strategies used in the largest training runs.
 
 ## Further Reading

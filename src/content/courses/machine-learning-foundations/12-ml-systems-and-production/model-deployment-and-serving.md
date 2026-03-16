@@ -127,10 +127,10 @@ The gap between a trained model and a production system is where most ML project
 
 ## Connections to Other Concepts
 
-- **ML Pipelines**: Deployment is the final pipeline stage. CI/CD for ML automates the path from trained model to production serving.
-- **A/B Testing for ML**: Serving infrastructure must support traffic splitting to enable A/B tests comparing model versions.
-- **Data Drift and Model Monitoring**: Monitoring hooks into the serving layer to track prediction distributions, latency, and error rates in real time.
-- **Experiment Tracking**: The model registry links deployed models back to the experiments that produced them, ensuring traceability.
+- `ml-pipelines.md`: Deployment is the final pipeline stage. CI/CD for ML automates the path from trained model to production serving.
+- `ab-testing-for-ml.md`: Serving infrastructure must support traffic splitting to enable A/B tests comparing model versions.
+- `data-drift-and-model-monitoring.md`: Monitoring hooks into the serving layer to track prediction distributions, latency, and error rates in real time.
+- `experiment-tracking.md`: The model registry links deployed models back to the experiments that produced them, ensuring traceability.
 
 ## Further Reading
 

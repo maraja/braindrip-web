@@ -104,13 +104,13 @@ ML has moved from an academic curiosity to the engine behind search engines, rec
 
 ## Connections to Other Concepts
 
-- **Types of Machine Learning**: A detailed breakdown of the supervised, unsupervised, and RL paradigms introduced here.
-- **Bias-Variance Tradeoff**: Formalizes the tension between hypothesis class complexity and generalization.
-- **Empirical Risk Minimization**: The theoretical framework that justifies the training optimization in step 4 of the pipeline.
-- **Loss Functions**: The specific choice of $\mathcal{L}$ in the training objective determines what the model optimizes for.
-- **Overfitting and Underfitting**: The practical failure modes that arise when the pipeline goes wrong.
-- **Regularization**: Constraining hypothesis complexity to improve generalization, directly implementing the inductive bias principle.
-- **Curse of Dimensionality**: Explains why ML becomes harder as the number of features grows and data becomes sparse.
+- `types-of-machine-learning.md`: A detailed breakdown of the supervised, unsupervised, and RL paradigms introduced here.
+- `bias-variance-tradeoff.md`: Formalizes the tension between hypothesis class complexity and generalization.
+- `empirical-risk-minimization.md`: The theoretical framework that justifies the training optimization in step 4 of the pipeline.
+- `loss-functions.md`: The specific choice of $\mathcal{L}$ in the training objective determines what the model optimizes for.
+- `overfitting-and-underfitting.md`: The practical failure modes that arise when the pipeline goes wrong.
+- `regularization.md`: Constraining hypothesis complexity to improve generalization, directly implementing the inductive bias principle.
+- `curse-of-dimensionality.md`: Explains why ML becomes harder as the number of features grows and data becomes sparse.
 
 ## Further Reading
 

@@ -106,14 +106,14 @@ This architecture balances efficiency with effectiveness: BM25 can score million
 
 ## Connections to Other Concepts
 
-- **TF-IDF** (`03-text-representation/tf-idf.md`): The term weighting scheme underlying the vector space model and closely related to BM25.
-- **Bag of Words** (`03-text-representation/bag-of-words.md`): BoW representations power classical term-matching retrieval.
-- **Sentence Embeddings** (`03-text-representation/sentence-embeddings.md`): Dense retrieval relies on learned sentence/passage embeddings.
-- **Document Embeddings** (`03-text-representation/document-embeddings.md`): Representing entire documents as dense vectors for retrieval and clustering.
-- **Document Similarity** (`document-similarity.md`): Cosine similarity and other measures used in both retrieval and duplicate detection.
-- **Information Extraction** (`information-extraction.md`): While IR finds relevant documents, IE extracts structured facts from within them.
-- **Question Answering** (`06-core-nlp-tasks-generation/question-answering.md`): Open-domain QA depends on IR to retrieve candidate passages before extracting or generating answers.
-- **Keyword Extraction** (`keyword-extraction.md`): Extracted keywords can serve as query terms or document descriptors in retrieval systems.
+- `03-text-representation/tf-idf.md`: The term weighting scheme underlying the vector space model and closely related to BM25.
+- `03-text-representation/bag-of-words.md`: BoW representations power classical term-matching retrieval.
+- `03-text-representation/sentence-embeddings.md`: Dense retrieval relies on learned sentence/passage embeddings.
+- `03-text-representation/document-embeddings.md`: Representing entire documents as dense vectors for retrieval and clustering.
+- `document-similarity.md`: Cosine similarity and other measures used in both retrieval and duplicate detection.
+- `information-extraction.md`: While IR finds relevant documents, IE extracts structured facts from within them.
+- `06-core-nlp-tasks-generation/question-answering.md`: Open-domain QA depends on IR to retrieve candidate passages before extracting or generating answers.
+- `keyword-extraction.md`: Extracted keywords can serve as query terms or document descriptors in retrieval systems.
 
 ## Further Reading
 

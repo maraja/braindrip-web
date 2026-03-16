@@ -93,9 +93,9 @@ DINOv2 features exhibit remarkable properties:
 
 ## Connections to Other Concepts
 
-- **CLIP**: CLIP uses language supervision while DINOv2 uses self-supervision only. They are complementary: CLIP excels at text-aligned tasks, DINOv2 at dense visual tasks. Many modern systems (e.g., Depth Anything) use DINOv2 as the visual backbone.
-- **Vision Transformers**: DINOv2 models are all ViTs; the architecture enables the patch-level self-supervision that makes DINOv2 features so transferable.
-- **Vision Foundation Models**: DINOv2 is one of the three pillars (alongside CLIP and SAM) defining the foundation model paradigm in vision.
+- `clip.md`: CLIP uses language supervision while DINOv2 uses self-supervision only. They are complementary: CLIP excels at text-aligned tasks, DINOv2 at dense visual tasks. Many modern systems (e.g., Depth Anything) use DINOv2 as the visual backbone.
+- `vision-transformer.md`: DINOv2 models are all ViTs; the architecture enables the patch-level self-supervision that makes DINOv2 features so transferable.
+- `vision-foundation-models.md`: DINOv2 is one of the three pillars (alongside CLIP and SAM) defining the foundation model paradigm in vision.
 - **Self-Supervised Learning**: DINOv2 represents the culmination of self-supervised vision research, combining the best ideas from DINO, iBOT, and MAE into a single framework.
 - **Image Segmentation**: DINOv2 features enable unsupervised segmentation and serve as strong backbones for supervised segmentation methods.
 

@@ -155,10 +155,10 @@ Results for bootstrapping were mixed. In some cases, the chain preserved more of
 
 ## Connections to Other Concepts
 
-- **RLHF / Reward Modeling**: The primary alignment technique threatened by weak supervisor limitations; weak-to-strong generalization directly studies whether RLHF can work when the supervisor is less capable than the model.
-- **Scalable Oversight**: Weak-to-strong generalization is one empirical component of the broader scalable oversight research agenda.
-- **Constitutional AI**: An alternative alignment paradigm that may be less vulnerable to weak supervision limitations because it relies on principles rather than per-instance judgments.
-- **Sycophancy**: The strong model's tendency to imitate the weak supervisor's errors mirrors the sycophancy problem in user-facing models.
+- `rlhf.md`: The primary alignment technique threatened by weak supervisor limitations; weak-to-strong generalization directly studies whether RLHF can work when the supervisor is less capable than the model.
+- `scalable-oversight.md`: Weak-to-strong generalization is one empirical component of the broader scalable oversight research agenda.
+- `constitutional-ai.md`: An alternative alignment paradigm that may be less vulnerable to weak supervision limitations because it relies on principles rather than per-instance judgments.
+- `sycophancy.md`: The strong model's tendency to imitate the weak supervisor's errors mirrors the sycophancy problem in user-facing models.
 - **Iterated Distillation and Amplification (IDA)**: A theoretical framework for iteratively improving oversight that the bootstrapping experiments partially test.
 
 ## Further Reading

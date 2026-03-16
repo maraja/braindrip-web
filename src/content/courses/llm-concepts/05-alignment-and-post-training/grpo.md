@@ -116,11 +116,11 @@ A single GRPO training iteration proceeds as follows:
 
 ## Connections to Other Concepts
 
-- **PPO**: GRPO inherits PPO's clipped objective but replaces the critic with group-based advantage estimation.
-- **REINFORCE with baseline**: The intellectual ancestor -- using sampled returns rather than a learned critic. GRPO improves on it with clipping and KL regularization.
-- **Rejection sampling**: GRPO's group sampling is related, but uses all samples for policy gradients rather than just the best one.
-- **RLHF/RLVR**: GRPO is a drop-in replacement for PPO in the RLHF or RLVR pipeline.
-- **Chain-of-thought training**: DeepSeek-R1-Zero's emergent reasoning connects GRPO to the study of how reasoning is elicited through RL.
+- `ppo-for-language-models.md`: GRPO inherits PPO's clipped objective but replaces the critic with group-based advantage estimation.
+- `reinforce.md`: The intellectual ancestor -- using sampled returns rather than a learned critic. GRPO improves on it with clipping and KL regularization.
+- `rejection-sampling.md`: GRPO's group sampling is related, but uses all samples for policy gradients rather than just the best one.
+- `rlhf.md`: GRPO is a drop-in replacement for PPO in the RLHF or RLVR pipeline.
+- `chain-of-thought-training.md`: DeepSeek-R1-Zero's emergent reasoning connects GRPO to the study of how reasoning is elicited through RL.
 
 ## Further Reading
 

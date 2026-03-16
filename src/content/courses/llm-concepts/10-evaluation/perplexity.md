@@ -85,11 +85,11 @@ Beyond pre-training, perplexity is invaluable for:
 
 ## Connections to Other Concepts
 
-- **Cross-Entropy Loss**: Perplexity is the direct exponentiation of cross-entropy loss, the standard training objective for language models.
-- **Tokenization**: Tokenizer choice fundamentally affects perplexity values, making cross-model comparison non-trivial.
-- **Quantization**: Perplexity degradation is the standard measure for evaluating quantization methods like GPTQ, AWQ, and GGUF.
-- **Scaling Laws**: The Chinchilla scaling laws predict how perplexity decreases as a function of model size and data volume.
-- **Benchmark Contamination**: Suspiciously low perplexity on benchmark test sets can be a signal of data contamination during pre-training.
+- `cross-entropy-loss.md`: Perplexity is the direct exponentiation of cross-entropy loss, the standard training objective for language models.
+- `tokenization.md`: Tokenizer choice fundamentally affects perplexity values, making cross-model comparison non-trivial.
+- `quantization.md`: Perplexity degradation is the standard measure for evaluating quantization methods like GPTQ, AWQ, and GGUF.
+- `scaling-laws.md`: The Chinchilla scaling laws predict how perplexity decreases as a function of model size and data volume.
+- `benchmark-contamination-detection.md`: Suspiciously low perplexity on benchmark test sets can be a signal of data contamination during pre-training.
 - **KL Divergence**: Perplexity is closely related to KL divergence between the model's distribution and the true data distribution.
 
 ## Further Reading

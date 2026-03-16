@@ -201,14 +201,14 @@ Beyond the leaderboard itself, the Arena project made several methodological con
 
 ## Connections to Other Concepts
 
-- **Benchmark Contamination**: Arena's key advantage is that contamination is structurally impossible -- every prompt is new. This makes it the gold standard when contamination is a concern for other benchmarks.
-- **LLM-as-a-Judge**: The primary alternative to human pairwise evaluation. LLM judges are calibrated against Arena-style human preferences. Arena provides the ground truth that validates LLM judge accuracy.
-- **RLHF**: Human preferences collected in Arena are structurally similar to RLHF preference data. Some researchers have proposed using Arena data directly for reward model training, though the data is noisier than curated RLHF datasets.
-- **Benchmarks (MMLU, HumanEval, etc.)**: Arena rankings often diverge from benchmark rankings, highlighting the limitations of automated benchmarks and the value of human evaluation.
-- **Goodhart's Law**: If model developers optimize purely for Arena ranking, the ranking may become a less useful measure of genuine quality (Goodhart's Law applied to the Arena metric itself). Early signs of this include models being tuned for verbosity and formatting.
-- **Reward Hacking**: Models that produce longer, more formatted responses may score higher in Arena without being genuinely more helpful. This is a form of reward hacking where the "reward" is human preference votes.
-- **Sycophancy**: Models that agree with the user's framing and produce confident, assertive responses tend to score higher in pairwise comparisons, even when more cautious or nuanced responses would be more accurate. This can reward sycophantic behavior.
-- **Human Evaluation**: Arena is the largest-scale implementation of pairwise human evaluation for LLMs, demonstrating both its strengths (captures holistic quality) and limitations (biases, demographics, cost).
+- `benchmark-contamination-detection.md`: Arena's key advantage is that contamination is structurally impossible -- every prompt is new. This makes it the gold standard when contamination is a concern for other benchmarks.
+- `llm-as-judge.md`: The primary alternative to human pairwise evaluation. LLM judges are calibrated against Arena-style human preferences. Arena provides the ground truth that validates LLM judge accuracy.
+- `rlhf.md`: Human preferences collected in Arena are structurally similar to RLHF preference data. Some researchers have proposed using Arena data directly for reward model training, though the data is noisier than curated RLHF datasets.
+- `benchmarks.md`: Arena rankings often diverge from benchmark rankings, highlighting the limitations of automated benchmarks and the value of human evaluation.
+- `goodharts-law.md`: If model developers optimize purely for Arena ranking, the ranking may become a less useful measure of genuine quality (Goodhart's Law applied to the Arena metric itself). Early signs of this include models being tuned for verbosity and formatting.
+- `reward-hacking.md`: Models that produce longer, more formatted responses may score higher in Arena without being genuinely more helpful. This is a form of reward hacking where the "reward" is human preference votes.
+- `sycophancy.md`: Models that agree with the user's framing and produce confident, assertive responses tend to score higher in pairwise comparisons, even when more cautious or nuanced responses would be more accurate. This can reward sycophantic behavior.
+- `human-evaluation.md`: Arena is the largest-scale implementation of pairwise human evaluation for LLMs, demonstrating both its strengths (captures holistic quality) and limitations (biases, demographics, cost).
 
 ## Further Reading
 

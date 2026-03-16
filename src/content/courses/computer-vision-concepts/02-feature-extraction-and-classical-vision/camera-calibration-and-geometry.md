@@ -133,10 +133,10 @@ where $B$ is the baseline (distance between cameras) and $d$ is the disparity (p
 
 ## Connections to Other Concepts
 
-- **Corner Detection**: Sub-pixel corner detection on calibration patterns is the critical input; errors here propagate directly into calibration accuracy.
-- **Image Stitching and Homography**: The homography between a calibration plane and the image plane provides the linear constraints that initialize Zhang's method.
-- **SIFT**: Feature correspondences between views, combined with calibrated cameras, enable structure-from-motion 3D reconstruction.
-- **Optical Flow**: Decomposing optical flow into rotation and translation components requires the intrinsic matrix $K$ to convert pixel displacements to angular measurements.
+- `corner-detection.md`: Sub-pixel corner detection on calibration patterns is the critical input; errors here propagate directly into calibration accuracy.
+- `image-stitching-and-homography.md`: The homography between a calibration plane and the image plane provides the linear constraints that initialize Zhang's method.
+- `sift.md`: Feature correspondences between views, combined with calibrated cameras, enable structure-from-motion 3D reconstruction.
+- `optical-flow.md`: Decomposing optical flow into rotation and translation components requires the intrinsic matrix $K$ to convert pixel displacements to angular measurements.
 
 ## Further Reading
 

@@ -96,14 +96,14 @@ For information retrieval specifically:
 
 ## Connections to Other Concepts
 
-- **TF-IDF** (`tf-idf.md`): TF-IDF vectors are the starting point for LSA-based document embeddings, and BM25 (a TF-IDF variant) remains a competitive baseline for retrieval.
-- **Sentence Embeddings** (`sentence-embeddings.md`): Many document embedding approaches build on sentence encoders, either by averaging sentence vectors or using hierarchical architectures.
-- **Word2Vec** (`word2vec.md`) / **GloVe** (`glove.md`): Averaging word vectors is the simplest dense document embedding method and a natural baseline.
-- **Topic Modeling** (`07-information-extraction-and-retrieval/topic-modeling.md`): Both LSA (a document embedding method) and LDA discover latent themes in document collections, but LSA produces continuous vectors while LDA produces probability distributions over topics.
-- **Information Retrieval** (`07-information-extraction-and-retrieval/information-retrieval.md`): Document embeddings power the dense retrieval paradigm that complements traditional keyword-based retrieval.
-- **Document Similarity** (`07-information-extraction-and-retrieval/document-similarity.md`): Cosine similarity between document embeddings is a standard approach to measuring document similarity.
-- **Contextual Embeddings** (`contextual-embeddings.md`): Longformer and BigBird extend the contextual embedding paradigm to long documents.
-- **BERT** (`09-pre-trained-models-for-nlp/bert.md`): Most modern document embedding models are built on BERT or its variants.
+- `tf-idf.md`: TF-IDF vectors are the starting point for LSA-based document embeddings, and BM25 (a TF-IDF variant) remains a competitive baseline for retrieval.
+- `sentence-embeddings.md`: Many document embedding approaches build on sentence encoders, either by averaging sentence vectors or using hierarchical architectures.
+- `word2vec.md` / **GloVe** (`glove.md`): Averaging word vectors is the simplest dense document embedding method and a natural baseline.
+- `07-information-extraction-and-retrieval/topic-modeling.md`: Both LSA (a document embedding method) and LDA discover latent themes in document collections, but LSA produces continuous vectors while LDA produces probability distributions over topics.
+- `07-information-extraction-and-retrieval/information-retrieval.md`: Document embeddings power the dense retrieval paradigm that complements traditional keyword-based retrieval.
+- `07-information-extraction-and-retrieval/document-similarity.md`: Cosine similarity between document embeddings is a standard approach to measuring document similarity.
+- `contextual-embeddings.md`: Longformer and BigBird extend the contextual embedding paradigm to long documents.
+- `09-pre-trained-models-for-nlp/bert.md`: Most modern document embedding models are built on BERT or its variants.
 
 ## Further Reading
 

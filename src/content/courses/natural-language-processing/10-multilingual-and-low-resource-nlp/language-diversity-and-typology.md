@@ -111,15 +111,15 @@ NLP challenge: Polysynthetic languages are the hardest case for NLP. Word-level 
 
 ## Connections to Other Concepts
 
-- **`multilingual-nlp.md`**: Typological diversity is the fundamental reason why multilingual NLP is hard -- languages are not just English with different words.
-- **`tokenization-in-nlp.md`**: Tokenization strategy must be adapted to morphological type and writing system, making typology directly relevant to the first step of any NLP pipeline.
-- **`morphology.md`**: Morphological typology (isolating, agglutinative, fusional, polysynthetic) determines how words encode meaning and how they should be processed.
-- **`multilingual-transformers.md`**: The "curse of multilinguality" is exacerbated by typological diversity -- a shared vocabulary wastes capacity on language types that need fundamentally different tokenization.
-- **`cross-lingual-word-embeddings.md`**: The isomorphism assumption underlying embedding alignment breaks down for typologically distant language pairs.
-- **`low-resource-nlp.md`**: Typologically unusual languages are disproportionately low-resource, compounding the challenge.
-- **`syntax-and-grammar.md`**: Word order typology directly affects parsing approaches and the design of syntactic models.
-- **`levels-of-linguistic-analysis.md`**: Typological features span multiple levels of linguistic analysis, from phonology to syntax.
-- **`machine-translation-approaches.md`**: MT quality correlates strongly with typological similarity between source and target languages.
+- `multilingual-nlp.md`: Typological diversity is the fundamental reason why multilingual NLP is hard -- languages are not just English with different words.
+- `tokenization.md`: Tokenization strategy must be adapted to morphological type and writing system, making typology directly relevant to the first step of any NLP pipeline.
+- `morphology.md`: Morphological typology (isolating, agglutinative, fusional, polysynthetic) determines how words encode meaning and how they should be processed.
+- `multilingual-transformers.md`: The "curse of multilinguality" is exacerbated by typological diversity -- a shared vocabulary wastes capacity on language types that need fundamentally different tokenization.
+- `cross-lingual-word-embeddings.md`: The isomorphism assumption underlying embedding alignment breaks down for typologically distant language pairs.
+- `low-resource-nlp.md`: Typologically unusual languages are disproportionately low-resource, compounding the challenge.
+- `syntax-and-grammar.md`: Word order typology directly affects parsing approaches and the design of syntactic models.
+- `levels-of-linguistic-analysis.md`: Typological features span multiple levels of linguistic analysis, from phonology to syntax.
+- `machine-translation.md`: MT quality correlates strongly with typological similarity between source and target languages.
 
 ## Further Reading
 

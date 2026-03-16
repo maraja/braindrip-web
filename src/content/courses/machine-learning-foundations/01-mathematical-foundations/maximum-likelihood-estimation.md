@@ -113,12 +113,12 @@ MLE is the default method for fitting parametric models in ML. Nearly every loss
 
 ## Connections to Other Concepts
 
-- **Probability Fundamentals**: MLE is defined in terms of the likelihood, which is the joint probability of data under a parametric model.
-- **Derivatives and Gradients**: Finding the MLE analytically requires setting the gradient of the log-likelihood to zero. Numerically, gradient descent on the NLL is the standard approach.
-- **Optimization and Gradient Descent**: Training a model by minimizing NLL is an optimization problem. Adam, SGD, and other optimizers are the tools.
-- **Information Theory**: The negative log-likelihood is the cross-entropy between the empirical data distribution and the model. MLE minimizes this cross-entropy, which is equivalent to minimizing KL divergence from the true distribution.
-- **Statistical Inference**: MLE is a point estimator with known asymptotic properties. Fisher information connects MLE variance to the Cramer-Rao bound.
-- **Norms and Distance Metrics**: L1 and L2 regularization correspond to Laplace and Gaussian priors in the MAP framework.
+- `probability-fundamentals.md`: MLE is defined in terms of the likelihood, which is the joint probability of data under a parametric model.
+- `derivatives-and-gradients.md`: Finding the MLE analytically requires setting the gradient of the log-likelihood to zero. Numerically, gradient descent on the NLL is the standard approach.
+- `cost-latency-optimization.md`: Training a model by minimizing NLL is an optimization problem. Adam, SGD, and other optimizers are the tools.
+- `information-theory.md`: The negative log-likelihood is the cross-entropy between the empirical data distribution and the model. MLE minimizes this cross-entropy, which is equivalent to minimizing KL divergence from the true distribution.
+- `statistical-inference.md`: MLE is a point estimator with known asymptotic properties. Fisher information connects MLE variance to the Cramer-Rao bound.
+- `norms-and-distance-metrics.md`: L1 and L2 regularization correspond to Laplace and Gaussian priors in the MAP framework.
 
 ## Further Reading
 

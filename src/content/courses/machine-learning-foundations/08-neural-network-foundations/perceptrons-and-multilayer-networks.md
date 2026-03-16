@@ -77,11 +77,11 @@ In practice, MLPs remain widely used as components within larger systems -- the 
 
 ## Connections to Other Concepts
 
-- **Backpropagation**: The algorithm that makes training MLPs feasible by efficiently computing gradients through all layers.
-- **Activation Functions**: The nonlinearities between layers that give MLPs their representational power.
-- **Weight Initialization**: Proper initialization is critical for training deep MLPs; naive initialization causes signal to vanish or explode.
-- **Universal Approximation Theorem**: Formalizes the theoretical power of MLPs with sufficient width or depth.
-- **Batch Normalization**: A technique that stabilizes training of deep MLPs by normalizing intermediate activations.
+- `backpropagation.md`: The algorithm that makes training MLPs feasible by efficiently computing gradients through all layers.
+- `activation-functions.md`: The nonlinearities between layers that give MLPs their representational power.
+- `weight-initialization.md`: Proper initialization is critical for training deep MLPs; naive initialization causes signal to vanish or explode.
+- `universal-approximation-theorem.md`: Formalizes the theoretical power of MLPs with sufficient width or depth.
+- `batch-normalization.md`: A technique that stabilizes training of deep MLPs by normalizing intermediate activations.
 
 ## Further Reading
 

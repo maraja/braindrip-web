@@ -117,12 +117,12 @@ This layered design ensures that the majority of queries are routed quickly whil
 
 ## Connections to Other Concepts
 
-- **Multi-LoRA Serving**: Routing can select among LoRA adapters on a shared base model, combining model-level routing with adapter-level specialization.
-- **Prompt Compression**: Compression reduces cost per query; routing reduces cost by selecting cheaper models. The two techniques compose multiplicatively.
-- **Reward Models**: Reward-model-based routing repurposes RLHF reward models as quality estimators for routing decisions.
-- **Mixture of Experts (MoE)**: Model routing is conceptually similar to MoE gating, but operates at the system level (choosing between separate models) rather than the layer level (choosing between expert FFN blocks).
-- **Inference-Time Scaling**: Routing can allocate more inference compute (better model, more samples, longer CoT) to harder queries, implementing a form of adaptive compute allocation.
-- **Speculative Decoding**: Both routing and speculative decoding optimize inference cost by using cheaper computation where possible, escalating to expensive computation only when needed.
+- `multi-lora-serving.md`: Routing can select among LoRA adapters on a shared base model, combining model-level routing with adapter-level specialization.
+- `prompt-compression.md`: Compression reduces cost per query; routing reduces cost by selecting cheaper models. The two techniques compose multiplicatively.
+- `process-reward-models.md`: Reward-model-based routing repurposes RLHF reward models as quality estimators for routing decisions.
+- `mixture-of-experts.md`: Model routing is conceptually similar to MoE gating, but operates at the system level (choosing between separate models) rather than the layer level (choosing between expert FFN blocks).
+- `inference-time-scaling-laws.md`: Routing can allocate more inference compute (better model, more samples, longer CoT) to harder queries, implementing a form of adaptive compute allocation.
+- `speculative-decoding.md`: Both routing and speculative decoding optimize inference cost by using cheaper computation where possible, escalating to expensive computation only when needed.
 
 ## Further Reading
 

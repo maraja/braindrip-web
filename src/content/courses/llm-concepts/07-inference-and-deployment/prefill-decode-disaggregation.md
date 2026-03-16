@@ -123,11 +123,11 @@ The transfer latency adds directly to the time-to-first-token (TTFT), so the dis
 
 ## Connections to Other Concepts
 
-- **Continuous Batching**: Continuous batching optimizes scheduling within a single GPU. Disaggregation extends this by optimizing scheduling across specialized GPU pools. Decode pools still run continuous batching internally.
-- **PagedAttention**: Efficient KV cache management via PagedAttention is essential for both pools. The prefill pool allocates blocks during prefill; these block structures must be serialized for transfer and reconstructed on the decode pool.
-- **KV Cache Compression**: Quantizing the KV cache before inter-pool transfer reduces bandwidth requirements. INT8 or INT4 KV cache compression directly halves or quarters the transfer time.
-- **Prefix Caching**: In a disaggregated system, the decode pool can maintain a prefix cache. Requests with cached prefixes might skip the prefill pool entirely, reducing load on prefill instances and eliminating transfer latency.
-- **Throughput vs. Latency**: Disaggregation explicitly decouples the throughput optimization (prefill) from the latency optimization (decode), allowing each to be tuned independently.
+- `continuous-batching.md`: Continuous batching optimizes scheduling within a single GPU. Disaggregation extends this by optimizing scheduling across specialized GPU pools. Decode pools still run continuous batching internally.
+- `paged-attention.md`: Efficient KV cache management via PagedAttention is essential for both pools. The prefill pool allocates blocks during prefill; these block structures must be serialized for transfer and reconstructed on the decode pool.
+- `kv-cache-compression.md`: Quantizing the KV cache before inter-pool transfer reduces bandwidth requirements. INT8 or INT4 KV cache compression directly halves or quarters the transfer time.
+- `prefix-caching.md`: In a disaggregated system, the decode pool can maintain a prefix cache. Requests with cached prefixes might skip the prefill pool entirely, reducing load on prefill instances and eliminating transfer latency.
+- `throughput-vs-latency.md`: Disaggregation explicitly decouples the throughput optimization (prefill) from the latency optimization (decode), allowing each to be tuned independently.
 
 ## Further Reading
 

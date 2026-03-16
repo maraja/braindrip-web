@@ -86,11 +86,11 @@ Techniques to increase the effective receptive field include:
 
 ## Connections to Other Concepts
 
-- **Convolution in Neural Networks**: The kernel size directly determines how much the receptive field grows per layer.
-- **Pooling Layers**: Pooling (or strided convolutions) increases the cumulative stride, accelerating receptive field growth in deeper layers.
-- **VGGNet**: Demonstrated that stacking $3 \times 3$ convolutions to achieve large receptive fields is more efficient than single large kernels.
-- **Inception**: Uses parallel branches with different kernel sizes to capture features at multiple receptive field scales within a single layer.
-- **ResNet**: Skip connections help the network utilize its large theoretical receptive field more effectively.
+- `convolution-in-neural-networks.md`: The kernel size directly determines how much the receptive field grows per layer.
+- `pooling-layers.md`: Pooling (or strided convolutions) increases the cumulative stride, accelerating receptive field growth in deeper layers.
+- `vggnet.md`: Demonstrated that stacking $3 \times 3$ convolutions to achieve large receptive fields is more efficient than single large kernels.
+- `inception.md`: Uses parallel branches with different kernel sizes to capture features at multiple receptive field scales within a single layer.
+- `resnet.md`: Skip connections help the network utilize its large theoretical receptive field more effectively.
 
 ## Further Reading
 

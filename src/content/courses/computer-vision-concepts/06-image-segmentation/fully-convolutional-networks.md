@@ -81,11 +81,11 @@ Input -> [conv1-pool1] -> [conv2-pool2] -> [conv3-pool3] -> [conv4-pool4] -> [co
 
 ## Connections to Other Concepts
 
-- **Semantic Segmentation**: FCN is the architecture that made learned semantic segmentation practical.
-- **U-Net**: extends the FCN skip-connection idea into a symmetric encoder-decoder with concatenation-based fusion.
-- **DeepLab and Atrous Convolution**: addresses FCN's resolution loss problem by replacing some pooling layers with dilated convolutions.
-- **Instance Segmentation / Mask R-CNN**: applies FCN-style heads to region proposals, producing per-instance masks.
-- **Conditional Random Fields**: frequently used as post-processing on FCN outputs to sharpen boundaries.
+- `semantic-segmentation.md`: FCN is the architecture that made learned semantic segmentation practical.
+- `u-net.md`: extends the FCN skip-connection idea into a symmetric encoder-decoder with concatenation-based fusion.
+- `deeplab-and-atrous-convolution.md`: addresses FCN's resolution loss problem by replacing some pooling layers with dilated convolutions.
+- `instance-segmentation.md`: applies FCN-style heads to region proposals, producing per-instance masks.
+- `conditional-random-fields.md`: frequently used as post-processing on FCN outputs to sharpen boundaries.
 
 ## Further Reading
 

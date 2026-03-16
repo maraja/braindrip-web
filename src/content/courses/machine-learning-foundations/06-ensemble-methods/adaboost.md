@@ -94,11 +94,11 @@ AdaBoost demonstrated that ensembles of weak learners can achieve arbitrarily hi
 
 ## Connections to Other Concepts
 
-- **Bagging and Bootstrap**: Bagging reduces variance through parallel independent models; AdaBoost reduces bias through sequential dependent models. They address opposite sides of the bias-variance tradeoff.
-- **Gradient Boosting**: AdaBoost is a special case of gradient boosting with exponential loss. Gradient boosting generalizes to arbitrary differentiable losses, making it more flexible and robust to noise.
-- **Random Forests**: Both are tree-based ensembles, but Random Forests use full-depth trees (low bias, high variance) while AdaBoost uses stumps (high bias, low variance). They reduce error through opposite mechanisms.
-- **XGBoost/LightGBM/CatBoost**: Modern descendants of the boosting lineage that began with AdaBoost. They use gradient boosting with regularization to overcome AdaBoost's noise sensitivity.
-- **Stacking and Blending**: AdaBoost combines homogeneous weak learners with fixed weighting; stacking combines heterogeneous strong learners through a learned meta-model.
+- `bagging-and-bootstrap.md`: Bagging reduces variance through parallel independent models; AdaBoost reduces bias through sequential dependent models. They address opposite sides of the bias-variance tradeoff.
+- `gradient-boosting.md`: AdaBoost is a special case of gradient boosting with exponential loss. Gradient boosting generalizes to arbitrary differentiable losses, making it more flexible and robust to noise.
+- `random-forests.md`: Both are tree-based ensembles, but Random Forests use full-depth trees (low bias, high variance) while AdaBoost uses stumps (high bias, low variance). They reduce error through opposite mechanisms.
+- `xgboost-lightgbm-catboost.md`: Modern descendants of the boosting lineage that began with AdaBoost. They use gradient boosting with regularization to overcome AdaBoost's noise sensitivity.
+- `stacking-and-blending.md`: AdaBoost combines homogeneous weak learners with fixed weighting; stacking combines heterogeneous strong learners through a learned meta-model.
 
 ## Further Reading
 

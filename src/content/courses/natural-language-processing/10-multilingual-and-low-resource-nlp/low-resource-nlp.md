@@ -117,15 +117,15 @@ This approach introduces noise from both alignment errors and annotation errors 
 
 ## Connections to Other Concepts
 
-- **`multilingual-transformers.md`**: The backbone for zero-shot cross-lingual transfer, the most widely used low-resource technique.
-- **`multilingual-nlp.md`**: Low-resource NLP is a central challenge within the broader multilingual NLP field.
-- **`data-augmentation-for-nlp.md`**: Augmentation techniques multiply the value of scarce labeled data.
-- **`cross-lingual-word-embeddings.md`**: Enable cross-lingual transfer for languages not covered by multilingual transformers.
-- **`machine-translation-approaches.md`**: MT enables translate-train and translate-test approaches and provides parallel data for annotation projection.
-- **`cross-lingual-transfer.md`**: Detailed treatment of how models transfer task knowledge across languages.
-- **`prompt-based-nlp.md`**: Prompt-based methods are particularly effective in few-shot settings.
-- **`data-annotation-and-labeling.md`**: Understanding annotation processes is key to designing efficient active learning strategies.
-- **`text-classification.md`**: Classification tasks are the most common testbed for low-resource techniques.
+- `multilingual-transformers.md`: The backbone for zero-shot cross-lingual transfer, the most widely used low-resource technique.
+- `multilingual-nlp.md`: Low-resource NLP is a central challenge within the broader multilingual NLP field.
+- `data-augmentation.md`: Augmentation techniques multiply the value of scarce labeled data.
+- `cross-lingual-word-embeddings.md`: Enable cross-lingual transfer for languages not covered by multilingual transformers.
+- `machine-translation.md`: MT enables translate-train and translate-test approaches and provides parallel data for annotation projection.
+- `cross-lingual-transfer.md`: Detailed treatment of how models transfer task knowledge across languages.
+- `prompt-based-nlp.md`: Prompt-based methods are particularly effective in few-shot settings.
+- `data-annotation-and-labeling.md`: Understanding annotation processes is key to designing efficient active learning strategies.
+- `text-classification.md`: Classification tasks are the most common testbed for low-resource techniques.
 
 ## Further Reading
 

@@ -110,11 +110,11 @@ Sliding window's advantage is simplicity: one hyperparameter ($W$), straightforw
 
 ## Connections to Other Concepts
 
-- **Full self-attention**: Sliding window is a strict subset -- same mechanism, restricted key-value set.
-- **KV cache**: The rolling buffer transforms a growing cache into a fixed-size circular buffer.
-- **Sparse attention**: Sliding window is one pattern; others include strided, local+global, and random.
-- **Grouped-query attention**: Mistral 7B combines sliding window with GQA for compounding memory savings.
-- **Attention sinks**: StreamingLLM adds persistent sink tokens to the rolling buffer, preventing perplexity degradation.
+- `self-attention.md`: Sliding window is a strict subset -- same mechanism, restricted key-value set.
+- `kv-cache.md`: The rolling buffer transforms a growing cache into a fixed-size circular buffer.
+- `sparse-attention.md`: Sliding window is one pattern; others include strided, local+global, and random.
+- `grouped-query-attention.md`: Mistral 7B combines sliding window with GQA for compounding memory savings.
+- `attention-sinks.md`: StreamingLLM adds persistent sink tokens to the rolling buffer, preventing perplexity degradation.
 
 ## Further Reading
 

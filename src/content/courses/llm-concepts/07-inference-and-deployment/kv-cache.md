@@ -121,11 +121,11 @@ KV cache is not optional -- it is a hard requirement for practical LLM serving. 
 
 ## Connections to Other Concepts
 
-- **Flash Attention**: Optimizes the compute side of attention; KV cache optimizes the redundancy side. They are complementary.
-- **Quantization**: Quantizing KV cache values (KV cache quantization) is a growing area that directly addresses the memory bottleneck.
-- **Throughput vs. Latency**: KV cache size directly determines how many requests can be batched, linking it to the fundamental throughput-latency trade-off.
-- **Model Serving Frameworks**: vLLM's PagedAttention, TensorRT-LLM's inflight batching, and TGI's memory management all revolve around efficient KV cache handling.
-- **Speculative Decoding**: The draft model maintains its own (smaller) KV cache, and verification re-uses the target model's cache efficiently.
+- `flash-attention.md`: Optimizes the compute side of attention; KV cache optimizes the redundancy side. They are complementary.
+- `quantization.md`: Quantizing KV cache values (KV cache quantization) is a growing area that directly addresses the memory bottleneck.
+- `throughput-vs-latency.md`: KV cache size directly determines how many requests can be batched, linking it to the fundamental throughput-latency trade-off.
+- `model-serving.md`: vLLM's PagedAttention, TensorRT-LLM's inflight batching, and TGI's memory management all revolve around efficient KV cache handling.
+- `speculative-decoding.md`: The draft model maintains its own (smaller) KV cache, and verification re-uses the target model's cache efficiently.
 
 ## Further Reading
 

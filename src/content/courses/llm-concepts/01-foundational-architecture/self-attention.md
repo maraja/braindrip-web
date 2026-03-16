@@ -110,12 +110,12 @@ Self-attention is also the mechanism that makes Transformers **interpretable** (
 
 ## Connections to Other Concepts
 
-- **Multi-Head Attention**: In practice, self-attention is always used in multi-head form to capture diverse relationship types (see `multi-head-attention.md`).
-- **Causal Attention**: A variant where a mask prevents attending to future tokens, used in decoder models (see `causal-attention.md`).
-- **Transformer Architecture**: Self-attention is the central mechanism inside each Transformer layer (see `transformer-architecture.md`).
-- **Residual Connections**: The output of self-attention is added to the input via a skip connection (see `residual-connections.md`).
-- **Positional Encoding**: Necessary because self-attention itself is position-agnostic.
-- **KV Cache**: In autoregressive generation, the keys and values from previous tokens are cached to avoid recomputation (see `autoregressive-generation.md`).
+- `multi-head-attention.md`: In practice, self-attention is always used in multi-head form to capture diverse relationship types (see `multi-head-attention.md`).
+- `causal-attention.md`: A variant where a mask prevents attending to future tokens, used in decoder models (see `causal-attention.md`).
+- `transformer-architecture.md`: Self-attention is the central mechanism inside each Transformer layer (see `transformer-architecture.md`).
+- `residual-connections.md`: The output of self-attention is added to the input via a skip connection (see `residual-connections.md`).
+- `positional-encoding.md`: Necessary because self-attention itself is position-agnostic.
+- `kv-cache.md`: In autoregressive generation, the keys and values from previous tokens are cached to avoid recomputation (see `autoregressive-generation.md`).
 
 ## Further Reading
 

@@ -93,12 +93,12 @@ The reset gate r_t is unique to the GRU and has no direct LSTM counterpart. When
 
 ## Connections to Other Concepts
 
-- **`long-short-term-memory.md`**: The GRU's direct predecessor and primary comparison point; the GRU simplifies the three-gate, two-state LSTM design to two gates and one state.
-- **`recurrent-neural-networks.md`**: GRUs share the same sequential processing framework as vanilla RNNs but add gating to solve the vanishing gradient problem.
-- **`bidirectional-rnns.md`**: Bidirectional GRUs (BiGRUs) are commonly used for sequence labeling tasks as a lighter alternative to BiLSTMs.
-- **`sequence-to-sequence-models.md`**: Cho et al. (2014) introduced the GRU within the context of encoder-decoder translation, making it inseparable from seq2seq history.
-- **`attention-mechanism.md`**: Bahdanau et al. (2014) used GRU-based encoders and decoders when introducing additive attention for machine translation.
-- **`contextual-embeddings.md`**: While ELMo uses LSTMs, some contextual embedding approaches have used GRUs with comparable results.
+- `long-short-term-memory.md`: The GRU's direct predecessor and primary comparison point; the GRU simplifies the three-gate, two-state LSTM design to two gates and one state.
+- `recurrent-neural-networks.md`: GRUs share the same sequential processing framework as vanilla RNNs but add gating to solve the vanishing gradient problem.
+- `bidirectional-rnns.md`: Bidirectional GRUs (BiGRUs) are commonly used for sequence labeling tasks as a lighter alternative to BiLSTMs.
+- `sequence-to-sequence-models.md`: Cho et al. (2014) introduced the GRU within the context of encoder-decoder translation, making it inseparable from seq2seq history.
+- `attention-mechanism.md`: Bahdanau et al. (2014) used GRU-based encoders and decoders when introducing additive attention for machine translation.
+- `contextual-embeddings.md`: While ELMo uses LSTMs, some contextual embedding approaches have used GRUs with comparable results.
 
 ## Further Reading
 

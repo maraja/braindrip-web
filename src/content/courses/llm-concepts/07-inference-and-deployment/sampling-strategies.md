@@ -136,10 +136,10 @@ Sampling strategy is arguably the most user-facing aspect of LLM behavior. The s
 
 ## Connections to Other Concepts
 
-- **KV Cache**: Every sampling strategy still relies on KV cache for efficient autoregressive generation. The sampling choice happens after the forward pass.
-- **Speculative Decoding**: The acceptance/rejection step in speculative decoding must account for the target model's sampling distribution, making the interaction between speculative decoding and non-greedy sampling a subtle technical challenge.
-- **Knowledge Distillation**: Temperature plays a dual role -- in distillation, high temperature softens the teacher's distribution to transfer more information. In sampling, it softens the distribution to increase diversity.
-- **Quantization**: Reduced precision can slightly alter the probability distribution, which interacts with sampling. At very low bit widths, the effective temperature may shift.
+- `kv-cache.md`: Every sampling strategy still relies on KV cache for efficient autoregressive generation. The sampling choice happens after the forward pass.
+- `speculative-decoding.md`: The acceptance/rejection step in speculative decoding must account for the target model's sampling distribution, making the interaction between speculative decoding and non-greedy sampling a subtle technical challenge.
+- `knowledge-distillation.md`: Temperature plays a dual role -- in distillation, high temperature softens the teacher's distribution to transfer more information. In sampling, it softens the distribution to increase diversity.
+- `quantization.md`: Reduced precision can slightly alter the probability distribution, which interacts with sampling. At very low bit widths, the effective temperature may shift.
 
 ## Further Reading
 

@@ -85,10 +85,10 @@ Training uses AdamW optimizer with cosine learning rate schedule, 5-epoch warmup
 
 ## Connections to Other Concepts
 
-- **Vision Transformer (ViT)**: DeiT uses the ViT architecture directly; it is a training methodology for ViT, not a new model.
-- **DINO**: Also trains ViT with a teacher-student framework but without labels, using self-distillation rather than CNN-to-Transformer distillation.
-- **Masked Image Modeling**: An alternative self-supervised pre-training strategy (MAE, BEiT) that also makes ViT data-efficient, but through reconstruction rather than distillation.
-- **Vision Transformer Scaling**: DeiT shows what's achievable at the ImageNet-1K scale; scaling laws describe how performance changes as data and model grow beyond this point.
+- `vision-transformer.md`: DeiT uses the ViT architecture directly; it is a training methodology for ViT, not a new model.
+- `dino.md`: Also trains ViT with a teacher-student framework but without labels, using self-distillation rather than CNN-to-Transformer distillation.
+- `masked-image-modeling.md`: An alternative self-supervised pre-training strategy (MAE, BEiT) that also makes ViT data-efficient, but through reconstruction rather than distillation.
+- `vision-transformer-scaling.md`: DeiT shows what's achievable at the ImageNet-1K scale; scaling laws describe how performance changes as data and model grow beyond this point.
 
 ## Further Reading
 

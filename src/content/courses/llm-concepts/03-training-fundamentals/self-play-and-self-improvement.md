@@ -102,11 +102,11 @@ The EM framing connects to variational inference: the E-step samples from the mo
 
 ## Connections to Other Concepts
 
-- **Chain-of-thought training**: STaR and Quiet-STaR are methods for training CoT capability, bridging prompting-based CoT and natively trained reasoning.
-- **Rejection sampling**: ReST and iterative RS fine-tuning are closely related -- both generate, filter, and train on the best outputs.
-- **GRPO and RLVR**: DeepSeek-R1 can be viewed as self-improvement through RL, with emergent reasoning as the result.
-- **Synthetic data**: Self-improvement is structured, iterative synthetic data generation.
-- **DPO**: SPIN uses a DPO-like objective, connecting self-improvement to preference optimization.
+- `chain-of-thought-training.md`: STaR and Quiet-STaR are methods for training CoT capability, bridging prompting-based CoT and natively trained reasoning.
+- `rejection-sampling.md`: ReST and iterative RS fine-tuning are closely related -- both generate, filter, and train on the best outputs.
+- `grpo.md`: DeepSeek-R1 can be viewed as self-improvement through RL, with emergent reasoning as the result.
+- `synthetic-data.md`: Self-improvement is structured, iterative synthetic data generation.
+- `dpo.md`: SPIN uses a DPO-like objective, connecting self-improvement to preference optimization.
 
 ## Further Reading
 

@@ -85,13 +85,13 @@ Even with VQA v2.0's balanced pairs, language bias persists. Models perform sign
 
 ## Connections to Other Concepts
 
-- **`multimodal-nlp.md`**: VQA is one of the primary evaluation tasks for multimodal models, driving advances in vision-language pre-training.
-- **`image-captioning.md`**: Captioning and VQA are complementary tasks -- captioning generates descriptions, VQA answers specific questions. Both require grounding language in visual content.
-- **`question-answering.md`**: Text-based QA shares the question understanding component, and extractive QA methods inspired early VQA attention mechanisms.
-- **`attention-mechanism.md`**: Visual attention in VQA (attending to relevant image regions based on the question) is one of the most intuitive demonstrations of the attention mechanism.
-- **`text-classification.md`**: VQA formulated as classification over answer candidates is a multimodal extension of text classification.
-- **`bias-in-nlp.md`**: Language bias in VQA is a canonical example of shortcut learning, relevant to broader discussions of bias and robustness in NLP.
-- **`document-understanding.md`**: Document QA (DocVQA) extends VQA to visually rich documents, requiring OCR and layout understanding.
+- `multimodal-nlp.md`: VQA is one of the primary evaluation tasks for multimodal models, driving advances in vision-language pre-training.
+- `image-captioning.md`: Captioning and VQA are complementary tasks -- captioning generates descriptions, VQA answers specific questions. Both require grounding language in visual content.
+- `question-answering.md`: Text-based QA shares the question understanding component, and extractive QA methods inspired early VQA attention mechanisms.
+- `attention-mechanism.md`: Visual attention in VQA (attending to relevant image regions based on the question) is one of the most intuitive demonstrations of the attention mechanism.
+- `text-classification.md`: VQA formulated as classification over answer candidates is a multimodal extension of text classification.
+- `bias-in-nlp.md`: Language bias in VQA is a canonical example of shortcut learning, relevant to broader discussions of bias and robustness in NLP.
+- `document-understanding.md`: Document QA (DocVQA) extends VQA to visually rich documents, requiring OCR and layout understanding.
 
 ## Further Reading
 

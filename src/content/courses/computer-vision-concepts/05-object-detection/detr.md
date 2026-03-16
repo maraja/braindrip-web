@@ -92,11 +92,11 @@ Addresses DETR's convergence and small-object weaknesses:
 
 ## Connections to Other Concepts
 
-- **Non-Maximum Suppression**: DETR is the first major detector to eliminate NMS entirely via set prediction.
-- **Anchor-Free Detection**: DETR is anchor-free by design, predicting boxes directly without anchor templates.
-- **Feature Pyramid Network**: Original DETR does not use FPN (a notable limitation); Deformable DETR adds multi-scale features.
-- **Intersection over Union**: Generalized IoU (GIoU) is used in both the matching cost and training loss.
-- **Focal Loss**: DETR uses standard cross-entropy, but some successors incorporate focal loss for classification.
+- `non-maximum-suppression.md`: DETR is the first major detector to eliminate NMS entirely via set prediction.
+- `anchor-free-detection.md`: DETR is anchor-free by design, predicting boxes directly without anchor templates.
+- `feature-pyramid-network.md`: Original DETR does not use FPN (a notable limitation); Deformable DETR adds multi-scale features.
+- `intersection-over-union.md`: Generalized IoU (GIoU) is used in both the matching cost and training loss.
+- `focal-loss.md`: DETR uses standard cross-entropy, but some successors incorporate focal loss for classification.
 
 ## Further Reading
 

@@ -89,9 +89,9 @@ Initial ANN retrieval returns the top-$K$ candidates (e.g., $K = 100$). Re-ranki
 ## Connections to Other Concepts
 
 - **Metric Learning**: Contrastive, triplet, and proxy losses are the training objectives for retrieval embeddings.
-- **Face Detection and Recognition**: Face retrieval (identification) is a specialized image retrieval task.
-- **Anomaly Detection**: PatchCore uses nearest-neighbor search in feature space, analogous to retrieval.
-- **Multimodal Models**: CLIP enables cross-modal retrieval (text query, image results) using shared embedding spaces.
+- `face-detection-and-recognition.md`: Face retrieval (identification) is a specialized image retrieval task.
+- `anomaly-detection.md`: PatchCore uses nearest-neighbor search in feature space, analogous to retrieval.
+- `multimodal-models.md`: CLIP enables cross-modal retrieval (text query, image results) using shared embedding spaces.
 
 ## Further Reading
 

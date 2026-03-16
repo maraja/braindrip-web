@@ -136,15 +136,15 @@ The pattern is consistent: augmentation helps most when data is scarcest, and th
 
 ## Connections to Other Concepts
 
-- **`low-resource-nlp.md`**: Data augmentation is one of the core strategies for low-resource NLP, complementing transfer learning and active learning.
-- **`machine-translation-approaches.md`**: Back-translation, the most effective augmentation technique, directly leverages MT systems.
-- **`bert.md`**: BERT's masked language model is repurposed for contextual augmentation, generating context-appropriate word substitutions.
-- **`multilingual-nlp.md`**: Cross-lingual augmentation leverages multilingual resources to augment data in any target language.
-- **`text-classification.md`**: Classification tasks are the most common application and evaluation ground for augmentation techniques.
-- **`paraphrase-generation.md`**: Paraphrase models provide high-quality label-preserving augmentation.
-- **`text-generation.md`**: Large language models can generate entirely synthetic training examples conditioned on task descriptions.
-- **`word2vec.md`**: Word embeddings enable synonym-based augmentation by providing semantically similar replacement candidates.
-- **`cross-lingual-transfer.md`**: Cross-lingual augmentation combines MT-based data creation with cross-lingual transfer methods.
+- `low-resource-nlp.md`: Data augmentation is one of the core strategies for low-resource NLP, complementing transfer learning and active learning.
+- `machine-translation.md`: Back-translation, the most effective augmentation technique, directly leverages MT systems.
+- `bert.md`: BERT's masked language model is repurposed for contextual augmentation, generating context-appropriate word substitutions.
+- `multilingual-nlp.md`: Cross-lingual augmentation leverages multilingual resources to augment data in any target language.
+- `text-classification.md`: Classification tasks are the most common application and evaluation ground for augmentation techniques.
+- `paraphrase-generation.md`: Paraphrase models provide high-quality label-preserving augmentation.
+- `text-generation.md`: Large language models can generate entirely synthetic training examples conditioned on task descriptions.
+- `word2vec.md`: Word embeddings enable synonym-based augmentation by providing semantically similar replacement candidates.
+- `cross-lingual-transfer.md`: Cross-lingual augmentation combines MT-based data creation with cross-lingual transfer methods.
 
 ## Further Reading
 

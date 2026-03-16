@@ -74,13 +74,13 @@ BoW vectors feed directly into classical machine learning models:
 
 ## Connections to Other Concepts
 
-- **TF-IDF** (`tf-idf.md`): Extends raw BoW counts with inverse document frequency weighting to downweight common words and upweight discriminative ones.
-- **N-Gram Language Models** (`n-gram-language-models.md`): While BoW discards order entirely, n-gram models make it central -- predicting each word from the previous n-1 words.
-- **Word2Vec** (`word2vec.md`): Dense embeddings emerged as a response to BoW's sparsity and inability to capture semantic similarity -- "happy" and "joyful" are orthogonal in BoW but nearby in Word2Vec space.
-- **Text Classification** (`05-core-nlp-tasks-analysis/text-classification.md`): BoW remains a go-to representation for classification tasks, especially as a baseline.
-- **Information Retrieval** (`07-information-extraction-and-retrieval/information-retrieval.md`): BoW underpins classical retrieval models like the vector space model.
-- **Topic Modeling** (`07-information-extraction-and-retrieval/topic-modeling.md`): LDA and related models operate directly on BoW representations to discover latent themes.
-- **Tokenization** (`02-text-preprocessing/tokenization-in-nlp.md`): The quality of BoW features depends entirely on how text is tokenized.
+- `tf-idf.md`: Extends raw BoW counts with inverse document frequency weighting to downweight common words and upweight discriminative ones.
+- `n-gram-language-models.md`: While BoW discards order entirely, n-gram models make it central -- predicting each word from the previous n-1 words.
+- `word2vec.md`: Dense embeddings emerged as a response to BoW's sparsity and inability to capture semantic similarity -- "happy" and "joyful" are orthogonal in BoW but nearby in Word2Vec space.
+- `05-core-nlp-tasks-analysis/text-classification.md`: BoW remains a go-to representation for classification tasks, especially as a baseline.
+- `07-information-extraction-and-retrieval/information-retrieval.md`: BoW underpins classical retrieval models like the vector space model.
+- `07-information-extraction-and-retrieval/topic-modeling.md`: LDA and related models operate directly on BoW representations to discover latent themes.
+- `02-text-preprocessing/tokenization-in-nlp.md`: The quality of BoW features depends entirely on how text is tokenized.
 
 ## Further Reading
 

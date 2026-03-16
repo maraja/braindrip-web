@@ -86,13 +86,13 @@ where sigma is the sigmoid function and P_n(w) is the noise distribution, typica
 
 ## Connections to Other Concepts
 
-- **Bag of Words** (`bag-of-words.md`): Word2Vec addresses BoW's inability to capture semantic similarity -- "happy" and "joyful" are orthogonal in BoW but neighbors in Word2Vec space.
-- **GloVe** (`glove.md`): An alternative approach that explicitly factorizes the co-occurrence matrix rather than using prediction. Produces comparable embeddings with different trade-offs.
-- **FastText** (`fasttext.md`): Extends Word2Vec with character n-grams to handle morphology and out-of-vocabulary words.
-- **Contextual Embeddings** (`contextual-embeddings.md`): Word2Vec assigns one vector per word type. Contextual models like ELMo and BERT assign different vectors per word *token*, resolving polysemy.
-- **Sentence Embeddings** (`sentence-embeddings.md`): Averaging Word2Vec vectors is the simplest approach to sentence representation.
-- **Bias in NLP** (`12-evaluation-and-ethics/bias-in-nlp.md`): Word2Vec embeddings infamously encode societal biases (man:programmer :: woman:homemaker), sparking important research on debiasing.
-- **Semantic Similarity** (`08-semantic-understanding/semantic-similarity.md`): Cosine similarity between Word2Vec vectors is a standard measure of word-level semantic similarity.
+- `bag-of-words.md`: Word2Vec addresses BoW's inability to capture semantic similarity -- "happy" and "joyful" are orthogonal in BoW but neighbors in Word2Vec space.
+- `glove.md`: An alternative approach that explicitly factorizes the co-occurrence matrix rather than using prediction. Produces comparable embeddings with different trade-offs.
+- `fasttext.md`: Extends Word2Vec with character n-grams to handle morphology and out-of-vocabulary words.
+- `contextual-embeddings.md`: Word2Vec assigns one vector per word type. Contextual models like ELMo and BERT assign different vectors per word *token*, resolving polysemy.
+- `sentence-embeddings.md`: Averaging Word2Vec vectors is the simplest approach to sentence representation.
+- `12-evaluation-and-ethics/bias-in-nlp.md`: Word2Vec embeddings infamously encode societal biases (man:programmer :: woman:homemaker), sparking important research on debiasing.
+- `08-semantic-understanding/semantic-similarity.md`: Cosine similarity between Word2Vec vectors is a standard measure of word-level semantic similarity.
 
 ## Further Reading
 

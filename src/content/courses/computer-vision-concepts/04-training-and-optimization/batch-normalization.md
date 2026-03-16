@@ -76,10 +76,10 @@ Group Normalization (Wu & He, 2018) divides channels into groups (default $G=32$
 
 ## Connections to Other Concepts
 
-- **Dropout and Regularization**: BN's regularization effect can partially replace Dropout, but the two mechanisms are complementary under some conditions.
-- **Learning Rate Scheduling**: BN's loss-landscape smoothing effect is what enables the higher learning rates that modern schedules exploit.
-- **Transfer Learning**: BN running statistics are domain-specific; care is needed when fine-tuning across domains.
-- **Progressive Resizing**: Changing input resolution affects BN statistics, which may need re-calibration.
+- `dropout-and-regularization.md`: BN's regularization effect can partially replace Dropout, but the two mechanisms are complementary under some conditions.
+- `learning-rate-scheduling.md`: BN's loss-landscape smoothing effect is what enables the higher learning rates that modern schedules exploit.
+- `transfer-learning.md`: BN running statistics are domain-specific; care is needed when fine-tuning across domains.
+- `progressive-resizing.md`: Changing input resolution affects BN statistics, which may need re-calibration.
 
 ## Further Reading
 

@@ -96,11 +96,11 @@ PCA is ubiquitous in machine learning and data science. It reduces computational
 
 ## Connections to Other Concepts
 
-- **K-Means Clustering**: PCA is commonly applied before K-means to reduce dimensionality and improve cluster quality. The top principal components often align with cluster-separating directions. PCA + K-means is arguably the most common unsupervised pipeline in practice.
-- **Gaussian Mixture Models**: Probabilistic PCA is a single-component latent variable model closely related to GMMs. Factor analysis extends this with component-specific noise. GMMs on PCA-reduced data combine dimensionality reduction with soft clustering.
-- **t-SNE and UMAP**: These nonlinear methods complement PCA. It is common practice to first reduce to 50 dimensions with PCA, then apply t-SNE or UMAP for 2D visualization. PCA preprocessing dramatically speeds up both methods.
-- **Anomaly Detection**: Points with high reconstruction error under a PCA model (large residuals in discarded components) are potential anomalies. This is one of the simplest and most effective anomaly detection approaches.
-- **Association Rules**: While association rules operate on discrete transactional data, PCA operates on continuous numerical data. Both aim to discover latent structure, but in fundamentally different data types.
+- `k-means-clustering.md`: PCA is commonly applied before K-means to reduce dimensionality and improve cluster quality. The top principal components often align with cluster-separating directions. PCA + K-means is arguably the most common unsupervised pipeline in practice.
+- `gaussian-mixture-models.md`: Probabilistic PCA is a single-component latent variable model closely related to GMMs. Factor analysis extends this with component-specific noise. GMMs on PCA-reduced data combine dimensionality reduction with soft clustering.
+- `tsne-and-umap.md`: These nonlinear methods complement PCA. It is common practice to first reduce to 50 dimensions with PCA, then apply t-SNE or UMAP for 2D visualization. PCA preprocessing dramatically speeds up both methods.
+- `anomaly-detection.md`: Points with high reconstruction error under a PCA model (large residuals in discarded components) are potential anomalies. This is one of the simplest and most effective anomaly detection approaches.
+- `association-rules.md`: While association rules operate on discrete transactional data, PCA operates on continuous numerical data. Both aim to discover latent structure, but in fundamentally different data types.
 
 ## Implementation Notes
 

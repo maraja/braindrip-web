@@ -107,11 +107,11 @@ The loss function is the bridge between your business objective and what the opt
 
 ## Connections to Other Concepts
 
-- **Empirical Risk Minimization**: The loss function is the $\mathcal{L}$ in ERM. Different losses define different risk functionals.
-- **Regularization**: The regularized objective is loss + penalty. The loss measures data fit; regularization measures complexity.
-- **Bias-Variance Tradeoff**: The bias-variance decomposition is cleanest for MSE. Different losses induce different decompositions.
-- **Overfitting and Underfitting**: Monitoring loss on train vs. validation sets is the primary diagnostic for these problems.
-- **What Is Machine Learning**: The loss function operationalizes the "performance measure $P$" in Mitchell's definition.
+- `empirical-risk-minimization.md`: The loss function is the $\mathcal{L}$ in ERM. Different losses define different risk functionals.
+- `regularization.md`: The regularized objective is loss + penalty. The loss measures data fit; regularization measures complexity.
+- `bias-variance-tradeoff.md`: The bias-variance decomposition is cleanest for MSE. Different losses induce different decompositions.
+- `overfitting-and-underfitting.md`: Monitoring loss on train vs. validation sets is the primary diagnostic for these problems.
+- `what-is-machine-learning.md`: The loss function operationalizes the "performance measure $P$" in Mitchell's definition.
 
 ## Further Reading
 

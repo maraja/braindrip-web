@@ -90,9 +90,9 @@ The trend is toward unified models that take raw sensors and directly output pla
 ## Connections to Other Concepts
 
 - **3D Vision**: Depth estimation, point cloud processing, and 3D object detection are core components.
-- **Object Detection**: 2D detection techniques (FPN, anchor-free detection) are adapted for 3D.
-- **Vision Transformers**: BEVFormer and UniAD rely heavily on Transformer architectures.
-- **Edge Deployment**: In-vehicle inference requires optimized models running on automotive-grade hardware (NVIDIA Orin, Tesla FSD chip).
+- `3d-object-detection.md`: 2D detection techniques (FPN, anchor-free detection) are adapted for 3D.
+- `vision-transformer.md`: BEVFormer and UniAD rely heavily on Transformer architectures.
+- `edge-deployment.md`: In-vehicle inference requires optimized models running on automotive-grade hardware (NVIDIA Orin, Tesla FSD chip).
 
 ## Further Reading
 

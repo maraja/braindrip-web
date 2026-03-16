@@ -86,10 +86,10 @@ The advantage of convolutional early layers has a principled explanation:
 
 ## Connections to Other Concepts
 
-- **Vision Transformer (ViT)**: Hybrids augment ViT with convolutional components; the original ViT paper itself tested a ResNet-50 stem variant.
-- **Swin Transformer**: Swin's hierarchical design and local attention windows serve a similar purpose to CNN early layers -- capturing local structure efficiently.
-- **DeiT**: DeiT uses training-time tricks (distillation, augmentation) to compensate for ViT's lack of inductive bias; hybrids address the same problem architecturally.
-- **Vision Transformer Scaling**: At very large scale (billions of parameters, billions of images), the advantage of hybrid over pure Transformer narrows.
+- `vision-transformer.md`: Hybrids augment ViT with convolutional components; the original ViT paper itself tested a ResNet-50 stem variant.
+- `swin-transformer.md`: Swin's hierarchical design and local attention windows serve a similar purpose to CNN early layers -- capturing local structure efficiently.
+- `deit.md`: DeiT uses training-time tricks (distillation, augmentation) to compensate for ViT's lack of inductive bias; hybrids address the same problem architecturally.
+- `vision-transformer-scaling.md`: At very large scale (billions of parameters, billions of images), the advantage of hybrid over pure Transformer narrows.
 
 ## Further Reading
 

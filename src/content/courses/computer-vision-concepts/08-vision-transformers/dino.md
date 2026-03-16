@@ -77,10 +77,10 @@ When visualizing the self-attention maps of the $[\texttt{CLS}]$ token in the la
 
 ## Connections to Other Concepts
 
-- **Vision Transformer (ViT)**: DINO uses ViT as the backbone and reveals properties of self-supervised ViT representations.
-- **DeiT**: DeiT distills from an external CNN teacher with labels; DINO distills from itself without labels. Both are distillation-based training strategies for ViT.
-- **Masked Image Modeling**: MAE and BEiT are alternative self-supervised methods that reconstruct masked patches rather than matching augmented views. DINO tends to produce better $k$-NN features, while MAE tends to produce better features after fine-tuning.
-- **Attention in Vision**: DINO's emergent segmentation directly visualizes what attention heads learn, providing insight into how self-attention operates on images.
+- `vision-transformer.md`: DINO uses ViT as the backbone and reveals properties of self-supervised ViT representations.
+- `deit.md`: DeiT distills from an external CNN teacher with labels; DINO distills from itself without labels. Both are distillation-based training strategies for ViT.
+- `masked-image-modeling.md`: MAE and BEiT are alternative self-supervised methods that reconstruct masked patches rather than matching augmented views. DINO tends to produce better $k$-NN features, while MAE tends to produce better features after fine-tuning.
+- `attention-in-vision.md`: DINO's emergent segmentation directly visualizes what attention heads learn, providing insight into how self-attention operates on images.
 
 ## Further Reading
 

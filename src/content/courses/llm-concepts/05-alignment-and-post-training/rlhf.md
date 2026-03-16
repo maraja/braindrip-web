@@ -113,10 +113,10 @@ RLHF also enabled the alignment of models with safety considerations -- teaching
 
 ## Connections to Other Concepts
 
-- **Supervised fine-tuning** is always the prerequisite step, providing the base policy that RLHF refines.
-- **Reward modeling** is a sub-component of RLHF worthy of deep study in its own right, as it is the critical bottleneck.
-- **DPO** emerged as a direct response to RLHF's instability, reparameterizing the problem to eliminate the need for an explicit reward model and RL loop.
-- **Constitutional AI** replaces human annotators with AI-generated feedback (RLAIF), modifying Stage 1 of the pipeline.
+- `supervised-fine-tuning.md`: is always the prerequisite step, providing the base policy that RLHF refines.
+- `reward-modeling.md`: is a sub-component of RLHF worthy of deep study in its own right, as it is the critical bottleneck.
+- `dpo.md`: emerged as a direct response to RLHF's instability, reparameterizing the problem to eliminate the need for an explicit reward model and RL loop.
+- `constitutional-ai.md`: replaces human annotators with AI-generated feedback (RLAIF), modifying Stage 1 of the pipeline.
 - **KL divergence** appears throughout machine learning and information theory; in RLHF it serves as a regularizer preventing mode collapse.
 
 ## Further Reading

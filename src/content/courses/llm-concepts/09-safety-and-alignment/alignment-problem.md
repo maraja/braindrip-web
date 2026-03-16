@@ -117,11 +117,11 @@ For organizations deploying LLMs, alignment is not an abstract philosophical con
 
 ## Connections to Other Concepts
 
-- **RLHF and DPO**: These are the primary current techniques for aligning LLMs, and their limitations define the frontier of the alignment problem.
-- **Hallucination**: Can be understood as an alignment failure -- the model produces plausible text rather than truthful text because its training objective rewards plausibility.
-- **Bias & Fairness**: Bias is a specific category of misalignment where the model's behavior diverges from equitable treatment due to training data and optimization dynamics.
-- **Prompt Injection**: Demonstrates a failure of alignment at the application level -- the model follows injected instructions instead of its intended instructions.
-- **Guardrails**: External alignment mechanisms that compensate for imperfect model-level alignment by adding additional layers of behavioral constraint.
+- `rlhf.md`: These are the primary current techniques for aligning LLMs, and their limitations define the frontier of the alignment problem.
+- `hallucination.md`: Can be understood as an alignment failure -- the model produces plausible text rather than truthful text because its training objective rewards plausibility.
+- `bias-in-nlp.md`: Bias is a specific category of misalignment where the model's behavior diverges from equitable treatment due to training data and optimization dynamics.
+- `prompt-injection.md`: Demonstrates a failure of alignment at the application level -- the model follows injected instructions instead of its intended instructions.
+- `guardrails.md`: External alignment mechanisms that compensate for imperfect model-level alignment by adding additional layers of behavioral constraint.
 
 ## Further Reading
 

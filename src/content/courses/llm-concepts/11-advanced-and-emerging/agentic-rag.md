@@ -154,12 +154,12 @@ Production deployments at companies building knowledge assistants, research tool
 
 ## Connections to Other Concepts
 
-- **RAG**: Agentic RAG is the evolution of standard RAG, adding dynamic orchestration around the same core retrieve-and-generate pattern.
-- **AI agents and tool use**: Agentic RAG is a specific application of the general AI agent pattern, where the primary "tools" are retrieval interfaces.
-- **Corrective RAG (CRAG)**: CRAG is a specific agentic RAG pattern focused on evaluating and correcting retrieval failures.
-- **HyDE**: An agentic RAG system might choose to use HyDE for certain types of queries where direct query embedding is likely to fail.
-- **Function calling**: The tool-calling interface of modern LLMs is the mechanism through which agentic RAG systems invoke retrieval and other tools.
-- **Compound AI systems**: Agentic RAG is a prime example of compound AI systems -- multiple components (LLM, retriever, evaluator, tools) working together.
+- `rag.md`: Agentic RAG is the evolution of standard RAG, adding dynamic orchestration around the same core retrieve-and-generate pattern.
+- `ai-agents.md`: Agentic RAG is a specific application of the general AI agent pattern, where the primary "tools" are retrieval interfaces.
+- `corrective-rag.md`: CRAG is a specific agentic RAG pattern focused on evaluating and correcting retrieval failures.
+- `hyde-hypothetical-document-embeddings.md`: An agentic RAG system might choose to use HyDE for certain types of queries where direct query embedding is likely to fail.
+- `function-calling.md`: The tool-calling interface of modern LLMs is the mechanism through which agentic RAG systems invoke retrieval and other tools.
+- `compound-ai-systems.md`: Agentic RAG is a prime example of compound AI systems -- multiple components (LLM, retriever, evaluator, tools) working together.
 
 ## Further Reading
 

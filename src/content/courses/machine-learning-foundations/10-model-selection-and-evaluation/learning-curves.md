@@ -115,11 +115,11 @@ Learning curves provide the diagnostic information needed to make informed decis
 
 ## Connections to Other Concepts
 
-- **Cross-Validation**: Used to generate reliable learning curve estimates at each training set size.
-- **Hyperparameter Tuning**: Validation curves (a type of learning curve) guide hyperparameter selection.
-- **Regression Metrics / Classification Metrics**: The y-axis of learning curves plots these metrics.
-- **Model Comparison**: Learning curves provide context beyond a single number -- two models may have similar average performance but very different learning dynamics.
-- **Calibration**: Monitoring calibration metrics across training iterations can reveal when models become overconfident.
+- `cross-validation.md`: Used to generate reliable learning curve estimates at each training set size.
+- `hyperparameter-tuning.md`: Validation curves (a type of learning curve) guide hyperparameter selection.
+- `regression-metrics.md`: The y-axis of learning curves plots these metrics.
+- `model-comparison.md`: Learning curves provide context beyond a single number -- two models may have similar average performance but very different learning dynamics.
+- `calibration.md`: Monitoring calibration metrics across training iterations can reveal when models become overconfident.
 
 ## Further Reading
 

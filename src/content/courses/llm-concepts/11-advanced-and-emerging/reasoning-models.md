@@ -137,11 +137,11 @@ The key insight from this ecosystem expansion: reasoning capability is a **train
 
 ## Connections to Other Concepts
 
-- **Chain-of-Thought Prompting**: Reasoning models formalize and optimize the CoT approach through RL training, producing higher-quality and more reliable reasoning chains than prompting alone can achieve.
-- **Reinforcement Learning from Human Feedback (RLHF)**: Reasoning models extend RLHF by using correctness-based rewards (math proofs, code test suites) alongside or instead of human preference signals.
-- **Scaling Laws**: Reasoning models introduce inference-time scaling as a complement to training-time scaling, adding a new dimension to the compute-performance tradeoff.
-- **Self-Reflection**: The self-verification behavior that emerges naturally in reasoning models is closely related to self-reflection, but occurs within a single generation rather than across separate trials.
-- **Distillation and Model Compression**: The R1 distillation results demonstrate that reasoning can be transferred from large teacher models to small student models, extending classical knowledge distillation techniques to emergent reasoning behaviors.
+- `chain-of-thought-prompting.md`: Reasoning models formalize and optimize the CoT approach through RL training, producing higher-quality and more reliable reasoning chains than prompting alone can achieve.
+- `rlhf.md`: Reasoning models extend RLHF by using correctness-based rewards (math proofs, code test suites) alongside or instead of human preference signals.
+- `scaling-laws.md`: Reasoning models introduce inference-time scaling as a complement to training-time scaling, adding a new dimension to the compute-performance tradeoff.
+- `self-reflection.md`: The self-verification behavior that emerges naturally in reasoning models is closely related to self-reflection, but occurs within a single generation rather than across separate trials.
+- `agent-distillation.md`: The R1 distillation results demonstrate that reasoning can be transferred from large teacher models to small student models, extending classical knowledge distillation techniques to emergent reasoning behaviors.
 
 ## Further Reading
 

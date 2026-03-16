@@ -104,12 +104,12 @@ Tokenization's impact is pervasive and often underappreciated:
 
 ## Connections to Other Concepts
 
-- **Token Embeddings**: Tokenization produces integer IDs; embeddings convert those IDs into the dense vectors the model actually processes.
-- **Byte-Pair Encoding**: The dominant specific algorithm behind most modern tokenizers.
-- **Vocabulary Design**: The higher-level decisions about vocabulary size and composition that shape tokenizer behavior.
-- **Context Window**: Tokenization efficiency directly determines how much text fits in the model's context.
-- **Special Tokens**: Tokenizers include special control tokens (BOS, EOS, PAD) that aren't derived from text.
-- **Positional Encoding**: Positions are assigned per-token, so tokenization granularity affects what "position" means.
+- `token-embeddings.md`: Tokenization produces integer IDs; embeddings convert those IDs into the dense vectors the model actually processes.
+- `byte-pair-encoding.md`: The dominant specific algorithm behind most modern tokenizers.
+- `vocabulary-design.md`: The higher-level decisions about vocabulary size and composition that shape tokenizer behavior.
+- `context-window.md`: Tokenization efficiency directly determines how much text fits in the model's context.
+- `special-tokens.md`: Tokenizers include special control tokens (BOS, EOS, PAD) that aren't derived from text.
+- `positional-encoding.md`: Positions are assigned per-token, so tokenization granularity affects what "position" means.
 
 ## Further Reading
 

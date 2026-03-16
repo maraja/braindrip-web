@@ -81,11 +81,11 @@ where $L_{\text{conf}}$ is cross-entropy over all classes and $L_{\text{loc}}$ i
 
 ## Connections to Other Concepts
 
-- **Multi-Scale Detection**: SSD is a canonical example of detecting objects at different scales from different network layers.
-- **YOLO**: Another single-stage detector; YOLOv2+ adopted SSD-style anchor boxes.
-- **Feature Pyramid Network**: FPN addresses SSD's small-object weakness by enriching low-level feature maps with top-down semantic information.
-- **Focal Loss / RetinaNet**: Identifies and solves the class imbalance problem that limits SSD's accuracy, using FPN + focal loss to surpass two-stage detectors.
-- **Non-Maximum Suppression**: Applied per-class after SSD's single forward pass to produce final detections.
+- `multi-scale-detection.md`: SSD is a canonical example of detecting objects at different scales from different network layers.
+- `yolo.md`: Another single-stage detector; YOLOv2+ adopted SSD-style anchor boxes.
+- `feature-pyramid-network.md`: FPN addresses SSD's small-object weakness by enriching low-level feature maps with top-down semantic information.
+- `focal-loss.md`: Identifies and solves the class imbalance problem that limits SSD's accuracy, using FPN + focal loss to surpass two-stage detectors.
+- `non-maximum-suppression.md`: Applied per-class after SSD's single forward pass to produce final detections.
 
 ## Further Reading
 

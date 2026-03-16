@@ -87,10 +87,10 @@ where $\text{sg}[\cdot]$ is the stop-gradient operator and $\beta = 0.25$ is the
 
 ## Connections to Other Concepts
 
-- **Latent Diffusion Models**: Use a pretrained VAE (or VQ-VAE) encoder/decoder to move diffusion into a compressed latent space.
-- **Generative Adversarial Networks**: VAE-GAN hybrids use adversarial losses to sharpen VAE reconstructions.
-- **Image Super-Resolution**: Autoencoders provide the backbone architecture for many super-resolution networks.
-- **Neural Style Transfer**: Encoder features from autoencoders overlap conceptually with VGG features used in style transfer.
+- `diffusion-models.md`: Use a pretrained VAE (or VQ-VAE) encoder/decoder to move diffusion into a compressed latent space.
+- `generative-adversarial-networks.md`: VAE-GAN hybrids use adversarial losses to sharpen VAE reconstructions.
+- `image-super-resolution.md`: Autoencoders provide the backbone architecture for many super-resolution networks.
+- `neural-style-transfer.md`: Encoder features from autoencoders overlap conceptually with VGG features used in style transfer.
 
 ## Further Reading
 

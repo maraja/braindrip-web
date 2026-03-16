@@ -103,9 +103,9 @@ This is especially important for:
 
 ## Connections to Other Concepts
 
-- **Embedding models and vector databases**: MRL is a training technique for embedding models that directly impacts vector database storage and retrieval strategies.
-- **ColBERT / late interaction**: MRL applies to single-vector (bi-encoder) embeddings; ColBERT uses multi-vector representations. They solve different aspects of the retrieval quality/efficiency trade-off.
-- **Quantization**: MRL reduces dimensionality; quantization reduces per-dimension precision. They are complementary compression techniques.
+- `embedding-models-and-vector-databases.md`: MRL is a training technique for embedding models that directly impacts vector database storage and retrieval strategies.
+- `colbert-late-interaction.md`: MRL applies to single-vector (bi-encoder) embeddings; ColBERT uses multi-vector representations. They solve different aspects of the retrieval quality/efficiency trade-off.
+- `quantization.md`: MRL reduces dimensionality; quantization reduces per-dimension precision. They are complementary compression techniques.
 - **Approximate nearest neighbor search**: Lower-dimensional embeddings speed up ANN algorithms like HNSW and IVF, making MRL a natural companion to these indexing strategies.
 - **Contrastive learning**: MRL extends standard contrastive learning with multi-granularity objectives.
 

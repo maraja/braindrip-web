@@ -128,12 +128,12 @@ QLoRA's impact on the field has been enormous:
 
 ## Connections to Other Concepts
 
-- **LoRA**: QLoRA is a direct extension of LoRA. Everything about LoRA's rank, alpha, target modules, and merging applies equally to QLoRA.
-- **Quantization**: QLoRA's NF4 data type is a specific form of post-training quantization, but designed specifically for fine-tuning rather than inference-only deployment.
+- `lora.md`: QLoRA is a direct extension of LoRA. Everything about LoRA's rank, alpha, target modules, and merging applies equally to QLoRA.
+- `quantization.md`: QLoRA's NF4 data type is a specific form of post-training quantization, but designed specifically for fine-tuning rather than inference-only deployment.
 - **GGML/GPTQ/AWQ**: These are inference-focused quantization methods. QLoRA's NF4 is a training-focused quantization that complements rather than competes with inference quantization.
-- **Gradient checkpointing**: Often combined with QLoRA for additional memory savings during training.
-- **Mixed-precision training**: QLoRA extends the concept of mixed precision -- rather than just mixing fp32 and fp16, it mixes 4-bit storage with 16-bit computation.
-- **Distributed training**: For models too large even for QLoRA on a single GPU, QLoRA can be combined with model parallelism techniques like FSDP.
+- `gradient-checkpointing.md`: Often combined with QLoRA for additional memory savings during training.
+- `mixed-precision-training.md`: QLoRA extends the concept of mixed precision -- rather than just mixing fp32 and fp16, it mixes 4-bit storage with 16-bit computation.
+- `05-distributed-training-infrastructure.md`: For models too large even for QLoRA on a single GPU, QLoRA can be combined with model parallelism techniques like FSDP.
 
 ## Further Reading
 

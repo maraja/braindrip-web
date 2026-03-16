@@ -86,11 +86,11 @@ Image -> Backbone CNN -> Shared Feature Map
 
 ## Connections to Other Concepts
 
-- **R-CNN**: The predecessor whose per-proposal CNN passes motivated the shared computation in Fast R-CNN.
-- **Feature Pyramid Network**: Added to Faster R-CNN to enable multi-scale detection, forming the dominant two-stage detector baseline.
-- **Non-Maximum Suppression**: Used both inside the RPN (to filter proposals) and at the final detection stage.
-- **YOLO and SSD**: Single-stage alternatives that bypass the proposal stage entirely for higher speed.
-- **DETR**: Eliminates both anchors and NMS using a transformer-based set prediction approach.
+- `r-cnn.md`: The predecessor whose per-proposal CNN passes motivated the shared computation in Fast R-CNN.
+- `feature-pyramid-network.md`: Added to Faster R-CNN to enable multi-scale detection, forming the dominant two-stage detector baseline.
+- `non-maximum-suppression.md`: Used both inside the RPN (to filter proposals) and at the final detection stage.
+- `yolo.md`: Single-stage alternatives that bypass the proposal stage entirely for higher speed.
+- `detr.md`: Eliminates both anchors and NMS using a transformer-based set prediction approach.
 
 ## Further Reading
 

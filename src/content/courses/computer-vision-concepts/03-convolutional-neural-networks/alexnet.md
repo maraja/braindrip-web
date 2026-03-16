@@ -84,12 +84,12 @@ The convolutional layers were initialized with zero-mean Gaussian random weights
 
 ## Connections to Other Concepts
 
-- **Convolution in Neural Networks**: AlexNet stacks five convolutional layers with varying kernel sizes, demonstrating learned hierarchical features.
-- **Pooling Layers**: Used overlapping max pooling as a form of regularization.
-- **Receptive Field**: The large kernel sizes ($11 \times 11$, $5 \times 5$) combined with stride-4 in the first layer gave AlexNet a large receptive field despite relatively few layers.
-- **VGGNet**: Followed AlexNet's blueprint but replaced large kernels with uniform 3x3 convolutions, showing that depth was more important than kernel size.
-- **Inception**: GoogLeNet (2014) retained some of AlexNet's multi-scale philosophy but formalized it through parallel branches with dimensionality reduction.
-- **Dropout**: AlexNet was one of the first large-scale demonstrations of dropout as a regularizer.
+- `convolution-in-neural-networks.md`: AlexNet stacks five convolutional layers with varying kernel sizes, demonstrating learned hierarchical features.
+- `pooling-layers.md`: Used overlapping max pooling as a form of regularization.
+- `receptive-field.md`: The large kernel sizes ($11 \times 11$, $5 \times 5$) combined with stride-4 in the first layer gave AlexNet a large receptive field despite relatively few layers.
+- `vggnet.md`: Followed AlexNet's blueprint but replaced large kernels with uniform 3x3 convolutions, showing that depth was more important than kernel size.
+- `inception.md`: GoogLeNet (2014) retained some of AlexNet's multi-scale philosophy but formalized it through parallel branches with dimensionality reduction.
+- `dropout-and-regularization.md`: AlexNet was one of the first large-scale demonstrations of dropout as a regularizer.
 
 ## Further Reading
 

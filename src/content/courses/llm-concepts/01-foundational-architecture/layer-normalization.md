@@ -131,11 +131,11 @@ LayerNorm and residual connections work as a team. The residual connection provi
 
 ## Connections to Other Concepts
 
-- **Residual Connections**: LayerNorm works in tandem with skip connections to stabilize deep models (see `residual-connections.md`).
-- **Transformer Architecture**: LayerNorm is a core structural element of every Transformer block (see `transformer-architecture.md`).
-- **Feed-Forward Networks**: LayerNorm is applied before the FFN in Pre-LN architectures (see `feed-forward-networks.md`).
+- `residual-connections.md`: LayerNorm works in tandem with skip connections to stabilize deep models (see `residual-connections.md`).
+- `transformer-architecture.md`: LayerNorm is a core structural element of every Transformer block (see `transformer-architecture.md`).
+- `feed-forward-networks.md`: LayerNorm is applied before the FFN in Pre-LN architectures (see `feed-forward-networks.md`).
 - **Training Stability**: Closely related to learning rate scheduling, initialization schemes, and mixed-precision training.
-- **Activation Functions**: The interaction between normalization and activation functions affects the overall training dynamics (see `activation-functions.md`).
+- `activation-functions.md`: The interaction between normalization and activation functions affects the overall training dynamics (see `activation-functions.md`).
 
 ## Further Reading
 

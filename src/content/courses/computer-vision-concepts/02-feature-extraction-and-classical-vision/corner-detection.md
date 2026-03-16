@@ -88,10 +88,10 @@ For applications demanding high geometric precision (stereo vision, calibration)
 
 ## Connections to Other Concepts
 
-- **Edge Detection**: Corners are special cases where two or more edges meet; the structure tensor generalizes the gradient magnitude used in edge detectors.
-- **SIFT**: SIFT keypoints use Difference-of-Gaussian extrema rather than Harris, but the underlying principle of seeking high-information locations is the same.
-- **Optical Flow**: The KLT tracker explicitly requires corners (Shi-Tomasi features) because the linear system for flow estimation is only well-conditioned at points with two large eigenvalues.
-- **Camera Calibration and Geometry**: Checkerboard corner detection is the first step in Zhang's calibration method.
+- `edge-detection.md`: Corners are special cases where two or more edges meet; the structure tensor generalizes the gradient magnitude used in edge detectors.
+- `sift.md`: SIFT keypoints use Difference-of-Gaussian extrema rather than Harris, but the underlying principle of seeking high-information locations is the same.
+- `optical-flow.md`: The KLT tracker explicitly requires corners (Shi-Tomasi features) because the linear system for flow estimation is only well-conditioned at points with two large eigenvalues.
+- `camera-calibration-and-geometry.md`: Checkerboard corner detection is the first step in Zhang's calibration method.
 
 ## Further Reading
 

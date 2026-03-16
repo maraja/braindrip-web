@@ -72,12 +72,12 @@ An earlier anchor-free approach by Law and Deng that detects objects as pairs of
 
 ## Connections to Other Concepts
 
-- **Fast and Faster R-CNN**: The anchor-based two-stage paradigm that anchor-free methods seek to simplify.
-- **Feature Pyramid Network**: Both FCOS and many CenterNet variants use FPN for multi-scale feature extraction.
-- **Focal Loss**: FCOS uses focal loss for classification; CenterNet uses a modified focal loss for heatmap training.
-- **DETR**: Another anchor-free approach but uses transformers and set-based prediction rather than per-pixel classification.
-- **Non-Maximum Suppression**: FCOS still requires NMS; CenterNet's heatmap peak extraction largely replaces it.
-- **YOLO**: YOLOv8 adopted anchor-free prediction heads inspired by FCOS.
+- `fast-and-faster-rcnn.md`: The anchor-based two-stage paradigm that anchor-free methods seek to simplify.
+- `feature-pyramid-network.md`: Both FCOS and many CenterNet variants use FPN for multi-scale feature extraction.
+- `focal-loss.md`: FCOS uses focal loss for classification; CenterNet uses a modified focal loss for heatmap training.
+- `detr.md`: Another anchor-free approach but uses transformers and set-based prediction rather than per-pixel classification.
+- `non-maximum-suppression.md`: FCOS still requires NMS; CenterNet's heatmap peak extraction largely replaces it.
+- `yolo.md`: YOLOv8 adopted anchor-free prediction heads inspired by FCOS.
 
 ## Further Reading
 

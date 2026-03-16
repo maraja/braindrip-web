@@ -121,11 +121,11 @@ This has profound implications:
 
 ## Connections to Other Concepts
 
-- **RLHF** provides the foundation. Reasoning models use RL optimization but with verifiable rewards rather than (or in addition to) human preference-based reward models.
-- **Reward modeling** -- specifically process reward models -- is central to step-level supervision of reasoning.
-- **Supervised fine-tuning** on reasoning traces is a complementary approach to RL-based training and is often used in distillation.
+- `rlhf.md`: provides the foundation. Reasoning models use RL optimization but with verifiable rewards rather than (or in addition to) human preference-based reward models.
+- `reward-modeling.md` -- specifically process reward models -- is central to step-level supervision of reasoning.
+- `supervised-fine-tuning.md`: on reasoning traces is a complementary approach to RL-based training and is often used in distillation.
 - **Inference optimization** becomes more important when models produce long reasoning chains, motivating techniques like speculative decoding and KV-cache optimization.
-- **Synthetic data** -- reasoning models can generate synthetic reasoning traces used to train other models, creating a flywheel of reasoning capability.
+- `synthetic-data.md` -- reasoning models can generate synthetic reasoning traces used to train other models, creating a flywheel of reasoning capability.
 
 ## Further Reading
 

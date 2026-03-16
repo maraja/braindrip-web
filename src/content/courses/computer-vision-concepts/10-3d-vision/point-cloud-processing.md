@@ -73,11 +73,11 @@ ICP converges to local minima; coarse alignment (e.g., RANSAC on FPFH features) 
 
 ## Connections to Other Concepts
 
-- **PointNet / PointNet++**: Neural architectures designed specifically for consuming raw point clouds without voxelization.
-- **3D Object Detection**: Point clouds are the primary input for LiDAR-based detectors like VoxelNet and PointPillars.
-- **Depth Estimation**: Predicted depth maps can be unprojected into point clouds using camera intrinsics.
-- **3D Reconstruction**: Point clouds are an intermediate representation fused into meshes or implicit surfaces.
-- **SLAM**: Real-time point cloud registration and mapping are central to LiDAR-based SLAM systems.
+- `pointnet.md`: Neural architectures designed specifically for consuming raw point clouds without voxelization.
+- `3d-object-detection.md`: Point clouds are the primary input for LiDAR-based detectors like VoxelNet and PointPillars.
+- `depth-estimation.md`: Predicted depth maps can be unprojected into point clouds using camera intrinsics.
+- `3d-reconstruction.md`: Point clouds are an intermediate representation fused into meshes or implicit surfaces.
+- `slam.md`: Real-time point cloud registration and mapping are central to LiDAR-based SLAM systems.
 
 ## Further Reading
 

@@ -106,10 +106,10 @@ Modern NAS increasingly incorporates hardware constraints directly into the sear
 
 ## Connections to Other Concepts
 
-- **MobileNet**: MobileNetV3 used NAS to discover its block configuration. MnasNet, the NAS method used for EfficientNet-B0, builds on the MobileNet design space.
-- **EfficientNet**: The B0 baseline was discovered by NAS; compound scaling then produced B1-B7 without additional search.
-- **Depthwise Separable Convolutions**: A common operation in NAS search spaces, as they provide good accuracy-efficiency tradeoffs.
-- **Inception**: Inception's multi-branch cells inspired NASNet's cell-based search space.
+- `mobilenet.md`: MobileNetV3 used NAS to discover its block configuration. MnasNet, the NAS method used for EfficientNet-B0, builds on the MobileNet design space.
+- `efficientnet.md`: The B0 baseline was discovered by NAS; compound scaling then produced B1-B7 without additional search.
+- `depthwise-separable-convolutions.md`: A common operation in NAS search spaces, as they provide good accuracy-efficiency tradeoffs.
+- `inception.md`: Inception's multi-branch cells inspired NASNet's cell-based search space.
 
 ## Further Reading
 

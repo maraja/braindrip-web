@@ -104,11 +104,11 @@ SR3 (Saharia et al., 2022) applies diffusion models to SR, conditioning the deno
 
 ## Connections to Other Concepts
 
-- **Generative Adversarial Networks**: SRGAN and Real-ESRGAN rely on GAN discriminators for perceptual quality.
-- **Diffusion Models**: Diffusion-based SR (SR3, StableSR) uses iterative denoising conditioned on LR input.
-- **Autoencoders and VAEs**: The autoencoder in latent diffusion SR compresses and reconstructs the image.
-- **Image Inpainting**: Both tasks fill in missing information -- inpainting fills spatial gaps, SR fills frequency gaps.
-- **Neural Style Transfer**: Perceptual loss (VGG features) originated in style transfer and became central to SR.
+- `generative-adversarial-networks.md`: SRGAN and Real-ESRGAN rely on GAN discriminators for perceptual quality.
+- `diffusion-models.md`: Diffusion-based SR (SR3, StableSR) uses iterative denoising conditioned on LR input.
+- `autoencoders-and-vaes.md`: The autoencoder in latent diffusion SR compresses and reconstructs the image.
+- `image-inpainting.md`: Both tasks fill in missing information -- inpainting fills spatial gaps, SR fills frequency gaps.
+- `neural-style-transfer.md`: Perceptual loss (VGG features) originated in style transfer and became central to SR.
 
 ## Further Reading
 

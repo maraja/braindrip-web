@@ -97,11 +97,11 @@ These methods are the standard tools for visualizing high-dimensional data. In s
 
 ## Connections to Other Concepts
 
-- **Principal Component Analysis**: PCA is linear and preserves global variance; t-SNE/UMAP are nonlinear and preserve local neighborhoods. PCA is typically used as a preprocessing step before t-SNE/UMAP to reduce dimensionality and computational cost.
-- **K-Means Clustering**: After producing a 2D embedding, K-means or DBSCAN is sometimes applied to the embedded coordinates for cluster assignment -- though this is controversial since the embedding distorts distances. Clustering in the original (or PCA-reduced) space is generally more reliable.
-- **DBSCAN**: DBSCAN on UMAP embeddings is a common pipeline for discovering clusters in high-dimensional data, particularly in single-cell biology. The Leiden algorithm is another popular choice for community detection on the shared nearest-neighbor graph.
-- **Anomaly Detection**: Outliers in t-SNE/UMAP plots (isolated points far from clusters) may indicate anomalies, though this should always be verified in the original feature space since embedding distortions can create spurious isolation.
-- **Gaussian Mixture Models**: GMMs can be applied to UMAP embeddings for soft cluster assignment in the visualization space, though the same caveats about distance distortion apply.
+- `principal-component-analysis.md`: PCA is linear and preserves global variance; t-SNE/UMAP are nonlinear and preserve local neighborhoods. PCA is typically used as a preprocessing step before t-SNE/UMAP to reduce dimensionality and computational cost.
+- `k-means-clustering.md`: After producing a 2D embedding, K-means or DBSCAN is sometimes applied to the embedded coordinates for cluster assignment -- though this is controversial since the embedding distorts distances. Clustering in the original (or PCA-reduced) space is generally more reliable.
+- `dbscan.md`: DBSCAN on UMAP embeddings is a common pipeline for discovering clusters in high-dimensional data, particularly in single-cell biology. The Leiden algorithm is another popular choice for community detection on the shared nearest-neighbor graph.
+- `anomaly-detection.md`: Outliers in t-SNE/UMAP plots (isolated points far from clusters) may indicate anomalies, though this should always be verified in the original feature space since embedding distortions can create spurious isolation.
+- `gaussian-mixture-models.md`: GMMs can be applied to UMAP embeddings for soft cluster assignment in the visualization space, though the same caveats about distance distortion apply.
 
 ## Implementation Notes
 

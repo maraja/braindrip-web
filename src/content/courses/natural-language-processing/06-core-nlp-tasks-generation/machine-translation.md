@@ -76,12 +76,12 @@ where BP = min(1, exp(1 - r/c)), r is reference length, c is candidate length, a
 
 ## Connections to Other Concepts
 
-- **`sequence-to-sequence-models.md`**: The encoder-decoder architecture is the backbone of neural MT, originally developed for this task.
-- **`attention-mechanism.md`**: Attention was invented specifically for MT (Bahdanau et al., 2015) and remains central to all modern MT systems.
-- **`tokenization-in-nlp.md`**: Subword tokenization methods like BPE emerged from MT research to handle open vocabularies across languages.
-- **`text-summarization.md`**: Summarization shares the encoder-decoder paradigm and many training techniques (e.g., copy mechanisms, beam search) with MT.
-- **`multilingual-nlp.md`**: Multilingual MT models and cross-lingual transfer are deeply interconnected.
-- **`evaluation-metrics-for-nlp.md`**: BLEU, METEOR, and learned metrics like COMET are covered in detail there.
+- `sequence-to-sequence-models.md`: The encoder-decoder architecture is the backbone of neural MT, originally developed for this task.
+- `attention-mechanism.md`: Attention was invented specifically for MT (Bahdanau et al., 2015) and remains central to all modern MT systems.
+- `tokenization.md`: Subword tokenization methods like BPE emerged from MT research to handle open vocabularies across languages.
+- `text-summarization.md`: Summarization shares the encoder-decoder paradigm and many training techniques (e.g., copy mechanisms, beam search) with MT.
+- `multilingual-nlp.md`: Multilingual MT models and cross-lingual transfer are deeply interconnected.
+- `evaluation-metrics.md`: BLEU, METEOR, and learned metrics like COMET are covered in detail there.
 
 ## Further Reading
 

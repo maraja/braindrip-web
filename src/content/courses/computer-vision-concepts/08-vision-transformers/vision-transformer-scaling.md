@@ -116,11 +116,11 @@ The crossover depends on multiple factors:
 
 ## Connections to Other Concepts
 
-- **Vision Transformer (ViT)**: Scaling laws describe how ViT's performance evolves as its size grows.
-- **DeiT**: Shows how training strategy (distillation, augmentation) partially compensates for data scarcity, effectively shifting the scaling curve.
-- **Swin Transformer**: Swin V2 scales to 3B parameters with windowed attention, demonstrating that efficient attention mechanisms enable scaling to high resolutions.
-- **Masked Image Modeling**: MAE and BEiT enable effective pre-training at large scale without labels, making it practical to train massive ViTs on unlabeled data.
-- **Hybrid CNN-Transformer**: At smaller scales (under ~10M training images), hybrids offer better accuracy-efficiency tradeoffs than pure ViTs.
+- `vision-transformer.md`: Scaling laws describe how ViT's performance evolves as its size grows.
+- `deit.md`: Shows how training strategy (distillation, augmentation) partially compensates for data scarcity, effectively shifting the scaling curve.
+- `swin-transformer.md`: Swin V2 scales to 3B parameters with windowed attention, demonstrating that efficient attention mechanisms enable scaling to high resolutions.
+- `masked-image-modeling.md`: MAE and BEiT enable effective pre-training at large scale without labels, making it practical to train massive ViTs on unlabeled data.
+- `hybrid-cnn-transformer.md`: At smaller scales (under ~10M training images), hybrids offer better accuracy-efficiency tradeoffs than pure ViTs.
 
 ## Further Reading
 

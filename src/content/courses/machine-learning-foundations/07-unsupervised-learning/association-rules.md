@@ -103,11 +103,11 @@ Extensions of basic association rules include:
 
 ## Connections to Other Concepts
 
-- **Anomaly Detection**: Transactions that violate strong association rules (unexpected item combinations or missing expected items) can be flagged as anomalous -- useful in fraud detection and quality control.
-- **K-Means Clustering**: Clustering can be applied to transactions (using Jaccard distance on binary item vectors) to find customer segments, complementing the item-level view of association rules.
-- **DBSCAN**: Both discover structure without predefined categories, but in different spaces -- DBSCAN in continuous feature space, association rules in discrete transaction space.
-- **Gaussian Mixture Models**: While GMMs model continuous density, association rules model discrete co-occurrence. They address different data types but share the goal of finding hidden structure.
-- **Principal Component Analysis**: For binary transaction matrices, PCA (or its binary analog, correspondence analysis) can reveal latent factors underlying purchasing patterns, providing a complementary view to discrete association rules.
+- `anomaly-detection.md`: Transactions that violate strong association rules (unexpected item combinations or missing expected items) can be flagged as anomalous -- useful in fraud detection and quality control.
+- `k-means-clustering.md`: Clustering can be applied to transactions (using Jaccard distance on binary item vectors) to find customer segments, complementing the item-level view of association rules.
+- `dbscan.md`: Both discover structure without predefined categories, but in different spaces -- DBSCAN in continuous feature space, association rules in discrete transaction space.
+- `gaussian-mixture-models.md`: While GMMs model continuous density, association rules model discrete co-occurrence. They address different data types but share the goal of finding hidden structure.
+- `principal-component-analysis.md`: For binary transaction matrices, PCA (or its binary analog, correspondence analysis) can reveal latent factors underlying purchasing patterns, providing a complementary view to discrete association rules.
 
 ## Implementation Notes
 

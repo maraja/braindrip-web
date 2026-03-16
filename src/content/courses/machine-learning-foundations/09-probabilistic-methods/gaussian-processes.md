@@ -108,10 +108,10 @@ GPs are the gold standard for uncertainty-aware regression in low-to-moderate di
 
 ## Connections to Other Concepts
 
-- **Bayesian Inference**: GPs are a canonical example of full Bayesian nonparametric inference -- the posterior over functions is computed exactly (for regression).
-- **Variational Inference**: Sparse variational GPs use variational methods to scale GPs to large datasets, optimizing a variational ELBO.
-- **Expectation-Maximization**: Hyperparameter optimization for GPs via marginal likelihood is related to type-II ML estimation.
-- **Graphical Models**: GPs can be placed within graphical model frameworks, e.g., GP-LVMs (Gaussian Process Latent Variable Models) for unsupervised learning.
+- `bayesian-inference.md`: GPs are a canonical example of full Bayesian nonparametric inference -- the posterior over functions is computed exactly (for regression).
+- `variational-inference.md`: Sparse variational GPs use variational methods to scale GPs to large datasets, optimizing a variational ELBO.
+- `expectation-maximization.md`: Hyperparameter optimization for GPs via marginal likelihood is related to type-II ML estimation.
+- `graphical-models.md`: GPs can be placed within graphical model frameworks, e.g., GP-LVMs (Gaussian Process Latent Variable Models) for unsupervised learning.
 - **MCMC**: When the kernel has complex hyperparameter posteriors, MCMC can be used for fully Bayesian hyperparameter inference.
 
 ## Further Reading

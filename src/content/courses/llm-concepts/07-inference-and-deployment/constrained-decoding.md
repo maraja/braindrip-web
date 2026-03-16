@@ -172,11 +172,11 @@ The server applies token masking internally, so the API consumer receives a 100%
 
 ## Connections to Other Concepts
 
-- **Logits and Softmax**: Constrained decoding operates directly on logits, setting invalid tokens to negative infinity before softmax converts them to probabilities. Understanding the logit-to-probability pipeline is essential.
-- **Sampling Strategies**: Constrained decoding composes with all sampling strategies. The mask is applied first, then temperature, top-k, top-p, etc. operate on the reduced valid set.
-- **Tokenization (BPE)**: The token-boundary problem is a direct consequence of BPE's variable-length token-to-character mapping. Understanding BPE is essential for grasping why constrained decoding is non-trivial.
-- **Model Serving Frameworks**: vLLM, TGI, and TensorRT-LLM all integrate constrained decoding, making it available as a serving-layer feature rather than requiring client-side implementation.
-- **Speculative Decoding**: Constrained decoding interacts with speculative decoding -- draft tokens must also be checked against the grammar, and rejected tokens may need grammar state rollback.
+- `logits-and-softmax.md`: Constrained decoding operates directly on logits, setting invalid tokens to negative infinity before softmax converts them to probabilities. Understanding the logit-to-probability pipeline is essential.
+- `sampling-strategies.md`: Constrained decoding composes with all sampling strategies. The mask is applied first, then temperature, top-k, top-p, etc. operate on the reduced valid set.
+- `tokenization.md`: The token-boundary problem is a direct consequence of BPE's variable-length token-to-character mapping. Understanding BPE is essential for grasping why constrained decoding is non-trivial.
+- `model-serving.md`: vLLM, TGI, and TensorRT-LLM all integrate constrained decoding, making it available as a serving-layer feature rather than requiring client-side implementation.
+- `speculative-decoding.md`: Constrained decoding interacts with speculative decoding -- draft tokens must also be checked against the grammar, and rejected tokens may need grammar state rollback.
 
 ## Further Reading
 

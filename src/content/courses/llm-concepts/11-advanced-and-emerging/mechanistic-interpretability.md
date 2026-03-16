@@ -132,10 +132,10 @@ The stakes for mechanistic interpretability extend beyond scientific curiosity:
 
 ## Connections to Other Concepts
 
-- **Transformer Architecture**: Mechanistic interpretability requires detailed understanding of attention heads, MLP layers, layer normalization, and the residual stream to trace computations.
-- **RLHF and Alignment**: Interpretability provides a verification tool for alignment -- checking whether RLHF has genuinely aligned a model's reasoning or merely taught it to produce aligned-looking outputs.
-- **Representation Learning**: Features in mechanistic interpretability are the specific representations the model has learned. Understanding feature geometry is central.
-- **AI Safety**: The primary motivation for much interpretability research. Detecting deception, power-seeking, and value misalignment all require understanding internal computations.
+- `transformer-architecture.md`: Mechanistic interpretability requires detailed understanding of attention heads, MLP layers, layer normalization, and the residual stream to trace computations.
+- `rlhf.md`: Interpretability provides a verification tool for alignment -- checking whether RLHF has genuinely aligned a model's reasoning or merely taught it to produce aligned-looking outputs.
+- `matryoshka-representation-learning.md`: Features in mechanistic interpretability are the specific representations the model has learned. Understanding feature geometry is central.
+- `03-ai-safety-and-governance.md`: The primary motivation for much interpretability research. Detecting deception, power-seeking, and value misalignment all require understanding internal computations.
 - **Model Editing**: Once circuits are identified, targeted editing (activation patching, feature clamping) can modify specific behaviors without retraining.
 - **Neuroscience**: The methodology draws parallels to neuroscience -- probing, ablation studies, and circuit mapping are inspired by techniques used to study biological brains.
 

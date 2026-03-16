@@ -102,11 +102,11 @@ where $y(\mathbf{x})$ is the ground truth label at pixel $\mathbf{x}$.
 
 ## Connections to Other Concepts
 
-- **Fully Convolutional Networks**: U-Net extends the FCN paradigm with a symmetric decoder and concatenation-based skips.
-- **Semantic Segmentation**: U-Net is one of the most widely used architectures for dense pixel-level classification.
-- **DeepLab and Atrous Convolution**: an alternative approach that avoids aggressive downsampling rather than recovering resolution through a decoder.
-- **Instance Segmentation**: U-Net variants have been adapted for instance-aware segmentation (e.g., StarDist, Cellpose for cell instance segmentation).
-- **Segment Anything**: SAM's image encoder uses a ViT, but its mask decoder shares the spirit of learned upsampling from U-Net.
+- `fully-convolutional-networks.md`: U-Net extends the FCN paradigm with a symmetric decoder and concatenation-based skips.
+- `semantic-segmentation.md`: U-Net is one of the most widely used architectures for dense pixel-level classification.
+- `deeplab-and-atrous-convolution.md`: an alternative approach that avoids aggressive downsampling rather than recovering resolution through a decoder.
+- `instance-segmentation.md`: U-Net variants have been adapted for instance-aware segmentation (e.g., StarDist, Cellpose for cell instance segmentation).
+- `segment-anything.md`: SAM's image encoder uses a ViT, but its mask decoder shares the spirit of learned upsampling from U-Net.
 
 ## Further Reading
 

@@ -173,12 +173,12 @@ As model architectures converge (most frontier models are dense transformers wit
 
 ## Connections to Other Concepts
 
-- **Pre-Training**: Data curation determines what the model learns during pre-training.
-- **Scaling Laws**: The relationship between data quantity and model performance; data quality shifts the scaling curve.
-- **Tokenization**: The tokenizer determines how the curated text is converted to training tokens.
-- **Emergent Abilities**: The data mix may influence which capabilities emerge and at what scale.
-- **Fine-Tuning**: High-quality curated data is equally important for the supervised fine-tuning stage.
-- **Bias and Fairness**: Data curation decisions (what to include, what to filter) directly determine the model's biases.
+- `pre-training.md`: Data curation determines what the model learns during pre-training.
+- `scaling-laws.md`: The relationship between data quantity and model performance; data quality shifts the scaling curve.
+- `tokenization.md`: The tokenizer determines how the curated text is converted to training tokens.
+- `emergent-abilities.md`: The data mix may influence which capabilities emerge and at what scale.
+- `supervised-fine-tuning.md`: High-quality curated data is equally important for the supervised fine-tuning stage.
+- `bias-in-nlp.md`: Data curation decisions (what to include, what to filter) directly determine the model's biases.
 
 ## Further Reading
 

@@ -96,10 +96,10 @@ Threshold selection is typically done on a small validation set containing both 
 
 ## Connections to Other Concepts
 
-- **Feature Extraction**: Pretrained CNN features (especially intermediate layers) are the foundation of most modern AD methods.
-- **Image Retrieval**: PatchCore's nearest-neighbor search in feature space is conceptually similar to image retrieval.
+- `feature-extraction-and-transformation.md`: Pretrained CNN features (especially intermediate layers) are the foundation of most modern AD methods.
+- `image-retrieval.md`: PatchCore's nearest-neighbor search in feature space is conceptually similar to image retrieval.
 - **Image Segmentation**: Pixel-level anomaly maps are a form of binary segmentation (normal vs. anomaly).
-- **Edge Deployment**: Factory-floor deployment requires fast inference on embedded hardware; EfficientAD's 4 ms latency enables this.
+- `edge-deployment.md`: Factory-floor deployment requires fast inference on embedded hardware; EfficientAD's 4 ms latency enables this.
 
 ## Further Reading
 

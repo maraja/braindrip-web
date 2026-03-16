@@ -107,10 +107,10 @@ The optimizer determines how efficiently a model navigates its loss landscape. S
 
 ## Connections to Other Concepts
 
-- **Backpropagation**: Computes the gradients $\mathbf{g}_t$ that all optimizers consume.
-- **Weight Initialization**: Good initialization reduces the burden on the optimizer by starting in a favorable region of the loss landscape.
-- **Batch Normalization**: Smooths the loss landscape, making optimization easier for any optimizer.
-- **Dropout and Regularization**: Weight decay in AdamW is a form of regularization; the optimizer and regularizer are deeply intertwined.
+- `backpropagation.md`: Computes the gradients $\mathbf{g}_t$ that all optimizers consume.
+- `weight-initialization.md`: Good initialization reduces the burden on the optimizer by starting in a favorable region of the loss landscape.
+- `batch-normalization.md`: Smooths the loss landscape, making optimization easier for any optimizer.
+- `dropout-and-regularization.md`: Weight decay in AdamW is a form of regularization; the optimizer and regularizer are deeply intertwined.
 
 ## Further Reading
 

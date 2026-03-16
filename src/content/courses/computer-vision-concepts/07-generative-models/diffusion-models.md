@@ -94,11 +94,11 @@ where $w > 1$ is the guidance scale (typically 3--15). Higher $w$ produces outpu
 
 ## Connections to Other Concepts
 
-- **Latent Diffusion and Stable Diffusion**: Apply diffusion in a compressed latent space for efficiency, enabling high-resolution text-to-image generation.
-- **Autoencoders and VAEs**: VAEs share the variational framework; diffusion can be viewed as a hierarchical VAE with a fixed encoder.
-- **Generative Adversarial Networks**: Diffusion models surpassed GANs in image quality benchmarks, motivating hybrid approaches.
-- **Image Inpainting**: Diffusion naturally supports inpainting by conditioning the denoising process on known pixels.
-- **Image Super-Resolution**: Diffusion-based super-resolution (SR3) produces higher-quality results than GAN-based methods.
+- `latent-diffusion-and-stable-diffusion.md`: Apply diffusion in a compressed latent space for efficiency, enabling high-resolution text-to-image generation.
+- `autoencoders-and-vaes.md`: VAEs share the variational framework; diffusion can be viewed as a hierarchical VAE with a fixed encoder.
+- `generative-adversarial-networks.md`: Diffusion models surpassed GANs in image quality benchmarks, motivating hybrid approaches.
+- `image-inpainting.md`: Diffusion naturally supports inpainting by conditioning the denoising process on known pixels.
+- `image-super-resolution.md`: Diffusion-based super-resolution (SR3) produces higher-quality results than GAN-based methods.
 
 ## Further Reading
 

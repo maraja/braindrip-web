@@ -77,10 +77,10 @@ boxes, weights = hog.detectMultiScale(
 
 ## Connections to Other Concepts
 
-- **Edge Detection**: HOG aggregates gradient information that edge detectors threshold. Both rely on the same underlying gradient computation.
-- **SIFT**: SIFT's descriptor is also a histogram of gradient orientations, but computed locally around sparse keypoints rather than densely over a grid. HOG can be seen as a dense, fixed-window analogue of SIFT.
-- **Optical Flow**: HOG-OF (HOG of optical flow) extends the descriptor to temporal gradients for action recognition.
-- **Template Matching**: HOG replaces raw pixel templates with gradient-based representations, providing robustness to illumination changes that break pixel-level matching.
+- `edge-detection.md`: HOG aggregates gradient information that edge detectors threshold. Both rely on the same underlying gradient computation.
+- `sift.md`: SIFT's descriptor is also a histogram of gradient orientations, but computed locally around sparse keypoints rather than densely over a grid. HOG can be seen as a dense, fixed-window analogue of SIFT.
+- `optical-flow.md`: HOG-OF (HOG of optical flow) extends the descriptor to temporal gradients for action recognition.
+- `template-matching.md`: HOG replaces raw pixel templates with gradient-based representations, providing robustness to illumination changes that break pixel-level matching.
 
 ## Further Reading
 

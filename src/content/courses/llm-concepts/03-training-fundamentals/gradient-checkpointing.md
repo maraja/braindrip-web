@@ -183,10 +183,10 @@ Memory savings breakdown:
 
 ## Connections to Other Concepts
 
-- **FlashAttention**: Eliminates the quadratic attention matrix, complementing gradient checkpointing by removing the single largest activation tensor.
-- **Mixed-Precision Training (FP16/BF16)**: Halves the memory per activation value, stacking with gradient checkpointing for multiplicative memory savings.
+- `flash-attention.md`: Eliminates the quadratic attention matrix, complementing gradient checkpointing by removing the single largest activation tensor.
+- `mixed-precision-training.md`: Halves the memory per activation value, stacking with gradient checkpointing for multiplicative memory savings.
 - **ZeRO Optimizer Sharding**: Reduces optimizer state memory (a separate concern from activations), working alongside checkpointing to reduce total memory footprint.
-- **Distributed Training (Tensor/Pipeline Parallelism)**: Splits activation memory across devices, combining with checkpointing when per-device memory is still insufficient.
+- `pipeline-parallelism.md`: Splits activation memory across devices, combining with checkpointing when per-device memory is still insufficient.
 - **Activation Recomputation**: Gradient checkpointing is the most common form of activation recomputation, but the general principle (recompute rather than store) applies to many settings beyond layer checkpoints.
 
 ## Further Reading

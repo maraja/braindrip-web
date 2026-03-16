@@ -133,11 +133,11 @@ Pipeline parallelism also divides model memory across stages. A model with 96 la
 
 ## Connections to Other Concepts
 
-- **Tensor Parallelism**: Often used together. Tensor parallelism handles intra-node splitting (within layers), while pipeline parallelism handles inter-node splitting (across layers). This combination leverages the hardware topology: fast NVLink within nodes, slower InfiniBand between nodes.
-- **Data Parallelism**: Pipeline parallelism is almost always combined with data parallelism. Multiple pipeline replicas process different data subsets, with gradient synchronization across replicas.
-- **3D Parallelism**: The full combination of data + tensor + pipeline parallelism used for the largest models.
+- `tensor-parallelism.md`: Often used together. Tensor parallelism handles intra-node splitting (within layers), while pipeline parallelism handles inter-node splitting (across layers). This combination leverages the hardware topology: fast NVLink within nodes, slower InfiniBand between nodes.
+- `data-parallelism.md`: Pipeline parallelism is almost always combined with data parallelism. Multiple pipeline replicas process different data subsets, with gradient synchronization across replicas.
+- `3d-parallelism.md`: The full combination of data + tensor + pipeline parallelism used for the largest models.
 - **Activation Checkpointing**: Particularly important in pipeline parallelism to reduce the memory overhead of stored activations across micro-batches.
-- **ZeRO / FSDP**: Can be combined with pipeline parallelism to shard optimizer states across data-parallel ranks within each pipeline stage.
+- `zero-shot-classification.md`: Can be combined with pipeline parallelism to shard optimizer states across data-parallel ranks within each pipeline stage.
 
 ## Further Reading
 

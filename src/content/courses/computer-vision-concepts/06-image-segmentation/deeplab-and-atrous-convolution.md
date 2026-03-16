@@ -96,11 +96,11 @@ At training time, stride 16 is common for efficiency. At inference, stride 8 wit
 
 ## Connections to Other Concepts
 
-- **Semantic Segmentation**: DeepLab is one of the most successful architectures for this task.
-- **Fully Convolutional Networks**: DeepLab builds on the FCN principle but addresses its resolution loss problem.
-- **U-Net**: takes the opposite approach -- aggressive downsampling followed by a heavy decoder. DeepLab minimizes downsampling in the first place.
-- **Conditional Random Fields**: used in DeepLab v1 and v2 as post-processing; dropped in v3 when network accuracy made it unnecessary.
-- **Panoptic Segmentation**: Panoptic-DeepLab extends the framework to jointly handle stuff and things.
+- `semantic-segmentation.md`: DeepLab is one of the most successful architectures for this task.
+- `fully-convolutional-networks.md`: DeepLab builds on the FCN principle but addresses its resolution loss problem.
+- `u-net.md`: takes the opposite approach -- aggressive downsampling followed by a heavy decoder. DeepLab minimizes downsampling in the first place.
+- `conditional-random-fields.md`: used in DeepLab v1 and v2 as post-processing; dropped in v3 when network accuracy made it unnecessary.
+- `panoptic-segmentation.md`: Panoptic-DeepLab extends the framework to jointly handle stuff and things.
 
 ## Further Reading
 

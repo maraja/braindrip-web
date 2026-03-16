@@ -145,10 +145,10 @@ Chunking is often the most impactful and least glamorous part of a RAG pipeline.
 
 ## Connections to Other Concepts
 
-- **RAG** is the primary consumer of chunking -- every RAG pipeline starts with a chunking decision.
-- **Embedding models** interact with chunking through their context windows and training characteristics.
-- **Vector databases** store chunks and their embeddings; chunk count directly affects index size and cost.
-- **Prompt engineering** determines how retrieved chunks are presented to the generative model.
+- `rag.md`: is the primary consumer of chunking -- every RAG pipeline starts with a chunking decision.
+- `embedding-models-and-vector-databases.md`: interact with chunking through their context windows and training characteristics.
+- `embedding-models-and-vector-databases.md`: store chunks and their embeddings; chunk count directly affects index size and cost.
+- `prompt-engineering.md`: determines how retrieved chunks are presented to the generative model.
 - **Long-context models** change the calculus: larger context windows mean more chunks can be included, partially mitigating imperfect retrieval.
 
 ## Further Reading

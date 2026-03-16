@@ -105,12 +105,12 @@ Consider a clinical dataset with 500 gene expression features and 200 patient sa
 
 ## Connections to Other Concepts
 
-- **Regularization (L1/L2)**: L1 regularization is an embedded feature selection method; L2 shrinks coefficients but does not zero them out.
+- `regularization.md`: L1 regularization is an embedded feature selection method; L2 shrinks coefficients but does not zero them out.
 - **Dimensionality Reduction (PCA)**: PCA transforms features into a new basis; feature selection retains original features. They address the same underlying problem from different angles.
-- **Handling High-Cardinality Features**: High-cardinality categoricals inflate dimensionality after encoding, making feature selection critical.
-- **Feature Extraction and Transformation**: Feature selection operates after features are engineered -- the two steps are complementary.
-- **Cross-Validation**: Wrapper methods and proper feature selection pipelines require cross-validation to avoid optimistic bias.
-- **Automated Feature Engineering**: Automated systems generate many candidate features, making rigorous selection even more critical to prevent the feature set from growing uncontrollably.
+- `handling-high-cardinality-features.md`: High-cardinality categoricals inflate dimensionality after encoding, making feature selection critical.
+- `feature-extraction-and-transformation.md`: Feature selection operates after features are engineered -- the two steps are complementary.
+- `cross-validation.md`: Wrapper methods and proper feature selection pipelines require cross-validation to avoid optimistic bias.
+- `automated-feature-engineering.md`: Automated systems generate many candidate features, making rigorous selection even more critical to prevent the feature set from growing uncontrollably.
 
 ## Further Reading
 

@@ -125,11 +125,11 @@ ALiBi matters for several reasons:
 
 ## Connections to Other Concepts
 
-- **Rotary Position Embeddings (RoPE)**: The dominant alternative to ALiBi. RoPE encodes position by rotating embeddings in complex space; ALiBi adds linear biases to attention scores. They represent fundamentally different approaches to the same problem.
-- **Context Window Extension**: ALiBi naturally supports extrapolation, reducing the need for context extension techniques. For RoPE-based models, extension methods (YaRN, position interpolation) are required.
-- **Positional Encoding**: ALiBi is part of the broader positional encoding family. Understanding it requires and enriches understanding of sinusoidal, learned, and rotary alternatives.
-- **Flash Attention**: FlashAttention implementations need to account for ALiBi biases in the tiled attention computation. Most FlashAttention libraries support ALiBi natively.
-- **Sparse Attention**: ALiBi's distance penalty naturally creates a soft form of sparsity -- attention to very distant tokens is strongly suppressed. This connects to explicit sparse attention mechanisms that hard-cut attention beyond a window.
+- `rotary-position-embedding.md`: The dominant alternative to ALiBi. RoPE encodes position by rotating embeddings in complex space; ALiBi adds linear biases to attention scores. They represent fundamentally different approaches to the same problem.
+- `context-window-extension.md`: ALiBi naturally supports extrapolation, reducing the need for context extension techniques. For RoPE-based models, extension methods (YaRN, position interpolation) are required.
+- `positional-encoding.md`: ALiBi is part of the broader positional encoding family. Understanding it requires and enriches understanding of sinusoidal, learned, and rotary alternatives.
+- `flash-attention.md`: FlashAttention implementations need to account for ALiBi biases in the tiled attention computation. Most FlashAttention libraries support ALiBi natively.
+- `sparse-attention.md`: ALiBi's distance penalty naturally creates a soft form of sparsity -- attention to very distant tokens is strongly suppressed. This connects to explicit sparse attention mechanisms that hard-cut attention beyond a window.
 
 ## Further Reading
 

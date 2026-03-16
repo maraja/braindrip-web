@@ -114,17 +114,17 @@ This adds a third weight matrix but improves quality enough that the total param
 
 ## Connections to Other Concepts
 
-- **Self-Attention**: The core mechanism inside each Transformer layer (see `self-attention.md`).
-- **Multi-Head Attention**: The practical form attention takes in the Transformer (see `multi-head-attention.md`).
-- **Residual Connections**: The skip connections that make deep Transformers trainable (see `residual-connections.md`).
-- **Layer Normalization**: The normalization scheme that stabilizes training (see `layer-normalization.md`).
-- **Feed-Forward Networks**: The layers that store factual knowledge (see `feed-forward-networks.md`).
-- **Positional Encoding**: Covered in a dedicated topic; the mechanism that gives order to the Transformer's otherwise order-agnostic attention.
-- **Autoregressive Generation**: How the decoder generates text token by token (see `autoregressive-generation.md`).
+- `self-attention.md`: The core mechanism inside each Transformer layer (see `self-attention.md`).
+- `multi-head-attention.md`: The practical form attention takes in the Transformer (see `multi-head-attention.md`).
+- `residual-connections.md`: The skip connections that make deep Transformers trainable (see `residual-connections.md`).
+- `layer-normalization.md`: The normalization scheme that stabilizes training (see `layer-normalization.md`).
+- `feed-forward-networks.md`: The layers that store factual knowledge (see `feed-forward-networks.md`).
+- `positional-encoding.md`: Covered in a dedicated topic; the mechanism that gives order to the Transformer's otherwise order-agnostic attention.
+- `autoregressive-generation.md`: How the decoder generates text token by token (see `autoregressive-generation.md`).
 
-- **Grouped Query Attention**: The KV-sharing strategy used in most modern models (see `grouped-query-attention.md`).
-- **Mixture of Experts**: The architectural extension replacing dense FFNs with sparse, routed expert networks (see `mixture-of-experts.md`).
-- **State Space Models**: The primary architectural alternative aiming to replace the quadratic attention mechanism with linear-time recurrence (see `state-space-models.md` in Advanced & Emerging).
+- `grouped-query-attention.md`: The KV-sharing strategy used in most modern models (see `grouped-query-attention.md`).
+- `mixture-of-experts.md`: The architectural extension replacing dense FFNs with sparse, routed expert networks (see `mixture-of-experts.md`).
+- `state-space-models.md`: The primary architectural alternative aiming to replace the quadratic attention mechanism with linear-time recurrence (see `state-space-models.md` in Advanced & Emerging).
 
 ## Further Reading
 

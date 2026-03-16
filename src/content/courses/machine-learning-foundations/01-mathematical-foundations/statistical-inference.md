@@ -99,10 +99,10 @@ Statistical inference connects data to decisions. In ML, it appears in model eva
 
 ## Connections to Other Concepts
 
-- **Probability Fundamentals**: Inference is built on top of probability theory; Bayes' theorem is the bridge between prior and posterior.
-- **Maximum Likelihood Estimation**: MLE is a point estimation method that arises naturally from the frequentist perspective and connects to MAP estimation in the Bayesian perspective.
-- **Information Theory**: Fisher information quantifies the amount of information data carry about a parameter and bounds estimator variance.
-- **Optimization and Gradient Descent**: Finding MLE or MAP estimates requires optimization; the Fisher information matrix is related to the Hessian of the log-likelihood.
+- `probability-fundamentals.md`: Inference is built on top of probability theory; Bayes' theorem is the bridge between prior and posterior.
+- `maximum-likelihood-estimation.md`: MLE is a point estimation method that arises naturally from the frequentist perspective and connects to MAP estimation in the Bayesian perspective.
+- `information-theory.md`: Fisher information quantifies the amount of information data carry about a parameter and bounds estimator variance.
+- `cost-latency-optimization.md`: Finding MLE or MAP estimates requires optimization; the Fisher information matrix is related to the Hessian of the log-likelihood.
 
 ## Further Reading
 

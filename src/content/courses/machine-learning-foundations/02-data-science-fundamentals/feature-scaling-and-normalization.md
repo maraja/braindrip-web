@@ -118,11 +118,11 @@ Without scaling, features measured in large units dominate distance-based and gr
 
 ## Connections to Other Concepts
 
-- **Exploratory Data Analysis**: EDA reveals whether features are skewed (suggesting log or Box-Cox transforms) or contain outliers (suggesting robust scaling).
-- **Data Cleaning and Preprocessing**: Outlier treatment during cleaning directly affects scaling. Unaddressed extreme values can dominate min-max normalization.
-- **Data Types and Structures**: Scaling applies only to numerical features. Categorical features require encoding (see **Encoding Categorical Variables**), not scaling.
-- **Handling Missing Data**: Imputed values should be scaled alongside observed values. If using mean imputation, the imputed value equals the training mean, which standardization maps to zero.
-- **Data Splitting and Sampling**: Scaler parameters must be computed on the training fold only to prevent data leakage.
+- `exploratory-data-analysis.md`: EDA reveals whether features are skewed (suggesting log or Box-Cox transforms) or contain outliers (suggesting robust scaling).
+- `data-cleaning-and-preprocessing.md`: Outlier treatment during cleaning directly affects scaling. Unaddressed extreme values can dominate min-max normalization.
+- `data-types-and-structures.md`: Scaling applies only to numerical features. Categorical features require encoding (see **Encoding Categorical Variables**), not scaling.
+- `handling-missing-data.md`: Imputed values should be scaled alongside observed values. If using mean imputation, the imputed value equals the training mean, which standardization maps to zero.
+- `data-splitting-and-sampling.md`: Scaler parameters must be computed on the training fold only to prevent data leakage.
 
 ## Further Reading
 

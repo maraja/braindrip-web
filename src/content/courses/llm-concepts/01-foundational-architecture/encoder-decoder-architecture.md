@@ -122,11 +122,11 @@ Decoder-only models naturally support in-context learning: provide examples in t
 
 ## Connections to Other Concepts
 
-- **Causal Attention**: The mechanism that distinguishes decoders from encoders (see `causal-attention.md`).
-- **Self-Attention**: Both encoders and decoders use self-attention; the difference is masking (see `self-attention.md`).
-- **Autoregressive Generation**: The generation mechanism used by decoders and decoder-only models (see `autoregressive-generation.md`).
-- **Next-Token Prediction**: The training objective that powers decoder-only models (see `next-token-prediction.md`).
-- **Transformer Architecture**: All three paradigms are variations of the Transformer (see `transformer-architecture.md`).
+- `causal-attention.md`: The mechanism that distinguishes decoders from encoders (see `causal-attention.md`).
+- `self-attention.md`: Both encoders and decoders use self-attention; the difference is masking (see `self-attention.md`).
+- `autoregressive-generation.md`: The generation mechanism used by decoders and decoder-only models (see `autoregressive-generation.md`).
+- `next-token-prediction.md`: The training objective that powers decoder-only models (see `next-token-prediction.md`).
+- `transformer-architecture.md`: All three paradigms are variations of the Transformer (see `transformer-architecture.md`).
 
 ## Further Reading
 

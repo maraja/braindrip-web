@@ -108,11 +108,11 @@ Decision trees are uniquely interpretable: you can follow the path from root to 
 
 ## Connections to Other Concepts
 
-- **Logistic Regression**: Trees capture nonlinear boundaries automatically; logistic regression requires explicit feature engineering. However, logistic regression provides smooth probability estimates, while tree probabilities are piecewise constant.
-- **K-Nearest Neighbors**: Both are non-parametric, but trees partition the space globally (each leaf is a region) while KNN uses local neighborhoods. Trees are much faster at prediction time.
-- **Support Vector Machines**: SVMs find a single optimal boundary with margin; trees find a piecewise axis-aligned boundary. For tabular data, ensembles of trees often outperform SVMs.
-- **Kernel Methods**: Kernel SVMs produce smooth nonlinear boundaries; trees produce jagged, axis-aligned boundaries. The choice depends on the problem geometry.
-- **Multi-Class Classification**: Trees are natively multiclass -- no wrapper needed. Each leaf simply stores the majority class (or the class distribution).
+- `logistic-regression.md`: Trees capture nonlinear boundaries automatically; logistic regression requires explicit feature engineering. However, logistic regression provides smooth probability estimates, while tree probabilities are piecewise constant.
+- `k-nearest-neighbors.md`: Both are non-parametric, but trees partition the space globally (each leaf is a region) while KNN uses local neighborhoods. Trees are much faster at prediction time.
+- `support-vector-machines.md`: SVMs find a single optimal boundary with margin; trees find a piecewise axis-aligned boundary. For tabular data, ensembles of trees often outperform SVMs.
+- `kernel-methods.md`: Kernel SVMs produce smooth nonlinear boundaries; trees produce jagged, axis-aligned boundaries. The choice depends on the problem geometry.
+- `multi-class-classification.md`: Trees are natively multiclass -- no wrapper needed. Each leaf simply stores the majority class (or the class distribution).
 
 ## Further Reading
 

@@ -99,11 +99,11 @@ A distinctive MCP feature is **sampling** -- the ability for servers to request 
 
 ## Connections to Other Concepts
 
-- **Function Calling & Tool Use**: MCP builds on the function calling paradigm, providing the infrastructure layer that makes tool use interoperable across applications (see `function-calling-and-tool-use.md`).
-- **AI Agents**: MCP is becoming the standard connectivity layer for AI agents, providing reliable tool access for autonomous operation (see `ai-agents.md`).
-- **Compound AI Systems**: MCP enables the modular composition that compound AI systems require -- each capability can be a pluggable MCP server (see `compound-ai-systems.md` in Advanced & Emerging).
-- **Multi-Agent Systems**: MCP's standardized tool access allows multiple agents to share the same tool infrastructure (see `multi-agent-systems.md`).
-- **Structured Output**: MCP's JSON Schema-based tool definitions connect naturally to structured output generation for reliable tool invocation (see `structured-output.md`).
+- `function-calling.md`: MCP builds on the function calling paradigm, providing the infrastructure layer that makes tool use interoperable across applications (see `function-calling-and-tool-use.md`).
+- `ai-agents.md`: MCP is becoming the standard connectivity layer for AI agents, providing reliable tool access for autonomous operation (see `ai-agents.md`).
+- `compound-ai-systems.md`: MCP enables the modular composition that compound AI systems require -- each capability can be a pluggable MCP server (see `compound-ai-systems.md` in Advanced & Emerging).
+- `multi-agent-systems.md`: MCP's standardized tool access allows multiple agents to share the same tool infrastructure (see `multi-agent-systems.md`).
+- `structured-output.md`: MCP's JSON Schema-based tool definitions connect naturally to structured output generation for reliable tool invocation (see `structured-output.md`).
 
 ## Further Reading
 

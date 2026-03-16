@@ -123,11 +123,11 @@ $$\text{EPE} = \frac{1}{N}\sum_{i=1}^N \sqrt{(u_i - u_i^{gt})^2 + (v_i - v_i^{gt
 
 ## Connections to Other Concepts
 
-- **Two-Stream Networks**: Optical flow is the input to the temporal stream, making flow quality directly impact action recognition accuracy.
-- **Video Representation**: Stacked flow fields are a primary video representation for motion-sensitive tasks.
-- **Video Object Tracking**: Flow provides motion cues for predicting object locations in subsequent frames.
-- **Video Generation**: Temporal coherence in generated videos can be evaluated and enforced using optical flow consistency.
-- **3D Convolutions**: 3D CNNs learn implicit motion representations that partially overlap with optical flow information.
+- `two-stream-networks.md`: Optical flow is the input to the temporal stream, making flow quality directly impact action recognition accuracy.
+- `video-representation.md`: Stacked flow fields are a primary video representation for motion-sensitive tasks.
+- `video-object-tracking.md`: Flow provides motion cues for predicting object locations in subsequent frames.
+- `video-generation.md`: Temporal coherence in generated videos can be evaluated and enforced using optical flow consistency.
+- `3d-convolutions.md`: 3D CNNs learn implicit motion representations that partially overlap with optical flow information.
 
 ## Further Reading
 

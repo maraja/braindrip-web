@@ -190,13 +190,13 @@ Furthermore, **verification** remains unsolved. How do you prove that a model ha
 
 ## Connections to Other Concepts
 
-- **Catastrophic Forgetting**: Ironically, the property that makes LLMs hard to train incrementally (they forget old knowledge when learning new things) is exactly what unlearning tries to exploit deliberately. Machine unlearning is "targeted catastrophic forgetting."
-- **Fine-Tuning and LoRA**: Many unlearning methods are implemented as fine-tuning procedures (gradient ascent is just fine-tuning with a flipped objective). LoRA-based unlearning modifies only low-rank adapters, potentially limiting the scope of forgetting.
+- `catastrophic-forgetting.md`: Ironically, the property that makes LLMs hard to train incrementally (they forget old knowledge when learning new things) is exactly what unlearning tries to exploit deliberately. Machine unlearning is "targeted catastrophic forgetting."
+- `supervised-fine-tuning.md`: Many unlearning methods are implemented as fine-tuning procedures (gradient ascent is just fine-tuning with a flipped objective). LoRA-based unlearning modifies only low-rank adapters, potentially limiting the scope of forgetting.
 - **Model Editing (ROME/MEMIT)**: Related techniques that modify specific factual associations. Model editing changes a fact (e.g., "Eiffel Tower is in Paris" to "Eiffel Tower is in London"); unlearning removes the fact entirely.
-- **Jailbreaking**: If safety fine-tuning is a behavioral veneer and jailbreaking can bypass it, then unlearning that actually removes the underlying knowledge should be more robust to jailbreaks. This is a key motivation for unlearning over safety alignment alone.
+- `jailbreaking.md`: If safety fine-tuning is a behavioral veneer and jailbreaking can bypass it, then unlearning that actually removes the underlying knowledge should be more robust to jailbreaks. This is a key motivation for unlearning over safety alignment alone.
 - **Differential Privacy**: DP training provides formal guarantees that individual data points have bounded influence on the model, which can facilitate later unlearning. However, DP at scale significantly degrades model quality.
 - **Membership Inference Attacks**: Used as both a threat model (what we want to prevent) and an evaluation tool (verifying that unlearning succeeded).
-- **Mechanistic Interpretability**: Understanding where and how knowledge is stored in LLMs (circuits, features, factual associations in MLP layers) directly informs more targeted unlearning approaches.
+- `mechanistic-interpretability.md`: Understanding where and how knowledge is stored in LLMs (circuits, features, factual associations in MLP layers) directly informs more targeted unlearning approaches.
 
 ## Further Reading
 

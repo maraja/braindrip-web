@@ -112,12 +112,12 @@ The practical impact is enormous. In genomics, Lasso enables genome-wide associa
 
 ## Connections to Other Concepts
 
-- **Linear Regression**: Ridge and Lasso generalize OLS by adding a penalty term; they reduce to OLS when $\lambda = 0$.
-- **Polynomial Regression**: Regularization is critical when using high-degree polynomial features to prevent the coefficient explosion that causes overfitting.
-- **Bias-Variance Tradeoff**: $\lambda$ directly controls the bias-variance balance. Increasing $\lambda$ increases bias but decreases variance.
-- **Regression Diagnostics**: Multicollinearity (high VIF) is a signal that Ridge or Lasso may improve over OLS.
-- **Cross-Validation**: The standard method for selecting the regularization strength $\lambda$.
-- **Generalized Linear Models**: Regularization extends naturally to GLMs, yielding penalized logistic regression and penalized Poisson regression.
+- `linear-regression.md`: Ridge and Lasso generalize OLS by adding a penalty term; they reduce to OLS when $\lambda = 0$.
+- `polynomial-regression.md`: Regularization is critical when using high-degree polynomial features to prevent the coefficient explosion that causes overfitting.
+- `bias-variance-tradeoff.md`: $\lambda$ directly controls the bias-variance balance. Increasing $\lambda$ increases bias but decreases variance.
+- `regression-diagnostics.md`: Multicollinearity (high VIF) is a signal that Ridge or Lasso may improve over OLS.
+- `cross-validation.md`: The standard method for selecting the regularization strength $\lambda$.
+- `generalized-linear-models.md`: Regularization extends naturally to GLMs, yielding penalized logistic regression and penalized Poisson regression.
 
 ## Further Reading
 

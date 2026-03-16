@@ -115,11 +115,11 @@ for generation in range(20):
 
 ## Connections to Other Concepts
 
-- **Data Curation and Filtering**: The primary defense against model collapse -- careful data curation that prioritizes verified human-generated content and tracks data provenance.
-- **Synthetic Data Generation**: The direct cause of model collapse when used recursively. Synthetic data is valuable for specific augmentation but dangerous as a primary training source across generations.
-- **Pre-training**: Model collapse primarily threatens the pre-training phase, where models consume massive web-scraped datasets that are increasingly contaminated with synthetic text.
-- **RLHF / Alignment Training**: Alignment training already uses synthetic data (AI-generated responses). Understanding model collapse informs how to structure this pipeline safely.
-- **Scaling Laws**: Model collapse may impose fundamental limits on scaling by degrading the quality of available training data, even as compute continues to increase.
+- `training-data-curation.md`: The primary defense against model collapse -- careful data curation that prioritizes verified human-generated content and tracks data provenance.
+- `synthetic-data.md`: The direct cause of model collapse when used recursively. Synthetic data is valuable for specific augmentation but dangerous as a primary training source across generations.
+- `pre-training.md`: Model collapse primarily threatens the pre-training phase, where models consume massive web-scraped datasets that are increasingly contaminated with synthetic text.
+- `rlhf.md`: Alignment training already uses synthetic data (AI-generated responses). Understanding model collapse informs how to structure this pipeline safely.
+- `scaling-laws.md`: Model collapse may impose fundamental limits on scaling by degrading the quality of available training data, even as compute continues to increase.
 
 ## Further Reading
 

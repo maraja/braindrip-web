@@ -90,11 +90,11 @@ The dueling architecture is an elegant example of how inductive bias -- building
 
 ## Connections to Other Concepts
 
-- **Value functions** (`value-functions.md`) define $V(s)$ and $Q(s,a)$, whose relationship $A(s,a) = Q(s,a) - V(s)$ is the foundation of the dueling decomposition.
-- **DQN** (`deep-q-networks.md`) provides the base architecture and training algorithm that dueling modifies.
-- **Double DQN** (`double-dqn.md`) changes the target computation; dueling changes the architecture. They are orthogonal and often combined.
-- **Advantage estimation** (`advantage-estimation.md`) in policy gradient methods uses the same $A(s,a) = Q(s,a) - V(s)$ decomposition, connecting dueling DQN to actor-critic ideas.
-- **Rainbow DQN** (`rainbow-dqn.md`) includes the dueling architecture as one of its six combined improvements.
+- `value-functions.md`: (`value-functions.md`) define $V(s)$ and $Q(s,a)$, whose relationship $A(s,a) = Q(s,a) - V(s)$ is the foundation of the dueling decomposition.
+- `double-dqn.md`: (`deep-q-networks.md`) provides the base architecture and training algorithm that dueling modifies.
+- `double-dqn.md`: (`double-dqn.md`) changes the target computation; dueling changes the architecture. They are orthogonal and often combined.
+- `advantage-estimation.md`: (`advantage-estimation.md`) in policy gradient methods uses the same $A(s,a) = Q(s,a) - V(s)$ decomposition, connecting dueling DQN to actor-critic ideas.
+- `rainbow-dqn.md`: (`rainbow-dqn.md`) includes the dueling architecture as one of its six combined improvements.
 
 ## Further Reading
 

@@ -136,11 +136,11 @@ The auxiliary heads can use equal weighting or a decay schedule (where farther-a
 
 ## Connections to Other Concepts
 
-- **Next-Token Prediction**: MTP is a direct generalization of NTP. The t+1 head in MTP is functionally identical to the standard NTP objective.
-- **Speculative Decoding**: MTP provides a natural mechanism for self-speculation, complementing external speculative decoding approaches.
-- **Training Objectives (BERT-style MLM)**: MTP can be seen as a middle ground between autoregressive NTP and bidirectional objectives -- it maintains autoregressive structure while extracting richer signal per position.
-- **DeepSeek-V3 / Mixture of Experts**: DeepSeek-V3 combined MTP with MoE architecture, demonstrating that MTP composes well with other architectural innovations.
-- **Knowledge Distillation**: MTP's auxiliary heads resemble multi-task distillation, where the model "teaches itself" about future structure.
+- `next-token-prediction.md`: MTP is a direct generalization of NTP. The t+1 head in MTP is functionally identical to the standard NTP objective.
+- `speculative-decoding.md`: MTP provides a natural mechanism for self-speculation, complementing external speculative decoding approaches.
+- `bert.md`: MTP can be seen as a middle ground between autoregressive NTP and bidirectional objectives -- it maintains autoregressive structure while extracting richer signal per position.
+- `02-deepseek-v3.md`: DeepSeek-V3 combined MTP with MoE architecture, demonstrating that MTP composes well with other architectural innovations.
+- `knowledge-distillation.md`: MTP's auxiliary heads resemble multi-task distillation, where the model "teaches itself" about future structure.
 
 ## Further Reading
 

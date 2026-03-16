@@ -119,11 +119,11 @@ The log of the softmax output ($\log P(t_i)$) is the **log-probability** of a to
 
 ## Connections to Other Concepts
 
-- **Next-Token Prediction**: The logits are the direct output that the next-token prediction loss is computed over (see `next-token-prediction.md`).
-- **Autoregressive Generation**: Token selection from the softmax distribution is the core of the generation loop (see `autoregressive-generation.md`).
-- **Feed-Forward Networks**: The hidden state that becomes logits is the residual stream output, shaped heavily by FFN layers (see `feed-forward-networks.md`).
-- **Activation Functions**: Softmax is itself an activation function, applied at the final output layer (see `activation-functions.md`).
-- **Transformer Architecture**: The logits layer sits on top of the full Transformer stack (see `transformer-architecture.md`).
+- `next-token-prediction.md`: The logits are the direct output that the next-token prediction loss is computed over (see `next-token-prediction.md`).
+- `autoregressive-generation.md`: Token selection from the softmax distribution is the core of the generation loop (see `autoregressive-generation.md`).
+- `feed-forward-networks.md`: The hidden state that becomes logits is the residual stream output, shaped heavily by FFN layers (see `feed-forward-networks.md`).
+- `activation-functions.md`: Softmax is itself an activation function, applied at the final output layer (see `activation-functions.md`).
+- `transformer-architecture.md`: The logits layer sits on top of the full Transformer stack (see `transformer-architecture.md`).
 
 ## Further Reading
 

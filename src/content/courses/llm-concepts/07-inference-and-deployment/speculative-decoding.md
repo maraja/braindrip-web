@@ -100,11 +100,11 @@ The "free lunch" nature of speculative decoding -- identical quality, strictly f
 
 ## Connections to Other Concepts
 
-- **KV Cache**: Speculative decoding requires careful KV cache management for both draft and target models. Roll-back on rejection is a key implementation detail.
-- **Quantization**: A quantized target model is already faster per token, which reduces the relative benefit of speculative decoding. However, the two techniques can be combined.
-- **Throughput vs. Latency**: Speculative decoding is primarily a latency optimization. At high batch sizes (throughput-oriented), its benefits diminish because the GPU is already well-utilized.
-- **Model Serving Frameworks**: vLLM and TensorRT-LLM both support speculative decoding, with ongoing work to improve integration with continuous batching.
-- **Knowledge Distillation**: A distilled small model can serve as an excellent draft model, combining two optimization strategies.
+- `kv-cache.md`: Speculative decoding requires careful KV cache management for both draft and target models. Roll-back on rejection is a key implementation detail.
+- `quantization.md`: A quantized target model is already faster per token, which reduces the relative benefit of speculative decoding. However, the two techniques can be combined.
+- `throughput-vs-latency.md`: Speculative decoding is primarily a latency optimization. At high batch sizes (throughput-oriented), its benefits diminish because the GPU is already well-utilized.
+- `model-serving.md`: vLLM and TensorRT-LLM both support speculative decoding, with ongoing work to improve integration with continuous batching.
+- `knowledge-distillation.md`: A distilled small model can serve as an excellent draft model, combining two optimization strategies.
 
 ## Further Reading
 

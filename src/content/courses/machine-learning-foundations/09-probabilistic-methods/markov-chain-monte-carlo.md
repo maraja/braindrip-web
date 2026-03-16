@@ -108,11 +108,11 @@ MCMC is the backbone of practical Bayesian inference. It enables fitting complex
 
 ## Connections to Other Concepts
 
-- **Bayesian Inference**: MCMC is the primary computational tool for performing Bayesian inference when the posterior is intractable.
-- **Variational Inference**: VI is the main alternative to MCMC. MCMC is asymptotically exact but slower; VI is faster but provides an approximation. The choice depends on the problem scale and accuracy requirements.
-- **Expectation-Maximization**: Monte Carlo EM replaces the intractable E-step expectation with MCMC samples from the posterior over latent variables.
-- **Graphical Models**: Gibbs sampling exploits graphical model structure -- each variable is sampled conditional on its Markov blanket.
-- **Gaussian Processes**: Fully Bayesian GP hyperparameter inference uses MCMC to sample from the posterior over kernel hyperparameters rather than optimizing a point estimate.
+- `bayesian-inference.md`: MCMC is the primary computational tool for performing Bayesian inference when the posterior is intractable.
+- `variational-inference.md`: VI is the main alternative to MCMC. MCMC is asymptotically exact but slower; VI is faster but provides an approximation. The choice depends on the problem scale and accuracy requirements.
+- `expectation-maximization.md`: Monte Carlo EM replaces the intractable E-step expectation with MCMC samples from the posterior over latent variables.
+- `graphical-models.md`: Gibbs sampling exploits graphical model structure -- each variable is sampled conditional on its Markov blanket.
+- `gaussian-processes.md`: Fully Bayesian GP hyperparameter inference uses MCMC to sample from the posterior over kernel hyperparameters rather than optimizing a point estimate.
 
 ## Further Reading
 

@@ -113,11 +113,11 @@ Examples of this composability:
 
 ## Connections to Other Concepts
 
-- **CLIP**: The primary language-supervised foundation model; defines the paradigm for zero-shot transfer and multimodal alignment.
-- **DINOv2**: The primary self-supervised foundation model; strongest general-purpose visual backbone for dense prediction tasks.
-- **Grounding DINO**: Demonstrates how foundation model features enable open-vocabulary detection, a capability impossible with fixed-vocabulary training.
+- `clip.md`: The primary language-supervised foundation model; defines the paradigm for zero-shot transfer and multimodal alignment.
+- `dinov2.md`: The primary self-supervised foundation model; strongest general-purpose visual backbone for dense prediction tasks.
+- `grounding-dino.md`: Demonstrates how foundation model features enable open-vocabulary detection, a capability impossible with fixed-vocabulary training.
 - **Image Segmentation**: SAM redefines segmentation as a promptable foundation model task rather than a fixed-taxonomy prediction problem.
-- **Vision Transformers**: The ViT architecture is the common substrate for all current vision foundation models.
+- `vision-transformer.md`: The ViT architecture is the common substrate for all current vision foundation models.
 
 ## Further Reading
 

@@ -104,12 +104,12 @@ where $\Delta\mathbf{p}_k$ are learned offsets. This provides a form of implicit
 
 ## Connections to Other Concepts
 
-- **Feature Pyramid Network**: The primary architectural solution to multi-scale detection in modern systems.
-- **SSD**: Pioneered multi-layer prediction for multi-scale detection without top-down enrichment.
-- **YOLO**: YOLOv1 used single-scale prediction; v3 onward adopted multi-scale FPN-like architectures.
-- **Sliding Window and Region Proposals**: Classical methods used image pyramids for multi-scale scanning.
-- **Focal Loss / RetinaNet**: Applies focal loss across all FPN levels, with scale-specific anchor assignment.
-- **DETR**: Original DETR used single-scale features; Deformable DETR added multi-scale attention for improved small-object detection.
+- `feature-pyramid-network.md`: The primary architectural solution to multi-scale detection in modern systems.
+- `ssd.md`: Pioneered multi-layer prediction for multi-scale detection without top-down enrichment.
+- `yolo.md`: YOLOv1 used single-scale prediction; v3 onward adopted multi-scale FPN-like architectures.
+- `sliding-window-and-region-proposals.md`: Classical methods used image pyramids for multi-scale scanning.
+- `focal-loss.md`: Applies focal loss across all FPN levels, with scale-specific anchor assignment.
+- `detr.md`: Original DETR used single-scale features; Deformable DETR added multi-scale attention for improved small-object detection.
 
 ## Further Reading
 

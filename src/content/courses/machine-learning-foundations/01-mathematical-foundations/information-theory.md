@@ -120,11 +120,11 @@ Information theory provides the theoretical underpinning for why certain loss fu
 
 ## Connections to Other Concepts
 
-- **Probability Fundamentals**: Entropy is defined in terms of probability distributions. All information-theoretic quantities are functions of distributions.
-- **Maximum Likelihood Estimation**: MLE minimizes cross-entropy, which equals KL divergence up to a constant. This is the fundamental link between information theory and parameter estimation.
-- **Statistical Inference**: Fisher information (different from Shannon information) bounds estimator variance but is conceptually related -- both quantify "information" in data.
-- **Derivatives and Gradients**: The gradient of cross-entropy loss drives parameter updates in neural network training.
-- **Norms and Distance Metrics**: KL divergence measures distributional distance, complementing geometric distances (L2, cosine) in feature space.
+- `probability-fundamentals.md`: Entropy is defined in terms of probability distributions. All information-theoretic quantities are functions of distributions.
+- `maximum-likelihood-estimation.md`: MLE minimizes cross-entropy, which equals KL divergence up to a constant. This is the fundamental link between information theory and parameter estimation.
+- `statistical-inference.md`: Fisher information (different from Shannon information) bounds estimator variance but is conceptually related -- both quantify "information" in data.
+- `derivatives-and-gradients.md`: The gradient of cross-entropy loss drives parameter updates in neural network training.
+- `norms-and-distance-metrics.md`: KL divergence measures distributional distance, complementing geometric distances (L2, cosine) in feature space.
 
 ## Further Reading
 

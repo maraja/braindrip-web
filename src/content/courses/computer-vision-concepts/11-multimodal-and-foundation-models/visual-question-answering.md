@@ -107,11 +107,11 @@ An answer is considered 100% correct if at least 3 out of 10 annotators gave the
 
 ## Connections to Other Concepts
 
-- **Image Captioning**: VQA can be viewed as conditional captioning where the condition is a question. Both tasks share encoder-decoder architectures and attention mechanisms.
-- **CLIP**: CLIP embeddings provide the visual backbone for modern VQA models (BLIP-2, LLaVA) and enable zero-shot VQA without task-specific training.
-- **Vision Foundation Models**: VQA performance is a key evaluation axis for general-purpose vision-language models.
-- **Zero-Shot Classification**: VQA subsumes classification -- "What object is in this image?" with a constrained answer set is equivalent to classification.
-- **Visual Question Answering Datasets**: VQA v2.0, GQA, OK-VQA, TextVQA, VizWiz each test different capabilities and expose different model weaknesses.
+- `image-captioning.md`: VQA can be viewed as conditional captioning where the condition is a question. Both tasks share encoder-decoder architectures and attention mechanisms.
+- `clip.md`: CLIP embeddings provide the visual backbone for modern VQA models (BLIP-2, LLaVA) and enable zero-shot VQA without task-specific training.
+- `vision-foundation-models.md`: VQA performance is a key evaluation axis for general-purpose vision-language models.
+- `zero-shot-classification.md`: VQA subsumes classification -- "What object is in this image?" with a constrained answer set is equivalent to classification.
+- `visual-question-answering.md`: VQA v2.0, GQA, OK-VQA, TextVQA, VizWiz each test different capabilities and expose different model weaknesses.
 
 ## Further Reading
 

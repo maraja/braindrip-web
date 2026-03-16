@@ -143,12 +143,12 @@ Each iteration roughly doubles the inference cost but can yield substantial qual
 
 ## Connections to Other Concepts
 
-- **Process Reward Models (PRMs)**: PRMs are the verifiers that make inference-time search effective. Without reliable step-level scoring, best-of-N sampling reduces to majority voting, which is less sample-efficient.
-- **Chain-of-Thought Prompting**: CoT is the foundation that inference-time scaling builds on. Longer, more structured reasoning chains are the mechanism through which additional compute translates to better answers.
-- **Self-Consistency**: The simplest inference-time scaling technique -- majority voting over multiple samples -- which serves as both a practical baseline and a conceptual starting point.
-- **Model Routing**: Routing can implement difficulty-dependent compute allocation by sending easy queries to small models (low compute) and hard queries to large models with extended reasoning (high compute).
-- **Monte Carlo Tree Search (MCTS)**: Tree search with value estimation is a natural framework for structured inference-time compute allocation, explored in approaches like Tree-of-Thought and reasoning-via-planning.
-- **Speculative Decoding**: While speculative decoding speeds up individual samples, inference-time scaling is about improving quality by spending more compute -- opposite goals that can coexist in the same system.
+- `process-reward-models.md`: PRMs are the verifiers that make inference-time search effective. Without reliable step-level scoring, best-of-N sampling reduces to majority voting, which is less sample-efficient.
+- `chain-of-thought-prompting.md`: CoT is the foundation that inference-time scaling builds on. Longer, more structured reasoning chains are the mechanism through which additional compute translates to better answers.
+- `self-consistency.md`: The simplest inference-time scaling technique -- majority voting over multiple samples -- which serves as both a practical baseline and a conceptual starting point.
+- `model-routing.md`: Routing can implement difficulty-dependent compute allocation by sending easy queries to small models (low compute) and hard queries to large models with extended reasoning (high compute).
+- `monte-carlo-tree-search.md`: Tree search with value estimation is a natural framework for structured inference-time compute allocation, explored in approaches like Tree-of-Thought and reasoning-via-planning.
+- `speculative-decoding.md`: While speculative decoding speeds up individual samples, inference-time scaling is about improving quality by spending more compute -- opposite goals that can coexist in the same system.
 
 ## Further Reading
 

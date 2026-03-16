@@ -125,12 +125,12 @@ Model merging has democratized model development. The open-source community uses
 
 ## Connections to Other Concepts
 
-- **Fine-Tuning and LoRA**: Model merging operates on the outputs of fine-tuning. LoRA adapters can also be merged -- both with the base model and with each other -- making lightweight adaptation composable.
+- `supervised-fine-tuning.md`: Model merging operates on the outputs of fine-tuning. LoRA adapters can also be merged -- both with the base model and with each other -- making lightweight adaptation composable.
 - **Loss Landscapes**: The theoretical foundation for why merging works is linear mode connectivity -- the observation that fine-tuned models from the same base share a flat loss basin.
 - **Ensemble Methods**: Merging can be viewed as "poor man's ensembling" -- getting some diversity benefits at single-model cost.
-- **Distillation**: An alternative approach to combining capabilities: distill a merged model's knowledge into a new model through training on the merged model's outputs.
-- **Test-Time Compute**: Kimi's innovation of merging reasoning and fast models connects merging to the inference-time scaling paradigm.
-- **Open-Source Ecosystem**: Merging has become central to the open-source model ecosystem, enabling community-driven improvement without massive compute budgets.
+- `agent-distillation.md`: An alternative approach to combining capabilities: distill a merged model's knowledge into a new model through training on the merged model's outputs.
+- `test-time-compute.md`: Kimi's innovation of merging reasoning and fast models connects merging to the inference-time scaling paradigm.
+- `04-the-open-source-ecosystem.md`: Merging has become central to the open-source model ecosystem, enabling community-driven improvement without massive compute budgets.
 
 ## Further Reading
 

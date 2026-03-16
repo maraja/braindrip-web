@@ -85,11 +85,11 @@ GAN inversion -- projecting a real image into StyleGAN's latent space -- enables
 
 ## Connections to Other Concepts
 
-- **GAN Training Dynamics**: StyleGAN uses R1 gradient penalty, exponential moving average, and lazy regularization -- all key stabilization techniques.
-- **Generative Adversarial Networks**: StyleGAN is a GAN architecture; it relies on adversarial training with a standard discriminator.
-- **Image-to-Image Translation**: StyleGAN's encoder-based inversion enables GAN-based editing pipelines related to domain transfer.
-- **Diffusion Models**: Diffusion models have surpassed StyleGAN in diversity metrics while StyleGAN retains advantages in latent space controllability and speed.
-- **Neural Style Transfer**: AdaIN, central to StyleGAN's architecture, was originally developed for arbitrary neural style transfer (Huang and Belongie, 2017).
+- `gan-training-dynamics.md`: StyleGAN uses R1 gradient penalty, exponential moving average, and lazy regularization -- all key stabilization techniques.
+- `generative-adversarial-networks.md`: StyleGAN is a GAN architecture; it relies on adversarial training with a standard discriminator.
+- `image-to-image-translation.md`: StyleGAN's encoder-based inversion enables GAN-based editing pipelines related to domain transfer.
+- `diffusion-models.md`: Diffusion models have surpassed StyleGAN in diversity metrics while StyleGAN retains advantages in latent space controllability and speed.
+- `neural-style-transfer.md`: AdaIN, central to StyleGAN's architecture, was originally developed for arbitrary neural style transfer (Huang and Belongie, 2017).
 
 ## Further Reading
 

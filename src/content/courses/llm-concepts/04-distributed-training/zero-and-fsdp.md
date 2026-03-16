@@ -134,10 +134,10 @@ This democratization means that a team with 8 GPUs can now train models that pre
 
 ## Connections to Other Concepts
 
-- **Data Parallelism (DDP)**: ZeRO/FSDP is an evolution of data parallelism. It preserves the data-parallel training semantics (each GPU sees different data, gradients are averaged) while eliminating memory redundancy.
-- **Tensor Parallelism**: Addresses a different dimension. ZeRO shards temporally (parameters are gathered, used, and discarded), while tensor parallelism shards spatially (each GPU permanently holds part of each layer). They can be combined.
-- **Pipeline Parallelism**: Also complementary. In a 3D parallelism setup, FSDP can serve as the data-parallel component while pipeline and tensor parallelism handle the model-parallel dimensions.
-- **Mixed Precision Training**: Tightly integrated with ZeRO/FSDP. The distinction between fp16 compute copies and fp32 optimizer master copies is central to the memory accounting.
+- `data-parallelism.md`: ZeRO/FSDP is an evolution of data parallelism. It preserves the data-parallel training semantics (each GPU sees different data, gradients are averaged) while eliminating memory redundancy.
+- `tensor-parallelism.md`: Addresses a different dimension. ZeRO shards temporally (parameters are gathered, used, and discarded), while tensor parallelism shards spatially (each GPU permanently holds part of each layer). They can be combined.
+- `pipeline-parallelism.md`: Also complementary. In a 3D parallelism setup, FSDP can serve as the data-parallel component while pipeline and tensor parallelism handle the model-parallel dimensions.
+- `mixed-precision-training.md`: Tightly integrated with ZeRO/FSDP. The distinction between fp16 compute copies and fp32 optimizer master copies is central to the memory accounting.
 - **Gradient Accumulation**: Often combined with FSDP to increase effective batch size without increasing per-micro-batch memory, allowing the all-gather communication to be amortized over more compute.
 
 ## Further Reading

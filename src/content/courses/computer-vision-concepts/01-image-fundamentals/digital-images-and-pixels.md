@@ -100,10 +100,10 @@ Different formats make different tradeoffs between file size, quality, and featu
 
 ## Connections to Other Concepts
 
-- **Color Spaces**: Each pixel can store values in different color coordinate systems (RGB, HSV, LAB), which fundamentally changes how algorithms interpret the numbers.
-- **Image Histograms**: The distribution of pixel intensity values across the grid is the basis for histogram analysis, equalization, and thresholding.
-- **Image Interpolation and Resampling**: When images are resized or geometrically transformed, new pixel values must be estimated at non-integer grid locations.
-- **Image Noise and Denoising**: Noise is introduced during both the sampling (photon shot noise) and quantization stages of image formation.
+- `color-spaces.md`: Each pixel can store values in different color coordinate systems (RGB, HSV, LAB), which fundamentally changes how algorithms interpret the numbers.
+- `image-histograms.md`: The distribution of pixel intensity values across the grid is the basis for histogram analysis, equalization, and thresholding.
+- `image-interpolation-and-resampling.md`: When images are resized or geometrically transformed, new pixel values must be estimated at non-integer grid locations.
+- `image-noise-and-denoising.md`: Noise is introduced during both the sampling (photon shot noise) and quantization stages of image formation.
 
 ## Further Reading
 

@@ -108,11 +108,11 @@ The curse of dimensionality is not an abstract theoretical concern -- it directl
 
 ## Connections to Other Concepts
 
-- **Bias-Variance Tradeoff**: High dimensions amplify variance because there are more parameters to estimate from the same data.
-- **Regularization**: Essential in high-dimensional settings to prevent overfitting. L1 regularization is particularly valuable for inducing sparsity.
-- **Overfitting and Underfitting**: High-dimensional feature spaces make overfitting the default without countermeasures.
-- **Empirical Risk Minimization**: The generalization gap in ERM grows with the VC dimension, which typically increases with data dimensionality.
-- **Types of Machine Learning**: Unsupervised dimensionality reduction methods are a direct response to the curse.
+- `bias-variance-tradeoff.md`: High dimensions amplify variance because there are more parameters to estimate from the same data.
+- `regularization.md`: Essential in high-dimensional settings to prevent overfitting. L1 regularization is particularly valuable for inducing sparsity.
+- `overfitting-and-underfitting.md`: High-dimensional feature spaces make overfitting the default without countermeasures.
+- `empirical-risk-minimization.md`: The generalization gap in ERM grows with the VC dimension, which typically increases with data dimensionality.
+- `types-of-machine-learning.md`: Unsupervised dimensionality reduction methods are a direct response to the curse.
 
 ## Further Reading
 

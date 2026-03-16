@@ -101,11 +101,11 @@ $$\text{CrossAttn}(\mathbf{Q}_{\text{spatial}}, \mathbf{K}_{\text{text}}, \mathb
 
 ## Connections to Other Concepts
 
-- **CLIP**: Provides text encoders for conditioning and is used in CLIP-guided generation and evaluation (CLIPScore).
-- **Image Captioning**: The inverse task. Captioning models (BLIP) are used to generate training captions for text-to-image models (DALL-E 3).
-- **Diffusion Models**: Text-to-image is the highest-profile application of diffusion models, driving most of the architectural innovation in this space.
-- **Vision Foundation Models**: Text-to-image models learn rich visual representations; their internal features can be repurposed for discriminative tasks.
-- **Generative Adversarial Networks**: GANs (StyleGAN, BigGAN) were the prior paradigm for image generation; diffusion models surpassed them in diversity and training stability.
+- `clip.md`: Provides text encoders for conditioning and is used in CLIP-guided generation and evaluation (CLIPScore).
+- `image-captioning.md`: The inverse task. Captioning models (BLIP) are used to generate training captions for text-to-image models (DALL-E 3).
+- `diffusion-models.md`: Text-to-image is the highest-profile application of diffusion models, driving most of the architectural innovation in this space.
+- `vision-foundation-models.md`: Text-to-image models learn rich visual representations; their internal features can be repurposed for discriminative tasks.
+- `generative-adversarial-networks.md`: GANs (StyleGAN, BigGAN) were the prior paradigm for image generation; diffusion models surpassed them in diversity and training stability.
 
 ## Further Reading
 

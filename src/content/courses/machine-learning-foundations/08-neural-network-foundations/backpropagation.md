@@ -95,11 +95,11 @@ Every modern deep learning framework is built around efficient implementations o
 
 ## Connections to Other Concepts
 
-- **Perceptrons and Multilayer Networks**: Backpropagation is the algorithm that makes training multilayer networks practical.
-- **Activation Functions**: The derivative $f'(\mathbf{z})$ appears directly in the backward pass; activation choice critically affects gradient flow.
-- **Weight Initialization**: Proper initialization prevents gradients from vanishing or exploding at the start of training.
-- **Optimizers**: Consume the gradients computed by backpropagation to update network parameters.
-- **Batch Normalization**: Designed partly to improve gradient flow through deep networks.
+- `perceptrons-and-multilayer-networks.md`: Backpropagation is the algorithm that makes training multilayer networks practical.
+- `activation-functions.md`: The derivative $f'(\mathbf{z})$ appears directly in the backward pass; activation choice critically affects gradient flow.
+- `weight-initialization.md`: Proper initialization prevents gradients from vanishing or exploding at the start of training.
+- `optimizers.md`: Consume the gradients computed by backpropagation to update network parameters.
+- `batch-normalization.md`: Designed partly to improve gradient flow through deep networks.
 
 ## Further Reading
 

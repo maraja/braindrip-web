@@ -133,12 +133,12 @@ Counterintuitively, presenting hard examples first (anti-curriculum) can also wo
 
 ## Connections to Other Concepts
 
-- **Data Curation**: Curriculum learning and data curation are closely related -- curation determines what data to include, while curriculum determines when to present it.
-- **Pre-training**: The primary training phase where curriculum learning has the greatest impact, given the massive scale and diverse data sources involved.
-- **Scaling Laws**: Curriculum learning can shift scaling curves favorably, achieving given performance levels with less compute or data.
-- **Model Collapse**: Curriculum learning can help mitigate model collapse by explicitly upweighting high-quality, verified human data at critical training phases.
-- **Catastrophic Forgetting**: Curriculum transitions must be managed carefully to avoid forgetting earlier training. Gradual transitions and data replay help maintain stability.
-- **Mixed-Precision Training**: Both are "training efficiency" techniques that improve the cost-performance trade-off without changing the model architecture.
+- `training-data-curation.md`: Curriculum learning and data curation are closely related -- curation determines what data to include, while curriculum determines when to present it.
+- `pre-training.md`: The primary training phase where curriculum learning has the greatest impact, given the massive scale and diverse data sources involved.
+- `scaling-laws.md`: Curriculum learning can shift scaling curves favorably, achieving given performance levels with less compute or data.
+- `model-collapse.md`: Curriculum learning can help mitigate model collapse by explicitly upweighting high-quality, verified human data at critical training phases.
+- `catastrophic-forgetting.md`: Curriculum transitions must be managed carefully to avoid forgetting earlier training. Gradual transitions and data replay help maintain stability.
+- `mixed-precision-training.md`: Both are "training efficiency" techniques that improve the cost-performance trade-off without changing the model architecture.
 
 ## Further Reading
 

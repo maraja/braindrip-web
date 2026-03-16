@@ -120,11 +120,11 @@ Tensor parallelism also reduces the **per-GPU computation time** for each layer,
 
 ## Connections to Other Concepts
 
-- **Data Parallelism**: Tensor parallelism is typically used **within** a node, while data parallelism replicates across groups of nodes. They are complementary and almost always combined.
-- **Pipeline Parallelism**: Pipeline parallelism splits across layers (inter-layer) while tensor parallelism splits within layers (intra-layer). They address the same problem (model too large for one GPU) from different angles.
-- **3D Parallelism**: The combination of data, tensor, and pipeline parallelism, where tensor parallelism handles the intra-node dimension.
+- `data-parallelism.md`: Tensor parallelism is typically used **within** a node, while data parallelism replicates across groups of nodes. They are complementary and almost always combined.
+- `pipeline-parallelism.md`: Pipeline parallelism splits across layers (inter-layer) while tensor parallelism splits within layers (intra-layer). They address the same problem (model too large for one GPU) from different angles.
+- `3d-parallelism.md`: The combination of data, tensor, and pipeline parallelism, where tensor parallelism handles the intra-node dimension.
 - **Sequence Parallelism**: Extends tensor parallelism to split the sequence dimension for operations like LayerNorm and dropout that otherwise require the full hidden state, further reducing activation memory.
-- **Attention Mechanisms**: Multi-head attention is naturally amenable to tensor parallelism because attention heads operate independently, making the column-wise split communication-free during the core attention computation.
+- `attention-mechanism.md`: Multi-head attention is naturally amenable to tensor parallelism because attention heads operate independently, making the column-wise split communication-free during the core attention computation.
 
 ## Further Reading
 

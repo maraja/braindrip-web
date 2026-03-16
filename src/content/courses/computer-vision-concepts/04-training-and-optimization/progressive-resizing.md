@@ -92,10 +92,10 @@ Touvron et al. (2019) demonstrated that models trained at one resolution and tes
 
 ## Connections to Other Concepts
 
-- **Batch Normalization**: Resolution changes affect BN statistics; re-calibration is needed at each phase transition.
-- **Learning Rate Scheduling**: Progressive resizing introduces a schedule within a schedule -- the learning rate often resets or drops at each resolution increase.
-- **Transfer Learning**: Fine-tuning a pretrained model with progressive resizing is a common and effective pattern.
-- **Data Augmentation**: Random resized crop parameters may need adjustment at different resolutions to maintain consistent augmentation intensity.
+- `batch-normalization.md`: Resolution changes affect BN statistics; re-calibration is needed at each phase transition.
+- `learning-rate-scheduling.md`: Progressive resizing introduces a schedule within a schedule -- the learning rate often resets or drops at each resolution increase.
+- `transfer-learning.md`: Fine-tuning a pretrained model with progressive resizing is a common and effective pattern.
+- `data-augmentation.md`: Random resized crop parameters may need adjustment at different resolutions to maintain consistent augmentation intensity.
 
 ## Further Reading
 

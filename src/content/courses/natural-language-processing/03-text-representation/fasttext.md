@@ -85,13 +85,13 @@ The classifier averages word (and n-gram) embeddings for the input text and feed
 
 ## Connections to Other Concepts
 
-- **Word2Vec** (`word2vec.md`): FastText extends Word2Vec's Skip-gram with subword information. Understanding Word2Vec is essential background.
-- **GloVe** (`glove.md`): Unlike FastText, GloVe has no subword mechanism. GloVe and FastText represent different design choices: global co-occurrence statistics vs. subword-enriched prediction.
-- **Morphology** (`01-foundations-of-language/morphology.md`): FastText's character n-grams implicitly capture morphological patterns -- prefixes, suffixes, and stems -- without explicit linguistic analysis.
-- **Tokenization** (`02-text-preprocessing/tokenization-in-nlp.md`): FastText's subword approach relates to BPE and WordPiece tokenization, which also decompose words into subword units, though at the tokenization stage rather than the embedding stage.
-- **Text Classification** (`05-core-nlp-tasks-analysis/text-classification.md`): The fastText classifier is a widely-used baseline for text classification, especially when training speed and simplicity are priorities.
-- **Multilingual NLP** (`10-multilingual-and-low-resource-nlp/multilingual-nlp.md`): Pre-trained FastText vectors for 157 languages provide a starting point for multilingual and low-resource NLP.
-- **Stemming and Lemmatization** (`02-text-preprocessing/stemming-and-lemmatization.md`): FastText reduces the need for explicit stemming because morphological variants naturally share subword vectors.
+- `word2vec.md`: FastText extends Word2Vec's Skip-gram with subword information. Understanding Word2Vec is essential background.
+- `glove.md`: Unlike FastText, GloVe has no subword mechanism. GloVe and FastText represent different design choices: global co-occurrence statistics vs. subword-enriched prediction.
+- `01-foundations-of-language/morphology.md`: FastText's character n-grams implicitly capture morphological patterns -- prefixes, suffixes, and stems -- without explicit linguistic analysis.
+- `02-text-preprocessing/tokenization-in-nlp.md`: FastText's subword approach relates to BPE and WordPiece tokenization, which also decompose words into subword units, though at the tokenization stage rather than the embedding stage.
+- `05-core-nlp-tasks-analysis/text-classification.md`: The fastText classifier is a widely-used baseline for text classification, especially when training speed and simplicity are priorities.
+- `10-multilingual-and-low-resource-nlp/multilingual-nlp.md`: Pre-trained FastText vectors for 157 languages provide a starting point for multilingual and low-resource NLP.
+- `02-text-preprocessing/stemming-and-lemmatization.md`: FastText reduces the need for explicit stemming because morphological variants naturally share subword vectors.
 
 ## Further Reading
 

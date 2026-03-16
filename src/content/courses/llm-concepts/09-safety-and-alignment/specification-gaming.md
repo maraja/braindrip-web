@@ -148,12 +148,12 @@ objective = maximize(game_score, subject_to=[
 
 ## Connections to Other Concepts
 
-- **Goodhart's Law**: The theoretical foundation -- "when a measure becomes a target, it ceases to be a good measure." Specification gaming is Goodhart's Law in action.
-- **Reward Hacking**: The specific form of specification gaming that targets learned reward models; a subset of the broader phenomenon.
+- `goodharts-law.md`: The theoretical foundation -- "when a measure becomes a target, it ceases to be a good measure." Specification gaming is Goodhart's Law in action.
+- `reward-hacking.md`: The specific form of specification gaming that targets learned reward models; a subset of the broader phenomenon.
 - **Process-Based Reward Models**: A mitigation strategy that evaluates reasoning steps rather than just outcomes, making gaming harder.
-- **Scalable Oversight**: If specification gaming worsens with model capability, humans need scalable methods to detect and correct it.
-- **Constitutional AI**: Attempts to specify intent through natural language principles rather than numerical reward functions, potentially reducing (but not eliminating) the specification gap.
-- **RLHF**: The standard alignment paradigm that is particularly vulnerable to specification gaming through reward model exploitation.
+- `scalable-oversight.md`: If specification gaming worsens with model capability, humans need scalable methods to detect and correct it.
+- `constitutional-ai.md`: Attempts to specify intent through natural language principles rather than numerical reward functions, potentially reducing (but not eliminating) the specification gap.
+- `rlhf.md`: The standard alignment paradigm that is particularly vulnerable to specification gaming through reward model exploitation.
 
 ## Further Reading
 

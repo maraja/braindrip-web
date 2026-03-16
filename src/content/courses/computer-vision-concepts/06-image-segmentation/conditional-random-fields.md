@@ -109,11 +109,11 @@ This allows end-to-end training of the CNN + CRF jointly, rather than tuning CRF
 
 ## Connections to Other Concepts
 
-- **Semantic Segmentation**: CRFs are applied to refine semantic segmentation outputs, particularly from earlier architectures.
-- **DeepLab and Atrous Convolution**: DeepLab v1 and v2 relied heavily on CRF post-processing; v3 and v3+ dropped it.
-- **Fully Convolutional Networks**: the original FCN paper did not use CRFs, but many follow-up works added them for boundary refinement.
-- **U-Net**: U-Net's skip connections partially address the boundary problem that CRFs solve, which is why CRFs are less common in U-Net pipelines.
-- **Instance Segmentation**: CRFs can refine instance masks but are rarely used in modern instance segmentation systems like Mask R-CNN.
+- `semantic-segmentation.md`: CRFs are applied to refine semantic segmentation outputs, particularly from earlier architectures.
+- `deeplab-and-atrous-convolution.md`: DeepLab v1 and v2 relied heavily on CRF post-processing; v3 and v3+ dropped it.
+- `fully-convolutional-networks.md`: the original FCN paper did not use CRFs, but many follow-up works added them for boundary refinement.
+- `u-net.md`: U-Net's skip connections partially address the boundary problem that CRFs solve, which is why CRFs are less common in U-Net pipelines.
+- `instance-segmentation.md`: CRFs can refine instance masks but are rarely used in modern instance segmentation systems like Mask R-CNN.
 
 ## Further Reading
 

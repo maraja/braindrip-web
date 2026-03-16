@@ -133,11 +133,11 @@ Instead of the sigmoid-based loss in DPO, IPO uses a squared loss centered on a 
 
 ## Connections to Other Concepts
 
-- **Direct Preference Optimization (DPO)**: The foundational method all variants extend or modify; understanding DPO's loss function is essential.
-- **RLHF**: The original paradigm that DPO and its variants aim to simplify; all share the same underlying Bradley-Terry preference model assumption (except KTO, which uses prospect theory).
-- **Reward Modeling**: SimPO and ORPO bypass explicit reward models; KTO reframes the reward signal from comparative to absolute.
-- **Goodhart's Law**: All preference methods risk optimizing a proxy for human intent; IPO's regularization directly mitigates this.
-- **Constitutional AI (CAI)**: An orthogonal alignment approach that generates preference data from principles, which can then be used with any of these training methods.
+- `04-direct-preference-optimization.md`: The foundational method all variants extend or modify; understanding DPO's loss function is essential.
+- `rlhf.md`: The original paradigm that DPO and its variants aim to simplify; all share the same underlying Bradley-Terry preference model assumption (except KTO, which uses prospect theory).
+- `reward-modeling.md`: SimPO and ORPO bypass explicit reward models; KTO reframes the reward signal from comparative to absolute.
+- `goodharts-law.md`: All preference methods risk optimizing a proxy for human intent; IPO's regularization directly mitigates this.
+- `constitutional-ai.md`: An orthogonal alignment approach that generates preference data from principles, which can then be used with any of these training methods.
 
 ## Further Reading
 

@@ -82,8 +82,8 @@ Function approximation is the bridge between textbook RL and real-world applicat
 ## Connections to Other Concepts
 
 - **Tabular methods** (`q-learning.md`, `sarsa.md`, `temporal-difference-learning.md`) are the special case where every state has its own parameter -- a table entry.
-- **Deep Q-Networks** (`deep-q-networks.md`) combine neural network approximation with two stabilization techniques to overcome the deadly triad.
-- **Experience replay** (`experience-replay.md`) and **target networks** (`target-networks.md`) are direct responses to the instabilities introduced by function approximation.
+- `deep-q-networks.md`: (`deep-q-networks.md`) combine neural network approximation with two stabilization techniques to overcome the deadly triad.
+- `experience-replay.md`: (`experience-replay.md`) and **target networks** (`target-networks.md`) are direct responses to the instabilities introduced by function approximation.
 - **Policy gradient methods** (`policy-gradient-theorem.md`) approximate the *policy* rather than the value function, facing their own approximation challenges.
 
 ## Further Reading

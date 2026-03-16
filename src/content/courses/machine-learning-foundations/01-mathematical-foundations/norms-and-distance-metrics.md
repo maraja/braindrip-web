@@ -109,12 +109,12 @@ The choice of norm and distance metric implicitly defines the geometry of your p
 
 ## Connections to Other Concepts
 
-- **Vectors and Matrices**: Norms are defined on vector spaces; matrix norms generalize them to transformations. The dot product underlies cosine similarity.
-- **Matrix Decompositions**: The spectral norm and Frobenius norm are defined through singular values. Low-rank approximation minimizes the Frobenius norm of the error.
-- **Optimization and Gradient Descent**: Regularization terms (L1, L2) modify the loss landscape. The choice of norm affects the geometry of the constraint set and the resulting optimization.
-- **Maximum Likelihood Estimation**: L2 regularization corresponds to a Gaussian prior; L1 to a Laplace prior. Regularized MLE is MAP estimation.
-- **Probability Fundamentals**: Mahalanobis distance is defined through the covariance matrix and appears in the exponent of the multivariate Gaussian.
-- **Information Theory**: KL divergence measures distributional "distance" and complements geometric norms that measure feature-space distance.
+- `vectors-and-matrices.md`: Norms are defined on vector spaces; matrix norms generalize them to transformations. The dot product underlies cosine similarity.
+- `matrix-decompositions.md`: The spectral norm and Frobenius norm are defined through singular values. Low-rank approximation minimizes the Frobenius norm of the error.
+- `cost-latency-optimization.md`: Regularization terms (L1, L2) modify the loss landscape. The choice of norm affects the geometry of the constraint set and the resulting optimization.
+- `maximum-likelihood-estimation.md`: L2 regularization corresponds to a Gaussian prior; L1 to a Laplace prior. Regularized MLE is MAP estimation.
+- `probability-fundamentals.md`: Mahalanobis distance is defined through the covariance matrix and appears in the exponent of the multivariate Gaussian.
+- `information-theory.md`: KL divergence measures distributional "distance" and complements geometric norms that measure feature-space distance.
 
 ## Further Reading
 

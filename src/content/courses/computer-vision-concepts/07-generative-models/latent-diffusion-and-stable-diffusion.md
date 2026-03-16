@@ -95,11 +95,11 @@ The cross-attention mechanism makes latent diffusion easily extensible:
 
 ## Connections to Other Concepts
 
-- **Diffusion Models**: Latent diffusion is the practical realization of the DDPM framework, made efficient through perceptual compression.
-- **Autoencoders and VAEs**: The pretrained autoencoder is a critical component; its quality directly bounds generation quality.
-- **Image Inpainting**: Stable Diffusion natively supports inpainting by fixing known latent regions during denoising.
-- **Image Super-Resolution**: Latent diffusion upscalers (SD x4 Upscaler) apply diffusion conditioned on low-resolution input.
-- **Image-to-Image Translation**: SDEdit and img2img pipelines perform domain transfer by adding noise to an input and denoising with a text prompt.
+- `diffusion-models.md`: Latent diffusion is the practical realization of the DDPM framework, made efficient through perceptual compression.
+- `autoencoders-and-vaes.md`: The pretrained autoencoder is a critical component; its quality directly bounds generation quality.
+- `image-inpainting.md`: Stable Diffusion natively supports inpainting by fixing known latent regions during denoising.
+- `image-super-resolution.md`: Latent diffusion upscalers (SD x4 Upscaler) apply diffusion conditioned on low-resolution input.
+- `image-to-image-translation.md`: SDEdit and img2img pipelines perform domain transfer by adding noise to an input and denoising with a text prompt.
 
 ## Further Reading
 

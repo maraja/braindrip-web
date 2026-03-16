@@ -90,10 +90,10 @@ Production labeling pipelines are noisy. Techniques for improving label quality:
 
 ## Connections to Other Concepts
 
-- **Transfer Learning**: Fine-tuning pretrained backbones is the standard starting point for practical classification.
-- **Data Augmentation**: Essential for combating overfitting when minority classes have few samples.
-- **Edge Deployment**: Production classification often runs on mobile or embedded devices with strict latency budgets.
-- **Classification Metrics**: Precision, recall, and F1 matter more than raw accuracy in imbalanced settings.
+- `transfer-learning.md`: Fine-tuning pretrained backbones is the standard starting point for practical classification.
+- `data-augmentation.md`: Essential for combating overfitting when minority classes have few samples.
+- `edge-deployment.md`: Production classification often runs on mobile or embedded devices with strict latency budgets.
+- `classification-metrics.md`: Precision, recall, and F1 matter more than raw accuracy in imbalanced settings.
 
 ## Further Reading
 

@@ -80,10 +80,10 @@ Choosing the wrong representation cascades through the entire pipeline. Feed a n
 
 ## Connections to Other Concepts
 
-- **Exploratory Data Analysis**: EDA techniques differ by type -- histograms for continuous, bar charts for categorical, autocorrelation plots for time series.
-- **Feature Scaling and Normalization**: Only meaningful for numerical data; applying z-score normalization to a one-hot encoded column is nonsensical.
-- **Encoding Categorical Variables**: The bridge from categorical types to numeric representations that algorithms require.
-- **Data Cleaning and Preprocessing**: Type detection is the first step in any cleaning pipeline -- you must know what a column *should* be before you can fix what it *is*.
+- `exploratory-data-analysis.md`: EDA techniques differ by type -- histograms for continuous, bar charts for categorical, autocorrelation plots for time series.
+- `feature-scaling-and-normalization.md`: Only meaningful for numerical data; applying z-score normalization to a one-hot encoded column is nonsensical.
+- `encoding-categorical-variables.md`: The bridge from categorical types to numeric representations that algorithms require.
+- `data-cleaning-and-preprocessing.md`: Type detection is the first step in any cleaning pipeline -- you must know what a column *should* be before you can fix what it *is*.
 
 ## Further Reading
 

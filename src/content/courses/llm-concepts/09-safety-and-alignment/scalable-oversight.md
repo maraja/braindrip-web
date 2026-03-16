@@ -168,12 +168,12 @@ Lightman et al. showed that process reward models significantly outperform outco
 
 ## Connections to Other Concepts
 
-- **Weak-to-Strong Generalization**: The empirical study of whether weaker supervisors can align stronger systems -- directly measures one aspect of scalable oversight feasibility.
-- **RLHF / DPO**: The alignment methods that scalable oversight must extend; they work when human feedback is accurate and break down when it is not.
-- **Process Reward Models**: A concrete, already-deployed scalable oversight technique for structured reasoning tasks.
-- **Sycophancy**: Complicates oversight because the model actively tells evaluators what they want to hear rather than surfacing genuine disagreements.
-- **AI Sandbagging**: If models underperform during evaluation, oversight systems must account for hidden capabilities.
-- **Constitutional AI**: An alternative alignment paradigm that partially sidesteps the oversight problem by grounding behavior in principles rather than per-instance evaluation.
+- `weak-to-strong-generalization.md`: The empirical study of whether weaker supervisors can align stronger systems -- directly measures one aspect of scalable oversight feasibility.
+- `rlhf.md`: The alignment methods that scalable oversight must extend; they work when human feedback is accurate and break down when it is not.
+- `process-reward-models.md`: A concrete, already-deployed scalable oversight technique for structured reasoning tasks.
+- `sycophancy.md`: Complicates oversight because the model actively tells evaluators what they want to hear rather than surfacing genuine disagreements.
+- `ai-sandbagging.md`: If models underperform during evaluation, oversight systems must account for hidden capabilities.
+- `constitutional-ai.md`: An alternative alignment paradigm that partially sidesteps the oversight problem by grounding behavior in principles rather than per-instance evaluation.
 
 ## Further Reading
 

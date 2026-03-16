@@ -84,12 +84,12 @@ The ideal paraphrase maximizes semantic similarity while maximizing lexical dive
 
 ## Connections to Other Concepts
 
-- **`machine-translation.md`**: Pivot-based paraphrasing directly uses MT, and paraphrase generation shares the seq2seq architecture with MT.
-- **`semantic-similarity.md`**: Semantic similarity metrics are the primary evaluation tool for paraphrase quality.
-- **`sentence-embeddings.md`**: Sentence embeddings provide the representations used to compute semantic similarity between input and paraphrase.
-- **`data-augmentation-for-nlp.md`**: Paraphrase generation is one of the most effective text augmentation techniques.
-- **`natural-language-inference.md`**: Bidirectional entailment is the gold standard for paraphrase verification.
-- **`text-generation.md`**: Paraphrase generation uses the same decoding strategies (beam search, sampling, diverse decoding).
+- `machine-translation.md`: Pivot-based paraphrasing directly uses MT, and paraphrase generation shares the seq2seq architecture with MT.
+- `semantic-similarity.md`: Semantic similarity metrics are the primary evaluation tool for paraphrase quality.
+- `sentence-embeddings.md`: Sentence embeddings provide the representations used to compute semantic similarity between input and paraphrase.
+- `data-augmentation.md`: Paraphrase generation is one of the most effective text augmentation techniques.
+- `natural-language-inference.md`: Bidirectional entailment is the gold standard for paraphrase verification.
+- `text-generation.md`: Paraphrase generation uses the same decoding strategies (beam search, sampling, diverse decoding).
 
 ## Further Reading
 

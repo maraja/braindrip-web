@@ -128,12 +128,12 @@ VLMs represent a qualitative expansion of what AI systems can do:
 
 ## Connections to Other Concepts
 
-- **Multimodal Models**: VLMs are the most mature subclass of multimodal models. The principles of cross-modal alignment, multi-stage training, and modality-specific encoders generalize to audio, video, and other modalities.
-- **Transformer Architecture**: VLMs rely on the Transformer's ability to attend across modalities when visual and text tokens are combined in the input sequence.
-- **Token Embeddings**: Visual tokens are projected into the same embedding space as text tokens, leveraging the language model's existing representational capacity.
-- **Flash Attention**: Essential for processing the large token counts that arise from high-resolution images combined with text.
-- **AI Agents**: VLMs enable visual grounding for agents -- understanding screenshots, reading web pages, interpreting dashboards, and navigating graphical interfaces.
-- **Prompt Injection**: VLMs introduce new attack surfaces: adversarial images can contain hidden text or patterns that manipulate model behavior.
+- `multimodal-models.md`: VLMs are the most mature subclass of multimodal models. The principles of cross-modal alignment, multi-stage training, and modality-specific encoders generalize to audio, video, and other modalities.
+- `transformer-architecture.md`: VLMs rely on the Transformer's ability to attend across modalities when visual and text tokens are combined in the input sequence.
+- `token-embeddings.md`: Visual tokens are projected into the same embedding space as text tokens, leveraging the language model's existing representational capacity.
+- `flash-attention.md`: Essential for processing the large token counts that arise from high-resolution images combined with text.
+- `ai-agents.md`: VLMs enable visual grounding for agents -- understanding screenshots, reading web pages, interpreting dashboards, and navigating graphical interfaces.
+- `prompt-injection.md`: VLMs introduce new attack surfaces: adversarial images can contain hidden text or patterns that manipulate model behavior.
 
 ## Further Reading
 

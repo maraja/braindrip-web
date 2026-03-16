@@ -84,12 +84,12 @@ Inserting gaps of size $d - 1$ between kernel elements expands the receptive fie
 
 ## Connections to Other Concepts
 
-- **Pooling Layers**: Typically follow convolutions to downsample feature maps and add local translation invariance.
-- **Receptive Field**: Each convolution layer expands the receptive field; understanding this is key to architecture design.
-- **Depthwise Separable Convolutions**: Factor standard convolutions into spatial and channel components for efficiency.
-- **Batch Normalization**: Almost always paired with convolutions in modern architectures.
-- **AlexNet**: The first large-scale CNN to demonstrate the power of learned convolutional filters on ImageNet.
-- **ResNet**: Uses convolutions with skip connections, enabling networks of 100+ layers.
+- `pooling-layers.md`: Typically follow convolutions to downsample feature maps and add local translation invariance.
+- `receptive-field.md`: Each convolution layer expands the receptive field; understanding this is key to architecture design.
+- `depthwise-separable-convolutions.md`: Factor standard convolutions into spatial and channel components for efficiency.
+- `batch-normalization.md`: Almost always paired with convolutions in modern architectures.
+- `alexnet.md`: The first large-scale CNN to demonstrate the power of learned convolutional filters on ImageNet.
+- `resnet.md`: Uses convolutions with skip connections, enabling networks of 100+ layers.
 
 ## Further Reading
 
