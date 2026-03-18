@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import { blueprints } from '../../data/blueprints';
+
+const builderBlueprints = blueprints.filter(b => b.audience === 'builders');
+const everyoneBlueprints = blueprints.filter(b => b.audience === 'everyone');
+
+const difficultyColors: Record<string, string> = {
+  beginner: 'bg-sage/12 text-sage-dark',
+  intermediate: 'bg-gold/15 text-forest-600',
+  advanced: 'bg-rust/12 text-rust',
+};
+
+const difficultyLabels: Record<string, string> = {
+  beginner: 'Beginner',
+  intermediate: 'Intermediate',
+  advanced: 'Advanced',
+};
+---
+
+<BaseLayout title="Blueprints">
+  <Header />
+  <main class="mx-auto max-w-[900px] px-4 sm:px-6 py-10 sm:py-16">
+    <header class="mb-14">
+      <div class="inline-flex items-center gap-2 rounded-full border border-rust/20 bg-rust/[0.06] px-3 py-1 text-[11px] font-mono font-medium text-rust mb-4 tracking-wide">
+        {blueprints.length} BLUEPRINTS
+      </div>
+      <h1 class="font-serif text-[1.75rem] sm:text-[2.5rem] font-bold text-forest-700 tracking-tight mb-3">Blueprints</h1>
+      <p class="text-lg text-forest-500 max-w-lg leading-relaxed">
+        Step-by-step builds &mdash; skip the theory, build something real with AI. Each blueprint takes you from zero to deployed.
+      </p>
+    </header>
+
+    <!-- For Builders -->
+    <section class="mb-16">
+      <div class="flex items-center gap-3 mb-6">
+        <h2 class="font-serif text-xl font-bold text-forest-700">For Builders</h2>
+        <span class="inline-flex items-center rounded-full bg-forest-700/8 px-2.5 py-0.5 text-[10px] font-semibold text-forest-600 tracking-wide">
+          Developer-focused
+        </span>
+      </div>
+      <div class="space-y-3">
+        {builderBlueprints.map(blueprint => (
+          <div
+            class="group flex items-start gap-5 rounded-xl border border-cream-300 bg-cream-50/80 p-6 transition-all hover:border-rust/30 hover:bg-white hover:shadow-sm"
+          >
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-rust/[0.08] flex items-center justify-center text-xl">
+              {blueprint.icon}
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-semibold tracking-wide ${difficultyColors[blueprint.difficulty]}`}>
+                  {difficultyLabels[blueprint.difficulty]}
+                </span>
+                <span class="inline-flex items-center rounded-full bg-cream-200/80 px-2 py-0.5 text-[10px] font-semibold text-forest-500">
+                  {blueprint.stepCount} steps
+                </span>
+                {blueprint.status === 'coming-soon' && (
+                  <span class="inline-flex items-center rounded-full bg-rust/[0.06] border border-rust/15 px-2 py-0.5 text-[10px] font-semibold text-rust/70 tracking-wide">
+                    Coming soon
+                  </span>
+                )}
+              </div>
+              <h3 class="font-serif text-lg font-semibold text-forest-700">
+                {blueprint.title}
+              </h3>
+              <p class="text-sm text-forest-500 mt-1 leading-relaxed">{blueprint.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- For Everyone -->
+    <section>
+      <div class="flex items-center gap-3 mb-6">
+        <h2 class="font-serif text-xl font-bold text-forest-700">For Everyone</h2>
+        <span class="inline-flex items-center rounded-full bg-sage/12 px-2.5 py-0.5 text-[10px] font-semibold text-sage-dark tracking-wide">
+          No coding required
+        </span>
+      </div>
+      <div class="space-y-3">
+        {everyoneBlueprints.map(blueprint => (
+          <div
+            class="group flex items-start gap-5 rounded-xl border border-cream-300 bg-cream-50/80 p-6 transition-all hover:border-rust/30 hover:bg-white hover:shadow-sm"
+          >
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-rust/[0.08] flex items-center justify-center text-xl">
+              {blueprint.icon}
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-semibold tracking-wide ${difficultyColors[blueprint.difficulty]}`}>
+                  {difficultyLabels[blueprint.difficulty]}
+                </span>
+                <span class="inline-flex items-center rounded-full bg-cream-200/80 px-2 py-0.5 text-[10px] font-semibold text-forest-500">
+                  {blueprint.stepCount} steps
+                </span>
+                {blueprint.status === 'coming-soon' && (
+                  <span class="inline-flex items-center rounded-full bg-rust/[0.06] border border-rust/15 px-2 py-0.5 text-[10px] font-semibold text-rust/70 tracking-wide">
+                    Coming soon
+                  </span>
+                )}
+              </div>
+              <h3 class="font-serif text-lg font-semibold text-forest-700">
+                {blueprint.title}
+              </h3>
+              <p class="text-sm text-forest-500 mt-1 leading-relaxed">{blueprint.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
