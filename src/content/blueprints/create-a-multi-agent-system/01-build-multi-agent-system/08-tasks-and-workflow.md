@@ -1,179 +1,189 @@
 # Step 8: Tasks and Workflow
 
-One-Line Summary: Define the three tasks — research, write, and edit — and wire them into a sequential CrewAI workflow where each agent's output feeds the next.
+One-Line Summary: Wire the three agents into a sequential crew workflow using tasks and context passing, so each agent builds on the previous one's output.
 
-Prerequisites: Steps 1-7 completed, all three agents built and tested individually
+Prerequisites: Steps 1-7 completed, all three agents defined
 
 ---
 
-## How CrewAI Tasks Work
+## The Workflow Pattern
 
-A **Task** is a specific assignment for an agent. It has:
+Our pipeline follows a simple sequential pattern:
 
-- **description** — What the agent needs to do (can include variables)
-- **expected_output** — The format and content you expect back
-- **agent** — Which agent handles this task
-- **context** — (Optional) A list of other tasks whose outputs are injected as context
+```
+Topic → [Research Task] → [Writing Task] → [Editing Task] → Article
+```
 
-The `context` parameter is how you create the data pipeline between agents. When Task B lists Task A in its context, CrewAI automatically passes Task A's output into Task B's prompt.
+Each task produces output that feeds into the next task as context. CrewAI manages this flow automatically — you just need to define the dependencies.
 
-## Define the Three Tasks
+## The Complete tasks.py
+
+Update `tasks.py` with all three tasks and a factory function that wires them together:
 
 ```python
-# tasks.py
-"""
-Task definitions for the content production pipeline.
-Each task is assigned to one agent and wired together via context dependencies.
-"""
+# tasks.py — Define tasks and wire the workflow
 
-from crewai import Task
-from agents.researcher import create_researcher
-from agents.writer import create_writer
-from agents.editor import create_editor
+from crewai import Task, Agent
 
 
-def create_tasks(topic: str):
-    """
-    Create the research, write, and edit tasks for a given topic.
-
-    Args:
-        topic: The subject to research and write about.
-
-    Returns:
-        A tuple of (agents_list, tasks_list) ready for crew assembly.
-    """
-
-    # --- Instantiate agents ---
-    researcher = create_researcher()
-    writer = create_writer()
-    editor = create_editor()
-
-    # --- Task 1: Research ---
-    research_task = Task(
+def create_research_task(agent: Agent, topic: str) -> Task:
+    """Create the research task for the Researcher agent."""
+    return Task(
         description=(
-            f"Conduct comprehensive research on the topic: '{topic}'. "
-            f"Search the web for the latest information, key developments, "
-            f"expert opinions, and relevant data. Organize your findings "
-            f"into structured notes with clear sections and bullet points. "
-            f"Include source references where possible."
+            f"Research the following topic thoroughly: {topic}\n\n"
+            "Your research process:\n"
+            "1. Search for the topic and identify the most relevant sources\n"
+            "2. Search for recent developments and current state\n"
+            "3. Search for expert opinions and contrasting viewpoints\n"
+            "4. Search for concrete data, statistics, or examples\n\n"
+            "Compile your findings into structured research notes with:\n"
+            "- Key themes and main points (with source references)\n"
+            "- Important facts, statistics, and data points\n"
+            "- Notable expert quotes or opinions\n"
+            "- Recent developments or trends\n"
+            "- Any areas of debate or controversy"
         ),
         expected_output=(
-            "Structured research notes in Markdown format with sections for: "
-            "1) Overview and Key Concepts, "
-            "2) Current State and Recent Developments, "
-            "3) Key Players and Technologies, "
-            "4) Challenges and Open Questions, "
-            "5) Notable Sources. "
-            "Each section should contain 3-5 detailed bullet points."
+            "Comprehensive, well-organized research notes in a clear "
+            "bullet-point format. Each major point should reference "
+            "its source. The notes should contain enough material "
+            "for a 1000-word article."
         ),
-        agent=researcher,
+        agent=agent,
     )
 
-    # --- Task 2: Write ---
-    # The context parameter automatically injects research_task's output
-    write_task = Task(
+
+def create_writing_task(
+    agent: Agent, topic: str, research_task: Task
+) -> Task:
+    """Create the writing task for the Writer agent."""
+    return Task(
         description=(
-            f"Using the research notes provided, write a comprehensive article "
-            f"about '{topic}'. The article should be 800-1200 words, have a "
-            f"compelling title, strong introduction, 3-4 body sections with "
-            f"H2 headers, and a forward-looking conclusion. "
-            f"Write for a technical audience that values depth and clarity."
+            f"Write a comprehensive article about: {topic}\n\n"
+            "Using the research notes provided, write an article that:\n"
+            "1. Opens with a compelling hook that draws the reader in\n"
+            "2. Provides necessary background and context\n"
+            "3. Covers the key themes identified in the research\n"
+            "4. Includes specific examples, data points, and quotes\n"
+            "5. Addresses different perspectives where relevant\n"
+            "6. Concludes with forward-looking insights\n\n"
+            "Article requirements:\n"
+            "- Length: approximately 1000-1500 words\n"
+            "- Format: Markdown with proper headings (##, ###)\n"
+            "- Tone: Informative and engaging, not academic\n"
+            "- Include a title as an H1 heading\n"
+            "- Use short paragraphs (3-4 sentences max)"
         ),
         expected_output=(
-            "A complete article in Markdown format with: "
-            "1) An engaging, specific title (H1), "
-            "2) An introduction that establishes why this topic matters, "
-            "3) 3-4 body sections (H2) that build on each other, "
-            "4) A conclusion that points toward future implications. "
-            "Professional but approachable tone. 800-1200 words."
+            "A well-written Markdown article of 1000-1500 words with "
+            "a clear title, logical structure, smooth transitions, "
+            "and specific supporting evidence from the research."
         ),
-        agent=writer,
-        # This is the key line — it pipes the Researcher's output to the Writer
-        context=[research_task],
+        agent=agent,
+        context=[research_task],  # Writer receives Researcher's output
     )
 
-    # --- Task 3: Edit ---
-    # The editor receives both the research notes AND the draft for fact-checking
-    edit_task = Task(
+
+def create_editing_task(
+    agent: Agent, topic: str, writing_task: Task
+) -> Task:
+    """Create the editing task for the Editor agent."""
+    return Task(
         description=(
-            f"Review and polish the article draft about '{topic}'. "
-            f"Check factual accuracy against the research notes. "
-            f"Fix any grammar or spelling errors. Improve clarity, flow, "
-            f"and transitions. Ensure Markdown formatting is clean and consistent. "
-            f"Save the final version using the save_to_file tool with the "
-            f"filename 'article.md'."
+            f"Edit and polish the draft article about: {topic}\n\n"
+            "Review the draft and make these improvements:\n"
+            "1. Fix any grammatical errors or awkward phrasing\n"
+            "2. Ensure every claim is supported by the research\n"
+            "3. Tighten the prose — cut filler words and redundancy\n"
+            "4. Verify the article has a logical flow from section "
+            "to section\n"
+            "5. Check that the introduction hooks the reader\n"
+            "6. Ensure the conclusion provides clear takeaways\n"
+            "7. Verify all Markdown formatting is correct\n\n"
+            "After editing, save the final article using the "
+            "save_to_file tool with a descriptive filename based "
+            "on the topic (e.g., 'quantum-computing.md')."
         ),
         expected_output=(
-            "A publication-ready article in Markdown format. All facts verified, "
-            "grammar polished, formatting consistent. The article must be saved "
-            "to 'article.md' using the save_to_file tool. Return the final "
-            "article text as output."
+            "A polished, publication-ready Markdown article that "
+            "has been saved to a file. The article should be "
+            "tighter and clearer than the draft, with no filler "
+            "or unsupported claims."
         ),
-        agent=editor,
-        # Editor gets both the research AND the draft for cross-referencing
-        context=[research_task, write_task],
+        agent=agent,
+        context=[writing_task],  # Editor receives Writer's output
     )
-
-    agents = [researcher, writer, editor]
-    tasks = [research_task, write_task, edit_task]
-
-    return agents, tasks
 ```
 
-## The Data Flow
+## The Context Chain
 
-Here is exactly what happens when the crew runs:
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                                                             │
-│  research_task                                              │
-│  ┌─────────────┐                                           │
-│  │ Researcher   │──► Output: structured research notes      │
-│  └─────────────┘                     │                      │
-│                                      ▼                      │
-│  write_task              context: [research_task]            │
-│  ┌─────────────┐                                           │
-│  │ Writer       │──► Output: article draft                  │
-│  └─────────────┘                     │                      │
-│                                      ▼                      │
-│  edit_task      context: [research_task, write_task]         │
-│  ┌─────────────┐                                           │
-│  │ Editor       │──► Output: polished article + saved file  │
-│  └─────────────┘                                           │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
-
-## Sequential vs. Hierarchical
-
-CrewAI supports two process types:
-
-| Process | How It Works | Best For |
-|---------|-------------|----------|
-| **Sequential** | Tasks run in order, one after another | Pipelines with clear stages (our use case) |
-| **Hierarchical** | A manager agent delegates tasks dynamically | Complex, branching workflows |
-
-We use sequential because our pipeline has a clear linear flow: research, then write, then edit. Each step depends on the previous one.
-
-## Why Context Matters
-
-The `context` parameter does more than just pass text. CrewAI formats it with clear labels so the receiving agent knows where the information came from:
+The `context` parameter is where the workflow comes together:
 
 ```
-# What the Writer sees in its prompt (simplified):
-You are a Senior Content Writer...
-
-## Context from previous tasks:
-
-### Task output from Senior Research Analyst:
-[The researcher's full output appears here]
-
-## Your current task:
-Write a comprehensive article about...
+research_task (no context — starts fresh)
+       │
+       ▼ output injected as context
+writing_task (context=[research_task])
+       │
+       ▼ output injected as context
+editing_task (context=[writing_task])
 ```
 
-This structured injection is why multi-agent pipelines produce better results than a single mega-prompt. Each agent gets exactly the context it needs, clearly labeled.
+When CrewAI runs the crew, it:
+
+1. Executes `research_task` and captures the output
+2. Injects that output into `writing_task`'s prompt, then executes it
+3. Injects the writing output into `editing_task`'s prompt, then executes it
+
+The agents never talk to each other directly. Context flows through the task chain.
+
+## Alternative: Multiple Context Sources
+
+You could also give the Editor access to both the research and the draft:
+
+```python
+# The Editor sees both the research and the draft
+editing_task = Task(
+    description="...",
+    expected_output="...",
+    agent=editor,
+    context=[research_task, writing_task],  # Both previous tasks
+)
+```
+
+This lets the Editor cross-reference claims in the draft against the original research. It uses more tokens but can improve fact-checking quality. We will keep it simple with a single context source for now.
+
+## Assembling the Crew
+
+The final piece is the Crew itself. This is the orchestrator that runs the workflow. Preview what `main.py` will look like (we will finalize it in Step 9):
+
+```python
+# Preview — how the crew is assembled
+from crewai import Crew, Process
+
+crew = Crew(
+    agents=[researcher, writer, editor],
+    tasks=[research_task, writing_task, editing_task],
+    process=Process.sequential,  # Run tasks one after another
+    verbose=True,
+)
+
+# Kick off the pipeline
+result = crew.kickoff()
+```
+
+`Process.sequential` means tasks run in the order they are listed. CrewAI also supports `Process.hierarchical`, where a manager agent delegates tasks to workers — but sequential is the right choice for a linear pipeline.
+
+## Task Design Principles
+
+| Principle | Why It Matters |
+|-----------|---------------|
+| **Be explicit about the process** | Numbered steps guide the agent through a reliable workflow |
+| **Specify the expected output format** | Prevents agents from guessing what you want |
+| **Use context to pass data** | Cleaner than having agents share a database or file system |
+| **One agent per task** | Each task has a single owner — no ambiguity about responsibility |
+
+The workflow is wired. Next, we will write `main.py` and run the full pipeline end to end.
 
 ---
 
