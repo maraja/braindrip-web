@@ -1,181 +1,186 @@
 # Step 9: Run the Crew
 
-One-Line Summary: Assemble all agents and tasks into a crew, execute it on a real topic, and understand the agent interactions and output.
+One-Line Summary: Write the main entry point, execute the full three-agent pipeline, and understand the agent interactions in the output.
 
-Prerequisites: Steps 1-8 completed, all agents and tasks defined
+Prerequisites: Steps 1-8 completed, all agents, tasks, and tools defined
 
 ---
 
 ## The Main Entry Point
 
-This is the file that ties everything together. It accepts a topic from the command line, builds the crew, and runs it:
+Create `main.py` — the script that ties everything together:
 
 ```python
-# main.py
-"""
-Multi-Agent Content Production Pipeline.
-
-Usage:
-    python main.py "Your topic here"
-    python main.py "The future of quantum computing"
-    python main.py "How RAG systems work in production"
-
-Three agents collaborate to produce a well-researched article:
-    1. Researcher — finds and organizes information
-    2. Writer — drafts the article from research notes
-    3. Editor — polishes and saves the final version
-"""
+# main.py — Entry point for the content production crew
 
 import sys
-import time
 from crewai import Crew, Process
-from tasks import create_tasks
+from agents import create_researcher, create_writer, create_editor
+from tasks import (
+    create_research_task,
+    create_writing_task,
+    create_editing_task,
+)
 
 
 def run_crew(topic: str) -> str:
-    """
-    Run the content production crew on a given topic.
+    """Assemble and run the content production crew."""
 
-    Args:
-        topic: The subject to research and write about.
+    # Step 1: Create the agents
+    researcher = create_researcher()
+    writer = create_writer()
+    editor = create_editor()
 
-    Returns:
-        The final article text.
-    """
-    print(f"\n{'=' * 60}")
-    print(f"MULTI-AGENT CONTENT PIPELINE")
-    print(f"Topic: {topic}")
-    print(f"{'=' * 60}\n")
+    # Step 2: Create the tasks with context wiring
+    research_task = create_research_task(researcher, topic)
+    writing_task = create_writing_task(writer, topic, research_task)
+    editing_task = create_editing_task(editor, topic, writing_task)
 
-    # Create agents and tasks for this topic
-    agents, tasks = create_tasks(topic)
-
-    # Assemble the crew
+    # Step 3: Assemble the crew
     crew = Crew(
-        agents=agents,
-        tasks=tasks,
-        # Sequential process — tasks run in order
+        agents=[researcher, writer, editor],
+        tasks=[research_task, writing_task, editing_task],
         process=Process.sequential,
-        # Print detailed agent reasoning
         verbose=True,
-        # Memory allows agents to recall context across tasks
-        memory=True,
-        # Cache tool results to avoid duplicate API calls
-        cache=True,
-        # Maximum requests per minute (prevents rate limiting)
-        max_rpm=30,
     )
 
-    # Track execution time
-    start_time = time.time()
+    # Step 4: Run the pipeline
+    print(f"\n{'='*60}")
+    print(f"Starting content crew for: {topic}")
+    print(f"{'='*60}\n")
 
-    # Kick off the crew — this runs all three agents in sequence
     result = crew.kickoff()
 
-    elapsed = time.time() - start_time
-
-    print(f"\n{'=' * 60}")
-    print(f"PIPELINE COMPLETE")
-    print(f"Time: {elapsed:.1f} seconds")
-    print(f"{'=' * 60}\n")
+    print(f"\n{'='*60}")
+    print("Crew finished!")
+    print(f"{'='*60}\n")
 
     return result.raw
 
 
-def main():
-    """Parse command-line arguments and run the crew."""
-    if len(sys.argv) < 2:
-        print("Usage: python main.py \"Your topic here\"")
-        print("Example: python main.py \"The future of quantum computing\"")
-        sys.exit(1)
-
-    topic = sys.argv[1]
-    article = run_crew(topic)
-
-    # Print the final article
-    print("\nFINAL ARTICLE:")
-    print("-" * 60)
-    print(article)
-    print("-" * 60)
-    print("\nArticle saved to: output/article.md")
-
-
 if __name__ == "__main__":
-    main()
+    # Accept topic from command line or use a default
+    if len(sys.argv) > 1:
+        topic = " ".join(sys.argv[1:])
+    else:
+        topic = "The Future of Quantum Computing"
+
+    output = run_crew(topic)
+    print(output)
 ```
 
 ## Run It
 
-```bash
-# Run the crew on a topic
-python main.py "The future of quantum computing"
-```
-
-The pipeline takes 2-5 minutes depending on the complexity of the topic and the number of web searches. Watch the verbose output to see each agent working.
-
-## Reading the Output
-
-The verbose logs show three distinct phases:
-
-**Phase 1: Researcher**
-```
-[Agent: Senior Research Analyst] Starting task...
-[Agent: Senior Research Analyst] Using tool: web_search
-[Agent: Senior Research Analyst] web_search("quantum computing 2025 breakthroughs")
-[Agent: Senior Research Analyst] Observation: ...
-[Agent: Senior Research Analyst] Using tool: web_search
-[Agent: Senior Research Analyst] web_search("quantum error correction progress")
-[Agent: Senior Research Analyst] Final Answer: ## Research Notes...
-```
-
-**Phase 2: Writer**
-```
-[Agent: Senior Content Writer] Starting task...
-[Agent: Senior Content Writer] Thinking...
-[Agent: Senior Content Writer] Final Answer: # The Quantum Leap...
-```
-
-**Phase 3: Editor**
-```
-[Agent: Senior Editor] Starting task...
-[Agent: Senior Editor] Thinking...
-[Agent: Senior Editor] Using tool: save_to_file
-[Agent: Senior Editor] Final Answer: # The Quantum Leap (polished)...
-```
-
-## Check the Output File
+Execute the full pipeline:
 
 ```bash
-# View the saved article
-cat output/article.md
+python main.py "The Rise of Multi-Agent AI Systems"
 ```
 
-You should see a complete, well-structured Markdown article with a title, introduction, body sections, and conclusion.
+Or with a different topic:
 
-## Understanding Token Usage
+```bash
+python main.py "How Rust Is Changing Systems Programming"
+```
 
-Each agent makes one or more LLM calls. A typical run uses:
+The entire run takes 2-5 minutes depending on the topic complexity and API response times.
 
-| Agent | Approximate Tokens | Notes |
-|-------|-------------------|-------|
-| Researcher | 3,000-8,000 | Multiple tool calls increase usage |
-| Writer | 4,000-6,000 | Single generation, longest output |
-| Editor | 3,000-5,000 | Receives all prior context |
-| **Total** | **10,000-19,000** | Roughly $0.05-0.15 per article with Claude Sonnet |
+## Understanding the Output
 
-## Troubleshooting
+Watch the terminal as the crew executes. You will see three distinct phases:
 
-**"Rate limit exceeded" errors:**
-Lower the `max_rpm` parameter in the Crew configuration, or add a delay between runs.
+**Phase 1 — Researcher at work:**
 
-**Agent stuck in a loop:**
-The `max_iter` parameter on each agent limits how many times it can call tools. If an agent hits this limit, it returns its best answer so far.
+```
+Working Agent: Senior Research Analyst
+Starting Task: Research the following topic thoroughly...
 
-**Empty or short output:**
-Check that the `expected_output` field in your tasks is specific enough. Vague expected outputs produce vague results.
+> Using tool: web_search
+> Tool input: "multi-agent AI systems 2024"
+> Tool output: [1] Multi-Agent Systems: A Survey...
 
-**Tool errors:**
-Check the verbose logs for the exact error message. Common issues are missing API keys or network connectivity problems.
+> Using tool: web_search
+> Tool input: "multi-agent AI frameworks comparison"
+> Tool output: [1] CrewAI vs AutoGen vs LangGraph...
+
+Task output: ## Research Notes: The Rise of Multi-Agent AI Systems
+### Key Themes
+- Multi-agent systems divide complex tasks...
+```
+
+The Researcher makes multiple search calls, refines its queries based on results, and compiles structured notes.
+
+**Phase 2 — Writer at work:**
+
+```
+Working Agent: Senior Content Writer
+Starting Task: Write a comprehensive article about...
+
+Task output: # The Rise of Multi-Agent AI Systems
+In the past year, a quiet revolution has been unfolding...
+```
+
+The Writer receives the research notes as context and produces a full draft. No tool calls — just writing.
+
+**Phase 3 — Editor at work:**
+
+```
+Working Agent: Senior Editor
+Starting Task: Edit and polish the draft article...
+
+> Using tool: save_to_file
+> Tool input: {"filename": "rise-of-multi-agent-ai-systems.md", "content": "..."}
+> Tool output: Article saved successfully to: output/rise-of-multi-agent-ai-systems.md
+```
+
+The Editor polishes the draft and saves it to the output directory.
+
+## Check the Output
+
+After the crew finishes, check the output directory:
+
+```bash
+ls output/
+```
+
+You should see a Markdown file with a descriptive name. Open it:
+
+```bash
+cat output/*.md
+```
+
+The article should have:
+
+- A clear title and logical heading structure
+- Well-organized sections with smooth transitions
+- Specific facts and data from the research
+- Clean, readable prose
+
+## What Happens When Things Go Wrong
+
+Common issues and how to fix them:
+
+| Issue | Cause | Fix |
+|-------|-------|-----|
+| **Agent loops endlessly** | Task description is ambiguous | Make the expected output more specific |
+| **Empty search results** | Search query too narrow | Adjust the research task to try broader queries |
+| **Writer ignores research** | Context not wired correctly | Verify `context=[research_task]` on the writing task |
+| **Editor does not save** | Tool not assigned | Check `tools=[save_to_file]` on the Editor agent |
+| **Rate limiting errors** | Too many API calls too fast | Add `max_rpm=10` to the Crew constructor |
+
+If you hit rate limits, add a rate limiter to the Crew:
+
+```python
+crew = Crew(
+    agents=[researcher, writer, editor],
+    tasks=[research_task, writing_task, editing_task],
+    process=Process.sequential,
+    verbose=True,
+    max_rpm=10,  # Maximum requests per minute to the LLM
+)
+```
+
+The full pipeline works. Next, we will explore ways to customize and extend it.
 
 ---
 
