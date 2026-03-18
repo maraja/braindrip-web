@@ -1,166 +1,129 @@
 # Step 6: The Writer
 
-One-Line Summary: Build the Writer agent that takes research notes and transforms them into a well-structured, engaging article draft.
+One-Line Summary: Build the Writer agent that takes the Researcher's notes and drafts a well-structured, engaging article.
 
-Prerequisites: Steps 1-5 completed, Researcher agent built
+Prerequisites: Steps 1-5 completed, Researcher agent defined
 
 ---
 
 ## The Writer's Job
 
-The Writer is the second agent in the pipeline. It receives the Researcher's structured notes and produces a full article draft. The key challenge is turning bullet points and facts into flowing, readable prose.
+The Writer sits in the middle of the pipeline. It receives the Researcher's structured notes and transforms them into a readable, well-organized article. The Writer does not need tools — it operates purely on the LLM's language capabilities, working with the context passed to it from the Researcher.
 
-The Writer has access to the `save_to_file` tool so it can persist drafts, but its primary output is the article text itself, which gets passed to the Editor.
+The key challenge for the Writer is not finding information (the Researcher did that) but organizing and presenting it effectively.
 
 ## Define the Writer Agent
 
+Add the Writer to `agents.py`:
+
 ```python
-# agents/writer.py
-"""
-Writer agent definition.
-This agent takes research notes and produces a well-structured
-article draft with clear sections, transitions, and narrative flow.
-"""
-
-from crewai import Agent
-from config.settings import MODEL_NAME
-from tools.file_tool import SaveToFileTool
-
-
 def create_writer() -> Agent:
-    """
-    Create and return the Writer agent.
-
-    The Writer transforms research notes into a polished article draft.
-    It focuses on structure, readability, and engaging prose.
-    """
+    """Create the Writer agent that drafts content from research notes."""
     return Agent(
         role="Senior Content Writer",
         goal=(
-            "Transform research notes into a compelling, well-structured "
-            "article that is informative, engaging, and accessible to a "
-            "technical audience. The article should flow naturally and "
-            "maintain reader interest throughout."
+            "Write a compelling, well-structured article based on "
+            "the provided research notes. The article should be "
+            "informative, engaging, and accessible to a technical "
+            "but non-specialist audience."
         ),
         backstory=(
-            "You are a senior content writer who spent 10 years at Wired and "
-            "Ars Technica before becoming a freelance technology journalist. "
-            "You have a gift for making complex technical topics accessible "
-            "without dumbing them down. Your articles are known for strong "
-            "opening hooks, clear section structure, smooth transitions between "
-            "ideas, and memorable closing thoughts. You never pad your writing "
-            "with filler — every paragraph advances the reader's understanding."
+            "You are an experienced technical writer who has written "
+            "for publications like Wired, Ars Technica, and MIT "
+            "Technology Review. You have a talent for making complex "
+            "topics accessible without dumbing them down. Your "
+            "articles are known for their clear structure, smooth "
+            "transitions, and engaging narrative flow. You always "
+            "use concrete examples to illustrate abstract concepts. "
+            "You write in a direct, confident voice — never fluffy "
+            "or full of filler."
         ),
-        llm=MODEL_NAME,
-        tools=[SaveToFileTool()],
-        allow_delegation=False,
+        tools=[],                 # The Writer works purely with language
+        llm=LLM_MODEL,
         verbose=True,
-        max_iter=5,
-        memory=True,
+        allow_delegation=False,   # Stay focused on writing
     )
 ```
 
-## Backstory Design Choices
+Notice the Writer has no tools. Not every agent needs tools. The Writer's strength is pure language — structuring, phrasing, and presenting the research it receives.
 
-The Writer's backstory is calibrated for article quality:
+## Define the Writing Task
 
-| Element | Effect on Output |
-|---------|-----------------|
-| "10 years at Wired and Ars Technica" | Sets the tone — technical but accessible |
-| "strong opening hooks" | The agent will write engaging introductions |
-| "smooth transitions between ideas" | Reduces the "list of paragraphs" problem |
-| "never pad with filler" | Keeps the output concise and valuable |
-
-Experiment with different backstories to see how they change the writing style. A backstory referencing academic papers will produce formal prose; one referencing blog posts will be more conversational.
-
-## Test the Writer Alone
-
-We can test the Writer by providing research notes directly in the task description:
+Add the writing task to `tasks.py`:
 
 ```python
-# test_writer.py
-"""Test the Writer agent with pre-made research notes."""
+def create_writing_task(agent, topic: str) -> Task:
+    """Create the writing task for the Writer agent."""
+    return Task(
+        description=(
+            f"Write a comprehensive article about: {topic}\n\n"
+            "Using the research notes provided, write an article that:\n"
+            "1. Opens with a compelling hook that draws the reader in\n"
+            "2. Provides necessary background and context\n"
+            "3. Covers the key themes identified in the research\n"
+            "4. Includes specific examples, data points, and quotes\n"
+            "5. Addresses different perspectives where relevant\n"
+            "6. Concludes with forward-looking insights\n\n"
+            "Article requirements:\n"
+            "- Length: approximately 1000-1500 words\n"
+            "- Format: Markdown with proper headings (##, ###)\n"
+            "- Tone: Informative and engaging, not academic\n"
+            "- Include a title as an H1 heading\n"
+            "- Use short paragraphs (3-4 sentences max)"
+        ),
+        expected_output=(
+            "A well-written Markdown article of 1000-1500 words with "
+            "a clear title, logical structure, smooth transitions, "
+            "and specific supporting evidence from the research."
+        ),
+        agent=agent,
+    )
+```
 
-from crewai import Task, Crew
-from agents.writer import create_writer
+## Context: How Agents Share Information
 
-# Create the Writer agent
-writer = create_writer()
+The critical question: how does the Writer receive the Researcher's notes? In CrewAI, this is handled through **task context**. When you define a task, you can specify which previous tasks it depends on:
 
-# Simulate research notes that would come from the Researcher
-sample_research = """
-## Research Notes: Multi-Agent AI Systems
-
-### Overview
-- Multi-agent systems use multiple specialized AI agents working together
-- Each agent has a defined role, tools, and decision-making capability
-- Coordination happens through message passing or shared memory
-
-### Key Frameworks
-- CrewAI: Role-based, Python-native, intuitive agent definitions
-- LangGraph: Graph-based workflows, more flexible but complex
-- AutoGen (Microsoft): Conversational agents, strong for coding tasks
-
-### Applications
-- Content production pipelines (research → write → edit)
-- Software development (architect → coder → reviewer)
-- Data analysis (collector → analyst → visualizer)
-
-### Challenges
-- Agent coordination and error propagation
-- Cost management with multiple LLM calls
-- Debugging multi-step agent workflows
-"""
-
-# Define the writing task
-write_task = Task(
-    description=(
-        f"Using the following research notes, write a complete article "
-        f"about multi-agent AI systems. The article should be 600-800 words, "
-        f"have a compelling title, introduction, 3-4 body sections, and a "
-        f"conclusion.\n\nResearch Notes:\n{sample_research}"
-    ),
-    expected_output=(
-        "A complete Markdown-formatted article with: "
-        "1) An engaging title, "
-        "2) An introduction that hooks the reader, "
-        "3) 3-4 body sections with H2 headers, "
-        "4) A conclusion with forward-looking insights. "
-        "The tone should be professional but approachable."
-    ),
+```python
+# This is how we will wire it up in tasks.py (Step 8)
+# The writing task receives the output of the research task as context
+writing_task = Task(
+    description="...",
+    expected_output="...",
     agent=writer,
+    context=[research_task],  # <-- This is the key line
 )
-
-# Run the Writer
-crew = Crew(
-    agents=[writer],
-    tasks=[write_task],
-    verbose=True,
-)
-
-if __name__ == "__main__":
-    result = crew.kickoff()
-    print("\n" + "=" * 60)
-    print("ARTICLE DRAFT:")
-    print("=" * 60)
-    print(result.raw)
 ```
 
-```bash
-python test_writer.py
+The `context` parameter tells CrewAI: "Before the Writer starts, inject the output of `research_task` into its prompt." The Writer sees the Researcher's full output and can reference it while drafting.
+
+This is different from agents communicating in real-time. In a sequential workflow, each agent completes its work fully before the next one starts. The context is a one-way data pipe.
+
+## Writer Output Quality
+
+The Writer's output quality depends on three factors:
+
+| Factor | How to Control It |
+|--------|------------------|
+| **Input quality** | The Researcher's notes — better research = better writing |
+| **Task description** | Explicit structure requirements in the writing task |
+| **Backstory** | The persona shapes tone, style, and quality standards |
+
+If the Writer's output is too generic, make the backstory more specific. If it is missing structure, add more detail to the task description. If it is missing facts, improve the Researcher's output.
+
+## Verify the Agent Definition
+
+At this point, your `agents.py` file should have two agent factory functions. Verify the file structure:
+
+```python
+# agents.py should now contain:
+# - create_researcher() -> Agent (with web_search tool)
+# - create_writer() -> Agent (no tools)
 ```
 
-## What Good Output Looks Like
+We will not test the Writer in isolation because it needs context from the Researcher to do useful work. We will test the full two-agent chain after building the Editor in the next step.
 
-A successful Writer output will have:
-
-- A title that is specific, not generic (not just "Multi-Agent AI Systems")
-- An opening paragraph that creates curiosity or states a bold claim
-- Sections that build on each other rather than just listing facts
-- Transitions between sections that connect ideas
-- A conclusion that goes beyond summarizing — it points forward
-
-If the output reads like a reformatted version of the bullet points, tweak the backstory to emphasize narrative flow and storytelling.
+The Writer is ready. Next, we build the final agent in our pipeline — the Editor.
 
 ---
 
