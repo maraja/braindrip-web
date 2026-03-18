@@ -1,0 +1,62 @@
+---
+import { getCollection, render } from 'astro:content';
+import ConceptLayout from '../../../layouts/ConceptLayout.astro';
+import { getBlueprint } from '../../../data/blueprints';
+import { getBlueprintModule } from '../../../data/blueprint-modules';
+import { formatConceptName } from '../../../utils/slugify';
+import { getModuleSteps, getStepPrevNext } from '../../../utils/blueprint-steps';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('blueprints');
+  return entries.map(entry => {
+    const id = entry.id.replace(/\.md$/, '');
+    const parts = id.split('/');
+    const blueprintSlug = parts[0];
+    const moduleDir = parts.length >= 3 ? parts[1] : parts[0];
+    const stepSlug = parts[parts.length - 1];
+    const moduleSlug = moduleDir.replace(/^\d+-/, '');
+
+    return {
+      params: { blueprint: blueprintSlug, slug: `${moduleSlug}/${stepSlug}` },
+      props: { entry, blueprintSlug, moduleSlug, stepSlug },
+    };
+  });
+}
+
+const { entry, blueprintSlug, moduleSlug, stepSlug } = Astro.props;
+const blueprint = getBlueprint(blueprintSlug);
+const mod = getBlueprintModule(blueprintSlug, moduleSlug);
+
+const { Content, headings: rawHeadings, remarkPluginFrontmatter } = await render(entry);
+
+const fm = remarkPluginFrontmatter || {};
+const title = fm.title || formatConceptName(stepSlug);
+const summary = fm.summary || '';
+const prerequisites = fm.prerequisites || '';
+
+const headings = rawHeadings
+  .filter((h: any) => h.depth === 2 || h.depth === 3)
+  .map((h: any) => ({ depth: h.depth, text: h.text, slug: h.slug }));
+
+const steps = await getModuleSteps(blueprintSlug, moduleSlug);
+const { prev, next } = getStepPrevNext(steps, stepSlug);
+---
+
+<ConceptLayout
+  title={title}
+  summary={summary}
+  prerequisites={prerequisites}
+  headings={headings}
+  courseSlug={blueprintSlug}
+  courseTitle={blueprint?.title || blueprintSlug}
+  moduleSlug={moduleSlug}
+  moduleTitle={mod?.title || moduleSlug}
+  moduleNumber={mod?.number || '01'}
+  conceptSlug={stepSlug}
+  prevSlug={prev}
+  nextSlug={next}
+  conceptCount={mod?.stepCount || 0}
+  basePath="/blueprints"
+>
+  <Content />
+</ConceptLayout>

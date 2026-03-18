@@ -6,16 +6,17 @@ interface Props {
   nextSlug?: string | null;
   courseSlug: string;
   moduleSlug: string;
+  basePath?: string;
 }
 
-const { prevSlug, nextSlug, courseSlug, moduleSlug } = Astro.props;
+const { prevSlug, nextSlug, courseSlug, moduleSlug, basePath = '/courses' } = Astro.props;
 ---
 
 <nav aria-label="Concept navigation" class="mt-16 pt-10 border-t border-cream-300/70">
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
     {prevSlug ? (
       <a
-        href={`/courses/${courseSlug}/${moduleSlug}/${prevSlug}`}
+        href={`${basePath}/${courseSlug}/${moduleSlug}/${prevSlug}`}
         class="group flex flex-col rounded-xl border border-cream-300 bg-cream-50/80 p-5 transition-all hover:border-sage/50 hover:bg-cream-50 hover:shadow-sm no-underline"
       >
         <span class="text-[10px] font-mono font-medium uppercase tracking-widest text-forest-400 mb-2">
@@ -31,7 +32,7 @@ const { prevSlug, nextSlug, courseSlug, moduleSlug } = Astro.props;
 
     {nextSlug ? (
       <a
-        href={`/courses/${courseSlug}/${moduleSlug}/${nextSlug}`}
+        href={`${basePath}/${courseSlug}/${moduleSlug}/${nextSlug}`}
         class="group flex flex-col items-end text-right rounded-xl border border-cream-300 bg-cream-50/80 p-5 transition-all hover:border-sage/50 hover:bg-cream-50 hover:shadow-sm no-underline"
       >
         <span class="text-[10px] font-mono font-medium uppercase tracking-widest text-forest-400 mb-2">

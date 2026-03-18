@@ -43,8 +43,9 @@ const difficultyLabels: Record<string, string> = {
       </div>
       <div class="space-y-3">
         {builderBlueprints.map(blueprint => (
-          <div
-            class="group flex items-start gap-5 rounded-xl border border-cream-300 bg-cream-50/80 p-6 transition-all hover:border-rust/30 hover:bg-white hover:shadow-sm"
+          <a
+            href={blueprint.status === 'published' ? `/blueprints/${blueprint.slug}` : undefined}
+            class="group flex items-start gap-5 rounded-xl border border-cream-300 bg-cream-50/80 p-6 transition-all hover:border-rust/30 hover:bg-white hover:shadow-sm no-underline"
           >
             <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-rust/[0.08] flex items-center justify-center text-xl">
               {blueprint.icon}
@@ -63,12 +64,17 @@ const difficultyLabels: Record<string, string> = {
                   </span>
                 )}
               </div>
-              <h3 class="font-serif text-lg font-semibold text-forest-700">
+              <h3 class="font-serif text-lg font-semibold text-forest-700 group-hover:text-rust transition-colors">
                 {blueprint.title}
               </h3>
               <p class="text-sm text-forest-500 mt-1 leading-relaxed">{blueprint.description}</p>
             </div>
-          </div>
+            {blueprint.status === 'published' && (
+              <svg class="w-5 h-5 text-forest-400/40 group-hover:text-rust transition-all flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            )}
+          </a>
         ))}
       </div>
     </section>
@@ -83,8 +89,9 @@ const difficultyLabels: Record<string, string> = {
       </div>
       <div class="space-y-3">
         {everyoneBlueprints.map(blueprint => (
-          <div
-            class="group flex items-start gap-5 rounded-xl border border-cream-300 bg-cream-50/80 p-6 transition-all hover:border-rust/30 hover:bg-white hover:shadow-sm"
+          <a
+            href={blueprint.status === 'published' ? `/blueprints/${blueprint.slug}` : undefined}
+            class="group flex items-start gap-5 rounded-xl border border-cream-300 bg-cream-50/80 p-6 transition-all hover:border-rust/30 hover:bg-white hover:shadow-sm no-underline"
           >
             <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-rust/[0.08] flex items-center justify-center text-xl">
               {blueprint.icon}
@@ -103,12 +110,17 @@ const difficultyLabels: Record<string, string> = {
                   </span>
                 )}
               </div>
-              <h3 class="font-serif text-lg font-semibold text-forest-700">
+              <h3 class="font-serif text-lg font-semibold text-forest-700 group-hover:text-rust transition-colors">
                 {blueprint.title}
               </h3>
               <p class="text-sm text-forest-500 mt-1 leading-relaxed">{blueprint.description}</p>
             </div>
-          </div>
+            {blueprint.status === 'published' && (
+              <svg class="w-5 h-5 text-forest-400/40 group-hover:text-rust transition-all flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            )}
+          </a>
         ))}
       </div>
     </section>

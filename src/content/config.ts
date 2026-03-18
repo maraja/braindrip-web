@@ -6,4 +6,9 @@ const courses = defineCollection({
   schema: z.object({}).passthrough(),
 });
 
-export const collections = { courses };
+const blueprints = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: 'src/content/blueprints' }),
+  schema: z.object({}).passthrough(),
+});
+
+export const collections = { courses, blueprints };
