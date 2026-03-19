@@ -60,7 +60,7 @@ The key insight: **the model decides what to do next**. You define the tools. Cl
                           │                   │                   │
                    ┌──────▼──────┐    ┌───────▼──────┐   ┌───────▼──────┐
                    │ Web Search   │    │  Calculator   │   │  Save Note   │
-                   │ (Brave API)  │    │  (eval-safe)  │   │  (in-memory) │
+                   │ (DuckDuckGo) │    │  (eval-safe)  │   │  (in-memory) │
                    └─────────────┘    └──────────────┘   └──────────────┘
 ```
 
@@ -72,7 +72,7 @@ The key insight: **the model decides what to do next**. You define the tools. Cl
 | **Anthropic SDK** | Direct API access — no framework magic. You understand every line. |
 | **Tool-use pattern** | Claude's native function-calling. Structured, typed, reliable. |
 | **FastAPI** | Modern, async, auto-generates OpenAPI docs. Perfect for AI backends. |
-| **Docker** | Reproducible deployment. Works everywhere. |
+| **DuckDuckGo Search** | Free web search — no API key required. |
 
 ## Project Structure
 
@@ -85,8 +85,7 @@ research-agent/
 ├── server.py             # FastAPI server
 ├── config.py             # Configuration and API keys
 ├── requirements.txt      # Dependencies
-├── Dockerfile            # Container deployment
-└── .env                  # API keys (not committed)
+└── .env                  # API key (not committed)
 ```
 
 Each step builds one piece. By the end, everything connects.

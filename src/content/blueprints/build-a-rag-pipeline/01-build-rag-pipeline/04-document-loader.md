@@ -1,25 +1,20 @@
 # Step 4: Document Loader
 
-One-Line Summary: Load PDFs and text files from a directory using LlamaIndex's built-in readers and inspect the resulting document objects.
+One-Line Summary: Load text files from a directory using plain Python and inspect the results — no frameworks needed.
 
-Prerequisites: Project setup and Qdrant running from previous steps
+Prerequisites: Project setup and Supabase configured from previous steps
 
 ---
 
 ## How Document Loading Works
 
-Before we can embed anything, we need to turn files into text that LlamaIndex can process. LlamaIndex provides `SimpleDirectoryReader`, which automatically detects file types and applies the right parser:
+Before we can embed anything, we need to read files and turn them into text. Unlike the framework approach (LlamaIndex, LangChain), we will do this with plain Python. It is simpler, you control every step, and there is no magic to debug.
 
-- **.txt files** — read as plain text
-- **.pdf files** — parsed page by page using `pypdf` (which we installed earlier)
-- **.md files** — read as plain text
-- **.docx, .csv, .html** — supported with additional readers
-
-Each file becomes one or more `Document` objects, each carrying the text content and metadata (filename, page number, file type).
+For this blueprint, we support `.txt` and `.md` files. PDF parsing adds complexity that distracts from the RAG concepts — we will cover it as an extension at the end.
 
 ## Add Sample Documents
 
-Drop a few files into your `data/` directory for testing. Create a sample text file:
+Create a few test files in your `data/` directory:
 
 ```bash
 # Create a sample document to test with
@@ -57,56 +52,54 @@ IT Support: helpdesk@example.com or #it-support on Slack
 EOF
 ```
 
-If you have real PDFs (handbooks, reports, documentation), drop those into `data/` as well. The more realistic your test data, the better you can evaluate your pipeline.
-
 ## Write the Document Loader
-
-Create `src/ingest.py` with the loading logic:
 
 ```python
 # src/ingest.py
 # ==========================================
-# Document Ingestion — Load files from the data/ directory
+# Document Ingestion — Load text files from data/
 # ==========================================
 
 from pathlib import Path
-from llama_index.core import SimpleDirectoryReader
 
-# Path to the documents directory
 DATA_DIR = Path(__file__).parent.parent / "data"
+
+SUPPORTED_EXTENSIONS = {".txt", ".md"}
 
 
 def load_documents(directory: Path = DATA_DIR):
     """
-    Load all supported documents from the given directory.
-    Returns a list of LlamaIndex Document objects.
+    Load all text files from the given directory.
+    Returns a list of dicts with 'content' and 'metadata'.
     """
     if not directory.exists():
         raise FileNotFoundError(f"Data directory not found: {directory}")
 
-    # List files we are about to load
-    files = list(directory.iterdir())
-    supported = [f for f in files if f.suffix in {".txt", ".pdf", ".md", ".csv"}]
-    print(f"Found {len(supported)} supported file(s) in {directory}:")
-    for f in supported:
-        print(f"  - {f.name} ({f.stat().st_size / 1024:.1f} KB)")
+    documents = []
+    for file_path in sorted(directory.iterdir()):
+        if file_path.suffix not in SUPPORTED_EXTENSIONS:
+            continue
 
-    # SimpleDirectoryReader auto-detects file types
-    reader = SimpleDirectoryReader(input_dir=str(directory))
-    documents = reader.load_data()
+        text = file_path.read_text(encoding="utf-8")
+        documents.append({
+            "content": text,
+            "metadata": {
+                "file_name": file_path.name,
+                "file_size": file_path.stat().st_size,
+                "char_count": len(text),
+            },
+        })
+        print(f"  Loaded: {file_path.name} ({len(text)} chars)")
 
-    print(f"\nLoaded {len(documents)} document(s) total.")
+    print(f"Loaded {len(documents)} document(s) from {directory}")
     return documents
 
 
 if __name__ == "__main__":
-    # Run this file directly to test document loading
     docs = load_documents()
-    for i, doc in enumerate(docs):
-        print(f"\n--- Document {i + 1} ---")
-        print(f"Metadata: {doc.metadata}")
-        print(f"Text preview: {doc.text[:200]}...")
-        print(f"Character count: {len(doc.text)}")
+    for doc in docs:
+        print(f"\n--- {doc['metadata']['file_name']} ---")
+        print(f"Preview: {doc['content'][:200]}...")
 ```
 
 ## Test the Loader
@@ -118,27 +111,18 @@ python -m src.ingest
 Expected output:
 
 ```
-Found 2 supported file(s) in /path/to/rag-pipeline/data:
-  - company-policy.txt (0.7 KB)
-  - onboarding-guide.txt (0.8 KB)
+  Loaded: company-policy.txt (651 chars)
+  Loaded: onboarding-guide.txt (623 chars)
+Loaded 2 document(s) from /path/to/rag-pipeline/data
 
-Loaded 2 document(s) total.
-
---- Document 1 ---
-Metadata: {'file_path': '/path/to/data/company-policy.txt', 'file_name': 'company-policy.txt', ...}
-Text preview: Company Refund Policy
+--- company-policy.txt ---
+Preview: Company Refund Policy
 
 All purchases are eligible for a full refund within 30 days...
-Character count: 651
 ```
 
-Each `Document` object has two important attributes:
-
-- **`doc.text`** — the full text content of the file (or a single page for PDFs)
-- **`doc.metadata`** — a dictionary with `file_name`, `file_path`, `file_type`, and for PDFs, `page_label`
-
-PDFs produce one `Document` per page, so a 20-page PDF yields 20 documents. This is fine — the next step will chunk them into smaller pieces regardless.
+Each document is a simple dictionary with `content` (the full text) and `metadata` (file info). No framework abstractions, no special objects — just Python dicts.
 
 ---
 
-[← Start Qdrant](03-start-qdrant.md) | [Next: Step 5 - Chunking and Embedding →](05-chunking-and-embedding.md)
+[← Set Up Supabase](03-set-up-supabase.md) | [Next: Step 5 - Chunking and Embedding →](05-chunking-and-embedding.md)

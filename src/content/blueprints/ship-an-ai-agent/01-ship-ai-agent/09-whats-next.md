@@ -17,7 +17,7 @@ You now have a working AI research agent that:
 - Saves notes and compiles findings
 - Maintains conversation history across multiple turns
 - Streams responses in real time
-- Runs in a Docker container
+- Runs as a FastAPI REST API
 
 That is a real agent. But shipping to production requires a few more layers.
 
@@ -185,26 +185,18 @@ logger.info(f"Session {session_id}: response_length={len(text)}")
 
 ## Deploy to the Cloud
 
-Your Dockerized agent can deploy anywhere:
+To deploy to the cloud, containerize your app with Docker and deploy to any provider:
 
 ```bash
 # Example: Deploy to Google Cloud Run
 gcloud run deploy research-agent \
   --source . \
-  --set-env-vars ANTHROPIC_API_KEY=$ANTHROPIC_API_KEY,BRAVE_API_KEY=$BRAVE_API_KEY \
+  --set-env-vars ANTHROPIC_API_KEY=$ANTHROPIC_API_KEY \
   --allow-unauthenticated \
   --region us-central1
 ```
 
-```bash
-# Example: Deploy to AWS with Fargate
-# (after pushing to ECR)
-aws ecs create-service \
-  --service-name research-agent \
-  --task-definition research-agent:1 \
-  --desired-count 2 \
-  --launch-type FARGATE
-```
+Or deploy to Railway, Fly.io, or Render — all support Python apps with minimal configuration.
 
 ## Where to Go From Here
 

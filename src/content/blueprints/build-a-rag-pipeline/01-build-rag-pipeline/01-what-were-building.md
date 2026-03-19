@@ -1,6 +1,6 @@
 # Step 1: What We're Building
 
-One-Line Summary: A document Q&A system that lets you upload company docs, embed them into a vector database, and ask questions in natural language — powered by LlamaIndex, Qdrant, and Claude.
+One-Line Summary: A document Q&A system that stores your files in Supabase, embeds them with pgvector, and answers questions using Claude — all with just one platform and two API calls.
 
 Prerequisites: Basic Python knowledge, familiarity with APIs and the command line
 
@@ -10,13 +10,13 @@ Prerequisites: Basic Python knowledge, familiarity with APIs and the command lin
 
 By the end of this blueprint, you will have a working RAG (Retrieval-Augmented Generation) pipeline that:
 
-- **Ingests documents** — PDFs and text files dropped into a folder
-- **Chunks and embeds** them using OpenAI's text-embedding-3-small model
-- **Stores vectors** in Qdrant, an open-source vector database running locally
+- **Ingests documents** — text files dropped into a folder
+- **Chunks and embeds** them using OpenAI's embedding model
+- **Stores vectors** in Supabase using the pgvector extension (no Docker, no separate database)
 - **Answers questions** by retrieving relevant chunks and sending them to Claude
-- **Exposes a REST API** via FastAPI so any frontend or tool can query your docs
+- **Runs as a Python script** you can query from the command line
 
-You will start your server and ask things like:
+You will run your script and ask things like:
 
 > "What is our refund policy?"
 
@@ -31,37 +31,31 @@ You will start your server and ask things like:
 ```
 ┌──────────────────────────────────────────────────────────┐
 │                     Your Documents                        │
-│              (PDFs, .txt files in /data)                  │
+│                  (text files in /data)                    │
 └──────────────────┬───────────────────────────────────────┘
                    │  1. Load & chunk
                    ▼
 ┌──────────────────────────────────────────────────────────┐
-│               LlamaIndex Ingestion Pipeline               │
-│         (SentenceSplitter → chunk documents)              │
+│              Simple Text Splitter (Python)                │
+│           (split into overlapping chunks)                 │
 └──────────────────┬───────────────────────────────────────┘
                    │  2. Embed chunks
                    ▼
 ┌──────────────────────────────────────────────────────────┐
-│            OpenAI text-embedding-3-small                  │
-│              (1536-dimension vectors)                     │
+│          OpenAI text-embedding-3-small                    │
+│            (1536-dimension vectors)                       │
 └──────────────────┬───────────────────────────────────────┘
                    │  3. Store vectors
                    ▼
 ┌──────────────────────────────────────────────────────────┐
-│              Qdrant Vector Database                        │
-│            (running locally via Docker)                    │
+│         Supabase (Postgres + pgvector)                    │
+│       Hosted database — no Docker required                │
 └──────────────────┬───────────────────────────────────────┘
-                   │  4. Query: retrieve top-k chunks
+                   │  4. Query: similarity search
                    ▼
 ┌──────────────────────────────────────────────────────────┐
-│         Claude (Anthropic API) — Generation               │
+│       Claude (Anthropic API) — Generation                 │
 │   "Given these document excerpts, answer the question"    │
-└──────────────────┬───────────────────────────────────────┘
-                   │  5. Return answer
-                   ▼
-┌──────────────────────────────────────────────────────────┐
-│              FastAPI REST Endpoint                         │
-│            POST /query  { "question": "..." }             │
 └──────────────────────────────────────────────────────────┘
 ```
 
@@ -70,28 +64,26 @@ You will start your server and ask things like:
 | Choice | Why |
 |--------|-----|
 | **Python 3.11+** | The standard language for AI/ML tooling. Broad library support. |
-| **LlamaIndex** | Most beginner-friendly RAG framework. Built-in chunking, embedding, and query engine abstractions. Less boilerplate than LangChain. |
-| **Qdrant** | Open-source vector database. Runs locally in Docker with zero configuration. Rich filtering, fast similarity search. |
-| **OpenAI text-embedding-3-small** | Cost-effective, high-quality embeddings. 1536 dimensions. Widely supported. |
-| **Claude (Anthropic SDK)** | Excellent at following instructions, synthesizing information, and citing sources. Great for Q&A generation. |
-| **FastAPI** | Modern Python web framework with automatic OpenAPI docs. Async support out of the box. |
+| **Supabase** | Free hosted Postgres with pgvector built in. Database, vector store, and dashboard in one platform. No Docker, no infrastructure to manage. |
+| **OpenAI text-embedding-3-small** | Cost-effective, high-quality embeddings. 1536 dimensions. One API call per chunk. |
+| **Claude (Anthropic SDK)** | Excellent at synthesizing information and citing sources. Great for Q&A generation. |
+
+Notice what is **not** in this stack: no RAG frameworks (LlamaIndex, LangChain), no separate vector database (Qdrant, Pinecone), no Docker, no API server (FastAPI). Supabase replaces all the infrastructure, and we write the RAG logic directly in Python so you understand every step.
 
 ## Project Structure
 
-Here is what we will build:
-
 ```
 rag-pipeline/
-├── data/                    # Drop your PDFs and .txt files here
-│   ├── sample.pdf
-│   └── company-handbook.txt
+├── data/                    # Drop your text files here
+│   ├── company-policy.txt
+│   └── onboarding-guide.txt
 ├── src/
-│   ├── ingest.py            # Document loading, chunking, and embedding
-│   ├── query.py             # Query engine that retrieves and generates answers
-│   └── api.py               # FastAPI endpoint
+│   ├── ingest.py            # Document loading, chunking, embedding, and storage
+│   ├── query.py             # Similarity search + Claude answer generation
+│   └── config.py            # Shared configuration
+├── setup_supabase.sql       # SQL to set up your Supabase table
 ├── requirements.txt
-├── .env                     # API keys (never commit this)
-└── docker-compose.yml       # Qdrant container config
+└── .env                     # API keys (never commit this)
 ```
 
 ## What is RAG?

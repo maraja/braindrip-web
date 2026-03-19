@@ -1,6 +1,6 @@
 # Step 8: Deploy as API
 
-One-Line Summary: Wrap your research agent in a FastAPI server with streaming support and deploy it with Docker so any application can use it.
+One-Line Summary: Wrap your research agent in a FastAPI server with streaming support so any application can use it.
 
 Prerequisites: Complete agent with memory from Step 7
 
@@ -256,48 +256,7 @@ curl -X POST http://localhost:8000/research \
   -d '{"query": "What are the top 3 AI trends right now?"}'
 ```
 
-## Dockerize It
-
-Create a `Dockerfile`:
-
-```dockerfile
-# Dockerfile
-# ==========================================
-# Production container for the research agent
-# ==========================================
-
-FROM python:3.11-slim
-
-WORKDIR /app
-
-# Install dependencies first (cached layer)
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy application code
-COPY *.py .
-
-# Expose the port
-EXPOSE 8000
-
-# Run with uvicorn
-CMD ["uvicorn", "server:app", "--host", "0.0.0.0", "--port", "8000"]
-```
-
-Build and run:
-
-```bash
-# Build the Docker image
-docker build -t research-agent .
-
-# Run the container (pass API keys via environment variables)
-docker run -p 8000:8000 \
-  -e ANTHROPIC_API_KEY=$ANTHROPIC_API_KEY \
-  -e BRAVE_API_KEY=$BRAVE_API_KEY \
-  research-agent
-```
-
-Your agent is now running as a containerized API, ready to deploy to any cloud provider.
+Your agent is now running as a REST API, ready to connect to any frontend or deploy to any cloud provider.
 
 ---
 

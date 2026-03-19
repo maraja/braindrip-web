@@ -231,8 +231,8 @@ MODELS = [
 ]
 ```
 
-You now have concrete performance data for your hardware. In the next step, we will set up vLLM for production-grade serving.
+You now have concrete performance data for your hardware. In the next step, we will customize models using Ollama's Modelfile system.
 
 ---
 
-[← Previous: Step 5 - Quantization](05-quantization.md) | [Next: Step 7 - vLLM Setup →](07-vllm-setup.md)
+[← Previous: Step 5 - Quantization](05-quantization.md) | [Next: Step 7 - Customize with Modelfiles →](07-customize-with-modelfiles.md)

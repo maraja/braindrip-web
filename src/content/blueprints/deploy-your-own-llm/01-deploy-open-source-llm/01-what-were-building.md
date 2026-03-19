@@ -1,8 +1,8 @@
 # Step 1: What We're Building
 
-One-Line Summary: Deploy an open-source LLM locally with Ollama for development, then serve it as a production-ready API with vLLM — with benchmarking, quantization, and Docker deployment.
+One-Line Summary: Deploy an open-source LLM locally with Ollama — pull a model, run it, call it from Python, benchmark it, and customize it with Modelfiles.
 
-Prerequisites: A machine with at least 16 GB RAM (GPU recommended but not required for Ollama), basic command-line skills, Python 3.10+
+Prerequisites: A machine with at least 16 GB RAM (GPU recommended but not required), basic command-line skills, Python 3.10+
 
 ---
 
@@ -10,73 +10,67 @@ Prerequisites: A machine with at least 16 GB RAM (GPU recommended but not requir
 
 By the end of this blueprint, you will have:
 
-- **A local LLM running on your machine** via Ollama for fast experimentation
+- **A local LLM running on your machine** via Ollama
 - **An OpenAI-compatible API** you can call from any language or framework
-- **A production deployment** using vLLM with high-throughput serving
-- **Benchmarking data** comparing quantization levels, tokens/sec, and latency
-- **A Docker container** ready to deploy anywhere with GPU passthrough
+- **An understanding of quantization** and how to choose the right quality/size tradeoff
+- **Benchmarking data** with real performance numbers for your hardware
+- **A custom model** tailored with your own system prompt and parameters
 
-You will be able to swap `https://api.openai.com` for `http://localhost:8000` in any existing OpenAI client code and it just works — no code changes, no vendor lock-in.
+You will be able to swap `https://api.openai.com` for `http://localhost:11434` in any existing OpenAI client code and it just works — no code changes, no vendor lock-in.
 
 ## Why Self-Host an LLM
 
 | Reason | Details |
 |--------|---------|
-| **Privacy** | Data never leaves your infrastructure. No third-party logging. |
-| **Cost** | No per-token billing. A single GPU pays for itself in weeks at high volume. |
+| **Privacy** | Data never leaves your machine. No third-party logging. |
+| **Cost** | No per-token billing. Free after the initial hardware investment. |
 | **Latency** | Local inference eliminates network round-trips. Sub-100ms first token. |
-| **Control** | Choose your model, quantization, context length, and serving parameters. |
-| **Availability** | No rate limits, no outages from upstream providers, no API deprecations. |
+| **Control** | Choose your model, quantization, context length, and parameters. |
+| **Availability** | No rate limits, no outages, no API deprecations. |
+
+## Why Ollama
+
+Ollama is "Docker for LLMs." One install, one command to pull a model, one command to run it. It handles:
+
+- **Model downloads** — pull models by name like `ollama pull llama3.1:8b`
+- **Quantization** — automatically serves optimized quantized versions
+- **API server** — built-in OpenAI-compatible REST API
+- **GPU acceleration** — detects and uses your GPU automatically
+- **Modelfiles** — customize models with system prompts and parameters
+
+No Python environments to manage, no CUDA toolkit to install, no Docker containers to orchestrate.
 
 ## The Model Landscape
 
-We will use **Llama 3.1 8B** as our primary model. Here is how it fits among popular open-source options:
+We will use **Llama 3.1 8B** as our primary model:
 
 | Model | Parameters | Strengths | License |
 |-------|-----------|-----------|---------|
 | **Llama 3.1 8B** | 8B | Strong all-around, great instruction following | Llama 3.1 Community |
-| Llama 3.1 70B | 70B | Near-GPT-4 quality, needs serious hardware | Llama 3.1 Community |
 | Mistral 7B | 7B | Fast, efficient, strong for its size | Apache 2.0 |
 | Qwen 2.5 7B | 7B | Excellent multilingual and coding | Apache 2.0 |
 | Gemma 2 9B | 9B | Google's open model, strong reasoning | Gemma license |
 
-We chose Llama 3.1 8B because it balances quality with resource needs — it runs on a laptop with 16 GB RAM (quantized) or a single consumer GPU.
+We chose Llama 3.1 8B because it balances quality with resource needs — it runs on a laptop with 16 GB RAM.
 
 ## Hardware Requirements
 
-**Minimum (Ollama, quantized models):**
-- 16 GB RAM, no GPU required
-- ~5 GB disk for the Q4 quantized model
-- Any modern x86_64 or Apple Silicon CPU
+- **16 GB RAM** — minimum for quantized 8B models
+- **~5 GB disk** — for the Q4 quantized model
+- **Any modern CPU** — x86_64 or Apple Silicon
+- **GPU (optional)** — NVIDIA or Apple Silicon GPU speeds up inference significantly but is not required
 
-**Recommended (vLLM, production serving):**
-- NVIDIA GPU with 16+ GB VRAM (RTX 4090, A10, L4, A100)
-- 32 GB system RAM
-- ~16 GB disk for FP16 model weights
-
-## Architecture Overview
+## Architecture
 
 ```
 ┌──────────────────────────────────────────────────────┐
-│                   Development                         │
 │  ┌─────────┐    ┌─────────┐    ┌──────────────────┐  │
 │  │ Terminal │───►│ Ollama  │───►│ Llama 3.1 8B     │  │
 │  │ / Python │    │ Server  │    │ (Q4 quantized)   │  │
+│  │ / Any    │    │ :11434  │    │                  │  │
+│  │ OpenAI   │    │         │    │ Runs on CPU      │  │
+│  │ client   │    │ REST API│    │ or GPU           │  │
 │  └─────────┘    └─────────┘    └──────────────────┘  │
-└──────────────────────────────────────────────────────┘
-
-┌──────────────────────────────────────────────────────┐
-│                   Production                          │
-│  ┌─────────┐    ┌─────────┐    ┌──────────────────┐  │
-│  │ Any      │───►│  vLLM   │───►│ Llama 3.1 8B     │  │
-│  │ OpenAI   │    │ Server  │    │ (FP16 on GPU)    │  │
-│  │ Client   │    │ :8000   │    │ PagedAttention    │  │
-│  └─────────┘    └─────────┘    └──────────────────┘  │
-│                      │                                │
-│                 ┌────┴────┐                           │
-│                 │ Docker  │                           │
-│                 │ + NVIDIA│                           │
-│                 └─────────┘                           │
 └──────────────────────────────────────────────────────┘
 ```
 
@@ -88,10 +82,8 @@ We chose Llama 3.1 8B because it balances quality with resource needs — it run
 4. **Ollama API** — call your model from Python code
 5. **Quantization** — understand quality vs. size tradeoffs
 6. **Benchmarking** — measure performance with real numbers
-7. **vLLM setup** — install the production inference engine
-8. **Serve with vLLM** — launch an OpenAI-compatible API
-9. **Docker deployment** — containerize with GPU passthrough
-10. **What's next** — fine-tuning, LoRA, and beyond
+7. **Customize with Modelfiles** — create tailored models with custom system prompts
+8. **What's next** — production serving, fine-tuning, and beyond
 
 Let's start by getting Ollama installed.
 

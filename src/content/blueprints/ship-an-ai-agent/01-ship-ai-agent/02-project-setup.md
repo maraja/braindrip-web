@@ -29,7 +29,7 @@ source venv/bin/activate
 
 ```bash
 # Install all required packages
-pip install anthropic httpx fastapi uvicorn python-dotenv
+pip install anthropic duckduckgo-search fastapi uvicorn python-dotenv
 ```
 
 Here is what each package does:
@@ -37,7 +37,7 @@ Here is what each package does:
 | Package | Purpose |
 |---------|---------|
 | `anthropic` | Official Python SDK for the Claude API |
-| `httpx` | Async HTTP client for making web search requests |
+| `duckduckgo-search` | Web search — free, no API key required |
 | `fastapi` | Web framework for our REST API |
 | `uvicorn` | ASGI server to run FastAPI |
 | `python-dotenv` | Load environment variables from a `.env` file |
@@ -57,9 +57,6 @@ Create a `.env` file in your project root. This keeps secrets out of your code:
 # .env
 # Your Anthropic API key — get one at https://console.anthropic.com/
 ANTHROPIC_API_KEY=sk-ant-your-key-here
-
-# Brave Search API key — get one at https://api.search.brave.com/
-BRAVE_API_KEY=BSA-your-key-here
 ```
 
 Now create `config.py` to load these values:
@@ -80,11 +77,6 @@ load_dotenv()
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 if not ANTHROPIC_API_KEY:
     raise ValueError("ANTHROPIC_API_KEY is not set. Add it to your .env file.")
-
-# Brave Search API key for web search tool
-BRAVE_API_KEY = os.getenv("BRAVE_API_KEY")
-if not BRAVE_API_KEY:
-    raise ValueError("BRAVE_API_KEY is not set. Add it to your .env file.")
 
 # Model to use — claude-sonnet-4-20250514 is fast and capable
 MODEL = "claude-sonnet-4-20250514"
@@ -133,7 +125,7 @@ If you see a five-word greeting and the success message, your environment is con
 
 **Anthropic API key:** Go to [console.anthropic.com](https://console.anthropic.com/), create an account, and generate an API key under Settings. You will need to add credits — the API is pay-per-use.
 
-**Brave Search API key:** Go to [api.search.brave.com](https://api.search.brave.com/), sign up for the free tier (2,000 queries/month), and copy your API key. We will use this in Step 6.
+We use DuckDuckGo for web search, which requires no API key — one less account to create.
 
 ---
 

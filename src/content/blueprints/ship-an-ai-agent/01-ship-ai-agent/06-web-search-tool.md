@@ -1,20 +1,20 @@
 # Step 6: Web Search Tool
 
-One-Line Summary: Replace the placeholder web search with a real implementation using httpx and the Brave Search API so your agent can find current information.
+One-Line Summary: Replace the placeholder web search with a real implementation using DuckDuckGo so your agent can find current information — no API key required.
 
-Prerequisites: Agent loop from Step 5, a Brave Search API key
+Prerequisites: Agent loop from Step 5
 
 ---
 
-## Why Brave Search
+## Why DuckDuckGo
 
-Your agent needs access to current information. The Brave Search API gives you:
+Your agent needs access to current information. DuckDuckGo search gives you:
 
 - **Web results** with titles, URLs, and descriptions
-- **A free tier** with 2,000 queries per month
-- **A simple REST API** — one endpoint, one query parameter
+- **No API key required** — install the package and it works
+- **No rate limit concerns** for development and learning
 
-Other options work too (SerpAPI, Tavily, Google Custom Search), but Brave has the best free tier for learning.
+Other options work too (Brave Search, SerpAPI, Tavily), but DuckDuckGo has the lowest setup friction.
 
 ## Implement the Search
 
@@ -22,58 +22,34 @@ Update the `handle_web_search` function in `tools.py`. Replace the placeholder w
 
 ```python
 # Add this import at the top of tools.py
-import httpx
-from config import BRAVE_API_KEY
+from duckduckgo_search import DDGS
+
 
 # ------------------------------------------
-# Web Search — Brave Search API
+# Web Search — DuckDuckGo (no API key needed)
 # ------------------------------------------
 
-async def handle_web_search_async(query: str, count: int = 5) -> str:
-    """Search the web using Brave Search API."""
-    url = "https://api.search.brave.com/res/v1/web/search"
-    headers = {
-        "Accept": "application/json",
-        "Accept-Encoding": "gzip",
-        "X-Subscription-Token": BRAVE_API_KEY,
-    }
-    params = {
-        "q": query,
-        "count": min(count, 10),  # Brave allows up to 20, we cap at 10
-    }
-
+def handle_web_search(query: str, count: int = 5) -> str:
+    """Search the web using DuckDuckGo."""
     try:
-        async with httpx.AsyncClient() as client:
-            response = await client.get(url, headers=headers, params=params, timeout=10.0)
-            response.raise_for_status()
-            data = response.json()
-
-        # Extract the web results
-        results = []
-        for item in data.get("web", {}).get("results", [])[:count]:
-            results.append({
-                "title": item.get("title", ""),
-                "url": item.get("url", ""),
-                "snippet": item.get("description", ""),
-            })
+        ddgs = DDGS()
+        results = list(ddgs.text(query, max_results=min(count, 10)))
 
         if not results:
             return json.dumps({"results": [], "message": "No results found"})
 
-        return json.dumps({"results": results, "query": query})
+        formatted = []
+        for item in results:
+            formatted.append({
+                "title": item.get("title", ""),
+                "url": item.get("href", ""),
+                "snippet": item.get("body", ""),
+            })
 
-    except httpx.TimeoutException:
-        return json.dumps({"error": "Search request timed out", "query": query})
-    except httpx.HTTPStatusError as e:
-        return json.dumps({"error": f"Search API error: {e.response.status_code}", "query": query})
+        return json.dumps({"results": formatted, "query": query})
+
     except Exception as e:
         return json.dumps({"error": f"Search failed: {str(e)}", "query": query})
-
-
-def handle_web_search(query: str, count: int = 5) -> str:
-    """Synchronous wrapper for web search."""
-    import asyncio
-    return asyncio.run(handle_web_search_async(query, count))
 ```
 
 ## Updated tools.py
@@ -88,9 +64,7 @@ Here is the complete, updated file with all imports and the real search implemen
 
 import json
 import math
-import asyncio
-import httpx
-from config import BRAVE_API_KEY
+from duckduckgo_search import DDGS
 
 # ------------------------------------------
 # Storage for saved notes (in-memory)
@@ -210,46 +184,27 @@ def handle_save_note(title: str, content: str, source: str = "not specified") ->
     })
 
 
-async def handle_web_search_async(query: str, count: int = 5) -> str:
-    """Search the web using Brave Search API."""
-    url = "https://api.search.brave.com/res/v1/web/search"
-    headers = {
-        "Accept": "application/json",
-        "Accept-Encoding": "gzip",
-        "X-Subscription-Token": BRAVE_API_KEY,
-    }
-    params = {"q": query, "count": min(count, 10)}
-
+def handle_web_search(query: str, count: int = 5) -> str:
+    """Search the web using DuckDuckGo."""
     try:
-        async with httpx.AsyncClient() as http_client:
-            response = await http_client.get(url, headers=headers, params=params, timeout=10.0)
-            response.raise_for_status()
-            data = response.json()
-
-        results = []
-        for item in data.get("web", {}).get("results", [])[:count]:
-            results.append({
-                "title": item.get("title", ""),
-                "url": item.get("url", ""),
-                "snippet": item.get("description", ""),
-            })
+        ddgs = DDGS()
+        results = list(ddgs.text(query, max_results=min(count, 10)))
 
         if not results:
             return json.dumps({"results": [], "message": "No results found"})
 
-        return json.dumps({"results": results, "query": query})
+        formatted = []
+        for item in results:
+            formatted.append({
+                "title": item.get("title", ""),
+                "url": item.get("href", ""),
+                "snippet": item.get("body", ""),
+            })
 
-    except httpx.TimeoutException:
-        return json.dumps({"error": "Search request timed out", "query": query})
-    except httpx.HTTPStatusError as e:
-        return json.dumps({"error": f"Search API error: {e.response.status_code}", "query": query})
+        return json.dumps({"results": formatted, "query": query})
+
     except Exception as e:
         return json.dumps({"error": f"Search failed: {str(e)}", "query": query})
-
-
-def handle_web_search(query: str, count: int = 5) -> str:
-    """Synchronous wrapper for web search."""
-    return asyncio.run(handle_web_search_async(query, count))
 
 
 # ------------------------------------------

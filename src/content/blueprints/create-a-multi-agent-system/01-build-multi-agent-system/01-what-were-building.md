@@ -1,6 +1,6 @@
 # Step 1: What We're Building
 
-One-Line Summary: A multi-agent content production pipeline where three AI agents — Researcher, Writer, and Editor — collaborate to produce polished articles from a single topic prompt.
+One-Line Summary: A multi-agent content production pipeline where three AI agents — Researcher, Writer, and Editor — collaborate to produce polished articles, built from scratch with the Anthropic SDK.
 
 Prerequisites: Basic Python knowledge, familiarity with LLMs and API concepts, a text editor
 
@@ -12,7 +12,7 @@ By the end of this blueprint, you will have a working multi-agent system that:
 
 - **Accepts a topic** and produces a well-researched, well-written article
 - **Uses three specialized agents** that collaborate in sequence
-- **Leverages Claude** as the underlying LLM via CrewAI
+- **Leverages Claude** directly through the Anthropic SDK
 - **Outputs polished Markdown** files ready for publishing
 - **Runs locally** from the command line
 
@@ -34,7 +34,7 @@ Think of it like a newsroom:
 - The **Writer** turns raw research into a compelling draft
 - The **Editor** polishes the prose, checks consistency, and produces the final piece
 
-Each agent has its own role, goal, backstory, and set of tools. They pass their output to the next agent in the chain.
+Each agent has its own system prompt, tools, and responsibilities. They pass their output to the next agent in the chain.
 
 ## Architecture
 
@@ -57,29 +57,28 @@ Each agent has its own role, goal, backstory, and set of tools. They pass their 
                                                                  └──────────┘
 ```
 
-The agents execute sequentially: the Researcher's output feeds into the Writer's task, and the Writer's output feeds into the Editor's task. CrewAI orchestrates this pipeline automatically.
-
-## Why CrewAI
+## Why This Stack
 
 | Choice | Why |
 |--------|-----|
-| **CrewAI** | The most intuitive framework for role-based multi-agent systems. Agents are defined with plain-English roles, goals, and backstories. |
-| **Claude (via LiteLLM)** | Anthropic's Claude provides strong reasoning and writing. LiteLLM gives CrewAI a unified interface to call it. |
-| **Python 3.11+** | CrewAI is a Python-native framework. Python 3.11+ gives us better error messages and performance. |
-| **Built-in tools** | We will create simple, focused tools — web search and file saving — that agents invoke when needed. |
+| **Anthropic SDK** | Call Claude directly — no framework wrappers, no middleware. You control every prompt, every tool call, every response. |
+| **Plain Python classes** | Agents are simple classes with a `run()` method. No framework to learn, nothing hidden behind abstractions. |
+| **DuckDuckGo search** | Free web search with no API key required. One `pip install` and it works. |
+| **Python 3.11+** | Standard language for AI tooling. Better error messages and performance. |
+
+Notice what is **not** in this stack: no CrewAI, no LangChain, no LangGraph, no LiteLLM. We build the multi-agent pattern from scratch so you understand exactly how agents work. Once you understand the pattern, you can use any framework — or none at all.
 
 ## Project Structure
 
-Here is what we will build:
-
 ```
 content-crew/
-├── main.py              # Entry point — accepts a topic and runs the crew
-├── agents.py            # Defines the three agents (Researcher, Writer, Editor)
-├── tasks.py             # Defines the tasks each agent performs
-├── tools.py             # Custom tools (web search, save to file)
+├── main.py              # Entry point — accepts a topic and runs the pipeline
+├── agent.py             # The base Agent class
+├── agents.py            # Defines the three specialized agents
+├── tools.py             # Tool functions (web search, save to file)
 ├── config.py            # Configuration and API keys
-├── requirements.txt     # Python dependencies
+├── requirements.txt
+├── .env                 # API key (never commit this)
 └── output/              # Generated articles land here
     └── article.md
 ```

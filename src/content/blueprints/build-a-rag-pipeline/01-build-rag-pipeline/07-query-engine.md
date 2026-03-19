@@ -1,141 +1,153 @@
 # Step 7: Query Engine
 
-One-Line Summary: Build the query engine that takes a natural language question, retrieves relevant document chunks from Qdrant, and generates an answer using Claude.
+One-Line Summary: Build the query engine that embeds a question, searches Supabase for relevant chunks, and generates an answer using Claude.
 
-Prerequisites: Documents indexed in Qdrant from Step 6
+Prerequisites: Documents stored in Supabase from Step 6
 
 ---
 
 ## How RAG Querying Works
 
-When a user asks a question, the query engine performs three steps:
+When a user asks a question, three things happen:
 
-1. **Embed the question** — convert the question into a vector using the same embedding model
-2. **Retrieve** — find the top-k most similar chunks in Qdrant using cosine similarity
-3. **Generate** — send the retrieved chunks plus the question to Claude, which synthesizes an answer grounded in the source material
+1. **Embed the question** — convert it to a vector using the same embedding model
+2. **Retrieve** — find the most similar chunks in Supabase using the `match_documents` function we created
+3. **Generate** — send the retrieved chunks plus the question to Claude, which synthesizes an answer
 
-LlamaIndex's `QueryEngine` abstracts all three steps into a single `.query()` call.
+We will build all three steps in a single Python module.
 
 ## Create the Query Module
 
 ```python
 # src/query.py
 # ==========================================
-# Query Engine — Retrieve and generate answers
-# using Claude as the LLM
+# Query Engine — Search Supabase + generate
+# answers with Claude
 # ==========================================
 
-import os
-from dotenv import load_dotenv
+from openai import OpenAI
+from anthropic import Anthropic
+from supabase import create_client
 
-from llama_index.core import Settings
-from llama_index.llms.anthropic import Anthropic
-from llama_index.embeddings.openai import OpenAIEmbedding
+from src.config import (
+    OPENAI_API_KEY, ANTHROPIC_API_KEY,
+    SUPABASE_URL, SUPABASE_KEY,
+    EMBEDDING_MODEL, CLAUDE_MODEL, TOP_K,
+)
 
-from src.ingest import load_existing_index
-
-# Load API keys from .env
-load_dotenv()
-
-# ------------------------------------------
-# Configuration
-# ------------------------------------------
-# Number of chunks to retrieve for each query
-TOP_K = 3
-
-# Claude model to use for generation
-CLAUDE_MODEL = "claude-sonnet-4-20250514"
+# Clients
+openai_client = OpenAI(api_key=OPENAI_API_KEY)
+anthropic_client = Anthropic(api_key=ANTHROPIC_API_KEY)
+supabase_client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 
-def create_query_engine():
+def embed_query(question: str) -> list[float]:
+    """Embed the user's question using the same model as ingestion."""
+    response = openai_client.embeddings.create(
+        model=EMBEDDING_MODEL,
+        input=question,
+    )
+    return response.data[0].embedding
+
+
+def search_similar_chunks(query_embedding: list[float], top_k: int = TOP_K):
     """
-    Build a query engine backed by:
-    - Qdrant for retrieval
-    - OpenAI for embedding the question
-    - Claude for generating the answer
+    Find the most similar chunks in Supabase using pgvector.
+    Calls the match_documents SQL function we created in Step 3.
     """
-    # ------------------------------------------
-    # Configure the LLM (Claude via Anthropic SDK)
-    # ------------------------------------------
-    llm = Anthropic(
+    result = supabase_client.rpc(
+        "match_documents",
+        {
+            "query_embedding": query_embedding,
+            "match_count": top_k,
+        },
+    ).execute()
+
+    return result.data
+
+
+def generate_answer(question: str, chunks: list[dict]) -> str:
+    """
+    Send the question and retrieved chunks to Claude.
+    Returns a grounded answer.
+    """
+    # Build context from retrieved chunks
+    context_parts = []
+    for i, chunk in enumerate(chunks):
+        source = chunk.get("metadata", {})
+        if isinstance(source, str):
+            import json
+            source = json.loads(source)
+        file_name = source.get("file_name", "unknown")
+        context_parts.append(
+            f"[Source: {file_name}]\n{chunk['content']}"
+        )
+    context = "\n\n---\n\n".join(context_parts)
+
+    # Call Claude with the context and question
+    response = anthropic_client.messages.create(
         model=CLAUDE_MODEL,
-        api_key=os.getenv("ANTHROPIC_API_KEY"),
-        # System prompt that guides how Claude answers
-        system_prompt=(
+        max_tokens=1024,
+        system=(
             "You are a helpful assistant that answers questions based on "
             "the provided document excerpts. Always ground your answers in "
             "the source material. If the documents do not contain enough "
             "information to answer the question, say so clearly. "
             "Cite which document the information comes from when possible."
         ),
+        messages=[
+            {
+                "role": "user",
+                "content": (
+                    f"Based on the following document excerpts, "
+                    f"answer this question: {question}\n\n"
+                    f"Document excerpts:\n\n{context}"
+                ),
+            }
+        ],
     )
 
-    # ------------------------------------------
-    # Configure embeddings (same model used during ingestion)
-    # ------------------------------------------
-    Settings.llm = llm
-    Settings.embed_model = OpenAIEmbedding(
-        model="text-embedding-3-small",
-        api_key=os.getenv("OPENAI_API_KEY"),
-    )
-
-    # ------------------------------------------
-    # Load the existing index from Qdrant
-    # ------------------------------------------
-    index = load_existing_index()
-
-    # ------------------------------------------
-    # Build the query engine
-    # ------------------------------------------
-    query_engine = index.as_query_engine(
-        # How many chunks to retrieve
-        similarity_top_k=TOP_K,
-        # Stream responses for faster perceived latency
-        streaming=False,
-    )
-
-    print(f"Query engine ready (top_k={TOP_K}, model={CLAUDE_MODEL})")
-    return query_engine
+    return response.content[0].text
 
 
-def ask(question: str, engine=None):
+def ask(question: str):
     """
-    Ask a question and get an answer grounded in your documents.
-
-    Returns a dict with the answer text and source information.
+    Full RAG pipeline: embed → search → generate.
+    Returns a dict with the answer and source information.
     """
-    if engine is None:
-        engine = create_query_engine()
-
     print(f"\nQuestion: {question}")
-    print("Retrieving relevant chunks and generating answer...")
 
-    # This single call embeds the question, retrieves chunks,
-    # and sends everything to Claude
-    response = engine.query(question)
+    # Step 1: Embed the question
+    query_embedding = embed_query(question)
+    print("Embedded question.")
 
-    # Extract source information from the response
+    # Step 2: Search for similar chunks
+    chunks = search_similar_chunks(query_embedding)
+    print(f"Retrieved {len(chunks)} relevant chunk(s).")
+
+    # Step 3: Generate answer with Claude
+    answer = generate_answer(question, chunks)
+
+    # Build result with source info
     sources = []
-    for node in response.source_nodes:
+    for chunk in chunks:
+        metadata = chunk.get("metadata", {})
+        if isinstance(metadata, str):
+            import json
+            metadata = json.loads(metadata)
         sources.append({
-            "file": node.metadata.get("file_name", "unknown"),
-            "score": round(node.score, 4) if node.score else None,
-            "text_preview": node.get_content()[:200],
+            "file": metadata.get("file_name", "unknown"),
+            "score": round(chunk.get("similarity", 0), 4),
+            "preview": chunk["content"][:200],
         })
 
-    result = {
-        "answer": str(response),
+    return {
+        "answer": answer,
         "sources": sources,
-        "num_sources": len(sources),
     }
-
-    return result
 
 
 if __name__ == "__main__":
-    # Interactive testing mode
-    engine = create_query_engine()
-
     test_questions = [
         "What is the refund policy?",
         "What happens in the first week of onboarding?",
@@ -143,12 +155,11 @@ if __name__ == "__main__":
     ]
 
     for question in test_questions:
-        result = ask(question, engine)
+        result = ask(question)
         print(f"\nAnswer: {result['answer']}")
-        print(f"\nSources ({result['num_sources']}):")
+        print(f"\nSources:")
         for src in result["sources"]:
-            print(f"  - {src['file']} (score: {src['score']})")
-            print(f"    {src['text_preview'][:100]}...")
+            print(f"  - {src['file']} (similarity: {src['score']})")
         print("\n" + "=" * 60)
 ```
 
@@ -161,12 +172,9 @@ python -m src.query
 Expected output:
 
 ```
-Connected to Qdrant at localhost:6333
-Loaded existing index from collection 'company_docs'.
-Query engine ready (top_k=3, model=claude-sonnet-4-20250514)
-
 Question: What is the refund policy?
-Retrieving relevant chunks and generating answer...
+Embedded question.
+Retrieved 3 relevant chunk(s).
 
 Answer: Based on the company policy document, all purchases are eligible
 for a full refund within 30 days of the original purchase date. To request
@@ -175,23 +183,24 @@ number and reason. Digital product refunds are processed within 5 business
 days, while physical products must be returned in original packaging.
 After 30 days, only store credit is available.
 
-Sources (3):
-  - company-policy.txt (score: 0.8921)
-    Company Refund Policy All purchases are eligible for a full refund...
+Sources:
+  - company-policy.txt (similarity: 0.8921)
+
+============================================================
 ```
 
 ## What is Happening Under the Hood
 
-When you call `engine.query("What is the refund policy?")`:
+When you call `ask("What is the refund policy?")`:
 
-1. LlamaIndex embeds the question using `text-embedding-3-small`, producing a 1536-dim vector
-2. It sends this vector to Qdrant, which returns the 3 most similar chunks (cosine similarity)
-3. LlamaIndex constructs a prompt like: "Given the following context, answer the question..." with the retrieved chunks injected
-4. Claude reads the chunks and generates a grounded answer
-5. The response includes both the answer text and references to which chunks were used
+1. The question is sent to OpenAI's embedding API, producing a 1536-dim vector
+2. That vector is sent to Supabase's `match_documents` function, which runs a cosine similarity search using pgvector inside Postgres
+3. The top 3 most similar chunks are returned with their similarity scores
+4. The chunks are formatted into a prompt and sent to Claude
+5. Claude reads the chunks and generates a grounded answer
 
-The `similarity_top_k=3` parameter controls how many chunks Claude sees. More chunks means more context but higher token cost and potential noise. For most use cases, 3-5 is a good starting point. We will experiment with this in Step 9.
+The entire retrieval step happens inside Postgres — no external vector database needed. pgvector's `<=>` operator computes cosine distance directly on your table rows, and the IVFFlat index we created makes it fast even with thousands of vectors.
 
 ---
 
-[← Vector Store](06-vector-store.md) | [Next: Step 8 - API Endpoint →](08-api-endpoint.md)
+[← Store Vectors](06-store-vectors.md) | [Next: Step 8 - Test and Iterate →](08-test-and-iterate.md)
