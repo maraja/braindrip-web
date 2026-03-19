@@ -1,5 +1,6 @@
 ---
 import { courses } from '../../data/courses';
+import { blueprints } from '../../data/blueprints';
 const totalConcepts = courses.reduce((sum, c) => sum + c.conceptCount, 0);
 ---
 
@@ -13,7 +14,7 @@ const totalConcepts = courses.reduce((sum, c) => sum + c.conceptCount, 0);
   <div class="mx-auto max-w-[680px] text-center px-6">
     <div class="inline-flex items-center gap-2 rounded-full border border-sage/20 bg-sage/[0.06] px-4 py-1.5 text-[12px] font-mono font-medium text-sage-dark mb-8 tracking-wide">
       <span class="w-1.5 h-1.5 rounded-full bg-sage"></span>
-      {totalConcepts} concepts &middot; {courses.length} courses
+      {totalConcepts} concepts &middot; {courses.length} courses &middot; {blueprints.length} blueprints
     </div>
 
     <h1 class="font-serif text-[2.25rem] sm:text-[3.25rem] md:text-[3.75rem] font-bold text-forest-700 leading-[1.1] tracking-tight mb-6">
@@ -21,8 +22,8 @@ const totalConcepts = courses.reduce((sum, c) => sum + c.conceptCount, 0);
     </h1>
 
     <p class="text-lg text-forest-500 leading-relaxed max-w-[520px] mx-auto mb-10">
-      Concept-driven learning for AI and machine learning &mdash;
-      each idea explained with intuition, math, and connections to the bigger picture.
+      Concept-driven learning and hands-on builds for AI &mdash;
+      deep dives that build intuition, and blueprints that get you shipping.
     </p>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-3">

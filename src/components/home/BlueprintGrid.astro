@@ -1,0 +1,82 @@
+---
+import { blueprints } from '../../data/blueprints';
+
+const difficultyColors = {
+  beginner: 'bg-sage/12 text-sage-dark',
+  intermediate: 'bg-gold/15 text-forest-600',
+  advanced: 'bg-rust/12 text-rust',
+};
+
+const difficultyLabels = {
+  beginner: 'Beginner',
+  intermediate: 'Intermediate',
+  advanced: 'Advanced',
+};
+---
+
+<section class="mx-auto max-w-[900px] px-6 pb-24">
+  <div class="mb-12">
+    <div class="inline-flex items-center gap-2 rounded-full border border-rust/20 bg-rust/[0.06] px-3 py-1 text-[11px] font-mono font-medium text-rust mb-4 tracking-wide">
+      NEW
+    </div>
+    <h2 class="font-serif text-2xl font-bold text-forest-700 mb-2">Blueprints</h2>
+    <p class="text-forest-500 text-[15px] max-w-lg">
+      Step-by-step builds &mdash; skip the theory, build something real with AI.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+    {blueprints.slice(0, 6).map(blueprint => {
+      const isPublished = blueprint.status === 'published';
+      const Wrapper = isPublished ? 'a' : 'div';
+      return (
+        <a
+          href={isPublished ? `/blueprints/${blueprint.slug}` : undefined}
+          class={`group flex flex-col rounded-xl border border-cream-300 bg-cream-50/80 p-5 transition-all hover:border-rust/30 hover:bg-white hover:shadow-sm no-underline ${isPublished ? 'cursor-pointer' : ''}`}
+        >
+          <div class="flex items-center gap-3 mb-3">
+            <span class="flex-shrink-0 w-10 h-10 rounded-xl bg-rust/[0.08] flex items-center justify-center text-lg">
+              {blueprint.icon}
+            </span>
+            <div class="flex items-center gap-1.5">
+              <span class={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-semibold tracking-wide ${difficultyColors[blueprint.difficulty]}`}>
+                {difficultyLabels[blueprint.difficulty]}
+              </span>
+              <span class="inline-flex items-center rounded-full bg-cream-200/80 px-2 py-0.5 text-[10px] font-semibold text-forest-500 tracking-wide">
+                {blueprint.stepCount} steps
+              </span>
+            </div>
+          </div>
+          <h3 class="font-serif text-[15px] font-semibold text-forest-700 group-hover:text-rust transition-colors leading-snug mb-1.5">
+            {blueprint.title}
+          </h3>
+          <p class="text-[12px] text-forest-500 leading-relaxed line-clamp-2 flex-1">{blueprint.description}</p>
+          {isPublished ? (
+            <div class="mt-3 flex items-center text-[11px] font-mono text-rust opacity-0 group-hover:opacity-100 transition-opacity">
+              Start building
+              <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          ) : (
+            <div class="mt-3 flex items-center text-[11px] font-mono text-rust/60">
+              Coming soon
+            </div>
+          )}
+        </a>
+      );
+    })}
+  </div>
+
+  <div class="mt-6 text-center">
+    <a
+      href="/blueprints"
+      class="inline-flex items-center gap-2 rounded-lg border border-rust/20 px-5 py-2.5 text-[13px] font-medium text-rust transition-all hover:bg-rust/[0.06] hover:border-rust/30 no-underline"
+    >
+      View all {blueprints.length} blueprints
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      </svg>
+    </a>
+  </div>
+</section>
