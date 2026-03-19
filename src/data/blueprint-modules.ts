@@ -29,6 +29,9 @@ const blueprintModules: Record<string, BlueprintModuleInfo[]> = {
   'build-your-own-ai-cli': [
     { number: '01', slug: 'build-ai-cli-tool', title: 'Build Your Own AI CLI Tool', description: 'Create a terminal assistant with Node.js and the Anthropic SDK.', icon: '⌨️', stepCount: 8 },
   ],
+  'build-an-agent-with-google-adk': [
+    { number: '01', slug: 'build-google-adk-agent', title: 'Build an Agent with Google ADK', description: 'Build and deploy a tool-using AI agent with Google ADK and Gemini.', icon: '🤖', stepCount: 9 },
+  ],
 };
 
 export function getBlueprintModules(blueprintSlug: string): BlueprintModuleInfo[] {

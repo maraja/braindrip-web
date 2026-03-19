@@ -81,6 +81,16 @@ export const blueprints: BlueprintInfo[] = [
     stepCount: 8,
     status: 'published',
   },
+  {
+    slug: 'build-an-agent-with-google-adk',
+    title: 'Build an Agent with Google ADK',
+    description: 'Build a research agent with Google\'s Agent Development Kit and Gemini — custom tools, sessions, and one-command deploy to Cloud Run.',
+    icon: '🤖',
+    difficulty: 'intermediate',
+    audience: 'builders',
+    stepCount: 9,
+    status: 'published',
+  },
 
   // --- For Everyone (Non-Technical / Business-Focused) ---
   {
