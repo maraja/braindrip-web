@@ -104,6 +104,14 @@ export const courses: CourseInfo[] = [
     moduleCount: 8,
     conceptCount: 57,
   },
+  {
+    slug: 'multi-skill-agent',
+    title: 'Building a Multi-Skill AI Agent',
+    description: 'Hands-on guide to building an AI agent with multiple skills — architecture, tool design, orchestration, error handling, and a capstone research agent project.',
+    icon: '🛠',
+    moduleCount: 10,
+    conceptCount: 42,
+  },
 ];
 
 export function getCourse(slug: string): CourseInfo | undefined {
