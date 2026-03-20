@@ -144,6 +144,18 @@ const courseModules: Record<string, ModuleInfo[]> = {
     { number: '07', slug: 'rl-for-language-models', title: 'RL for Language Models', description: 'RLHF, reward modeling, and RL in the LLM training pipeline.', icon: '🤖', conceptCount: 7 },
     { number: '08', slug: 'landmark-applications', title: 'Landmark Applications', description: 'AlphaGo, Atari, robotics, and milestone RL achievements.', icon: '🏆', conceptCount: 6 },
   ],
+  'multi-skill-agent': [
+    { number: '01', slug: 'agent-architecture-foundations', title: 'Agent Architecture Foundations', description: 'What multi-skill agents are, the skill abstraction, the runtime loop, and framework selection.', icon: '🏗', conceptCount: 4 },
+    { number: '02', slug: 'defining-skills-as-tools', title: 'Defining Skills as Tools', description: 'Tool schema design, input validation, output contracts, and building retrieval and action skills.', icon: '🔧', conceptCount: 5 },
+    { number: '03', slug: 'the-reasoning-core', title: 'The Reasoning Core', description: 'System prompts, skill selection logic, chain-of-thought reasoning, and termination conditions.', icon: '🧠', conceptCount: 4 },
+    { number: '04', slug: 'state-and-memory-across-steps', title: 'State & Memory Across Steps', description: 'Working memory, structured state, context window management, and persistent memory.', icon: '💾', conceptCount: 4 },
+    { number: '05', slug: 'task-decomposition-and-planning', title: 'Task Decomposition & Planning', description: 'Breaking tasks into steps, plan-then-execute, adaptive replanning, and dependency graphs.', icon: '📋', conceptCount: 4 },
+    { number: '06', slug: 'skill-orchestration-patterns', title: 'Skill Orchestration Patterns', description: 'Sequential chains, parallel execution, conditional branching, supervisor pattern, and human-in-the-loop.', icon: '🔀', conceptCount: 5 },
+    { number: '07', slug: 'error-handling-and-recovery', title: 'Error Handling & Recovery', description: 'Error taxonomy, retry strategies, graceful degradation, and self-correction.', icon: '🛡', conceptCount: 4 },
+    { number: '08', slug: 'testing-multi-skill-agents', title: 'Testing Multi-Skill Agents', description: 'Unit testing skills, integration testing chains, evaluation suites, and regression testing.', icon: '✅', conceptCount: 4 },
+    { number: '09', slug: 'production-deployment', title: 'Production Deployment', description: 'Cost optimization, latency budgets, observability, and scaling agent workloads.', icon: '🚀', conceptCount: 4 },
+    { number: '10', slug: 'capstone-build-a-research-agent', title: 'Capstone: Build a Research Agent', description: 'End-to-end project — designing, implementing, wiring, and iterating on a multi-skill research agent.', icon: '🎓', conceptCount: 4 },
+  ],
 };
 
 export function getModulesForCourse(courseSlug: string): ModuleInfo[] {
