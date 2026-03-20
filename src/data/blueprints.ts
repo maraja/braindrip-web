@@ -91,6 +91,16 @@ export const blueprints: BlueprintInfo[] = [
     stepCount: 9,
     status: 'published',
   },
+  {
+    slug: 'build-a-langgraph-agent-team',
+    title: 'Build a LangGraph Agent Team',
+    description: 'Build a job application assistant where four AI agents collaborate via LangGraph — analyze postings, tailor resumes, write cover letters, and review everything.',
+    icon: '🕸️',
+    difficulty: 'intermediate',
+    audience: 'builders',
+    stepCount: 10,
+    status: 'published',
+  },
 
   // --- For Everyone (Non-Technical / Business-Focused) ---
   {

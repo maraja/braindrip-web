@@ -32,6 +32,9 @@ const blueprintModules: Record<string, BlueprintModuleInfo[]> = {
   'build-an-agent-with-google-adk': [
     { number: '01', slug: 'build-google-adk-agent', title: 'Build an Agent with Google ADK', description: 'Build and deploy a tool-using AI agent with Google ADK and Gemini.', icon: '🤖', stepCount: 9 },
   ],
+  'build-a-langgraph-agent-team': [
+    { number: '01', slug: 'build-langgraph-agent-team', title: 'Build a LangGraph Agent Team', description: 'Build a multi-agent job application assistant with LangGraph and OpenAI.', icon: '🕸️', stepCount: 10 },
+  ],
 };
 
 export function getBlueprintModules(blueprintSlug: string): BlueprintModuleInfo[] {
