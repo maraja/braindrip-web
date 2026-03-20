@@ -1,20 +1,18 @@
 # Wiring the Agent Graph
 
-**One-Line Summary**: Assembling the five research skills into a complete LangGraph state machine with typed state, conditional routing, and a system prompt that guides the agent through the research workflow.
+**One-Line Summary**: Assembling the five research skills into a LangGraph state machine with typed state, conditional routing, and a system prompt that guides the research workflow.
 
 **Prerequisites**: `implementing-the-skill-set.md`, `project-overview-and-requirements.md`, `choosing-your-framework.md`
 
 ## What Is the Agent Graph?
 
-Think of skills as instruments in an orchestra -- each plays perfectly alone, but without a conductor and score, there is no symphony. The agent graph is both: it defines execution order, branching conditions, and the shared state passing information between skills.
+Skills are like instruments in an orchestra -- each plays perfectly alone, but without a conductor and score there is no symphony. The agent graph defines execution order, branching conditions, and the shared state passing information between skills.
 
 In LangGraph terms, the agent graph is a `StateGraph` where each node reads from and writes to shared state, and edges define transitions. Some edges are unconditional, others conditional based on state. The graph compiles into a runnable that executes the full research workflow. Your decisions about state shape, edge conditions, and node boundaries determine whether the agent is robust or fragile.
 
 ## How It Works
 
 ### State Definition
-
-The shared state carries all data between nodes:
 
 ```python
 from typing_extensions import TypedDict
@@ -43,20 +41,19 @@ class ResearchState(TypedDict):
 
 ### Node Functions
 
-Each node takes the current state and returns a partial state update:
+Each node takes current state, returns a partial update:
 
 ```python
 async def generate_queries_node(state: ResearchState) -> dict:
     topic, focus = state["topic"], state.get("focus_areas", [])
-    prompt = (f"Generate 3 diverse search queries to research: {topic}\n"
-              f"{'Focus on: ' + ', '.join(focus) if focus else ''}\n"
-              f'Return JSON: {{"queries": ["q1", "q2", "q3"]}}')
+    prompt = (f"Generate 3 diverse search queries for: {topic}\n"
+              f"{'Focus: ' + ', '.join(focus) if focus else ''}\n"
+              f'JSON: {{"queries": ["q1", "q2", "q3"]}}')
     resp = await llm_client.chat.completions.create(model="gpt-4o-mini",
         messages=[{"role": "user", "content": prompt}],
         response_format={"type": "json_object"}, temperature=0.7)
-    queries = json.loads(resp.choices[0].message.content)["queries"]
-    return {"search_queries": queries, "search_rounds_completed": 0}
-
+    return {"search_queries": json.loads(resp.choices[0].message.content)["queries"],
+            "search_rounds_completed": 0}
 async def search_node(state: ResearchState) -> dict:
     existing = {r["url"] for r in state.get("search_results", [])}
     new = []
@@ -67,23 +64,19 @@ async def search_node(state: ResearchState) -> dict:
                 new.append(r.model_dump()); existing.add(r.url)
     return {"search_results": state.get("search_results", []) + new,
             "search_rounds_completed": state["search_rounds_completed"] + 1}
-
 async def read_pages_node(state: ResearchState) -> dict:
     target = DEPTH_TO_SOURCES[state.get("depth", "standard")]
     read_urls = {p["url"] for p in state.get("pages_read", [])}
     urls = [r["url"] for r in state["search_results"]
             if r["url"] not in read_urls][:target]
     results = await asyncio.gather(
-        *[read_page(ReadPageInput(url=u)) for u in urls],
-        return_exceptions=True)
-    pages, failed, errors = list(state.get("pages_read", [])), [], []
+        *[read_page(ReadPageInput(url=u)) for u in urls], return_exceptions=True)
+    pages, failed = list(state.get("pages_read", [])), []
     for r in results:
-        if isinstance(r, Exception): errors.append(str(r)[:200])
+        if isinstance(r, Exception): pass
         elif r.success: pages.append(r.model_dump())
-        else: failed.append(r.url); errors.append(r.error or "")
-    return {"pages_read": pages, "pages_failed": failed,
-            "error_log": state.get("error_log", []) + errors}
-
+        else: failed.append(r.url)
+    return {"pages_read": pages, "pages_failed": failed}
 async def summarize_node(state: ResearchState) -> dict:
     done = {s.get("source_url") for s in state.get("summaries", [])}
     new_pages = [p for p in state["pages_read"] if p["url"] not in done]
@@ -96,13 +89,12 @@ async def summarize_node(state: ResearchState) -> dict:
         sums.append(r.model_dump())
         claims.extend({"claim": c, "source_url": r.source_url} for c in r.key_claims)
     return {"summaries": sums, "all_claims": claims}
-
 async def fact_check_node(state: ResearchState) -> dict:
     results = await asyncio.gather(
         *[fact_check(FactCheckInput(claim=c["claim"], original_source=c["source_url"]))
           for c in state["all_claims"][:5]], return_exceptions=True)
-    return {"fact_checks": [r.model_dump() for r in results if not isinstance(r, Exception)]}
-
+    return {"fact_checks": [r.model_dump() for r in results
+                            if not isinstance(r, Exception)]}
 async def write_report_node(state: ResearchState) -> dict:
     report = await write_report(WriteReportInput(
         topic=state["topic"],
@@ -113,8 +105,6 @@ async def write_report_node(state: ResearchState) -> dict:
 ```
 
 ### Edge Logic and Conditional Routing
-
-A single routing function decides whether to loop back for more sources or proceed:
 
 ```python
 def should_search_more(state: ResearchState) -> str:
@@ -150,22 +140,17 @@ def build_research_graph() -> StateGraph:
 research_graph = build_research_graph().compile()
 ```
 
-### System Prompt
+### System Prompt and Runner
 
 ```python
 SYSTEM_PROMPT = """You are a thorough research assistant. Guidelines:
 1. Generate diverse queries covering different angles of the topic.
-2. When summarizing, focus on facts, data, and specific claims.
-3. Extract concrete, verifiable claims with numbers, dates, and names.
-4. When fact-checking, look for independent corroboration.
-5. Distinguish verified facts from unverified claims in the final report.
-6. If information is contradictory, present both perspectives.
-7. Never fabricate information. If you cannot find something, say so."""
-```
+2. Focus on facts, data, and specific verifiable claims.
+3. When fact-checking, look for independent corroboration.
+4. Distinguish verified facts from unverified claims in the report.
+5. If information is contradictory, present both perspectives.
+6. Never fabricate information. If you cannot find something, say so."""
 
-### Compile and Run
-
-```python
 async def run_research_agent(topic: str, depth: str = "standard",
                               focus_areas: list[str] | None = None) -> dict:
     start = time.monotonic()
@@ -185,37 +170,32 @@ async def run_research_agent(topic: str, depth: str = "standard",
 
 ### The Graph Is the Architecture
 
-Where you draw node boundaries determines what can be parallelized, retried independently, and observed in traces. The six-node structure balances granularity with overhead for a research workflow.
+Node boundaries determine what can be parallelized, retried, and traced. Six nodes balances granularity with overhead.
 
 ### Conditional Routing Enables Adaptive Behavior
 
-`should_search_more` makes this an agent rather than a pipeline. If the first round yields enough sources, it proceeds; if not, it loops back. This adaptability is the core value of the agent pattern.
+`should_search_more` makes this an agent rather than a pipeline. Enough sources? Proceed. Not enough? Loop back.
 
 ## Key Technical Details
 
-- Each node returns only modified fields, merged into full state via the reducer pattern
-- Conditional edges are synchronous -- keep them fast with no LLM calls
-- `asyncio.gather` in read and summarize nodes enables 3-5x speedup via parallel execution
-- Graph compilation validates structure at build time (orphan nodes, dangling edges)
-- State serialization: roughly 1-5ms per transition, negligible vs. LLM latency
+- Each node returns only modified fields, merged via the reducer pattern
+- Conditional edges are synchronous -- no LLM calls in routing functions
+- `asyncio.gather` in read/summarize nodes enables 3-5x speedup
+- Graph compilation validates structure at build time; state serialization adds ~1-5ms per transition
 
 ## Common Misconceptions
 
-**"The LLM should decide which node to visit next"**: The graph handles routing with deterministic Python code. This is more reliable than asking the LLM "should we search more?" because routing is a programmatic check, not a language task.
+**"The LLM should decide which node to visit next"**: Routing is deterministic Python, not a language task. Deterministic checks are faster, cheaper, and more predictable.
 
-**"You need to pass the full state to every node"**: LangGraph passes the full state, but each node should only read the fields it needs and write only what it modifies. A node that touches everything signals the state shape needs refactoring.
+**"You need to pass the full state to every node"**: Each node should only read what it needs and write what it modifies. Touching everything signals the state needs refactoring.
 
 ## Connections to Other Concepts
 
-- `implementing-the-skill-set.md` -- The skill functions called by each node
-- `project-overview-and-requirements.md` -- The architecture diagram this code implements
-- `running-and-iterating.md` -- How to test and improve this graph
-- `choosing-your-framework.md` -- Why LangGraph was chosen for this implementation
-- `dependency-graphs-for-skill-execution.md` -- Theoretical foundation for graph-based orchestration
+- `implementing-the-skill-set.md` -- Skill functions called by each node
+- `project-overview-and-requirements.md` -- Architecture diagram this implements
+- `running-and-iterating.md` -- Testing and improving this graph
 
 ## Further Reading
 
 - Harrison Chase, "LangGraph: Build Stateful Agents" (2024) -- Official documentation and tutorials
-- LangChain Team, "How to Create a StateGraph" (2024) -- Step-by-step guide to the StateGraph API
-- Pregel, "A System for Large-Scale Graph Processing" (2010) -- The computation model that inspired LangGraph
-- Anthropic, "Building Effective Agents" (2024) -- Architectural patterns for multi-step agent systems
+- Anthropic, "Building Effective Agents" (2024) -- Multi-step agent architectural patterns
