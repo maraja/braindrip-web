@@ -6,11 +6,9 @@
 
 ## What Is the Skill Set?
 
-Think of each skill as a specialist on a research team. The web searcher finds relevant sources. The reader extracts substance from web pages. The summarizer distills long articles into key points. The fact checker cross-references claims. The report writer assembles everything into a coherent document. Each specialist has a clear job description (input schema), delivers a specific product (output schema), and knows how to handle problems in their domain.
+Think of each skill as a specialist on a research team. The web searcher finds sources. The reader extracts substance from pages. The summarizer distills articles into key points. The fact checker cross-references claims. The report writer assembles everything. Each has a clear input schema, a specific output schema, and domain-specific error handling.
 
-In technical terms, each skill is a Python async function with Pydantic input and output models, a focused implementation, and standardized error behavior. The skills are stateless -- they receive all necessary data as input and return a complete result. This makes them testable in isolation, cacheable, and easy to swap for improved versions later.
-
-The implementation follows a consistent pattern: define the types, implement the core logic, add error handling, and write a tool-compatible wrapper.
+Each skill is a Python async function with Pydantic models, stateless by design -- receiving all data as input and returning a complete result. This makes them testable in isolation, cacheable, and swappable. The pattern is consistent: define types, implement logic, add error handling.
 
 ## How It Works
 
@@ -157,7 +155,7 @@ async def fact_check(input: FactCheckInput) -> FactCheckOutput:
 
 ### Skill 5: Write Report
 
-Synthesizes all findings into a structured document:
+Synthesizes all findings into a structured document. Takes summaries, fact checks, and source metadata as input; uses GPT-4o for final synthesis:
 
 ```python
 class WriteReportInput(BaseModel):
@@ -166,14 +164,10 @@ class WriteReportInput(BaseModel):
     fact_checks: list[FactCheckOutput]
     sources: list[WebSearchResult]
 
-class ReportSection(BaseModel):
-    heading: str
-    content: str
-
 class WriteReportOutput(BaseModel):
     title: str
     executive_summary: str
-    sections: list[ReportSection]
+    sections: list[dict]  # {"heading": str, "content": str}
     fact_status: list[dict]
     references: list[str]
 
@@ -184,16 +178,13 @@ async def write_report(input: WriteReportInput) -> WriteReportOutput:
     refs = "\n".join(f"[{i+1}] {s.title} -- {s.url}" for i, s in enumerate(input.sources))
     prompt = (f"Write a research report on: {input.topic}\nCite with [1],[2],etc.\n\n"
               f"SUMMARIES:\n{sums}\n\nFACT CHECKS:\n{facts}\n\nSOURCES:\n{refs}\n\n"
-              f'Respond as JSON: {{"title":"...","executive_summary":"...",'
-              f'"sections":[{{"heading":"...","content":"..."}}],'
-              f'"fact_status":[{{"claim":"...","verdict":"..."}}]}}')
+              f'JSON: {{"title":"...","executive_summary":"...","sections":[...],"fact_status":[...]}}')
     resp = await llm_client.chat.completions.create(model="gpt-4o",
         messages=[{"role": "user", "content": prompt}],
         response_format={"type": "json_object"}, temperature=0.3, max_tokens=4000)
     data = json.loads(resp.choices[0].message.content)
     return WriteReportOutput(title=data["title"],
-        executive_summary=data["executive_summary"],
-        sections=[ReportSection(**s) for s in data["sections"]],
+        executive_summary=data["executive_summary"], sections=data["sections"],
         fact_status=data.get("fact_status", []),
         references=[f"[{i+1}] {s.title} -- {s.url}" for i, s in enumerate(input.sources)])
 ```
@@ -202,20 +193,19 @@ async def write_report(input: WriteReportInput) -> WriteReportOutput:
 
 ### Clean Interfaces Enable Independent Development
 
-Each skill can be developed, tested, and improved independently. You can swap the search provider from Tavily to Brave without touching the summarizer. You can upgrade the summarization model without affecting the fact checker. This modularity is what makes the system maintainable as requirements evolve.
+Each skill can be developed, tested, and improved independently. Swap the search provider from Tavily to Brave without touching the summarizer. Upgrade the summarization model without affecting the fact checker. This modularity makes the system maintainable as requirements evolve.
 
 ### Error Boundaries Prevent Cascade Failures
 
-Each skill handles its own errors and returns structured failure information rather than throwing exceptions that crash the whole agent. The `ReadPageOutput` with `success=False` allows the orchestrator to skip failed pages and continue. This resilience is critical for a system depending on external services.
+Each skill returns structured failure information rather than throwing exceptions. The `ReadPageOutput` with `success=False` lets the orchestrator skip failed pages and continue -- critical for a system depending on external services.
 
 ## Key Technical Details
 
-- Web search returns results in 0.5-2 seconds; Tavily API costs approximately $0.005 per search
-- Page reading succeeds for 75-85% of URLs; common failures are timeouts, 403s, and JS-rendered pages
-- Summarization with GPT-4o-mini costs approximately $0.001 per article
-- Fact checking is the most expensive skill: 1 search + 2-3 page reads + 1 GPT-4o call ($0.02-0.05 per claim)
-- Report writing uses the most output tokens (1000-3000) and benefits from the strongest model
-- Total skill implementation is approximately 200 lines of Python excluding imports
+- Web search: 0.5-2 seconds latency, approximately $0.005 per Tavily API call
+- Page reading: 75-85% success rate; failures from timeouts, 403s, and JS-rendered pages
+- Summarization: approximately $0.001 per article with GPT-4o-mini
+- Fact checking: most expensive at $0.02-0.05 per claim (1 search + 2-3 reads + 1 GPT-4o call)
+- Report writing: 1000-3000 output tokens, benefits from strongest model
 
 ## Common Misconceptions
 

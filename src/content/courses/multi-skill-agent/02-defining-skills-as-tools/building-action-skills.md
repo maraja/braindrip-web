@@ -1,59 +1,67 @@
 # Building Action Skills
 
-**One-Line Summary**: Action skills modify external state — writing files, calling APIs, updating databases, sending messages — and require special care around idempotency, confirmation, and dry-run modes to be safe in an autonomous agent loop.
+**One-Line Summary**: Action skills modify external state -- writing files, calling APIs, updating databases, sending messages -- and require idempotency, confirmation patterns, and dry-run modes to prevent irreversible mistakes.
 
-**Prerequisites**: `designing-effective-tool-schemas.md`, `output-contracts.md`, `building-retrieval-skills.md`
+**Prerequisites**: `designing-effective-tool-schemas.md`, `output-contracts.md`, `input-validation-and-type-safety.md`
 
 ## What Are Action Skills?
 
-If retrieval skills are the agent's eyes and ears, action skills are its hands. They reach out and change the world: creating a file, sending an email, updating a database record, deploying code, posting to Slack. This ability to act is what separates a useful agent from a fancy search engine. But it also introduces risk. A retrieval skill that runs twice returns the same results. An action skill that runs twice might send two emails, create two files, or charge a credit card twice.
+If retrieval skills are the agent's eyes and ears, action skills are its hands. They reach out and change the world: creating files, sending emails, updating database records, deploying code, posting to Slack. This ability to act is what separates a useful agent from a fancy search engine. But it also introduces risk that retrieval skills never carry. A retrieval skill that runs twice returns the same results. An action skill that runs twice might send two emails, create duplicate records, or charge a credit card twice.
 
-Action skills are tools that have side effects — they modify state outside the agent's own context. Every action is potentially irreversible or at least consequential. This is fundamentally different from retrieval: you can search the web 100 times with no harm, but sending 100 emails is a problem. This asymmetry means action skills need defensive patterns that retrieval skills do not: input validation is stricter, confirmation may be required, and idempotency must be considered.
+Action skills are tools that have side effects. They modify state outside the agent's own context. Every action is potentially irreversible or at least consequential. This is fundamentally different from retrieval: you can search the web a hundred times with no harm, but sending a hundred emails is a serious problem. This asymmetry means action skills need defensive patterns that retrieval skills do not: input validation must be stricter, confirmation may be required before destructive operations, and idempotency must be baked into the design.
 
-Technically, an action skill takes structured inputs from the LLM, performs a state-changing operation on an external system, and returns a structured result indicating what happened. The skill is responsible for validating inputs, handling partial failures, and reporting results in a way the LLM can verify. The agent runtime may additionally enforce policies like requiring user confirmation for certain action types or limiting how many actions can be taken per session.
+Technically, an action skill takes structured inputs from the LLM, performs a state-changing operation on an external system, and returns a structured result indicating exactly what happened. The skill is responsible for validating inputs, handling partial failures, rolling back when possible, and reporting results in a way the LLM can verify. The agent runtime may additionally enforce policies like requiring user confirmation for certain action types or limiting how many actions can be taken per session.
 
 ## How It Works
 
 ### File Operations Skill
 
-File creation and modification is one of the most common action skills:
+File creation and modification is one of the most common action skills. The key safeguards are path validation, automatic backup creation, and size limits:
 
 ```python
 from pathlib import Path
 from pydantic import BaseModel, Field, field_validator
+import shutil
+from datetime import datetime
 
 WORKSPACE = Path("/workspace")
 
 class WriteFileInput(BaseModel):
     path: str = Field(..., description="File path relative to workspace root.")
-    content: str = Field(..., description="Full file content to write.")
-    create_dirs: bool = Field(
-        default=True,
-        description="Create parent directories if they don't exist."
-    )
+    content: str = Field(..., max_length=100000, description="Full file content to write.")
+    create_backup: bool = Field(default=True, description="Backup existing file before overwriting.")
 
     @field_validator("path")
     @classmethod
-    def validate_path(cls, v):
+    def validate_safe_path(cls, v):
         resolved = (WORKSPACE / v).resolve()
         if not resolved.is_relative_to(WORKSPACE):
             raise ValueError("Path must be within the workspace directory.")
+        if resolved.suffix in [".env", ".key", ".pem", ".secret"]:
+            raise ValueError(f"Cannot write to sensitive file type: {resolved.suffix}")
         return v
 
 def write_file_skill(params: WriteFileInput) -> dict:
     """Write content to a file in the workspace."""
-    target = WORKSPACE / params.path
+    target = (WORKSPACE / params.path).resolve()
 
     try:
-        # Track whether this is a creation or an update
+        # Track whether this is a creation or update
         existed = target.exists()
         old_size = target.stat().st_size if existed else 0
 
-        if params.create_dirs:
-            target.parent.mkdir(parents=True, exist_ok=True)
+        # Create backup if file exists and backup is requested
+        backup_path = None
+        if existed and params.create_backup:
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            backup_path = target.with_suffix(f".bak.{timestamp}")
+            shutil.copy2(target, backup_path)
 
+        # Create parent directories if needed
+        target.parent.mkdir(parents=True, exist_ok=True)
+
+        # Write the file
         target.write_text(params.content, encoding="utf-8")
-
         new_size = target.stat().st_size
         action = "Updated" if existed else "Created"
 
@@ -64,36 +72,39 @@ def write_file_skill(params: WriteFileInput) -> dict:
             "metadata": {
                 "previous_size": old_size if existed else None,
                 "new_size": new_size,
+                "backup_path": str(backup_path) if backup_path else None,
             },
         }
     except PermissionError:
         return {
             "status": "error",
             "message": f"Permission denied writing to '{params.path}'.",
+            "error_code": "PERMISSION_DENIED",
         }
     except Exception as e:
         return {
             "status": "error",
             "message": f"Failed to write file: {str(e)}",
+            "error_code": "WRITE_ERROR",
         }
 ```
 
 ### API Call Skill
 
-A generic HTTP skill for calling external APIs:
+External API calls let the agent interact with third-party services. The key patterns are timeout management, response normalization, and clear error categorization:
 
 ```python
 import httpx
 from pydantic import BaseModel, Field, HttpUrl
 
-class HttpRequestInput(BaseModel):
+class ApiCallInput(BaseModel):
     method: str = Field(..., pattern="^(GET|POST|PUT|PATCH|DELETE)$")
     url: HttpUrl
     headers: dict[str, str] = Field(default_factory=dict)
     body: dict | None = Field(default=None, description="JSON request body for POST/PUT/PATCH.")
     timeout_seconds: int = Field(default=15, ge=1, le=60)
 
-def http_request_skill(params: HttpRequestInput) -> dict:
+def api_call_skill(params: ApiCallInput) -> dict:
     """Make an HTTP request to an external API."""
     try:
         with httpx.Client(timeout=params.timeout_seconds) as client:
@@ -104,7 +115,7 @@ def http_request_skill(params: HttpRequestInput) -> dict:
                 json=params.body if params.body else None,
             )
 
-        # Parse response
+        # Parse response body, truncating if very large
         try:
             response_data = response.json()
         except ValueError:
@@ -114,7 +125,7 @@ def http_request_skill(params: HttpRequestInput) -> dict:
 
         return {
             "status": "success" if is_success else "error",
-            "message": f"{params.method} {params.url} returned {response.status_code}.",
+            "message": f"{params.method} {params.url} returned HTTP {response.status_code}.",
             "data": response_data,
             "metadata": {
                 "status_code": response.status_code,
@@ -125,92 +136,206 @@ def http_request_skill(params: HttpRequestInput) -> dict:
     except httpx.TimeoutException:
         return {
             "status": "error",
-            "message": f"Request to {params.url} timed out after {params.timeout_seconds}s.",
+            "message": f"Request timed out after {params.timeout_seconds}s. Try increasing timeout or simplifying the request.",
+            "error_code": "TIMEOUT",
         }
     except httpx.ConnectError:
         return {
             "status": "error",
             "message": f"Could not connect to {params.url}. Check the URL and try again.",
+            "error_code": "CONNECTION_ERROR",
         }
 ```
 
 ### Database Write Skill
 
-Database mutations need transaction safety:
+Database mutations need the strictest safeguards: parameterized queries to prevent injection, transaction safety with rollback on failure, and optional dry-run mode:
 
 ```python
 import sqlite3
 from pydantic import BaseModel, Field, field_validator
 
 class DatabaseWriteInput(BaseModel):
-    sql: str = Field(..., description="SQL INSERT, UPDATE, or DELETE statement.")
+    operation: str = Field(..., description="SQL INSERT, UPDATE, or DELETE statement. Use ? placeholders.")
     params: list = Field(
         default_factory=list,
-        description="Parameterized values to prevent SQL injection. Use ? placeholders in SQL."
+        description="Parameterized values to prevent SQL injection."
+    )
+    dry_run: bool = Field(
+        default=False,
+        description="If true, validate the query without executing it."
     )
 
-    @field_validator("sql")
+    @field_validator("operation")
     @classmethod
-    def must_be_write(cls, v):
+    def must_be_write_operation(cls, v):
         normalized = v.strip().upper()
         if normalized.startswith("SELECT"):
-            raise ValueError("Use query_database for SELECT queries. This tool is for writes only.")
+            raise ValueError("Use query_database for SELECT. This tool is for writes only.")
         if any(normalized.startswith(kw) for kw in ["DROP", "ALTER", "TRUNCATE"]):
             raise ValueError("Schema modifications (DROP, ALTER, TRUNCATE) are not allowed.")
+        allowed = ("INSERT", "UPDATE", "DELETE")
+        if not any(normalized.startswith(op) for op in allowed):
+            raise ValueError(f"Only INSERT, UPDATE, DELETE allowed. Got: {normalized[:20]}")
         return v
 
 def database_write_skill(params: DatabaseWriteInput) -> dict:
-    """Execute a write operation (INSERT, UPDATE, DELETE) on the database."""
+    """Execute a write operation on the application database."""
     conn = None
     try:
         conn = sqlite3.connect("app.db")
-        cursor = conn.execute(params.sql, params.params)
+
+        if params.dry_run:
+            # Validate without executing by using EXPLAIN
+            cursor = conn.execute(f"EXPLAIN {params.operation}", params.params)
+            plan = cursor.fetchall()
+            return {
+                "status": "success",
+                "data": {"query_plan": str(plan[:5])},
+                "message": "Dry run: query is valid and would execute successfully.",
+                "metadata": {"dry_run": True},
+            }
+
+        cursor = conn.execute(params.operation, params.params)
         affected = cursor.rowcount
         conn.commit()
 
-        # Determine operation type for clear messaging
-        op = params.sql.strip().split()[0].upper()
-
+        op = params.operation.strip().split()[0].upper()
         return {
             "status": "success",
             "message": f"{op} affected {affected} row(s).",
             "data": {"rows_affected": affected, "operation": op},
+            "metadata": {
+                "rows_affected": affected,
+                "last_row_id": cursor.lastrowid,
+            },
         }
     except sqlite3.IntegrityError as e:
         if conn:
             conn.rollback()
         return {
             "status": "error",
-            "message": f"Integrity error: {str(e)}. Check for duplicate keys or constraint violations.",
+            "message": f"Integrity error: {str(e)}. Check for duplicates or constraint violations.",
+            "error_code": "INTEGRITY_ERROR",
         }
     except sqlite3.Error as e:
         if conn:
             conn.rollback()
         return {
             "status": "error",
-            "message": f"Database error: {str(e)}. Check SQL syntax and table/column names.",
+            "message": f"Database error: {str(e)}. Operation was rolled back.",
+            "error_code": "DB_WRITE_ERROR",
         }
     finally:
         if conn:
             conn.close()
 ```
 
-### Idempotency
+### Sending Messages Skill
 
-Idempotency means that performing the same operation multiple times produces the same result as performing it once. This is critical for action skills because agents may retry failed steps:
+Messaging skills send notifications to humans or other systems. Because sent messages cannot be unsent, preview mode is essential:
+
+```python
+from pydantic import BaseModel, Field
+
+class SendMessageInput(BaseModel):
+    channel: str = Field(..., pattern="^(email|slack|webhook)$", description="Delivery channel.")
+    recipient: str = Field(..., description="Email address, Slack channel, or webhook URL.")
+    subject: str = Field(default="", max_length=200)
+    body: str = Field(..., min_length=1, max_length=10000)
+    preview_only: bool = Field(
+        default=False,
+        description="If true, return a preview without sending."
+    )
+
+def send_message_skill(params: SendMessageInput) -> dict:
+    """Send a message via email, Slack, or webhook."""
+    preview = {
+        "channel": params.channel,
+        "recipient": params.recipient,
+        "subject": params.subject,
+        "body_preview": params.body[:200] + ("..." if len(params.body) > 200 else ""),
+    }
+
+    if params.preview_only:
+        return {
+            "status": "success",
+            "data": preview,
+            "message": "Preview generated. Set preview_only=false to send.",
+            "metadata": {"preview_only": True, "body_length": len(params.body)},
+        }
+
+    try:
+        if params.channel == "email":
+            send_email(params.recipient, params.subject, params.body)
+        elif params.channel == "slack":
+            post_to_slack(params.recipient, params.body)
+        elif params.channel == "webhook":
+            httpx.post(params.recipient, json={"text": params.body}, timeout=10)
+
+        return {
+            "status": "success",
+            "data": preview,
+            "message": f"Message sent via {params.channel} to {params.recipient}.",
+            "metadata": {"sent": True, "body_length": len(params.body)},
+        }
+    except Exception as e:
+        return {
+            "status": "error",
+            "message": f"Failed to send via {params.channel}: {str(e)}",
+            "error_code": "SEND_ERROR",
+        }
+```
+
+### Idempotency: Making Actions Safe to Retry
+
+An idempotent operation produces the same result whether you execute it once or ten times. This is critical because agents may retry failed steps, or the LLM may lose track of what it already did in long conversations:
 
 ```python
 import hashlib
+import json
 
+# Simple idempotency store (use Redis or a database in production)
+_executed_keys: dict[str, dict] = {}
+
+def make_idempotent(func):
+    """Decorator that prevents duplicate execution of action skills."""
+    def wrapper(params) -> dict:
+        key_data = f"{func.__name__}:{json.dumps(params.model_dump(), sort_keys=True)}"
+        idempotency_key = hashlib.sha256(key_data.encode()).hexdigest()[:16]
+
+        if idempotency_key in _executed_keys:
+            original = _executed_keys[idempotency_key]
+            return {
+                "status": "success",
+                "data": original.get("data"),
+                "message": "Action already completed (duplicate detected). Returning original result.",
+                "metadata": {"idempotent_skip": True, "key": idempotency_key},
+            }
+
+        result = func(params)
+        if result.get("status") == "success":
+            _executed_keys[idempotency_key] = result
+
+        return result
+    return wrapper
+
+@make_idempotent
+def send_message_skill(params: SendMessageInput) -> dict:
+    # ... same implementation as above
+    pass
+```
+
+Content-based idempotency works well for file writes:
+
+```python
 def idempotent_write_file(params: WriteFileInput) -> dict:
     """Write file only if content has actually changed."""
     target = WORKSPACE / params.path
 
-    # Check if file already has this exact content
     if target.exists():
         existing_hash = hashlib.sha256(target.read_bytes()).hexdigest()
         new_hash = hashlib.sha256(params.content.encode()).hexdigest()
-
         if existing_hash == new_hash:
             return {
                 "status": "success",
@@ -218,164 +343,91 @@ def idempotent_write_file(params: WriteFileInput) -> dict:
                 "data": {"path": params.path, "action": "unchanged"},
             }
 
-    # Content differs or file doesn't exist — proceed with write
     return write_file_skill(params)
+```
 
+### Confirmation and Dry-Run Patterns
 
-def idempotent_create_record(table: str, unique_key: dict, data: dict) -> dict:
-    """Create a record only if it doesn't already exist."""
-    conn = sqlite3.connect("app.db")
+For destructive operations, use a two-phase pattern where the first call previews effects and the second call executes:
 
-    # Check for existing record
-    where_clause = " AND ".join(f"{k} = ?" for k in unique_key)
-    existing = conn.execute(
-        f"SELECT 1 FROM {table} WHERE {where_clause}",
-        list(unique_key.values())
-    ).fetchone()
-
-    if existing:
-        return {
-            "status": "success",
-            "message": f"Record already exists in {table} with {unique_key}. No duplicate created.",
-            "data": {"action": "already_exists"},
-        }
-
-    # Insert new record
-    all_data = {**unique_key, **data}
-    columns = ", ".join(all_data.keys())
-    placeholders = ", ".join("?" * len(all_data))
-    conn.execute(
-        f"INSERT INTO {table} ({columns}) VALUES ({placeholders})",
-        list(all_data.values())
+```python
+class DeleteFilesInput(BaseModel):
+    pattern: str = Field(..., description="Glob pattern of files to delete.")
+    confirm: bool = Field(
+        default=False,
+        description="Must be true to actually delete. False returns a preview."
     )
-    conn.commit()
-    conn.close()
 
-    return {
-        "status": "success",
-        "message": f"Created new record in {table}.",
-        "data": {"action": "created"},
-    }
-```
+def delete_files_skill(params: DeleteFilesInput) -> dict:
+    """Delete files matching a pattern. Requires confirm=true to execute."""
+    matches = list(WORKSPACE.rglob(params.pattern))
+    file_list = [str(p.relative_to(WORKSPACE)) for p in matches if p.is_file()]
 
-### Confirmation Patterns
-
-For high-risk actions, require explicit confirmation:
-
-```python
-class ConfirmableAction:
-    """Wraps an action skill with a two-phase confirmation pattern."""
-
-    def __init__(self, skill_fn, risk_level: str = "medium"):
-        self.skill_fn = skill_fn
-        self.risk_level = risk_level
-        self.pending_actions = {}
-
-    def preview(self, params: dict) -> dict:
-        """Phase 1: Show what would happen without doing it."""
-        action_id = hashlib.sha256(str(params).encode()).hexdigest()[:12]
-        self.pending_actions[action_id] = params
-
-        return {
-            "status": "pending_confirmation",
-            "message": f"Action preview (ID: {action_id}): This will {self.describe(params)}. "
-                       f"Call confirm_action with action_id='{action_id}' to proceed.",
-            "data": {"action_id": action_id, "params": params},
-        }
-
-    def confirm(self, action_id: str) -> dict:
-        """Phase 2: Execute the confirmed action."""
-        if action_id not in self.pending_actions:
-            return {"status": "error", "message": f"No pending action with ID '{action_id}'."}
-
-        params = self.pending_actions.pop(action_id)
-        return self.skill_fn(params)
-```
-
-### Dry-Run Mode
-
-Dry-run mode lets the agent test an action without executing it:
-
-```python
-class DryRunnable:
-    """Mixin that adds dry-run support to action skills."""
-
-    def execute(self, params: dict, dry_run: bool = False) -> dict:
-        if dry_run:
-            return self.simulate(params)
-        return self.perform(params)
-
-    def simulate(self, params: dict) -> dict:
-        """Describe what would happen without doing it."""
-        # Validate inputs (this still runs)
-        validation_result = self.validate(params)
-        if not validation_result["valid"]:
-            return {"status": "error", "message": validation_result["error"]}
-
+    if not params.confirm:
         return {
             "status": "success",
-            "message": f"[DRY RUN] Would {self.describe_action(params)}. No changes made.",
-            "data": {"dry_run": True, "would_affect": self.estimate_impact(params)},
+            "data": {"files_to_delete": file_list[:20]},
+            "message": f"Would delete {len(file_list)} files. Set confirm=true to proceed.",
+            "metadata": {"dry_run": True, "total_files": len(file_list)},
         }
-```
 
-Add `dry_run` as a parameter in the tool schema:
+    deleted = 0
+    errors = []
+    for path in matches:
+        if path.is_file():
+            try:
+                path.unlink()
+                deleted += 1
+            except Exception as e:
+                errors.append(f"{path.name}: {e}")
 
-```json
-{
-    "name": "send_email",
-    "input_schema": {
-        "properties": {
-            "to": {"type": "string"},
-            "subject": {"type": "string"},
-            "body": {"type": "string"},
-            "dry_run": {
-                "type": "boolean",
-                "default": false,
-                "description": "If true, validates inputs and shows what would be sent without actually sending."
-            }
-        }
+    status = "success" if not errors else "error"
+    return {
+        "status": status,
+        "data": {"deleted_count": deleted, "errors": errors[:5]},
+        "message": f"Deleted {deleted} files." + (f" {len(errors)} errors occurred." if errors else ""),
+        "metadata": {"deleted_count": deleted, "error_count": len(errors)},
     }
-}
 ```
+
+The agent calls the tool once with `confirm=false`, reviews the preview in its reasoning step, and then calls again with `confirm=true` only if the preview matches its intent. This two-phase pattern catches mistakes before they cause harm.
 
 ## Why It Matters
 
-### Actions Are What Make Agents Useful
+### Action Skills Are Where Agents Create Real Value
 
-An agent that can only search and read is a research assistant. An agent that can also write files, call APIs, and send messages is a productivity tool. Action skills are what close the loop from "finding information" to "getting things done."
+An agent that can only search and read is a research assistant. An agent that can also write files, create tickets, send messages, and update databases is an autonomous worker that completes tasks end-to-end. Action skills close the loop from "here is what you should do" to "done."
 
-### Side Effects Require Defensive Design
+### Action Skills Are Where Agents Cause Real Harm
 
-Every action skill is a potential source of real-world harm if misused. Sending an email to the wrong person, overwriting a critical file, or deleting database records cannot be undone with a retry. Defensive patterns like validation, confirmation, idempotency, and dry-run modes are not optional luxuries — they are essential safety measures for autonomous systems.
+The same power that makes action skills valuable makes them dangerous. A retrieval skill that returns wrong results wastes a few iterations. An action skill that deletes the wrong files, sends an email to the wrong person, or writes corrupt data to a production database causes real damage that may be impossible to reverse. Every safeguard in this concept -- strict validation, idempotency, confirmation gates, dry-run modes -- exists because action skills interact with the real world in ways that cannot always be undone.
 
 ## Key Technical Details
 
-- Action skills should always return what they actually did, not just "success" — include specifics like "Created file report.pdf (2,450 bytes)"
-- Idempotency keys should be based on the semantic intent, not the raw inputs (same email to same recipient = same action)
-- Dry-run mode should validate all inputs and check preconditions — it should fail if the real action would fail
-- Database writes should use parameterized queries to prevent SQL injection, even from an LLM
-- File writes should be atomic when possible (write to temp file, then rename) to prevent partial writes
-- Set reasonable rate limits: no more than 5 emails per minute, 100 API calls per session
-- Log every action with full inputs and outputs for auditability
+- Action skills should always report exactly what they did: "Created file report.pdf (2,450 bytes)" not just "success"
+- Idempotency keys should be based on the full parameter set so identical calls produce identical results
+- Dry-run mode should run full validation and precondition checks, stopping only at the actual execution step
+- Database writes must use parameterized queries to prevent SQL injection, even when inputs come from an LLM
+- File writes should create automatic backups before overwriting to enable recovery from mistakes
+- Set conservative rate limits on external actions: no more than 5 emails per minute or 100 API calls per session
+- Log every action with full inputs and outputs for auditability and debugging
 
 ## Common Misconceptions
 
-**"The LLM will use action skills responsibly on its own"**: LLMs have no inherent sense of consequence. They will happily send an email, delete a file, or call a paid API if the task seems to call for it. Safety must be built into the skill implementation and the runtime policy, not trusted to the model's judgment. Always validate, always limit, and consider confirmation for irreversible actions.
+**"The LLM will use action skills responsibly on its own"**: LLMs have no inherent sense of consequence. They will send an email, delete a file, or call a paid API if the task seems to call for it. Safety must be built into the skill implementation and the runtime policy, not trusted to the model's judgment. Always validate inputs, enforce rate limits, and require confirmation for irreversible operations.
 
-**"Idempotency is only needed for retries"**: Idempotency also protects against the agent calling the same action multiple times within a single run. If the agent loses track of what it already did (common with long context), it might re-execute an action. Idempotent skills handle this gracefully; non-idempotent skills create duplicates.
+**"Idempotency is only needed for retries"**: Idempotency also protects against the agent calling the same action multiple times within a single run. If the agent loses track of what it already did, which happens with long conversations that push earlier context out of the window, it might re-execute an action. Idempotent skills handle this gracefully. Non-idempotent skills create duplicates, send duplicate messages, or double-charge accounts.
 
 ## Connections to Other Concepts
 
-- `building-retrieval-skills.md` — The read-only counterpart to action skills
-- `input-validation-and-type-safety.md` — Especially critical for action skills due to side effects
-- `output-contracts.md` — Action results must clearly state what was done
-- `agent-runtime-loop.md` — The runtime can enforce policies on which actions require confirmation
-- `designing-effective-tool-schemas.md` — Action tool descriptions must clearly state their side effects
+- `building-retrieval-skills.md` -- The read-only counterpart to action skills, with fundamentally different safety properties
+- `input-validation-and-type-safety.md` -- Especially critical for action skills where bad inputs cause irreversible side effects
+- `output-contracts.md` -- Action results must clearly state what was done so the LLM can verify success
+- `designing-effective-tool-schemas.md` -- Action tool descriptions must clearly communicate their side effects and destructive potential
 
 ## Further Reading
 
-- Anthropic, "Tool Use Safety" (2024) — Guidelines for building safe tool implementations
-- Pat Helland, "Idempotence Is Not a Medical Condition" (2012) — Classic essay on idempotency in distributed systems
-- Stripe API Documentation, "Idempotent Requests" (2024) — Production example of idempotency keys
-- OWASP, "API Security Top 10" (2023) — Security considerations for tools that call external APIs
+- Anthropic, "Tool Use Best Practices" (2024) -- Guidelines for building safe and effective tool integrations
+- Helland, "Idempotence Is Not a Medical Condition" (2012) -- Classic essay on why idempotency matters in distributed systems
+- Stripe API Documentation, "Idempotent Requests" (2024) -- Production-grade patterns for making API operations safe to retry
+- Leveson, "Engineering a Safer World" (2011) -- Systems thinking about safety constraints in automated systems
