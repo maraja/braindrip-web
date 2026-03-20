@@ -191,7 +191,7 @@ export const blueprints: BlueprintInfo[] = [
     difficulty: 'beginner',
     audience: 'everyone',
     stepCount: 7,
-    status: 'coming-soon',
+    status: 'published',
   },
   {
     slug: 'create-an-ai-study-buddy',
@@ -201,7 +201,7 @@ export const blueprints: BlueprintInfo[] = [
     difficulty: 'beginner',
     audience: 'everyone',
     stepCount: 6,
-    status: 'coming-soon',
+    status: 'published',
   },
   {
     slug: 'launch-an-ai-social-media-manager',
@@ -211,7 +211,7 @@ export const blueprints: BlueprintInfo[] = [
     difficulty: 'beginner',
     audience: 'everyone',
     stepCount: 8,
-    status: 'coming-soon',
+    status: 'published',
   },
   {
     slug: 'build-your-ai-meeting-assistant',
@@ -221,7 +221,7 @@ export const blueprints: BlueprintInfo[] = [
     difficulty: 'beginner',
     audience: 'everyone',
     stepCount: 6,
-    status: 'coming-soon',
+    status: 'published',
   },
   {
     slug: 'design-your-ai-powered-portfolio',
@@ -231,7 +231,7 @@ export const blueprints: BlueprintInfo[] = [
     difficulty: 'beginner',
     audience: 'everyone',
     stepCount: 7,
-    status: 'coming-soon',
+    status: 'published',
   },
 ];
 
